@@ -55,7 +55,7 @@ class tam_contact_form_seven {
 	}
 
 	function load_plugin_textdomain() { // l10n
-		load_plugin_textdomain('wpcf7', 'wp-content/plugins/wp-contact-form-7/languages');
+		load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages');
 	}
 
 	function contact_forms() {
@@ -84,7 +84,7 @@ class tam_contact_form_seven {
 		global $plugin_page;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
-			$admin_stylesheet_url = get_option('siteurl') . '/wp-content/plugins/wp-contact-form-7/admin-stylesheet.css';
+			$admin_stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/admin-stylesheet.css';
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 		}
 	}
@@ -276,7 +276,7 @@ class tam_contact_form_seven {
 	}
 
 	function stylesheet() {
-		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/wp-contact-form-7/admin-stylesheet.css';
+		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/admin-stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
 	}
 
