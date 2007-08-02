@@ -1,0 +1,18 @@
+div.wpcf7 {
+	padding: 1em 0;
+}
+
+div.wpcf7-mail-sent-ok {
+	border: 1px solid #398f14;
+	padding: 0.2em 1em;
+}
+
+div.wpcf7-mail-sent-ng {
+	border: 1px solid #ff0000;
+	padding: 0.2em 1em;
+}
+
+div.wpcf7-validation-errors {
+	border: 1px solid #f7e700;
+	padding: 0.2em 1em;
+}

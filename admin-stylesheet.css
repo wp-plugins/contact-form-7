@@ -1,0 +1,104 @@
+ul.cfmenu {
+	padding: 2em 0 3px;
+	border-bottom: 1px solid #0e98ea;
+}
+ul.cfmenu li {
+	display: inline; 
+	list-style: none;
+	margin: 1em 0.5em;
+}
+ul.cfmenu li.current {
+	padding: 4px;
+	border: 1px solid #0e98ea;
+	border-bottom: 1px solid #fff;
+	font-weight: bolder;
+}
+ul.cfmenu li.add-new {
+	margin-left: 1em;
+	color: #eba80e;
+}
+ul.cfmenu li.add-new a {
+	color: #eba80e;
+}
+ul.cfmenu a {
+	border-bottom: none;
+	color: #454545;
+}
+ul.cfmenu a:hover {
+	border-bottom: 1px solid #0e98ea;
+}
+div.cfdiv { 
+	margin: 0;
+	padding: 12px; 
+}
+input.cfsave {
+	font-weight: bold;
+}
+input.cfdelete:hover {
+	background: #ce0000;
+	color: #fff;
+}
+p.important {
+	color: #eba80e;
+}
+input#contact-form-anchor-text {
+	margin-left: 1em;
+	color: #333;
+	background: #fff;
+	border: 1px solid #eba80e;
+	font-family: monospace;
+}
+fieldset { 
+	padding: .5em 2em 1em; 
+	margin: 1em 1em 1em 0; 
+}
+fieldset legend {
+	font-weight: bolder;
+}
+input.wide {
+	width: 97%;
+}
+textarea {
+	width: 97%;
+}
+p.submit {
+	margin: 0 24px;
+}
+input.quick-button {
+	background: #fff url( images/fade-butt.png ) repeat-x 0 -2px;
+	margin: 3px 0;
+	padding: 1px 0;
+}
+div#quick-panel {
+	display: none;
+	border: 1px dotted #ccc;
+	margin: 0 0 4px;
+	padding: 4px;
+	width: 97%;
+	background: #aaecf5;
+}
+div#quick-panel div.close {
+	float: right;
+	font-size: 8pt;
+	font-weight: bold;
+	border: 1px solid #999;
+	background: #bbb;
+	color: #fff;
+	padding: 1px 3px;
+	cursor: pointer;
+}
+div#quick-panel input {
+	background: #fff;
+}
+div#quick-panel input.qp-button {
+	background: #fff url( images/fade-butt.png ) repeat-x 0 -2px;
+	margin: 3px 1px 2px;
+	padding: 2px;
+}
+div#quick-panel input.required {
+	border: 1px solid #777;
+}
+div#quick-panel table td {
+	text-align: right;
+	padding: 0 1em;
+}

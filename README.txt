@@ -1,0 +1,20 @@
+=== Contact Form 7 ===
+Contributors: takayukister
+Tags: contact form, email
+Requires at least: 2.0.10
+Tested up to: 2.3-alpha
+Stable tag: trunk
+
+Just another contact form plugin. Simple but flexible.
+
+== Description ==
+
+* Supports multiple contact forms.
+* You can customize form and mail contents with simple markup.
+* Includes simple input validations.
+
+== Installation ==
+
+1. Upload `wp-contact-form-7/` directory to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+
