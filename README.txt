@@ -15,6 +15,6 @@ Just another contact form plugin. Simple but flexible.
 
 == Installation ==
 
-1. Upload `wp-contact-form-7/` directory to the `/wp-content/plugins/` directory
+1. Upload whole `contact-form-7` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
