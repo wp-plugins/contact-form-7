@@ -1,6 +1,6 @@
 ul.cfmenu {
 	padding: 2em 0 3px;
-	border-bottom: 1px solid #0e98ea;
+	border-bottom: 1px solid #777;
 }
 ul.cfmenu li {
 	display: inline; 
@@ -9,7 +9,7 @@ ul.cfmenu li {
 }
 ul.cfmenu li.current {
 	padding: 4px;
-	border: 1px solid #0e98ea;
+	border: 1px solid #777;
 	border-bottom: 1px solid #fff;
 	font-weight: bolder;
 }
