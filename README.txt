@@ -3,7 +3,7 @@ Contributors: takayukister
 Tags: contact form, email
 Requires at least: 2.0.10
 Tested up to: 2.3-alpha
-Stable tag: trunk
+Stable tag: 1.1
 
 Just another contact form plugin. Simple but flexible.
 
@@ -15,6 +15,6 @@ Just another contact form plugin. Simple but flexible.
 
 == Installation ==
 
-1. Upload whole `contact-form-7` directory to the `/wp-content/plugins/` directory
+1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
