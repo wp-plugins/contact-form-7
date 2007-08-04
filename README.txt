@@ -18,3 +18,6 @@ Just another contact form plugin. Simple but flexible.
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
+== Screenshots ==
+
+1. screenshot-1.jpg
