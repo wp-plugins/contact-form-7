@@ -30,7 +30,7 @@
 		<form method="post" action="<?php echo $base_url . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
 			<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
 
-			<fieldset>
+			<div class="fieldset">
 				<label for="wpcf7-title"><?php _e('Title', 'wpcf7'); ?></label>
 				<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" onchange="update_anchor(this.value);" />
 				
@@ -40,9 +40,9 @@
 				<input type="text" id="contact-form-anchor-text" size="50" onfocus="this.select();" readonly="readonly" />
 				</p>
 				<?php endif; ?>
-			</fieldset>
+			</div>
 
-			<fieldset><legend><?php _e('Form content', 'wpcf7'); ?></legend>
+			<div class="fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
 				<input type="button" value="text" class="quick-button" onclick="quick_panel('text');" />
 				<input type="button" value="text*" class="quick-button" onclick="quick_panel('text*');" />
 				<input type="button" value="email" class="quick-button" onclick="quick_panel('email');" />
@@ -52,21 +52,21 @@
 				<input type="button" value="submit" class="quick-button" onclick="quick_panel('submit');" />
 				<div id="quick-panel"></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
-			</fieldset>
+			</div>
 
-			<fieldset><legend><?php _e('Mail template', 'wpcf7'); ?></legend>
+			<div class="fieldset"><div class="legend"><?php _e('Mail template', 'wpcf7'); ?></div>
 				<label for="wpcf7-mail-subject"><?php _e('Subject field:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" /><br />
 				<label for="wpcf7-mail-sender"><?php _e('Sender field:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-mail-sender" name="wpcf7-mail-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['sender']); ?>" /><br />
 				<label for="wpcf7-mail-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
 				<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
-			</fieldset>
+			</div>
 
-			<fieldset><legend><?php _e('Options', 'wpcf7'); ?></legend>
+			<div class="fieldset"><div class="legend"><?php _e('Options', 'wpcf7'); ?></div>
 				<label for="wpcf7-options-recipient"><?php _e('Recipient address:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-options-recipient" name="wpcf7-options-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
-			</fieldset>
+			</div>
 
 			<p class="submit">
 				<input type="submit" class="cfsave" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />

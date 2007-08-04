@@ -29,7 +29,7 @@ ul.cfmenu a:hover {
 }
 div.cfdiv { 
 	margin: 0;
-	padding: 12px; 
+	padding: 24px; 
 }
 input.cfsave {
 	font-weight: bold;
@@ -48,18 +48,18 @@ input#contact-form-anchor-text {
 	border: 1px solid #eba80e;
 	font-family: monospace;
 }
-fieldset { 
-	padding: .5em 2em 1em; 
-	margin: 1em 1em 1em 0; 
+div.fieldset {
+	margin: 1.5em 0;
 }
-fieldset legend {
+div.fieldset div.legend {
 	font-weight: bolder;
+	margin-bottom: 0.5em;
 }
 input.wide {
-	width: 97%;
+	width: 99%;
 }
 textarea {
-	width: 97%;
+	width: 99%;
 }
 p.submit {
 	margin: 0 24px;
@@ -71,10 +71,9 @@ input.quick-button {
 }
 div#quick-panel {
 	display: none;
-	border: 1px dotted #ccc;
 	margin: 0 0 4px;
 	padding: 4px;
-	width: 97%;
+	width: 99%;
 	background: #aaecf5;
 }
 div#quick-panel div.close {
