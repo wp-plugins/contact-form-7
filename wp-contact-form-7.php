@@ -308,13 +308,17 @@ function validate(formData, jqForm, options) {
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
-		if (! is_email(this.value))
+		if (! is_email(this.value)) {
+			$(this).addClass('wpcf7-email-not-valid');
 			this.wpcf7InvalidMessage = '<?php echo 'Please fill the email field.'; ?>';
+		}
 	});
 
 	$('.wpcf7-validates-as-required', jqForm[0]).each(function() {
-		if (! this.value)
+		if (! this.value) {
+			$(this).addClass('wpcf7-required-not-valid');
 			this.wpcf7InvalidMessage = '<?php echo 'Please fill the required field.'; ?>';
+		}
 	});
 	
 	$.each(jqForm[0].elements, function() {
@@ -330,11 +334,7 @@ function validate(formData, jqForm, options) {
 
 function is_email(user_email) {
 	var chars = /^[-a-z0-9+_.]+@([-a-z0-9_]+[.])+[a-z]{2,6}$/i;
-	if (chars.test(user_email)) {
-		return true;
-	} else {
-		return false;
-	}
+	return chars.test(user_email);
 }
 
 function not_valid_tip(input, message) {
@@ -444,7 +444,7 @@ function not_valid_tip(input, message) {
 				} else {
 					$value = array_shift($values);
 				}
-				return '<textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>';
+				return '<span style="position: relative;"><textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea></span>';
 				break;
 		}
 	}

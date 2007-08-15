@@ -17,11 +17,23 @@ div.wpcf7-validation-errors {
 	padding: 0.2em 1em;
 }
 
-.wpcf7-not-valid-tip {
+span.wpcf7-not-valid-tip {
 	position: absolute;
 	top: 20%;
 	left: 20%;
 	background: #fff;
 	border: 1px solid #ff0000;
 	width: 200px;
+}
+
+input.wpcf7-email-not-valid {
+}
+
+input.wpcf7-required-not-valid {
+}
+
+textarea.wpcf7-email-not-valid {
+}
+
+textarea.wpcf7-required-not-valid {
 }
