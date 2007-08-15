@@ -24,6 +24,7 @@ span.wpcf7-not-valid-tip {
 	background: #fff;
 	border: 1px solid #ff0000;
 	width: 200px;
+	padding: 2px;
 }
 
 input.wpcf7-email-not-valid {

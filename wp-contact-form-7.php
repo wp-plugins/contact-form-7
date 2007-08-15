@@ -310,7 +310,7 @@ function validate(formData, jqForm, options) {
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
 		if (! is_email(this.value)) {
 			$(this).addClass('wpcf7-email-not-valid');
-			this.wpcf7InvalidMessage = '<?php echo 'Please fill the email field.'; ?>';
+			this.wpcf7InvalidMessage = '<?php echo 'Email address seems invalid.'; ?>';
 		}
 	});
 
