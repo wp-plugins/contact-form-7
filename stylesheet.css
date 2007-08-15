@@ -16,3 +16,12 @@ div.wpcf7-validation-errors {
 	border: 1px solid #f7e700;
 	padding: 0.2em 1em;
 }
+
+.wpcf7-not-valid-tip {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	background: #fff;
+	border: 1px solid #ff0000;
+	width: 200px;
+}

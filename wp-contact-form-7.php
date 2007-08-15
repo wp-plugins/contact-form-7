@@ -35,6 +35,8 @@ class tam_contact_form_seven {
 		add_action('admin_menu', array(&$this, 'add_pages'));
 		add_action('admin_head', array(&$this, 'admin_page_stylesheet'));
 		add_action('wp_head', array(&$this, 'stylesheet'));
+		add_action('wp_head', array(&$this, 'javascript'));
+		add_action('wp_print_scripts', array(&$this, 'load_js'));
 		add_filter('the_content', array(&$this, 'the_content_filter'));
 	}
 	
@@ -198,7 +200,10 @@ class tam_contact_form_seven {
 		}
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
-		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
+		if (is_singular())
+			return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content, 1);
+		else
+			return preg_replace($regex, '', $content);
 	}
 	
 	function the_content_filter_callback($matches) {
@@ -231,7 +236,7 @@ class tam_contact_form_seven {
 			}
 			$form .= '</ul></div>';
 		}
-		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post">';
+		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post" id="wpcf7_the_form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= $form_content;
 		$form .= '</form></div>';
@@ -276,8 +281,80 @@ class tam_contact_form_seven {
 	}
 
 	function stylesheet() {
-		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/admin-stylesheet.css';
+		if (! is_singular())
+			return;
+		
+		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
+	}
+	
+	function javascript() {
+		if (! is_singular())
+			return;
+		
+?>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function() {
+	var options = {
+		beforeSubmit: validate
+	};
+	$('#wpcf7_the_form').ajaxForm(options);
+});
+
+function validate(formData, jqForm, options) {
+
+	var valid = true;
+	
+	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
+		if (! is_email(this.value))
+			this.wpcf7InvalidMessage = '<?php echo 'Please fill the email field.'; ?>';
+	});
+
+	$('.wpcf7-validates-as-required', jqForm[0]).each(function() {
+		if (! this.value)
+			this.wpcf7InvalidMessage = '<?php echo 'Please fill the required field.'; ?>';
+	});
+	
+	$.each(jqForm[0].elements, function() {
+		if (this.hasOwnProperty('wpcf7InvalidMessage')) {
+			not_valid_tip(this, this.wpcf7InvalidMessage);
+			valid = false;
+			delete this.wpcf7InvalidMessage;
+		}
+	});
+	
+	return valid;
+}
+
+function is_email(user_email) {
+	var chars = /^[-a-z0-9+_.]+@([-a-z0-9_]+[.])+[a-z]{2,6}$/i;
+	if (chars.test(user_email)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function not_valid_tip(input, message) {
+	$(input).after('<span class="wpcf7-not-valid-tip">' + message + '</span>');
+	$('span.wpcf7-not-valid-tip').mouseover(function() {
+		$(this).fadeOut('fast');
+	});
+	$(input).mouseover(function() {
+		$(input).siblings('.wpcf7-not-valid-tip').fadeOut('fast');
+	});
+}
+
+//]]>
+</script>
+<?php
+	}
+	
+	function load_js() {
+		if (is_singular())
+			wp_enqueue_script('jquery-form');
 	}
 
 /* Processing form element placeholders */
@@ -309,6 +386,7 @@ class tam_contact_form_seven {
 				if ($id = $id_matches[1])
 					$atts .= ' id="' . $id . '"';
 			}
+			
 			$class_att = "";
 			$class_array = preg_grep('%^class:[-0-9a-zA-Z_]+$%', $options);
 			foreach ($class_array as $class) {
@@ -316,6 +394,12 @@ class tam_contact_form_seven {
 				if ($class = $class_matches[1])
 					$class_att .= ' ' . $class;
 			}
+			
+			if (preg_match('/^email[*]?$/', $type))
+				$class_att .= ' wpcf7-validates-as-email';
+			if (preg_match('/[*]$/', $type))
+				$class_att .= ' wpcf7-validates-as-required';
+				
 			if ($class_att)
 				$atts .= ' class="' . trim($class_att) . '"';
 		}
@@ -340,7 +424,7 @@ class tam_contact_form_seven {
 				} else {
 					$value = array_shift($values);
 				}
-				return '<input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' />';
+				return '<span style="position: relative;"><input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' /></span>';
 				break;
 			case 'textarea':
 				if (is_array($options)) {
