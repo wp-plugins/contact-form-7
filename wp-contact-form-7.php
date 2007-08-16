@@ -358,14 +358,14 @@ function validate(formData, jqForm, options) {
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
 		if (! isEmail(this.value)) {
 			$(this).addClass('wpcf7-email-not-valid');
-			this.wpcf7InvalidMessage = '<?php echo 'Email address seems invalid.'; ?>';
+			this.wpcf7InvalidMessage = '<?php _e('Email address seems invalid.', 'wpcf7'); ?>';
 		}
 	});
 
 	$('.wpcf7-validates-as-required', jqForm[0]).each(function() {
 		if (! this.value) {
 			$(this).addClass('wpcf7-required-not-valid');
-			this.wpcf7InvalidMessage = '<?php echo 'Please fill the required field.'; ?>';
+			this.wpcf7InvalidMessage = '<?php _e('Please fill the required field.', 'wpcf7'); ?>';
 		}
 	});
 	

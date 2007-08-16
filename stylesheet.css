@@ -28,7 +28,8 @@ span.wpcf7-not-valid-tip {
 	z-index: 100;
 	background: #fff;
 	border: 1px solid #ff0000;
-	width: 200px;
+	font-size: 10pt;
+	width: 280px;
 	padding: 2px;
 }
 
