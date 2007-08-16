@@ -180,13 +180,13 @@ class tam_contact_form_seven {
 
 	function default_form_template() {
 		$template .= '<p><label>' . __('Your Name', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [text* your-name "' . __('Your Name', 'wpcf7') . '"] </label></p>' . "\n\n";
+		$template .= '    [text* your-name] </label></p>' . "\n\n";
 		$template .= '<p><label>' . __('Your Email', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [email* your-email "' . __('Your Email', 'wpcf7') . '"] </label></p>' . "\n\n";
+		$template .= '    [email* your-email] </label></p>' . "\n\n";
 		$template .= '<p><label>' . __('Subject', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [text your-subject "' . __('Subject', 'wpcf7') . '"] </label></p>' . "\n\n";
+		$template .= '    [text your-subject] </label></p>' . "\n\n";
 		$template .= '<p><label>' . __('Your Message', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [textarea your-message "' . __('Your Message', 'wpcf7') . '"] </label></p>' . "\n\n";
+		$template .= '    [textarea your-message] </label></p>' . "\n\n";
 		$template .= '[submit "' . __('Send', 'wpcf7') . '"]';
 		return $template;
 	}
@@ -287,7 +287,7 @@ class tam_contact_form_seven {
 		foreach ($form_elements as $fe) {
 			$type = $fe['type'];
 			$name = $fe['name'];
-			$title = $fe['title'];
+			$title = $fe['title'] ? $fe['title'] : $name;
 
 			// Required item (*)
 			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
@@ -418,7 +418,7 @@ function processJson(data) {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$regex = '%\[\s*([a-z]+[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)(\s*(?:"[^"]*"|\'[^\']*\'))([-0-9a-zA-Z:_/\s]*)?(\s*(?:"[^"]*"|\'[^\']*\'))*\]%';
+		$regex = '%\[\s*([a-z]+[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)(\s*(?:"[^"]*"|\'[^\']*\'))?([-0-9a-zA-Z:_/\s]*)?(\s*(?:"[^"]*"|\'[^\']*\'))*\]%';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
 			// Submit button

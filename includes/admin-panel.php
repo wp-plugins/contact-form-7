@@ -107,9 +107,7 @@
 							+ '<td>maxlength= <input type="text" name="qp-maxlength" onchange="create_tag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="create_tag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="create_tag();" /></td></tr>'
-							+ '<tr><td><?php _e('Label', 'wpcf7'); ?> <input type="text" name="qp-label" onchange="create_tag();" /></td>'
 							+ '<td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
-							+ '<tr><td><?php _e('Create &lt;label&gt; for this ?', 'wpcf7'); ?> <input type="checkbox" name="qp-label-tag" value="1" onchange="create_tag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'textarea':
@@ -120,9 +118,7 @@
 							+ '<td>rows= <input type="text" name="qp-rows" onchange="create_tag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="create_tag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="create_tag();" /></td></tr>'
-							+ '<tr><td><?php _e('Label', 'wpcf7'); ?> <input type="text" name="qp-label" onchange="create_tag();" /></td>'
 							+ '<td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
-							+ '<tr><td><?php _e('Create &lt;label&gt; for this ?', 'wpcf7'); ?> <input type="checkbox" name="qp-label-tag" value="1" onchange="create_tag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
@@ -173,11 +169,7 @@
 						tag += ' ' + name.value;
 					}
 					
-					var label = form.elements['qp-label'];
-					if (label && '' != label.value)
-						tag += ' ' + wrap_quote(label.value);
-					else if (! initial)
-						tag += ' ""';
+					var has_option = 0;
 					
 					if (/^(text[*]?|email[*]?)$/.test(type)) {
 					
@@ -187,12 +179,16 @@
 						var maxlength = form.elements['qp-maxlength'];
 						if (maxlength)
 							maxlength.value = integer(maxlength.value);
-						if (size && '' != size.value && maxlength && '' != maxlength.value)
+						if (size && '' != size.value && maxlength && '' != maxlength.value) {
 							tag += ' ' + size.value + '/' + maxlength.value;
-						else if (size && '' != size.value)
+							has_option = 1;
+						} else if (size && '' != size.value) {
 							tag += ' ' + size.value + '/';
-						else if (maxlength && '' != maxlength.value)
+							has_option = 1;
+						} else if (maxlength && '' != maxlength.value) {
 							tag += ' ' + '/' + maxlength.value;
+							has_option = 1;
+						}
 					
 					} else if (/^textarea[*]?$/.test(type)) {
 					
@@ -202,20 +198,26 @@
 						var rows = form.elements['qp-rows'];
 						if (rows)
 							rows.value = integer(rows.value);
-						if (cols && '' != cols.value && rows && '' != rows.value)
+						if (cols && '' != cols.value && rows && '' != rows.value) {
 							tag += ' ' + cols.value + 'x' + rows.value;
-						else if (cols && '' != cols.value)
+							has_option = 1;
+						} else if (cols && '' != cols.value) {
 							tag += ' ' + cols.value + 'x';
-						else if (rows && '' != rows.value)
+							has_option = 1;
+						} else if (rows && '' != rows.value) {
 							tag += ' ' + 'x' + rows.value;
+							has_option = 1;
+						}
 					
 					}
 					
 					var id = form.elements['qp-id'];
 					if (id) {
 						id.value = cdata(id.value);
-						if ('' != id.value)
+						if ('' != id.value) {
 							tag += ' id:' + id.value;
+							has_option = 1;
+						}
 					}
 					
 					var klass = form.elements['qp-class'];
@@ -223,29 +225,23 @@
 						var klass_list = klass.value.split(' ');
 						for (var i = 0; i < klass_list.length; i++) {
 							var klass_value = cdata(klass_list[i]);
-							if ('' != klass_value)
+							if ('' != klass_value) {
 								tag += ' class:' + klass_value;
+								has_option = 1;
+							}
 						}
 					}
 					
 					var default_value = form.elements['qp-default'];
-					if (default_value && '' != default_value.value)
-						tag += ' ' + wrap_quote(default_value.value);
+					if (default_value && '' != default_value.value) {
+						if (has_option)
+							tag += ' ' + wrap_quote(default_value.value);
+						else
+							tag += ' default ' + wrap_quote(default_value.value);
+					}
 				}
 				
 				tag += ']';
-				
-				var label_tag = form.elements['qp-label-tag'];
-				if (label_tag && label_tag.checked) {
-					var required = (-1 != type.indexOf('*')) ? ' (*)' : '';
-					var label_text = (label && '' != label.value) ? (label.value + required) : '';
-					
-					if (id && '' != id.value)
-						tag = '<label for="' + id.value + '">' + label_text + '</label> ' + tag;
-					else
-						tag = '<label>' + label_text + ' ' + tag + ' </label>';
-				}
-				
 				insert.value = tag;
 			}
 			
