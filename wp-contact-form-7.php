@@ -370,10 +370,10 @@ function validate(formData, jqForm, options) {
 	});
 	
 	$.each(jqForm[0].elements, function() {
-		if (this.hasOwnProperty('wpcf7InvalidMessage')) {
+		if (this.wpcf7InvalidMessage) {
 			notValidTip(this, this.wpcf7InvalidMessage);
 			valid = false;
-			delete this.wpcf7InvalidMessage;
+			this.wpcf7InvalidMessage = null;
 		}
 	});
 	
