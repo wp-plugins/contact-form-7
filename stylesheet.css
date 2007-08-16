@@ -25,6 +25,7 @@ span.wpcf7-not-valid-tip {
 	position: absolute;
 	top: 20%;
 	left: 20%;
+	z-index: 100;
 	background: #fff;
 	border: 1px solid #ff0000;
 	width: 200px;
