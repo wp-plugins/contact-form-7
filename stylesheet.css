@@ -2,6 +2,10 @@ div.wpcf7 {
 	padding: 1em 0;
 }
 
+div#wpcf7-response-output {
+	margin: 0.5em;
+}
+
 div.wpcf7-mail-sent-ok {
 	border: 1px solid #398f14;
 	padding: 0.2em 1em;

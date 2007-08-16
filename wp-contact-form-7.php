@@ -37,7 +37,42 @@ class tam_contact_form_seven {
 		add_action('wp_head', array(&$this, 'stylesheet'));
 		add_action('wp_head', array(&$this, 'javascript'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
+		add_action('init', array(&$this, 'ajax_json_echo'));
 		add_filter('the_content', array(&$this, 'the_content_filter'));
+	}
+	
+	function ajax_json_echo() {
+		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
+			if (isset($_POST['_wpcf7'])) {
+				$id = (int) $_POST['_wpcf7'];
+				$contact_forms = $this->contact_forms();
+				if ($cf = $contact_forms[$id]) {
+					$cf = stripslashes_deep($cf);
+					if ($this->mail($cf)) {
+						echo '{ mailSent: 1, message: "' . $this->default_mail_result_message(true) . '" }';
+					} else {
+						echo '{ mailSent: 0, message: "' . $this->default_mail_result_message(false) . '" }';
+					}
+				}
+			}
+			exit();
+		}
+	}
+	
+	function mail($contact_form) {
+		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
+		$callback = create_function('$matches', 'if (isset($_POST[$matches[1]])) return $_POST[$matches[1]]; else return $matches[0];');
+		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
+		$mail_sender = preg_replace_callback($regex, $callback, $contact_form['mail']['sender']);
+		$mail_body = preg_replace_callback($regex, $callback, $contact_form['mail']['body']);
+		$mail_headers = "MIME-Version: 1.0\n"
+			. "From: $mail_sender\n"
+			. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
+		if (@wp_mail($contact_form['options']['recipient'], $mail_subject, $mail_body, $mail_headers)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	function set_initial() {
@@ -180,15 +215,7 @@ class tam_contact_form_seven {
 				$fes = $this->form_elements($cf['form'], false);
 				$validation = $this->validate_form_elements($fes);
 				if ($validation['valid']) {
-					$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-					$callback = create_function('$matches', 'if (isset($_POST[$matches[1]])) return $_POST[$matches[1]]; else return $matches[0];');
-					$mail_subject = preg_replace_callback($regex, $callback, $cf['mail']['subject']);
-					$mail_sender = preg_replace_callback($regex, $callback, $cf['mail']['sender']);
-					$mail_body = preg_replace_callback($regex, $callback, $cf['mail']['body']);
-					$mail_headers = "MIME-Version: 1.0\n"
-						. "From: $mail_sender\n"
-						. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-					if (@wp_mail($cf['options']['recipient'], $mail_subject, $mail_body, $mail_headers)) {
+					if ($this->mail($cf)) {
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->default_mail_result_message(true));
 					} else {
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->default_mail_result_message(false));
@@ -239,7 +266,11 @@ class tam_contact_form_seven {
 		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post" id="wpcf7_the_form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= $form_content;
-		$form .= '</form></div>';
+		$form .= '</form>';
+		
+		$form .= '<div id="wpcf7-response-output"></div>';
+		
+		$form .= '</div>';
 		return $form;
 	}
 
@@ -292,15 +323,24 @@ class tam_contact_form_seven {
 		if (! is_singular())
 			return;
 		
+		$override_url = get_permalink();
+		if (false === strrchr($override_url, '?')) {
+			$override_url .= '?wpcf7=json';
+		} else {
+			$override_url .= '&wpcf7=json';
+		}
+		
 ?>
 <script type="text/javascript">
 //<![CDATA[
 
 $(document).ready(function() {
-	var options = {
-		beforeSubmit: validate
-	};
-	$('#wpcf7_the_form').ajaxForm(options);
+	$('#wpcf7_the_form').ajaxForm({
+		beforeSubmit: validate,
+		url: '<?php echo $override_url; ?>',
+		dataType: 'json',
+		success: processJson
+	});
 });
 
 function validate(formData, jqForm, options) {
@@ -308,7 +348,7 @@ function validate(formData, jqForm, options) {
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
-		if (! is_email(this.value)) {
+		if (! isEmail(this.value)) {
 			$(this).addClass('wpcf7-email-not-valid');
 			this.wpcf7InvalidMessage = '<?php echo 'Email address seems invalid.'; ?>';
 		}
@@ -323,7 +363,7 @@ function validate(formData, jqForm, options) {
 	
 	$.each(jqForm[0].elements, function() {
 		if (this.hasOwnProperty('wpcf7InvalidMessage')) {
-			not_valid_tip(this, this.wpcf7InvalidMessage);
+			notValidTip(this, this.wpcf7InvalidMessage);
 			valid = false;
 			delete this.wpcf7InvalidMessage;
 		}
@@ -332,12 +372,12 @@ function validate(formData, jqForm, options) {
 	return valid;
 }
 
-function is_email(user_email) {
+function isEmail(user_email) {
 	var chars = /^[-a-z0-9+_.]+@([-a-z0-9_]+[.])+[a-z]{2,6}$/i;
 	return chars.test(user_email);
 }
 
-function not_valid_tip(input, message) {
+function notValidTip(input, message) {
 	$(input).after('<span class="wpcf7-not-valid-tip">' + message + '</span>');
 	$('span.wpcf7-not-valid-tip').mouseover(function() {
 		$(this).fadeOut('fast');
@@ -345,6 +385,16 @@ function not_valid_tip(input, message) {
 	$(input).mouseover(function() {
 		$(input).siblings('.wpcf7-not-valid-tip').fadeOut('fast');
 	});
+}
+
+function processJson(data) {
+	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
+	if (1 == data.mailSent) {
+		$('#wpcf7-response-output').addClass('wpcf7-mail-sent-ok');
+	} else {
+		$('#wpcf7-response-output').addClass('wpcf7-mail-sent-ng');
+	}
+	$('#wpcf7-response-output').append(data.message).fadeIn('fast');
 }
 
 //]]>
