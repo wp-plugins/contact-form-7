@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-08-02 22:04+0900\n"
+"PO-Revision-Date: 2007-08-16 19:20+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,74 +15,78 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:51
-#: contact-form-7/wp-contact-form-7.php:124
+#: contact-form-7/wp-contact-form-7.php:88
+#: contact-form-7/wp-contact-form-7.php:161
 msgid "Contact form"
 msgstr "コンタクトフォーム"
 
-#: contact-form-7/wp-contact-form-7.php:80
+#: contact-form-7/wp-contact-form-7.php:117
 #: contact-form-7/includes/admin-panel.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:100
+#: contact-form-7/wp-contact-form-7.php:137
 #, php-format
 msgid "Contact form \"%s\" deleted. "
 msgstr "コンタクトフォーム \"%s\" が削除されました。"
 
-#: contact-form-7/wp-contact-form-7.php:116
+#: contact-form-7/wp-contact-form-7.php:153
 #, php-format
 msgid "Contact form \"%s\" saved. "
 msgstr "コンタクトフォーム \"%s\" が保存されました。"
 
-#: contact-form-7/wp-contact-form-7.php:145
-#: contact-form-7/wp-contact-form-7.php:146
+#: contact-form-7/wp-contact-form-7.php:182
 msgid "Your Name"
 msgstr "お名前"
 
-#: contact-form-7/wp-contact-form-7.php:145
-#: contact-form-7/wp-contact-form-7.php:147
+#: contact-form-7/wp-contact-form-7.php:182
+#: contact-form-7/wp-contact-form-7.php:184
 msgid "(required)"
 msgstr "(必須）"
 
-#: contact-form-7/wp-contact-form-7.php:147
-#: contact-form-7/wp-contact-form-7.php:148
+#: contact-form-7/wp-contact-form-7.php:184
 msgid "Your Email"
 msgstr "メールアドレス"
 
-#: contact-form-7/wp-contact-form-7.php:149
-#: contact-form-7/wp-contact-form-7.php:150
+#: contact-form-7/wp-contact-form-7.php:186
 msgid "Subject"
 msgstr "題名"
 
-#: contact-form-7/wp-contact-form-7.php:151
-#: contact-form-7/wp-contact-form-7.php:152
+#: contact-form-7/wp-contact-form-7.php:188
 msgid "Your Message"
 msgstr "メッセージ本文"
 
-#: contact-form-7/wp-contact-form-7.php:153
-#: contact-form-7/wp-contact-form-7.php:372
+#: contact-form-7/wp-contact-form-7.php:190
+#: contact-form-7/wp-contact-form-7.php:514
 msgid "Send"
 msgstr "送信"
 
-#: contact-form-7/wp-contact-form-7.php:254
-#: contact-form-7/wp-contact-form-7.php:261
+#: contact-form-7/wp-contact-form-7.php:296
+#: contact-form-7/wp-contact-form-7.php:303
 #, php-format
 msgid "Please fill the required field: %s "
 msgstr "必須項目に記入もれがあります: %s"
 
-#: contact-form-7/wp-contact-form-7.php:264
+#: contact-form-7/wp-contact-form-7.php:306
 #, php-format
 msgid "Email address seems invalid: %s "
 msgstr "メールアドレスの形式が正しくないようです: %s "
 
-#: contact-form-7/wp-contact-form-7.php:273
+#: contact-form-7/wp-contact-form-7.php:315
 msgid "Your message was sent successfully. Thanks."
 msgstr "あなたのメッセージは送信されました。ありがとうございました。"
 
-#: contact-form-7/wp-contact-form-7.php:275
+#: contact-form-7/wp-contact-form-7.php:317
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr "メッセージの送信に失敗しました。間をおいてもう一度お試しいただくか、別の手段で管理者にお問い合わせ下さい。"
+
+#: contact-form-7/wp-contact-form-7.php:361
+msgid "Email address seems invalid."
+msgstr "メールアドレスの形式が正しくないようです。"
+
+#: contact-form-7/wp-contact-form-7.php:368
+msgid "Please fill the required field."
+msgstr "必須項目に記入もれがあります。"
 
 #: contact-form-7/includes/admin-panel.php:19
 #: contact-form-7/includes/admin-panel.php:22
@@ -142,22 +146,15 @@ msgstr ""
 "  'キャンセル' で中止、 'OK' で削除します。"
 
 #: contact-form-7/includes/admin-panel.php:110
-#: contact-form-7/includes/admin-panel.php:123
-#: contact-form-7/includes/admin-panel.php:130
-msgid "Label"
-msgstr "ラベル"
-
-#: contact-form-7/includes/admin-panel.php:111
-#: contact-form-7/includes/admin-panel.php:124
+#: contact-form-7/includes/admin-panel.php:121
 msgid "Default value"
 msgstr "デフォルト値"
 
-#: contact-form-7/includes/admin-panel.php:112
-#: contact-form-7/includes/admin-panel.php:125
-msgid "Create &lt;label&gt; for this ?"
-msgstr "このフィールドのための &lt;label&gt; タグを作成しますか?"
+#: contact-form-7/includes/admin-panel.php:126
+msgid "Label"
+msgstr "ラベル"
 
-#: contact-form-7/includes/admin-panel.php:137
+#: contact-form-7/includes/admin-panel.php:133
 msgid "Insert"
 msgstr "挿入"
 
