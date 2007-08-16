@@ -251,24 +251,30 @@ class tam_contact_form_seven {
 		$form_content = $this->form_elements($cf['form']);
 
 		$form = '<div class="wpcf7" id="wpcf7_' . $id . '">';
-		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
-			if ($_POST['_wpcf7_mail_sent']['ok'])
-				$form .= '<div class="wpcf7-mail-sent-ok"><ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul></div>';
-			else
-				$form .= '<div class="wpcf7-mail-sent-ng"><ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul></div>';
-		} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
-			$form .= '<div class="wpcf7-validation-errors"><ul>';
-			foreach ($_POST['_wpcf7_validation_errors']['messages'] as $err) {
-				$form .= '<li>' . $err . '</li>';
-			}
-			$form .= '</ul></div>';
-		}
+		
 		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post" id="wpcf7_the_form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= $form_content;
 		$form .= '</form>';
 		
-		$form .= '<div id="wpcf7-response-output"></div>';
+		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
+			if ($_POST['_wpcf7_mail_sent']['ok']) {
+				$clsss = ' class="wpcf7-mail-sent-ok"';
+				$content = '<ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul>';
+			} else {
+				$class = ' class="wpcf7-mail-sent-ng"';
+				$content = '<ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul>';
+			}
+		} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
+			$class = ' class="wpcf7-validation-errors"';
+			$content = '';
+			foreach ($_POST['_wpcf7_validation_errors']['messages'] as $err) {
+				$content .= '<li>' . $err . '</li>';
+			}
+			$content = '<ul>' . $content . '</ul>';
+		}
+		
+		$form .= '<div id="wpcf7-response-output"' . $class . '>' . $content . '</div>';
 		
 		$form .= '</div>';
 		return $form;
