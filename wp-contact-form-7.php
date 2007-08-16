@@ -345,7 +345,9 @@ $(document).ready(function() {
 		beforeSubmit: validate,
 		url: '<?php echo $override_url; ?>',
 		dataType: 'json',
-		success: processJson
+		success: processJson,
+		clearForm: true,
+		resetForm: true
 	});
 });
 
