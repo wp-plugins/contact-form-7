@@ -352,7 +352,7 @@ $(document).ready(function() {
 });
 
 function validate(formData, jqForm, options) {
-
+	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
