@@ -471,9 +471,9 @@ function processJson(data) {
 			case 'text':
 			case 'email':
 				if (is_array($options)) {
-					$size_maxlength_array = preg_grep('%^[0-9]*/[0-9]*$%', $options);
+					$size_maxlength_array = preg_grep('%^[0-9]*[/x][0-9]*$%', $options);
 					if ($size_maxlength = array_shift($size_maxlength_array)) {
-						preg_match('%^([0-9]*)/([0-9]*)$%', $size_maxlength, $sm_matches);
+						preg_match('%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches);
 						if ($size = (int) $sm_matches[1])
 							$atts .= ' size="' . $size . '"';
 						if ($maxlength = (int) $sm_matches[2])
@@ -491,9 +491,9 @@ function processJson(data) {
 				break;
 			case 'textarea':
 				if (is_array($options)) {
-					$cols_rows_array = preg_grep('%^[0-9]*x[0-9]*$%', $options);
+					$cols_rows_array = preg_grep('%^[0-9]*[x/][0-9]*$%', $options);
 					if ($cols_rows = array_shift($cols_rows_array)) {
-						preg_match('%^([0-9]*)x([0-9]*)$%', $cols_rows, $cr_matches);
+						preg_match('%^([0-9]*)[x/]([0-9]*)$%', $cols_rows, $cr_matches);
 						if ($cols = (int) $cr_matches[1])
 							$atts .= ' cols="' . $cols . '"';
 						if ($rows = (int) $cr_matches[2])
