@@ -260,18 +260,14 @@ class tam_contact_form_seven {
 		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
 			if ($_POST['_wpcf7_mail_sent']['ok']) {
 				$clsss = ' class="wpcf7-mail-sent-ok"';
-				$content = '<ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul>';
+				$content = $_POST['_wpcf7_mail_sent']['message'];
 			} else {
 				$class = ' class="wpcf7-mail-sent-ng"';
-				$content = '<ul><li>' . $_POST['_wpcf7_mail_sent']['message'] . '</li></ul>';
+				$content = $_POST['_wpcf7_mail_sent']['message'];
 			}
 		} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
 			$class = ' class="wpcf7-validation-errors"';
-			$content = '';
-			foreach ($_POST['_wpcf7_validation_errors']['messages'] as $err) {
-				$content .= '<li>' . $err . '</li>';
-			}
-			$content = '<ul>' . $content . '</ul>';
+			$content = __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
 		}
 		
 		$form .= '<div id="wpcf7-response-output"' . $class . '>' . $content . '</div>';
@@ -287,23 +283,22 @@ class tam_contact_form_seven {
 		foreach ($form_elements as $fe) {
 			$type = $fe['type'];
 			$name = $fe['name'];
-			$title = $fe['title'] ? $fe['title'] : $name;
 
 			// Required item (*)
 			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
 				if (empty($_POST[$name])) {
 					$valid = false;
-					$reason[] = sprintf(__('Please fill the required field: %s ', 'wpcf7'), $title);
+					$reason[$name] = __('Please fill the required field.', 'wpcf7');
 				}
 			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
 				if ('*' == substr($type, -1) && empty($_POST[$name])) {
 					$valid = false;
-					$reason[] = sprintf(__('Please fill the required field: %s ', 'wpcf7'), $title);
+					$reason[$name] = __('Please fill the required field.', 'wpcf7');
 				} elseif (! is_email($_POST[$name])) {
 					$valid = false;
-					$reason[] = sprintf(__('Email address seems invalid: %s ', 'wpcf7'), $title);
+					$reason[$name] = __('Email address seems invalid.', 'wpcf7');
 				}
 			}
 		}
@@ -377,6 +372,12 @@ function validate(formData, jqForm, options) {
 		}
 	});
 	
+	if (! valid) {
+		$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
+		$('#wpcf7-response-output').addClass('wpcf7-validation-errors');
+		$('#wpcf7-response-output').append('<?php _e('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7'); ?>').fadeIn('fast');
+	}
+	
 	return valid;
 }
 
@@ -396,7 +397,7 @@ function notValidTip(input, message) {
 }
 
 function processJson(data) {
-	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
+	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
 	if (1 == data.mailSent) {
 		$('#wpcf7-response-output').addClass('wpcf7-mail-sent-ok');
 	} else {
@@ -436,6 +437,10 @@ function processJson(data) {
 
 	function form_element_replace_callback($matches) {
 		extract((array) $this->form_element_parse($matches));
+		
+		$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
+		$validation_error = $validation_error ? '<br /><span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
+		
 		$atts = '';
 		if (is_array($options)) {
 			$id_array = preg_grep('%^id:[-0-9a-zA-Z_]+$%', $options);
@@ -482,7 +487,7 @@ function processJson(data) {
 				} else {
 					$value = array_shift($values);
 				}
-				return '<span style="position: relative;"><input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' /></span>';
+				return '<span style="position: relative;"><input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' />' . $validation_error . '</span>';
 				break;
 			case 'textarea':
 				if (is_array($options)) {
@@ -502,7 +507,7 @@ function processJson(data) {
 				} else {
 					$value = array_shift($values);
 				}
-				return '<span style="position: relative;"><textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea></span>';
+				return '<span style="position: relative;"><textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>' . $validation_error . '</span>';
 				break;
 		}
 	}
