@@ -238,6 +238,8 @@ class tam_contact_form_seven {
 
 		$id = (int) $matches[1];
 		if (! ($cf = $contact_forms[$id])) return $matches[0];
+		
+		$cf = stripslashes_deep($cf);
 
 		if (isset($_POST['_wpcf7'])) {
 			if ((int) $_POST['_wpcf7'] == $id)
@@ -246,15 +248,11 @@ class tam_contact_form_seven {
 				unset($_POST['_wpcf7_submitted']);
 		}
 
-		$cf = stripslashes_deep($cf);
-
-		$form_content = $this->form_elements($cf['form']);
-
 		$form = '<div class="wpcf7" id="wpcf7_' . $id . '">';
 		
 		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post" id="wpcf7_the_form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
-		$form .= $form_content;
+		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
 		
 		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
