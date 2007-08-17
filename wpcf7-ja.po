@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-08-16 19:20+0900\n"
+"PO-Revision-Date: 2007-08-17 14:26+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -57,36 +57,32 @@ msgid "Your Message"
 msgstr "メッセージ本文"
 
 #: contact-form-7/wp-contact-form-7.php:190
-#: contact-form-7/wp-contact-form-7.php:514
+#: contact-form-7/wp-contact-form-7.php:515
 msgid "Send"
 msgstr "送信"
 
-#: contact-form-7/wp-contact-form-7.php:296
+#: contact-form-7/wp-contact-form-7.php:270
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "入力内容に不備があります。確認してもう一度送信してください。"
+
+#: contact-form-7/wp-contact-form-7.php:293
+#: contact-form-7/wp-contact-form-7.php:300
+#: contact-form-7/wp-contact-form-7.php:365
+msgid "Please fill the required field."
+msgstr "必須項目に記入もれがあります。"
+
 #: contact-form-7/wp-contact-form-7.php:303
-#, php-format
-msgid "Please fill the required field: %s "
-msgstr "必須項目に記入もれがあります: %s"
-
-#: contact-form-7/wp-contact-form-7.php:306
-#, php-format
-msgid "Email address seems invalid: %s "
-msgstr "メールアドレスの形式が正しくないようです: %s "
-
-#: contact-form-7/wp-contact-form-7.php:315
-msgid "Your message was sent successfully. Thanks."
-msgstr "あなたのメッセージは送信されました。ありがとうございました。"
-
-#: contact-form-7/wp-contact-form-7.php:317
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "メッセージの送信に失敗しました。間をおいてもう一度お試しいただくか、別の手段で管理者にお問い合わせ下さい。"
-
-#: contact-form-7/wp-contact-form-7.php:361
+#: contact-form-7/wp-contact-form-7.php:358
 msgid "Email address seems invalid."
 msgstr "メールアドレスの形式が正しくないようです。"
 
-#: contact-form-7/wp-contact-form-7.php:368
-msgid "Please fill the required field."
-msgstr "必須項目に記入もれがあります。"
+#: contact-form-7/wp-contact-form-7.php:312
+msgid "Your message was sent successfully. Thanks."
+msgstr "あなたのメッセージは送信されました。ありがとうございました。"
+
+#: contact-form-7/wp-contact-form-7.php:314
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "メッセージの送信に失敗しました。間をおいてもう一度お試しいただくか、別の手段で管理者にお問い合わせ下さい。"
 
 #: contact-form-7/includes/admin-panel.php:19
 #: contact-form-7/includes/admin-panel.php:22
