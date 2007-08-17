@@ -92,7 +92,7 @@
 				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|submit)$/;
 				if (! valid_types.test(type)) return;
 				
-				quick_panel.innerHTML = '<div class="close" style="float: right;"><span onclick="document.getElementById(\'quick-panel\').style.display = \'none\';">X</span></div>';
+				quick_panel.innerHTML = '<div class="close" style="float: right;"><span onclick="document.getElementById(\'quick-panel\').style.display = \'none\';">&#215;</span></div>';
 				quick_panel.innerHTML += '<div style="text-align: center; font-weight: bold; color: #555;"><code>[' + type + ']</code></div>';
 				quick_panel.innerHTML += '<input type="hidden" name="qp-type" value="' + type + '" />';
 				
