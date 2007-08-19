@@ -437,7 +437,7 @@ function processJson(data) {
 		extract((array) $this->form_element_parse($matches));
 		
 		$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
-		$validation_error = $validation_error ? '<br /><span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
+		$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
 		
 		$atts = '';
 		if (is_array($options)) {

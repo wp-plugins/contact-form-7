@@ -35,6 +35,7 @@ span.wpcf7-not-valid-tip {
 span.wpcf7-not-valid-tip-no-ajax {
 	color: #f00;
 	font-size: 10pt;
+	display: block;
 }
 
 input.wpcf7-email-not-valid {
