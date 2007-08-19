@@ -38,7 +38,7 @@ class tam_contact_form_seven {
 		add_action('wp_head', array(&$this, 'javascript'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
 		add_action('init', array(&$this, 'ajax_json_echo'));
-		add_filter('the_content', array(&$this, 'the_content_filter'));
+		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 	}
 	
 	function ajax_json_echo() {
