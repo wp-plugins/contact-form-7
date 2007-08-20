@@ -34,8 +34,7 @@ class tam_contact_form_seven {
 		add_action('plugins_loaded', array(&$this, 'load_plugin_textdomain'), 20);
 		add_action('admin_menu', array(&$this, 'add_pages'));
 		add_action('admin_head', array(&$this, 'admin_page_stylesheet'));
-		add_action('wp_head', array(&$this, 'stylesheet'));
-		add_action('wp_head', array(&$this, 'javascript'));
+		add_action('wp_head', array(&$this, 'wp_head'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
 		add_action('init', array(&$this, 'ajax_json_echo'));
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
@@ -310,17 +309,12 @@ class tam_contact_form_seven {
 			return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
 	}
 
-	function stylesheet() {
+	function wp_head() {
 		if (! is_singular())
 			return;
 		
 		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
-	}
-	
-	function javascript() {
-		if (! is_singular())
-			return;
 		
 		$override_url = get_permalink();
 		if (false === strrchr($override_url, '?')) {
