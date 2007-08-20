@@ -48,9 +48,9 @@ class tam_contact_form_seven {
 				if ($cf = $contact_forms[$id]) {
 					$cf = stripslashes_deep($cf);
 					if ($this->mail($cf)) {
-						echo '{ mailSent: 1, message: "' . $this->default_mail_result_message(true) . '" }';
+						echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '" }';
 					} else {
-						echo '{ mailSent: 0, message: "' . $this->default_mail_result_message(false) . '" }';
+						echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '" }';
 					}
 				}
 			}
@@ -201,6 +201,15 @@ class tam_contact_form_seven {
 		$recipient = get_option('admin_email');
 		return compact('recipient');
 	}
+	
+	function message($status) {
+		switch ($status) {
+			case 'mail_sent_ok':
+				return __('Your message was sent successfully. Thanks.', 'wpcf7');
+			case 'mail_sent_ng':
+				return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
+		}
+	}
 
 /* Post content filtering */
 
@@ -215,9 +224,9 @@ class tam_contact_form_seven {
 				$validation = $this->validate_form_elements($fes);
 				if ($validation['valid']) {
 					if ($this->mail($cf)) {
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->default_mail_result_message(true));
+						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
 					} else {
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->default_mail_result_message(false));
+						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
 					}
 				} else {
 					$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
@@ -300,13 +309,6 @@ class tam_contact_form_seven {
 			}
 		}
 		return compact('valid', 'reason');
-	}
-
-	function default_mail_result_message($ok = true) {
-		if ($ok)
-			return __('Your message was sent successfully. Thanks.', 'wpcf7');
-		else
-			return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
 	}
 
 	function wp_head() {
