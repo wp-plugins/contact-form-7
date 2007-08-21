@@ -254,7 +254,7 @@ class tam_contact_form_seven {
 		
 		$cf = stripslashes_deep($cf);
 
-		$unit_tag = 'wpcf7-form-' . $id . '-post-' . get_the_ID() . '-order-' . $this->order_in_post;
+		$unit_tag = 'wpcf7-f' . $id . '-p' . get_the_ID() . '-o' . $this->order_in_post;
 		$this->processing_unit_tag = $unit_tag;
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
