@@ -356,7 +356,7 @@ $(document).ready(function() {
 
 function validate(formData, jqForm, options) {
 	var wpcf7ResponseOutput = jqForm.siblings('.wpcf7-response-output');
-	wpcf7ResponseOutput.hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
+	wpcf7ResponseOutput.hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
