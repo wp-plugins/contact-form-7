@@ -3,7 +3,7 @@ div.wpcf7 {
 	padding: 0;
 }
 
-div#wpcf7-response-output {
+div.wpcf7-response-output {
 	margin: 2em 0.5em 1em;
 	padding: 0.2em 1em;
 }

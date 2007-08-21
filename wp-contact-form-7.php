@@ -263,20 +263,25 @@ class tam_contact_form_seven {
 		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
 		
+		// Post response output
+		$class = 'wpcf7-response-output';
+		
 		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
 			if ($_POST['_wpcf7_mail_sent']['ok']) {
-				$clsss = ' class="wpcf7-mail-sent-ok"';
+				$clsss .= ' wpcf7-mail-sent-ok';
 				$content = $_POST['_wpcf7_mail_sent']['message'];
 			} else {
-				$class = ' class="wpcf7-mail-sent-ng"';
+				$class .= ' wpcf7-mail-sent-ng';
 				$content = $_POST['_wpcf7_mail_sent']['message'];
 			}
 		} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
-			$class = ' class="wpcf7-validation-errors"';
+			$class .= ' wpcf7-validation-errors';
 			$content = __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
 		}
 		
-		$form .= '<div id="wpcf7-response-output"' . $class . '>' . $content . '</div>';
+		$class = ' class="' . $class . '"';
+		
+		$form .= '<div' . $class . '>' . $content . '</div>';
 		
 		$form .= '</div>';
 		return $form;
