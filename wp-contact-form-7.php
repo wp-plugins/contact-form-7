@@ -215,6 +215,8 @@ class tam_contact_form_seven {
 
 /* Post content filtering */
 
+	var $order_in_post; // Which contact form unit now you are processing. Integer value used in $unit_tag.
+	
 	function the_content_filter($content) {
 		// Form submitted?
 		if (isset($_POST['_wpcf7'])) {
@@ -235,6 +237,8 @@ class tam_contact_form_seven {
 				}
 			}
 		}
+		
+		$this->order_in_post = 1;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
 		if (is_singular())
@@ -242,8 +246,6 @@ class tam_contact_form_seven {
 		else
 			return preg_replace($regex, '', $content);
 	}
-	
-	var $order_on_this_query = 0;
 	
 	function the_content_filter_callback($matches) {
 		$contact_forms = $this->contact_forms();
@@ -260,7 +262,7 @@ class tam_contact_form_seven {
 				unset($_POST['_wpcf7_submitted']);
 		}
 		
-		$unit_tag = 'wpcf7-form-' . $id . '-post-' . get_the_ID() . '-order-' . $this->order_on_this_query;
+		$unit_tag = 'wpcf7-form-' . $id . '-post-' . get_the_ID() . '-order-' . $this->order_in_post;
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
 		
@@ -292,7 +294,7 @@ class tam_contact_form_seven {
 		
 		$form .= '</div>';
 		
-		$this->order_on_this_query += 1;
+		$this->order_in_post += 1;
 		return $form;
 	}
 
