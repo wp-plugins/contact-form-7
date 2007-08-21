@@ -247,6 +247,8 @@ class tam_contact_form_seven {
 			return preg_replace($regex, '', $content);
 	}
 	
+	var $processing_unit_tag;
+	
 	function the_content_filter_callback($matches) {
 		$contact_forms = $this->contact_forms();
 
@@ -255,14 +257,8 @@ class tam_contact_form_seven {
 		
 		$cf = stripslashes_deep($cf);
 
-		if (isset($_POST['_wpcf7'])) {
-			if ((int) $_POST['_wpcf7'] == $id)
-				$_POST['_wpcf7_submitted'] = 1;
-			else
-				unset($_POST['_wpcf7_submitted']);
-		}
-		
 		$unit_tag = 'wpcf7-form-' . $id . '-post-' . get_the_ID() . '-order-' . $this->order_in_post;
+		$this->processing_unit_tag = $unit_tag;
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
 		
@@ -272,20 +268,22 @@ class tam_contact_form_seven {
 		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
 		
-		// Post response output
+		// Post response output for non-AJAX
 		$class = 'wpcf7-response-output';
 		
-		if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
-			if ($_POST['_wpcf7_mail_sent']['ok']) {
-				$clsss .= ' wpcf7-mail-sent-ok';
-				$content = $_POST['_wpcf7_mail_sent']['message'];
-			} else {
-				$class .= ' wpcf7-mail-sent-ng';
-				$content = $_POST['_wpcf7_mail_sent']['message'];
+		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
+			if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
+				if ($_POST['_wpcf7_mail_sent']['ok']) {
+					$clsss .= ' wpcf7-mail-sent-ok';
+					$content = $_POST['_wpcf7_mail_sent']['message'];
+				} else {
+					$class .= ' wpcf7-mail-sent-ng';
+					$content = $_POST['_wpcf7_mail_sent']['message'];
+				}
+			} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
+				$class .= ' wpcf7-validation-errors';
+				$content = __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
 			}
-		} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
-			$class .= ' wpcf7-validation-errors';
-			$content = __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
 		}
 		
 		$class = ' class="' . $class . '"';
@@ -295,6 +293,7 @@ class tam_contact_form_seven {
 		$form .= '</div>';
 		
 		$this->order_in_post += 1;
+		$this->processing_unit_tag = null;
 		return $form;
 	}
 
@@ -448,10 +447,14 @@ function processJson(data) {
 	}
 
 	function form_element_replace_callback($matches) {
-		extract((array) $this->form_element_parse($matches));
+		extract((array) $this->form_element_parse($matches)); // $type, $name, $title, $options, $values
 		
-		$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
-		$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
+		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
+			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
+			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
+		} else {
+			$validation_error = '';
+		}
 		
 		$atts = '';
 		if (is_array($options)) {
@@ -478,6 +481,17 @@ function processJson(data) {
 			if ($class_att)
 				$atts .= ' class="' . trim($class_att) . '"';
 		}
+		
+		// Value.
+		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
+			if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok'])
+				$value = '';
+			else
+				$value = $_POST[$name];
+		} else {
+			$value = array_shift($values);
+		}
+		
 		$type = preg_replace('/[*]$/', '', $type);
 		switch ($type) {
 			case 'text':
@@ -492,13 +506,6 @@ function processJson(data) {
 							$atts .= ' maxlength="' . $maxlength . '"';
 					}
 				}
-				if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok']) {
-					$value = '';
-				} elseif (isset($_POST['_wpcf7_submitted'])) {
-					$value = $_POST[$name];
-				} else {
-					$value = array_shift($values);
-				}
 				return '<span style="position: relative;"><input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' />' . $validation_error . '</span>';
 				break;
 			case 'textarea':
@@ -511,13 +518,6 @@ function processJson(data) {
 						if ($rows = (int) $cr_matches[2])
 							$atts .= ' rows="' . $rows . '"';
 					}
-				}
-				if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok']) {
-					$value = '';
-				} elseif (isset($_POST['_wpcf7_submitted'])) {
-					$value = $_POST[$name];
-				} else {
-					$value = array_shift($values);
 				}
 				return '<span style="position: relative;"><textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>' . $validation_error . '</span>';
 				break;
