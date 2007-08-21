@@ -264,7 +264,7 @@ class tam_contact_form_seven {
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
 		
-		$form .= '<form action="' . get_permalink() . '#' . $unit_tag . '" method="post" id="wpcf7_the_form">';
+		$form .= '<form action="' . get_permalink() . '#' . $unit_tag . '" method="post">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 		$form .= $this->form_elements($cf['form']);
@@ -344,7 +344,7 @@ class tam_contact_form_seven {
 //<![CDATA[
 
 $(document).ready(function() {
-	$('#wpcf7_the_form').ajaxForm({
+	$('div.wpcf7 > form').ajaxForm({
 		beforeSubmit: validate,
 		url: '<?php echo $override_url; ?>',
 		dataType: 'json',
