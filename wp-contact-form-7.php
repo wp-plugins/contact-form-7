@@ -241,10 +241,7 @@ class tam_contact_form_seven {
 		$this->order_in_post = 1;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
-		if (is_singular())
-			return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content, 1);
-		else
-			return preg_replace($regex, '', $content);
+		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
 	}
 	
 	var $processing_unit_tag;
@@ -262,7 +259,10 @@ class tam_contact_form_seven {
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
 		
-		$form .= '<form action="' . get_permalink() . '#' . $unit_tag . '" method="post">';
+		$url = parse_url($_SERVER['REQUEST_URI']);
+		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
+		
+		$form .= '<form action="' . $url . '" method="post">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 		$form .= $this->form_elements($cf['form']);
@@ -327,18 +327,14 @@ class tam_contact_form_seven {
 	}
 
 	function wp_head() {
-		if (! is_singular())
-			return;
-		
 		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
 		
-		$override_url = get_permalink();
-		if (false === strrchr($override_url, '?')) {
-			$override_url .= '?wpcf7=json';
-		} else {
-			$override_url .= '&wpcf7=json';
-		}
+		$url = parse_url($_SERVER['REQUEST_URI']);
+		if (empty($url['query']))
+			$override_url = $url['path'] . '?wpcf7=json';
+		else
+			$override_url = $url['path'] . '?' . $url['query'] . '&wpcf7=json';
 		
 ?>
 <script type="text/javascript">
@@ -423,7 +419,7 @@ function processJson(data) {
 	}
 	
 	function load_js() {
-		if (is_singular())
+		if (! is_admin())
 			wp_enqueue_script('jquery-form');
 	}
 
@@ -561,7 +557,7 @@ function processJson(data) {
 			return $result;
 		}
 	}
-
+	
 }
 
 new tam_contact_form_seven();
