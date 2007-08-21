@@ -44,13 +44,15 @@ class tam_contact_form_seven {
 		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
 			if (isset($_POST['_wpcf7'])) {
 				$id = (int) $_POST['_wpcf7'];
+				$unit_tag = $_POST['_wpcf7_unit_tag'];
 				$contact_forms = $this->contact_forms();
 				if ($cf = $contact_forms[$id]) {
 					$cf = stripslashes_deep($cf);
+					$into = '#' . $unit_tag . ' div.wpcf7-response-output';
 					if ($this->mail($cf)) {
-						echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '" }';
+						echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
 					} else {
-						echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '" }';
+						echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
 					}
 				}
 			}
@@ -241,6 +243,8 @@ class tam_contact_form_seven {
 			return preg_replace($regex, '', $content);
 	}
 	
+	var $order_on_this_query = 0;
+	
 	function the_content_filter_callback($matches) {
 		$contact_forms = $this->contact_forms();
 
@@ -255,11 +259,14 @@ class tam_contact_form_seven {
 			else
 				unset($_POST['_wpcf7_submitted']);
 		}
-
-		$form = '<div class="wpcf7" id="wpcf7_' . $id . '">';
 		
-		$form .= '<form action="' . get_permalink() . '#wpcf7_' . $id . '" method="post" id="wpcf7_the_form">';
+		$unit_tag = 'wpcf7-form-' . $id . '-post-' . get_the_ID() . '-order-' . $this->order_on_this_query;
+
+		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
+		
+		$form .= '<form action="' . get_permalink() . '#' . $unit_tag . '" method="post" id="wpcf7_the_form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
+		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
 		
@@ -284,6 +291,8 @@ class tam_contact_form_seven {
 		$form .= '<div' . $class . '>' . $content . '</div>';
 		
 		$form .= '</div>';
+		
+		$this->order_on_this_query += 1;
 		return $form;
 	}
 
@@ -346,7 +355,8 @@ $(document).ready(function() {
 });
 
 function validate(formData, jqForm, options) {
-	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
+	var wpcf7ResponseOutput = jqForm.siblings('.wpcf7-response-output');
+	wpcf7ResponseOutput.hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng');
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
@@ -372,9 +382,9 @@ function validate(formData, jqForm, options) {
 	});
 	
 	if (! valid) {
-		$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
-		$('#wpcf7-response-output').addClass('wpcf7-validation-errors');
-		$('#wpcf7-response-output').append('<?php _e('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7'); ?>').fadeIn('fast');
+		wpcf7ResponseOutput.hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
+		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
+		wpcf7ResponseOutput.append('<?php _e('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7'); ?>').fadeIn('fast');
 	}
 	
 	return valid;
@@ -396,13 +406,14 @@ function notValidTip(input, message) {
 }
 
 function processJson(data) {
-	$('#wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
+	var wpcf7ResponseOutput = $(data.into);
+	wpcf7ResponseOutput.hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
 	if (1 == data.mailSent) {
-		$('#wpcf7-response-output').addClass('wpcf7-mail-sent-ok');
+		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
 	} else {
-		$('#wpcf7-response-output').addClass('wpcf7-mail-sent-ng');
+		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
 	}
-	$('#wpcf7-response-output').append(data.message).fadeIn('fast');
+	wpcf7ResponseOutput.append(data.message).fadeIn('fast');
 }
 
 //]]>
