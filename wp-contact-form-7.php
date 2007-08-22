@@ -354,6 +354,7 @@ $(document).ready(function() {
 function validate(formData, jqForm, options) {
 	var wpcf7ResponseOutput = jqForm.siblings('.wpcf7-response-output');
 	clearResponseOutput();
+	$('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
 	var valid = true;
 	
 	$('.wpcf7-validates-as-email', jqForm[0]).each(function() {
@@ -379,6 +380,7 @@ function validate(formData, jqForm, options) {
 	});
 	
 	if (! valid) {
+		$('img.ajax-loader', jqForm[0]).css({ visibility: 'hidden' });
 		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
 		wpcf7ResponseOutput.append('<?php _e('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7'); ?>').fadeIn('fast');
 	}
@@ -415,6 +417,7 @@ function processJson(data) {
 function clearResponseOutput() {
 	$('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors');
 	$('span.wpcf7-not-valid-tip').remove();
+	$('img.ajax-loader').css({ visibility: 'hidden' });
 }
 
 //]]>
@@ -529,7 +532,8 @@ function clearResponseOutput() {
 			$value = $this->strip_quote($matches[1]);
 		if (empty($value))
 			$value = __('Send', 'wpcf7');
-		return '<input type="submit" value="' . $value . '" />';
+		$ajax_loader_image_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/images/ajax-loader.gif';
+		return '<input type="submit" value="' . $value . '" /> <img class="ajax-loader" style="visibility: hidden;" src="' . $ajax_loader_image_url . '" />';
 	}
 
 	function form_element_parse($element) {
