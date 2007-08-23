@@ -510,7 +510,9 @@ function clearResponseOutput() {
 							$atts .= ' maxlength="' . $maxlength . '"';
 					}
 				}
-				return '<span style="position: relative;"><input type="text" name="' . $name . '" value="' . $value . '"' . $atts . ' />' . $validation_error . '</span>';
+				$html = '<input type="text" name="' . $name . '" value="' . attribute_escape($value) . '"' . $atts . ' />';
+				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				return $html;
 				break;
 			case 'textarea':
 				if (is_array($options)) {
@@ -523,7 +525,9 @@ function clearResponseOutput() {
 							$atts .= ' rows="' . $rows . '"';
 					}
 				}
-				return '<span style="position: relative;"><textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>' . $validation_error . '</span>';
+				$html = '<textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>';
+				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				return $html;
 				break;
 		}
 	}
