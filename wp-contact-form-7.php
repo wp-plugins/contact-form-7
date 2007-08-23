@@ -451,7 +451,7 @@ function clearResponseOutput() {
 	}
 
 	function form_element_replace_callback($matches) {
-		extract((array) $this->form_element_parse($matches)); // $type, $name, $title, $options, $values
+		extract((array) $this->form_element_parse($matches)); // $type, $name, $options, $values
 		
 		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
 			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
@@ -540,10 +540,9 @@ function clearResponseOutput() {
 	function form_element_parse($element) {
 		$type = trim($element[1]);
 		$name = trim($element[2]);
-		$title = $this->strip_quote($element[3]);
-		$options = preg_split('/[\s]+/', trim($element[4]));
-		$values = $this->strip_quote_deep(array_slice($element, 5));
-		return compact('type', 'name', 'title', 'options', 'values');
+		$options = preg_split('/[\s]+/', trim($element[3]));
+		$values = $this->strip_quote_deep(array_slice($element, 4));
+		return compact('type', 'name', 'options', 'values');
 	}
 
 	function strip_quote($text) {
