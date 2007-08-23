@@ -433,11 +433,12 @@ function clearResponseOutput() {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$regex = '%\[\s*([a-z]+[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)(\s*(?:"[^"]*"|\'[^\']*\'))?([-0-9a-zA-Z:_/\s]*)?(\s*(?:"[^"]*"|\'[^\']*\'))*\]%';
+		$regex = '%\[\s*((?:text|email|textarea)[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))*\s*\]%';
+		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
 			// Submit button
-			$form = preg_replace_callback('/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/', array(&$this, 'submit_replace_callback'), $form);
+			$form = preg_replace_callback($submit_regex, array(&$this, 'submit_replace_callback'), $form);
 			return $form;
 		} else {
 			$results = array();
