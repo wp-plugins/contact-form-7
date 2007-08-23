@@ -107,7 +107,7 @@
 							+ '<td>maxlength= <input type="text" name="qp-maxlength" onchange="create_tag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="create_tag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="create_tag();" /></td></tr>'
-							+ '<td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
+							+ '<tr><td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'textarea':
@@ -118,7 +118,7 @@
 							+ '<td>rows= <input type="text" name="qp-rows" onchange="create_tag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="create_tag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="create_tag();" /></td></tr>'
-							+ '<td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
+							+ '<tr><td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="create_tag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
