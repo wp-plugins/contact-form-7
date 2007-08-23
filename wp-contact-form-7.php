@@ -30,6 +30,7 @@ class tam_contact_form_seven {
 	var $contact_forms;
 
 	function tam_contact_form_seven() {
+		// This backslash replacement for Win32 will be unnecessary. See http://trac.wordpress.org/ticket/3002
 		add_action('activate_' . strtr(plugin_basename(__FILE__), '\\', '/'), array(&$this, 'set_initial'));
 		add_action('plugins_loaded', array(&$this, 'load_plugin_textdomain'), 20);
 		add_action('admin_menu', array(&$this, 'add_pages'));
