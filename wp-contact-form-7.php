@@ -433,7 +433,7 @@ function clearResponseOutput() {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$regex = '%\[\s*((?:text|email|textarea)[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))*\s*\]%';
+		$regex = '%\[\s*((?:text|email|textarea|select)[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
@@ -493,7 +493,7 @@ function clearResponseOutput() {
 			else
 				$value = $_POST[$name];
 		} else {
-			$value = array_shift($values);
+			$value = $values[0];
 		}
 		
 		$type = preg_replace('/[*]$/', '', $type);
@@ -529,6 +529,17 @@ function clearResponseOutput() {
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
+			case 'select':
+				if (empty($values))
+					array_push($values, '---');
+				$html = '';
+				foreach ($values as $value) {
+					$html .= '<option value="' . attribute_escape($value) . '">' . $value . '</option>';
+				}
+				$html = '<select name="' . $name . '"' . $atts . '>' . $html . '</select>';
+				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				return $html;
+				break;
 		}
 	}
 
@@ -545,7 +556,10 @@ function clearResponseOutput() {
 		$type = trim($element[1]);
 		$name = trim($element[2]);
 		$options = preg_split('/[\s]+/', trim($element[3]));
-		$values = $this->strip_quote_deep(array_slice($element, 4));
+		
+		preg_match_all('/"[^"]*"|\'[^\']*\'/', $element[4], $matches);
+		$values = $this->strip_quote_deep($matches[0]);
+		
 		return compact('type', 'name', 'options', 'values');
 	}
 
