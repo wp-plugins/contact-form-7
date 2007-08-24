@@ -227,7 +227,7 @@ class tam_contact_form_seven {
 		$template .= '    [text your-subject] </label></p>' . "\n\n";
 		$template .= '<p><label>' . __('Your Message', 'wpcf7') . '<br />' . "\n";
 		$template .= '    [textarea your-message] </label></p>' . "\n\n";
-		$template .= '[submit "' . __('Send', 'wpcf7') . '"]';
+		$template .= '<p>[submit "' . __('Send', 'wpcf7') . '"]</p>';
 		return $template;
 	}
 	
