@@ -106,7 +106,7 @@
 					case 'email':
 					case 'email*':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td>size= <input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
 							+ '<td>maxlength= <input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
@@ -117,7 +117,7 @@
 					case 'textarea':
 					case 'textarea*':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td>cols= <input type="text" name="qp-cols" onchange="wpcf7CreateTag();" /></td>'
 							+ '<td>rows= <input type="text" name="qp-rows" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
