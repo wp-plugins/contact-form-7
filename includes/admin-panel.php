@@ -168,7 +168,7 @@
 						name.value = name.value.replace(/[^0-9a-zA-Z:._-]/g, '');
 						name.value = name.value.replace(/^[^a-zA-Z]+/, '');
 						if ('' == name.value)
-							name.value = 'form_' + Math.floor(Math.random() * 1000);
+							name.value = type.replace(/[*]$/, '') + '_' + Math.floor(Math.random() * 1000);
 						tag += ' ' + name.value;
 					}
 					
