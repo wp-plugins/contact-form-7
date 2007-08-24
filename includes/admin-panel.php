@@ -137,13 +137,13 @@
 					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" />'
 					+ '</div>';
 				quick_panel.style.display = 'block';
-				wpcf7CreateTag(true);
+				wpcf7CreateTag();
 				var qp_name = document.getElementById('qp-name');
 				if (qp_name)
 					qp_name.focus();
 			}
 			
-			function wpcf7CreateTag(initial) {
+			function wpcf7CreateTag() {
 				var form = document.getElementById('wpcf7-admin-form-element');
 				if (! form) return;
 				
@@ -164,7 +164,7 @@
 						tag += ' ' + wpcf7WrapQuote(label.value);
 				} else {
 					var name = form.elements['qp-name'];
-					if (name && ! initial) {
+					if (name) {
 						name.value = name.value.replace(/[^0-9a-zA-Z:._-]/g, '');
 						name.value = name.value.replace(/^[^a-zA-Z]+/, '');
 						if ('' == name.value)
