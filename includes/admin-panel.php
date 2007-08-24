@@ -85,12 +85,16 @@
 		<script type="text/javascript">
 			//<![CDATA[
 			
+			function wpcf7ValidateType(type) {
+				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|submit)$/;
+				return valid_types.test(type);
+			}
+			
 			function wpcf7QuickPanel(type) {
 				var quick_panel = document.getElementById('quick-panel');
 				if (! quick_panel) return;
 				
-				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|submit)$/;
-				if (! valid_types.test(type)) return;
+				if (! wpcf7ValidateType(type)) return;
 				
 				quick_panel.innerHTML = '<div class="close" style="float: right;"><span onclick="document.getElementById(\'quick-panel\').style.display = \'none\';">&#215;</span></div>';
 				quick_panel.innerHTML += '<div style="text-align: center; font-weight: bold; color: #555;"><code>[' + type + ']</code></div>';
@@ -150,8 +154,7 @@
 				if (! type) return;
 				
 				type = type.value;
-				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|submit)$/;
-				if (! valid_types.test(type)) return;
+				if (! wpcf7ValidateType(type)) return;
 				
 				var tag = '[' + type;
 				
