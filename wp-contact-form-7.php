@@ -391,7 +391,7 @@ $(document).ready(function() {
 });
 
 function validate(formData, jqForm, options) {
-	var wpcf7ResponseOutput = jqForm.siblings('.wpcf7-response-output');
+	var wpcf7ResponseOutput = $('div.wpcf7-response-output', jqForm.parents('div.wpcf7')).lt(1);
 	clearResponseOutput();
 	$('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
 	var valid = true;
