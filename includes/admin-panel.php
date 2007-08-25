@@ -181,38 +181,41 @@
 						tag += ' ' + name.value;
 					}
 					
-					if (/^(text[*]?|email[*]?)$/.test(type)) {
-					
-						var size = form.elements['qp-size'];
-						if (size)
-							size.value = wpcf7Integer(size.value);
-						var maxlength = form.elements['qp-maxlength'];
-						if (maxlength)
-							maxlength.value = wpcf7Integer(maxlength.value);
-						if (size && '' != size.value && maxlength && '' != maxlength.value) {
-							tag += ' ' + size.value + '/' + maxlength.value;
-						} else if (size && '' != size.value) {
-							tag += ' ' + size.value + '/';
-						} else if (maxlength && '' != maxlength.value) {
-							tag += ' ' + '/' + maxlength.value;
-						}
-					
-					} else if (/^textarea[*]?$/.test(type)) {
-					
-						var cols = form.elements['qp-cols'];
-						if (cols)
-							cols.value = wpcf7Integer(cols.value);
-						var rows = form.elements['qp-rows'];
-						if (rows)
-							rows.value = wpcf7Integer(rows.value);
-						if (cols && '' != cols.value && rows && '' != rows.value) {
-							tag += ' ' + cols.value + 'x' + rows.value;
-						} else if (cols && '' != cols.value) {
-							tag += ' ' + cols.value + 'x';
-						} else if (rows && '' != rows.value) {
-							tag += ' ' + 'x' + rows.value;
-						}
-					
+					switch (type) {
+						case 'text':
+						case 'text*':
+						case 'email':
+						case 'email*':
+							var size = form.elements['qp-size'];
+							if (size)
+								size.value = wpcf7Integer(size.value);
+							var maxlength = form.elements['qp-maxlength'];
+							if (maxlength)
+								maxlength.value = wpcf7Integer(maxlength.value);
+							if (size && '' != size.value && maxlength && '' != maxlength.value) {
+								tag += ' ' + size.value + '/' + maxlength.value;
+							} else if (size && '' != size.value) {
+								tag += ' ' + size.value + '/';
+							} else if (maxlength && '' != maxlength.value) {
+								tag += ' ' + '/' + maxlength.value;
+							}
+							break;
+						case 'textarea':
+						case 'textarea*':
+							var cols = form.elements['qp-cols'];
+							if (cols)
+								cols.value = wpcf7Integer(cols.value);
+							var rows = form.elements['qp-rows'];
+							if (rows)
+								rows.value = wpcf7Integer(rows.value);
+							if (cols && '' != cols.value && rows && '' != rows.value) {
+								tag += ' ' + cols.value + 'x' + rows.value;
+							} else if (cols && '' != cols.value) {
+								tag += ' ' + cols.value + 'x';
+							} else if (rows && '' != rows.value) {
+								tag += ' ' + 'x' + rows.value;
+							}
+							break;
 					}
 					
 					var id = form.elements['qp-id'];
