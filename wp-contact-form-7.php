@@ -573,7 +573,11 @@ function clearResponseOutput() {
 					array_push($values, '---');
 				$html = '';
 				foreach ($values as $value) {
-					$html .= '<option value="' . attribute_escape($value) . '">' . $value . '</option>';
+					if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && $_POST[$name] == $value)
+						$selected = ' selected="selected"';
+					else
+						$selected = '';
+					$html .= '<option value="' . attribute_escape($value) . '"' . $selected . '>' . $value . '</option>';
 				}
 				$html = '<select name="' . $name . '"' . $atts . '>' . $html . '</select>';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
