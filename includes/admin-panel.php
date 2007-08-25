@@ -43,16 +43,16 @@
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
-				<input type="button" value="text" class="quick-button" onclick="wpcf7QuickPanel('text');" />
-				<input type="button" value="text*" class="quick-button" onclick="wpcf7QuickPanel('text*');" />
-				<input type="button" value="email" class="quick-button" onclick="wpcf7QuickPanel('email');" />
-				<input type="button" value="email*" class="quick-button" onclick="wpcf7QuickPanel('email*');" />
-				<input type="button" value="textarea" class="quick-button" onclick="wpcf7QuickPanel('textarea');" />
-				<input type="button" value="textarea*" class="quick-button" onclick="wpcf7QuickPanel('textarea*');" />
-				<input type="button" value="select" class="quick-button" onclick="wpcf7QuickPanel('select');" />
-				<input type="button" value="submit" class="quick-button" onclick="wpcf7QuickPanel('submit');" />
-				<div id="quick-panel"></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
+				<input type="button" value="text" class="quick-button" onclick="wpcf7QuickPanel('text');" style="background-color: #cee4d4;" />
+				<input type="button" value="text*" class="quick-button" onclick="wpcf7QuickPanel('text*');" style="background-color: #cee4d4;" />
+				<input type="button" value="email" class="quick-button" onclick="wpcf7QuickPanel('email');" style="background-color: #e6edb4;" />
+				<input type="button" value="email*" class="quick-button" onclick="wpcf7QuickPanel('email*');" style="background-color: #e6edb4;" />
+				<input type="button" value="textarea" class="quick-button" onclick="wpcf7QuickPanel('textarea');" style="background-color: #bfe7e5;" />
+				<input type="button" value="textarea*" class="quick-button" onclick="wpcf7QuickPanel('textarea*');" style="background-color: #bfe7e5;" />
+				<input type="button" value="select" class="quick-button" onclick="wpcf7QuickPanel('select');" style="background-color: #cbd5e8;" />
+				<input type="button" value="submit" class="quick-button" onclick="wpcf7QuickPanel('submit');" style="background-color: #e5d6c2;" />
+				<div id="quick-panel"></div>
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail template', 'wpcf7'); ?></div>
@@ -96,6 +96,28 @@
 				if (! quick_panel) return;
 				
 				if (! wpcf7ValidateType(type)) return;
+				
+				// Style
+				switch (type) {
+					case 'text':
+					case 'text*':
+						quick_panel.style.background = '#cee4d4;';
+						break;
+					case 'email':
+					case 'email*':
+						quick_panel.style.background = '#e6edb4;';
+						break;
+					case 'textarea':
+					case 'textarea*':
+						quick_panel.style.background = '#bfe7e5;';
+						break;
+					case 'select':
+						quick_panel.style.background = '#cbd5e8;';
+						break;
+					case 'submit':
+						quick_panel.style.background = '#e5d6c2;';
+						break;
+				}
 				
 				quick_panel.innerHTML = '<div class="close" style="float: right;"><span onclick="document.getElementById(\'quick-panel\').style.display = \'none\';">&#215;</span></div>';
 				quick_panel.innerHTML += '<div style="text-align: center; font-weight: bold; color: #555;"><code>[' + type + ']</code></div>';
