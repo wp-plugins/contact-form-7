@@ -107,43 +107,44 @@
 					case 'email':
 					case 'email*':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td>size= <input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
-							+ '<td>maxlength= <input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
-							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>size=</th><td><input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>maxlength=</th><td><input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Default value', 'wpcf7'); ?></th><td><input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'textarea':
 					case 'textarea*':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td>cols= <input type="text" name="qp-cols" onchange="wpcf7CreateTag();" /></td>'
-							+ '<td>rows= <input type="text" name="qp-rows" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
-							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>cols=</th><td><input type="text" name="qp-cols" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>rows=</th><td><input type="text" name="qp-rows" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Default value', 'wpcf7'); ?></th><td><input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'select':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
-							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td><?php _e('Options', 'wpcf7'); ?> <textarea name="qp-default" onchange="wpcf7CreateTag();"></textarea></td></tr>'
+							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Choices', 'wpcf7'); ?></th><td><textarea name="qp-default" onchange="wpcf7CreateTag();" rows="6"></textarea><br />'
+							+ '<span style="font-size: smaller;"><?php _e('* One choice per line.', 'wpcf7'); ?></span></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
 						quick_panel.innerHTML += '<table><tbody>'
-							+ '<tr><td><?php _e('Label', 'wpcf7'); ?> <input type="text" name="qp-label" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Label', 'wpcf7'); ?></th><td><input type="text" name="qp-label" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 				}
 				
 				quick_panel.innerHTML += '<div style="margin: 10px 0 0; text-align: center;">'
 					+ '<input type="text" name="qp-insert" style="width: 80%; border: none; font-family: monospace;" tabindex="32767" /> '
-					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" />'
+					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" style="width: inherit;" />'
 					+ '</div>';
 				quick_panel.style.display = 'block';
 				wpcf7CreateTag();

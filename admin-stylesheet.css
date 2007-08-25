@@ -86,8 +86,9 @@ div#quick-panel div.close {
 	padding: 1px 3px;
 	cursor: pointer;
 }
-div#quick-panel input {
+div#quick-panel input, div#quick-panel textarea {
 	background: #fff;
+	width: 200px;
 }
 div#quick-panel input.qp-button {
 	background: #fff url( images/fade-butt.png ) repeat-x 0 -2px;
@@ -97,7 +98,10 @@ div#quick-panel input.qp-button {
 div#quick-panel input.required {
 	border: 1px solid #777;
 }
-div#quick-panel table td {
+div#quick-panel table th {
 	text-align: right;
-	padding: 0 1em;
+	padding-left: 1em;
+}
+div#quick-panel table td {
+	text-align: left;
 }
