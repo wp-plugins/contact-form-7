@@ -142,7 +142,7 @@
 				}
 				
 				quick_panel.innerHTML += '<div style="margin: 10px 0 0; text-align: center;">'
-					+ '<input type="text" name="qp-insert" style="width: 80%; border: none; font-family: monospace;" /> '
+					+ '<input type="text" name="qp-insert" style="width: 80%; border: none; font-family: monospace;" tabindex="32767" /> '
 					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" />'
 					+ '</div>';
 				quick_panel.style.display = 'block';
