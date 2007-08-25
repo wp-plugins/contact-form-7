@@ -131,7 +131,7 @@
 							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><td><?php _e('Options', 'wpcf7'); ?> <input type="text" name="qp-options" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><td><?php _e('Options', 'wpcf7'); ?> <textarea name="qp-default" onchange="wpcf7CreateTag();"></textarea></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
@@ -239,7 +239,12 @@
 					
 					var default_value = form.elements['qp-default'];
 					if (default_value && '' != default_value.value) {
-						tag += ' ' + wpcf7WrapQuote(default_value.value);
+						var default_values = default_value.value.split("\n");
+						for (var i = 0; i < default_values.length; i++) {
+							default_values[i] = default_values[i].replace(/^\s+/, '').replace(/\s+$/, '');
+							if ('' != default_values[i])
+								tag += ' ' + wpcf7WrapQuote(default_values[i]);
+						}
 					}
 				}
 				
