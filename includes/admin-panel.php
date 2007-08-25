@@ -49,6 +49,7 @@
 				<input type="button" value="email*" class="quick-button" onclick="wpcf7QuickPanel('email*');" />
 				<input type="button" value="textarea" class="quick-button" onclick="wpcf7QuickPanel('textarea');" />
 				<input type="button" value="textarea*" class="quick-button" onclick="wpcf7QuickPanel('textarea*');" />
+				<input type="button" value="select" class="quick-button" onclick="wpcf7QuickPanel('select');" />
 				<input type="button" value="submit" class="quick-button" onclick="wpcf7QuickPanel('submit');" />
 				<div id="quick-panel"></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
@@ -86,7 +87,7 @@
 			//<![CDATA[
 			
 			function wpcf7ValidateType(type) {
-				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|submit)$/;
+				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|select|submit)$/;
 				return valid_types.test(type);
 			}
 			
@@ -123,6 +124,14 @@
 							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
 							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><td><?php _e('Default value', 'wpcf7'); ?> <input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '</tbody></table>';
+						break;
+					case 'select':
+						quick_panel.innerHTML += '<table><tbody>'
+							+ '<tr><td>name= <input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><td>id= <input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<td>class= <input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><td><?php _e('Options', 'wpcf7'); ?> <input type="text" name="qp-options" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
