@@ -181,8 +181,6 @@
 						tag += ' ' + name.value;
 					}
 					
-					var has_option = 0;
-					
 					if (/^(text[*]?|email[*]?)$/.test(type)) {
 					
 						var size = form.elements['qp-size'];
@@ -193,13 +191,10 @@
 							maxlength.value = wpcf7Integer(maxlength.value);
 						if (size && '' != size.value && maxlength && '' != maxlength.value) {
 							tag += ' ' + size.value + '/' + maxlength.value;
-							has_option = 1;
 						} else if (size && '' != size.value) {
 							tag += ' ' + size.value + '/';
-							has_option = 1;
 						} else if (maxlength && '' != maxlength.value) {
 							tag += ' ' + '/' + maxlength.value;
-							has_option = 1;
 						}
 					
 					} else if (/^textarea[*]?$/.test(type)) {
@@ -212,13 +207,10 @@
 							rows.value = wpcf7Integer(rows.value);
 						if (cols && '' != cols.value && rows && '' != rows.value) {
 							tag += ' ' + cols.value + 'x' + rows.value;
-							has_option = 1;
 						} else if (cols && '' != cols.value) {
 							tag += ' ' + cols.value + 'x';
-							has_option = 1;
 						} else if (rows && '' != rows.value) {
 							tag += ' ' + 'x' + rows.value;
-							has_option = 1;
 						}
 					
 					}
@@ -228,7 +220,6 @@
 						id.value = wpcf7Cdata(id.value);
 						if ('' != id.value) {
 							tag += ' id:' + id.value;
-							has_option = 1;
 						}
 					}
 					
@@ -239,17 +230,13 @@
 							var klass_value = wpcf7Cdata(klass_list[i]);
 							if ('' != klass_value) {
 								tag += ' class:' + klass_value;
-								has_option = 1;
 							}
 						}
 					}
 					
 					var default_value = form.elements['qp-default'];
 					if (default_value && '' != default_value.value) {
-						if (has_option)
-							tag += ' ' + wpcf7WrapQuote(default_value.value);
-						else
-							tag += ' default ' + wpcf7WrapQuote(default_value.value);
+						tag += ' ' + wpcf7WrapQuote(default_value.value);
 					}
 				}
 				
