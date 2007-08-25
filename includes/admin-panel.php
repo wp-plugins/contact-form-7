@@ -101,21 +101,21 @@
 				switch (type) {
 					case 'text':
 					case 'text*':
-						quick_panel.style.background = '#cee4d4;';
+						quick_panel.style.backgroundColor = '#cee4d4';
 						break;
 					case 'email':
 					case 'email*':
-						quick_panel.style.background = '#e6edb4;';
+						quick_panel.style.backgroundColor = '#e6edb4';
 						break;
 					case 'textarea':
 					case 'textarea*':
-						quick_panel.style.background = '#bfe7e5;';
+						quick_panel.style.backgroundColor = '#bfe7e5';
 						break;
 					case 'select':
-						quick_panel.style.background = '#cbd5e8;';
+						quick_panel.style.backgroundColor = '#cbd5e8';
 						break;
 					case 'submit':
-						quick_panel.style.background = '#e5d6c2;';
+						quick_panel.style.backgroundColor = '#e5d6c2';
 						break;
 				}
 				
@@ -166,7 +166,7 @@
 				
 				quick_panel.innerHTML += '<div style="margin: 10px 0 0; text-align: center;">'
 					+ '<input type="text" name="qp-insert" style="width: 80%; border: none; font-family: monospace;" tabindex="32767" /> '
-					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" style="width: inherit;" />'
+					+ '<input type="button" value="<?php _e('Insert', 'wpcf7'); ?>" class="qp-button" onclick="wpcf7InsertTag(this.form.elements[\'qp-insert\'].value);" style="width: auto;" />'
 					+ '</div>';
 				quick_panel.style.display = 'block';
 				wpcf7CreateTag();
