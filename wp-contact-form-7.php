@@ -466,7 +466,7 @@ function clearResponseOutput() {
 	
 	function load_js() {
 		if (! is_admin())
-			wp_enqueue_script('jquery-form');
+			wp_enqueue_script('jquery-form', '/wp-includes/js/jquery/jquery.form.js', array('jquery'), '1.0.3');
 	}
 
 /* Processing form element placeholders */
