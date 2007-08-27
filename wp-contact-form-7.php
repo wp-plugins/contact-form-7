@@ -105,8 +105,7 @@ class tam_contact_form_seven {
 		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
 		$mail_sender = preg_replace_callback($regex, $callback, $contact_form['mail']['sender']);
 		$mail_body = preg_replace_callback($regex, $callback, $contact_form['mail']['body']);
-		$mail_headers = "MIME-Version: 1.0\n"
-			. "From: $mail_sender\n"
+		$mail_headers = "From: $mail_sender\n"
 			. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
 		if (@wp_mail($contact_form['options']['recipient'], $mail_subject, $mail_body, $mail_headers)) {
 			return true;
