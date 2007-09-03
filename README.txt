@@ -2,8 +2,8 @@
 Contributors: takayukister
 Tags: contact form, email, ajax
 Requires at least: 2.2
-Tested up to: 2.3-alpha
-Stable tag: 1.3.1
+Tested up to: 2.3-beta1
+Stable tag: 1.3.2
 
 Just another contact form plugin. Simple but flexible.
 
@@ -22,4 +22,4 @@ Just another contact form plugin. Simple but flexible.
 
 == Screenshots ==
 
-1. screenshot-1.jpg
+1. screenshot-1.png
