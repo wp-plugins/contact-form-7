@@ -439,6 +439,9 @@ function notValidTip(input, message) {
 	jQuery(input).mouseover(function() {
 		jQuery(input).siblings('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
 	});
+	jQuery(input).focus(function() {
+		jQuery(input).siblings('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
+	});
 }
 
 function processJson(data) {
