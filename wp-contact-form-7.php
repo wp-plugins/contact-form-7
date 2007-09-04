@@ -37,7 +37,7 @@ class tam_contact_form_seven {
 		add_action('admin_head', array(&$this, 'admin_page_stylesheet'));
 		add_action('wp_head', array(&$this, 'wp_head'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
-		add_action('init', array(&$this, 'ajax_json_echo'));
+		add_action('init', array(&$this, 'init_switch'));
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautop_substitute'));
@@ -78,25 +78,28 @@ class tam_contact_form_seven {
 		
 		return $pee;
 	}
+
+	function init_switch() {
+		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7'])
+			$this->ajax_json_echo();
+	}
 	
 	function ajax_json_echo() {
-		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
-			if (isset($_POST['_wpcf7'])) {
-				$id = (int) $_POST['_wpcf7'];
-				$unit_tag = $_POST['_wpcf7_unit_tag'];
-				$contact_forms = $this->contact_forms();
-				if ($cf = $contact_forms[$id]) {
-					$cf = stripslashes_deep($cf);
-					$into = '#' . $unit_tag . ' div.wpcf7-response-output';
-					if ($this->mail($cf)) {
-						echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
-					} else {
-						echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
-					}
+		if (isset($_POST['_wpcf7'])) {
+			$id = (int) $_POST['_wpcf7'];
+			$unit_tag = $_POST['_wpcf7_unit_tag'];
+			$contact_forms = $this->contact_forms();
+			if ($cf = $contact_forms[$id]) {
+				$cf = stripslashes_deep($cf);
+				$into = '#' . $unit_tag . ' div.wpcf7-response-output';
+				if ($this->mail($cf)) {
+					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
+				} else {
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
 				}
 			}
-			exit();
 		}
+		exit();
 	}
 	
 	function mail($contact_form) {
