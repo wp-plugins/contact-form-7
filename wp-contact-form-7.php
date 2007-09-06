@@ -372,7 +372,7 @@ class tam_contact_form_seven {
 		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
 			if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
 				if ($_POST['_wpcf7_mail_sent']['ok']) {
-					$clsss .= ' wpcf7-mail-sent-ok';
+					$class .= ' wpcf7-mail-sent-ok';
 					$content = $_POST['_wpcf7_mail_sent']['message'];
 				} else {
 					$class .= ' wpcf7-mail-sent-ng';
