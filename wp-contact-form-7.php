@@ -116,7 +116,40 @@ class tam_contact_form_seven {
 			return false;
 		}
 	}
-	
+
+	function akismet() {
+		global $akismet_api_host, $akismet_api_port;
+		
+		if (function_exists('akismet_http_post') && (get_option('wordpress_api_key') || $wpcom_api_key)) {
+			$c['blog'] = get_option('home');
+			$c['user_ip'] = preg_replace('/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR']);
+			$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+			$c['referrer'] = $_SERVER['HTTP_REFERER'];
+			$c['comment_author'] = '';
+			$c['comment_author_email'] = '';
+			$c['comment_author_url'] = '';
+			$c['comment_content'] = '';
+			
+			$ignore = array('HTTP_COOKIE');
+			
+			foreach ($_SERVER as $key => $value)
+				if (! in_array($key, $ignore))
+					$c["$key"] = $value;
+			
+			$query_string = '';
+			foreach ($c as $key => $data)
+				$query_string .= $key . '=' . urlencode(stripslashes($data)) . '&';
+			
+			$response = akismet_http_post($query_string, $akismet_api_host, '/1.1/comment-check', $akismet_api_port);
+			if ('true' == $response[1])
+				return true;
+			else
+				return false;
+		} else {
+			return false;
+		}
+	}
+
 	function set_initial() {
 		$wpcf7 = get_option('wpcf7');
 		if (! is_array($wpcf7))
