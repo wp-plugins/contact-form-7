@@ -92,7 +92,9 @@ class tam_contact_form_seven {
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
 				$into = '#' . $unit_tag . ' div.wpcf7-response-output';
-				if ($this->mail($cf)) {
+				if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
+				} elseif ($this->mail($cf)) {
 					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
 				} else {
 					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
@@ -320,7 +322,9 @@ class tam_contact_form_seven {
 				$fes = $this->form_elements($cf['form'], false);
 				$validation = $this->validate_form_elements($fes);
 				if ($validation['valid']) {
-					if ($this->mail($cf)) {
+					if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
+					} elseif ($this->mail($cf)) {
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
 					} else {
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
