@@ -15,6 +15,13 @@ Just another contact form plugin. Simple but flexible.
 * You can customize form and mail contents with simple markup.
 * Client side validation and AJAX submitting with jQuery Form Plugin.
 
+#### Localization Included
+
+* Italian, by [Bruno](http://www.brunosalzano.com)
+* Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
+
+If you have translated Contact Form 7 in your language, please let me know and send me [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress).
+
 == Installation ==
 
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
