@@ -93,7 +93,7 @@ class tam_contact_form_seven {
 				$cf = stripslashes_deep($cf);
 				$into = '#' . $unit_tag . ' div.wpcf7-response-output';
 				if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '", spam: 1 }';
 				} elseif ($this->mail($cf)) {
 					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
 				} else {
@@ -324,7 +324,7 @@ class tam_contact_form_seven {
 				$validation = $this->validate_form_elements($fes);
 				if ($validation['valid']) {
 					if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
+						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
 					} elseif ($this->mail($cf)) {
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
 					} else {
@@ -376,6 +376,8 @@ class tam_contact_form_seven {
 					$content = $_POST['_wpcf7_mail_sent']['message'];
 				} else {
 					$class .= ' wpcf7-mail-sent-ng';
+					if ($_POST['_wpcf7_mail_sent']['spam'])
+						$class .= ' wpcf7-spam-blocked';
 					$content = $_POST['_wpcf7_mail_sent']['message'];
 				}
 			} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
@@ -511,6 +513,9 @@ function processJson(data) {
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
 	} else {
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
+	}
+	if (1 == data.spam) {
+		wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
 	}
 	wpcf7ResponseOutput.append(data.message).fadeIn('fast');
 }

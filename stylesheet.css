@@ -16,6 +16,10 @@ div.wpcf7-mail-sent-ng {
 	border: 2px solid #ff0000;
 }
 
+div.wpcf7-spam-blocked {
+	border: 2px solid #ffa500;
+}
+
 div.wpcf7-validation-errors {
 	border: 2px solid #f7e700;
 }
