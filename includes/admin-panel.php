@@ -68,13 +68,13 @@
 				<label for="wpcf7-options-recipient"><?php _e('Recipient address:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-options-recipient" name="wpcf7-options-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 			<?php if (function_exists('akismet_http_post') && (get_option('wordpress_api_key') || $wpcom_api_key)) : ?>
-				<br /><br />
-				<input type="checkbox" id="wpcf7-options-akismet" name="wpcf7-options-akismet" value="1" />
-				<label for="wpcf7-options-akismet"><?php _e('Use Akismet spam filter', 'wpcf7'); ?></label>
+				<br /><br /><?php $checked = ($cf['options']['akismet']) ? ' checked="checked"' : ''; ?>
+				<input type="checkbox" id="wpcf7-options-akismet" name="wpcf7-options-akismet" value="1"<?php echo $checked; ?> />
+				<label for="wpcf7-options-akismet"><?php _e('Apply Akismet spam filter', 'wpcf7'); ?></label>
 			<?php else : ?>
 				<br /><br />
 				<input type="checkbox" id="wpcf7-options-akismet" name="wpcf7-options-akismet" value="1" disabled="disabled" />
-				<label for="wpcf7-options-akismet" class="disabled"><?php _e('Use Akismet spam filter', 'wpcf7'); ?></label>
+				<label for="wpcf7-options-akismet" class="disabled"><?php _e('Apply Akismet spam filter', 'wpcf7'); ?></label>
 				<br /><span class="notice"><?php _e('Akismet plugin is not active. You need Akismet to use this feature.', 'wpcf7'); ?></span>
 			<?php endif; ?>
 			</div>
