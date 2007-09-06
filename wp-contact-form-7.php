@@ -187,9 +187,10 @@ class tam_contact_form_seven {
 			$mail_sender = trim($_POST['wpcf7-mail-sender']);
 			$mail_body = trim($_POST['wpcf7-mail-body']);
 			$options_recipient = trim($_POST['wpcf7-options-recipient']);
+			$options_akismet = (bool) $_POST['wpcf7-options-akismet'];
 			
 			$mail = array('subject' => $mail_subject, 'sender' => $mail_sender, 'body' => $mail_body);
-			$options = array('recipient' => $options_recipient);
+			$options = array('recipient' => $options_recipient, 'akismet' => $options_akismet);
 			
 			$contact_forms[$id] = compact('title', 'form', 'mail', 'options');
 			$updated_message = sprintf(__('Contact form "%s" saved. ', 'wpcf7'), $contact_forms[$id]['title']);

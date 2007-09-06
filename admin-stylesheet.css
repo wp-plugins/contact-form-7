@@ -41,6 +41,9 @@ input.cfdelete:hover {
 p.important {
 	color: #eba80e;
 }
+span.notice {
+	color: #ed2b68;
+}
 input#contact-form-anchor-text {
 	margin-left: 1em;
 	color: #333;
@@ -60,6 +63,9 @@ input.wide {
 }
 textarea {
 	width: 99%;
+}
+label.disabled {
+	color: #777;
 }
 p.submit {
 	margin: 0 24px;
