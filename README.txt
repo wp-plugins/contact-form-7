@@ -2,8 +2,8 @@
 Contributors: takayukister
 Tags: contact form, email, ajax
 Requires at least: 2.2
-Tested up to: 2.3-beta1
-Stable tag: 1.3.2
+Tested up to: 2.3-beta2
+Stable tag: 1.4
 
 Just another contact form plugin. Simple but flexible.
 
@@ -14,8 +14,11 @@ Just another contact form plugin. Simple but flexible.
 * Supports multiple contact forms.
 * You can customize form and mail contents with simple markup.
 * Client side validation and AJAX submitting with jQuery Form Plugin.
+* Spam filtering with Akismet.
 
 #### Localization Included
+
+Thank you for your contribution.
 
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
