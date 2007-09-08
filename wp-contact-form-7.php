@@ -145,6 +145,8 @@ class tam_contact_form_seven {
 		$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 		$c['referrer'] = $_SERVER['HTTP_REFERER'];
 		$c['comment_type'] = 'contactform7';
+		if ($permalink = get_permalink())
+			$c['permalink'] = $permalink;
 		if ('' != $author)
 			$c['comment_author'] = $author;
 		if ('' != $author_email)
