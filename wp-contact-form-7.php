@@ -136,8 +136,10 @@ class tam_contact_form_seven {
 				$author_email = $_POST[$fe['name']];
 			if (preg_grep('%^akismet:author_url$%', $fe['options']) && '' == $author_url)
 				$author_url = $_POST[$fe['name']];
-			if (preg_grep('%^akismet:content$%', $fe['options']) && '' == $content)
-				$content = $_POST[$fe['name']];
+			
+			if ('' != $content)
+				$content .= "\n\n";
+			$content .= $_POST[$fe['name']];
 		}
 		
 		$c['blog'] = get_option('home');
