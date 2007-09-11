@@ -20,10 +20,10 @@ Just another contact form plugin. Simple but flexible.
 
 Thank you for your contribution.
 
-* Catalan, by Jordi Sancho
+* Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
-* Spanish, by Jordi Sancho
+* Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
 
 If you have translated Contact Form 7 in your language, please let me know and send me [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress).
 
