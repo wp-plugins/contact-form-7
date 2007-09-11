@@ -2,8 +2,8 @@
 Contributors: takayukister
 Tags: contact form, email, ajax
 Requires at least: 2.2
-Tested up to: 2.3-beta2
-Stable tag: 1.4
+Tested up to: 2.3-beta3
+Stable tag: 1.4.1
 
 Just another contact form plugin. Simple but flexible.
 
@@ -20,8 +20,10 @@ Just another contact form plugin. Simple but flexible.
 
 Thank you for your contribution.
 
+* Catalan, by Jordi Sancho
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
+* Spanish, by Jordi Sancho
 
 If you have translated Contact Form 7 in your language, please let me know and send me [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress).
 
