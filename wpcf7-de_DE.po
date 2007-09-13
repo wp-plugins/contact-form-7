@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpcf7-de_DE\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-09-13 11:16+0200\n"
+"PO-Revision-Date: 2007-09-13 14:30+0200\n"
 "Last-Translator: Marcel Spitau <marcel.spitau@mawspitau.de>\n"
 "Language-Team: deutsch\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr "Das Versenden der E-Mail war fehlerhaft. Bitte versuchen Sie es nocheinm
 #: contact-form-7/wp-contact-form-7.php:324
 #: contact-form-7/wp-contact-form-7.php:424
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler bein Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingabe und drücken Sie nochmals auf versenden."
+msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingabe und drücken Sie nochmals auf versenden."
 
 #: contact-form-7/wp-contact-form-7.php:351
 #: contact-form-7/wp-contact-form-7.php:358
@@ -91,7 +91,7 @@ msgstr "Ungültige Eingabe der E-Mail-Adresse."
 #: contact-form-7/includes/admin-panel.php:19
 #: contact-form-7/includes/admin-panel.php:22
 msgid "Add new"
-msgstr "Neues hinzufügen"
+msgstr "Neues Formular hinzufügen"
 
 #: contact-form-7/includes/admin-panel.php:34
 msgid "Title"
@@ -107,7 +107,7 @@ msgstr "Formularinhalt"
 
 #: contact-form-7/includes/admin-panel.php:58
 msgid "Mail template"
-msgstr "Template für die E-Mail"
+msgstr "Vorlage für die E-Mail"
 
 #: contact-form-7/includes/admin-panel.php:59
 msgid "Subject field:"
