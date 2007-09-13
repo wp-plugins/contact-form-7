@@ -1,0 +1,168 @@
+# translation of wpcf7-de_DE.po to deutsch
+# Marcel Spitau <marcel.spitau@mawspitau.de>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: wpcf7-de_DE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-09-13 11:16+0200\n"
+"Last-Translator: Marcel Spitau <marcel.spitau@mawspitau.de>\n"
+"Language-Team: deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: contact-form-7/wp-contact-form-7.php:128
+#: contact-form-7/wp-contact-form-7.php:201
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: contact-form-7/wp-contact-form-7.php:157
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:177
+#, php-format
+msgid "Contact form \"%s\" deleted. "
+msgstr "Kontaktformular Nr. \"%s\" gelöscht."
+
+#: contact-form-7/wp-contact-form-7.php:193
+#, php-format
+msgid "Contact form \"%s\" saved. "
+msgstr "Kontaktformular Nr. \"%s\" gespeichert."
+
+#: contact-form-7/wp-contact-form-7.php:222
+msgid "Your Name"
+msgstr "Ihr Name"
+
+#: contact-form-7/wp-contact-form-7.php:222
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "(required)"
+msgstr "(Pflichtfeld)"
+
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "Your Email"
+msgstr "Ihre E-Mail"
+
+#: contact-form-7/wp-contact-form-7.php:226
+msgid "Subject"
+msgstr "Betreff"
+
+#: contact-form-7/wp-contact-form-7.php:228
+msgid "Your Message"
+msgstr "Ihre Nachricht"
+
+#: contact-form-7/wp-contact-form-7.php:230
+#: contact-form-7/wp-contact-form-7.php:593
+msgid "Send"
+msgstr "Senden"
+
+#: contact-form-7/wp-contact-form-7.php:249
+msgid "Your message was sent successfully. Thanks."
+msgstr "Ihre Nachricht wurde erfolgreich versendet. Vielen Dank!"
+
+#: contact-form-7/wp-contact-form-7.php:251
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Das Versenden der E-Mail war fehlerhaft. Bitte versuchen Sie es nocheinmal zu einem späteren Zeitpunkt oder informieren Sie den Adminstrator."
+
+#: contact-form-7/wp-contact-form-7.php:324
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Fehler bein Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingabe und drücken Sie nochmals auf versenden."
+
+#: contact-form-7/wp-contact-form-7.php:351
+#: contact-form-7/wp-contact-form-7.php:358
+#: contact-form-7/wp-contact-form-7.php:409
+msgid "Please fill the required field."
+msgstr "Bitte füllen Sie die Pflichtfelder aus."
+
+#: contact-form-7/wp-contact-form-7.php:361
+#: contact-form-7/wp-contact-form-7.php:402
+msgid "Email address seems invalid."
+msgstr "Ungültige Eingabe der E-Mail-Adresse."
+
+#: contact-form-7/includes/admin-panel.php:19
+#: contact-form-7/includes/admin-panel.php:22
+msgid "Add new"
+msgstr "Neues hinzufügen"
+
+#: contact-form-7/includes/admin-panel.php:34
+msgid "Title"
+msgstr "Titel"
+
+#: contact-form-7/includes/admin-panel.php:39
+msgid "Copy and paste this code into your post content."
+msgstr "Kopieren Sie diesen Code und fügen Sie in Ihren Artikel oder die Seite ein."
+
+#: contact-form-7/includes/admin-panel.php:45
+msgid "Form content"
+msgstr "Formularinhalt"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Mail template"
+msgstr "Template für die E-Mail"
+
+#: contact-form-7/includes/admin-panel.php:59
+msgid "Subject field:"
+msgstr "Betrefffeld:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Sender field:"
+msgstr "Absenderfeld:"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Message body:"
+msgstr "Nachrichtentext:"
+
+#: contact-form-7/includes/admin-panel.php:67
+msgid "Options"
+msgstr "Optionen"
+
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Recipient address:"
+msgstr "Empfänger Adresse:"
+
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Save"
+msgstr "Speichern"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Delete this contact form"
+msgstr "Dieses Kontaktformular löschen."
+
+#: contact-form-7/includes/admin-panel.php:81
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Dieses Kontaktformular soll gelöscht werden.\n"
+"'Abbrechen' um zu stoppen und 'OK' um zu löschen"
+
+#: contact-form-7/includes/admin-panel.php:137
+#: contact-form-7/includes/admin-panel.php:148
+msgid "Default value"
+msgstr "Standardwert"
+
+#: contact-form-7/includes/admin-panel.php:156
+msgid "Choices"
+msgstr "Möglichkeiten"
+
+#: contact-form-7/includes/admin-panel.php:157
+msgid "* One choice per line."
+msgstr "* Eine Möglichkeit in einer Zeile"
+
+#: contact-form-7/includes/admin-panel.php:162
+msgid "Label"
+msgstr "Etikett"
+
+#: contact-form-7/includes/admin-panel.php:169
+msgid "Insert"
+msgstr "Einfügen"
+
