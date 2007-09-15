@@ -21,6 +21,7 @@ Just another contact form plugin. Simple but flexible.
 Thank you for your contribution.
 
 * Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
+* French, by [Jillij](http://www.jillij.com/)
 * German, by [Marcel Spitau](http://blog.spitau.de)
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
