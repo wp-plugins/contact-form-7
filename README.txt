@@ -16,7 +16,7 @@ Just another contact form plugin. Simple but flexible.
 * Client side validation and AJAX submitting with jQuery Form Plugin.
 * Spam filtering with Akismet.
 
-#### Localization Included
+= Localization Included =
 
 Thank you for your contribution.
 
@@ -33,6 +33,13 @@ If you have translated Contact Form 7 in your language, please let me know and s
 
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Frequently Asked Questions ==
+
+= Akismet says all messages are spam. What's wrong? =
+
+There are settings you need to do as well as checking in "Apply Akismet spam filter" checkbox.
+In the meantime, see this [release announcement](http://ideasilo.wordpress.com/2007/09/07/contact-form-7-14/).
 
 == Screenshots ==
 
