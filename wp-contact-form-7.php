@@ -106,7 +106,7 @@ class tam_contact_form_seven {
 	
 	function mail($contact_form) {
 		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-		$callback = create_function('$matches', 'if (isset($_POST[$matches[1]])) return $_POST[$matches[1]]; else return $matches[0];');
+		$callback = create_function('$matches', 'if (isset($_POST[$matches[1]])) return stripslashes($_POST[$matches[1]]); else return $matches[0];');
 		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
 		$mail_sender = preg_replace_callback($regex, $callback, $contact_form['mail']['sender']);
 		$mail_body = preg_replace_callback($regex, $callback, $contact_form['mail']['body']);
