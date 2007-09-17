@@ -3,7 +3,7 @@ Contributors: takayukister
 Tags: contact form, email, ajax
 Requires at least: 2.2
 Tested up to: 2.3-beta3
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 
 Just another contact form plugin. Simple but flexible.
 
