@@ -311,6 +311,12 @@ class tam_contact_form_seven {
 				return __('Your message was sent successfully. Thanks.', 'wpcf7');
 			case 'mail_sent_ng':
 				return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
+			case 'validation_error':
+				return __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
+			case 'invalid_email':
+				return __('Email address seems invalid.', 'wpcf7');
+			case 'invalid_required':
+				return __('Please fill the required field.', 'wpcf7');
 		}
 	}
 
@@ -387,7 +393,7 @@ class tam_contact_form_seven {
 				}
 			} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
 				$class .= ' wpcf7-validation-errors';
-				$content = __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
+				$content = $this->message('validation_error');
 			}
 		}
 		
@@ -414,17 +420,17 @@ class tam_contact_form_seven {
 			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
 				if (empty($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = __('Please fill the required field.', 'wpcf7');
+					$reason[$name] = $this->message('invalid_required');
 				}
 			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
 				if ('*' == substr($type, -1) && empty($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = __('Please fill the required field.', 'wpcf7');
+					$reason[$name] = $this->message('invalid_required');
 				} elseif (! is_email($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = __('Email address seems invalid.', 'wpcf7');
+					$reason[$name] = $this->message('invalid_email');
 				}
 			}
 		}
@@ -465,14 +471,14 @@ function validate(formData, jqForm, options) {
 	jQuery('.wpcf7-validates-as-email', jqForm[0]).each(function() {
 		if (! isEmail(this.value)) {
 			jQuery(this).addClass('wpcf7-email-not-valid');
-			this.wpcf7InvalidMessage = '<?php _e('Email address seems invalid.', 'wpcf7'); ?>';
+			this.wpcf7InvalidMessage = '<?php echo $this->message('invalid_email'); ?>';
 		}
 	});
 
 	jQuery('.wpcf7-validates-as-required', jqForm[0]).each(function() {
 		if (! this.value) {
 			jQuery(this).addClass('wpcf7-required-not-valid');
-			this.wpcf7InvalidMessage = '<?php _e('Please fill the required field.', 'wpcf7'); ?>';
+			this.wpcf7InvalidMessage = '<?php echo $this->message('invalid_required'); ?>';
 		}
 	});
 	
@@ -487,7 +493,7 @@ function validate(formData, jqForm, options) {
 	if (! valid) {
 		jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'hidden' });
 		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
-		wpcf7ResponseOutput.append('<?php _e('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7'); ?>').fadeIn('fast');
+		wpcf7ResponseOutput.append('<?php echo $this->message('validation_error'); ?>').fadeIn('fast');
 	}
 	
 	return valid;
