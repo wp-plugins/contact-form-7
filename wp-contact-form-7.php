@@ -28,6 +28,7 @@ Author URI: http://ideasilo.wordpress.com/
 class tam_contact_form_seven {
 
 	var $contact_forms;
+	var $captcha;
 
 	function tam_contact_form_seven() {
 		// This backslash replacement for Win32 will be unnecessary. See http://trac.wordpress.org/ticket/3002
@@ -543,7 +544,8 @@ function clearResponseOutput() {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$regex = '%\[\s*((?:text|email|textarea|select)[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
+		$types = 'text|email|textarea|select|captchac|captchar';
+		$regex = '%\[\s*((?:' . $types . ')[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
@@ -610,6 +612,7 @@ function clearResponseOutput() {
 		switch ($type) {
 			case 'text':
 			case 'email':
+			case 'captchar':
 				if (is_array($options)) {
 					$size_maxlength_array = preg_grep('%^[0-9]*[/x][0-9]*$%', $options);
 					if ($size_maxlength = array_shift($size_maxlength_array)) {
@@ -652,6 +655,20 @@ function clearResponseOutput() {
 				}
 				$html = '<select name="' . $name . '"' . $atts . '>' . $html . '</select>';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				return $html;
+				break;
+			case 'captchac':
+				if (! $filename = $this->generate_captcha()) {
+					return '';
+					break;
+				}
+				$captcha = $this->captcha;
+				$img_size = $captcha->img_size;
+				$atts .= ' width="' . $img_size[0] . '" height="' . $img_size[1] . '"';
+				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+				$html = '<img src="' . $captcha_url . '"' . $atts . ' />';
+				$ref = substr($filename, 0, strrpos($filename, '.'));
+				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
 				return $html;
 				break;
 		}
@@ -697,8 +714,38 @@ function clearResponseOutput() {
 			return $result;
 		}
 	}
-	
+
+	function generate_captcha() {
+		if (! is_object($this->captcha))
+			$this->captcha = new tam_captcha();
+		$captcha = $this->captcha;
+		
+		$prefix = mt_rand();
+		$captcha_word = $captcha->generate_random_word();
+		return $captcha->generate_image($prefix, $captcha_word);
+	}
+
+	function check_captcha($prefix, $response) {
+		if (! is_object($this->captcha))
+			$this->captcha = new tam_captcha();
+		$captcha = $this->captcha;
+		
+		return $captcha->check($prefix, $response);
+	}
+
+	function get_captcha_subject_names($contact_form) {
+		$names = array();
+		$fes = $this->form_elements($contact_form['form'], false);
+		foreach ($fes as $fe) {
+			if (preg_match('^captcha[cr]$', $fe['type']))
+				$names[] = $fe['name'];
+		}
+		return array_uniq($names);
+	}
+
 }
+
+require_once(dirname(__FILE__) . '/captcha/captcha.php');
 
 new tam_contact_form_seven();
 

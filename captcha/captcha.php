@@ -49,6 +49,7 @@ class tam_captcha {
 	}
 
 	function generate_image($prefix, $captcha) {
+		$filename = null;
 		if ($im = imagecreatetruecolor($this->img_size[0], $this->img_size[1])) {
 			$bg = imagecolorallocate($im, $this->bg[0], $this->bg[1], $this->bg[2]);
 			$fg = imagecolorallocate($im, $this->fg[0], $this->fg[1], $this->fg[2]);
@@ -61,14 +62,17 @@ class tam_captcha {
 			}
 			switch ($this->img_type) {
 				case 'jpeg':
-					imagejpeg($im, $this->tmp_dir . $prefix . '.jpeg');
+					$filename = $prefix . '.jpeg';
+					imagejpeg($im, $this->tmp_dir . $filename);
 					break;
 				case 'gif':
-					imagegif($im, $this->tmp_dir . $prefix . '.gif');
+					$filename = $prefix . '.gif';
+					imagegif($im, $this->tmp_dir . $filename);
 					break;
 				case 'png':
 				default:
-					imagepng($im, $this->tmp_dir . $prefix . '.png');
+					$filename = $prefix . '.png';
+					imagepng($im, $this->tmp_dir . $filename);
 			}
 			imagedestroy($im);
 		}
@@ -76,6 +80,7 @@ class tam_captcha {
 			fwrite($fh, '<?php $captcha = "' . $captcha . '"; ?>');
 			fclose($fh);
 		}
+		return $filename;
 	}
 
 	function check($prefix, $response) {
