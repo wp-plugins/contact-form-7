@@ -743,10 +743,10 @@ function clearResponseOutput() {
 		$names = array();
 		$fes = $this->form_elements($contact_form['form'], false);
 		foreach ($fes as $fe) {
-			if (preg_match('^captcha[cr]$', $fe['type']))
+			if (preg_match('/^captcha[cr]$/', $fe['type']))
 				$names[] = $fe['name'];
 		}
-		return array_uniq($names);
+		return array_unique($names);
 	}
 
 }
