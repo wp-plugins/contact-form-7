@@ -33,7 +33,7 @@ class tam_captcha {
 		$this->bg = array(255, 255, 255);
 		$this->fg = array(0, 0, 0);
 		$this->base = array(6, 18);
-		$this->font_size = 17;
+		$this->font_size = 14;
 		$this->font_char_width = 15;
 		$this->img_type = 'png';
 	}
