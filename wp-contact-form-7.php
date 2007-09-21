@@ -92,13 +92,20 @@ class tam_contact_form_seven {
 			$contact_forms = $this->contact_forms();
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
-				$into = '#' . $unit_tag;
-				if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '", spam: 1 }';
+				$validation = $this->validate($cf);
+				if (! $validation['valid']) { // Validation error occured
+					$invalids = array();
+					foreach ($validation['reason'] as $name => $reason) {
+						$invalids[] = '{ into: ":input[@name=' . $name . ']", message: "' . $reason . '" }';
+					}
+					$invalids = '[' . join(', ', $invalids) . ']';
+					echo '{ mailSent: 0, message: "' . $this->message('validation_error') . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ' }';
+				} elseif ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", spam: 1 }';
 				} elseif ($this->mail($cf)) {
-					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "' . $into . '" }';
+					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "#' . $unit_tag . '" }';
 				} else {
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '" }';
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '" }';
 				}
 			}
 		}
@@ -442,7 +449,6 @@ class tam_contact_form_seven {
 					$valid = false;
 					$reason[$name] = $this->message('captcha_not_match');
 				}
-				$this->remove_captcha($_POST[$captchac]);
 			}
 		}
 		return compact('valid', 'reason');
@@ -464,55 +470,17 @@ class tam_contact_form_seven {
 
 jQuery(document).ready(function() {
 	jQuery('div.wpcf7 > form').ajaxForm({
-		beforeSubmit: validate,
+		beforeSubmit: beforeSubmit,
 		url: '<?php echo $override_url; ?>',
 		dataType: 'json',
-		success: processJson,
-		clearForm: true,
-		resetForm: true
+		success: processJson
 	});
 });
 
-function validate(formData, jqForm, options) {
-	var wpcf7ResponseOutput = jQuery('div.wpcf7-response-output', jqForm.parents('div.wpcf7')).lt(1);
+function beforeSubmit(formData, jqForm, options) {
 	clearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
-	var valid = true;
-	
-	jQuery('.wpcf7-validates-as-email', jqForm[0]).each(function() {
-		if (! isEmail(this.value)) {
-			jQuery(this).addClass('wpcf7-email-not-valid');
-			this.wpcf7InvalidMessage = '<?php echo $this->message('invalid_email'); ?>';
-		}
-	});
-
-	jQuery('.wpcf7-validates-as-required', jqForm[0]).each(function() {
-		if (! this.value) {
-			jQuery(this).addClass('wpcf7-required-not-valid');
-			this.wpcf7InvalidMessage = '<?php echo $this->message('invalid_required'); ?>';
-		}
-	});
-	
-	jQuery.each(jqForm[0].elements, function() {
-		if (this.wpcf7InvalidMessage) {
-			notValidTip(this, this.wpcf7InvalidMessage);
-			valid = false;
-			this.wpcf7InvalidMessage = null;
-		}
-	});
-	
-	if (! valid) {
-		jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'hidden' });
-		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
-		wpcf7ResponseOutput.append('<?php echo $this->message('validation_error'); ?>').fadeIn('fast');
-	}
-	
-	return valid;
-}
-
-function isEmail(user_email) {
-	var chars = /^[-a-z0-9+_.]+@([-a-z0-9_]+[.])+[a-z]{2,6}$/i;
-	return chars.test(user_email);
+	return true;
 }
 
 function notValidTip(input, message) {
@@ -531,13 +499,20 @@ function notValidTip(input, message) {
 function processJson(data) {
 	var wpcf7ResponseOutput = jQuery(data.into).find('div.wpcf7-response-output');
 	clearResponseOutput();
-	if (1 == data.mailSent) {
-		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
-	} else {
-		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
+	if (data.invalids) {
+		jQuery.each(data.invalids, function(i, n) {
+			notValidTip(jQuery(data.into).find(n.into), n.message);
+		});
+		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
 	}
 	if (1 == data.spam) {
 		wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
+	}
+	if (1 == data.mailSent) {
+		jQuery(data.into).find('form').resetForm().clearForm();
+		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
+	} else {
+		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
 	}
 	wpcf7ResponseOutput.append(data.message).fadeIn('fast');
 }
