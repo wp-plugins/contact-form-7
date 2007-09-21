@@ -341,16 +341,14 @@ class tam_contact_form_seven {
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
 				$validation = $this->validate($cf);
-				if ($validation['valid']) {
-					if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
-					} elseif ($this->mail($cf)) {
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
-					} else {
-						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
-					}
-				} else {
+				if (! $validation['valid']) {
 					$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
+				} elseif ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
+				} elseif ($this->mail($cf)) {
+					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
+				} else {
+					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
 				}
 			}
 		}
