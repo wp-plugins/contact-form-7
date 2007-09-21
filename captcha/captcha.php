@@ -86,7 +86,7 @@ class tam_captcha {
 	function check($prefix, $response) {
 		if (is_readable($this->tmp_dir . $prefix . '.php')) {
 			include($this->tmp_dir . $prefix . '.php');
-			if ($response == $captcha)
+			if (0 == strcasecmp($response, $captcha))
 				return true;
 		}
 		return false;
