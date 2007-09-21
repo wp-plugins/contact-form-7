@@ -317,6 +317,8 @@ class tam_contact_form_seven {
 				return __('Email address seems invalid.', 'wpcf7');
 			case 'invalid_required':
 				return __('Please fill the required field.', 'wpcf7');
+			case 'captcha_not_match':
+				return __('Your entered code is incorrect.', 'wpcf7');
 		}
 	}
 
@@ -432,6 +434,15 @@ class tam_contact_form_seven {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_email');
 				}
+			}
+
+			if (preg_match('/^captchar$/', $type)) {
+				$captchac = '_wpcf7_captcha_challenge_' . $name;
+				if (! $this->check_captcha($_POST[$captchac], $_POST[$name])) {
+					$valid = false;
+					$reason[$name] = $this->message('captcha_not_match');
+				}
+				$this->remove_captcha($_POST[$captchac]);
 			}
 		}
 		return compact('valid', 'reason');
@@ -739,14 +750,12 @@ function clearResponseOutput() {
 		return $captcha->check($prefix, $response);
 	}
 
-	function get_captcha_subject_names($contact_form) {
-		$names = array();
-		$fes = $this->form_elements($contact_form['form'], false);
-		foreach ($fes as $fe) {
-			if (preg_match('/^captcha[cr]$/', $fe['type']))
-				$names[] = $fe['name'];
-		}
-		return array_unique($names);
+	function remove_captcha($prefix) {
+		if (! is_object($this->captcha))
+			$this->captcha = new tam_captcha();
+		$captcha = $this->captcha;
+		
+		$captcha->remove($prefix);
 	}
 
 }
