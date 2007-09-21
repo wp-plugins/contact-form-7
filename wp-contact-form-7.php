@@ -92,7 +92,7 @@ class tam_contact_form_seven {
 			$contact_forms = $this->contact_forms();
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
-				$into = '#' . $unit_tag . ' div.wpcf7-response-output';
+				$into = '#' . $unit_tag;
 				if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
 					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "' . $into . '", spam: 1 }';
 				} elseif ($this->mail($cf)) {
@@ -529,7 +529,7 @@ function notValidTip(input, message) {
 }
 
 function processJson(data) {
-	var wpcf7ResponseOutput = jQuery(data.into);
+	var wpcf7ResponseOutput = jQuery(data.into).find('div.wpcf7-response-output');
 	clearResponseOutput();
 	if (1 == data.mailSent) {
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
