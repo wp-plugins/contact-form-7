@@ -331,8 +331,7 @@ class tam_contact_form_seven {
 			$contact_forms = $this->contact_forms();
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
-				$fes = $this->form_elements($cf['form'], false);
-				$validation = $this->validate_form_elements($fes);
+				$validation = $this->validate($cf);
 				if ($validation['valid']) {
 					if ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
 						$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
@@ -408,11 +407,12 @@ class tam_contact_form_seven {
 		return $form;
 	}
 
-	function validate_form_elements($form_elements) {
+	function validate($contact_form) {
+		$fes = $this->form_elements($contact_form['form'], false);
 		$valid = true;
 		$reason = array();
 
-		foreach ($form_elements as $fe) {
+		foreach ($fes as $fe) {
 			$type = $fe['type'];
 			$name = $fe['name'];
 
