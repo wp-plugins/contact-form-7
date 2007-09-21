@@ -91,6 +91,15 @@ class tam_captcha {
 		}
 		return false;
 	}
+
+	function remove($prefix) {
+		$suffixes = array('.jpeg', '.gif', '.png', '.php');
+		foreach ($suffixes as $suffix) {
+			$file = $this->tmp_dir . $prefix . $suffix;
+			if (is_file($file))
+				unlink($file);
+		}
+	}
 }
 
 ?>
