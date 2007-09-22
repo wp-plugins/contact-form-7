@@ -42,6 +42,7 @@ Contact Form 7 has been translated into the following languages.
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
+* Russian, by [Dmitry Volotovich](http://www.volnov.com)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
 
 These language files are included in the plugin.
