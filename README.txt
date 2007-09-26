@@ -32,7 +32,7 @@ In the meantime, see this [release announcement](http://ideasilo.wordpress.com/2
 
 1. screenshot-1.png
 
-== Localization ==
+== L10N ==
 
 Contact Form 7 has been translated into the following languages.
 
