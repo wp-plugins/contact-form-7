@@ -93,19 +93,31 @@ class tam_contact_form_seven {
 			if ($cf = $contact_forms[$id]) {
 				$cf = stripslashes_deep($cf);
 				$validation = $this->validate($cf);
+				
+				$captchas = $this->refill_captcha($cf);
+				if (! empty($captchas)) {
+					$captchas_js = array();
+					foreach ($captchas as $name => $cap) {
+						$captchas_js[] = '"' . $name . '": "' . $cap . '"';
+					}
+					$captcha = '{ ' . join(', ', $captchas_js) . ' }';
+				} else {
+					$captcha = 'null';
+				}
+				
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
 					foreach ($validation['reason'] as $name => $reason) {
 						$invalids[] = '{ into: ":input[@name=' . $name . ']", message: "' . $reason . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
-					echo '{ mailSent: 0, message: "' . $this->message('validation_error') . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ' }';
+					echo '{ mailSent: 0, message: "' . $this->message('validation_error') . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
 				} elseif ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", spam: 1 }';
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
-					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "#' . $unit_tag . '" }';
+					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '" }';
+					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				}
 			}
 		}
@@ -447,9 +459,26 @@ class tam_contact_form_seven {
 					$valid = false;
 					$reason[$name] = $this->message('captcha_not_match');
 				}
+				$this->remove_captcha($_POST[$captchac]);
 			}
 		}
 		return compact('valid', 'reason');
+	}
+
+	function refill_captcha($contact_form) {
+		$fes = $this->form_elements($contact_form['form'], false);
+		$refill = array();
+		
+		foreach ($fes as $fe) {
+			$type = $fe['type'];
+			$name = $fe['name'];
+			if ('captchar' == $type) {
+				if ($filename = $this->generate_captcha())
+					$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+					$refill[$name] = $captcha_url;
+			}
+		}
+		return $refill;
 	}
 
 	function wp_head() {
@@ -502,6 +531,14 @@ function processJson(data) {
 			notValidTip(jQuery(data.into).find(n.into), n.message);
 		});
 		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
+	}
+	if (data.captcha) {
+		jQuery.each(data.captcha, function(i, n) {
+			jQuery(data.into).find(':input[@name="' + i + '"]').clearFields();
+			jQuery(data.into).find('img.wpcf7-captcha-' + i).attr('src', n);
+			var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
+			jQuery(data.into).find('input:hidden[@name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
+		});
 	}
 	if (1 == data.spam) {
 		wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
@@ -583,7 +620,10 @@ function clearResponseOutput() {
 				$class_att .= ' wpcf7-validates-as-email';
 			if (preg_match('/[*]$/', $type))
 				$class_att .= ' wpcf7-validates-as-required';
-				
+			
+			if (preg_match('/^captchac$/', $type))
+				$class_att .= ' wpcf7-captcha-' . $name;
+			
 			if ($class_att)
 				$atts .= ' class="' . trim($class_att) . '"';
 		}
@@ -591,6 +631,8 @@ function clearResponseOutput() {
 		// Value.
 		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
 			if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok'])
+				$value = '';
+			elseif ('captchar' == $type)
 				$value = '';
 			else
 				$value = $_POST[$name];
