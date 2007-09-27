@@ -42,6 +42,11 @@ class tam_contact_form_seven {
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautop_substitute'));
+		
+		// Cron
+		add_action('wpcf7_hourly_event', 'cleanup_captcha_files');
+		if (! wp_next_scheduled('wpcf7_hourly_event'))
+			wp_schedule_event(time(), 'hourly', 'wpcf7_hourly_event');
 	}
 	
 	// Original wpautop function has harmful effect on formatting of form elements.
@@ -771,6 +776,26 @@ function clearResponseOutput() {
 		$captcha = $this->captcha;
 		
 		$captcha->remove($prefix);
+	}
+
+	function cleanup_captcha_files() {
+		if (! is_object($this->captcha))
+			$this->captcha = new tam_captcha();
+		$captcha = $this->captcha;
+		
+		$tmp_dir = $captcha->tmp_dir;
+		if (is_dir($tmp_dir) && is_writable($tmp_dir)) {
+			if ($handle = opendir($tmp_dir)) {
+				while (false !== ($file = readdir($handle))) {
+					if (! preg_match('/^[0-9]+\.(php|png|gif|jpeg)$/', $file))
+						continue;
+					$stat = stat($tmp_dir . $file);
+					if ($stat['mtime'] + 21600 < time()) // 21600 secs == 6 hours
+						unlink($tmp_dir . $file);
+				}
+				closedir($handle);
+			}
+		}
 	}
 
 }
