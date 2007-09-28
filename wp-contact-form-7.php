@@ -577,7 +577,7 @@ function clearResponseOutput() {
 
 	function form_elements($form, $replace = true) {
 		$types = 'text|email|textarea|select|captchac|captchar';
-		$regex = '%\[\s*((?:' . $types . ')[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
+		$regex = '%\[\s*((?:' . $types . ')[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
@@ -695,13 +695,75 @@ function clearResponseOutput() {
 				return $html;
 				break;
 			case 'captchac':
-				if (! $filename = $this->generate_captcha()) {
+				$op = array();
+				// Default
+				$op['img_size'] = array(72, 24);
+				$op['base'] = array(6, 18);
+				$op['font_size'] = 14;
+				$op['font_char_width'] = 15;
+				
+				if (is_array($options)) {
+					$image_size_array = preg_grep('%^size:[smlSML]$%', $options);
+					if ($image_size = array_shift($image_size_array)) {
+						preg_match('%^size:([smlSML])$%', $image_size, $is_matches);
+						switch (strtolower($is_matches[1])) {
+							case 's':
+								$op['img_size'] = array(60, 20);
+								$op['base'] = array(6, 15);
+								$op['font_size'] = 11;
+								$op['font_char_width'] = 13;
+								break;
+							case 'l':
+								$op['img_size'] = array(84, 28);
+								$op['base'] = array(6, 20);
+								$op['font_size'] = 17;
+								$op['font_char_width'] = 19;
+								break;
+							case 'm':
+							default:
+								$op['img_size'] = array(72, 24);
+								$op['base'] = array(6, 18);
+								$op['font_size'] = 14;
+								$op['font_char_width'] = 15;
+						}
+					}
+					$fg_color_array = preg_grep('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
+					if ($fg_color = array_shift($fg_color_array)) {
+						preg_match('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches);
+						if (3 == strlen($fc_matches[1])) {
+							$r = substr($fc_matches[1], 0, 1);
+							$g = substr($fc_matches[1], 1, 1);
+							$b = substr($fc_matches[1], 2, 1);
+							$op['fg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
+						} elseif (6 == strlen($fc_matches[1])) {
+							$r = substr($fc_matches[1], 0, 2);
+							$g = substr($fc_matches[1], 2, 2);
+							$b = substr($fc_matches[1], 4, 2);
+							$op['fg'] = array(hexdec($r), hexdec($g), hexdec($b));
+						}
+					}
+					$bg_color_array = preg_grep('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
+					if ($bg_color = array_shift($bg_color_array)) {
+						preg_match('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches);
+						if (3 == strlen($bc_matches[1])) {
+							$r = substr($bc_matches[1], 0, 1);
+							$g = substr($bc_matches[1], 1, 1);
+							$b = substr($bc_matches[1], 2, 1);
+							$op['bg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
+						} elseif (6 == strlen($bc_matches[1])) {
+							$r = substr($bc_matches[1], 0, 2);
+							$g = substr($bc_matches[1], 2, 2);
+							$b = substr($bc_matches[1], 4, 2);
+							$op['bg'] = array(hexdec($r), hexdec($g), hexdec($b));
+						}
+					}
+				}
+				if (! $filename = $this->generate_captcha($op)) {
 					return '';
 					break;
 				}
-				$captcha = $this->captcha;
-				$img_size = $captcha->img_size;
-				$atts .= ' width="' . $img_size[0] . '" height="' . $img_size[1] . '"';
+				if (is_array($op['img_size']))
+					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
 				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
 				$html = '<img src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
@@ -752,10 +814,25 @@ function clearResponseOutput() {
 		}
 	}
 
-	function generate_captcha() {
+	function generate_captcha($options = null) {
 		if (! is_object($this->captcha))
 			$this->captcha = new tam_captcha();
-		$captcha = $this->captcha;
+		$captcha =& $this->captcha;
+		
+		if (is_array($options)) {
+			if (isset($options['img_size']))
+				$captcha->img_size = $options['img_size'];
+			if (isset($options['base']))
+				$captcha->base = $options['base'];
+			if (isset($options['font_size']))
+				$captcha->font_size = $options['font_size'];
+			if (isset($options['font_char_width']))
+				$captcha->font_char_width = $options['font_char_width'];
+			if (isset($options['fg']))
+				$captcha->fg = $options['fg'];
+			if (isset($options['bg']))
+				$captcha->bg = $options['bg'];
+		}
 		
 		$prefix = mt_rand();
 		$captcha_word = $captcha->generate_random_word();
@@ -765,7 +842,7 @@ function clearResponseOutput() {
 	function check_captcha($prefix, $response) {
 		if (! is_object($this->captcha))
 			$this->captcha = new tam_captcha();
-		$captcha = $this->captcha;
+		$captcha =& $this->captcha;
 		
 		return $captcha->check($prefix, $response);
 	}
@@ -773,7 +850,7 @@ function clearResponseOutput() {
 	function remove_captcha($prefix) {
 		if (! is_object($this->captcha))
 			$this->captcha = new tam_captcha();
-		$captcha = $this->captcha;
+		$captcha =& $this->captcha;
 		
 		$captcha->remove($prefix);
 	}
@@ -781,7 +858,7 @@ function clearResponseOutput() {
 	function cleanup_captcha_files() {
 		if (! is_object($this->captcha))
 			$this->captcha = new tam_captcha();
-		$captcha = $this->captcha;
+		$captcha =& $this->captcha;
 		
 		$tmp_dir = $captcha->tmp_dir;
 		if (is_dir($tmp_dir) && is_writable($tmp_dir)) {
