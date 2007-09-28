@@ -477,8 +477,10 @@ class tam_contact_form_seven {
 		foreach ($fes as $fe) {
 			$type = $fe['type'];
 			$name = $fe['name'];
-			if ('captchar' == $type) {
-				if ($filename = $this->generate_captcha())
+			$options = $fe['options'];
+			if ('captchac' == $type) {
+				$op = $this->captchac_options($options);
+				if ($filename = $this->generate_captcha($op))
 					$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
 					$refill[$name] = $captcha_url;
 			}
@@ -702,62 +704,8 @@ function clearResponseOutput() {
 				$op['font_size'] = 14;
 				$op['font_char_width'] = 15;
 				
-				if (is_array($options)) {
-					$image_size_array = preg_grep('%^size:[smlSML]$%', $options);
-					if ($image_size = array_shift($image_size_array)) {
-						preg_match('%^size:([smlSML])$%', $image_size, $is_matches);
-						switch (strtolower($is_matches[1])) {
-							case 's':
-								$op['img_size'] = array(60, 20);
-								$op['base'] = array(6, 15);
-								$op['font_size'] = 11;
-								$op['font_char_width'] = 13;
-								break;
-							case 'l':
-								$op['img_size'] = array(84, 28);
-								$op['base'] = array(6, 20);
-								$op['font_size'] = 17;
-								$op['font_char_width'] = 19;
-								break;
-							case 'm':
-							default:
-								$op['img_size'] = array(72, 24);
-								$op['base'] = array(6, 18);
-								$op['font_size'] = 14;
-								$op['font_char_width'] = 15;
-						}
-					}
-					$fg_color_array = preg_grep('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
-					if ($fg_color = array_shift($fg_color_array)) {
-						preg_match('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches);
-						if (3 == strlen($fc_matches[1])) {
-							$r = substr($fc_matches[1], 0, 1);
-							$g = substr($fc_matches[1], 1, 1);
-							$b = substr($fc_matches[1], 2, 1);
-							$op['fg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
-						} elseif (6 == strlen($fc_matches[1])) {
-							$r = substr($fc_matches[1], 0, 2);
-							$g = substr($fc_matches[1], 2, 2);
-							$b = substr($fc_matches[1], 4, 2);
-							$op['fg'] = array(hexdec($r), hexdec($g), hexdec($b));
-						}
-					}
-					$bg_color_array = preg_grep('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
-					if ($bg_color = array_shift($bg_color_array)) {
-						preg_match('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches);
-						if (3 == strlen($bc_matches[1])) {
-							$r = substr($bc_matches[1], 0, 1);
-							$g = substr($bc_matches[1], 1, 1);
-							$b = substr($bc_matches[1], 2, 1);
-							$op['bg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
-						} elseif (6 == strlen($bc_matches[1])) {
-							$r = substr($bc_matches[1], 0, 2);
-							$g = substr($bc_matches[1], 2, 2);
-							$b = substr($bc_matches[1], 4, 2);
-							$op['bg'] = array(hexdec($r), hexdec($g), hexdec($b));
-						}
-					}
-				}
+				$op = array_merge($op, $this->captchac_options($options));
+				
 				if (! $filename = $this->generate_captcha($op)) {
 					return '';
 					break;
@@ -873,6 +821,69 @@ function clearResponseOutput() {
 				closedir($handle);
 			}
 		}
+	}
+
+	function captchac_options($options) {
+		if (! is_array($options))
+			return array();
+		
+		$op = array();
+		$image_size_array = preg_grep('%^size:[smlSML]$%', $options);
+		if ($image_size = array_shift($image_size_array)) {
+			preg_match('%^size:([smlSML])$%', $image_size, $is_matches);
+			switch (strtolower($is_matches[1])) {
+				case 's':
+					$op['img_size'] = array(60, 20);
+					$op['base'] = array(6, 15);
+					$op['font_size'] = 11;
+					$op['font_char_width'] = 13;
+					break;
+				case 'l':
+					$op['img_size'] = array(84, 28);
+					$op['base'] = array(6, 20);
+					$op['font_size'] = 17;
+					$op['font_char_width'] = 19;
+					break;
+				case 'm':
+				default:
+					$op['img_size'] = array(72, 24);
+					$op['base'] = array(6, 18);
+					$op['font_size'] = 14;
+					$op['font_char_width'] = 15;
+			}
+		}
+		$fg_color_array = preg_grep('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
+		if ($fg_color = array_shift($fg_color_array)) {
+			preg_match('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches);
+			if (3 == strlen($fc_matches[1])) {
+				$r = substr($fc_matches[1], 0, 1);
+				$g = substr($fc_matches[1], 1, 1);
+				$b = substr($fc_matches[1], 2, 1);
+				$op['fg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
+			} elseif (6 == strlen($fc_matches[1])) {
+				$r = substr($fc_matches[1], 0, 2);
+				$g = substr($fc_matches[1], 2, 2);
+				$b = substr($fc_matches[1], 4, 2);
+				$op['fg'] = array(hexdec($r), hexdec($g), hexdec($b));
+			}
+		}
+		$bg_color_array = preg_grep('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
+		if ($bg_color = array_shift($bg_color_array)) {
+			preg_match('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches);
+			if (3 == strlen($bc_matches[1])) {
+				$r = substr($bc_matches[1], 0, 1);
+				$g = substr($bc_matches[1], 1, 1);
+				$b = substr($bc_matches[1], 2, 1);
+				$op['bg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
+			} elseif (6 == strlen($bc_matches[1])) {
+				$r = substr($bc_matches[1], 0, 2);
+				$g = substr($bc_matches[1], 2, 2);
+				$b = substr($bc_matches[1], 4, 2);
+				$op['bg'] = array(hexdec($r), hexdec($g), hexdec($b));
+			}
+		}
+		
+		return $op;
 	}
 
 }
