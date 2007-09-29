@@ -51,6 +51,8 @@
 				<input type="button" value="textarea" class="quick-button" onclick="wpcf7QuickPanel('textarea');" style="background-color: #bfe7e5;" />
 				<input type="button" value="textarea*" class="quick-button" onclick="wpcf7QuickPanel('textarea*');" style="background-color: #bfe7e5;" />
 				<input type="button" value="select" class="quick-button" onclick="wpcf7QuickPanel('select');" style="background-color: #cbd5e8;" />
+				<input type="button" value="captchac" class="quick-button" onclick="wpcf7QuickPanel('captchac');" style="background-color: #d5e8cb;" />
+				<input type="button" value="captchar" class="quick-button" onclick="wpcf7QuickPanel('captchar');" style="background-color: #d5e8cb;" />
 				<input type="button" value="submit" class="quick-button" onclick="wpcf7QuickPanel('submit');" style="background-color: #e5d6c2;" />
 				<div id="quick-panel"></div>
 			</div>
@@ -97,7 +99,7 @@
 			//<![CDATA[
 			
 			function wpcf7ValidateType(type) {
-				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|select|submit)$/;
+				var valid_types = /^(text[*]?|email[*]?|textarea[*]?|select|captcha[cr]|submit)$/;
 				return valid_types.test(type);
 			}
 			
@@ -124,6 +126,10 @@
 					case 'select':
 						quick_panel.style.backgroundColor = '#cbd5e8';
 						break;
+					case 'captchac':
+					case 'captchar':
+						quick_panel.style.backgroundColor = '#d5e8cb';
+						break;
 					case 'submit':
 						quick_panel.style.backgroundColor = '#e5d6c2';
 						break;
@@ -148,10 +154,10 @@
 						}
 						quick_panel.innerHTML += '<table><tbody>'
 							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><th>size=</th><td><input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
-							+ '<th>maxlength=</th><td><input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
 							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>size=</th><td><input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>maxlength=</th><td><input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><th><?php _e('Default value', 'wpcf7'); ?></th><td><input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td>'
 							+ akismet_option
 							+ '</tr>'
@@ -161,10 +167,10 @@
 					case 'textarea*':
 						quick_panel.innerHTML += '<table><tbody>'
 							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
-							+ '<tr><th>cols=</th><td><input type="text" name="qp-cols" onchange="wpcf7CreateTag();" /></td>'
-							+ '<th>rows=</th><td><input type="text" name="qp-rows" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
 							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>cols=</th><td><input type="text" name="qp-cols" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>rows=</th><td><input type="text" name="qp-rows" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><th><?php _e('Default value', 'wpcf7'); ?></th><td><input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
@@ -175,6 +181,30 @@
 							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '<tr><th><?php _e('Choices', 'wpcf7'); ?></th><td><textarea name="qp-default" onchange="wpcf7CreateTag();" rows="6"></textarea><br />'
 							+ '<span style="font-size: smaller;"><?php _e('* One choice per line.', 'wpcf7'); ?></span></td></tr>'
+							+ '</tbody></table>';
+						break;
+					case 'captchac':
+						quick_panel.innerHTML += '<table><tbody>'
+							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Foreground color', 'wpcf7'); ?></th><td><input type="text" name="qp-fgc" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th><?php _e('Background color', 'wpcf7'); ?></th><td><input type="text" name="qp-bgc" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Image size', 'wpcf7'); ?></th>'
+							+ '<td><select name="qp-isize" onchange="wpcf7CreateTag();"><option value="">--</option>'
+							+ '<option value="s"><?php _e('Small', 'wpcf7'); ?></option>'
+							+ '<option value="m"><?php _e('Medium', 'wpcf7'); ?></option>'
+							+ '<option value="l"><?php _e('Large', 'wpcf7'); ?></option></select></td></tr>'
+							+ '</tbody></table>';
+						break;
+					case 'captchar':
+						quick_panel.innerHTML += '<table><tbody>'
+							+ '<tr><th>name=</th><td><input type="text" name="qp-name" id="qp-name" class="required" value="edit-me" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>id=</th><td><input type="text" name="qp-id" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>class=</th><td><input type="text" name="qp-class" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th>size=</th><td><input type="text" name="qp-size" onchange="wpcf7CreateTag();" /></td>'
+							+ '<th>maxlength=</th><td><input type="text" name="qp-maxlength" onchange="wpcf7CreateTag();" /></td></tr>'
+							+ '<tr><th><?php _e('Default value', 'wpcf7'); ?></th><td><input type="text" name="qp-default" onchange="wpcf7CreateTag();" /></td></tr>'
 							+ '</tbody></table>';
 						break;
 					case 'submit':
@@ -229,6 +259,7 @@
 						case 'text*':
 						case 'email':
 						case 'email*':
+						case 'captchar':
 							var size = form.elements['qp-size'];
 							if (size)
 								size.value = wpcf7Integer(size.value);
@@ -299,6 +330,35 @@
 								break;
 							}
 						}
+					}
+					
+					var image_size = form.elements['qp-isize'];
+					if (image_size) {
+						switch (image_size.value) {
+							case 's':
+								tag += ' size:s';
+								break;
+							case 'm':
+								tag += ' size:m';
+								break;
+							case 'l':
+								tag += ' size:l';
+								break;
+						}
+					}
+					
+					var fgc = form.elements['qp-fgc'];
+					if (fgc) {
+						var fgc_v = wpcf7Cdata(fgc.value);
+						if (fgc_v)
+							tag += ' fg:#' + fgc_v;
+					}
+					
+					var bgc = form.elements['qp-bgc'];
+					if (bgc) {
+						var bgc_v = wpcf7Cdata(bgc.value);
+						if (bgc_v)
+							tag += ' bg:#' + bgc_v;
 					}
 					
 					var default_value = form.elements['qp-default'];
