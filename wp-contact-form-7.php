@@ -117,7 +117,7 @@ class tam_contact_form_seven {
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
 					echo '{ mailSent: 0, message: "' . $this->message('validation_error') . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
-				} elseif ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+				} elseif ($this->akismet($cf)) { // Spam!
 					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
 					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
@@ -150,22 +150,33 @@ class tam_contact_form_seven {
 		if (! function_exists('akismet_http_post') || ! (get_option('wordpress_api_key') || $wpcom_api_key))
 			return false;
 
+		$akismet_ready = false;
 		$author = $author_email = $author_url = $content = '';
 		$fes = $this->form_elements($contact_form['form'], false);
+		
 		foreach ($fes as $fe) {
 			if (! is_array($fe['options'])) continue;
 			
-			if (preg_grep('%^akismet:author$%', $fe['options']) && '' == $author)
+			if (preg_grep('%^akismet:author$%', $fe['options']) && '' == $author) {
 				$author = $_POST[$fe['name']];
-			if (preg_grep('%^akismet:author_email$%', $fe['options']) && '' == $author_email)
+				$akismet_ready = true;
+			}
+			if (preg_grep('%^akismet:author_email$%', $fe['options']) && '' == $author_email) {
 				$author_email = $_POST[$fe['name']];
-			if (preg_grep('%^akismet:author_url$%', $fe['options']) && '' == $author_url)
+				$akismet_ready = true;
+			}
+			if (preg_grep('%^akismet:author_url$%', $fe['options']) && '' == $author_url) {
 				$author_url = $_POST[$fe['name']];
+				$akismet_ready = true;
+			}
 			
 			if ('' != $content)
 				$content .= "\n\n";
 			$content .= $_POST[$fe['name']];
 		}
+		
+		if (! $akismet_ready)
+			return false;
 		
 		$c['blog'] = get_option('home');
 		$c['user_ip'] = preg_replace('/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR']);
@@ -270,10 +281,9 @@ class tam_contact_form_seven {
 			$mail_sender = trim($_POST['wpcf7-mail-sender']);
 			$mail_body = trim($_POST['wpcf7-mail-body']);
 			$options_recipient = trim($_POST['wpcf7-options-recipient']);
-			$options_akismet = (bool) $_POST['wpcf7-options-akismet'];
 			
 			$mail = array('subject' => $mail_subject, 'sender' => $mail_sender, 'body' => $mail_body);
-			$options = array('recipient' => $options_recipient, 'akismet' => $options_akismet);
+			$options = array('recipient' => $options_recipient);
 			
 			$contact_forms[$id] = compact('title', 'form', 'mail', 'options');
 			$updated_message = sprintf(__('Contact form "%s" saved. ', 'wpcf7'), $contact_forms[$id]['title']);
@@ -360,7 +370,7 @@ class tam_contact_form_seven {
 				$validation = $this->validate($cf);
 				if (! $validation['valid']) {
 					$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
-				} elseif ($cf['options']['akismet'] && $this->akismet($cf)) { // Spam!
+				} elseif ($this->akismet($cf)) { // Spam!
 					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
 				} elseif ($this->mail($cf)) {
 					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
