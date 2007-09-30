@@ -28,7 +28,7 @@ class tam_captcha {
 			dirname(__FILE__) . '/gentium/GenAR102.TTF',
 			dirname(__FILE__) . '/gentium/GenI102.TTF',
 			dirname(__FILE__) . '/gentium/GenR102.TTF');
-		$this->tmp_dir = dirname(__FILE__) . '/temporary/';
+		$this->tmp_dir = dirname(__FILE__) . '/tmp/';
 		$this->img_size = array(72, 24);
 		$this->bg = array(255, 255, 255);
 		$this->fg = array(0, 0, 0);
