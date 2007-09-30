@@ -113,16 +113,16 @@ class tam_contact_form_seven {
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
 					foreach ($validation['reason'] as $name => $reason) {
-						$invalids[] = '{ into: ":input[@name=' . $name . ']", message: "' . $reason . '" }';
+						$invalids[] = '{ into: ":input[@name=' . $name . ']", message: "' . js_escape($reason) . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
-					echo '{ mailSent: 0, message: "' . $this->message('validation_error') . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message('validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message('mail_sent_ng')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
-					echo '{ mailSent: 1, message: "' . $this->message('mail_sent_ok') . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 1, message: "' . js_escape($this->message('mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
-					echo '{ mailSent: 0, message: "' . $this->message('mail_sent_ng') . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message('mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				}
 			}
 		}
