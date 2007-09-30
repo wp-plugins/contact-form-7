@@ -491,7 +491,7 @@ class tam_contact_form_seven {
 			if ('captchac' == $type) {
 				$op = $this->captchac_options($options);
 				if ($filename = $this->generate_captcha($op))
-					$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+					$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/temporary/' . $filename;
 					$refill[$name] = $captcha_url;
 			}
 		}
@@ -722,7 +722,7 @@ function clearResponseOutput() {
 				}
 				if (is_array($op['img_size']))
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
-				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/temporary/' . $filename;
 				$html = '<img src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
