@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-09-05 16:04+0100\n"
+"PO-Revision-Date: 2007-09-29 19:19+0100\n"
 "Last-Translator: Bruno Salzano <bruno@brunosalzano.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,75 +15,75 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:128
-#: contact-form-7/wp-contact-form-7.php:201
+#: contact-form-7/wp-contact-form-7.php:224
+#: contact-form-7/wp-contact-form-7.php:297
 msgid "Contact form"
 msgstr "Modulo di contatto"
 
-#: contact-form-7/wp-contact-form-7.php:157
+#: contact-form-7/wp-contact-form-7.php:253
 #: contact-form-7/includes/admin-panel.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:177
+#: contact-form-7/wp-contact-form-7.php:273
 #, php-format
 msgid "Contact form \"%s\" deleted. "
-msgstr "Il modulo di contatto \"%s\" è stato cancellato. "
+msgstr "Il modulo di contatto \"%s\" e&#39; stato cancellato. "
 
-#: contact-form-7/wp-contact-form-7.php:193
+#: contact-form-7/wp-contact-form-7.php:289
 #, php-format
 msgid "Contact form \"%s\" saved. "
-msgstr "Il modulo di contatto \"%s\" è stato salvato. "
+msgstr "Il modulo di contatto \"%s\" e&#39; stato salvato. "
 
-#: contact-form-7/wp-contact-form-7.php:222
+#: contact-form-7/wp-contact-form-7.php:318
 msgid "Your Name"
 msgstr "Il tuo nome"
 
-#: contact-form-7/wp-contact-form-7.php:222
-#: contact-form-7/wp-contact-form-7.php:224
+#: contact-form-7/wp-contact-form-7.php:318
+#: contact-form-7/wp-contact-form-7.php:320
 msgid "(required)"
 msgstr "(richiesto)"
 
-#: contact-form-7/wp-contact-form-7.php:224
+#: contact-form-7/wp-contact-form-7.php:320
 msgid "Your Email"
 msgstr "La tua email"
 
-#: contact-form-7/wp-contact-form-7.php:226
+#: contact-form-7/wp-contact-form-7.php:322
 msgid "Subject"
 msgstr "Oggetto"
 
-#: contact-form-7/wp-contact-form-7.php:228
+#: contact-form-7/wp-contact-form-7.php:324
 msgid "Your Message"
-msgstr "Messaggio"
+msgstr "Il tuo messaggi"
 
-#: contact-form-7/wp-contact-form-7.php:230
-#: contact-form-7/wp-contact-form-7.php:593
+#: contact-form-7/wp-contact-form-7.php:326
+#: contact-form-7/wp-contact-form-7.php:738
 msgid "Send"
 msgstr "Invia"
 
-#: contact-form-7/wp-contact-form-7.php:249
+#: contact-form-7/wp-contact-form-7.php:345
 msgid "Your message was sent successfully. Thanks."
-msgstr "Il tuo messaggio è stato inviato. Grazie."
+msgstr "Il tuo messaggio e&#39; stato inviato. Grazie."
 
-#: contact-form-7/wp-contact-form-7.php:251
+#: contact-form-7/wp-contact-form-7.php:347
 msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Errore. Riprovare più tardi o contattare l'amministratore in altro modo."
+msgstr "Errore nell&#39;invio. Riprovare piu&#39; tardi o contattare l&#39;amministratore in altro modo."
 
-#: contact-form-7/wp-contact-form-7.php:324
-#: contact-form-7/wp-contact-form-7.php:424
+#: contact-form-7/wp-contact-form-7.php:349
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Sono avvenuti errori di validazione. Controllare i campi richiesti e inviare di nuovo il modulo."
 
 #: contact-form-7/wp-contact-form-7.php:351
-#: contact-form-7/wp-contact-form-7.php:358
-#: contact-form-7/wp-contact-form-7.php:409
+msgid "Email address seems invalid."
+msgstr "Indirizzo email non valido."
+
+#: contact-form-7/wp-contact-form-7.php:353
 msgid "Please fill the required field."
 msgstr "Per favore, riempire tutti i campi richiesti"
 
-#: contact-form-7/wp-contact-form-7.php:361
-#: contact-form-7/wp-contact-form-7.php:402
-msgid "Email address seems invalid."
-msgstr "Indirizzo email non valido."
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "Your entered code is incorrect."
+msgstr "Il codice inserito non è valido"
 
 #: contact-form-7/includes/admin-panel.php:19
 #: contact-form-7/includes/admin-panel.php:22
@@ -96,45 +96,45 @@ msgstr "Titolo"
 
 #: contact-form-7/includes/admin-panel.php:39
 msgid "Copy and paste this code into your post content."
-msgstr "Copia ed incolla questo codice nel contenuto del tuo post."
+msgstr "Copia ed incolla questo codice nel contenuto del tuo post"
 
 #: contact-form-7/includes/admin-panel.php:45
 msgid "Form content"
 msgstr "Contenuti del modulo"
 
-#: contact-form-7/includes/admin-panel.php:58
+#: contact-form-7/includes/admin-panel.php:60
 msgid "Mail template"
 msgstr "Template email"
 
-#: contact-form-7/includes/admin-panel.php:59
+#: contact-form-7/includes/admin-panel.php:61
 msgid "Subject field:"
 msgstr "Campo oggetto:"
 
-#: contact-form-7/includes/admin-panel.php:61
+#: contact-form-7/includes/admin-panel.php:63
 msgid "Sender field:"
 msgstr "Campo mittente:"
 
-#: contact-form-7/includes/admin-panel.php:63
+#: contact-form-7/includes/admin-panel.php:65
 msgid "Message body:"
-msgstr "Campo testo:"
+msgstr "Corpo del messaggio"
 
-#: contact-form-7/includes/admin-panel.php:67
+#: contact-form-7/includes/admin-panel.php:69
 msgid "Options"
 msgstr "Opzioni"
 
-#: contact-form-7/includes/admin-panel.php:68
+#: contact-form-7/includes/admin-panel.php:70
 msgid "Recipient address:"
-msgstr "Indirizzo destinatario:"
+msgstr "Indirizzo del destinatario:"
 
-#: contact-form-7/includes/admin-panel.php:73
+#: contact-form-7/includes/admin-panel.php:75
 msgid "Save"
 msgstr "Salva"
 
-#: contact-form-7/includes/admin-panel.php:80
+#: contact-form-7/includes/admin-panel.php:82
 msgid "Delete this contact form"
-msgstr "Cancella questa form di contatto"
+msgstr "Elimina questa form di contatto"
 
-#: contact-form-7/includes/admin-panel.php:81
+#: contact-form-7/includes/admin-panel.php:83
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -143,23 +143,68 @@ msgstr ""
 "  'Cancel' per annullare, 'OK' per confermare."
 
 #: contact-form-7/includes/admin-panel.php:137
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/includes/admin-panel.php:138
+msgid "Check this field as sender&#39;s name"
+msgstr "Controlla questo campo come indirizzo del mittente"
+
+#: contact-form-7/includes/admin-panel.php:139
+msgid "Check this field as sender&#39;s email"
+msgstr "Controlla questo campo come email del mittente"
+
+#: contact-form-7/includes/admin-panel.php:140
+msgid "Check this field as sender&#39;s URL"
+msgstr "Controlla questo campo come URL del mittente"
+
+#: contact-form-7/includes/admin-panel.php:141
+msgid "Don&#39;t check this field with Akismet"
+msgstr "Non controllare questo campo con Akismet"
+
 #: contact-form-7/includes/admin-panel.php:148
+#: contact-form-7/includes/admin-panel.php:161
+#: contact-form-7/includes/admin-panel.php:194
 msgid "Default value"
 msgstr "Valore di default"
 
-#: contact-form-7/includes/admin-panel.php:156
+#: contact-form-7/includes/admin-panel.php:169
 msgid "Choices"
 msgstr "Opzioni"
 
-#: contact-form-7/includes/admin-panel.php:157
+#: contact-form-7/includes/admin-panel.php:170
 msgid "* One choice per line."
-msgstr "* Una opzione per riga"
+msgstr "Una opzione per linea."
 
-#: contact-form-7/includes/admin-panel.php:162
+#: contact-form-7/includes/admin-panel.php:178
+msgid "Foreground color"
+msgstr "Colore di primo piano"
+
+#: contact-form-7/includes/admin-panel.php:179
+msgid "Background color"
+msgstr "Colore di sfondo"
+
+#: contact-form-7/includes/admin-panel.php:180
+msgid "Image size"
+msgstr "Dimensione immagine"
+
+#: contact-form-7/includes/admin-panel.php:182
+msgid "Small"
+msgstr "Piccola"
+
+#: contact-form-7/includes/admin-panel.php:183
+msgid "Medium"
+msgstr "Media"
+
+#: contact-form-7/includes/admin-panel.php:184
+msgid "Large"
+msgstr "Grande"
+
+#: contact-form-7/includes/admin-panel.php:199
 msgid "Label"
 msgstr "Etichetta"
 
-#: contact-form-7/includes/admin-panel.php:169
+#: contact-form-7/includes/admin-panel.php:206
 msgid "Insert"
 msgstr "Inserisci"
 
