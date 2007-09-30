@@ -777,6 +777,19 @@ function clearResponseOutput() {
 			$this->captcha = new tam_captcha();
 		$captcha =& $this->captcha;
 		
+		if (! is_dir($captcha->tmp_dir) || ! is_writable($captcha->tmp_dir))
+			return false;
+		
+		$img_type = imagetypes();
+		if ($img_type & IMG_PNG)
+			$captcha->img_type = 'png';
+		elseif ($img_type & IMG_GIF)
+			$captcha->img_type = 'gif';
+		elseif ($img_type & IMG_JPG)
+			$captcha->img_type = 'jpeg';
+		else
+			return false;
+		
 		if (is_array($options)) {
 			if (isset($options['img_size']))
 				$captcha->img_size = $options['img_size'];
