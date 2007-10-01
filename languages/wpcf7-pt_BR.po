@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-10-01 14:50-0300\n"
+"Last-Translator: Leonardo <pinheiroweb@gmail.com>\n"
+"Language-Team: Leonardo Pinheiro <pinheiroweb@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:128
+#: contact-form-7/wp-contact-form-7.php:201
+msgid "Contact form"
+msgstr "Formulário de Contato"
+
+#: contact-form-7/wp-contact-form-7.php:157
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:177
+#, php-format
+msgid "Contact form \"%s\" deleted. "
+msgstr "Formulário de contato \"%s\" excluído."
+
+#: contact-form-7/wp-contact-form-7.php:193
+#, php-format
+msgid "Contact form \"%s\" saved. "
+msgstr "Formulário de contato \"%s\" salvo."
+
+#: contact-form-7/wp-contact-form-7.php:222
+msgid "Your Name"
+msgstr "Nome"
+
+#: contact-form-7/wp-contact-form-7.php:222
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "(required)"
+msgstr "(obrigatório)"
+
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "Your Email"
+msgstr "E-mail"
+
+#: contact-form-7/wp-contact-form-7.php:226
+msgid "Subject"
+msgstr "Assunto"
+
+#: contact-form-7/wp-contact-form-7.php:228
+msgid "Your Message"
+msgstr "Mensagem"
+
+#: contact-form-7/wp-contact-form-7.php:230
+#: contact-form-7/wp-contact-form-7.php:593
+msgid "Send"
+msgstr "Enviar"
+
+#: contact-form-7/wp-contact-form-7.php:249
+msgid "Your message was sent successfully. Thanks."
+msgstr "Sua mensagem foi enviada com sucesso. Obrigado."
+
+#: contact-form-7/wp-contact-form-7.php:251
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Erro ao enviar sua mensagem. Por favor tente mais tarde ou entre em contato com a banda. (banda@eletrikabarbarella.com.br)"
+
+#: contact-form-7/wp-contact-form-7.php:324
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Por favor preencha os campos obrigatórios e envie novamente."
+
+#: contact-form-7/wp-contact-form-7.php:351
+#: contact-form-7/wp-contact-form-7.php:358
+#: contact-form-7/wp-contact-form-7.php:409
+msgid "Please fill the required field."
+msgstr "Por favor preencha os campos obrigatórios.Por favor cumplimenta los campos necesarios"
+
+#: contact-form-7/wp-contact-form-7.php:361
+#: contact-form-7/wp-contact-form-7.php:402
+msgid "Email address seems invalid."
+msgstr "O e-mail parece ter sido preenchido de forma incorreta."
+
+#: contact-form-7/includes/admin-panel.php:19
+#: contact-form-7/includes/admin-panel.php:22
+msgid "Add new"
+msgstr "Adiconar novo"
+
+#: contact-form-7/includes/admin-panel.php:34
+msgid "Title"
+msgstr "Título"
+
+#: contact-form-7/includes/admin-panel.php:39
+msgid "Copy and paste this code into your post content."
+msgstr "Copie e Cole este código dentro do conteúdo do seu POST ou PÁGINA."
+
+#: contact-form-7/includes/admin-panel.php:45
+msgid "Form content"
+msgstr "Conteúdo do formulário"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Mail template"
+msgstr "Modelo de E-mail"
+
+#: contact-form-7/includes/admin-panel.php:59
+msgid "Subject field:"
+msgstr "Campo de assunto:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Sender field:"
+msgstr "Campo do remetente:"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Message body:"
+msgstr "Corpo da mensagem:"
+
+#: contact-form-7/includes/admin-panel.php:67
+msgid "Options"
+msgstr "Opções"
+
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Recipient address:"
+msgstr "Endereço do destinatário:"
+
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Save"
+msgstr "Salvar"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Delete this contact form"
+msgstr "Apagar este formulário de contato"
+
+#: contact-form-7/includes/admin-panel.php:81
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"O formulário de contato será eliminado. \n"
+" Cancelar para anular, 'OK' para confirmar."
+
+#: contact-form-7/includes/admin-panel.php:137
+#: contact-form-7/includes/admin-panel.php:148
+msgid "Default value"
+msgstr "Valor padrão"
+
+#: contact-form-7/includes/admin-panel.php:156
+msgid "Choices"
+msgstr "Opções"
+
+#: contact-form-7/includes/admin-panel.php:157
+msgid "* One choice per line."
+msgstr "* Uma opção por linha"
+
+#: contact-form-7/includes/admin-panel.php:162
+msgid "Label"
+msgstr "Label"
+
+#: contact-form-7/includes/admin-panel.php:169
+msgid "Insert"
+msgstr "Inserir"
+
