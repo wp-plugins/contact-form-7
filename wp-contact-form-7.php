@@ -832,17 +832,19 @@ function clearResponseOutput() {
 		$captcha =& $this->captcha;
 		
 		$tmp_dir = $captcha->tmp_dir;
-		if (is_dir($tmp_dir) && is_writable($tmp_dir)) {
-			if ($handle = opendir($tmp_dir)) {
-				while (false !== ($file = readdir($handle))) {
-					if (! preg_match('/^[0-9]+\.(php|png|gif|jpeg)$/', $file))
-						continue;
-					$stat = stat($tmp_dir . $file);
-					if ($stat['mtime'] + 21600 < time()) // 21600 secs == 6 hours
-						unlink($tmp_dir . $file);
-				}
-				closedir($handle);
+		
+		if (! is_dir($tmp_dir) || ! is_writable($tmp_dir))
+			return false;
+		
+		if ($handle = opendir($tmp_dir)) {
+			while (false !== ($file = readdir($handle))) {
+				if (! preg_match('/^[0-9]+\.(php|png|gif|jpeg)$/', $file))
+					continue;
+				$stat = stat($tmp_dir . $file);
+				if ($stat['mtime'] + 21600 < time()) // 21600 secs == 6 hours
+					@ unlink($tmp_dir . $file);
 			}
+			closedir($handle);
 		}
 	}
 
