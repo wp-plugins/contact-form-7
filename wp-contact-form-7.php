@@ -42,11 +42,6 @@ class tam_contact_form_seven {
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautop_substitute'));
-		
-		// Cron
-		add_action('wpcf7_hourly_event', 'cleanup_captcha_files');
-		if (! wp_next_scheduled('wpcf7_hourly_event'))
-			wp_schedule_event(time(), 'hourly', 'wpcf7_hourly_event');
 	}
 	
 	// Original wpautop function has harmful effect on formatting of form elements.
