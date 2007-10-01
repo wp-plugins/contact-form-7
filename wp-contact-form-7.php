@@ -121,6 +121,7 @@ class tam_contact_form_seven {
 				}
 			}
 		}
+		$this->cleanup_captcha_files();
 		exit();
 	}
 	
@@ -430,6 +431,8 @@ class tam_contact_form_seven {
 		$form .= '<div' . $class . '>' . $content . '</div>';
 		
 		$form .= '</div>';
+		
+		$this->cleanup_captcha_files();
 		
 		$this->order_in_post += 1;
 		$this->processing_unit_tag = null;
