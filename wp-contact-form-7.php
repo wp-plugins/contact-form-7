@@ -81,8 +81,10 @@ class tam_contact_form_seven {
 	}
 
 	function init_switch() {
-		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7'])
+		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
 			$this->ajax_json_echo();
+			exit();
+		}
 	}
 	
 	function ajax_json_echo() {
@@ -122,7 +124,6 @@ class tam_contact_form_seven {
 			}
 		}
 		$this->cleanup_captcha_files();
-		exit();
 	}
 	
 	function mail($contact_form) {
