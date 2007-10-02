@@ -33,12 +33,12 @@ class tam_contact_form_seven {
 	function tam_contact_form_seven() {
 		// This backslash replacement for Win32 will be unnecessary. See http://trac.wordpress.org/ticket/3002
 		add_action('activate_' . strtr(plugin_basename(__FILE__), '\\', '/'), array(&$this, 'set_initial'));
-		add_action('init', array(&$this, 'load_plugin_textdomain'), 9);
+		add_action('init', array(&$this, 'load_plugin_textdomain'));
 		add_action('admin_menu', array(&$this, 'add_pages'));
 		add_action('admin_head', array(&$this, 'admin_page_stylesheet'));
 		add_action('wp_head', array(&$this, 'wp_head'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
-		add_action('init', array(&$this, 'init_switch'));
+		add_action('init', array(&$this, 'init_switch'), 11);
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautop_substitute'));
