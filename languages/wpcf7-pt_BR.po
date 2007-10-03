@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-10-01 14:50-0300\n"
+"PO-Revision-Date: 2007-10-02 15:43-0300\n"
 "Last-Translator: Leonardo <pinheiroweb@gmail.com>\n"
 "Language-Team: Leonardo Pinheiro <pinheiroweb@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "Sua mensagem foi enviada com sucesso. Obrigado."
 
 #: contact-form-7/wp-contact-form-7.php:251
 msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Erro ao enviar sua mensagem. Por favor tente mais tarde ou entre em contato com a banda. (banda@eletrikabarbarella.com.br)"
+msgstr "Erro ao enviar sua mensagem. Por favor tente mais tarde ou entre em contato com o webmaster."
 
 #: contact-form-7/wp-contact-form-7.php:324
 #: contact-form-7/wp-contact-form-7.php:424
@@ -78,7 +78,7 @@ msgstr "Por favor preencha os campos obrigatórios e envie novamente."
 #: contact-form-7/wp-contact-form-7.php:358
 #: contact-form-7/wp-contact-form-7.php:409
 msgid "Please fill the required field."
-msgstr "Por favor preencha os campos obrigatórios.Por favor cumplimenta los campos necesarios"
+msgstr "Por favor preencha os campos obrigatórios."
 
 #: contact-form-7/wp-contact-form-7.php:361
 #: contact-form-7/wp-contact-form-7.php:402
