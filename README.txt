@@ -2,8 +2,8 @@
 Contributors: takayukister
 Tags: contact form, email, ajax
 Requires at least: 2.2
-Tested up to: 2.3-beta3
-Stable tag: 1.4.4
+Tested up to: 2.3
+Stable tag: 1.5
 
 Just another contact form plugin. Simple but flexible.
 
@@ -13,20 +13,14 @@ Just another contact form plugin. Simple but flexible.
 
 * Supports multiple contact forms.
 * You can customize form and mail contents with simple markup.
-* Client side validation and AJAX submitting with jQuery Form Plugin.
+* AJAX submitting with jQuery Form Plugin.
 * Spam filtering with Akismet.
+* Bot prevention with CAPTCHA.
 
 == Installation ==
 
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-
-== Frequently Asked Questions ==
-
-= Akismet says all messages are spam. What's wrong? =
-
-There are settings you need to do as well as checking in "Apply Akismet spam filter" checkbox.
-In the meantime, see this [release announcement](http://ideasilo.wordpress.com/2007/09/07/contact-form-7-14/).
 
 == Screenshots ==
 
