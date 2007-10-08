@@ -57,17 +57,18 @@
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail template', 'wpcf7'); ?></div>
-				<label for="wpcf7-mail-subject"><?php _e('Subject field:', 'wpcf7'); ?></label><br />
-				<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" /><br />
-				<label for="wpcf7-mail-sender"><?php _e('Sender field:', 'wpcf7'); ?></label><br />
+				<label for="wpcf7-mail-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
+				<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>" /><br />
+				<label for="wpcf7-mail-sender"><?php _e('From:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-mail-sender" name="wpcf7-mail-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['sender']); ?>" /><br />
+				<label for="wpcf7-mail-subject"><?php _e('Subject:', 'wpcf7'); ?></label><br />
+				<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" /><br />
 				<label for="wpcf7-mail-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
 				<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Options', 'wpcf7'); ?></div>
-				<label for="wpcf7-options-recipient"><?php _e('Recipient address:', 'wpcf7'); ?></label><br />
-				<input type="text" id="wpcf7-options-recipient" name="wpcf7-options-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
+				<input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 			</div>
 
 			<p class="submit">

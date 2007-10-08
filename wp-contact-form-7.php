@@ -284,9 +284,10 @@ class tam_contact_form_seven {
 			$mail_subject = trim($_POST['wpcf7-mail-subject']);
 			$mail_sender = trim($_POST['wpcf7-mail-sender']);
 			$mail_body = trim($_POST['wpcf7-mail-body']);
-			$options_recipient = trim($_POST['wpcf7-options-recipient']);
+			$mail_recipient = trim($_POST['wpcf7-mail-recipient']);
+			$options_recipient = trim($_POST['wpcf7-options-recipient']); // For backward compatibility.
 			
-			$mail = array('subject' => $mail_subject, 'sender' => $mail_sender, 'body' => $mail_body);
+			$mail = array('subject' => $mail_subject, 'sender' => $mail_sender, 'body' => $mail_body, 'recipient' => $mail_recipient);
 			$options = array('recipient' => $options_recipient);
 			
 			$contact_forms[$id] = compact('title', 'form', 'mail', 'options');
@@ -338,11 +339,12 @@ class tam_contact_form_seven {
 		$subject = '[your-subject]';
 		$sender = '[your-name] <[your-email]>';
 		$body = '[your-message]';
-		return compact('subject', 'sender', 'body');
+		$recipient = get_option('admin_email');
+		return compact('subject', 'sender', 'body', 'recipient');
 	}
 
 	function default_options_template() {
-		$recipient = get_option('admin_email');
+		$recipient = get_option('admin_email'); // For backward compatibility.
 		return compact('recipient');
 	}
 	
