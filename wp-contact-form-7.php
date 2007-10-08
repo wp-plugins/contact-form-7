@@ -292,6 +292,7 @@ class tam_contact_form_seven {
 				);
 			
 			$mail_2 = array(
+				'active' => (1 == $_POST['wpcf7-mail-2-active']) ? true : false,
 				'subject' => trim($_POST['wpcf7-mail-2-subject']),
 				'sender' => trim($_POST['wpcf7-mail-2-sender']),
 				'body' => trim($_POST['wpcf7-mail-2-body']),
