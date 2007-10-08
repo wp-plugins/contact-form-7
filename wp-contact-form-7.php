@@ -137,6 +137,18 @@ class tam_contact_form_seven {
 		$mail_headers = "From: $mail_sender\n"
 			. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
 		if (@wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers)) {
+			
+			// Mail 2
+			if ($contact_form['mail_2']['active']) {
+				$mail_2_subject = preg_replace_callback($regex, $callback, $contact_form['mail_2']['subject']);
+				$mail_2_sender = preg_replace_callback($regex, $callback, $contact_form['mail_2']['sender']);
+				$mail_2_body = preg_replace_callback($regex, $callback, $contact_form['mail_2']['body']);
+				$mail_2_recipient = preg_replace_callback($regex, $callback, $contact_form['mail_2']['recipient']);
+				$mail_2_headers = "From: $mail_2_sender\n"
+					. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
+				@wp_mail($mail_2_recipient, $mail_2_subject, $mail_2_body, $mail_2_headers);
+			}
+			
 			return true;
 		} else {
 			return false;
