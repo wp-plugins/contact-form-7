@@ -329,6 +329,7 @@ class tam_contact_form_seven {
 		$cf = array('title' => $title,
 			'form' => $this->default_form_template(),
 			'mail' => $this->default_mail_template(),
+			'mail_2' => $this->default_mail_2_template(),
 			'options' => $this->default_options_template());
 		if ($initial)
 			$cf['initial'] = true;
@@ -354,6 +355,15 @@ class tam_contact_form_seven {
 		$body = '[your-message]';
 		$recipient = get_option('admin_email');
 		return compact('subject', 'sender', 'body', 'recipient');
+	}
+
+	function default_mail_2_template() {
+		$active = false;
+		$subject = '[your-subject]';
+		$sender = '[your-name] <[your-email]>';
+		$body = '[your-message]';
+		$recipient = '[your-email]';
+		return compact('active', 'subject', 'sender', 'body', 'recipient');
 	}
 
 	function default_options_template() {
