@@ -4,12 +4,12 @@
 <div class="wrap">
 	<h2><?php _e('Contact Form 7', 'wpcf7'); ?></h2>
 	<ul class="cfmenu">
-		<?php foreach ($contact_forms as $key => $cf) : if (! $cf['initial']) : ?>
+		<?php foreach ($contact_forms as $key => $value) : if (! $value['initial']) : ?>
 		<li class="<?php if ($key == $current) echo 'current' ?>">
 			<?php if ($key == $current) : ?>
-			<?php echo $cf['title']; ?>
+			<?php echo $value['title']; ?>
 			<?php else : ?>
-			<a href="<?php echo $base_url . '&contactform=' . $key; ?>"><?php echo $cf['title']; ?></a>
+			<a href="<?php echo $base_url . '&contactform=' . $key; ?>"><?php echo $value['title']; ?></a>
 			<?php endif; ?>
 		</li>
 		<?php endif; endforeach; ?>
@@ -24,7 +24,6 @@
 			<?php endif; ?>
 		</li>
 	</ul>
-	<?php $cf = stripslashes_deep($contact_forms[$current]); ?>
 	<div class="cfdiv">
 
 		<form method="post" action="<?php echo $base_url . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">

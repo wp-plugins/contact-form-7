@@ -298,6 +298,8 @@ class tam_contact_form_seven {
 				$current = min(array_keys($contact_forms));
 		}
 
+		$cf = stripslashes_deep($contact_forms[$current]);
+
 		include 'includes/admin-panel.php';
 	}
 
