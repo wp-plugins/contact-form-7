@@ -133,9 +133,10 @@ class tam_contact_form_seven {
 		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
 		$mail_sender = preg_replace_callback($regex, $callback, $contact_form['mail']['sender']);
 		$mail_body = preg_replace_callback($regex, $callback, $contact_form['mail']['body']);
+		$mail_recipient = preg_replace_callback($regex, $callback, $contact_form['mail']['recipient']);
 		$mail_headers = "From: $mail_sender\n"
 			. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-		if (@wp_mail($contact_form['options']['recipient'], $mail_subject, $mail_body, $mail_headers)) {
+		if (@wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers)) {
 			return true;
 		} else {
 			return false;
