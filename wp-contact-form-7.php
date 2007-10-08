@@ -280,21 +280,27 @@ class tam_contact_form_seven {
 			$this->update_contact_forms($contact_forms);
 		} elseif (isset($_POST['wpcf7-save'])) {
 			check_admin_referer('wpcf7-save_' . $id);
+			
 			$title = trim($_POST['wpcf7-title']);
 			$form = trim($_POST['wpcf7-form']);
-			$mail_subject = trim($_POST['wpcf7-mail-subject']);
-			$mail_sender = trim($_POST['wpcf7-mail-sender']);
-			$mail_body = trim($_POST['wpcf7-mail-body']);
-			$mail_recipient = trim($_POST['wpcf7-mail-recipient']);
-			$mail_2_subject = trim($_POST['wpcf7-mail-2-subject']);
-			$mail_2_sender = trim($_POST['wpcf7-mail-2-sender']);
-			$mail_2_body = trim($_POST['wpcf7-mail-2-body']);
-			$mail_2_recipient = trim($_POST['wpcf7-mail-2-recipient']);
-			$options_recipient = trim($_POST['wpcf7-options-recipient']); // For backward compatibility.
 			
-			$mail = array('subject' => $mail_subject, 'sender' => $mail_sender, 'body' => $mail_body, 'recipient' => $mail_recipient);
-			$mail_2 = array('subject' => $mail_2_subject, 'sender' => $mail_2_sender, 'body' => $mail_2_body, 'recipient' => $mail_2_recipient);
-			$options = array('recipient' => $options_recipient);
+			$mail = array(
+				'subject' => trim($_POST['wpcf7-mail-subject']),
+				'sender' => trim($_POST['wpcf7-mail-sender']),
+				'body' => trim($_POST['wpcf7-mail-body']),
+				'recipient' => trim($_POST['wpcf7-mail-recipient'])
+				);
+			
+			$mail_2 = array(
+				'subject' => trim($_POST['wpcf7-mail-2-subject']),
+				'sender' => trim($_POST['wpcf7-mail-2-sender']),
+				'body' => trim($_POST['wpcf7-mail-2-body']),
+				'recipient' => trim($_POST['wpcf7-mail-2-recipient'])
+				);
+			
+			$options = array(
+				'recipient' => trim($_POST['wpcf7-options-recipient']) // For backward compatibility.
+				);
 			
 			$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
 			$updated_message = sprintf(__('Contact form "%s" saved. ', 'wpcf7'), $contact_forms[$id]['title']);
