@@ -69,7 +69,7 @@
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail template (2)', 'wpcf7'); ?></div>
 				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
-				<label for="wpcf7-mail-2-active"><?php _e('Activate mail template (2)', 'wpcf7'); ?></label><br />
+				<label for="wpcf7-mail-2-active"><?php _e('Use mail template (2)', 'wpcf7'); ?></label><br />
 				<label for="wpcf7-mail-2-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-mail-2-recipient" name="wpcf7-mail-2-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['recipient']); ?>" /><br />
 				<label for="wpcf7-mail-2-sender"><?php _e('From:', 'wpcf7'); ?></label><br />
