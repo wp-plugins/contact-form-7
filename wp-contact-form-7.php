@@ -127,6 +127,7 @@ class tam_contact_form_seven {
 	}
 	
 	function mail($contact_form) {
+		$contact_form = $this->upgrade_160($contact_form);
 		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
 		$callback = create_function('$matches', 'if (isset($_POST[$matches[1]])) return stripslashes($_POST[$matches[1]]); else return $matches[0];');
 		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
@@ -244,6 +245,12 @@ class tam_contact_form_seven {
 		update_option('wpcf7', $wpcf7);
 	}
 
+	function upgrade_160($contact_form) {
+		if (! isset($contact_form['mail']['recipient']))
+			$contact_form['mail']['recipient'] = $contact_form['options']['recipient'];
+		return $contact_form;
+	}
+
 /* Admin panel */
 
 	function add_pages() {
@@ -299,6 +306,7 @@ class tam_contact_form_seven {
 		}
 
 		$cf = stripslashes_deep($contact_forms[$current]);
+		$cf = $this->upgrade_160($cf);
 
 		include 'includes/admin-panel.php';
 	}
