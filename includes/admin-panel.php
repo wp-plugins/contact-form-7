@@ -18,18 +18,16 @@
 </div>
 <?php if ($cf) : ?>
 <div class="wrap">
+	<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
+		<?php wp_nonce_field('wpcf7-save_' . $current); ?>
+		<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
+		<?php if (! $unsaved) : ?>
+		<div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
+			<input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
+				<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
+		</div>
+		<?php endif; ?>
 	<div class="cfdiv">
-
-		<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
-			<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
-			
-			<?php if (! $unsaved) : ?>
-			<div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
-				<input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
-					<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
-			</div>
-			<?php endif; ?>
-			
 			<div class="fieldset">
 				<label for="wpcf7-title"><?php _e('Title', 'wpcf7'); ?></label>
 				<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" onchange="wpcf7UpdateAnchor(this.value);" />
@@ -81,15 +79,15 @@
 				<textarea id="wpcf7-mail-2-body" name="wpcf7-mail-2-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail_2']['body']); ?></textarea>
 			</div>
 
+<!--
 			<div class="fieldset"><div class="legend"><?php _e('Options', 'wpcf7'); ?></div>
 				<input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 			</div>
+-->
 
 			<p class="submit">
 				<input type="submit" class="cfsave" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-				<?php wp_nonce_field('wpcf7-save_' . $current); ?>
 			</p>
-		</form>
 
 		<script type="text/javascript">
 			//<![CDATA[
@@ -426,5 +424,6 @@
 		</script>
 
 	</div>
+	</form>
 </div>
 <?php endif; ?>
