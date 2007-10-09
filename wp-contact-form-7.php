@@ -346,20 +346,18 @@ class tam_contact_form_seven {
 				break;
 		}
 		
-		if ('new' == $_GET['contactform'] || 0 == count($contact_forms)) {
+		if ('new' == $_GET['contactform']) {
 			$initial = true;
-			$contact_forms[] = array();
-			$current = max(array_keys($contact_forms));
-			$contact_forms[$current] = $this->default_pack(__('Contact form', 'wpcf7') . ' ' . $current, true);
-		} else {
+			$current = -1;
+			$cf = $this->default_pack(__('Untitled', 'wpcf7'), true);
+		} elseif (array_key_exists($_GET['contactform'], $contact_forms)) {
 			$current = (int) $_GET['contactform'];
-			if (! array_key_exists($current, $contact_forms))
-				$current = min(array_keys($contact_forms));
+			$cf = stripslashes_deep($contact_forms[$current]);
+			$cf = $this->upgrade_160($cf);
+		} else {
+			$cf = null;
 		}
-
-		$cf = stripslashes_deep($contact_forms[$current]);
-		$cf = $this->upgrade_160($cf);
-
+		
 		include 'includes/admin-panel.php';
 	}
 
