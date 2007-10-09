@@ -267,6 +267,55 @@ class tam_contact_form_seven {
 /* Admin panel */
 
 	function add_pages() {
+		$base_url = get_option('siteurl') . '/wp-admin/options-general.php?page=' . plugin_basename(__FILE__);
+		$contact_forms = $this->contact_forms();
+		
+		if (isset($_POST['wpcf7-save'])) {
+			$id = $_POST['wpcf7-id'];
+			check_admin_referer('wpcf7-save_' . $id);
+			
+			$title = trim($_POST['wpcf7-title']);
+			$form = trim($_POST['wpcf7-form']);
+			$mail = array(
+				'subject' => trim($_POST['wpcf7-mail-subject']),
+				'sender' => trim($_POST['wpcf7-mail-sender']),
+				'body' => trim($_POST['wpcf7-mail-body']),
+				'recipient' => trim($_POST['wpcf7-mail-recipient'])
+				);
+			$mail_2 = array(
+				'active' => (1 == $_POST['wpcf7-mail-2-active']) ? true : false,
+				'subject' => trim($_POST['wpcf7-mail-2-subject']),
+				'sender' => trim($_POST['wpcf7-mail-2-sender']),
+				'body' => trim($_POST['wpcf7-mail-2-body']),
+				'recipient' => trim($_POST['wpcf7-mail-2-recipient'])
+				);
+			$options = array(
+				'recipient' => trim($_POST['wpcf7-options-recipient']) // For backward compatibility.
+				);
+			
+			if (array_key_exists($id, $contact_forms)) {
+				$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
+				$redirect_to = $base_url . '&contactform=' . $id . '&message=saved';
+			} else {
+				$key = max(array_keys($contact_forms)) + 1;
+				$contact_forms[$key] = compact('title', 'form', 'mail', 'mail_2', 'options');
+				$redirect_to = $base_url . '&contactform=' . $key . '&message=created';
+			}
+			$this->update_contact_forms($contact_forms);
+			
+			wp_redirect($redirect_to);
+			exit();
+		} elseif (isset($_POST['wpcf7-delete'])) {
+			$id = $_POST['wpcf7-id'];
+			check_admin_referer('wpcf7-delete_' . $id);
+			
+			unset($contact_forms[$id]);
+			$this->update_contact_forms($contact_forms);
+			
+			wp_redirect($base_url . '&message=deleted');
+			exit();
+		}
+	
 		add_options_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), 'manage_options', __FILE__, array(&$this, 'option_page'));
 	}
 	
@@ -285,41 +334,18 @@ class tam_contact_form_seven {
 		
 		$id = $_POST['wpcf7-id'];
 		
-		if (isset($_POST['wpcf7-delete'])) {
-			check_admin_referer('wpcf7-delete_' . $id);
-			$updated_message = sprintf(__('Contact form "%s" deleted. ', 'wpcf7'), $contact_forms[$id]['title']);
-			unset($contact_forms[$id]);
-			$this->update_contact_forms($contact_forms);
-		} elseif (isset($_POST['wpcf7-save'])) {
-			check_admin_referer('wpcf7-save_' . $id);
-			
-			$title = trim($_POST['wpcf7-title']);
-			$form = trim($_POST['wpcf7-form']);
-			
-			$mail = array(
-				'subject' => trim($_POST['wpcf7-mail-subject']),
-				'sender' => trim($_POST['wpcf7-mail-sender']),
-				'body' => trim($_POST['wpcf7-mail-body']),
-				'recipient' => trim($_POST['wpcf7-mail-recipient'])
-				);
-			
-			$mail_2 = array(
-				'active' => (1 == $_POST['wpcf7-mail-2-active']) ? true : false,
-				'subject' => trim($_POST['wpcf7-mail-2-subject']),
-				'sender' => trim($_POST['wpcf7-mail-2-sender']),
-				'body' => trim($_POST['wpcf7-mail-2-body']),
-				'recipient' => trim($_POST['wpcf7-mail-2-recipient'])
-				);
-			
-			$options = array(
-				'recipient' => trim($_POST['wpcf7-options-recipient']) // For backward compatibility.
-				);
-			
-			$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
-			$updated_message = sprintf(__('Contact form "%s" saved. ', 'wpcf7'), $contact_forms[$id]['title']);
-			$this->update_contact_forms($contact_forms);
+		switch ($_GET['message']) {
+			case 'created':
+				$updated_message = __('Contact form created.', 'wpcf7');
+				break;
+			case 'saved':
+				$updated_message = __('Contact form saved.', 'wpcf7');
+				break;
+			case 'deleted':
+				$updated_message = __('Contact form deleted.', 'wpcf7');
+				break;
 		}
-
+		
 		if ('new' == $_GET['contactform'] || 0 == count($contact_forms)) {
 			$initial = true;
 			$contact_forms[] = array();
