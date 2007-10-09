@@ -267,7 +267,8 @@ class tam_contact_form_seven {
 /* Admin panel */
 
 	function add_pages() {
-		$base_url = get_option('siteurl') . '/wp-admin/options-general.php?page=' . plugin_basename(__FILE__);
+		$base_url = get_option('siteurl') . '/wp-admin/options-general.php';
+		$page = plugin_basename(__FILE__);
 		$contact_forms = $this->contact_forms();
 		
 		if (isset($_POST['wpcf7-save'])) {
@@ -295,11 +296,11 @@ class tam_contact_form_seven {
 			
 			if (array_key_exists($id, $contact_forms)) {
 				$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
-				$redirect_to = $base_url . '&contactform=' . $id . '&message=saved';
+				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id . '&message=saved';
 			} else {
 				$key = max(array_keys($contact_forms)) + 1;
 				$contact_forms[$key] = compact('title', 'form', 'mail', 'mail_2', 'options');
-				$redirect_to = $base_url . '&contactform=' . $key . '&message=created';
+				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 			}
 			$this->update_contact_forms($contact_forms);
 			
@@ -312,7 +313,7 @@ class tam_contact_form_seven {
 			unset($contact_forms[$id]);
 			$this->update_contact_forms($contact_forms);
 			
-			wp_redirect($base_url . '&message=deleted');
+			wp_redirect($base_url . '?page=' . $page . '&message=deleted');
 			exit();
 		}
 	
@@ -329,7 +330,8 @@ class tam_contact_form_seven {
 	}
 	
 	function option_page() {
-		$base_url = $_SERVER['PHP_SELF'] . '?page=' . plugin_basename(__FILE__);
+		$base_url = get_option('siteurl') . '/wp-admin/options-general.php';
+		$page = plugin_basename(__FILE__);
 		$contact_forms = $this->contact_forms();
 		
 		$id = $_POST['wpcf7-id'];
