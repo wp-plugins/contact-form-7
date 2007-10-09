@@ -35,7 +35,7 @@ class tam_contact_form_seven {
 		add_action('activate_' . strtr(plugin_basename(__FILE__), '\\', '/'), array(&$this, 'set_initial'));
 		add_action('init', array(&$this, 'load_plugin_textdomain'));
 		add_action('admin_menu', array(&$this, 'add_pages'));
-		add_action('admin_head', array(&$this, 'admin_page_stylesheet'));
+		add_action('admin_head', array(&$this, 'admin_head'));
 		add_action('wp_head', array(&$this, 'wp_head'));
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
 		add_action('init', array(&$this, 'init_switch'), 11);
@@ -320,12 +320,22 @@ class tam_contact_form_seven {
 		add_options_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), 'manage_options', __FILE__, array(&$this, 'option_page'));
 	}
 	
-	function admin_page_stylesheet() {
+	function admin_head() {
 		global $plugin_page;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
 			$admin_stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/admin-stylesheet.css';
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
+			
+			$javascript_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/wpcf7-admin.js';
+?>
+<script type="text/javascript">
+//<![CDATA[
+var _wpcf7 = {  };
+//]]>
+</script>
+<script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
+<?php
 		}
 	}
 	
@@ -584,7 +594,9 @@ class tam_contact_form_seven {
 		
 ?>
 <script type="text/javascript">
+//<![CDATA[
 var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
+//]]>
 </script>
 <script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
 <?php
