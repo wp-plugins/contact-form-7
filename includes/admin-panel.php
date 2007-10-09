@@ -22,7 +22,14 @@
 
 		<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
 			<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
-
+			
+			<?php if (! $unsaved) : ?>
+			<div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
+				<input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
+					<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
+			</div>
+			<?php endif; ?>
+			
 			<div class="fieldset">
 				<label for="wpcf7-title"><?php _e('Title', 'wpcf7'); ?></label>
 				<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" onchange="wpcf7UpdateAnchor(this.value);" />
@@ -81,14 +88,6 @@
 			<p class="submit">
 				<input type="submit" class="cfsave" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
 				<?php wp_nonce_field('wpcf7-save_' . $current); ?>
-			</p>
-
-			<p class="submit" style="text-align: left;">
-				<?php if (! $cf['initial']) : ?>
-				<?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
-				<input type="submit" name="wpcf7-delete" class="cfdelete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
-					<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
-				<?php endif; ?>
 			</p>
 		</form>
 

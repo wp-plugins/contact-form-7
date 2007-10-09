@@ -2,12 +2,17 @@ div.cfdiv {
 	margin: 0;
 	padding: 24px; 
 }
+div.delete-link {
+	text-align: right;
+	margin: 0;
+	padding: 0;
+}
+div.delete-link input {
+	border: none;
+	cursor: pointer;
+}
 input.cfsave {
 	font-weight: bold;
-}
-input.cfdelete:hover {
-	background: #ce0000;
-	color: #fff;
 }
 p.important {
 	color: #eba80e;
