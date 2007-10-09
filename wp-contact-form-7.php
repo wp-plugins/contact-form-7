@@ -589,6 +589,9 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 	}
 	
 	function load_js() {
+		global $pagenow;
+		if (is_admin() && 'options-general.php' == $pagenow && plugin_basename(__FILE__) == $_GET['page'])
+			wp_enqueue_script('jquery');
 		if (! is_admin())
 			wp_enqueue_script('jquery-form', '/wp-includes/js/jquery/jquery.form.js', array('jquery'), '1.0.3');
 	}
