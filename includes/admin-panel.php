@@ -24,6 +24,9 @@
 			<?php endif; ?>
 		</li>
 	</ul>
+</div>
+<?php if ($cf) : ?>
+<div class="wrap">
 	<div class="cfdiv">
 
 		<form method="post" action="<?php echo $base_url . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
@@ -434,3 +437,4 @@
 
 	</div>
 </div>
+<?php endif; ?>
