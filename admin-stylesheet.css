@@ -1,32 +1,3 @@
-ul.cfmenu {
-	padding: 2em 0 3px;
-	border-bottom: 1px solid #777;
-}
-ul.cfmenu li {
-	display: inline; 
-	list-style: none;
-	margin: 1em 0.5em;
-}
-ul.cfmenu li.current {
-	padding: 4px;
-	border: 1px solid #777;
-	border-bottom: 1px solid #fff;
-	font-weight: bolder;
-}
-ul.cfmenu li.add-new {
-	margin-left: 1em;
-	color: #eba80e;
-}
-ul.cfmenu li.add-new a {
-	color: #eba80e;
-}
-ul.cfmenu a {
-	border-bottom: none;
-	color: #454545;
-}
-ul.cfmenu a:hover {
-	border-bottom: 1px solid #0e98ea;
-}
 div.cfdiv { 
 	margin: 0;
 	padding: 24px; 

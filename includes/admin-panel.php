@@ -3,33 +3,24 @@
 <?php endif; ?>
 <div class="wrap">
 	<h2><?php _e('Contact Form 7', 'wpcf7'); ?></h2>
-	<ul class="cfmenu">
-		<?php foreach ($contact_forms as $key => $value) : if (! $value['initial']) : ?>
-		<li class="<?php if ($key == $current) echo 'current' ?>">
-			<?php if ($key == $current) : ?>
-			<?php echo $value['title']; ?>
-			<?php else : ?>
-			<a href="<?php echo $base_url . '&contactform=' . $key; ?>"><?php echo $value['title']; ?></a>
-			<?php endif; ?>
-		</li>
-		<?php endif; endforeach; ?>
-		
-		<li class="add-new <?php if ($unsaved) echo 'current' ?>">
-			<?php if ($unsaved) : ?>
-				<?php _e('Add new', 'wpcf7'); ?>
-			<?php else : ?>
-			<a href="<?php echo $base_url . '&contactform=new'; ?>">
-				<?php _e('Add new', 'wpcf7'); ?>
-			</a>
-			<?php endif; ?>
-		</li>
-	</ul>
+	<?php if (! empty($contact_forms)) :?>
+	<form method="get" action="<?php echo $base_url; ?>">
+		<input type="hidden" name="page" value="<?php echo $page; ?>" />
+		<select name="contactform">
+		<?php foreach ($contact_forms as $k => $v) : ?>
+			<option value="<?php echo $k; ?>"><?php echo $v['title']; ?></option>
+		<?php endforeach; ?>
+		</select>
+		<input type="submit" value="<?php _e('Edit', 'wpcf7'); ?>" />
+	</form>
+	<?php endif; ?>
+	<p><a href="<?php echo $base_url . '?page=' . $page . '&contactform=new'; ?>"><?php _e('Add new', 'wpcf7'); ?></a></p>
 </div>
 <?php if ($cf) : ?>
 <div class="wrap">
 	<div class="cfdiv">
 
-		<form method="post" action="<?php echo $base_url . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
+		<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
 			<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
 
 			<div class="fieldset">
