@@ -14,8 +14,8 @@
 		</li>
 		<?php endif; endforeach; ?>
 		
-		<li class="add-new <?php if ($initial) echo 'current' ?>">
-			<?php if ($initial) : ?>
+		<li class="add-new <?php if ($unsaved) echo 'current' ?>">
+			<?php if ($unsaved) : ?>
 				<?php _e('Add new', 'wpcf7'); ?>
 			<?php else : ?>
 			<a href="<?php echo $base_url . '&contactform=new'; ?>">
@@ -33,7 +33,7 @@
 				<label for="wpcf7-title"><?php _e('Title', 'wpcf7'); ?></label>
 				<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" onchange="wpcf7UpdateAnchor(this.value);" />
 				
-				<?php if (! $initial) : ?>
+				<?php if (! $unsaved) : ?>
 				<p class="important">
 				<?php _e('Copy and paste this code into your post content.', 'wpcf7'); ?> &raquo;
 				<input type="text" id="contact-form-anchor-text" size="50" onfocus="this.select();" readonly="readonly" />

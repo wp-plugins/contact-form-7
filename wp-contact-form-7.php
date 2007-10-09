@@ -347,7 +347,7 @@ class tam_contact_form_seven {
 		}
 		
 		if ('new' == $_GET['contactform']) {
-			$initial = true;
+			$unsaved = true;
 			$current = -1;
 			$cf = $this->default_pack(__('Untitled', 'wpcf7'), true);
 		} elseif (array_key_exists($_GET['contactform'], $contact_forms)) {
