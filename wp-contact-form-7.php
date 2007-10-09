@@ -298,7 +298,7 @@ class tam_contact_form_seven {
 				$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
 				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id . '&message=saved';
 			} else {
-				$key = max(array_keys($contact_forms)) + 1;
+				$key = (empty($contact_forms)) ? 1 : max(array_keys($contact_forms)) + 1;
 				$contact_forms[$key] = compact('title', 'form', 'mail', 'mail_2', 'options');
 				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 			}
