@@ -40,7 +40,7 @@
 				<?php endif; ?>
 			</div>
 
-			<div class="fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
+			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
 				<input type="button" value="text" class="quick-button" onclick="wpcf7QuickPanel('text');" style="background-color: #cee4d4;" />
 				<input type="button" value="text*" class="quick-button" onclick="wpcf7QuickPanel('text*');" style="background-color: #cee4d4;" />

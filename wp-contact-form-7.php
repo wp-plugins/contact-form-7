@@ -331,7 +331,30 @@ class tam_contact_form_seven {
 ?>
 <script type="text/javascript">
 //<![CDATA[
-var _wpcf7 = {  };
+var _wpcf7 = {
+	siteurl: '<?php echo js_escape(get_option('siteurl')); ?>',
+	l10n: {
+		optional: "<?php echo js_escape(__('optional', 'wpcf7')); ?>",
+		generateTag: "<?php echo js_escape(__('Generate Tag', 'wpcf7')); ?>",
+		textField: "<?php echo js_escape(__('Text field', 'wpcf7')); ?>",
+		emailField: "<?php echo js_escape(__('Email field', 'wpcf7')); ?>",
+		textArea: "<?php echo js_escape(__('Text area', 'wpcf7')); ?>",
+		menu: "<?php echo js_escape(__('Drop-down menu', 'wpcf7')); ?>",
+		captcha: "<?php echo js_escape(__('CAPTCHA', 'wpcf7')); ?>",
+		submit: "<?php echo js_escape(__('Submit button', 'wpcf7')); ?>",
+		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
+		tagId: "<?php echo js_escape(__('Id', 'wpcf7')); ?>",
+		tagClasses: "<?php echo js_escape(__('Class', 'wpcf7')); ?>",
+		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
+		tagSize: "<?php echo js_escape(__('Size', 'wpcf7')); ?>",
+		tagMaxLength: "<?php echo js_escape(__('Max length', 'wpcf7')); ?>",
+		defaultValue: "<?php echo js_escape(__('Default value', 'wpcf7')); ?>",
+		akismet: "<?php echo js_escape(__('Akismet', 'wpcf7')); ?>",
+		akismetAuthor: "<?php echo js_escape(__("This field requires author's name", 'wpcf7')); ?>",
+		akismetAuthorUrl: "<?php echo js_escape(__("This field requires author's URL", 'wpcf7')); ?>",
+		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>"
+	}
+};
 //]]>
 </script>
 <script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
