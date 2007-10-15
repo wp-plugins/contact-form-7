@@ -332,7 +332,6 @@ class tam_contact_form_seven {
 <script type="text/javascript">
 //<![CDATA[
 var _wpcf7 = {
-	siteurl: '<?php echo js_escape(get_option('siteurl')); ?>',
 	l10n: {
 		optional: "<?php echo js_escape(__('optional', 'wpcf7')); ?>",
 		generateTag: "<?php echo js_escape(__('Generate Tag', 'wpcf7')); ?>",
@@ -348,11 +347,24 @@ var _wpcf7 = {
 		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
 		tagSize: "<?php echo js_escape(__('Size', 'wpcf7')); ?>",
 		tagMaxLength: "<?php echo js_escape(__('Max length', 'wpcf7')); ?>",
+		tagCols: "<?php echo js_escape(__('Cols', 'wpcf7')); ?>",
+		tagRows: "<?php echo js_escape(__('Rows', 'wpcf7')); ?>",
+		menuChoices: "<?php echo js_escape(__('Choices', 'wpcf7')); ?>",
+		label: "<?php echo js_escape(__('Label', 'wpcf7')); ?>",
 		defaultValue: "<?php echo js_escape(__('Default value', 'wpcf7')); ?>",
 		akismet: "<?php echo js_escape(__('Akismet', 'wpcf7')); ?>",
 		akismetAuthor: "<?php echo js_escape(__("This field requires author's name", 'wpcf7')); ?>",
 		akismetAuthorUrl: "<?php echo js_escape(__("This field requires author's URL", 'wpcf7')); ?>",
-		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>"
+		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>",
+		generatedTag: "<?php echo js_escape(__("Generated tag", 'wpcf7')); ?>",
+		fgColor: "<?php echo js_escape(__("Foreground color", 'wpcf7')); ?>",
+		bgColor: "<?php echo js_escape(__("Background color", 'wpcf7')); ?>",
+		imageSize: "<?php echo js_escape(__("Image size", 'wpcf7')); ?>",
+		imageSizeSmall: "<?php echo js_escape(__("Small", 'wpcf7')); ?>",
+		imageSizeMedium: "<?php echo js_escape(__("Medium", 'wpcf7')); ?>",
+		imageSizeLarge: "<?php echo js_escape(__("Large", 'wpcf7')); ?>",
+		imageSettings: "<?php echo js_escape(__("Image settings", 'wpcf7')); ?>",
+		inputFieldSettings: "<?php echo js_escape(__("Input field settings", 'wpcf7')); ?>"
 	}
 };
 //]]>

@@ -93,3 +93,35 @@ div#quick-panel table th {
 div#quick-panel table td {
 	text-align: left;
 }
+div.tag-generator {
+	position: relative;
+	border: 1px solid #f8f8f8;
+	background: #fff;
+	padding: 10px;
+}
+div.tg-pane {
+    border: 1px solid #ddd;
+    background: #fbfbfb;
+    margin: 1ex 0 0;
+    padding: 10px;
+}
+div.tg-pane table td {
+	vertical-align: top;
+}
+div.tg-dropdown {
+    position: absolute;
+    top: 32px;
+    z-index: 10;
+    border: 1px solid #ddd;
+}
+span.tg-closebutton {
+    color: #777;
+    font: bold 16px monospace;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+div.tg-panetitle {
+    font: bold 132% sans-serif;
+    margin: 0 0 10px;
+    color: #777;
+}
