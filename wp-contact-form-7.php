@@ -356,7 +356,7 @@ var _wpcf7 = {
 		akismetAuthor: "<?php echo js_escape(__("This field requires author's name", 'wpcf7')); ?>",
 		akismetAuthorUrl: "<?php echo js_escape(__("This field requires author's URL", 'wpcf7')); ?>",
 		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>",
-		generatedTag: "<?php echo js_escape(__("Generated tag", 'wpcf7')); ?>",
+		generatedTag: "<?php echo js_escape(__("Copy and paste this tag into the form", 'wpcf7')); ?>",
 		fgColor: "<?php echo js_escape(__("Foreground color", 'wpcf7')); ?>",
 		bgColor: "<?php echo js_escape(__("Background color", 'wpcf7')); ?>",
 		imageSize: "<?php echo js_escape(__("Image size", 'wpcf7')); ?>",
@@ -364,7 +364,9 @@ var _wpcf7 = {
 		imageSizeMedium: "<?php echo js_escape(__("Medium", 'wpcf7')); ?>",
 		imageSizeLarge: "<?php echo js_escape(__("Large", 'wpcf7')); ?>",
 		imageSettings: "<?php echo js_escape(__("Image settings", 'wpcf7')); ?>",
-		inputFieldSettings: "<?php echo js_escape(__("Input field settings", 'wpcf7')); ?>"
+		inputFieldSettings: "<?php echo js_escape(__("Input field settings", 'wpcf7')); ?>",
+		tagForImage: "<?php echo js_escape(__("For image", 'wpcf7')); ?>",
+		tagForInputField: "<?php echo js_escape(__("For input field", 'wpcf7')); ?>"
 	}
 };
 //]]>

@@ -105,8 +105,19 @@ div.tg-pane {
     margin: 1ex 0 0;
     padding: 10px;
 }
+div.tg-pane table {
+	width: 70%;
+	margin: 0 0 0.7em 0;
+}
+div.tg-pane table caption {
+	text-align: left;
+	padding: 0 0 0.2em 0;
+	font-weight: bolder;
+	color: #777;
+}
 div.tg-pane table td {
 	vertical-align: top;
+	width: 40%;
 }
 div.tg-dropdown {
     position: absolute;

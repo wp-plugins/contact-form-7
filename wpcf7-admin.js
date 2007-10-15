@@ -88,7 +88,7 @@ function tgPane(pane, tagType) {
   var tgInputs = {};
   jQuery.each([ 'tagName', 'tagId', 'tagClasses', 'tagId2', 'tagClasses2', 'defaultValue',
     'tagSize', 'tagMaxLength', 'tagCols', 'tagRows', 'label', 'fgColor', 'bgColor' ], function(i, n) {
-    tgInputs[n] = jQuery('<input type="text" size="40" />');
+    tgInputs[n] = jQuery('<input type="text" />');
     tgInputs[n].css({ width: '80%', 'font-size': 'smaller' });
     tgInputs[n].change(function() {
       tgCreateTag(tagType, tgInputs, n);
@@ -111,26 +111,29 @@ function tgPane(pane, tagType) {
   });
   jQuery.each([ 'tag1st', 'tag2nd' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="text" readonly="readonly" onfocus="this.select()" />');
-    tgInputs[n].css({ width: '96%', 'border-color': '#555' });
+    tgInputs[n].css({ width: '96%', 'border-color': '#555', 'background-color': '#fff' });
   });
   
   switch (tagType) {
     case 'textField':
     case 'emailField':
-      var table = jQuery('<table></table>');
-      pane.append(table);
-      
-      table.append(tgTr(
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      table1.append(tgTr(
         jQuery('<span>&nbsp;' + _wpcf7.l10n.isRequiredField + '</span>').prepend(tgInputs.isRequiredField)
       ));
-      table.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName)
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
       ));
-      table.append(tgTr(
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagSize + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
         jQuery('<span>' + _wpcf7.l10n.tagMaxLength + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
         jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
@@ -142,96 +145,114 @@ function tgPane(pane, tagType) {
       } else if ('emailField' == tagType) {
         akismetOpts.append(tgInputs.akismetAuthorEmail).append('&nbsp;' + _wpcf7.l10n.akismetAuthorEmail);
       }
-      table.append(tgTr(
+      table2.append(tgTr(
         akismetOpts,
         jQuery('<span>' + _wpcf7.l10n.defaultValue + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.defaultValue)
       ));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag1st).wrap('<tr></tr>'));
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'textArea':
-      var table = jQuery('<table></table>');
-      pane.append(table);
-      
-      table.append(tgTr(
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      table1.append(tgTr(
         jQuery('<span>&nbsp;' + _wpcf7.l10n.isRequiredField + '</span>').prepend(tgInputs.isRequiredField)
       ));
-      table.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName)
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
       ));
-      table.append(tgTr(
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagCols + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagCols),
         jQuery('<span>' + _wpcf7.l10n.tagRows + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagRows)
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
         jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.defaultValue + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.defaultValue)
       ));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag1st).wrap('<tr></tr>'));
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'menu':
-      var table = jQuery('<table></table>');
-      pane.append(table);
-      
-      table.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName)
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
       ));
-      table.append(tgTr(
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
         jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
       ));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag1st).wrap('<tr></tr>'));
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'captcha':
-      var table = jQuery('<table></table>');
-      pane.append(table);
-      
-      table.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName)
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
       ));
-      table.append(tgTr('<em>' + _wpcf7.l10n.imageSettings + '</em>'));
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append('<caption>' + _wpcf7.l10n.imageSettings + '</caption>');
       var imageSizeOpts = jQuery('<span>' + _wpcf7.l10n.imageSize + ' (' + _wpcf7.l10n.optional + ')<br /></span>');
       imageSizeOpts.append(tgInputs.imageSizeSmall).append('&nbsp;' + _wpcf7.l10n.imageSizeSmall);
-      imageSizeOpts.append('<br />');
+      imageSizeOpts.append('&emsp;');
       imageSizeOpts.append(tgInputs.imageSizeMedium).append('&nbsp;' + _wpcf7.l10n.imageSizeMedium);
-      imageSizeOpts.append('<br />');
+      imageSizeOpts.append('&emsp;');
       imageSizeOpts.append(tgInputs.imageSizeLarge).append('&nbsp;' + _wpcf7.l10n.imageSizeLarge);
-      table.append(tgTr(
+      table2.append(tgTr(
         imageSizeOpts
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.fgColor + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.fgColor),
         jQuery('<span>' + _wpcf7.l10n.bgColor + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.bgColor)
       ));
-      table.append(tgTr(
+      table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
         jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
-      table.append(tgTr('<em>' + _wpcf7.l10n.inputFieldSettings + '</em>'));
-      table.append(tgTr(
+      
+      var table3 = jQuery('<table></table>');
+      pane.append(table3);
+      table3.append('<caption>' + _wpcf7.l10n.inputFieldSettings + '</caption>');
+      table3.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagSize + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
         jQuery('<span>' + _wpcf7.l10n.tagMaxLength + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
       ));
-      table.append(tgTr(
+      table3.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId2),
         jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses2)
       ));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag1st).wrap('<tr></tr>'));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag2nd).wrap('<tr></tr>'));
+      pane.append(
+        jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '</div>')
+          .append('<br />').append('1) ' + _wpcf7.l10n.tagForImage)
+          .append(tgInputs.tag1st)
+          .append('<br />').append('2) ' + _wpcf7.l10n.tagForInputField)
+          .append(tgInputs.tag2nd)
+      );
       break;
     case 'submit':
       var table = jQuery('<table></table>');
       pane.append(table);
       
       table.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.label + '<br /></span>').append(tgInputs.label)
+        jQuery('<span>' + _wpcf7.l10n.label + '<br /></span>').append(tgInputs.label),
+        jQuery('<span></span>')
       ));
-      table.append(jQuery('<td colspan="2"></td>').append(_wpcf7.l10n.generatedTag + '<br />').append(tgInputs.tag1st).wrap('<tr></tr>'));
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
   }
   
@@ -255,6 +276,8 @@ function tgCreateTag(tagType, tgInputs, trigger) {
   jQuery.each([ 'tagName' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^0-9a-zA-Z:._-]/g, '').replace(/^[^a-zA-Z]+/, '');
+    if ('' == val)
+      val = tgDefaultName(tagType);
     tgInputs[n].val(val);
   });
   
@@ -264,18 +287,24 @@ function tgCreateTag(tagType, tgInputs, trigger) {
     tgInputs[n].val(val);
   });
   
-  jQuery.each([ 'tagId' ], function(i, n) {
+  jQuery.each([ 'tagId', 'tagId2' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^-0-9a-zA-Z_]/g, '');
     tgInputs[n].val(val);
   });
   
-  jQuery.each([ 'tagClasses' ], function(i, n) {
+  jQuery.each([ 'tagClasses', 'tagClasses2' ], function(i, n) {
     var val = tgInputs[n].val();
-    val = jQuery.trim(val.replace(/\s+/g, ' '));
     val = jQuery.map(val.split(' '), function(n) {
       return n.replace(/[^-0-9a-zA-Z_]/g, '');
     }).join(' ');
+    val = jQuery.trim(val.replace(/\s+/g, ' '));
+    tgInputs[n].val(val);
+  });
+  
+  jQuery.each([ 'fgColor', 'bgColor' ], function(i, n) {
+    var val = tgInputs[n].val();
+    val = val.replace(/[^0-9a-fA-F]/g, '');
     tgInputs[n].val(val);
   });
   
@@ -383,9 +412,33 @@ function tgCreateTag(tagType, tgInputs, trigger) {
         options.push('size:m');
       if (tgInputs.imageSizeLarge.is(':checked'))
         options.push('size:l');
+      if (tgInputs.fgColor.val())
+        options.push('fg:#' + tgInputs.fgColor.val());
+      if (tgInputs.bgColor.val())
+        options.push('bg:#' + tgInputs.bgColor.val());
+      if (tgInputs.tagId.val())
+        options.push('id:' + tgInputs.tagId.val());
+      if (tgInputs.tagClasses.val())
+        jQuery.each(tgInputs.tagClasses.val().split(' '), function(i, n) {
+          options.push('class:' + n);
+        });
       options = (options.length > 0) ? ' ' + options.join(' ') : '';
       var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
       tgInputs.tag1st.val(tag);
+      // for captchar
+      var type = 'captchar';
+      var options = [];
+      if (tgInputs.tagSize.val() || tgInputs.tagMaxLength.val())
+        options.push(tgInputs.tagSize.val() + '/' + tgInputs.tagMaxLength.val());
+      if (tgInputs.tagId2.val())
+        options.push('id:' + tgInputs.tagId2.val());
+      if (tgInputs.tagClasses2.val())
+        jQuery.each(tgInputs.tagClasses2.val().split(' '), function(i, n) {
+          options.push('class:' + n);
+        });
+      options = (options.length > 0) ? ' ' + options.join(' ') : '';
+      var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
+      tgInputs.tag2nd.val(tag);
       break;
     case 'submit':
       var type = 'submit';
@@ -395,5 +448,20 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       var tag = '[' + type + label +  ']';
       tgInputs.tag1st.val(tag);
       break;
+  }
+}
+
+function tgDefaultName(tagType) {
+  var rand = Math.floor(Math.random() * 1000);
+  if ('textField' == tagType) {
+    return 'text-' + rand;
+  } else if ('emailField' == tagType) {
+    return 'email-' + rand;
+  } else if ('textArea' == tagType) {
+    return 'textarea-' + rand;
+  } else if ('menu' == tagType) {
+    return 'menu-' + rand;
+  } else if ('captcha' == tagType) {
+    return 'captcha-' + rand;
   }
 }
