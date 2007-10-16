@@ -107,10 +107,10 @@ function tagGenerator() {
     });
     submenu.click(function() {
       dropdown.hide();
-      pane.not(':hidden').slideUp('fast');
+      pane.hide();
       pane.empty();
       tgPane(pane, n);
-      pane.slideDown('normal');
+      pane.show();
       return false;
     });
     dropdown.append(submenu);
@@ -126,7 +126,7 @@ function tgPane(pane, tagType) {
   closeButtonDiv.css({ float: 'right' });
   var closeButton = jQuery('<span class="tg-closebutton">&#215;</span>');
   closeButton.click(function() {
-    pane.slideUp('fast').empty();
+    pane.hide().empty();
   });
   closeButtonDiv.append(closeButton);
   pane.append(closeButtonDiv);
@@ -153,7 +153,7 @@ function tgPane(pane, tagType) {
   });
   jQuery.each([ 'menuChoices' ], function(i, n) {
     tgInputs[n] = jQuery('<textarea></textarea>');
-    tgInputs[n].css({ width: '80%', 'font-size': 'smaller' });
+    tgInputs[n].css({ width: '80%', height: '100px', 'font-size': 'smaller' });
     tgInputs[n].change(function() {
       tgCreateTag(tagType, tgInputs, n);
     });

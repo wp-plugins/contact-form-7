@@ -99,6 +99,7 @@ div.tg-pane input.tag {
 div.tg-dropdown {
     position: absolute;
     top: 26px;
+	left: 0;
     z-index: 10;
     border: 1px solid #ddd;
 }
