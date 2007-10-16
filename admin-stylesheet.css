@@ -9,16 +9,21 @@ ul.cfmenu li.addnew a {
 	color: #e6255b;
 }
 div.cfdiv {
+	position: relative;
 	margin: 0;
 	padding: 24px;
 }
 div.delete-link {
-	text-align: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 	margin: 0;
 	padding: 0;
 }
 div.delete-link input {
 	border: none;
+	background-color: #fff;
+	color: #f11;
 	cursor: pointer;
 }
 input.cfsave {

@@ -1,5 +1,12 @@
 jQuery(document).ready(function() {
   jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
+  
+  jQuery('div.delete-link input').mouseover(function() {
+    jQuery(this).css({ 'background-color': '#ff7' });
+  });
+  jQuery('div.delete-link input').mouseout(function() {
+    jQuery(this).css({ 'background-color': '#fff' });
+  });
 });
 
 function tagGenerator() {
