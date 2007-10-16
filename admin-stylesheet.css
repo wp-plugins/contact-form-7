@@ -1,6 +1,16 @@
-div.cfdiv { 
+ul.cfmenu li {
+	display: inline;
+	margin-right: 1em;
+}
+ul.cfmenu li.addnew {
+	margin-left: 1.5em;
+}
+ul.cfmenu li.addnew a {
+	color: #e6255b;
+}
+div.cfdiv {
 	margin: 0;
-	padding: 24px; 
+	padding: 24px;
 }
 div.delete-link {
 	text-align: right;
