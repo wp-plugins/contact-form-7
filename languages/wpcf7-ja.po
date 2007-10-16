@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-10-16 15:02+0900\n"
+"PO-Revision-Date: 2007-10-16 15:07+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -129,38 +129,32 @@ msgid "Input field settings"
 msgstr "入力項目の設定"
 
 #: contact-form-7/wp-contact-form-7.php:362
-#, fuzzy
 msgid "For image"
-msgstr "画像ファイルのURI："
+msgstr "画像"
 
 #: contact-form-7/wp-contact-form-7.php:363
-#, fuzzy
 msgid "For input field"
-msgstr "カスタム・フィールドが削除されました。"
+msgstr "入力項目"
 
 #: contact-form-7/wp-contact-form-7.php:364
 msgid "* One choice per line."
 msgstr "* 1行ごとに分けて入力してください。"
 
 #: contact-form-7/wp-contact-form-7.php:383
-#, fuzzy
 msgid "Contact form created."
-msgstr "新規ユーザーが作成されました。"
+msgstr "コンタクトフォームが作成されました。"
 
 #: contact-form-7/wp-contact-form-7.php:386
-#, fuzzy
 msgid "Contact form saved."
-msgstr "設定を保存しました。"
+msgstr "コンタクトフォームが保存されました。"
 
 #: contact-form-7/wp-contact-form-7.php:389
-#, fuzzy
 msgid "Contact form deleted."
-msgstr "すべてのスパムが削除されました。"
+msgstr "コンタクトフォームが削除されました。"
 
 #: contact-form-7/wp-contact-form-7.php:396
-#, fuzzy
 msgid "Untitled"
-msgstr "タイトル"
+msgstr "無題"
 
 #: contact-form-7/wp-contact-form-7.php:420
 msgid "Your Name"
@@ -221,20 +215,17 @@ msgid "Copy and paste this code into your post content."
 msgstr "次のコードをコピーして投稿の本文中にペーストして下さい。"
 
 #: contact-form-7/includes/admin-panel.php:33
-#, fuzzy
 msgid "Form"
-msgstr "登録フォーム"
+msgstr "フォーム"
 
 #: contact-form-7/includes/admin-panel.php:37
-#, fuzzy
 msgid "Mail"
-msgstr "メールアドレス"
+msgstr "メール"
 
 #: contact-form-7/includes/admin-panel.php:38
 #: contact-form-7/includes/admin-panel.php:51
-#, fuzzy
 msgid "To:"
-msgstr "%s のパーマリンク"
+msgstr "宛先:"
 
 #: contact-form-7/includes/admin-panel.php:40
 #: contact-form-7/includes/admin-panel.php:53
@@ -243,9 +234,8 @@ msgstr "差出人:"
 
 #: contact-form-7/includes/admin-panel.php:42
 #: contact-form-7/includes/admin-panel.php:55
-#, fuzzy
 msgid "Subject:"
-msgstr "題名"
+msgstr "件名:"
 
 #: contact-form-7/includes/admin-panel.php:44
 #: contact-form-7/includes/admin-panel.php:57
@@ -253,14 +243,12 @@ msgid "Message body:"
 msgstr "メッセージ本文:"
 
 #: contact-form-7/includes/admin-panel.php:48
-#, fuzzy
 msgid "Mail (2)"
-msgstr "メールアドレス"
+msgstr "メール (2)"
 
 #: contact-form-7/includes/admin-panel.php:50
-#, fuzzy
 msgid "Use mail (2)"
-msgstr "メールアドレス："
+msgstr "メール (2) を使う"
 
 #: contact-form-7/includes/admin-panel.php:64
 msgid "Save"
