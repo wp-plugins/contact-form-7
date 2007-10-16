@@ -8,10 +8,12 @@ ul.cfmenu li.addnew {
 ul.cfmenu li.addnew a {
 	color: #e6255b;
 }
-div.cfdiv {
+div.relative {
 	position: relative;
+}
+div.cfdiv {
 	margin: 0;
-	padding: 10px;
+	padding: 20px;
 }
 div.delete-link {
 	position: absolute;
@@ -53,10 +55,10 @@ div.fieldset div.legend {
 	margin-bottom: 0.5em;
 }
 input.wide {
-	width: 99%;
+	width: 96%;
 }
 textarea {
-	width: 99%;
+	width: 96%;
 }
 label.disabled {
 	color: #777;

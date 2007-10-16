@@ -16,13 +16,13 @@
 	</ul>
 </div>
 <?php if ($cf) : ?>
-<div class="wrap">
+<div class="wrap relative">
 	<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
 		<?php wp_nonce_field('wpcf7-save_' . $current); ?>
 		<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
+		<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" />
+
 		<div class="cfdiv">
-			<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" />
-				
 			<?php if (! $unsaved) : ?>
 			<p class="tagcode">
 			<?php _e('Copy and paste this code into your post content.', 'wpcf7'); ?><br />
@@ -63,15 +63,14 @@
 			<p class="submit">
 				<input type="submit" class="cfsave" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
 			</p>
+		</div>
 			
 		<?php if (! $unsaved) : ?>
-			<div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
-				<input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
-					<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
-			</div>
-		<?php endif; ?>
-
+		<div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
+			<input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
+				<?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
 		</div>
+		<?php endif; ?>
 	</form>
 </div>
 <?php endif; ?>
