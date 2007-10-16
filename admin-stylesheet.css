@@ -109,8 +109,8 @@ div.tag-generator {
 	padding: 5px 0 5px 1px;
 }
 div.tg-pane {
-    border: 1px solid #ddd;
-    background: #f7f7f7;
+    border: 1px solid #999;
+    background: #fff;
     margin: 1ex 0 0;
     padding: 10px;
 }
@@ -127,6 +127,12 @@ div.tg-pane table caption {
 div.tg-pane table td {
 	vertical-align: top;
 	width: 40%;
+}
+div.tg-pane input.tag {
+	border: 1px solid #777;
+	font-weight: bolder;
+	color: #333;
+	background-color: #fff;
 }
 div.tg-dropdown {
     position: absolute;

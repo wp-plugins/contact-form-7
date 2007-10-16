@@ -111,8 +111,8 @@ function tgPane(pane, tagType) {
     });
   });
   jQuery.each([ 'tag1st', 'tag2nd' ], function(i, n) {
-    tgInputs[n] = jQuery('<input type="text" readonly="readonly" onfocus="this.select()" />');
-    tgInputs[n].css({ width: '96%', 'border-color': '#555', 'background-color': '#fff' });
+    tgInputs[n] = jQuery('<input type="text" class="tag" readonly="readonly" onfocus="this.select()" />');
+    tgInputs[n].css({ width: '96%' });
   });
   
   switch (tagType) {
