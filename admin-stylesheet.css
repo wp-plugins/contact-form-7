@@ -61,53 +61,6 @@ label.disabled {
 p.submit {
 	margin: 0 24px;
 }
-input.quick-button {
-	background: #fff url( images/fade-butt.png ) repeat-x 0 -2px;
-	margin: 3px 0;
-	padding: 1px 0;
-}
-div#quick-panel {
-	display: none;
-	margin: 0 0 4px;
-	padding: 4px;
-	width: 99%;
-}
-div#quick-panel div.close {
-	float: right;
-	font-size: 8pt;
-	font-weight: bold;
-	border: 1px solid #999;
-	background: #bbb;
-	color: #fff;
-	padding: 1px 3px;
-	cursor: pointer;
-}
-div#quick-panel input, div#quick-panel textarea {
-	background: #fff;
-	width: 200px;
-}
-div#quick-panel input.inline-opt {
-	width: 1em;
-	vertical-align: middle;
-}
-div#quick-panel input.qp-button {
-	background: #fff url( images/fade-butt.png ) repeat-x 0 -2px;
-	margin: 3px 1px 2px;
-	padding: 2px;
-}
-div#quick-panel input.required {
-	border: 1px solid #777;
-}
-div#quick-panel table tr {
-	vertical-align: top;
-}
-div#quick-panel table th {
-	text-align: right;
-	padding-left: 1em;
-}
-div#quick-panel table td {
-	text-align: left;
-}
 div.tag-generator {
 	position: relative;
 	background: #fff;
