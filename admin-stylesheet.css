@@ -95,13 +95,12 @@ div#quick-panel table td {
 }
 div.tag-generator {
 	position: relative;
-	border: 1px solid #f8f8f8;
 	background: #fff;
-	padding: 10px;
+	padding: 5px 0 5px 1px;
 }
 div.tg-pane {
     border: 1px solid #ddd;
-    background: #fbfbfb;
+    background: #f7f7f7;
     margin: 1ex 0 0;
     padding: 10px;
 }
@@ -121,7 +120,7 @@ div.tg-pane table td {
 }
 div.tg-dropdown {
     position: absolute;
-    top: 32px;
+    top: 24px;
     z-index: 10;
     border: 1px solid #ddd;
 }

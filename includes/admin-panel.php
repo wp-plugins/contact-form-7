@@ -41,7 +41,7 @@
 			</div>
 
 			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
-				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
+				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea><!--
 				<input type="button" value="text" class="quick-button" onclick="wpcf7QuickPanel('text');" style="background-color: #cee4d4;" />
 				<input type="button" value="text*" class="quick-button" onclick="wpcf7QuickPanel('text*');" style="background-color: #cee4d4;" />
 				<input type="button" value="email" class="quick-button" onclick="wpcf7QuickPanel('email');" style="background-color: #e6edb4;" />
@@ -52,7 +52,7 @@
 				<input type="button" value="captchac" class="quick-button" onclick="wpcf7QuickPanel('captchac');" style="background-color: #d5e8cb;" />
 				<input type="button" value="captchar" class="quick-button" onclick="wpcf7QuickPanel('captchar');" style="background-color: #d5e8cb;" />
 				<input type="button" value="submit" class="quick-button" onclick="wpcf7QuickPanel('submit');" style="background-color: #e5d6c2;" />
-				<div id="quick-panel"></div>
+				<div id="quick-panel"></div>-->
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail template', 'wpcf7'); ?></div>

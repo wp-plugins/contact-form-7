@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  jQuery('#form-content-fieldset').append(tagGenerator());
+  jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
 });
 
 function tagGenerator() {
@@ -59,9 +59,10 @@ function tagGenerator() {
     });
     submenu.click(function() {
       dropdown.hide();
+      pane.not(':hidden').slideUp('fast');
       pane.empty();
       tgPane(pane, n);
-      pane.show();
+      pane.slideDown('normal');
       return false;
     });
     dropdown.append(submenu);
@@ -77,7 +78,7 @@ function tgPane(pane, tagType) {
   closeButtonDiv.css({ float: 'right' });
   var closeButton = jQuery('<span class="tg-closebutton">&#215;</span>');
   closeButton.click(function() {
-    pane.hide().empty();
+    pane.slideUp('fast').empty();
   });
   closeButtonDiv.append(closeButton);
   pane.append(closeButtonDiv);
@@ -257,7 +258,6 @@ function tgPane(pane, tagType) {
   }
   
   tgCreateTag(tagType, tgInputs);
-  pane.slideDown('normal');
 }
 
 function tgTr() {
