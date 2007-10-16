@@ -48,11 +48,14 @@ input#contact-form-anchor-text {
 	width: 96%;
 }
 div.fieldset {
-	margin: 1.5em 0;
+	margin: 2em 0;
 }
 div.fieldset div.legend {
 	font-weight: bolder;
 	margin-bottom: 0.5em;
+}
+div.fieldset div.mail-field {
+	margin: 0.3em 0;
 }
 input.wide {
 	width: 96%;
