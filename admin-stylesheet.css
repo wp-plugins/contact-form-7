@@ -134,14 +134,13 @@ div.tg-pane table td {
 	width: 40%;
 }
 div.tg-pane input.tag {
-	border: 1px solid #777;
-	font-weight: bolder;
+	border: 1px solid #fff;
 	color: #333;
-	background-color: #fff;
+	background-color: #fff3f3;
 }
 div.tg-dropdown {
     position: absolute;
-    top: 24px;
+    top: 26px;
     z-index: 10;
     border: 1px solid #ddd;
 }

@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
   
   jQuery('div.delete-link input').mouseover(function() {
-    jQuery(this).css({ 'background-color': '#ff7' });
+    jQuery(this).css({ 'background-color': '#ffa' });
   });
   jQuery('div.delete-link input').mouseout(function() {
     jQuery(this).css({ 'background-color': '#fff' });
@@ -201,6 +201,7 @@ function tgPane(pane, tagType) {
       ));
       table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
+          .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>')
       ));
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
