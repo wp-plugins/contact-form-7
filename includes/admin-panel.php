@@ -33,7 +33,7 @@
 				<?php endif; ?>
 			</div>
 
-			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form content', 'wpcf7'); ?></div>
+			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form', 'wpcf7'); ?></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea><!--
 				<input type="button" value="text" class="quick-button" onclick="wpcf7QuickPanel('text');" style="background-color: #cee4d4;" />
 				<input type="button" value="text*" class="quick-button" onclick="wpcf7QuickPanel('text*');" style="background-color: #cee4d4;" />
@@ -48,7 +48,7 @@
 				<div id="quick-panel"></div>-->
 			</div>
 
-			<div class="fieldset"><div class="legend"><?php _e('Mail template', 'wpcf7'); ?></div>
+			<div class="fieldset"><div class="legend"><?php _e('Mail', 'wpcf7'); ?></div>
 				<label for="wpcf7-mail-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 				<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>" /><br />
 				<label for="wpcf7-mail-sender"><?php _e('From:', 'wpcf7'); ?></label><br />
@@ -59,7 +59,7 @@
 				<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
 			</div>
 
-			<div class="fieldset"><div class="legend"><?php _e('Mail template (2)', 'wpcf7'); ?></div>
+			<div class="fieldset"><div class="legend"><?php _e('Mail (2)', 'wpcf7'); ?></div>
 				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
 				<label for="wpcf7-mail-2-active"><?php _e('Use mail template (2)', 'wpcf7'); ?></label><br />
 				<label for="wpcf7-mail-2-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
