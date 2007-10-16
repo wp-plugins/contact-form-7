@@ -19,19 +19,16 @@
 <div class="wrap">
 	<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
 		<?php wp_nonce_field('wpcf7-save_' . $current); ?>
-		<input type="hidden" name="wpcf7-id" value="<?php echo $current; ?>" />
-	<div class="cfdiv">
-			<div class="fieldset">
-				<label for="wpcf7-title"><?php _e('Title', 'wpcf7'); ?></label>
-				<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" onchange="wpcf7UpdateAnchor(this.value);" />
+		<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
+		<div class="cfdiv">
+			<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>" />
 				
-				<?php if (! $unsaved) : ?>
-				<p class="important">
-				<?php _e('Copy and paste this code into your post content.', 'wpcf7'); ?> &raquo;
-				<input type="text" id="contact-form-anchor-text" size="50" onfocus="this.select();" readonly="readonly" />
-				</p>
-				<?php endif; ?>
-			</div>
+			<?php if (! $unsaved) : ?>
+			<p class="tagcode">
+			<?php _e('Copy and paste this code into your post content.', 'wpcf7'); ?><br />
+			<input type="text" id="contact-form-anchor-text" onfocus="this.select();" readonly="readonly" />
+			</p>
+			<?php endif; ?>
 
 			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form', 'wpcf7'); ?></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
@@ -74,24 +71,7 @@
 			</div>
 		<?php endif; ?>
 
-		<script type="text/javascript">
-			//<![CDATA[
-			
-			function wpcf7UpdateAnchor(title) {
-				if (title == null) title = document.getElementById('wpcf7-title').value;
-				var anchor = document.getElementById('contact-form-anchor-text');
-				if (anchor) {
-					title = title.replace(/-+/g, '-');
-					title = title.replace(/["'\[\]<>]/g, '');
-					anchor.value = '[contact-form <?php echo $current; ?> "' + title + '"]';
-				}
-			}
-
-			wpcf7UpdateAnchor();
-			//]]>
-		</script>
-
-	</div>
+		</div>
 	</form>
 </div>
 <?php endif; ?>

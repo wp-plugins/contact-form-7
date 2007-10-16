@@ -1,13 +1,53 @@
 jQuery(document).ready(function() {
   jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
   
-  jQuery('div.delete-link input').mouseover(function() {
-    jQuery(this).css({ 'background-color': '#ffa' });
+  jQuery('input#wpcf7-title').mouseover(function() {
+    jQuery(this).css({
+      'background-color': '#ffffdd'
+    });
   });
-  jQuery('div.delete-link input').mouseout(function() {
-    jQuery(this).css({ 'background-color': '#fff' });
+  
+  jQuery('input#wpcf7-title').mouseout(function() {
+    jQuery(this).css({
+      'background-color': '#fff'
+    });
   });
+  
+  jQuery('input#wpcf7-title').focus(function() {
+    jQuery(this).css({
+      cursor: 'text',
+      color: '#333',
+      border: '1px solid #777',
+      font: 'normal 13px Verdana, Arial, Helvetica, sans-serif',
+      'background-color': '#fff'
+    });
+  });
+  
+  jQuery('input#wpcf7-title').blur(function() {
+    jQuery(this).css({
+      cursor: 'pointer',
+      color: '#555',
+      border: 'none',
+      font: 'bold 20px serif',
+      'background-color': '#fff'
+    });
+  });
+  
+  jQuery('input#wpcf7-title').change(function() {
+    updateTag();
+  });
+  
+  updateTag();
 });
+
+function updateTag() {
+  var title = jQuery('input#wpcf7-title').val();
+  title = title.replace(/["'\[\]]/g, '');
+  jQuery('input#wpcf7-title').val(title);
+  var current = jQuery('input#wpcf7-id').val();
+  var tag = '[contact-form ' + current + ' "' + title + '"]';
+  jQuery('input#contact-form-anchor-text').val(tag);
+}
 
 function tagGenerator() {
   var menu = jQuery('<div class="tag-generator"></div>');

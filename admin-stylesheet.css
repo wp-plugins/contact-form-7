@@ -11,7 +11,7 @@ ul.cfmenu li.addnew a {
 div.cfdiv {
 	position: relative;
 	margin: 0;
-	padding: 24px;
+	padding: 10px;
 }
 div.delete-link {
 	position: absolute;
@@ -23,24 +23,27 @@ div.delete-link {
 div.delete-link input {
 	border: none;
 	background-color: #fff;
-	color: #f11;
+	color: #ff3535;
+	cursor: pointer;
+}
+input#wpcf7-title {
+	color: #555;
+	background-color: #fff;
+	border: none;
+	font: bold 20px serif;
 	cursor: pointer;
 }
 input.cfsave {
 	font-weight: bold;
 }
-p.important {
-	color: #eba80e;
-}
-span.notice {
-	color: #ed2b68;
+p.tagcode {
+	color: #333;
 }
 input#contact-form-anchor-text {
-	margin-left: 1em;
 	color: #333;
-	background: #fff;
-	border: 1px solid #eba80e;
-	font-family: monospace;
+	background: #fff3f3;
+	border: 1px solid #fff;
+	width: 96%;
 }
 div.fieldset {
 	margin: 1.5em 0;
