@@ -179,12 +179,12 @@ function tgPane(pane, tagType) {
       var table2 = jQuery('<table></table>');
       pane.append(table2);
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagSize + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
-        jQuery('<span>' + _wpcf7.l10n.tagMaxLength + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
+        jQuery('<span><code>size</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
+        jQuery('<span><code>maxlength</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
       ));
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
-        jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
       var akismetOpts = jQuery('<span>' + _wpcf7.l10n.akismet + ' (' + _wpcf7.l10n.optional + ')<br /></span>');
       if ('textField' == tagType) {
@@ -214,12 +214,12 @@ function tgPane(pane, tagType) {
       var table2 = jQuery('<table></table>');
       pane.append(table2);
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagCols + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagCols),
-        jQuery('<span>' + _wpcf7.l10n.tagRows + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagRows)
+        jQuery('<span><code>cols</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagCols),
+        jQuery('<span><code>rows</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagRows)
       ));
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
-        jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
       table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.defaultValue + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.defaultValue)
@@ -237,8 +237,8 @@ function tgPane(pane, tagType) {
       var table2 = jQuery('<table></table>');
       pane.append(table2);
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
-        jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
       table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
@@ -271,20 +271,20 @@ function tgPane(pane, tagType) {
         jQuery('<span>' + _wpcf7.l10n.bgColor + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.bgColor)
       ));
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
-        jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
       
       var table3 = jQuery('<table></table>');
       pane.append(table3);
       table3.append('<caption>' + _wpcf7.l10n.inputFieldSettings + '</caption>');
       table3.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagSize + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
-        jQuery('<span>' + _wpcf7.l10n.tagMaxLength + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
+        jQuery('<span><code>size</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
+        jQuery('<span><code>maxlength</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
       ));
       table3.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.tagId + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId2),
-        jQuery('<span>' + _wpcf7.l10n.tagClasses + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses2)
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId2),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses2)
       ));
       pane.append(
         jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '</div>')
