@@ -42,7 +42,8 @@ jQuery(document).ready(function() {
 
 function updateTag() {
   var title = jQuery('input#wpcf7-title').val();
-  title = title.replace(/["'\[\]]/g, '');
+  if (title)
+    title = title.replace(/["'\[\]]/g, '');
   jQuery('input#wpcf7-title').val(title);
   var current = jQuery('input#wpcf7-id').val();
   var tag = '[contact-form ' + current + ' "' + title + '"]';
