@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
   
   jQuery('input#wpcf7-title').mouseover(function() {
-    jQuery(this).css({
+    jQuery(this).not('.focus').css({
       'background-color': '#ffffdd'
     });
   });
@@ -14,6 +14,7 @@ jQuery(document).ready(function() {
   });
   
   jQuery('input#wpcf7-title').focus(function() {
+    jQuery(this).addClass('focus');
     jQuery(this).css({
       cursor: 'text',
       color: '#333',
@@ -24,6 +25,7 @@ jQuery(document).ready(function() {
   });
   
   jQuery('input#wpcf7-title').blur(function() {
+    jQuery(this).removeClass('focus');
     jQuery(this).css({
       cursor: 'pointer',
       color: '#555',
