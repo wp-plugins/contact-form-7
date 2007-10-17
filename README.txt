@@ -32,6 +32,7 @@ Contact Form 7 has been translated into the following languages.
 
 * Brazilian Portuguese, by [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/)
 * Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
+* Dutch, by [Chris Devriese](http://www.100it.be/)
 * French, by [Jillij](http://www.jillij.com/)
 * German, by [Marcel Spitau](http://blog.spitau.de)
 * Italian, by [Bruno](http://www.brunosalzano.com)

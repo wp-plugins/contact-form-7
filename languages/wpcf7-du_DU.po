@@ -1,0 +1,168 @@
+# translation of wpcf7-de_DE.po to deutsch
+# Marcel Spitau <marcel.spitau@mawspitau.de>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: wpcf7-du_DU\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-10-16 23:10+0100\n"
+"Last-Translator: Chris Devriese <chris.devriese@100it.be>\n"
+"Language-Team: Nederlands\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:128
+#: contact-form-7/wp-contact-form-7.php:201
+msgid "Contact form"
+msgstr "Contactformulier"
+
+#: contact-form-7/wp-contact-form-7.php:157
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:177
+#, php-format
+msgid "Contact form \"%s\" deleted. "
+msgstr "Contactformulier Nr. \"%s\" gewist."
+
+#: contact-form-7/wp-contact-form-7.php:193
+#, php-format
+msgid "Contact form \"%s\" saved. "
+msgstr "Contactformulier Nr. \"%s\" bewaard."
+
+#: contact-form-7/wp-contact-form-7.php:222
+msgid "Your Name"
+msgstr "Uw naam"
+
+#: contact-form-7/wp-contact-form-7.php:222
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "(required)"
+msgstr "(Noodzakelijk)"
+
+#: contact-form-7/wp-contact-form-7.php:224
+msgid "Your Email"
+msgstr "Uw E-Mail"
+
+#: contact-form-7/wp-contact-form-7.php:226
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: contact-form-7/wp-contact-form-7.php:228
+msgid "Your Message"
+msgstr "Uw bericht"
+
+#: contact-form-7/wp-contact-form-7.php:230
+#: contact-form-7/wp-contact-form-7.php:593
+msgid "Send"
+msgstr "Verstuur"
+
+#: contact-form-7/wp-contact-form-7.php:249
+msgid "Your message was sent successfully. Thanks."
+msgstr "Uw bericht werd succesvol verzonden. Bedankt."
+
+#: contact-form-7/wp-contact-form-7.php:251
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Uw bericht kon niet worden verzonden. Gelieve op een later moment opnieuw te proberen of de beheerder te contacteren."
+
+#: contact-form-7/wp-contact-form-7.php:324
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Validatiefouten opgetreden. Controleer de nodige  invulvelden en verstuur opnieuw"
+
+#: contact-form-7/wp-contact-form-7.php:351
+#: contact-form-7/wp-contact-form-7.php:358
+#: contact-form-7/wp-contact-form-7.php:409
+msgid "Please fill the required field."
+msgstr "Gelieve het nodige veld in te vullen"
+
+#: contact-form-7/wp-contact-form-7.php:361
+#: contact-form-7/wp-contact-form-7.php:402
+msgid "Email address seems invalid."
+msgstr "Uw emailadres lijkt niet geldig."
+
+#: contact-form-7/includes/admin-panel.php:19
+#: contact-form-7/includes/admin-panel.php:22
+msgid "Add new"
+msgstr "Nieuw formulier toevoegen"
+
+#: contact-form-7/includes/admin-panel.php:34
+msgid "Title"
+msgstr "Titel"
+
+#: contact-form-7/includes/admin-panel.php:39
+msgid "Copy and paste this code into your post content."
+msgstr "Kopieer en plak deze code in uw bericht."
+
+#: contact-form-7/includes/admin-panel.php:45
+msgid "Form content"
+msgstr "formulierinhoud"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Mail template"
+msgstr "Email sjabloon"
+
+#: contact-form-7/includes/admin-panel.php:59
+msgid "Subject field:"
+msgstr "Onderwerp:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Sender field:"
+msgstr "Afzender:"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Message body:"
+msgstr "Bericht:"
+
+#: contact-form-7/includes/admin-panel.php:67
+msgid "Options"
+msgstr "Opties"
+
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Recipient address:"
+msgstr "Ontvanger adres:"
+
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Save"
+msgstr "Bewaren"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Delete this contact form"
+msgstr "Dit formulier wissen"
+
+#: contact-form-7/includes/admin-panel.php:81
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"U gaat dit contactformulier wissen.\n"
+"'Onderbreken' om te stoppen,  'OK' om te wissen."
+
+#: contact-form-7/includes/admin-panel.php:137
+#: contact-form-7/includes/admin-panel.php:148
+msgid "Default value"
+msgstr "standaard waarde"
+
+#: contact-form-7/includes/admin-panel.php:156
+msgid "Choices"
+msgstr "Keuzes"
+
+#: contact-form-7/includes/admin-panel.php:157
+msgid "* One choice per line."
+msgstr "* Een keuze per lijn"
+
+#: contact-form-7/includes/admin-panel.php:162
+msgid "Label"
+msgstr "Etiket"
+
+#: contact-form-7/includes/admin-panel.php:169
+msgid "Insert"
+msgstr "Invoegen"
+
