@@ -499,7 +499,7 @@ var _wpcf7 = {
 	
 	function the_content_filter($content) {
 		$this->processing_within = 'p' . get_the_ID();
-		$this->unit_count = 1;
+		$this->unit_count = 0;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
 		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
@@ -515,6 +515,7 @@ var _wpcf7 = {
 		
 		$cf = stripslashes_deep($cf);
 
+		$this->unit_count += 1;
 		$unit_tag = 'wpcf7-f' . $id . '-' . $this->processing_within . '-o' . $this->unit_count;
 		$this->processing_unit_tag = $unit_tag;
 
@@ -555,7 +556,6 @@ var _wpcf7 = {
 		
 		$form .= '</div>';
 		
-		$this->unit_count += 1;
 		$this->processing_unit_tag = null;
 		return $form;
 	}
