@@ -84,6 +84,8 @@ class tam_contact_form_seven {
 		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
 			$this->ajax_json_echo();
 			exit();
+		} elseif (! is_admin()) {
+			$this->process_nonajax_submitting();
 		}
 	}
 	
@@ -468,30 +470,32 @@ var _wpcf7 = {
 		}
 	}
 
+	function process_nonajax_submitting() {
+		if (! isset($_POST['_wpcf7']))
+			return;
+		
+		$id = (int) $_POST['_wpcf7'];
+		$contact_forms = $this->contact_forms();
+		if ($cf = $contact_forms[$id]) {
+			$cf = stripslashes_deep($cf);
+			$validation = $this->validate($cf);
+			if (! $validation['valid']) {
+				$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
+			} elseif ($this->akismet($cf)) { // Spam!
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
+			} elseif ($this->mail($cf)) {
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
+			} else {
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
+			}
+		}
+	}
+
 /* Post content filtering */
 
 	var $order_in_post; // Which contact form unit now you are processing. Integer value used in $unit_tag.
 	
 	function the_content_filter($content) {
-		// Form submitted?
-		if (isset($_POST['_wpcf7'])) {
-			$id = (int) $_POST['_wpcf7'];
-			$contact_forms = $this->contact_forms();
-			if ($cf = $contact_forms[$id]) {
-				$cf = stripslashes_deep($cf);
-				$validation = $this->validate($cf);
-				if (! $validation['valid']) {
-					$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
-				} elseif ($this->akismet($cf)) { // Spam!
-					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
-				} elseif ($this->mail($cf)) {
-					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
-				} else {
-					$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
-				}
-			}
-		}
-		
 		$this->order_in_post = 1;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
