@@ -86,6 +86,7 @@ class tam_contact_form_seven {
 			exit();
 		} elseif (! is_admin()) {
 			$this->process_nonajax_submitting();
+			$this->cleanup_captcha_files();
 		}
 	}
 	
@@ -125,7 +126,6 @@ class tam_contact_form_seven {
 				}
 			}
 		}
-		$this->cleanup_captcha_files();
 	}
 	
 	function mail($contact_form) {
@@ -551,8 +551,6 @@ var _wpcf7 = {
 		$form .= '<div' . $class . '>' . $content . '</div>';
 		
 		$form .= '</div>';
-		
-		$this->cleanup_captcha_files();
 		
 		$this->order_in_post += 1;
 		$this->processing_unit_tag = null;
