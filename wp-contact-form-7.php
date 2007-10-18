@@ -493,16 +493,19 @@ var _wpcf7 = {
 
 /* Post content filtering */
 
-	var $order_in_post; // Which contact form unit now you are processing. Integer value used in $unit_tag.
+	var $processing_unit_tag;
+	var $processing_within;
+	var $unit_count;
 	
 	function the_content_filter($content) {
-		$this->order_in_post = 1;
+		$this->processing_within = 'p' . get_the_ID();
+		$this->unit_count = 1;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
 		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
+		
+		$this->processing_within = null;
 	}
-	
-	var $processing_unit_tag;
 	
 	function the_content_filter_callback($matches) {
 		$contact_forms = $this->contact_forms();
@@ -512,7 +515,7 @@ var _wpcf7 = {
 		
 		$cf = stripslashes_deep($cf);
 
-		$unit_tag = 'wpcf7-f' . $id . '-p' . get_the_ID() . '-o' . $this->order_in_post;
+		$unit_tag = 'wpcf7-f' . $id . '-' . $this->processing_within . '-o' . $this->unit_count;
 		$this->processing_unit_tag = $unit_tag;
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
@@ -552,7 +555,7 @@ var _wpcf7 = {
 		
 		$form .= '</div>';
 		
-		$this->order_in_post += 1;
+		$this->unit_count += 1;
 		$this->processing_unit_tag = null;
 		return $form;
 	}
