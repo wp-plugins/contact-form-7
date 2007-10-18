@@ -40,6 +40,7 @@ class tam_contact_form_seven {
 		add_action('wp_print_scripts', array(&$this, 'load_js'));
 		add_action('init', array(&$this, 'init_switch'), 11);
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
+		add_filter('widget_text', array(&$this, 'widget_text_filter'));
 		remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautop_substitute'));
 	}
@@ -496,9 +497,21 @@ var _wpcf7 = {
 	var $processing_unit_tag;
 	var $processing_within;
 	var $unit_count;
+	var $widget_count;
 	
 	function the_content_filter($content) {
 		$this->processing_within = 'p' . get_the_ID();
+		$this->unit_count = 0;
+
+		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
+		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
+		
+		$this->processing_within = null;
+	}
+	
+	function widget_text_filter($content) {
+		$this->widget_count += 1;
+		$this->processing_within = 'w' . $this->widget_count;
 		$this->unit_count = 0;
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
