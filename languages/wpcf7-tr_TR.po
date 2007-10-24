@@ -1,0 +1,270 @@
+# translation of wpcf7-de_DE.po to turkish
+# Roman Neumüller <email@katpatuka.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: wpcf7-tr_TR\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-10-23 23:10+0200\n"
+"Last-Translator: Roman Neumüller <email@katpatuka.org>\n"
+"Language-Team: türkçe <email@katpatuka.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:238
+msgid "Contact form"
+msgstr "İletişim Formu"
+
+#: contact-form-7/wp-contact-form-7.php:323
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:339
+msgid "optional"
+msgstr "isteğe bağlı"
+
+#: contact-form-7/wp-contact-form-7.php:340
+msgid "Generate Tag"
+msgstr "Etiket yarat"
+
+#: contact-form-7/wp-contact-form-7.php:341
+msgid "Text field"
+msgstr "Metin alanı"
+
+#: contact-form-7/wp-contact-form-7.php:342
+msgid "Email field"
+msgstr "E-posta alanı"
+
+#: contact-form-7/wp-contact-form-7.php:343
+msgid "Text area"
+msgstr "Yazı alanı"
+
+#: contact-form-7/wp-contact-form-7.php:344
+msgid "Drop-down menu"
+msgstr "Açılan liste"
+
+#: contact-form-7/wp-contact-form-7.php:345
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:346
+msgid "Submit button"
+msgstr "Gönder tuşu"
+
+#: contact-form-7/wp-contact-form-7.php:347
+msgid "Name"
+msgstr "Adı"
+
+#: contact-form-7/wp-contact-form-7.php:348
+msgid "Required field?"
+msgstr "Gerekli alan?"
+
+#: contact-form-7/wp-contact-form-7.php:349
+msgid "Choices"
+msgstr "Seçenekler"
+
+#: contact-form-7/wp-contact-form-7.php:350
+msgid "Label"
+msgstr "Etiket"
+
+#: contact-form-7/wp-contact-form-7.php:351
+msgid "Default value"
+msgstr "Varsayılan değer"
+
+#: contact-form-7/wp-contact-form-7.php:352
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:353
+msgid "This field requires author's name"
+msgstr "Bu alanında yazarın adı yazması gerekir"
+
+#: contact-form-7/wp-contact-form-7.php:354
+msgid "This field requires author's URL"
+msgstr "Bu alanında yazarın web adresi yazması gerekir"
+
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "This field requires author's email address"
+msgstr "Bu alanında yazarın e-postası yazması gerekir"
+
+#: contact-form-7/wp-contact-form-7.php:356
+msgid "Copy and paste this code into the form"
+msgstr "Bu kodu kopyalayıp formuna yapıştır."
+
+#: contact-form-7/wp-contact-form-7.php:357
+msgid "Foreground color"
+msgstr "Üst rengi"
+
+#: contact-form-7/wp-contact-form-7.php:358
+msgid "Background color"
+msgstr "Arka rengi"
+
+#: contact-form-7/wp-contact-form-7.php:359
+msgid "Image size"
+msgstr "Resim boyutu"
+
+#: contact-form-7/wp-contact-form-7.php:360
+msgid "Small"
+msgstr "Ufak"
+
+#: contact-form-7/wp-contact-form-7.php:361
+msgid "Medium"
+msgstr "Orta"
+
+#: contact-form-7/wp-contact-form-7.php:362
+msgid "Large"
+msgstr "Büyük"
+
+#: contact-form-7/wp-contact-form-7.php:363
+msgid "Image settings"
+msgstr "Resim ayarları"
+
+#: contact-form-7/wp-contact-form-7.php:364
+msgid "Input field settings"
+msgstr "Alan ayarlari"
+
+#: contact-form-7/wp-contact-form-7.php:365
+msgid "For image"
+msgstr "Resim için"
+
+#: contact-form-7/wp-contact-form-7.php:366
+msgid "For input field"
+msgstr "Alan için"
+
+#: contact-form-7/wp-contact-form-7.php:367
+msgid "* One choice per line."
+msgstr "* Satır başı tek seçenek."
+
+#: contact-form-7/wp-contact-form-7.php:386
+msgid "Contact form created."
+msgstr "İletişim formu yaratıldı."
+
+#: contact-form-7/wp-contact-form-7.php:389
+msgid "Contact form saved."
+msgstr "İletişim formu kaydetildi."
+
+#: contact-form-7/wp-contact-form-7.php:392
+msgid "Contact form deleted."
+msgstr "İletişim formu silindi."
+
+#: contact-form-7/wp-contact-form-7.php:399
+msgid "Untitled"
+msgstr "Başlıksız"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Your Name"
+msgstr "Adın"
+
+#: contact-form-7/wp-contact-form-7.php:423
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "(required)"
+msgstr "(gerekli)"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Your Email"
+msgstr "E-posta adresin"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Subject"
+msgstr "Konu"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Your Message"
+msgstr "Mesajın"
+
+#: contact-form-7/wp-contact-form-7.php:431
+#: contact-form-7/wp-contact-form-7.php:813
+msgid "Send"
+msgstr "Gönder"
+
+#: contact-form-7/wp-contact-form-7.php:460
+msgid "Your message was sent successfully. Thanks."
+msgstr "Mesajın başarıyla gönderilmiş, teşeküller"
+
+#: contact-form-7/wp-contact-form-7.php:462
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Mesajın gönderilemedi. Ya istenmeyen mail olarak algılandı ya da sunucusunda hata olmuş."
+
+#: contact-form-7/wp-contact-form-7.php:464
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Geçerlilik kontrolü hatası. Alanlarına kontrol et ve bir daha dene."
+
+#: contact-form-7/wp-contact-form-7.php:466
+msgid "Email address seems invalid."
+msgstr "E-posta adresini geçersiz görünüyor..."
+
+#: contact-form-7/wp-contact-form-7.php:468
+msgid "Please fill the required field."
+msgstr "Lütfen gerekli alanları doldurun."
+
+#: contact-form-7/wp-contact-form-7.php:470
+msgid "Your entered code is incorrect."
+msgstr "Girdiğin kod yanlış."
+
+#: contact-form-7/includes/admin-panel.php:15
+msgid "Add new"
+msgstr "Yeni form yarat"
+
+#: contact-form-7/includes/admin-panel.php:28
+msgid "Copy and paste this code into your post content."
+msgstr "Bu kodu kopyalayıp yazısına yapıştır."
+
+#: contact-form-7/includes/admin-panel.php:33
+msgid "Form"
+msgstr "Form"
+
+#: contact-form-7/includes/admin-panel.php:37
+msgid "Mail"
+msgstr "E-Posta"
+
+#: contact-form-7/includes/admin-panel.php:39
+#: contact-form-7/includes/admin-panel.php:60
+msgid "To:"
+msgstr "Kime:"
+
+#: contact-form-7/includes/admin-panel.php:43
+#: contact-form-7/includes/admin-panel.php:64
+msgid "From:"
+msgstr "Gönderen:"
+
+#: contact-form-7/includes/admin-panel.php:47
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Subject:"
+msgstr "Konu:"
+
+#: contact-form-7/includes/admin-panel.php:51
+#: contact-form-7/includes/admin-panel.php:72
+msgid "Message body:"
+msgstr "Mesaj:"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Mail (2)"
+msgstr "E-Posta (2)"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Use mail (2)"
+msgstr "E-Posta (2) kullan"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Save"
+msgstr "Kaydet"
+
+#: contact-form-7/includes/admin-panel.php:86
+msgid "Delete this contact form"
+msgstr "Bu iletişim formu sil"
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"iletişim formu kalıcı olarak silmek üzeresin.\n"
+"İptal etmek için 'Vazgeç' , silmek için 'Tamam' düğmesine bas."
+

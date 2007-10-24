@@ -40,6 +40,7 @@ Contact Form 7 has been translated into the following languages.
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Russian, by [Dmitry Volotovich](http://www.volnov.com)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
+* Turkish, by [Roman Neumuller](http://katpatuka.wordpress.com)
 
 These language files are included in the plugin.
 
