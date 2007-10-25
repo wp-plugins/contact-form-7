@@ -37,6 +37,7 @@ Contact Form 7 has been translated into the following languages.
 * German, by [Marcel Spitau](http://blog.spitau.de)
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
+* Norwegian, by Kjetil M. Bergem
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Russian, by [Dmitry Volotovich](http://www.volnov.com)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
