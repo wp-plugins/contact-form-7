@@ -1,9 +1,9 @@
 === Contact Form 7 ===
 Contributors: takayukister
-Tags: contact form, email, ajax
+Tags: contact form, email, ajax, captcha, akismet
 Requires at least: 2.2
-Tested up to: 2.3
-Stable tag: 1.6
+Tested up to: 2.4-bleeding
+Stable tag: 1.6.1
 
 Just another contact form plugin. Simple but flexible.
 
