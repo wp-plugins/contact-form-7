@@ -111,6 +111,8 @@ class tam_contact_form_seven {
 					$captcha = 'null';
 				}
 				
+				@header('Content-Type: text/plain; charset=' . get_option('blog_charset'));
+				
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
 					foreach ($validation['reason'] as $name => $reason) {
