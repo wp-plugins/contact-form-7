@@ -676,7 +676,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|checkbox[+]?|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
@@ -725,6 +725,9 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				$class_att .= ' wpcf7-validates-as-email';
 			if (preg_match('/[*]$/', $type))
 				$class_att .= ' wpcf7-validates-as-required';
+			
+			if (preg_match('/^checkbox[+]?$/', $type))
+				$class_att .= ' wpcf7-list';
 			
 			if (preg_match('/^captchac$/', $type))
 				$class_att .= ' wpcf7-captcha-' . $name;
@@ -796,12 +799,31 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 					$html .= '<option value="' . attribute_escape($value) . '"' . $selected . '>' . $value . '</option>';
 				}
                 
-                if ($multiple) {
-                    $name .= '[]';
+                if ($multiple)
                     $atts .= ' multiple="multiple"';
+                
+				$html = '<select name="' . $name . ($multiple ? '[]' : '') . '"' . $atts . '>' . $html . '</select>';
+				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				return $html;
+				break;
+            case 'checkbox':
+            case 'checkbox+':
+                $multiple = ('checkbox+' == $type) ? true : false;
+                $html = '';
+                
+                foreach ($values as $value) {
+                    $checked = '';
+                    if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+                            $multiple && in_array($value, $_POST[$name]) ||
+                            ! $multiple && $_POST[$name] == $value))
+                        $checked = ' checked="checked"';
+                    $item = '<input type="checkbox" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . ' />';
+                    $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
+                    $item = '<span class="wpcf7-list-item">' . $item . '</span>';
+                    $html .= $item;
                 }
                 
-				$html = '<select name="' . $name . '"' . $atts . '>' . $html . '</select>';
+                $html = '<span' . $atts . '>' . $html . '</span>';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
