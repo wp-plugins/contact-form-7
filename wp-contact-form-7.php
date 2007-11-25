@@ -665,8 +665,8 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text|email|textarea|select|captchac|captchar';
-		$regex = '%\[\s*((?:' . $types . ')[*]?)(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|captchac|captchar';
+		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
@@ -734,10 +734,11 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 			$value = $values[0];
 		}
 		
-		$type = preg_replace('/[*]$/', '', $type);
 		switch ($type) {
 			case 'text':
+			case 'text*':
 			case 'email':
+			case 'email*':
 			case 'captchar':
 				if (is_array($options)) {
 					$size_maxlength_array = preg_grep('%^[0-9]*[/x][0-9]*$%', $options);
@@ -754,6 +755,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				return $html;
 				break;
 			case 'textarea':
+			case 'textarea*':
 				if (is_array($options)) {
 					$cols_rows_array = preg_grep('%^[0-9]*[x/][0-9]*$%', $options);
 					if ($cols_rows = array_shift($cols_rows_array)) {
@@ -769,16 +771,25 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				return $html;
 				break;
 			case 'select':
+			case 'select+':
+                $multiple = ('select+' == $type) ? true : false;
 				if (empty($values))
 					array_push($values, '---');
 				$html = '';
 				foreach ($values as $value) {
-					if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && $_POST[$name] == $value)
-						$selected = ' selected="selected"';
-					else
-						$selected = '';
+                    $selected = '';
+                    if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+                            $multiple && in_array($value, $_POST[$name]) ||
+                            ! $multiple && $_POST[$name] == $value))
+                        $selected = ' selected="selected"';
 					$html .= '<option value="' . attribute_escape($value) . '"' . $selected . '>' . $value . '</option>';
 				}
+                
+                if ($multiple) {
+                    $name .= '[]';
+                    $atts .= ' multiple="multiple"';
+                }
+                
 				$html = '<select name="' . $name . '"' . $atts . '>' . $html . '</select>';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
