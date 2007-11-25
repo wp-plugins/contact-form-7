@@ -93,12 +93,12 @@ function tagGenerator() {
   var dropdown = jQuery('<div class="tg-dropdown"></div>');
   dropdown.hide();
   
-  jQuery.each([ 'textField', 'emailField', 'textArea', 'menu', 'captcha', 'submit' ], function(i, n) {
+  jQuery.each([ 'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons', 'captcha', 'submit' ], function(i, n) {
     var submenu = jQuery('<div>' + _wpcf7.l10n[n] + '</div>');
     submenu.css({
       margin: 0,
       padding: '0 4px',
-      'line-height': '200%',
+      'line-height': '180%',
       background: '#fff'
     });
     submenu.mouseover(function() {
@@ -146,7 +146,7 @@ function tgPane(pane, tagType) {
     });
   });
   tgInputs.tagName.css({ 'border-color': '#555' });
-  jQuery.each([ 'isRequiredField', 'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
+  jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
     'imageSizeSmall', 'imageSizeMedium', 'imageSizeLarge' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="checkbox" />');
     tgInputs[n].change(function() {
@@ -229,8 +229,16 @@ function tgPane(pane, tagType) {
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'menu':
+    case 'checkboxes':
+    case 'radioButtons':
       var table1 = jQuery('<table></table>');
       pane.append(table1);
+      
+      if ('radioButtons' != tagType)
+        table1.append(tgTr(
+          jQuery('<span>&nbsp;' + _wpcf7.l10n.allowsMultipleSelections + '</span>').prepend(tgInputs.allowsMultipleSelections)
+        ));
+      
       table1.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
         jQuery('<span></span>')
@@ -434,7 +442,18 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       tgInputs.tag1st.val(tag);
       break;
     case 'menu':
-      var type = 'select';
+    case 'checkboxes':
+    case 'radioButtons':
+      var type = '';
+      if ('menu' == tagType)
+        type = 'select';
+      else if ('checkboxes' == tagType)
+        type = 'checkbox';
+      else if ('radioButtons' == tagType)
+        type = 'radio';
+      if (tgInputs.allowsMultipleSelections.is(':checked'))
+        type += '+';
+      
       var name = tgInputs.tagName.val();
       var options = [];
       if (tgInputs.tagId.val())
@@ -512,6 +531,10 @@ function tgDefaultName(tagType) {
     return 'textarea-' + rand;
   } else if ('menu' == tagType) {
     return 'menu-' + rand;
+  } else if ('checkboxes' == tagType) {
+    return 'checkbox-' + rand;
+  } else if ('radioButtons' == tagType) {
+    return 'radio-' + rand;
   } else if ('captcha' == tagType) {
     return 'captcha-' + rand;
   }
