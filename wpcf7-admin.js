@@ -40,6 +40,12 @@ jQuery(document).ready(function() {
   });
   
   updateTag();
+  
+  jQuery('input#wpcf7-mail-2-active').click(function() {
+    toggleMail2();
+  });
+  
+  toggleMail2();
 });
 
 function updateTag() {
@@ -50,6 +56,13 @@ function updateTag() {
   var current = jQuery('input#wpcf7-id').val();
   var tag = '[contact-form ' + current + ' "' + title + '"]';
   jQuery('input#contact-form-anchor-text').val(tag);
+}
+
+function toggleMail2() {
+  if (jQuery('input#wpcf7-mail-2-active').is(':checked'))
+    jQuery('div.fieldset.mail2 > div.mail-field').slideDown('fast');
+  else
+    jQuery('div.fieldset.mail2 > div.mail-field').hide();
 }
 
 function tagGenerator() {
