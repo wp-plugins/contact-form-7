@@ -705,42 +705,42 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 		}
 		
 		$atts = '';
-		if (is_array($options)) {
-			$id_array = preg_grep('%^id:[-0-9a-zA-Z_]+$%', $options);
-			if ($id = array_shift($id_array)) {
-				preg_match('%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches);
-				if ($id = $id_matches[1])
-					$atts .= ' id="' . $id . '"';
-			}
-			
-			$class_att = "";
-			$class_array = preg_grep('%^class:[-0-9a-zA-Z_]+$%', $options);
-			foreach ($class_array as $class) {
-				preg_match('%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches);
-				if ($class = $class_matches[1])
-					$class_att .= ' ' . $class;
-			}
-			
-			if (preg_match('/^email[*]?$/', $type))
-				$class_att .= ' wpcf7-validates-as-email';
-			if (preg_match('/[*]$/', $type))
-				$class_att .= ' wpcf7-validates-as-required';
-			
-            if ('checkbox' == $type)
-                $class_att .= ' wpcf7-checkbox';
-			
-            if ('checkbox+' == $type)
-                $class_att .= ' wpcf7-checkbox-plus';
-			
-            if ('radio' == $type)
-                $class_att .= ' wpcf7-radio';
-			
-			if (preg_match('/^captchac$/', $type))
-				$class_att .= ' wpcf7-captcha-' . $name;
-			
-			if ($class_att)
-				$atts .= ' class="' . trim($class_att) . '"';
-		}
+        $options = (array) $options;
+        
+        $id_array = preg_grep('%^id:[-0-9a-zA-Z_]+$%', $options);
+        if ($id = array_shift($id_array)) {
+            preg_match('%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches);
+            if ($id = $id_matches[1])
+                $atts .= ' id="' . $id . '"';
+        }
+        
+        $class_att = "";
+        $class_array = preg_grep('%^class:[-0-9a-zA-Z_]+$%', $options);
+        foreach ($class_array as $class) {
+            preg_match('%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches);
+            if ($class = $class_matches[1])
+                $class_att .= ' ' . $class;
+        }
+        
+        if (preg_match('/^email[*]?$/', $type))
+            $class_att .= ' wpcf7-validates-as-email';
+        if (preg_match('/[*]$/', $type))
+            $class_att .= ' wpcf7-validates-as-required';
+        
+        if ('checkbox' == $type)
+            $class_att .= ' wpcf7-checkbox';
+        
+        if ('checkbox+' == $type)
+            $class_att .= ' wpcf7-checkbox-plus';
+        
+        if ('radio' == $type)
+            $class_att .= ' wpcf7-radio';
+        
+        if (preg_match('/^captchac$/', $type))
+            $class_att .= ' wpcf7-captcha-' . $name;
+        
+        if ($class_att)
+            $atts .= ' class="' . trim($class_att) . '"';
 		
 		// Value.
 		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
