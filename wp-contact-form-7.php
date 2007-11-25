@@ -676,7 +676,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|checkbox[+]?|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|checkbox[+]?|radio|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
@@ -726,8 +726,14 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 			if (preg_match('/[*]$/', $type))
 				$class_att .= ' wpcf7-validates-as-required';
 			
-			if (preg_match('/^checkbox[+]?$/', $type))
-				$class_att .= ' wpcf7-list';
+            if ('checkbox' == $type)
+                $class_att .= ' wpcf7-checkbox';
+			
+            if ('checkbox+' == $type)
+                $class_att .= ' wpcf7-checkbox-plus';
+			
+            if ('radio' == $type)
+                $class_att .= ' wpcf7-radio';
 			
 			if (preg_match('/^captchac$/', $type))
 				$class_att .= ' wpcf7-captcha-' . $name;
@@ -808,7 +814,9 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				break;
             case 'checkbox':
             case 'checkbox+':
+            case 'radio':
                 $multiple = ('checkbox+' == $type) ? true : false;
+                $input_type = preg_replace('/[+]$/', '', $type);
                 $html = '';
                 
                 foreach ($values as $value) {
@@ -817,7 +825,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
                             $multiple && in_array($value, $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $checked = ' checked="checked"';
-                    $item = '<input type="checkbox" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . ' />';
+                    $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . ' />';
                     $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
                     $item = '<span class="wpcf7-list-item">' . $item . '</span>';
                     $html .= $item;
