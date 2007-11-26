@@ -23,6 +23,17 @@ Just another contact form plugin. Simple but flexible.
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
+== Frequently Asked Questions ==
+
+If you have questions about Contact Form 7,
+please submit it [to the support forum](http://wordpress.org/tags/contact-form-7#postform) or
+comment [on my blog](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/).
+
+= By default the size of text field is really small. How can I increase it? =
+
+[This documentation](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/#Tags_in_form_content) may help.
+You can do that by editting a tag like: `[text your-name 40/100]`
+
 == Screenshots ==
 
 1. screenshot-1.png
