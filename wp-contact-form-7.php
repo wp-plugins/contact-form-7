@@ -597,7 +597,25 @@ var _wpcf7 = {
 		foreach ($fes as $fe) {
 			$type = $fe['type'];
 			$name = $fe['name'];
-
+            $values = $fe['values'];
+            
+            // Before validation corrections
+            if (preg_match('/^(?:text|email)[*]?$/', $type))
+                $_POST[$name] = trim(strtr($_POST[$name], "\n", " "));
+            
+			if (preg_match('/^(?:select|checkbox|radio)$/', $type)) {
+                if (! in_array($_POST[$name], $values)) //  Not in given choices.
+                    $_POST[$name] = '';
+            }
+            
+            if (preg_match('/^(?:select|checkbox)[+]$/', $type)) {
+                $_POST[$name] = (array) $_POST[$name];
+                foreach ($_POST[$name] as $key => $value) {
+                    if (! in_array($value, $values)) // Not in given choices.
+                        unset($_POST[$name][$key]);
+                }
+            }
+            
 			// Required item (*)
 			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
 				if (empty($_POST[$name])) {
