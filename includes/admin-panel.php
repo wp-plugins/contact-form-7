@@ -30,11 +30,11 @@
 			</p>
 			<?php endif; ?>
 
-			<div class="fieldset form" id="form-content-fieldset"><div class="legend"><?php _e('Form', 'wpcf7'); ?></div>
+			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form', 'wpcf7'); ?></div>
 				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
 			</div>
 
-			<div class="fieldset mail"><div class="legend"><?php _e('Mail', 'wpcf7'); ?></div>
+			<div class="fieldset"><div class="legend"><?php _e('Mail', 'wpcf7'); ?></div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>" />
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 
-			<div class="fieldset mail2"><div class="legend"><?php _e('Mail (2)', 'wpcf7'); ?></div>
+			<div class="fieldset"><div class="legend"><?php _e('Mail (2)', 'wpcf7'); ?></div>
 				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
 				<label for="wpcf7-mail-2-active"><?php _e('Use mail (2)', 'wpcf7'); ?></label>
 				<div class="mail-field">
