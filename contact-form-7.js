@@ -5,6 +5,11 @@ jQuery(document).ready(function() {
 		dataType: 'json',
 		success: processJson
 	});
+  
+  // Exclusive checkbox
+  jQuery('input:checkbox.exclusive').click(function() {
+    jQuery(this.form).find('input:checkbox.exclusive[@name="' + this.name + '"]').not(this).removeAttr('checked');
+  });
 });
 
 function beforeSubmit(formData, jqForm, options) {

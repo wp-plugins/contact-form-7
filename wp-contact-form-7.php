@@ -840,13 +840,16 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
                 $input_type = preg_replace('/[+]$/', '', $type);
                 $html = '';
                 
+                if ('checkbox' == $type)
+                    $input_class = ' class="exclusive"';
+                
                 foreach ($values as $value) {
                     $checked = '';
                     if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
                             $multiple && in_array($value, $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $checked = ' checked="checked"';
-                    $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . ' />';
+                    $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
                     $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
                     $item = '<span class="wpcf7-list-item">' . $item . '</span>';
                     $html .= $item;
