@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "POT-Creation-Date: 2007-10-24 13:47+0900\n"
-"PO-Revision-Date: 2007-10-24 13:56+0900\n"
+"PO-Revision-Date: 2007-11-26 20:12+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,194 +13,206 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:238
+#: contact-form-7/wp-contact-form-7.php:251
 msgid "Contact form"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:323
+#: contact-form-7/wp-contact-form-7.php:336
 #: contact-form-7/includes/admin-panel.php:5
 msgid "Contact Form 7"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:339
+#: contact-form-7/wp-contact-form-7.php:352
 msgid "optional"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:340
+#: contact-form-7/wp-contact-form-7.php:353
 msgid "Generate Tag"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:341
+#: contact-form-7/wp-contact-form-7.php:354
 msgid "Text field"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:342
+#: contact-form-7/wp-contact-form-7.php:355
 msgid "Email field"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:343
+#: contact-form-7/wp-contact-form-7.php:356
 msgid "Text area"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:344
+#: contact-form-7/wp-contact-form-7.php:357
 msgid "Drop-down menu"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:345
-msgid "CAPTCHA"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:346
-msgid "Submit button"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:347
-msgid "Name"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:348
-msgid "Required field?"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:349
-msgid "Choices"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:350
-msgid "Label"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:351
-msgid "Default value"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:352
-msgid "Akismet"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:353
-msgid "This field requires author's name"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:354
-msgid "This field requires author's URL"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:355
-msgid "This field requires author's email address"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:356
-msgid "Copy and paste this code into the form"
-msgstr ""
-
-#: contact-form-7/wp-contact-form-7.php:357
-msgid "Foreground color"
-msgstr ""
-
 #: contact-form-7/wp-contact-form-7.php:358
-msgid "Background color"
+msgid "Checkboxes"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:359
-msgid "Image size"
+msgid "Radio buttons"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:360
-msgid "Small"
+msgid "CAPTCHA"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:361
-msgid "Medium"
+msgid "Submit button"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:362
-msgid "Large"
+msgid "Name"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:363
-msgid "Image settings"
+msgid "Required field?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:364
-msgid "Input field settings"
+msgid "Allows multiple selections?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:365
-msgid "For image"
+msgid "Choices"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:366
-msgid "For input field"
+msgid "Label"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:367
+msgid "Default value"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:368
+msgid "Akismet"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:369
+msgid "This field requires author's name"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:370
+msgid "This field requires author's URL"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:371
+msgid "This field requires author's email address"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:372
+msgid "Copy and paste this code into the form"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:373
+msgid "Foreground color"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:374
+msgid "Background color"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:375
+msgid "Image size"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:376
+msgid "Small"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:377
+msgid "Medium"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:378
+msgid "Large"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:379
+msgid "Image settings"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:380
+msgid "Input field settings"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:381
+msgid "For image"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:382
+msgid "For input field"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:383
 msgid "* One choice per line."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:386
+#: contact-form-7/wp-contact-form-7.php:402
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:389
+#: contact-form-7/wp-contact-form-7.php:405
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:392
+#: contact-form-7/wp-contact-form-7.php:408
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:399
+#: contact-form-7/wp-contact-form-7.php:415
 msgid "Untitled"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:423
+#: contact-form-7/wp-contact-form-7.php:439
 msgid "Your Name"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:423
-#: contact-form-7/wp-contact-form-7.php:425
+#: contact-form-7/wp-contact-form-7.php:439
+#: contact-form-7/wp-contact-form-7.php:441
 msgid "(required)"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:425
+#: contact-form-7/wp-contact-form-7.php:441
 msgid "Your Email"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:427
+#: contact-form-7/wp-contact-form-7.php:443
 msgid "Subject"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:429
+#: contact-form-7/wp-contact-form-7.php:445
 msgid "Your Message"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:431
-#: contact-form-7/wp-contact-form-7.php:813
+#: contact-form-7/wp-contact-form-7.php:447
+#: contact-form-7/wp-contact-form-7.php:891
 msgid "Send"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:460
+#: contact-form-7/wp-contact-form-7.php:476
 msgid "Your message was sent successfully. Thanks."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:462
+#: contact-form-7/wp-contact-form-7.php:478
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:464
+#: contact-form-7/wp-contact-form-7.php:480
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:466
+#: contact-form-7/wp-contact-form-7.php:482
 msgid "Email address seems invalid."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:468
+#: contact-form-7/wp-contact-form-7.php:484
 msgid "Please fill the required field."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:470
+#: contact-form-7/wp-contact-form-7.php:486
 msgid "Your entered code is incorrect."
 msgstr ""
 
