@@ -1068,6 +1068,6 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 
 require_once(dirname(__FILE__) . '/captcha/captcha.php');
 
-new tam_contact_form_seven();
+$wpcf7 = new tam_contact_form_seven();
 
 ?>
