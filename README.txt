@@ -58,7 +58,3 @@ Contact Form 7 has been translated into the following languages.
 These language files are included in the plugin.
 
 If you have translated Contact Form 7 in your language, please let me know and send me [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress). Thank you for your contribution.
-
-== Known Issues ==
-
-You have error messages after saving a contact form in case that you use Contact Form 7 1.6 or later with WordPress 2.2.x on Windows server.
