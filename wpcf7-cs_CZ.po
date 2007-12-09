@@ -1,0 +1,272 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-12-08 19:18+0100\n"
+"Last-Translator: Korry <pindiky@seznam.cz>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: contact-form-7/wp-contact-form-7.php:251
+msgid "Contact form"
+msgstr "Kontaktní formulář"
+
+#: contact-form-7/wp-contact-form-7.php:336
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:352
+msgid "optional"
+msgstr "doporučeno"
+
+#: contact-form-7/wp-contact-form-7.php:353
+msgid "Generate Tag"
+msgstr "Generuj Tag"
+
+#: contact-form-7/wp-contact-form-7.php:354
+msgid "Text field"
+msgstr "Text field"
+
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "Email field"
+msgstr "Email"
+
+#: contact-form-7/wp-contact-form-7.php:356
+msgid "Text area"
+msgstr "Text area"
+
+#: contact-form-7/wp-contact-form-7.php:357
+msgid "Drop-down menu"
+msgstr "Rozbalovací menu"
+
+#: contact-form-7/wp-contact-form-7.php:358
+msgid "Checkboxes"
+msgstr "Checkboxes"
+
+#: contact-form-7/wp-contact-form-7.php:359
+msgid "Radio buttons"
+msgstr "Radio buttons"
+
+#: contact-form-7/wp-contact-form-7.php:360
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:361
+msgid "Submit button"
+msgstr "Potvrzovací tlačítko"
+
+#: contact-form-7/wp-contact-form-7.php:362
+msgid "Name"
+msgstr "Jméno"
+
+#: contact-form-7/wp-contact-form-7.php:363
+msgid "Required field?"
+msgstr "Vyžadované pole?"
+
+#: contact-form-7/wp-contact-form-7.php:364
+msgid "Allows multiple selections?"
+msgstr "Povolit vícenásobný výběr?"
+
+#: contact-form-7/wp-contact-form-7.php:365
+msgid "Choices"
+msgstr "Možnosti"
+
+#: contact-form-7/wp-contact-form-7.php:366
+msgid "Label"
+msgstr "Popis"
+
+#: contact-form-7/wp-contact-form-7.php:367
+msgid "Default value"
+msgstr "Výchozí hodnota"
+
+#: contact-form-7/wp-contact-form-7.php:368
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:369
+msgid "This field requires author's name"
+msgstr "Toto pole musí obsahovat jméno autora"
+
+#: contact-form-7/wp-contact-form-7.php:370
+msgid "This field requires author's URL"
+msgstr "Toto pole musí obsahovat URL autora"
+
+#: contact-form-7/wp-contact-form-7.php:371
+msgid "This field requires author's email address"
+msgstr "Toto pole musí obsahovat autorův e-mail"
+
+#: contact-form-7/wp-contact-form-7.php:372
+msgid "Copy and paste this code into the form"
+msgstr "Zkopírujte tento kód a vložte jej do formuláře"
+
+#: contact-form-7/wp-contact-form-7.php:373
+msgid "Foreground color"
+msgstr "Barva písma"
+
+#: contact-form-7/wp-contact-form-7.php:374
+msgid "Background color"
+msgstr "Barva pozadí"
+
+#: contact-form-7/wp-contact-form-7.php:375
+msgid "Image size"
+msgstr "Velikost obrázku"
+
+#: contact-form-7/wp-contact-form-7.php:376
+msgid "Small"
+msgstr "Malý"
+
+#: contact-form-7/wp-contact-form-7.php:377
+msgid "Medium"
+msgstr "Střední"
+
+#: contact-form-7/wp-contact-form-7.php:378
+msgid "Large"
+msgstr "Velký"
+
+#: contact-form-7/wp-contact-form-7.php:379
+msgid "Image settings"
+msgstr "Nastavení obrázku"
+
+#: contact-form-7/wp-contact-form-7.php:380
+msgid "Input field settings"
+msgstr "Parametry vstupního pole"
+
+#: contact-form-7/wp-contact-form-7.php:381
+msgid "For image"
+msgstr "For image"
+
+#: contact-form-7/wp-contact-form-7.php:382
+msgid "For input field"
+msgstr "Pro vstupní pole"
+
+#: contact-form-7/wp-contact-form-7.php:383
+msgid "* One choice per line."
+msgstr "* Jedna možnost na řádku"
+
+#: contact-form-7/wp-contact-form-7.php:402
+msgid "Contact form created."
+msgstr "Formulář vytvořen"
+
+#: contact-form-7/wp-contact-form-7.php:405
+msgid "Contact form saved."
+msgstr "Formulář uložen"
+
+#: contact-form-7/wp-contact-form-7.php:408
+msgid "Contact form deleted."
+msgstr "Contact form deleted"
+
+#: contact-form-7/wp-contact-form-7.php:415
+msgid "Untitled"
+msgstr "Untitled"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Your Name"
+msgstr "Vaše jméno"
+
+#: contact-form-7/wp-contact-form-7.php:439
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "(required)"
+msgstr "(vyžadováno)"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Your Email"
+msgstr "Váš Email"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "Subject"
+msgstr "Předmět zprávy"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Your Message"
+msgstr "Vaše zpráva"
+
+#: contact-form-7/wp-contact-form-7.php:447
+#: contact-form-7/wp-contact-form-7.php:891
+msgid "Send"
+msgstr "Odeslat"
+
+#: contact-form-7/wp-contact-form-7.php:476
+msgid "Your message was sent successfully. Thanks."
+msgstr "Vaše zpráva byla úspěšně odeslána. Děkujeme."
+
+#: contact-form-7/wp-contact-form-7.php:478
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Nepodařilo se odeslat zprávu. Opakujte později, nebo kontaktujte administátora."
+
+#: contact-form-7/wp-contact-form-7.php:480
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Chyba v ověření. Zkontrolujte prosím všechna povinná pole."
+
+#: contact-form-7/wp-contact-form-7.php:482
+msgid "Email address seems invalid."
+msgstr "Emailová adresa není v platném tvaru."
+
+#: contact-form-7/wp-contact-form-7.php:484
+msgid "Please fill the required field."
+msgstr "Vyplňte prosím povinná pole."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Your entered code is incorrect."
+msgstr "Vložený ověřovací kód není správně."
+
+#: contact-form-7/includes/admin-panel.php:15
+msgid "Add new"
+msgstr "Přidej nový"
+
+#: contact-form-7/includes/admin-panel.php:28
+msgid "Copy and paste this code into your post content."
+msgstr "Zkopírujte tento kód a vložte jej do článku."
+
+#: contact-form-7/includes/admin-panel.php:33
+msgid "Form"
+msgstr "Formulář"
+
+#: contact-form-7/includes/admin-panel.php:37
+msgid "Mail"
+msgstr "Mail"
+
+#: contact-form-7/includes/admin-panel.php:39
+#: contact-form-7/includes/admin-panel.php:60
+msgid "To:"
+msgstr "Komu:"
+
+#: contact-form-7/includes/admin-panel.php:43
+#: contact-form-7/includes/admin-panel.php:64
+msgid "From:"
+msgstr "Od:"
+
+#: contact-form-7/includes/admin-panel.php:47
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: contact-form-7/includes/admin-panel.php:51
+#: contact-form-7/includes/admin-panel.php:72
+msgid "Message body:"
+msgstr "Zpráva:"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Mail (2)"
+msgstr "Mail (2)"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Use mail (2)"
+msgstr "Use mail (2)"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Save"
+msgstr "Uložit"
+
+#: contact-form-7/includes/admin-panel.php:86
+msgid "Delete this contact form"
+msgstr "Smaž tento formulář."
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "Chcete smazat tento formulář?"
+
