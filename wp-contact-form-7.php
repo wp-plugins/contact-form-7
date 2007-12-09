@@ -284,7 +284,7 @@ class tam_contact_form_seven {
 
 	function add_pages() {
 		$base_url = get_option('siteurl') . '/wp-admin/options-general.php';
-		$page = plugin_basename(__FILE__);
+		$page = str_replace('\\', '%5C', plugin_basename(__FILE__));
 		$contact_forms = $this->contact_forms();
 		
 		if (isset($_POST['wpcf7-save'])) {
