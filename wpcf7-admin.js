@@ -392,7 +392,7 @@ function tgCreateTag(tagType, tgInputs, trigger) {
   switch (tagType) {
     case 'textField':
     case 'emailField':
-      var type = 'text';
+      var type = ('emailField' == tagType) ? 'email' : 'text';
       if (tgInputs.isRequiredField.is(':checked'))
         type += '*';
       var name = tgInputs.tagName.val();
