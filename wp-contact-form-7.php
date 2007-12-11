@@ -628,7 +628,7 @@ var _wpcf7 = {
 				if ('*' == substr($type, -1) && empty($_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_required');
-				} elseif (! is_email($_POST[$name])) {
+				} elseif (! empty($_POST[$name]) && ! is_email($_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_email');
 				}
