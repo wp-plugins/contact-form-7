@@ -421,7 +421,7 @@ var _wpcf7 = {
 			$cf = null;
 		}
 		
-		include 'includes/admin-panel.php';
+		require_once ABSPATH . PLUGINDIR . '/contact-form-7/includes/admin-panel.php';
 	}
 
 	function default_pack($title, $initial = false) {
