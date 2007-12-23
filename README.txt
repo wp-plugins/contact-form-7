@@ -23,6 +23,8 @@ Just another contact form plugin. Simple but flexible.
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
+See also: [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/)
+
 == Frequently Asked Questions ==
 
 If you have questions about Contact Form 7,
