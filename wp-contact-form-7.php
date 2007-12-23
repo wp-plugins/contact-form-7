@@ -774,6 +774,13 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 		} else {
 			$value = $values[0];
 		}
+        
+        // Default selected/checked for select/checkbox/radio
+        if (preg_match('/^(?:select|checkbox|radio)[+]?$/', $type)) {
+            $scr_defaults = array_values(preg_grep('/^default:/', $options));
+            preg_match('/^default:([0-9_]+)$/', $scr_defaults[0], $scr_default_matches);
+            $scr_default = explode('_', $scr_default_matches[1]);
+        }
 		
 		switch ($type) {
 			case 'text':
@@ -814,17 +821,19 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 			case 'select':
 			case 'select+':
                 $multiple = ('select+' == $type) ? true : false;
-				if (empty($values))
+				if ($empty_select = empty($values))
 					array_push($values, '---');
 				$html = '';
-				foreach ($values as $value) {
+                foreach ($values as $key => $value) {
                     $selected = '';
+                    if (! $empty_select && in_array($key + 1, $scr_default))
+                        $selected = ' selected="selected"';
                     if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
                             $multiple && in_array($value, $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $selected = ' selected="selected"';
 					$html .= '<option value="' . attribute_escape($value) . '"' . $selected . '>' . $value . '</option>';
-				}
+                }
                 
                 if ($multiple)
                     $atts .= ' multiple="multiple"';
@@ -843,8 +852,10 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
                 if ('checkbox' == $type)
                     $input_class = ' class="exclusive"';
                 
-                foreach ($values as $value) {
+                foreach ($values as $key => $value) {
                     $checked = '';
+                    if (in_array($key + 1, $scr_default))
+                        $checked = ' checked="checked"';
                     if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
                             $multiple && in_array($value, $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
