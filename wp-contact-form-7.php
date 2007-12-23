@@ -849,8 +849,13 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
                             $multiple && in_array($value, $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $checked = ' checked="checked"';
-                    $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
-                    $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
+                    if (preg_grep('%^label[_-]?first$%', $options)) { // put label first, input last
+                        $item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
+                        $item .= '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                    } else {
+                        $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                        $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
+                    }
                     $item = '<span class="wpcf7-list-item">' . $item . '</span>';
                     $html .= $item;
                 }
