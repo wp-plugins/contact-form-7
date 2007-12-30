@@ -605,15 +605,14 @@ var _wpcf7 = {
                 $_POST[$name] = trim(strtr($_POST[$name], "\n", " "));
             
 			if (preg_match('/^(?:select|checkbox|radio)$/', $type)) {
-                if (! in_array($_POST[$name], $values)) //  Not in given choices.
-                    $_POST[$name] = '';
-            }
-            
-            if (preg_match('/^(?:select|checkbox)[+]$/', $type)) {
-                $_POST[$name] = (array) $_POST[$name];
-                foreach ($_POST[$name] as $key => $value) {
-                    if (! in_array($value, $values)) // Not in given choices.
-                        unset($_POST[$name][$key]);
+                if (is_array($_POST[$name])) {
+                    foreach ($_POST[$name] as $key => $value) {
+                        if (! in_array($value, $values)) // Not in given choices.
+                            unset($_POST[$name][$key]);
+                    }
+                } else {
+                    if (! in_array($_POST[$name], $values)) //  Not in given choices.
+                        $_POST[$name] = '';
                 }
             }
             
@@ -698,7 +697,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[+]?|checkbox[+]?|radio|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select|checkbox|radio|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
@@ -752,9 +751,6 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
         if ('checkbox' == $type)
             $class_att .= ' wpcf7-checkbox';
         
-        if ('checkbox+' == $type)
-            $class_att .= ' wpcf7-checkbox-plus';
-        
         if ('radio' == $type)
             $class_att .= ' wpcf7-radio';
         
@@ -777,7 +773,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 		}
         
         // Default selected/checked for select/checkbox/radio
-        if (preg_match('/^(?:select|checkbox|radio)[+]?$/', $type)) {
+        if (preg_match('/^(?:select|checkbox|radio)$/', $type)) {
             $scr_defaults = array_values(preg_grep('/^default:/', $options));
             preg_match('/^default:([0-9_]+)$/', $scr_defaults[0], $scr_default_matches);
             $scr_default = explode('_', $scr_default_matches[1]);
@@ -820,8 +816,7 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				return $html;
 				break;
 			case 'select':
-			case 'select+':
-                $multiple = ('select+' == $type) ? true : false;
+                $multiple = (preg_grep('%^multiple$%', $options)) ? true : false;
 				if ($empty_select = empty($values))
 					array_push($values, '---');
 				$html = '';
@@ -844,13 +839,11 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
 				return $html;
 				break;
             case 'checkbox':
-            case 'checkbox+':
             case 'radio':
-                $multiple = ('checkbox+' == $type) ? true : false;
-                $input_type = preg_replace('/[+]$/', '', $type);
+                $multiple = ('checkbox' == $type && ! preg_grep('%^exclusive$%', $options)) ? true : false;
                 $html = '';
                 
-                if ('checkbox' == $type)
+                if ('checkbox' == $type && ! $multiple)
                     $input_class = ' class="exclusive"';
                 
                 foreach ($values as $key => $value) {
@@ -863,9 +856,9 @@ var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
                         $checked = ' checked="checked"';
                     if (preg_grep('%^label[_-]?first$%', $options)) { // put label first, input last
                         $item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
-                        $item .= '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                        $item .= '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
                     } else {
-                        $item = '<input type="' . $input_type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                        $item = '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
                         $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
                     }
                     $item = '<span class="wpcf7-list-item">' . $item . '</span>';
