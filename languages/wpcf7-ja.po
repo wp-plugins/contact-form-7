@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-11-26 20:10+0900\n"
+"PO-Revision-Date: 2007-12-30 20:07+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -73,148 +73,152 @@ msgid "Required field?"
 msgstr "必須入力の項目ですか?"
 
 #: contact-form-7/wp-contact-form-7.php:364
-msgid "Allows multiple selections?"
+msgid "Allow multiple selections?"
 msgstr "複数選択を可能にしますか?"
 
 #: contact-form-7/wp-contact-form-7.php:365
+msgid "Make checkboxes exclusive?"
+msgstr "チェックボックスを排他化しますか?"
+
+#: contact-form-7/wp-contact-form-7.php:366
 msgid "Choices"
 msgstr "選択項目"
 
-#: contact-form-7/wp-contact-form-7.php:366
+#: contact-form-7/wp-contact-form-7.php:367
 msgid "Label"
 msgstr "ラベル"
 
-#: contact-form-7/wp-contact-form-7.php:367
+#: contact-form-7/wp-contact-form-7.php:368
 msgid "Default value"
 msgstr "デフォルト値"
 
-#: contact-form-7/wp-contact-form-7.php:368
+#: contact-form-7/wp-contact-form-7.php:369
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/wp-contact-form-7.php:369
+#: contact-form-7/wp-contact-form-7.php:370
 msgid "This field requires author's name"
 msgstr "送信者の名前の入力を要求する項目"
 
-#: contact-form-7/wp-contact-form-7.php:370
+#: contact-form-7/wp-contact-form-7.php:371
 msgid "This field requires author's URL"
 msgstr "送信者の URL の入力を要求する項目"
 
-#: contact-form-7/wp-contact-form-7.php:371
+#: contact-form-7/wp-contact-form-7.php:372
 msgid "This field requires author's email address"
 msgstr "送信者のメールアドレスの入力を要求する項目"
 
-#: contact-form-7/wp-contact-form-7.php:372
+#: contact-form-7/wp-contact-form-7.php:373
 msgid "Copy and paste this code into the form"
 msgstr "次のコードをコピーしてフォームにペーストして下さい。"
 
-#: contact-form-7/wp-contact-form-7.php:373
+#: contact-form-7/wp-contact-form-7.php:374
 msgid "Foreground color"
 msgstr "文字色"
 
-#: contact-form-7/wp-contact-form-7.php:374
+#: contact-form-7/wp-contact-form-7.php:375
 msgid "Background color"
 msgstr "背景色"
 
-#: contact-form-7/wp-contact-form-7.php:375
+#: contact-form-7/wp-contact-form-7.php:376
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: contact-form-7/wp-contact-form-7.php:376
+#: contact-form-7/wp-contact-form-7.php:377
 msgid "Small"
 msgstr "小"
 
-#: contact-form-7/wp-contact-form-7.php:377
+#: contact-form-7/wp-contact-form-7.php:378
 msgid "Medium"
 msgstr "中"
 
-#: contact-form-7/wp-contact-form-7.php:378
+#: contact-form-7/wp-contact-form-7.php:379
 msgid "Large"
 msgstr "大"
 
-#: contact-form-7/wp-contact-form-7.php:379
+#: contact-form-7/wp-contact-form-7.php:380
 msgid "Image settings"
 msgstr "画像の設定"
 
-#: contact-form-7/wp-contact-form-7.php:380
+#: contact-form-7/wp-contact-form-7.php:381
 msgid "Input field settings"
 msgstr "入力項目の設定"
 
-#: contact-form-7/wp-contact-form-7.php:381
+#: contact-form-7/wp-contact-form-7.php:382
 msgid "For image"
 msgstr "画像"
 
-#: contact-form-7/wp-contact-form-7.php:382
+#: contact-form-7/wp-contact-form-7.php:383
 msgid "For input field"
 msgstr "入力項目"
 
-#: contact-form-7/wp-contact-form-7.php:383
+#: contact-form-7/wp-contact-form-7.php:384
 msgid "* One choice per line."
 msgstr "* 1行ごとに分けて入力してください。"
 
-#: contact-form-7/wp-contact-form-7.php:402
+#: contact-form-7/wp-contact-form-7.php:403
 msgid "Contact form created."
 msgstr "コンタクトフォームが作成されました。"
 
-#: contact-form-7/wp-contact-form-7.php:405
+#: contact-form-7/wp-contact-form-7.php:406
 msgid "Contact form saved."
 msgstr "コンタクトフォームが保存されました。"
 
-#: contact-form-7/wp-contact-form-7.php:408
+#: contact-form-7/wp-contact-form-7.php:409
 msgid "Contact form deleted."
 msgstr "コンタクトフォームが削除されました。"
 
-#: contact-form-7/wp-contact-form-7.php:415
+#: contact-form-7/wp-contact-form-7.php:416
 msgid "Untitled"
 msgstr "無題"
 
-#: contact-form-7/wp-contact-form-7.php:439
+#: contact-form-7/wp-contact-form-7.php:440
 msgid "Your Name"
 msgstr "お名前"
 
-#: contact-form-7/wp-contact-form-7.php:439
-#: contact-form-7/wp-contact-form-7.php:441
+#: contact-form-7/wp-contact-form-7.php:440
+#: contact-form-7/wp-contact-form-7.php:442
 msgid "(required)"
 msgstr "(必須）"
 
-#: contact-form-7/wp-contact-form-7.php:441
+#: contact-form-7/wp-contact-form-7.php:442
 msgid "Your Email"
 msgstr "メールアドレス"
 
-#: contact-form-7/wp-contact-form-7.php:443
+#: contact-form-7/wp-contact-form-7.php:444
 msgid "Subject"
 msgstr "題名"
 
-#: contact-form-7/wp-contact-form-7.php:445
+#: contact-form-7/wp-contact-form-7.php:446
 msgid "Your Message"
 msgstr "メッセージ本文"
 
-#: contact-form-7/wp-contact-form-7.php:447
-#: contact-form-7/wp-contact-form-7.php:891
+#: contact-form-7/wp-contact-form-7.php:448
+#: contact-form-7/wp-contact-form-7.php:901
 msgid "Send"
 msgstr "送信"
 
-#: contact-form-7/wp-contact-form-7.php:476
+#: contact-form-7/wp-contact-form-7.php:477
 msgid "Your message was sent successfully. Thanks."
 msgstr "あなたのメッセージは送信されました。ありがとうございました。"
 
-#: contact-form-7/wp-contact-form-7.php:478
+#: contact-form-7/wp-contact-form-7.php:479
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr "メッセージの送信に失敗しました。間をおいてもう一度お試しいただくか、別の手段で管理者にお問い合わせ下さい。"
 
-#: contact-form-7/wp-contact-form-7.php:480
+#: contact-form-7/wp-contact-form-7.php:481
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "入力内容に不備があります。確認してもう一度送信してください。"
 
-#: contact-form-7/wp-contact-form-7.php:482
+#: contact-form-7/wp-contact-form-7.php:483
 msgid "Email address seems invalid."
 msgstr "メールアドレスの形式が正しくないようです。"
 
-#: contact-form-7/wp-contact-form-7.php:484
+#: contact-form-7/wp-contact-form-7.php:485
 msgid "Please fill the required field."
 msgstr "必須項目に記入もれがあります。"
 
-#: contact-form-7/wp-contact-form-7.php:486
+#: contact-form-7/wp-contact-form-7.php:487
 msgid "Your entered code is incorrect."
 msgstr "入力されたコードが正しくありません。"
 
