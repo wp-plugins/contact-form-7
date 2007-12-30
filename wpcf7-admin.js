@@ -146,7 +146,8 @@ function tgPane(pane, tagType) {
     });
   });
   tgInputs.tagName.css({ 'border-color': '#555' });
-  jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
+  jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'makeCheckboxesExclusive',
+    'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
     'imageSizeSmall', 'imageSizeMedium', 'imageSizeLarge' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="checkbox" />');
     tgInputs[n].change(function() {
@@ -234,11 +235,6 @@ function tgPane(pane, tagType) {
       var table1 = jQuery('<table></table>');
       pane.append(table1);
       
-      if ('radioButtons' != tagType)
-        table1.append(tgTr(
-          jQuery('<span>&nbsp;' + _wpcf7.l10n.allowsMultipleSelections + '</span>').prepend(tgInputs.allowsMultipleSelections)
-        ));
-      
       table1.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
         jQuery('<span></span>')
@@ -250,10 +246,26 @@ function tgPane(pane, tagType) {
         jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
         jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
       ));
-      table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
-          .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>')
-      ));
+      
+      if ('menu' == tagType) {
+        table2.append(tgTr(
+          jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
+            .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>'),
+          jQuery('<span>&nbsp;' + _wpcf7.l10n.allowsMultipleSelections + '</span>').prepend(tgInputs.allowsMultipleSelections).prepend('<br />')
+        ));
+      } else if ('checkboxes' == tagType) {
+        table2.append(tgTr(
+          jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
+            .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>'),
+          jQuery('<span>&nbsp;' + _wpcf7.l10n.makeCheckboxesExclusive + '</span>').prepend(tgInputs.makeCheckboxesExclusive).prepend('<br />')
+        ));
+      } else {
+        table2.append(tgTr(
+          jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
+            .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>')
+        ));
+      }
+      
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'captcha':
@@ -451,11 +463,13 @@ function tgCreateTag(tagType, tgInputs, trigger) {
         type = 'checkbox';
       else if ('radioButtons' == tagType)
         type = 'radio';
-      if (tgInputs.allowsMultipleSelections.is(':checked'))
-        type += '+';
       
       var name = tgInputs.tagName.val();
       var options = [];
+      if (tgInputs.allowsMultipleSelections.is(':checked'))
+        options.push('multiple');
+      if (tgInputs.makeCheckboxesExclusive.is(':checked'))
+        options.push('exclusive');
       if (tgInputs.tagId.val())
         options.push('id:' + tgInputs.tagId.val());
       if (tgInputs.tagClasses.val())
