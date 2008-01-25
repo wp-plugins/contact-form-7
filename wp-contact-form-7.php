@@ -82,7 +82,7 @@ class tam_contact_form_seven {
 	}
 
 	function init_switch() {
-		if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_GET['wpcf7']) && 'json' == $_GET['wpcf7']) {
+		if ('POST' == $_SERVER['REQUEST_METHOD'] && $_POST['_wpcf7_is_ajax_call']) {
 			$this->ajax_json_echo();
 			exit();
 		} elseif (! is_admin()) {
@@ -669,19 +669,7 @@ var _wpcf7 = {
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
 		
 		$javascript_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/contact-form-7.js';
-		
-		$url = parse_url($_SERVER['REQUEST_URI']);
-		if (empty($url['query']))
-			$override_url = $url['path'] . '?wpcf7=json';
-		else
-			$override_url = $url['path'] . '?' . $url['query'] . '&wpcf7=json';
-		
 ?>
-<script type="text/javascript">
-//<![CDATA[
-var _wpcf7 = { ajaxUrl: '<?php echo $override_url; ?>' };
-//]]>
-</script>
 <script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
 <?php
 	}

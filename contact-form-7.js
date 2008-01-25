@@ -1,7 +1,6 @@
 jQuery(document).ready(function() {
 	jQuery('div.wpcf7 > form').ajaxForm({
 		beforeSubmit: beforeSubmit,
-		url: _wpcf7.ajaxUrl,
 		dataType: 'json',
 		success: processJson
 	});
@@ -15,6 +14,9 @@ jQuery(document).ready(function() {
 function beforeSubmit(formData, jqForm, options) {
 	clearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
+  
+  formData.push({name: '_wpcf7_is_ajax_call', value: 1});
+  
 	return true;
 }
 
