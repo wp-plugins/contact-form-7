@@ -41,8 +41,8 @@ class tam_contact_form_seven {
 		add_action('init', array(&$this, 'init_switch'), 11);
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		add_filter('widget_text', array(&$this, 'widget_text_filter'));
-		remove_filter('the_content', 'wpautop');
-		add_filter('the_content', array(&$this, 'wpautop_substitute'));
+		if (remove_filter('the_content', 'wpautop'))
+            add_filter('the_content', array(&$this, 'wpautop_substitute'));
 	}
 	
 	// Original wpautop function has harmful effect on formatting of form elements.
