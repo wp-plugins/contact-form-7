@@ -146,7 +146,7 @@ function tgPane(pane, tagType) {
     });
   });
   tgInputs.tagName.css({ 'border-color': '#555' });
-  jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'makeCheckboxesExclusive',
+  jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'insertFirstBlankOption', 'makeCheckboxesExclusive',
     'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
     'imageSizeSmall', 'imageSizeMedium', 'imageSizeLarge' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="checkbox" />');
@@ -248,10 +248,13 @@ function tgPane(pane, tagType) {
       ));
       
       if ('menu' == tagType) {
+        var menuOpt1 = jQuery('<span>&nbsp;' + _wpcf7.l10n.allowsMultipleSelections + '</span>').prepend(tgInputs.allowsMultipleSelections).prepend('<br />');
+        var menuOpt2 = jQuery('<span>&nbsp;' + _wpcf7.l10n.insertFirstBlankOption + '</span>').prepend(tgInputs.insertFirstBlankOption).prepend('<br />');
+        
         table2.append(tgTr(
           jQuery('<span>' + _wpcf7.l10n.menuChoices + '<br /></span>').append(tgInputs.menuChoices)
             .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>'),
-          jQuery('<span>&nbsp;' + _wpcf7.l10n.allowsMultipleSelections + '</span>').prepend(tgInputs.allowsMultipleSelections).prepend('<br />')
+          menuOpt1.append(menuOpt2)
         ));
       } else if ('checkboxes' == tagType) {
         table2.append(tgTr(
@@ -468,6 +471,8 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       var options = [];
       if (tgInputs.allowsMultipleSelections.is(':checked'))
         options.push('multiple');
+      if (tgInputs.insertFirstBlankOption.is(':checked'))
+        options.push('include_blank');
       if (tgInputs.makeCheckboxesExclusive.is(':checked'))
         options.push('exclusive');
       if (tgInputs.tagId.val())

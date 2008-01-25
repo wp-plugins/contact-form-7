@@ -362,6 +362,7 @@ var _wpcf7 = {
 		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
 		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
 		allowsMultipleSelections: "<?php echo js_escape(__('Allow multiple selections?', 'wpcf7')); ?>",
+		insertFirstBlankOption: "<?php echo js_escape(__('Insert a blank item as the first option?', 'wpcf7')); ?>",
 		makeCheckboxesExclusive: "<?php echo js_escape(__('Make checkboxes exclusive?', 'wpcf7')); ?>",
 		menuChoices: "<?php echo js_escape(__('Choices', 'wpcf7')); ?>",
 		label: "<?php echo js_escape(__('Label', 'wpcf7')); ?>",
@@ -805,8 +806,11 @@ var _wpcf7 = {
 				break;
 			case 'select':
                 $multiple = (preg_grep('%^multiple$%', $options)) ? true : false;
-				if ($empty_select = empty($values))
-					array_push($values, '---');
+                $include_blank = preg_grep('%^include_blank$%', $options);
+                
+				if ($empty_select = empty($values) || $include_blank)
+					array_unshift($values, '---');
+                
 				$html = '';
                 foreach ($values as $key => $value) {
                     $selected = '';
