@@ -45,6 +45,7 @@ You can do that by editting a tag like: `[text your-name 40/100]`
 Contact Form 7 has been translated into the following languages.
 
 * Brazilian Portuguese, by [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/)
+* Bulgarian, by [Iliyan Darganov](http://www.darganov.com/)
 * Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
 * Czech, by Korry
 * Dutch, by [Chris Devriese](http://www.100it.be/)
