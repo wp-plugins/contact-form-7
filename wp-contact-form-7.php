@@ -846,7 +846,7 @@ var _wpcf7 = {
                 $html = '';
                 
                 if ('checkbox' == $type && ! $multiple)
-                    $input_class = ' class="exclusive"';
+                    $onclick = ' onclick="wpcf7ExclusiveCheckbox(this);"';
                 
                 foreach ($values as $key => $value) {
                     $checked = '';
@@ -858,9 +858,9 @@ var _wpcf7 = {
                         $checked = ' checked="checked"';
                     if (preg_grep('%^label[_-]?first$%', $options)) { // put label first, input last
                         $item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
-                        $item .= '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                        $item .= '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $onclick . ' />';
                     } else {
-                        $item = '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $input_class . ' />';
+                        $item = '<input type="' . $type . '" name="' . $name . ($multiple ? '[]' : '') . '" value="' . attribute_escape($value) . '"' . $checked . $onclick . ' />';
                         $item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
                     }
                     $item = '<span class="wpcf7-list-item">' . $item . '</span>';

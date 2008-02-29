@@ -4,12 +4,12 @@ jQuery(document).ready(function() {
 		dataType: 'json',
 		success: processJson
 	});
-  
-  // Exclusive checkbox
-  jQuery('input:checkbox.exclusive').click(function() {
-    jQuery(this.form).find('input:checkbox.exclusive[@name="' + this.name + '"]').not(this).removeAttr('checked');
-  });
 });
+
+// Exclusive checkbox
+function wpcf7ExclusiveCheckbox(elem) {
+  jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
+}
 
 function beforeSubmit(formData, jqForm, options) {
 	clearResponseOutput();
