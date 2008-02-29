@@ -780,9 +780,13 @@ var _wpcf7 = {
 						preg_match('%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches);
 						if ($size = (int) $sm_matches[1])
 							$atts .= ' size="' . $size . '"';
+                        else
+                            $atts .= ' size="40"';
 						if ($maxlength = (int) $sm_matches[2])
 							$atts .= ' maxlength="' . $maxlength . '"';
-					}
+					} else {
+                        $atts .= ' size="40"';
+                    }
 				}
 				$html = '<input type="text" name="' . $name . '" value="' . attribute_escape($value) . '"' . $atts . ' />';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
