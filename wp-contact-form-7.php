@@ -800,9 +800,15 @@ var _wpcf7 = {
 						preg_match('%^([0-9]*)[x/]([0-9]*)$%', $cols_rows, $cr_matches);
 						if ($cols = (int) $cr_matches[1])
 							$atts .= ' cols="' . $cols . '"';
+                        else
+                            $atts .= ' cols="40"';
 						if ($rows = (int) $cr_matches[2])
 							$atts .= ' rows="' . $rows . '"';
-					}
+                        else
+                            $atts .= ' rows="10"';
+					} else {
+                        $atts .= ' cols="40" rows="10"';
+                    }
 				}
 				$html = '<textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>';
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
