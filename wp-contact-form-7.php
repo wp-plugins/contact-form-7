@@ -686,7 +686,7 @@ var _wpcf7 = {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select|checkbox|radio|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select|checkbox|radio|acceptance|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
@@ -871,6 +871,14 @@ var _wpcf7 = {
 				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
+            case 'acceptance':
+                $invert = (bool) preg_grep('%^invert$%', $options);
+                $onclick = $invert ? ' onclick="wpcf7ToggleSubmit(this, true);"' : ' onclick="wpcf7ToggleSubmit(this);"';
+                $default = (bool) preg_grep('%^default:on$%', $options);
+                $checked = $default ? ' checked="checked"' : '';
+                $html = '<input type="checkbox" value="1"' . $onclick . $checked . ' />';
+                return $html;
+                break;
 			case 'captchac':
 				$op = array();
 				// Default

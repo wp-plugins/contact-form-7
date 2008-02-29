@@ -11,6 +11,17 @@ function wpcf7ExclusiveCheckbox(elem) {
   jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
 }
 
+// Toggle submit button
+function wpcf7ToggleSubmit(elem, invert) {
+  var submit = jQuery(elem.form).find('input:submit');
+  var enable = jQuery(elem).is(':checked');
+  if (invert) enable = ! enable;
+  if (enable)
+    submit.removeAttr('disabled');
+  else
+    submit.attr('disabled', 'disabled');
+}
+
 function wpcf7BeforeSubmit(formData, jqForm, options) {
 	wpcf7ClearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
