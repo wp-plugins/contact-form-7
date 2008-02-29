@@ -1,8 +1,8 @@
 jQuery(document).ready(function() {
 	jQuery('div.wpcf7 > form').ajaxForm({
-		beforeSubmit: beforeSubmit,
+		beforeSubmit: wpcf7BeforeSubmit,
 		dataType: 'json',
-		success: processJson
+		success: wpcf7ProcessJson
 	});
 });
 
@@ -11,8 +11,8 @@ function wpcf7ExclusiveCheckbox(elem) {
   jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
 }
 
-function beforeSubmit(formData, jqForm, options) {
-	clearResponseOutput();
+function wpcf7BeforeSubmit(formData, jqForm, options) {
+	wpcf7ClearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
   
   formData.push({name: '_wpcf7_is_ajax_call', value: 1});
@@ -20,7 +20,7 @@ function beforeSubmit(formData, jqForm, options) {
 	return true;
 }
 
-function notValidTip(input, message) {
+function wpcf7NotValidTip(input, message) {
 	jQuery(input).after('<span class="wpcf7-not-valid-tip">' + message + '</span>');
 	jQuery('span.wpcf7-not-valid-tip').mouseover(function() {
 		jQuery(this).fadeOut('fast');
@@ -33,12 +33,12 @@ function notValidTip(input, message) {
 	});
 }
 
-function processJson(data) {
+function wpcf7ProcessJson(data) {
 	var wpcf7ResponseOutput = jQuery(data.into).find('div.wpcf7-response-output');
-	clearResponseOutput();
+	wpcf7ClearResponseOutput();
 	if (data.invalids) {
 		jQuery.each(data.invalids, function(i, n) {
-			notValidTip(jQuery(data.into).find(n.into), n.message);
+			wpcf7NotValidTip(jQuery(data.into).find(n.into), n.message);
 		});
 		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
 	}
@@ -62,7 +62,7 @@ function processJson(data) {
 	wpcf7ResponseOutput.append(data.message).fadeIn('fast');
 }
 
-function clearResponseOutput() {
+function wpcf7ClearResponseOutput() {
 	jQuery('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
 	jQuery('span.wpcf7-not-valid-tip').remove();
 	jQuery('img.ajax-loader').css({ visibility: 'hidden' });
