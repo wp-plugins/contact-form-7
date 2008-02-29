@@ -888,7 +888,7 @@ var _wpcf7 = {
 				if (is_array($op['img_size']))
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
 				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
-				$html = '<img src="' . $captcha_url . '"' . $atts . ' />';
+				$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
 				return $html;
@@ -902,7 +902,7 @@ var _wpcf7 = {
 		if (empty($value))
 			$value = __('Send', 'wpcf7');
 		$ajax_loader_image_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/images/ajax-loader.gif';
-		return '<input type="submit" value="' . $value . '" /> <img class="ajax-loader" style="visibility: hidden;" src="' . $ajax_loader_image_url . '" />';
+		return '<input type="submit" value="' . $value . '" /> <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 	}
 
 	function form_element_parse($element) {
