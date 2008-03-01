@@ -120,6 +120,8 @@ class tam_contact_form_seven {
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
 					echo '{ mailSent: 0, message: "' . js_escape($this->message('validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
+                } elseif (! $this->acceptance($cf)) { // Not accepted terms
+                    echo '{ mailSent: 0, message: "' . js_escape($this->message('accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
 					echo '{ mailSent: 0, message: "' . js_escape($this->message('mail_sent_ng')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
@@ -237,6 +239,24 @@ class tam_contact_form_seven {
 		else
 			return false;
 	}
+
+    function acceptance($contact_form) {
+        $fes = $this->form_elements($contact_form['form'], false);
+		
+        $accepted = true;
+        
+		foreach ($fes as $fe) {
+            if ('acceptance' != $fe['type'])
+                continue;
+            
+            $invert = (bool) preg_grep('%^invert$%', $fe['options']);
+            
+            if ($invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']])
+                $accepted = false;
+        }
+        
+        return $accepted;
+    }
 
 	function set_initial() {
 		$wpcf7 = get_option('wpcf7');
@@ -480,6 +500,8 @@ var _wpcf7 = {
 				return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
 			case 'validation_error':
 				return __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
+            case 'accept_terms':
+                return __('Please accept the terms to proceed.', 'wpcf7');
 			case 'invalid_email':
 				return __('Email address seems invalid.', 'wpcf7');
 			case 'invalid_required':
@@ -500,6 +522,8 @@ var _wpcf7 = {
 			$validation = $this->validate($cf);
 			if (! $validation['valid']) {
 				$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
+			} elseif (! $this->acceptance($cf)) { // Not accepted terms
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('accept_terms'));
 			} elseif ($this->akismet($cf)) { // Spam!
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
 			} elseif ($this->mail($cf)) {
