@@ -12,9 +12,12 @@ function wpcf7ExclusiveCheckbox(elem) {
 }
 
 // Toggle submit button
-function wpcf7ToggleSubmit(elem) {
-  var submit = jQuery(elem.form).find('input:submit');
-  var acceptances = jQuery(elem.form).find('input:checkbox.wpcf7-acceptance');
+function wpcf7ToggleSubmit(form) {
+  var submit = jQuery(form).find('input:submit');
+  if (! submit.length) return;
+  
+  var acceptances = jQuery(form).find('input:checkbox.wpcf7-acceptance');
+  if (! acceptances.length) return;
   
   submit.removeAttr('disabled');
   acceptances.each(function(i, n) {

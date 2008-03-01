@@ -540,7 +540,6 @@ var _wpcf7 = {
 	var $processing_within;
 	var $unit_count;
 	var $widget_count;
-    var $dynamic_settings;
 	
 	function the_content_filter($content) {
 		$this->processing_within = 'p' . get_the_ID();
@@ -556,7 +555,6 @@ var _wpcf7 = {
 		$this->widget_count += 1;
 		$this->processing_within = 'w' . $this->widget_count;
 		$this->unit_count = 0;
-        $this->dynamic_settings = array();
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
 		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
@@ -581,7 +579,7 @@ var _wpcf7 = {
 		$url = parse_url($_SERVER['REQUEST_URI']);
 		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
 		
-		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form">';
+		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form" id="' . $unit_tag . '">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 		$form .= $this->form_elements($cf['form']);
@@ -610,6 +608,13 @@ var _wpcf7 = {
 		$class = ' class="' . $class . '"';
 		
 		$form .= '<div' . $class . '>' . $content . '</div>';
+        
+        $script = '<script type="text/javascript">
+//<![CDATA[
+wpcf7ToggleSubmit(jQuery("form#' . $unit_tag . '").get(0));
+//]]>
+</script>';
+        $form .= $script;
 		
 		$form .= '</div>';
 		
@@ -910,10 +915,7 @@ var _wpcf7 = {
                 $invert = (bool) preg_grep('%^invert$%', $options);
                 $default = (bool) preg_grep('%^default:on$%', $options);
                 
-                if ($invert && $default || ! $invert && ! $default)
-                    $this->dynamic_settings['disable_submit'] = 1;
-                
-                $onclick = ' onclick="wpcf7ToggleSubmit(this);"';
+                $onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
                 $checked = $default ? ' checked="checked"' : '';
                 $html = '<input type="checkbox" value="1"' . $atts . $onclick . $checked . ' />';
                 return $html;
@@ -950,8 +952,7 @@ var _wpcf7 = {
 			$value = __('Send', 'wpcf7');
 		$ajax_loader_image_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/images/ajax-loader.gif';
         
-        $disabled = $this->dynamic_settings['disable_submit'] ? ' disabled="disabled"' : '';
-        $html = '<input type="submit" value="' . $value . '"' . $disabled . ' />';
+        $html = '<input type="submit" value="' . $value . '" />';
         $html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 		return $html;
 	}
