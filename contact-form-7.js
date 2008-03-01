@@ -12,14 +12,16 @@ function wpcf7ExclusiveCheckbox(elem) {
 }
 
 // Toggle submit button
-function wpcf7ToggleSubmit(elem, invert) {
+function wpcf7ToggleSubmit(elem) {
   var submit = jQuery(elem.form).find('input:submit');
-  var enable = jQuery(elem).is(':checked');
-  if (invert) enable = ! enable;
-  if (enable)
-    submit.removeAttr('disabled');
-  else
-    submit.attr('disabled', 'disabled');
+  var acceptances = jQuery(elem.form).find('input:checkbox.wpcf7-acceptance');
+  
+  submit.removeAttr('disabled');
+  acceptances.each(function(i, n) {
+    n = jQuery(n);
+    if (n.hasClass('wpcf7-invert') && n.is(':checked') || ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
+      submit.attr('disabled', 'disabled');
+  });
 }
 
 function wpcf7BeforeSubmit(formData, jqForm, options) {

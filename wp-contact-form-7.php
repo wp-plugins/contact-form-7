@@ -516,6 +516,7 @@ var _wpcf7 = {
 	var $processing_within;
 	var $unit_count;
 	var $widget_count;
+    var $dynamic_settings;
 	
 	function the_content_filter($content) {
 		$this->processing_within = 'p' . get_the_ID();
@@ -531,6 +532,7 @@ var _wpcf7 = {
 		$this->widget_count += 1;
 		$this->processing_within = 'w' . $this->widget_count;
 		$this->unit_count = 0;
+        $this->dynamic_settings = array();
 
 		$regex = '/\[\s*contact-form\s+(\d+)(?:\s+.*?)?\s*\]/';
 		return preg_replace_callback($regex, array(&$this, 'the_content_filter_callback'), $content);
@@ -616,6 +618,9 @@ var _wpcf7 = {
                         $_POST[$name] = '';
                 }
             }
+            
+            if ('acceptance' == $type)
+                $_POST[$name] = $_POST[$name] ? 1 : 0;
             
 			// Required item (*)
 			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
@@ -746,6 +751,12 @@ var _wpcf7 = {
         if (preg_match('/^captchac$/', $type))
             $class_att .= ' wpcf7-captcha-' . $name;
         
+        if ('acceptance' == $type) {
+            $class_att .= ' wpcf7-acceptance';
+            if (preg_grep('%^invert$%', $options))
+                $class_att .= ' wpcf7-invert';
+        }
+        
         if ($class_att)
             $atts .= ' class="' . trim($class_att) . '"';
 		
@@ -873,10 +884,14 @@ var _wpcf7 = {
 				break;
             case 'acceptance':
                 $invert = (bool) preg_grep('%^invert$%', $options);
-                $onclick = $invert ? ' onclick="wpcf7ToggleSubmit(this, true);"' : ' onclick="wpcf7ToggleSubmit(this);"';
                 $default = (bool) preg_grep('%^default:on$%', $options);
+                
+                if ($invert && $default || ! $invert && ! $default)
+                    $this->dynamic_settings['disable_submit'] = 1;
+                
+                $onclick = ' onclick="wpcf7ToggleSubmit(this);"';
                 $checked = $default ? ' checked="checked"' : '';
-                $html = '<input type="checkbox" value="1"' . $onclick . $checked . ' />';
+                $html = '<input type="checkbox" value="1"' . $atts . $onclick . $checked . ' />';
                 return $html;
                 break;
 			case 'captchac':
@@ -910,7 +925,11 @@ var _wpcf7 = {
 		if (empty($value))
 			$value = __('Send', 'wpcf7');
 		$ajax_loader_image_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/images/ajax-loader.gif';
-		return '<input type="submit" value="' . $value . '" /> <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
+        
+        $disabled = $this->dynamic_settings['disable_submit'] ? ' disabled="disabled"' : '';
+        $html = '<input type="submit" value="' . $value . '"' . $disabled . ' />';
+        $html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
+		return $html;
 	}
 
 	function form_element_parse($element) {
