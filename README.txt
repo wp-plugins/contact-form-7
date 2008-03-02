@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://takayukister.chipin.com/contact-form-7-20
 Tags: contact form, email, ajax, captcha, akismet
 Requires at least: 2.2
-Tested up to: 2.4-bleeding
-Stable tag: 1.7.5
+Tested up to: 2.5-beta1
+Stable tag: 1.7.6
 
 Just another contact form plugin. Simple but flexible.
 
@@ -30,11 +30,6 @@ See also: [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-for
 If you have questions about Contact Form 7,
 please submit it [to the support forum](http://wordpress.org/tags/contact-form-7#postform) or
 comment [on my blog](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/).
-
-= By default the size of text field is really small. How can I increase it? =
-
-[This documentation](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/#Tags_in_form_content) may help.
-You can do that by editting a tag like: `[text your-name 40/100]`
 
 == Screenshots ==
 
