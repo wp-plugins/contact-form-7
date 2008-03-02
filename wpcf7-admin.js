@@ -93,7 +93,7 @@ function tagGenerator() {
   var dropdown = jQuery('<div class="tg-dropdown"></div>');
   dropdown.hide();
   
-  jQuery.each([ 'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons', 'captcha', 'submit' ], function(i, n) {
+  jQuery.each([ 'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons', 'acceptance', 'captcha', 'submit' ], function(i, n) {
     var submenu = jQuery('<div>' + _wpcf7.l10n[n] + '</div>');
     submenu.css({
       margin: 0,
@@ -147,6 +147,7 @@ function tgPane(pane, tagType) {
   });
   tgInputs.tagName.css({ 'border-color': '#555' });
   jQuery.each([ 'isRequiredField', 'allowsMultipleSelections', 'insertFirstBlankOption', 'makeCheckboxesExclusive',
+    'isAcceptanceDefaultOn', 'isAcceptanceInvert',
     'akismetAuthor', 'akismetAuthorEmail', 'akismetAuthorUrl',
     'imageSizeSmall', 'imageSizeMedium', 'imageSizeLarge' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="checkbox" />');
@@ -268,6 +269,30 @@ function tgPane(pane, tagType) {
             .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.oneChoicePerLine + '</span>')
         ));
       }
+      
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
+      break;
+    case 'acceptance':
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
+      ));
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+      ));
+      
+      var menuOpt1 = jQuery('<span>&nbsp;' + _wpcf7.l10n.isAcceptanceDefaultOn + '</span>').prepend(tgInputs.isAcceptanceDefaultOn).prepend('<br />');
+      var menuOpt2 = jQuery('<span>&nbsp;' + _wpcf7.l10n.isAcceptanceInvert + '</span>').prepend(tgInputs.isAcceptanceInvert).prepend('<br />');
+      menuOpt2.append('<br /><span style="font-size: smaller;">' + _wpcf7.l10n.isAcceptanceInvertMeans + '</span>');
+      
+      table2.append(tgTr(menuOpt1.append(menuOpt2)));
       
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
@@ -490,6 +515,24 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       var tag = name ? '[' + type + ' ' + name + options + choices +  ']' : '';
       tgInputs.tag1st.val(tag);
       break;
+    case 'acceptance':
+      var type = 'acceptance';
+      var name = tgInputs.tagName.val();
+      var options = [];
+      if (tgInputs.isAcceptanceDefaultOn.is(':checked'))
+        options.push('default:on');
+      if (tgInputs.isAcceptanceInvert.is(':checked'))
+        options.push('invert');
+      if (tgInputs.tagId.val())
+        options.push('id:' + tgInputs.tagId.val());
+      if (tgInputs.tagClasses.val())
+        jQuery.each(tgInputs.tagClasses.val().split(' '), function(i, n) {
+          options.push('class:' + n);
+        });
+      options = (options.length > 0) ? ' ' + options.join(' ') : '';
+      var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
+      tgInputs.tag1st.val(tag);
+      break;
     case 'captcha':
       // for captchac
       var type = 'captchac';
@@ -554,6 +597,8 @@ function tgDefaultName(tagType) {
     return 'checkbox-' + rand;
   } else if ('radioButtons' == tagType) {
     return 'radio-' + rand;
+  } else if ('acceptance' == tagType) {
+    return 'acceptance-' + rand;
   } else if ('captcha' == tagType) {
     return 'captcha-' + rand;
   }
