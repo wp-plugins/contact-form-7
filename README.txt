@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://takayukister.chipin.com/contact-form-7-20
 Tags: contact form, email, ajax, captcha, akismet
 Requires at least: 2.2
-Tested up to: 2.5-beta1
-Stable tag: 1.7.6
+Tested up to: 2.5-RC1.1
+Stable tag: 1.7.6.1
 
 Just another contact form plugin. Simple but flexible.
 
