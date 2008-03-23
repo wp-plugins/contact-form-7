@@ -583,7 +583,7 @@ var _wpcf7 = {
 		$url = parse_url($_SERVER['REQUEST_URI']);
 		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
 		
-		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form" id="' . $unit_tag . '">';
+		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 		$form .= $this->form_elements($cf['form']);
@@ -615,7 +615,7 @@ var _wpcf7 = {
         
         $script = '<script type="text/javascript">
 //<![CDATA[
-wpcf7ToggleSubmit(jQuery("form#' . $unit_tag . '").get(0));
+wpcf7ToggleSubmit(jQuery("div#' . $unit_tag . ' form").get(0));
 //]]>
 </script>';
         $form .= $script;
