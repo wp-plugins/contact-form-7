@@ -914,7 +914,7 @@ var _wpcf7 = {
                 
                 $onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
                 $checked = $default ? ' checked="checked"' : '';
-                $html = '<input type="checkbox" value="1"' . $atts . $onclick . $checked . ' />';
+                $html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $onclick . $checked . ' />';
                 return $html;
                 break;
 			case 'captchac':
