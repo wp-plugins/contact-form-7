@@ -4,6 +4,10 @@ jQuery(document).ready(function() {
 		dataType: 'json',
 		success: wpcf7ProcessJson
 	});
+
+  jQuery('div.wpcf7 > form').each(function(i, n) {
+    wpcf7ToggleSubmit(jQuery(n));
+  });
 });
 
 // Exclusive checkbox

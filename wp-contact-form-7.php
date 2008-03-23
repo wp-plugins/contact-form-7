@@ -612,13 +612,6 @@ var _wpcf7 = {
 		$class = ' class="' . $class . '"';
 		
 		$form .= '<div' . $class . '>' . $content . '</div>';
-        
-        $script = '<script type="text/javascript">
-//<![CDATA[
-wpcf7ToggleSubmit(jQuery("div#' . $unit_tag . ' form").get(0));
-//]]>
-</script>';
-        $form .= $script;
 		
 		$form .= '</div>';
 		
