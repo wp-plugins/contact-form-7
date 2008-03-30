@@ -23,9 +23,11 @@ Just another contact form plugin. Simple but flexible.
 1. Upload whole `contact-form-7` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
-See also: [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/)
+See also: [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/) and [FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/)
 
 == Frequently Asked Questions ==
+
+See [Contact Form 7 FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/)
 
 If you have questions about Contact Form 7,
 please submit it [to the support forum](http://wordpress.org/tags/contact-form-7#postform) or
@@ -43,15 +45,18 @@ Contact Form 7 has been translated into the following languages.
 * Bulgarian, by [Iliyan Darganov](http://www.darganov.com/)
 * Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
 * Czech, by Korry
+* Danish, by [Jens Griebel](http://www.kompas-it.dk/)
 * Dutch, by [Chris Devriese](http://www.100it.be/)
 * French, by [Jillij](http://www.jillij.com/)
 * German, by [Marcel Spitau](http://blog.spitau.de)
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
+* Latvian, by [Sandis Veinbergs](http://www.kleofass.lv/)
 * Norwegian, by Kjetil M. Bergem
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Russian, by [Dmitry Volotovich](http://www.volnov.com)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
+* Swedish, by [Fredrik Jonsson](http://www.fredda-o-ac.se/)
 * Turkish, by [Roman Neumuller](http://katpatuka.wordpress.com)
 
 These language files are included in the plugin.
