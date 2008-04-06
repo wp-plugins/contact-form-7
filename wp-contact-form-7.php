@@ -655,6 +655,15 @@ var _wpcf7 = {
 					$reason[$name] = $this->message('invalid_required');
 				}
 			}
+            
+            if ('select*' == $type) {
+                if (empty($_POST[$name]) ||
+                        ! is_array($_POST[$name]) && '---' == $_POST[$name] ||
+                        is_array($_POST[$name]) && 1 == count($_POST[$name]) && '---' == $_POST[$name][0]) {
+                    $valid = false;
+					$reason[$name] = $this->message('invalid_required');
+                }
+			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
 				if ('*' == substr($type, -1) && empty($_POST[$name])) {
@@ -717,7 +726,7 @@ var _wpcf7 = {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select|checkbox[*]?|radio|acceptance|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
 		if ($replace) {
@@ -852,6 +861,7 @@ var _wpcf7 = {
 				return $html;
 				break;
 			case 'select':
+			case 'select*':
                 $multiple = (preg_grep('%^multiple$%', $options)) ? true : false;
                 $include_blank = preg_grep('%^include_blank$%', $options);
                 
