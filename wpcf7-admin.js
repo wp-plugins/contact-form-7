@@ -235,7 +235,10 @@ function tgPane(pane, tagType) {
     case 'radioButtons':
       var table1 = jQuery('<table></table>');
       pane.append(table1);
-      
+      if ('radioButtons' != tagType)
+        table1.append(tgTr(
+          jQuery('<span>&nbsp;' + _wpcf7.l10n.isRequiredField + '</span>').prepend(tgInputs.isRequiredField)
+        ));
       table1.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
         jQuery('<span></span>')
@@ -491,6 +494,8 @@ function tgCreateTag(tagType, tgInputs, trigger) {
         type = 'checkbox';
       else if ('radioButtons' == tagType)
         type = 'radio';
+      if (tgInputs.isRequiredField.is(':checked'))
+        type += '*';
       
       var name = tgInputs.tagName.val();
       var options = [];
