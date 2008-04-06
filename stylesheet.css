@@ -24,6 +24,10 @@ div.wpcf7-validation-errors {
 	border: 2px solid #f7e700;
 }
 
+span.wpcf7-form-control-wrap {
+	position: relative;
+}
+
 span.wpcf7-not-valid-tip {
 	position: absolute;
 	top: 20%;
