@@ -40,16 +40,16 @@ function wpcf7BeforeSubmit(formData, jqForm, options) {
 	return true;
 }
 
-function wpcf7NotValidTip(input, message) {
-	jQuery(input).after('<span class="wpcf7-not-valid-tip">' + message + '</span>');
+function wpcf7NotValidTip(into, message) {
+  jQuery(into).append('<span class="wpcf7-not-valid-tip">' + message + '</span>');
 	jQuery('span.wpcf7-not-valid-tip').mouseover(function() {
 		jQuery(this).fadeOut('fast');
 	});
-	jQuery(input).mouseover(function() {
-		jQuery(input).siblings('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
+	jQuery(into).find(':input').mouseover(function() {
+		jQuery(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
 	});
-	jQuery(input).focus(function() {
-		jQuery(input).siblings('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
+	jQuery(into).find(':input').focus(function() {
+		jQuery(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
 	});
 }
 

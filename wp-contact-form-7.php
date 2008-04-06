@@ -116,7 +116,7 @@ class tam_contact_form_seven {
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
 					foreach ($validation['reason'] as $name => $reason) {
-						$invalids[] = '{ into: ":input[@name=' . $name . ']", message: "' . js_escape($reason) . '" }';
+						$invalids[] = '{ into: "span.wrap.' . $name . '", message: "' . js_escape($reason) . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
 					echo '{ mailSent: 0, message: "' . js_escape($this->message('validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
@@ -826,7 +826,7 @@ var _wpcf7 = {
                     }
 				}
 				$html = '<input type="text" name="' . $name . '" value="' . attribute_escape($value) . '"' . $atts . ' />';
-				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				$html = '<span class="wrap ' . $name . '" style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
 			case 'textarea':
@@ -848,7 +848,7 @@ var _wpcf7 = {
                     }
 				}
 				$html = '<textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>';
-				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				$html = '<span class="wrap ' . $name . '" style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
 			case 'select':
@@ -874,7 +874,7 @@ var _wpcf7 = {
                     $atts .= ' multiple="multiple"';
                 
 				$html = '<select name="' . $name . ($multiple ? '[]' : '') . '"' . $atts . '>' . $html . '</select>';
-				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				$html = '<span class="wrap ' . $name . '" style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
             case 'checkbox':
@@ -908,7 +908,7 @@ var _wpcf7 = {
                 }
                 
                 $html = '<span' . $atts . '>' . $html . '</span>';
-				$html = '<span style="position: relative;">' . $html . $validation_error . '</span>';
+				$html = '<span class="wrap ' . $name . '" style="position: relative;">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
             case 'acceptance':
