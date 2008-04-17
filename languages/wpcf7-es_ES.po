@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-09-10 20:43+0100\n"
-"Last-Translator: QA Solutions.NET <qasolutions.js@gmail.com>\n"
+"PO-Revision-Date: 2008-04-17 17:27+0900\n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -72,13 +72,13 @@ msgstr "Error al enviar el mensaje. Por favor pruébalo más tarde o contacta co
 #: contact-form-7/wp-contact-form-7.php:324
 #: contact-form-7/wp-contact-form-7.php:424
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Error  de validación. por favor confirma los campos i envía el formulario de nuevo"
+msgstr "Error  de validación. por favor confirma los campos y envía el formulario de nuevo"
 
 #: contact-form-7/wp-contact-form-7.php:351
 #: contact-form-7/wp-contact-form-7.php:358
 #: contact-form-7/wp-contact-form-7.php:409
 msgid "Please fill the required field."
-msgstr "Por favor cumplimenta los campos necesarios"
+msgstr "Por favor complementa los campos necesarios"
 
 #: contact-form-7/wp-contact-form-7.php:361
 #: contact-form-7/wp-contact-form-7.php:402
@@ -96,7 +96,7 @@ msgstr "Título"
 
 #: contact-form-7/includes/admin-panel.php:39
 msgid "Copy and paste this code into your post content."
-msgstr "Copia i pega este código dentro del contenido de tu post"
+msgstr "Copia y pega este código dentro del contenido de tu post"
 
 #: contact-form-7/includes/admin-panel.php:45
 msgid "Form content"
@@ -116,7 +116,7 @@ msgstr "Campo de remitente:"
 
 #: contact-form-7/includes/admin-panel.php:63
 msgid "Message body:"
-msgstr "Cuerp del mensaje:"
+msgstr "Cuerpo del mensaje:"
 
 #: contact-form-7/includes/admin-panel.php:67
 msgid "Options"
