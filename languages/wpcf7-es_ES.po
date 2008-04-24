@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-04-17 17:27+0900\n"
+"PO-Revision-Date: 2008-04-24 23:36+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -72,13 +72,13 @@ msgstr "Error al enviar el mensaje. Por favor pruébalo más tarde o contacta co
 #: contact-form-7/wp-contact-form-7.php:324
 #: contact-form-7/wp-contact-form-7.php:424
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Error  de validación. por favor confirma los campos y envía el formulario de nuevo"
+msgstr "Error  de validación. Por favor confirma los campos y envía el formulario de nuevo"
 
 #: contact-form-7/wp-contact-form-7.php:351
 #: contact-form-7/wp-contact-form-7.php:358
 #: contact-form-7/wp-contact-form-7.php:409
 msgid "Please fill the required field."
-msgstr "Por favor complementa los campos necesarios"
+msgstr "Por favor completa este campo"
 
 #: contact-form-7/wp-contact-form-7.php:361
 #: contact-form-7/wp-contact-form-7.php:402
