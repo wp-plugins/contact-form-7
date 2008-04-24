@@ -56,6 +56,7 @@ Contact Form 7 has been translated into the following languages.
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Russian, by [Dmitry Volotovich](http://www.volnov.com)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
+(revised by [Vladimir Prieto](http://vladimir.prie.to/) and [Federico Mikaelian](http://www.fedemika.com.ar/))
 * Swedish, by [Fredrik Jonsson](http://www.fredda-o-ac.se/)
 * Turkish, by [Roman Neumuller](http://katpatuka.wordpress.com)
 
