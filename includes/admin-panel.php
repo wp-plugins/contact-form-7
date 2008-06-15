@@ -76,9 +76,9 @@
 
 			<input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 
-			<p class="submit">
-				<input type="submit" class="cfsave" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-			</p>
+			<div>
+				<input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
+			</div>
 		</div>
 			
 		<?php if (! $unsaved) : ?>

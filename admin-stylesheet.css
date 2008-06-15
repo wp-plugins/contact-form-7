@@ -35,9 +35,6 @@ input#wpcf7-title {
 	font: bold 20px serif;
 	cursor: pointer;
 }
-input.cfsave {
-	font-weight: bold;
-}
 p.tagcode {
 	color: #333;
 }
@@ -65,9 +62,6 @@ textarea {
 }
 label.disabled {
 	color: #777;
-}
-p.submit {
-	margin: 0 24px;
 }
 div.tag-generator {
 	position: relative;
