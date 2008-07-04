@@ -55,6 +55,7 @@ Contact Form 7 has been translated into the following languages.
 * Norwegian, by Kjetil M. Bergem
 * Polish, by [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Russian, by [Dmitry Volotovich](http://www.volnov.com)
+* Romanian, by [Stas Sushkov](http://stas.nerd.ro/ascii/)
 * Spanish, by [Jordi Sancho](http://www.qasolutions.net/blog)
 (revised by [Vladimir Prieto](http://vladimir.prie.to/) and [Federico Mikaelian](http://www.fedemika.com.ar/))
 * Swedish, by [Fredrik Jonsson](http://www.fredda-o-ac.se/)
