@@ -41,7 +41,7 @@ comment [on my blog](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/).
 
 Contact Form 7 has been translated into the following languages.
 
-* Brazilian Portuguese, by [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/)
+* Brazilian Portuguese, by [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/) (revised by Henrique Vianna)
 * Bulgarian, by [Iliyan Darganov](http://www.darganov.com/)
 * Catalan, by [Jordi Sancho](http://www.qasolutions.net/blog)
 * Czech, by Korry
