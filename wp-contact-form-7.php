@@ -636,11 +636,13 @@ var _wpcf7 = {
 			if (preg_match('/^(?:select|checkbox|radio)[*]?$/', $type)) {
                 if (is_array($_POST[$name])) {
                     foreach ($_POST[$name] as $key => $value) {
+                        $value = stripslashes($value);
                         if (! in_array($value, $values)) // Not in given choices.
                             unset($_POST[$name][$key]);
                     }
                 } else {
-                    if (! in_array($_POST[$name], $values)) //  Not in given choices.
+                    $value = stripslashes($_POST[$name]);
+                    if (! in_array($value, $values)) //  Not in given choices.
                         $_POST[$name] = '';
                 }
             }
