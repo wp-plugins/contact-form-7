@@ -259,6 +259,8 @@ class tam_contact_form_seven {
     }
 
 	function set_initial() {
+        $this->load_plugin_textdomain();
+    
 		$wpcf7 = get_option('wpcf7');
 		if (! is_array($wpcf7))
 			$wpcf7 = array();
