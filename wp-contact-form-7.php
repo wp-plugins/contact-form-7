@@ -25,6 +25,12 @@ Author URI: http://ideasilo.wordpress.com/
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+define('WPCF7_VERSION', '1.7.8');
+
+function wpcf7_version() {
+    return WPCF7_VERSION;
+}
+
 class tam_contact_form_seven {
 
 	var $contact_forms;
@@ -580,7 +586,8 @@ var _wpcf7 = {
 		$unit_tag = 'wpcf7-f' . $id . '-' . $this->processing_within . '-o' . $this->unit_count;
 		$this->processing_unit_tag = $unit_tag;
 
-		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
+        $form = '<!-- Contact Form 7 ' . wpcf7_version() . ' -->';
+		$form .= '<div class="wpcf7" id="' . $unit_tag . '">';
 		
 		$url = parse_url($_SERVER['REQUEST_URI']);
 		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
