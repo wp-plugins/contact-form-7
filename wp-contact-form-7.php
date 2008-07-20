@@ -31,6 +31,21 @@ function wpcf7_version() {
     return WPCF7_VERSION;
 }
 
+if (! defined('WP_CONTENT_DIR'))
+    define('WP_CONTENT_DIR', ABSPATH . 'wp-content');
+if (! defined('WP_CONTENT_URL'))
+    define('WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
+
+if (! defined('WP_PLUGIN_DIR'))
+    define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins');
+if (! defined('WP_PLUGIN_URL'))
+    define('WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins');
+
+if (! defined('WPCF7_PLUGIN_DIR'))
+    define('WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . plugin_basename(dirname(__FILE__)));
+if (! defined('WPCF7_PLUGIN_URL'))
+    define('WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)));
+
 class tam_contact_form_seven {
 
 	var $contact_forms;
@@ -285,7 +300,12 @@ class tam_contact_form_seven {
 	}
 
 	function load_plugin_textdomain() { // l10n
-		load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages');
+        global $wp_version;
+
+        if (version_compare($wp_version, '2.6', '<')) // Using old WordPress
+            load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages');
+        else
+            load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages');
 	}
 
 	function contact_forms() {
@@ -370,10 +390,10 @@ class tam_contact_form_seven {
 		global $plugin_page;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
-			$admin_stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/admin-stylesheet.css';
+            $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 			
-			$javascript_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/wpcf7-admin.js';
+			$javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
 ?>
 <script type="text/javascript">
 //<![CDATA[
@@ -457,7 +477,7 @@ var _wpcf7 = {
 			$cf = null;
 		}
 		
-		require_once ABSPATH . PLUGINDIR . '/contact-form-7/includes/admin-panel.php';
+		require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
 	}
 
 	function default_pack($title, $initial = false) {
@@ -711,7 +731,7 @@ var _wpcf7 = {
 			if ('captchac' == $type) {
 				$op = $this->captchac_options($options);
 				if ($filename = $this->generate_captcha($op))
-					$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+					$captcha_url = WPCF7_PLUGIN_URL . '/captcha/tmp/' . $filename;
 					$refill[$name] = $captcha_url;
 			}
 		}
@@ -719,10 +739,10 @@ var _wpcf7 = {
 	}
 
 	function wp_head() {
-		$stylesheet_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/stylesheet.css';
+		$stylesheet_url = WPCF7_PLUGIN_URL . '/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
 		
-		$javascript_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/contact-form-7.js';
+		$javascript_url = WPCF7_PLUGIN_URL . '/contact-form-7.js';
 ?>
 <script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
 <?php
@@ -959,7 +979,7 @@ var _wpcf7 = {
 				}
 				if (is_array($op['img_size']))
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
-				$captcha_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/captcha/tmp/' . $filename;
+				$captcha_url = WPCF7_PLUGIN_URL . '/captcha/tmp/' . $filename;
 				$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
@@ -973,7 +993,7 @@ var _wpcf7 = {
 			$value = $this->strip_quote($matches[1]);
 		if (empty($value))
 			$value = __('Send', 'wpcf7');
-		$ajax_loader_image_url = get_option('siteurl') . '/wp-content/plugins/contact-form-7/images/ajax-loader.gif';
+		$ajax_loader_image_url = WPCF7_PLUGIN_URL . '/images/ajax-loader.gif';
         
         $html = '<input type="submit" value="' . $value . '" />';
         $html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
