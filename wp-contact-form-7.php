@@ -730,9 +730,10 @@ var _wpcf7 = {
 			$options = $fe['options'];
 			if ('captchac' == $type) {
 				$op = $this->captchac_options($options);
-				if ($filename = $this->generate_captcha($op))
+				if ($filename = $this->generate_captcha($op)) {
 					$captcha_url = WPCF7_PLUGIN_URL . '/captcha/tmp/' . $filename;
 					$refill[$name] = $captcha_url;
+                }
 			}
 		}
 		return $refill;
