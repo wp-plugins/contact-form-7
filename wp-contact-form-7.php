@@ -492,14 +492,14 @@ var _wpcf7 = {
 	}
 
 	function default_form_template() {
-		$template .= '<p><label>' . __('Your Name', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [text* your-name] </label></p>' . "\n\n";
-		$template .= '<p><label>' . __('Your Email', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [email* your-email] </label></p>' . "\n\n";
-		$template .= '<p><label>' . __('Subject', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [text your-subject] </label></p>' . "\n\n";
-		$template .= '<p><label>' . __('Your Message', 'wpcf7') . '<br />' . "\n";
-		$template .= '    [textarea your-message] </label></p>' . "\n\n";
+		$template .= '<p>' . __('Your Name', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
+		$template .= '    [text* your-name] </p>' . "\n\n";
+		$template .= '<p>' . __('Your Email', 'wpcf7') . ' ' . __('(required)', 'wpcf7') . '<br />' . "\n";
+		$template .= '    [email* your-email] </p>' . "\n\n";
+		$template .= '<p>' . __('Subject', 'wpcf7') . '<br />' . "\n";
+		$template .= '    [text your-subject] </p>' . "\n\n";
+		$template .= '<p>' . __('Your Message', 'wpcf7') . '<br />' . "\n";
+		$template .= '    [textarea your-message] </p>' . "\n\n";
 		$template .= '<p>[submit "' . __('Send', 'wpcf7') . '"]</p>';
 		return $template;
 	}
