@@ -49,6 +49,7 @@ Contact Form 7 has been translated into the following languages.
 * Dutch, by [Chris Devriese](http://www.100it.be/)
 * French, by [Jillij](http://www.jillij.com/)
 * German, by [Marcel Spitau](http://blog.spitau.de)
+* Hungarian, by [Andras Hirschler](http://hia.itblog.hu/)
 * Italian, by [Bruno](http://www.brunosalzano.com)
 * Japanese, by [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Latvian, by [Sandis Veinbergs](http://www.kleofass.lv/)
