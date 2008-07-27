@@ -1,0 +1,305 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 v1.hu\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-07-26 16:05+0100\n"
+"Last-Translator: HiA <hia@itblog.hu>\n"
+"Language-Team: HiA <hia@itblog.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: contact-form-7/wp-contact-form-7.php:271
+msgid "Contact form"
+msgstr "Kapcsolat űrlap"
+
+#: contact-form-7/wp-contact-form-7.php:356
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:372
+msgid "optional"
+msgstr "választható"
+
+#: contact-form-7/wp-contact-form-7.php:373
+msgid "Generate Tag"
+msgstr "Általános Címke"
+
+#: contact-form-7/wp-contact-form-7.php:374
+msgid "Text field"
+msgstr "Szöveg mező"
+
+#: contact-form-7/wp-contact-form-7.php:375
+msgid "Email field"
+msgstr "E-mail mező"
+
+#: contact-form-7/wp-contact-form-7.php:376
+msgid "Text area"
+msgstr "Többsoros szöveg"
+
+#: contact-form-7/wp-contact-form-7.php:377
+msgid "Drop-down menu"
+msgstr "Lenyíló menü"
+
+#: contact-form-7/wp-contact-form-7.php:378
+msgid "Checkboxes"
+msgstr "Jelölőnégyzetek"
+
+#: contact-form-7/wp-contact-form-7.php:379
+msgid "Radio buttons"
+msgstr "Választógombok"
+
+#: contact-form-7/wp-contact-form-7.php:380
+msgid "Acceptance"
+msgstr "Elfogadás"
+
+#: contact-form-7/wp-contact-form-7.php:381
+msgid "Make this checkbox checked by default?"
+msgstr "Ez a jelölőnyégyzet alapértelmezettnek be legyen kapcsolva?"
+
+#: contact-form-7/wp-contact-form-7.php:382
+msgid "Make this checkbox work inversely?"
+msgstr "Ez a jelölőnégyzet működjön fordítva?"
+
+#: contact-form-7/wp-contact-form-7.php:383
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Azt jelenti, hogy az a látogató kikapcsolja, aki elfogadja a feltételeket."
+
+#: contact-form-7/wp-contact-form-7.php:384
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:385
+msgid "Submit button"
+msgstr "Elfogadás gomb"
+
+#: contact-form-7/wp-contact-form-7.php:386
+msgid "Name"
+msgstr "Név"
+
+#: contact-form-7/wp-contact-form-7.php:387
+msgid "Required field?"
+msgstr "Kötelező mező?"
+
+#: contact-form-7/wp-contact-form-7.php:388
+msgid "Allow multiple selections?"
+msgstr "Engedélyezett a többszörös választás?"
+
+#: contact-form-7/wp-contact-form-7.php:389
+msgid "Insert a blank item as the first option?"
+msgstr "Első lehetőségnek egy üres tétel beszúrása?"
+
+#: contact-form-7/wp-contact-form-7.php:390
+msgid "Make checkboxes exclusive?"
+msgstr "A jelölőnégyzetek kizáróak legyenek?"
+
+#: contact-form-7/wp-contact-form-7.php:391
+msgid "Choices"
+msgstr "Lehetőségek"
+
+#: contact-form-7/wp-contact-form-7.php:392
+msgid "Label"
+msgstr "Cimke"
+
+#: contact-form-7/wp-contact-form-7.php:393
+msgid "Default value"
+msgstr "Alapértelmezett érték"
+
+#: contact-form-7/wp-contact-form-7.php:394
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:395
+msgid "This field requires author's name"
+msgstr "Ebbe a mezőbe a szerző neve szükséges"
+
+#: contact-form-7/wp-contact-form-7.php:396
+msgid "This field requires author's URL"
+msgstr "Ebbe a mezőbe a szerző URL-je szükséges"
+
+#: contact-form-7/wp-contact-form-7.php:397
+msgid "This field requires author's email address"
+msgstr "Ebbe a mezőbe a szerző e-mail címe szükséges"
+
+#: contact-form-7/wp-contact-form-7.php:398
+msgid "Copy and paste this code into the form"
+msgstr "Másold és illeszd be a kódot az űrlapra!"
+
+#: contact-form-7/wp-contact-form-7.php:399
+msgid "Foreground color"
+msgstr "Előtér szín"
+
+#: contact-form-7/wp-contact-form-7.php:400
+msgid "Background color"
+msgstr "Háttér szín"
+
+#: contact-form-7/wp-contact-form-7.php:401
+msgid "Image size"
+msgstr "Kép mérete"
+
+#: contact-form-7/wp-contact-form-7.php:402
+msgid "Small"
+msgstr "Kicsi"
+
+#: contact-form-7/wp-contact-form-7.php:403
+msgid "Medium"
+msgstr "Közepes"
+
+#: contact-form-7/wp-contact-form-7.php:404
+msgid "Large"
+msgstr "Nagy"
+
+#: contact-form-7/wp-contact-form-7.php:405
+msgid "Image settings"
+msgstr "Kép beállítások"
+
+#: contact-form-7/wp-contact-form-7.php:406
+msgid "Input field settings"
+msgstr "Beviteli mező beállításai"
+
+#: contact-form-7/wp-contact-form-7.php:407
+msgid "For image"
+msgstr "Képnek"
+
+#: contact-form-7/wp-contact-form-7.php:408
+msgid "For input field"
+msgstr "Beviteli mezőnek"
+
+#: contact-form-7/wp-contact-form-7.php:409
+msgid "* One choice per line."
+msgstr "* Egy választás soronként."
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Contact form created."
+msgstr "Kapcsolat űrlap létrehozva."
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "Contact form saved."
+msgstr "Kapcsolat űrlap elmentve."
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Contact form deleted."
+msgstr "Kapcsolat űrlap törölve."
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Untitled"
+msgstr "Cím nélkül"
+
+#: contact-form-7/wp-contact-form-7.php:465
+msgid "Your Name"
+msgstr "Neved"
+
+#: contact-form-7/wp-contact-form-7.php:465
+#: contact-form-7/wp-contact-form-7.php:467
+msgid "(required)"
+msgstr "(szükséges)"
+
+#: contact-form-7/wp-contact-form-7.php:467
+msgid "Your Email"
+msgstr "E-mail címed"
+
+#: contact-form-7/wp-contact-form-7.php:469
+msgid "Subject"
+msgstr "Tárgy"
+
+#: contact-form-7/wp-contact-form-7.php:471
+msgid "Your Message"
+msgstr "Üzeneted"
+
+#: contact-form-7/wp-contact-form-7.php:473
+#: contact-form-7/wp-contact-form-7.php:956
+msgid "Send"
+msgstr "Küldés"
+
+#: contact-form-7/wp-contact-form-7.php:502
+msgid "Your message was sent successfully. Thanks."
+msgstr "Az üzenet sikeresen el lett küldve. Köszönjük!"
+
+#: contact-form-7/wp-contact-form-7.php:504
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Üzenet küldése sikertelen. Kérjük próbálja meg később vagy más módon keresse a kapcsolatot!"
+
+#: contact-form-7/wp-contact-form-7.php:506
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Érvényesítési hiba. Kérem a mezők megerősítését és újra elfogadását!"
+
+#: contact-form-7/wp-contact-form-7.php:508
+msgid "Please accept the terms to proceed."
+msgstr "Kérem a feltételek elfogadását a folytatáshoz!"
+
+#: contact-form-7/wp-contact-form-7.php:510
+msgid "Email address seems invalid."
+msgstr "Az e-mail cím nem tűnik helyesnek."
+
+#: contact-form-7/wp-contact-form-7.php:512
+msgid "Please fill the required field."
+msgstr "Kérem a szükséges mezők kitöltését!"
+
+#: contact-form-7/wp-contact-form-7.php:514
+msgid "Your entered code is incorrect."
+msgstr "A beírt kódod hibás."
+
+#: contact-form-7/includes/admin-panel.php:15
+msgid "Add new"
+msgstr "Új hozzáadása"
+
+#: contact-form-7/includes/admin-panel.php:28
+msgid "Copy and paste this code into your post content."
+msgstr "Másold és illeszd be ezt a kódot a bejegyzésde tartalmába!"
+
+#: contact-form-7/includes/admin-panel.php:33
+msgid "Form"
+msgstr "Űrlap"
+
+#: contact-form-7/includes/admin-panel.php:37
+msgid "Mail"
+msgstr "Levél"
+
+#: contact-form-7/includes/admin-panel.php:39
+#: contact-form-7/includes/admin-panel.php:60
+msgid "To:"
+msgstr "Címzett:"
+
+#: contact-form-7/includes/admin-panel.php:43
+#: contact-form-7/includes/admin-panel.php:64
+msgid "From:"
+msgstr "Feladó:"
+
+#: contact-form-7/includes/admin-panel.php:47
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Subject:"
+msgstr "Tárgy:"
+
+#: contact-form-7/includes/admin-panel.php:51
+#: contact-form-7/includes/admin-panel.php:72
+msgid "Message body:"
+msgstr "Üzenet törzse:"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Mail (2)"
+msgstr "Levél (2)"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Use mail (2)"
+msgstr "Levél (2) használata"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Save"
+msgstr "Mentés"
+
+#: contact-form-7/includes/admin-panel.php:86
+msgid "Delete this contact form"
+msgstr "Ennek a kapcsolat űrlapnak a törlése."
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Ennek a kapcsolat űrlapnak a törlésére készül.\n"
+" 'Mégse', ha nem akarja, 'OK' a törléshez."
+
