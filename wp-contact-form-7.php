@@ -333,7 +333,7 @@ class tam_contact_form_seven {
 /* Admin panel */
 
 	function add_pages() {
-		$base_url = get_option('siteurl') . '/wp-admin/options-general.php';
+		$base_url = get_option('siteurl') . '/wp-admin/edit.php';
 		$page = str_replace('\\', '%5C', plugin_basename(__FILE__));
 		$contact_forms = $this->contact_forms();
 		
@@ -383,7 +383,7 @@ class tam_contact_form_seven {
 			exit();
 		}
 	
-		add_options_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), 'manage_options', __FILE__, array(&$this, 'option_page'));
+		add_management_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), 'edit_posts', __FILE__, array(&$this, 'management_page'));
 	}
 	
 	function admin_head() {
@@ -446,8 +446,8 @@ var _wpcf7 = {
 		}
 	}
 	
-	function option_page() {
-		$base_url = get_option('siteurl') . '/wp-admin/options-general.php';
+	function management_page() {
+		$base_url = get_option('siteurl') . '/wp-admin/edit.php';
 		$page = plugin_basename(__FILE__);
 		$contact_forms = $this->contact_forms();
 		
@@ -751,7 +751,7 @@ var _wpcf7 = {
 	
 	function load_js() {
 		global $pagenow;
-        if (is_admin() && 'options-general.php' == $pagenow && false !== strpos($_GET['page'], 'contact-form-7'))
+        if (is_admin() && 'edit.php' == $pagenow && false !== strpos($_GET['page'], 'contact-form-7'))
 			wp_enqueue_script('jquery');
 		if (! is_admin())
 			wp_enqueue_script('jquery-form', '/wp-includes/js/jquery/jquery.form.js', array('jquery'), '1.0.3');
