@@ -1,13 +1,10 @@
-ul.cfmenu li {
-	display: inline;
-	margin-right: 1em;
+ul.subsubsub li.addnew {
+	margin-left: 0.5em;
 }
-ul.cfmenu li.addnew {
-	margin-left: 1.5em;
-}
-ul.cfmenu li.addnew a {
+ul.subsubsub li.addnew a {
 	color: #e6255b;
 }
+
 div.relative {
 	position: relative;
 }
