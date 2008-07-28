@@ -615,8 +615,10 @@ var _wpcf7 = {
 		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
 		
 		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form">';
+        $form .= '<div style="display: none;">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
+        $form .= '</div>';
 		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
 		
