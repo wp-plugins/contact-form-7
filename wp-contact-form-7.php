@@ -474,7 +474,9 @@ var _wpcf7 = {
 			$cf = stripslashes_deep($contact_forms[$current]);
 			$cf = $this->upgrade_160($cf);
 		} else {
-			$cf = null;
+            $current = (int) array_shift(array_keys($contact_forms));
+            $cf = stripslashes_deep($contact_forms[$current]);
+			$cf = $this->upgrade_160($cf);
 		}
 		
 		require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
