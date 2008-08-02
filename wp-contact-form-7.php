@@ -766,7 +766,7 @@ var _wpcf7 = {
 	function form_elements($form, $replace = true) {
 		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
-		$submit_regex = '/\[\s*submit(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]/';
+		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		if ($replace) {
 			$form = preg_replace_callback($regex, array(&$this, 'form_element_replace_callback'), $form);
 			// Submit button
@@ -994,13 +994,34 @@ var _wpcf7 = {
 	}
 
 	function submit_replace_callback($matches) {
-		if ($matches[1])
-			$value = $this->strip_quote($matches[1]);
+        $atts = '';
+        $options = preg_split('/[\s]+/', trim($matches[1]));
+        
+        $id_array = preg_grep('%^id:[-0-9a-zA-Z_]+$%', $options);
+        if ($id = array_shift($id_array)) {
+            preg_match('%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches);
+            if ($id = $id_matches[1])
+                $atts .= ' id="' . $id . '"';
+        }
+        
+        $class_att = '';
+        $class_array = preg_grep('%^class:[-0-9a-zA-Z_]+$%', $options);
+        foreach ($class_array as $class) {
+            preg_match('%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches);
+            if ($class = $class_matches[1])
+                $class_att .= ' ' . $class;
+        } 
+        
+        if ($class_att)
+            $atts .= ' class="' . trim($class_att) . '"';
+        
+		if ($matches[2])
+			$value = $this->strip_quote($matches[2]);
 		if (empty($value))
 			$value = __('Send', 'wpcf7');
 		$ajax_loader_image_url = WPCF7_PLUGIN_URL . '/images/ajax-loader.gif';
         
-        $html = '<input type="submit" value="' . $value . '" />';
+        $html = '<input type="submit" value="' . $value . '"' . $atts . ' />';
         $html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 		return $html;
 	}
