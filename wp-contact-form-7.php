@@ -46,6 +46,11 @@ if (! defined('WPCF7_PLUGIN_DIR'))
 if (! defined('WPCF7_PLUGIN_URL'))
     define('WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)));
 
+if (! defined('WPCF7_CAPTCHA_TMP_DIR'))
+    define('WPCF7_CAPTCHA_TMP_DIR', WP_CONTENT_DIR . '/uploads/wpcf7_captcha');
+if (! defined('WPCF7_CAPTCHA_TMP_URL'))
+    define('WPCF7_CAPTCHA_TMP_URL', WP_CONTENT_URL . '/uploads/wpcf7_captcha');
+
 class tam_contact_form_seven {
 
 	var $contact_forms;
@@ -735,7 +740,7 @@ var _wpcf7 = {
 			if ('captchac' == $type) {
 				$op = $this->captchac_options($options);
 				if ($filename = $this->generate_captcha($op)) {
-					$captcha_url = WPCF7_PLUGIN_URL . '/captcha/tmp/' . $filename;
+					$captcha_url = trailingslashit(WPCF7_CAPTCHA_TMP_URL) . $filename;
 					$refill[$name] = $captcha_url;
                 }
 			}
@@ -984,7 +989,7 @@ var _wpcf7 = {
 				}
 				if (is_array($op['img_size']))
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
-				$captcha_url = WPCF7_PLUGIN_URL . '/captcha/tmp/' . $filename;
+				$captcha_url = trailingslashit(WPCF7_CAPTCHA_TMP_URL) . $filename;
 				$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
@@ -1057,11 +1062,19 @@ var _wpcf7 = {
 			return $result;
 		}
 	}
-
-	function generate_captcha($options = null) {
-		if (! is_object($this->captcha))
+    
+    function init_captcha() {
+        if (! is_object($this->captcha))
 			$this->captcha = new tam_captcha();
 		$captcha =& $this->captcha;
+        
+        $captcha->tmp_dir = trailingslashit(WPCF7_CAPTCHA_TMP_DIR);
+        wp_mkdir_p($captcha->tmp_dir);
+    }
+
+	function generate_captcha($options = null) {
+        $this->init_captcha();
+        $captcha =& $this->captcha;
 		
 		if (! is_dir($captcha->tmp_dir) || ! is_writable($captcha->tmp_dir))
 			return false;
@@ -1097,26 +1110,23 @@ var _wpcf7 = {
 	}
 
 	function check_captcha($prefix, $response) {
-		if (! is_object($this->captcha))
-			$this->captcha = new tam_captcha();
-		$captcha =& $this->captcha;
+        $this->init_captcha();
+        $captcha =& $this->captcha;
 		
 		return $captcha->check($prefix, $response);
 	}
 
 	function remove_captcha($prefix) {
-		if (! is_object($this->captcha))
-			$this->captcha = new tam_captcha();
-		$captcha =& $this->captcha;
+        $this->init_captcha();
+        $captcha =& $this->captcha;
 		
 		$captcha->remove($prefix);
 	}
 
 	function cleanup_captcha_files() {
-		if (! is_object($this->captcha))
-			$this->captcha = new tam_captcha();
-		$captcha =& $this->captcha;
-		
+        $this->init_captcha();
+        $captcha =& $this->captcha;
+
 		$tmp_dir = $captcha->tmp_dir;
 		
 		if (! is_dir($tmp_dir) || ! is_writable($tmp_dir))
