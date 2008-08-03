@@ -342,7 +342,7 @@ class tam_contact_form_seven {
 		$page = str_replace('\\', '%5C', plugin_basename(__FILE__));
 		$contact_forms = $this->contact_forms();
 		
-		if (isset($_POST['wpcf7-save'])) {
+		if (isset($_POST['wpcf7-save']) && $this->has_edit_cap()) {
 			$id = $_POST['wpcf7-id'];
 			check_admin_referer('wpcf7-save_' . $id);
 			
@@ -377,7 +377,7 @@ class tam_contact_form_seven {
 			
 			wp_redirect($redirect_to);
 			exit();
-		} elseif (isset($_POST['wpcf7-delete'])) {
+		} elseif (isset($_POST['wpcf7-delete']) && $this->has_edit_cap()) {
 			$id = $_POST['wpcf7-id'];
 			check_admin_referer('wpcf7-delete_' . $id);
 			
@@ -450,6 +450,10 @@ var _wpcf7 = {
 <?php
 		}
 	}
+    
+    function has_edit_cap() {
+        return current_user_can('publish_pages');
+    }
 	
 	function management_page() {
 		$base_url = get_option('siteurl') . '/wp-admin/edit.php';

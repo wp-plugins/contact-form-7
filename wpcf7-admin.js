@@ -1,5 +1,9 @@
 jQuery(document).ready(function() {
-  jQuery('#form-content-fieldset textarea:first').after(tagGenerator());
+  jQuery('#form-content-fieldset textarea:first:enabled').after(tagGenerator());
+  
+  jQuery('input#wpcf7-title:enabled').css({
+    cursor: 'pointer'
+  });
   
   jQuery('input#wpcf7-title').mouseover(function() {
     jQuery(this).not('.focus').css({
