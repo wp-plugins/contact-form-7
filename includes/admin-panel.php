@@ -22,7 +22,7 @@
 <?php $disabled = ($this->has_edit_cap()) ? '' : ' disabled="disabled"'; ?>
 <div class="wrap relative">
 	<form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
-		<?php wp_nonce_field('wpcf7-save_' . $current); ?>
+		<?php if ($this->has_edit_cap()) wp_nonce_field('wpcf7-save_' . $current); ?>
 		<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
 		<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo htmlspecialchars($cf['title']); ?>"<?php echo $disabled; ?> />
 
@@ -34,53 +34,53 @@
 			</p>
 			<?php endif; ?>
 
+        <?php if ($this->has_edit_cap()) : ?>
 			<div class="fieldset" id="form-content-fieldset"><div class="legend"><?php _e('Form', 'wpcf7'); ?></div>
-				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"<?php echo $disabled; ?>><?php echo htmlspecialchars($cf['form']); ?></textarea>
+				<textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail', 'wpcf7'); ?></div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-sender"><?php _e('From:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-sender" name="wpcf7-mail-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['sender']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-sender" name="wpcf7-mail-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['sender']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-subject"><?php _e('Subject:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
-					<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"<?php echo $disabled; ?>><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
+					<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
 				</div>
 			</div>
 
 			<div class="fieldset"><div class="legend"><?php _e('Mail (2)', 'wpcf7'); ?></div>
-				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?><?php echo $disabled; ?> />
+				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
 				<label for="wpcf7-mail-2-active"><?php _e('Use mail (2)', 'wpcf7'); ?></label>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-2-recipient" name="wpcf7-mail-2-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['recipient']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-2-recipient" name="wpcf7-mail-2-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['recipient']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-sender"><?php _e('From:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-2-sender" name="wpcf7-mail-2-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['sender']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-2-sender" name="wpcf7-mail-2-sender" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['sender']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-subject"><?php _e('Subject:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-2-subject" name="wpcf7-mail-2-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['subject']); ?>"<?php echo $disabled; ?> />
+					<input type="text" id="wpcf7-mail-2-subject" name="wpcf7-mail-2-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['subject']); ?>" />
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
-					<textarea id="wpcf7-mail-2-body" name="wpcf7-mail-2-body" cols="100" rows="16"<?php echo $disabled; ?>><?php echo htmlspecialchars($cf['mail_2']['body']); ?></textarea>
+					<textarea id="wpcf7-mail-2-body" name="wpcf7-mail-2-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail_2']['body']); ?></textarea>
 				</div>
 			</div>
 
 			<input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 
-        <?php if ($this->has_edit_cap()) : ?>
 			<div>
 				<input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
 			</div>
