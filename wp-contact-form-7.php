@@ -346,7 +346,11 @@ class tam_contact_form_seven {
 /* Admin panel */
 
 	function add_pages() {
-		$base_url = get_option('siteurl') . '/wp-admin/edit.php';
+        if (function_exists('admin_url')) {
+            $base_url = admin_url('edit.php');
+        } else {
+            $base_url = get_option('siteurl') . '/wp-admin/edit.php';
+        }
 		$page = str_replace('\\', '%5C', plugin_basename(__FILE__));
 		$contact_forms = $this->contact_forms();
 		
@@ -464,7 +468,11 @@ var _wpcf7 = {
     }
 	
 	function management_page() {
-		$base_url = get_option('siteurl') . '/wp-admin/edit.php';
+        if (function_exists('admin_url')) {
+            $base_url = admin_url('edit.php');
+        } else {
+            $base_url = get_option('siteurl') . '/wp-admin/edit.php';
+        }
 		$page = plugin_basename(__FILE__);
 		$contact_forms = $this->contact_forms();
 		
