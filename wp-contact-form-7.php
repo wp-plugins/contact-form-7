@@ -52,11 +52,11 @@ if (! defined('WPCF7_CAPTCHA_TMP_URL'))
     define('WPCF7_CAPTCHA_TMP_URL', WP_CONTENT_URL . '/uploads/wpcf7_captcha');
 
 if (! function_exists('wpcf7_read_capability')) {
-    function wpcf7_read_capability() { return 'publish_pages'; }
+    function wpcf7_read_capability() { return 'edit_posts'; }
 }
 
 if (! function_exists('wpcf7_read_write_capability')) {
-    function wpcf7_read_write_capability() { return 'management_page'; }
+    function wpcf7_read_write_capability() { return 'publish_pages'; }
 }
 
 class tam_contact_form_seven {
@@ -400,7 +400,7 @@ class tam_contact_form_seven {
 			exit();
 		}
 	
-		add_management_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), 'edit_posts', __FILE__, array(&$this, wpcf7_read_write_capability()));
+		add_management_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), wpcf7_read_capability(), __FILE__, array(&$this, 'management_page'));
 	}
 	
 	function admin_head() {
@@ -464,7 +464,7 @@ var _wpcf7 = {
 	}
     
     function has_edit_cap() {
-        return current_user_can(wpcf7_read_capability());
+        return current_user_can(wpcf7_read_write_capability());
     }
 	
 	function management_page() {
