@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CF7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-10 18:56+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"Language-Team: Soz <njupt.soz@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: contact-form-7/wp-contact-form-7.php:309
+msgid "Contact form"
+msgstr "联系表单"
+
+#: contact-form-7/wp-contact-form-7.php:403
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:419
+msgid "optional"
+msgstr "选项"
+
+#: contact-form-7/wp-contact-form-7.php:420
+msgid "Generate Tag"
+msgstr "生成标签"
+
+#: contact-form-7/wp-contact-form-7.php:421
+msgid "Text field"
+msgstr "单行文字"
+
+#: contact-form-7/wp-contact-form-7.php:422
+msgid "Email field"
+msgstr "邮件"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Text area"
+msgstr "多行文字"
+
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Drop-down menu"
+msgstr "下拉菜单"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Checkboxes"
+msgstr "多选"
+
+#: contact-form-7/wp-contact-form-7.php:426
+msgid "Radio buttons"
+msgstr "单选"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Acceptance"
+msgstr "接受协议"
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Make this checkbox checked by default?"
+msgstr "默认勾选"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Make this checkbox work inversely?"
+msgstr "让多选框方向工作"
+
+#: contact-form-7/wp-contact-form-7.php:430
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "意味着访问者不勾选才可以提交,勾选了就不能提交"
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "CAPTCHA"
+msgstr "验证码"
+
+#: contact-form-7/wp-contact-form-7.php:432
+msgid "Submit button"
+msgstr "提交按钮"
+
+#: contact-form-7/wp-contact-form-7.php:433
+msgid "Name"
+msgstr "名字"
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Required field?"
+msgstr "必填?"
+
+#: contact-form-7/wp-contact-form-7.php:435
+msgid "Allow multiple selections?"
+msgstr "允许多选?"
+
+#: contact-form-7/wp-contact-form-7.php:436
+msgid "Insert a blank item as the first option?"
+msgstr "第一选项为空?"
+
+#: contact-form-7/wp-contact-form-7.php:437
+msgid "Make checkboxes exclusive?"
+msgstr "只能选择一项?"
+
+#: contact-form-7/wp-contact-form-7.php:438
+msgid "Choices"
+msgstr "选项"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Label"
+msgstr "标签"
+
+#: contact-form-7/wp-contact-form-7.php:440
+msgid "Default value"
+msgstr "默认值"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Akismet"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:442
+msgid "This field requires author's name"
+msgstr "这个区域要求填写名字"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "This field requires author's URL"
+msgstr "这个区域要求填写URL"
+
+#: contact-form-7/wp-contact-form-7.php:444
+msgid "This field requires author's email address"
+msgstr "这个区域要求填写Email地址"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Copy and paste this code into the form"
+msgstr "复制并粘贴到表单中"
+
+#: contact-form-7/wp-contact-form-7.php:446
+msgid "Foreground color"
+msgstr "前景颜色"
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Background color"
+msgstr "背景色"
+
+#: contact-form-7/wp-contact-form-7.php:448
+msgid "Image size"
+msgstr "图像大小"
+
+#: contact-form-7/wp-contact-form-7.php:449
+msgid "Small"
+msgstr "小"
+
+#: contact-form-7/wp-contact-form-7.php:450
+msgid "Medium"
+msgstr "中"
+
+#: contact-form-7/wp-contact-form-7.php:451
+msgid "Large"
+msgstr "大"
+
+#: contact-form-7/wp-contact-form-7.php:452
+msgid "Image settings"
+msgstr "图像设置"
+
+#: contact-form-7/wp-contact-form-7.php:453
+msgid "Input field settings"
+msgstr "输入区域设置"
+
+#: contact-form-7/wp-contact-form-7.php:454
+msgid "For image"
+msgstr "图像"
+
+#: contact-form-7/wp-contact-form-7.php:455
+msgid "For input field"
+msgstr "输入区域"
+
+#: contact-form-7/wp-contact-form-7.php:456
+msgid "* One choice per line."
+msgstr "一行一项"
+
+#: contact-form-7/wp-contact-form-7.php:483
+msgid "Contact form created."
+msgstr "联系表单创建成功"
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Contact form saved."
+msgstr "联系保单保存成功"
+
+#: contact-form-7/wp-contact-form-7.php:489
+msgid "Contact form deleted."
+msgstr "联系表单删除成功"
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Untitled"
+msgstr "没有标题"
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Your Name"
+msgstr "你的名字"
+
+#: contact-form-7/wp-contact-form-7.php:522
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "(required)"
+msgstr "必填"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Your Email"
+msgstr "你的邮箱"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Subject"
+msgstr "主题"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Your Message"
+msgstr "详细信息"
+
+#: contact-form-7/wp-contact-form-7.php:530
+#: contact-form-7/wp-contact-form-7.php:1046
+msgid "Send"
+msgstr "提交"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Your message was sent successfully. Thanks."
+msgstr "你的信息已经提交成功了!谢谢!"
+
+#: contact-form-7/wp-contact-form-7.php:561
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "提交失败,请尝试使用另一种方法去联系管理员."
+
+#: contact-form-7/wp-contact-form-7.php:563
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "验证失败,请确认填写的表单没有错误"
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Please accept the terms to proceed."
+msgstr "请同意条款,才能提交"
+
+#: contact-form-7/wp-contact-form-7.php:567
+msgid "Email address seems invalid."
+msgstr "好像邮件地址不对"
+
+#: contact-form-7/wp-contact-form-7.php:569
+msgid "Please fill the required field."
+msgstr "请填满必填的表单"
+
+#: contact-form-7/wp-contact-form-7.php:571
+msgid "Your entered code is incorrect."
+msgstr "您的验证码是错误的"
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "新增"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "复制并粘贴到你的日志中"
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "表单"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "邮寄"
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:65
+msgid "To:"
+msgstr "到:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:69
+msgid "From:"
+msgstr "从:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Subject:"
+msgstr "主题:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:77
+msgid "Message body:"
+msgstr "邮件内容:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "确认邮件"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "使用邮件确认"
+
+#: contact-form-7/includes/admin-panel.php:85
+msgid "Save"
+msgstr "保存"
+
+#: contact-form-7/includes/admin-panel.php:92
+msgid "Delete this contact form"
+msgstr "删除本表单"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"确认要删除此表单?\n"
+"'Cancel' 取消,'OK' 删除"
+
