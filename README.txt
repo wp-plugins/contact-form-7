@@ -23,6 +23,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Czech (cs_CZ) - Korry
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/)
 * Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/)
+* Finnish (fi) - [Miika Turunen](http://www.webwork.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/)

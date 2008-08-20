@@ -1,0 +1,320 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-10 18:56+0900\n"
+"PO-Revision-Date: 2008-08-20 16:48+0200\n"
+"Last-Translator: Miika Turunen <miika@webwork.fi>\n"
+"Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:309
+msgid "Contact form"
+msgstr "Yhteydenottolomake"
+
+#: contact-form-7/wp-contact-form-7.php:403
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:419
+msgid "optional"
+msgstr "Valinnainen"
+
+#: contact-form-7/wp-contact-form-7.php:420
+msgid "Generate Tag"
+msgstr "Luo tagi"
+
+#: contact-form-7/wp-contact-form-7.php:421
+msgid "Text field"
+msgstr "Tekstialue"
+
+#: contact-form-7/wp-contact-form-7.php:422
+msgid "Email field"
+msgstr "Sähköpostikenttä"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Text area"
+msgstr "Tekstikenttä"
+
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Drop-down menu"
+msgstr "Alasvetovalikko"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Checkboxes"
+msgstr "Valintaruudut"
+
+#: contact-form-7/wp-contact-form-7.php:426
+msgid "Radio buttons"
+msgstr "Valintanapit"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Acceptance"
+msgstr "Hyväksyntä"
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Make this checkbox checked by default?"
+msgstr "Merkitse tämä valintaruutu aktiiviseksi?"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Make this checkbox work inversely?"
+msgstr "Tee tästä valintaruudusta käänteinen?"
+
+#: contact-form-7/wp-contact-form-7.php:430
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Tämä tarkoittaa sitä että käyttäjän täytyy ottaa valinta pois hyväksyäkseen ehdon"
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:432
+msgid "Submit button"
+msgstr "Lähetä -nappi"
+
+#: contact-form-7/wp-contact-form-7.php:433
+msgid "Name"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Required field?"
+msgstr "Pakollinen tieto?"
+
+#: contact-form-7/wp-contact-form-7.php:435
+msgid "Allow multiple selections?"
+msgstr "Salli monivalinta?"
+
+#: contact-form-7/wp-contact-form-7.php:436
+msgid "Insert a blank item as the first option?"
+msgstr "Laita tyhjä valinta ensimmäiseksi vaihtoehdoksi?"
+
+#: contact-form-7/wp-contact-form-7.php:437
+msgid "Make checkboxes exclusive?"
+msgstr "Tee valintaruuduista poissulkeva?"
+
+#: contact-form-7/wp-contact-form-7.php:438
+msgid "Choices"
+msgstr "Valinnat"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Label"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:440
+msgid "Default value"
+msgstr "Vakioarvo"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:442
+msgid "This field requires author's name"
+msgstr "Tämä kenttä vaatii kirjoittajan nimen"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "This field requires author's URL"
+msgstr "Tämä kenttä vaatii kirjoittajan URL:n"
+
+#: contact-form-7/wp-contact-form-7.php:444
+msgid "This field requires author's email address"
+msgstr "Tämä kenttä vaatii kirjoittajan sähköpostiosoitteen"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Copy and paste this code into the form"
+msgstr "Kopioi ja liitä tämä koodi artikkeliin, jossa haluat yhteydenottolomakkeen näkyvän."
+
+#: contact-form-7/wp-contact-form-7.php:446
+msgid "Foreground color"
+msgstr "Etuosan väri"
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Background color"
+msgstr "Taustan väri"
+
+#: contact-form-7/wp-contact-form-7.php:448
+msgid "Image size"
+msgstr "Kuvan koko"
+
+#: contact-form-7/wp-contact-form-7.php:449
+msgid "Small"
+msgstr "Pieni"
+
+#: contact-form-7/wp-contact-form-7.php:450
+msgid "Medium"
+msgstr "Keski"
+
+#: contact-form-7/wp-contact-form-7.php:451
+msgid "Large"
+msgstr "Suuri"
+
+#: contact-form-7/wp-contact-form-7.php:452
+msgid "Image settings"
+msgstr "Kuvan asetukset"
+
+#: contact-form-7/wp-contact-form-7.php:453
+msgid "Input field settings"
+msgstr "Syötekentän asetukset"
+
+#: contact-form-7/wp-contact-form-7.php:454
+msgid "For image"
+msgstr "Kuvalle"
+
+#: contact-form-7/wp-contact-form-7.php:455
+msgid "For input field"
+msgstr "Syötekentälle"
+
+#: contact-form-7/wp-contact-form-7.php:456
+msgid "* One choice per line."
+msgstr "* Yksi valinta per rivi"
+
+#: contact-form-7/wp-contact-form-7.php:483
+msgid "Contact form created."
+msgstr "Yhteydenottolomake \"%s\" poistettiin."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Contact form saved."
+msgstr "Yhteydenottolomake \"%s\" tallennettiin."
+
+#: contact-form-7/wp-contact-form-7.php:489
+msgid "Contact form deleted."
+msgstr "Yhteydenottolomake \"%s\" poistettiin."
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Untitled"
+msgstr "Ei otsikkoa"
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Your Name"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:522
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "(required)"
+msgstr "(pakollinen)"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Your Email"
+msgstr "Sähköposti"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Subject"
+msgstr "Aihe"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Your Message"
+msgstr "Viesti"
+
+#: contact-form-7/wp-contact-form-7.php:530
+#: contact-form-7/wp-contact-form-7.php:1046
+msgid "Send"
+msgstr "Lähetä"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Your message was sent successfully. Thanks."
+msgstr "Viesti lähetettiin onnistuneesti. Kiitos yhteydenotostanne!"
+
+#: contact-form-7/wp-contact-form-7.php:561
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Viestin lähetys epäonnistui. Yritä myöhemmin uudestaan tai ota yhteyttä järjestelmänvalvojaan."
+
+#: contact-form-7/wp-contact-form-7.php:563
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Lomakkeesta löytyi virheitä. Tarkasta lomake ja yritä uudelleen."
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Please accept the terms to proceed."
+msgstr "Hyväksy käyttöehdot jatkaaksesi."
+
+#: contact-form-7/wp-contact-form-7.php:567
+msgid "Email address seems invalid."
+msgstr "Sähköpostiosoite vaikuttaa virheelliseltä."
+
+#: contact-form-7/wp-contact-form-7.php:569
+msgid "Please fill the required field."
+msgstr "Täytä pakollinen kenttä."
+
+#: contact-form-7/wp-contact-form-7.php:571
+msgid "Your entered code is incorrect."
+msgstr "Syöttämäsi koodi on virheellinen."
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "Lisää uusi"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "Kopioi ja liitä tämä koodi artikkeliin, jossa haluat yhteydenottolomakkeen näkyvän."
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "Lomake"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "Sähköposti"
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:65
+msgid "To:"
+msgstr "Vastaanottaja:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:69
+msgid "From:"
+msgstr "Lähettäjä:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Subject:"
+msgstr "Aihe:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:77
+msgid "Message body:"
+msgstr "Viesti:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "Sähköposti (2)"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "Käytä Sähköpostia (2)"
+
+#: contact-form-7/includes/admin-panel.php:85
+msgid "Save"
+msgstr "Tallenna"
+
+#: contact-form-7/includes/admin-panel.php:92
+msgid "Delete this contact form"
+msgstr "Poista tämä yhteydenottolomake"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Olet poistamassa yhteydenottolomaketta. \n"
+"Paina 'Peruuta' peruuttaaksesi tai 'OK' poistaaksesi."
+
+#~ msgid "Form content"
+#~ msgstr "Lomakkeen sisältö"
+#~ msgid "Mail template"
+#~ msgstr "Sähköpostimalli"
+#~ msgid "Sender field:"
+#~ msgstr "Lähettäjä:"
+#~ msgid "Recipient address:"
+#~ msgstr "Vastaanottajan osoite:"
+#~ msgid "Insert"
+#~ msgstr "Syötä"
+
