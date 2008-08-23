@@ -36,6 +36,7 @@ class tam_captcha {
 		$this->font_size = 14;
 		$this->font_char_width = 15;
 		$this->img_type = 'png';
+        $this->file_mode = 0755;
 	}
 
 	function generate_random_word() {
@@ -75,8 +76,10 @@ class tam_captcha {
 					imagepng($im, $this->tmp_dir . $filename);
 			}
 			imagedestroy($im);
+            chmod($this->tmp_dir . $filename, $this->file_mode);
 		}
 		if ($fh = fopen($this->tmp_dir . $prefix . '.php', 'w')) {
+            chmod($this->tmp_dir . $prefix . '.php', $this->file_mode);
 			fwrite($fh, '<?php $captcha = "' . $captcha . '"; ?>');
 			fclose($fh);
 		}
