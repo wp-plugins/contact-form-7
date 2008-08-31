@@ -20,6 +20,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
 * Catalan (ca_ES) - [Jordi Sancho](http://www.qasolutions.net/blog)
 * Chinese, Simplified (zh_CN) - [Soz](http://www.webtoolol.com/)
+* Chinese, Traditional (zh_TW) - [James Wu](http://jameswublog.com)
 * Czech (cs_CZ) - Korry
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/)
 * Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/)
