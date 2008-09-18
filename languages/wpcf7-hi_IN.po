@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-10 18:56+0900\n"
+"PO-Revision-Date: 2008-09-13 13:31-0500\n"
+"Last-Translator: Tarun Joshi <apni.duniya@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:309
+msgid "Contact form"
+msgstr "संपर्क प्रपत्र "
+
+#: contact-form-7/wp-contact-form-7.php:403
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "संपर्क प्रपत्र ७"
+
+#: contact-form-7/wp-contact-form-7.php:419
+msgid "optional"
+msgstr "वैकल्पिक"
+
+#: contact-form-7/wp-contact-form-7.php:420
+msgid "Generate Tag"
+msgstr "टैग उत्पन्न करें"
+
+#: contact-form-7/wp-contact-form-7.php:421
+msgid "Text field"
+msgstr "पाठ्य क्षेत्र "
+
+#: contact-form-7/wp-contact-form-7.php:422
+msgid "Email field"
+msgstr "ईपत्र क्षेत्र"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Text area"
+msgstr "पाठ्य क्षेत्र "
+
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Drop-down menu"
+msgstr "नीचे गिरके दिखने वाली विकल्प सूची"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Checkboxes"
+msgstr "निशान पेटी"
+
+#: contact-form-7/wp-contact-form-7.php:426
+msgid "Radio buttons"
+msgstr "रेडियो बटन"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Acceptance"
+msgstr "सहमति (स्वीकृति)"
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Make this checkbox checked by default?"
+msgstr "इस निशान पेटी में पहले से ही निशान लगा के रखें?"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Make this checkbox work inversely?"
+msgstr "इस निशान पेटी से उल्टे से (प्रतिलोम) काम करवायें?"
+
+#: contact-form-7/wp-contact-form-7.php:430
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* इसका मतलब है कि आगंतुक जिन्होंने शर्तें स्वीकारी थी उन्होंने इस पर लगा चटका हटाया है."
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "CAPTCHA"
+msgstr "कैप्चा (CAPTCHA)"
+
+#: contact-form-7/wp-contact-form-7.php:432
+msgid "Submit button"
+msgstr "भेजने (सबमिट) के लिये बटन"
+
+#: contact-form-7/wp-contact-form-7.php:433
+msgid "Name"
+msgstr "नाम"
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Required field?"
+msgstr "अपेक्षित क्षेत्र"
+
+#: contact-form-7/wp-contact-form-7.php:435
+msgid "Allow multiple selections?"
+msgstr "बहुविकल्प चुनने दें?"
+
+#: contact-form-7/wp-contact-form-7.php:436
+msgid "Insert a blank item as the first option?"
+msgstr "एक खाली विषय (चीज) पहले विकल्प के रूप में डालें?"
+
+#: contact-form-7/wp-contact-form-7.php:437
+msgid "Make checkboxes exclusive?"
+msgstr "क्या निशान पेटी अलग से बनायें?"
+
+#: contact-form-7/wp-contact-form-7.php:438
+msgid "Choices"
+msgstr "अन्य विकल्प"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Label"
+msgstr "चिप्पी (सूचक पत्र)"
+
+#: contact-form-7/wp-contact-form-7.php:440
+msgid "Default value"
+msgstr "पहले से तयशुदा गुण"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Akismet"
+msgstr "एक्सिमेट (Akismet)"
+
+#: contact-form-7/wp-contact-form-7.php:442
+msgid "This field requires author's name"
+msgstr "यहाँ लेखक का नाम जरूरी (अपेक्षित) है"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "This field requires author's URL"
+msgstr "यहाँ लेखक का यू आर एल (वेब पता) जरूरी (अपेक्षित) है"
+
+#: contact-form-7/wp-contact-form-7.php:444
+msgid "This field requires author's email address"
+msgstr "यहाँ लेखक का ईपत्र पता जरूरी (अपेक्षित) है"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Copy and paste this code into the form"
+msgstr "इस कूट (कोड) की नकल (प्रतिलिपि) करके प्रपत्र में चिपकायें"
+
+#: contact-form-7/wp-contact-form-7.php:446
+msgid "Foreground color"
+msgstr "अग्रभाग के लिये रंग "
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Background color"
+msgstr "पृष्टभूमि (परिप्रेक्ष्य) के लिये रंग "
+
+#: contact-form-7/wp-contact-form-7.php:448
+msgid "Image size"
+msgstr "तस्वीर (प्रतिबिंब) का आकार "
+
+#: contact-form-7/wp-contact-form-7.php:449
+msgid "Small"
+msgstr "छोटा"
+
+#: contact-form-7/wp-contact-form-7.php:450
+msgid "Medium"
+msgstr "मध्यम (मझोला)"
+
+#: contact-form-7/wp-contact-form-7.php:451
+msgid "Large"
+msgstr "बड़ा"
+
+#: contact-form-7/wp-contact-form-7.php:452
+msgid "Image settings"
+msgstr "तस्वीर (प्रतिबिंब) अनुकूलन "
+
+#: contact-form-7/wp-contact-form-7.php:453
+msgid "Input field settings"
+msgstr "निवेश स्थान (क्षेत्र) अनुकूलन "
+
+#: contact-form-7/wp-contact-form-7.php:454
+msgid "For image"
+msgstr "तस्वीर (प्रतिबिंब) के लिये"
+
+#: contact-form-7/wp-contact-form-7.php:455
+msgid "For input field"
+msgstr "निवेश स्थान (क्षेत्र) के लिये"
+
+#: contact-form-7/wp-contact-form-7.php:456
+msgid "* One choice per line."
+msgstr "* एक पंक्ति पर एक ही पसंद."
+
+#: contact-form-7/wp-contact-form-7.php:483
+msgid "Contact form created."
+msgstr "संपर्क प्रपत्र बना दिया गया है."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Contact form saved."
+msgstr "संपर्क प्रपत्र सुरक्षित रख दिया गया है."
+
+#: contact-form-7/wp-contact-form-7.php:489
+msgid "Contact form deleted."
+msgstr "संपर्क प्रपत्र मिटा दिया गया है."
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Untitled"
+msgstr "शीर्षक रहित "
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Your Name"
+msgstr "आपका नाम"
+
+#: contact-form-7/wp-contact-form-7.php:522
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "(required)"
+msgstr "(जरूरी [अपेक्षित])"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Your Email"
+msgstr "आपका ईपत्र पता"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Subject"
+msgstr "विषय"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Your Message"
+msgstr "आपका संदेश"
+
+#: contact-form-7/wp-contact-form-7.php:530
+#: contact-form-7/wp-contact-form-7.php:1046
+msgid "Send"
+msgstr "भेजना"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Your message was sent successfully. Thanks."
+msgstr "आपका संदेश सफलतापूर्वक भेज दिया गया, धन्यवाद"
+
+#: contact-form-7/wp-contact-form-7.php:561
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "आपका संदेश नही भेज पाये. कृप्या दोबारा कोशिश करें या फिर किसी दूसरे तरीके से प्रबंधक से संपर्क करें."
+
+#: contact-form-7/wp-contact-form-7.php:563
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "प्रमाणीकरण करने में गलतियाँ आयीं, कृप्या दोबारा जाँच के फिर से बटन पर चटका (सबमिट) लगायें."
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Please accept the terms to proceed."
+msgstr "आगे जाने के लिये कृप्या शर्तें स्वीकारें."
+
+#: contact-form-7/wp-contact-form-7.php:567
+msgid "Email address seems invalid."
+msgstr "ईपत्र का पता अमान्य (गलत) प्रतीत होता है."
+
+#: contact-form-7/wp-contact-form-7.php:569
+msgid "Please fill the required field."
+msgstr "कृप्या अपेक्षित क्षेत्र भरें."
+
+#: contact-form-7/wp-contact-form-7.php:571
+msgid "Your entered code is incorrect."
+msgstr "आपके द्वारा लिखा गया कूट (कोड) गलत है."
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "नया जोड़ें"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "इस कूट (कोड) की नकल (प्रतिलिपि) करके प्रविष्टि के अंश में चिपकायें."
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "प्रपत्र (फार्म)"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "चिट्ठी-पत्री "
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:65
+msgid "To:"
+msgstr "किसको:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:69
+msgid "From:"
+msgstr "किसकी ओर से:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Subject:"
+msgstr "विषय:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:77
+msgid "Message body:"
+msgstr "संदेश लिखने की जगह:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "चिट्ठी-पत्री (२)"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "चिट्ठी-पत्री (२) उपयोग में लायें"
+
+#: contact-form-7/includes/admin-panel.php:85
+msgid "Save"
+msgstr "सुरक्षित करें"
+
+#: contact-form-7/includes/admin-panel.php:92
+msgid "Delete this contact form"
+msgstr "इस संपर्क प्रपत्र को मिटायें"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"आप इस संपर्क प्रपत्र को डिलीट करने ही वाले हैं. \n"
+" डिलीट नही करने के लिये रद्द करें, डिलीट करने के लिये ओके दबायें"
+
