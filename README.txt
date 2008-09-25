@@ -29,6 +29,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de)
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/)
+* Indonesian (id_ID) - [Hendry Lee](http://blogbuildingu.com/)
 * Italian (it_IT) - [Bruno](http://www.brunosalzano.com)
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
