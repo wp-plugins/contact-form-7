@@ -172,7 +172,7 @@ class tam_contact_form_seven {
 	}
 	
 	function mail($contact_form) {
-		$contact_form = $this->upgrade_160($contact_form);
+		$contact_form = $this->upgrade($contact_form);
 		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
         $callback = array(&$this, 'mail_callback');
 		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
@@ -343,6 +343,10 @@ class tam_contact_form_seven {
 		$wpcf7['contact_forms'] = $contact_forms;
 		update_option('wpcf7', $wpcf7);
 	}
+    
+    function upgrade($contact_form) {
+        $this->upgrade_160($contact_form);
+    }
 
 	function upgrade_160($contact_form) {
 		if (! isset($contact_form['mail']['recipient']))
@@ -506,11 +510,11 @@ var _wpcf7 = {
 		} elseif (array_key_exists($_GET['contactform'], $contact_forms)) {
 			$current = (int) $_GET['contactform'];
 			$cf = stripslashes_deep($contact_forms[$current]);
-			$cf = $this->upgrade_160($cf);
+			$cf = $this->upgrade($cf);
 		} else {
             $current = (int) array_shift(array_keys($contact_forms));
             $cf = stripslashes_deep($contact_forms[$current]);
-			$cf = $this->upgrade_160($cf);
+			$cf = $this->upgrade($cf);
 		}
 		
 		require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
