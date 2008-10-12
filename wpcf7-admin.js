@@ -44,6 +44,19 @@ jQuery(document).ready(function() {
   });
   
   updateTag();
+  
+  jQuery('#message-fields-toggle-switch').text('Show');
+  jQuery('#message-fields').hide();
+  
+  jQuery('#message-fields-toggle-switch').click(function() {
+    if (jQuery('#message-fields').is(':hidden')) {
+        jQuery('#message-fields').show();
+        jQuery('#message-fields-toggle-switch').text('Hide');
+    } else {
+        jQuery('#message-fields').hide();
+        jQuery('#message-fields-toggle-switch').text('Show');
+    }
+  });
 });
 
 function updateTag() {
