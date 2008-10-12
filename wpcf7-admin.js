@@ -45,16 +45,16 @@ jQuery(document).ready(function() {
   
   updateTag();
   
-  jQuery('#message-fields-toggle-switch').text('Show');
+  jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.show);
   jQuery('#message-fields').hide();
   
   jQuery('#message-fields-toggle-switch').click(function() {
     if (jQuery('#message-fields').is(':hidden')) {
-        jQuery('#message-fields').show();
-        jQuery('#message-fields-toggle-switch').text('Hide');
+        jQuery('#message-fields').slideDown('fast');
+        jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.hide);
     } else {
-        jQuery('#message-fields').hide();
-        jQuery('#message-fields-toggle-switch').text('Show');
+        jQuery('#message-fields').slideUp('fast');
+        jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.show);
     }
   });
 });

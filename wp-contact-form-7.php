@@ -460,7 +460,9 @@ var _wpcf7 = {
 		inputFieldSettings: "<?php echo js_escape(__("Input field settings", 'wpcf7')); ?>",
 		tagForImage: "<?php echo js_escape(__("For image", 'wpcf7')); ?>",
 		tagForInputField: "<?php echo js_escape(__("For input field", 'wpcf7')); ?>",
-		oneChoicePerLine: "<?php echo js_escape(__("* One choice per line.", 'wpcf7')); ?>"
+		oneChoicePerLine: "<?php echo js_escape(__("* One choice per line.", 'wpcf7')); ?>",
+		show: "<?php echo js_escape(__("Show", 'wpcf7')); ?>",
+		hide: "<?php echo js_escape(__("Hide", 'wpcf7')); ?>"
 	}
 };
 //]]>
