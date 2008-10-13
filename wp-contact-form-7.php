@@ -157,15 +157,15 @@ class tam_contact_form_seven {
 						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape($reason) . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
-					echo '{ mailSent: 0, message: "' . js_escape($this->message('validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
                 } elseif (! $this->acceptance($cf)) { // Not accepted terms
-                    echo '{ mailSent: 0, message: "' . js_escape($this->message('accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+                    echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . js_escape($this->message('mail_sent_ng')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
-					echo '{ mailSent: 1, message: "' . js_escape($this->message('mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
-					echo '{ mailSent: 0, message: "' . js_escape($this->message('mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				}
 			}
 		}
@@ -359,13 +359,13 @@ class tam_contact_form_seven {
     function upgrade_181($contact_form) {
 		if (! isset($contact_form['messages']))
             $contact_form['messages'] = array(
-                'mail_sent_ok' => $this->message('mail_sent_ok'),
-                'mail_sent_ng' => $this->message('mail_sent_ng'),
-                'validation_error' => $this->message('validation_error'),
-                'accept_terms' => $this->message('accept_terms'),
-                'invalid_email' => $this->message('invalid_email'),
-                'invalid_required' => $this->message('invalid_required'),
-                'captcha_not_match' => $this->message('captcha_not_match')
+                'mail_sent_ok' => $this->default_message('mail_sent_ok'),
+                'mail_sent_ng' => $this->default_message('mail_sent_ng'),
+                'validation_error' => $this->default_message('validation_error'),
+                'accept_terms' => $this->default_message('accept_terms'),
+                'invalid_email' => $this->default_message('invalid_email'),
+                'invalid_required' => $this->default_message('invalid_required'),
+                'captcha_not_match' => $this->default_message('captcha_not_match')
             );
 		return $contact_form;
     }
@@ -588,13 +588,13 @@ var _wpcf7 = {
 	}
 
     function default_messages_template() {
-        $mail_sent_ok = $this->message('mail_sent_ok');
-        $mail_sent_ng = $this->message('mail_sent_ng');
-        $validation_error = $this->message('validation_error');
-        $accept_terms = $this->message('accept_terms');
-        $invalid_email = $this->message('invalid_email');
-        $invalid_required = $this->message('invalid_required');
-        $captcha_not_match = $this->message('captcha_not_match');
+        $mail_sent_ok = $this->default_message('mail_sent_ok');
+        $mail_sent_ng = $this->default_message('mail_sent_ng');
+        $validation_error = $this->default_message('validation_error');
+        $accept_terms = $this->default_message('accept_terms');
+        $invalid_email = $this->default_message('invalid_email');
+        $invalid_required = $this->default_message('invalid_required');
+        $captcha_not_match = $this->default_message('captcha_not_match');
 		return compact('mail_sent_ok', 'mail_sent_ng', 'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
     }
 
@@ -603,7 +603,14 @@ var _wpcf7 = {
 		return compact('recipient');
 	}
 	
-	function message($status) {
+    function message($contact_form, $status) {
+        if (! isset($contact_form['messages']) || ! isset($contact_form['messages'][$status]))
+            return $this->default_message($status);
+        
+        return $contact_form['messages'][$status];
+    }
+    
+	function default_message($status) {
 		switch ($status) {
 			case 'mail_sent_ok':
 				return __('Your message was sent successfully. Thanks.', 'wpcf7');
@@ -634,13 +641,13 @@ var _wpcf7 = {
 			if (! $validation['valid']) {
 				$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
 			} elseif (! $this->acceptance($cf)) { // Not accepted terms
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('accept_terms'));
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'accept_terms'));
 			} elseif ($this->akismet($cf)) { // Spam!
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'), 'spam' => true);
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'mail_sent_ng'), 'spam' => true);
 			} elseif ($this->mail($cf)) {
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message('mail_sent_ok'));
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message($cf, 'mail_sent_ok'));
 			} else {
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message('mail_sent_ng'));
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'mail_sent_ng'));
 			}
 		}
 	}
@@ -715,7 +722,7 @@ var _wpcf7 = {
 				}
 			} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
 				$class .= ' wpcf7-validation-errors';
-				$content = $this->message('validation_error');
+				$content = $this->message($cf, 'validation_error');
 			}
 		}
 		
@@ -764,7 +771,7 @@ var _wpcf7 = {
 			if (preg_match('/^(?:text|textarea|checkbox)[*]$/', $type)) {
 				if (empty($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = $this->message('invalid_required');
+					$reason[$name] = $this->message($contact_form, 'invalid_required');
 				}
 			}
             
@@ -773,17 +780,17 @@ var _wpcf7 = {
                         ! is_array($_POST[$name]) && '---' == $_POST[$name] ||
                         is_array($_POST[$name]) && 1 == count($_POST[$name]) && '---' == $_POST[$name][0]) {
                     $valid = false;
-					$reason[$name] = $this->message('invalid_required');
+					$reason[$name] = $this->message($contact_form, 'invalid_required');
                 }
 			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
 				if ('*' == substr($type, -1) && empty($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = $this->message('invalid_required');
+					$reason[$name] = $this->message($contact_form, 'invalid_required');
 				} elseif (! empty($_POST[$name]) && ! is_email($_POST[$name])) {
 					$valid = false;
-					$reason[$name] = $this->message('invalid_email');
+					$reason[$name] = $this->message($contact_form, 'invalid_email');
 				}
 			}
 
@@ -791,7 +798,7 @@ var _wpcf7 = {
 				$captchac = '_wpcf7_captcha_challenge_' . $name;
 				if (! $this->check_captcha($_POST[$captchac], $_POST[$name])) {
 					$valid = false;
-					$reason[$name] = $this->message('captcha_not_match');
+					$reason[$name] = $this->message($contact_form, 'captcha_not_match');
 				}
 				$this->remove_captcha($_POST[$captchac]);
 			}
