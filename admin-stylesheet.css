@@ -114,3 +114,15 @@ div.tg-panetitle {
     margin: 0 0 10px;
     color: #777;
 }
+
+/* default styles for backward compatibility */
+.subsubsub {
+	list-style: none;
+	margin: 14px 0 8px 0;
+	padding: 0;
+	white-space: nowrap;
+	font-size: 12px;
+}
+.subsubsub a { line-height: 200%; padding: 3px; text-decoration: none; }
+.subsubsub a.current { font-weight: bold; background: none; border: none;}
+.subsubsub li { display: inline; margin: 0; padding: 0; }
