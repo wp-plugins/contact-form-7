@@ -345,7 +345,9 @@ class tam_contact_form_seven {
 	}
     
     function upgrade($contact_form) {
-        $this->upgrade_160($contact_form);
+        $contact_form = $this->upgrade_160($contact_form);
+        $contact_form = $this->upgrade_181($contact_form);
+        return $contact_form;
     }
 
 	function upgrade_160($contact_form) {
@@ -353,6 +355,20 @@ class tam_contact_form_seven {
 			$contact_form['mail']['recipient'] = $contact_form['options']['recipient'];
 		return $contact_form;
 	}
+    
+    function upgrade_181($contact_form) {
+		if (! isset($contact_form['messages']))
+            $contact_form['messages'] = array(
+                'mail_sent_ok' => $this->message('mail_sent_ok'),
+                'mail_sent_ng' => $this->message('mail_sent_ng'),
+                'validation_error' => $this->message('validation_error'),
+                'accept_terms' => $this->message('accept_terms'),
+                'invalid_email' => $this->message('invalid_email'),
+                'invalid_required' => $this->message('invalid_required'),
+                'captcha_not_match' => $this->message('captcha_not_match')
+            );
+		return $contact_form;
+    }
 
 /* Admin panel */
 
@@ -384,16 +400,25 @@ class tam_contact_form_seven {
 				'body' => trim($_POST['wpcf7-mail-2-body']),
 				'recipient' => trim($_POST['wpcf7-mail-2-recipient'])
 				);
+            $messages = array(
+                'mail_sent_ok' => trim($_POST['wpcf7-message-mail-sent-ok']),
+                'mail_sent_ng' => trim($_POST['wpcf7-message-mail-sent-ng']),
+                'validation_error' => trim($_POST['wpcf7-message-validation-error']),
+                'accept_terms' => trim($_POST['wpcf7-message-accept-terms']),
+                'invalid_email' => trim($_POST['wpcf7-message-invalid-email']),
+                'invalid_required' => trim($_POST['wpcf7-message-invalid-required']),
+                'captcha_not_match' => trim($_POST['wpcf7-message-captcha-not-match'])
+                );
 			$options = array(
 				'recipient' => trim($_POST['wpcf7-options-recipient']) // For backward compatibility.
 				);
 			
 			if (array_key_exists($id, $contact_forms)) {
-				$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'options');
+				$contact_forms[$id] = compact('title', 'form', 'mail', 'mail_2', 'messages', 'options');
 				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id . '&message=saved';
 			} else {
 				$key = (empty($contact_forms)) ? 1 : max(array_keys($contact_forms)) + 1;
-				$contact_forms[$key] = compact('title', 'form', 'mail', 'mail_2', 'options');
+				$contact_forms[$key] = compact('title', 'form', 'mail', 'mail_2', 'messages', 'options');
 				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 			}
 			$this->update_contact_forms($contact_forms);
@@ -525,6 +550,7 @@ var _wpcf7 = {
 			'form' => $this->default_form_template(),
 			'mail' => $this->default_mail_template(),
 			'mail_2' => $this->default_mail_2_template(),
+            'messages' => $this->default_messages_template(),
 			'options' => $this->default_options_template());
 		if ($initial)
 			$cf['initial'] = true;
@@ -560,6 +586,17 @@ var _wpcf7 = {
 		$recipient = '[your-email]';
 		return compact('active', 'subject', 'sender', 'body', 'recipient');
 	}
+
+    function default_messages_template() {
+        $mail_sent_ok = $this->message('mail_sent_ok');
+        $mail_sent_ng = $this->message('mail_sent_ng');
+        $validation_error = $this->message('validation_error');
+        $accept_terms = $this->message('accept_terms');
+        $invalid_email = $this->message('invalid_email');
+        $invalid_required = $this->message('invalid_required');
+        $captcha_not_match = $this->message('captcha_not_match');
+		return compact('mail_sent_ok', 'mail_sent_ng', 'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
+    }
 
 	function default_options_template() {
 		$recipient = get_option('admin_email'); // For backward compatibility.

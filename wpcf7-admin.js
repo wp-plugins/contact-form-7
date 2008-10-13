@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
         jQuery('#message-fields').slideDown('fast');
         jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.hide);
     } else {
-        jQuery('#message-fields').slideUp('fast');
+        jQuery('#message-fields').hide('fast');
         jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.show);
     }
   });
