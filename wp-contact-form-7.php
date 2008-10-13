@@ -442,13 +442,26 @@ class tam_contact_form_seven {
 	}
 	
 	function admin_head() {
-		global $plugin_page;
+		global $plugin_page, $wp_version;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
             $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 			
 			$javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
+            
+            /* default styles for backward compatibility */
+            if (version_compare($wp_version, '2.5', '<')) : // Using old WordPress
+?>
+<style type="text/css">
+    .subsubsub { list-style: none; margin: 14px 0 8px 0; padding: 0; white-space: nowrap; font-size: 12px; }
+    .subsubsub a { line-height: 200%; padding: 3px; text-decoration: none; }
+    .subsubsub a.current { font-weight: bold; background: none; border: none;}
+    .subsubsub li { display: inline; margin: 0; padding: 0; }
+</style>
+<?php
+            endif;
+
 ?>
 <script type="text/javascript">
 //<![CDATA[
