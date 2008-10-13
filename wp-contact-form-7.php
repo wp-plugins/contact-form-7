@@ -161,7 +161,7 @@ class tam_contact_form_seven {
                 } elseif (! $this->acceptance($cf)) { // Not accepted terms
                     echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
+					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
 					echo '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
@@ -361,6 +361,7 @@ class tam_contact_form_seven {
             $contact_form['messages'] = array(
                 'mail_sent_ok' => $this->default_message('mail_sent_ok'),
                 'mail_sent_ng' => $this->default_message('mail_sent_ng'),
+                'akismet_says_spam' => $this->default_message('akismet_says_spam'),
                 'validation_error' => $this->default_message('validation_error'),
                 'accept_terms' => $this->default_message('accept_terms'),
                 'invalid_email' => $this->default_message('invalid_email'),
@@ -403,6 +404,7 @@ class tam_contact_form_seven {
             $messages = array(
                 'mail_sent_ok' => trim($_POST['wpcf7-message-mail-sent-ok']),
                 'mail_sent_ng' => trim($_POST['wpcf7-message-mail-sent-ng']),
+                'akismet_says_spam' => trim($_POST['wpcf7-message-akismet-says-spam']),
                 'validation_error' => trim($_POST['wpcf7-message-validation-error']),
                 'accept_terms' => trim($_POST['wpcf7-message-accept-terms']),
                 'invalid_email' => trim($_POST['wpcf7-message-invalid-email']),
@@ -590,12 +592,13 @@ var _wpcf7 = {
     function default_messages_template() {
         $mail_sent_ok = $this->default_message('mail_sent_ok');
         $mail_sent_ng = $this->default_message('mail_sent_ng');
+        $akismet_says_spam = $this->default_message('akismet_says_spam');
         $validation_error = $this->default_message('validation_error');
         $accept_terms = $this->default_message('accept_terms');
         $invalid_email = $this->default_message('invalid_email');
         $invalid_required = $this->default_message('invalid_required');
         $captcha_not_match = $this->default_message('captcha_not_match');
-		return compact('mail_sent_ok', 'mail_sent_ng', 'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
+		return compact('mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam', 'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
     }
 
 	function default_options_template() {
@@ -615,6 +618,8 @@ var _wpcf7 = {
 			case 'mail_sent_ok':
 				return __('Your message was sent successfully. Thanks.', 'wpcf7');
 			case 'mail_sent_ng':
+				return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
+			case 'akismet_says_spam':
 				return __('Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7');
 			case 'validation_error':
 				return __('Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7');
@@ -643,7 +648,7 @@ var _wpcf7 = {
 			} elseif (! $this->acceptance($cf)) { // Not accepted terms
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'accept_terms'));
 			} elseif ($this->akismet($cf)) { // Spam!
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'mail_sent_ng'), 'spam' => true);
+				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'akismet_says_spam'), 'spam' => true);
 			} elseif ($this->mail($cf)) {
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message($cf, 'mail_sent_ok'));
 			} else {

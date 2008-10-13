@@ -95,6 +95,10 @@
                         <input type="text" id="wpcf7-message-mail-sent-ng" name="wpcf7-message-mail-sent-ng" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['mail_sent_ng']); ?>" />
                     </div>
                     <div class="message-field">
+                        <label for="wpcf7-message-akismet-says-spam"><?php _e("\"Akismet judged the sending activity as spamming\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-akismet-says-spam" name="wpcf7-message-akismet-says-spam" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['akismet_says_spam']); ?>" />
+                    </div>
+                    <div class="message-field">
                         <label for="wpcf7-message-validation-error"><?php _e("\"Validation errors occurred\"", 'wpcf7'); ?></label><br />
                         <input type="text" id="wpcf7-message-validation-error" name="wpcf7-message-validation-error" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['validation_error']); ?>" />
                     </div>
