@@ -141,3 +141,10 @@
 	</form>
 </div>
 <?php endif; ?>
+
+<div class="wrap">
+    <div style="text-align: center;">
+        <a href="<?php echo $base_url . '?page=' . $page . '&action=import'; ?>">Import</a> |
+        <a href="<?php echo $base_url . '?page=' . $page . '&action=export'; ?>">Export</a>
+    </div>
+</div>
