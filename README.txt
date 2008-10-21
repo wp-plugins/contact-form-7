@@ -35,7 +35,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
 * Norwegian (nb_NO) - Kjetil M. Bergem
-* Persian (Farsi; fa_IR) - Mohammad Musavi
+* Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - [Dmitry Volotovich](http://www.volnov.com)
