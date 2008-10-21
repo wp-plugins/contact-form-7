@@ -859,6 +859,9 @@ var _wpcf7 = {
             $values = $fe['values'];
             
             // Before validation corrections
+            if (preg_match('/^(?:text|email|captchar|textarea)[*]?$/', $type))
+                $_POST[$name] = (string) $_POST[$name];
+            
             if (preg_match('/^(?:text|email)[*]?$/', $type))
                 $_POST[$name] = trim(strtr($_POST[$name], "\n", " "));
             
@@ -880,12 +883,19 @@ var _wpcf7 = {
                 $_POST[$name] = $_POST[$name] ? 1 : 0;
             
 			// Required item (*)
-			if (preg_match('/^(?:text|textarea|checkbox)[*]$/', $type)) {
-				if (empty($_POST[$name])) {
+			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
+                if (! isset($_POST[$name]) || '' == $_POST[$name]) {
 					$valid = false;
 					$reason[$name] = $this->message($contact_form, 'invalid_required');
 				}
 			}
+            
+            if ('checkbox*' == $type) {
+                if (empty($_POST[$name])) {
+					$valid = false;
+					$reason[$name] = $this->message($contact_form, 'invalid_required');
+				}
+            }
             
             if ('select*' == $type) {
                 if (empty($_POST[$name]) ||
@@ -897,10 +907,10 @@ var _wpcf7 = {
 			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
-				if ('*' == substr($type, -1) && empty($_POST[$name])) {
+				if ('*' == substr($type, -1) && (! isset($_POST[$name]) || '' == $_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message($contact_form, 'invalid_required');
-				} elseif (! empty($_POST[$name]) && ! is_email($_POST[$name])) {
+				} elseif (isset($_POST[$name]) && '' != $_POST[$name] && ! is_email($_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message($contact_form, 'invalid_email');
 				}
