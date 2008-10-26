@@ -4,7 +4,7 @@ Plugin Name: Contact Form 7
 Plugin URI: http://ideasilo.wordpress.com/2007/04/30/contact-form-7/
 Description: Just another contact form plugin. Simple but flexible.
 Author: Takayuki Miyoshi
-Version: 1.8.0.3
+Version: 1.8.0.4
 Author URI: http://ideasilo.wordpress.com/
 */
 
@@ -25,7 +25,7 @@ Author URI: http://ideasilo.wordpress.com/
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define('WPCF7_VERSION', '1.8.0.3');
+define('WPCF7_VERSION', '1.8.0.4');
 
 function wpcf7_version() {
     return WPCF7_VERSION;
@@ -406,13 +406,26 @@ class tam_contact_form_seven {
 	}
 	
 	function admin_head() {
-		global $plugin_page;
+		global $plugin_page, $wp_version;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
             $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 			
 			$javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
+            
+            /* default styles for backward compatibility */ 
+            if (version_compare($wp_version, '2.5', '<')) : // Using old WordPress 
+?> 
+<style type="text/css"> 
+    .subsubsub { list-style: none; margin: 14px 0 8px 0; padding: 0; white-space: nowrap; font-size: 12px; } 
+    .subsubsub a { line-height: 200%; padding: 3px; text-decoration: none; } 
+    .subsubsub a.current { font-weight: bold; background: none; border: none;} 
+    .subsubsub li { display: inline; margin: 0; padding: 0; } 
+</style> 
+<?php 
+            endif; 
+
 ?>
 <script type="text/javascript">
 //<![CDATA[
@@ -692,6 +705,9 @@ var _wpcf7 = {
             $values = $fe['values'];
             
             // Before validation corrections
+            if (preg_match('/^(?:text|email|captchar|textarea)[*]?$/', $type))
+                $_POST[$name] = (string) $_POST[$name];
+
             if (preg_match('/^(?:text|email)[*]?$/', $type))
                 $_POST[$name] = trim(strtr($_POST[$name], "\n", " "));
             
@@ -713,12 +729,19 @@ var _wpcf7 = {
                 $_POST[$name] = $_POST[$name] ? 1 : 0;
             
 			// Required item (*)
-			if (preg_match('/^(?:text|textarea|checkbox)[*]$/', $type)) {
-				if (empty($_POST[$name])) {
+			if (preg_match('/^(?:text|textarea)[*]$/', $type)) {
+                if (! isset($_POST[$name]) || '' == $_POST[$name]) {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_required');
 				}
 			}
+            
+            if ('checkbox*' == $type) {
+                if (empty($_POST[$name])) {
+					$valid = false;
+					$reason[$name] = $this->message($contact_form, 'invalid_required');
+				}
+            }
             
             if ('select*' == $type) {
                 if (empty($_POST[$name]) ||
@@ -730,10 +753,10 @@ var _wpcf7 = {
 			}
 
 			if (preg_match('/^email[*]?$/', $type)) {
-				if ('*' == substr($type, -1) && empty($_POST[$name])) {
+				if ('*' == substr($type, -1) && (! isset($_POST[$name]) || '' == $_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_required');
-				} elseif (! empty($_POST[$name]) && ! is_email($_POST[$name])) {
+				} elseif (isset($_POST[$name]) && '' != $_POST[$name] && ! is_email($_POST[$name])) {
 					$valid = false;
 					$reason[$name] = $this->message('invalid_email');
 				}
