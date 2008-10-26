@@ -61,6 +61,8 @@
 			<div class="fieldset"><div class="legend"><?php _e('Mail (2)', 'wpcf7'); ?></div>
 				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
 				<label for="wpcf7-mail-2-active"><?php _e('Use mail (2)', 'wpcf7'); ?></label>
+                
+                    <div id="mail-2-fields">
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-2-recipient" name="wpcf7-mail-2-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['recipient']); ?>" />
@@ -77,7 +79,50 @@
 					<label for="wpcf7-mail-2-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
 					<textarea id="wpcf7-mail-2-body" name="wpcf7-mail-2-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail_2']['body']); ?></textarea>
 				</div>
+                    </div>
 			</div>
+
+                <div class="fieldset">
+                    <div class="legend">
+                        <?php _e('Messages', 'wpcf7'); ?>
+                        <span id="message-fields-toggle-switch"></span>
+                    </div>
+                    
+                    <div id="message-fields">
+                    <div class="message-field">
+                        <label for="wpcf7-message-mail-sent-ok"><?php _e("\"Sender's message was sent successfully\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-mail-sent-ok" name="wpcf7-message-mail-sent-ok" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['mail_sent_ok']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-mail-sent-ng"><?php _e("\"Sender's message was failed to send\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-mail-sent-ng" name="wpcf7-message-mail-sent-ng" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['mail_sent_ng']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-akismet-says-spam"><?php _e("\"Akismet judged the sending activity as spamming\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-akismet-says-spam" name="wpcf7-message-akismet-says-spam" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['akismet_says_spam']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-validation-error"><?php _e("\"Validation errors occurred\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-validation-error" name="wpcf7-message-validation-error" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['validation_error']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-accept-terms"><?php _e("\"There is a field of term that sender is needed to accept\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-accept-terms" name="wpcf7-message-accept-terms" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['accept_terms']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-invalid-email"><?php _e("\"Email address that sender entered is invalid\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-invalid-email" name="wpcf7-message-invalid-email" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['invalid_email']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-invalid-required"><?php _e("\"There is a field that sender is needed to fill in\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-invalid-required" name="wpcf7-message-invalid-required" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['invalid_required']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-captcha-not-match"><?php _e("\"The code that sender entered does not match the CAPTCHA\"", 'wpcf7'); ?></label><br />
+                        <input type="text" id="wpcf7-message-captcha-not-match" name="wpcf7-message-captcha-not-match" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['captcha_not_match']); ?>" />
+                    </div>
+                    </div>
+                </div>
 
 			<input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
 
@@ -96,3 +141,10 @@
 	</form>
 </div>
 <?php endif; ?>
+
+<div class="wrap">
+    <div style="text-align: center;">
+        <a href="<?php echo $base_url . '?page=' . $page . '&action=import'; ?>">Import</a> |
+        <a href="<?php echo $base_url . '?page=' . $page . '&action=export'; ?>">Export</a>
+    </div>
+</div>

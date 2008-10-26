@@ -47,8 +47,15 @@ div.fieldset div.legend {
 	font-weight: bolder;
 	margin-bottom: 0.5em;
 }
-div.fieldset div.mail-field {
+div.fieldset div.mail-field, div.fieldset div.message-field {
 	margin: 0.3em 0;
+}
+span#message-fields-toggle-switch {
+	margin-left: 1em;
+	font-weight: normal;
+	font-size: smaller;
+	color: #2583ad;
+	cursor: pointer;
 }
 input.wide {
 	width: 96%;
