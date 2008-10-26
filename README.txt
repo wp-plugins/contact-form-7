@@ -40,6 +40,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - [Dmitry Volotovich](http://www.volnov.com)
 * Romanian (ro) - [Stas Sushkov](http://stas.nerd.ro/ascii/)
+* Slovene (sl_SI) - Mihael Simonič
 * Spanish (es_ES) - [Jordi Sancho](http://www.qasolutions.net/blog)
 (updated by [Vladimir Prieto](http://vladimir.prie.to/) and [Federico Mikaelian](http://www.fedemika.com.ar/))
 * Swedish (sv_SE) - [Fredrik Jonsson](http://www.fredda-o-ac.se/)
