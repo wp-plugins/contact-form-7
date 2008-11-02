@@ -16,6 +16,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 Since being published in August 2007, Contact Form 7 has been translated into a number of languages. Our thanks and appreciation must go to the following for their contributions:
 
+* Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/) (updated by Henrique Vianna)
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
 * Catalan (ca_ES) - [Jordi Sancho](http://www.qasolutions.net/blog)
