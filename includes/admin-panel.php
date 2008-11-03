@@ -17,7 +17,7 @@
         <?php endif; ?>
     </ul>
 </div>
-
+<br class="clear" />
 <?php if ($cf) : ?>
 <?php $disabled = ($this->has_edit_cap()) ? '' : ' disabled="disabled"'; ?>
 <div class="wrap relative">
