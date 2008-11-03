@@ -526,6 +526,8 @@ var _wpcf7 = {
     }
 	
 	function management_page() {
+        global $wp_version;
+    
         if (function_exists('admin_url')) {
             $base_url = admin_url('edit.php');
         } else {
