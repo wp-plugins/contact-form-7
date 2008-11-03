@@ -373,11 +373,19 @@ class tam_contact_form_seven {
 
 /* Admin panel */
 
+    function admin_menu_parent() {
+        global $wp_version;
+        if (version_compare($wp_version, '2.7-alpha', '>='))
+            return 'import.php';
+        else
+            return 'edit.php';
+    }
+
 	function add_pages() {
         if (function_exists('admin_url')) {
-            $base_url = admin_url('edit.php');
+            $base_url = admin_url($this->admin_menu_parent());
         } else {
-            $base_url = get_option('siteurl') . '/wp-admin/edit.php';
+            $base_url = get_option('siteurl') . '/wp-admin/' . $this->admin_menu_parent();
         }
 		$page = str_replace('\\', '%5C', plugin_basename(__FILE__));
 		$contact_forms = $this->contact_forms();
@@ -529,9 +537,9 @@ var _wpcf7 = {
         global $wp_version;
     
         if (function_exists('admin_url')) {
-            $base_url = admin_url('edit.php');
+            $base_url = admin_url($this->admin_menu_parent());
         } else {
-            $base_url = get_option('siteurl') . '/wp-admin/edit.php';
+            $base_url = get_option('siteurl') . '/wp-admin/' . $this->admin_menu_parent();
         }
 		$page = plugin_basename(__FILE__);
 		
@@ -961,7 +969,7 @@ var _wpcf7 = {
 	
 	function load_js() {
 		global $pagenow;
-        if (is_admin() && 'edit.php' == $pagenow && false !== strpos($_GET['page'], 'contact-form-7'))
+        if (is_admin() && $this->admin_menu_parent() == $pagenow && false !== strpos($_GET['page'], 'contact-form-7'))
 			wp_enqueue_script('jquery');
 		if (! is_admin())
 			wp_enqueue_script('jquery-form', '/wp-includes/js/jquery/jquery.form.js', array('jquery'), '1.0.3');
