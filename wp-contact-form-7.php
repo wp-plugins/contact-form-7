@@ -475,6 +475,15 @@ class tam_contact_form_seven {
 <?php
             endif;
 
+            /* looks little bit more WP 2.7 fashion */
+            if (version_compare($wp_version, '2.7-alpha', '>=')) : // Using WordPress 2.7 or latar
+?>
+<style type="text/css">
+    input#contact-form-anchor-text { -moz-border-radius: 6px; -khtml-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+</style>
+<?php
+            endif;
+
 ?>
 <script type="text/javascript">
 //<![CDATA[
