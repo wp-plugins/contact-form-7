@@ -51,6 +51,9 @@ if (! defined('WPCF7_CAPTCHA_TMP_DIR'))
 if (! defined('WPCF7_CAPTCHA_TMP_URL'))
     define('WPCF7_CAPTCHA_TMP_URL', WP_CONTENT_URL . '/uploads/wpcf7_captcha');
 
+if (! defined('WPCF7_SUBSTITUTE_WPAUTOP'))
+    define('WPCF7_SUBSTITUTE_WPAUTOP', true);
+    
 if (! function_exists('wpcf7_read_capability')) {
     function wpcf7_read_capability() { return 'edit_posts'; }
 }
@@ -75,7 +78,7 @@ class tam_contact_form_seven {
 		add_action('init', array(&$this, 'init_switch'), 11);
 		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
 		add_filter('widget_text', array(&$this, 'widget_text_filter'));
-		if (remove_filter('the_content', 'wpautop'))
+		if (WPCF7_SUBSTITUTE_WPAUTOP && remove_filter('the_content', 'wpautop'))
             add_filter('the_content', array(&$this, 'wpautop_substitute'));
 	}
     
