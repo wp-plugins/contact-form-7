@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-08 23:13+0900\n"
-"PO-Revision-Date: 2008-11-08 23:14+0900\n"
+"POT-Creation-Date: 2008-11-08 23:29+0900\n"
+"PO-Revision-Date: 2008-11-08 23:29+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -304,35 +304,35 @@ msgid "Messages"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:93
-msgid "\"Sender's message was sent successfully\""
+msgid "Sender's message was sent successfully"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:97
-msgid "\"Sender's message was failed to send\""
+msgid "Sender's message was failed to send"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:101
-msgid "\"Akismet judged the sending activity as spamming\""
+msgid "Akismet judged the sending activity as spamming"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:105
-msgid "\"Validation errors occurred\""
+msgid "Validation errors occurred"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:109
-msgid "\"There is a field of term that sender is needed to accept\""
+msgid "There is a field of term that sender is needed to accept"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:113
-msgid "\"Email address that sender entered is invalid\""
+msgid "Email address that sender entered is invalid"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:117
-msgid "\"There is a field that sender is needed to fill in\""
+msgid "There is a field that sender is needed to fill in"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:121
-msgid "\"The code that sender entered does not match the CAPTCHA\""
+msgid "The code that sender entered does not match the CAPTCHA"
 msgstr ""
 
 #: contact-form-7/includes/admin-panel.php:130
