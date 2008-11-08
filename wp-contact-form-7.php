@@ -445,11 +445,6 @@ class tam_contact_form_seven {
 			wp_redirect($base_url . '?page=' . $page . '&message=deleted');
 			exit();
 		}
-        
-        if ('export' == $_GET['action'] && 'download' == $_GET['step']) {
-            $this->export((array) $_POST['wpcf7-contact-forms']);
-            exit();
-        }
 	
 		add_management_page(__('Contact Form 7', 'wpcf7'), __('Contact Form 7', 'wpcf7'), wpcf7_read_capability(), __FILE__, array(&$this, 'management_page'));
 	}
@@ -565,14 +560,6 @@ var _wpcf7 = {
 		}
         
 		$contact_forms = $this->contact_forms();
-        
-        if ('import' == $_GET['action']) {
-            require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel-import.php';
-            return;
-        } elseif ('export' == $_GET['action']) {
-            require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel-export.php';
-            return;
-        }
 		
 		$id = $_POST['wpcf7-id'];
 		
@@ -592,86 +579,6 @@ var _wpcf7 = {
 		
 		require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
 	}
-
-    function export($exported = array()) {
-        $filename = 'contact-form-7.' . date('Y-m-d') . '.xml';
-        header('Content-Description: File Transfer');
-        header("Content-Disposition: attachment; filename=$filename");
-        header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
-        
-        $contact_forms = $this->contact_forms();
-        
-        echo '<?xml version="1.0" encoding="' . get_bloginfo('charset') . '"?' . ">\n";
-        echo '<contact_forms>' . "\n";
-        
-        foreach ($contact_forms as $k => $cf) {
-            if (! isset($exported[$k]) || ! $exported[$k]) // Unnecessary to export
-                continue;
-            
-            echo '  <contact_form>' . "\n";
-            echo '    <title>' . $this->xml_cdata($cf['title']) . '</title>' . "\n";
-            echo '    <form>' . $this->xml_cdata($cf['form']) . '</form>' . "\n";
-            echo '    <mail>' . "\n" . $this->xpt_mail_template($cf['mail']) . '    </mail>' . "\n";
-            echo '    <mail_2>' . "\n" . $this->xpt_mail_template($cf['mail_2']) . '    </mail_2>' . "\n";
-            echo '    <messages>' . "\n" . $this->xpt_messages_template($cf['messages']) . '    </messages>' . "\n";
-            echo '    <options>' . "\n" . $this->xpt_options_template($cf['options']) . '    </options>' . "\n";
-            echo '  </contact_form>' . "\n";
-        }
-        
-        echo '</contact_forms>' . "\n";
-    }
-    
-    function xpt_mail_template($mail, $indent = '      ') {
-        $mail = (array) $mail;
-        $out = "";
-        
-        if (array_key_exists('active', $mail)) // for Mail(2)
-            $out .= $indent . '<active>' . ($mail['active'] ? '1' : '0') . '</active>' . "\n";
-        
-        $elms = array('subject', 'sender', 'body', 'recipient');
-        
-        foreach ($elms as $elm) {
-            $out .= $indent . '<' . $elm . '>' . $this->xml_cdata($mail[$elm]) . '</' . $elm . '>' . "\n";
-        }
-        
-        return $out;
-    }
-    
-    function xpt_messages_template($messages, $indent = '      ') {
-        $messages = (array) $messages;
-        $out = "";
-
-        $elms = array('mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam', 'validation_error',
-            'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
-
-        foreach ($elms as $elm) {
-            $out .= $indent . '<' . $elm . '>' . $this->xml_cdata($messages[$elm]) . '</' . $elm . '>' . "\n";
-        }
-
-        return $out;
-    }
-    
-    function xpt_options_template($options, $indent = '      ') {
-        $options = (array) $options;
-        $out = "";
-
-        $elms = array('recipient');
-
-        foreach ($elms as $elm) {
-            $out .= $indent . '<' . $elm . '>' . $this->xml_cdata($options[$elm]) . '</' . $elm . '>' . "\n";
-        }
-
-        return $out;
-    }
-    
-    function xml_cdata($string) {
-        if (seems_utf8($string) == false)
-            $string = utf8_encode($string);
-
-        $string = "<![CDATA[" . $string . ((substr($string, -1) == ']') ? ' ' : '') . "]]>";
-
-        return $string;
-    }
 
 	function default_pack($title, $initial = false) {
 		$cf = array('title' => $title,

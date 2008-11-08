@@ -143,9 +143,3 @@
 <?php endif; ?>
 
 <?php if (version_compare($wp_version, '2.7-alpha', '>=')) : ?><br class="clear" /><?php endif; ?>
-<div class="wrap">
-    <div style="text-align: center;">
-        <a href="<?php echo $base_url . '?page=' . $page . '&action=import'; ?>">Import</a> |
-        <a href="<?php echo $base_url . '?page=' . $page . '&action=export'; ?>">Export</a>
-    </div>
-</div>
