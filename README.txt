@@ -46,6 +46,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 (updated by [Vladimir Prieto](http://vladimir.prie.to/) and [Federico Mikaelian](http://www.fedemika.com.ar/))
 * Swedish (sv_SE) - [Fredrik Jonsson](http://www.fredda-o-ac.se/)
 * Turkish (tr_TR) - [Roman Neumuller](http://katpatuka.wordpress.com) (updated by [Hasan Yılmaz](http://hedefturkce.com/))
+* Ukrainian (uk_UA) - Andrey Kovba
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into Contact Form 7.
 
