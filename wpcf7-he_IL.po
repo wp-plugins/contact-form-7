@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: contactform7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-10 18:56+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yaron Ofer <info@gadgetguru.co.il>\n"
+"Language-Team: GadgetGuru DevTeam <info@gadgetguru.co.il>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: contact-form-7/wp-contact-form-7.php:309
+msgid "Contact form"
+msgstr "טופס צור קשר"
+
+#: contact-form-7/wp-contact-form-7.php:403
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:419
+msgid "optional"
+msgstr "אופציונלי"
+
+#: contact-form-7/wp-contact-form-7.php:420
+msgid "Generate Tag"
+msgstr "צור תג"
+
+#: contact-form-7/wp-contact-form-7.php:421
+msgid "Text field"
+msgstr "שדה טקסט"
+
+#: contact-form-7/wp-contact-form-7.php:422
+msgid "Email field"
+msgstr "שדה דואר אלקטרוני"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Text area"
+msgstr "אזור טקסט"
+
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Drop-down menu"
+msgstr "תפריט נפתח"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Checkboxes"
+msgstr "תיבת בחירה"
+
+#: contact-form-7/wp-contact-form-7.php:426
+msgid "Radio buttons"
+msgstr "כפתורי רדיו"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Acceptance"
+msgstr "כפתור אישרור"
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Make this checkbox checked by default?"
+msgstr "הפוך את תיבת הבחירה מסומנת כברירת מחדל?"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Make this checkbox work inversely?"
+msgstr "לשנות שתיבת הבחירה תעבוד הפוך?"
+
+#: contact-form-7/wp-contact-form-7.php:430
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* כלומר, גולש שמקבל את התנאי צריך להסיר את הסימון."
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "CAPTCHA"
+msgstr "CAPTCHA אנטי ספאם"
+
+#: contact-form-7/wp-contact-form-7.php:432
+msgid "Submit button"
+msgstr "לחצן שלח"
+
+#: contact-form-7/wp-contact-form-7.php:433
+msgid "Name"
+msgstr "שם"
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Required field?"
+msgstr "שדה חובה?"
+
+#: contact-form-7/wp-contact-form-7.php:435
+msgid "Allow multiple selections?"
+msgstr "אפשר בחירות מרובות?"
+
+#: contact-form-7/wp-contact-form-7.php:436
+msgid "Insert a blank item as the first option?"
+msgstr "הוספת שדה ריק באפשרות הראשונה?"
+
+#: contact-form-7/wp-contact-form-7.php:437
+msgid "Make checkboxes exclusive?"
+msgstr "הפוך תיבת בחירה לבלעדית?"
+
+#: contact-form-7/wp-contact-form-7.php:438
+msgid "Choices"
+msgstr "בחירות"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Label"
+msgstr "תווית"
+
+#: contact-form-7/wp-contact-form-7.php:440
+msgid "Default value"
+msgstr "ערך ברירת מחדל"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Akismet"
+msgstr "Akismet - בודק תגובות זבל"
+
+#: contact-form-7/wp-contact-form-7.php:442
+msgid "This field requires author's name"
+msgstr "שדה זה דורש את השם הכותב"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "This field requires author's URL"
+msgstr "שדה זה דורש את הכתובת של הכותב"
+
+#: contact-form-7/wp-contact-form-7.php:444
+msgid "This field requires author's email address"
+msgstr "שדה זה דורש הדואר האלקטרוני של הכותב"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Copy and paste this code into the form"
+msgstr "העתק והדבק את הקוד לתוך טופס"
+
+#: contact-form-7/wp-contact-form-7.php:446
+msgid "Foreground color"
+msgstr "צבע רקע קדמי"
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Background color"
+msgstr "צבע רקע"
+
+#: contact-form-7/wp-contact-form-7.php:448
+msgid "Image size"
+msgstr "גודל תמונה"
+
+#: contact-form-7/wp-contact-form-7.php:449
+msgid "Small"
+msgstr "קטנה"
+
+#: contact-form-7/wp-contact-form-7.php:450
+msgid "Medium"
+msgstr "בינונית"
+
+#: contact-form-7/wp-contact-form-7.php:451
+msgid "Large"
+msgstr "גדולה"
+
+#: contact-form-7/wp-contact-form-7.php:452
+msgid "Image settings"
+msgstr "הגדרות תמונה"
+
+#: contact-form-7/wp-contact-form-7.php:453
+msgid "Input field settings"
+msgstr "הגדרות שדה קלט"
+
+#: contact-form-7/wp-contact-form-7.php:454
+msgid "For image"
+msgstr "עבור תמונה"
+
+#: contact-form-7/wp-contact-form-7.php:455
+msgid "For input field"
+msgstr "עבור שדה קלט"
+
+#: contact-form-7/wp-contact-form-7.php:456
+msgid "* One choice per line."
+msgstr "* בכל שורה בחירה אחד."
+
+#: contact-form-7/wp-contact-form-7.php:483
+msgid "Contact form created."
+msgstr "נוצר טופס יצירת קשר ."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Contact form saved."
+msgstr "נשמר טופס יצירת קשר."
+
+#: contact-form-7/wp-contact-form-7.php:489
+msgid "Contact form deleted."
+msgstr "הטופס נמחק."
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Untitled"
+msgstr "ללא כותרת"
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Your Name"
+msgstr "השם שלך"
+
+#: contact-form-7/wp-contact-form-7.php:522
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "(required)"
+msgstr "(חובה)"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Your Email"
+msgstr "הדואר האלקרוני שלך"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Subject"
+msgstr "נושא"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Your Message"
+msgstr "ההודעה שלך"
+
+#: contact-form-7/wp-contact-form-7.php:530
+#: contact-form-7/wp-contact-form-7.php:1046
+msgid "Send"
+msgstr "שלח"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Your message was sent successfully. Thanks."
+msgstr "ההודעה נשלחה בהצלחה. תודה."
+
+#: contact-form-7/wp-contact-form-7.php:561
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "אירעה תקלה בשליחה. אנא נסה במועד מאוחר יותר או פנה למנהל המערכת בדרך אחרת."
+
+#: contact-form-7/wp-contact-form-7.php:563
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "אירעה תקלה. נא לבדוק את השדות ולנסות לשלוח שוב."
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Please accept the terms to proceed."
+msgstr "לא אישרת את התנאים, נא לאשר על מנת להמשיך."
+
+#: contact-form-7/wp-contact-form-7.php:567
+msgid "Email address seems invalid."
+msgstr "כתובת האי-מייל כנראה לא תקין."
+
+#: contact-form-7/wp-contact-form-7.php:569
+msgid "Please fill the required field."
+msgstr "נא למלא את כל שדות החובה."
+
+#: contact-form-7/wp-contact-form-7.php:571
+msgid "Your entered code is incorrect."
+msgstr "הקוד שהזנת שגוי."
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "הוסף טופס חדש"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "העתק והדבק את הקוד לתוכן העמוד/כתבה שלך."
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "טופס"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "דואר"
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:65
+msgid "To:"
+msgstr "אל:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:69
+msgid "From:"
+msgstr "מאת:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Subject:"
+msgstr "נושא:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:77
+msgid "Message body:"
+msgstr "תוכן ההודעה:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "דואר 2"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "שימוש בדואר (2)"
+
+#: contact-form-7/includes/admin-panel.php:85
+msgid "Save"
+msgstr "שמור"
+
+#: contact-form-7/includes/admin-panel.php:92
+msgid "Delete this contact form"
+msgstr "מחק טופס זה"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"אתה עומד למחוק את הטופס .\n"
+"לחץ 'ביטול' כדי לעצור, 'אישור' כדי למחוק."
+
