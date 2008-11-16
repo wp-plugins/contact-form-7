@@ -276,7 +276,7 @@ class tam_contact_form_seven {
 		$ignore = array('HTTP_COOKIE');
 		
 		foreach ($_SERVER as $key => $value)
-			if (! in_array($key, $ignore))
+			if (! in_array($key, (array) $ignore))
 				$c["$key"] = $value;
 		
 		$query_string = '';
@@ -802,12 +802,12 @@ var _wpcf7 = {
                 if (is_array($_POST[$name])) {
                     foreach ($_POST[$name] as $key => $value) {
                         $value = stripslashes($value);
-                        if (! in_array($value, $values)) // Not in given choices.
+                        if (! in_array($value, (array) $values)) // Not in given choices.
                             unset($_POST[$name][$key]);
                     }
                 } else {
                     $value = stripslashes($_POST[$name]);
-                    if (! in_array($value, $values)) //  Not in given choices.
+                    if (! in_array($value, (array) $values)) //  Not in given choices.
                         $_POST[$name] = '';
                 }
             }
@@ -1046,10 +1046,10 @@ var _wpcf7 = {
 				$html = '';
                 foreach ($values as $key => $value) {
                     $selected = '';
-                    if (! $empty_select && in_array($key + 1, $scr_default))
+                    if (! $empty_select && in_array($key + 1, (array) $scr_default))
                         $selected = ' selected="selected"';
                     if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
-                            $multiple && in_array($value, $_POST[$name]) ||
+                            $multiple && in_array($value, (array) $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $selected = ' selected="selected"';
 					$html .= '<option value="' . attribute_escape($value) . '"' . $selected . '>' . $value . '</option>';
@@ -1075,10 +1075,10 @@ var _wpcf7 = {
                 
                 foreach ($values as $key => $value) {
                     $checked = '';
-                    if (in_array($key + 1, $scr_default))
+                    if (in_array($key + 1, (array) $scr_default))
                         $checked = ' checked="checked"';
                     if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
-                            $multiple && in_array($value, $_POST[$name]) ||
+                            $multiple && in_array($value, (array) $_POST[$name]) ||
                             ! $multiple && $_POST[$name] == $value))
                         $checked = ' checked="checked"';
                     if (preg_grep('%^label[_-]?first$%', $options)) { // put label first, input last
