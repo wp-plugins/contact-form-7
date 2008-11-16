@@ -460,7 +460,12 @@ class tam_contact_form_seven {
 		global $plugin_page, $wp_version;
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
-            $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
+        
+            if (version_compare($wp_version, '2.7-beta3', '>=')) // Using WordPress 2.7-beta3 or latar
+                $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet-27.css';
+            else
+                $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
+
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 			
 			$javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
@@ -583,8 +588,12 @@ var _wpcf7 = {
             $cf = stripslashes_deep($contact_forms[$current]);
 			$cf = $this->upgrade($cf);
 		}
-		
-		require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
+
+
+        if (version_compare($wp_version, '2.7-beta3', '>=')) // Using WordPress 2.7-beta3 or latar
+            require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel-27.php';
+        else
+            require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
 	}
 
 	function default_pack($title, $initial = false) {
