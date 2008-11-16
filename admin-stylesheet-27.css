@@ -1,0 +1,109 @@
+ul.subsubsub li.addnew {
+	margin-left: 0.5em;
+}
+ul.subsubsub li.addnew a {
+	color: #e6255b;
+}
+div.save-contact-form {
+	padding: 1.4em 0 0 0;
+	text-align: right;
+}
+div.delete-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+}
+div.delete-link input {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-bottom: 1px solid #ff0000;
+	background-color: #fff;
+	color: #ff0000;
+	font-size: smaller;
+	cursor: pointer;
+}
+input#wpcf7-title {
+	color: #555;
+	background-color: #fff;
+	border: none;
+	font: bold 20px serif;
+}
+p.tagcode {
+	color: #333;
+}
+input#contact-form-anchor-text {
+	color: #333;
+	background: #fff3f3;
+	border: 1px solid #fff;
+	width: 96%;
+}
+span#message-fields-toggle-switch {
+	margin-left: 1em;
+	font-weight: normal;
+	font-size: smaller;
+	color: #2583ad;
+	cursor: pointer;
+}
+input, textarea {
+	border: 1px solid #dfdfdf;
+}
+input.wide {
+	width: 100%;
+}
+textarea {
+	width: 100%;
+}
+label.disabled {
+	color: #777;
+}
+div.tag-generator {
+	position: relative;
+	background: #fff;
+	padding: 5px 0 5px 1px;
+}
+div.tg-pane {
+    border: 1px solid #999;
+    background: #fcfcfc;
+    margin: 1ex 28px 0 0;
+    padding: 10px;
+}
+div.tg-pane table {
+	width: 70%;
+	margin: 0 0 0.7em 0;
+}
+div.tg-pane table caption {
+	text-align: left;
+	padding: 0 0 0.2em 0;
+	font-weight: bolder;
+	color: #777;
+}
+div.tg-pane table td {
+	vertical-align: top;
+	width: 40%;
+}
+div.tg-pane input.tag {
+	border: 1px solid #fff;
+	color: #333;
+	background-color: #fff3f3;
+}
+div.tg-dropdown {
+    position: absolute;
+    top: 26px;
+	left: 0;
+    z-index: 10;
+    border: 1px solid #ddd;
+}
+span.tg-closebutton {
+    color: #777;
+    font: bold 16px monospace;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+div.tg-panetitle {
+    font: bold 132% sans-serif;
+    margin: 0 0 10px;
+    color: #777;
+}
