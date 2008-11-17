@@ -74,6 +74,20 @@ jQuery(document).ready(function() {
   jQuery('#wpcf7-admin-form-element :input').change(function() {
     jQuery('.save-contact-form').fadeIn('slow');
   });
+
+  jQuery('.delete-link input').mouseover(function() {
+    jQuery(this).css({
+      color: '#fff',
+      'background-color': '#ff0000'
+    });
+  });
+
+  jQuery('.delete-link input').mouseout(function() {
+    jQuery(this).css({
+      color: '#ff0000',
+      'background-color': '#fff'
+    });
+  });
 });
 
 function updateTag() {
