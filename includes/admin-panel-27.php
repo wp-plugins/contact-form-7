@@ -41,9 +41,11 @@
                         </p>
                         <?php endif; ?>
 
+                        <?php if ($this->has_edit_cap()) : ?>
                         <div class="save-contact-form">
                             <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
                         </div>
+                        <?php endif; ?>
 
                         <?php if ($this->has_edit_cap() && ! $unsaved) : ?>
                         <div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>

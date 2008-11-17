@@ -70,6 +70,10 @@ jQuery(document).ready(function() {
         jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.show);
     }
   });
+
+  jQuery('#wpcf7-admin-form-element :input').change(function() {
+    jQuery('.save-contact-form').fadeIn('slow');
+  });
 });
 
 function updateTag() {
