@@ -11,7 +11,7 @@ ul.subsubsub li.addnew a:active {
 div.save-contact-form {
 	padding: 1.4em 0 0 0;
 	text-align: right;
-  display: none;
+	display: none;
 }
 div.delete-link {
 	position: absolute;
@@ -38,12 +38,12 @@ input#wpcf7-title {
 }
 p.tagcode {
 	color: #333;
-  margin: 2ex 0 1ex 1em;
+	margin: 2ex 0 1ex 1em;
 }
 input#contact-form-anchor-text {
-	color: #333;
-	background: #fff3f3;
-	border: 1px solid #fff;
+	color: #fff;
+	background: #8a796d;
+	border: none;
 	width: 96%;
 }
 span#message-fields-toggle-switch {
@@ -71,10 +71,14 @@ div.tag-generator {
 	padding: 5px 0 5px 1px;
 }
 div.tg-pane {
-    border: 1px solid #999;
-    background: #fcfcfc;
+    border: 1px dashed #999;
+    background: #f1f1f1;
     margin: 1ex 0 0 0;
     padding: 10px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 div.tg-pane table {
 	width: 80%;
@@ -86,14 +90,21 @@ div.tg-pane table caption {
 	font-weight: bolder;
 	color: #777;
 }
+div.tg-pane table code {
+	background-color: inherit;
+}
 div.tg-pane table td {
 	vertical-align: top;
 	width: 40%;
 }
 div.tg-pane input.tag {
-	border: 1px solid #fff;
-	color: #333;
-	background-color: #fff3f3;
+	border: none;
+	color: #fff;
+	background-color: #8a796d;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 div.tg-dropdown {
     position: absolute;

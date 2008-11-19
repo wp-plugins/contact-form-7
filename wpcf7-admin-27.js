@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  jQuery('#wpcf7-form:enabled').after(tagGenerator());
+  jQuery('#wpcf7-form:enabled').before(tagGenerator());
   
   jQuery('input#wpcf7-title:enabled').css({
     cursor: 'pointer'
@@ -130,7 +130,7 @@ function tagGenerator() {
     jQuery(this).css({ background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0' });
   });
   selector.click(function() {
-    dropdown.show();
+    dropdown.slideDown('fast');
     return false;
   });
   jQuery('body').click(function() {
@@ -164,7 +164,7 @@ function tagGenerator() {
       pane.hide();
       pane.empty();
       tgPane(pane, n);
-      pane.show();
+      pane.slideDown('fast');
       return false;
     });
     dropdown.append(submenu);
@@ -180,7 +180,7 @@ function tgPane(pane, tagType) {
   closeButtonDiv.css({ float: 'right' });
   var closeButton = jQuery('<span class="tg-closebutton">&#215;</span>');
   closeButton.click(function() {
-    pane.hide().empty();
+    pane.slideUp('fast').empty();
   });
   closeButtonDiv.append(closeButton);
   pane.append(closeButtonDiv);
