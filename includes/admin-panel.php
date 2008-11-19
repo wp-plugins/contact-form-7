@@ -29,7 +29,7 @@
 		<div class="cfdiv">
 			<?php if (! $unsaved) : ?>
 			<p class="tagcode">
-			<?php _e('Copy and paste this code into your post content.', 'wpcf7'); ?><br />
+			<?php _e('Copy this code and paste it into your post content.', 'wpcf7'); ?><br />
 			<input type="text" id="contact-form-anchor-text" onfocus="this.select();" readonly="readonly" />
 			</p>
 			<?php endif; ?>
