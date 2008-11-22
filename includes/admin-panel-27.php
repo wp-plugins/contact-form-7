@@ -74,9 +74,6 @@
                         <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
                     </div>
 
-                    <div class="save-contact-form">
-                        <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-                    </div>
                 </td>
             </tr>
         </tbody>
@@ -108,9 +105,6 @@
 					<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
 				</div>
 
-                    <div class="save-contact-form">
-                        <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-                    </div>
                 </td>
             </tr>
         </tbody>
@@ -147,9 +141,6 @@
 				</div>
                     </div>
 
-                    <div class="save-contact-form">
-                        <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-                    </div>
                 </td>
             </tr>
         </tbody>
@@ -199,9 +190,6 @@
                     </div>
                     </div>
 
-                    <div class="save-contact-form">
-                        <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
-                    </div>
                 </td>
             </tr>
         </tbody>

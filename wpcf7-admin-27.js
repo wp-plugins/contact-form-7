@@ -71,10 +71,6 @@ jQuery(document).ready(function() {
     }
   });
 
-  jQuery('#wpcf7-admin-form-element :input').change(function() {
-    jQuery('.save-contact-form').fadeIn('slow');
-  });
-
   jQuery('.delete-link input').mouseover(function() {
     jQuery(this).css({
       color: '#fff',
