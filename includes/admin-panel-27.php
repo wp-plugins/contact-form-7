@@ -196,7 +196,19 @@
     </table>
 
     <input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars($cf['options']['recipient']); ?>" />
-    
+
+    <table class="widefat" style="margin-top: 1em;">
+        <tbody>
+            <tr>
+                <td scope="col">
+                    <div class="save-contact-form">
+                        <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e('Save', 'wpcf7'); ?>" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
     <?php endif; ?>
 
 </form>
