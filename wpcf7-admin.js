@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  jQuery('#form-content-fieldset textarea:first:enabled').after(tagGenerator());
+  jQuery('#wpcf7-form:enabled').before(tagGenerator());
   
   jQuery('input#wpcf7-title:enabled').css({
     cursor: 'pointer'
@@ -70,6 +70,20 @@ jQuery(document).ready(function() {
         jQuery('#message-fields-toggle-switch').text(_wpcf7.l10n.show);
     }
   });
+
+  jQuery('.delete-link input').mouseover(function() {
+    jQuery(this).css({
+      color: '#fff',
+      'background-color': '#ff0000'
+    });
+  });
+
+  jQuery('.delete-link input').mouseout(function() {
+    jQuery(this).css({
+      color: '#ff0000',
+      'background-color': '#fff'
+    });
+  });
 });
 
 function updateTag() {
@@ -93,7 +107,11 @@ function tagGenerator() {
   selector.css({
     border: '1px solid #ddd',
     padding: '2px 4px',
-    background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0'
+    background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0',
+    '-moz-border-radius': '3px',
+    '-khtml-border-radius': '3px',
+    '-webkit-border-radius': '3px',
+    'border-radius': '3px'
   });
   selector.mouseover(function() {
     jQuery(this).css({ 'border-color': '#bbb' });
@@ -108,7 +126,7 @@ function tagGenerator() {
     jQuery(this).css({ background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0' });
   });
   selector.click(function() {
-    dropdown.show();
+    dropdown.slideDown('fast');
     return false;
   });
   jQuery('body').click(function() {
@@ -142,7 +160,7 @@ function tagGenerator() {
       pane.hide();
       pane.empty();
       tgPane(pane, n);
-      pane.show();
+      pane.slideDown('fast');
       return false;
     });
     dropdown.append(submenu);
@@ -158,7 +176,7 @@ function tgPane(pane, tagType) {
   closeButtonDiv.css({ float: 'right' });
   var closeButton = jQuery('<span class="tg-closebutton">&#215;</span>');
   closeButton.click(function() {
-    pane.hide().empty();
+    pane.slideUp('fast').empty();
   });
   closeButtonDiv.append(closeButton);
   pane.append(closeButtonDiv);

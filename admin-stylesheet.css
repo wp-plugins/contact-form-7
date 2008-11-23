@@ -4,13 +4,13 @@ ul.subsubsub li.addnew {
 ul.subsubsub li.addnew a {
 	color: #e6255b;
 }
-
-div.relative {
-	position: relative;
+ul.subsubsub li.addnew a:hover,
+ul.subsubsub li.addnew a:active {
+  color: #999;
 }
-div.cfdiv {
-	margin: 0;
-	padding: 20px;
+div.save-contact-form {
+	padding: 1.4em 0 0 0;
+	text-align: right;
 }
 div.delete-link {
 	position: absolute;
@@ -20,9 +20,13 @@ div.delete-link {
 	padding: 0;
 }
 div.delete-link input {
+	padding: 0;
+	margin: 0;
 	border: none;
+	border-bottom: 1px solid #ff0000;
 	background-color: #fff;
-	color: #e6255b;
+	color: #ff0000;
+	font-size: smaller;
 	cursor: pointer;
 }
 input#wpcf7-title {
@@ -33,22 +37,13 @@ input#wpcf7-title {
 }
 p.tagcode {
 	color: #333;
+	margin: 2ex 0 1ex 1em;
 }
 input#contact-form-anchor-text {
-	color: #333;
-	background: #fff3f3;
-	border: 1px solid #fff;
+	color: #fff;
+	background: #8a796d;
+	border: none;
 	width: 96%;
-}
-div.fieldset {
-	margin: 2em 0;
-}
-div.fieldset div.legend {
-	font-weight: bolder;
-	margin-bottom: 0.5em;
-}
-div.fieldset div.mail-field, div.fieldset div.message-field {
-	margin: 0.3em 0;
 }
 span#message-fields-toggle-switch {
 	margin-left: 1em;
@@ -57,11 +52,14 @@ span#message-fields-toggle-switch {
 	color: #2583ad;
 	cursor: pointer;
 }
+input, textarea {
+	border: 1px solid #dfdfdf;
+}
 input.wide {
-	width: 96%;
+	width: 100%;
 }
 textarea {
-	width: 96%;
+	width: 100%;
 }
 label.disabled {
 	color: #777;
@@ -72,13 +70,17 @@ div.tag-generator {
 	padding: 5px 0 5px 1px;
 }
 div.tg-pane {
-    border: 1px solid #999;
-    background: #fff;
-    margin: 1ex 28px 0 0;
+    border: 1px dashed #999;
+    background: #f1f1f1;
+    margin: 1ex 0 0 0;
     padding: 10px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 div.tg-pane table {
-	width: 70%;
+	width: 80%;
 	margin: 0 0 0.7em 0;
 }
 div.tg-pane table caption {
@@ -87,14 +89,21 @@ div.tg-pane table caption {
 	font-weight: bolder;
 	color: #777;
 }
+div.tg-pane table code {
+	background-color: inherit;
+}
 div.tg-pane table td {
 	vertical-align: top;
 	width: 40%;
 }
 div.tg-pane input.tag {
-	border: 1px solid #fff;
-	color: #333;
-	background-color: #fff3f3;
+	border: none;
+	color: #fff;
+	background-color: #8a796d;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 div.tg-dropdown {
     position: absolute;
