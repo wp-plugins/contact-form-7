@@ -88,7 +88,7 @@ div.tg-pane {
 	border-radius: 6px;
 }
 div.tg-pane table {
-	width: 80%;
+	width: 100%;
 	margin: 0 0 0.7em 0;
 }
 div.tg-pane table caption {
@@ -102,7 +102,7 @@ div.tg-pane table code {
 }
 div.tg-pane table td {
 	vertical-align: top;
-	width: 40%;
+	width: 50%;
 }
 div.tg-pane input.tag {
 	border: none;
@@ -122,7 +122,7 @@ div.tg-dropdown {
 }
 span.tg-closebutton {
     color: #777;
-    font: bold 16px monospace;
+    font: bold 18px monospace;
     padding: 1px 4px;
     cursor: pointer;
 }

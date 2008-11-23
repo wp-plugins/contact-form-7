@@ -67,16 +67,18 @@
     <table class="widefat" style="margin-top: 1em;">
         <thead>
             <tr>
-                <th scope="col"><?php _e('Form', 'wpcf7'); ?></th>
+                <th scope="col" colspan="2"><?php _e('Form', 'wpcf7'); ?></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td scope="col">
+                <td scope="col" style="width: 50%;">
                     <div>
-                        <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="16"><?php echo htmlspecialchars($cf['form']); ?></textarea>
+                        <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="20"><?php echo htmlspecialchars($cf['form']); ?></textarea>
                     </div>
-
+                </td>
+                <td scope="col" style="width: 50%;">
+                    <div id="tag-generator-div"></div>
                 </td>
             </tr>
         </tbody>

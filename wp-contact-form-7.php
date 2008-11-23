@@ -460,7 +460,7 @@ var _wpcf7 = {
 		akismetAuthor: "<?php echo js_escape(__("This field requires author's name", 'wpcf7')); ?>",
 		akismetAuthorUrl: "<?php echo js_escape(__("This field requires author's URL", 'wpcf7')); ?>",
 		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>",
-		generatedTag: "<?php echo js_escape(__("Copy this code and paste it into the form below &darr;", 'wpcf7')); ?>",
+		generatedTag: "<?php echo js_escape(__("Copy this code and paste it into the form left.", 'wpcf7')); ?>",
 		fgColor: "<?php echo js_escape(__("Foreground color", 'wpcf7')); ?>",
 		bgColor: "<?php echo js_escape(__("Background color", 'wpcf7')); ?>",
 		imageSize: "<?php echo js_escape(__("Image size", 'wpcf7')); ?>",

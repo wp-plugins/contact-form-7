@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  jQuery('#wpcf7-form:enabled').before(tagGenerator());
+  jQuery('#tag-generator-div').append(tagGenerator());
   
   jQuery('input#wpcf7-title:enabled').css({
     cursor: 'pointer'
@@ -188,7 +188,7 @@ function tgPane(pane, tagType) {
   jQuery.each([ 'tagName', 'tagId', 'tagClasses', 'tagId2', 'tagClasses2', 'defaultValue',
     'tagSize', 'tagMaxLength', 'tagCols', 'tagRows', 'label', 'fgColor', 'bgColor' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="text" />');
-    tgInputs[n].css({ width: '80%', 'font-size': 'smaller' });
+    tgInputs[n].css({ width: '98%', 'font-size': 'smaller' });
     tgInputs[n].change(function() {
       tgCreateTag(tagType, tgInputs, n);
     });
@@ -205,14 +205,14 @@ function tgPane(pane, tagType) {
   });
   jQuery.each([ 'menuChoices' ], function(i, n) {
     tgInputs[n] = jQuery('<textarea></textarea>');
-    tgInputs[n].css({ width: '80%', height: '100px', 'font-size': 'smaller' });
+    tgInputs[n].css({ width: '98%', height: '100px', 'font-size': 'smaller' });
     tgInputs[n].change(function() {
       tgCreateTag(tagType, tgInputs, n);
     });
   });
   jQuery.each([ 'tag1st', 'tag2nd' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="text" class="tag" readonly="readonly" onfocus="this.select()" />');
-    tgInputs[n].css({ width: '96%' });
+    tgInputs[n].css({ width: '98%' });
   });
   
   switch (tagType) {
@@ -343,7 +343,7 @@ function tgPane(pane, tagType) {
       var menuOpt2 = jQuery('<span>&nbsp;' + _wpcf7.l10n.isAcceptanceInvert + '</span>').prepend(tgInputs.isAcceptanceInvert).prepend('<br />');
       menuOpt2.append('<br /><span style="font-size: smaller;">' + _wpcf7.l10n.isAcceptanceInvertMeans + '</span>');
       
-      table2.append(tgTr(menuOpt1.append(menuOpt2)));
+      table2.append(jQuery('<tr></tr>').append(jQuery('<td colspan="2"></td>').append(menuOpt1).append(menuOpt2)));
       
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
@@ -364,9 +364,7 @@ function tgPane(pane, tagType) {
       imageSizeOpts.append(tgInputs.imageSizeMedium).append('&nbsp;' + _wpcf7.l10n.imageSizeMedium);
       imageSizeOpts.append('&emsp;');
       imageSizeOpts.append(tgInputs.imageSizeLarge).append('&nbsp;' + _wpcf7.l10n.imageSizeLarge);
-      table2.append(tgTr(
-        imageSizeOpts
-      ));
+      table2.append(jQuery('<tr></tr>').append(jQuery('<td colspan="2"></td>').append(imageSizeOpts)));
       table2.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.fgColor + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.fgColor),
         jQuery('<span>' + _wpcf7.l10n.bgColor + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.bgColor)
