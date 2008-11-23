@@ -104,6 +104,10 @@
 					<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" />
 				</div>
                     <div class="pseudo-hr"></div>
+				<div class="mail-field">
+					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
+					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['attachments']); ?>" />
+				</div>
                 </td>
                 <td scope="col" style="width: 50%;">
 				<div class="mail-field">
@@ -143,6 +147,10 @@
 					<input type="text" id="wpcf7-mail-2-subject" name="wpcf7-mail-2-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['subject']); ?>" />
 				</div>
                     <div class="pseudo-hr"></div>
+				<div class="mail-field">
+					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
+					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['attachments']); ?>" />
+				</div>
                 </td>
                 <td scope="col" style="width: 50%;">
 				<div class="mail-field">
