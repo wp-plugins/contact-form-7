@@ -85,12 +85,12 @@
     <table class="widefat" style="margin-top: 1em;">
         <thead>
             <tr>
-                <th scope="col"><?php _e('Mail', 'wpcf7'); ?></th>
+                <th scope="col" colspan="2"><?php _e('Mail', 'wpcf7'); ?></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td scope="col">
+                <td scope="col" style="width: 50%;">
 				<div class="mail-field">
 					<label for="wpcf7-mail-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-recipient" name="wpcf7-mail-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['recipient']); ?>" />
@@ -103,11 +103,13 @@
 					<label for="wpcf7-mail-subject"><?php _e('Subject:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-subject" name="wpcf7-mail-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['subject']); ?>" />
 				</div>
+                    <div class="pseudo-hr"></div>
+                </td>
+                <td scope="col" style="width: 50%;">
 				<div class="mail-field">
 					<label for="wpcf7-mail-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
 					<textarea id="wpcf7-mail-body" name="wpcf7-mail-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail']['body']); ?></textarea>
 				</div>
-
                 </td>
             </tr>
         </tbody>
@@ -116,16 +118,18 @@
     <table class="widefat" style="margin-top: 1em;">
         <thead>
             <tr>
-                <th scope="col"><?php _e('Mail (2)', 'wpcf7'); ?></th>
+                <th scope="col" colspan="2"><?php _e('Mail (2)', 'wpcf7'); ?></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td scope="col">
+                <td scope="col" colspan="2">
 				<input type="checkbox" id="wpcf7-mail-2-active" name="wpcf7-mail-2-active" value="1"<?php echo ($cf['mail_2']['active']) ? ' checked="checked"' : ''; ?> />
 				<label for="wpcf7-mail-2-active"><?php _e('Use mail (2)', 'wpcf7'); ?></label>
-                
-                    <div id="mail-2-fields">
+                </td>
+            </tr>
+            <tr id="mail-2-fields">
+                <td scope="col" style="width: 50%;">
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-recipient"><?php _e('To:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-2-recipient" name="wpcf7-mail-2-recipient" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['recipient']); ?>" />
@@ -138,12 +142,13 @@
 					<label for="wpcf7-mail-2-subject"><?php _e('Subject:', 'wpcf7'); ?></label><br />
 					<input type="text" id="wpcf7-mail-2-subject" name="wpcf7-mail-2-subject" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['subject']); ?>" />
 				</div>
+                    <div class="pseudo-hr"></div>
+                </td>
+                <td scope="col" style="width: 50%;">
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-body"><?php _e('Message body:', 'wpcf7'); ?></label><br />
 					<textarea id="wpcf7-mail-2-body" name="wpcf7-mail-2-body" cols="100" rows="16"><?php echo htmlspecialchars($cf['mail_2']['body']); ?></textarea>
 				</div>
-                    </div>
-
                 </td>
             </tr>
         </tbody>

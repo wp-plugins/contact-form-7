@@ -56,6 +56,10 @@ span#message-fields-toggle-switch {
 	color: #2583ad;
 	cursor: pointer;
 }
+div.pseudo-hr {
+	border-bottom: 1px solid #cfcfcf;
+	margin: 1em 0;
+}
 input, textarea {
 	border: 1px solid #dfdfdf;
 }
