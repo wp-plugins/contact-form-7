@@ -92,6 +92,8 @@ class tam_contact_form_seven {
 	}
 	
 	function ajax_json_echo() {
+        $echo = '';
+        
 		if (isset($_POST['_wpcf7'])) {
 			$id = (int) $_POST['_wpcf7'];
 			$unit_tag = $_POST['_wpcf7_unit_tag'];
@@ -111,26 +113,32 @@ class tam_contact_form_seven {
 					$captcha = 'null';
 				}
 				
-				@header('Content-Type: text/plain; charset=' . get_option('blog_charset'));
-				
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
 					foreach ($validation['reason'] as $name => $reason) {
 						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape($reason) . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
-					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
                 } elseif (! $this->acceptance($cf)) { // Not accepted terms
-                    echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+                    $echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
-					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
 				} elseif ($this->mail($cf)) {
-					echo '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
-					echo '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				}
 			}
 		}
+        
+        if ($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
+            @header('Content-Type: application/json; charset=' . get_option('blog_charset'));
+            echo $echo;
+        } else {
+            @header('Content-Type: text/html; charset=' . get_option('blog_charset'));
+            echo '<textarea>' . $echo . '</textarea>';
+        }
 	}
 	
 	function mail($contact_form) {
