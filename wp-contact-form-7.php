@@ -465,27 +465,6 @@ class tam_contact_form_seven {
             $javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
 
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
-            
-            /* default styles for backward compatibility */
-            if (version_compare($wp_version, '2.5', '<')) : // Using old WordPress
-?>
-<style type="text/css">
-    .subsubsub { list-style: none; margin: 14px 0 8px 0; padding: 0; white-space: nowrap; font-size: 12px; }
-    .subsubsub a { line-height: 200%; padding: 3px; text-decoration: none; }
-    .subsubsub a.current { font-weight: bold; background: none; border: none;}
-    .subsubsub li { display: inline; margin: 0; padding: 0; }
-</style>
-<?php
-            endif;
-
-            /* looks little bit more WP 2.7 fashion */
-            if (version_compare($wp_version, '2.7-alpha', '>=')) : // Using WordPress 2.7 or latar
-?>
-<style type="text/css">
-    input#contact-form-anchor-text { -moz-border-radius: 6px; -khtml-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
-</style>
-<?php
-            endif;
 
 ?>
 <script type="text/javascript">
