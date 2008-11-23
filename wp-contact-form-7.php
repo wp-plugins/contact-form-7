@@ -682,8 +682,18 @@ var _wpcf7 = {
 		
 		$url = parse_url($_SERVER['REQUEST_URI']);
 		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
+        
+        $form_elements = $this->form_elements($cf['form'], false);
+        $multipart = false;
+        foreach ($form_elements as $form_element) {
+            if ('file' == $form_element['type']) {
+                $multipart = true;
+                break;
+            }
+        }
+        $enctype = $multipart ? ' enctype="multipart/form-data"' : '';
 		
-		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form">';
+		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
         $form .= '<div style="display: none;">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_version" value="' . wpcf7_version() . '" />';
@@ -890,7 +900,7 @@ var _wpcf7 = {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		if ($replace) {
@@ -1116,6 +1126,10 @@ var _wpcf7 = {
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
 				return $html;
 				break;
+            case 'file':
+                $html = '<input type="file" name="' . $name . '" value="1" />';
+                return $html;
+                break;
 		}
 	}
 
