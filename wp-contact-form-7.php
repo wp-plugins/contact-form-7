@@ -143,32 +143,43 @@ class tam_contact_form_seven {
 	
 	function mail($contact_form) {
 		$contact_form = $this->upgrade($contact_form);
-		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-        $callback = array(&$this, 'mail_callback');
-		$mail_subject = preg_replace_callback($regex, $callback, $contact_form['mail']['subject']);
-		$mail_sender = preg_replace_callback($regex, $callback, $contact_form['mail']['sender']);
-		$mail_body = preg_replace_callback($regex, $callback, $contact_form['mail']['body']);
-		$mail_recipient = preg_replace_callback($regex, $callback, $contact_form['mail']['recipient']);
-		$mail_headers = "From: $mail_sender\n"
-			. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-		if (@wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers)) {
-			
-			// Mail 2
-			if ($contact_form['mail_2']['active']) {
-				$mail_2_subject = preg_replace_callback($regex, $callback, $contact_form['mail_2']['subject']);
-				$mail_2_sender = preg_replace_callback($regex, $callback, $contact_form['mail_2']['sender']);
-				$mail_2_body = preg_replace_callback($regex, $callback, $contact_form['mail_2']['body']);
-				$mail_2_recipient = preg_replace_callback($regex, $callback, $contact_form['mail_2']['recipient']);
-				$mail_2_headers = "From: $mail_2_sender\n"
-					. "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-				@wp_mail($mail_2_recipient, $mail_2_subject, $mail_2_body, $mail_2_headers);
-			}
-			
-			return true;
-		} else {
-			return false;
-		}
+        
+        if ($this->compose_and_send_mail($contact_form['mail'])) {
+            if ($contact_form['mail_2']['active'])
+                $this->compose_and_send_mail($contact_form['mail_2']);
+            
+            return true;
+        }
+        
+        return false;
 	}
+    
+    function compose_and_send_mail($mail_template, $attachment = false) {
+        $regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
+        $callback = array(&$this, 'mail_callback');
+		$mail_subject = preg_replace_callback($regex, $callback, $mail_template['subject']);
+		$mail_sender = preg_replace_callback($regex, $callback, $mail_template['sender']);
+		$mail_body = preg_replace_callback($regex, $callback, $mail_template['body']);
+		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
+		$mail_headers = "From: $mail_sender\n";
+        return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers);
+    }
+    
+    function attachable($contact_form) {
+        global $wp_version;
+        
+        if (version_compare($wp_version, '2.7-beta1', '<')) // wp_mail() file uploading option isn't suppoted
+            return false;
+        
+        $fes = $this->form_elements($contact_form['form'], false);
+        $files = array();
+        foreach ($fes as $fe) {
+            if ($fe['type'] == 'file')
+                $files[] = $fe['name'];
+        }
+        
+        return $files;
+    }
     
     function mail_callback($matches) {
         if (isset($_POST[$matches[1]])) {
