@@ -34,8 +34,7 @@ function wpcf7ToggleSubmit(form) {
 function wpcf7BeforeSubmit(formData, jqForm, options) {
 	wpcf7ClearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
-  
-  formData.push({name: '_wpcf7_is_ajax_call', value: 1});
+    jQuery('input[@name="_wpcf7_is_ajax_call"]', jqForm[0]).val(1);
   
 	return true;
 }
