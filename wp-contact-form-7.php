@@ -137,6 +137,11 @@ class tam_contact_form_seven {
 				} else {
 					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				}
+                
+                // remove upload files
+                foreach ($handled_uploads['files'] as $name => $path) {
+                    @unlink($path);
+                }
 			}
 		}
         
@@ -687,17 +692,28 @@ var _wpcf7 = {
 		if ($cf = $contact_forms[$id]) {
 			$cf = stripslashes_deep($cf);
 			$validation = $this->validate($cf);
+            
+            $handled_uploads = $this->handle_uploads($cf);
+            if (! $handled_uploads['validation']['valid'])
+                $validation['valid'] = false;
+            $validation['reason'] = array_merge($validation['reason'], $handled_uploads['validation']['reason']);
+            
 			if (! $validation['valid']) {
 				$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
 			} elseif (! $this->acceptance($cf)) { // Not accepted terms
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'accept_terms'));
 			} elseif ($this->akismet($cf)) { // Spam!
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'akismet_says_spam'), 'spam' => true);
-			} elseif ($this->mail($cf)) {
+			} elseif ($this->mail($cf, $handled_uploads['files'])) {
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message($cf, 'mail_sent_ok'));
 			} else {
 				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'mail_sent_ng'));
 			}
+            
+            // remove upload files
+            foreach ($handled_uploads['files'] as $name => $path) {
+                @unlink($path);
+            }
 		}
 	}
 
