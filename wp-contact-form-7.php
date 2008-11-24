@@ -1270,7 +1270,7 @@ var _wpcf7 = {
     
     function init_uploads() {
         wp_mkdir_p(trailingslashit(WPCF7_UPLOADS_TMP_DIR));
-        @chmod(WPCF7_UPLOADS_TMP_DIR, 0600);
+        @chmod(WPCF7_UPLOADS_TMP_DIR, 0733);
     }
     
     function init_captcha() {
