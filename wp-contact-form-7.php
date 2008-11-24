@@ -51,6 +51,9 @@ if (! defined('WPCF7_CAPTCHA_TMP_DIR'))
 if (! defined('WPCF7_CAPTCHA_TMP_URL'))
     define('WPCF7_CAPTCHA_TMP_URL', WP_CONTENT_URL . '/uploads/wpcf7_captcha');
 
+if (! defined('WPCF7_UPLOADS_TMP_DIR'))
+    define('WPCF7_UPLOADS_TMP_DIR', WP_CONTENT_DIR . '/uploads/wpcf7_uploads');
+
 if (! defined('WPCF7_AUTOP'))
     define('WPCF7_AUTOP', true);
     
@@ -102,6 +105,11 @@ class tam_contact_form_seven {
 				$cf = stripslashes_deep($cf);
 				$validation = $this->validate($cf);
 				
+                $handled_uploads = $this->handle_uploads($cf);
+                if (! $handled_uploads['validation']['valid'])
+                    $validation['valid'] = false;
+                $validation['reason'] = array_merge($validation['reason'], $handled_uploads['validation']['reason']);
+                
 				$captchas = $this->refill_captcha($cf);
 				if (! empty($captchas)) {
 					$captchas_js = array();
@@ -124,7 +132,7 @@ class tam_contact_form_seven {
                     $echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
 					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
-				} elseif ($this->mail($cf)) {
+				} elseif ($this->mail($cf, $handled_uploads['files'])) {
 					$echo = '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
 				} else {
 					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
@@ -140,15 +148,56 @@ class tam_contact_form_seven {
             echo '<textarea>' . $echo . '</textarea>';
         }
 	}
+    
+    function handle_uploads($contact_form) {
+        $files = array();
+        $valid = true;
+        $reason = array();
+        
+        $this->init_uploads(); // Confirm upload dir
+        $uploads_dir = WPCF7_UPLOADS_TMP_DIR;
+        
+        $fes = $this->form_elements($contact_form['form'], false);
+        
+        foreach ($fes as $fe) {
+            if ('file' != $fe['type'])
+                continue;
+            
+            $name = $fe['name'];
+            $file = $_FILE[$name];
+            
+            if (! is_uploaded_file($file['tmp_name']))
+                continue;
+            
+            // Do validations here
+            
+            $filename = wp_unique_filename($uploads_dir, $file['name']);
+            $new_file = trailingslashit($uploads_dir) . $filename;
+            if (false === @move_uploaded_file($file['tmp_name'], $new_file)) {
+                $valid = false;
+                $reason[$name] = $this->message($contact_form, 'upload_failed');
+                continue;
+            }
+
+            $files[$name] = $new_file;
+        }
+        
+        $validation = compact('valid', 'reason');
+        
+        return compact('files', 'validation');
+    }
 	
-	function mail($contact_form) {
+	function mail($contact_form, $files = array()) {
+        global $wp_version;
+        
+        if (version_compare($wp_version, '2.7-beta1', '<')) // wp_mail() file uploading option isn't suppoted
+            $files = array();
+    
 		$contact_form = $this->upgrade($contact_form);
         
-        $attachments = $this->attachable($contact_form);
-        
-        if ($this->compose_and_send_mail($contact_form['mail'], $attachments)) {
+        if ($this->compose_and_send_mail($contact_form['mail'], $files)) {
             if ($contact_form['mail_2']['active'])
-                $this->compose_and_send_mail($contact_form['mail_2'], $attachments);
+                $this->compose_and_send_mail($contact_form['mail_2'], $files);
             
             return true;
         }
@@ -156,7 +205,7 @@ class tam_contact_form_seven {
         return false;
 	}
     
-    function compose_and_send_mail($mail_template, $attachments = false) {
+    function compose_and_send_mail($mail_template, $attachments = array()) {
         $regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
         $callback = array(&$this, 'mail_callback');
 		$mail_subject = preg_replace_callback($regex, $callback, $mail_template['subject']);
@@ -167,34 +216,15 @@ class tam_contact_form_seven {
         
         if ($attachments) {
             $for_this_mail = array();
-            foreach ($attachments as $attachment) {
-                if (false === strpos($mail_template['attachments'], "[${attachment}]"))
+            foreach ($attachments as $name => $path) {
+                if (false === strpos($mail_template['attachments'], "[${name}]"))
                     continue;
-                $filename = $_FILES[$attachment]['tmp_name'];
-                if (! is_uploaded_file($filename))
-                    continue;
-                $for_this_mail[] = $filename;
+                $for_this_mail[] = $path;
             }
             return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers, $for_this_mail);
         } else {
             return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers);
         }
-    }
-    
-    function attachable($contact_form) {
-        global $wp_version;
-        
-        if (version_compare($wp_version, '2.7-beta1', '<')) // wp_mail() file uploading option isn't suppoted
-            return false;
-        
-        $fes = $this->form_elements($contact_form['form'], false);
-        $files = array();
-        foreach ($fes as $fe) {
-            if ($fe['type'] == 'file')
-                $files[] = $fe['name'];
-        }
-        
-        return $files;
     }
     
     function mail_callback($matches) {
@@ -643,6 +673,8 @@ var _wpcf7 = {
 				return __('Please fill the required field.', 'wpcf7');
 			case 'captcha_not_match':
 				return __('Your entered code is incorrect.', 'wpcf7');
+			case 'upload_failed':
+				return __('Failed to upload file.', 'wpcf7');
 		}
 	}
 
@@ -1234,6 +1266,11 @@ var _wpcf7 = {
 			return $result;
 		}
 	}
+    
+    function init_uploads() {
+        wp_mkdir_p(trailingslashit(WPCF7_UPLOADS_TMP_DIR));
+        @chmod(WPCF7_UPLOADS_TMP_DIR, 0600);
+    }
     
     function init_captcha() {
         if (! is_object($this->captcha))
