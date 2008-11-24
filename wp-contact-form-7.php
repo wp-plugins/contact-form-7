@@ -164,7 +164,7 @@ class tam_contact_form_seven {
                 continue;
             
             $name = $fe['name'];
-            $file = $_FILE[$name];
+            $file = $_FILES[$name];
             
             if (! is_uploaded_file($file['tmp_name']))
                 continue;
