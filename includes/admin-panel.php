@@ -150,8 +150,8 @@
 				</div>
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
-					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
-					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['attachments']); ?>" />
+					<label for="wpcf7-mail-2-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
+					<input type="text" id="wpcf7-mail-2-attachments" name="wpcf7-mail-2-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['attachments']); ?>" />
 				</div>
                 </td>
                 <td scope="col" style="width: 50%;">

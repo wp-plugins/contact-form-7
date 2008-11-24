@@ -144,9 +144,11 @@ class tam_contact_form_seven {
 	function mail($contact_form) {
 		$contact_form = $this->upgrade($contact_form);
         
-        if ($this->compose_and_send_mail($contact_form['mail'])) {
+        $attachments = $this->attachable($contact_form);
+        
+        if ($this->compose_and_send_mail($contact_form['mail'], $attachments)) {
             if ($contact_form['mail_2']['active'])
-                $this->compose_and_send_mail($contact_form['mail_2']);
+                $this->compose_and_send_mail($contact_form['mail_2'], $attachments);
             
             return true;
         }
@@ -154,7 +156,7 @@ class tam_contact_form_seven {
         return false;
 	}
     
-    function compose_and_send_mail($mail_template, $attachment = false) {
+    function compose_and_send_mail($mail_template, $attachments = false) {
         $regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
         $callback = array(&$this, 'mail_callback');
 		$mail_subject = preg_replace_callback($regex, $callback, $mail_template['subject']);
@@ -162,7 +164,21 @@ class tam_contact_form_seven {
 		$mail_body = preg_replace_callback($regex, $callback, $mail_template['body']);
 		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
 		$mail_headers = "From: $mail_sender\n";
-        return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers);
+        
+        if ($attachments) {
+            $for_this_mail = array();
+            foreach ($attachments as $attachment) {
+                if (false === strpos($mail_template['attachments'], "[${attachment}]"))
+                    continue;
+                $filename = $_FILES[$attachment]['tmp_name'];
+                if (! is_uploaded_file($filename))
+                    continue;
+                $for_this_mail[] = $filename;
+            }
+            return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers, $for_this_mail);
+        } else {
+            return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers);
+        }
     }
     
     function attachable($contact_form) {
@@ -381,14 +397,16 @@ class tam_contact_form_seven {
 				'subject' => trim($_POST['wpcf7-mail-subject']),
 				'sender' => trim($_POST['wpcf7-mail-sender']),
 				'body' => trim($_POST['wpcf7-mail-body']),
-				'recipient' => trim($_POST['wpcf7-mail-recipient'])
+				'recipient' => trim($_POST['wpcf7-mail-recipient']),
+				'attachments' => trim($_POST['wpcf7-mail-attachments'])
 				);
 			$mail_2 = array(
 				'active' => (1 == $_POST['wpcf7-mail-2-active']) ? true : false,
 				'subject' => trim($_POST['wpcf7-mail-2-subject']),
 				'sender' => trim($_POST['wpcf7-mail-2-sender']),
 				'body' => trim($_POST['wpcf7-mail-2-body']),
-				'recipient' => trim($_POST['wpcf7-mail-2-recipient'])
+				'recipient' => trim($_POST['wpcf7-mail-2-recipient']),
+				'attachments' => trim($_POST['wpcf7-mail-2-attachments'])
 				);
             $messages = array(
                 'mail_sent_ok' => trim($_POST['wpcf7-message-mail-sent-ok']),
