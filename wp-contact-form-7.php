@@ -717,7 +717,6 @@ var _wpcf7 = {
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_version" value="' . wpcf7_version() . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
-		$form .= '<input type="hidden" name="_wpcf7_is_ajax_call" value="0" />';
         $form .= '</div>';
 		$form .= $this->form_elements($cf['form']);
 		$form .= '</form>';
