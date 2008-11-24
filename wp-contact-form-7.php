@@ -1197,6 +1197,7 @@ var _wpcf7 = {
 				break;
             case 'file':
                 $html = '<input type="file" name="' . $name . '" value="1" />';
+                $html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
                 return $html;
                 break;
 		}
