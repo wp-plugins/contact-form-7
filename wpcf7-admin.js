@@ -141,7 +141,11 @@ function tagGenerator() {
   var dropdown = jQuery('<div class="tg-dropdown"></div>');
   dropdown.hide();
   
-  jQuery.each([ 'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons', 'acceptance', 'captcha', 'submit' ], function(i, n) {
+  var tag_types = [
+    'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons',
+    'acceptance', 'captcha', 'fileUpload', 'submit'];
+
+  jQuery.each(tag_types, function(i, n) {
     var submenu = jQuery('<div>' + _wpcf7.l10n[n] + '</div>');
     submenu.css({
       margin: 0,
@@ -186,7 +190,7 @@ function tgPane(pane, tagType) {
   
   var tgInputs = {};
   jQuery.each([ 'tagName', 'tagId', 'tagClasses', 'tagId2', 'tagClasses2', 'defaultValue',
-    'tagSize', 'tagMaxLength', 'tagCols', 'tagRows', 'label', 'fgColor', 'bgColor' ], function(i, n) {
+    'tagSize', 'tagMaxLength', 'tagFileSizeLimit', 'tagAcceptableFileTypes', 'tagCols', 'tagRows', 'label', 'fgColor', 'bgColor' ], function(i, n) {
     tgInputs[n] = jQuery('<input type="text" />');
     tgInputs[n].css({ width: '98%', 'font-size': 'smaller' });
     tgInputs[n].change(function() {
@@ -392,6 +396,29 @@ function tgPane(pane, tagType) {
           .append('<br />').append('2) ' + _wpcf7.l10n.tagForInputField)
           .append(tgInputs.tag2nd)
       );
+      break;
+    case 'fileUpload':
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      table1.append(tgTr(
+        jQuery('<span>&nbsp;' + _wpcf7.l10n.isRequiredField + '</span>').prepend(tgInputs.isRequiredField)
+      ));
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
+      ));
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.fileSizeLimit + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagFileSizeLimit),
+        jQuery('<span>' + _wpcf7.l10n.acceptableFileTypes + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagAcceptableFileTypes)
+      ));
+      table2.append(tgTr(
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+      ));
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'submit':
       var table = jQuery('<table></table>');
@@ -628,6 +655,22 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
       tgInputs.tag2nd.val(tag);
       break;
+    case 'fileUpload':
+      var type = 'file';
+      if (tgInputs.isRequiredField.is(':checked'))
+        type += '*';
+      var name = tgInputs.tagName.val();
+      var options = [];
+      if (tgInputs.tagId.val())
+        options.push('id:' + tgInputs.tagId.val());
+      if (tgInputs.tagClasses.val())
+        jQuery.each(tgInputs.tagClasses.val().split(' '), function(i, n) {
+          options.push('class:' + n);
+        });
+      options = (options.length > 0) ? ' ' + options.join(' ') : '';
+      var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
+      tgInputs.tag1st.val(tag);
+      break;
     case 'submit':
       var type = 'submit';
       
@@ -667,5 +710,7 @@ function tgDefaultName(tagType) {
     return 'acceptance-' + rand;
   } else if ('captcha' == tagType) {
     return 'captcha-' + rand;
+  } else if ('fileUpload' == tagType) {
+    return 'file-' + rand;
   }
 }

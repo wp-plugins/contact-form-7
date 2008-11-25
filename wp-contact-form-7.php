@@ -511,6 +511,7 @@ var _wpcf7 = {
 		isAcceptanceInvert: "<?php echo js_escape(__("Make this checkbox work inversely?", 'wpcf7')); ?>",
 		isAcceptanceInvertMeans: "<?php echo js_escape(__("* That means visitor who accepts the term unchecks it.", 'wpcf7')); ?>",
 		captcha: "<?php echo js_escape(__('CAPTCHA', 'wpcf7')); ?>",
+		fileUpload: "<?php echo js_escape(__('File upload', 'wpcf7')); ?>",
 		submit: "<?php echo js_escape(__('Submit button', 'wpcf7')); ?>",
 		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
 		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
@@ -537,7 +538,9 @@ var _wpcf7 = {
 		tagForInputField: "<?php echo js_escape(__("For input field", 'wpcf7')); ?>",
 		oneChoicePerLine: "<?php echo js_escape(__("* One choice per line.", 'wpcf7')); ?>",
 		show: "<?php echo js_escape(__("Show", 'wpcf7')); ?>",
-		hide: "<?php echo js_escape(__("Hide", 'wpcf7')); ?>"
+		hide: "<?php echo js_escape(__("Hide", 'wpcf7')); ?>",
+		fileSizeLimit: "<?php echo js_escape(__("File size limit", 'wpcf7')); ?>",
+		acceptableFileTypes: "<?php echo js_escape(__("Acceptable file types", 'wpcf7')); ?>"
 	}
 };
 //]]>
