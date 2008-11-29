@@ -461,7 +461,7 @@ function tgCreateTag(tagType, tgInputs, trigger) {
     tgInputs[n].val(val);
   });
   
-  jQuery.each([ 'tagSize', 'tagMaxLength', 'tagCols', 'tagRows' ], function(i, n) {
+  jQuery.each([ 'tagSize', 'tagMaxLength', 'tagCols', 'tagRows', 'tagFileSizeLimit' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^0-9]/g, '');
     tgInputs[n].val(val);
@@ -485,6 +485,12 @@ function tgCreateTag(tagType, tgInputs, trigger) {
   jQuery.each([ 'fgColor', 'bgColor' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^0-9a-fA-F]/g, '');
+    tgInputs[n].val(val);
+  });
+  
+  jQuery.each([ 'tagAcceptableFileTypes' ], function(i, n) {
+    var val = tgInputs[n].val();
+    val = val.replace(/[^0-9a-zA-Z.\s]/g, '');
     tgInputs[n].val(val);
   });
   
@@ -667,6 +673,10 @@ function tgCreateTag(tagType, tgInputs, trigger) {
         jQuery.each(tgInputs.tagClasses.val().split(' '), function(i, n) {
           options.push('class:' + n);
         });
+      if (tgInputs.tagFileSizeLimit.val())
+        options.push('limit:' + tgInputs.tagFileSizeLimit.val());
+      if (tgInputs.tagAcceptableFileTypes.val())
+        options.push('filetypes:' + tgInputs.tagAcceptableFileTypes.val().split(' ').join('|'));
       options = (options.length > 0) ? ' ' + options.join(' ') : '';
       var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
       tgInputs.tag1st.val(tag);
