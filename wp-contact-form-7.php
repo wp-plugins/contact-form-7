@@ -408,7 +408,7 @@ class tam_contact_form_seven {
     function admin_menu_parent() {
         global $wp_version;
         if (version_compare($wp_version, '2.7-alpha', '>='))
-            return 'import.php';
+            return 'tools.php';
         else
             return 'edit.php';
     }
