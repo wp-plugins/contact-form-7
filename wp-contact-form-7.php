@@ -165,18 +165,22 @@ class tam_contact_form_seven {
         $fes = $this->form_elements($contact_form['form'], false);
         
         foreach ($fes as $fe) {
-            if ('file' != $fe['type'])
+            if ('file' != $fe['type'] && 'file*' != $fe['type'])
                 continue;
             
             $name = $fe['name'];
             $options = (array) $fe['options'];
 
             $file = $_FILES[$name];
+
+            if (empty($file) && 'file*' == $fe['type']) {
+                $valid = false;
+                $reason[$name] = $this->message($contact_form, 'invalid_required');
+                continue;
+            }
             
             if (! is_uploaded_file($file['tmp_name']))
                 continue;
-            
-            // Do validations here
             
             $filename = wp_unique_filename($uploads_dir, $file['name']);
             $new_file = trailingslashit($uploads_dir) . $filename;
@@ -1058,7 +1062,7 @@ var _wpcf7 = {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file[*]?';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/|\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		if ($replace) {
@@ -1285,7 +1289,8 @@ var _wpcf7 = {
 				return $html;
 				break;
             case 'file':
-                $html = '<input type="file" name="' . $name . '" value="1" />';
+            case 'file*':
+                $html = '<input type="file" name="' . $name . '"' . $atts . ' value="1" />';
                 $html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
                 return $html;
                 break;
