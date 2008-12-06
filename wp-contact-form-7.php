@@ -209,6 +209,18 @@ class tam_contact_form_seven {
                     continue;
                 }
             }
+            
+            if ($allowed_size_options = preg_grep('%^limit:%', $options)) {
+                $allowed_size_option = array_shift($allowed_size_options);
+                preg_match('/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches);
+                $allowed_size = (int) $matches[1];
+                
+                if ($file['size'] > $allowed_size) {
+                    $valid = false;
+                    $reason[$name] = $this->message($contact_form, 'upload_file_too_large');
+                    continue;
+                }
+            }
         }
         
         $validation = compact('valid', 'reason');
