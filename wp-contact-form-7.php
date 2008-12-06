@@ -169,6 +169,8 @@ class tam_contact_form_seven {
                 continue;
             
             $name = $fe['name'];
+            $options = (array) $fe['options'];
+
             $file = $_FILES[$name];
             
             if (! is_uploaded_file($file['tmp_name']))
@@ -185,6 +187,28 @@ class tam_contact_form_seven {
             }
 
             $files[$name] = $new_file;
+
+            if ($allowed_types_options = preg_grep('%^filetypes:%', $options)) {
+                $pattern = '';
+                foreach ($allowed_types_options as $allowed_types_option) {
+                    if (preg_match('%^filetypes:(.+)$%', $allowed_types_option, $matches)) {
+                        $file_types = explode('|', $matches[1]);
+                        foreach ($file_types as $file_type) {
+                            $file_type = trim($file_type, '.');
+                            $file_type = str_replace(array('.', '+', '*', '?'), array('\.', '\+', '\*', '\?'), $file_type);
+                            $pattern .= '|' . $file_type;
+                        }
+                    }
+                }
+                $pattern = trim($pattern, '|');
+                $pattern = '(' . $pattern . ')';
+                $pattern = '/\.' . $pattern . '$/i';
+                if (! preg_match($pattern, $file['name'])) {
+                    $valid = false;
+                    $reason[$name] = $this->message($contact_form, 'upload_file_type_invalid');
+                    continue;
+                }
+            }
         }
         
         $validation = compact('valid', 'reason');
