@@ -107,7 +107,11 @@
 				</div>
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
-					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
+					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label>
+                        <?php if (version_compare($wp_version, '2.7-alpha', '<')) : ?>
+                        <span style="color: #ff3300; margin-left: 0.5em;"><?php _e('(You need WordPress 2.7 or greater to use this feature)', 'wpcf7'); ?></span>
+                        <?php endif; ?>
+                        <br />
 					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['attachments']); ?>" />
 				</div>
                 </td>
@@ -150,7 +154,11 @@
 				</div>
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
-					<label for="wpcf7-mail-2-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label><br />
+					<label for="wpcf7-mail-2-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label>
+                        <?php if (version_compare($wp_version, '2.7-alpha', '<')) : ?>
+                        <span style="color: #ff3300; margin-left: 0.5em;"><?php _e('(You need WordPress 2.7 or greater to use this feature)', 'wpcf7'); ?></span>
+                        <?php endif; ?>
+                        <br />
 					<input type="text" id="wpcf7-mail-2-attachments" name="wpcf7-mail-2-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['attachments']); ?>" />
 				</div>
                 </td>
