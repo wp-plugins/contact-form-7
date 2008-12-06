@@ -27,10 +27,6 @@ Author URI: http://ideasilo.wordpress.com/
 
 define('WPCF7_VERSION', '1.8.1.1');
 
-function wpcf7_version() {
-    return WPCF7_VERSION;
-}
-
 if (! defined('WP_CONTENT_DIR'))
     define('WP_CONTENT_DIR', ABSPATH . 'wp-content');
 if (! defined('WP_CONTENT_URL'))
@@ -56,7 +52,11 @@ if (! defined('WPCF7_UPLOADS_TMP_DIR'))
 
 if (! defined('WPCF7_AUTOP'))
     define('WPCF7_AUTOP', true);
-    
+
+if (! function_exists('wpcf7_version')) {
+    function wpcf7_version() { return WPCF7_VERSION; }
+}
+
 if (! function_exists('wpcf7_read_capability')) {
     function wpcf7_read_capability() { return 'edit_posts'; }
 }
