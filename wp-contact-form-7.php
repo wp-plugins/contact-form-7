@@ -379,6 +379,7 @@ class tam_contact_form_seven {
     function upgrade($contact_form) {
         $contact_form = $this->upgrade_160($contact_form);
         $contact_form = $this->upgrade_181($contact_form);
+        $contact_form = $this->upgrade_190($contact_form);
         return $contact_form;
     }
 
@@ -400,6 +401,22 @@ class tam_contact_form_seven {
                 'invalid_required' => $this->default_message('invalid_required'),
                 'captcha_not_match' => $this->default_message('captcha_not_match')
             );
+		return $contact_form;
+    }
+    
+    function upgrade_190($contact_form) {
+        if (! isset($contact_form['messages']) || ! is_array($contact_form['messages']))
+            $contact_form['messages'] = array();
+
+        if (! isset($contact_form['messages']['upload_failed']))
+            $contact_form['messages']['upload_failed'] = $this->default_message('upload_failed');
+
+        if (! isset($contact_form['messages']['upload_file_type_invalid']))
+            $contact_form['messages']['upload_file_type_invalid'] = $this->default_message('upload_file_type_invalid');
+
+        if (! isset($contact_form['messages']['upload_file_too_large']))
+            $contact_form['messages']['upload_file_too_large'] = $this->default_message('upload_file_too_large');
+
 		return $contact_form;
     }
 
@@ -451,7 +468,10 @@ class tam_contact_form_seven {
                 'accept_terms' => trim($_POST['wpcf7-message-accept-terms']),
                 'invalid_email' => trim($_POST['wpcf7-message-invalid-email']),
                 'invalid_required' => trim($_POST['wpcf7-message-invalid-required']),
-                'captcha_not_match' => trim($_POST['wpcf7-message-captcha-not-match'])
+                'captcha_not_match' => trim($_POST['wpcf7-message-captcha-not-match']),
+                'upload_failed' => trim($_POST['wpcf7-message-upload-failed']),
+                'upload_file_type_invalid' => trim($_POST['wpcf7-message-upload-file-type-invalid']),
+                'upload_file_too_large' => trim($_POST['wpcf7-message-upload-file-too-large'])
                 );
 			$options = array(
 				'recipient' => trim($_POST['wpcf7-options-recipient']) // For backward compatibility.
@@ -648,7 +668,12 @@ var _wpcf7 = {
         $invalid_email = $this->default_message('invalid_email');
         $invalid_required = $this->default_message('invalid_required');
         $captcha_not_match = $this->default_message('captcha_not_match');
-		return compact('mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam', 'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'captcha_not_match');
+        $upload_failed = $this->default_message('upload_failed');
+        $upload_file_type_invalid = $this->default_message('upload_file_type_invalid');
+        $upload_file_too_large = $this->default_message('upload_file_too_large');
+		return compact('mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam',
+            'validation_error', 'accept_terms', 'invalid_email', 'invalid_required',
+            'captcha_not_match', 'upload_failed', 'upload_file_type_invalid', 'upload_file_too_large');
     }
 
 	function default_options_template() {
@@ -683,6 +708,10 @@ var _wpcf7 = {
 				return __('Your entered code is incorrect.', 'wpcf7');
 			case 'upload_failed':
 				return __('Failed to upload file.', 'wpcf7');
+			case 'upload_file_type_invalid':
+				return __('This file type is not allowed.', 'wpcf7');
+			case 'upload_file_too_large':
+				return __('This file is too large.', 'wpcf7');
 		}
 	}
 

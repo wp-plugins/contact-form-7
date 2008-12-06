@@ -206,6 +206,18 @@
                         <label for="wpcf7-message-captcha-not-match"><em># <?php _e("The code that sender entered does not match the CAPTCHA", 'wpcf7'); ?></em></label><br />
                         <input type="text" id="wpcf7-message-captcha-not-match" name="wpcf7-message-captcha-not-match" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['captcha_not_match']); ?>" />
                     </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-upload-failed"><em># <?php _e("Uploading a file fails for any reason", 'wpcf7'); ?></em></label><br />
+                        <input type="text" id="wpcf7-message-upload-failed" name="wpcf7-message-upload-failed" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['upload_failed']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-upload-file-type-invalid"><em># <?php _e("Uploaded file is not allowed file type", 'wpcf7'); ?></em></label><br />
+                        <input type="text" id="wpcf7-message-upload-file-type-invalid" name="wpcf7-message-upload-file-type-invalid" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['upload_file_type_invalid']); ?>" />
+                    </div>
+                    <div class="message-field">
+                        <label for="wpcf7-message-upload-file-too-large"><em># <?php _e("Uploaded file is too large", 'wpcf7'); ?></em></label><br />
+                        <input type="text" id="wpcf7-message-upload-file-too-large" name="wpcf7-message-upload-file-too-large" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['upload_file_too_large']); ?>" />
+                    </div>
                     </div>
 
                 </td>
