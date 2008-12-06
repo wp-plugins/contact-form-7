@@ -71,4 +71,3 @@ please submit them [to the support forum](http://wordpress.org/tags/contact-form
 == Screenshots ==
 
 1. screenshot-1.png
-2. screenshot-2.png
