@@ -114,6 +114,11 @@
                         <br />
 					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail']['attachments']); ?>" />
 				</div>
+                    <div class="pseudo-hr"></div>
+				<div class="mail-field">
+                        <input type="checkbox" id="wpcf7-mail-use-html" name="wpcf7-mail-use-html" value="1"<?php echo ($cf['mail']['use_html']) ? ' checked="checked"' : ''; ?> />
+                        <label for="wpcf7-mail-use-html"><?php _e('Use HTML content type', 'wpcf7'); ?></label>
+                    </div>
                 </td>
                 <td scope="col" style="width: 50%;">
 				<div class="mail-field">
@@ -161,6 +166,11 @@
                         <br />
 					<input type="text" id="wpcf7-mail-2-attachments" name="wpcf7-mail-2-attachments" class="wide" size="70" value="<?php echo htmlspecialchars($cf['mail_2']['attachments']); ?>" />
 				</div>
+                    <div class="pseudo-hr"></div>
+				<div class="mail-field">
+                        <input type="checkbox" id="wpcf7-mail-2-use-html" name="wpcf7-mail-2-use-html" value="1"<?php echo ($cf['mail_2']['use_html']) ? ' checked="checked"' : ''; ?> />
+                        <label for="wpcf7-mail-2-use-html"><?php _e('Use HTML content type', 'wpcf7'); ?></label>
+                    </div>
                 </td>
                 <td scope="col" style="width: 50%;">
 				<div class="mail-field">

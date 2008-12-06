@@ -254,6 +254,9 @@ class tam_contact_form_seven {
 		$mail_body = preg_replace_callback($regex, $callback, $mail_template['body']);
 		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
 		$mail_headers = "From: $mail_sender\n";
+
+        if ($mail_template['use_html'])
+            $mail_headers .= "Content-Type: text/html\n";
         
         if ($attachments) {
             $for_this_mail = array();
@@ -486,7 +489,8 @@ class tam_contact_form_seven {
 				'sender' => trim($_POST['wpcf7-mail-sender']),
 				'body' => trim($_POST['wpcf7-mail-body']),
 				'recipient' => trim($_POST['wpcf7-mail-recipient']),
-				'attachments' => trim($_POST['wpcf7-mail-attachments'])
+				'attachments' => trim($_POST['wpcf7-mail-attachments']),
+				'use_html' => (1 == $_POST['wpcf7-mail-use-html']) ? true : false
 				);
 			$mail_2 = array(
 				'active' => (1 == $_POST['wpcf7-mail-2-active']) ? true : false,
@@ -494,7 +498,8 @@ class tam_contact_form_seven {
 				'sender' => trim($_POST['wpcf7-mail-2-sender']),
 				'body' => trim($_POST['wpcf7-mail-2-body']),
 				'recipient' => trim($_POST['wpcf7-mail-2-recipient']),
-				'attachments' => trim($_POST['wpcf7-mail-2-attachments'])
+				'attachments' => trim($_POST['wpcf7-mail-2-attachments']),
+				'use_html' => (1 == $_POST['wpcf7-mail-2-use-html']) ? true : false
 				);
             $messages = array(
                 'mail_sent_ok' => trim($_POST['wpcf7-message-mail-sent-ok']),
