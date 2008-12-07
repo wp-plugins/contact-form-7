@@ -1,0 +1,349 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-08 23:29+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"Language-Team: www.adsl2u.com <webmaster@adsl2u.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: SAUDI ARABIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: contact-form-7/wp-contact-form-7.php:323
+msgid "Contact form"
+msgstr "نموذج للاتصال"
+
+#: contact-form-7/wp-contact-form-7.php:456
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "نموذج للاتصال 7"
+
+#: contact-form-7/wp-contact-form-7.php:494
+msgid "optional"
+msgstr "اختياري"
+
+#: contact-form-7/wp-contact-form-7.php:495
+msgid "Generate Tag"
+msgstr "خيارات النموذج"
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Text field"
+msgstr "خانة نص"
+
+#: contact-form-7/wp-contact-form-7.php:497
+msgid "Email field"
+msgstr "خانة البريد الألكتروني"
+
+#: contact-form-7/wp-contact-form-7.php:498
+msgid "Text area"
+msgstr "منطقة الكتابه"
+
+#: contact-form-7/wp-contact-form-7.php:499
+msgid "Drop-down menu"
+msgstr "قائمة منسدلة"
+
+#: contact-form-7/wp-contact-form-7.php:500
+msgid "Checkboxes"
+msgstr "صناديق الاختيار"
+
+#: contact-form-7/wp-contact-form-7.php:501
+msgid "Radio buttons"
+msgstr "أزرار الاختيار(Radio)"
+
+#: contact-form-7/wp-contact-form-7.php:502
+msgid "Acceptance"
+msgstr "القبول"
+
+#: contact-form-7/wp-contact-form-7.php:503
+msgid "Make this checkbox checked by default?"
+msgstr "جعل صندوق الخيارات صناديق محددة تلقائياً؟"
+
+#: contact-form-7/wp-contact-form-7.php:504
+msgid "Make this checkbox work inversely?"
+msgstr "جعل صندوق الخيارات يعمل عكسياً؟"
+
+#: contact-form-7/wp-contact-form-7.php:505
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* هذا يعني أن الزائر الذي قبل الاتفاقية لم يقم بتحديد الخيار."
+
+#: contact-form-7/wp-contact-form-7.php:506
+msgid "CAPTCHA"
+msgstr "CAPTCHA اختبار الكود"
+
+#: contact-form-7/wp-contact-form-7.php:507
+msgid "Submit button"
+msgstr "زر الارسال"
+
+#: contact-form-7/wp-contact-form-7.php:508
+msgid "Name"
+msgstr "الاسم"
+
+#: contact-form-7/wp-contact-form-7.php:509
+msgid "Required field?"
+msgstr "طلب الخانة؟"
+
+#: contact-form-7/wp-contact-form-7.php:510
+msgid "Allow multiple selections?"
+msgstr "السماح بالخيارات المتعددة؟"
+
+#: contact-form-7/wp-contact-form-7.php:511
+msgid "Insert a blank item as the first option?"
+msgstr "إدراج عنصر فارغ في بداية الخيار؟"
+
+#: contact-form-7/wp-contact-form-7.php:512
+msgid "Make checkboxes exclusive?"
+msgstr "جعل الخيارات حصرية؟"
+
+#: contact-form-7/wp-contact-form-7.php:513
+msgid "Choices"
+msgstr "الاختيارات"
+
+#: contact-form-7/wp-contact-form-7.php:514
+msgid "Label"
+msgstr "علامة"
+
+#: contact-form-7/wp-contact-form-7.php:515
+msgid "Default value"
+msgstr "قيمة افتراضية"
+
+#: contact-form-7/wp-contact-form-7.php:516
+msgid "Akismet"
+msgstr "Akismet لصد التعليقات المزعجة"
+
+#: contact-form-7/wp-contact-form-7.php:517
+msgid "This field requires author's name"
+msgstr "هذه الخانة تطلب اسم مقدم الطلب"
+
+#: contact-form-7/wp-contact-form-7.php:518
+msgid "This field requires author's URL"
+msgstr "هذه الخانة تطلب الموقع الخاص بمقدم الطلب"
+
+#: contact-form-7/wp-contact-form-7.php:519
+msgid "This field requires author's email address"
+msgstr "هذه الخانة تطلب البريد الألكتروني من مقدم الطلب"
+
+#: contact-form-7/wp-contact-form-7.php:520
+msgid "Copy and paste this code into the form"
+msgstr "انسخ الكود ثم ألصقه في النموذج"
+
+#: contact-form-7/wp-contact-form-7.php:521
+msgid "Foreground color"
+msgstr "لون المقدمة"
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Background color"
+msgstr "لون الخلفية"
+
+#: contact-form-7/wp-contact-form-7.php:523
+msgid "Image size"
+msgstr "حجم الصورة"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Small"
+msgstr "صغير"
+
+#: contact-form-7/wp-contact-form-7.php:525
+msgid "Medium"
+msgstr "وسط"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Large"
+msgstr "كبير"
+
+#: contact-form-7/wp-contact-form-7.php:527
+msgid "Image settings"
+msgstr "اعدادات الصورة"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Input field settings"
+msgstr "خيارات الإدخال في الخانة"
+
+#: contact-form-7/wp-contact-form-7.php:529
+msgid "For image"
+msgstr "للصورة"
+
+#: contact-form-7/wp-contact-form-7.php:530
+msgid "For input field"
+msgstr "للإدخالات في الخانة"
+
+#: contact-form-7/wp-contact-form-7.php:531
+msgid "* One choice per line."
+msgstr "* خيار في كل سطر."
+
+#: contact-form-7/wp-contact-form-7.php:532
+msgid "Show"
+msgstr "اظهار"
+
+#: contact-form-7/wp-contact-form-7.php:533
+msgid "Hide"
+msgstr "اخفاء"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Contact form created."
+msgstr "صنع نموذج اتصال."
+
+#: contact-form-7/wp-contact-form-7.php:562
+msgid "Contact form saved."
+msgstr "حفظ نموذج اتصال."
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Contact form deleted."
+msgstr "حذف نموذج اتصال."
+
+#: contact-form-7/wp-contact-form-7.php:576
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#: contact-form-7/wp-contact-form-7.php:603
+msgid "Your Name"
+msgstr "اسمك"
+
+#: contact-form-7/wp-contact-form-7.php:603
+#: contact-form-7/wp-contact-form-7.php:605
+msgid "(required)"
+msgstr "مطلوب"
+
+#: contact-form-7/wp-contact-form-7.php:605
+msgid "Your Email"
+msgstr "بريدك"
+
+#: contact-form-7/wp-contact-form-7.php:607
+msgid "Subject"
+msgstr "الموضوع"
+
+#: contact-form-7/wp-contact-form-7.php:609
+msgid "Your Message"
+msgstr "رسالتك"
+
+#: contact-form-7/wp-contact-form-7.php:611
+#: contact-form-7/wp-contact-form-7.php:1158
+msgid "Send"
+msgstr "إرسال"
+
+#: contact-form-7/wp-contact-form-7.php:659
+msgid "Your message was sent successfully. Thanks."
+msgstr "لقد تم إرسال رسالتك , شكراً لك."
+
+#: contact-form-7/wp-contact-form-7.php:661
+#: contact-form-7/wp-contact-form-7.php:663
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "فشل في إرسال رسالتك , رجاءً حاول لاحقاً أو قم بالاتصال بمسؤول الموقع بطريقة أخرى"
+
+#: contact-form-7/wp-contact-form-7.php:665
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "حدث خطأ في التحقق من البيانات ، رجاءاً قم بإعادة ملء الخانات ومن ثم إعادة الإرسال."
+
+#: contact-form-7/wp-contact-form-7.php:667
+msgid "Please accept the terms to proceed."
+msgstr "رجاءً قم بالموافقه على الشروط حتى تستمر."
+
+#: contact-form-7/wp-contact-form-7.php:669
+msgid "Email address seems invalid."
+msgstr "يبدو أن البريد الألكتروني خاطئ."
+
+#: contact-form-7/wp-contact-form-7.php:671
+msgid "Please fill the required field."
+msgstr "رجاْءً قم بتعبئة جميع الخانات المطلوبة."
+
+#: contact-form-7/wp-contact-form-7.php:673
+msgid "Your entered code is incorrect."
+msgstr "الكود الذي أدخلته غير صحيح."
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "أضف جديد"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "انسخ الكود ثم ألصقه داخل المحتوى الذي تريده."
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "نموذج"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "بريد"
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:67
+msgid "To:"
+msgstr "إلى:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:71
+msgid "From:"
+msgstr "من:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:75
+msgid "Subject:"
+msgstr "الموضوع:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:79
+msgid "Message body:"
+msgstr "محتوى الرسالة:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "بريد (2)"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "استخدم بريد (2)"
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid "Messages"
+msgstr "رسائل"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid "Sender's message was sent successfully"
+msgstr "تم إرسال الرسالة بنجاح"
+
+#: contact-form-7/includes/admin-panel.php:97
+msgid "Sender's message was failed to send"
+msgstr "لم يتم إرسال الرسالة"
+
+#: contact-form-7/includes/admin-panel.php:101
+msgid "Akismet judged the sending activity as spamming"
+msgstr "لقد تم تصنيف هذه الرسالة من الرسائل المزعجة عن طريق Akismet "
+
+#: contact-form-7/includes/admin-panel.php:105
+msgid "Validation errors occurred"
+msgstr "حدثت مشكلة أثناء التحقق من البيانات"
+
+#: contact-form-7/includes/admin-panel.php:109
+msgid "There is a field of term that sender is needed to accept"
+msgstr "هناك خانة في الشروط يحتاج المرسل إلى الموافقه عليها."
+
+#: contact-form-7/includes/admin-panel.php:113
+msgid "Email address that sender entered is invalid"
+msgstr "البريد الذي أدخله المرسل غير صحيح"
+
+#: contact-form-7/includes/admin-panel.php:117
+msgid "There is a field that sender is needed to fill in"
+msgstr "هناك خانة يحتاج المرسل إلى ملأها."
+
+#: contact-form-7/includes/admin-panel.php:121
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "الكود الذي أدخله المرسل لم يتطابق مع خاصية CAPTCHA"
+
+#: contact-form-7/includes/admin-panel.php:130
+msgid "Save"
+msgstr "حفظ"
+
+#: contact-form-7/includes/admin-panel.php:137
+msgid "Delete this contact form"
+msgstr "احذف نموذج الاتصال هذا"
+
+#: contact-form-7/includes/admin-panel.php:138
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "انت على وشك حذف نموذج الاتصال المحدد.أضغط \"إلغاء\" أو \"نعم\" للحذف."
+
