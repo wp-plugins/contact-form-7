@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://takayukister.chipin.com/contact-form-7-20
 Tags: contact form, email, ajax, captcha, akismet
 Requires at least: 2.5
-Tested up to: 2.7-beta3
-Stable tag: 1.8.1.1
+Tested up to: 2.7
+Stable tag: 1.9
 
 Just another contact form plugin. Simple but flexible.
 
@@ -57,7 +57,7 @@ If you have created your own language pack, or have an update of an existing one
 1. Upload the entire `contact-form-7` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
-The control panel of Contact Form 7 is in 'Manage > Contact Form 7'. Please note that it has moved from the 'Settings' menu since Contact Form 7 1.8.
+The control panel of Contact Form 7 is in 'Manage > Contact Form 7' (on WordPress 2.7 and greater, 'Tools > Contact Form 7'). Please note that it has moved from the 'Settings' menu since Contact Form 7 1.8.
 
 For basic usage, you can also have a look at the [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/) and [FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/).
 
