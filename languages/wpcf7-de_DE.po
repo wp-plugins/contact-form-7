@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form | V1.0\n"
+"Project-Id-Version: Contact Form | V1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-07 00:21+0900\n"
 "PO-Revision-Date: \n"
@@ -263,7 +263,7 @@ msgstr "Bitte füllen Sie dieses Pflichtfeld aus!"
 
 #: contact-form-7/wp-contact-form-7.php:753
 msgid "Your entered code is incorrect."
-msgstr "Ihre eingegebener Code ist falsch."
+msgstr "Ihr eingegebener Code ist falsch."
 
 #: contact-form-7/wp-contact-form-7.php:755
 msgid "Failed to upload file."
@@ -379,7 +379,7 @@ msgstr "Dieses Feld muss ausgefüllt werden!"
 
 #: contact-form-7/includes/admin-panel.php:216
 msgid "Email address that sender entered is invalid"
-msgstr "Die eingebene Email Adresse ist ungültig!"
+msgstr "Die eingegebene Email Adresse ist ungültig!"
 
 #: contact-form-7/includes/admin-panel.php:220
 msgid "There is a field of term that sender is needed to accept"
