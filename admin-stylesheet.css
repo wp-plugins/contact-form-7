@@ -1,3 +1,6 @@
+div.wpcf7 ul.subsubsub {
+	white-space: normal;
+}
 ul.subsubsub li.addnew {
 	margin-left: 0.5em;
 }
