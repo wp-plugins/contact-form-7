@@ -53,6 +53,9 @@ if (! defined('WPCF7_UPLOADS_TMP_DIR'))
 if (! defined('WPCF7_AUTOP'))
     define('WPCF7_AUTOP', true);
 
+if (! defined('WPCF7_USE_PIPE'))
+    define('WPCF7_USE_PIPE', true);
+
 if (! function_exists('wpcf7_version')) {
     function wpcf7_version() { return WPCF7_VERSION; }
 }
@@ -239,7 +242,11 @@ class tam_contact_form_seven {
             $files = array();
     
 		$contact_form = $this->upgrade($contact_form);
-        
+
+        if (WPCF7_USE_PIPE) {
+            $this->pipe_all_posted($contact_form);
+        }
+
         if ($this->compose_and_send_mail($contact_form['mail'], $files)) {
             if ($contact_form['mail_2']['active'])
                 $this->compose_and_send_mail($contact_form['mail_2'], $files);
@@ -278,6 +285,7 @@ class tam_contact_form_seven {
     function mail_callback($matches) {
         if (isset($_POST[$matches[1]])) {
             $submitted = $_POST[$matches[1]];
+            
             if (is_array($submitted))
                 $submitted = join(', ', $submitted);
             return stripslashes($submitted);
@@ -1337,7 +1345,7 @@ var _wpcf7 = {
 		
 		preg_match_all('/"[^"]*"|\'[^\']*\'/', $element[4], $matches);
 		$values = $this->strip_quote_deep($matches[0]);
-		
+        
 		return compact('type', 'name', 'options', 'values');
 	}
 
@@ -1510,6 +1518,61 @@ var _wpcf7 = {
 		
 		return $op;
 	}
+
+    function get_pipes($contact_form) {
+        $results = array();
+
+        $fes = $this->form_elements($contact_form['form'], false);
+        foreach ($fes as $fe) {
+            $type = $fe['type'];
+            $name = $fe['name'];
+            $values = $fe['values'];
+            
+            if (! preg_match('/^(select[*]?|checkbox[*]?|radio)$/', $type))
+                continue;
+            
+            $pipes = array();
+            foreach ($values as $value) {
+                $pipe_pos = strpos($value, '|');
+                if (false === $pipe_pos)
+                    continue;
+                
+                $before = substr($value, 0, $pipe_pos);
+                $after = substr($value, $pipe_pos + 1);
+                
+                if (! isset($pipes[$before]))
+                    $pipes[$before] = $after;
+            }
+            
+            $results[$name] = array_merge($pipes, (array) $results[$name]);
+        }
+        
+        return $results;
+    }
+
+    function pipe($pipes, $value) {
+        if (is_string($value)) {
+            if (isset($pipes[$value]))
+                return $pipes[$value];
+            else
+                return $value;
+        } elseif (is_array($value)) {
+            $results = array();
+            foreach ($value as $k => $v) {
+                $results[$k] = $this->pipe($pipes, $v);
+            }
+            return $results;
+        }
+    }
+
+    function pipe_all_posted($contact_form) {
+        $all_pipes = $this->get_pipes($contact_form);
+        
+        foreach ($all_pipes as $name => $pipes) {
+            if (isset($_POST[$name]))
+                $_POST[$name] = $this->pipe($pipes, $_POST[$name]);
+        }
+    }
 
 }
 
