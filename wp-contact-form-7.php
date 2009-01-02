@@ -72,6 +72,7 @@ class tam_contact_form_seven {
 
 	var $contact_forms;
 	var $captcha;
+    var $posted_data;
 
 	function tam_contact_form_seven() {
 		add_action('activate_' . plugin_basename(__FILE__), array(&$this, 'set_initial'));
@@ -243,6 +244,8 @@ class tam_contact_form_seven {
     
 		$contact_form = $this->upgrade($contact_form);
 
+        $this->posted_data = $_POST;
+
         if (WPCF7_USE_PIPE) {
             $this->pipe_all_posted($contact_form);
         }
@@ -283,8 +286,8 @@ class tam_contact_form_seven {
     }
     
     function mail_callback($matches) {
-        if (isset($_POST[$matches[1]])) {
-            $submitted = $_POST[$matches[1]];
+        if (isset($this->posted_data[$matches[1]])) {
+            $submitted = $this->posted_data[$matches[1]];
             
             if (is_array($submitted))
                 $submitted = join(', ', $submitted);
@@ -1578,8 +1581,8 @@ var _wpcf7 = {
         }
         
         foreach ($all_pipes as $name => $pipes) {
-            if (isset($_POST[$name]))
-                $_POST[$name] = $this->pipe($pipes, $_POST[$name]);
+            if (isset($this->posted_data[$name]))
+                $this->posted_data[$name] = $this->pipe($pipes, $this->posted_data[$name]);
         }
     }
 
