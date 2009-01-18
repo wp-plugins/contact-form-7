@@ -569,7 +569,7 @@ class tam_contact_form_seven {
 
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
             
-            if ('rtl' == bloginfo('text_direction')) {
+            if ('rtl' == get_bloginfo('text_direction')) {
                 $admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin-stylesheet-rtl.css';
                 echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
             }
@@ -1061,7 +1061,7 @@ var _wpcf7 = {
 		$stylesheet_url = WPCF7_PLUGIN_URL . '/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
         
-        if ('rtl' == bloginfo('text_direction')) {
+        if ('rtl' == get_bloginfo('text_direction')) {
             $stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/stylesheet-rtl.css';
             echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
         }
