@@ -1083,7 +1083,7 @@ var _wpcf7 = {
 /* Processing form element placeholders */
 
 	function form_elements($form, $replace = true) {
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file[*]?';
+		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file[*]?|quiz';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/|\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		if ($replace) {
@@ -1278,6 +1278,29 @@ var _wpcf7 = {
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
+            case 'quiz':
+                if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] &&
+                    ! (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok'])) {
+                    $posted_value = trim($_POST[$name]);
+                } else {
+                    $posted_value = '';
+                }
+                $posted_value = $posted_value ? ' value="' . attribute_escape($posted_value) . '"' : '';
+                    
+                if (count($values) == 0) {
+                    break;
+                } elseif (count($values) == 1) {
+                    $value = $values[0];
+                } else {
+                    $value = $values[array_rand($values)];
+                }
+                
+                $html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
+                $html .= '<input type="text" name="' . $name . '"' . $posted_value . ' />';
+                $html = '<span' . $atts . '>' . $html . '</span>';
+				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+				return $html;
+                break;
             case 'acceptance':
                 $invert = (bool) preg_grep('%^invert$%', $options);
                 $default = (bool) preg_grep('%^default:on$%', $options);
@@ -1359,7 +1382,7 @@ var _wpcf7 = {
 		preg_match_all('/"[^"]*"|\'[^\']*\'/', $element[4], $matches);
 		$raw_values = $this->strip_quote_deep($matches[0]);
         
-        if (WPCF7_USE_PIPE && preg_match('/^(select[*]?|checkbox[*]?|radio)$/', $type)) {
+        if (WPCF7_USE_PIPE && preg_match('/^(select[*]?|checkbox[*]?|radio)$/', $type) || 'quiz' == $type) {
             $pipes = $this->get_pipes($raw_values);
             $values = array_keys($pipes);
         } else {
