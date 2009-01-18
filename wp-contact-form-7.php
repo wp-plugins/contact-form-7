@@ -568,6 +568,11 @@ class tam_contact_form_seven {
             $javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
 
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
+            
+            if ('rtl' == bloginfo('text_direction')) {
+                $admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin-stylesheet-rtl.css';
+                echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
+            }
 
 ?>
 <script type="text/javascript">
@@ -1055,6 +1060,11 @@ var _wpcf7 = {
 	function wp_head() {
 		$stylesheet_url = WPCF7_PLUGIN_URL . '/stylesheet.css';
 		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
+        
+        if ('rtl' == bloginfo('text_direction')) {
+            $stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/stylesheet-rtl.css';
+            echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
+        }
 		
 		$javascript_url = WPCF7_PLUGIN_URL . '/contact-form-7.js';
 ?>
