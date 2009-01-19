@@ -143,7 +143,7 @@ function tagGenerator() {
   
   var tag_types = [
     'textField', 'emailField', 'textArea', 'menu', 'checkboxes', 'radioButtons',
-    'acceptance', 'captcha', 'fileUpload', 'submit'];
+    'acceptance', 'quiz', 'captcha', 'fileUpload', 'submit'];
 
   jQuery.each(tag_types, function(i, n) {
     var submenu = jQuery('<div>' + _wpcf7.l10n[n] + '</div>');
@@ -349,6 +349,31 @@ function tgPane(pane, tagType) {
       
       table2.append(jQuery('<tr></tr>').append(jQuery('<td colspan="2"></td>').append(menuOpt1).append(menuOpt2)));
       
+      pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
+      break;
+    case 'quiz':
+      var table1 = jQuery('<table></table>');
+      pane.append(table1);
+      
+      table1.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
+        jQuery('<span></span>')
+      ));
+      
+      var table2 = jQuery('<table></table>');
+      pane.append(table2);
+      table2.append(tgTr(
+        jQuery('<span><code>size</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagSize),
+        jQuery('<span><code>maxlength</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagMaxLength)
+      ));
+      table2.append(tgTr(
+        jQuery('<span><code>id</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagId),
+        jQuery('<span><code>class</code> (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagClasses)
+      ));
+      table2.append(tgTr(
+        jQuery('<span>' + _wpcf7.l10n.quizzes + '<br /></span>').append(tgInputs.menuChoices)
+          .append('<br /><span style="font-size: smaller">' + _wpcf7.l10n.quizFormatDesc + '</span>')
+      ));
       pane.append(jQuery('<div class="tg-tag">' + _wpcf7.l10n.generatedTag + '<br /></div>').append(tgInputs.tag1st));
       break;
     case 'captcha':
@@ -622,6 +647,27 @@ function tgCreateTag(tagType, tgInputs, trigger) {
       var tag = name ? '[' + type + ' ' + name + options +  ']' : '';
       tgInputs.tag1st.val(tag);
       break;
+    case 'quiz':
+      var type = 'quiz';
+      var name = tgInputs.tagName.val();
+      var options = [];
+      if (tgInputs.tagSize.val() || tgInputs.tagMaxLength.val())
+        options.push(tgInputs.tagSize.val() + '/' + tgInputs.tagMaxLength.val());
+      if (tgInputs.tagId.val())
+        options.push('id:' + tgInputs.tagId.val());
+      if (tgInputs.tagClasses.val())
+        jQuery.each(tgInputs.tagClasses.val().split(' '), function(i, n) {
+          options.push('class:' + n);
+        });
+      options = (options.length > 0) ? ' ' + options.join(' ') : '';
+      var choices = '';
+      if (tgInputs.menuChoices.val())
+        jQuery.each(tgInputs.menuChoices.val().split("\n"), function(i, n) {
+          choices += ' "' + n.replace(/["]/g, '&quot;') + '"';
+        });
+      var tag = name ? '[' + type + ' ' + name + options + choices + ']' : '';
+      tgInputs.tag1st.val(tag);
+      break;
     case 'captcha':
       // for captchac
       var type = 'captchac';
@@ -718,6 +764,8 @@ function tgDefaultName(tagType) {
     return 'radio-' + rand;
   } else if ('acceptance' == tagType) {
     return 'acceptance-' + rand;
+  } else if ('quiz' == tagType) {
+    return 'quiz-' + rand;
   } else if ('captcha' == tagType) {
     return 'captcha-' + rand;
   } else if ('fileUpload' == tagType) {

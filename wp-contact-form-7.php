@@ -603,6 +603,9 @@ var _wpcf7 = {
 		isAcceptanceInvert: "<?php echo js_escape(__("Make this checkbox work inversely?", 'wpcf7')); ?>",
 		isAcceptanceInvertMeans: "<?php echo js_escape(__("* That means visitor who accepts the term unchecks it.", 'wpcf7')); ?>",
 		captcha: "<?php echo js_escape(__('CAPTCHA', 'wpcf7')); ?>",
+		quiz: "<?php echo js_escape(__('Quiz', 'wpcf7')); ?>",
+		quizzes: "<?php echo js_escape(__('Quizzes', 'wpcf7')); ?>",
+		quizFormatDesc: "<?php echo js_escape(__("* quiz|answer (e.g. 1+1=?|2)", 'wpcf7')); ?>",
 		fileUpload: "<?php echo js_escape(__('File upload', 'wpcf7')); ?>",
 		submit: "<?php echo js_escape(__('Submit button', 'wpcf7')); ?>",
 		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
@@ -1342,14 +1345,28 @@ var _wpcf7 = {
                     $value = $values[array_rand($values)];
                 }
                 
+				if (is_array($options)) {
+					$size_maxlength_array = preg_grep('%^[0-9]*[/x][0-9]*$%', $options);
+					if ($size_maxlength = array_shift($size_maxlength_array)) {
+						preg_match('%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches);
+						if ($size = (int) $sm_matches[1])
+							$atts .= ' size="' . $size . '"';
+                        else
+                            $atts .= ' size="40"';
+						if ($maxlength = (int) $sm_matches[2])
+							$atts .= ' maxlength="' . $maxlength . '"';
+					} else {
+                        $atts .= ' size="40"';
+                    }
+				}
+                
                 $pipes = $this->get_pipes($raw_values);
                 $answer = $this->pipe($pipes, $value);
                 $answer = $this->canonicalize($answer);
                 
                 $html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
-                $html .= '<input type="text" name="' . $name . '" />';
+                $html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
                 $html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash($answer, 'wpcf7_quiz') . '" />';
-                $html = '<span' . $atts . '>' . $html . '</span>';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
                 break;
