@@ -124,6 +124,17 @@ class tam_contact_form_seven {
 				} else {
 					$captcha = 'null';
 				}
+                
+                $quizzes = $this->refill_quiz($cf);
+                if (! empty($quizzes)) {
+                    $quizzes_js = array();
+                    foreach ($quizzes as $name => $q) {
+                        $quizzes_js[] = '"' . $name . '": [ "' . js_escape($q[0]) . '", "' . $q[1] . '" ]';
+                    }
+                    $quiz = '{ ' . join(', ', $quizzes_js) . ' }';
+                } else {
+                    $quiz = 'null';
+                }
 				
 				if (! $validation['valid']) { // Validation error occured
 					$invalids = array();
@@ -131,15 +142,15 @@ class tam_contact_form_seven {
 						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape($reason) . '" }';
 					}
 					$invalids = '[' . join(', ', $invalids) . ']';
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
                 } elseif (! $this->acceptance($cf)) { // Not accepted terms
-                    $echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+                    $echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ($this->akismet($cf)) { // Spam!
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ($this->mail($cf, $handled_uploads['files'])) {
-					$echo = '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} else {
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				}
                 
                 // remove upload files
@@ -767,6 +778,8 @@ var _wpcf7 = {
 				return __('Please fill the required field.', 'wpcf7');
 			case 'captcha_not_match':
 				return __('Your entered code is incorrect.', 'wpcf7');
+			case 'quiz_answer_not_correct':
+				return __('Your answer is not correct.', 'wpcf7');
 			case 'upload_failed':
 				return __('Failed to upload file.', 'wpcf7');
 			case 'upload_file_type_invalid':
@@ -1042,7 +1055,7 @@ var _wpcf7 = {
                 $expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
                 if ($answer_hash != $expected_hash) {
                     $valid = false;
-                    $reason[$name] = $this->message($contact_form, 'captcha_not_match');
+                    $reason[$name] = $this->message($contact_form, 'quiz_answer_not_correct');
                 }
             }
 		}
@@ -1065,6 +1078,37 @@ var _wpcf7 = {
                 }
 			}
 		}
+		return $refill;
+	}
+
+    function refill_quiz($contact_form) {
+		$fes = $this->form_elements($contact_form['form'], false);
+		$refill = array();
+		
+		foreach ($fes as $fe) {
+			$type = $fe['type'];
+			$name = $fe['name'];
+            $values = $fe['values'];
+            $raw_values = $fe['raw_values'];
+            
+			if ('quiz' != $type)
+                continue;
+            
+            if (count($values) == 0)
+                continue;
+
+            if (count($values) == 1)
+                $question = $values[0];
+            else
+                $question = $values[array_rand($values)];
+            
+            $pipes = $this->get_pipes($raw_values);
+            $answer = $this->pipe($pipes, $question);
+            $answer = $this->canonicalize($answer);
+                
+            $refill[$name] = array($question, wp_hash($answer, 'wpcf7_quiz'));
+		}
+        
 		return $refill;
 	}
 
@@ -1290,14 +1334,6 @@ var _wpcf7 = {
 				return $html;
 				break;
             case 'quiz':
-                if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] &&
-                    ! (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['ok'])) {
-                    $posted_value = trim($_POST[$name]);
-                } else {
-                    $posted_value = '';
-                }
-                $posted_value = $posted_value ? ' value="' . attribute_escape($posted_value) . '"' : '';
-                    
                 if (count($values) == 0) {
                     break;
                 } elseif (count($values) == 1) {
@@ -1311,7 +1347,7 @@ var _wpcf7 = {
                 $answer = $this->canonicalize($answer);
                 
                 $html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
-                $html .= '<input type="text" name="' . $name . '"' . $posted_value . ' />';
+                $html .= '<input type="text" name="' . $name . '" />';
                 $html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash($answer, 'wpcf7_quiz') . '" />';
                 $html = '<span' . $atts . '>' . $html . '</span>';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';

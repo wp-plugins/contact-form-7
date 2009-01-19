@@ -71,6 +71,13 @@ function wpcf7ProcessJson(data) {
 			jQuery(data.into).find('input:hidden[@name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
 		});
 	}
+    if (data.quiz) {
+        jQuery.each(data.quiz, function(i, n) {
+            jQuery(data.into).find(':input[@name="' + i + '"]').clearFields();
+            jQuery(data.into).find(':input[@name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
+            jQuery(data.into).find('input:hidden[@name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
+        });
+    }
 	if (1 == data.spam) {
 		wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
 	}
