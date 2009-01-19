@@ -221,6 +221,10 @@
                         <input type="text" id="wpcf7-message-accept-terms" name="wpcf7-message-accept-terms" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['accept_terms']); ?>" />
                     </div>
                     <div class="message-field">
+                        <label for="wpcf7-message-quiz-answer-not-correct"><em># <?php _e("Sender doesn't enter the correct answer to the quiz", 'wpcf7'); ?></em></label><br />
+                        <input type="text" id="wpcf7-message-quiz-answer-not-correct" name="wpcf7-message-quiz-answer-not-correct" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['quiz_answer_not_correct']); ?>" />
+                    </div>
+                    <div class="message-field">
                         <label for="wpcf7-message-captcha-not-match"><em># <?php _e("The code that sender entered does not match the CAPTCHA", 'wpcf7'); ?></em></label><br />
                         <input type="text" id="wpcf7-message-captcha-not-match" name="wpcf7-message-captcha-not-match" class="wide" size="70" value="<?php echo htmlspecialchars($cf['messages']['captcha_not_match']); ?>" />
                     </div>

@@ -535,6 +535,7 @@ class tam_contact_form_seven {
                 'accept_terms' => trim($_POST['wpcf7-message-accept-terms']),
                 'invalid_email' => trim($_POST['wpcf7-message-invalid-email']),
                 'invalid_required' => trim($_POST['wpcf7-message-invalid-required']),
+                'quiz_answer_not_correct' => trim($_POST['wpcf7-message-quiz-answer-not-correct']),
                 'captcha_not_match' => trim($_POST['wpcf7-message-captcha-not-match']),
                 'upload_failed' => trim($_POST['wpcf7-message-upload-failed']),
                 'upload_file_type_invalid' => trim($_POST['wpcf7-message-upload-file-type-invalid']),
@@ -742,12 +743,13 @@ var _wpcf7 = {
         $accept_terms = $this->default_message('accept_terms');
         $invalid_email = $this->default_message('invalid_email');
         $invalid_required = $this->default_message('invalid_required');
+        $quiz_answer_not_correct = $this->default_message('quiz_answer_not_correct');
         $captcha_not_match = $this->default_message('captcha_not_match');
         $upload_failed = $this->default_message('upload_failed');
         $upload_file_type_invalid = $this->default_message('upload_file_type_invalid');
         $upload_file_too_large = $this->default_message('upload_file_too_large');
 		return compact('mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam',
-            'validation_error', 'accept_terms', 'invalid_email', 'invalid_required',
+            'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'quiz_answer_not_correct',
             'captcha_not_match', 'upload_failed', 'upload_file_type_invalid', 'upload_file_too_large');
     }
 
