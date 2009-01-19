@@ -967,6 +967,7 @@ var _wpcf7 = {
 			$type = $fe['type'];
 			$name = $fe['name'];
             $values = $fe['values'];
+            $raw_values = $fe['raw_values'];
             
             // Before validation corrections
             if (preg_match('/^(?:text|email|captchar|textarea)[*]?$/', $type))
@@ -1034,6 +1035,16 @@ var _wpcf7 = {
 				}
 				$this->remove_captcha($_POST[$captchac]);
 			}
+            
+            if ('quiz' == $type) {
+                $answer = $this->canonicalize($_POST[$name]);
+                $answer_hash = wp_hash($answer, 'wpcf7_quiz');
+                $expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
+                if ($answer_hash != $expected_hash) {
+                    $valid = false;
+                    $reason[$name] = $this->message($contact_form, 'captcha_not_match');
+                }
+            }
 		}
 		return compact('valid', 'reason');
 	}
@@ -1102,7 +1113,7 @@ var _wpcf7 = {
 	}
 
 	function form_element_replace_callback($matches) {
-		extract((array) $this->form_element_parse($matches)); // $type, $name, $options, $values
+		extract((array) $this->form_element_parse($matches)); // $type, $name, $options, $values, $raw_values
 		
 		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
 			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
@@ -1295,8 +1306,13 @@ var _wpcf7 = {
                     $value = $values[array_rand($values)];
                 }
                 
+                $pipes = $this->get_pipes($raw_values);
+                $answer = $this->pipe($pipes, $value);
+                $answer = $this->canonicalize($answer);
+                
                 $html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
                 $html .= '<input type="text" name="' . $name . '"' . $posted_value . ' />';
+                $html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash($answer, 'wpcf7_quiz') . '" />';
                 $html = '<span' . $atts . '>' . $html . '</span>';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
@@ -1373,6 +1389,15 @@ var _wpcf7 = {
         $html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 		return $html;
 	}
+    
+    function canonicalize($text) {
+        if (function_exists('mb_convert_kana') && 'UTF-8' == get_option('blog_charset'))
+            $text = mb_convert_kana($text, 'asKV', 'UTF-8');
+
+        $text = strtolower($text);
+        $text = trim($text);
+        return $text;
+    }
 
 	function form_element_parse($element) {
 		$type = trim($element[1]);
