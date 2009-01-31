@@ -5,30 +5,30 @@ jQuery(document).ready(function() {
 		success: wpcf7ProcessJson
 	});
 
-  jQuery('div.wpcf7 > form').each(function(i, n) {
-    wpcf7ToggleSubmit(jQuery(n));
-  });
+    jQuery('div.wpcf7 > form').each(function(i, n) {
+        wpcf7ToggleSubmit(jQuery(n));
+    });
 });
 
 // Exclusive checkbox
 function wpcf7ExclusiveCheckbox(elem) {
-  jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
+    jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
 }
 
 // Toggle submit button
 function wpcf7ToggleSubmit(form) {
-  var submit = jQuery(form).find('input:submit');
-  if (! submit.length) return;
-  
-  var acceptances = jQuery(form).find('input:checkbox.wpcf7-acceptance');
-  if (! acceptances.length) return;
-  
-  submit.removeAttr('disabled');
-  acceptances.each(function(i, n) {
-    n = jQuery(n);
-    if (n.hasClass('wpcf7-invert') && n.is(':checked') || ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
-      submit.attr('disabled', 'disabled');
-  });
+    var submit = jQuery(form).find('input:submit');
+    if (! submit.length) return;
+
+    var acceptances = jQuery(form).find('input:checkbox.wpcf7-acceptance');
+    if (! acceptances.length) return;
+
+    submit.removeAttr('disabled');
+    acceptances.each(function(i, n) {
+        n = jQuery(n);
+        if (n.hasClass('wpcf7-invert') && n.is(':checked') || ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
+        submit.attr('disabled', 'disabled');
+    });
 }
 
 function wpcf7BeforeSubmit(formData, jqForm, options) {
