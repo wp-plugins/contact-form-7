@@ -1350,6 +1350,13 @@ var _wpcf7 = {
 				return $html;
 				break;
             case 'quiz':
+                if (count($raw_values) == 0 && count($values) == 0) { // default quiz
+                    $raw_values[] = '1+1=?|2';
+                    $values[] = '1+1=?';
+                }
+                    
+                $pipes = $this->get_pipes($raw_values);
+                
                 if (count($values) == 0) {
                     break;
                 } elseif (count($values) == 1) {
@@ -1357,6 +1364,9 @@ var _wpcf7 = {
                 } else {
                     $value = $values[array_rand($values)];
                 }
+                
+                $answer = $this->pipe($pipes, $value);
+                $answer = $this->canonicalize($answer);
                 
 				if (is_array($options)) {
 					$size_maxlength_array = preg_grep('%^[0-9]*[/x][0-9]*$%', $options);
@@ -1372,10 +1382,6 @@ var _wpcf7 = {
                         $atts .= ' size="40"';
                     }
 				}
-                
-                $pipes = $this->get_pipes($raw_values);
-                $answer = $this->pipe($pipes, $value);
-                $answer = $this->canonicalize($answer);
                 
                 $html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
                 $html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
