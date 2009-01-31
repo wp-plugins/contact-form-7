@@ -1,6 +1,6 @@
 === Contact Form 7 ===
 Contributors: takayukister
-Donate link: http://takayukister.chipin.com/contact-form-7-20
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2908336
 Tags: contact, contact form, email, ajax, captcha, akismet
 Requires at least: 2.5
 Tested up to: 2.7
