@@ -445,6 +445,7 @@ class tam_contact_form_seven {
         $contact_form = $this->upgrade_160($contact_form);
         $contact_form = $this->upgrade_181($contact_form);
         $contact_form = $this->upgrade_190($contact_form);
+        $contact_form = $this->upgrade_192($contact_form);
         return $contact_form;
     }
 
@@ -481,6 +482,16 @@ class tam_contact_form_seven {
 
         if (! isset($contact_form['messages']['upload_file_too_large']))
             $contact_form['messages']['upload_file_too_large'] = $this->default_message('upload_file_too_large');
+
+		return $contact_form;
+    }
+    
+    function upgrade_192($contact_form) {
+        if (! isset($contact_form['messages']) || ! is_array($contact_form['messages']))
+            $contact_form['messages'] = array();
+
+        if (! isset($contact_form['messages']['quiz_answer_not_correct']))
+            $contact_form['messages']['quiz_answer_not_correct'] = $this->default_message('quiz_answer_not_correct');
 
 		return $contact_form;
     }
