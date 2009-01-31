@@ -1,13 +1,19 @@
 jQuery(document).ready(function() {
-	jQuery('div.wpcf7 > form').ajaxForm({
-		beforeSubmit: wpcf7BeforeSubmit,
-		dataType: 'json',
-		success: wpcf7ProcessJson
-	});
+    try {
+        jQuery('div.wpcf7 > form').ajaxForm({
+            beforeSubmit: wpcf7BeforeSubmit,
+            dataType: 'json',
+            success: wpcf7ProcessJson
+        });
+    } catch (e) {
+    }
 
-    jQuery('div.wpcf7 > form').each(function(i, n) {
-        wpcf7ToggleSubmit(jQuery(n));
-    });
+    try {
+        jQuery('div.wpcf7 > form').each(function(i, n) {
+            wpcf7ToggleSubmit(jQuery(n));
+        });
+    } catch (e) {
+    }
 });
 
 // Exclusive checkbox
