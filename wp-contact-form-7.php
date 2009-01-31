@@ -250,7 +250,7 @@ class tam_contact_form_seven {
 	function mail($contact_form, $files = array()) {
         global $wp_version;
         
-        if (version_compare($wp_version, '2.7-beta1', '<')) // wp_mail() file uploading option isn't suppoted
+        if (version_compare($wp_version, '2.7', '<')) // wp_mail() file uploading option isn't suppoted
             $files = array();
     
 		$contact_form = $this->upgrade($contact_form);
@@ -489,7 +489,7 @@ class tam_contact_form_seven {
 
     function admin_menu_parent() {
         global $wp_version;
-        if (version_compare($wp_version, '2.7-alpha', '>='))
+        if (version_compare($wp_version, '2.7', '>='))
             return 'tools.php';
         else
             return 'edit.php';

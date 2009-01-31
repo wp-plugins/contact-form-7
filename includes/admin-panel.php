@@ -1,13 +1,13 @@
-<?php if (! version_compare($wp_version, '2.7-beta3', '>=') && isset($updated_message)) : ?>
+<?php if (! version_compare($wp_version, '2.7', '>=') && isset($updated_message)) : ?>
 <div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
 <?php endif; ?>
 <div class="wrap wpcf7">
     <h2><?php _e('Contact Form 7', 'wpcf7'); ?></h2>
     
-    <?php if (version_compare($wp_version, '2.7-beta3', '>=') && isset($updated_message)) : ?>
+    <?php if (version_compare($wp_version, '2.7', '>=') && isset($updated_message)) : ?>
     <div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
     <?php endif; ?>
-    
+
     <ul class="subsubsub">
         <?php foreach ($contact_forms as $k => $v) : ?>
         <li><a href="<?php echo $base_url . '?page=' . $page . '&contactform=' . $k ?>"<?php if ($k == $current) echo ' class="current"'; ?>>
@@ -108,7 +108,7 @@
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label>
-                        <?php if (version_compare($wp_version, '2.7-alpha', '<')) : ?>
+                        <?php if (version_compare($wp_version, '2.7', '<')) : ?>
                         <span style="color: #ff3300; margin-left: 0.5em;"><?php _e('(You need WordPress 2.7 or greater to use this feature)', 'wpcf7'); ?></span>
                         <?php endif; ?>
                         <br />
@@ -160,7 +160,7 @@
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-attachments"><?php _e('File attachments:', 'wpcf7'); ?></label>
-                        <?php if (version_compare($wp_version, '2.7-alpha', '<')) : ?>
+                        <?php if (version_compare($wp_version, '2.7', '<')) : ?>
                         <span style="color: #ff3300; margin-left: 0.5em;"><?php _e('(You need WordPress 2.7 or greater to use this feature)', 'wpcf7'); ?></span>
                         <?php endif; ?>
                         <br />
