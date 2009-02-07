@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-01 05:19+0900\n"
-"PO-Revision-Date: 2009-02-01 05:20+0900\n"
+"POT-Creation-Date: 2009-02-07 16:17+0900\n"
+"PO-Revision-Date: 2009-02-07 16:17+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,205 +93,209 @@ msgid "File upload"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:622
-msgid "Submit button"
+msgid "bytes"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:623
-msgid "Name"
+msgid "Submit button"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:624
-msgid "Required field?"
+msgid "Name"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:625
-msgid "Allow multiple selections?"
+msgid "Required field?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:626
-msgid "Insert a blank item as the first option?"
+msgid "Allow multiple selections?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:627
-msgid "Make checkboxes exclusive?"
+msgid "Insert a blank item as the first option?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:628
-msgid "Choices"
+msgid "Make checkboxes exclusive?"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:629
-msgid "Label"
+msgid "Choices"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:630
-msgid "Default value"
+msgid "Label"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:631
-msgid "Akismet"
+msgid "Default value"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:632
-msgid "This field requires author's name"
+msgid "Akismet"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:633
-msgid "This field requires author's URL"
+msgid "This field requires author's name"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:634
-msgid "This field requires author's email address"
+msgid "This field requires author's URL"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:635
-msgid "Copy this code and paste it into the form left."
+msgid "This field requires author's email address"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:636
-msgid "Foreground color"
+msgid "Copy this code and paste it into the form left."
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:637
-msgid "Background color"
+msgid "Foreground color"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:638
-msgid "Image size"
+msgid "Background color"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:639
-msgid "Small"
+msgid "Image size"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:640
-msgid "Medium"
+msgid "Small"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:641
-msgid "Large"
+msgid "Medium"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:642
-msgid "Image settings"
+msgid "Large"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:643
-msgid "Input field settings"
+msgid "Image settings"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:644
-msgid "For image"
+msgid "Input field settings"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:645
-msgid "For input field"
+msgid "For image"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:646
-msgid "* One choice per line."
+msgid "For input field"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:647
-msgid "Show"
+msgid "* One choice per line."
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:648
-msgid "Hide"
+msgid "Show"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:649
-msgid "File size limit"
+msgid "Hide"
 msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:650
+msgid "File size limit"
+msgstr ""
+
+#: contact-form-7/wp-contact-form-7.php:651
 msgid "Acceptable file types"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:676
+#: contact-form-7/wp-contact-form-7.php:677
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:679
+#: contact-form-7/wp-contact-form-7.php:680
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:682
+#: contact-form-7/wp-contact-form-7.php:683
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:693
+#: contact-form-7/wp-contact-form-7.php:694
 msgid "Untitled"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:720
+#: contact-form-7/wp-contact-form-7.php:721
 msgid "Your Name"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:720
-#: contact-form-7/wp-contact-form-7.php:722
+#: contact-form-7/wp-contact-form-7.php:721
+#: contact-form-7/wp-contact-form-7.php:723
 msgid "(required)"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:722
+#: contact-form-7/wp-contact-form-7.php:723
 msgid "Your Email"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:724
+#: contact-form-7/wp-contact-form-7.php:725
 msgid "Subject"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:726
+#: contact-form-7/wp-contact-form-7.php:727
 msgid "Your Message"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:728
-#: contact-form-7/wp-contact-form-7.php:1451
+#: contact-form-7/wp-contact-form-7.php:729
+#: contact-form-7/wp-contact-form-7.php:1458
 msgid "Send"
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:782
+#: contact-form-7/wp-contact-form-7.php:783
 msgid "Your message was sent successfully. Thanks."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:784
-#: contact-form-7/wp-contact-form-7.php:786
+#: contact-form-7/wp-contact-form-7.php:785
+#: contact-form-7/wp-contact-form-7.php:787
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:788
+#: contact-form-7/wp-contact-form-7.php:789
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:790
+#: contact-form-7/wp-contact-form-7.php:791
 msgid "Please accept the terms to proceed."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:792
+#: contact-form-7/wp-contact-form-7.php:793
 msgid "Email address seems invalid."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:794
+#: contact-form-7/wp-contact-form-7.php:795
 msgid "Please fill the required field."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:796
+#: contact-form-7/wp-contact-form-7.php:797
 msgid "Your entered code is incorrect."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:798
+#: contact-form-7/wp-contact-form-7.php:799
 msgid "Your answer is not correct."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:800
+#: contact-form-7/wp-contact-form-7.php:801
 msgid "Failed to upload file."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:802
+#: contact-form-7/wp-contact-form-7.php:803
 msgid "This file type is not allowed."
 msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:804
+#: contact-form-7/wp-contact-form-7.php:805
 msgid "This file is too large."
 msgstr ""
 
