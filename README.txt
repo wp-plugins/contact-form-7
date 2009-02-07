@@ -47,7 +47,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/)
 * Slovene (sl_SI) - [Mihael Simonič](http://smihael.bplaced.net)
 * Spanish (es_ES) - [Jordi Sancho](http://www.qasolutions.net/blog)
-(updated by [Vladimir Prieto](http://vladimir.prie.to/) and [Federico Mikaelian](http://www.fedemika.com.ar/))
+(updated by [Vladimir Prieto](http://vladimir.prie.to/), [Federico Mikaelian](http://www.fedemika.com.ar/) and [Matias Baldanza](http://matiasbaldanza.com/))
 * Swedish (sv_SE) - [Fredrik Jonsson](http://www.fredda-o-ac.se/)
 * Turkish (tr_TR) - [Roman Neumuller](http://katpatuka.wordpress.com) (updated by [Hasan Yılmaz](http://hedefturkce.com/))
 * Ukrainian (uk_UA) - [Andrey Kovba](http://myserver.com.ua/)
