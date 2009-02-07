@@ -250,9 +250,6 @@ class tam_contact_form_seven {
 	function mail($contact_form, $files = array()) {
         global $wp_version;
         
-        if (version_compare($wp_version, '2.7', '<')) // wp_mail() file uploading option isn't suppoted
-            $files = array();
-    
 		$contact_form = $this->upgrade($contact_form);
 
         $this->posted_data = $_POST;
