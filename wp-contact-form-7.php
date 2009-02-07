@@ -8,7 +8,7 @@ Version: 1.9.2.2
 Author URI: http://ideasilo.wordpress.com/
 */
 
-/*  Copyright 2007-2008 Takayuki Miyoshi (email: takayukister at gmail.com)
+/*  Copyright 2007-2009 Takayuki Miyoshi (email: takayukister at gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
