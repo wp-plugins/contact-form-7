@@ -439,7 +439,7 @@ function tgPane(pane, tagType) {
       var table2 = jQuery('<table></table>');
       pane.append(table2);
       table2.append(tgTr(
-        jQuery('<span>' + _wpcf7.l10n.fileSizeLimit + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagFileSizeLimit),
+        jQuery('<span>' + _wpcf7.l10n.fileSizeLimit + ' (' + _wpcf7.l10n.bytes + ') (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagFileSizeLimit),
         jQuery('<span>' + _wpcf7.l10n.acceptableFileTypes + ' (' + _wpcf7.l10n.optional + ')<br /></span>').append(tgInputs.tagAcceptableFileTypes)
       ));
       table2.append(tgTr(

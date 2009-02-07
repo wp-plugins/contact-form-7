@@ -619,6 +619,7 @@ var _wpcf7 = {
 		quizzes: "<?php echo js_escape(__('Quizzes', 'wpcf7')); ?>",
 		quizFormatDesc: "<?php echo js_escape(__("* quiz|answer (e.g. 1+1=?|2)", 'wpcf7')); ?>",
 		fileUpload: "<?php echo js_escape(__('File upload', 'wpcf7')); ?>",
+		bytes: "<?php echo js_escape(__('bytes', 'wpcf7')); ?>",
 		submit: "<?php echo js_escape(__('Submit button', 'wpcf7')); ?>",
 		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
 		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
