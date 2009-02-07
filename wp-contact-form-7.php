@@ -188,7 +188,7 @@ class tam_contact_form_seven {
 
             $file = $_FILES[$name];
 
-            if (empty($file) && 'file*' == $fe['type']) {
+            if (empty($file['tmp_name']) && 'file*' == $fe['type']) {
                 $valid = false;
                 $reason[$name] = $this->message($contact_form, 'invalid_required');
                 continue;
@@ -280,9 +280,12 @@ class tam_contact_form_seven {
 		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
 		$mail_headers = "From: $mail_sender\n";
 
-        if ($mail_template['use_html'])
+        if ($attachments) {
+            $mail_headers .= "Content-Type: multipart/mixed\n";
+        } elseif ($mail_template['use_html']) {
             $mail_headers .= "Content-Type: text/html\n";
-        
+        }
+
         if ($attachments) {
             $for_this_mail = array();
             foreach ($attachments as $name => $path) {
