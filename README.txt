@@ -37,7 +37,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Indonesian (id_ID) - [Hendry Lee](http://blogbuildingu.com/)
 * Italian (it_IT) - [Bruno](http://www.brunosalzano.com)
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
-* Korean (ko_KR) - Seong Eun Lee
+* Korean (ko_KR) - Seong Eun Lee (updated by [Jong-In Kim](http://incommunity.codex.kr/wordpress/))
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
 * Norwegian (nb_NO) - Kjetil M. Bergem
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
