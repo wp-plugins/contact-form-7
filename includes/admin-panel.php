@@ -51,8 +51,13 @@
                         <?php endif; ?>
 
                         <?php if ($this->has_edit_cap() && ! $unsaved) : ?>
-                        <div class="delete-link"><?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
-                            <input type="submit" name="wpcf7-delete" value="<?php _e('Delete this contact form', 'wpcf7'); ?>"
+                        <div class="actions-link">
+                            <?php $copy_nonce = wp_create_nonce('wpcf7-copy_' . $current); ?>
+                            <input type="submit" name="wpcf7-copy" class="copy" value="<?php _e('Copy', 'wpcf7'); ?>"
+                                <?php echo "onclick=\"this.form._wpnonce.value = '$copy_nonce'; return true;\""; ?> />
+                            |
+                            <?php $delete_nonce = wp_create_nonce('wpcf7-delete_' . $current); ?>
+                            <input type="submit" name="wpcf7-delete" class="delete" value="<?php _e('Delete', 'wpcf7'); ?>"
                                 <?php echo "onclick=\"if (confirm('" . js_escape(__("You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7')) . "')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
                         </div>
                         <?php endif; ?>

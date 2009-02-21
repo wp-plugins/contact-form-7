@@ -568,6 +568,22 @@ class tam_contact_form_seven {
 			
 			wp_redirect($redirect_to);
 			exit();
+        } elseif (isset($_POST['wpcf7-copy']) && $this->has_edit_cap()) {
+			$id = $_POST['wpcf7-id'];
+			check_admin_referer('wpcf7-copy_' . $id);
+            
+            if (array_key_exists($id, $contact_forms)) {
+                $key = max(array_keys($contact_forms)) + 1;
+                $contact_forms[$key] = $contact_forms[$id];
+                $contact_forms[$key]['title'] .= '_copy';
+                $this->update_contact_forms($contact_forms);
+                $redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
+            } else {
+                $redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id;
+            }
+            
+            wp_redirect($redirect_to);
+			exit();
 		} elseif (isset($_POST['wpcf7-delete']) && $this->has_edit_cap()) {
 			$id = $_POST['wpcf7-id'];
 			check_admin_referer('wpcf7-delete_' . $id);

@@ -72,17 +72,15 @@ jQuery(document).ready(function() {
             }
         });
 
-        jQuery('.delete-link input').mouseover(function() {
+        jQuery('.actions-link input').mouseover(function() {
             jQuery(this).css({
-                color: '#fff',
-                'background-color': '#ff0000'
+                'border-bottom': '1px solid'
             });
         });
 
-        jQuery('.delete-link input').mouseout(function() {
+        jQuery('.actions-link input').mouseout(function() {
             jQuery(this).css({
-                color: '#ff0000',
-                'background-color': '#fff'
+                'border-bottom': 'none'
             });
         });
     } catch (e) {

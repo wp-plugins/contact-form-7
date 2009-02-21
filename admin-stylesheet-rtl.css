@@ -5,7 +5,7 @@ ul.subsubsub li.addnew {
 div.save-contact-form {
 	direction: rtl;
 }
-div.delete-link {
+div.actions-link {
 	right: auto;
 	left: 0;
 }

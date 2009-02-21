@@ -15,22 +15,26 @@ div.save-contact-form {
 	padding: 1.4em 0 0 0;
 	text-align: right;
 }
-div.delete-link {
+div.actions-link {
 	position: absolute;
 	top: 0;
 	right: 0;
 	margin: 0;
 	padding: 0;
 }
-div.delete-link input {
+div.actions-link input {
 	padding: 0;
 	margin: 0;
 	border: none;
-	border-bottom: 1px solid #ff0000;
 	background-color: #fff;
-	color: #ff0000;
 	font-size: smaller;
 	cursor: pointer;
+}
+div.actions-link input.copy {
+	color: #006505;
+}
+div.actions-link input.delete {
+	color: #bc0b0b;
 }
 input#wpcf7-title {
 	color: #555;
