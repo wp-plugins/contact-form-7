@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2908336
 Tags: contact, contact form, email, ajax, captcha, akismet
 Requires at least: 2.5
-Tested up to: 2.7
-Stable tag: 1.9.2.2
+Tested up to: 2.7.1
+Stable tag: 1.9.3
 
 Just another contact form plugin. Simple but flexible.
 
