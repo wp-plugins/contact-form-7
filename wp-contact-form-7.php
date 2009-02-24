@@ -307,7 +307,7 @@ class tam_contact_form_seven {
         
             // Special [wpcf7.remote_ip] tag
             if ('wpcf7.remote_ip' == $matches[1])
-                return preg_replace('/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR']);
+                return preg_replace('/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR']);
         
             return $matches[0];
         }
