@@ -1168,7 +1168,7 @@ var _wpcf7 = {
         if (is_admin() && $this->admin_menu_parent() == $pagenow && false !== strpos($_GET['page'], 'contact-form-7'))
 			wp_enqueue_script('jquery');
 		if (! is_admin())
-			wp_enqueue_script('jquery-form', '/wp-includes/js/jquery/jquery.form.js', array('jquery'), '1.0.3');
+			wp_enqueue_script('jquery-form');
 	}
 
 /* Processing form element placeholders */
