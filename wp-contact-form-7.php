@@ -442,6 +442,9 @@ class tam_contact_form_seven {
 	}
     
     function upgrade($contact_form) {
+        if (empty($contact_form))
+            return $contact_form;
+
         $contact_form = $this->upgrade_160($contact_form);
         $contact_form = $this->upgrade_181($contact_form);
         $contact_form = $this->upgrade_190($contact_form);
