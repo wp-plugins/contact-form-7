@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
 
 // Exclusive checkbox
 function wpcf7ExclusiveCheckbox(elem) {
-    jQuery(elem.form).find('input:checkbox[@name="' + elem.name + '"]').not(elem).removeAttr('checked');
+    jQuery(elem.form).find('input:checkbox[name="' + elem.name + '"]').not(elem).removeAttr('checked');
 }
 
 // Toggle submit button
@@ -71,17 +71,17 @@ function wpcf7ProcessJson(data) {
 	}
 	if (data.captcha) {
 		jQuery.each(data.captcha, function(i, n) {
-			jQuery(data.into).find(':input[@name="' + i + '"]').clearFields();
+			jQuery(data.into).find(':input[name="' + i + '"]').clearFields();
 			jQuery(data.into).find('img.wpcf7-captcha-' + i).attr('src', n);
 			var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
-			jQuery(data.into).find('input:hidden[@name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
+			jQuery(data.into).find('input:hidden[name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
 		});
 	}
     if (data.quiz) {
         jQuery.each(data.quiz, function(i, n) {
-            jQuery(data.into).find(':input[@name="' + i + '"]').clearFields();
-            jQuery(data.into).find(':input[@name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
-            jQuery(data.into).find('input:hidden[@name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
+            jQuery(data.into).find(':input[name="' + i + '"]').clearFields();
+            jQuery(data.into).find(':input[name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
+            jQuery(data.into).find('input:hidden[name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
         });
     }
 	if (1 == data.spam) {
