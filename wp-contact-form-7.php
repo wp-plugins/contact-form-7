@@ -667,8 +667,10 @@ var _wpcf7 = {
 		show: "<?php echo js_escape(__("Show", 'wpcf7')); ?>",
 		hide: "<?php echo js_escape(__("Hide", 'wpcf7')); ?>",
 		fileSizeLimit: "<?php echo js_escape(__("File size limit", 'wpcf7')); ?>",
-		acceptableFileTypes: "<?php echo js_escape(__("Acceptable file types", 'wpcf7')); ?>"
-	}
+		acceptableFileTypes: "<?php echo js_escape(__("Acceptable file types", 'wpcf7')); ?>",
+        needReallySimpleCaptcha: "<?php echo js_escape(__("Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7')); ?>"
+	},
+    captchaMod: <?php echo (class_exists('ReallySimpleCaptcha')) ? 'true' : 'false' ?>
 };
 //]]>
 </script>

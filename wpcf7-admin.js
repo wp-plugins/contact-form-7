@@ -380,6 +380,14 @@ function tgPane(pane, tagType) {
     case 'captcha':
       var table1 = jQuery('<table></table>');
       pane.append(table1);
+
+        if (! _wpcf7.captchaMod) {
+            table1.append('<tr><td colspan="2"><strong style="color: #e6255b">' +
+                _wpcf7.l10n.needReallySimpleCaptcha + '</strong><br />' +
+                '<a href="http://wordpress.org/extend/plugins/really-simple-captcha/">' +
+                'http://wordpress.org/extend/plugins/really-simple-captcha/</a></td></tr>');
+        }
+
       table1.append(tgTr(
         jQuery('<span>' + _wpcf7.l10n.tagName + '<br /></span>').append(tgInputs.tagName),
         jQuery('<span></span>')

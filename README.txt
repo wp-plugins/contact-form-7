@@ -14,6 +14,8 @@ Just another contact form plugin. Simple but flexible.
 
 Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on.
 
+**Note: Contact Form 7's CAPTCHA module has been separated as [Really Simple CAPTCHA](http://wordpress.org/extend/plugins/really-simple-captcha/) plugin. Now you need to install it if you use CAPTCHA. If you don't, you can use as in the past.**
+
 Since being published in August 2007, Contact Form 7 has been translated into a number of languages. Our thanks and appreciation must go to the following for their contributions:
 
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
