@@ -1419,6 +1419,11 @@ var _wpcf7 = {
                 return $html;
                 break;
 			case 'captchac':
+                if (! class_exists('ReallySimpleCaptcha')) {
+                    return '<em>' . __('To use CAPTCHA, you need <a href="http://wordpress.org/extend/plugins/really-simple-captcha/">Really Simple CAPTCHA</a> plugin installed.', 'wpcf7') . '</em>';
+                    break;
+                }
+
 				$op = array();
 				// Default
 				$op['img_size'] = array(72, 24);
@@ -1536,16 +1541,21 @@ var _wpcf7 = {
     }
     
     function init_captcha() {
+        if (! class_exists('ReallySimpleCaptcha'))
+            return false;
+
         if (! is_object($this->captcha))
-			$this->captcha = new tam_captcha();
+			$this->captcha = new ReallySimpleCaptcha();
 		$captcha =& $this->captcha;
         
         $captcha->tmp_dir = trailingslashit(WPCF7_CAPTCHA_TMP_DIR);
         wp_mkdir_p($captcha->tmp_dir);
+        return true;
     }
 
 	function generate_captcha($options = null) {
-        $this->init_captcha();
+        if (! $this->init_captcha())
+            return false;
         $captcha =& $this->captcha;
 		
 		if (! is_dir($captcha->tmp_dir) || ! is_writable($captcha->tmp_dir))
@@ -1582,21 +1592,24 @@ var _wpcf7 = {
 	}
 
 	function check_captcha($prefix, $response) {
-        $this->init_captcha();
+        if (! $this->init_captcha())
+            return false;
         $captcha =& $this->captcha;
 		
 		return $captcha->check($prefix, $response);
 	}
 
 	function remove_captcha($prefix) {
-        $this->init_captcha();
+        if (! $this->init_captcha())
+            return false;
         $captcha =& $this->captcha;
 		
 		$captcha->remove($prefix);
 	}
 
 	function cleanup_captcha_files() {
-        $this->init_captcha();
+        if (! $this->init_captcha())
+            return false;
         $captcha =& $this->captcha;
 
 		$tmp_dir = $captcha->tmp_dir;
@@ -1737,8 +1750,6 @@ var _wpcf7 = {
     }
 
 }
-
-require_once(dirname(__FILE__) . '/captcha/captcha.php');
 
 $wpcf7 = new tam_contact_form_seven();
 
