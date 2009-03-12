@@ -38,7 +38,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/)
 * Indonesian (id_ID) - [Hendry Lee](http://blogbuildingu.com/)
-* Italian (it_IT) - [Bruno](http://www.brunosalzano.com)
+* Italian (it_IT) - [Bruno](http://www.brunosalzano.com) (updated by [Gianni Diurno](http://gidibao.net/))
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Korean (ko_KR) - Seong Eun Lee (updated by [Jong-In Kim](http://incommunity.codex.kr/wordpress/))
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
