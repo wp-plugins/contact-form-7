@@ -1530,8 +1530,9 @@ var _wpcf7 = {
 	}
 
     function init_uploads() {
-        wp_mkdir_p(trailingslashit($this->upload_tmp_dir()));
-        @chmod($this->upload_tmp_dir(), 0733);
+        $dir = $this->upload_tmp_dir();
+        wp_mkdir_p(trailingslashit($dir));
+        @chmod($dir, 0733);
     }
     
     function init_captcha() {
