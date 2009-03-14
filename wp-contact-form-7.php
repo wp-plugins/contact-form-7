@@ -42,14 +42,6 @@ if (! defined('WPCF7_PLUGIN_DIR'))
 if (! defined('WPCF7_PLUGIN_URL'))
     define('WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)));
 
-if (! defined('WPCF7_CAPTCHA_TMP_DIR'))
-    define('WPCF7_CAPTCHA_TMP_DIR', WP_CONTENT_DIR . '/uploads/wpcf7_captcha');
-if (! defined('WPCF7_CAPTCHA_TMP_URL'))
-    define('WPCF7_CAPTCHA_TMP_URL', WP_CONTENT_URL . '/uploads/wpcf7_captcha');
-
-if (! defined('WPCF7_UPLOADS_TMP_DIR'))
-    define('WPCF7_UPLOADS_TMP_DIR', WP_CONTENT_DIR . '/uploads/wpcf7_uploads');
-
 if (! defined('WPCF7_AUTOP'))
     define('WPCF7_AUTOP', true);
 
@@ -175,7 +167,7 @@ class tam_contact_form_seven {
         $reason = array();
         
         $this->init_uploads(); // Confirm upload dir
-        $uploads_dir = WPCF7_UPLOADS_TMP_DIR;
+        $uploads_dir = $this->upload_tmp_dir();
         
         $fes = $this->form_elements($contact_form['form'], false);
         
@@ -1111,7 +1103,7 @@ var _wpcf7 = {
 			if ('captchac' == $type) {
 				$op = $this->captchac_options($options);
 				if ($filename = $this->generate_captcha($op)) {
-					$captcha_url = trailingslashit(WPCF7_CAPTCHA_TMP_URL) . $filename;
+					$captcha_url = trailingslashit($this->captcha_tmp_url()) . $filename;
 					$refill[$name] = $captcha_url;
                 }
 			}
@@ -1441,7 +1433,7 @@ var _wpcf7 = {
 				}
 				if (is_array($op['img_size']))
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
-				$captcha_url = trailingslashit(WPCF7_CAPTCHA_TMP_URL) . $filename;
+				$captcha_url = trailingslashit($this->captcha_tmp_url()) . $filename;
 				$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr($filename, 0, strrpos($filename, '.'));
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
@@ -1536,10 +1528,10 @@ var _wpcf7 = {
 			return $result;
 		}
 	}
-    
+
     function init_uploads() {
-        wp_mkdir_p(trailingslashit(WPCF7_UPLOADS_TMP_DIR));
-        @chmod(WPCF7_UPLOADS_TMP_DIR, 0733);
+        wp_mkdir_p(trailingslashit($this->upload_tmp_dir()));
+        @chmod($this->upload_tmp_dir(), 0733);
     }
     
     function init_captcha() {
@@ -1550,7 +1542,7 @@ var _wpcf7 = {
 			$this->captcha = new ReallySimpleCaptcha();
 		$captcha =& $this->captcha;
         
-        $captcha->tmp_dir = trailingslashit(WPCF7_CAPTCHA_TMP_DIR);
+        $captcha->tmp_dir = trailingslashit($this->captcha_tmp_dir());
         wp_mkdir_p($captcha->tmp_dir);
         return true;
     }
@@ -1751,6 +1743,55 @@ var _wpcf7 = {
         }
     }
 
+    function captcha_tmp_dir() {
+        if (defined('WPCF7_CAPTCHA_TMP_DIR'))
+            return WPCF7_CAPTCHA_TMP_DIR;
+        else
+            return $this->upload_dir('dir') . '/wpcf7_captcha';
+    }
+
+    function captcha_tmp_url() {
+        if (defined('WPCF7_CAPTCHA_TMP_URL'))
+            return WPCF7_CAPTCHA_TMP_URL;
+        else
+            return $this->upload_dir('url') . '/wpcf7_captcha';
+    }
+
+    function upload_tmp_dir() {
+        if (defined('WPCF7_UPLOADS_TMP_DIR'))
+            return WPCF7_UPLOADS_TMP_DIR;
+        else
+            return $this->upload_dir('dir') . '/wpcf7_uploads';
+    }
+
+    function upload_dir($type = false) {
+        $siteurl = get_option('siteurl');
+        $upload_path = trim(get_option('upload_path'));
+        if (empty($upload_path))
+            $dir = WP_CONTENT_DIR . '/uploads';
+        else
+            $dir = $upload_path;
+
+        $dir = path_join(ABSPATH, $dir);
+
+        if (! $url = get_option('upload_url_path')) {
+            if (empty($upload_path) || $upload_path == $dir)
+                $url = WP_CONTENT_URL . '/uploads';
+            else
+                $url = trailingslashit($siteurl) . $upload_path;
+        }
+
+        if (defined('UPLOADS')) {
+            $dir = ABSPATH . UPLOADS;
+            $url = trailingslashit($siteurl) . UPLOADS;
+        }
+
+        if ('dir' == $type)
+            return $dir;
+        if ('url' == $type)
+            return $url;
+        return array('dir' => $dir, 'url' => $url);
+    }
 }
 
 $wpcf7 = new tam_contact_form_seven();
