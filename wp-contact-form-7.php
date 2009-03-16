@@ -269,11 +269,8 @@ class tam_contact_form_seven {
 		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
 		$mail_headers = "From: $mail_sender\n";
 
-        if ($attachments) {
-            $mail_headers .= "Content-Type: multipart/mixed\n";
-        } elseif ($mail_template['use_html']) {
+        if ($mail_template['use_html'])
             $mail_headers .= "Content-Type: text/html\n";
-        }
 
         if ($attachments) {
             $for_this_mail = array();
