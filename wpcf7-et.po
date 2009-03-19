@@ -1,0 +1,318 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-10 18:56+0900\n"
+"PO-Revision-Date: 2009-03-18 13:37+0200\n"
+"Last-Translator: Peeter Rahuvarm <peeter@kraabus.ee>\n"
+"Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:309
+msgid "Contact form"
+msgstr "Kontaktivorm"
+
+#: contact-form-7/wp-contact-form-7.php:403
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:419
+msgid "optional"
+msgstr "võib tühjaks jätta"
+
+#: contact-form-7/wp-contact-form-7.php:420
+msgid "Generate Tag"
+msgstr "Välja loomine"
+
+#: contact-form-7/wp-contact-form-7.php:421
+msgid "Text field"
+msgstr "Tekstiväli (1 rida)"
+
+#: contact-form-7/wp-contact-form-7.php:422
+msgid "Email field"
+msgstr "E-posti väli"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Text area"
+msgstr "Teksti kast"
+
+#: contact-form-7/wp-contact-form-7.php:424
+msgid "Drop-down menu"
+msgstr "Rippmenüü"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Checkboxes"
+msgstr "Checkboxes"
+
+#: contact-form-7/wp-contact-form-7.php:426
+msgid "Radio buttons"
+msgstr "Radio buttons"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Acceptance"
+msgstr "Aktsepteerimine"
+
+#: contact-form-7/wp-contact-form-7.php:428
+msgid "Make this checkbox checked by default?"
+msgstr "Vaikimisi täidetud"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Make this checkbox work inversely?"
+msgstr "Pane see tagurpidi tööle"
+
+#: contact-form-7/wp-contact-form-7.php:430
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* See tähendab et aktsepteeriv külastaja võtab linnukese ära"
+
+#: contact-form-7/wp-contact-form-7.php:431
+msgid "CAPTCHA"
+msgstr "TURVAKOOD"
+
+#: contact-form-7/wp-contact-form-7.php:432
+msgid "Submit button"
+msgstr "Saatmise nupp"
+
+#: contact-form-7/wp-contact-form-7.php:433
+msgid "Name"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:434
+msgid "Required field?"
+msgstr "Nõutud väli?"
+
+#: contact-form-7/wp-contact-form-7.php:435
+msgid "Allow multiple selections?"
+msgstr "Luba mitut valikut?"
+
+#: contact-form-7/wp-contact-form-7.php:436
+msgid "Insert a blank item as the first option?"
+msgstr "Lisa tühi rida esimeseks valikuks?"
+
+#: contact-form-7/wp-contact-form-7.php:437
+msgid "Make checkboxes exclusive?"
+msgstr "Make checkboxes exclusive?"
+
+#: contact-form-7/wp-contact-form-7.php:438
+msgid "Choices"
+msgstr "Valikud"
+
+#: contact-form-7/wp-contact-form-7.php:439
+msgid "Label"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:440
+msgid "Default value"
+msgstr "Vaikimisi väärtus"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:442
+msgid "This field requires author's name"
+msgstr "Autori nimi on nõutav"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "This field requires author's URL"
+msgstr "This field requires author's URL"
+
+#: contact-form-7/wp-contact-form-7.php:444
+msgid "This field requires author's email address"
+msgstr "Autori e-posti aadress on nõutav"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Copy and paste this code into the form"
+msgstr "lõika ja kleebi see kood vormi sisse"
+
+#: contact-form-7/wp-contact-form-7.php:446
+msgid "Foreground color"
+msgstr "Eesmine värv"
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Background color"
+msgstr "Taustavärv"
+
+#: contact-form-7/wp-contact-form-7.php:448
+msgid "Image size"
+msgstr "Pildi suurus"
+
+#: contact-form-7/wp-contact-form-7.php:449
+msgid "Small"
+msgstr "Väike"
+
+#: contact-form-7/wp-contact-form-7.php:450
+msgid "Medium"
+msgstr "Keskmine"
+
+#: contact-form-7/wp-contact-form-7.php:451
+msgid "Large"
+msgstr "Suur"
+
+#: contact-form-7/wp-contact-form-7.php:452
+msgid "Image settings"
+msgstr "Pildi seaded"
+
+#: contact-form-7/wp-contact-form-7.php:453
+msgid "Input field settings"
+msgstr "Sisestusvälja seaded"
+
+#: contact-form-7/wp-contact-form-7.php:454
+msgid "For image"
+msgstr "Pildile"
+
+#: contact-form-7/wp-contact-form-7.php:455
+msgid "For input field"
+msgstr "Sisestusväljale"
+
+#: contact-form-7/wp-contact-form-7.php:456
+msgid "* One choice per line."
+msgstr "* Üks valik rea kohta"
+
+#: contact-form-7/wp-contact-form-7.php:483
+msgid "Contact form created."
+msgstr "Kontaktivorm \"%s\" on loodud."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Contact form saved."
+msgstr "Kontaktivorm \"%s\" on salvestatud."
+
+#: contact-form-7/wp-contact-form-7.php:489
+msgid "Contact form deleted."
+msgstr "Kontaktivorm \"%s\" on kustutatud."
+
+#: contact-form-7/wp-contact-form-7.php:496
+msgid "Untitled"
+msgstr "Nimetu"
+
+#: contact-form-7/wp-contact-form-7.php:522
+msgid "Your Name"
+msgstr "Nimi"
+
+#: contact-form-7/wp-contact-form-7.php:522
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "(required)"
+msgstr "(nõutav)"
+
+#: contact-form-7/wp-contact-form-7.php:524
+msgid "Your Email"
+msgstr "E-post"
+
+#: contact-form-7/wp-contact-form-7.php:526
+msgid "Subject"
+msgstr "Teema"
+
+#: contact-form-7/wp-contact-form-7.php:528
+msgid "Your Message"
+msgstr "Teade"
+
+#: contact-form-7/wp-contact-form-7.php:530
+#: contact-form-7/wp-contact-form-7.php:1046
+msgid "Send"
+msgstr "Saada"
+
+#: contact-form-7/wp-contact-form-7.php:559
+msgid "Your message was sent successfully. Thanks."
+msgstr "Teie sõnum on saadetud. Aitäh!"
+
+#: contact-form-7/wp-contact-form-7.php:561
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Sõnumi saatmine ebaõnnestus. Palun proovige hiljem või võtke ühendust muul viisil."
+
+#: contact-form-7/wp-contact-form-7.php:563
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Vormi täitmisel esines vigu. Palun kontrollige ja saatke uuesti."
+
+#: contact-form-7/wp-contact-form-7.php:565
+msgid "Please accept the terms to proceed."
+msgstr "Tingimustega nõustumine on vajalik"
+
+#: contact-form-7/wp-contact-form-7.php:567
+msgid "Email address seems invalid."
+msgstr "E-posti aadress on vigane"
+
+#: contact-form-7/wp-contact-form-7.php:569
+msgid "Please fill the required field."
+msgstr "Palun täitke nõutud väljad"
+
+#: contact-form-7/wp-contact-form-7.php:571
+msgid "Your entered code is incorrect."
+msgstr "Sisestatud kood on vale"
+
+#: contact-form-7/includes/admin-panel.php:16
+msgid "Add new"
+msgstr "Lisa uus"
+
+#: contact-form-7/includes/admin-panel.php:32
+msgid "Copy and paste this code into your post content."
+msgstr "Lõika ja kleebi see kood postituse sisse, sinna kus tahad kontaktivormi näha."
+
+#: contact-form-7/includes/admin-panel.php:38
+msgid "Form"
+msgstr "Vorm"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Mail"
+msgstr "E-post"
+
+#: contact-form-7/includes/admin-panel.php:44
+#: contact-form-7/includes/admin-panel.php:65
+msgid "To:"
+msgstr "Saaja:"
+
+#: contact-form-7/includes/admin-panel.php:48
+#: contact-form-7/includes/admin-panel.php:69
+msgid "From:"
+msgstr "Saatja:"
+
+#: contact-form-7/includes/admin-panel.php:52
+#: contact-form-7/includes/admin-panel.php:73
+msgid "Subject:"
+msgstr "Teema:"
+
+#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/includes/admin-panel.php:77
+msgid "Message body:"
+msgstr "Sõnumi sisu:"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Mail (2)"
+msgstr "E-post (2)"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Use mail (2)"
+msgstr "Kasuta e-posti (2)"
+
+#: contact-form-7/includes/admin-panel.php:85
+msgid "Save"
+msgstr "Salvesta"
+
+#: contact-form-7/includes/admin-panel.php:92
+msgid "Delete this contact form"
+msgstr "Kustuta see kontaktivorm"
+
+#: contact-form-7/includes/admin-panel.php:93
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "Kas soovid kustutada kontaktivormi?"
+
+#~ msgid "Form content"
+#~ msgstr "Lomakkeen sisältö"
+#~ msgid "Mail template"
+#~ msgstr "Sähköpostimalli"
+#~ msgid "Sender field:"
+#~ msgstr "Lähettäjä:"
+#~ msgid "Recipient address:"
+#~ msgstr "Vastaanottajan osoite:"
+#~ msgid "Insert"
+#~ msgstr "Syötä"
+
