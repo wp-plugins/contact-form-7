@@ -1497,7 +1497,7 @@ var _wpcf7 = {
         
         if (WPCF7_USE_PIPE && preg_match('/^(select[*]?|checkbox[*]?|radio)$/', $type) || 'quiz' == $type) {
             $pipes = $this->get_pipes($raw_values);
-            $values = array_keys($pipes);
+            $values = $this->get_pipe_ins($pipes);
         } else {
             $values =& $raw_values;
         }
@@ -1685,18 +1685,30 @@ var _wpcf7 = {
 	}
 
     function pipe($pipes, $value) {
-        if (is_string($value)) {
-            if (isset($pipes[$value]))
-                return $pipes[$value];
-            else
-                return $value;
-        } elseif (is_array($value)) {
+        if (is_array($value)) {
             $results = array();
             foreach ($value as $k => $v) {
                 $results[$k] = $this->pipe($pipes, $v);
             }
             return $results;
         }
+
+        foreach ($pipes as $p) {
+            if ($p[0] == $value)
+                return $p[1];
+        }
+
+        return $value;
+    }
+
+    function get_pipe_ins($pipes) {
+        $ins = array();
+        foreach ($pipes as $pipe) {
+            $in = $pipe[0];
+            if (! in_array($in, $ins))
+                $ins[] = $in;
+        }
+        return $ins;
     }
 
     function get_pipes($values) {
@@ -1710,9 +1722,8 @@ var _wpcf7 = {
                 $before = substr($value, 0, $pipe_pos);
                 $after = substr($value, $pipe_pos + 1);
             }
-            
-            if (! isset($pipes[$before]))
-                $pipes[$before] = $after;
+
+            $pipes[] = array($before, $after);
         }
         
         return $pipes;
