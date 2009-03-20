@@ -712,7 +712,7 @@ var _wpcf7 = {
 			$cf = $this->upgrade($cf);
 		}
 
-        require_once WPCF7_PLUGIN_DIR . '/includes/admin-panel.php';
+        require_once WPCF7_PLUGIN_DIR . '/admin-panel.php';
 	}
 
 	function default_pack($title, $initial = false) {
