@@ -595,13 +595,13 @@ class tam_contact_form_seven {
 		
 		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
         
-            $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin-stylesheet.css';
-            $javascript_url = WPCF7_PLUGIN_URL . '/wpcf7-admin.js';
+            $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet.css';
+            $javascript_url = WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js';
 
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
             
             if ('rtl' == get_bloginfo('text_direction')) {
-                $admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin-stylesheet-rtl.css';
+                $admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet-rtl.css';
                 echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
             }
 
@@ -712,7 +712,7 @@ var _wpcf7 = {
 			$cf = $this->upgrade($cf);
 		}
 
-        require_once WPCF7_PLUGIN_DIR . '/admin-panel.php';
+        require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
 	}
 
 	function default_pack($title, $initial = false) {
