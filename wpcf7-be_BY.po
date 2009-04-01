@@ -1,0 +1,213 @@
+# translation of wpcf7-pl_PL.po to Polish
+# Zbigniew Czernik <czernik@tlen.pl>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: wpcf7-be_BE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2009-04-02 05:18+0900\n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"Language-Team: Beloussian <http://led24.de/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Belarusian\n"
+"X-Poedit-Country: Belarus\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:224
+#: contact-form-7/wp-contact-form-7.php:297
+msgid "Contact form"
+msgstr "Форма для кантакту"
+
+#: contact-form-7/wp-contact-form-7.php:253
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:273
+#, php-format
+msgid "Contact form \"%s\" deleted. "
+msgstr "Форма \"%s\" выдалена."
+
+#: contact-form-7/wp-contact-form-7.php:289
+#, php-format
+msgid "Contact form \"%s\" saved. "
+msgstr "Форма \"%s\" захавана."
+
+#: contact-form-7/wp-contact-form-7.php:318
+msgid "Your Name"
+msgstr "Ваша імя"
+
+#: contact-form-7/wp-contact-form-7.php:318
+#: contact-form-7/wp-contact-form-7.php:320
+msgid "(required)"
+msgstr "(абавязкова)"
+
+#: contact-form-7/wp-contact-form-7.php:320
+msgid "Your Email"
+msgstr "Ваш E-Mail"
+
+#: contact-form-7/wp-contact-form-7.php:322
+msgid "Subject"
+msgstr "Тэма"
+
+#: contact-form-7/wp-contact-form-7.php:324
+msgid "Your Message"
+msgstr "Паведамленне"
+
+#: contact-form-7/wp-contact-form-7.php:326
+#: contact-form-7/wp-contact-form-7.php:738
+msgid "Send"
+msgstr "Адправіць"
+
+#: contact-form-7/wp-contact-form-7.php:345
+msgid "Your message was sent successfully. Thanks."
+msgstr "Ваша паведамленне было адпраўленае паспяхова. Дзякуй."
+
+#: contact-form-7/wp-contact-form-7.php:347
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Памылка адпраўкі паведамлення. Паспрабуйце пазней або звернецеся да адміністратара сайта."
+
+#: contact-form-7/wp-contact-form-7.php:349
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Памылка адпраўкі паведамлення. Паспрабуйце пазней або звярніцеся да адміністратара сайта."
+
+#: contact-form-7/wp-contact-form-7.php:351
+msgid "Email address seems invalid."
+msgstr "Е-mail адрас памылковы"
+
+#: contact-form-7/wp-contact-form-7.php:353
+msgid "Please fill the required field."
+msgstr "Калі ласка, запоўніце абавязковыя палі"
+
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "Your entered code is incorrect."
+msgstr "Код уведзены вамі няправільна"
+
+#: contact-form-7/includes/admin-panel.php:19
+#: contact-form-7/includes/admin-panel.php:22
+msgid "Add new"
+msgstr "Дадаць новую"
+
+#: contact-form-7/includes/admin-panel.php:34
+msgid "Title"
+msgstr "Загаловак"
+
+#: contact-form-7/includes/admin-panel.php:39
+msgid "Copy and paste this code into your post content."
+msgstr "Скапіюйце і ўстаўце код у Вашу старонку."
+
+#: contact-form-7/includes/admin-panel.php:45
+msgid "Form content"
+msgstr "Змест формы"
+
+#: contact-form-7/includes/admin-panel.php:60
+msgid "Mail template"
+msgstr "Шаблон ліста"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid "Subject field:"
+msgstr "Поле тэмы:"
+
+#: contact-form-7/includes/admin-panel.php:63
+msgid "Sender field:"
+msgstr "Адрас адпраўніка:"
+
+#: contact-form-7/includes/admin-panel.php:65
+msgid "Message body:"
+msgstr "Змест паведамлення:"
+
+#: contact-form-7/includes/admin-panel.php:69
+msgid "Options"
+msgstr "Наладкі"
+
+#: contact-form-7/includes/admin-panel.php:70
+msgid "Recipient address:"
+msgstr "Адрас атрымальніка:"
+
+#: contact-form-7/includes/admin-panel.php:75
+msgid "Save"
+msgstr "Захаваць"
+
+#: contact-form-7/includes/admin-panel.php:82
+msgid "Delete this contact form"
+msgstr "Выдаліць гэтую форму"
+
+#: contact-form-7/includes/admin-panel.php:83
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Выдаліць гэтую форму?.\n"
+"  'Cancel' не выдаляць, 'OK' выдаліць."
+
+#: contact-form-7/includes/admin-panel.php:137
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/includes/admin-panel.php:138
+msgid "Check this field as sender&#39;s name"
+msgstr "Правяраць гэтае поле як імя адпраўніка"
+
+#: contact-form-7/includes/admin-panel.php:139
+msgid "Check this field as sender&#39;s email"
+msgstr "Правяраць гэтае поле як e-mail"
+
+#: contact-form-7/includes/admin-panel.php:140
+msgid "Check this field as sender&#39;s URL"
+msgstr "Правяраць гэтае поле як URL"
+
+#: contact-form-7/includes/admin-panel.php:141
+msgid "Don&#39;t check this field with Akismet"
+msgstr "Правяраць гэтае поле з Akismet плагин"
+
+#: contact-form-7/includes/admin-panel.php:148
+#: contact-form-7/includes/admin-panel.php:161
+#: contact-form-7/includes/admin-panel.php:194
+msgid "Default value"
+msgstr "Значэнне па змаўчанні"
+
+#: contact-form-7/includes/admin-panel.php:169
+msgid "Choices"
+msgstr "Выбар"
+
+#: contact-form-7/includes/admin-panel.php:170
+msgid "* One choice per line."
+msgstr "* па адной у радку."
+
+#: contact-form-7/includes/admin-panel.php:178
+msgid "Foreground color"
+msgstr "Колер пярэдняга плану"
+
+#: contact-form-7/includes/admin-panel.php:179
+msgid "Background color"
+msgstr "Колер фону"
+
+#: contact-form-7/includes/admin-panel.php:180
+msgid "Image size"
+msgstr "Памер малюнка"
+
+#: contact-form-7/includes/admin-panel.php:182
+msgid "Small"
+msgstr "Маленькі"
+
+#: contact-form-7/includes/admin-panel.php:183
+msgid "Medium"
+msgstr "Сярэдні"
+
+#: contact-form-7/includes/admin-panel.php:184
+msgid "Large"
+msgstr "Вялікі"
+
+#: contact-form-7/includes/admin-panel.php:199
+msgid "Label"
+msgstr "Цэтлік"
+
+#: contact-form-7/includes/admin-panel.php:206
+msgid "Insert"
+msgstr "Уставіць"
+
