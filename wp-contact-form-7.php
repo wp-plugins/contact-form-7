@@ -904,7 +904,7 @@ var _wpcf7 = {
         $form_elements = $this->form_elements($cf['form'], false);
         $multipart = false;
         foreach ($form_elements as $form_element) {
-            if ('file' == $form_element['type']) {
+            if (preg_match('/^file[*]?$/', $form_element['type'])) {
                 $multipart = true;
                 break;
             }
