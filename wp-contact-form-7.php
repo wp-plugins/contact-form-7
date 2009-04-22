@@ -199,8 +199,8 @@ class tam_contact_form_seven {
 
             $files[$name] = $new_file;
 
+            $pattern = '';
             if ($allowed_types_options = preg_grep('%^filetypes:%', $options)) {
-                $pattern = '';
                 foreach ($allowed_types_options as $allowed_types_option) {
                     if (preg_match('%^filetypes:(.+)$%', $allowed_types_option, $matches)) {
                         $file_types = explode('|', $matches[1]);
@@ -211,14 +211,19 @@ class tam_contact_form_seven {
                         }
                     }
                 }
-                $pattern = trim($pattern, '|');
-                $pattern = '(' . $pattern . ')';
-                $pattern = '/\.' . $pattern . '$/i';
-                if (! preg_match($pattern, $file['name'])) {
-                    $valid = false;
-                    $reason[$name] = $this->message($contact_form, 'upload_file_type_invalid');
-                    continue;
-                }
+            }
+
+            // Default file-type restriction
+            if ('' == $pattern)
+              $pattern = 'jpg|jpeg|png|gif|pdf|doc|docx|ppt|pptx|odt|avi|ogg|m4a|mov|mp3|mp4|mpg|wav|wmv';
+
+            $pattern = trim($pattern, '|');
+            $pattern = '(' . $pattern . ')';
+            $pattern = '/\.' . $pattern . '$/i';
+            if (! preg_match($pattern, $file['name'])) {
+                $valid = false;
+                $reason[$name] = $this->message($contact_form, 'upload_file_type_invalid');
+                continue;
             }
             
             if ($allowed_size_options = preg_grep('%^limit:%', $options)) {
