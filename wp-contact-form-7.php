@@ -1553,17 +1553,21 @@ var _wpcf7 = {
     }
 
 	function cleanup_upload_files() {
-    $dir = $this->upload_tmp_dir();
-    $dir = trailingslashit($dir);
-    if ($handle = opendir($dir)) {
-      while (false !== ($file = readdir($handle))) {
-        if ($file == "." || $file == "..")
-          continue;
+        $dir = $this->upload_tmp_dir();
+        $dir = trailingslashit($dir);
+
+        if (! is_dir($dir))
+            return false;
+
+        if ($handle = opendir($dir)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file == "." || $file == "..")
+                    continue;
 
 				$stat = stat($dir . $file);
 				if ($stat['mtime'] + 60 < time()) // 60 secs
 					@ unlink($dir . $file);
-			}
+            }
 			closedir($handle);
 		}
 	}
