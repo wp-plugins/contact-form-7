@@ -188,16 +188,8 @@ class tam_contact_form_seven {
             
             if (! is_uploaded_file($file['tmp_name']))
                 continue;
-            
-            $filename = wp_unique_filename($uploads_dir, $file['name']);
-            $new_file = trailingslashit($uploads_dir) . $filename;
-            if (false === @move_uploaded_file($file['tmp_name'], $new_file)) {
-                $valid = false;
-                $reason[$name] = $this->message($contact_form, 'upload_failed');
-                continue;
-            }
 
-            $files[$name] = $new_file;
+            /* File type validation */
 
             $pattern = '';
             if ($allowed_types_options = preg_grep('%^filetypes:%', $options)) {
@@ -225,18 +217,39 @@ class tam_contact_form_seven {
                 $reason[$name] = $this->message($contact_form, 'upload_file_type_invalid');
                 continue;
             }
-            
+
+            /* File size validation */
+
+            $allowed_size = 1048576; // default size 1 MB
             if ($allowed_size_options = preg_grep('%^limit:%', $options)) {
                 $allowed_size_option = array_shift($allowed_size_options);
                 preg_match('/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches);
                 $allowed_size = (int) $matches[1];
-                
-                if ($file['size'] > $allowed_size) {
-                    $valid = false;
-                    $reason[$name] = $this->message($contact_form, 'upload_file_too_large');
-                    continue;
-                }
             }
+
+            if ($file['size'] > $allowed_size) {
+              $valid = false;
+              $reason[$name] = $this->message($contact_form, 'upload_file_too_large');
+              continue;
+            }
+
+            $filename = wp_unique_filename($uploads_dir, $file['name']);
+
+            // If you get PHP file, it's a danger. Make it TXT file.
+            if (preg_match('/\.php\d?$/', $filename))
+              $filename .= '.txt';
+
+            $new_file = trailingslashit($uploads_dir) . $filename;
+            if (false === @move_uploaded_file($file['tmp_name'], $new_file)) {
+                $valid = false;
+                $reason[$name] = $this->message($contact_form, 'upload_failed');
+                continue;
+            }
+
+            // Make sure the uploaded file is only readable for the owner process
+            chmod($new_file, 0400);
+
+            $files[$name] = $new_file;
         }
         
         $validation = compact('valid', 'reason');
