@@ -87,6 +87,7 @@ class tam_contact_form_seven {
 		} elseif (! is_admin()) {
 			$this->process_nonajax_submitting();
 			$this->cleanup_captcha_files();
+			$this->cleanup_upload_files();
 		}
 	}
 	
@@ -445,6 +446,7 @@ class tam_contact_form_seven {
 	function update_contact_forms($contact_forms) {
 		$wpcf7 = get_option('wpcf7');
 		$wpcf7['contact_forms'] = $contact_forms;
+
 		update_option('wpcf7', $wpcf7);
 	}
     
@@ -1549,6 +1551,18 @@ var _wpcf7 = {
         wp_mkdir_p(trailingslashit($dir));
         @chmod($dir, 0733);
     }
+
+	function cleanup_upload_files() {
+    $dir = $this->upload_tmp_dir();
+    if ($handle = opendir($dir)) {
+      while (false !== ($file = readdir($handle))) {
+				$stat = stat($dir . $file);
+				if ($stat['mtime'] + 60 < time()) // 60 secs
+					@ unlink($dir . $file);
+			}
+			closedir($handle);
+		}
+	}
     
     function init_captcha() {
         if (! class_exists('ReallySimpleCaptcha'))
