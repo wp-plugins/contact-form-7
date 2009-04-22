@@ -2,6 +2,7 @@
 <div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
 <?php endif; ?>
 <div class="wrap wpcf7">
+    <?php if (function_exists('screen_icon')) screen_icon(); ?>
     <h2><?php _e('Contact Form 7', 'wpcf7'); ?></h2>
     
     <?php if (version_compare($wp_version, '2.7', '>=') && isset($updated_message)) : ?>
