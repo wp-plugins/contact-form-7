@@ -235,8 +235,8 @@ class tam_contact_form_seven {
 
             $filename = wp_unique_filename($uploads_dir, $file['name']);
 
-            // If you get PHP file, it's a danger. Make it TXT file.
-            if (preg_match('/\.php\d?$/', $filename))
+            // If you get script file, it's a danger. Make it TXT file.
+            if (preg_match('/\.(php|pl|py|rb|cgi)\d?$/', $filename))
               $filename .= '.txt';
 
             $new_file = trailingslashit($uploads_dir) . $filename;
