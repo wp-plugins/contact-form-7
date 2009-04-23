@@ -1556,7 +1556,7 @@ var _wpcf7 = {
         $dir = $this->upload_tmp_dir();
         $dir = trailingslashit($dir);
 
-        if (! is_dir($dir))
+        if (! is_dir($dir) || ! is_writable($dir))
             return false;
 
         if ($handle = opendir($dir)) {
