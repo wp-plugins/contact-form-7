@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7 in italiano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-21 11:20+0900\n"
-"PO-Revision-Date: 2009-03-13 01:22+0100\n"
+"POT-Creation-Date: 2009-03-15 03:27+0900\n"
+"PO-Revision-Date: 2009-04-24 00:57+0100\n"
 "Last-Translator: Gianni Diurno (aka gidibao) <gidibao@gmail.com>\n"
 "Language-Team: Gianni Diurno | http://gidibao.net/ <gidibao@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
@@ -16,289 +16,297 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:413
+#: contact-form-7/wp-contact-form-7.php:405
 msgid "Contact form"
 msgstr "Modulo di contatto"
 
-#: contact-form-7/wp-contact-form-7.php:598
+#: contact-form-7/wp-contact-form-7.php:593
 #: contact-form-7/includes/admin-panel.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:621
+#: contact-form-7/wp-contact-form-7.php:616
 msgid "optional"
 msgstr "facoltativo"
 
-#: contact-form-7/wp-contact-form-7.php:622
+#: contact-form-7/wp-contact-form-7.php:617
 msgid "Generate Tag"
 msgstr "Genera tag"
 
-#: contact-form-7/wp-contact-form-7.php:623
+#: contact-form-7/wp-contact-form-7.php:618
 msgid "Text field"
 msgstr "Campo testo"
 
-#: contact-form-7/wp-contact-form-7.php:624
+#: contact-form-7/wp-contact-form-7.php:619
 msgid "Email field"
 msgstr "Campo email"
 
-#: contact-form-7/wp-contact-form-7.php:625
+#: contact-form-7/wp-contact-form-7.php:620
 msgid "Text area"
 msgstr "Area di testo"
 
-#: contact-form-7/wp-contact-form-7.php:626
+#: contact-form-7/wp-contact-form-7.php:621
 msgid "Drop-down menu"
 msgstr "Menu a tendina"
 
-#: contact-form-7/wp-contact-form-7.php:627
+#: contact-form-7/wp-contact-form-7.php:622
 msgid "Checkboxes"
 msgstr "Caselle di verifica"
 
-#: contact-form-7/wp-contact-form-7.php:628
+#: contact-form-7/wp-contact-form-7.php:623
 msgid "Radio buttons"
 msgstr "Radio buttons"
 
-#: contact-form-7/wp-contact-form-7.php:629
+#: contact-form-7/wp-contact-form-7.php:624
 msgid "Acceptance"
 msgstr "Consenso"
 
-#: contact-form-7/wp-contact-form-7.php:630
+#: contact-form-7/wp-contact-form-7.php:625
 msgid "Make this checkbox checked by default?"
 msgstr "Desideri che questa casella di verifica sia selezionata (predefinito)?"
 
-#: contact-form-7/wp-contact-form-7.php:631
+#: contact-form-7/wp-contact-form-7.php:626
 msgid "Make this checkbox work inversely?"
 msgstr "Desideri che questa casella di verifica funzioni in modalità inversa?"
 
-#: contact-form-7/wp-contact-form-7.php:632
+#: contact-form-7/wp-contact-form-7.php:627
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "* Ciò indica che il visitatore dovrà de-selezionare la casella per esprimere il proprio consenso."
 
-#: contact-form-7/wp-contact-form-7.php:633
+#: contact-form-7/wp-contact-form-7.php:628
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/wp-contact-form-7.php:634
+#: contact-form-7/wp-contact-form-7.php:629
 msgid "Quiz"
 msgstr "Quesito"
 
-#: contact-form-7/wp-contact-form-7.php:635
+#: contact-form-7/wp-contact-form-7.php:630
 msgid "Quizzes"
 msgstr "Quesiti"
 
-#: contact-form-7/wp-contact-form-7.php:636
+#: contact-form-7/wp-contact-form-7.php:631
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* quesito|domanda (ad esempio: 1+1=?|2)"
 
-#: contact-form-7/wp-contact-form-7.php:637
+#: contact-form-7/wp-contact-form-7.php:632
 msgid "File upload"
 msgstr "File caricato"
 
-#: contact-form-7/wp-contact-form-7.php:638
+#: contact-form-7/wp-contact-form-7.php:633
 msgid "bytes"
 msgstr "bytes"
 
-#: contact-form-7/wp-contact-form-7.php:639
+#: contact-form-7/wp-contact-form-7.php:634
 msgid "Submit button"
 msgstr "Pulsante di invio"
 
-#: contact-form-7/wp-contact-form-7.php:640
+#: contact-form-7/wp-contact-form-7.php:635
 msgid "Name"
 msgstr "Nome"
 
-#: contact-form-7/wp-contact-form-7.php:641
+#: contact-form-7/wp-contact-form-7.php:636
 msgid "Required field?"
 msgstr "Campi obbligatori?"
 
-#: contact-form-7/wp-contact-form-7.php:642
+#: contact-form-7/wp-contact-form-7.php:637
 msgid "Allow multiple selections?"
 msgstr "Desideri permettere le selezioni multiple?"
 
-#: contact-form-7/wp-contact-form-7.php:643
+#: contact-form-7/wp-contact-form-7.php:638
 msgid "Insert a blank item as the first option?"
 msgstr "Desideri lasciare in bianco la prima opzione?"
 
-#: contact-form-7/wp-contact-form-7.php:644
+#: contact-form-7/wp-contact-form-7.php:639
 msgid "Make checkboxes exclusive?"
 msgstr "Desideri escludere le caselle di verifica?"
 
-#: contact-form-7/wp-contact-form-7.php:645
+#: contact-form-7/wp-contact-form-7.php:640
 msgid "Choices"
 msgstr "Opzioni"
 
-#: contact-form-7/wp-contact-form-7.php:646
+#: contact-form-7/wp-contact-form-7.php:641
 msgid "Label"
 msgstr "Etichetta"
 
-#: contact-form-7/wp-contact-form-7.php:647
+#: contact-form-7/wp-contact-form-7.php:642
 msgid "Default value"
 msgstr "Valore predefinito"
 
-#: contact-form-7/wp-contact-form-7.php:648
+#: contact-form-7/wp-contact-form-7.php:643
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/wp-contact-form-7.php:649
+#: contact-form-7/wp-contact-form-7.php:644
 msgid "This field requires author's name"
 msgstr "Questo campo necessita del nome autore"
 
-#: contact-form-7/wp-contact-form-7.php:650
+#: contact-form-7/wp-contact-form-7.php:645
 msgid "This field requires author's URL"
 msgstr "Questo campo necessita dell'URL autore"
 
-#: contact-form-7/wp-contact-form-7.php:651
+#: contact-form-7/wp-contact-form-7.php:646
 msgid "This field requires author's email address"
 msgstr "Questo campo necessita dell'indirizzo email autore"
 
-#: contact-form-7/wp-contact-form-7.php:652
+#: contact-form-7/wp-contact-form-7.php:647
 msgid "Copy this code and paste it into the form left."
 msgstr "Copia questo codice ed incollalo nel modulo a sinistra."
 
-#: contact-form-7/wp-contact-form-7.php:653
+#: contact-form-7/wp-contact-form-7.php:648
 msgid "Foreground color"
 msgstr "Colore di primo piano"
 
-#: contact-form-7/wp-contact-form-7.php:654
+#: contact-form-7/wp-contact-form-7.php:649
 msgid "Background color"
 msgstr "Colore di sfondo"
 
-#: contact-form-7/wp-contact-form-7.php:655
+#: contact-form-7/wp-contact-form-7.php:650
 msgid "Image size"
 msgstr "Dimensione immagine"
 
-#: contact-form-7/wp-contact-form-7.php:656
+#: contact-form-7/wp-contact-form-7.php:651
 msgid "Small"
 msgstr "Piccola"
 
-#: contact-form-7/wp-contact-form-7.php:657
+#: contact-form-7/wp-contact-form-7.php:652
 msgid "Medium"
 msgstr "Media"
 
-#: contact-form-7/wp-contact-form-7.php:658
+#: contact-form-7/wp-contact-form-7.php:653
 msgid "Large"
 msgstr "Grande"
 
-#: contact-form-7/wp-contact-form-7.php:659
+#: contact-form-7/wp-contact-form-7.php:654
 msgid "Image settings"
 msgstr "Impostazioni immagine"
 
-#: contact-form-7/wp-contact-form-7.php:660
+#: contact-form-7/wp-contact-form-7.php:655
 msgid "Input field settings"
 msgstr "Impostazione campo dati"
 
-#: contact-form-7/wp-contact-form-7.php:661
+#: contact-form-7/wp-contact-form-7.php:656
 msgid "For image"
 msgstr "Per immagine"
 
-#: contact-form-7/wp-contact-form-7.php:662
+#: contact-form-7/wp-contact-form-7.php:657
 msgid "For input field"
 msgstr "Per campo dati"
 
-#: contact-form-7/wp-contact-form-7.php:663
+#: contact-form-7/wp-contact-form-7.php:658
 msgid "* One choice per line."
 msgstr "* Una opzione per linea."
 
-#: contact-form-7/wp-contact-form-7.php:664
+#: contact-form-7/wp-contact-form-7.php:659
 msgid "Show"
 msgstr "Mostra"
 
-#: contact-form-7/wp-contact-form-7.php:665
+#: contact-form-7/wp-contact-form-7.php:660
 msgid "Hide"
 msgstr "Nascondi"
 
-#: contact-form-7/wp-contact-form-7.php:666
+#: contact-form-7/wp-contact-form-7.php:661
 msgid "File size limit"
 msgstr "Limite dimensione file"
 
-#: contact-form-7/wp-contact-form-7.php:667
+#: contact-form-7/wp-contact-form-7.php:662
 msgid "Acceptable file types"
 msgstr "Tipologia di file consentiti"
 
-#: contact-form-7/wp-contact-form-7.php:693
+#: contact-form-7/wp-contact-form-7.php:663
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Nota: per l'utilizzo del CAPTCHA é necessaria l'installazione del plugin Really Simple CAPTCHA."
+
+#: contact-form-7/wp-contact-form-7.php:690
 msgid "Contact form created."
 msgstr "Il modulo di contatto é stato creato."
 
-#: contact-form-7/wp-contact-form-7.php:696
+#: contact-form-7/wp-contact-form-7.php:693
 msgid "Contact form saved."
 msgstr "Il modulo di contatto é stato salvato. "
 
-#: contact-form-7/wp-contact-form-7.php:699
+#: contact-form-7/wp-contact-form-7.php:696
 msgid "Contact form deleted."
 msgstr "Il modulo di contatto é stato cancellato. "
 
-#: contact-form-7/wp-contact-form-7.php:710
+#: contact-form-7/wp-contact-form-7.php:707
 msgid "Untitled"
 msgstr "Senza titolo"
 
-#: contact-form-7/wp-contact-form-7.php:737
+#: contact-form-7/wp-contact-form-7.php:734
 msgid "Your Name"
 msgstr "Il tuo nome"
 
-#: contact-form-7/wp-contact-form-7.php:737
-#: contact-form-7/wp-contact-form-7.php:739
+#: contact-form-7/wp-contact-form-7.php:734
+#: contact-form-7/wp-contact-form-7.php:736
 msgid "(required)"
 msgstr "(richiesto)"
 
-#: contact-form-7/wp-contact-form-7.php:739
+#: contact-form-7/wp-contact-form-7.php:736
 msgid "Your Email"
 msgstr "La tua email"
 
-#: contact-form-7/wp-contact-form-7.php:741
+#: contact-form-7/wp-contact-form-7.php:738
 msgid "Subject"
 msgstr "Oggetto"
 
-#: contact-form-7/wp-contact-form-7.php:743
+#: contact-form-7/wp-contact-form-7.php:740
 msgid "Your Message"
 msgstr "Il tuo messaggio"
 
-#: contact-form-7/wp-contact-form-7.php:745
-#: contact-form-7/wp-contact-form-7.php:1474
+#: contact-form-7/wp-contact-form-7.php:742
+#: contact-form-7/wp-contact-form-7.php:1476
 msgid "Send"
 msgstr "Invia"
 
-#: contact-form-7/wp-contact-form-7.php:799
+#: contact-form-7/wp-contact-form-7.php:796
 msgid "Your message was sent successfully. Thanks."
 msgstr "Il tuo messaggio é stato inviato con successo. Grazie."
 
-#: contact-form-7/wp-contact-form-7.php:801
-#: contact-form-7/wp-contact-form-7.php:803
+#: contact-form-7/wp-contact-form-7.php:798
+#: contact-form-7/wp-contact-form-7.php:800
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr "Si é verificato un errore durante l'invio del tuo messaggio. Riprova in un secondo momento oppure contatta in un altro modo l'amministratore del sito."
 
-#: contact-form-7/wp-contact-form-7.php:805
+#: contact-form-7/wp-contact-form-7.php:802
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Si é verificato un errore di convalida. Controlla i campi obbligatori ed invia nuovamente il messaggio."
 
-#: contact-form-7/wp-contact-form-7.php:807
+#: contact-form-7/wp-contact-form-7.php:804
 msgid "Please accept the terms to proceed."
 msgstr "Accetta i termini prima di procedere"
 
-#: contact-form-7/wp-contact-form-7.php:809
+#: contact-form-7/wp-contact-form-7.php:806
 msgid "Email address seems invalid."
 msgstr "Pare che l'indirizzo email non sia valido."
 
-#: contact-form-7/wp-contact-form-7.php:811
+#: contact-form-7/wp-contact-form-7.php:808
 msgid "Please fill the required field."
 msgstr "Riempire tutti i campi richiesti. Grazie"
 
-#: contact-form-7/wp-contact-form-7.php:813
+#: contact-form-7/wp-contact-form-7.php:810
 msgid "Your entered code is incorrect."
 msgstr "Il codice che hai inserito non è valido"
 
-#: contact-form-7/wp-contact-form-7.php:815
+#: contact-form-7/wp-contact-form-7.php:812
 msgid "Your answer is not correct."
 msgstr "La risposta che hai inserito non é corretta"
 
-#: contact-form-7/wp-contact-form-7.php:817
+#: contact-form-7/wp-contact-form-7.php:814
 msgid "Failed to upload file."
 msgstr "Si é verificato un errore durante il caricamento del file"
 
-#: contact-form-7/wp-contact-form-7.php:819
+#: contact-form-7/wp-contact-form-7.php:816
 msgid "This file type is not allowed."
 msgstr "Questo tipo di file non é permesso"
 
-#: contact-form-7/wp-contact-form-7.php:821
+#: contact-form-7/wp-contact-form-7.php:818
 msgid "This file is too large."
 msgstr "Questo file é troppo grande"
+
+#: contact-form-7/wp-contact-form-7.php:1417
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Per l'utilizzo del CAPTCHA é necessaria l'installazione del plugin <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
 
 #: contact-form-7/includes/admin-panel.php:20
 msgid "Add new"
