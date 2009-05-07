@@ -847,36 +847,36 @@ var _wpcf7 = {
 	}
 
 	function process_nonajax_submitting() {
-		if (! isset($_POST['_wpcf7']))
+		if ( ! isset($_POST['_wpcf7'] ) )
 			return;
-		
+
 		$id = (int) $_POST['_wpcf7'];
 		$contact_forms = $this->contact_forms();
-		if ($cf = $contact_forms[$id]) {
-			$cf = stripslashes_deep($cf);
-			$validation = $this->validate($cf);
-            
-            $handled_uploads = $this->handle_uploads($cf);
-            if (! $handled_uploads['validation']['valid'])
-                $validation['valid'] = false;
-            $validation['reason'] = array_merge($validation['reason'], $handled_uploads['validation']['reason']);
-            
-			if (! $validation['valid']) {
-				$_POST['_wpcf7_validation_errors'] = array('id' => $id, 'messages' => $validation['reason']);
-			} elseif (! $this->acceptance($cf)) { // Not accepted terms
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'accept_terms'));
-			} elseif ($this->akismet($cf)) { // Spam!
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'akismet_says_spam'), 'spam' => true);
-			} elseif ($this->mail($cf, $handled_uploads['files'])) {
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => true, 'message' => $this->message($cf, 'mail_sent_ok'));
+		if ( $cf = $contact_forms[$id] ) {
+			$cf = stripslashes_deep( $cf );
+			$validation = $this->validate( $cf );
+
+			$handled_uploads = $this->handle_uploads( $cf );
+			if ( ! $handled_uploads['validation']['valid'] )
+				$validation['valid'] = false;
+			$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
+
+			if ( ! $validation['valid'] ) {
+				$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
+			} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'accept_terms' ) );
+			} elseif ( $this->akismet( $cf ) ) { // Spam!
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'akismet_says_spam' ), 'spam' => true );
+			} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $this->message( $cf, 'mail_sent_ok' ) );
 			} else {
-				$_POST['_wpcf7_mail_sent'] = array('id' => $id, 'ok' => false, 'message' => $this->message($cf, 'mail_sent_ng'));
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'mail_sent_ng' ) );
 			}
-            
-            // remove upload files
-            foreach ($handled_uploads['files'] as $name => $path) {
-                @unlink($path);
-            }
+
+			// remove upload files
+			foreach ( $handled_uploads['files'] as $name => $path ) {
+				@unlink( $path );
+			}
 		}
 	}
 
@@ -886,148 +886,148 @@ var _wpcf7 = {
 	var $processing_within;
 	var $unit_count;
 	var $widget_count;
-	
-	function the_content_filter($content) {
+
+	function the_content_filter( $content ) {
 		$this->processing_within = 'p' . get_the_ID();
 		$this->unit_count = 0;
 
-        return $content;
+		return $content;
 	}
-	
-	function widget_text_filter($content) {
+
+	function widget_text_filter( $content ) {
 		$this->widget_count += 1;
 		$this->processing_within = 'w' . $this->widget_count;
 		$this->unit_count = 0;
 
 		$regex = '/\[\s*contact-form\s+(\d+(?:\s+.*)?)\]/';
-		return preg_replace_callback($regex, array(&$this, 'widget_text_filter_callback'), $content);
+		return preg_replace_callback( $regex, array( &$this, 'widget_text_filter_callback' ), $content );
 	}
-    
-    function widget_text_filter_callback($matches) {
-        return $this->contact_form_tag_func($matches[1]);
-    }
 
-    function contact_form_tag_func($atts) {
-        if (is_string($atts))
-            $atts = explode(' ', $atts, 2);
+	function widget_text_filter_callback( $matches ) {
+		return $this->contact_form_tag_func( $matches[1] );
+	}
 
-        $atts = (array) $atts;
+	function contact_form_tag_func( $atts ) {
+		if ( is_string( $atts ) )
+			$atts = explode( ' ', $atts, 2 );
 
-        $id = (int) array_shift($atts);
-    
+		$atts = (array) $atts;
+
+		$id = (int) array_shift( $atts );
+
 		$contact_forms = $this->contact_forms();
 
-		if (! ($cf = $contact_forms[$id]))
-            return '[contact-form 404 "Not Found"]';
-		
-		$cf = stripslashes_deep($cf);
+		if ( ! ( $cf = $contact_forms[$id] ) )
+			return '[contact-form 404 "Not Found"]';
+
+		$cf = stripslashes_deep( $cf );
 
 		$this->unit_count += 1;
 		$unit_tag = 'wpcf7-f' . $id . '-' . $this->processing_within . '-o' . $this->unit_count;
 		$this->processing_unit_tag = $unit_tag;
 
 		$form = '<div class="wpcf7" id="' . $unit_tag . '">';
-		
-		$url = parse_url($_SERVER['REQUEST_URI']);
-		$url = $url['path'] . (empty($url['query']) ? '' : '?' . $url['query']) . '#' . $unit_tag;
-        
-        $form_elements = $this->form_elements($cf['form'], false);
-        $multipart = false;
-        foreach ($form_elements as $form_element) {
-            if (preg_match('/^file[*]?$/', $form_element['type'])) {
-                $multipart = true;
-                break;
-            }
-        }
-        $enctype = $multipart ? ' enctype="multipart/form-data"' : '';
-		
+
+		$url = parse_url( $_SERVER['REQUEST_URI'] );
+		$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $unit_tag;
+
+		$form_elements = $this->form_elements( $cf['form'], false );
+		$multipart = false;
+		foreach ( $form_elements as $form_element ) {
+			if ( preg_match( '/^file[*]?$/', $form_element['type'] ) ) {
+				$multipart = true;
+				break;
+			}
+		}
+		$enctype = $multipart ? ' enctype="multipart/form-data"' : '';
+
 		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
-        $form .= '<div style="display: none;">';
+		$form .= '<div style="display: none;">';
 		$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_version" value="' . wpcf7_version() . '" />';
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
-        $form .= '</div>';
-		$form .= $this->form_elements($cf['form']);
+		$form .= '</div>';
+		$form .= $this->form_elements( $cf['form'] );
 		$form .= '</form>';
-		
+
 		// Post response output for non-AJAX
 		$class = 'wpcf7-response-output';
-		
-		if ($this->processing_unit_tag == $_POST['_wpcf7_unit_tag']) {
-			if (isset($_POST['_wpcf7_mail_sent']) && $_POST['_wpcf7_mail_sent']['id'] == $id) {
-				if ($_POST['_wpcf7_mail_sent']['ok']) {
+
+		if ( $this->processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $id ) {
+				if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
 					$class .= ' wpcf7-mail-sent-ok';
 					$content = $_POST['_wpcf7_mail_sent']['message'];
 				} else {
 					$class .= ' wpcf7-mail-sent-ng';
-					if ($_POST['_wpcf7_mail_sent']['spam'])
+					if ( $_POST['_wpcf7_mail_sent']['spam'] )
 						$class .= ' wpcf7-spam-blocked';
 					$content = $_POST['_wpcf7_mail_sent']['message'];
 				}
-			} elseif (isset($_POST['_wpcf7_validation_errors']) && $_POST['_wpcf7_validation_errors']['id'] == $id) {
+			} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $id ) {
 				$class .= ' wpcf7-validation-errors';
-				$content = $this->message($cf, 'validation_error');
+				$content = $this->message( $cf, 'validation_error' );
 			}
 		}
-		
-		$class = ' class="' . $class . '"';
-		
-		$form .= '<div' . $class . '>' . $content . '</div>';
-		
-		$form .= '</div>';
-		
-		$this->processing_unit_tag = null;
-        
-        if (WPCF7_AUTOP)
-            $form = $this->wpautop_substitute($form);
-        
-		return $form;
-    }
 
-    function wpautop_substitute($pee, $br = 1) {
-        $pee = $pee . "\n"; // just to make things a little easier, pad the end
-        $pee = preg_replace('|<br />\s*<br />|', "\n\n", $pee);
-        // Space things out a little
-        $allblocks = '(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr)';
-        $pee = preg_replace('!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee);
-        $pee = preg_replace('!(</' . $allblocks . '>)!', "$1\n\n", $pee);
-        $pee = str_replace(array("\r\n", "\r"), "\n", $pee); // cross-platform newlines
-        if ( strpos($pee, '<object') !== false ) {
-            $pee = preg_replace('|\s*<param([^>]*)>\s*|', "<param$1>", $pee); // no pee inside object/embed
-            $pee = preg_replace('|\s*</embed>\s*|', '</embed>', $pee);
-        }
-        $pee = preg_replace("/\n\n+/", "\n\n", $pee); // take care of duplicates
-        // make paragraphs, including one at the end
-        $pees = preg_split('/\n\s*\n/', $pee, -1, PREG_SPLIT_NO_EMPTY);
-        $pee = '';
-        foreach ( $pees as $tinkle )
-            $pee .= '<p>' . trim($tinkle, "\n") . "</p>\n";
-        $pee = preg_replace('|<p>\s*?</p>|', '', $pee); // under certain strange conditions it could create a P of entirely whitespace
-        $pee = preg_replace('!<p>([^<]+)\s*?(</(?:div|address|form)[^>]*>)!', "<p>$1</p>$2", $pee);
-        $pee = preg_replace( '|<p>|', "$1<p>", $pee );
-        $pee = preg_replace('!<p>\s*(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee); // don't pee all over a tag
-        $pee = preg_replace("|<p>(<li.+?)</p>|", "$1", $pee); // problem with nested lists
-        $pee = preg_replace('|<p><blockquote([^>]*)>|i', "<blockquote$1><p>", $pee);
-        $pee = str_replace('</blockquote></p>', '</p></blockquote>', $pee);
-        $pee = preg_replace('!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee);
-        $pee = preg_replace('!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee);
-        if ($br) {
-            $pee = preg_replace_callback('/<(script|style).*?<\/\\1>/s', create_function('$matches', 'return str_replace("\n", "<WPPreserveNewline />", $matches[0]);'), $pee);
-            $pee = preg_replace('|(?<!<br />)\s*\n|', "<br />\n", $pee); // optionally make line breaks
-            $pee = str_replace('<WPPreserveNewline />', "\n", $pee);
-        }
-        $pee = preg_replace('!(</?' . $allblocks . '[^>]*>)\s*<br />!', "$1", $pee);
-        $pee = preg_replace('!<br />(\s*</?(?:p|li|div|dl|dd|dt|th|pre|td|ul|ol)[^>]*>)!', '$1', $pee);
-        if (strpos($pee, '<pre') !== false)
-            $pee = preg_replace_callback('!(<pre.*?>)(.*?)</pre>!is', 'clean_pre', $pee );
-        $pee = preg_replace( "|\n</p>$|", '</p>', $pee );
-        
-        if (function_exists('get_shortcode_regex'))
-            $pee = preg_replace('/<p>\s*?(' . get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee); // don't auto-p wrap shortcodes that stand alone
-    
-        return $pee;
-    }
-    
+		$class = ' class="' . $class . '"';
+
+		$form .= '<div' . $class . '>' . $content . '</div>';
+
+		$form .= '</div>';
+
+		$this->processing_unit_tag = null;
+
+		if ( WPCF7_AUTOP )
+			$form = $this->wpautop_substitute( $form );
+
+		return $form;
+	}
+
+	function wpautop_substitute( $pee, $br = 1 ) {
+		$pee = $pee . "\n"; // just to make things a little easier, pad the end
+		$pee = preg_replace( '|<br />\s*<br />|', "\n\n", $pee );
+		// Space things out a little
+		$allblocks = '(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr)';
+		$pee = preg_replace( '!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee );
+		$pee = preg_replace( '!(</' . $allblocks . '>)!', "$1\n\n", $pee );
+		$pee = str_replace( array( "\r\n", "\r" ), "\n", $pee ); // cross-platform newlines
+		if ( strpos( $pee, '<object' ) !== false ) {
+			$pee = preg_replace( '|\s*<param([^>]*)>\s*|', "<param$1>", $pee ); // no pee inside object/embed
+			$pee = preg_replace( '|\s*</embed>\s*|', '</embed>', $pee );
+		}
+		$pee = preg_replace( "/\n\n+/", "\n\n", $pee ); // take care of duplicates
+		// make paragraphs, including one at the end
+		$pees = preg_split( '/\n\s*\n/', $pee, -1, PREG_SPLIT_NO_EMPTY );
+		$pee = '';
+		foreach ( $pees as $tinkle )
+			$pee .= '<p>' . trim( $tinkle, "\n" ) . "</p>\n";
+		$pee = preg_replace( '|<p>\s*?</p>|', '', $pee ); // under certain strange conditions it could create a P of entirely whitespace
+		$pee = preg_replace( '!<p>([^<]+)\s*?(</(?:div|address|form)[^>]*>)!', "<p>$1</p>$2", $pee );
+		$pee = preg_replace( '|<p>|', "$1<p>", $pee );
+		$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee ); // don't pee all over a tag
+		$pee = preg_replace( "|<p>(<li.+?)</p>|", "$1", $pee ); // problem with nested lists
+		$pee = preg_replace( '|<p><blockquote([^>]*)>|i', "<blockquote$1><p>", $pee );
+		$pee = str_replace( '</blockquote></p>', '</p></blockquote>', $pee );
+		$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee );
+		$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee );
+		if ( $br ) {
+			$pee = preg_replace_callback( '/<(script|style).*?<\/\\1>/s', create_function( '$matches', 'return str_replace("\n", "<WPPreserveNewline />", $matches[0]);' ), $pee );
+			$pee = preg_replace( '|(?<!<br />)\s*\n|', "<br />\n", $pee ); // optionally make line breaks
+			$pee = str_replace( '<WPPreserveNewline />', "\n", $pee );
+		}
+		$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*<br />!', "$1", $pee );
+		$pee = preg_replace( '!<br />(\s*</?(?:p|li|div|dl|dd|dt|th|pre|td|ul|ol)[^>]*>)!', '$1', $pee );
+		if ( strpos( $pee, '<pre' ) !== false )
+			$pee = preg_replace_callback( '!(<pre.*?>)(.*?)</pre>!is', 'clean_pre', $pee );
+		$pee = preg_replace( "|\n</p>$|", '</p>', $pee );
+
+		if ( function_exists( 'get_shortcode_regex' ) )
+			$pee = preg_replace( '/<p>\s*?(' . get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee ); // don't auto-p wrap shortcodes that stand alone
+
+		return $pee;
+	}
+
 	function validate($contact_form) {
 		$fes = $this->form_elements($contact_form['form'], false);
 		$valid = true;
