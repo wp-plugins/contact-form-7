@@ -622,74 +622,74 @@ class tam_contact_form_seven {
 
 	function admin_head() {
 		global $plugin_page, $wp_version;
-		
-		if (isset($plugin_page) && $plugin_page == plugin_basename(__FILE__)) {
-        
-            $admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet.css';
-            $javascript_url = WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js';
+
+		if ( isset( $plugin_page ) && $plugin_page == plugin_basename( __FILE__ ) ) {
+
+			$admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet.css';
+			$javascript_url = WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js';
 
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
-            
-            if ('rtl' == get_bloginfo('text_direction')) {
-                $admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet-rtl.css';
-                echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
-            }
+
+			if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
+				$admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet-rtl.css';
+				echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
+			}
 
 ?>
 <script type="text/javascript">
 //<![CDATA[
 var _wpcf7 = {
 	l10n: {
-		optional: "<?php echo js_escape(__('optional', 'wpcf7')); ?>",
-		generateTag: "<?php echo js_escape(__('Generate Tag', 'wpcf7')); ?>",
-		textField: "<?php echo js_escape(__('Text field', 'wpcf7')); ?>",
-		emailField: "<?php echo js_escape(__('Email field', 'wpcf7')); ?>",
-		textArea: "<?php echo js_escape(__('Text area', 'wpcf7')); ?>",
-		menu: "<?php echo js_escape(__('Drop-down menu', 'wpcf7')); ?>",
-		checkboxes: "<?php echo js_escape(__('Checkboxes', 'wpcf7')); ?>",
-		radioButtons: "<?php echo js_escape(__('Radio buttons', 'wpcf7')); ?>",
-		acceptance: "<?php echo js_escape(__('Acceptance', 'wpcf7')); ?>",
-		isAcceptanceDefaultOn: "<?php echo js_escape(__("Make this checkbox checked by default?", 'wpcf7')); ?>",
-		isAcceptanceInvert: "<?php echo js_escape(__("Make this checkbox work inversely?", 'wpcf7')); ?>",
-		isAcceptanceInvertMeans: "<?php echo js_escape(__("* That means visitor who accepts the term unchecks it.", 'wpcf7')); ?>",
-		captcha: "<?php echo js_escape(__('CAPTCHA', 'wpcf7')); ?>",
-		quiz: "<?php echo js_escape(__('Quiz', 'wpcf7')); ?>",
-		quizzes: "<?php echo js_escape(__('Quizzes', 'wpcf7')); ?>",
-		quizFormatDesc: "<?php echo js_escape(__("* quiz|answer (e.g. 1+1=?|2)", 'wpcf7')); ?>",
-		fileUpload: "<?php echo js_escape(__('File upload', 'wpcf7')); ?>",
-		bytes: "<?php echo js_escape(__('bytes', 'wpcf7')); ?>",
-		submit: "<?php echo js_escape(__('Submit button', 'wpcf7')); ?>",
-		tagName: "<?php echo js_escape(__('Name', 'wpcf7')); ?>",
-		isRequiredField: "<?php echo js_escape(__('Required field?', 'wpcf7')); ?>",
-		allowsMultipleSelections: "<?php echo js_escape(__('Allow multiple selections?', 'wpcf7')); ?>",
-		insertFirstBlankOption: "<?php echo js_escape(__('Insert a blank item as the first option?', 'wpcf7')); ?>",
-		makeCheckboxesExclusive: "<?php echo js_escape(__('Make checkboxes exclusive?', 'wpcf7')); ?>",
-		menuChoices: "<?php echo js_escape(__('Choices', 'wpcf7')); ?>",
-		label: "<?php echo js_escape(__('Label', 'wpcf7')); ?>",
-		defaultValue: "<?php echo js_escape(__('Default value', 'wpcf7')); ?>",
-		akismet: "<?php echo js_escape(__('Akismet', 'wpcf7')); ?>",
-		akismetAuthor: "<?php echo js_escape(__("This field requires author's name", 'wpcf7')); ?>",
-		akismetAuthorUrl: "<?php echo js_escape(__("This field requires author's URL", 'wpcf7')); ?>",
-		akismetAuthorEmail: "<?php echo js_escape(__("This field requires author's email address", 'wpcf7')); ?>",
-		generatedTag: "<?php echo js_escape(__("Copy this code and paste it into the form left.", 'wpcf7')); ?>",
-		fgColor: "<?php echo js_escape(__("Foreground color", 'wpcf7')); ?>",
-		bgColor: "<?php echo js_escape(__("Background color", 'wpcf7')); ?>",
-		imageSize: "<?php echo js_escape(__("Image size", 'wpcf7')); ?>",
-		imageSizeSmall: "<?php echo js_escape(__("Small", 'wpcf7')); ?>",
-		imageSizeMedium: "<?php echo js_escape(__("Medium", 'wpcf7')); ?>",
-		imageSizeLarge: "<?php echo js_escape(__("Large", 'wpcf7')); ?>",
-		imageSettings: "<?php echo js_escape(__("Image settings", 'wpcf7')); ?>",
-		inputFieldSettings: "<?php echo js_escape(__("Input field settings", 'wpcf7')); ?>",
-		tagForImage: "<?php echo js_escape(__("For image", 'wpcf7')); ?>",
-		tagForInputField: "<?php echo js_escape(__("For input field", 'wpcf7')); ?>",
-		oneChoicePerLine: "<?php echo js_escape(__("* One choice per line.", 'wpcf7')); ?>",
-		show: "<?php echo js_escape(__("Show", 'wpcf7')); ?>",
-		hide: "<?php echo js_escape(__("Hide", 'wpcf7')); ?>",
-		fileSizeLimit: "<?php echo js_escape(__("File size limit", 'wpcf7')); ?>",
-		acceptableFileTypes: "<?php echo js_escape(__("Acceptable file types", 'wpcf7')); ?>",
-        needReallySimpleCaptcha: "<?php echo js_escape(__("Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7')); ?>"
+		optional: "<?php echo js_escape( __( 'optional', 'wpcf7' ) ); ?>",
+		generateTag: "<?php echo js_escape( __( 'Generate Tag', 'wpcf7' ) ); ?>",
+		textField: "<?php echo js_escape( __( 'Text field', 'wpcf7' ) ); ?>",
+		emailField: "<?php echo js_escape( __( 'Email field', 'wpcf7' ) ); ?>",
+		textArea: "<?php echo js_escape( __( 'Text area', 'wpcf7' ) ); ?>",
+		menu: "<?php echo js_escape( __( 'Drop-down menu', 'wpcf7' ) ); ?>",
+		checkboxes: "<?php echo js_escape( __( 'Checkboxes', 'wpcf7' ) ); ?>",
+		radioButtons: "<?php echo js_escape( __( 'Radio buttons', 'wpcf7' ) ); ?>",
+		acceptance: "<?php echo js_escape( __( 'Acceptance', 'wpcf7' ) ); ?>",
+		isAcceptanceDefaultOn: "<?php echo js_escape( __( "Make this checkbox checked by default?", 'wpcf7' ) ); ?>",
+		isAcceptanceInvert: "<?php echo js_escape( __( "Make this checkbox work inversely?", 'wpcf7' ) ); ?>",
+		isAcceptanceInvertMeans: "<?php echo js_escape( __( "* That means visitor who accepts the term unchecks it.", 'wpcf7' ) ); ?>",
+		captcha: "<?php echo js_escape( __( 'CAPTCHA', 'wpcf7' ) ); ?>",
+		quiz: "<?php echo js_escape( __( 'Quiz', 'wpcf7' ) ); ?>",
+		quizzes: "<?php echo js_escape( __( 'Quizzes', 'wpcf7' ) ); ?>",
+		quizFormatDesc: "<?php echo js_escape( __( "* quiz|answer (e.g. 1+1=?|2)", 'wpcf7' ) ); ?>",
+		fileUpload: "<?php echo js_escape( __( 'File upload', 'wpcf7' ) ); ?>",
+		bytes: "<?php echo js_escape( __( 'bytes', 'wpcf7' ) ); ?>",
+		submit: "<?php echo js_escape( __( 'Submit button', 'wpcf7' ) ); ?>",
+		tagName: "<?php echo js_escape( __( 'Name', 'wpcf7' ) ); ?>",
+		isRequiredField: "<?php echo js_escape( __( 'Required field?', 'wpcf7' ) ); ?>",
+		allowsMultipleSelections: "<?php echo js_escape( __( 'Allow multiple selections?', 'wpcf7' ) ); ?>",
+		insertFirstBlankOption: "<?php echo js_escape( __( 'Insert a blank item as the first option?', 'wpcf7' ) ); ?>",
+		makeCheckboxesExclusive: "<?php echo js_escape( __( 'Make checkboxes exclusive?', 'wpcf7' ) ); ?>",
+		menuChoices: "<?php echo js_escape( __( 'Choices', 'wpcf7' ) ); ?>",
+		label: "<?php echo js_escape( __( 'Label', 'wpcf7' ) ); ?>",
+		defaultValue: "<?php echo js_escape( __( 'Default value', 'wpcf7' ) ); ?>",
+		akismet: "<?php echo js_escape( __( 'Akismet', 'wpcf7' ) ); ?>",
+		akismetAuthor: "<?php echo js_escape( __( "This field requires author's name", 'wpcf7' ) ); ?>",
+		akismetAuthorUrl: "<?php echo js_escape( __( "This field requires author's URL", 'wpcf7' ) ); ?>",
+		akismetAuthorEmail: "<?php echo js_escape( __( "This field requires author's email address", 'wpcf7' ) ); ?>",
+		generatedTag: "<?php echo js_escape( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?>",
+		fgColor: "<?php echo js_escape( __( "Foreground color", 'wpcf7' ) ); ?>",
+		bgColor: "<?php echo js_escape( __( "Background color", 'wpcf7' ) ); ?>",
+		imageSize: "<?php echo js_escape( __( "Image size", 'wpcf7' ) ); ?>",
+		imageSizeSmall: "<?php echo js_escape( __( "Small", 'wpcf7' ) ); ?>",
+		imageSizeMedium: "<?php echo js_escape( __( "Medium", 'wpcf7' ) ); ?>",
+		imageSizeLarge: "<?php echo js_escape( __( "Large", 'wpcf7' ) ); ?>",
+		imageSettings: "<?php echo js_escape( __( "Image settings", 'wpcf7' ) ); ?>",
+		inputFieldSettings: "<?php echo js_escape( __( "Input field settings", 'wpcf7' ) ); ?>",
+		tagForImage: "<?php echo js_escape( __( "For image", 'wpcf7' ) ); ?>",
+		tagForInputField: "<?php echo js_escape( __( "For input field", 'wpcf7' ) ); ?>",
+		oneChoicePerLine: "<?php echo js_escape( __( "* One choice per line.", 'wpcf7' ) ); ?>",
+		show: "<?php echo js_escape( __( "Show", 'wpcf7' ) ); ?>",
+		hide: "<?php echo js_escape( __( "Hide", 'wpcf7' ) ); ?>",
+		fileSizeLimit: "<?php echo js_escape( __( "File size limit", 'wpcf7' ) ); ?>",
+		acceptableFileTypes: "<?php echo js_escape( __( "Acceptable file types", 'wpcf7' ) ); ?>",
+		needReallySimpleCaptcha: "<?php echo js_escape( __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7' ) ); ?>"
 	},
-    captchaMod: <?php echo (class_exists('ReallySimpleCaptcha')) ? 'true' : 'false' ?>
+	captchaMod: <?php echo ( class_exists( 'ReallySimpleCaptcha' ) ) ? 'true' : 'false' ?>
 };
 //]]>
 </script>
@@ -697,7 +697,7 @@ var _wpcf7 = {
 <?php
 		}
 	}
-    
+
     function has_edit_cap() {
         return current_user_can(wpcf7_read_write_capability());
     }
