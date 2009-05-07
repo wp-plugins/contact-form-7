@@ -1535,322 +1535,322 @@ var _wpcf7 = {
 		return compact( 'type', 'name', 'options', 'values', 'raw_values' );
 	}
 
-	function strip_quote($text) {
-		$text = trim($text);
-		if (preg_match('/^"(.*)"$/', $text, $matches))
+	function strip_quote( $text ) {
+		$text = trim( $text );
+		if ( preg_match( '/^"(.*)"$/', $text, $matches ) )
 			$text = $matches[1];
-		elseif (preg_match("/^'(.*)'$/", $text, $matches))
+		elseif ( preg_match( "/^'(.*)'$/", $text, $matches ) )
 			$text = $matches[1];
 		return $text;
 	}
 
-	function strip_quote_deep($arr) {
-		if (is_string($arr))
-			return $this->strip_quote($arr);
-		if (is_array($arr)) {
+	function strip_quote_deep( $arr ) {
+		if ( is_string( $arr ) )
+			return $this->strip_quote( $arr );
+		if ( is_array( $arr ) ) {
 			$result = array();
-			foreach ($arr as $key => $text) {
-				$result[$key] = $this->strip_quote($text);
+			foreach ( $arr as $key => $text ) {
+				$result[$key] = $this->strip_quote( $text );
 			}
 			return $result;
 		}
 	}
 
-    function init_uploads() {
-        $dir = $this->upload_tmp_dir();
-        wp_mkdir_p(trailingslashit($dir));
-        @chmod($dir, 0733);
-    }
+	function init_uploads() {
+		$dir = $this->upload_tmp_dir();
+		wp_mkdir_p( trailingslashit( $dir ) );
+		@chmod( $dir, 0733 );
+	}
 
 	function cleanup_upload_files() {
-        $dir = $this->upload_tmp_dir();
-        $dir = trailingslashit($dir);
+		$dir = $this->upload_tmp_dir();
+		$dir = trailingslashit( $dir );
 
-        if (! is_dir($dir) || ! is_writable($dir))
-            return false;
+		if ( ! is_dir( $dir ) || ! is_writable( $dir ) )
+			return false;
 
-        if ($handle = opendir($dir)) {
-            while (false !== ($file = readdir($handle))) {
-                if ($file == "." || $file == "..")
-                    continue;
+		if ( $handle = opendir( $dir ) ) {
+			while ( false !== ( $file = readdir( $handle ) ) ) {
+				if ( $file == "." || $file == ".." )
+					continue;
 
-				$stat = stat($dir . $file);
-				if ($stat['mtime'] + 60 < time()) // 60 secs
-					@ unlink($dir . $file);
-            }
-			closedir($handle);
+				$stat = stat( $dir . $file );
+				if ( $stat['mtime'] + 60 < time() ) // 60 secs
+					@ unlink( $dir . $file );
+			}
+			closedir( $handle );
 		}
 	}
-    
-    function init_captcha() {
-        if (! class_exists('ReallySimpleCaptcha'))
-            return false;
 
-        if (! is_object($this->captcha))
+	function init_captcha() {
+		if ( ! class_exists( 'ReallySimpleCaptcha' ) )
+			return false;
+
+		if ( ! is_object( $this->captcha ) )
 			$this->captcha = new ReallySimpleCaptcha();
 		$captcha =& $this->captcha;
-        
-        $captcha->tmp_dir = trailingslashit($this->captcha_tmp_dir());
-        wp_mkdir_p($captcha->tmp_dir);
-        return true;
-    }
 
-	function generate_captcha($options = null) {
-        if (! $this->init_captcha())
-            return false;
-        $captcha =& $this->captcha;
-		
-		if (! is_dir($captcha->tmp_dir) || ! is_writable($captcha->tmp_dir))
+		$captcha->tmp_dir = trailingslashit( $this->captcha_tmp_dir() );
+		wp_mkdir_p( $captcha->tmp_dir );
+		return true;
+	}
+
+	function generate_captcha( $options = null ) {
+		if ( ! $this->init_captcha() )
 			return false;
-		
+		$captcha =& $this->captcha;
+
+		if ( ! is_dir( $captcha->tmp_dir ) || ! is_writable( $captcha->tmp_dir ) )
+			return false;
+
 		$img_type = imagetypes();
-		if ($img_type & IMG_PNG)
+		if ( $img_type & IMG_PNG )
 			$captcha->img_type = 'png';
-		elseif ($img_type & IMG_GIF)
+		elseif ( $img_type & IMG_GIF )
 			$captcha->img_type = 'gif';
-		elseif ($img_type & IMG_JPG)
+		elseif ( $img_type & IMG_JPG )
 			$captcha->img_type = 'jpeg';
 		else
 			return false;
-		
-		if (is_array($options)) {
-			if (isset($options['img_size']))
+
+		if ( is_array( $options ) ) {
+			if ( isset( $options['img_size'] ) )
 				$captcha->img_size = $options['img_size'];
-			if (isset($options['base']))
+			if ( isset( $options['base'] ) )
 				$captcha->base = $options['base'];
-			if (isset($options['font_size']))
+			if ( isset( $options['font_size'] ) )
 				$captcha->font_size = $options['font_size'];
-			if (isset($options['font_char_width']))
+			if ( isset( $options['font_char_width'] ) )
 				$captcha->font_char_width = $options['font_char_width'];
-			if (isset($options['fg']))
+			if ( isset( $options['fg'] ) )
 				$captcha->fg = $options['fg'];
-			if (isset($options['bg']))
+			if ( isset( $options['bg'] ) )
 				$captcha->bg = $options['bg'];
 		}
-		
+
 		$prefix = mt_rand();
 		$captcha_word = $captcha->generate_random_word();
-		return $captcha->generate_image($prefix, $captcha_word);
+		return $captcha->generate_image( $prefix, $captcha_word );
 	}
 
-	function check_captcha($prefix, $response) {
-        if (! $this->init_captcha())
-            return false;
-        $captcha =& $this->captcha;
-		
-		return $captcha->check($prefix, $response);
+	function check_captcha( $prefix, $response ) {
+		if ( ! $this->init_captcha() )
+			return false;
+		$captcha =& $this->captcha;
+
+		return $captcha->check( $prefix, $response );
 	}
 
-	function remove_captcha($prefix) {
-        if (! $this->init_captcha())
-            return false;
-        $captcha =& $this->captcha;
-		
-		$captcha->remove($prefix);
+	function remove_captcha( $prefix ) {
+		if ( ! $this->init_captcha() )
+			return false;
+		$captcha =& $this->captcha;
+
+		$captcha->remove( $prefix );
 	}
 
 	function cleanup_captcha_files() {
-        if (! $this->init_captcha())
-            return false;
-        $captcha =& $this->captcha;
+		if ( ! $this->init_captcha() )
+			return false;
+		$captcha =& $this->captcha;
 
 		$tmp_dir = $captcha->tmp_dir;
 		
-		if (! is_dir($tmp_dir) || ! is_writable($tmp_dir))
+		if ( ! is_dir( $tmp_dir ) || ! is_writable( $tmp_dir ) )
 			return false;
-		
-		if ($handle = opendir($tmp_dir)) {
-			while (false !== ($file = readdir($handle))) {
-				if (! preg_match('/^[0-9]+\.(php|png|gif|jpeg)$/', $file))
+
+		if ( $handle = opendir( $tmp_dir ) ) {
+			while ( false !== ( $file = readdir( $handle ) ) ) {
+				if ( ! preg_match( '/^[0-9]+\.(php|png|gif|jpeg)$/', $file ) )
 					continue;
-				$stat = stat($tmp_dir . $file);
-				if ($stat['mtime'] + 21600 < time()) // 21600 secs == 6 hours
-					@ unlink($tmp_dir . $file);
+				$stat = stat( $tmp_dir . $file );
+				if ( $stat['mtime'] + 21600 < time() ) // 21600 secs == 6 hours
+					@ unlink( $tmp_dir . $file );
 			}
-			closedir($handle);
+			closedir( $handle );
 		}
 	}
 
-	function captchac_options($options) {
-		if (! is_array($options))
+	function captchac_options( $options ) {
+		if ( ! is_array( $options ) )
 			return array();
-		
+
 		$op = array();
-		$image_size_array = preg_grep('%^size:[smlSML]$%', $options);
-		if ($image_size = array_shift($image_size_array)) {
-			preg_match('%^size:([smlSML])$%', $image_size, $is_matches);
-			switch (strtolower($is_matches[1])) {
+		$image_size_array = preg_grep( '%^size:[smlSML]$%', $options );
+		if ( $image_size = array_shift( $image_size_array ) ) {
+			preg_match( '%^size:([smlSML])$%', $image_size, $is_matches );
+			switch ( strtolower( $is_matches[1] ) ) {
 				case 's':
-					$op['img_size'] = array(60, 20);
-					$op['base'] = array(6, 15);
+					$op['img_size'] = array( 60, 20 );
+					$op['base'] = array( 6, 15 );
 					$op['font_size'] = 11;
 					$op['font_char_width'] = 13;
 					break;
 				case 'l':
-					$op['img_size'] = array(84, 28);
-					$op['base'] = array(6, 20);
+					$op['img_size'] = array( 84, 28 );
+					$op['base'] = array( 6, 20 );
 					$op['font_size'] = 17;
 					$op['font_char_width'] = 19;
 					break;
 				case 'm':
 				default:
-					$op['img_size'] = array(72, 24);
-					$op['base'] = array(6, 18);
+					$op['img_size'] = array( 72, 24 );
+					$op['base'] = array( 6, 18 );
 					$op['font_size'] = 14;
 					$op['font_char_width'] = 15;
 			}
 		}
-		$fg_color_array = preg_grep('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
-		if ($fg_color = array_shift($fg_color_array)) {
-			preg_match('%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches);
-			if (3 == strlen($fc_matches[1])) {
-				$r = substr($fc_matches[1], 0, 1);
-				$g = substr($fc_matches[1], 1, 1);
-				$b = substr($fc_matches[1], 2, 1);
-				$op['fg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
-			} elseif (6 == strlen($fc_matches[1])) {
-				$r = substr($fc_matches[1], 0, 2);
-				$g = substr($fc_matches[1], 2, 2);
-				$b = substr($fc_matches[1], 4, 2);
-				$op['fg'] = array(hexdec($r), hexdec($g), hexdec($b));
+		$fg_color_array = preg_grep( '%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options );
+		if ( $fg_color = array_shift( $fg_color_array ) ) {
+			preg_match( '%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches );
+			if ( 3 == strlen( $fc_matches[1] ) ) {
+				$r = substr( $fc_matches[1], 0, 1 );
+				$g = substr( $fc_matches[1], 1, 1 );
+				$b = substr( $fc_matches[1], 2, 1 );
+				$op['fg'] = array( hexdec( $r . $r ), hexdec( $g . $g ), hexdec( $b . $b ) );
+			} elseif ( 6 == strlen( $fc_matches[1] ) ) {
+				$r = substr( $fc_matches[1], 0, 2 );
+				$g = substr( $fc_matches[1], 2, 2 );
+				$b = substr( $fc_matches[1], 4, 2 );
+				$op['fg'] = array( hexdec( $r ), hexdec( $g ), hexdec( $b ) );
 			}
 		}
-		$bg_color_array = preg_grep('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options);
-		if ($bg_color = array_shift($bg_color_array)) {
-			preg_match('%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches);
-			if (3 == strlen($bc_matches[1])) {
-				$r = substr($bc_matches[1], 0, 1);
-				$g = substr($bc_matches[1], 1, 1);
-				$b = substr($bc_matches[1], 2, 1);
-				$op['bg'] = array(hexdec($r . $r), hexdec($g . $g), hexdec($b . $b));
-			} elseif (6 == strlen($bc_matches[1])) {
-				$r = substr($bc_matches[1], 0, 2);
-				$g = substr($bc_matches[1], 2, 2);
-				$b = substr($bc_matches[1], 4, 2);
-				$op['bg'] = array(hexdec($r), hexdec($g), hexdec($b));
+		$bg_color_array = preg_grep( '%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options );
+		if ( $bg_color = array_shift( $bg_color_array ) ) {
+			preg_match( '%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches );
+			if ( 3 == strlen( $bc_matches[1] ) ) {
+				$r = substr( $bc_matches[1], 0, 1 );
+				$g = substr( $bc_matches[1], 1, 1 );
+				$b = substr( $bc_matches[1], 2, 1 );
+				$op['bg'] = array( hexdec( $r . $r ), hexdec( $g . $g ), hexdec( $b . $b ) );
+			} elseif ( 6 == strlen( $bc_matches[1] ) ) {
+				$r = substr( $bc_matches[1], 0, 2 );
+				$g = substr( $bc_matches[1], 2, 2 );
+				$b = substr( $bc_matches[1], 4, 2 );
+				$op['bg'] = array( hexdec( $r ), hexdec( $g ), hexdec( $b ) );
 			}
 		}
-		
+
 		return $op;
 	}
 
-    function pipe($pipes, $value) {
-        if (is_array($value)) {
-            $results = array();
-            foreach ($value as $k => $v) {
-                $results[$k] = $this->pipe($pipes, $v);
-            }
-            return $results;
-        }
+	function pipe( $pipes, $value ) {
+		if ( is_array( $value ) ) {
+			$results = array();
+			foreach ( $value as $k => $v ) {
+				$results[$k] = $this->pipe( $pipes, $v );
+			}
+			return $results;
+		}
 
-        foreach ($pipes as $p) {
-            if ($p[0] == $value)
-                return $p[1];
-        }
+		foreach ( $pipes as $p ) {
+			if ( $p[0] == $value )
+				return $p[1];
+		}
 
-        return $value;
-    }
+		return $value;
+	}
 
-    function get_pipe_ins($pipes) {
-        $ins = array();
-        foreach ($pipes as $pipe) {
-            $in = $pipe[0];
-            if (! in_array($in, $ins))
-                $ins[] = $in;
-        }
-        return $ins;
-    }
+	function get_pipe_ins( $pipes ) {
+		$ins = array();
+		foreach ( $pipes as $pipe ) {
+			$in = $pipe[0];
+			if ( ! in_array( $in, $ins ) )
+				$ins[] = $in;
+		}
+		return $ins;
+	}
 
-    function get_pipes($values) {
-        $pipes = array();
-        
-        foreach ($values as $value) {
-            $pipe_pos = strpos($value, '|');
-            if (false === $pipe_pos) {
-                $before = $after = $value;
-            } else {
-                $before = substr($value, 0, $pipe_pos);
-                $after = substr($value, $pipe_pos + 1);
-            }
+	function get_pipes( $values ) {
+		$pipes = array();
 
-            $pipes[] = array($before, $after);
-        }
-        
-        return $pipes;
-    }
+		foreach ( $values as $value ) {
+			$pipe_pos = strpos( $value, '|' );
+			if ( false === $pipe_pos ) {
+				$before = $after = $value;
+			} else {
+				$before = substr( $value, 0, $pipe_pos );
+				$after = substr( $value, $pipe_pos + 1 );
+			}
 
-    function pipe_all_posted($contact_form) {
-        $all_pipes = array();
+			$pipes[] = array( $before, $after );
+		}
 
-        $fes = $this->form_elements($contact_form['form'], false);
-        foreach ($fes as $fe) {
-            $type = $fe['type'];
-            $name = $fe['name'];
-            $raw_values = $fe['raw_values'];
-            
-            if (! preg_match('/^(select[*]?|checkbox[*]?|radio)$/', $type))
-                continue;
-            
-            $pipes = $this->get_pipes($raw_values);
-            
-            $all_pipes[$name] = array_merge($pipes, (array) $all_pipes[$name]);
-        }
-        
-        foreach ($all_pipes as $name => $pipes) {
-            if (isset($this->posted_data[$name]))
-                $this->posted_data[$name] = $this->pipe($pipes, $this->posted_data[$name]);
-        }
-    }
+		return $pipes;
+	}
 
-    function captcha_tmp_dir() {
-        if (defined('WPCF7_CAPTCHA_TMP_DIR'))
-            return WPCF7_CAPTCHA_TMP_DIR;
-        else
-            return $this->upload_dir('dir') . '/wpcf7_captcha';
-    }
+	function pipe_all_posted( $contact_form ) {
+		$all_pipes = array();
 
-    function captcha_tmp_url() {
-        if (defined('WPCF7_CAPTCHA_TMP_URL'))
-            return WPCF7_CAPTCHA_TMP_URL;
-        else
-            return $this->upload_dir('url') . '/wpcf7_captcha';
-    }
+		$fes = $this->form_elements( $contact_form['form'], false );
+		foreach ( $fes as $fe ) {
+			$type = $fe['type'];
+			$name = $fe['name'];
+			$raw_values = $fe['raw_values'];
 
-    function upload_tmp_dir() {
-        if (defined('WPCF7_UPLOADS_TMP_DIR'))
-            return WPCF7_UPLOADS_TMP_DIR;
-        else
-            return $this->upload_dir('dir') . '/wpcf7_uploads';
-    }
+			if ( ! preg_match( '/^(select[*]?|checkbox[*]?|radio)$/', $type ) )
+				continue;
 
-    function upload_dir($type = false) {
-        $siteurl = get_option('siteurl');
-        $upload_path = trim(get_option('upload_path'));
-        if (empty($upload_path))
-            $dir = WP_CONTENT_DIR . '/uploads';
-        else
-            $dir = $upload_path;
+			$pipes = $this->get_pipes( $raw_values );
 
-        $dir = path_join(ABSPATH, $dir);
+			$all_pipes[$name] = array_merge( $pipes, (array) $all_pipes[$name] );
+		}
 
-        if (! $url = get_option('upload_url_path')) {
-            if (empty($upload_path) || $upload_path == $dir)
-                $url = WP_CONTENT_URL . '/uploads';
-            else
-                $url = trailingslashit($siteurl) . $upload_path;
-        }
+		foreach ( $all_pipes as $name => $pipes ) {
+			if ( isset( $this->posted_data[$name] ) )
+				$this->posted_data[$name] = $this->pipe( $pipes, $this->posted_data[$name] );
+		}
+	}
 
-        if (defined('UPLOADS')) {
-            $dir = ABSPATH . UPLOADS;
-            $url = trailingslashit($siteurl) . UPLOADS;
-        }
+	function captcha_tmp_dir() {
+		if ( defined( 'WPCF7_CAPTCHA_TMP_DIR' ) )
+			return WPCF7_CAPTCHA_TMP_DIR;
+		else
+			return $this->upload_dir( 'dir' ) . '/wpcf7_captcha';
+	}
 
-        if ('dir' == $type)
-            return $dir;
-        if ('url' == $type)
-            return $url;
-        return array('dir' => $dir, 'url' => $url);
-    }
+	function captcha_tmp_url() {
+		if ( defined( 'WPCF7_CAPTCHA_TMP_URL' ) )
+			return WPCF7_CAPTCHA_TMP_URL;
+		else
+			return $this->upload_dir( 'url' ) . '/wpcf7_captcha';
+	}
+
+	function upload_tmp_dir() {
+		if ( defined( 'WPCF7_UPLOADS_TMP_DIR' ) )
+			return WPCF7_UPLOADS_TMP_DIR;
+		else
+			return $this->upload_dir( 'dir' ) . '/wpcf7_uploads';
+	}
+
+	function upload_dir( $type = false ) {
+		$siteurl = get_option( 'siteurl' );
+		$upload_path = trim( get_option( 'upload_path' ) );
+		if ( empty( $upload_path ) )
+			$dir = WP_CONTENT_DIR . '/uploads';
+		else
+			$dir = $upload_path;
+
+		$dir = path_join( ABSPATH, $dir );
+
+		if ( ! $url = get_option( 'upload_url_path' ) ) {
+			if ( empty( $upload_path ) || $upload_path == $dir )
+				$url = WP_CONTENT_URL . '/uploads';
+			else
+				$url = trailingslashit( $siteurl ) . $upload_path;
+		}
+
+		if ( defined( 'UPLOADS' ) ) {
+			$dir = ABSPATH . UPLOADS;
+			$url = trailingslashit( $siteurl ) . UPLOADS;
+		}
+
+		if ( 'dir' == $type )
+			return $dir;
+		if ( 'url' == $type )
+			return $url;
+		return array( 'dir' => $dir, 'url' => $url );
+	}
 }
 
 $wpcf7 = new tam_contact_form_seven();
