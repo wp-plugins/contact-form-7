@@ -327,167 +327,171 @@ class tam_contact_form_seven {
 		}
 	}
 
-	function akismet($contact_form) {
+	function akismet( $contact_form ) {
 		global $akismet_api_host, $akismet_api_port;
-		
-		if (! function_exists('akismet_http_post') || ! (get_option('wordpress_api_key') || $wpcom_api_key))
+
+		if ( ! function_exists( 'akismet_http_post' ) || ! ( get_option( 'wordpress_api_key' ) || $wpcom_api_key ) )
 			return false;
 
 		$akismet_ready = false;
 		$author = $author_email = $author_url = $content = '';
-		$fes = $this->form_elements($contact_form['form'], false);
-		
-		foreach ($fes as $fe) {
-			if (! is_array($fe['options'])) continue;
-			
-			if (preg_grep('%^akismet:author$%', $fe['options']) && '' == $author) {
+		$fes = $this->form_elements( $contact_form['form'], false );
+
+		foreach ( $fes as $fe ) {
+			if ( ! is_array( $fe['options'] ) ) continue;
+
+			if ( preg_grep( '%^akismet:author$%', $fe['options'] ) && '' == $author ) {
 				$author = $_POST[$fe['name']];
 				$akismet_ready = true;
 			}
-			if (preg_grep('%^akismet:author_email$%', $fe['options']) && '' == $author_email) {
+
+			if ( preg_grep( '%^akismet:author_email$%', $fe['options'] ) && '' == $author_email ) {
 				$author_email = $_POST[$fe['name']];
 				$akismet_ready = true;
 			}
-			if (preg_grep('%^akismet:author_url$%', $fe['options']) && '' == $author_url) {
+
+			if ( preg_grep( '%^akismet:author_url$%', $fe['options'] ) && '' == $author_url ) {
 				$author_url = $_POST[$fe['name']];
 				$akismet_ready = true;
 			}
-			
-			if ('' != $content)
+
+			if ( '' != $content )
 				$content .= "\n\n";
+
 			$content .= $_POST[$fe['name']];
 		}
-		
-		if (! $akismet_ready)
+
+		if ( ! $akismet_ready )
 			return false;
-		
-		$c['blog'] = get_option('home');
-		$c['user_ip'] = preg_replace('/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR']);
+
+		$c['blog'] = get_option( 'home' );
+		$c['user_ip'] = preg_replace( '/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR'] );
 		$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 		$c['referrer'] = $_SERVER['HTTP_REFERER'];
 		$c['comment_type'] = 'contactform7';
-		if ($permalink = get_permalink())
+		if ( $permalink = get_permalink() )
 			$c['permalink'] = $permalink;
-		if ('' != $author)
+		if ( '' != $author )
 			$c['comment_author'] = $author;
-		if ('' != $author_email)
+		if ( '' != $author_email )
 			$c['comment_author_email'] = $author_email;
-		if ('' != $author_url)
+		if ( '' != $author_url )
 			$c['comment_author_url'] = $author_url;
-		if ('' != $content)
+		if ( '' != $content )
 			$c['comment_content'] = $content;
-		
-		$ignore = array('HTTP_COOKIE');
-		
-		foreach ($_SERVER as $key => $value)
-			if (! in_array($key, (array) $ignore))
+
+		$ignore = array( 'HTTP_COOKIE' );
+
+		foreach ( $_SERVER as $key => $value )
+			if ( ! in_array( $key, (array) $ignore ) )
 				$c["$key"] = $value;
-		
+
 		$query_string = '';
-		foreach ($c as $key => $data)
-			$query_string .= $key . '=' . urlencode(stripslashes($data)) . '&';
-		
-		$response = akismet_http_post($query_string, $akismet_api_host, '/1.1/comment-check', $akismet_api_port);
-		if ('true' == $response[1])
+		foreach ( $c as $key => $data )
+			$query_string .= $key . '=' . urlencode( stripslashes( $data ) ) . '&';
+
+		$response = akismet_http_post( $query_string, $akismet_api_host, '/1.1/comment-check', $akismet_api_port );
+		if ( 'true' == $response[1] )
 			return true;
 		else
 			return false;
 	}
 
-    function acceptance($contact_form) {
-        $fes = $this->form_elements($contact_form['form'], false);
-		
-        $accepted = true;
-        
-		foreach ($fes as $fe) {
-            if ('acceptance' != $fe['type'])
-                continue;
-            
-            $invert = (bool) preg_grep('%^invert$%', $fe['options']);
-            
-            if ($invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']])
-                $accepted = false;
-        }
-        
-        return $accepted;
-    }
+	function acceptance( $contact_form ) {
+		$fes = $this->form_elements( $contact_form['form'], false );
+
+		$accepted = true;
+
+		foreach ( $fes as $fe ) {
+			if ( 'acceptance' != $fe['type'] )
+				continue;
+
+			$invert = (bool) preg_grep( '%^invert$%', $fe['options'] );
+
+			if ( $invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']] )
+				$accepted = false;
+		}
+
+		return $accepted;
+	}
 
 	function set_initial() {
-        $this->load_plugin_textdomain();
-    
-		$wpcf7 = get_option('wpcf7');
-		if (! is_array($wpcf7))
+		$this->load_plugin_textdomain();
+
+		$wpcf7 = get_option( 'wpcf7' );
+		if ( ! is_array( $wpcf7 ) )
 			$wpcf7 = array();
 
 		$contact_forms = $wpcf7['contact_forms'];
-		if (! is_array($contact_forms))
+		if ( ! is_array( $contact_forms ) )
 			$contact_forms = array();
 
-		if (0 == count($contact_forms))
-			$contact_forms[1] = $this->default_pack(__('Contact form', 'wpcf7') . ' 1');
+		if ( 0 == count( $contact_forms ) )
+			$contact_forms[1] = $this->default_pack( __( 'Contact form', 'wpcf7' ) . ' 1' );
 
 		$wpcf7['contact_forms'] = $contact_forms;
-		update_option('wpcf7', $wpcf7);
+		update_option( 'wpcf7', $wpcf7 );
 	}
 
 	function load_plugin_textdomain() { // l10n
-        global $wp_version;
+		global $wp_version;
 
-        if (version_compare($wp_version, '2.6', '<')) // Using old WordPress
-            load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages');
-        else
-            load_plugin_textdomain('wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages');
+		if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
+			load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
+		else
+			load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
 	}
 
 	function contact_forms() {
-		if (is_array($this->contact_forms))
+		if ( is_array( $this->contact_forms ) )
 			return $this->contact_forms;
-		$wpcf7 = get_option('wpcf7');
+
+		$wpcf7 = get_option( 'wpcf7' );
 		$this->contact_forms = $wpcf7['contact_forms'];
-		if (! is_array($this->contact_forms))
+		if ( ! is_array( $this->contact_forms ) )
 			$this->contact_forms = array();
 		return $this->contact_forms;
 	}
 
-	function update_contact_forms($contact_forms) {
-		$wpcf7 = get_option('wpcf7');
+	function update_contact_forms( $contact_forms ) {
+		$wpcf7 = get_option( 'wpcf7' );
 		$wpcf7['contact_forms'] = $contact_forms;
 
-		update_option('wpcf7', $wpcf7);
+		update_option( 'wpcf7', $wpcf7 );
 	}
-    
-    function upgrade($contact_form) {
-        if (empty($contact_form))
-            return $contact_form;
 
-        $contact_form = $this->upgrade_160($contact_form);
-        $contact_form = $this->upgrade_181($contact_form);
-        $contact_form = $this->upgrade_190($contact_form);
-        $contact_form = $this->upgrade_192($contact_form);
-        return $contact_form;
-    }
+	function upgrade( $contact_form ) {
+		if ( empty( $contact_form ) )
+			return $contact_form;
 
-	function upgrade_160($contact_form) {
-		if (! isset($contact_form['mail']['recipient']))
+		$contact_form = $this->upgrade_160( $contact_form );
+		$contact_form = $this->upgrade_181( $contact_form );
+		$contact_form = $this->upgrade_190( $contact_form );
+		$contact_form = $this->upgrade_192( $contact_form );
+		return $contact_form;
+	}
+
+	function upgrade_160( $contact_form ) {
+		if ( ! isset( $contact_form['mail']['recipient'] ) )
 			$contact_form['mail']['recipient'] = $contact_form['options']['recipient'];
 		return $contact_form;
 	}
-    
-    function upgrade_181($contact_form) {
-		if (! isset($contact_form['messages']))
-            $contact_form['messages'] = array(
-                'mail_sent_ok' => $this->default_message('mail_sent_ok'),
-                'mail_sent_ng' => $this->default_message('mail_sent_ng'),
-                'akismet_says_spam' => $this->default_message('akismet_says_spam'),
-                'validation_error' => $this->default_message('validation_error'),
-                'accept_terms' => $this->default_message('accept_terms'),
-                'invalid_email' => $this->default_message('invalid_email'),
-                'invalid_required' => $this->default_message('invalid_required'),
-                'captcha_not_match' => $this->default_message('captcha_not_match')
-            );
+
+	function upgrade_181( $contact_form ) {
+		if ( ! isset( $contact_form['messages'] ) )
+			$contact_form['messages'] = array(
+				'mail_sent_ok' => $this->default_message( 'mail_sent_ok' ),
+				'mail_sent_ng' => $this->default_message( 'mail_sent_ng' ),
+				'akismet_says_spam' => $this->default_message( 'akismet_says_spam' ),
+				'validation_error' => $this->default_message( 'validation_error' ),
+				'accept_terms' => $this->default_message( 'accept_terms' ),
+				'invalid_email' => $this->default_message( 'invalid_email' ),
+				'invalid_required' => $this->default_message( 'invalid_required' ),
+				'captcha_not_match' => $this->default_message( 'captcha_not_match' )
+			);
 		return $contact_form;
-    }
-    
+	}
+
     function upgrade_190($contact_form) {
         if (! isset($contact_form['messages']) || ! is_array($contact_form['messages']))
             $contact_form['messages'] = array();
