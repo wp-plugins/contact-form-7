@@ -25,143 +25,149 @@ Author URI: http://ideasilo.wordpress.com/
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define('WPCF7_VERSION', '1.9.5.1');
+define( 'WPCF7_VERSION', '1.9.5.1' );
 
-if (! defined('WP_CONTENT_DIR'))
-    define('WP_CONTENT_DIR', ABSPATH . 'wp-content');
-if (! defined('WP_CONTENT_URL'))
-    define('WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
+if ( ! defined( 'WP_CONTENT_DIR' ) )
+	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 
-if (! defined('WP_PLUGIN_DIR'))
-    define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins');
-if (! defined('WP_PLUGIN_URL'))
-    define('WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins');
+if ( ! defined( 'WP_CONTENT_URL' ) )
+	define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
 
-if (! defined('WPCF7_PLUGIN_DIR'))
-    define('WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . plugin_basename(dirname(__FILE__)));
-if (! defined('WPCF7_PLUGIN_URL'))
-    define('WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)));
+if ( ! defined( 'WP_PLUGIN_DIR' ) )
+	define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 
-if (! defined('WPCF7_AUTOP'))
-    define('WPCF7_AUTOP', true);
+if ( ! defined( 'WP_PLUGIN_URL' ) )
+	define( 'WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins' );
 
-if (! defined('WPCF7_USE_PIPE'))
-    define('WPCF7_USE_PIPE', true);
+if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
+	define( 'WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) );
 
-if (! function_exists('wpcf7_version')) {
-    function wpcf7_version() { return WPCF7_VERSION; }
+if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
+	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) );
+
+if ( ! defined( 'WPCF7_AUTOP' ) )
+	define( 'WPCF7_AUTOP', true );
+
+if ( ! defined( 'WPCF7_USE_PIPE' ) )
+	define( 'WPCF7_USE_PIPE', true );
+
+if ( ! function_exists( 'wpcf7_version' ) ) {
+	function wpcf7_version() { return WPCF7_VERSION; }
 }
 
-if (! function_exists('wpcf7_read_capability')) {
-    function wpcf7_read_capability() { return 'edit_posts'; }
+if ( ! function_exists( 'wpcf7_read_capability' ) ) {
+	function wpcf7_read_capability() { return 'edit_posts'; }
 }
 
-if (! function_exists('wpcf7_read_write_capability')) {
-    function wpcf7_read_write_capability() { return 'publish_pages'; }
+if ( ! function_exists( 'wpcf7_read_write_capability' ) ) {
+	function wpcf7_read_write_capability() { return 'publish_pages'; }
 }
 
 class tam_contact_form_seven {
 
 	var $contact_forms;
 	var $captcha;
-    var $posted_data;
+	var $posted_data;
 
 	function tam_contact_form_seven() {
-		add_action('activate_' . plugin_basename(__FILE__), array(&$this, 'set_initial'));
-		add_action('init', array(&$this, 'load_plugin_textdomain'));
-		add_action('admin_menu', array(&$this, 'add_pages'));
-		add_action('admin_head', array(&$this, 'admin_head'));
-		add_action('wp_head', array(&$this, 'wp_head'));
-		add_action('wp_print_scripts', array(&$this, 'load_js'));
-		add_action('init', array(&$this, 'init_switch'), 11);
-		add_filter('the_content', array(&$this, 'the_content_filter'), 9);
-		add_filter('widget_text', array(&$this, 'widget_text_filter'), 9);
-        
-        add_shortcode('contact-form', array(&$this, 'contact_form_tag_func'));
+		add_action( 'activate_' . plugin_basename( __FILE__ ), array( &$this, 'set_initial' ) );
+		add_action( 'init', array( &$this, 'load_plugin_textdomain' ) );
+		add_action( 'admin_menu', array( &$this, 'add_pages' ) );
+		add_action( 'admin_head', array( &$this, 'admin_head' ) );
+		add_action( 'wp_head', array( &$this, 'wp_head' ) );
+		add_action( 'wp_print_scripts', array( &$this, 'load_js' ) );
+		add_action( 'init', array( &$this, 'init_switch' ), 11 );
+
+		add_filter( 'the_content', array( &$this, 'the_content_filter' ), 9 );
+		add_filter( 'widget_text', array( &$this, 'widget_text_filter' ), 9 );
+
+		add_shortcode( 'contact-form', array( &$this, 'contact_form_tag_func' ) );
 	}
 
 	function init_switch() {
-		if ('POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call']) {
+		if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
 			$this->ajax_json_echo();
 			exit();
-		} elseif (! is_admin()) {
+		} elseif ( ! is_admin() ) {
 			$this->process_nonajax_submitting();
 			$this->cleanup_captcha_files();
 			$this->cleanup_upload_files();
 		}
 	}
-	
+
 	function ajax_json_echo() {
-        $echo = '';
-        
-		if (isset($_POST['_wpcf7'])) {
+		$echo = '';
+
+		if ( isset( $_POST['_wpcf7'] ) ) {
 			$id = (int) $_POST['_wpcf7'];
 			$unit_tag = $_POST['_wpcf7_unit_tag'];
 			$contact_forms = $this->contact_forms();
-			if ($cf = $contact_forms[$id]) {
-				$cf = stripslashes_deep($cf);
-				$validation = $this->validate($cf);
-				
-                $handled_uploads = $this->handle_uploads($cf);
-                if (! $handled_uploads['validation']['valid'])
-                    $validation['valid'] = false;
-                $validation['reason'] = array_merge($validation['reason'], $handled_uploads['validation']['reason']);
-                
-				$captchas = $this->refill_captcha($cf);
-				if (! empty($captchas)) {
+
+			if ( $cf = $contact_forms[$id] ) {
+				$cf = stripslashes_deep( $cf );
+				$validation = $this->validate( $cf );
+
+				$handled_uploads = $this->handle_uploads( $cf );
+				if ( ! $handled_uploads['validation']['valid'] )
+					$validation['valid'] = false;
+
+				$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
+
+				$captchas = $this->refill_captcha( $cf );
+				if ( ! empty( $captchas ) ) {
 					$captchas_js = array();
-					foreach ($captchas as $name => $cap) {
+					foreach ( $captchas as $name => $cap ) {
 						$captchas_js[] = '"' . $name . '": "' . $cap . '"';
 					}
-					$captcha = '{ ' . join(', ', $captchas_js) . ' }';
+					$captcha = '{ ' . join( ', ', $captchas_js ) . ' }';
 				} else {
 					$captcha = 'null';
 				}
-                
-                $quizzes = $this->refill_quiz($cf);
-                if (! empty($quizzes)) {
-                    $quizzes_js = array();
-                    foreach ($quizzes as $name => $q) {
-                        $quizzes_js[] = '"' . $name . '": [ "' . js_escape($q[0]) . '", "' . $q[1] . '" ]';
-                    }
-                    $quiz = '{ ' . join(', ', $quizzes_js) . ' }';
-                } else {
-                    $quiz = 'null';
-                }
-				
-				if (! $validation['valid']) { // Validation error occured
-					$invalids = array();
-					foreach ($validation['reason'] as $name => $reason) {
-						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape($reason) . '" }';
+
+				$quizzes = $this->refill_quiz( $cf );
+				if ( ! empty( $quizzes ) ) {
+					$quizzes_js = array();
+					foreach ( $quizzes as $name => $q ) {
+						$quizzes_js[] = '"' . $name . '": [ "' . js_escape( $q[0] ) . '", "' . $q[1] . '" ]';
 					}
-					$invalids = '[' . join(', ', $invalids) . ']';
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'validation_error')) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-                } elseif (! $this->acceptance($cf)) { // Not accepted terms
-                    $echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'accept_terms')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-				} elseif ($this->akismet($cf)) { // Spam!
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'akismet_says_spam')) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-				} elseif ($this->mail($cf, $handled_uploads['files'])) {
-					$echo = '{ mailSent: 1, message: "' . js_escape($this->message($cf, 'mail_sent_ok')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$quiz = '{ ' . join( ', ', $quizzes_js ) . ' }';
 				} else {
-					$echo = '{ mailSent: 0, message: "' . js_escape($this->message($cf, 'mail_sent_ng')) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$quiz = 'null';
 				}
-                
-                // remove upload files
-                foreach ($handled_uploads['files'] as $name => $path) {
-                    @unlink($path);
-                }
+
+				if ( ! $validation['valid'] ) { // Validation error occured
+					$invalids = array();
+					foreach ( $validation['reason'] as $name => $reason ) {
+						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape( $reason ) . '" }';
+					}
+					$invalids = '[' . join( ', ', $invalids ) . ']';
+					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
+					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				} elseif ( $this->akismet( $cf ) ) { // Spam!
+					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
+					$echo = '{ mailSent: 1, message: "' . js_escape( $this->message( $cf, 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				} else {
+					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				}
+
+				// remove upload files
+				foreach ( $handled_uploads['files'] as $name => $path ) {
+					@unlink( $path );
+				}
 			}
 		}
-        
-        if ($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-            @header('Content-Type: application/json; charset=' . get_option('blog_charset'));
-            echo $echo;
-        } else {
-            @header('Content-Type: text/html; charset=' . get_option('blog_charset'));
-            echo '<textarea>' . $echo . '</textarea>';
-        }
+
+		if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
+			@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
+			echo $echo;
+		} else {
+			@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
+			echo '<textarea>' . $echo . '</textarea>';
+		}
 	}
-    
+
     function handle_uploads($contact_form) {
         $files = array();
         $valid = true;
