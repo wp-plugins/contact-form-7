@@ -168,164 +168,164 @@ class tam_contact_form_seven {
 		}
 	}
 
-    function handle_uploads($contact_form) {
-        $files = array();
-        $valid = true;
-        $reason = array();
-        
-        $this->init_uploads(); // Confirm upload dir
-        $uploads_dir = $this->upload_tmp_dir();
-        
-        $fes = $this->form_elements($contact_form['form'], false);
-        
-        foreach ($fes as $fe) {
-            if ('file' != $fe['type'] && 'file*' != $fe['type'])
-                continue;
-            
-            $name = $fe['name'];
-            $options = (array) $fe['options'];
+	function handle_uploads( $contact_form ) {
+		$files = array();
+		$valid = true;
+		$reason = array();
 
-            $file = $_FILES[$name];
+		$this->init_uploads(); // Confirm upload dir
+		$uploads_dir = $this->upload_tmp_dir();
 
-            if (empty($file['tmp_name']) && 'file*' == $fe['type']) {
-                $valid = false;
-                $reason[$name] = $this->message($contact_form, 'invalid_required');
-                continue;
-            }
-            
-            if (! is_uploaded_file($file['tmp_name']))
-                continue;
+		$fes = $this->form_elements( $contact_form['form'], false );
 
-            /* File type validation */
+		foreach ( $fes as $fe ) {
+			if ( 'file' != $fe['type'] && 'file*' != $fe['type'] )
+				continue;
 
-            $pattern = '';
-            if ($allowed_types_options = preg_grep('%^filetypes:%', $options)) {
-                foreach ($allowed_types_options as $allowed_types_option) {
-                    if (preg_match('%^filetypes:(.+)$%', $allowed_types_option, $matches)) {
-                        $file_types = explode('|', $matches[1]);
-                        foreach ($file_types as $file_type) {
-                            $file_type = trim($file_type, '.');
-                            $file_type = str_replace(array('.', '+', '*', '?'), array('\.', '\+', '\*', '\?'), $file_type);
-                            $pattern .= '|' . $file_type;
-                        }
-                    }
-                }
-            }
+			$name = $fe['name'];
+			$options = (array) $fe['options'];
 
-            // Default file-type restriction
-            if ('' == $pattern)
-              $pattern = 'jpg|jpeg|png|gif|pdf|doc|docx|ppt|pptx|odt|avi|ogg|m4a|mov|mp3|mp4|mpg|wav|wmv';
+			$file = $_FILES[$name];
 
-            $pattern = trim($pattern, '|');
-            $pattern = '(' . $pattern . ')';
-            $pattern = '/\.' . $pattern . '$/i';
-            if (! preg_match($pattern, $file['name'])) {
-                $valid = false;
-                $reason[$name] = $this->message($contact_form, 'upload_file_type_invalid');
-                continue;
-            }
+			if ( empty( $file['tmp_name'] ) && 'file*' == $fe['type'] ) {
+				$valid = false;
+				$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+				continue;
+			}
 
-            /* File size validation */
+			if ( ! is_uploaded_file( $file['tmp_name'] ) )
+				continue;
 
-            $allowed_size = 1048576; // default size 1 MB
-            if ($allowed_size_options = preg_grep('%^limit:%', $options)) {
-                $allowed_size_option = array_shift($allowed_size_options);
-                preg_match('/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches);
-                $allowed_size = (int) $matches[1];
-            }
+			/* File type validation */
 
-            if ($file['size'] > $allowed_size) {
-              $valid = false;
-              $reason[$name] = $this->message($contact_form, 'upload_file_too_large');
-              continue;
-            }
+			$pattern = '';
+			if ( $allowed_types_options = preg_grep( '%^filetypes:%', $options ) ) {
+				foreach ( $allowed_types_options as $allowed_types_option ) {
+					if ( preg_match( '%^filetypes:(.+)$%', $allowed_types_option, $matches ) ) {
+						$file_types = explode( '|', $matches[1] );
+						foreach ( $file_types as $file_type ) {
+							$file_type = trim( $file_type, '.' );
+							$file_type = str_replace( array( '.', '+', '*', '?' ), array( '\.', '\+', '\*', '\?' ), $file_type );
+							$pattern .= '|' . $file_type;
+						}
+					}
+				}
+			}
 
-            $filename = wp_unique_filename($uploads_dir, $file['name']);
+			// Default file-type restriction
+			if ( '' == $pattern )
+				$pattern = 'jpg|jpeg|png|gif|pdf|doc|docx|ppt|pptx|odt|avi|ogg|m4a|mov|mp3|mp4|mpg|wav|wmv';
 
-            // If you get script file, it's a danger. Make it TXT file.
-            if (preg_match('/\.(php|pl|py|rb|cgi)\d?$/', $filename))
-              $filename .= '.txt';
+			$pattern = trim( $pattern, '|' );
+			$pattern = '(' . $pattern . ')';
+			$pattern = '/\.' . $pattern . '$/i';
+			if ( ! preg_match( $pattern, $file['name'] ) ) {
+				$valid = false;
+				$reason[$name] = $this->message( $contact_form, 'upload_file_type_invalid' );
+				continue;
+			}
 
-            $new_file = trailingslashit($uploads_dir) . $filename;
-            if (false === @move_uploaded_file($file['tmp_name'], $new_file)) {
-                $valid = false;
-                $reason[$name] = $this->message($contact_form, 'upload_failed');
-                continue;
-            }
+			/* File size validation */
 
-            // Make sure the uploaded file is only readable for the owner process
-            chmod($new_file, 0400);
+			$allowed_size = 1048576; // default size 1 MB
+			if ( $allowed_size_options = preg_grep( '%^limit:%', $options ) ) {
+				$allowed_size_option = array_shift( $allowed_size_options );
+				preg_match( '/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches );
+				$allowed_size = (int) $matches[1];
+			}
 
-            $files[$name] = $new_file;
-        }
-        
-        $validation = compact('valid', 'reason');
-        
-        return compact('files', 'validation');
-    }
-	
-	function mail($contact_form, $files = array()) {
-        global $wp_version;
-        
-		$contact_form = $this->upgrade($contact_form);
+			if ( $file['size'] > $allowed_size ) {
+				$valid = false;
+				$reason[$name] = $this->message( $contact_form, 'upload_file_too_large' );
+				continue;
+			}
 
-        $this->posted_data = $_POST;
+			$filename = wp_unique_filename( $uploads_dir, $file['name'] );
 
-        if (WPCF7_USE_PIPE) {
-            $this->pipe_all_posted($contact_form);
-        }
+			// If you get script file, it's a danger. Make it TXT file.
+			if ( preg_match( '/\.(php|pl|py|rb|cgi)\d?$/', $filename ) )
+				$filename .= '.txt';
 
-        if ($this->compose_and_send_mail($contact_form['mail'], $files)) {
-            if ($contact_form['mail_2']['active'])
-                $this->compose_and_send_mail($contact_form['mail_2'], $files);
-            
-            return true;
-        }
-        
-        return false;
+			$new_file = trailingslashit( $uploads_dir ) . $filename;
+			if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
+				$valid = false;
+				$reason[$name] = $this->message( $contact_form, 'upload_failed' );
+				continue;
+			}
+
+			// Make sure the uploaded file is only readable for the owner process
+			chmod( $new_file, 0400 );
+
+			$files[$name] = $new_file;
+		}
+
+		$validation = compact( 'valid', 'reason' );
+
+		return compact( 'files', 'validation' );
 	}
-    
-    function compose_and_send_mail($mail_template, $attachments = array()) {
-        $regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-        $callback = array(&$this, 'mail_callback');
-		$mail_subject = preg_replace_callback($regex, $callback, $mail_template['subject']);
-		$mail_sender = preg_replace_callback($regex, $callback, $mail_template['sender']);
-		$mail_body = preg_replace_callback($regex, $callback, $mail_template['body']);
-		$mail_recipient = preg_replace_callback($regex, $callback, $mail_template['recipient']);
+
+	function mail( $contact_form, $files = array() ) {
+		global $wp_version;
+
+		$contact_form = $this->upgrade( $contact_form );
+
+		$this->posted_data = $_POST;
+
+		if ( WPCF7_USE_PIPE ) {
+			$this->pipe_all_posted( $contact_form );
+		}
+
+		if ( $this->compose_and_send_mail( $contact_form['mail'], $files ) ) {
+			if ( $contact_form['mail_2']['active'] )
+				$this->compose_and_send_mail( $contact_form['mail_2'], $files );
+
+			return true;
+		}
+
+		return false;
+	}
+
+	function compose_and_send_mail( $mail_template, $attachments = array() ) {
+		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
+		$callback = array( &$this, 'mail_callback' );
+		$mail_subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
+		$mail_sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
+		$mail_body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+		$mail_recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
 		$mail_headers = "From: $mail_sender\n";
 
-        if ($mail_template['use_html'])
-            $mail_headers .= "Content-Type: text/html\n";
+		if ( $mail_template['use_html'] )
+			$mail_headers .= "Content-Type: text/html\n";
 
-        if ($attachments) {
-            $for_this_mail = array();
-            foreach ($attachments as $name => $path) {
-                if (false === strpos($mail_template['attachments'], "[${name}]"))
-                    continue;
-                $for_this_mail[] = $path;
-            }
-            return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers, $for_this_mail);
-        } else {
-            return @wp_mail($mail_recipient, $mail_subject, $mail_body, $mail_headers);
-        }
-    }
-    
-    function mail_callback($matches) {
-        if (isset($this->posted_data[$matches[1]])) {
-            $submitted = $this->posted_data[$matches[1]];
-            
-            if (is_array($submitted))
-                $submitted = join(', ', $submitted);
-            return stripslashes($submitted);
-        } else {
-        
-            // Special [wpcf7.remote_ip] tag
-            if ('wpcf7.remote_ip' == $matches[1])
-                return preg_replace('/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR']);
-        
-            return $matches[0];
-        }
-    }
+		if ( $attachments ) {
+			$for_this_mail = array();
+			foreach ( $attachments as $name => $path ) {
+				if ( false === strpos( $mail_template['attachments'], "[${name}]" ) )
+					continue;
+				$for_this_mail[] = $path;
+			}
+			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers, $for_this_mail );
+		} else {
+			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers );
+		}
+	}
+
+	function mail_callback( $matches ) {
+		if ( isset( $this->posted_data[$matches[1]] ) ) {
+			$submitted = $this->posted_data[$matches[1]];
+
+			if ( is_array( $submitted ) )
+				$submitted = join( ', ', $submitted );
+			return stripslashes( $submitted );
+		} else {
+
+			// Special [wpcf7.remote_ip] tag
+			if ( 'wpcf7.remote_ip' == $matches[1] )
+				return preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
+
+			return $matches[0];
+		}
+	}
 
 	function akismet($contact_form) {
 		global $akismet_api_host, $akismet_api_port;
