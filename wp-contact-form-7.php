@@ -1560,6 +1560,15 @@ var _wpcf7 = {
 		$dir = $this->upload_tmp_dir();
 		wp_mkdir_p( trailingslashit( $dir ) );
 		@chmod( $dir, 0733 );
+
+		$htaccess_file = trailingslashit( $dir ) . '.htaccess';
+		if ( file_exists( $htaccess_file ) )
+			return;
+
+		if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
+			fwrite( $handle, "Deny from all\n" );
+			fclose( $handle );
+		}
 	}
 
 	function cleanup_upload_files() {
@@ -1571,7 +1580,7 @@ var _wpcf7 = {
 
 		if ( $handle = opendir( $dir ) ) {
 			while ( false !== ( $file = readdir( $handle ) ) ) {
-				if ( $file == "." || $file == ".." )
+				if ( $file == "." || $file == ".." || $file == ".htaccess" )
 					continue;
 
 				$stat = stat( $dir . $file );
