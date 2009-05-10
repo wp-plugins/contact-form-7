@@ -275,7 +275,7 @@ class tam_contact_form_seven {
 			$this->pipe_all_posted( $contact_form );
 		}
 
-		if ( $this->save_as_draft( $contact_form['mail'], $files ) ) {
+		if ( $this->compose_and_send_mail( $contact_form['mail'], $files ) ) {
 			if ( $contact_form['mail_2']['active'] )
 				$this->compose_and_send_mail( $contact_form['mail_2'], $files );
 
@@ -283,36 +283,6 @@ class tam_contact_form_seven {
 		}
 
 		return false;
-	}
-
-	function save_as_draft( $mail_template, $attachments = array() ) {
-		$post_title = '';
-		if ( $this->posted_data['title'] )
-			$post_title = trim( $this->posted_data['title'] );
-
-		$post_categories = array();
-		if ( $this->posted_data['categories'] ) {
-			$post_categories = (array) $this->posted_data['categories'];
-			$cats = array();
-			foreach ( $post_categories as $post_category) {
-				$cats[] = get_cat_ID($post_category);
-			}
-			$post_categories = $cats;
-		}
-
-		$first_user = array_shift( get_users_of_blog() );
-		$post_author = $first_user->ID;
-
-		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-		$callback = array( &$this, 'mail_callback' );
-		$post_content = preg_replace_callback( $regex, $callback, $mail_template['body'] );
-
-		$postarr = array(
-			'post_title' => $post_title, 'post_category' => $post_categories,
-			'post_status' => 'draft', 'post_type' => 'post', 'post_author' => $post_author,
-			'ping_status' => 'closed', 'post_content' => $post_content );
-
-		return wp_insert_post( $postarr );
 	}
 
 	function compose_and_send_mail( $mail_template, $attachments = array() ) {
