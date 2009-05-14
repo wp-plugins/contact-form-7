@@ -1177,19 +1177,17 @@ var _wpcf7 = {
 			$stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/stylesheet-rtl.css';
 			echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
 		}
-
-		$javascript_url = WPCF7_PLUGIN_URL . '/contact-form-7.js';
-?>
-<script type='text/javascript' src='<?php echo $javascript_url; ?>'></script>
-<?php
 	}
 
 	function load_js() {
 		global $pagenow;
+
 		if ( is_admin() && $this->admin_menu_parent() == $pagenow && false !== strpos( $_GET['page'], 'contact-form-7' ) )
 			wp_enqueue_script( 'jquery' );
-		if ( ! is_admin() )
+		if ( ! is_admin() ) {
 			wp_enqueue_script( 'jquery-form' );
+			wp_enqueue_script( 'contact-form-7', WPCF7_PLUGIN_URL . '/contact-form-7.js', array('jquery', 'jquery-form'), false, true );
+		}
 	}
 
 /* Processing form element placeholders */
