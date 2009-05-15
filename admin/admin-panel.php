@@ -115,6 +115,10 @@
 				</div>
                     <div class="pseudo-hr"></div>
 				<div class="mail-field">
+					<label for="wpcf7-mail-additional-headers"><?php _e( 'Additional headers:', 'wpcf7' ); ?></label><br />
+					<textarea id="wpcf7-mail-additional-headers" name="wpcf7-mail-additional-headers" cols="100" rows="2"><?php echo htmlspecialchars( $cf['mail']['additional_headers'] ); ?></textarea>
+				</div>
+				<div class="mail-field">
 					<label for="wpcf7-mail-attachments"><?php _e( 'File attachments:', 'wpcf7' ); ?></label>
                         <?php if ( version_compare( $wp_version, '2.7', '<' ) ) : ?>
                         <span style="color: #ff3300; margin-left: 0.5em;"><?php _e( '(You need WordPress 2.7 or greater to use this feature)', 'wpcf7' ); ?></span>
@@ -166,6 +170,10 @@
 					<input type="text" id="wpcf7-mail-2-subject" name="wpcf7-mail-2-subject" class="wide" size="70" value="<?php echo htmlspecialchars( $cf['mail_2']['subject'] ); ?>" />
 				</div>
                     <div class="pseudo-hr"></div>
+				<div class="mail-field">
+					<label for="wpcf7-mail-2-additional-headers"><?php _e( 'Additional headers:', 'wpcf7' ); ?></label><br />
+					<textarea id="wpcf7-mail-2-additional-headers" name="wpcf7-mail-2-additional-headers" cols="100" rows="2"><?php echo htmlspecialchars( $cf['mail_2']['additional_headers'] ); ?></textarea>
+				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-attachments"><?php _e( 'File attachments:', 'wpcf7' ); ?></label>
                         <?php if ( version_compare( $wp_version, '2.7', '<' ) ) : ?>
