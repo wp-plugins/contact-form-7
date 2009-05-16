@@ -154,7 +154,7 @@ class tam_contact_form_seven {
 		$reason = array();
 
 		$this->init_uploads(); // Confirm upload dir
-		$uploads_dir = $this->upload_tmp_dir();
+		$uploads_dir = wpcf7_upload_tmp_dir();
 
 		$fes = $this->form_elements( $contact_form['form'], false );
 
@@ -415,15 +415,6 @@ class tam_contact_form_seven {
 
 		$wpcf7['contact_forms'] = $contact_forms;
 		update_option( 'wpcf7', $wpcf7 );
-	}
-
-	function load_plugin_textdomain() { // l10n
-		global $wp_version;
-
-		if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
-			load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
-		else
-			load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
 	}
 
 	function contact_forms() {
@@ -742,7 +733,7 @@ class tam_contact_form_seven {
 			if ( 'captchac' == $type ) {
 				$op = $this->captchac_options( $options );
 				if ( $filename = $this->generate_captcha( $op ) ) {
-					$captcha_url = trailingslashit( $this->captcha_tmp_url() ) . $filename;
+					$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
 					$refill[$name] = $captcha_url;
 				}
 			}
@@ -1064,7 +1055,7 @@ class tam_contact_form_seven {
 				}
 				if ( is_array( $op['img_size'] ) )
 					$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
-				$captcha_url = trailingslashit( $this->captcha_tmp_url() ) . $filename;
+				$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
 				$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
 				$ref = substr( $filename, 0, strrpos( $filename, '.' ) );
 				$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
@@ -1161,7 +1152,7 @@ class tam_contact_form_seven {
 	}
 
 	function init_uploads() {
-		$dir = $this->upload_tmp_dir();
+		$dir = wpcf7_upload_tmp_dir();
 		wp_mkdir_p( trailingslashit( $dir ) );
 		@chmod( $dir, 0733 );
 
@@ -1176,7 +1167,7 @@ class tam_contact_form_seven {
 	}
 
 	function cleanup_upload_files() {
-		$dir = $this->upload_tmp_dir();
+		$dir = wpcf7_upload_tmp_dir();
 		$dir = trailingslashit( $dir );
 
 		if ( ! is_dir( $dir ) || ! is_writable( $dir ) )
@@ -1203,7 +1194,7 @@ class tam_contact_form_seven {
 			$this->captcha = new ReallySimpleCaptcha();
 		$captcha =& $this->captcha;
 
-		$captcha->tmp_dir = trailingslashit( $this->captcha_tmp_dir() );
+		$captcha->tmp_dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 		wp_mkdir_p( $captcha->tmp_dir );
 		return true;
 	}
@@ -1414,56 +1405,6 @@ class tam_contact_form_seven {
 				$this->posted_data[$name] = $this->pipe( $pipes, $this->posted_data[$name] );
 		}
 	}
-
-	function captcha_tmp_dir() {
-		if ( defined( 'WPCF7_CAPTCHA_TMP_DIR' ) )
-			return WPCF7_CAPTCHA_TMP_DIR;
-		else
-			return $this->upload_dir( 'dir' ) . '/wpcf7_captcha';
-	}
-
-	function captcha_tmp_url() {
-		if ( defined( 'WPCF7_CAPTCHA_TMP_URL' ) )
-			return WPCF7_CAPTCHA_TMP_URL;
-		else
-			return $this->upload_dir( 'url' ) . '/wpcf7_captcha';
-	}
-
-	function upload_tmp_dir() {
-		if ( defined( 'WPCF7_UPLOADS_TMP_DIR' ) )
-			return WPCF7_UPLOADS_TMP_DIR;
-		else
-			return $this->upload_dir( 'dir' ) . '/wpcf7_uploads';
-	}
-
-	function upload_dir( $type = false ) {
-		$siteurl = get_option( 'siteurl' );
-		$upload_path = trim( get_option( 'upload_path' ) );
-		if ( empty( $upload_path ) )
-			$dir = WP_CONTENT_DIR . '/uploads';
-		else
-			$dir = $upload_path;
-
-		$dir = path_join( ABSPATH, $dir );
-
-		if ( ! $url = get_option( 'upload_url_path' ) ) {
-			if ( empty( $upload_path ) || $upload_path == $dir )
-				$url = WP_CONTENT_URL . '/uploads';
-			else
-				$url = trailingslashit( $siteurl ) . $upload_path;
-		}
-
-		if ( defined( 'UPLOADS' ) ) {
-			$dir = ABSPATH . UPLOADS;
-			$url = trailingslashit( $siteurl ) . UPLOADS;
-		}
-
-		if ( 'dir' == $type )
-			return $dir;
-		if ( 'url' == $type )
-			return $url;
-		return array( 'dir' => $dir, 'url' => $url );
-	}
 }
 
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
@@ -1487,13 +1428,23 @@ function wpcf7_init_switch() {
 
 add_action( 'init', 'wpcf7_init_switch', 11 );
 
+function wpcf7_load_plugin_textdomain() { // l10n
+	global $wp_version;
+
+	if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
+		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
+	else
+		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
+}
+
+add_action( 'init', 'wpcf7_load_plugin_textdomain' );
+
 if ( is_admin() ) {
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 	add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 }
 
 add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, array( $wpcf7, 'set_initial' ) );
-add_action( 'init', array( $wpcf7, 'load_plugin_textdomain' ) );
 add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
 add_action( 'admin_head', 'wpcf7_admin_head' );
 add_action( 'wp_head', array( $wpcf7, 'wp_head' ) );
