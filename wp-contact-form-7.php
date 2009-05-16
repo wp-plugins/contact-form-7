@@ -45,6 +45,9 @@ if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
 if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
 	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) );
 
+if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
+	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+
 if ( ! defined( 'WPCF7_AUTOP' ) )
 	define( 'WPCF7_AUTOP', true );
 
@@ -70,29 +73,6 @@ class tam_contact_form_seven {
 	var $posted_data;
 
 	function tam_contact_form_seven() {
-		add_action( 'activate_' . plugin_basename( __FILE__ ), array( &$this, 'set_initial' ) );
-		add_action( 'init', array( &$this, 'load_plugin_textdomain' ) );
-		add_action( 'admin_menu', array( &$this, 'add_pages' ) );
-		add_action( 'admin_head', array( &$this, 'admin_head' ) );
-		add_action( 'wp_head', array( &$this, 'wp_head' ) );
-		add_action( 'wp_print_scripts', array( &$this, 'load_js' ) );
-		add_action( 'init', array( &$this, 'init_switch' ), 11 );
-
-		add_filter( 'the_content', array( &$this, 'the_content_filter' ), 9 );
-		add_filter( 'widget_text', array( &$this, 'widget_text_filter' ), 9 );
-
-		add_shortcode( 'contact-form', array( &$this, 'contact_form_tag_func' ) );
-	}
-
-	function init_switch() {
-		if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
-			$this->ajax_json_echo();
-			exit();
-		} elseif ( ! is_admin() ) {
-			$this->process_nonajax_submitting();
-			$this->cleanup_captcha_files();
-			$this->cleanup_upload_files();
-		}
 	}
 
 	function ajax_json_echo() {
@@ -141,15 +121,15 @@ class tam_contact_form_seven {
 						$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . js_escape( $reason ) . '" }';
 					}
 					$invalids = '[' . join( ', ', $invalids ) . ']';
-					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
-					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ( $this->akismet( $cf ) ) { // Spam!
-					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
-					$echo = '{ mailSent: 1, message: "' . js_escape( $this->message( $cf, 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$echo = '{ mailSent: 1, message: "' . js_escape( wpcf7_message( $cf, 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} else {
-					$echo = '{ mailSent: 0, message: "' . js_escape( $this->message( $cf, 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				}
 
 				// remove upload files
@@ -189,7 +169,7 @@ class tam_contact_form_seven {
 
 			if ( empty( $file['tmp_name'] ) && 'file*' == $fe['type'] ) {
 				$valid = false;
-				$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+				$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
 				continue;
 			}
 
@@ -221,7 +201,7 @@ class tam_contact_form_seven {
 			$pattern = '/\.' . $pattern . '$/i';
 			if ( ! preg_match( $pattern, $file['name'] ) ) {
 				$valid = false;
-				$reason[$name] = $this->message( $contact_form, 'upload_file_type_invalid' );
+				$reason[$name] = wpcf7_message( $contact_form, 'upload_file_type_invalid' );
 				continue;
 			}
 
@@ -236,7 +216,7 @@ class tam_contact_form_seven {
 
 			if ( $file['size'] > $allowed_size ) {
 				$valid = false;
-				$reason[$name] = $this->message( $contact_form, 'upload_file_too_large' );
+				$reason[$name] = wpcf7_message( $contact_form, 'upload_file_too_large' );
 				continue;
 			}
 
@@ -249,7 +229,7 @@ class tam_contact_form_seven {
 			$new_file = trailingslashit( $uploads_dir ) . $filename;
 			if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
 				$valid = false;
-				$reason[$name] = $this->message( $contact_form, 'upload_failed' );
+				$reason[$name] = wpcf7_message( $contact_form, 'upload_failed' );
 				continue;
 			}
 
@@ -484,14 +464,14 @@ class tam_contact_form_seven {
 	function upgrade_181( $contact_form ) {
 		if ( ! isset( $contact_form['messages'] ) )
 			$contact_form['messages'] = array(
-				'mail_sent_ok' => $this->default_message( 'mail_sent_ok' ),
-				'mail_sent_ng' => $this->default_message( 'mail_sent_ng' ),
-				'akismet_says_spam' => $this->default_message( 'akismet_says_spam' ),
-				'validation_error' => $this->default_message( 'validation_error' ),
-				'accept_terms' => $this->default_message( 'accept_terms' ),
-				'invalid_email' => $this->default_message( 'invalid_email' ),
-				'invalid_required' => $this->default_message( 'invalid_required' ),
-				'captcha_not_match' => $this->default_message( 'captcha_not_match' )
+				'mail_sent_ok' => wpcf7_default_message( 'mail_sent_ok' ),
+				'mail_sent_ng' => wpcf7_default_message( 'mail_sent_ng' ),
+				'akismet_says_spam' => wpcf7_default_message( 'akismet_says_spam' ),
+				'validation_error' => wpcf7_default_message( 'validation_error' ),
+				'accept_terms' => wpcf7_default_message( 'accept_terms' ),
+				'invalid_email' => wpcf7_default_message( 'invalid_email' ),
+				'invalid_required' => wpcf7_default_message( 'invalid_required' ),
+				'captcha_not_match' => wpcf7_default_message( 'captcha_not_match' )
 			);
 		return $contact_form;
 	}
@@ -501,13 +481,13 @@ class tam_contact_form_seven {
 			$contact_form['messages'] = array();
 
 		if ( ! isset( $contact_form['messages']['upload_failed'] ) )
-			$contact_form['messages']['upload_failed'] = $this->default_message( 'upload_failed' );
+			$contact_form['messages']['upload_failed'] = wpcf7_default_message( 'upload_failed' );
 
 		if ( ! isset( $contact_form['messages']['upload_file_type_invalid'] ) )
-			$contact_form['messages']['upload_file_type_invalid'] = $this->default_message( 'upload_file_type_invalid' );
+			$contact_form['messages']['upload_file_type_invalid'] = wpcf7_default_message( 'upload_file_type_invalid' );
 
 		if ( ! isset( $contact_form['messages']['upload_file_too_large'] ) )
-			$contact_form['messages']['upload_file_too_large'] = $this->default_message( 'upload_file_too_large' );
+			$contact_form['messages']['upload_file_too_large'] = wpcf7_default_message( 'upload_file_too_large' );
 
 		return $contact_form;
 	}
@@ -517,286 +497,9 @@ class tam_contact_form_seven {
 			$contact_form['messages'] = array();
 
 		if ( ! isset( $contact_form['messages']['quiz_answer_not_correct'] ) )
-			$contact_form['messages']['quiz_answer_not_correct'] = $this->default_message( 'quiz_answer_not_correct' );
+			$contact_form['messages']['quiz_answer_not_correct'] = wpcf7_default_message( 'quiz_answer_not_correct' );
 
 		return $contact_form;
-	}
-
-/* Admin panel */
-
-	function admin_menu_parent() {
-		global $wp_version;
-		if ( version_compare( $wp_version, '2.7', '>=' ) )
-			return 'tools.php';
-		else
-			return 'edit.php';
-	}
-
-	function add_pages() {
-		if ( function_exists( 'admin_url' ) ) {
-			$base_url = admin_url( $this->admin_menu_parent() );
-		} else {
-			$base_url = get_option( 'siteurl' ) . '/wp-admin/' . $this->admin_menu_parent();
-		}
-		$page = str_replace( '\\', '%5C', plugin_basename( __FILE__ ) );
-		$contact_forms = $this->contact_forms();
-
-		if ( isset( $_POST['wpcf7-save'] ) && $this->has_edit_cap() ) {
-			$id = $_POST['wpcf7-id'];
-			check_admin_referer( 'wpcf7-save_' . $id );
-
-			$title = trim( $_POST['wpcf7-title'] );
-			$form = trim( $_POST['wpcf7-form'] );
-			$mail = array(
-				'subject' => trim( $_POST['wpcf7-mail-subject'] ),
-				'sender' => trim( $_POST['wpcf7-mail-sender'] ),
-				'body' => trim( $_POST['wpcf7-mail-body'] ),
-				'recipient' => trim( $_POST['wpcf7-mail-recipient'] ),
-				'additional_headers' => trim( $_POST['wpcf7-mail-additional-headers'] ),
-				'attachments' => trim( $_POST['wpcf7-mail-attachments'] ),
-				'use_html' => ( 1 == $_POST['wpcf7-mail-use-html'] ) ? true : false
-				);
-			$mail_2 = array(
-				'active' => ( 1 == $_POST['wpcf7-mail-2-active'] ) ? true : false,
-				'subject' => trim( $_POST['wpcf7-mail-2-subject'] ),
-				'sender' => trim( $_POST['wpcf7-mail-2-sender'] ),
-				'body' => trim( $_POST['wpcf7-mail-2-body'] ),
-				'recipient' => trim( $_POST['wpcf7-mail-2-recipient'] ),
-				'additional_headers' => trim( $_POST['wpcf7-mail-2-additional-headers'] ),
-				'attachments' => trim( $_POST['wpcf7-mail-2-attachments'] ),
-				'use_html' => ( 1 == $_POST['wpcf7-mail-2-use-html'] ) ? true : false
-				);
-			$messages = array(
-				'mail_sent_ok' => trim( $_POST['wpcf7-message-mail-sent-ok'] ),
-				'mail_sent_ng' => trim( $_POST['wpcf7-message-mail-sent-ng'] ),
-				'akismet_says_spam' => trim( $_POST['wpcf7-message-akismet-says-spam'] ),
-				'validation_error' => trim( $_POST['wpcf7-message-validation-error'] ),
-				'accept_terms' => trim( $_POST['wpcf7-message-accept-terms'] ),
-				'invalid_email' => trim( $_POST['wpcf7-message-invalid-email'] ),
-				'invalid_required' => trim( $_POST['wpcf7-message-invalid-required'] ),
-				'quiz_answer_not_correct' => trim( $_POST['wpcf7-message-quiz-answer-not-correct'] ),
-				'captcha_not_match' => trim( $_POST['wpcf7-message-captcha-not-match'] ),
-				'upload_failed' => trim( $_POST['wpcf7-message-upload-failed'] ),
-				'upload_file_type_invalid' => trim( $_POST['wpcf7-message-upload-file-type-invalid'] ),
-				'upload_file_too_large' => trim( $_POST['wpcf7-message-upload-file-too-large'] )
-				);
-			$options = array(
-				'recipient' => trim( $_POST['wpcf7-options-recipient'] ) // For backward compatibility.
-				);
-
-			if ( array_key_exists( $id, $contact_forms ) ) {
-				$contact_forms[$id] = compact( 'title', 'form', 'mail', 'mail_2', 'messages', 'options' );
-				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id . '&message=saved';
-			} else {
-				$key = ( empty( $contact_forms ) ) ? 1 : max( array_keys( $contact_forms ) ) + 1;
-				$contact_forms[$key] = compact( 'title', 'form', 'mail', 'mail_2', 'messages', 'options' );
-				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
-			}
-			$this->update_contact_forms( $contact_forms );
-			
-			wp_redirect( $redirect_to );
-			exit();
-		} elseif ( isset( $_POST['wpcf7-copy'] ) && $this->has_edit_cap() ) {
-			$id = $_POST['wpcf7-id'];
-			check_admin_referer( 'wpcf7-copy_' . $id );
-
-			if ( array_key_exists( $id, $contact_forms ) ) {
-				$key = max( array_keys( $contact_forms ) ) + 1;
-				$contact_forms[$key] = $contact_forms[$id];
-				$contact_forms[$key]['title'] .= '_copy';
-				$this->update_contact_forms( $contact_forms );
-				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
-			} else {
-				$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id;
-			}
-
-			wp_redirect( $redirect_to );
-			exit();
-		} elseif ( isset( $_POST['wpcf7-delete'] ) && $this->has_edit_cap() ) {
-			$id = $_POST['wpcf7-id'];
-			check_admin_referer( 'wpcf7-delete_' . $id );
-
-			unset( $contact_forms[$id] );
-			$this->update_contact_forms( $contact_forms );
-
-			wp_redirect( $base_url . '?page=' . $page . '&message=deleted' );
-			exit();
-		}
-
-		add_management_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ), wpcf7_read_capability(), __FILE__, array( &$this, 'management_page' ) );
-	}
-
-	function admin_head() {
-		global $plugin_page;
-
-		if ( isset( $plugin_page ) && $plugin_page == plugin_basename( __FILE__ ) ) {
-
-			$admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet.css';
-			echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
-
-			if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-				$admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet-rtl.css';
-				echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
-			}
-
-?>
-<script type="text/javascript">
-//<![CDATA[
-var _wpcf7 = {
-	captchaMod: <?php echo ( class_exists( 'ReallySimpleCaptcha' ) ) ? 'true' : 'false' ?>
-};
-//]]>
-</script>
-<?php
-		}
-	}
-
-	function has_edit_cap() {
-		return current_user_can( wpcf7_read_write_capability() );
-	}
-
-	function management_page() {
-		global $wp_version;
-
-		if ( function_exists( 'admin_url' ) ) {
-			$base_url = admin_url( $this->admin_menu_parent() );
-		} else {
-			$base_url = get_option( 'siteurl' ) . '/wp-admin/' . $this->admin_menu_parent();
-		}
-		$page = plugin_basename( __FILE__ );
-
-		switch ( $_GET['message'] ) {
-			case 'created':
-				$updated_message = __( 'Contact form created.', 'wpcf7' );
-				break;
-			case 'saved':
-				$updated_message = __( 'Contact form saved.', 'wpcf7' );
-				break;
-			case 'deleted':
-				$updated_message = __( 'Contact form deleted.', 'wpcf7' );
-				break;
-		}
-
-		$contact_forms = $this->contact_forms();
-
-		$id = $_POST['wpcf7-id'];
-
-		if ( 'new' == $_GET['contactform'] ) {
-			$unsaved = true;
-			$current = -1;
-			$cf = $this->default_pack( __( 'Untitled', 'wpcf7' ), true );
-		} elseif ( array_key_exists( $_GET['contactform'], $contact_forms ) ) {
-			$current = (int) $_GET['contactform'];
-			$cf = stripslashes_deep( $contact_forms[$current] );
-			$cf = $this->upgrade( $cf );
-		} else {
-			$current = (int) array_shift( array_keys( $contact_forms ) );
-			$cf = stripslashes_deep( $contact_forms[$current] );
-			$cf = $this->upgrade( $cf );
-		}
-
-		require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
-	}
-
-	function default_pack( $title, $initial = false ) {
-		$cf = array( 'title' => $title,
-			'form' => $this->default_form_template(),
-			'mail' => $this->default_mail_template(),
-			'mail_2' => $this->default_mail_2_template(),
-			'messages' => $this->default_messages_template(),
-			'options' => $this->default_options_template() );
-		if ( $initial )
-			$cf['initial'] = true;
-		return $cf;
-	}
-
-	function default_form_template() {
-		$template .= '<p>' . __( 'Your Name', 'wpcf7' ) . ' ' . __( '(required)', 'wpcf7' ) . '<br />' . "\n";
-		$template .= '    [text* your-name] </p>' . "\n\n";
-		$template .= '<p>' . __( 'Your Email', 'wpcf7' ) . ' ' . __( '(required)', 'wpcf7' ) . '<br />' . "\n";
-		$template .= '    [email* your-email] </p>' . "\n\n";
-		$template .= '<p>' . __( 'Subject', 'wpcf7' ) . '<br />' . "\n";
-		$template .= '    [text your-subject] </p>' . "\n\n";
-		$template .= '<p>' . __( 'Your Message', 'wpcf7' ) . '<br />' . "\n";
-		$template .= '    [textarea your-message] </p>' . "\n\n";
-		$template .= '<p>[submit "' . __( 'Send', 'wpcf7' ) . '"]</p>';
-		return $template;
-	}
-
-	function default_mail_template() {
-		$subject = '[your-subject]';
-		$sender = '[your-name] <[your-email]>';
-		$body = '[your-message]';
-		$recipient = get_option( 'admin_email' );
-		return compact( 'subject', 'sender', 'body', 'recipient' );
-	}
-
-	function default_mail_2_template() {
-		$active = false;
-		$subject = '[your-subject]';
-		$sender = '[your-name] <[your-email]>';
-		$body = '[your-message]';
-		$recipient = '[your-email]';
-		return compact( 'active', 'subject', 'sender', 'body', 'recipient' );
-	}
-
-	function default_messages_template() {
-		$mail_sent_ok = $this->default_message( 'mail_sent_ok' );
-		$mail_sent_ng = $this->default_message( 'mail_sent_ng' );
-		$akismet_says_spam = $this->default_message( 'akismet_says_spam' );
-		$validation_error = $this->default_message( 'validation_error' );
-		$accept_terms = $this->default_message( 'accept_terms' );
-		$invalid_email = $this->default_message( 'invalid_email' );
-		$invalid_required = $this->default_message( 'invalid_required' );
-		$quiz_answer_not_correct = $this->default_message( 'quiz_answer_not_correct' );
-		$captcha_not_match = $this->default_message( 'captcha_not_match' );
-		$upload_failed = $this->default_message( 'upload_failed' );
-		$upload_file_type_invalid = $this->default_message( 'upload_file_type_invalid' );
-		$upload_file_too_large = $this->default_message( 'upload_file_too_large' );
-		return compact( 'mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam',
-            'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'quiz_answer_not_correct',
-            'captcha_not_match', 'upload_failed', 'upload_file_type_invalid', 'upload_file_too_large' );
-	}
-
-	function default_options_template() {
-		$recipient = get_option( 'admin_email' ); // For backward compatibility.
-		return compact( 'recipient' );
-	}
-
-	function message( $contact_form, $status ) {
-		if ( ! isset( $contact_form['messages'] ) || ! isset( $contact_form['messages'][$status] ) )
-			return $this->default_message( $status );
-
-		return $contact_form['messages'][$status];
-    }
-
-	function default_message( $status ) {
-		switch ( $status ) {
-			case 'mail_sent_ok':
-				return __( 'Your message was sent successfully. Thanks.', 'wpcf7' );
-			case 'mail_sent_ng':
-				return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-			case 'akismet_says_spam':
-				return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-			case 'validation_error':
-				return __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' );
-			case 'accept_terms':
-				return __( 'Please accept the terms to proceed.', 'wpcf7' );
-			case 'invalid_email':
-				return __( 'Email address seems invalid.', 'wpcf7' );
-			case 'invalid_required':
-				return __( 'Please fill the required field.', 'wpcf7' );
-			case 'captcha_not_match':
-				return __( 'Your entered code is incorrect.', 'wpcf7' );
-			case 'quiz_answer_not_correct':
-				return __( 'Your answer is not correct.', 'wpcf7' );
-			case 'upload_failed':
-				return __( 'Failed to upload file.', 'wpcf7' );
-			case 'upload_file_type_invalid':
-				return __( 'This file type is not allowed.', 'wpcf7' );
-			case 'upload_file_too_large':
-				return __( 'This file is too large.', 'wpcf7' );
-		}
 	}
 
 	function process_nonajax_submitting() {
@@ -817,13 +520,13 @@ var _wpcf7 = {
 			if ( ! $validation['valid'] ) {
 				$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
 			} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
-				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'accept_terms' ) );
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'accept_terms' ) );
 			} elseif ( $this->akismet( $cf ) ) { // Spam!
-				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'akismet_says_spam' ), 'spam' => true );
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'akismet_says_spam' ), 'spam' => true );
 			} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
-				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $this->message( $cf, 'mail_sent_ok' ) );
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => wpcf7_message( $cf, 'mail_sent_ok' ) );
 			} else {
-				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $this->message( $cf, 'mail_sent_ng' ) );
+				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'mail_sent_ng' ) );
 			}
 
 			// remove upload files
@@ -919,7 +622,7 @@ var _wpcf7 = {
 				}
 			} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $id ) {
 				$class .= ' wpcf7-validation-errors';
-				$content = $this->message( $cf, 'validation_error' );
+				$content = wpcf7_message( $cf, 'validation_error' );
 			}
 		}
 
@@ -1020,14 +723,14 @@ var _wpcf7 = {
 			if ( preg_match( '/^(?:text|textarea)[*]$/', $type ) ) {
 				if ( ! isset( $_POST[$name] ) || '' == $_POST[$name] ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+					$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
 				}
 			}
 
 			if ( 'checkbox*' == $type ) {
 				if ( empty( $_POST[$name] ) ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+					$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
 				}
 			}
 
@@ -1036,17 +739,17 @@ var _wpcf7 = {
 						! is_array( $_POST[$name] ) && '---' == $_POST[$name] ||
 						is_array( $_POST[$name] ) && 1 == count( $_POST[$name] ) && '---' == $_POST[$name][0] ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+					$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
 				}
 			}
 
 			if ( preg_match( '/^email[*]?$/', $type ) ) {
 				if ( '*' == substr( $type, -1 ) && ( ! isset( $_POST[$name] ) || '' == $_POST[$name] ) ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'invalid_required' );
+					$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
 				} elseif ( isset( $_POST[$name] ) && '' != $_POST[$name] && ! is_email( $_POST[$name] ) ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'invalid_email' );
+					$reason[$name] = wpcf7_message( $contact_form, 'invalid_email' );
 				}
 			}
 
@@ -1054,7 +757,7 @@ var _wpcf7 = {
 				$captchac = '_wpcf7_captcha_challenge_' . $name;
 				if ( ! $this->check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'captcha_not_match' );
+					$reason[$name] = wpcf7_message( $contact_form, 'captcha_not_match' );
 				}
 				$this->remove_captcha( $_POST[$captchac] );
 			}
@@ -1065,7 +768,7 @@ var _wpcf7 = {
 				$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
 				if ( $answer_hash != $expected_hash ) {
 					$valid = false;
-					$reason[$name] = $this->message( $contact_form, 'quiz_answer_not_correct' );
+					$reason[$name] = wpcf7_message( $contact_form, 'quiz_answer_not_correct' );
 				}
 			}
 		}
@@ -1133,62 +836,6 @@ var _wpcf7 = {
 	}
 
 	function load_js() {
-		global $pagenow;
-
-		if ( is_admin() && $this->admin_menu_parent() == $pagenow && false !== strpos( $_GET['page'], 'contact-form-7' ) ) {
-			wp_enqueue_script( 'wpcf7-admin', WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js', array('jquery'), wpcf7_version(), true );
-			wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
-				'optional' => __( 'optional', 'wpcf7' ),
-				'generateTag' => __( 'Generate Tag', 'wpcf7' ),
-				'textField' => __( 'Text field', 'wpcf7' ),
-				'emailField' => __( 'Email field', 'wpcf7' ),
-				'textArea' => __( 'Text area', 'wpcf7' ),
-				'menu' => __( 'Drop-down menu', 'wpcf7' ),
-				'checkboxes' => __( 'Checkboxes', 'wpcf7' ),
-				'radioButtons' => __( 'Radio buttons', 'wpcf7' ),
-				'acceptance' => __( 'Acceptance', 'wpcf7' ),
-				'isAcceptanceDefaultOn' => __( "Make this checkbox checked by default?", 'wpcf7' ),
-				'isAcceptanceInvert' => __( "Make this checkbox work inversely?", 'wpcf7' ),
-				'isAcceptanceInvertMeans' => __( "* That means visitor who accepts the term unchecks it.", 'wpcf7' ),
-				'captcha' => __( 'CAPTCHA', 'wpcf7' ),
-				'quiz' => __( 'Quiz', 'wpcf7' ),
-				'quizzes' => __( 'Quizzes', 'wpcf7' ),
-				'quizFormatDesc' => __( "* quiz|answer (e.g. 1+1=?|2)", 'wpcf7' ),
-				'fileUpload' => __( 'File upload', 'wpcf7' ),
-				'bytes' => __( 'bytes', 'wpcf7' ),
-				'submit' => __( 'Submit button', 'wpcf7' ),
-				'tagName' => __( 'Name', 'wpcf7' ),
-				'isRequiredField' => __( 'Required field?', 'wpcf7' ),
-				'allowsMultipleSelections' => __( 'Allow multiple selections?', 'wpcf7' ),
-				'insertFirstBlankOption' => __( 'Insert a blank item as the first option?', 'wpcf7' ),
-				'makeCheckboxesExclusive' => __( 'Make checkboxes exclusive?', 'wpcf7' ),
-				'menuChoices' => __( 'Choices', 'wpcf7' ),
-				'label' => __( 'Label', 'wpcf7' ),
-				'defaultValue' => __( 'Default value', 'wpcf7' ),
-				'akismet' => __( 'Akismet', 'wpcf7' ),
-				'akismetAuthor' => __( "This field requires author's name", 'wpcf7' ),
-				'akismetAuthorUrl' => __( "This field requires author's URL", 'wpcf7' ),
-				'akismetAuthorEmail' => __( "This field requires author's email address", 'wpcf7' ),
-				'generatedTag' => __( "Copy this code and paste it into the form left.", 'wpcf7' ),
-				'fgColor' => __( "Foreground color", 'wpcf7' ),
-				'bgColor' => __( "Background color", 'wpcf7' ),
-				'imageSize' => __( "Image size", 'wpcf7' ),
-				'imageSizeSmall' => __( "Small", 'wpcf7' ),
-				'imageSizeMedium' => __( "Medium", 'wpcf7' ),
-				'imageSizeLarge' => __( "Large", 'wpcf7' ),
-				'imageSettings' => __( "Image settings", 'wpcf7' ),
-				'inputFieldSettings' => __( "Input field settings", 'wpcf7' ),
-				'tagForImage' => __( "For image", 'wpcf7' ),
-				'tagForInputField' => __( "For input field", 'wpcf7' ),
-				'oneChoicePerLine' => __( "* One choice per line.", 'wpcf7' ),
-				'show' => __( "Show", 'wpcf7' ),
-				'hide' => __( "Hide", 'wpcf7' ),
-				'fileSizeLimit' => __( "File size limit", 'wpcf7' ),
-				'acceptableFileTypes' => __( "Acceptable file types", 'wpcf7' ),
-				'needReallySimpleCaptcha' => __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7' )
-			) );
-		}
-
 		if ( ! is_admin() )
 			wp_enqueue_script( 'contact-form-7', WPCF7_PLUGIN_URL . '/contact-form-7.js', array('jquery', 'jquery-form'), wpcf7_version(), true );
 	}
@@ -1863,6 +1510,40 @@ var _wpcf7 = {
 	}
 }
 
+require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
+
 $wpcf7 = new tam_contact_form_seven();
 
+function wpcf7_init_switch() {
+	global $wpcf7;
+
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
+		$wpcf7->ajax_json_echo();
+		exit();
+	} elseif ( ! is_admin() ) {
+		$wpcf7->process_nonajax_submitting();
+		$wpcf7->cleanup_captcha_files();
+		$wpcf7->cleanup_upload_files();
+	}
+}
+
+add_action( 'init', 'wpcf7_init_switch', 11 );
+
+if ( is_admin() ) {
+	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
+	add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
+}
+
+add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, array( $wpcf7, 'set_initial' ) );
+add_action( 'init', array( $wpcf7, 'load_plugin_textdomain' ) );
+add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
+add_action( 'admin_head', 'wpcf7_admin_head' );
+add_action( 'wp_head', array( $wpcf7, 'wp_head' ) );
+add_action( 'wp_print_scripts', array( $wpcf7, 'load_js' ) );
+
+add_filter( 'the_content', array( $wpcf7, 'the_content_filter' ), 9 );
+add_filter( 'widget_text', array( $wpcf7, 'widget_text_filter' ), 9 );
+
+add_shortcode( 'contact-form', array( $wpcf7, 'contact_form_tag_func' ) );
 ?>

@@ -15,7 +15,7 @@
             <?php echo $v['title']; ?></a> |</li>
         <?php endforeach; ?>
 
-        <?php if ( $this->has_edit_cap() ) : ?>
+        <?php if ( wpcf7_admin_has_edit_cap() ) : ?>
         <li class="addnew">
             <a href="<?php echo $base_url . '?page=' . $page . '&contactform=new'; ?>"<?php if ( $unsaved ) echo ' class="current"'; ?>>
             <?php _e( 'Add new', 'wpcf7' ); ?></a></li>
@@ -25,10 +25,10 @@
     <br class="clear" />
 
 <?php if ( $cf ) : ?>
-<?php $disabled = ( $this->has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
+<?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
 
 <form method="post" action="<?php echo $base_url . '?page=' . $page . '&contactform=' . $current; ?>" id="wpcf7-admin-form-element">
-<?php if ( $this->has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
+<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
 <input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
 
     <table class="widefat">
@@ -45,13 +45,13 @@
                         </p>
                         <?php endif; ?>
 
-                        <?php if ( $this->has_edit_cap() ) : ?>
+                        <?php if ( wpcf7_admin_has_edit_cap() ) : ?>
                         <div class="save-contact-form">
                             <input type="submit" class="button button-highlighted" name="wpcf7-save" value="<?php _e( 'Save', 'wpcf7' ); ?>" />
                         </div>
                         <?php endif; ?>
 
-                        <?php if ( $this->has_edit_cap() && ! $unsaved ) : ?>
+                        <?php if ( wpcf7_admin_has_edit_cap() && ! $unsaved ) : ?>
                         <div class="actions-link">
                             <?php $copy_nonce = wp_create_nonce( 'wpcf7-copy_' . $current ); ?>
                             <input type="submit" name="wpcf7-copy" class="copy" value="<?php _e( 'Copy', 'wpcf7' ); ?>"
@@ -70,7 +70,7 @@
         </tbody>
     </table>
 
-    <?php if ( $this->has_edit_cap() ) : ?>
+    <?php if ( wpcf7_admin_has_edit_cap() ) : ?>
     
     <table class="widefat" style="margin-top: 1em;">
         <thead>
