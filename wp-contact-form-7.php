@@ -399,24 +399,6 @@ class tam_contact_form_seven {
 		return $accepted;
 	}
 
-	function set_initial() {
-		$this->load_plugin_textdomain();
-
-		$wpcf7 = get_option( 'wpcf7' );
-		if ( ! is_array( $wpcf7 ) )
-			$wpcf7 = array();
-
-		$contact_forms = $wpcf7['contact_forms'];
-		if ( ! is_array( $contact_forms ) )
-			$contact_forms = array();
-
-		if ( 0 == count( $contact_forms ) )
-			$contact_forms[1] = $this->default_pack( __( 'Contact form', 'wpcf7' ) . ' 1' );
-
-		$wpcf7['contact_forms'] = $contact_forms;
-		update_option( 'wpcf7', $wpcf7 );
-	}
-
 	function contact_forms() {
 		if ( is_array( $this->contact_forms ) )
 			return $this->contact_forms;
@@ -702,11 +684,11 @@ class tam_contact_form_seven {
 
 			if ( preg_match( '/^captchar$/', $type ) ) {
 				$captchac = '_wpcf7_captcha_challenge_' . $name;
-				if ( ! $this->check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
+				if ( ! wpcf7_check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
 					$valid = false;
 					$reason[$name] = wpcf7_message( $contact_form, 'captcha_not_match' );
 				}
-				$this->remove_captcha( $_POST[$captchac] );
+				wpcf7_remove_captcha( $_POST[$captchac] );
 			}
 
 			if ( 'quiz' == $type ) {
@@ -731,8 +713,8 @@ class tam_contact_form_seven {
 			$name = $fe['name'];
 			$options = $fe['options'];
 			if ( 'captchac' == $type ) {
-				$op = $this->captchac_options( $options );
-				if ( $filename = $this->generate_captcha( $op ) ) {
+				$op = wpcf7_captchac_options( $options );
+				if ( $filename = wpcf7_generate_captcha( $op ) ) {
 					$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
 					$refill[$name] = $captcha_url;
 				}
@@ -770,21 +752,6 @@ class tam_contact_form_seven {
 		}
 
 		return $refill;
-	}
-
-	function wp_head() {
-		$stylesheet_url = WPCF7_PLUGIN_URL . '/stylesheet.css';
-		echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
-
-		if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-			$stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/stylesheet-rtl.css';
-			echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
-		}
-	}
-
-	function load_js() {
-		if ( ! is_admin() )
-			wp_enqueue_script( 'contact-form-7', WPCF7_PLUGIN_URL . '/contact-form-7.js', array('jquery', 'jquery-form'), wpcf7_version(), true );
 	}
 
 /* Processing form element placeholders */
@@ -1047,9 +1014,9 @@ class tam_contact_form_seven {
 				$op['font_size'] = 14;
 				$op['font_char_width'] = 15;
 
-				$op = array_merge( $op, $this->captchac_options( $options ) );
+				$op = array_merge( $op, wpcf7_captchac_options( $options ) );
 
-				if ( ! $filename = $this->generate_captcha( $op ) ) {
+				if ( ! $filename = wpcf7_generate_captcha( $op ) ) {
 					return '';
 					break;
 				}
@@ -1186,158 +1153,6 @@ class tam_contact_form_seven {
 		}
 	}
 
-	function init_captcha() {
-		if ( ! class_exists( 'ReallySimpleCaptcha' ) )
-			return false;
-
-		if ( ! is_object( $this->captcha ) )
-			$this->captcha = new ReallySimpleCaptcha();
-		$captcha =& $this->captcha;
-
-		$captcha->tmp_dir = trailingslashit( wpcf7_captcha_tmp_dir() );
-		wp_mkdir_p( $captcha->tmp_dir );
-		return true;
-	}
-
-	function generate_captcha( $options = null ) {
-		if ( ! $this->init_captcha() )
-			return false;
-		$captcha =& $this->captcha;
-
-		if ( ! is_dir( $captcha->tmp_dir ) || ! is_writable( $captcha->tmp_dir ) )
-			return false;
-
-		$img_type = imagetypes();
-		if ( $img_type & IMG_PNG )
-			$captcha->img_type = 'png';
-		elseif ( $img_type & IMG_GIF )
-			$captcha->img_type = 'gif';
-		elseif ( $img_type & IMG_JPG )
-			$captcha->img_type = 'jpeg';
-		else
-			return false;
-
-		if ( is_array( $options ) ) {
-			if ( isset( $options['img_size'] ) )
-				$captcha->img_size = $options['img_size'];
-			if ( isset( $options['base'] ) )
-				$captcha->base = $options['base'];
-			if ( isset( $options['font_size'] ) )
-				$captcha->font_size = $options['font_size'];
-			if ( isset( $options['font_char_width'] ) )
-				$captcha->font_char_width = $options['font_char_width'];
-			if ( isset( $options['fg'] ) )
-				$captcha->fg = $options['fg'];
-			if ( isset( $options['bg'] ) )
-				$captcha->bg = $options['bg'];
-		}
-
-		$prefix = mt_rand();
-		$captcha_word = $captcha->generate_random_word();
-		return $captcha->generate_image( $prefix, $captcha_word );
-	}
-
-	function check_captcha( $prefix, $response ) {
-		if ( ! $this->init_captcha() )
-			return false;
-		$captcha =& $this->captcha;
-
-		return $captcha->check( $prefix, $response );
-	}
-
-	function remove_captcha( $prefix ) {
-		if ( ! $this->init_captcha() )
-			return false;
-		$captcha =& $this->captcha;
-
-		$captcha->remove( $prefix );
-	}
-
-	function cleanup_captcha_files() {
-		if ( ! $this->init_captcha() )
-			return false;
-		$captcha =& $this->captcha;
-
-		$tmp_dir = $captcha->tmp_dir;
-		
-		if ( ! is_dir( $tmp_dir ) || ! is_writable( $tmp_dir ) )
-			return false;
-
-		if ( $handle = opendir( $tmp_dir ) ) {
-			while ( false !== ( $file = readdir( $handle ) ) ) {
-				if ( ! preg_match( '/^[0-9]+\.(php|png|gif|jpeg)$/', $file ) )
-					continue;
-				$stat = stat( $tmp_dir . $file );
-				if ( $stat['mtime'] + 21600 < time() ) // 21600 secs == 6 hours
-					@ unlink( $tmp_dir . $file );
-			}
-			closedir( $handle );
-		}
-	}
-
-	function captchac_options( $options ) {
-		if ( ! is_array( $options ) )
-			return array();
-
-		$op = array();
-		$image_size_array = preg_grep( '%^size:[smlSML]$%', $options );
-		if ( $image_size = array_shift( $image_size_array ) ) {
-			preg_match( '%^size:([smlSML])$%', $image_size, $is_matches );
-			switch ( strtolower( $is_matches[1] ) ) {
-				case 's':
-					$op['img_size'] = array( 60, 20 );
-					$op['base'] = array( 6, 15 );
-					$op['font_size'] = 11;
-					$op['font_char_width'] = 13;
-					break;
-				case 'l':
-					$op['img_size'] = array( 84, 28 );
-					$op['base'] = array( 6, 20 );
-					$op['font_size'] = 17;
-					$op['font_char_width'] = 19;
-					break;
-				case 'm':
-				default:
-					$op['img_size'] = array( 72, 24 );
-					$op['base'] = array( 6, 18 );
-					$op['font_size'] = 14;
-					$op['font_char_width'] = 15;
-			}
-		}
-		$fg_color_array = preg_grep( '%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options );
-		if ( $fg_color = array_shift( $fg_color_array ) ) {
-			preg_match( '%^fg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $fg_color, $fc_matches );
-			if ( 3 == strlen( $fc_matches[1] ) ) {
-				$r = substr( $fc_matches[1], 0, 1 );
-				$g = substr( $fc_matches[1], 1, 1 );
-				$b = substr( $fc_matches[1], 2, 1 );
-				$op['fg'] = array( hexdec( $r . $r ), hexdec( $g . $g ), hexdec( $b . $b ) );
-			} elseif ( 6 == strlen( $fc_matches[1] ) ) {
-				$r = substr( $fc_matches[1], 0, 2 );
-				$g = substr( $fc_matches[1], 2, 2 );
-				$b = substr( $fc_matches[1], 4, 2 );
-				$op['fg'] = array( hexdec( $r ), hexdec( $g ), hexdec( $b ) );
-			}
-		}
-		$bg_color_array = preg_grep( '%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $options );
-		if ( $bg_color = array_shift( $bg_color_array ) ) {
-			preg_match( '%^bg:#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$%', $bg_color, $bc_matches );
-			if ( 3 == strlen( $bc_matches[1] ) ) {
-				$r = substr( $bc_matches[1], 0, 1 );
-				$g = substr( $bc_matches[1], 1, 1 );
-				$b = substr( $bc_matches[1], 2, 1 );
-				$op['bg'] = array( hexdec( $r . $r ), hexdec( $g . $g ), hexdec( $b . $b ) );
-			} elseif ( 6 == strlen( $bc_matches[1] ) ) {
-				$r = substr( $bc_matches[1], 0, 2 );
-				$g = substr( $bc_matches[1], 2, 2 );
-				$b = substr( $bc_matches[1], 4, 2 );
-				$op['bg'] = array( hexdec( $r ), hexdec( $g ), hexdec( $b ) );
-			}
-		}
-
-		return $op;
-	}
-
 	function pipe( $pipes, $value ) {
 		if ( is_array( $value ) ) {
 			$results = array();
@@ -1410,6 +1225,8 @@ class tam_contact_form_seven {
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 
 $wpcf7 = new tam_contact_form_seven();
 
@@ -1421,7 +1238,7 @@ function wpcf7_init_switch() {
 		exit();
 	} elseif ( ! is_admin() ) {
 		$wpcf7->process_nonajax_submitting();
-		$wpcf7->cleanup_captcha_files();
+		wpcf7_cleanup_captcha_files();
 		$wpcf7->cleanup_upload_files();
 	}
 }
@@ -1439,16 +1256,34 @@ function wpcf7_load_plugin_textdomain() { // l10n
 
 add_action( 'init', 'wpcf7_load_plugin_textdomain' );
 
+function wpcf7_set_initial() {
+	wpcf7_load_plugin_textdomain();
+
+	$wpcf7 = get_option( 'wpcf7' );
+	if ( ! is_array( $wpcf7 ) )
+		$wpcf7 = array();
+
+	$contact_forms = $wpcf7['contact_forms'];
+	if ( ! is_array( $contact_forms ) )
+		$contact_forms = array();
+
+	if ( 0 == count( $contact_forms ) )
+		$contact_forms[1] = wpcf7_default_pack( __( 'Contact form', 'wpcf7' ) . ' 1' );
+
+	$wpcf7['contact_forms'] = $contact_forms;
+	update_option( 'wpcf7', $wpcf7 );
+}
+
 if ( is_admin() ) {
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 	add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 }
 
-add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, array( $wpcf7, 'set_initial' ) );
+add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_set_initial' );
 add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
 add_action( 'admin_head', 'wpcf7_admin_head' );
-add_action( 'wp_head', array( $wpcf7, 'wp_head' ) );
-add_action( 'wp_print_scripts', array( $wpcf7, 'load_js' ) );
+add_action( 'wp_head', 'wpcf7_wp_head' );
+add_action( 'wp_print_scripts', 'wpcf7_load_js' );
 
 add_filter( 'the_content', array( $wpcf7, 'the_content_filter' ), 9 );
 add_filter( 'widget_text', array( $wpcf7, 'widget_text_filter' ), 9 );
