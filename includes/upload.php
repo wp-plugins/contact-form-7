@@ -1,8 +1,6 @@
 <?php
 
 function wpcf7_handle_uploads( $contact_form ) {
-	global $wpcf7;
-
 	$files = array();
 	$valid = true;
 	$reason = array();
@@ -10,7 +8,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 	wpcf7_init_uploads(); // Confirm upload dir
 	$uploads_dir = wpcf7_upload_tmp_dir();
 
-	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$fes = $contact_form->form_elements( false );
 
 	foreach ( $fes as $fe ) {
 		if ( 'file' != $fe['type'] && 'file*' != $fe['type'] )
@@ -23,7 +21,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 
 		if ( empty( $file['tmp_name'] ) && 'file*' == $fe['type'] ) {
 			$valid = false;
-			$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
+			$reason[$name] = $contact_form->message( 'invalid_required' );
 			continue;
 		}
 
@@ -55,7 +53,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 		$pattern = '/\.' . $pattern . '$/i';
 		if ( ! preg_match( $pattern, $file['name'] ) ) {
 			$valid = false;
-			$reason[$name] = wpcf7_message( $contact_form, 'upload_file_type_invalid' );
+			$reason[$name] = $contact_form->message( 'upload_file_type_invalid' );
 			continue;
 		}
 
@@ -70,7 +68,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 
 		if ( $file['size'] > $allowed_size ) {
 			$valid = false;
-			$reason[$name] = wpcf7_message( $contact_form, 'upload_file_too_large' );
+			$reason[$name] = $contact_form->message( 'upload_file_too_large' );
 			continue;
 		}
 
@@ -83,7 +81,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 		$new_file = trailingslashit( $uploads_dir ) . $filename;
 		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
 			$valid = false;
-			$reason[$name] = wpcf7_message( $contact_form, 'upload_failed' );
+			$reason[$name] = $contact_form->message( 'upload_failed' );
 			continue;
 		}
 

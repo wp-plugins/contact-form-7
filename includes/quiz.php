@@ -1,9 +1,7 @@
 <?php
 
 function wpcf7_refill_quiz( $contact_form ) {
-	global $wpcf7;
-
-	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$fes = $contact_form->form_elements( false );
 	$refill = array();
 
 	foreach ( $fes as $fe ) {

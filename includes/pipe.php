@@ -50,7 +50,7 @@ function wpcf7_pipe_all_posted( $contact_form ) {
 
 	$all_pipes = array();
 
-	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$fes = $contact_form->form_elements( false );
 	foreach ( $fes as $fe ) {
 		$type = $fe['type'];
 		$name = $fe['name'];

@@ -1,10 +1,32 @@
 <?php
 
-function wpcf7_message( $contact_form, $status ) {
-	if ( ! isset( $contact_form['messages'] ) || ! isset( $contact_form['messages'][$status] ) )
-		return wpcf7_default_message( $status );
-
-	return $contact_form['messages'][$status];
+function wpcf7_default_message( $status ) {
+	switch ( $status ) {
+		case 'mail_sent_ok':
+			return __( 'Your message was sent successfully. Thanks.', 'wpcf7' );
+		case 'mail_sent_ng':
+			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
+		case 'akismet_says_spam':
+			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
+		case 'validation_error':
+			return __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' );
+		case 'accept_terms':
+			return __( 'Please accept the terms to proceed.', 'wpcf7' );
+		case 'invalid_email':
+			return __( 'Email address seems invalid.', 'wpcf7' );
+		case 'invalid_required':
+			return __( 'Please fill the required field.', 'wpcf7' );
+		case 'captcha_not_match':
+			return __( 'Your entered code is incorrect.', 'wpcf7' );
+		case 'quiz_answer_not_correct':
+			return __( 'Your answer is not correct.', 'wpcf7' );
+		case 'upload_failed':
+			return __( 'Failed to upload file.', 'wpcf7' );
+		case 'upload_file_type_invalid':
+			return __( 'This file type is not allowed.', 'wpcf7' );
+		case 'upload_file_too_large':
+			return __( 'This file is too large.', 'wpcf7' );
+	}
 }
 
 function wpcf7_upload_dir( $type = false ) {

@@ -3,17 +3,15 @@
 function wpcf7_mail( $contact_form, $files = array() ) {
 	global $wp_version, $wpcf7;
 
-	$contact_form = $wpcf7->upgrade( $contact_form );
-
 	$wpcf7->posted_data = $_POST;
 
 	if ( WPCF7_USE_PIPE ) {
 		wpcf7_pipe_all_posted( $contact_form );
 	}
 
-	if ( wpcf7_compose_and_send_mail( $contact_form['mail'], $files ) ) {
-		if ( $contact_form['mail_2']['active'] )
-			wpcf7_compose_and_send_mail( $contact_form['mail_2'], $files );
+	if ( wpcf7_compose_and_send_mail( $contact_form->mail, $files ) ) {
+		if ( $contact_form->mail_2['active'] )
+			wpcf7_compose_and_send_mail( $contact_form->mail_2, $files );
 
 		return true;
 	}

@@ -1,14 +1,14 @@
 <?php
 
 function wpcf7_akismet( $contact_form ) {
-	global $akismet_api_host, $akismet_api_port, $wpcf7;
+	global $akismet_api_host, $akismet_api_port;
 
 	if ( ! function_exists( 'akismet_http_post' ) || ! ( get_option( 'wordpress_api_key' ) || $wpcom_api_key ) )
 		return false;
 
 	$akismet_ready = false;
 	$author = $author_email = $author_url = $content = '';
-	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$fes = $contact_form->form_elements( false );
 
 	foreach ( $fes as $fe ) {
 		if ( ! is_array( $fe['options'] ) ) continue;

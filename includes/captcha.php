@@ -168,9 +168,7 @@ function wpcf7_captchac_options( $options ) {
 }
 
 function wpcf7_refill_captcha( $contact_form ) {
-	global $wpcf7;
-
-	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$fes = $contact_form->form_elements( false );
 	$refill = array();
 
 	foreach ( $fes as $fe ) {

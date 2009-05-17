@@ -230,15 +230,13 @@ function wpcf7_admin_management_page() {
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
-		$cf = wpcf7_default_pack( __( 'Untitled', 'wpcf7' ), true );
+		$cf = wpcf7_contact_form( wpcf7_default_pack( __( 'Untitled', 'wpcf7' ), true ) );
 	} elseif ( array_key_exists( $_GET['contactform'], $contact_forms ) ) {
 		$current = (int) $_GET['contactform'];
-		$cf = stripslashes_deep( $contact_forms[$current] );
-		$cf = $wpcf7->upgrade( $cf );
+		$cf = wpcf7_contact_form( $contact_forms[$current] );
 	} else {
 		$current = (int) array_shift( array_keys( $contact_forms ) );
-		$cf = stripslashes_deep( $contact_forms[$current] );
-		$cf = $wpcf7->upgrade( $cf );
+		$cf = wpcf7_contact_form( $contact_forms[$current] );
 	}
 
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
@@ -272,35 +270,6 @@ function wpcf7_default_mail_2_template() {
 	$body = '[your-message]';
 	$recipient = '[your-email]';
 	return compact( 'active', 'subject', 'sender', 'body', 'recipient' );
-}
-
-function wpcf7_default_message( $status ) {
-	switch ( $status ) {
-		case 'mail_sent_ok':
-			return __( 'Your message was sent successfully. Thanks.', 'wpcf7' );
-		case 'mail_sent_ng':
-			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-		case 'akismet_says_spam':
-			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-		case 'validation_error':
-			return __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' );
-		case 'accept_terms':
-			return __( 'Please accept the terms to proceed.', 'wpcf7' );
-		case 'invalid_email':
-			return __( 'Email address seems invalid.', 'wpcf7' );
-		case 'invalid_required':
-			return __( 'Please fill the required field.', 'wpcf7' );
-		case 'captcha_not_match':
-			return __( 'Your entered code is incorrect.', 'wpcf7' );
-		case 'quiz_answer_not_correct':
-			return __( 'Your answer is not correct.', 'wpcf7' );
-		case 'upload_failed':
-			return __( 'Failed to upload file.', 'wpcf7' );
-		case 'upload_file_type_invalid':
-			return __( 'This file type is not allowed.', 'wpcf7' );
-		case 'upload_file_too_large':
-			return __( 'This file is too large.', 'wpcf7' );
-	}
 }
 
 function wpcf7_default_messages_template() {
