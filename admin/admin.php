@@ -22,7 +22,7 @@ function wpcf7_admin_add_pages() {
 	}
 
 	$page = str_replace( '\\', '%5C', plugin_basename( __FILE__ ) );
-	$contact_forms = $wpcf7->contact_forms();
+	$contact_forms = wpcf7_contact_forms();
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
 		$id = $_POST['wpcf7-id'];
@@ -223,7 +223,7 @@ function wpcf7_admin_management_page() {
 			break;
 	}
 
-	$contact_forms = $wpcf7->contact_forms();
+	$contact_forms = wpcf7_contact_forms();
 
 	$id = $_POST['wpcf7-id'];
 

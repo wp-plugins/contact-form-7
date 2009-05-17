@@ -66,10 +66,34 @@ if ( ! function_exists( 'wpcf7_read_write_capability' ) ) {
 	function wpcf7_read_write_capability() { return 'publish_pages'; }
 }
 
+
+$wpcf7_contact_forms = null;
+
+function wpcf7_contact_forms() {
+	global $wpcf7_contact_forms;
+
+	if ( is_array( $wpcf7_contact_forms ) )
+		return $wpcf7_contact_forms;
+
+	$wpcf7 = get_option( 'wpcf7' );
+	$wpcf7_contact_forms = $wpcf7['contact_forms'];
+
+	if ( ! is_array( $wpcf7_contact_forms ) )
+		$wpcf7_contact_forms = array();
+
+	return $wpcf7_contact_forms;
+}
+
+function wpcf7_update_contact_forms( $contact_forms ) {
+	$wpcf7 = get_option( 'wpcf7' );
+	$wpcf7['contact_forms'] = $contact_forms;
+
+	update_option( 'wpcf7', $wpcf7 );
+}
+
+
 class tam_contact_form_seven {
 
-	var $contact_forms;
-	var $captcha;
 	var $posted_data;
 
 	function ajax_json_echo() {
@@ -78,7 +102,7 @@ class tam_contact_form_seven {
 		if ( isset( $_POST['_wpcf7'] ) ) {
 			$id = (int) $_POST['_wpcf7'];
 			$unit_tag = $_POST['_wpcf7_unit_tag'];
-			$contact_forms = $this->contact_forms();
+			$contact_forms = wpcf7_contact_forms();
 
 			if ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) {
 				$validation = $cf->validate();
@@ -144,30 +168,12 @@ class tam_contact_form_seven {
 		}
 	}
 
-	function contact_forms() {
-		if ( is_array( $this->contact_forms ) )
-			return $this->contact_forms;
-
-		$wpcf7 = get_option( 'wpcf7' );
-		$this->contact_forms = $wpcf7['contact_forms'];
-		if ( ! is_array( $this->contact_forms ) )
-			$this->contact_forms = array();
-		return $this->contact_forms;
-	}
-
-	function update_contact_forms( $contact_forms ) {
-		$wpcf7 = get_option( 'wpcf7' );
-		$wpcf7['contact_forms'] = $contact_forms;
-
-		update_option( 'wpcf7', $wpcf7 );
-	}
-
 	function process_nonajax_submitting() {
 		if ( ! isset($_POST['_wpcf7'] ) )
 			return;
 
 		$id = (int) $_POST['_wpcf7'];
-		$contact_forms = $this->contact_forms();
+		$contact_forms = wpcf7_contact_forms();
 		if ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) {
 			$validation = $cf->validate();
 
@@ -230,7 +236,7 @@ class tam_contact_form_seven {
 
 		$id = (int) array_shift( $atts );
 
-		$contact_forms = $this->contact_forms();
+		$contact_forms = wpcf7_contact_forms();
 
 		if ( ! ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) )
 			return '[contact-form 404 "Not Found"]';
