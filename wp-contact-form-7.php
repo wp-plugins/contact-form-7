@@ -72,9 +72,6 @@ class tam_contact_form_seven {
 	var $captcha;
 	var $posted_data;
 
-	function tam_contact_form_seven() {
-	}
-
 	function ajax_json_echo() {
 		$echo = '';
 
@@ -104,7 +101,7 @@ class tam_contact_form_seven {
 					$captcha = 'null';
 				}
 
-				$quizzes = $this->refill_quiz( $cf );
+				$quizzes = wpcf7_refill_quiz( $cf );
 				if ( ! empty( $quizzes ) ) {
 					$quizzes_js = array();
 					foreach ( $quizzes as $name => $q ) {
@@ -122,9 +119,9 @@ class tam_contact_form_seven {
 					}
 					$invalids = '[' . join( ', ', $invalids ) . ']';
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-				} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
+				} elseif ( ! wpcf7_acceptance( $cf ) ) { // Not accepted terms
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-				} elseif ( $this->akismet( $cf ) ) { // Spam!
+				} elseif ( wpcf7_akismet( $cf ) ) { // Spam!
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
 					$echo = '{ mailSent: 1, message: "' . js_escape( wpcf7_message( $cf, 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
@@ -146,94 +143,6 @@ class tam_contact_form_seven {
 			@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
 			echo '<textarea>' . $echo . '</textarea>';
 		}
-	}
-
-	function akismet( $contact_form ) {
-		global $akismet_api_host, $akismet_api_port;
-
-		if ( ! function_exists( 'akismet_http_post' ) || ! ( get_option( 'wordpress_api_key' ) || $wpcom_api_key ) )
-			return false;
-
-		$akismet_ready = false;
-		$author = $author_email = $author_url = $content = '';
-		$fes = $this->form_elements( $contact_form['form'], false );
-
-		foreach ( $fes as $fe ) {
-			if ( ! is_array( $fe['options'] ) ) continue;
-
-			if ( preg_grep( '%^akismet:author$%', $fe['options'] ) && '' == $author ) {
-				$author = $_POST[$fe['name']];
-				$akismet_ready = true;
-			}
-
-			if ( preg_grep( '%^akismet:author_email$%', $fe['options'] ) && '' == $author_email ) {
-				$author_email = $_POST[$fe['name']];
-				$akismet_ready = true;
-			}
-
-			if ( preg_grep( '%^akismet:author_url$%', $fe['options'] ) && '' == $author_url ) {
-				$author_url = $_POST[$fe['name']];
-				$akismet_ready = true;
-			}
-
-			if ( '' != $content )
-				$content .= "\n\n";
-
-			$content .= $_POST[$fe['name']];
-		}
-
-		if ( ! $akismet_ready )
-			return false;
-
-		$c['blog'] = get_option( 'home' );
-		$c['user_ip'] = preg_replace( '/[^0-9., ]/', '', $_SERVER['REMOTE_ADDR'] );
-		$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
-		$c['referrer'] = $_SERVER['HTTP_REFERER'];
-		$c['comment_type'] = 'contactform7';
-		if ( $permalink = get_permalink() )
-			$c['permalink'] = $permalink;
-		if ( '' != $author )
-			$c['comment_author'] = $author;
-		if ( '' != $author_email )
-			$c['comment_author_email'] = $author_email;
-		if ( '' != $author_url )
-			$c['comment_author_url'] = $author_url;
-		if ( '' != $content )
-			$c['comment_content'] = $content;
-
-		$ignore = array( 'HTTP_COOKIE' );
-
-		foreach ( $_SERVER as $key => $value )
-			if ( ! in_array( $key, (array) $ignore ) )
-				$c["$key"] = $value;
-
-		$query_string = '';
-		foreach ( $c as $key => $data )
-			$query_string .= $key . '=' . urlencode( stripslashes( $data ) ) . '&';
-
-		$response = akismet_http_post( $query_string, $akismet_api_host, '/1.1/comment-check', $akismet_api_port );
-		if ( 'true' == $response[1] )
-			return true;
-		else
-			return false;
-	}
-
-	function acceptance( $contact_form ) {
-		$fes = $this->form_elements( $contact_form['form'], false );
-
-		$accepted = true;
-
-		foreach ( $fes as $fe ) {
-			if ( 'acceptance' != $fe['type'] )
-				continue;
-
-			$invert = (bool) preg_grep( '%^invert$%', $fe['options'] );
-
-			if ( $invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']] )
-				$accepted = false;
-		}
-
-		return $accepted;
 	}
 
 	function contact_forms() {
@@ -329,9 +238,9 @@ class tam_contact_form_seven {
 
 			if ( ! $validation['valid'] ) {
 				$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
-			} elseif ( ! $this->acceptance( $cf ) ) { // Not accepted terms
+			} elseif ( ! wpcf7_acceptance( $cf ) ) { // Not accepted terms
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'accept_terms' ) );
-			} elseif ( $this->akismet( $cf ) ) { // Spam!
+			} elseif ( wpcf7_akismet( $cf ) ) { // Spam!
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'akismet_says_spam' ), 'spam' => true );
 			} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => wpcf7_message( $cf, 'mail_sent_ok' ) );
@@ -539,37 +448,6 @@ class tam_contact_form_seven {
 			}
 		}
 		return compact( 'valid', 'reason' );
-	}
-
-	function refill_quiz( $contact_form ) {
-		$fes = $this->form_elements( $contact_form['form'], false );
-		$refill = array();
-
-		foreach ( $fes as $fe ) {
-			$type = $fe['type'];
-			$name = $fe['name'];
-			$values = $fe['values'];
-			$raw_values = $fe['raw_values'];
-
-			if ( 'quiz' != $type )
-				continue;
-
-			if ( count( $values ) == 0 )
-				continue;
-
-			if ( count( $values ) == 1 )
-				$question = $values[0];
-			else
-				$question = $values[array_rand( $values )];
-
-			$pipes = wpcf7_get_pipes( $raw_values );
-			$answer = wpcf7_pipe( $pipes, $question );
-			$answer = wpcf7_canonicalize( $answer );
-
-			$refill[$name] = array( $question, wp_hash( $answer, 'wpcf7_quiz' ) );
-		}
-
-		return $refill;
 	}
 
 /* Processing form element placeholders */
@@ -913,6 +791,9 @@ require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/acceptance.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/quiz.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
 
