@@ -93,7 +93,7 @@ class tam_contact_form_seven {
 
 				$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
 
-				$captchas = $this->refill_captcha( $cf );
+				$captchas = wpcf7_refill_captcha( $cf );
 				if ( ! empty( $captchas ) ) {
 					$captchas_js = array();
 					foreach ( $captchas as $name => $cap ) {
@@ -126,7 +126,7 @@ class tam_contact_form_seven {
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} elseif ( $this->akismet( $cf ) ) { // Spam!
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-				} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
+				} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
 					$echo = '{ mailSent: 1, message: "' . js_escape( wpcf7_message( $cf, 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 				} else {
 					$echo = '{ mailSent: 0, message: "' . js_escape( wpcf7_message( $cf, 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
@@ -242,73 +242,6 @@ class tam_contact_form_seven {
 		$validation = compact( 'valid', 'reason' );
 
 		return compact( 'files', 'validation' );
-	}
-
-	function mail( $contact_form, $files = array() ) {
-		global $wp_version;
-
-		$contact_form = $this->upgrade( $contact_form );
-
-		$this->posted_data = $_POST;
-
-		if ( WPCF7_USE_PIPE ) {
-			$this->pipe_all_posted( $contact_form );
-		}
-
-		if ( $this->compose_and_send_mail( $contact_form['mail'], $files ) ) {
-			if ( $contact_form['mail_2']['active'] )
-				$this->compose_and_send_mail( $contact_form['mail_2'], $files );
-
-			return true;
-		}
-
-		return false;
-	}
-
-	function compose_and_send_mail( $mail_template, $attachments = array() ) {
-		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
-		$callback = array( &$this, 'mail_callback' );
-		$mail_subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
-		$mail_sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
-		$mail_body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
-		$mail_recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
-
-		$mail_headers = "From: $mail_sender\n";
-
-		if ( $mail_template['use_html'] )
-			$mail_headers .= "Content-Type: text/html\n";
-
-		$mail_additional_headers = preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
-		$mail_headers .= trim($mail_additional_headers) . "\n";
-
-		if ( $attachments ) {
-			$for_this_mail = array();
-			foreach ( $attachments as $name => $path ) {
-				if ( false === strpos( $mail_template['attachments'], "[${name}]" ) )
-					continue;
-				$for_this_mail[] = $path;
-			}
-			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers, $for_this_mail );
-		} else {
-			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers );
-		}
-	}
-
-	function mail_callback( $matches ) {
-		if ( isset( $this->posted_data[$matches[1]] ) ) {
-			$submitted = $this->posted_data[$matches[1]];
-
-			if ( is_array( $submitted ) )
-				$submitted = join( ', ', $submitted );
-			return stripslashes( $submitted );
-		} else {
-
-			// Special [wpcf7.remote_ip] tag
-			if ( 'wpcf7.remote_ip' == $matches[1] )
-				return preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
-
-			return $matches[0];
-		}
 	}
 
 	function akismet( $contact_form ) {
@@ -496,7 +429,7 @@ class tam_contact_form_seven {
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'accept_terms' ) );
 			} elseif ( $this->akismet( $cf ) ) { // Spam!
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'akismet_says_spam' ), 'spam' => true );
-			} elseif ( $this->mail( $cf, $handled_uploads['files'] ) ) {
+			} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => wpcf7_message( $cf, 'mail_sent_ok' ) );
 			} else {
 				$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_message( $cf, 'mail_sent_ng' ) );
@@ -692,7 +625,7 @@ class tam_contact_form_seven {
 			}
 
 			if ( 'quiz' == $type ) {
-				$answer = $this->canonicalize( $_POST[$name] );
+				$answer = wpcf7_canonicalize( $_POST[$name] );
 				$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
 				$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
 				if ( $answer_hash != $expected_hash ) {
@@ -702,25 +635,6 @@ class tam_contact_form_seven {
 			}
 		}
 		return compact( 'valid', 'reason' );
-	}
-
-	function refill_captcha( $contact_form ) {
-		$fes = $this->form_elements( $contact_form['form'], false );
-		$refill = array();
-
-		foreach ( $fes as $fe ) {
-			$type = $fe['type'];
-			$name = $fe['name'];
-			$options = $fe['options'];
-			if ( 'captchac' == $type ) {
-				$op = wpcf7_captchac_options( $options );
-				if ( $filename = wpcf7_generate_captcha( $op ) ) {
-					$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
-					$refill[$name] = $captcha_url;
-				}
-			}
-		}
-		return $refill;
 	}
 
 	function refill_quiz( $contact_form ) {
@@ -746,7 +660,7 @@ class tam_contact_form_seven {
 
 			$pipes = $this->get_pipes( $raw_values );
 			$answer = $this->pipe( $pipes, $question );
-			$answer = $this->canonicalize( $answer );
+			$answer = wpcf7_canonicalize( $answer );
 
 			$refill[$name] = array( $question, wp_hash( $answer, 'wpcf7_quiz' ) );
 		}
@@ -969,7 +883,7 @@ class tam_contact_form_seven {
 				}
 
 				$answer = $this->pipe( $pipes, $value );
-				$answer = $this->canonicalize( $answer );
+				$answer = wpcf7_canonicalize( $answer );
 
 				if ( is_array( $options ) ) {
 					$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
@@ -1060,7 +974,7 @@ class tam_contact_form_seven {
 			$atts .= ' class="' . trim( $class_att ) . '"';
 
 		if ( $matches[2] )
-			$value = $this->strip_quote( $matches[2] );
+			$value = wpcf7_strip_quote( $matches[2] );
 		if ( empty( $value ) )
 			$value = __( 'Send', 'wpcf7' );
 		$ajax_loader_image_url = WPCF7_PLUGIN_URL . '/images/ajax-loader.gif';
@@ -1070,22 +984,13 @@ class tam_contact_form_seven {
 		return $html;
 	}
 
-	function canonicalize( $text ) {
-		if ( function_exists( 'mb_convert_kana' ) && 'UTF-8' == get_option( 'blog_charset' ) )
-			$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );
-
-		$text = strtolower( $text );
-		$text = trim( $text );
-		return $text;
-	}
-
 	function form_element_parse( $element ) {
 		$type = trim( $element[1] );
 		$name = trim( $element[2] );
 		$options = preg_split( '/[\s]+/', trim( $element[3] ) );
 
 		preg_match_all( '/"[^"]*"|\'[^\']*\'/', $element[4], $matches );
-		$raw_values = $this->strip_quote_deep( $matches[0] );
+		$raw_values = wpcf7_strip_quote_deep( $matches[0] );
 
 		if ( WPCF7_USE_PIPE && preg_match( '/^(select[*]?|checkbox[*]?|radio)$/', $type ) || 'quiz' == $type ) {
 			$pipes = $this->get_pipes( $raw_values );
@@ -1095,27 +1000,6 @@ class tam_contact_form_seven {
 		}
 
 		return compact( 'type', 'name', 'options', 'values', 'raw_values' );
-	}
-
-	function strip_quote( $text ) {
-		$text = trim( $text );
-		if ( preg_match( '/^"(.*)"$/', $text, $matches ) )
-			$text = $matches[1];
-		elseif ( preg_match( "/^'(.*)'$/", $text, $matches ) )
-			$text = $matches[1];
-		return $text;
-	}
-
-	function strip_quote_deep( $arr ) {
-		if ( is_string( $arr ) )
-			return $this->strip_quote( $arr );
-		if ( is_array( $arr ) ) {
-			$result = array();
-			foreach ( $arr as $key => $text ) {
-				$result[$key] = $this->strip_quote( $text );
-			}
-			return $result;
-		}
 	}
 
 	function init_uploads() {
@@ -1226,6 +1110,7 @@ require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 
 $wpcf7 = new tam_contact_form_seven();

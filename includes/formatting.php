@@ -44,4 +44,35 @@ function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
 	return $pee;
 }
 
+function wpcf7_strip_quote( $text ) {
+	$text = trim( $text );
+	if ( preg_match( '/^"(.*)"$/', $text, $matches ) )
+		$text = $matches[1];
+	elseif ( preg_match( "/^'(.*)'$/", $text, $matches ) )
+		$text = $matches[1];
+	return $text;
+}
+
+function wpcf7_strip_quote_deep( $arr ) {
+	if ( is_string( $arr ) )
+		return wpcf7_strip_quote( $arr );
+
+	if ( is_array( $arr ) ) {
+		$result = array();
+		foreach ( $arr as $key => $text ) {
+			$result[$key] = wpcf7_strip_quote( $text );
+		}
+		return $result;
+	}
+}
+
+function wpcf7_canonicalize( $text ) {
+	if ( function_exists( 'mb_convert_kana' ) && 'UTF-8' == get_option( 'blog_charset' ) )
+		$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );
+
+	$text = strtolower( $text );
+	$text = trim( $text );
+	return $text;
+}
+
 ?>

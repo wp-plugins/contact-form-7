@@ -167,4 +167,27 @@ function wpcf7_captchac_options( $options ) {
 	return $op;
 }
 
+function wpcf7_refill_captcha( $contact_form ) {
+	global $wpcf7;
+
+	$fes = $wpcf7->form_elements( $contact_form['form'], false );
+	$refill = array();
+
+	foreach ( $fes as $fe ) {
+		$type = $fe['type'];
+		$name = $fe['name'];
+		$options = $fe['options'];
+
+		if ( 'captchac' == $type ) {
+			$op = wpcf7_captchac_options( $options );
+			if ( $filename = wpcf7_generate_captcha( $op ) ) {
+				$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+				$refill[$name] = $captcha_url;
+			}
+		}
+	}
+
+	return $refill;
+}
+
 ?>
