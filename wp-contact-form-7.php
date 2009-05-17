@@ -87,7 +87,7 @@ class tam_contact_form_seven {
 				$cf = stripslashes_deep( $cf );
 				$validation = $this->validate( $cf );
 
-				$handled_uploads = $this->handle_uploads( $cf );
+				$handled_uploads = wpcf7_handle_uploads( $cf );
 				if ( ! $handled_uploads['validation']['valid'] )
 					$validation['valid'] = false;
 
@@ -146,102 +146,6 @@ class tam_contact_form_seven {
 			@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
 			echo '<textarea>' . $echo . '</textarea>';
 		}
-	}
-
-	function handle_uploads( $contact_form ) {
-		$files = array();
-		$valid = true;
-		$reason = array();
-
-		$this->init_uploads(); // Confirm upload dir
-		$uploads_dir = wpcf7_upload_tmp_dir();
-
-		$fes = $this->form_elements( $contact_form['form'], false );
-
-		foreach ( $fes as $fe ) {
-			if ( 'file' != $fe['type'] && 'file*' != $fe['type'] )
-				continue;
-
-			$name = $fe['name'];
-			$options = (array) $fe['options'];
-
-			$file = $_FILES[$name];
-
-			if ( empty( $file['tmp_name'] ) && 'file*' == $fe['type'] ) {
-				$valid = false;
-				$reason[$name] = wpcf7_message( $contact_form, 'invalid_required' );
-				continue;
-			}
-
-			if ( ! is_uploaded_file( $file['tmp_name'] ) )
-				continue;
-
-			/* File type validation */
-
-			$pattern = '';
-			if ( $allowed_types_options = preg_grep( '%^filetypes:%', $options ) ) {
-				foreach ( $allowed_types_options as $allowed_types_option ) {
-					if ( preg_match( '%^filetypes:(.+)$%', $allowed_types_option, $matches ) ) {
-						$file_types = explode( '|', $matches[1] );
-						foreach ( $file_types as $file_type ) {
-							$file_type = trim( $file_type, '.' );
-							$file_type = str_replace( array( '.', '+', '*', '?' ), array( '\.', '\+', '\*', '\?' ), $file_type );
-							$pattern .= '|' . $file_type;
-						}
-					}
-				}
-			}
-
-			// Default file-type restriction
-			if ( '' == $pattern )
-				$pattern = 'jpg|jpeg|png|gif|pdf|doc|docx|ppt|pptx|odt|avi|ogg|m4a|mov|mp3|mp4|mpg|wav|wmv';
-
-			$pattern = trim( $pattern, '|' );
-			$pattern = '(' . $pattern . ')';
-			$pattern = '/\.' . $pattern . '$/i';
-			if ( ! preg_match( $pattern, $file['name'] ) ) {
-				$valid = false;
-				$reason[$name] = wpcf7_message( $contact_form, 'upload_file_type_invalid' );
-				continue;
-			}
-
-			/* File size validation */
-
-			$allowed_size = 1048576; // default size 1 MB
-			if ( $allowed_size_options = preg_grep( '%^limit:%', $options ) ) {
-				$allowed_size_option = array_shift( $allowed_size_options );
-				preg_match( '/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches );
-				$allowed_size = (int) $matches[1];
-			}
-
-			if ( $file['size'] > $allowed_size ) {
-				$valid = false;
-				$reason[$name] = wpcf7_message( $contact_form, 'upload_file_too_large' );
-				continue;
-			}
-
-			$filename = wp_unique_filename( $uploads_dir, $file['name'] );
-
-			// If you get script file, it's a danger. Make it TXT file.
-			if ( preg_match( '/\.(php|pl|py|rb|cgi)\d?$/', $filename ) )
-				$filename .= '.txt';
-
-			$new_file = trailingslashit( $uploads_dir ) . $filename;
-			if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
-				$valid = false;
-				$reason[$name] = wpcf7_message( $contact_form, 'upload_failed' );
-				continue;
-			}
-
-			// Make sure the uploaded file is only readable for the owner process
-			chmod( $new_file, 0400 );
-
-			$files[$name] = $new_file;
-		}
-
-		$validation = compact( 'valid', 'reason' );
-
-		return compact( 'files', 'validation' );
 	}
 
 	function akismet( $contact_form ) {
@@ -418,7 +322,7 @@ class tam_contact_form_seven {
 			$cf = stripslashes_deep( $cf );
 			$validation = $this->validate( $cf );
 
-			$handled_uploads = $this->handle_uploads( $cf );
+			$handled_uploads = wpcf7_handle_uploads( $cf );
 			if ( ! $handled_uploads['validation']['valid'] )
 				$validation['valid'] = false;
 			$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
@@ -658,8 +562,8 @@ class tam_contact_form_seven {
 			else
 				$question = $values[array_rand( $values )];
 
-			$pipes = $this->get_pipes( $raw_values );
-			$answer = $this->pipe( $pipes, $question );
+			$pipes = wpcf7_get_pipes( $raw_values );
+			$answer = wpcf7_pipe( $pipes, $question );
 			$answer = wpcf7_canonicalize( $answer );
 
 			$refill[$name] = array( $question, wp_hash( $answer, 'wpcf7_quiz' ) );
@@ -872,7 +776,7 @@ class tam_contact_form_seven {
 					$values[] = '1+1=?';
 				}
 
-				$pipes = $this->get_pipes( $raw_values );
+				$pipes = wpcf7_get_pipes( $raw_values );
 
 				if ( count( $values ) == 0 ) {
 					break;
@@ -882,7 +786,7 @@ class tam_contact_form_seven {
 					$value = $values[array_rand( $values )];
 				}
 
-				$answer = $this->pipe( $pipes, $value );
+				$answer = wpcf7_pipe( $pipes, $value );
 				$answer = wpcf7_canonicalize( $answer );
 
 				if ( is_array( $options ) ) {
@@ -993,116 +897,13 @@ class tam_contact_form_seven {
 		$raw_values = wpcf7_strip_quote_deep( $matches[0] );
 
 		if ( WPCF7_USE_PIPE && preg_match( '/^(select[*]?|checkbox[*]?|radio)$/', $type ) || 'quiz' == $type ) {
-			$pipes = $this->get_pipes( $raw_values );
-			$values = $this->get_pipe_ins( $pipes );
+			$pipes = wpcf7_get_pipes( $raw_values );
+			$values = wpcf7_get_pipe_ins( $pipes );
 		} else {
 			$values =& $raw_values;
 		}
 
 		return compact( 'type', 'name', 'options', 'values', 'raw_values' );
-	}
-
-	function init_uploads() {
-		$dir = wpcf7_upload_tmp_dir();
-		wp_mkdir_p( trailingslashit( $dir ) );
-		@chmod( $dir, 0733 );
-
-		$htaccess_file = trailingslashit( $dir ) . '.htaccess';
-		if ( file_exists( $htaccess_file ) )
-			return;
-
-		if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
-			fwrite( $handle, "Deny from all\n" );
-			fclose( $handle );
-		}
-	}
-
-	function cleanup_upload_files() {
-		$dir = wpcf7_upload_tmp_dir();
-		$dir = trailingslashit( $dir );
-
-		if ( ! is_dir( $dir ) || ! is_writable( $dir ) )
-			return false;
-
-		if ( $handle = opendir( $dir ) ) {
-			while ( false !== ( $file = readdir( $handle ) ) ) {
-				if ( $file == "." || $file == ".." || $file == ".htaccess" )
-					continue;
-
-				$stat = stat( $dir . $file );
-				if ( $stat['mtime'] + 60 < time() ) // 60 secs
-					@ unlink( $dir . $file );
-			}
-			closedir( $handle );
-		}
-	}
-
-	function pipe( $pipes, $value ) {
-		if ( is_array( $value ) ) {
-			$results = array();
-			foreach ( $value as $k => $v ) {
-				$results[$k] = $this->pipe( $pipes, $v );
-			}
-			return $results;
-		}
-
-		foreach ( $pipes as $p ) {
-			if ( $p[0] == $value )
-				return $p[1];
-		}
-
-		return $value;
-	}
-
-	function get_pipe_ins( $pipes ) {
-		$ins = array();
-		foreach ( $pipes as $pipe ) {
-			$in = $pipe[0];
-			if ( ! in_array( $in, $ins ) )
-				$ins[] = $in;
-		}
-		return $ins;
-	}
-
-	function get_pipes( $values ) {
-		$pipes = array();
-
-		foreach ( $values as $value ) {
-			$pipe_pos = strpos( $value, '|' );
-			if ( false === $pipe_pos ) {
-				$before = $after = $value;
-			} else {
-				$before = substr( $value, 0, $pipe_pos );
-				$after = substr( $value, $pipe_pos + 1 );
-			}
-
-			$pipes[] = array( $before, $after );
-		}
-
-		return $pipes;
-	}
-
-	function pipe_all_posted( $contact_form ) {
-		$all_pipes = array();
-
-		$fes = $this->form_elements( $contact_form['form'], false );
-		foreach ( $fes as $fe ) {
-			$type = $fe['type'];
-			$name = $fe['name'];
-			$raw_values = $fe['raw_values'];
-
-			if ( ! preg_match( '/^(select[*]?|checkbox[*]?|radio)$/', $type ) )
-				continue;
-
-			$pipes = $this->get_pipes( $raw_values );
-
-			$all_pipes[$name] = array_merge( $pipes, (array) $all_pipes[$name] );
-		}
-
-		foreach ( $all_pipes as $name => $pipes ) {
-			if ( isset( $this->posted_data[$name] ) )
-				$this->posted_data[$name] = $this->pipe( $pipes, $this->posted_data[$name] );
-		}
 	}
 }
 
@@ -1111,7 +912,9 @@ require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
 
 $wpcf7 = new tam_contact_form_seven();
 
@@ -1124,7 +927,7 @@ function wpcf7_init_switch() {
 	} elseif ( ! is_admin() ) {
 		$wpcf7->process_nonajax_submitting();
 		wpcf7_cleanup_captcha_files();
-		$wpcf7->cleanup_upload_files();
+		wpcf7_cleanup_upload_files();
 	}
 }
 
