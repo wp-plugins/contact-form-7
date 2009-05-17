@@ -11,7 +11,7 @@ function wpcf7_mail( $contact_form, $files = array() ) {
 		$wpcf7->pipe_all_posted( $contact_form );
 	}
 
-	if ( $this->compose_and_send_mail( $contact_form['mail'], $files ) ) {
+	if ( wpcf7_compose_and_send_mail( $contact_form['mail'], $files ) ) {
 		if ( $contact_form['mail_2']['active'] )
 			wpcf7_compose_and_send_mail( $contact_form['mail_2'], $files );
 
