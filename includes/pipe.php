@@ -46,7 +46,7 @@ function wpcf7_get_pipes( $values ) {
 }
 
 function wpcf7_pipe_all_posted( $contact_form ) {
-	global $wpcf7;
+	global $wpcf7_posted_data;
 
 	$all_pipes = array();
 
@@ -65,8 +65,8 @@ function wpcf7_pipe_all_posted( $contact_form ) {
 	}
 
 	foreach ( $all_pipes as $name => $pipes ) {
-		if ( isset( $wpcf7->posted_data[$name] ) )
-			$wpcf7->posted_data[$name] = wpcf7_pipe( $pipes, $wpcf7->posted_data[$name] );
+		if ( isset( $wpcf7_posted_data[$name] ) )
+			$wpcf7_posted_data[$name] = wpcf7_pipe( $pipes, $wpcf7_posted_data[$name] );
 	}
 }
 

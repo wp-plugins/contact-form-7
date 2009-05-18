@@ -1,9 +1,9 @@
 <?php
 
 function wpcf7_mail( $contact_form, $files = array() ) {
-	global $wp_version, $wpcf7;
+	global $wp_version, $wpcf7_posted_data;
 
-	$wpcf7->posted_data = $_POST;
+	$wpcf7_posted_data = $_POST;
 
 	if ( WPCF7_USE_PIPE ) {
 		wpcf7_pipe_all_posted( $contact_form );
@@ -49,10 +49,10 @@ function wpcf7_compose_and_send_mail( $mail_template, $attachments = array() ) {
 }
 
 function wpcf7_mail_callback( $matches ) {
-	global $wpcf7;
+	global $wpcf7_posted_data;
 
-	if ( isset( $wpcf7->posted_data[$matches[1]] ) ) {
-		$submitted = $wpcf7->posted_data[$matches[1]];
+	if ( isset( $wpcf7_posted_data[$matches[1]] ) ) {
+		$submitted = $wpcf7_posted_data[$matches[1]];
 
 		if ( is_array( $submitted ) )
 			$submitted = join( ', ', $submitted );

@@ -13,8 +13,6 @@ function wpcf7_admin_has_edit_cap() {
 }
 
 function wpcf7_admin_add_pages() {
-	global $wpcf7;
-
 	if ( function_exists( 'admin_url' ) ) {
 		$base_url = admin_url( wpcf7_admin_menu_parent() );
 	} else {
@@ -76,7 +74,7 @@ function wpcf7_admin_add_pages() {
 			$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 		}
 
-		$wpcf7->update_contact_forms( $contact_forms );
+		wpcf7_update_contact_forms( $contact_forms );
 
 		wp_redirect( $redirect_to );
 		exit();
@@ -88,7 +86,7 @@ function wpcf7_admin_add_pages() {
 			$key = max( array_keys( $contact_forms ) ) + 1;
 			$contact_forms[$key] = $contact_forms[$id];
 			$contact_forms[$key]['title'] .= '_copy';
-			$wpcf7->update_contact_forms( $contact_forms );
+			wpcf7_update_contact_forms( $contact_forms );
 			$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 		} else {
 			$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id;
@@ -101,7 +99,7 @@ function wpcf7_admin_add_pages() {
 		check_admin_referer( 'wpcf7-delete_' . $id );
 
 		unset( $contact_forms[$id] );
-		$wpcf7->update_contact_forms( $contact_forms );
+		wpcf7_update_contact_forms( $contact_forms );
 
 		wp_redirect( $base_url . '?page=' . $page . '&message=deleted' );
 		exit();
@@ -201,7 +199,7 @@ function wpcf7_admin_load_js() {
 }
 
 function wpcf7_admin_management_page() {
-	global $wp_version, $wpcf7;
+	global $wp_version;
 
 	if ( function_exists( 'admin_url' ) ) {
 		$base_url = admin_url( wpcf7_admin_menu_parent() );

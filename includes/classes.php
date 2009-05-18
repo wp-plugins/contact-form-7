@@ -33,11 +33,11 @@ class WPCF7_ContactForm {
 	}
 
 	function form_element_replace_callback( $matches ) {
-		global $wpcf7;
+		global $wpcf7_processing_unit_tag;
 
 		extract( (array) $this->form_element_parse( $matches ) ); // $type, $name, $options, $values, $raw_values
 
-		if ( $wpcf7->processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+		if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
 			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
 			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
 		} else {
@@ -86,7 +86,7 @@ class WPCF7_ContactForm {
 			$atts .= ' class="' . trim( $class_att ) . '"';
 
 		// Value.
-		if ( $wpcf7->processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+		if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
 			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['ok'] )
 				$value = '';
 			elseif ( 'captchar' == $type )
@@ -163,7 +163,7 @@ class WPCF7_ContactForm {
 					$selected = '';
 					if ( ! $empty_select && in_array( $key + 1, (array) $scr_default ) )
 						$selected = ' selected="selected"';
-					if ( $wpcf7->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+					if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$selected = ' selected="selected"';
@@ -192,7 +192,7 @@ class WPCF7_ContactForm {
 					$checked = '';
 					if ( in_array( $key + 1, (array) $scr_default ) )
 						$checked = ' checked="checked"';
-					if ( $wpcf7->processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+					if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$checked = ' checked="checked"';
