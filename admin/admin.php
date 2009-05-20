@@ -310,4 +310,25 @@ function wpcf7_default_pack( $title, $initial = false ) {
 	return $cf;
 }
 
+function wpcf7_plugin_action_links( $links, $file ) {
+	if ( $file != WPCF7_PLUGIN_BASENAME )
+		return $links;
+
+	if ( function_exists( 'admin_url' ) ) {
+		$base_url = admin_url( wpcf7_admin_menu_parent() );
+	} else {
+		$base_url = get_option( 'siteurl' ) . '/wp-admin/' . wpcf7_admin_menu_parent();
+	}
+
+	$url = $base_url . '?page=' . plugin_basename( __FILE__ );
+
+	$settings_link = '<a href="' . $url . '">' . __('Settings') . '</a>';
+
+	array_unshift( $links, $settings_link );
+
+	return $links;
+}
+
+add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
+
 ?>
