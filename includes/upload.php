@@ -62,8 +62,15 @@ function wpcf7_handle_uploads( $contact_form ) {
 		$allowed_size = 1048576; // default size 1 MB
 		if ( $allowed_size_options = preg_grep( '%^limit:%', $options ) ) {
 			$allowed_size_option = array_shift( $allowed_size_options );
-			preg_match( '/^limit:([1-9][0-9]*)$/', $allowed_size_option, $matches );
+			preg_match( '/^limit:([1-9][0-9]*)([kKmM]?[bB])?$/', $allowed_size_option, $matches );
 			$allowed_size = (int) $matches[1];
+
+			$kbmb = strtolower( $matches[2] );
+			if ( 'kb' == $kbmb ) {
+				$allowed_size *= 1024;
+			} elseif ( 'mb' == $kbmb ) {
+				$allowed_size *= 1024 * 1024;
+			}
 		}
 
 		if ( $file['size'] > $allowed_size ) {
@@ -125,7 +132,7 @@ function wpcf7_cleanup_upload_files() {
 
 			$stat = stat( $dir . $file );
 			if ( $stat['mtime'] + 60 < time() ) // 60 secs
-				@ unlink( $dir . $file );
+				@unlink( $dir . $file );
 		}
 		closedir( $handle );
 	}

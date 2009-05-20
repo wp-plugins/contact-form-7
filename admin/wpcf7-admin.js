@@ -495,7 +495,7 @@ function tgCreateTag(tagType, tgInputs, trigger) {
     tgInputs[n].val(val);
   });
   
-  jQuery.each([ 'tagSize', 'tagMaxLength', 'tagCols', 'tagRows', 'tagFileSizeLimit' ], function(i, n) {
+  jQuery.each([ 'tagSize', 'tagMaxLength', 'tagCols', 'tagRows' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^0-9]/g, '');
     tgInputs[n].val(val);
@@ -519,6 +519,12 @@ function tgCreateTag(tagType, tgInputs, trigger) {
   jQuery.each([ 'fgColor', 'bgColor' ], function(i, n) {
     var val = tgInputs[n].val();
     val = val.replace(/[^0-9a-fA-F]/g, '');
+    tgInputs[n].val(val);
+  });
+  
+  jQuery.each([ 'tagFileSizeLimit' ], function(i, n) {
+    var val = tgInputs[n].val();
+    val = val.replace(/[^0-9kKmMbB]/g, '');
     tgInputs[n].val(val);
   });
   
