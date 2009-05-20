@@ -54,6 +54,10 @@ if ( ! defined( 'WPCF7_AUTOP' ) )
 if ( ! defined( 'WPCF7_USE_PIPE' ) )
 	define( 'WPCF7_USE_PIPE', true );
 
+/* If you or your client hate to see about donation, set this value false. */
+if ( ! defined( 'WPCF7_SHOW_DONATION_LINK' ) )
+	define( 'WPCF7_SHOW_DONATION_LINK', true );
+
 if ( ! function_exists( 'wpcf7_version' ) ) {
 	function wpcf7_version() { return WPCF7_VERSION; }
 }
