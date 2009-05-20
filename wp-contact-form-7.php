@@ -64,6 +64,20 @@ if ( ! defined( 'WPCF7_ADMIN_READ_CAPABILITY' ) )
 if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
+require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/acceptance.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/quiz.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
+
+if ( is_admin() )
+	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 
 $wpcf7_contact_forms = null;
 
@@ -89,8 +103,8 @@ function wpcf7_update_contact_forms( $contact_forms ) {
 	update_option( 'wpcf7', $wpcf7 );
 }
 
-
 $wpcf7_posted_data = null;
+
 $wpcf7_processing_within = null;
 $wpcf7_unit_count = null;
 $wpcf7_widget_count = null;
@@ -247,84 +261,19 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	if ( ! ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) )
 		return '[contact-form 404 "Not Found"]';
 
+	$cf->id = $id;
+
 	$wpcf7_unit_count += 1;
+
 	$unit_tag = 'wpcf7-f' . $id . '-' . $wpcf7_processing_within . '-o' . $wpcf7_unit_count;
 	$cf->unit_tag = $unit_tag;
 
-	$form = '<div class="wpcf7" id="' . $unit_tag . '">';
-
-	$url = parse_url( $_SERVER['REQUEST_URI'] );
-	$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $unit_tag;
-
-	$form_elements = $cf->form_elements( false );
-	$multipart = false;
-
-	foreach ( $form_elements as $form_element ) {
-		if ( preg_match( '/^file[*]?$/', $form_element['type'] ) ) {
-			$multipart = true;
-			break;
-		}
-	}
-
-	$enctype = $multipart ? ' enctype="multipart/form-data"' : '';
-
-	$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
-	$form .= '<div style="display: none;">';
-	$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
-	$form .= '<input type="hidden" name="_wpcf7_version" value="' . WPCF7_VERSION . '" />';
-	$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
-	$form .= '</div>';
-	$form .= $cf->form_elements();
-	$form .= '</form>';
-
-	// Post response output for non-AJAX
-	$class = 'wpcf7-response-output';
-
-	if ( $cf->is_posted() ) {
-		if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $id ) {
-			if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
-				$class .= ' wpcf7-mail-sent-ok';
-				$content = $_POST['_wpcf7_mail_sent']['message'];
-			} else {
-				$class .= ' wpcf7-mail-sent-ng';
-				if ( $_POST['_wpcf7_mail_sent']['spam'] )
-					$class .= ' wpcf7-spam-blocked';
-				$content = $_POST['_wpcf7_mail_sent']['message'];
-			}
-		} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $id ) {
-			$class .= ' wpcf7-validation-errors';
-			$content = $cf->message( 'validation_error' );
-		}
-	}
-
-	$class = ' class="' . $class . '"';
-
-	$form .= '<div' . $class . '>' . $content . '</div>';
-
-	$form .= '</div>';
-
-	if ( WPCF7_AUTOP )
-		$form = wpcf7_wpautop_substitute( $form );
+	$form = $cf->form_html();
 
 	return $form;
 }
 
 add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
-
-require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/form.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/acceptance.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/quiz.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
-
-if ( is_admin() )
-	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 
 function wpcf7_init_switch() {
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {

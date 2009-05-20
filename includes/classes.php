@@ -2,6 +2,7 @@
 
 class WPCF7_ContactForm {
 
+	var $id;
 	var $title;
 	var $form;
 	var $mail;
@@ -20,6 +21,67 @@ class WPCF7_ContactForm {
 			return true;
 
 		return false;
+	}
+
+	/* Generating Form HTML */
+
+	function form_html() {
+		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
+
+		$url = parse_url( $_SERVER['REQUEST_URI'] );
+		$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $this->unit_tag;
+
+		$form_elements = $this->form_elements( false );
+		$multipart = false;
+
+		foreach ( $form_elements as $form_element ) {
+			if ( preg_match( '/^file[*]?$/', $form_element['type'] ) ) {
+				$multipart = true;
+				break;
+			}
+		}
+
+		$enctype = $multipart ? ' enctype="multipart/form-data"' : '';
+
+		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
+		$form .= '<div style="display: none;">';
+		$form .= '<input type="hidden" name="_wpcf7" value="' . $this->id . '" />';
+		$form .= '<input type="hidden" name="_wpcf7_version" value="' . WPCF7_VERSION . '" />';
+		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $this->unit_tag . '" />';
+		$form .= '</div>';
+		$form .= $this->form_elements();
+		$form .= '</form>';
+
+		// Post response output for non-AJAX
+		$class = 'wpcf7-response-output';
+
+		if ( $this->is_posted() ) {
+			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $this->id ) {
+				if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
+					$class .= ' wpcf7-mail-sent-ok';
+					$content = $_POST['_wpcf7_mail_sent']['message'];
+				} else {
+					$class .= ' wpcf7-mail-sent-ng';
+					if ( $_POST['_wpcf7_mail_sent']['spam'] )
+						$class .= ' wpcf7-spam-blocked';
+					$content = $_POST['_wpcf7_mail_sent']['message'];
+				}
+			} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $this->id ) {
+				$class .= ' wpcf7-validation-errors';
+				$content = $this->message( 'validation_error' );
+			}
+		}
+
+		$class = ' class="' . $class . '"';
+
+		$form .= '<div' . $class . '>' . $content . '</div>';
+
+		$form .= '</div>';
+
+		if ( WPCF7_AUTOP )
+			$form = wpcf7_wpautop_substitute( $form );
+
+		return $form;
 	}
 
 	/* Form Elements */
