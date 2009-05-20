@@ -58,17 +58,11 @@ if ( ! defined( 'WPCF7_USE_PIPE' ) )
 if ( ! defined( 'WPCF7_SHOW_DONATION_LINK' ) )
 	define( 'WPCF7_SHOW_DONATION_LINK', true );
 
-if ( ! function_exists( 'wpcf7_version' ) ) {
-	function wpcf7_version() { return WPCF7_VERSION; }
-}
+if ( ! defined( 'WPCF7_ADMIN_READ_CAPABILITY' ) )
+	define( 'WPCF7_ADMIN_READ_CAPABILITY', 'edit_posts' );
 
-if ( ! function_exists( 'wpcf7_read_capability' ) ) {
-	function wpcf7_read_capability() { return 'edit_posts'; }
-}
-
-if ( ! function_exists( 'wpcf7_read_write_capability' ) ) {
-	function wpcf7_read_write_capability() { return 'publish_pages'; }
-}
+if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
+	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
 
 $wpcf7_contact_forms = null;
@@ -278,7 +272,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
 	$form .= '<div style="display: none;">';
 	$form .= '<input type="hidden" name="_wpcf7" value="' . $id . '" />';
-	$form .= '<input type="hidden" name="_wpcf7_version" value="' . wpcf7_version() . '" />';
+	$form .= '<input type="hidden" name="_wpcf7_version" value="' . WPCF7_VERSION . '" />';
 	$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $unit_tag . '" />';
 	$form .= '</div>';
 	$form .= $cf->form_elements();

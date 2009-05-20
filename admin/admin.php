@@ -9,7 +9,7 @@ function wpcf7_admin_menu_parent() {
 }
 
 function wpcf7_admin_has_edit_cap() {
-	return current_user_can( wpcf7_read_write_capability() );
+	return current_user_can( WPCF7_ADMIN_READ_WRITE_CAPABILITY );
 }
 
 function wpcf7_admin_add_pages() {
@@ -105,7 +105,7 @@ function wpcf7_admin_add_pages() {
 		exit();
 	}
 
-	add_management_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ), wpcf7_read_capability(), __FILE__, 'wpcf7_admin_management_page' );
+	add_management_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ), WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
 }
 
 add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
@@ -149,7 +149,7 @@ function wpcf7_admin_load_js() {
 	if ( false === strpos( $_GET['page'], 'contact-form-7' ) )
 		return;
 
-	wp_enqueue_script( 'wpcf7-admin', WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js', array('jquery'), wpcf7_version(), true );
+	wp_enqueue_script( 'wpcf7-admin', WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js', array('jquery'), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
