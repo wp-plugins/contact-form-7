@@ -216,6 +216,8 @@ function wpcf7_the_content_filter( $content ) {
 	return $content;
 }
 
+add_filter( 'the_content', 'wpcf7_the_content_filter', 9 );
+
 function wpcf7_widget_text_filter( $content ) {
 	global $wpcf7_widget_count, $wpcf7_processing_within, $wpcf7_unit_count;
 
@@ -226,6 +228,8 @@ function wpcf7_widget_text_filter( $content ) {
 	$regex = '/\[\s*contact-form\s+(\d+(?:\s+.*)?)\]/';
 	return preg_replace_callback( $regex, 'wpcf7_widget_text_filter_callback', $content );
 }
+
+add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 
 function wpcf7_widget_text_filter_callback( $matches ) {
 	return wpcf7_contact_form_tag_func( $matches[1] );
@@ -310,6 +314,8 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	return $form;
 }
 
+add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
+
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
@@ -321,6 +327,9 @@ require_once WPCF7_PLUGIN_DIR . '/includes/acceptance.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/quiz.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
+
+if ( is_admin() )
+	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 
 function wpcf7_init_switch() {
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
@@ -364,6 +373,8 @@ function wpcf7_set_initial() {
 	update_option( 'wpcf7', $wpcf7 );
 }
 
+add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_set_initial' );
+
 function wpcf7_contact_form( $data ) {
 	if ( ! $data )
 		return false;
@@ -384,19 +395,4 @@ function wpcf7_contact_form( $data ) {
 	return $contact_form;
 }
 
-if ( is_admin() ) {
-	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
-	add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
-}
-
-add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_set_initial' );
-add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
-add_action( 'admin_head', 'wpcf7_admin_head' );
-add_action( 'wp_head', 'wpcf7_wp_head' );
-add_action( 'wp_print_scripts', 'wpcf7_load_js' );
-
-add_filter( 'the_content', 'wpcf7_the_content_filter', 9 );
-add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
-
-add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 ?>

@@ -10,6 +10,8 @@ function wpcf7_wp_head() {
 	}
 }
 
+add_action( 'wp_head', 'wpcf7_wp_head' );
+
 function wpcf7_load_js() {
 	if ( ! is_admin() ) {
 		wp_enqueue_script( 'contact-form-7',
@@ -18,5 +20,7 @@ function wpcf7_load_js() {
 		);
 	}
 }
+
+add_action( 'wp_print_scripts', 'wpcf7_load_js' );
 
 ?>

@@ -108,6 +108,8 @@ function wpcf7_admin_add_pages() {
 	add_management_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ), wpcf7_read_capability(), __FILE__, 'wpcf7_admin_management_page' );
 }
 
+add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
+
 function wpcf7_admin_head() {
 	global $plugin_page;
 
@@ -132,6 +134,8 @@ var _wpcf7 = {
 <?php
 	}
 }
+
+add_action( 'admin_head', 'wpcf7_admin_head' );
 
 function wpcf7_admin_load_js() {
 	global $pagenow;
@@ -197,6 +201,8 @@ function wpcf7_admin_load_js() {
 		'needReallySimpleCaptcha' => __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7' )
 	) );
 }
+
+add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 
 function wpcf7_admin_management_page() {
 	global $wp_version;
