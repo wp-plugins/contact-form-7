@@ -230,7 +230,7 @@ function wpcf7_widget_text_filter( $content ) {
 add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 
 function wpcf7_widget_text_filter_callback( $matches ) {
-	return wpcf7_contact_form_tag_func( $matches[1] );
+	return do_shortcode( $matches[0] );
 }
 
 function wpcf7_contact_form_tag_func( $atts ) {
