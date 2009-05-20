@@ -1,3 +1,33 @@
+div.wpcf7 div.donation {
+	border-width: 1px;
+	border-style: solid;
+	padding: 0 0.6em;
+	margin: 5px 0 15px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #ffffe0;
+	border-color: #e6db55;
+	text-align: center;
+}
+
+div.wpcf7 div.donation p {
+	margin: 0.5em 0;
+	line-height: 1;
+	padding: 2px;
+}
+
+div.wpcf7 div.donation p img {
+	vertical-align: text-bottom;
+}
+
+div.wpcf7 div.donation p em {
+	padding-left: 1em;
+	color: #555;
+	font-weight: bold;
+}
+
 div.wpcf7 ul.subsubsub {
 	white-space: normal;
 }

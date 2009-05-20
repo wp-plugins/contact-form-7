@@ -349,11 +349,10 @@ function wpcf7_donation_link() {
 		return;
 
 ?>
-<div id="donation" style="text-align: center;">
-<p><a href='http://www.pledgie.com/campaigns/3117'><img alt='Click here to lend your support to: Support Contact Form 7 and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/3117.png?skin_name=chrome' border='0' /></a>
-<em style="padding-left: 1em; vertical-align: text-bottom; color: #555;">
-<?php _e( "To keep developing good plugin needs user's support at any time.", 'wpcf7' ); ?>
-</em>
+<div class="donation">
+<p><a href="http://www.pledgie.com/campaigns/3117">
+<img alt="Click here to lend your support to: Support Contact Form 7 and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/3117.png?skin_name=chrome" border="0" width="149" height="37" /></a>
+<em><?php _e( "To keep developing good plugin needs user's support at any time.", 'wpcf7' ); ?></em>
 </p>
 </div>
 <?php
