@@ -91,7 +91,6 @@ function wpcf7_update_contact_forms( $contact_forms ) {
 
 
 $wpcf7_posted_data = null;
-$wpcf7_processing_unit_tag = null;
 $wpcf7_processing_within = null;
 $wpcf7_unit_count = null;
 $wpcf7_widget_count = null;
@@ -234,7 +233,7 @@ function wpcf7_widget_text_filter_callback( $matches ) {
 }
 
 function wpcf7_contact_form_tag_func( $atts ) {
-	global $wpcf7_unit_count, $wpcf7_processing_within, $wpcf7_processing_unit_tag;
+	global $wpcf7_unit_count, $wpcf7_processing_within;
 
 	if ( is_string( $atts ) )
 		$atts = explode( ' ', $atts, 2 );
@@ -250,7 +249,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 
 	$wpcf7_unit_count += 1;
 	$unit_tag = 'wpcf7-f' . $id . '-' . $wpcf7_processing_within . '-o' . $wpcf7_unit_count;
-	$wpcf7_processing_unit_tag = $unit_tag;
+	$cf->unit_tag = $unit_tag;
 
 	$form = '<div class="wpcf7" id="' . $unit_tag . '">';
 
@@ -281,7 +280,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	// Post response output for non-AJAX
 	$class = 'wpcf7-response-output';
 
-	if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+	if ( $cf->is_posted() ) {
 		if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $id ) {
 			if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
 				$class .= ' wpcf7-mail-sent-ok';
@@ -303,8 +302,6 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	$form .= '<div' . $class . '>' . $content . '</div>';
 
 	$form .= '</div>';
-
-	$wpcf7_processing_unit_tag = null;
 
 	if ( WPCF7_AUTOP )
 		$form = wpcf7_wpautop_substitute( $form );

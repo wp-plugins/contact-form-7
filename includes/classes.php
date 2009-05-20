@@ -9,6 +9,19 @@ class WPCF7_ContactForm {
 	var $messages;
 	var $options;
 
+	var $unit_tag;
+
+	// Return true if this form is the same one as currently POSTed.
+	function is_posted() {
+		if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
+			return false;
+
+		if ( $this->unit_tag == $_POST['_wpcf7_unit_tag'] )
+			return true;
+
+		return false;
+	}
+
 	/* Form Elements */
 
 	function form_elements( $replace = true ) {
@@ -33,11 +46,9 @@ class WPCF7_ContactForm {
 	}
 
 	function form_element_replace_callback( $matches ) {
-		global $wpcf7_processing_unit_tag;
-
 		extract( (array) $this->form_element_parse( $matches ) ); // $type, $name, $options, $values, $raw_values
 
-		if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+		if ( $this->is_posted() ) {
 			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
 			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
 		} else {
@@ -86,7 +97,7 @@ class WPCF7_ContactForm {
 			$atts .= ' class="' . trim( $class_att ) . '"';
 
 		// Value.
-		if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] ) {
+		if ( $this->is_posted() ) {
 			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['ok'] )
 				$value = '';
 			elseif ( 'captchar' == $type )
@@ -163,7 +174,7 @@ class WPCF7_ContactForm {
 					$selected = '';
 					if ( ! $empty_select && in_array( $key + 1, (array) $scr_default ) )
 						$selected = ' selected="selected"';
-					if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+					if ( $this->is_posted() && (
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$selected = ' selected="selected"';
@@ -192,7 +203,7 @@ class WPCF7_ContactForm {
 					$checked = '';
 					if ( in_array( $key + 1, (array) $scr_default ) )
 						$checked = ' checked="checked"';
-					if ( $wpcf7_processing_unit_tag == $_POST['_wpcf7_unit_tag'] && (
+					if ( $this->is_posted() && (
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$checked = ' checked="checked"';
