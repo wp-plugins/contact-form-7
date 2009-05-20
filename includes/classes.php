@@ -527,51 +527,22 @@ class WPCF7_ContactForm {
 	/* Upgrade */
 
 	function upgrade() {
-		$this->upgrade_160();
-		$this->upgrade_181();
-		$this->upgrade_190();
-		$this->upgrade_192();
-	}
-
-	function upgrade_160() {
 		if ( ! isset( $this->mail['recipient'] ) )
 			$this->mail['recipient'] = $this->options['recipient'];
-	}
 
-	function upgrade_181() {
-		if ( ! is_array( $this->messages ) )
-			$this->messages = array(
-				'mail_sent_ok' => wpcf7_default_message( 'mail_sent_ok' ),
-				'mail_sent_ng' => wpcf7_default_message( 'mail_sent_ng' ),
-				'akismet_says_spam' => wpcf7_default_message( 'akismet_says_spam' ),
-				'validation_error' => wpcf7_default_message( 'validation_error' ),
-				'accept_terms' => wpcf7_default_message( 'accept_terms' ),
-				'invalid_email' => wpcf7_default_message( 'invalid_email' ),
-				'invalid_required' => wpcf7_default_message( 'invalid_required' ),
-				'captcha_not_match' => wpcf7_default_message( 'captcha_not_match' )
-			);
-	}
 
-	function upgrade_190() {
 		if ( ! is_array( $this->messages ) )
 			$this->messages = array();
 
-		if ( ! isset( $this->messages['upload_failed'] ) )
-			$this->messages['upload_failed'] = wpcf7_default_message( 'upload_failed' );
+		$messages = array(
+			'mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam', 'validation_error', 'accept_terms',
+			'invalid_email', 'invalid_required', 'captcha_not_match', 'upload_failed', 'upload_file_type_invalid',
+			'upload_file_too_large', 'quiz_answer_not_correct' );
 
-		if ( ! isset( $this->messages['upload_file_type_invalid'] ) )
-			$this->messages['upload_file_type_invalid'] = wpcf7_default_message( 'upload_file_type_invalid' );
-
-		if ( ! isset( $this->messages['upload_file_too_large'] ) )
-			$this->messages['upload_file_too_large'] = wpcf7_default_message( 'upload_file_too_large' );
-	}
-
-	function upgrade_192() {
-		if ( ! is_array( $this->messages ) )
-			$this->messages = array();
-
-		if ( ! isset( $this->messages['quiz_answer_not_correct'] ) )
-			$this->messages['quiz_answer_not_correct'] = wpcf7_default_message( 'quiz_answer_not_correct' );
+		foreach ($messages as $message) {
+			if ( ! isset( $this->messages[$message] ) )
+				$this->messages[$message] = wpcf7_default_message( $message );
+		}
 	}
 
 }
