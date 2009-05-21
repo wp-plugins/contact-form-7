@@ -61,16 +61,19 @@ function wpcf7_admin_add_pages() {
 			'upload_file_type_invalid' => trim( $_POST['wpcf7-message-upload-file-type-invalid'] ),
 			'upload_file_too_large' => trim( $_POST['wpcf7-message-upload-file-too-large'] )
 		);
+		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
 		$options = array(
 			'recipient' => trim( $_POST['wpcf7-options-recipient'] ) // For backward compatibility.
 		);
 
+		$data = compact( 'title', 'form', 'mail', 'mail_2', 'messages', 'additional_settings', 'options' );
+
 		if ( array_key_exists( $id, $contact_forms ) ) {
-			$contact_forms[$id] = compact( 'title', 'form', 'mail', 'mail_2', 'messages', 'options' );
+			$contact_forms[$id] = $data;
 			$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $id . '&message=saved';
 		} else {
 			$key = ( empty( $contact_forms ) ) ? 1 : max( array_keys( $contact_forms ) ) + 1;
-			$contact_forms[$key] = compact( 'title', 'form', 'mail', 'mail_2', 'messages', 'options' );
+			$contact_forms[$key] = $data;
 			$redirect_to = $base_url . '?page=' . $page . '&contactform=' . $key . '&message=created';
 		}
 

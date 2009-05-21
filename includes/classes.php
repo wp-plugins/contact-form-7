@@ -8,6 +8,7 @@ class WPCF7_ContactForm {
 	var $mail;
 	var $mail_2;
 	var $messages;
+	var $additional_settings;
 	var $options;
 
 	var $unit_tag;

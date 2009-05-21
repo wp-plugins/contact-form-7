@@ -263,6 +263,23 @@
         </tbody>
     </table>
 
+    <table class="widefat" style="margin-top: 1em;">
+        <thead>
+            <tr>
+                <th scope="col"><?php _e( 'Additional Settings', 'wpcf7' ); ?> <span id="additional-settings-fields-toggle-switch"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">
+                    <div id="additional-settings-fields">
+					<textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8"><?php echo htmlspecialchars( $cf->additional_settings ); ?></textarea>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
     <input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars( $cf->options['recipient'] ); ?>" />
 
     <table class="widefat" style="margin-top: 1em;">

@@ -72,6 +72,24 @@ jQuery(document).ready(function() {
             }
         });
 
+        if ('' == jQuery.trim(jQuery('#wpcf7-additional-settings').text())) {
+            jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
+            jQuery('#additional-settings-fields').hide();
+        } else {
+            jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
+            jQuery('#additional-settings-fields').show();
+        }
+
+        jQuery('#additional-settings-fields-toggle-switch').click(function() {
+            if (jQuery('#additional-settings-fields').is(':hidden')) {
+                jQuery('#additional-settings-fields').slideDown('fast');
+                jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
+            } else {
+                jQuery('#additional-settings-fields').hide('fast');
+                jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
+            }
+        });
+
         jQuery('.actions-link input').mouseover(function() {
             jQuery(this).css({
                 'border-bottom': '1px solid'

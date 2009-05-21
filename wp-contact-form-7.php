@@ -332,6 +332,7 @@ function wpcf7_contact_form( $data ) {
 	$contact_form->mail = $data['mail'];
 	$contact_form->mail_2 = $data['mail_2'];
 	$contact_form->messages = $data['messages'];
+	$contact_form->additional_settings = $data['additional_settings'];
 	$contact_form->options = $data['options'];
 
 	$contact_form->upgrade();

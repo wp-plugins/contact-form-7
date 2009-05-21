@@ -86,7 +86,7 @@ input#contact-form-anchor-text {
 	-webkit-border-radius: 6px;
 	border-radius: 6px; 
 }
-span#message-fields-toggle-switch {
+span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
 	margin-left: 1em;
 	font-weight: normal;
 	font-size: smaller;
