@@ -90,6 +90,9 @@ function wpcf7ProcessJson(data) {
 	if (1 == data.mailSent) {
 		jQuery(data.into).find('form').resetForm().clearForm();
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
+
+        if (data.onSentOk)
+            jQuery.each(data.onSentOk, function(i, n) { eval(n) });
 	} else {
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
 	}

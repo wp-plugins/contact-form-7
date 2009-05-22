@@ -150,6 +150,13 @@ function wpcf7_ajax_json_echo() {
 				$quiz = 'null';
 			}
 
+			$on_sent_ok_settings = $cf->additional_setting( 'on_sent_ok', false );
+			if ( ! empty( $on_sent_ok_settings ) ) {
+				$on_sent_ok = '[ ' . implode( ', ', $on_sent_ok_settings ) . ' ]';
+			} else {
+				$on_sent_ok = 'null';
+			}
+
 			if ( ! $validation['valid'] ) { // Validation error occured
 				$invalids = array();
 				foreach ( $validation['reason'] as $name => $reason ) {
@@ -162,7 +169,7 @@ function wpcf7_ajax_json_echo() {
 			} elseif ( wpcf7_akismet( $cf ) ) { // Spam!
 				$echo = '{ mailSent: 0, message: "' . js_escape( $cf->message( 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 			} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
-				$echo = '{ mailSent: 1, message: "' . js_escape( $cf->message( 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				$echo = '{ mailSent: 1, message: "' . js_escape( $cf->message( 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ', onSentOk: ' . $on_sent_ok . ' }';
 			} else {
 				$echo = '{ mailSent: 0, message: "' . js_escape( $cf->message( 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 			}

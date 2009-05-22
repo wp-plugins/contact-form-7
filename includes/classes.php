@@ -525,6 +525,29 @@ class WPCF7_ContactForm {
 		return $messages[$status];
 	}
 
+	/* Additional settings */
+
+	function additional_setting( $name, $max = 1 ) {
+		$tmp_settings = (array) explode( "\n", $this->additional_settings );
+
+		$count = 0;
+		$values = array();
+
+		foreach ( $tmp_settings as $setting ) {
+			if ( preg_match('/^([a-zA-Z0-9_]+)\s*:(.*)$/', $setting, $matches ) ) {
+				if ( $matches[1] != $name )
+					continue;
+
+				if ( ! $max || $count < (int) $max ) {
+					$values[] = trim( $matches[2] );
+					$count += 1;
+				}
+			}
+		}
+
+		return $values;
+	}
+
 	/* Upgrade */
 
 	function upgrade() {
