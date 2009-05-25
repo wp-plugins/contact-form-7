@@ -51,12 +51,21 @@ class WPCF7_ContactForm {
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $this->unit_tag . '" />';
 		$form .= '</div>';
 		$form .= $this->form_elements();
+		$form .= $this->form_response_output();
 		$form .= '</form>';
 
-		// Post response output for non-AJAX
+		$form .= '</div>';
+
+		if ( WPCF7_AUTOP )
+			$form = wpcf7_wpautop_substitute( $form );
+
+		return $form;
+	}
+
+	function form_response_output() {
 		$class = 'wpcf7-response-output';
 
-		if ( $this->is_posted() ) {
+		if ( $this->is_posted() ) { // Post response output for non-AJAX
 			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $this->id ) {
 				if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
 					$class .= ' wpcf7-mail-sent-ok';
@@ -75,14 +84,7 @@ class WPCF7_ContactForm {
 
 		$class = ' class="' . $class . '"';
 
-		$form .= '<div' . $class . '>' . $content . '</div>';
-
-		$form .= '</div>';
-
-		if ( WPCF7_AUTOP )
-			$form = wpcf7_wpautop_substitute( $form );
-
-		return $form;
+		return '<div' . $class . '>' . $content . '</div>';
 	}
 
 	/* Form Elements */
