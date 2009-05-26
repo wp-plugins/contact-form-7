@@ -48,6 +48,9 @@ if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
+if ( ! defined( 'WPCF7_LOAD_JS' ) )
+	define( 'WPCF7_LOAD_JS', true );
+
 if ( ! defined( 'WPCF7_AUTOP' ) )
 	define( 'WPCF7_AUTOP', true );
 
