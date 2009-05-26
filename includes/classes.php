@@ -3,6 +3,7 @@
 class WPCF7_ContactForm {
 
 	var $id;
+
 	var $title;
 	var $form;
 	var $mail;
@@ -12,6 +13,8 @@ class WPCF7_ContactForm {
 	var $options;
 
 	var $unit_tag;
+
+	var $responses_count = 0;
 
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
@@ -51,7 +54,10 @@ class WPCF7_ContactForm {
 		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $this->unit_tag . '" />';
 		$form .= '</div>';
 		$form .= $this->form_elements();
-		$form .= $this->form_response_output();
+
+		if ( ! $this->responses_count )
+			$form .= $this->form_response_output();
+
 		$form .= '</form>';
 
 		$form .= '</div>';
@@ -80,6 +86,8 @@ class WPCF7_ContactForm {
 				$class .= ' wpcf7-validation-errors';
 				$content = $this->message( 'validation_error' );
 			}
+		} else {
+			$class .= ' wpcf7-display-none';
 		}
 
 		$class = ' class="' . $class . '"';
@@ -95,10 +103,13 @@ class WPCF7_ContactForm {
 		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file[*]?|quiz';
 		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/|\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
+		$response_regex = '%\[\s*response\s*\]%';
 		if ( $replace ) {
 			$form = preg_replace_callback( $regex, array( &$this, 'form_element_replace_callback' ), $form );
 			// Submit button
 			$form = preg_replace_callback( $submit_regex, array( &$this, 'submit_replace_callback' ), $form );
+			// Response output
+			$form = preg_replace_callback( $response_regex, array( &$this, 'response_replace_callback' ), $form );
 			return $form;
 		} else {
 			$results = array();
@@ -403,6 +414,11 @@ class WPCF7_ContactForm {
 		$html = '<input type="submit" value="' . $value . '"' . $atts . ' />';
 		$html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 		return $html;
+	}
+
+	function response_replace_callback( $matches ) {
+		$this->responses_count += 1;
+		return $this->form_response_output();
 	}
 
 	function form_element_parse( $element ) {

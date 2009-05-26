@@ -49,3 +49,7 @@ span.wpcf7-not-valid-tip-no-ajax {
 span.wpcf7-list-item {
 	margin-left: 0.5em;
 }
+
+.wpcf7-display-none {
+	display: none;
+}
