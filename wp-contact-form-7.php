@@ -67,6 +67,17 @@ if ( ! defined( 'WPCF7_ADMIN_READ_CAPABILITY' ) )
 if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
+function wpcf7_plugin_url( $path = '' ) {
+	if ( function_exists( 'plugins_url' ) ) {
+		return plugins_url( $path, __FILE__ );
+	} else { // Older than WP 2.6
+		$url = WPCF7_PLUGIN_URL;
+		if ( ! empty( $path ) && is_string( $path ) && false === strpos( $path, '..' ) )
+			$url .= '/' . ltrim( $path, '/' );
+		return $url;
+	}
+}
+
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
@@ -285,11 +296,11 @@ function wpcf7_contact_form_tag_func( $atts ) {
 add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 
 function wpcf7_wp_head() {
-	$stylesheet_url = WPCF7_PLUGIN_URL . '/stylesheet.css';
+	$stylesheet_url = wpcf7_plugin_url( 'stylesheet.css' );
 	echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
 
 	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-		$stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/stylesheet-rtl.css';
+		$stylesheet_rtl_url = wpcf7_plugin_url( 'stylesheet-rtl.css' );
 		echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
 	}
 }
@@ -297,7 +308,7 @@ function wpcf7_wp_head() {
 add_action( 'wp_head', 'wpcf7_wp_head' );
 
 function wpcf7_enqueue_scripts() {
-	wp_enqueue_script( 'contact-form-7', WPCF7_PLUGIN_URL . '/contact-form-7.js',
+	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
 		array('jquery', 'jquery-form'), WPCF7_VERSION, true );
 }
 

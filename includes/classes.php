@@ -409,7 +409,7 @@ class WPCF7_ContactForm {
 			$value = wpcf7_strip_quote( $matches[2] );
 		if ( empty( $value ) )
 			$value = __( 'Send', 'wpcf7' );
-		$ajax_loader_image_url = WPCF7_PLUGIN_URL . '/images/ajax-loader.gif';
+		$ajax_loader_image_url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
 
 		$html = '<input type="submit" value="' . $value . '"' . $atts . ' />';
 		$html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';

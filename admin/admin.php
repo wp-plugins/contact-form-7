@@ -118,11 +118,11 @@ function wpcf7_admin_head() {
 
 	if ( isset( $plugin_page ) && $plugin_page == plugin_basename( __FILE__ ) ) {
 
-		$admin_stylesheet_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet.css';
+		$admin_stylesheet_url = wpcf7_plugin_url( 'admin/admin-stylesheet.css' );
 		echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 
 		if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-			$admin_stylesheet_rtl_url = WPCF7_PLUGIN_URL . '/admin/admin-stylesheet-rtl.css';
+			$admin_stylesheet_rtl_url = wpcf7_plugin_url( 'admin/admin-stylesheet-rtl.css' );
 			echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
 		}
 
@@ -152,7 +152,7 @@ function wpcf7_admin_load_js() {
 	if ( false === strpos( $_GET['page'], 'contact-form-7' ) )
 		return;
 
-	wp_enqueue_script( 'wpcf7-admin', WPCF7_PLUGIN_URL . '/admin/wpcf7-admin.js', array('jquery'), WPCF7_VERSION, true );
+	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/wpcf7-admin.js' ), array('jquery'), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
