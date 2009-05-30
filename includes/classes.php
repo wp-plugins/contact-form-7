@@ -126,7 +126,7 @@ class WPCF7_ContactForm {
 
 		if ( $this->is_posted() ) {
 			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
-			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . $validation_error . '</span>' : '';
+			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $validation_error ) . '</span>' : '';
 		} else {
 			$validation_error = '';
 		}
@@ -233,7 +233,7 @@ class WPCF7_ContactForm {
 							$atts .= ' cols="40" rows="10"';
 					}
 				}
-				$html = '<textarea name="' . $name . '"' . $atts . '>' . $value . '</textarea>';
+				$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
@@ -254,7 +254,7 @@ class WPCF7_ContactForm {
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$selected = ' selected="selected"';
-					$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $value . '</option>';
+					$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $value ) . '</option>';
 				}
 
 				if ( $multiple )
@@ -332,7 +332,7 @@ class WPCF7_ContactForm {
 					}
 				}
                 
-				$html = '<span class="wpcf7-quiz-label">' . $value . '</span>&nbsp;';
+				$html = '<span class="wpcf7-quiz-label">' . esc_html( $value ) . '</span>&nbsp;';
 				$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
 				$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
@@ -411,7 +411,7 @@ class WPCF7_ContactForm {
 			$value = __( 'Send', 'wpcf7' );
 		$ajax_loader_image_url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
 
-		$html = '<input type="submit" value="' . $value . '"' . $atts . ' />';
+		$html = '<input type="submit" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 		$html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . $ajax_loader_image_url . '" />';
 		return $html;
 	}
