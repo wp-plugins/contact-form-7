@@ -60,7 +60,7 @@
                             <?php $delete_nonce = wp_create_nonce( 'wpcf7-delete_' . $current ); ?>
                             <input type="submit" name="wpcf7-delete" class="delete" value="<?php _e( 'Delete', 'wpcf7' ); ?>"
                                 <?php echo "onclick=\"if (confirm('" .
-							js_escape( __( "You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7' ) ) .
+							esc_js( __( "You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7' ) ) .
 							"')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
                         </div>
                         <?php endif; ?>

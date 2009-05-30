@@ -211,7 +211,7 @@ class WPCF7_ContactForm {
 						$atts .= ' size="40"';
 					}
 				}
-				$html = '<input type="text" name="' . $name . '" value="' . attribute_escape( $value ) . '"' . $atts . ' />';
+				$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
@@ -254,7 +254,7 @@ class WPCF7_ContactForm {
 						$multiple && in_array( $value, (array) $_POST[$name] ) ||
 							! $multiple && $_POST[$name] == $value ) )
 						$selected = ' selected="selected"';
-					$html .= '<option value="' . attribute_escape( $value ) . '"' . $selected . '>' . $value . '</option>';
+					$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $value . '</option>';
 				}
 
 				if ( $multiple )
@@ -285,9 +285,9 @@ class WPCF7_ContactForm {
 						$checked = ' checked="checked"';
 					if ( preg_grep( '%^label[_-]?first$%', $options ) ) { // put label first, input last
 						$item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
-						$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . attribute_escape( $value ) . '"' . $checked . $onclick . ' />';
+						$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
 					} else {
-						$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . attribute_escape( $value ) . '"' . $checked . $onclick . ' />';
+						$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
 						$item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
 					}
 					$item = '<span class="wpcf7-list-item">' . $item . '</span>';
