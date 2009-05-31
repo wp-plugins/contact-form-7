@@ -5,8 +5,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 	$valid = true;
 	$reason = array();
 
-	wpcf7_init_uploads(); // Confirm upload dir
-	$uploads_dir = wpcf7_upload_tmp_dir();
+	$uploads_dir = null;
 
 	$fes = $contact_form->form_elements( false );
 
@@ -79,6 +78,11 @@ function wpcf7_handle_uploads( $contact_form ) {
 			continue;
 		}
 
+		if ( ! $uploads_dir ) {
+			$uploads_dir = wpcf7_upload_tmp_dir();
+			wpcf7_init_uploads(); // Confirm upload dir
+		}
+
 		$filename = wp_unique_filename( $uploads_dir, $file['name'] );
 
 		// If you get script file, it's a danger. Make it TXT file.
@@ -93,7 +97,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 		}
 
 		// Make sure the uploaded file is only readable for the owner process
-		chmod( $new_file, 0400 );
+		@chmod( $new_file, 0400 );
 
 		$files[$name] = $new_file;
 	}
@@ -119,13 +123,16 @@ function wpcf7_init_uploads() {
 }
 
 function wpcf7_cleanup_upload_files() {
-	$dir = wpcf7_upload_tmp_dir();
-	$dir = trailingslashit( $dir );
+	$dir = trailingslashit( wpcf7_upload_tmp_dir() );
 
-	if ( ! is_dir( $dir ) || ! is_writable( $dir ) )
+	if ( ! is_dir( $dir ) )
+		return false;
+	if ( ! is_readable( $dir ) )
+		return false;
+	if ( ! is_writable( $dir ) )
 		return false;
 
-	if ( $handle = opendir( $dir ) ) {
+	if ( $handle = @opendir( $dir ) ) {
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			if ( $file == "." || $file == ".." || $file == ".htaccess" )
 				continue;
