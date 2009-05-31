@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-25 10:36+0900\n"
-"PO-Revision-Date: 2009-05-25 10:55+0900\n"
+"POT-Creation-Date: 2009-05-31 23:05+0900\n"
+"PO-Revision-Date: 2009-05-31 23:06+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:321
+#: contact-form-7/wp-contact-form-7.php:373
 msgid "Contact form"
 msgstr "コンタクトフォーム"
 
@@ -397,7 +397,7 @@ msgid "Your Message"
 msgstr "メッセージ本文"
 
 #: contact-form-7/admin/admin.php:261
-#: contact-form-7/includes/classes.php:398
+#: contact-form-7/includes/classes.php:411
 msgid "Send"
 msgstr "送信"
 
@@ -421,7 +421,7 @@ msgstr "あなたの貢献があればこのプラグインをもっと良くす
 msgid "Developing a plugin and providing user support is really hard work. Please help."
 msgstr "プラグインを開発してユーザーサポートを提供するというのはとても大変な仕事です。ちょっとでいいから助けてください。"
 
-#: contact-form-7/includes/classes.php:339
+#: contact-form-7/includes/classes.php:352
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
 msgstr "CAPTCHA を使うには <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> プラグインのインストールが必要です。"
 
