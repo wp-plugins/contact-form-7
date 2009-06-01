@@ -69,6 +69,15 @@ if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 
 function wpcf7_plugin_url( $path = '' ) {
 	if ( function_exists( 'plugins_url' ) ) {
+
+		if ( version_compare( $wp_version, '2.8-beta', '<' ) ) { // Using WordPress 2.6 - 2.7.x
+			$folder = dirname( plugin_basename( __FILE__ ) );
+			if ( '.' != $folder )
+				$path = path_join( ltrim( $folder, '/' ), $path );
+
+			return plugins_url( $path );
+		}
+
 		return plugins_url( $path, __FILE__ );
 	} else { // Older than WP 2.6
 		$url = WPCF7_PLUGIN_URL;
