@@ -1,7 +1,7 @@
 <?php
 
 function wpcf7_mail( $contact_form, $files = array() ) {
-	global $wp_version, $wpcf7_posted_data;
+	global $wpcf7_posted_data;
 
 	$wpcf7_posted_data = $_POST;
 

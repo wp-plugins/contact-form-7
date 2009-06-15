@@ -68,6 +68,8 @@ if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
 function wpcf7_plugin_url( $path = '' ) {
+	global $wp_version;
+
 	if ( function_exists( 'plugins_url' ) ) {
 
 		if ( version_compare( $wp_version, '2.8-beta', '<' ) ) { // Using WordPress 2.6 - 2.7.x
