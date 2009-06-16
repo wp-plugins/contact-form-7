@@ -51,6 +51,9 @@ if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 if ( ! defined( 'WPCF7_LOAD_JS' ) )
 	define( 'WPCF7_LOAD_JS', true );
 
+if ( ! defined( 'WPCF7_LOAD_CSS' ) )
+	define( 'WPCF7_LOAD_CSS', true );
+
 if ( ! defined( 'WPCF7_AUTOP' ) )
 	define( 'WPCF7_AUTOP', true );
 
@@ -335,7 +338,8 @@ function wpcf7_wp_head() {
 	}
 }
 
-add_action( 'wp_head', 'wpcf7_wp_head' );
+if ( WPCF7_LOAD_CSS )
+	add_action( 'wp_head', 'wpcf7_wp_head' );
 
 function wpcf7_enqueue_scripts() {
 	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
