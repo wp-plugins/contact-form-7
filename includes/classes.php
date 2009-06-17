@@ -290,6 +290,10 @@ class WPCF7_ContactForm {
 						$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
 						$item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
 					}
+
+					if ( preg_grep( '%^use[_-]?label[_-]?element$%', $options ) )
+						$item = '<label>' . $item . '</label>';
+
 					$item = '<span class="wpcf7-list-item">' . $item . '</span>';
 					$html .= $item;
 				}
