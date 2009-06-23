@@ -122,6 +122,8 @@ class WPCF7_ContactForm {
 	}
 
 	function form_element_replace_callback( $matches ) {
+		global $wpdb;
+
 		extract( (array) $this->form_element_parse( $matches ) ); // $type, $name, $options, $values, $raw_values
 
 		if ( $this->is_posted() ) {
@@ -251,8 +253,8 @@ class WPCF7_ContactForm {
 					if ( ! $empty_select && in_array( $key + 1, (array) $scr_default ) )
 						$selected = ' selected="selected"';
 					if ( $this->is_posted() && (
-						$multiple && in_array( $value, (array) $_POST[$name] ) ||
-							! $multiple && $_POST[$name] == $value ) )
+						$multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) ||
+							! $multiple && $_POST[$name] == $wpdb->escape( $value ) ) )
 						$selected = ' selected="selected"';
 					$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $value ) . '</option>';
 				}
@@ -280,8 +282,8 @@ class WPCF7_ContactForm {
 					if ( in_array( $key + 1, (array) $scr_default ) )
 						$checked = ' checked="checked"';
 					if ( $this->is_posted() && (
-						$multiple && in_array( $value, (array) $_POST[$name] ) ||
-							! $multiple && $_POST[$name] == $value ) )
+						$multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) ||
+							! $multiple && $_POST[$name] == $wpdb->escape( $value ) ) )
 						$checked = ' checked="checked"';
 					if ( preg_grep( '%^label[_-]?first$%', $options ) ) { // put label first, input last
 						$item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
