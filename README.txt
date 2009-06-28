@@ -83,3 +83,7 @@ Attention: [Check your site before reporting trouble, please!](http://ideasilo.w
 == Screenshots ==
 
 1. screenshot-1.png
+
+== Changelog ==
+
+[See change logs in author's blog.](http://ideasilo.wordpress.com/tag/contact-form-7/)
