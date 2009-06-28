@@ -342,8 +342,12 @@ if ( WPCF7_LOAD_CSS )
 	add_action( 'wp_head', 'wpcf7_wp_head' );
 
 function wpcf7_enqueue_scripts() {
+	$in_footer = true;
+	if ( 'header' === WPCF7_LOAD_JS )
+		$in_footer = false;
+
 	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
-		array('jquery', 'jquery-form'), WPCF7_VERSION, true );
+		array('jquery', 'jquery-form'), WPCF7_VERSION, $in_footer );
 }
 
 if ( ! is_admin() && WPCF7_LOAD_JS )
