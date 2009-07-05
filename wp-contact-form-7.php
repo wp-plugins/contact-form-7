@@ -397,6 +397,8 @@ function wpcf7_set_initial() {
 
 add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_set_initial' );
 
+add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
+
 function wpcf7_contact_form( $data ) {
 	if ( ! $data )
 		return false;

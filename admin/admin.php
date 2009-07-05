@@ -369,4 +369,64 @@ function wpcf7_donation_link() {
 <?php
 }
 
+function wpcf7_install() {
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . "contact_form_7";
+
+	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name )
+		return; // Exists already
+
+	$charset_collate = '';
+	if ( $wpdb->has_cap( 'collation' ) ) {
+		if ( ! empty( $wpdb->charset ) )
+			$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+		if ( ! empty( $wpdb->collate ) )
+			$charset_collate .= " COLLATE $wpdb->collate";
+	}
+
+	$wpdb->query( "CREATE TABLE IF NOT EXISTS $table_name (
+		cf7_unit_id bigint(20) unsigned NOT NULL auto_increment,
+		title varchar(200) NOT NULL default '',
+		form text NOT NULL,
+		mail text NOT NULL,
+		mail_2 text NOT NULL,
+		messages text NOT NULL,
+		additional_settings text NOT NULL,
+		PRIMARY KEY (cf7_unit_id)) $charset_collate;" );
+
+	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name )
+		return false; // Failed to create
+
+	$legacy_data = get_option( 'wpcf7' );
+	if ( is_array( $legacy_data ) ) {
+		foreach ( $legacy_data['contact_forms'] as $key => $value ) {
+			$wpdb->insert( $table_name, array(
+				'cf7_unit_id' => $key,
+				'title' => $value['title'],
+				'form' => maybe_serialize( $value['form'] ),
+				'mail' => maybe_serialize( $value['mail'] ),
+				'mail_2' => maybe_serialize( $value['mail_2'] ),
+				'messages' => maybe_serialize( $value['messages'] ),
+				'additional_settings' => maybe_serialize( $value['additional_settings'] )
+				), array( '%d', '%s', '%s', '%s', '%s', '%s', '%s' ) );
+		}
+	} else {
+		wpcf7_insert_defaults();
+	}
+}
+
+function wpcf7_insert_defaults() {
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . "contact_form_7";
+
+	$wpdb->insert( $table_name, array(
+		'title' => __( 'Contact form', 'wpcf7' ) . ' 1',
+		'form' => maybe_serialize( wpcf7_default_form_template() ),
+		'mail' => maybe_serialize( wpcf7_default_mail_template() ),
+		'mail_2' => maybe_serialize ( wpcf7_default_mail_2_template() ),
+		'messages' => maybe_serialize( wpcf7_default_messages_template() ) ) );
+}
+
 ?>
