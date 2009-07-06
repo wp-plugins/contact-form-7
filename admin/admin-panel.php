@@ -10,9 +10,9 @@
     <?php endif; ?>
 
     <ul class="subsubsub">
-        <?php foreach ( $contact_forms as $k => $v ) : ?>
-        <li><a href="<?php echo $base_url . '?page=' . $page . '&contactform=' . $k ?>"<?php if ( $k == $current ) echo ' class="current"'; ?>>
-            <?php echo $v['title']; ?></a> |</li>
+        <?php foreach ( $contact_forms as $v ) : ?>
+        <li><a href="<?php echo $base_url . '?page=' . $page . '&contactform=' . $v->id ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>>
+            <?php echo $v->title; ?></a> |</li>
         <?php endforeach; ?>
 
         <?php if ( wpcf7_admin_has_edit_cap() ) : ?>
@@ -279,8 +279,6 @@
             </tr>
         </tbody>
     </table>
-
-    <input type="hidden" id="wpcf7-options-recipient" name="wpcf7-options-recipient" value="<?php echo htmlspecialchars( $cf->options['recipient'] ); ?>" />
 
     <table class="widefat" style="margin-top: 1em;">
         <tbody>

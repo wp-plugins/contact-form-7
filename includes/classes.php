@@ -2,15 +2,15 @@
 
 class WPCF7_ContactForm {
 
-	var $id;
+	var $initial = false;
 
+	var $id;
 	var $title;
 	var $form;
 	var $mail;
 	var $mail_2;
 	var $messages;
 	var $additional_settings;
-	var $options;
 
 	var $unit_tag;
 
@@ -576,7 +576,7 @@ class WPCF7_ContactForm {
 
 	function upgrade() {
 		if ( ! isset( $this->mail['recipient'] ) )
-			$this->mail['recipient'] = $this->options['recipient'];
+			$this->mail['recipient'] = get_option( 'admin_email' );
 
 
 		if ( ! is_array( $this->messages ) )
@@ -593,6 +593,118 @@ class WPCF7_ContactForm {
 		}
 	}
 
+	/* Save */
+
+	function save() {
+		global $wpdb;
+
+		$table_name = wpcf7_table_name();
+
+		if ( $this->initial ) {
+			$result = $wpdb->insert( $table_name, array(
+				'title' => $this->title,
+				'form' => maybe_serialize( $this->form ),
+				'mail' => maybe_serialize( $this->mail ),
+				'mail_2' => maybe_serialize ( $this->mail_2 ),
+				'messages' => maybe_serialize( $this->messages ),
+				'additional_settings' => maybe_serialize( $this->additional_settings ) ) );
+
+			if ( $result ) {
+				$this->initial = false;
+				$this->id = $wpdb->insert_id;
+				return;
+			}
+
+			return false; // Failed to save
+
+		} else { // Update
+			if ( ! absint( $this->id ) )
+				return false; // Missing ID
+
+			$wpdb->update( $table_name, array(
+				'title' => $this->title,
+				'form' => maybe_serialize( $this->form ),
+				'mail' => maybe_serialize( $this->mail ),
+				'mail_2' => maybe_serialize ( $this->mail_2 ),
+				'messages' => maybe_serialize( $this->messages ),
+				'additional_settings' => maybe_serialize( $this->additional_settings )
+				), array( 'cf7_unit_id' => absint( $this->id) ) );
+
+			return;
+		}
+	}
+
+	function copy() {
+		$new = new WPCF7_ContactForm();
+		$new->initial = true;
+
+		$new->title = $this->title . '_copy';
+		$new->form = $this->form;
+		$new->mail = $this->mail;
+		$new->mail_2 = $this->mail_2;
+		$new->messages = $this->messages;
+		$new->additional_settings = $this->additional_settings;
+
+		return $new;
+	}
+
+	function delete() {
+		global $wpdb;
+
+		if ( $this->initial )
+			return;
+
+		$table_name = wpcf7_table_name();
+
+		$query = $wpdb->prepare(
+			"DELETE FROM $table_name WHERE cf7_unit_id = %d LIMIT 1",
+			absint( $this->id ) );
+
+		$wpdb->query( $query );
+
+		$this->initial = true;
+		$this->id = null;
+	}
+
+}
+
+function wpcf7_contact_form( $id ) {
+	global $wpdb;
+
+	$table_name = wpcf7_table_name();
+
+	$id = (int) $id;
+
+	$query = $wpdb->prepare( "SELECT * FROM $table_name WHERE cf7_unit_id = %d", $id );
+
+	if ( ! $row = $wpdb->get_row( $query ) )
+		return false; // No data
+
+	$contact_form = new WPCF7_ContactForm();
+	$contact_form->id = $row->cf7_unit_id;
+	$contact_form->title = stripslashes_deep( $row->title );
+	$contact_form->form = stripslashes_deep( maybe_unserialize( $row->form ) );
+	$contact_form->mail = stripslashes_deep( maybe_unserialize( $row->mail ) );
+	$contact_form->mail_2 = stripslashes_deep( maybe_unserialize( $row->mail_2 ) );
+	$contact_form->messages = stripslashes_deep( maybe_unserialize( $row->messages ) );
+	$contact_form->additional_settings = stripslashes_deep( maybe_unserialize( $row->additional_settings ) );
+
+	$contact_form->upgrade();
+
+	return $contact_form;
+}
+
+function wpcf7_contact_form_default_pack() {
+	$contact_form = new WPCF7_ContactForm();
+	$contact_form->initial = true;
+
+	$contact_form->title = __( 'Untitled', 'wpcf7' );
+	$contact_form->form = wpcf7_default_form_template();
+	$contact_form->mail = wpcf7_default_mail_template();
+	$contact_form->mail_2 = wpcf7_default_mail_2_template();
+	$contact_form->messages = wpcf7_default_messages_template();
+
+	return $contact_form;
 }
 
 ?>

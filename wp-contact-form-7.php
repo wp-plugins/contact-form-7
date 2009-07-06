@@ -92,6 +92,12 @@ function wpcf7_plugin_url( $path = '' ) {
 	}
 }
 
+function wpcf7_table_name() {
+	global $wpdb;
+
+	return $wpdb->prefix . "contact_form_7";
+}
+
 // Pre-2.8 compatibility
 if ( ! function_exists( 'esc_js' ) ) {
 	function esc_js( $text ) {
@@ -125,28 +131,12 @@ require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
 if ( is_admin() )
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 
-$wpcf7_contact_forms = null;
-
 function wpcf7_contact_forms() {
-	global $wpcf7_contact_forms;
+	global $wpdb;
 
-	if ( is_array( $wpcf7_contact_forms ) )
-		return $wpcf7_contact_forms;
+	$table_name = wpcf7_table_name();
 
-	$wpcf7 = get_option( 'wpcf7' );
-	$wpcf7_contact_forms = $wpcf7['contact_forms'];
-
-	if ( ! is_array( $wpcf7_contact_forms ) )
-		$wpcf7_contact_forms = array();
-
-	return $wpcf7_contact_forms;
-}
-
-function wpcf7_update_contact_forms( $contact_forms ) {
-	$wpcf7 = get_option( 'wpcf7' );
-	$wpcf7['contact_forms'] = $contact_forms;
-
-	update_option( 'wpcf7', $wpcf7 );
+	return $wpdb->get_results( "SELECT cf7_unit_id as id, title FROM $table_name" );
 }
 
 $wpcf7_posted_data = null;
@@ -163,7 +153,7 @@ function wpcf7_ajax_json_echo() {
 		$unit_tag = $_POST['_wpcf7_unit_tag'];
 		$contact_forms = wpcf7_contact_forms();
 
-		if ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) {
+		if ( $cf = wpcf7_contact_form( $id ) ) {
 			$validation = $cf->validate();
 
 			$handled_uploads = wpcf7_handle_uploads( $cf );
@@ -242,7 +232,7 @@ function wpcf7_process_nonajax_submitting() {
 
 	$id = (int) $_POST['_wpcf7'];
 	$contact_forms = wpcf7_contact_forms();
-	if ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) {
+	if ( $cf = wpcf7_contact_form( $id ) ) {
 		$validation = $cf->validate();
 
 		$handled_uploads = wpcf7_handle_uploads( $cf );
@@ -311,7 +301,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 
 	$contact_forms = wpcf7_contact_forms();
 
-	if ( ! ( $cf = wpcf7_contact_form( $contact_forms[$id] ) ) )
+	if ( ! ( $cf = wpcf7_contact_form( $id ) ) )
 		return '[contact-form 404 "Not Found"]';
 
 	$cf->id = $id;
@@ -376,48 +366,5 @@ function wpcf7_load_plugin_textdomain() { // l10n
 }
 
 add_action( 'init', 'wpcf7_load_plugin_textdomain' );
-
-function wpcf7_set_initial() {
-	wpcf7_load_plugin_textdomain();
-
-	$wpcf7 = get_option( 'wpcf7' );
-	if ( ! is_array( $wpcf7 ) )
-		$wpcf7 = array();
-
-	$contact_forms = $wpcf7['contact_forms'];
-	if ( ! is_array( $contact_forms ) )
-		$contact_forms = array();
-
-	if ( 0 == count( $contact_forms ) )
-		$contact_forms[1] = wpcf7_default_pack( __( 'Contact form', 'wpcf7' ) . ' 1' );
-
-	$wpcf7['contact_forms'] = $contact_forms;
-	update_option( 'wpcf7', $wpcf7 );
-}
-
-add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_set_initial' );
-
-add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
-
-function wpcf7_contact_form( $data ) {
-	if ( ! $data )
-		return false;
-
-	$data = stripslashes_deep( $data );
-
-	$contact_form = new WPCF7_ContactForm();
-
-	$contact_form->title = $data['title'];
-	$contact_form->form = $data['form'];
-	$contact_form->mail = $data['mail'];
-	$contact_form->mail_2 = $data['mail_2'];
-	$contact_form->messages = $data['messages'];
-	$contact_form->additional_settings = $data['additional_settings'];
-	$contact_form->options = $data['options'];
-
-	$contact_form->upgrade();
-
-	return $contact_form;
-}
 
 ?>
