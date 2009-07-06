@@ -20,7 +20,6 @@ function wpcf7_admin_add_pages() {
 	}
 
 	$page = str_replace( '\\', '%5C', plugin_basename( __FILE__ ) );
-	$contact_forms = wpcf7_contact_forms();
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
 		$id = $_POST['wpcf7-id'];
@@ -297,6 +296,8 @@ function wpcf7_install() {
 				'additional_settings' => maybe_serialize( $value['additional_settings'] )
 				), array( '%d', '%s', '%s', '%s', '%s', '%s', '%s' ) );
 		}
+
+		delete_option( 'wpcf7' );
 	} else {
 		wpcf7_load_plugin_textdomain();
 

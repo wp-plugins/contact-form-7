@@ -151,7 +151,6 @@ function wpcf7_ajax_json_echo() {
 	if ( isset( $_POST['_wpcf7'] ) ) {
 		$id = (int) $_POST['_wpcf7'];
 		$unit_tag = $_POST['_wpcf7_unit_tag'];
-		$contact_forms = wpcf7_contact_forms();
 
 		if ( $cf = wpcf7_contact_form( $id ) ) {
 			$validation = $cf->validate();
@@ -231,7 +230,7 @@ function wpcf7_process_nonajax_submitting() {
 		return;
 
 	$id = (int) $_POST['_wpcf7'];
-	$contact_forms = wpcf7_contact_forms();
+
 	if ( $cf = wpcf7_contact_form( $id ) ) {
 		$validation = $cf->validate();
 
@@ -299,12 +298,8 @@ function wpcf7_contact_form_tag_func( $atts ) {
 
 	$id = (int) array_shift( $atts );
 
-	$contact_forms = wpcf7_contact_forms();
-
 	if ( ! ( $cf = wpcf7_contact_form( $id ) ) )
 		return '[contact-form 404 "Not Found"]';
-
-	$cf->id = $id;
 
 	$wpcf7_unit_count += 1;
 

@@ -618,7 +618,7 @@ class WPCF7_ContactForm {
 			return false; // Failed to save
 
 		} else { // Update
-			if ( ! absint( $this->id ) )
+			if ( ! (int) $this->id )
 				return false; // Missing ID
 
 			$wpdb->update( $table_name, array(
