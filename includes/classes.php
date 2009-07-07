@@ -105,6 +105,7 @@ class WPCF7_ContactForm {
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		$response_regex = '%\[\s*response\s*\]%';
 		if ( $replace ) {
+			$form = wpcf7_do_shortcode( $form );
 			$form = preg_replace_callback( $regex, array( &$this, 'form_element_replace_callback' ), $form );
 			// Submit button
 			$form = preg_replace_callback( $submit_regex, array( &$this, 'submit_replace_callback' ), $form );

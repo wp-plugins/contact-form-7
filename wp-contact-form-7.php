@@ -45,6 +45,9 @@ if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
 if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
 	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) );
 
+if ( ! defined( 'WPCF7_PLUGIN_MODULES_DIR' ) )
+	define( 'WPCF7_PLUGIN_MODULES_DIR', WPCF7_PLUGIN_DIR . '/modules' );
+
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
@@ -120,6 +123,7 @@ if ( ! function_exists( 'esc_attr' ) ) {
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
@@ -361,5 +365,22 @@ function wpcf7_load_plugin_textdomain() { // l10n
 }
 
 add_action( 'init', 'wpcf7_load_plugin_textdomain' );
+
+
+/* Loading modules */
+
+function wpcf7_load_modules() {
+	$dir = WPCF7_PLUGIN_MODULES_DIR;
+
+	if ( ! ( is_dir( $dir ) && $dh = opendir( $dir ) ) )
+		return false;
+
+	while ( ( $module = readdir( $dh ) ) !== false ) {
+		if ( substr( $module, -4 ) == '.php' )
+			include_once $dir . '/' . $module;
+	}
+}
+
+wpcf7_load_modules();
 
 ?>
