@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 1.9.2.2 正體中文語系檔\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 16:17+0900\n"
+"POT-Creation-Date: 2009-05-31 23:05+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: James Wu <admin@jameswublog.com>\n"
 "Language-Team: http://jameswublog.com <phptech@gmail.com>\n"
@@ -14,308 +14,37 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: contact-form-7/wp-contact-form-7.php:413
+#: contact-form-7/wp-contact-form-7.php:373
 msgid "Contact form"
 msgstr "聯絡表單"
 
-#: contact-form-7/wp-contact-form-7.php:582
-#: contact-form-7/includes/admin-panel.php:5
+#: contact-form-7/admin/admin-panel.php:6
+#: contact-form-7/admin/admin.php:111
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:605
-msgid "optional"
-msgstr "可不填"
-
-#: contact-form-7/wp-contact-form-7.php:606
-msgid "Generate Tag"
-msgstr "標籤產生器"
-
-#: contact-form-7/wp-contact-form-7.php:607
-msgid "Text field"
-msgstr "文字欄位"
-
-#: contact-form-7/wp-contact-form-7.php:608
-msgid "Email field"
-msgstr "電子郵件欄位"
-
-#: contact-form-7/wp-contact-form-7.php:609
-msgid "Text area"
-msgstr "文字區塊"
-
-#: contact-form-7/wp-contact-form-7.php:610
-msgid "Drop-down menu"
-msgstr "下拉式選單"
-
-#: contact-form-7/wp-contact-form-7.php:611
-msgid "Checkboxes"
-msgstr "核選方塊"
-
-#: contact-form-7/wp-contact-form-7.php:612
-msgid "Radio buttons"
-msgstr "選項按鈕"
-
-#: contact-form-7/wp-contact-form-7.php:613
-msgid "Acceptance"
-msgstr "接受使用條款"
-
-#: contact-form-7/wp-contact-form-7.php:614
-msgid "Make this checkbox checked by default?"
-msgstr "預設核選方塊為核取(已勾選)?"
-
-#: contact-form-7/wp-contact-form-7.php:615
-msgid "Make this checkbox work inversely?"
-msgstr "設定核取方塊被選取的狀態相反?"
-
-#: contact-form-7/wp-contact-form-7.php:616
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "*意思是如果使用者如果接受服務條款，則不需勾選核取方塊。"
-
-#: contact-form-7/wp-contact-form-7.php:617
-msgid "CAPTCHA"
-msgstr "圖片驗證"
-
-#: contact-form-7/wp-contact-form-7.php:618
-msgid "Quiz"
-msgstr "測驗題目驗證"
-
-#: contact-form-7/wp-contact-form-7.php:619
-msgid "Quizzes"
-msgstr "測驗題庫"
-
-#: contact-form-7/wp-contact-form-7.php:620
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* 測驗題目|答案 (例如 1+1=?|2)"
-
-#: contact-form-7/wp-contact-form-7.php:621
-msgid "File upload"
-msgstr "檔案上傳"
-
-#: contact-form-7/wp-contact-form-7.php:622
-msgid "bytes"
-msgstr "位元組"
-
-#: contact-form-7/wp-contact-form-7.php:623
-msgid "Submit button"
-msgstr "提交按鈕"
-
-#: contact-form-7/wp-contact-form-7.php:624
-msgid "Name"
-msgstr "物件名稱"
-
-#: contact-form-7/wp-contact-form-7.php:625
-msgid "Required field?"
-msgstr "設定為必要欄位?"
-
-#: contact-form-7/wp-contact-form-7.php:626
-msgid "Allow multiple selections?"
-msgstr "允許在下拉式選單中，可以選擇一個以上的選項?"
-
-#: contact-form-7/wp-contact-form-7.php:627
-msgid "Insert a blank item as the first option?"
-msgstr "要插入一個空白資料欄位，作為第一個選項?"
-
-#: contact-form-7/wp-contact-form-7.php:628
-msgid "Make checkboxes exclusive?"
-msgstr "設定核取方塊，為不允許修改(唯讀)?"
-
-#: contact-form-7/wp-contact-form-7.php:629
-msgid "Choices"
-msgstr "選項"
-
-#: contact-form-7/wp-contact-form-7.php:630
-msgid "Label"
-msgstr "標籤"
-
-#: contact-form-7/wp-contact-form-7.php:631
-msgid "Default value"
-msgstr "預設值"
-
-#: contact-form-7/wp-contact-form-7.php:632
-msgid "Akismet"
-msgstr "Akismet（防止垃圾郵件的插件）"
-
-#: contact-form-7/wp-contact-form-7.php:633
-msgid "This field requires author's name"
-msgstr "這個欄位需要填寫作者的姓名"
-
-#: contact-form-7/wp-contact-form-7.php:634
-msgid "This field requires author's URL"
-msgstr "這個欄位需要填寫作者的網址"
-
-#: contact-form-7/wp-contact-form-7.php:635
-msgid "This field requires author's email address"
-msgstr "這個欄位需要填寫作者的電子郵件信箱"
-
-#: contact-form-7/wp-contact-form-7.php:636
-msgid "Copy this code and paste it into the form left."
-msgstr "把這段代碼複製後，貼到左方的表格"
-
-#: contact-form-7/wp-contact-form-7.php:637
-msgid "Foreground color"
-msgstr "前景顏色"
-
-#: contact-form-7/wp-contact-form-7.php:638
-msgid "Background color"
-msgstr "背景顏色"
-
-#: contact-form-7/wp-contact-form-7.php:639
-msgid "Image size"
-msgstr "圖片尺寸"
-
-#: contact-form-7/wp-contact-form-7.php:640
-msgid "Small"
-msgstr "小"
-
-#: contact-form-7/wp-contact-form-7.php:641
-msgid "Medium"
-msgstr "中"
-
-#: contact-form-7/wp-contact-form-7.php:642
-msgid "Large"
-msgstr "大"
-
-#: contact-form-7/wp-contact-form-7.php:643
-msgid "Image settings"
-msgstr "圖片設定"
-
-#: contact-form-7/wp-contact-form-7.php:644
-msgid "Input field settings"
-msgstr "設定輸入欄位"
-
-#: contact-form-7/wp-contact-form-7.php:645
-msgid "For image"
-msgstr "圖片使用"
-
-#: contact-form-7/wp-contact-form-7.php:646
-msgid "For input field"
-msgstr "輸入欄位使用"
-
-#: contact-form-7/wp-contact-form-7.php:647
-msgid "* One choice per line."
-msgstr "*每行只能有一個選項。"
-
-#: contact-form-7/wp-contact-form-7.php:648
-msgid "Show"
-msgstr "顯示"
-
-#: contact-form-7/wp-contact-form-7.php:649
-msgid "Hide"
-msgstr "隱藏"
-
-#: contact-form-7/wp-contact-form-7.php:650
-msgid "File size limit"
-msgstr "檔案大小限制"
-
-#: contact-form-7/wp-contact-form-7.php:651
-msgid "Acceptable file types"
-msgstr "可接受上傳檔案的種類"
-
-#: contact-form-7/wp-contact-form-7.php:677
-msgid "Contact form created."
-msgstr "已新增聯絡表單。"
-
-#: contact-form-7/wp-contact-form-7.php:680
-msgid "Contact form saved."
-msgstr "已儲存聯絡表單。"
-
-#: contact-form-7/wp-contact-form-7.php:683
-msgid "Contact form deleted."
-msgstr "已刪除聯絡表單。"
-
-#: contact-form-7/wp-contact-form-7.php:694
-msgid "Untitled"
-msgstr "無標題"
-
-#: contact-form-7/wp-contact-form-7.php:721
-msgid "Your Name"
-msgstr "您的姓名"
-
-#: contact-form-7/wp-contact-form-7.php:721
-#: contact-form-7/wp-contact-form-7.php:723
-msgid "(required)"
-msgstr "〈需填寫〉"
-
-#: contact-form-7/wp-contact-form-7.php:723
-msgid "Your Email"
-msgstr "您的電子郵件信箱"
-
-#: contact-form-7/wp-contact-form-7.php:725
-msgid "Subject"
-msgstr "主旨"
-
-#: contact-form-7/wp-contact-form-7.php:727
-msgid "Your Message"
-msgstr "您的信件內容"
-
-#: contact-form-7/wp-contact-form-7.php:729
-#: contact-form-7/wp-contact-form-7.php:1458
-msgid "Send"
-msgstr "傳送"
-
-#: contact-form-7/wp-contact-form-7.php:783
-msgid "Your message was sent successfully. Thanks."
-msgstr "您的信件已成功寄出，感謝。"
-
-#: contact-form-7/wp-contact-form-7.php:785
-#: contact-form-7/wp-contact-form-7.php:787
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "信件傳送失敗。請稍後再試或以其他方式與站管人員聯絡。"
-
-#: contact-form-7/wp-contact-form-7.php:789
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "認證發生錯誤。請確認各項欄位資料是否正確後，再行提交。"
-
-#: contact-form-7/wp-contact-form-7.php:791
-msgid "Please accept the terms to proceed."
-msgstr "請接受本服務條款再繼續進行。"
-
-#: contact-form-7/wp-contact-form-7.php:793
-msgid "Email address seems invalid."
-msgstr "電子郵件格式不符。"
-
-#: contact-form-7/wp-contact-form-7.php:795
-msgid "Please fill the required field."
-msgstr "請填寫必要欄位。"
-
-#: contact-form-7/wp-contact-form-7.php:797
-msgid "Your entered code is incorrect."
-msgstr "您輸入的認證代碼錯誤。　"
-
-#: contact-form-7/wp-contact-form-7.php:799
-msgid "Your answer is not correct."
-msgstr "您的答案不正確。"
-
-#: contact-form-7/wp-contact-form-7.php:801
-msgid "Failed to upload file."
-msgstr "上傳檔案失敗。"
-
-#: contact-form-7/wp-contact-form-7.php:803
-msgid "This file type is not allowed."
-msgstr "上傳的檔案不是允許的檔案種類。"
-
-#: contact-form-7/wp-contact-form-7.php:805
-msgid "This file is too large."
-msgstr "上傳檔案過大。"
-
-#: contact-form-7/includes/admin-panel.php:20
+#: contact-form-7/admin/admin-panel.php:21
 msgid "Add new"
 msgstr "建立新聯絡表單"
 
-#: contact-form-7/includes/admin-panel.php:42
+#: contact-form-7/admin/admin-panel.php:43
 msgid "Copy this code and paste it into your post, page or text widget content."
 msgstr "您可以把這段代碼複製到您的網誌文章、分頁或文字小工具(Text Widget)的內容中。"
 
-#: contact-form-7/includes/admin-panel.php:49
-#: contact-form-7/includes/admin-panel.php:257
+#: contact-form-7/admin/admin-panel.php:50
+#: contact-form-7/admin/admin-panel.php:290
 msgid "Save"
 msgstr "儲存"
 
-#: contact-form-7/includes/admin-panel.php:55
-msgid "Delete this contact form"
-msgstr "刪除這個聯絡表單"
+#: contact-form-7/admin/admin-panel.php:57
+msgid "Copy"
+msgstr "複製"
 
-#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/admin/admin-panel.php:61
+msgid "Delete"
+msgstr "刪除"
+
+#: contact-form-7/admin/admin-panel.php:63
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -323,106 +52,422 @@ msgstr ""
 "您即將刪除這個聯絡表單。\n"
 "按「確定」刪除表單，或按「取消」取消刪除表單的動作。"
 
-#: contact-form-7/includes/admin-panel.php:70
+#: contact-form-7/admin/admin-panel.php:78
 msgid "Form"
 msgstr "表單"
 
-#: contact-form-7/includes/admin-panel.php:90
+#: contact-form-7/admin/admin-panel.php:98
 msgid "Mail"
 msgstr "郵件"
 
-#: contact-form-7/includes/admin-panel.php:97
-#: contact-form-7/includes/admin-panel.php:149
+#: contact-form-7/admin/admin-panel.php:105
+#: contact-form-7/admin/admin-panel.php:161
 msgid "To:"
 msgstr "收件人:"
 
-#: contact-form-7/includes/admin-panel.php:101
-#: contact-form-7/includes/admin-panel.php:153
+#: contact-form-7/admin/admin-panel.php:109
+#: contact-form-7/admin/admin-panel.php:165
 msgid "From:"
 msgstr "寄件人:"
 
-#: contact-form-7/includes/admin-panel.php:105
-#: contact-form-7/includes/admin-panel.php:157
+#: contact-form-7/admin/admin-panel.php:113
+#: contact-form-7/admin/admin-panel.php:169
 msgid "Subject:"
 msgstr "主旨："
 
-#: contact-form-7/includes/admin-panel.php:110
-#: contact-form-7/includes/admin-panel.php:162
+#: contact-form-7/admin/admin-panel.php:118
+#: contact-form-7/admin/admin-panel.php:174
+msgid "Additional headers:"
+msgstr "額外的標頭(header) "
+
+#: contact-form-7/admin/admin-panel.php:122
+#: contact-form-7/admin/admin-panel.php:178
 msgid "File attachments:"
 msgstr "附加檔案:"
 
-#: contact-form-7/includes/admin-panel.php:112
-#: contact-form-7/includes/admin-panel.php:164
+#: contact-form-7/admin/admin-panel.php:124
+#: contact-form-7/admin/admin-panel.php:180
 msgid "(You need WordPress 2.7 or greater to use this feature)"
 msgstr "您必需使用WordPress 2.7或以上版本，才能使用這個功能。"
 
-#: contact-form-7/includes/admin-panel.php:120
-#: contact-form-7/includes/admin-panel.php:172
+#: contact-form-7/admin/admin-panel.php:132
+#: contact-form-7/admin/admin-panel.php:188
 msgid "Use HTML content type"
 msgstr "使用HTML內文格式"
 
-#: contact-form-7/includes/admin-panel.php:125
-#: contact-form-7/includes/admin-panel.php:177
+#: contact-form-7/admin/admin-panel.php:137
+#: contact-form-7/admin/admin-panel.php:193
 msgid "Message body:"
 msgstr "郵件內容："
 
-#: contact-form-7/includes/admin-panel.php:136
+#: contact-form-7/admin/admin-panel.php:148
 msgid "Mail (2)"
 msgstr "郵件(2)"
 
-#: contact-form-7/includes/admin-panel.php:143
+#: contact-form-7/admin/admin-panel.php:155
 msgid "Use mail (2)"
 msgstr "使用郵件(2)"
 
-#: contact-form-7/includes/admin-panel.php:188
+#: contact-form-7/admin/admin-panel.php:204
 msgid "Messages"
 msgstr "郵件內容"
 
-#: contact-form-7/includes/admin-panel.php:196
+#: contact-form-7/admin/admin-panel.php:212
 msgid "Sender's message was sent successfully"
 msgstr "寄件者的信件已經成功寄出"
 
-#: contact-form-7/includes/admin-panel.php:200
+#: contact-form-7/admin/admin-panel.php:216
 msgid "Sender's message was failed to send"
 msgstr "寄件者的信件傳送失敗"
 
-#: contact-form-7/includes/admin-panel.php:204
+#: contact-form-7/admin/admin-panel.php:220
 msgid "Akismet judged the sending activity as spamming"
 msgstr "經Akismet機制判斷，這個寄信的動作為濫發廣告信"
 
-#: contact-form-7/includes/admin-panel.php:208
+#: contact-form-7/admin/admin-panel.php:224
 msgid "Validation errors occurred"
 msgstr "發生認證錯誤"
 
-#: contact-form-7/includes/admin-panel.php:212
+#: contact-form-7/admin/admin-panel.php:228
 msgid "There is a field that sender is needed to fill in"
 msgstr " 有一個必需填寫的欄位不允許空白，請寄信者再確認。"
 
-#: contact-form-7/includes/admin-panel.php:216
+#: contact-form-7/admin/admin-panel.php:232
 msgid "Email address that sender entered is invalid"
 msgstr " 電子郵件格式不符，請寄信者再確認。"
 
-#: contact-form-7/includes/admin-panel.php:220
+#: contact-form-7/admin/admin-panel.php:236
 msgid "There is a field of term that sender is needed to accept"
 msgstr "寄信者必需接受使用者條款"
 
-#: contact-form-7/includes/admin-panel.php:224
+#: contact-form-7/admin/admin-panel.php:240
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "寄信者沒有輸入測驗題目的正確答案"
 
-#: contact-form-7/includes/admin-panel.php:228
+#: contact-form-7/admin/admin-panel.php:244
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "寄信者所輸入的圖片認證碼錯誤"
 
-#: contact-form-7/includes/admin-panel.php:232
+#: contact-form-7/admin/admin-panel.php:248
 msgid "Uploading a file fails for any reason"
 msgstr "檔案上傳的過程中，因不明原因導致上傳失敗。"
 
-#: contact-form-7/includes/admin-panel.php:236
+#: contact-form-7/admin/admin-panel.php:252
 msgid "Uploaded file is not allowed file type"
 msgstr "所上傳的檔案是不被允許的檔案種類"
 
-#: contact-form-7/includes/admin-panel.php:240
+#: contact-form-7/admin/admin-panel.php:256
 msgid "Uploaded file is too large"
 msgstr "上傳擋案過大"
+
+#: contact-form-7/admin/admin-panel.php:269
+msgid "Additional Settings"
+msgstr "額外的設定"
+
+#: contact-form-7/admin/admin.php:157
+msgid "optional"
+msgstr "可不填"
+
+#: contact-form-7/admin/admin.php:158
+msgid "Generate Tag"
+msgstr "標籤產生器"
+
+#: contact-form-7/admin/admin.php:159
+msgid "Text field"
+msgstr "文字欄位"
+
+#: contact-form-7/admin/admin.php:160
+msgid "Email field"
+msgstr "電子郵件欄位"
+
+#: contact-form-7/admin/admin.php:161
+msgid "Text area"
+msgstr "文字區塊"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Drop-down menu"
+msgstr "下拉式選單"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Checkboxes"
+msgstr "核選方塊"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Radio buttons"
+msgstr "選項按鈕"
+
+#: contact-form-7/admin/admin.php:165
+msgid "Acceptance"
+msgstr "接受使用條款"
+
+#: contact-form-7/admin/admin.php:166
+msgid "Make this checkbox checked by default?"
+msgstr "預設核選方塊為核取(已勾選)?"
+
+#: contact-form-7/admin/admin.php:167
+msgid "Make this checkbox work inversely?"
+msgstr "設定核取方塊被選取的狀態相反?"
+
+#: contact-form-7/admin/admin.php:168
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "*意思是如果使用者如果接受服務條款，則不需勾選核取方塊。"
+
+#: contact-form-7/admin/admin.php:169
+msgid "CAPTCHA"
+msgstr "圖片驗證"
+
+#: contact-form-7/admin/admin.php:170
+msgid "Quiz"
+msgstr "測驗題目驗證"
+
+#: contact-form-7/admin/admin.php:171
+msgid "Quizzes"
+msgstr "測驗題庫"
+
+#: contact-form-7/admin/admin.php:172
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* 測驗題目|答案 (例如 1+1=?|2)"
+
+#: contact-form-7/admin/admin.php:173
+msgid "File upload"
+msgstr "檔案上傳"
+
+#: contact-form-7/admin/admin.php:174
+msgid "bytes"
+msgstr "位元組"
+
+#: contact-form-7/admin/admin.php:175
+msgid "Submit button"
+msgstr "提交按鈕"
+
+#: contact-form-7/admin/admin.php:176
+msgid "Name"
+msgstr "物件名稱"
+
+#: contact-form-7/admin/admin.php:177
+msgid "Required field?"
+msgstr "設定為必要欄位?"
+
+#: contact-form-7/admin/admin.php:178
+msgid "Allow multiple selections?"
+msgstr "允許在下拉式選單中，可以選擇一個以上的選項?"
+
+#: contact-form-7/admin/admin.php:179
+msgid "Insert a blank item as the first option?"
+msgstr "要插入一個空白資料欄位，作為第一個選項?"
+
+#: contact-form-7/admin/admin.php:180
+msgid "Make checkboxes exclusive?"
+msgstr "設定核取方塊，為不允許修改(唯讀)?"
+
+#: contact-form-7/admin/admin.php:181
+msgid "Choices"
+msgstr "選項"
+
+#: contact-form-7/admin/admin.php:182
+msgid "Label"
+msgstr "標籤"
+
+#: contact-form-7/admin/admin.php:183
+msgid "Default value"
+msgstr "預設值"
+
+#: contact-form-7/admin/admin.php:184
+msgid "Akismet"
+msgstr "Akismet（防止垃圾郵件的插件）"
+
+#: contact-form-7/admin/admin.php:185
+msgid "This field requires author's name"
+msgstr "這個欄位需要填寫作者的姓名"
+
+#: contact-form-7/admin/admin.php:186
+msgid "This field requires author's URL"
+msgstr "這個欄位需要填寫作者的網址"
+
+#: contact-form-7/admin/admin.php:187
+msgid "This field requires author's email address"
+msgstr "這個欄位需要填寫作者的電子郵件信箱"
+
+#: contact-form-7/admin/admin.php:188
+msgid "Copy this code and paste it into the form left."
+msgstr "把這段代碼複製後，貼到左方的表格"
+
+#: contact-form-7/admin/admin.php:189
+msgid "Foreground color"
+msgstr "前景顏色"
+
+#: contact-form-7/admin/admin.php:190
+msgid "Background color"
+msgstr "背景顏色"
+
+#: contact-form-7/admin/admin.php:191
+msgid "Image size"
+msgstr "圖片尺寸"
+
+#: contact-form-7/admin/admin.php:192
+msgid "Small"
+msgstr "小"
+
+#: contact-form-7/admin/admin.php:193
+msgid "Medium"
+msgstr "中"
+
+#: contact-form-7/admin/admin.php:194
+msgid "Large"
+msgstr "大"
+
+#: contact-form-7/admin/admin.php:195
+msgid "Image settings"
+msgstr "圖片設定"
+
+#: contact-form-7/admin/admin.php:196
+msgid "Input field settings"
+msgstr "設定輸入欄位"
+
+#: contact-form-7/admin/admin.php:197
+msgid "For image"
+msgstr "圖片使用"
+
+#: contact-form-7/admin/admin.php:198
+msgid "For input field"
+msgstr "輸入欄位使用"
+
+#: contact-form-7/admin/admin.php:199
+msgid "* One choice per line."
+msgstr "*每行只能有一個選項。"
+
+#: contact-form-7/admin/admin.php:200
+msgid "Show"
+msgstr "顯示"
+
+#: contact-form-7/admin/admin.php:201
+msgid "Hide"
+msgstr "隱藏"
+
+#: contact-form-7/admin/admin.php:202
+msgid "File size limit"
+msgstr "檔案大小限制"
+
+#: contact-form-7/admin/admin.php:203
+msgid "Acceptable file types"
+msgstr "可接受上傳檔案的種類"
+
+#: contact-form-7/admin/admin.php:204
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "作者註：使用圖片驗證(CAPTCHA)的功能前，您必需先安裝\"Really Simple CAPTCHA\"這個外掛。"
+
+#: contact-form-7/admin/admin.php:223
+msgid "Contact form created."
+msgstr "已新增聯絡表單。"
+
+#: contact-form-7/admin/admin.php:226
+msgid "Contact form saved."
+msgstr "已儲存聯絡表單。"
+
+#: contact-form-7/admin/admin.php:229
+msgid "Contact form deleted."
+msgstr "已刪除聯絡表單。"
+
+#: contact-form-7/admin/admin.php:240
+msgid "Untitled"
+msgstr "無標題"
+
+#: contact-form-7/admin/admin.php:253
+msgid "Your Name"
+msgstr "您的姓名"
+
+#: contact-form-7/admin/admin.php:253
+#: contact-form-7/admin/admin.php:255
+msgid "(required)"
+msgstr "〈需填寫〉"
+
+#: contact-form-7/admin/admin.php:255
+msgid "Your Email"
+msgstr "您的電子郵件信箱"
+
+#: contact-form-7/admin/admin.php:257
+msgid "Subject"
+msgstr "主旨"
+
+#: contact-form-7/admin/admin.php:259
+msgid "Your Message"
+msgstr "您的信件內容"
+
+#: contact-form-7/admin/admin.php:261
+#: contact-form-7/includes/classes.php:411
+msgid "Send"
+msgstr "傳送"
+
+#: contact-form-7/admin/admin.php:334
+#, fuzzy
+msgid "Settings"
+msgstr "圖片設定"
+
+#: contact-form-7/admin/admin.php:355
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 需要您的支持，請今天就慷慨解囊。"
+
+#: contact-form-7/admin/admin.php:356
+msgid "Is this plugin useful for you? If you like it, please help the developer."
+msgstr "您覺得本外掛實用嗎? 如果您喜歡這個外掛，請捐款支持本外掛的作者。"
+
+#: contact-form-7/admin/admin.php:357
+msgid "Your contribution is needed for making this plugin better."
+msgstr "為了讓這個外掛更好用，我們需要您的捐款。"
+
+#: contact-form-7/admin/admin.php:358
+msgid "Developing a plugin and providing user support is really hard work. Please help."
+msgstr "外掛程式的製作和幫助使用者解決技術上的問題，是很辛苦的工作。請捐款支持。"
+
+#: contact-form-7/includes/classes.php:352
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "使用圖片驗證(CAPTCHA)的功能前，您必需先安裝 <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>這個外掛。"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Your message was sent successfully. Thanks."
+msgstr "您的信件已成功寄出，感謝。"
+
+#: contact-form-7/includes/functions.php:8
+#: contact-form-7/includes/functions.php:10
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "信件傳送失敗。請稍後再試或以其他方式與站管人員聯絡。"
+
+#: contact-form-7/includes/functions.php:12
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "認證發生錯誤。請確認各項欄位資料是否正確後，再行提交。"
+
+#: contact-form-7/includes/functions.php:14
+msgid "Please accept the terms to proceed."
+msgstr "請接受本服務條款再繼續進行。"
+
+#: contact-form-7/includes/functions.php:16
+msgid "Email address seems invalid."
+msgstr "電子郵件格式不符。"
+
+#: contact-form-7/includes/functions.php:18
+msgid "Please fill the required field."
+msgstr "請填寫必要欄位。"
+
+#: contact-form-7/includes/functions.php:20
+msgid "Your entered code is incorrect."
+msgstr "您輸入的認證代碼錯誤。　"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Your answer is not correct."
+msgstr "您的答案不正確。"
+
+#: contact-form-7/includes/functions.php:24
+msgid "Failed to upload file."
+msgstr "上傳檔案失敗。"
+
+#: contact-form-7/includes/functions.php:26
+msgid "This file type is not allowed."
+msgstr "上傳的檔案不是允許的檔案種類。"
+
+#: contact-form-7/includes/functions.php:28
+msgid "This file is too large."
+msgstr "上傳檔案過大。"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "刪除這個聯絡表單"
 
