@@ -35,7 +35,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * French (fr_FR) - [Jillij](http://www.jillij.com/)
 * Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de) (updated by [Ivan Graf](http://blog.bildergallery.com/))
-* Greek (el_EL) - [Nick Mouratidis](http://www.kepik.gr/)
+* Greek (el) - [Nick Mouratidis](http://www.kepik.gr/) (updated by [Pr. friedlich](http://friedlich.wordpress.com/))
 * Hebrew (he_IL) - [Yaron Ofer](http://www.gadgetguru.co.il/)
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/)
