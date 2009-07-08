@@ -7,17 +7,23 @@ class WPCF7_ShortcodeManager {
 	// Taggs scanned at the last time of do_shortcode()
 	var $scanned_tags = null;
 
-	function add_shortcode( $tag, $func ) {
+	// Executing shortcodes (true) or just scanning (false)
+	var $exec = true;
+
+	function add_shortcode( $tag, $func, $has_name = false ) {
 		if ( is_callable( $func ) )
-			$this->shortcode_tags[$tag] = $func;
+			$this->shortcode_tags[$tag] = array(
+				'function' => $func,
+				'has_name' => (boolean) $has_name );
 	}
 
 	function remove_shortcode( $tag ) {
 		unset( $this->shortcode_tags[$tag] );
 	}
 
-	function do_shortcode( $content ) {
+	function do_shortcode( $content, $exec = true ) {
 		$this->scanned_tags = array();
+		$this->exec = (boolean) $exec;
 
 		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags) )
 			return $content;
@@ -43,18 +49,30 @@ class WPCF7_ShortcodeManager {
 		$tag = $m[2];
 		$attr = $this->shortcode_parse_atts( $m[3] );
 
-		$this->scanned_tags[] = array(
-			'type' => $tag,
-			'attr' => $attr,
-			'content' => $m[5] );
+		$scanned_tag = array();
+		$scanned_tag['type'] = $tag;
 
-		if ( isset( $m[5] ) ) {
-			// enclosing tag - extra parameter
-			return $m[1] . call_user_func( $this->shortcode_tags[$tag], $attr, $m[5], $m[2] ) . $m[6];
+		if ( is_array( $attr ) ) {
+			if ( is_array( $attr['options'] ) && ! empty( $attr['options'] ) ) {
+				if ( $this->shortcode_tags[$tag]['has_name'] )
+					$scanned_tag['name'] = array_shift( $attr['options'] );
+				$scanned_tag['options'] = $attr['options'];
+			}
+			$scanned_tag['values'] = (array) $attr['values'];
 		} else {
-			// self-closing tag
-			return $m[1] . call_user_func( $this->shortcode_tags[$tag], $attr, NULL, $m[2] ) . $m[6];
+			$scanned_tag['attr'] = $attr;
 		}
+
+		$scanned_tag['content'] = $m[5];
+
+		$this->scanned_tags[] = $scanned_tag;
+
+		$func = $this->shortcode_tags[$tag]['function'];
+
+		if ( $this->exec )
+			return $m[1] . call_user_func( $func, $scanned_tag ) . $m[6];
+		else
+			return $m[0];
 	}
 
 	function shortcode_parse_atts( $text ) {
@@ -62,13 +80,11 @@ class WPCF7_ShortcodeManager {
 		$text = preg_replace( "/[\x{00a0}\x{200b}]+/u", " ", $text );
 		$text = stripcslashes( trim( $text ) );
 
-		$pattern = '%^([-0-9a-zA-Z:.#_/|\s]*?)?((?:\s+(?:"[^"]*"|\'[^\']*\'))*)?$%';
+		$pattern = '%^([-0-9a-zA-Z:.#_/|\s]*?)((?:\s*"[^"]*"|\s*\'[^\']*\')*)$%';
 
 		if ( preg_match( $pattern, $text, $match ) ) {
 			if ( ! empty( $match[1] ) ) {
 				$atts['options'] = preg_split( '/[\s]+/', trim( $match[1] ) );
-				if ( ! empty( $atts['options'] ) )
-					$atts['maybe_name'] = $atts['options'][0];
 			}
 			if ( ! empty( $match[2] ) ) {
 				preg_match_all( '/"[^"]*"|\'[^\']*\'/', $match[2], $matched_values );
@@ -85,10 +101,10 @@ class WPCF7_ShortcodeManager {
 
 $wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
 
-function wpcf7_add_shortcode( $tag, $func ) {
+function wpcf7_add_shortcode( $tag, $func, $has_name = false ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->add_shortcode( $tag, $func );
+	return $wpcf7_shortcode_manager->add_shortcode( $tag, $func, $has_name );
 }
 
 function wpcf7_remove_shortcode( $tag ) {
@@ -97,26 +113,26 @@ function wpcf7_remove_shortcode( $tag ) {
 	return $wpcf7_shortcode_manager->remove_shortcode( $tag );
 }
 
-function wpcf7_do_shortcode( $content ) {
+function wpcf7_do_shortcode( $content, $exec = true ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->do_shortcode( $content );
+	return $wpcf7_shortcode_manager->do_shortcode( $content, (boolean) $exec );
 }
 
-function wpcf7_scanned_shortcodes( $tag = null ) {
+function wpcf7_scanned_shortcodes( $type = null ) {
 	global $wpcf7_shortcode_manager;
 
-	$tag = trim( $tag );
+	$type = trim( $type );
 	$result = array();
 
 	$scanned = $wpcf7_shortcode_manager->scanned_tags;
 
-	if ( empty( $tag ) ) {
+	if ( empty( $type ) ) {
 		$result = $scanned;
 	} else {
-		foreach ( $scanned as $item ) {
-			if ( $item['type'] == $tag )
-				$result[] = $item;
+		foreach ( $scanned as $tag ) {
+			if ( $tag['type'] == $type )
+				$result[] = $tag;
 		}
 	}
 

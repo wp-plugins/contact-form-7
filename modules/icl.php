@@ -3,19 +3,22 @@
 ** ICL module for ICanLocalize translation service
 **/
 
-function icl_wpcf7_shortcode_handler( $atts, $content = null ) {
+function icl_wpcf7_shortcode_handler( $tag ) {
 
 	$subject = '';
 
-	if ( is_array( $atts ) && is_array( $atts['values'] ) ) {
-		foreach ( $atts['values'] as $value ) {
+	if ( ! is_array( $tag ) )
+		return $subject;
+
+	if ( is_array( $tag['values'] ) ) {
+		foreach ( $tag['values'] as $value ) {
 			$value = trim( $value );
 			$subject .= icl_wpcf7_translate( $value );
 		}
 	}
 
-	if ( ! empty( $content ) ) {
-		$content = trim( $content );
+	if ( ! empty( $tag['content'] ) ) {
+		$content = trim( $tag['content'] );
 		$subject .= icl_wpcf7_translate( $content );
 	}
 
@@ -32,19 +35,22 @@ function icl_wpcf7_translate( $text ) {
 }
 
 function icl_wpcf7_collect_strings( &$contact_form ) {
-	wpcf7_do_shortcode( $contact_form->form );
+	wpcf7_do_shortcode( $contact_form->form, false );
 	$scanned = wpcf7_scanned_shortcodes( 'icl' );
 
-	foreach ( $scanned as $item ) {
-		if ( is_array( $item['attr'] ) && is_array( $item['attr']['values'] ) ) {
-			foreach ( $item['attr']['values'] as $value ) {
+	foreach ( $scanned as $tag ) {
+		if ( ! is_array( $tag ) )
+			continue;
+
+		if ( is_array( $tag['values'] ) ) {
+			foreach ( $tag['values'] as $value ) {
 				$value = trim( $value );
 				icl_wpcf7_register_string( $value );
 			}
 		}
 
-		if ( ! empty( $item['content'] ) )
-			icl_wpcf7_register_string( $item['content'] );
+		if ( ! empty( $tag['content'] ) )
+			icl_wpcf7_register_string( $tag['content'] );
 	}
 }
 
