@@ -25,7 +25,10 @@ function icl_wpcf7_shortcode_handler( $atts, $content = null ) {
 wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
 function icl_wpcf7_translate( $text ) {
-	return $text;
+	if ( ! function_exists( 'icl_t' ) )
+		return $text;
+
+	return icl_t( 'Contact Form 7 - Form Text', $text );
 }
 
 function icl_wpcf7_collect_strings( &$contact_form ) {
