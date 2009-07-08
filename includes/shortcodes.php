@@ -60,7 +60,7 @@ class WPCF7_ShortcodeManager {
 	function shortcode_parse_atts( $text ) {
 		$atts = array();
 		$text = preg_replace( "/[\x{00a0}\x{200b}]+/u", " ", $text );
-		$text = trim( $text );
+		$text = stripcslashes( trim( $text ) );
 
 		$pattern = '%^([-0-9a-zA-Z:.#_/|\s]*?)?((?:\s+(?:"[^"]*"|\'[^\']*\'))*)?$%';
 
@@ -103,10 +103,24 @@ function wpcf7_do_shortcode( $content ) {
 	return $wpcf7_shortcode_manager->do_shortcode( $content );
 }
 
-function wpcf7_scanned_shortcodes() {
+function wpcf7_scanned_shortcodes( $tag = null ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->scanned_tags;
+	$tag = trim( $tag );
+	$result = array();
+
+	$scanned = $wpcf7_shortcode_manager->scanned_tags;
+
+	if ( empty( $tag ) ) {
+		$result = $scanned;
+	} else {
+		foreach ( $scanned as $item ) {
+			if ( $item['type'] == $tag )
+				$result[] = $item;
+		}
+	}
+
+	return $result;
 }
 
 ?>

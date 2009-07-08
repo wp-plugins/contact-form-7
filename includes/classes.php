@@ -613,16 +613,17 @@ class WPCF7_ContactForm {
 			if ( $result ) {
 				$this->initial = false;
 				$this->id = $wpdb->insert_id;
-				return;
-			}
 
-			return false; // Failed to save
+				do_action_ref_array( 'wpcf7_after_create', array( &$this ) );
+			} else {
+				return false; // Failed to save
+			}
 
 		} else { // Update
 			if ( ! (int) $this->id )
 				return false; // Missing ID
 
-			$wpdb->update( $table_name, array(
+			$result = $wpdb->update( $table_name, array(
 				'title' => $this->title,
 				'form' => maybe_serialize( $this->form ),
 				'mail' => maybe_serialize( $this->mail ),
@@ -631,8 +632,15 @@ class WPCF7_ContactForm {
 				'additional_settings' => maybe_serialize( $this->additional_settings )
 				), array( 'cf7_unit_id' => absint( $this->id) ) );
 
-			return;
+			if ( false !== $result ) {
+				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );
+			} else {
+				return false; // Failed to save
+			}
 		}
+
+		do_action_ref_array( 'wpcf7_after_save', array( &$this ) );
+		return true; // Succeeded to save
 	}
 
 	function copy() {
