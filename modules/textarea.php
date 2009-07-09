@@ -1,9 +1,9 @@
 <?php
 /**
-** A base module for [text], [text*], [email], and [email*]
+** A base module for [textarea] and [textarea*]
 **/
 
-function wpcf7_text_shortcode_handler( $tag ) {
+function wpcf7_textarea_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
 	if ( ! is_array( $tag ) )
@@ -38,9 +38,6 @@ function wpcf7_text_shortcode_handler( $tag ) {
 			$class_att .= ' ' . $class;
 	}
 
-	if ( preg_match( '/^email[*]?$/', $type ) )
-		$class_att .= ' wpcf7-validates-as-email';
-
 	if ( preg_match( '/[*]$/', $type ) )
 		$class_att .= ' wpcf7-validates-as-required';
 
@@ -57,30 +54,30 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$value = $values[0];
 	}
 
-	if ( ! empty( $options ) ) {
-		$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
-		if ( $size_maxlength = array_shift( $size_maxlength_array ) ) {
-			preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches );
-			if ( $size = (int) $sm_matches[1] )
-				$atts .= ' size="' . $size . '"';
+	if ( is_array( $options ) ) {
+		$cols_rows_array = preg_grep( '%^[0-9]*[x/][0-9]*$%', $options );
+		if ( $cols_rows = array_shift( $cols_rows_array ) ) {
+			preg_match( '%^([0-9]*)[x/]([0-9]*)$%', $cols_rows, $cr_matches );
+			if ( $cols = (int) $cr_matches[1] )
+				$atts .= ' cols="' . $cols . '"';
 			else
-				$atts .= ' size="40"';
-			if ( $maxlength = (int) $sm_matches[2] )
-				$atts .= ' maxlength="' . $maxlength . '"';
+				$atts .= ' cols="40"';
+			if ( $rows = (int) $cr_matches[2] )
+				$atts .= ' rows="' . $rows . '"';
+			else
+				$atts .= ' rows="10"';
 		} else {
-			$atts .= ' size="40"';
+			$atts .= ' cols="40" rows="10"';
 		}
 	}
 
-	$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
+	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
 	return $html;
 }
 
-wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'textarea', 'wpcf7_textarea_shortcode_handler', true );
+wpcf7_add_shortcode( 'textarea*', 'wpcf7_textarea_shortcode_handler', true );
 
 ?>

@@ -212,28 +212,6 @@ class WPCF7_ContactForm {
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
-			case 'textarea':
-			case 'textarea*':
-				if ( is_array( $options ) ) {
-					$cols_rows_array = preg_grep( '%^[0-9]*[x/][0-9]*$%', $options );
-					if ( $cols_rows = array_shift( $cols_rows_array ) ) {
-						preg_match( '%^([0-9]*)[x/]([0-9]*)$%', $cols_rows, $cr_matches );
-						if ( $cols = (int) $cr_matches[1] )
-							$atts .= ' cols="' . $cols . '"';
-						else
-							$atts .= ' cols="40"';
-						if ( $rows = (int) $cr_matches[2] )
-							$atts .= ' rows="' . $rows . '"';
-						else
-							$atts .= ' rows="10"';
-					} else {
-							$atts .= ' cols="40" rows="10"';
-					}
-				}
-				$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
-				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
 			case 'select':
 			case 'select*':
 				$multiple = ( preg_grep( '%^multiple$%', $options ) ) ? true : false;
