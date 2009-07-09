@@ -58,7 +58,10 @@ class WPCF7_ShortcodeManager {
 					$scanned_tag['name'] = array_shift( $attr['options'] );
 				$scanned_tag['options'] = $attr['options'];
 			}
-			$scanned_tag['values'] = (array) $attr['values'];
+			$scanned_tag['raw_values'] = (array) $attr['values'];
+			$pipes = new WPCF7_Pipes( $scanned_tag['raw_values'] );
+			$scanned_tag['values'] = $pipes->collect_befores();
+			$scanned_tag['pipes'] = $pipes;
 		} else {
 			$scanned_tag['attr'] = $attr;
 		}
