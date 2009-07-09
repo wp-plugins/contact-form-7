@@ -145,6 +145,8 @@ function wpcf7_contact_forms() {
 
 $wpcf7_posted_data = null;
 
+$wpcf7_contact_form = null;
+
 $wpcf7_processing_within = null;
 $wpcf7_unit_count = null;
 $wpcf7_widget_count = null;
@@ -293,7 +295,7 @@ function wpcf7_widget_text_filter_callback( $matches ) {
 }
 
 function wpcf7_contact_form_tag_func( $atts ) {
-	global $wpcf7_unit_count, $wpcf7_processing_within;
+	global $wpcf7_contact_form, $wpcf7_unit_count, $wpcf7_processing_within;
 
 	if ( is_string( $atts ) )
 		$atts = explode( ' ', $atts, 2 );
@@ -302,15 +304,17 @@ function wpcf7_contact_form_tag_func( $atts ) {
 
 	$id = (int) array_shift( $atts );
 
-	if ( ! ( $cf = wpcf7_contact_form( $id ) ) )
+	if ( ! ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) )
 		return '[contact-form 404 "Not Found"]';
 
 	$wpcf7_unit_count += 1;
 
 	$unit_tag = 'wpcf7-f' . $id . '-' . $wpcf7_processing_within . '-o' . $wpcf7_unit_count;
-	$cf->unit_tag = $unit_tag;
+	$wpcf7_contact_form->unit_tag = $unit_tag;
 
-	$form = $cf->form_html();
+	$form = $wpcf7_contact_form->form_html();
+
+	$wpcf7_contact_form = null;
 
 	return $form;
 }
