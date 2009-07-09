@@ -120,10 +120,10 @@ if ( ! function_exists( 'esc_attr' ) ) {
 	}
 }
 
-require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
@@ -381,6 +381,6 @@ function wpcf7_load_modules() {
 	}
 }
 
-wpcf7_load_modules();
+add_action( 'init', 'wpcf7_load_modules' );
 
 ?>
