@@ -21,9 +21,8 @@ class WPCF7_ShortcodeManager {
 		unset( $this->shortcode_tags[$tag] );
 	}
 
-	function do_shortcode( $content, $exec = true ) {
+	function do_shortcode( $content ) {
 		$this->scanned_tags = array();
-		$this->exec = (boolean) $exec;
 
 		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags) )
 			return $content;
@@ -31,6 +30,12 @@ class WPCF7_ShortcodeManager {
 		$pattern = $this->get_shortcode_regex();
 		return preg_replace_callback( '/' . $pattern . '/s',
 			array(&$this, 'do_shortcode_tag'), $content );
+	}
+
+	function scan_shortcode( $content ) {
+		$this->exec = false;
+		$this->do_shortcode( $content );
+		return $this->scanned_tags;
 	}
 
 	function get_shortcode_regex() {
@@ -116,19 +121,19 @@ function wpcf7_remove_shortcode( $tag ) {
 	return $wpcf7_shortcode_manager->remove_shortcode( $tag );
 }
 
-function wpcf7_do_shortcode( $content, $exec = true ) {
+function wpcf7_do_shortcode( $content ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->do_shortcode( $content, (boolean) $exec );
+	return $wpcf7_shortcode_manager->do_shortcode( $content );
 }
 
-function wpcf7_scanned_shortcodes( $type = null ) {
+function wpcf7_scan_shortcode( $content, $type = null ) {
 	global $wpcf7_shortcode_manager;
 
 	$type = trim( $type );
-	$result = array();
 
-	$scanned = $wpcf7_shortcode_manager->scanned_tags;
+	$result = array();
+	$scanned = $wpcf7_shortcode_manager->scan_shortcode( $content );
 
 	if ( empty( $type ) ) {
 		$result = $scanned;
