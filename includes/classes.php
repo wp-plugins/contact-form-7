@@ -155,20 +155,8 @@ class WPCF7_ContactForm {
 		if ( preg_match( '/[*]$/', $type ) )
 			$class_att .= ' wpcf7-validates-as-required';
 
-		if ( preg_match( '/^checkbox[*]?$/', $type ) )
-			$class_att .= ' wpcf7-checkbox';
-
-		if ( 'radio' == $type )
-			$class_att .= ' wpcf7-radio';
-
 		if ( preg_match( '/^captchac$/', $type ) )
 			$class_att .= ' wpcf7-captcha-' . $name;
-
-		if ( 'acceptance' == $type ) {
-			$class_att .= ' wpcf7-acceptance';
-			if ( preg_grep( '%^invert$%', $options ) )
-				$class_att .= ' wpcf7-invert';
-		}
 
 		if ( $class_att )
 			$atts .= ' class="' . trim( $class_att ) . '"';
@@ -183,13 +171,6 @@ class WPCF7_ContactForm {
 				$value = $_POST[$name];
 		} else {
 			$value = $values[0];
-		}
-
-		// Default selected/checked for select/checkbox/radio
-		if ( preg_match( '/^(?:select|checkbox|radio)[*]?$/', $type ) ) {
-			$scr_defaults = array_values( preg_grep( '/^default:/', $options ) );
-			preg_match( '/^default:([0-9_]+)$/', $scr_defaults[0], $scr_default_matches );
-			$scr_default = explode( '_', $scr_default_matches[1] );
 		}
 
 		switch ( $type ) {
@@ -210,15 +191,6 @@ class WPCF7_ContactForm {
 				}
 				$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
-			case 'acceptance':
-				$invert = (bool) preg_grep( '%^invert$%', $options );
-				$default = (bool) preg_grep( '%^default:on$%', $options );
-
-				$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
-				$checked = $default ? ' checked="checked"' : '';
-				$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $onclick . $checked . ' />';
 				return $html;
 				break;
 			case 'captchac':
