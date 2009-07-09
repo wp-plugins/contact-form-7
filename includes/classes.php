@@ -106,7 +106,6 @@ class WPCF7_ContactForm {
 		$response_regex = '%\[\s*response\s*\]%';
 		if ( $replace ) {
 			$form = wpcf7_do_shortcode( $form );
-			$form = preg_replace_callback( $regex, array( &$this, 'form_element_replace_callback' ), $form );
 			// Submit button
 			$form = preg_replace_callback( $submit_regex, array( &$this, 'submit_replace_callback' ), $form );
 			// Response output
@@ -119,52 +118,6 @@ class WPCF7_ContactForm {
 				$results[] = (array) $this->form_element_parse( $match );
 			}
 			return $results;
-		}
-	}
-
-	function form_element_replace_callback( $matches ) {
-		global $wpdb;
-
-		extract( (array) $this->form_element_parse( $matches ) ); // $type, $name, $options, $values, $raw_values
-
-		if ( $this->is_posted() ) {
-			$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
-			$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $validation_error ) . '</span>' : '';
-		} else {
-			$validation_error = '';
-		}
-
-		$atts = '';
-		$options = (array) $options;
-
-		$id_array = preg_grep( '%^id:[-0-9a-zA-Z_]+$%', $options );
-		if ( $id = array_shift( $id_array ) ) {
-			preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches );
-			if ( $id = $id_matches[1] )
-				$atts .= ' id="' . $id . '"';
-		}
-
-		$class_att = "";
-		$class_array = preg_grep( '%^class:[-0-9a-zA-Z_]+$%', $options );
-		foreach ( $class_array as $class ) {
-			preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches );
-			if ( $class = $class_matches[1] )
-				$class_att .= ' ' . $class;
-		}
-
-		if ( preg_match( '/[*]$/', $type ) )
-			$class_att .= ' wpcf7-validates-as-required';
-
-		if ( $class_att )
-			$atts .= ' class="' . trim( $class_att ) . '"';
-
-		switch ( $type ) {
-			case 'file':
-			case 'file*':
-				$html = '<input type="file" name="' . $name . '"' . $atts . ' value="1" />';
-				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
 		}
 	}
 
