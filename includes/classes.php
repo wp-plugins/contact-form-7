@@ -152,8 +152,6 @@ class WPCF7_ContactForm {
 				$class_att .= ' ' . $class;
 		}
 
-		if ( preg_match( '/^email[*]?$/', $type ) )
-			$class_att .= ' wpcf7-validates-as-email';
 		if ( preg_match( '/[*]$/', $type ) )
 			$class_att .= ' wpcf7-validates-as-required';
 
@@ -195,10 +193,6 @@ class WPCF7_ContactForm {
 		}
 
 		switch ( $type ) {
-			case 'text':
-			case 'text*':
-			case 'email':
-			case 'email*':
 			case 'captchar':
 				if ( is_array( $options ) ) {
 					$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );

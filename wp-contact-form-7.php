@@ -152,22 +152,24 @@ $wpcf7_unit_count = null;
 $wpcf7_widget_count = null;
 
 function wpcf7_ajax_json_echo() {
+	global $wpcf7_contact_form;
+
 	$echo = '';
 
 	if ( isset( $_POST['_wpcf7'] ) ) {
 		$id = (int) $_POST['_wpcf7'];
 		$unit_tag = $_POST['_wpcf7_unit_tag'];
 
-		if ( $cf = wpcf7_contact_form( $id ) ) {
-			$validation = $cf->validate();
+		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
+			$validation = $wpcf7_contact_form->validate();
 
-			$handled_uploads = wpcf7_handle_uploads( $cf );
+			$handled_uploads = wpcf7_handle_uploads( $wpcf7_contact_form );
 			if ( ! $handled_uploads['validation']['valid'] )
 				$validation['valid'] = false;
 
 			$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
 
-			$captchas = wpcf7_refill_captcha( $cf );
+			$captchas = wpcf7_refill_captcha( $wpcf7_contact_form );
 
 			if ( ! empty( $captchas ) ) {
 				$captchas_js = array();
@@ -179,7 +181,7 @@ function wpcf7_ajax_json_echo() {
 				$captcha = 'null';
 			}
 
-			$quizzes = wpcf7_refill_quiz( $cf );
+			$quizzes = wpcf7_refill_quiz( $wpcf7_contact_form );
 
 			if ( ! empty( $quizzes ) ) {
 				$quizzes_js = array();
@@ -191,7 +193,7 @@ function wpcf7_ajax_json_echo() {
 				$quiz = 'null';
 			}
 
-			$on_sent_ok_settings = $cf->additional_setting( 'on_sent_ok', false );
+			$on_sent_ok_settings = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
 			if ( ! empty( $on_sent_ok_settings ) ) {
 				$on_sent_ok = '[ ' . implode( ', ', $on_sent_ok_settings ) . ' ]';
 			} else {
@@ -204,15 +206,15 @@ function wpcf7_ajax_json_echo() {
 					$invalids[] = '{ into: "span.wpcf7-form-control-wrap.' . $name . '", message: "' . esc_js( $reason ) . '" }';
 				}
 				$invalids = '[' . join( ', ', $invalids ) . ']';
-				$echo = '{ mailSent: 0, message: "' . esc_js( $cf->message( 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-			} elseif ( ! wpcf7_acceptance( $cf ) ) { // Not accepted terms
-				$echo = '{ mailSent: 0, message: "' . esc_js( $cf->message( 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-			} elseif ( wpcf7_akismet( $cf ) ) { // Spam!
-				$echo = '{ mailSent: 0, message: "' . esc_js( $cf->message( 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-			} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
-				$echo = '{ mailSent: 1, message: "' . esc_js( $cf->message( 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ', onSentOk: ' . $on_sent_ok . ' }';
+				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+			} elseif ( ! wpcf7_acceptance( $wpcf7_contact_form ) ) { // Not accepted terms
+				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+			} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
+				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+			} elseif ( wpcf7_mail( $wpcf7_contact_form, $handled_uploads['files'] ) ) {
+				$echo = '{ mailSent: 1, message: "' . esc_js( $wpcf7_contact_form->message( 'mail_sent_ok' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ', onSentOk: ' . $on_sent_ok . ' }';
 			} else {
-				$echo = '{ mailSent: 0, message: "' . esc_js( $cf->message( 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
+				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'mail_sent_ng' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 			}
 
 			// remove upload files
@@ -229,18 +231,22 @@ function wpcf7_ajax_json_echo() {
 		@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
 		echo '<textarea>' . $echo . '</textarea>';
 	}
+
+	$wpcf7_contact_form = null;
 }
 
 function wpcf7_process_nonajax_submitting() {
+	global $wpcf7_contact_form;
+
 	if ( ! isset($_POST['_wpcf7'] ) )
 		return;
 
 	$id = (int) $_POST['_wpcf7'];
 
-	if ( $cf = wpcf7_contact_form( $id ) ) {
-		$validation = $cf->validate();
+	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
+		$validation = $wpcf7_contact_form->validate();
 
-		$handled_uploads = wpcf7_handle_uploads( $cf );
+		$handled_uploads = wpcf7_handle_uploads( $wpcf7_contact_form );
 
 		if ( ! $handled_uploads['validation']['valid'] )
 			$validation['valid'] = false;
@@ -249,14 +255,14 @@ function wpcf7_process_nonajax_submitting() {
 
 		if ( ! $validation['valid'] ) {
 			$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
-		} elseif ( ! wpcf7_acceptance( $cf ) ) { // Not accepted terms
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $cf->message( 'accept_terms' ) );
-		} elseif ( wpcf7_akismet( $cf ) ) { // Spam!
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $cf->message( 'akismet_says_spam' ), 'spam' => true );
-		} elseif ( wpcf7_mail( $cf, $handled_uploads['files'] ) ) {
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $cf->message( 'mail_sent_ok' ) );
+		} elseif ( ! wpcf7_acceptance( $wpcf7_contact_form ) ) { // Not accepted terms
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'accept_terms' ) );
+		} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
+		} elseif ( wpcf7_mail( $wpcf7_contact_form, $handled_uploads['files'] ) ) {
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
 		} else {
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $cf->message( 'mail_sent_ng' ) );
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'mail_sent_ng' ) );
 		}
 
 		// remove upload files
@@ -264,6 +270,8 @@ function wpcf7_process_nonajax_submitting() {
 			@unlink( $path );
 		}
 	}
+
+	$wpcf7_contact_form = null;
 }
 
 function wpcf7_the_content_filter( $content ) {
