@@ -212,44 +212,6 @@ class WPCF7_ContactForm {
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
-			case 'checkbox':
-			case 'checkbox*':
-			case 'radio':
-				$multiple = ( preg_match( '/^checkbox[*]?$/', $type ) && ! preg_grep( '%^exclusive$%', $options ) ) ? true : false;
-				$html = '';
-
-				if ( preg_match( '/^checkbox[*]?$/', $type ) && ! $multiple )
-					$onclick = ' onclick="wpcf7ExclusiveCheckbox(this);"';
-
-				$input_type = rtrim( $type, '*' );
-
-				foreach ( $values as $key => $value ) {
-					$checked = '';
-					if ( in_array( $key + 1, (array) $scr_default ) )
-						$checked = ' checked="checked"';
-					if ( $this->is_posted() && (
-						$multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) ||
-							! $multiple && $_POST[$name] == $wpdb->escape( $value ) ) )
-						$checked = ' checked="checked"';
-					if ( preg_grep( '%^label[_-]?first$%', $options ) ) { // put label first, input last
-						$item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
-						$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
-					} else {
-						$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
-						$item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
-					}
-
-					if ( preg_grep( '%^use[_-]?label[_-]?element$%', $options ) )
-						$item = '<label>' . $item . '</label>';
-
-					$item = '<span class="wpcf7-list-item">' . $item . '</span>';
-					$html .= $item;
-				}
-
-				$html = '<span' . $atts . '>' . $html . '</span>';
-				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
 			case 'quiz':
 				if ( count( $raw_values ) == 0 && count( $values ) == 0 ) { // default quiz
 					$raw_values[] = '1+1=?|2';
