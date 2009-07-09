@@ -57,19 +57,17 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$value = $values[0];
 	}
 
-	if ( ! empty( $options ) ) {
-		$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
-		if ( $size_maxlength = array_shift( $size_maxlength_array ) ) {
-			preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches );
-			if ( $size = (int) $sm_matches[1] )
-				$atts .= ' size="' . $size . '"';
-			else
-				$atts .= ' size="40"';
-			if ( $maxlength = (int) $sm_matches[2] )
-				$atts .= ' maxlength="' . $maxlength . '"';
-		} else {
+	$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
+	if ( $size_maxlength = array_shift( $size_maxlength_array ) ) {
+		preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches );
+		if ( $size = (int) $sm_matches[1] )
+			$atts .= ' size="' . $size . '"';
+		else
 			$atts .= ' size="40"';
-		}
+		if ( $maxlength = (int) $sm_matches[2] )
+			$atts .= ' maxlength="' . $maxlength . '"';
+	} else {
+		$atts .= ' size="40"';
 	}
 
 	$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';

@@ -1,9 +1,9 @@
 <?php
 /**
-** A base module for [textarea] and [textarea*]
+** A base module for [quiz]
 **/
 
-function wpcf7_textarea_shortcode_handler( $tag ) {
+function wpcf7_quiz_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
 	if ( ! is_array( $tag ) )
@@ -12,7 +12,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$pipes = $tag['pipes'];
 
 	if ( is_object( $wpcf7_contact_form ) && $wpcf7_contact_form->is_posted() ) {
 		$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
@@ -38,44 +38,42 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 			$class_att .= ' ' . $class;
 	}
 
-	if ( preg_match( '/[*]$/', $type ) )
-		$class_att .= ' wpcf7-validates-as-required';
-
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
-	// Value
-	if ( is_object( $wpcf7_contact_form ) && $wpcf7_contact_form->is_posted() ) {
-		if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['ok'] )
-			$value = '';
-		else
-			$value = $_POST[$name];
+	if ( is_object( $pipes ) && ! $pipes->zero() ) {
+		$pipe = $pipes->random_pipe();
+		$question = $pipe->before;
+		$answer = $pipe->after;
 	} else {
-		$value = $values[0];
+		// default quiz
+		$question = '1+1=?';
+		$answer = '2';
 	}
 
-	$cols_rows_array = preg_grep( '%^[0-9]*[x/][0-9]*$%', $options );
-	if ( $cols_rows = array_shift( $cols_rows_array ) ) {
-		preg_match( '%^([0-9]*)[x/]([0-9]*)$%', $cols_rows, $cr_matches );
-		if ( $cols = (int) $cr_matches[1] )
-			$atts .= ' cols="' . $cols . '"';
+	$answer = wpcf7_canonicalize( $answer );
+
+	$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
+	if ( $size_maxlength = array_shift( $size_maxlength_array ) ) {
+		preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches );
+		if ( $size = (int) $sm_matches[1] )
+			$atts .= ' size="' . $size . '"';
 		else
-			$atts .= ' cols="40"';
-		if ( $rows = (int) $cr_matches[2] )
-			$atts .= ' rows="' . $rows . '"';
-		else
-			$atts .= ' rows="10"';
+			$atts .= ' size="40"';
+		if ( $maxlength = (int) $sm_matches[2] )
+			$atts .= ' maxlength="' . $maxlength . '"';
 	} else {
-		$atts .= ' cols="40" rows="10"';
+		$atts .= ' size="40"';
 	}
 
-	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
+	$html = '<span class="wpcf7-quiz-label">' . esc_html( $question ) . '</span>&nbsp;';
+	$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
+	$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
 	return $html;
 }
 
-wpcf7_add_shortcode( 'textarea', 'wpcf7_textarea_shortcode_handler', true );
-wpcf7_add_shortcode( 'textarea*', 'wpcf7_textarea_shortcode_handler', true );
+wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
 
 ?>

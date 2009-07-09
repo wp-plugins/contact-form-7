@@ -212,46 +212,6 @@ class WPCF7_ContactForm {
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
-			case 'quiz':
-				if ( count( $raw_values ) == 0 && count( $values ) == 0 ) { // default quiz
-					$raw_values[] = '1+1=?|2';
-					$values[] = '1+1=?';
-				}
-
-				$pipes = wpcf7_get_pipes( $raw_values );
-
-				if ( count( $values ) == 0 ) {
-					break;
-				} elseif ( count( $values ) == 1 ) {
-					$value = $values[0];
-				} else {
-					$value = $values[array_rand( $values )];
-				}
-
-				$answer = wpcf7_pipe( $pipes, $value );
-				$answer = wpcf7_canonicalize( $answer );
-
-				if ( is_array( $options ) ) {
-					$size_maxlength_array = preg_grep( '%^[0-9]*[/x][0-9]*$%', $options );
-					if ( $size_maxlength = array_shift( $size_maxlength_array ) ) {
-						preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $size_maxlength, $sm_matches );
-						if ( $size = (int) $sm_matches[1] )
-							$atts .= ' size="' . $size . '"';
-						else
-							$atts .= ' size="40"';
-						if ( $maxlength = (int) $sm_matches[2] )
-							$atts .= ' maxlength="' . $maxlength . '"';
-					} else {
-						$atts .= ' size="40"';
-					}
-				}
-                
-				$html = '<span class="wpcf7-quiz-label">' . esc_html( $value ) . '</span>&nbsp;';
-				$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
-				$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
-				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
 			case 'acceptance':
 				$invert = (bool) preg_grep( '%^invert$%', $options );
 				$default = (bool) preg_grep( '%^default:on$%', $options );

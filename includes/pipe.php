@@ -51,6 +51,17 @@ class WPCF7_Pipes {
 
 		return $befores;
 	}
+
+	function zero() {
+		return empty( $this->pipes );
+	}
+
+	function random_pipe() {
+		if ( $this->zero() )
+			return null;
+
+		return $this->pipes[array_rand( $this->pipes )];
+	}
 }
 
 function wpcf7_pipe( $pipes, $value ) {
