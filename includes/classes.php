@@ -212,33 +212,6 @@ class WPCF7_ContactForm {
 				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 				return $html;
 				break;
-			case 'select':
-			case 'select*':
-				$multiple = ( preg_grep( '%^multiple$%', $options ) ) ? true : false;
-				$include_blank = preg_grep( '%^include_blank$%', $options );
-
-				if ( $empty_select = empty( $values ) || $include_blank )
-					array_unshift( $values, '---' );
-
-				$html = '';
-				foreach ( $values as $key => $value ) {
-					$selected = '';
-					if ( ! $empty_select && in_array( $key + 1, (array) $scr_default ) )
-						$selected = ' selected="selected"';
-					if ( $this->is_posted() && (
-						$multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) ||
-							! $multiple && $_POST[$name] == $wpdb->escape( $value ) ) )
-						$selected = ' selected="selected"';
-					$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $value ) . '</option>';
-				}
-
-				if ( $multiple )
-					$atts .= ' multiple="multiple"';
-
-				$html = '<select name="' . $name . ( $multiple ? '[]' : '' ) . '"' . $atts . '>' . $html . '</select>';
-				$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
-				return $html;
-				break;
 			case 'checkbox':
 			case 'checkbox*':
 			case 'radio':
