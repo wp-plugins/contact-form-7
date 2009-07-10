@@ -349,43 +349,6 @@ function wpcf7_wp_head() {
 if ( WPCF7_LOAD_CSS )
 	add_action( 'wp_head', 'wpcf7_wp_head' );
 
-function wpcf7_enqueue_scripts() {
-	$in_footer = true;
-	if ( 'header' === WPCF7_LOAD_JS )
-		$in_footer = false;
-
-	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
-		array('jquery', 'jquery-form'), WPCF7_VERSION, $in_footer );
-}
-
-if ( ! is_admin() && WPCF7_LOAD_JS )
-	add_action( 'init', 'wpcf7_enqueue_scripts' );
-
-function wpcf7_init_switch() {
-	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
-		wpcf7_ajax_json_echo();
-		exit();
-	} elseif ( ! is_admin() ) {
-		wpcf7_process_nonajax_submitting();
-		wpcf7_cleanup_captcha_files();
-		wpcf7_cleanup_upload_files();
-	}
-}
-
-add_action( 'init', 'wpcf7_init_switch', 11 );
-
-function wpcf7_load_plugin_textdomain() { // l10n
-	global $wp_version;
-
-	if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
-		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
-	else
-		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
-}
-
-add_action( 'init', 'wpcf7_load_plugin_textdomain' );
-
-
 /* Loading modules */
 
 function wpcf7_load_modules() {
@@ -401,5 +364,41 @@ function wpcf7_load_modules() {
 }
 
 add_action( 'init', 'wpcf7_load_modules' );
+
+function wpcf7_enqueue_scripts() {
+	$in_footer = true;
+	if ( 'header' === WPCF7_LOAD_JS )
+		$in_footer = false;
+
+	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
+		array('jquery', 'jquery-form'), WPCF7_VERSION, $in_footer );
+}
+
+if ( ! is_admin() && WPCF7_LOAD_JS )
+	add_action( 'init', 'wpcf7_enqueue_scripts' );
+
+function wpcf7_load_plugin_textdomain() { // l10n
+	global $wp_version;
+
+	if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
+		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
+	else
+		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
+}
+
+add_action( 'init', 'wpcf7_load_plugin_textdomain' );
+
+function wpcf7_init_switch() {
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
+		wpcf7_ajax_json_echo();
+		exit();
+	} elseif ( ! is_admin() ) {
+		wpcf7_process_nonajax_submitting();
+		wpcf7_cleanup_captcha_files();
+		wpcf7_cleanup_upload_files();
+	}
+}
+
+add_action( 'init', 'wpcf7_init_switch', 11 );
 
 ?>
