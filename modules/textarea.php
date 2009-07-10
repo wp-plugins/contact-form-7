@@ -3,6 +3,8 @@
 ** A base module for [textarea] and [textarea*]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_textarea_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -75,5 +77,29 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 
 wpcf7_add_shortcode( 'textarea', 'wpcf7_textarea_shortcode_handler', true );
 wpcf7_add_shortcode( 'textarea*', 'wpcf7_textarea_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_textarea_validation_filter( $result, $tag ) {
+	global $wpcf7_contact_form;
+
+	$type = $tag['type'];
+	$name = $tag['name'];
+
+	$_POST[$name] = (string) $_POST[$name];
+
+	if ( 'textarea*' == $type ) {
+		if ( '' == $_POST[$name] ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+		}
+	}
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_textarea', 'wpcf7_textarea_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_textarea*', 'wpcf7_textarea_validation_filter', 10, 2 );
 
 ?>

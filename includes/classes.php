@@ -228,8 +228,8 @@ class WPCF7_ContactForm {
 
 	function validate() {
 		$fes = $this->form_scan_shortcode();
-		$valid = true;
-		$reason = array();
+
+		$result = array( 'valid' => true, 'reason' => array() );
 
 		foreach ( $fes as $fe ) {
 			$type = $fe['type'];
@@ -240,9 +240,6 @@ class WPCF7_ContactForm {
 			// Before validation corrections
 			if ( preg_match( '/^(?:text|email|captchar|textarea)[*]?$/', $type ) )
 				$_POST[$name] = (string) $_POST[$name];
-
-			if ( preg_match( '/^(?:text|email)[*]?$/', $type ) )
-				$_POST[$name] = trim( strtr( $_POST[$name], "\n", " " ) );
 
 			if ( preg_match( '/^(?:select|checkbox|radio)[*]?$/', $type ) ) {
 				if ( is_array( $_POST[$name] ) ) {
@@ -261,18 +258,12 @@ class WPCF7_ContactForm {
 			if ( 'acceptance' == $type )
 				$_POST[$name] = $_POST[$name] ? 1 : 0;
 
-			// Required item (*)
-			if ( preg_match( '/^(?:text|textarea)[*]$/', $type ) ) {
-				if ( ! isset( $_POST[$name] ) || '' == $_POST[$name] ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'invalid_required' );
-				}
-			}
+			$result = apply_filters( 'wpcf7_validate_' . $type, $result, $fe );
 
 			if ( 'checkbox*' == $type ) {
 				if ( empty( $_POST[$name] ) ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'invalid_required' );
+					$result['valid'] = false;
+					$result['reason'][$name] = $this->message( 'invalid_required' );
 				}
 			}
 
@@ -280,26 +271,16 @@ class WPCF7_ContactForm {
 				if ( empty( $_POST[$name] ) ||
 						! is_array( $_POST[$name] ) && '---' == $_POST[$name] ||
 						is_array( $_POST[$name] ) && 1 == count( $_POST[$name] ) && '---' == $_POST[$name][0] ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'invalid_required' );
-				}
-			}
-
-			if ( preg_match( '/^email[*]?$/', $type ) ) {
-				if ( '*' == substr( $type, -1 ) && ( ! isset( $_POST[$name] ) || '' == $_POST[$name] ) ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'invalid_required' );
-				} elseif ( isset( $_POST[$name] ) && '' != $_POST[$name] && ! is_email( $_POST[$name] ) ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'invalid_email' );
+					$result['valid'] = false;
+					$result['reason'][$name] = $this->message( 'invalid_required' );
 				}
 			}
 
 			if ( preg_match( '/^captchar$/', $type ) ) {
 				$captchac = '_wpcf7_captcha_challenge_' . $name;
 				if ( ! wpcf7_check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'captcha_not_match' );
+					$result['valid'] = false;
+					$result['reason'][$name] = $this->message( 'captcha_not_match' );
 				}
 				wpcf7_remove_captcha( $_POST[$captchac] );
 			}
@@ -309,12 +290,13 @@ class WPCF7_ContactForm {
 				$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
 				$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
 				if ( $answer_hash != $expected_hash ) {
-					$valid = false;
-					$reason[$name] = $this->message( 'quiz_answer_not_correct' );
+					$result['valid'] = false;
+					$result['reason'][$name] = $this->message( 'quiz_answer_not_correct' );
 				}
 			}
 		}
-		return compact( 'valid', 'reason' );
+
+		return $result;
 	}
 
 	/* Message */

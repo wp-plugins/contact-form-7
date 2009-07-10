@@ -3,6 +3,8 @@
 ** A base module for [text], [text*], [email], and [email*]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_text_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -78,5 +80,41 @@ wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_text_validation_filter( $result, $tag ) {
+	global $wpcf7_contact_form;
+
+	$type = $tag['type'];
+	$name = $tag['name'];
+
+	$_POST[$name] = trim( strtr( (string) $_POST[$name], "\n", " " ) );
+
+	if ( 'text*' == $type ) {
+		if ( '' == $_POST[$name] ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+		}
+	}
+
+	if ( 'email' == $type || 'email*' == $type ) {
+		if ( 'email*' == $type && '' == $_POST[$name] ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+		} elseif ( '' != $_POST[$name] && ! is_email( $_POST[$name] ) ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_email' );
+		}
+	}
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_text', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_text*', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
 
 ?>
