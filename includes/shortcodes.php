@@ -127,24 +127,4 @@ function wpcf7_do_shortcode( $content ) {
 	return $wpcf7_shortcode_manager->do_shortcode( $content );
 }
 
-function wpcf7_scan_shortcode( $content, $type = null ) {
-	global $wpcf7_shortcode_manager;
-
-	$type = trim( $type );
-
-	$result = array();
-	$scanned = $wpcf7_shortcode_manager->scan_shortcode( $content );
-
-	if ( empty( $type ) ) {
-		$result = $scanned;
-	} else {
-		foreach ( $scanned as $tag ) {
-			if ( $tag['type'] == $type )
-				$result[] = $tag;
-		}
-	}
-
-	return $result;
-}
-
 ?>

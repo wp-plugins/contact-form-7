@@ -15,6 +15,7 @@ class WPCF7_ContactForm {
 	var $unit_tag;
 
 	var $responses_count = 0;
+	var $scanned_form_tags;
 
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
@@ -104,6 +105,50 @@ class WPCF7_ContactForm {
 
 	/* Form Elements */
 
+	function form_do_shortcode() {
+		global $wpcf7_shortcode_manager;
+
+		$form = $wpcf7_shortcode_manager->do_shortcode( $this->form );
+		$this->scanned_form_tags = $wpcf7_shortcode_manager->scanned_tags;
+		return $form;
+	}
+
+	function form_scan_shortcode( $cond = null ) {
+		global $wpcf7_shortcode_manager;
+
+		if ( ! empty( $this->scanned_form_tags ) ) {
+			$scanned = $this->scanned_form_tags;
+		} else {
+			$scanned = $wpcf7_shortcode_manager->scan_shortcode( $this->form );
+			$this->scanned_form_tags = $scanned;
+		}
+
+		if ( empty( $scanned ) )
+			return null;
+
+		if ( ! is_array( $cond ) || empty( $cond ) )
+			return $scanned;
+
+		for ( $i = 0, $size = count( $scanned ); $i < $size; $i++ ) {
+
+			if ( is_string( $cond['type'] ) && ! empty( $cond['type'] ) ) {
+				if ( $scanned[$i]['type'] != $cond['type'] ) {
+					unset( $scanned[$i] );
+					continue;
+				}
+			}
+
+			if ( is_string( $cond['name'] ) && ! empty( $cond['name'] ) ) {
+				if ( $scanned[$i]['name'] != $cond['name'] ) {
+					unset ( $scanned[$i] );
+					continue;
+				}
+			}
+		}
+
+		return array_values( $scanned );
+	}
+
 	function form_elements( $replace = true ) {
 		$form = $this->form;
 
@@ -112,7 +157,7 @@ class WPCF7_ContactForm {
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
 		$response_regex = '%\[\s*response\s*\]%';
 		if ( $replace ) {
-			$form = wpcf7_do_shortcode( $form );
+			$form = $this->form_do_shortcode();
 			// Submit button
 			$form = preg_replace_callback( $submit_regex, array( &$this, 'submit_replace_callback' ), $form );
 			// Response output

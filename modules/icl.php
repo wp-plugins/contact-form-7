@@ -35,7 +35,7 @@ function icl_wpcf7_translate( $text ) {
 }
 
 function icl_wpcf7_collect_strings( &$contact_form ) {
-	$scanned = wpcf7_scan_shortcode( $contact_form->form, 'icl' );
+	$scanned = $contact_form->form_scan_shortcode( array( 'type' => 'icl' ) );
 
 	foreach ( $scanned as $tag ) {
 		if ( ! is_array( $tag ) )
