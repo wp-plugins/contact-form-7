@@ -136,11 +136,21 @@ class WPCF7_ContactForm {
 					unset( $scanned[$i] );
 					continue;
 				}
+			} elseif ( is_array( $cond['type'] ) ) {
+				if ( ! in_array( $scanned[$i]['type'], $cond['type'] ) ) {
+					unset( $scanned[$i] );
+					continue;
+				}
 			}
 
 			if ( is_string( $cond['name'] ) && ! empty( $cond['name'] ) ) {
 				if ( $scanned[$i]['name'] != $cond['name'] ) {
 					unset ( $scanned[$i] );
+					continue;
+				}
+			} elseif ( is_array( $cond['name'] ) ) {
+				if ( ! in_array( $scanned[$i]['name'], $cond['name'] ) ) {
+					unset( $scanned[$i] );
 					continue;
 				}
 			}

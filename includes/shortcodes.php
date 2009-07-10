@@ -21,7 +21,8 @@ class WPCF7_ShortcodeManager {
 		unset( $this->shortcode_tags[$tag] );
 	}
 
-	function do_shortcode( $content ) {
+	function do_shortcode( $content, $exec = true ) {
+		$this->exec = (bool) $exec;
 		$this->scanned_tags = array();
 
 		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags) )
@@ -33,8 +34,7 @@ class WPCF7_ShortcodeManager {
 	}
 
 	function scan_shortcode( $content ) {
-		$this->exec = false;
-		$this->do_shortcode( $content );
+		$this->do_shortcode( $content, false );
 		return $this->scanned_tags;
 	}
 
