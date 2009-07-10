@@ -4,7 +4,7 @@
 **/
 
 function wpcf7_checkbox_shortcode_handler( $tag ) {
-	global $wpdb, $wpcf7_contact_form;
+	global $wpcf7_contact_form;
 
 	if ( ! is_array( $tag ) )
 		return '';
@@ -75,9 +75,9 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 			$checked = true;
 
 		if ( $posted) {
-			if ( $multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) )
+			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
 				$checked = true;
-			if ( ! $multiple && $_POST[$name] == $wpdb->escape( $value ) )
+			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
 				$checked = true;
 		}
 

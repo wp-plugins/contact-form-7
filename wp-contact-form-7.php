@@ -120,6 +120,13 @@ if ( ! function_exists( 'esc_attr' ) ) {
 	}
 }
 
+if ( ! function_exists( 'esc_sql' ) ) {
+	function esc_sql( $text ) {
+		global $wpdb;
+		return $wpdb->escape( $text );
+	}
+}
+
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
