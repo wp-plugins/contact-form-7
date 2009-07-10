@@ -14,44 +14,51 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
 
-	$validation_error = '';
-	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		$validation_error = $wpcf7_contact_form->validation_error( $name );
-
 	$atts = '';
+	$id_att = '';
+	$class_att = '';
 
-	$id_array = preg_grep( '%^id:[-0-9a-zA-Z_]+$%', $options );
-	if ( $id = array_shift( $id_array ) ) {
-		preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches );
-		if ( $id = $id_matches[1] )
-			$atts .= ' id="' . $id . '"';
-	}
+	$defaults = array();
 
-	$class_att = "";
-	$class_array = preg_grep( '%^class:[-0-9a-zA-Z_]+$%', $options );
-	foreach ( $class_array as $class ) {
-		preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches );
-		if ( $class = $class_matches[1] )
-			$class_att .= ' ' . $class;
-	}
+	$label_first = false;
+	$use_label_element = false;
 
-	if ( preg_match( '/[*]$/', $type ) )
+	if ( 'checkbox*' == $type )
 		$class_att .= ' wpcf7-validates-as-required';
 
-	if ( preg_match( '/^checkbox[*]?$/', $type ) )
+	if ( 'checkbox' == $type || 'checkbox*' == $type )
 		$class_att .= ' wpcf7-checkbox';
 
 	if ( 'radio' == $type )
 		$class_att .= ' wpcf7-radio';
 
+	foreach ( $options as $option ) {
+		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
+			$id_att = $matches[1];
+
+		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
+			$class_att .= ' ' . $matches[1];
+
+		} elseif ( preg_match( '/^default:([0-9_]+)$/', $option, $matches ) ) {
+			$defaults = explode( '_', $matches[1] );
+
+		} elseif ( preg_match( '%^label[_-]?first$%', $option ) ) {
+			$label_first = true;
+
+		} elseif ( preg_match( '%^use[_-]?label[_-]?element$%', $option ) ) {
+			$use_label_element = true;
+
+		}
+	}
+
+	if ( $id_att )
+		$atts .= ' id="' . trim( $id_att ) . '"';
+
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
-	$scr_defaults = array_values( preg_grep( '/^default:/', $options ) );
-	preg_match( '/^default:([0-9_]+)$/', $scr_defaults[0], $scr_default_matches );
-	$scr_default = explode( '_', $scr_default_matches[1] );
-
 	$multiple = preg_match( '/^checkbox[*]?$/', $type ) && ! preg_grep( '%^exclusive$%', $options );
+
 	$html = '';
 
 	if ( preg_match( '/^checkbox[*]?$/', $type ) && ! $multiple )
@@ -59,15 +66,24 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 	$input_type = rtrim( $type, '*' );
 
+	$posted = is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted();
+
 	foreach ( $values as $key => $value ) {
-		$checked = '';
-		if ( in_array( $key + 1, (array) $scr_default ) )
-			$checked = ' checked="checked"';
-		if ( is_object( $wpcf7_contact_form ) && $wpcf7_contact_form->is_posted() && (
-				$multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) ||
-				! $multiple && $_POST[$name] == $wpdb->escape( $value ) ) )
-			$checked = ' checked="checked"';
-		if ( preg_grep( '%^label[_-]?first$%', $options ) ) { // put label first, input last
+		$checked = false;
+
+		if ( in_array( $key + 1, (array) $defaults ) )
+			$checked = true;
+
+		if ( $posted) {
+			if ( $multiple && in_array( $wpdb->escape( $value ), (array) $_POST[$name] ) )
+				$checked = true;
+			if ( ! $multiple && $_POST[$name] == $wpdb->escape( $value ) )
+				$checked = true;
+		}
+
+		$checked = $checked ? ' checked="checked"' : '';
+
+		if ( $label_first ) { // put label first, input last
 			$item = '<span class="wpcf7-list-item-label">' . $value . '</span>&nbsp;';
 			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
 		} else {
@@ -75,7 +91,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . $value . '</span>';
 		}
 
-		if ( preg_grep( '%^use[_-]?label[_-]?element$%', $options ) )
+		if ( $use_label_element )
 			$item = '<label>' . $item . '</label>';
 
 		$item = '<span class="wpcf7-list-item">' . $item . '</span>';
@@ -83,6 +99,11 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	}
 
 	$html = '<span' . $atts . '>' . $html . '</span>';
+
+	$validation_error = '';
+	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		$validation_error = $wpcf7_contact_form->validation_error( $name );
+
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
 	return $html;
