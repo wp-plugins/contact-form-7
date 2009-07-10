@@ -167,7 +167,9 @@ function wpcf7_captchac_options( $options ) {
 }
 
 function wpcf7_refill_captcha( $contact_form ) {
-	$fes = $contact_form->form_scan_shortcode();
+	$fes = $contact_form->form_scan_shortcode(
+		array( 'type' => 'captchac' ) );
+
 	$refill = array();
 
 	foreach ( $fes as $fe ) {
@@ -175,12 +177,10 @@ function wpcf7_refill_captcha( $contact_form ) {
 		$name = $fe['name'];
 		$options = $fe['options'];
 
-		if ( 'captchac' == $type ) {
-			$op = wpcf7_captchac_options( $options );
-			if ( $filename = wpcf7_generate_captcha( $op ) ) {
-				$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
-				$refill[$name] = $captcha_url;
-			}
+		$op = wpcf7_captchac_options( $options );
+		if ( $filename = wpcf7_generate_captcha( $op ) ) {
+			$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+			$refill[$name] = $captcha_url;
 		}
 	}
 

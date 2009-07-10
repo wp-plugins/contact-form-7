@@ -1,7 +1,8 @@
 <?php
 
 function wpcf7_refill_quiz( $contact_form ) {
-	$fes = $contact_form->form_scan_shortcode();
+	$fes = $contact_form->form_scan_shortcode( array( 'type' => 'quiz' ) );
+
 	$refill = array();
 
 	foreach ( $fes as $fe ) {
@@ -9,9 +10,6 @@ function wpcf7_refill_quiz( $contact_form ) {
 		$name = $fe['name'];
 		$values = $fe['values'];
 		$raw_values = $fe['raw_values'];
-
-		if ( 'quiz' != $type )
-			continue;
 
 		if ( count( $values ) == 0 )
 			continue;
