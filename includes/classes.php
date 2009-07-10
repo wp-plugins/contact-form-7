@@ -206,22 +206,22 @@ class WPCF7_ContactForm {
 		return $this->form_response_output();
 	}
 
-	function form_element_parse( $element ) {
-		$type = trim( $element[1] );
-		$name = trim( $element[2] );
-		$options = preg_split( '/[\s]+/', trim( $element[3] ) );
+	/* Mail + Pipe */
 
-		preg_match_all( '/"[^"]*"|\'[^\']*\'/', $element[4], $matches );
-		$raw_values = wpcf7_strip_quote_deep( $matches[0] );
+	function pipe_all_posted() {
+		global $wpcf7_posted_data;
 
-		if ( WPCF7_USE_PIPE && preg_match( '/^(select[*]?|checkbox[*]?|radio)$/', $type ) || 'quiz' == $type ) {
-			$pipes = wpcf7_get_pipes( $raw_values );
-			$values = wpcf7_get_pipe_ins( $pipes );
-		} else {
-			$values =& $raw_values;
+		$fes = $contact_form->form_scan_shortcode();
+
+		foreach ( $fes as $fe ) {
+			$name = $fe['name'];
+			$pipes = $fe['pipes'];
+
+			if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+				if ( isset( $wpcf7_posted_data[$name] ) )
+					$wpcf7_posted_data[$name] = $pipes->do_pipe( $wpcf7_posted_data[$name] );
+			}
 		}
-
-		return compact( 'type', 'name', 'options', 'values', 'raw_values' );
 	}
 
 	/* Validate */

@@ -6,7 +6,7 @@ function wpcf7_mail( $contact_form, $files = array() ) {
 	$wpcf7_posted_data = $_POST;
 
 	if ( WPCF7_USE_PIPE ) {
-		wpcf7_pipe_all_posted( $contact_form );
+		$contact_form->pipe_all_posted();
 	}
 
 	if ( wpcf7_compose_and_send_mail( $contact_form->mail, $files ) ) {
