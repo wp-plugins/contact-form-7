@@ -1,7 +1,7 @@
 <?php
 
 function wpcf7_refill_quiz( $contact_form ) {
-	$fes = $contact_form->form_elements( false );
+	$fes = $contact_form->form_scan_shortcode();
 	$refill = array();
 
 	foreach ( $fes as $fe ) {

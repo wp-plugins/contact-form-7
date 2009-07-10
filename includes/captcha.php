@@ -167,7 +167,7 @@ function wpcf7_captchac_options( $options ) {
 }
 
 function wpcf7_refill_captcha( $contact_form ) {
-	$fes = $contact_form->form_elements( false );
+	$fes = $contact_form->form_scan_shortcode();
 	$refill = array();
 
 	foreach ( $fes as $fe ) {

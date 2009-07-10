@@ -114,7 +114,7 @@ function wpcf7_pipe_all_posted( $contact_form ) {
 
 	$all_pipes = array();
 
-	$fes = $contact_form->form_elements( false );
+	$fes = $contact_form->form_scan_shortcode();
 	foreach ( $fes as $fe ) {
 		$type = $fe['type'];
 		$name = $fe['name'];

@@ -7,7 +7,7 @@ function wpcf7_handle_uploads( $contact_form ) {
 
 	$uploads_dir = null;
 
-	$fes = $contact_form->form_elements( false );
+	$fes = $contact_form->form_scan_shortcode();
 
 	foreach ( $fes as $fe ) {
 		if ( 'file' != $fe['type'] && 'file*' != $fe['type'] )

@@ -8,7 +8,7 @@ function wpcf7_akismet( $contact_form ) {
 
 	$akismet_ready = false;
 	$author = $author_email = $author_url = $content = '';
-	$fes = $contact_form->form_elements( false );
+	$fes = $contact_form->form_scan_shortcode();
 
 	foreach ( $fes as $fe ) {
 		if ( ! is_array( $fe['options'] ) ) continue;

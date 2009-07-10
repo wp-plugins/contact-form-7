@@ -36,15 +36,8 @@ class WPCF7_ContactForm {
 		$url = parse_url( $_SERVER['REQUEST_URI'] );
 		$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $this->unit_tag;
 
-		$form_elements = $this->form_elements( false );
-		$multipart = false;
-
-		foreach ( $form_elements as $form_element ) {
-			if ( preg_match( '/^file[*]?$/', $form_element['type'] ) ) {
-				$multipart = true;
-				break;
-			}
-		}
+		$multipart = (bool) $this->form_scan_shortcode(
+			array( 'type' => array( 'file', 'file*' ) ) );
 
 		$enctype = $multipart ? ' enctype="multipart/form-data"' : '';
 
@@ -159,48 +152,40 @@ class WPCF7_ContactForm {
 		return array_values( $scanned );
 	}
 
-	function form_elements( $replace = true ) {
-		$form = $this->form;
+	function form_elements() {
+		$form = $this->form_do_shortcode();
 
-		$types = 'text[*]?|email[*]?|textarea[*]?|select[*]?|checkbox[*]?|radio|acceptance|captchac|captchar|file[*]?|quiz';
-		$regex = '%\[\s*(' . $types . ')(\s+[a-zA-Z][0-9a-zA-Z:._-]*)([-0-9a-zA-Z:#_/|\s]*)?((?:\s*(?:"[^"]*"|\'[^\']*\'))*)?\s*\]%';
+		// Submit button
 		$submit_regex = '%\[\s*submit(\s[-0-9a-zA-Z:#_/\s]*)?(\s+(?:"[^"]*"|\'[^\']*\'))?\s*\]%';
+		$form = preg_replace_callback( $submit_regex,
+			array( &$this, 'submit_replace_callback' ), $form );
+
+		// Response output
 		$response_regex = '%\[\s*response\s*\]%';
-		if ( $replace ) {
-			$form = $this->form_do_shortcode();
-			// Submit button
-			$form = preg_replace_callback( $submit_regex, array( &$this, 'submit_replace_callback' ), $form );
-			// Response output
-			$form = preg_replace_callback( $response_regex, array( &$this, 'response_replace_callback' ), $form );
-			return $form;
-		} else {
-			$results = array();
-			preg_match_all( $regex, $form, $matches, PREG_SET_ORDER );
-			foreach ( $matches as $match ) {
-				$results[] = (array) $this->form_element_parse( $match );
-			}
-			return $results;
-		}
+		$form = preg_replace_callback( $response_regex,
+			array( &$this, 'response_replace_callback' ), $form );
+
+		return $form;
 	}
 
 	function submit_replace_callback( $matches ) {
 		$atts = '';
 		$options = preg_split( '/[\s]+/', trim( $matches[1] ) );
 
-		$id_array = preg_grep( '%^id:[-0-9a-zA-Z_]+$%', $options );
-		if ( $id = array_shift( $id_array ) ) {
-			preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $id, $id_matches );
-			if ( $id = $id_matches[1] )
-				$atts .= ' id="' . $id . '"';
+		$id_att = '';
+		$class_att = '';
+
+		foreach ( $options as $option ) {
+			if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $op_matches ) ) {
+				$id_att = $op_matches[1];
+
+			} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $op_matches ) ) {
+				$class_att .= ' ' . $op_matches[1];
+			}
 		}
 
-		$class_att = '';
-		$class_array = preg_grep( '%^class:[-0-9a-zA-Z_]+$%', $options );
-		foreach ( $class_array as $class ) {
-			preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $class, $class_matches );
-			if ( $class = $class_matches[1] )
-				$class_att .= ' ' . $class;
-		} 
+		if ( $id_att )
+			$atts .= ' id="' . trim( $id_att ) . '"';
 
 		if ( $class_att )
 			$atts .= ' class="' . trim( $class_att ) . '"';
@@ -242,7 +227,7 @@ class WPCF7_ContactForm {
 	/* Validate */
 
 	function validate() {
-		$fes = $this->form_elements( false );
+		$fes = $this->form_scan_shortcode();
 		$valid = true;
 		$reason = array();
 
