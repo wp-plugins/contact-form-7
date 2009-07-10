@@ -95,6 +95,13 @@ class WPCF7_ContactForm {
 		return '<div' . $class . '>' . $content . '</div>';
 	}
 
+	function validation_error( $name ) {
+		if ( $this->is_posted() && $ve = $_POST['_wpcf7_validation_errors']['messages'][$name] )
+			return '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
+
+		return '';
+	}
+
 	/* Form Elements */
 
 	function form_elements( $replace = true ) {

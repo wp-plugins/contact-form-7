@@ -14,12 +14,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
 
-	if ( is_object( $wpcf7_contact_form ) && $wpcf7_contact_form->is_posted() ) {
-		$validation_error = $_POST['_wpcf7_validation_errors']['messages'][$name];
-		$validation_error = $validation_error ? '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $validation_error ) . '</span>' : '';
-	} else {
-		$validation_error = '';
-	}
+	$validation_error = '';
+	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		$validation_error = $wpcf7_contact_form->validation_error( $name );
 
 	$atts = '';
 
