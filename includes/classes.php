@@ -241,40 +241,10 @@ class WPCF7_ContactForm {
 			if ( preg_match( '/^(?:text|email|captchar|textarea)[*]?$/', $type ) )
 				$_POST[$name] = (string) $_POST[$name];
 
-			if ( preg_match( '/^(?:select|checkbox|radio)[*]?$/', $type ) ) {
-				if ( is_array( $_POST[$name] ) ) {
-					foreach ( $_POST[$name] as $key => $value ) {
-						$value = stripslashes( $value );
-						if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
-							unset( $_POST[$name][$key] );
-					}
-				} else {
-					$value = stripslashes( $_POST[$name] );
-					if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
-						$_POST[$name] = '';
-				}
-			}
-
 			if ( 'acceptance' == $type )
 				$_POST[$name] = $_POST[$name] ? 1 : 0;
 
 			$result = apply_filters( 'wpcf7_validate_' . $type, $result, $fe );
-
-			if ( 'checkbox*' == $type ) {
-				if ( empty( $_POST[$name] ) ) {
-					$result['valid'] = false;
-					$result['reason'][$name] = $this->message( 'invalid_required' );
-				}
-			}
-
-			if ( 'select*' == $type ) {
-				if ( empty( $_POST[$name] ) ||
-						! is_array( $_POST[$name] ) && '---' == $_POST[$name] ||
-						is_array( $_POST[$name] ) && 1 == count( $_POST[$name] ) && '---' == $_POST[$name][0] ) {
-					$result['valid'] = false;
-					$result['reason'][$name] = $this->message( 'invalid_required' );
-				}
-			}
 
 			if ( preg_match( '/^captchar$/', $type ) ) {
 				$captchac = '_wpcf7_captcha_challenge_' . $name;

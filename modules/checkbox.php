@@ -3,6 +3,8 @@
 ** A base module for [checkbox], [checkbox*], and [radio]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_checkbox_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -112,5 +114,41 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 wpcf7_add_shortcode( 'checkbox', 'wpcf7_checkbox_shortcode_handler', true );
 wpcf7_add_shortcode( 'checkbox*', 'wpcf7_checkbox_shortcode_handler', true );
 wpcf7_add_shortcode( 'radio', 'wpcf7_checkbox_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_checkbox_validation_filter( $result, $tag ) {
+	global $wpcf7_contact_form;
+
+	$type = $tag['type'];
+	$name = $tag['name'];
+	$values = $tag['values'];
+
+	if ( is_array( $_POST[$name] ) ) {
+		foreach ( $_POST[$name] as $key => $value ) {
+			$value = stripslashes( $value );
+			if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
+				unset( $_POST[$name][$key] );
+		}
+	} else {
+		$value = stripslashes( $_POST[$name] );
+		if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
+			$_POST[$name] = '';
+	}
+
+	if ( 'checkbox*' == $type ) {
+		if ( empty( $_POST[$name] ) ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+		}
+	}
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_checkbox', 'wpcf7_checkbox_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_checkbox*', 'wpcf7_checkbox_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_radio', 'wpcf7_checkbox_validation_filter', 10, 2 );
 
 ?>
