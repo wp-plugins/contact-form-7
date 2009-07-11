@@ -211,7 +211,7 @@ class WPCF7_ContactForm {
 	function pipe_all_posted() {
 		global $wpcf7_posted_data;
 
-		$fes = $contact_form->form_scan_shortcode();
+		$fes = $this->form_scan_shortcode();
 
 		foreach ( $fes as $fe ) {
 			$name = $fe['name'];
@@ -376,6 +376,22 @@ class WPCF7_ContactForm {
 		$this->id = null;
 	}
 
+	/* Misc */
+
+	function accepted() {
+		$fes = $this->form_scan_shortcode( array( 'type' => 'acceptance' ) );
+
+		$accepted = true;
+
+		foreach ( $fes as $fe ) {
+			$invert = (bool) preg_grep( '%^invert$%', $fe['options'] );
+
+			if ( $invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']] )
+				$accepted = false;
+		}
+
+		return $accepted;
+	}
 }
 
 function wpcf7_contact_form( $id ) {

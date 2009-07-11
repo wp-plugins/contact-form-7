@@ -134,7 +134,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/acceptance.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/quiz.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
@@ -214,7 +213,7 @@ function wpcf7_ajax_json_echo() {
 				}
 				$invalids = '[' . join( ', ', $invalids ) . ']';
 				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'validation_error' ) ) . '", into: "#' . $unit_tag . '", invalids: ' . $invalids . ', captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
-			} elseif ( ! wpcf7_acceptance( $wpcf7_contact_form ) ) { // Not accepted terms
+			} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
 				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'accept_terms' ) ) . '", into: "#' . $unit_tag . '", captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
 			} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
 				$echo = '{ mailSent: 0, message: "' . esc_js( $wpcf7_contact_form->message( 'akismet_says_spam' ) ) . '", into: "#' . $unit_tag . '", spam: 1, captcha: ' . $captcha . ', quiz: ' . $quiz . ' }';
@@ -262,7 +261,7 @@ function wpcf7_process_nonajax_submitting() {
 
 		if ( ! $validation['valid'] ) {
 			$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
-		} elseif ( ! wpcf7_acceptance( $wpcf7_contact_form ) ) { // Not accepted terms
+		} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'accept_terms' ) );
 		} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
