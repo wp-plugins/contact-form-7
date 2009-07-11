@@ -3,6 +3,8 @@
 ** A base module for [quiz]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_quiz_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -73,5 +75,27 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 }
 
 wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_quiz_validation_filter( $result, $tag ) {
+	global $wpcf7_contact_form;
+
+	$type = $tag['type'];
+	$name = $tag['name'];
+
+	$answer = wpcf7_canonicalize( $_POST[$name] );
+	$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
+	$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
+	if ( $answer_hash != $expected_hash ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = $wpcf7_contact_form->message( 'quiz_answer_not_correct' );
+	}
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
 ?>

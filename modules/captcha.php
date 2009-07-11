@@ -3,6 +3,8 @@
 ** A base module for [captchac] and [captchar]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_captcha_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -97,5 +99,30 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 wpcf7_add_shortcode( 'captchac', 'wpcf7_captcha_shortcode_handler', true );
 wpcf7_add_shortcode( 'captchar', 'wpcf7_captcha_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_captcha_validation_filter( $result, $tag ) {
+	global $wpcf7_contact_form;
+
+	$type = $tag['type'];
+	$name = $tag['name'];
+
+	$_POST[$name] = (string) $_POST[$name];
+
+	$captchac = '_wpcf7_captcha_challenge_' . $name;
+
+	if ( ! wpcf7_check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = $wpcf7_contact_form->message( 'captcha_not_match' );
+	}
+
+	wpcf7_remove_captcha( $_POST[$captchac] );
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_captchar', 'wpcf7_captcha_validation_filter', 10, 2 );
 
 ?>

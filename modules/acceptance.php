@@ -3,6 +3,8 @@
 ** A base module for [acceptance]
 **/
 
+/* Shortcode handler */
+
 function wpcf7_acceptance_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -48,5 +50,16 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 }
 
 wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
+
+
+/* Validation filter */
+
+function wpcf7_acceptance_validation_filter( $result, $tag ) {
+	$_POST[$name] = $_POST[$name] ? 1 : 0;
+
+	return $result;
+}
+
+add_filter( 'wpcf7_validate_acceptance', 'wpcf7_acceptance_validation_filter', 10, 2 );
 
 ?>

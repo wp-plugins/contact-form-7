@@ -233,37 +233,8 @@ class WPCF7_ContactForm {
 
 		foreach ( $fes as $fe ) {
 			$type = $fe['type'];
-			$name = $fe['name'];
-			$values = $fe['values'];
-			$raw_values = $fe['raw_values'];
-
-			// Before validation corrections
-			if ( preg_match( '/^(?:text|email|captchar|textarea)[*]?$/', $type ) )
-				$_POST[$name] = (string) $_POST[$name];
-
-			if ( 'acceptance' == $type )
-				$_POST[$name] = $_POST[$name] ? 1 : 0;
 
 			$result = apply_filters( 'wpcf7_validate_' . $type, $result, $fe );
-
-			if ( preg_match( '/^captchar$/', $type ) ) {
-				$captchac = '_wpcf7_captcha_challenge_' . $name;
-				if ( ! wpcf7_check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
-					$result['valid'] = false;
-					$result['reason'][$name] = $this->message( 'captcha_not_match' );
-				}
-				wpcf7_remove_captcha( $_POST[$captchac] );
-			}
-
-			if ( 'quiz' == $type ) {
-				$answer = wpcf7_canonicalize( $_POST[$name] );
-				$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
-				$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
-				if ( $answer_hash != $expected_hash ) {
-					$result['valid'] = false;
-					$result['reason'][$name] = $this->message( 'quiz_answer_not_correct' );
-				}
-			}
 		}
 
 		return $result;
