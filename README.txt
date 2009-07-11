@@ -2,7 +2,7 @@
 Contributors: takayukister
 Donate link: http://pledgie.com/campaigns/3117
 Tags: contact, contact form, email, ajax, captcha, akismet
-Requires at least: 2.5
+Requires at least: 2.7
 Tested up to: 2.8
 Stable tag: 1.10.1
 
