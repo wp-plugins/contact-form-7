@@ -29,7 +29,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Croatian (hr) - [tolingo Translation Services](http://www.tolingo.com)
 * Czech (cs_CZ) - Korry
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/) (updated by [Georg S. Adamsen](http://wordpress.blogos.dk/))
-* Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/)
+* Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/) (updated by Martin Hein)
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee)
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/)
