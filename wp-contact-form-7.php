@@ -134,7 +134,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/captcha.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
 
 if ( is_admin() )
@@ -173,8 +172,6 @@ function wpcf7_ajax_json_echo() {
 				$validation['valid'] = false;
 
 			$validation['reason'] = array_merge( $validation['reason'], $handled_uploads['validation']['reason'] );
-
-			$captcha = wpcf7_refill_captcha( $wpcf7_contact_form );
 
 			$on_sent_ok_settings = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
 			if ( ! empty( $on_sent_ok_settings ) ) {
