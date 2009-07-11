@@ -131,9 +131,8 @@ require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 
 if ( is_admin() )
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
@@ -166,7 +165,12 @@ function wpcf7_ajax_json_echo() {
 		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
 			$validation = $wpcf7_contact_form->validate();
 
-			$handled_uploads = wpcf7_handle_uploads( $wpcf7_contact_form );
+			$handled_uploads = array(
+				'validation' => array( 'valid' => true, 'reason' => array() ),
+				'files' => array() );
+
+			$handled_uploads = apply_filters( 'wpcf7_handled_uploads', $handled_uploads );
+
 			if ( ! $handled_uploads['validation']['valid'] )
 				$validation['valid'] = false;
 
@@ -244,7 +248,11 @@ function wpcf7_process_nonajax_submitting() {
 	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
 		$validation = $wpcf7_contact_form->validate();
 
-		$handled_uploads = wpcf7_handle_uploads( $wpcf7_contact_form );
+		$handled_uploads = array(
+			'validation' => array( 'valid' => true, 'reason' => array() ),
+			'files' => array() );
+
+		$handled_uploads = apply_filters( 'wpcf7_handled_uploads', $handled_uploads );
 
 		if ( ! $handled_uploads['validation']['valid'] )
 			$validation['valid'] = false;
@@ -385,8 +393,6 @@ function wpcf7_init_switch() {
 		exit();
 	} elseif ( ! is_admin() ) {
 		wpcf7_process_nonajax_submitting();
-		wpcf7_cleanup_captcha_files();
-		wpcf7_cleanup_upload_files();
 	}
 }
 

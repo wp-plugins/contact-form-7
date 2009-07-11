@@ -265,6 +265,9 @@ function wpcf7_cleanup_captcha_files() {
 	}
 }
 
+if ( ! is_admin() && 'GET' == $_SERVER['REQUEST_METHOD'] )
+	wpcf7_cleanup_captcha_files();
+
 function wpcf7_captchac_options( $options ) {
 	if ( ! is_array( $options ) )
 		return array();
