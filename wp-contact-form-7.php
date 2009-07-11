@@ -76,23 +76,15 @@ if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 function wpcf7_plugin_url( $path = '' ) {
 	global $wp_version;
 
-	if ( function_exists( 'plugins_url' ) ) {
+	if ( version_compare( $wp_version, '2.8', '<' ) ) { // Using WordPress 2.7
+		$folder = dirname( plugin_basename( __FILE__ ) );
+		if ( '.' != $folder )
+			$path = path_join( ltrim( $folder, '/' ), $path );
 
-		if ( version_compare( $wp_version, '2.8-beta', '<' ) ) { // Using WordPress 2.6 - 2.7.x
-			$folder = dirname( plugin_basename( __FILE__ ) );
-			if ( '.' != $folder )
-				$path = path_join( ltrim( $folder, '/' ), $path );
-
-			return plugins_url( $path );
-		}
-
-		return plugins_url( $path, __FILE__ );
-	} else { // Older than WP 2.6
-		$url = WPCF7_PLUGIN_URL;
-		if ( ! empty( $path ) && is_string( $path ) && false === strpos( $path, '..' ) )
-			$url .= '/' . ltrim( $path, '/' );
-		return $url;
+		return plugins_url( $path );
 	}
+
+	return plugins_url( $path, __FILE__ );
 }
 
 function wpcf7_table_name() {
@@ -379,10 +371,8 @@ if ( ! is_admin() && WPCF7_LOAD_JS )
 function wpcf7_load_plugin_textdomain() { // l10n
 	global $wp_version;
 
-	if ( version_compare( $wp_version, '2.6', '<' ) ) // Using old WordPress
-		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages' );
-	else
-		load_plugin_textdomain( 'wpcf7', 'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
+	load_plugin_textdomain( 'wpcf7',
+		'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
 }
 
 add_action( 'init', 'wpcf7_load_plugin_textdomain' );

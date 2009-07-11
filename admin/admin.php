@@ -1,25 +1,13 @@
 <?php
 
-function wpcf7_admin_menu_parent() {
-	global $wp_version;
-	if ( version_compare( $wp_version, '2.7', '>=' ) )
-		return 'tools.php';
-	else
-		return 'edit.php';
-}
-
 function wpcf7_admin_has_edit_cap() {
 	return current_user_can( WPCF7_ADMIN_READ_WRITE_CAPABILITY );
 }
 
 function wpcf7_admin_add_pages() {
-	if ( function_exists( 'admin_url' ) ) {
-		$base_url = admin_url( wpcf7_admin_menu_parent() );
-	} else {
-		$base_url = get_option( 'siteurl' ) . '/wp-admin/' . wpcf7_admin_menu_parent();
-	}
+	$base_url = admin_url( 'admin.php' );
 
-	$page = str_replace( '\\', '%5C', plugin_basename( __FILE__ ) );
+	$page = plugin_basename( __FILE__ );
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
 		$id = $_POST['wpcf7-id'];
@@ -111,7 +99,11 @@ function wpcf7_admin_add_pages() {
 		exit();
 	}
 
-	add_management_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ), WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
+	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ),
+		WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
+
+	add_submenu_page( __FILE__, __( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
+		WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
 }
 
 add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
@@ -149,7 +141,7 @@ function wpcf7_admin_load_js() {
 	if ( ! is_admin() )
 		return;
 
-	if ( wpcf7_admin_menu_parent() != $pagenow )
+	if ( 'admin.php' != $pagenow )
 		return;
 
 	if ( false === strpos( $_GET['page'], 'contact-form-7' ) )
@@ -213,11 +205,7 @@ add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 function wpcf7_admin_management_page() {
 	global $wp_version;
 
-	if ( function_exists( 'admin_url' ) ) {
-		$base_url = admin_url( wpcf7_admin_menu_parent() );
-	} else {
-		$base_url = get_option( 'siteurl' ) . '/wp-admin/' . wpcf7_admin_menu_parent();
-	}
+	$base_url = admin_url( 'admin.php' );
 
 	$page = plugin_basename( __FILE__ );
 
@@ -318,11 +306,7 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	if ( $file != WPCF7_PLUGIN_BASENAME )
 		return $links;
 
-	if ( function_exists( 'admin_url' ) ) {
-		$base_url = admin_url( wpcf7_admin_menu_parent() );
-	} else {
-		$base_url = get_option( 'siteurl' ) . '/wp-admin/' . wpcf7_admin_menu_parent();
-	}
+	$base_url = admin_url( 'admin.php' );
 
 	$url = $base_url . '?page=' . plugin_basename( __FILE__ );
 

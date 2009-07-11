@@ -1,11 +1,8 @@
-<?php if ( ! version_compare( $wp_version, '2.7', '>=' ) && isset( $updated_message ) ) : ?>
-<div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
-<?php endif; ?>
 <div class="wrap wpcf7">
-    <?php if ( function_exists( 'screen_icon' ) ) screen_icon(); ?>
+    <?php screen_icon( 'tools' ); ?>
     <h2><?php _e( 'Contact Form 7', 'wpcf7' ); ?></h2>
     <?php wpcf7_donation_link(); ?>
-    <?php if ( version_compare( $wp_version, '2.7', '>=' ) && isset( $updated_message ) ) : ?>
+    <?php if ( isset( $updated_message ) ) : ?>
     <div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
     <?php endif; ?>
 
@@ -120,9 +117,6 @@
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-attachments"><?php _e( 'File attachments:', 'wpcf7' ); ?></label>
-                        <?php if ( version_compare( $wp_version, '2.7', '<' ) ) : ?>
-                        <span style="color: #ff3300; margin-left: 0.5em;"><?php _e( '(You need WordPress 2.7 or greater to use this feature)', 'wpcf7' ); ?></span>
-                        <?php endif; ?>
                         <br />
 					<input type="text" id="wpcf7-mail-attachments" name="wpcf7-mail-attachments" class="wide" size="70" value="<?php echo htmlspecialchars( $cf->mail['attachments'] ); ?>" />
 				</div>
@@ -176,9 +170,6 @@
 				</div>
 				<div class="mail-field">
 					<label for="wpcf7-mail-2-attachments"><?php _e( 'File attachments:', 'wpcf7' ); ?></label>
-                        <?php if ( version_compare( $wp_version, '2.7', '<' ) ) : ?>
-                        <span style="color: #ff3300; margin-left: 0.5em;"><?php _e( '(You need WordPress 2.7 or greater to use this feature)', 'wpcf7' ); ?></span>
-                        <?php endif; ?>
                         <br />
 					<input type="text" id="wpcf7-mail-2-attachments" name="wpcf7-mail-2-attachments" class="wide" size="70" value="<?php echo htmlspecialchars( $cf->mail_2['attachments'] ); ?>" />
 				</div>
