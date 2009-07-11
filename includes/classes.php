@@ -298,6 +298,24 @@ class WPCF7_ContactForm {
 
 	/* Mail */
 
+	function mail( $files = array() ) {
+		global $wpcf7_posted_data;
+
+		$wpcf7_posted_data = $_POST;
+
+		if ( WPCF7_USE_PIPE )
+			$this->pipe_all_posted();
+
+		if ( wpcf7_compose_and_send_mail( $this->mail, $files ) ) {
+			if ( $this->mail_2['active'] )
+				wpcf7_compose_and_send_mail( $this->mail_2, $files );
+
+			return true;
+		}
+
+		return false;
+	}
+
 	function pipe_all_posted() {
 		global $wpcf7_posted_data;
 

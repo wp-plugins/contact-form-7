@@ -1,24 +1,5 @@
 <?php
 
-function wpcf7_mail( $contact_form, $files = array() ) {
-	global $wpcf7_posted_data;
-
-	$wpcf7_posted_data = $_POST;
-
-	if ( WPCF7_USE_PIPE ) {
-		$contact_form->pipe_all_posted();
-	}
-
-	if ( wpcf7_compose_and_send_mail( $contact_form->mail, $files ) ) {
-		if ( $contact_form->mail_2['active'] )
-			wpcf7_compose_and_send_mail( $contact_form->mail_2, $files );
-
-		return true;
-	}
-
-	return false;
-}
-
 function wpcf7_compose_and_send_mail( $mail_template, $attachments = array() ) {
 	$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
 	$callback = 'wpcf7_mail_callback';

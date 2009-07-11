@@ -204,7 +204,7 @@ function wpcf7_ajax_json_echo() {
 				$items['message'] = $wpcf7_contact_form->message( 'akismet_says_spam' );
 				$items['spam'] = true;
 
-			} elseif ( wpcf7_mail( $wpcf7_contact_form, $handled_uploads['files'] ) ) {
+			} elseif ( $wpcf7_contact_form->mail( $handled_uploads['files'] ) ) {
 				$items['mailSent'] = true;
 				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ok' );
 				$items['onSentOk'] = $on_sent_ok;
@@ -257,7 +257,7 @@ function wpcf7_process_nonajax_submitting() {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'accept_terms' ) );
 		} elseif ( $wpcf7_contact_form->akismet() ) { // Spam!
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
-		} elseif ( wpcf7_mail( $wpcf7_contact_form, $handled_uploads['files'] ) ) {
+		} elseif ( $wpcf7_contact_form->mail( $handled_uploads['files'] ) ) {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
 		} else {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'mail_sent_ng' ) );
