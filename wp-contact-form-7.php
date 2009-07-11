@@ -133,7 +133,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/akismet.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upload.php';
 
 if ( is_admin() )
@@ -201,7 +200,7 @@ function wpcf7_ajax_json_echo() {
 			} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
 				$items['message'] = $wpcf7_contact_form->message( 'accept_terms' );
 
-			} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
+			} elseif ( $wpcf7_contact_form->akismet() ) { // Spam!
 				$items['message'] = $wpcf7_contact_form->message( 'akismet_says_spam' );
 				$items['spam'] = true;
 
@@ -256,7 +255,7 @@ function wpcf7_process_nonajax_submitting() {
 			$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
 		} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'accept_terms' ) );
-		} elseif ( wpcf7_akismet( $wpcf7_contact_form ) ) { // Spam!
+		} elseif ( $wpcf7_contact_form->akismet() ) { // Spam!
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
 		} elseif ( wpcf7_mail( $wpcf7_contact_form, $handled_uploads['files'] ) ) {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
