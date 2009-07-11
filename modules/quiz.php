@@ -98,4 +98,51 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 
 add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
+
+/* Ajax echo filter */
+
+function wpcf7_quiz_ajax_echo_filter( $items ) {
+	global $wpcf7_contact_form;
+
+	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		return $items;
+
+	if ( ! is_array( $items ) )
+		return $items;
+
+	$fes = $wpcf7_contact_form->form_scan_shortcode(
+		array( 'type' => 'quiz' ) );
+
+	if ( empty( $fes ) )
+		return $items;
+
+	$refill = array();
+
+	foreach ( $fes as $fe ) {
+		$name = $fe['name'];
+		$pipes = $fe['pipes'];
+
+		if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+			$pipe = $pipes->random_pipe();
+			$question = $pipe->before;
+			$answer = $pipe->after;
+		} else {
+			// default quiz
+			$question = '1+1=?';
+			$answer = '2';
+		}
+
+		$answer = wpcf7_canonicalize( $answer );
+
+		$refill[$name] = array( $question, wp_hash( $answer, 'wpcf7_quiz' ) );
+	}
+
+	if ( ! empty( $refill ) )
+		$items['quiz'] = $refill;
+
+	return $items;
+}
+
+add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_echo_filter' );
+
 ?>
