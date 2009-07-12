@@ -18,6 +18,7 @@ class WPCF7_ContactForm {
 	var $scanned_form_tags;
 
 	var $posted_data;
+	var $uploaded_files;
 
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
@@ -300,7 +301,7 @@ class WPCF7_ContactForm {
 
 	/* Mail */
 
-	function mail( $files = array() ) {
+	function mail() {
 		$fes = $this->form_scan_shortcode();
 
 		foreach ( $fes as $fe ) {
@@ -315,9 +316,9 @@ class WPCF7_ContactForm {
 			$this->posted_data[$name] = $value;
 		}
 
-		if ( $this->compose_and_send_mail( $this->mail, $files ) ) {
+		if ( $this->compose_and_send_mail( $this->mail ) ) {
 			if ( $this->mail_2['active'] )
-				$this->compose_and_send_mail( $this->mail_2, $files );
+				$this->compose_and_send_mail( $this->mail_2 );
 
 			return true;
 		}
@@ -325,7 +326,7 @@ class WPCF7_ContactForm {
 		return false;
 	}
 
-	function compose_and_send_mail( $mail_template, $attachments = array() ) {
+	function compose_and_send_mail( $mail_template ) {
 		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
 		$callback = array( &$this, 'mail_callback' );
 
@@ -343,9 +344,9 @@ class WPCF7_ContactForm {
 			$mail_template['additional_headers'] );
 		$mail_headers .= trim( $mail_additional_headers ) . "\n";
 
-		if ( $attachments ) {
+		if ( $this->uploaded_files ) {
 			$for_this_mail = array();
-			foreach ( $attachments as $name => $path ) {
+			foreach ( $this->uploaded_files as $name => $path ) {
 				if ( false === strpos( $mail_template['attachments'], "[${name}]" ) )
 					continue;
 				$for_this_mail[] = $path;
