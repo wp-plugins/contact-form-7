@@ -225,6 +225,14 @@ class WPCF7_ContactForm {
 		return $result;
 	}
 
+	/* Acceptance */
+
+	function accepted() {
+		$accepted = true;
+
+		return apply_filters( 'wpcf7_acceptance', $accepted );
+	}
+
 	/* Akismet */
 
 	function akismet() {
@@ -511,23 +519,6 @@ class WPCF7_ContactForm {
 
 		$this->initial = true;
 		$this->id = null;
-	}
-
-	/* Misc */
-
-	function accepted() {
-		$fes = $this->form_scan_shortcode( array( 'type' => 'acceptance' ) );
-
-		$accepted = true;
-
-		foreach ( $fes as $fe ) {
-			$invert = (bool) preg_grep( '%^invert$%', $fe['options'] );
-
-			if ( $invert && $_POST[$fe['name']] || ! $invert && ! $_POST[$fe['name']] )
-				$accepted = false;
-		}
-
-		return $accepted;
 	}
 }
 

@@ -52,14 +52,28 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
 
 
-/* Validation filter */
+/* Acceptance filter */
 
-function wpcf7_acceptance_validation_filter( $result, $tag ) {
-	$_POST[$name] = $_POST[$name] ? 1 : 0;
+function wpcf7_acceptance_filter( $accepted ) {
+	global $wpcf7_contact_form;
 
-	return $result;
+	$fes = $wpcf7_contact_form->form_scan_shortcode( array( 'type' => 'acceptance' ) );
+
+	foreach ( $fes as $fe ) {
+		$name = $fe['name'];
+		$options = (array) $fe['options'];
+
+		$value = $_POST[$name] ? 1 : 0;
+
+		$invert = (bool) preg_grep( '%^invert$%', $options );
+
+		if ( $invert && $value || ! $invert && ! $value )
+			$accepted = false;
+	}
+
+	return $accepted;
 }
 
-add_filter( 'wpcf7_validate_acceptance', 'wpcf7_acceptance_validation_filter', 10, 2 );
+add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 ?>
