@@ -69,7 +69,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 		$selected = $selected ? ' selected="selected"' : '';
 
-		$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $value ) . '</option>';
+		$display = apply_filters( 'wpcf7_display_text', $value );
+
+		$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $display ) . '</option>';
 	}
 
 	if ( $multiple )

@@ -64,7 +64,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		$value = $values[0];
 	}
 
-	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
+	$display = apply_filters( 'wpcf7_display_text', $value );
+
+	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $display ) . '</textarea>';
 
 	$validation_error = '';
 	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
