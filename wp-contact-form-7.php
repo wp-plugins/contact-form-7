@@ -191,6 +191,8 @@ function wpcf7_ajax_json_echo() {
 				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ok' );
 				$items['onSentOk'] = $on_sent_ok;
 
+				do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
+
 			} else {
 				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ng' );
 			}
@@ -234,6 +236,8 @@ function wpcf7_process_nonajax_submitting() {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
 		} elseif ( $wpcf7_contact_form->mail() ) {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
+
+			do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
 		} else {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'mail_sent_ng' ) );
 		}
