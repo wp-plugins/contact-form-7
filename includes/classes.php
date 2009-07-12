@@ -17,6 +17,8 @@ class WPCF7_ContactForm {
 	var $responses_count = 0;
 	var $scanned_form_tags;
 
+	var $posted_data;
+
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
 		if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
@@ -299,16 +301,23 @@ class WPCF7_ContactForm {
 	/* Mail */
 
 	function mail( $files = array() ) {
-		global $wpcf7_posted_data;
+		$fes = $this->form_scan_shortcode();
 
-		$wpcf7_posted_data = $_POST;
+		foreach ( $fes as $fe ) {
+			$name = $fe['name'];
+			$pipes = $fe['pipes'];
 
-		if ( WPCF7_USE_PIPE )
-			$this->pipe_all_posted();
+			$value = $_POST[$name];
 
-		if ( wpcf7_compose_and_send_mail( $this->mail, $files ) ) {
+			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() )
+				$value = $pipes->do_pipe( $value );
+
+			$this->posted_data[$name] = $value;
+		}
+
+		if ( $this->compose_and_send_mail( $this->mail, $files ) ) {
 			if ( $this->mail_2['active'] )
-				wpcf7_compose_and_send_mail( $this->mail_2, $files );
+				$this->compose_and_send_mail( $this->mail_2, $files );
 
 			return true;
 		}
@@ -316,19 +325,54 @@ class WPCF7_ContactForm {
 		return false;
 	}
 
-	function pipe_all_posted() {
-		global $wpcf7_posted_data;
+	function compose_and_send_mail( $mail_template, $attachments = array() ) {
+		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
+		$callback = array( &$this, 'mail_callback' );
 
-		$fes = $this->form_scan_shortcode();
+		$mail_subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
+		$mail_sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
+		$mail_body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+		$mail_recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
 
-		foreach ( $fes as $fe ) {
-			$name = $fe['name'];
-			$pipes = $fe['pipes'];
+		$mail_headers = "From: $mail_sender\n";
 
-			if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
-				if ( isset( $wpcf7_posted_data[$name] ) )
-					$wpcf7_posted_data[$name] = $pipes->do_pipe( $wpcf7_posted_data[$name] );
+		if ( $mail_template['use_html'] )
+			$mail_headers .= "Content-Type: text/html\n";
+
+		$mail_additional_headers = preg_replace_callback( $regex, $callback,
+			$mail_template['additional_headers'] );
+		$mail_headers .= trim( $mail_additional_headers ) . "\n";
+
+		if ( $attachments ) {
+			$for_this_mail = array();
+			foreach ( $attachments as $name => $path ) {
+				if ( false === strpos( $mail_template['attachments'], "[${name}]" ) )
+					continue;
+				$for_this_mail[] = $path;
 			}
+
+			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers,
+				$for_this_mail );
+		} else {
+			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers );
+		}
+	}
+
+	function mail_callback( $matches ) {
+		if ( isset( $this->posted_data[$matches[1]] ) ) {
+			$submitted = $this->posted_data[$matches[1]];
+
+			if ( is_array( $submitted ) )
+				$submitted = join( ', ', $submitted );
+
+			return stripslashes( $submitted );
+
+		} else {
+			// Special [wpcf7.remote_ip] tag
+			if ( 'wpcf7.remote_ip' == $matches[1] )
+				return preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
+
+			return $matches[0];
 		}
 	}
 

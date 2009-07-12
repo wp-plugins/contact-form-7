@@ -123,7 +123,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 
 if ( is_admin() )
@@ -136,8 +135,6 @@ function wpcf7_contact_forms() {
 
 	return $wpdb->get_results( "SELECT cf7_unit_id as id, title FROM $table_name" );
 }
-
-$wpcf7_posted_data = null;
 
 $wpcf7_contact_form = null;
 
