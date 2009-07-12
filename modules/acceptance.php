@@ -42,8 +42,11 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	$default_on = (bool) preg_grep( '/^default:on$/i', $options );
 
-	$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
+	if ( WPCF7_LOAD_JS )
+		$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
+
 	$checked = $default_on ? ' checked="checked"' : '';
+
 	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $onclick . $checked . ' />';
 
 	return $html;
