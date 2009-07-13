@@ -154,13 +154,6 @@ function wpcf7_ajax_json_echo() {
 		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
 			$validation = $wpcf7_contact_form->validate();
 
-			$on_sent_ok_settings = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
-			if ( ! empty( $on_sent_ok_settings ) ) {
-				$on_sent_ok = array_map( 'wpcf7_strip_quote', $on_sent_ok_settings );
-			} else {
-				$on_sent_ok = null;
-			}
-
 			$items = array(
 				'mailSent' => false,
 				'into' => '#' . $unit_tag,
@@ -189,6 +182,13 @@ function wpcf7_ajax_json_echo() {
 			} elseif ( $wpcf7_contact_form->mail() ) {
 				$items['mailSent'] = true;
 				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ok' );
+
+				$on_sent_ok = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
+				if ( ! empty( $on_sent_ok ) ) {
+					$on_sent_ok = array_map( 'wpcf7_strip_quote', $on_sent_ok );
+				} else {
+					$on_sent_ok = null;
+				}
 				$items['onSentOk'] = $on_sent_ok;
 
 				do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
