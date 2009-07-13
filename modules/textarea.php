@@ -15,6 +15,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
+	$content = $tag['content'];
 
 	$atts = '';
 	$id_att = '';
@@ -62,6 +63,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 			$value = $_POST[$name];
 	} else {
 		$value = $values[0];
+
+		if ( ! empty( $content ) )
+			$value = $content;
 	}
 
 	$display = apply_filters( 'wpcf7_display_text', $value );

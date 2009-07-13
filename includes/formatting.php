@@ -6,6 +6,7 @@ function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
 	$pee = $pee . "\n"; // just to make things a little easier, pad the end
 	$pee = preg_replace( '|<br />\s*<br />|', "\n\n", $pee );
 	// Space things out a little
+	/* wpcf7: removed select and input */
 	$allblocks = '(?:table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr)';
 	$pee = preg_replace( '!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee );
 	$pee = preg_replace( '!(</' . $allblocks . '>)!', "$1\n\n", $pee );
@@ -38,9 +39,9 @@ function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
 	if ( strpos( $pee, '<pre' ) !== false )
 		$pee = preg_replace_callback( '!(<pre[^>]*>)(.*?)</pre>!is', 'clean_pre', $pee );
 	$pee = preg_replace( "|\n</p>$|", '</p>', $pee );
-
+	/* wpcf7: replaced to wpcf7_get_shortcode_regex */
 	// don't auto-p wrap shortcodes that stand alone
-	$pee = preg_replace( '/<p>\s*?(' . get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee );
+	$pee = preg_replace( '/<p>\s*?(' . wpcf7_get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee );
 
 	return $pee;
 }

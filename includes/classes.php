@@ -59,9 +59,6 @@ class WPCF7_ContactForm {
 
 		$form .= '</div>';
 
-		if ( WPCF7_AUTOP )
-			$form = wpcf7_wpautop_substitute( $form );
-
 		return $form;
 	}
 
@@ -104,7 +101,12 @@ class WPCF7_ContactForm {
 	function form_do_shortcode() {
 		global $wpcf7_shortcode_manager;
 
-		$form = $wpcf7_shortcode_manager->do_shortcode( $this->form );
+		$form = $this->form;
+
+		if ( WPCF7_AUTOP )
+			$form = wpcf7_wpautop_substitute( $form );
+
+		$form = $wpcf7_shortcode_manager->do_shortcode( $form );
 		$this->scanned_form_tags = $wpcf7_shortcode_manager->scanned_tags;
 		return $form;
 	}

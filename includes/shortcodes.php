@@ -71,7 +71,9 @@ class WPCF7_ShortcodeManager {
 			$scanned_tag['attr'] = $attr;
 		}
 
-		$scanned_tag['content'] = $m[5];
+		$content = trim( $m[5] );
+		$content = preg_replace( "/<br\s*\/?>$/m", '', $content );
+		$scanned_tag['content'] = $content;
 
 		$this->scanned_tags[] = $scanned_tag;
 
@@ -125,6 +127,12 @@ function wpcf7_do_shortcode( $content ) {
 	global $wpcf7_shortcode_manager;
 
 	return $wpcf7_shortcode_manager->do_shortcode( $content );
+}
+
+function wpcf7_get_shortcode_regex() {
+	global $wpcf7_shortcode_manager;
+
+	return $wpcf7_shortcode_manager->get_shortcode_regex();
 }
 
 ?>
