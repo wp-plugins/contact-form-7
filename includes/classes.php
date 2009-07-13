@@ -318,8 +318,17 @@ class WPCF7_ContactForm {
 
 			$value = $_POST[$name];
 
-			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() )
-				$value = $pipes->do_pipe( $value );
+			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+				if ( is_array( $value) ) {
+					$new_value = array();
+					foreach ( $value as $v ) {
+						$new_value[] = $pipes->do_pipe( $v );
+					}
+					$value = $new_value;
+				} else {
+					$value = $pipes->do_pipe( $value );
+				}
+			}
 
 			$this->posted_data[$name] = $value;
 		}
