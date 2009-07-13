@@ -64,9 +64,15 @@ class WPCF7_ShortcodeManager {
 				$scanned_tag['options'] = $attr['options'];
 			}
 			$scanned_tag['raw_values'] = (array) $attr['values'];
-			$pipes = new WPCF7_Pipes( $scanned_tag['raw_values'] );
-			$scanned_tag['values'] = $pipes->collect_befores();
-			$scanned_tag['pipes'] = $pipes;
+
+			if ( WPCF7_USE_PIPE ) {
+				$pipes = new WPCF7_Pipes( $scanned_tag['raw_values'] );
+				$scanned_tag['values'] = $pipes->collect_befores();
+				$scanned_tag['pipes'] = $pipes;
+			} else {
+				$scanned_tag['values'] = $scanned_tag['raw_values'];
+			}
+
 		} else {
 			$scanned_tag['attr'] = $attr;
 		}
