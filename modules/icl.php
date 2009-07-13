@@ -27,15 +27,18 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 
 wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
-function icl_wpcf7_display_text_filter( $text ) {
-	$text = trim( $text );
-	return icl_wpcf7_translate( $text );
+function icl_wpcf7_display_text_filter( $text, $tag ) {
+	$options = (array) $tag['options'];
+	if ( ! in_array( 'icl', $options ) )
+		return $text;
+
+	return icl_wpcf7_translate( trim( $text ) );
 }
 
-add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter' );
+add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter', 10, 2 );
 
 function icl_wpcf7_translate( $text ) {
-	if ( ! function_exists( 'icl_t' ) )
+	if ( ! function_exists( 'icl_t' ) || empty( $text ) )
 		return $text;
 
 	return icl_t( 'Contact Form 7 - Form Text', $text );

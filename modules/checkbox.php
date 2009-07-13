@@ -85,7 +85,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		$checked = $checked ? ' checked="checked"' : '';
 
-		$display = apply_filters( 'wpcf7_display_text', $value );
+		$display = apply_filters( 'wpcf7_display_text', $value, $tag );
 
 		if ( $label_first ) { // put label first, input last
 			$item = '<span class="wpcf7-list-item-label">' . esc_html( $display ) . '</span>&nbsp;';

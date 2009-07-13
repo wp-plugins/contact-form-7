@@ -69,7 +69,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 		$selected = $selected ? ' selected="selected"' : '';
 
-		$display = apply_filters( 'wpcf7_display_text', $value );
+		$display = apply_filters( 'wpcf7_display_text', $value, $tag );
 
 		$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $display ) . '</option>';
 	}

@@ -68,7 +68,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 			$value = $content;
 	}
 
-	$display = apply_filters( 'wpcf7_display_text', $value );
+	$display = apply_filters( 'wpcf7_display_text', $value, $tag );
 
 	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $display ) . '</textarea>';
 
