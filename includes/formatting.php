@@ -1,6 +1,6 @@
 <?php
 
-function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
+function wpcf7_autop( $pee, $br = 1 ) {
 	if ( trim($pee) === '' )
 		return '';
 	$pee = $pee . "\n"; // just to make things a little easier, pad the end
@@ -30,7 +30,8 @@ function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
 	$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee );
 	$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee );
 	if ( $br ) {
-		$pee = preg_replace_callback( '/<(script|style).*?<\/\\1>/s', create_function( '$matches', 'return str_replace("\n", "<WPPreserveNewline />", $matches[0]);' ), $pee );
+		/* wpcf7: add textarea */
+		$pee = preg_replace_callback( '/<(script|style|textarea).*?<\/\\1>/s', create_function( '$matches', 'return str_replace("\n", "<WPPreserveNewline />", $matches[0]);' ), $pee );
 		$pee = preg_replace( '|(?<!<br />)\s*\n|', "<br />\n", $pee ); // optionally make line breaks
 		$pee = str_replace( '<WPPreserveNewline />', "\n", $pee );
 	}
@@ -39,9 +40,9 @@ function wpcf7_wpautop_substitute( $pee, $br = 1 ) {
 	if ( strpos( $pee, '<pre' ) !== false )
 		$pee = preg_replace_callback( '!(<pre[^>]*>)(.*?)</pre>!is', 'clean_pre', $pee );
 	$pee = preg_replace( "|\n</p>$|", '</p>', $pee );
-	/* wpcf7: replaced to wpcf7_get_shortcode_regex */
+	/* wpcf7: replaced to wpcf7_get_shortcode_regex ( -> comment out) */
 	// don't auto-p wrap shortcodes that stand alone
-	$pee = preg_replace( '/<p>\s*?(' . wpcf7_get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee );
+	// $pee = preg_replace( '/<p>\s*?(' . wpcf7_get_shortcode_regex() . ')\s*<\/p>/s', '$1', $pee );
 
 	return $pee;
 }

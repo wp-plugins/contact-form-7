@@ -103,11 +103,12 @@ class WPCF7_ContactForm {
 
 		$form = $this->form;
 
-		if ( WPCF7_AUTOP )
-			$form = wpcf7_wpautop_substitute( $form );
-
 		$form = $wpcf7_shortcode_manager->do_shortcode( $form );
 		$this->scanned_form_tags = $wpcf7_shortcode_manager->scanned_tags;
+
+		if ( WPCF7_AUTOP )
+			$form = wpcf7_autop( $form );
+
 		return $form;
 	}
 
