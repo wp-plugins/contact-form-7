@@ -27,6 +27,13 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 
 wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
+function icl_wpcf7_display_text_filter( $text ) {
+	$text = trim( $text );
+	return icl_wpcf7_translate( $text );
+}
+
+add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter' );
+
 function icl_wpcf7_translate( $text ) {
 	if ( ! function_exists( 'icl_t' ) )
 		return $text;
@@ -35,10 +42,18 @@ function icl_wpcf7_translate( $text ) {
 }
 
 function icl_wpcf7_collect_strings( &$contact_form ) {
-	$scanned = $contact_form->form_scan_shortcode( array( 'type' => 'icl' ) );
+	$scanned = $contact_form->form_scan_shortcode();
 
 	foreach ( $scanned as $tag ) {
 		if ( ! is_array( $tag ) )
+			continue;
+
+		$type = $tag['type'];
+		$options = (array) $tag['options'];
+		$values = (array) $tag['values'];
+		$content = $tag['content'];
+
+		if ( ! ('icl' == $type || in_array( 'icl', $options ) ) )
 			continue;
 
 		if ( is_array( $tag['values'] ) ) {
