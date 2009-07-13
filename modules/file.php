@@ -52,6 +52,23 @@ wpcf7_add_shortcode( 'file', 'wpcf7_file_shortcode_handler', true );
 wpcf7_add_shortcode( 'file*', 'wpcf7_file_shortcode_handler', true );
 
 
+/* Encode type filter */
+
+function wpcf7_file_form_enctype_filter( $enctype ) {
+	global $wpcf7_contact_form;
+
+	$multipart = (bool) $wpcf7_contact_form->form_scan_shortcode(
+		array( 'type' => array( 'file', 'file*' ) ) );
+
+	if ( $multipart )
+		$enctype = ' enctype="multipart/form-data"';
+
+	return $enctype;
+}
+
+add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
+
+
 /* Validation + upload handling filter */
 
 function wpcf7_file_validation_filter( $result, $tag ) {

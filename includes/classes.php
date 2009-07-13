@@ -39,10 +39,7 @@ class WPCF7_ContactForm {
 		$url = parse_url( $_SERVER['REQUEST_URI'] );
 		$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $this->unit_tag;
 
-		$multipart = (bool) $this->form_scan_shortcode(
-			array( 'type' => array( 'file', 'file*' ) ) );
-
-		$enctype = $multipart ? ' enctype="multipart/form-data"' : '';
+		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
 		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
 		$form .= '<div style="display: none;">';
