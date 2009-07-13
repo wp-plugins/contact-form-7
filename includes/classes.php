@@ -391,11 +391,14 @@ class WPCF7_ContactForm {
 
 	function message( $status ) {
 		$messages = $this->messages;
+		$message = '';
 
 		if ( ! is_array( $messages ) || ! isset( $messages[$status] ) )
-			return wpcf7_default_message( $status );
+			$message = wpcf7_default_message( $status );
+		else
+			$message = $messages[$status];
 
-		return $messages[$status];
+		return apply_filters( 'wpcf7_display_message', $message );
 	}
 
 	/* Additional settings */
