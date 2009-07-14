@@ -81,6 +81,8 @@ class WPCF7_ShortcodeManager {
 		$content = preg_replace( "/<br\s*\/?>$/m", '', $content );
 		$scanned_tag['content'] = $content;
 
+		$scanned_tag = apply_filters( 'wpcf7_form_tag', $scanned_tag );
+
 		$this->scanned_tags[] = $scanned_tag;
 
 		$func = $this->shortcode_tags[$tag]['function'];

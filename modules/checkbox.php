@@ -88,14 +88,17 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		$checked = $checked ? ' checked="checked"' : '';
 
-		$display = apply_filters( 'wpcf7_display_text', $value, $tag );
+		if ( is_array( $tag['labels'] ) && isset( $tag['labels'][$key] ) )
+			$label = $tag['labels'][$key];
+		else
+			$label = $value;
 
 		if ( $label_first ) { // put label first, input last
-			$item = '<span class="wpcf7-list-item-label">' . esc_html( $display ) . '</span>&nbsp;';
+			$item = '<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>&nbsp;';
 			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
 		} else {
 			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
-			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . esc_html( $display ) . '</span>';
+			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>';
 		}
 
 		if ( $use_label_element )

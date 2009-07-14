@@ -72,9 +72,12 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 		$selected = $selected ? ' selected="selected"' : '';
 
-		$display = apply_filters( 'wpcf7_display_text', $value, $tag );
+		if ( is_array( $tag['labels'] ) && isset( $tag['labels'][$key] ) )
+			$label = $tag['labels'][$key];
+		else
+			$label = $value;
 
-		$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $display ) . '</option>';
+		$html .= '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html( $label ) . '</option>';
 	}
 
 	if ( $multiple )

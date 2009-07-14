@@ -25,17 +25,37 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
 
-/* Form display text filter */
+/* Form tag filter */
 
-function icl_wpcf7_display_text_filter( $text, $tag ) {
-	$options = (array) $tag['options'];
-	if ( ! in_array( 'icl', $options ) )
-		return $text;
+function icl_wpcf7_form_tag_filter( $tag ) {
+	if ( ! is_array( $tag ) )
+		return $tag;
 
-	return icl_wpcf7_translate( trim( $text ), trim( $text ) );
+	$type = $tag['type'];
+	$options = $tag['options'];
+	$values = $tag['values'];
+	$content = $tag['content'];
+
+	if ( 'icl' != $type && ! in_array( 'icl', $options ) )
+		return $tag;
+
+	$new_values = array();
+	foreach ( $values as $key => $value ) {
+		$new_values[$key] = icl_wpcf7_translate( $value, $value );
+	}
+
+	if ( preg_match( '/^(?:text|email|textarea|captchar)[*]?$/', $type ) )
+		$tag['values'] = $new_values;
+	else
+		$tag['labels'] = $new_values;
+
+	$content = icl_wpcf7_translate( $content, $content );
+	$tag['content'] = $content;
+
+	return $tag;
 }
 
-add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter', 10, 2 );
+add_filter( 'wpcf7_form_tag', 'icl_wpcf7_form_tag_filter' );
 
 
 /* Message dispaly filter */
