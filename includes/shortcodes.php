@@ -85,12 +85,12 @@ class WPCF7_ShortcodeManager {
 
 		$func = $this->shortcode_tags[$tag]['function'];
 
-		$scanned_tag = apply_filters( 'wpcf7_form_tag', $scanned_tag );
-
-		if ( $this->exec )
+		if ( $this->exec ) {
+			$scanned_tag = apply_filters( 'wpcf7_form_tag', $scanned_tag );
 			return $m[1] . call_user_func( $func, $scanned_tag ) . $m[6];
-		else
+		} else {
 			return $m[0];
+		}
 	}
 
 	function shortcode_parse_atts( $text ) {
