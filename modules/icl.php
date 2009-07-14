@@ -22,7 +22,7 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 	return '';
 }
 
-wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler', true );
+wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
 
 /* Form display text filter */
@@ -76,7 +76,6 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 			continue;
 
 		$type = $tag['type'];
-		$name = $tag['name'];
 		$options = (array) $tag['options'];
 		$values = (array) $tag['values'];
 		$content = $tag['content'];
@@ -85,13 +84,12 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 			continue;
 
 		if ( ! empty( $content ) ) {
-			icl_wpcf7_register_string( $content, $name );
+			icl_wpcf7_register_string( $content );
 
 		} elseif ( ! empty( $values ) ) {
-			foreach ( $values as $key => $value ) {
+			foreach ( $values as $value ) {
 				$value = trim( $value );
-				$s_name = ( ! empty( $name ) ) ? $name . '_#' . $key : '';
-				icl_wpcf7_register_string( $value, $s_name );
+				icl_wpcf7_register_string( $value );
 			}
 		}
 	}
@@ -101,17 +99,15 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 	$messages = (array) $contact_form->messages;
 
 	$shortcode_manager = new WPCF7_ShortcodeManager();
-	$shortcode_manager->add_shortcode( 'icl', create_function( '$tag', 'return null;' ), true );
+	$shortcode_manager->add_shortcode( 'icl', create_function( '$tag', 'return null;' ) );
 
 	foreach ( $messages as $message ) {
 		$tags = $shortcode_manager->scan_shortcode( $message );
 		foreach ( $tags as $tag ) {
-			$s_name = ( ! empty( $tag['name'] ) ) ? $tag['name'] : '';
-			if ( ! empty( $tag["content"] ) ) {
-				icl_wpcf7_register_string( $tag["content"], $s_name, "Message" );
-			} elseif ( is_array( $tag["values"] ) && ! empty( $tag["values"] ) ) {
-				icl_wpcf7_register_string( $tag["values"][0], $s_name, "Message" );
+			foreach ( (array) $tag["values"] as $v ) {
+				icl_wpcf7_register_string( $v, "Message" );
 			}
+			icl_wpcf7_register_string( $tag["content"], "Message" );
 		}
 	}
 }
@@ -121,7 +117,7 @@ add_action( 'wpcf7_after_save', 'icl_wpcf7_collect_strings' );
 
 /* Functions */
 
-function icl_wpcf7_register_string( $value, $name, $section = "Form" ) {
+function icl_wpcf7_register_string( $value, $section = "Form" ) {
 	if ( ! function_exists( 'icl_register_string' ) )
 		return false;
 
@@ -129,11 +125,7 @@ function icl_wpcf7_register_string( $value, $name, $section = "Form" ) {
 	if ( empty( $value ) )
 		return false;
 
-	$name = trim( $name );
-	if ( empty( $name ) )
-		$name = $value;
-
-	icl_register_string( 'Contact Form 7 - ' . $section, $name, $value );
+	icl_register_string( 'Contact Form 7 - ' . $section, $value, $value );
 }
 
 function icl_wpcf7_translate( $text, $section = "Form" ) {
