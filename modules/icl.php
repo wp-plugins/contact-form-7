@@ -12,12 +12,12 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 
 	$content = trim( $tag['content'] );
 	if ( ! empty( $content ) )
-		return icl_wpcf7_translate( $content );
+		return icl_wpcf7_translate( $content, $content );
 
 	$values = (array) $tag['values'];
 	$value = trim( $values[0] );
 	if ( ! empty( $value ) )
-		return icl_wpcf7_translate( $value );
+		return icl_wpcf7_translate( $value, $value );
 
 	return '';
 }
@@ -32,7 +32,7 @@ function icl_wpcf7_display_text_filter( $text, $tag ) {
 	if ( ! in_array( 'icl', $options ) )
 		return $text;
 
-	return icl_wpcf7_translate( trim( $text ) );
+	return icl_wpcf7_translate( trim( $text ), trim( $text ) );
 }
 
 add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter', 10, 2 );
@@ -53,12 +53,12 @@ function icl_wpcf7_display_message_shortcode_handler( $tag ) {
 
 	$content = trim( $tag['content'] );
 	if ( ! empty( $content ) )
-		return icl_wpcf7_translate( $content, "Message" );
+		return icl_wpcf7_translate( $content, $content );
 
 	$values = (array) $tag['values'];
 	$value = trim( $values[0] );
 	if ( ! empty( $value ) )
-		return icl_wpcf7_translate( $value, "Message" );
+		return icl_wpcf7_translate( $value, $value );
 
 	return '';
 }
@@ -84,12 +84,12 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 			continue;
 
 		if ( ! empty( $content ) ) {
-			icl_wpcf7_register_string( $content );
+			icl_wpcf7_register_string( $content, $content );
 
 		} elseif ( ! empty( $values ) ) {
 			foreach ( $values as $value ) {
 				$value = trim( $value );
-				icl_wpcf7_register_string( $value );
+				icl_wpcf7_register_string( $value, $value );
 			}
 		}
 	}
@@ -105,9 +105,9 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 		$tags = $shortcode_manager->scan_shortcode( $message );
 		foreach ( $tags as $tag ) {
 			foreach ( (array) $tag["values"] as $v ) {
-				icl_wpcf7_register_string( $v, "Message" );
+				icl_wpcf7_register_string( $v, $v );
 			}
-			icl_wpcf7_register_string( $tag["content"], "Message" );
+			icl_wpcf7_register_string( $tag["content"], $tag["content"] );
 		}
 	}
 }
@@ -117,22 +117,29 @@ add_action( 'wpcf7_after_save', 'icl_wpcf7_collect_strings' );
 
 /* Functions */
 
-function icl_wpcf7_register_string( $value, $section = "Form" ) {
+function icl_wpcf7_register_string( $name, $value ) {
 	if ( ! function_exists( 'icl_register_string' ) )
 		return false;
+
+	$context = 'Contact Form 7';
 
 	$value = trim( $value );
 	if ( empty( $value ) )
 		return false;
 
-	icl_register_string( 'Contact Form 7 - ' . $section, $value, $value );
+	icl_register_string( $context, $name, $value );
 }
 
-function icl_wpcf7_translate( $text, $section = "Form" ) {
-	if ( ! function_exists( 'icl_t' ) || empty( $text ) )
-		return $text;
+function icl_wpcf7_translate( $name, $value = '' ) {
+	if ( ! function_exists( 'icl_t' ) )
+		return $value;
 
-	return icl_t( 'Contact Form 7 - ' . $section, $text );
+	if ( empty( $name ) )
+		return $value;
+
+	$context = 'Contact Form 7';
+
+	return icl_t( $context, $name, $value );
 }
 
 ?>
