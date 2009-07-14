@@ -16,6 +16,9 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$pipes = $tag['pipes'];
 
+	if ( empty( $name ) )
+		return '';
+
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
@@ -121,6 +124,9 @@ function wpcf7_quiz_ajax_echo_filter( $items ) {
 	foreach ( $fes as $fe ) {
 		$name = $fe['name'];
 		$pipes = $fe['pipes'];
+
+		if ( empty( $name ) )
+			continue;
 
 		if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
 			$pipe = $pipes->random_pipe();

@@ -16,6 +16,9 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
 
+	if ( empty( $name ) )
+		return '';
+
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
@@ -65,6 +68,9 @@ function wpcf7_acceptance_filter( $accepted ) {
 	foreach ( $fes as $fe ) {
 		$name = $fe['name'];
 		$options = (array) $fe['options'];
+
+		if ( empty( $name ) )
+			continue;
 
 		$value = $_POST[$name] ? 1 : 0;
 

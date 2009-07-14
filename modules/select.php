@@ -16,6 +16,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
 
+	if ( empty( $name ) )
+		return '';
+
 	$atts = '';
 	$id_att = '';
 	$class_att = '';

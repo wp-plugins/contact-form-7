@@ -218,6 +218,10 @@ class WPCF7_ContactForm {
 
 		foreach ( $fes as $fe ) {
 			$type = $fe['type'];
+			$name = $fe['name'];
+
+			if ( empty( $name ) )
+				continue;
 
 			$result = apply_filters( 'wpcf7_validate_' . $type, $result, $fe );
 		}
@@ -315,6 +319,9 @@ class WPCF7_ContactForm {
 		foreach ( $fes as $fe ) {
 			$name = $fe['name'];
 			$pipes = $fe['pipes'];
+
+			if ( empty( $name ) )
+				continue;
 
 			$value = $_POST[$name];
 

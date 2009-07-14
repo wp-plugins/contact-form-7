@@ -16,6 +16,9 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
 
+	if ( empty( $name ) )
+		return '';
+
 	$validation_error = '';
 	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
 		$validation_error = $wpcf7_contact_form->validation_error( $name );
@@ -148,6 +151,9 @@ function wpcf7_captcha_ajax_echo_filter( $items ) {
 	foreach ( $fes as $fe ) {
 		$name = $fe['name'];
 		$options = $fe['options'];
+
+		if ( empty( $name ) )
+			continue;
 
 		$op = wpcf7_captchac_options( $options );
 		if ( $filename = wpcf7_generate_captcha( $op ) ) {

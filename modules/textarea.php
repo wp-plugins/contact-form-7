@@ -17,6 +17,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$values = (array) $tag['values'];
 	$content = $tag['content'];
 
+	if ( empty( $name ) )
+		return '';
+
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
