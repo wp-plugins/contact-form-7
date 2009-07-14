@@ -62,25 +62,9 @@ add_filter( 'wpcf7_form_tag', 'icl_wpcf7_form_tag_filter' );
 
 function icl_wpcf7_display_message_filter( $message ) {
 	$shortcode_manager = new WPCF7_ShortcodeManager();
-	$shortcode_manager->add_shortcode( 'icl', 'icl_wpcf7_display_message_shortcode_handler' );
+	$shortcode_manager->add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler' );
 
 	return $shortcode_manager->do_shortcode( $message );
-}
-
-function icl_wpcf7_display_message_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
-		return '';
-
-	$content = trim( $tag['content'] );
-	if ( ! empty( $content ) )
-		return icl_wpcf7_translate( $content, $content );
-
-	$values = (array) $tag['values'];
-	$value = trim( $values[0] );
-	if ( ! empty( $value ) )
-		return icl_wpcf7_translate( $value, $value );
-
-	return '';
 }
 
 add_filter( 'wpcf7_display_message', 'icl_wpcf7_display_message_filter' );
