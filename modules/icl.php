@@ -42,13 +42,25 @@ add_filter( 'wpcf7_display_text', 'icl_wpcf7_display_text_filter', 10, 2 );
 
 function icl_wpcf7_display_message_filter( $message ) {
 	$shortcode_manager = new WPCF7_ShortcodeManager();
-	$shortcode_manager->add_shortcode( 'icl', create_function( '$tag',
-		'if ( ! empty( $tag["content"] ) )'
-		. ' return icl_wpcf7_translate( $tag["content"], "Message" );'
-		. ' if ( ! empty( $tag["values"] ) )'
-		. ' return icl_wpcf7_translate( $tag["values"][0], "Message" );' ) );
+	$shortcode_manager->add_shortcode( 'icl', 'icl_wpcf7_display_message_shortcode_handler' );
 
 	return $shortcode_manager->do_shortcode( $message );
+}
+
+function icl_wpcf7_display_message_shortcode_handler( $tag ) {
+	if ( ! is_array( $tag ) )
+		return '';
+
+	$content = trim( $tag['content'] );
+	if ( ! empty( $content ) )
+		return icl_wpcf7_translate( $content, "Message" );
+
+	$values = (array) $tag['values'];
+	$value = trim( $values[0] );
+	if ( ! empty( $value ) )
+		return icl_wpcf7_translate( $value, "Message" );
+
+	return '';
 }
 
 add_filter( 'wpcf7_display_message', 'icl_wpcf7_display_message_filter' );
@@ -71,15 +83,15 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 		if ( ! ('icl' == $type || in_array( 'icl', $options ) ) )
 			continue;
 
-		if ( is_array( $tag['values'] ) ) {
-			foreach ( $tag['values'] as $value ) {
+		if ( ! empty( $content ) ) {
+			icl_wpcf7_register_string( $content );
+
+		} elseif ( ! empty( $values ) ) {
+			foreach ( $values as $value ) {
 				$value = trim( $value );
 				icl_wpcf7_register_string( $value );
 			}
 		}
-
-		if ( ! empty( $tag['content'] ) )
-			icl_wpcf7_register_string( $tag['content'] );
 	}
 
 	/* From messages */
@@ -87,12 +99,16 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 	$messages = (array) $contact_form->messages;
 
 	$shortcode_manager = new WPCF7_ShortcodeManager();
-	$shortcode_manager->add_shortcode( 'icl', create_function( '$tag',
-		'foreach ( (array) $tag["values"] as $v ) { icl_wpcf7_register_string( $v, "Message" ); }'
-		. ' icl_wpcf7_register_string( $tag["content"], "Message" );' ) );
+	$shortcode_manager->add_shortcode( 'icl', create_function( '$tag', 'return null;' ) );
 
 	foreach ( $messages as $message ) {
-		$shortcode_manager->do_shortcode( $message );
+		$tags = $shortcode_manager->scan_shortcode( $message );
+		foreach ( $tags as $tag ) {
+			foreach ( (array) $tag["values"] as $v ) {
+				icl_wpcf7_register_string( $v, "Message" );
+			}
+			icl_wpcf7_register_string( $tag["content"], "Message" );
+		}
 	}
 }
 
