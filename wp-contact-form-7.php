@@ -336,8 +336,6 @@ if ( ! is_admin() && WPCF7_LOAD_JS )
 	add_action( 'init', 'wpcf7_enqueue_scripts' );
 
 function wpcf7_load_plugin_textdomain() { // l10n
-	global $wp_version;
-
 	load_plugin_textdomain( 'wpcf7',
 		'wp-content/plugins/contact-form-7/languages', 'contact-form-7/languages' );
 }
