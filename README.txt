@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://pledgie.com/campaigns/3117
 Tags: contact, contact form, email, ajax, captcha, akismet
 Requires at least: 2.7
-Tested up to: 2.8
+Tested up to: 2.9-rare
 Stable tag: 1.10.1
 
 Just another contact form plugin. Simple but flexible.
@@ -67,7 +67,7 @@ If you have created your own language pack, or have an update of an existing one
 1. Upload the entire `contact-form-7` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
-The control panel of Contact Form 7 is in 'Manage > Contact Form 7' (on WordPress 2.7 and greater, 'Tools > Contact Form 7'). Please note that it has moved from the 'Settings' menu since Contact Form 7 1.8.
+You will find 'Contact Form 7' menu in your WordPress admin panel.
 
 For basic usage, you can also have a look at the [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/) and [FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/).
 
