@@ -67,7 +67,7 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 			$new_values[$key] = icl_wpcf7_translate( $string_name, $value );
 		}
 
-		if ( preg_match( '/^(?:text|email|textarea|captchar)[*]?$/', $type ) )
+		if ( preg_match( '/^(?:text|email|textarea|captchar|submit)[*]?$/', $type ) )
 			$tag['values'] = $new_values;
 		else
 			$tag['labels'] = $new_values;
