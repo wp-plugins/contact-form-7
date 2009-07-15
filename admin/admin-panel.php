@@ -3,7 +3,7 @@
     <h2><?php _e( 'Contact Form 7', 'wpcf7' ); ?></h2>
     <?php wpcf7_donation_link(); ?>
     <?php if ( isset( $updated_message ) ) : ?>
-    <div id="message" class="updated fade"><p><strong><?php echo $updated_message; ?></strong></p></div>
+    <div id="message" class="updated fade"><p><?php echo $updated_message; ?></p></div>
     <?php endif; ?>
 
     <ul class="subsubsub">
