@@ -44,16 +44,26 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 	$values = (array) $tag['values'];
 	$content = $tag['content'];
 
-	if ( 'icl' == $type || empty( $name ) )
+	$icl_option = array();
+	foreach ( $options as $option ) {
+		if ( 'icl' == $option ) {
+			$icl_option = array( 'icl', null );
+			break;
+		} elseif ( preg_match( '/^icl:(.+)$/', $option, $matches ) ) {
+			$icl_option = array( 'icl', $matches[1] );
+			break;
+		}
+	}
+
+	if ( ! ('icl' == $type || $icl_option ) )
 		return $tag;
 
-	if ( ! in_array( 'icl', $options ) )
-		return $tag;
+	$str_id = $icl_option[1] ? $icl_option[1] : $name;
 
 	if ( ! empty( $values ) ) {
 		$new_values = array();
 		foreach ( $values as $key => $value ) {
-			$string_name = icl_wpcf7_string_name( $value, $name, $key );
+			$string_name = icl_wpcf7_string_name( $value, $str_id, $key );
 			$new_values[$key] = icl_wpcf7_translate( $string_name, $value );
 		}
 
@@ -66,7 +76,7 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 	$content = trim( $content );
 
 	if ( ! empty( $content ) ) {
-		$string_name = icl_wpcf7_string_name( $content, $name );
+		$string_name = icl_wpcf7_string_name( $content, $str_id );
 		$content = icl_wpcf7_translate( $string_name, $content );
 		$tag['content'] = $content;
 	}
@@ -104,17 +114,30 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 		$values = (array) $tag['values'];
 		$content = $tag['content'];
 
-		if ( ! ('icl' == $type || in_array( 'icl', $options ) ) )
+		$icl_option = array();
+		foreach ( $options as $option ) {
+			if ( 'icl' == $option ) {
+				$icl_option = array( 'icl', null );
+				break;
+			} elseif ( preg_match( '/^icl:(.+)$/', $option, $matches ) ) {
+				$icl_option = array( 'icl', $matches[1] );
+				break;
+			}
+		}
+
+		if ( ! ('icl' == $type || $icl_option ) )
 			continue;
 
+		$str_id = $icl_option[1] ? $icl_option[1] : $name;
+
 		if ( ! empty( $content ) ) {
-			$string_name = icl_wpcf7_string_name( $content, $name );
+			$string_name = icl_wpcf7_string_name( $content, $str_id );
 			icl_wpcf7_register_string( $string_name, $content );
 
 		} elseif ( ! empty( $values ) ) {
 			foreach ( $values as $key => $value ) {
 				$value = trim( $value );
-				$string_name = icl_wpcf7_string_name( $value, $name, $key );
+				$string_name = icl_wpcf7_string_name( $value, $str_id, $key );
 				icl_wpcf7_register_string( $string_name, $value );
 			}
 		}
