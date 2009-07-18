@@ -285,7 +285,7 @@ function wpcf7_install() {
 				), array( '%d', '%s', '%s', '%s', '%s', '%s', '%s' ) );
 		}
 
-		delete_option( 'wpcf7' );
+		// delete_option( 'wpcf7' ); // Comment out for downgrading case for a while
 	} else {
 		wpcf7_load_plugin_textdomain();
 
