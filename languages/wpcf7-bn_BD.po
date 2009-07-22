@@ -1,0 +1,437 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-01 05:19+0900\n"
+"PO-Revision-Date: 2009-07-22 22:03+0900\n"
+"Last-Translator: \n"
+"Language-Team: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:413
+msgid "Contact form"
+msgstr "যোগাযোগ ফরম"
+
+#: contact-form-7/wp-contact-form-7.php:582
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "যোগাযোগ ফরম ৭"
+
+#: contact-form-7/wp-contact-form-7.php:605
+msgid "optional"
+msgstr "ঐচ্ছিক"
+
+#: contact-form-7/wp-contact-form-7.php:606
+msgid "Generate Tag"
+msgstr "ট্যাগ তৈরী"
+
+#: contact-form-7/wp-contact-form-7.php:607
+msgid "Text field"
+msgstr "লেখার ফিল্ড"
+
+#: contact-form-7/wp-contact-form-7.php:608
+msgid "Email field"
+msgstr "ইমেইলের ফিল্ড"
+
+#: contact-form-7/wp-contact-form-7.php:609
+msgid "Text area"
+msgstr "লেখার এলাকা"
+
+#: contact-form-7/wp-contact-form-7.php:610
+msgid "Drop-down menu"
+msgstr "ড্রপ-ডাউন মেনু"
+
+#: contact-form-7/wp-contact-form-7.php:611
+msgid "Checkboxes"
+msgstr "চেক বক্স"
+
+#: contact-form-7/wp-contact-form-7.php:612
+msgid "Radio buttons"
+msgstr "রেডিও বাটন"
+
+#: contact-form-7/wp-contact-form-7.php:613
+msgid "Acceptance"
+msgstr "গ্রহনযোগ্যতা"
+
+#: contact-form-7/wp-contact-form-7.php:614
+msgid "Make this checkbox checked by default?"
+msgstr "ডিফল্ডের জন্য চেকবক্স নির্বাচন করুন?"
+
+#: contact-form-7/wp-contact-form-7.php:615
+msgid "Make this checkbox work inversely?"
+msgstr "বিপরীতের জন্য চেকবক্স নির্বাচন করুন?"
+
+#: contact-form-7/wp-contact-form-7.php:616
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "এটার মানে, দর্শনার্থী শর্তাবলী গ্রহন করেছে, আনচেক করুন।"
+
+#: contact-form-7/wp-contact-form-7.php:617
+msgid "CAPTCHA"
+msgstr "ক্যাপচা"
+
+#: contact-form-7/wp-contact-form-7.php:618
+msgid "Quiz"
+msgstr "কুইজ"
+
+#: contact-form-7/wp-contact-form-7.php:619
+msgid "Quizzes"
+msgstr "কুইজ"
+
+#: contact-form-7/wp-contact-form-7.php:620
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* কুইজ|উত্তর (উদাহারণ ১+২=?|২)"
+
+#: contact-form-7/wp-contact-form-7.php:621
+msgid "File upload"
+msgstr "ফাইল আপলোড"
+
+#: contact-form-7/wp-contact-form-7.php:622
+msgid "Submit button"
+msgstr "প্রেরিত বাটন"
+
+#: contact-form-7/wp-contact-form-7.php:623
+msgid "Name"
+msgstr "নাম"
+
+#: contact-form-7/wp-contact-form-7.php:624
+msgid "Required field?"
+msgstr "দরকারী ফিল্ড?"
+
+#: contact-form-7/wp-contact-form-7.php:625
+msgid "Allow multiple selections?"
+msgstr "একাধিক নির্বাচনের অনুমতি দিবেন?"
+
+#: contact-form-7/wp-contact-form-7.php:626
+msgid "Insert a blank item as the first option?"
+msgstr "প্রথমটির জন্য খালি অপশন রাখবেন?"
+
+#: contact-form-7/wp-contact-form-7.php:627
+msgid "Make checkboxes exclusive?"
+msgstr "চেকবক্স বর্জন করবেন?"
+
+#: contact-form-7/wp-contact-form-7.php:628
+msgid "Choices"
+msgstr "পছন্দ"
+
+#: contact-form-7/wp-contact-form-7.php:629
+msgid "Label"
+msgstr "মোড়ক"
+
+#: contact-form-7/wp-contact-form-7.php:630
+msgid "Default value"
+msgstr "ডিফল্ট মান"
+
+#: contact-form-7/wp-contact-form-7.php:631
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:632
+msgid "This field requires author's name"
+msgstr "লেখকের নাম এই ফিল্ডে আবশ্যক"
+
+#: contact-form-7/wp-contact-form-7.php:633
+msgid "This field requires author's URL"
+msgstr "লেখকের URL এই ফিল্ডে আবশ্যক"
+
+#: contact-form-7/wp-contact-form-7.php:634
+msgid "This field requires author's email address"
+msgstr "লেখকের ইমেইল এই ফিল্ডে আবশ্যক"
+
+#: contact-form-7/wp-contact-form-7.php:635
+msgid "Copy this code and paste it into the form left."
+msgstr "কোড কপি করে বামের ফিল্ডে পেষ্ট করুন।"
+
+#: contact-form-7/wp-contact-form-7.php:636
+msgid "Foreground color"
+msgstr "পুরোভূমির রঙ"
+
+#: contact-form-7/wp-contact-form-7.php:637
+msgid "Background color"
+msgstr "পটভূমির রঙ"
+
+#: contact-form-7/wp-contact-form-7.php:638
+msgid "Image size"
+msgstr "ছবির সাইজ"
+
+#: contact-form-7/wp-contact-form-7.php:639
+msgid "Small"
+msgstr "ছোট"
+
+#: contact-form-7/wp-contact-form-7.php:640
+msgid "Medium"
+msgstr "মধ্যম"
+
+#: contact-form-7/wp-contact-form-7.php:641
+msgid "Large"
+msgstr "বড়"
+
+#: contact-form-7/wp-contact-form-7.php:642
+msgid "Image settings"
+msgstr "ছবি সেটিংস"
+
+#: contact-form-7/wp-contact-form-7.php:643
+msgid "Input field settings"
+msgstr "সরবরাহ ফিল্ড সেটিংস"
+
+#: contact-form-7/wp-contact-form-7.php:644
+msgid "For image"
+msgstr "ছবির জন্য"
+
+#: contact-form-7/wp-contact-form-7.php:645
+msgid "For input field"
+msgstr "সরবরাহ ফিল্ডের জন্য"
+
+#: contact-form-7/wp-contact-form-7.php:646
+msgid "* One choice per line."
+msgstr "* প্রতি ফিল্ডের জন্য একটি পছন্দ"
+
+#: contact-form-7/wp-contact-form-7.php:647
+msgid "Show"
+msgstr "দেখাও"
+
+#: contact-form-7/wp-contact-form-7.php:648
+msgid "Hide"
+msgstr "লুকাও"
+
+#: contact-form-7/wp-contact-form-7.php:649
+msgid "File size limit"
+msgstr "ফাইল সাইজ সীমা"
+
+#: contact-form-7/wp-contact-form-7.php:650
+msgid "Acceptable file types"
+msgstr "গ্রহনযোগ্য ফাইল টাইপ"
+
+#: contact-form-7/wp-contact-form-7.php:676
+msgid "Contact form created."
+msgstr "যোগাযোগ ফরম তৈরী হয়েছে।"
+
+#: contact-form-7/wp-contact-form-7.php:679
+msgid "Contact form saved."
+msgstr "যোগাযোগ ফরম সংরক্ষণ করা হয়েছে।"
+
+#: contact-form-7/wp-contact-form-7.php:682
+msgid "Contact form deleted."
+msgstr "যোগাযোগ ফরম মুছে দেওয়া হয়েছে।"
+
+#: contact-form-7/wp-contact-form-7.php:693
+msgid "Untitled"
+msgstr "শিরোনামহীন"
+
+#: contact-form-7/wp-contact-form-7.php:720
+msgid "Your Name"
+msgstr "আপনার নাম"
+
+#: contact-form-7/wp-contact-form-7.php:720
+#: contact-form-7/wp-contact-form-7.php:722
+msgid "(required)"
+msgstr "(আবশ্যক)"
+
+#: contact-form-7/wp-contact-form-7.php:722
+msgid "Your Email"
+msgstr "আপনার ইমেইল"
+
+#: contact-form-7/wp-contact-form-7.php:724
+msgid "Subject"
+msgstr "বিষয়"
+
+#: contact-form-7/wp-contact-form-7.php:726
+msgid "Your Message"
+msgstr "আপনার বার্তা"
+
+#: contact-form-7/wp-contact-form-7.php:728
+#: contact-form-7/wp-contact-form-7.php:1451
+msgid "Send"
+msgstr "পাঠান"
+
+#: contact-form-7/wp-contact-form-7.php:782
+msgid "Your message was sent successfully. Thanks."
+msgstr "আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে। ধন্যবাদ।"
+
+#: contact-form-7/wp-contact-form-7.php:784
+#: contact-form-7/wp-contact-form-7.php:786
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "আপনার বার্তা পাঠানো যায় নি। দয়া করে আবার চেষ্টা করুন অথবা এ্যডমিনের সাথে যোগাযোগ করুন।"
+
+#: contact-form-7/wp-contact-form-7.php:788
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "ভ্যলিডেশনে ত্রুটি ধরা পড়েছে। দয়া করে ফিল্ড নিশ্চিত করে আবার চেষ্টা করুন।"
+
+#: contact-form-7/wp-contact-form-7.php:790
+msgid "Please accept the terms to proceed."
+msgstr "দয়া করে এই শর্তগুলো গ্রহণ করুন"
+
+#: contact-form-7/wp-contact-form-7.php:792
+msgid "Email address seems invalid."
+msgstr "আপনার ইমেইল মনে হয় ভুল।"
+
+#: contact-form-7/wp-contact-form-7.php:794
+msgid "Please fill the required field."
+msgstr "দয়া করে আবশ্যক ফিল্ড পূরণ করুন।"
+
+#: contact-form-7/wp-contact-form-7.php:796
+msgid "Your entered code is incorrect."
+msgstr "আপনার লেখা কোডটি ভুল।"
+
+#: contact-form-7/wp-contact-form-7.php:798
+msgid "Your answer is not correct."
+msgstr "আপনার উত্তর সঠিক নয়।"
+
+#: contact-form-7/wp-contact-form-7.php:800
+msgid "Failed to upload file."
+msgstr "আপলোড করা সফল হয় নি।"
+
+#: contact-form-7/wp-contact-form-7.php:802
+msgid "This file type is not allowed."
+msgstr "এই ফাইলটি সমর্থনযোগ্য নয়"
+
+#: contact-form-7/wp-contact-form-7.php:804
+msgid "This file is too large."
+msgstr "ফাইলটি বড়।"
+
+#: contact-form-7/includes/admin-panel.php:20
+msgid "Add new"
+msgstr "নতুন যোগ করুন"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "এই কোড গুলো কপি করে আপনার পোস্টে, পেজে কা টেক্স উইডগেটে পোস্ট করুন"
+
+#: contact-form-7/includes/admin-panel.php:49
+#: contact-form-7/includes/admin-panel.php:257
+msgid "Save"
+msgstr "সংরক্ষণ"
+
+#: contact-form-7/includes/admin-panel.php:55
+msgid "Delete this contact form"
+msgstr "এই যোগাযোগ ফরম মুছে ফেলুন"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"আপনি যোগাযোগ ফরম মুছে ফেলছেন।.\n"
+" বন্ধের জন্য ‘বন্ধ’করুন এবং মোছার জন্য ‘ওকে’ করুন।"
+
+#: contact-form-7/includes/admin-panel.php:70
+msgid "Form"
+msgstr "প্রেরক"
+
+#: contact-form-7/includes/admin-panel.php:90
+msgid "Mail"
+msgstr "মেইল"
+
+#: contact-form-7/includes/admin-panel.php:97
+#: contact-form-7/includes/admin-panel.php:149
+msgid "To:"
+msgstr "প্রতি:"
+
+#: contact-form-7/includes/admin-panel.php:101
+#: contact-form-7/includes/admin-panel.php:153
+msgid "From:"
+msgstr "প্রেরক:"
+
+#: contact-form-7/includes/admin-panel.php:105
+#: contact-form-7/includes/admin-panel.php:157
+msgid "Subject:"
+msgstr "বিষয়:"
+
+#: contact-form-7/includes/admin-panel.php:110
+#: contact-form-7/includes/admin-panel.php:162
+msgid "File attachments:"
+msgstr "ফাইল সংযুক্তি:"
+
+#: contact-form-7/includes/admin-panel.php:112
+#: contact-form-7/includes/admin-panel.php:164
+msgid "(You need WordPress 2.7 or greater to use this feature)"
+msgstr "(আপনার ওয়ার্ডপ্রেস ২.৭ বা তার পরের সংস্করণ দরকার)"
+
+#: contact-form-7/includes/admin-panel.php:120
+#: contact-form-7/includes/admin-panel.php:172
+msgid "Use HTML content type"
+msgstr "HTML বিষয় ব্যবহার"
+
+#: contact-form-7/includes/admin-panel.php:125
+#: contact-form-7/includes/admin-panel.php:177
+msgid "Message body:"
+msgstr "বার্তা লেখার যায়গা:"
+
+#: contact-form-7/includes/admin-panel.php:136
+msgid "Mail (2)"
+msgstr "ইমেইল (২)"
+
+#: contact-form-7/includes/admin-panel.php:143
+msgid "Use mail (2)"
+msgstr "ব্যবহার মেইল (২)"
+
+#: contact-form-7/includes/admin-panel.php:188
+msgid "Messages"
+msgstr "বার্তা"
+
+#: contact-form-7/includes/admin-panel.php:196
+msgid "Sender's message was sent successfully"
+msgstr "আপনার বার্তাটি সফলতার সাথে পাঠানো হয়েছে।"
+
+#: contact-form-7/includes/admin-panel.php:200
+msgid "Sender's message was failed to send"
+msgstr "আপনার বার্তাটি পাঠানো যায়নি।"
+
+#: contact-form-7/includes/admin-panel.php:204
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet এর হিসাবে এটি স্প্যাম হিসাবে গণ্য হবে।"
+
+#: contact-form-7/includes/admin-panel.php:208
+msgid "Validation errors occurred"
+msgstr "ভ্যলিডেশনে ত্রুটি ধরা পড়েছে"
+
+#: contact-form-7/includes/admin-panel.php:212
+msgid "There is a field that sender is needed to fill in"
+msgstr "প্রেরকের পূরণ করা দরকার এমন ফিল্ড খালি আছে"
+
+#: contact-form-7/includes/admin-panel.php:216
+msgid "Email address that sender entered is invalid"
+msgstr "প্রেরকের ইমেইল ঠিকানা সঠিক নয়"
+
+#: contact-form-7/includes/admin-panel.php:220
+msgid "There is a field of term that sender is needed to accept"
+msgstr "এমন কিছু ফিল্ড আছে যেগুলো প্রেরকের গ্রহণ করা দরকার"
+
+#: contact-form-7/includes/admin-panel.php:224
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "প্রেরকের কুইজের সঠিক উত্তর দেয় নি"
+
+#: contact-form-7/includes/admin-panel.php:228
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "প্রেরকের লেখা ক্যাপচা কোড সঠিক নয়"
+
+#: contact-form-7/includes/admin-panel.php:232
+msgid "Uploading a file fails for any reason"
+msgstr "অন্য কোন কারণে আপলোড সফল হয় নি"
+
+#: contact-form-7/includes/admin-panel.php:236
+msgid "Uploaded file is not allowed file type"
+msgstr "আপলোড করা ফাইলটি সমর্থনযোগ্য নয়"
+
+#: contact-form-7/includes/admin-panel.php:240
+msgid "Uploaded file is too large"
+msgstr "আপলোড করা ফাইল বড় হয়েছে"
+
+#~ msgid "Form content"
+#~ msgstr "Contenido del formulario"
+#~ msgid "Mail template"
+#~ msgstr "Plantilla del email"
+#~ msgid "Sender field:"
+#~ msgstr "Campo de remitente:"
+#~ msgid "Recipient address:"
+#~ msgstr "Dirección del destinatario:"
+#~ msgid "Insert"
+#~ msgstr "Insertar"
+

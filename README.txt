@@ -20,6 +20,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/) and Muhammed Lardi
+* Bangla (bn_BD) - [S. M. Mehdi Akram](http://www.shamokaldarpon.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/) (updated by [Henrique Vianna](http://henriquevianna.com/))
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
