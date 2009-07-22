@@ -1,4 +1,23 @@
-<div class="wrap wpcf7">
+<?php
+
+/* No table warning */
+if ( ! wpcf7_table_exists() ) {
+	$no_table_error = sprintf(
+		__( 'The plugin data table does not exist. You probably need to <strong><a href="%s">reactivate</a></strong> the plugin to create it.', 'wpcf7' ),
+		admin_url( 'plugins.php' ) );
+?>
+	<div class="wrap">
+	<?php screen_icon( 'tools' ); ?>
+	<h2><?php _e( 'Contact Form 7', 'wpcf7' ); ?></h2>
+	<div id="message" class="updated fade">
+	<p><?php echo $no_table_error; ?></p>
+	</div>
+	</div>
+<?php
+	return;
+}
+
+?><div class="wrap wpcf7">
 
 	<?php screen_icon( 'tools' ); ?>
 

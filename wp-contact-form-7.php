@@ -81,6 +81,14 @@ function wpcf7_table_name() {
 	return $wpdb->prefix . "contact_form_7";
 }
 
+function wpcf7_table_exists() {
+	global $wpdb;
+
+	$table_name = wpcf7_table_name();
+
+	return $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name;
+}
+
 // Pre-2.8 compatibility
 if ( ! function_exists( 'esc_js' ) ) {
 	function esc_js( $text ) {

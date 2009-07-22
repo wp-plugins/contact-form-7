@@ -245,10 +245,10 @@ function wpcf7_admin_management_page() {
 function wpcf7_install() {
 	global $wpdb;
 
-	$table_name = wpcf7_table_name();
-
-	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name )
+	if ( wpcf7_table_exists() )
 		return; // Exists already
+
+	$table_name = wpcf7_table_name();
 
 	$charset_collate = '';
 	if ( $wpdb->has_cap( 'collation' ) ) {
@@ -268,7 +268,7 @@ function wpcf7_install() {
 		additional_settings text NOT NULL,
 		PRIMARY KEY (cf7_unit_id)) $charset_collate;" );
 
-	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name )
+	if ( ! wpcf7_table_exists() )
 		return false; // Failed to create
 
 	$legacy_data = get_option( 'wpcf7' );
