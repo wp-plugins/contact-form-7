@@ -99,7 +99,7 @@ function wpcf7_admin_add_pages() {
 		exit();
 	}
 
-	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact Form 7', 'wpcf7' ),
+	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
 		WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
 
 	add_submenu_page( __FILE__, __( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
