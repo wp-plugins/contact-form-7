@@ -32,7 +32,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/) (updated by [Martin Hein](http://www.split-a-pixel.nl/))
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee)
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/)
-* French (fr_FR) - [Jillij](http://www.jillij.com/)
+* French (fr_FR) - [Jillij](http://www.jillij.com/) (updated by [Maître Mô](http://maitremo.fr/))
 * Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de) (updated by [Ivan Graf](http://blog.bildergallery.com/))
 * Greek (el) - [Nick Mouratidis](http://www.kepik.gr/) (updated by [Pr. friedlich](http://friedlich.wordpress.com/))
