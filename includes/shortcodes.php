@@ -42,7 +42,7 @@ class WPCF7_ShortcodeManager {
 		$tagnames = array_keys( $this->shortcode_tags );
 		$tagregexp = join( '|', array_map( 'preg_quote', $tagnames ) );
 
-		return '(.?)\[(' . $tagregexp . ')(?:\s(.*?))?(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)';
+		return '(.?)\[(' . $tagregexp . ')(?:\s(.*?))?(?:\s(\/))?\](?:(.+?)\[\/\2\])?(.?)';
 	}
 
 	function do_shortcode_tag( $m ) {
