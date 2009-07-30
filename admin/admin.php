@@ -5,9 +5,6 @@ function wpcf7_admin_has_edit_cap() {
 }
 
 function wpcf7_admin_add_pages() {
-	$base_url = admin_url( 'admin.php' );
-
-	$page = plugin_basename( __FILE__ );
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
 		$id = $_POST['wpcf7-id'];
@@ -55,8 +52,8 @@ function wpcf7_admin_add_pages() {
 		);
 		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
 
-		$redirect_to = $base_url . '?page=' . $page;
-		$redirect_to .= ( $contact_form->initial ) ? '&message=created' : '&message=saved';
+		$query = array();
+		$query['message'] = ( $contact_form->initial ) ? 'created' : 'saved';
 
 		$contact_form->title = $title;
 		$contact_form->form = $form;
@@ -67,25 +64,27 @@ function wpcf7_admin_add_pages() {
 
 		$contact_form->save();
 
-		$redirect_to .= '&contactform=' . $contact_form->id;
-
+		$query['contactform'] = $contact_form->id;
+		$redirect_to = wpcf7_admin_url( 'admin.php', $query );
 		wp_redirect( $redirect_to );
 		exit();
 	} elseif ( isset( $_POST['wpcf7-copy'] ) && wpcf7_admin_has_edit_cap() ) {
 		$id = $_POST['wpcf7-id'];
 		check_admin_referer( 'wpcf7-copy_' . $id );
 
-		$redirect_to = $base_url . '?page=' . $page;
+		$query = array();
 
 		if ( $contact_form = wpcf7_contact_form( $id ) ) {
 			$new_contact_form = $contact_form->copy();
 			$new_contact_form->save();
 
-			$redirect_to .= '&contactform=' . $new_contact_form->id . '&message=created';
+			$query['contactform'] = $new_contact_form->id;
+			$query['message'] = 'created';
 		} else {
-			$redirect_to .= '&contactform=' . $contact_form->id;
+			$query['contactform'] = $contact_form->id;
 		}
 
+		$redirect_to = wpcf7_admin_url( 'admin.php', $query );
 		wp_redirect( $redirect_to );
 		exit();
 	} elseif ( isset( $_POST['wpcf7-delete'] ) && wpcf7_admin_has_edit_cap() ) {
@@ -95,7 +94,8 @@ function wpcf7_admin_add_pages() {
 		if ( $contact_form = wpcf7_contact_form( $id ) )
 			$contact_form->delete();
 
-		wp_redirect( $base_url . '?page=' . $page . '&message=deleted' );
+		$redirect_to = wpcf7_admin_url( 'admin.php', array( 'message' => 'deleted' ) );
+		wp_redirect( $redirect_to );
 		exit();
 	}
 
@@ -205,10 +205,6 @@ add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 function wpcf7_admin_management_page() {
 	global $wp_version;
 
-	$base_url = admin_url( 'admin.php' );
-
-	$page = plugin_basename( __FILE__ );
-
 	switch ( $_GET['message'] ) {
 		case 'created':
 			$updated_message = __( 'Contact form created.', 'wpcf7' );
@@ -302,15 +298,29 @@ add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
 
 /* Misc */
 
+function wpcf7_admin_url( $file, $query = array() ) {
+	$file = trim( $file, ' /' );
+	if ( 'admin/' != substr( $file, 0, 6 ) )
+		$file = 'admin/' . $file;
+
+	$path = 'admin.php';
+	$path .= '?page=' . WPCF7_PLUGIN_NAME . '/' . $file;
+
+	if ( $query = build_query( $query ) )
+		$path .= '&' . $query;
+
+	$url = admin_url( $path );
+
+	return $url;
+}
+
 function wpcf7_plugin_action_links( $links, $file ) {
 	if ( $file != WPCF7_PLUGIN_BASENAME )
 		return $links;
 
-	$base_url = admin_url( 'admin.php' );
+	$url = wpcf7_admin_url( 'admin.php' );
 
-	$url = $base_url . '?page=' . plugin_basename( __FILE__ );
-
-	$settings_link = '<a href="' . $url . '">' . __('Settings') . '</a>';
+	$settings_link = '<a href="' . $url . '">' . esc_html( __( 'Settings', 'wpcf7' ) ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 
@@ -342,7 +352,7 @@ function wpcf7_donation_link() {
 <div class="donation">
 <p><a href="http://www.pledgie.com/campaigns/3117">
 <img alt="Click here to lend your support to: Support Contact Form 7 and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/3117.png?skin_name=chrome" border="0" width="149" height="37" /></a>
-<em><?php echo $text; ?></em>
+<em><?php echo esc_html( $text ); ?></em>
 </p>
 </div>
 <?php

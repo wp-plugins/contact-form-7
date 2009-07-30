@@ -39,6 +39,9 @@ if ( ! defined( 'WPCF7_PLUGIN_MODULES_DIR' ) )
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
+if ( ! defined( 'WPCF7_PLUGIN_NAME' ) )
+	define( 'WPCF7_PLUGIN_NAME', trim( dirname( WPCF7_PLUGIN_BASENAME ), '/' ) );
+
 if ( ! defined( 'WPCF7_LOAD_JS' ) )
 	define( 'WPCF7_LOAD_JS', true );
 
