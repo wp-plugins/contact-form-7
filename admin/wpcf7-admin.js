@@ -90,17 +90,6 @@ jQuery(document).ready(function() {
             }
         });
 
-        jQuery('.actions-link input').mouseover(function() {
-            jQuery(this).css({
-                'border-bottom': '1px solid'
-            });
-        });
-
-        jQuery('.actions-link input').mouseout(function() {
-            jQuery(this).css({
-                'border-bottom': 'none'
-            });
-        });
     } catch (e) {
     }
 });

@@ -57,7 +57,7 @@ div.actions-link input {
 	margin: 0;
 	border: none;
 	background-color: #fff;
-	font-size: smaller;
+	font-size: 11px;
 	cursor: pointer;
 }
 div.actions-link input.copy {
