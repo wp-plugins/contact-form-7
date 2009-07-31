@@ -97,6 +97,22 @@ function wpcf7_admin_add_pages() {
 		$redirect_to = wpcf7_admin_url( 'admin.php', array( 'message' => 'deleted' ) );
 		wp_redirect( $redirect_to );
 		exit();
+	} elseif ( isset( $_GET['wpcf7-create-table'] ) ) {
+		check_admin_referer( 'wpcf7-create-table' );
+
+		$query = array();
+
+		if ( ! wpcf7_table_exists() && current_user_can( 'activate_plugins' ) ) {
+			wpcf7_install();
+			if ( wpcf7_table_exists() ) {
+				$query['message'] = 'table_created';
+			} else {
+				$query['message'] = 'table_not_created';
+			}
+		}
+
+		wp_redirect( wpcf7_admin_url( 'admin.php', $query ) );
+		exit();
 	}
 
 	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
@@ -207,13 +223,19 @@ function wpcf7_admin_management_page() {
 
 	switch ( $_GET['message'] ) {
 		case 'created':
-			$updated_message = __( 'Contact form created.', 'wpcf7' );
+			$updated_message = __( "Contact form created.", 'wpcf7' );
 			break;
 		case 'saved':
-			$updated_message = __( 'Contact form saved.', 'wpcf7' );
+			$updated_message = __( "Contact form saved.", 'wpcf7' );
 			break;
 		case 'deleted':
-			$updated_message = __( 'Contact form deleted.', 'wpcf7' );
+			$updated_message = __( "Contact form deleted.", 'wpcf7' );
+			break;
+		case 'table_created':
+			$updated_message = __( "Database table created.", 'wpcf7' );
+			break;
+		case 'table_not_created':
+			$updated_message = __( "Failed to create database table.", 'wpcf7' );
 			break;
 	}
 

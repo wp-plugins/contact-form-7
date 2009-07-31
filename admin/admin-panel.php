@@ -2,15 +2,21 @@
 
 /* No table warning */
 if ( ! wpcf7_table_exists() ) {
-	$no_table_error = sprintf(
-		__( 'The plugin data table does not exist. You probably need to <strong><a href="%s">reactivate</a></strong> the plugin to create it.', 'wpcf7' ),
-		admin_url( 'plugins.php' ) );
+	if ( current_user_can( 'activate_plugins' ) ) {
+		$create_table_link_url = wpcf7_admin_url( 'admin.php', array( 'wpcf7-create-table' => 1 ) );
+		$create_table_link_url = wp_nonce_url( $create_table_link_url, 'wpcf7-create-table' );
+		$message = sprintf(
+			__( '<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href="%s">create the table</a> for it to work.', 'wpcf7' ),
+			$create_table_link_url );
+	} else {
+		$message = __( "<strong>The database table for Contact Form 7 does not exist.</strong>", 'wpcf7' );
+	}
 ?>
 	<div class="wrap">
 	<?php screen_icon( 'edit-pages' ); ?>
 	<h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
 	<div id="message" class="updated fade">
-	<p><?php echo $no_table_error; ?></p>
+	<p><?php echo $message; ?></p>
 	</div>
 	</div>
 <?php
