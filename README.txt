@@ -4,7 +4,7 @@ Donate link: http://pledgie.com/campaigns/3117
 Tags: contact, contact form, email, ajax, captcha, akismet
 Requires at least: 2.7
 Tested up to: 2.9-rare
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 Just another contact form plugin. Simple but flexible.
 
