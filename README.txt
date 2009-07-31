@@ -68,7 +68,7 @@ If you have created your own language pack, or have an update of an existing one
 1. Upload the entire `contact-form-7` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
-You will find 'Contact Form 7' menu in your WordPress admin panel.
+You will find 'Contact' menu in your WordPress admin panel.
 
 For basic usage, you can also have a look at the [plugin homepage](http://ideasilo.wordpress.com/2007/04/30/contact-form-7/) and [FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/).
 
