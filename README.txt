@@ -45,7 +45,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com) (plugin author)
 * Korean (ko_KR) - Seong Eun Lee (updated by [Jong-In Kim](http://incommunity.codex.kr/wordpress/))
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
-* Norwegian (nb_NO) - Kjetil M. Bergem
+* Norwegian (nb_NO) - Kjetil M. Bergem (updated by [aanvik.net](http://www.aanvik.net))
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
