@@ -119,13 +119,19 @@ function wpcf7_admin_add_pages() {
 		WPCF7_ADMIN_READ_CAPABILITY, wpcf7_plugin_path( 'admin/admin.php' ),
 		'wpcf7_admin_management_page' );
 
-	add_submenu_page( wpcf7_plugin_path( 'admin/admin.php' ),
-		__( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
+	wpcf7_add_contact_page( __( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
 		WPCF7_ADMIN_READ_CAPABILITY, wpcf7_plugin_path( 'admin/admin.php' ),
 		'wpcf7_admin_management_page' );
 }
 
-add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
+add_action( 'admin_menu', 'wpcf7_admin_add_pages', 9 );
+
+function wpcf7_add_contact_page( $page_title, $menu_title, $access_level,
+	$file, $function = '', $icon_url = '' ) {
+
+	add_submenu_page( wpcf7_plugin_path( 'admin/admin.php' ),
+		$page_title, $menu_title, $access_level, $file, $function = '', $icon_url = '' );
+}
 
 function wpcf7_admin_head() {
 	global $plugin_page;
