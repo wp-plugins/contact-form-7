@@ -27,20 +27,20 @@ Author URI: http://ideasilo.wordpress.com/
 
 define( 'WPCF7_VERSION', '2.0.1' );
 
-if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
-	define( 'WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) );
-
-if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
-	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) );
-
-if ( ! defined( 'WPCF7_PLUGIN_MODULES_DIR' ) )
-	define( 'WPCF7_PLUGIN_MODULES_DIR', WPCF7_PLUGIN_DIR . '/modules' );
-
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 if ( ! defined( 'WPCF7_PLUGIN_NAME' ) )
 	define( 'WPCF7_PLUGIN_NAME', trim( dirname( WPCF7_PLUGIN_BASENAME ), '/' ) );
+
+if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
+	define( 'WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . WPCF7_PLUGIN_NAME );
+
+if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
+	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . WPCF7_PLUGIN_NAME );
+
+if ( ! defined( 'WPCF7_PLUGIN_MODULES_DIR' ) )
+	define( 'WPCF7_PLUGIN_MODULES_DIR', WPCF7_PLUGIN_DIR . '/modules' );
 
 if ( ! defined( 'WPCF7_LOAD_JS' ) )
 	define( 'WPCF7_LOAD_JS', true );
@@ -64,18 +64,19 @@ if ( ! defined( 'WPCF7_ADMIN_READ_CAPABILITY' ) )
 if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
+function wpcf7_plugin_path( $path = '' ) {
+	return path_join( WPCF7_PLUGIN_DIR, trim( $path, '/' ) );
+}
+
 function wpcf7_plugin_url( $path = '' ) {
 	global $wp_version;
 
 	if ( version_compare( $wp_version, '2.8', '<' ) ) { // Using WordPress 2.7
-		$folder = dirname( plugin_basename( __FILE__ ) );
-		if ( '.' != $folder )
-			$path = path_join( ltrim( $folder, '/' ), $path );
-
+		$path = path_join( WPCF7_PLUGIN_NAME, $path );
 		return plugins_url( $path );
 	}
 
-	return plugins_url( $path, __FILE__ );
+	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
 }
 
 function wpcf7_table_name() {

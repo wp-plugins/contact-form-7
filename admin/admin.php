@@ -116,10 +116,13 @@ function wpcf7_admin_add_pages() {
 	}
 
 	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
-		WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
+		WPCF7_ADMIN_READ_CAPABILITY, wpcf7_plugin_path( 'admin/admin.php' ),
+		'wpcf7_admin_management_page' );
 
-	add_submenu_page( __FILE__, __( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
-		WPCF7_ADMIN_READ_CAPABILITY, __FILE__, 'wpcf7_admin_management_page' );
+	add_submenu_page( wpcf7_plugin_path( 'admin/admin.php' ),
+		__( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
+		WPCF7_ADMIN_READ_CAPABILITY, wpcf7_plugin_path( 'admin/admin.php' ),
+		'wpcf7_admin_management_page' );
 }
 
 add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
@@ -127,15 +130,16 @@ add_action( 'admin_menu', 'wpcf7_admin_add_pages' );
 function wpcf7_admin_head() {
 	global $plugin_page;
 
-	if ( isset( $plugin_page ) && $plugin_page == plugin_basename( __FILE__ ) ) {
+	if ( ! isset( $plugin_page ) || 0 !== strpos( $plugin_page, WPCF7_PLUGIN_NAME ) )
+		return;
 
-		$admin_stylesheet_url = wpcf7_plugin_url( 'admin/admin-stylesheet.css' );
-		echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
+	$admin_stylesheet_url = wpcf7_plugin_url( 'admin/admin-stylesheet.css' );
+	echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
 
-		if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-			$admin_stylesheet_rtl_url = wpcf7_plugin_url( 'admin/admin-stylesheet-rtl.css' );
-			echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
-		}
+	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
+		$admin_stylesheet_rtl_url = wpcf7_plugin_url( 'admin/admin-stylesheet-rtl.css' );
+		echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
+	}
 
 ?>
 <script type="text/javascript">
@@ -146,7 +150,6 @@ var _wpcf7 = {
 //]]>
 </script>
 <?php
-	}
 }
 
 add_action( 'admin_head', 'wpcf7_admin_head' );
