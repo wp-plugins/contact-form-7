@@ -48,7 +48,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Lithuanian(lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
 * Norwegian (nb_NO) - Kjetil M. Bergem (updated by [aanvik.net](http://www.aanvik.net))
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
-* Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/)
+* Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/) (updated by [Daniel Fruzynski](http://www.poradnik-webmastera.com))
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - [Dmitry Volotovich](http://www.volnov.com)
 * Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/)
