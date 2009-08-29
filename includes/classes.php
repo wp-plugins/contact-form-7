@@ -412,8 +412,9 @@ class WPCF7_ContactForm {
 
 		$messages = array(
 			'mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam', 'validation_error', 'accept_terms',
-			'invalid_email', 'invalid_required', 'captcha_not_match', 'upload_failed', 'upload_file_type_invalid',
-			'upload_file_too_large', 'quiz_answer_not_correct' );
+			'invalid_email', 'invalid_required', 'captcha_not_match', 'upload_failed',
+			'upload_file_type_invalid', 'upload_file_too_large', 'upload_failed_php_error',
+			'quiz_answer_not_correct' );
 
 		foreach ($messages as $message) {
 			if ( ! isset( $this->messages[$message] ) )

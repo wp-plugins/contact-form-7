@@ -299,6 +299,11 @@ if ( ! wpcf7_table_exists() ) {
 	<input type="text" id="wpcf7-message-upload-file-too-large" name="wpcf7-message-upload-file-too-large" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_file_too_large'] ); ?>" />
 	</div>
 
+	<div class="message-field">
+	<label for="wpcf7-message-upload-failed-php-error"><em># <?php echo esc_html( __( "Uploading a file fails for PHP error", 'wpcf7' ) ); ?></em></label><br />
+	<input type="text" id="wpcf7-message-upload-failed-php-error" name="wpcf7-message-upload-failed-php-error" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_failed_php_error'] ); ?>" />
+	</div>
+
 	</div>
 	</td>
 	</tr>

@@ -48,7 +48,8 @@ function wpcf7_admin_add_pages() {
 			'captcha_not_match' => trim( $_POST['wpcf7-message-captcha-not-match'] ),
 			'upload_failed' => trim( $_POST['wpcf7-message-upload-failed'] ),
 			'upload_file_type_invalid' => trim( $_POST['wpcf7-message-upload-file-type-invalid'] ),
-			'upload_file_too_large' => trim( $_POST['wpcf7-message-upload-file-too-large'] )
+			'upload_file_too_large' => trim( $_POST['wpcf7-message-upload-file-too-large'] ),
+			'upload_failed_php_error' => trim( $_POST['wpcf7-message-upload-failed-php-error'] )
 		);
 		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
 

@@ -26,6 +26,8 @@ function wpcf7_default_message( $status ) {
 			return __( 'This file type is not allowed.', 'wpcf7' );
 		case 'upload_file_too_large':
 			return __( 'This file is too large.', 'wpcf7' );
+		case 'upload_failed_php_error':
+			return __( 'Failed to upload file. Error occurred.', 'wpcf7' );
 	}
 }
 
