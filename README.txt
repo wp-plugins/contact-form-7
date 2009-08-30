@@ -78,7 +78,7 @@ For basic usage, you can also have a look at the [plugin homepage](http://ideasi
 Please see [FAQ](http://ideasilo.wordpress.com/2008/03/29/contact-form-7-faq/).
 
 If you have any further questions,
-please submit them [to the support forum](http://wordpress.org/tags/contact-form-7#postform).
+please submit them [to the support forum](http://wordpress.org/tags/contact-form-7?forum_id=10#postform).
 
 Attention: [Check your site before reporting trouble, please!](http://ideasilo.wordpress.com/2009/01/20/check-your-site-before-reporting-trouble-please/)
 
