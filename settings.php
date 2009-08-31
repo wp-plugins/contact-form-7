@@ -93,7 +93,7 @@ function wpcf7_ajax_json_echo() {
 			$items = array(
 				'mailSent' => false,
 				'into' => '#' . $unit_tag,
-				'captcha' => $captcha );
+				'captcha' => null );
 
 			$items = apply_filters( 'wpcf7_ajax_json_echo', $items );
 
