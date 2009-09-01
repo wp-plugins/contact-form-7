@@ -24,7 +24,7 @@ Since being published in August 2007, Contact Form 7 has been translated into a 
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/) (updated by [Henrique Vianna](http://henriquevianna.com/))
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
-* Catalan (ca_ES) - [Jordi Sancho](http://www.qasolutions.net/blog)
+* Catalan (ca) - [Jordi Sancho](http://www.qasolutions.net/blog) (updated by Robert Buj)
 * Chinese, Simplified (zh_CN) - [Soz](http://www.webtoolol.com/)
 * Chinese, Traditional (zh_TW) - [James Wu](http://jameswublog.com)
 * Croatian (hr) - [tolingo Translation Services](http://www.tolingo.com)
