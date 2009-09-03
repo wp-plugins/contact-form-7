@@ -83,7 +83,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 
 	$file = $_FILES[$name];
 
-	if ( $file['error'] ) {
+	if ( $file['error'] && UPLOAD_ERR_NO_FILE != $file['error'] ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = $wpcf7_contact_form->message( 'upload_failed_php_error' );
 		return $result;
