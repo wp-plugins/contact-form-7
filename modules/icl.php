@@ -42,6 +42,8 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
+	$raw_values = (array) $tag['raw_values'];
+	$pipes = $tag['pipes'];
 	$content = $tag['content'];
 
 	$icl_option = array();
@@ -60,18 +62,30 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 
 	$str_id = $icl_option[1] ? $icl_option[1] : $name;
 
-	if ( ! empty( $values ) ) {
-		$new_values = array();
+	$new_values = array();
+
+	if ( $raw_values && $pipes && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+		$new_raw_values = array();
+		foreach ( $raw_values as $key => $value ) {
+			$string_name = icl_wpcf7_string_name( $value, $str_id, $key );
+			$new_raw_values[$key] = icl_wpcf7_translate( $string_name, $value );
+		}
+
+		$new_pipes = new WPCF7_Pipes( $new_raw_values );
+		$new_values = $new_pipes->collect_befores();
+		$tag['pipes'] = $new_pipes;
+
+	} elseif ( $values ) {
 		foreach ( $values as $key => $value ) {
 			$string_name = icl_wpcf7_string_name( $value, $str_id, $key );
 			$new_values[$key] = icl_wpcf7_translate( $string_name, $value );
 		}
-
-		if ( preg_match( '/^(?:text|email|textarea|captchar|submit)[*]?$/', $type ) )
-			$tag['values'] = $new_values;
-		else
-			$tag['labels'] = $new_values;
 	}
+
+	if ( preg_match( '/^(?:text|email|textarea|captchar|submit)[*]?$/', $type ) )
+		$tag['labels'] = $tag['values'] = $new_values;
+	else
+		$tag['labels'] = $new_values;
 
 	$content = trim( $content );
 
@@ -111,7 +125,7 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 		$type = $tag['type'];
 		$name = $tag['name'];
 		$options = (array) $tag['options'];
-		$values = (array) $tag['values'];
+		$raw_values = (array) $tag['raw_values'];
 		$content = $tag['content'];
 
 		$icl_option = array();
@@ -134,8 +148,8 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 			$string_name = icl_wpcf7_string_name( $content, $str_id );
 			icl_wpcf7_register_string( $string_name, $content );
 
-		} elseif ( ! empty( $values ) ) {
-			foreach ( $values as $key => $value ) {
+		} elseif ( ! empty( $raw_values ) ) {
+			foreach ( $raw_values as $key => $value ) {
 				$value = trim( $value );
 				$string_name = icl_wpcf7_string_name( $value, $str_id, $key );
 				icl_wpcf7_register_string( $string_name, $value );

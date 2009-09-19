@@ -73,6 +73,8 @@ class WPCF7_ShortcodeManager {
 				$scanned_tag['values'] = $scanned_tag['raw_values'];
 			}
 
+			$scanned_tag['labels'] = $scanned_tag['values'];
+
 		} else {
 			$scanned_tag['attr'] = $attr;
 		}
