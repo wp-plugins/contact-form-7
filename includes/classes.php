@@ -434,13 +434,13 @@ class WPCF7_ContactForm {
 		$table_name = wpcf7_table_name();
 
 		if ( $this->initial ) {
-			$result = $wpdb->insert( $table_name, array(
+			$result = $wpdb->insert( $table_name, stripslashes_deep( array(
 				'title' => $this->title,
 				'form' => maybe_serialize( $this->form ),
 				'mail' => maybe_serialize( $this->mail ),
 				'mail_2' => maybe_serialize ( $this->mail_2 ),
 				'messages' => maybe_serialize( $this->messages ),
-				'additional_settings' => maybe_serialize( $this->additional_settings ) ) );
+				'additional_settings' => maybe_serialize( $this->additional_settings ) ) ) );
 
 			if ( $result ) {
 				$this->initial = false;
@@ -455,14 +455,14 @@ class WPCF7_ContactForm {
 			if ( ! (int) $this->id )
 				return false; // Missing ID
 
-			$result = $wpdb->update( $table_name, array(
+			$result = $wpdb->update( $table_name, stripslashes_deep( array(
 				'title' => $this->title,
 				'form' => maybe_serialize( $this->form ),
 				'mail' => maybe_serialize( $this->mail ),
 				'mail_2' => maybe_serialize ( $this->mail_2 ),
 				'messages' => maybe_serialize( $this->messages ),
 				'additional_settings' => maybe_serialize( $this->additional_settings )
-				), array( 'cf7_unit_id' => absint( $this->id) ) );
+				) ), array( 'cf7_unit_id' => absint( $this->id) ) );
 
 			if ( false !== $result ) {
 				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );
