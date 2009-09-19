@@ -73,10 +73,24 @@ function wpcf7_contact_forms() {
 }
 
 $wpcf7_contact_form = null;
-
+$wpcf7_request_uri = null;
 $wpcf7_processing_within = null;
 $wpcf7_unit_count = null;
 $wpcf7_widget_count = null;
+
+add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
+
+function wpcf7_set_request_uri() {
+	global $wpcf7_request_uri;
+
+	$wpcf7_request_uri = add_query_arg( array() );
+}
+
+function wpcf7_get_request_uri() {
+	global $wpcf7_request_uri;
+
+	return (string) $wpcf7_request_uri;
+}
 
 function wpcf7_ajax_json_echo() {
 	global $wpcf7_contact_form;

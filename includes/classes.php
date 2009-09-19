@@ -36,8 +36,12 @@ class WPCF7_ContactForm {
 	function form_html() {
 		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 
-		$url = parse_url( $_SERVER['REQUEST_URI'] );
-		$url = $url['path'] . ( empty( $url['query'] ) ? '' : '?' . $url['query'] ) . '#' . $this->unit_tag;
+		$url = wpcf7_get_request_uri();
+
+		if ( $frag = strstr( $uri, '#' ) )
+			$uri = substr( $uri, 0, -strlen( $frag ) );
+
+		$url .= '#' . $this->unit_tag;
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
