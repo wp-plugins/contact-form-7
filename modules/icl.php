@@ -3,6 +3,15 @@
 ** ICL module for ICanLocalize translation service
 **/
 
+function icl_wpcf7_wpml_available() {
+	global $sitepress;
+
+	return is_a( $sitepress, 'SitePress' );
+}
+
+if ( ! icl_wpcf7_wpml_available() )
+	return;
+
 /* Shortcode handler */
 
 function icl_wpcf7_shortcode_handler( $tag ) {
