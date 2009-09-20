@@ -15,6 +15,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
+	$labels = (array) $tag['labels'];
 
 	if ( empty( $name ) )
 		return '';
@@ -50,8 +51,10 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$include_blank = (bool) preg_grep( '%^include_blank$%', $options );
 
 	$empty_select = empty( $values );
-	if ( $empty_select || $include_blank )
+	if ( $empty_select || $include_blank ) {
+		array_unshift( $labels, '---' );
 		array_unshift( $values, '---' );
+	}
 
 	$html = '';
 
@@ -72,8 +75,8 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 		$selected = $selected ? ' selected="selected"' : '';
 
-		if ( is_array( $tag['labels'] ) && isset( $tag['labels'][$key] ) )
-			$label = $tag['labels'][$key];
+		if ( isset( $labels[$key] ) )
+			$label = $labels[$key];
 		else
 			$label = $value;
 

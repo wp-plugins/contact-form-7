@@ -15,6 +15,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
 	$values = (array) $tag['values'];
+	$labels = (array) $tag['labels'];
 
 	if ( empty( $name ) )
 		return '';
@@ -88,8 +89,8 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		$checked = $checked ? ' checked="checked"' : '';
 
-		if ( is_array( $tag['labels'] ) && isset( $tag['labels'][$key] ) )
-			$label = $tag['labels'][$key];
+		if ( isset( $labels[$key] ) )
+			$label = $labels[$key];
 		else
 			$label = $value;
 
