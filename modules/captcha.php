@@ -263,7 +263,7 @@ function wpcf7_cleanup_captcha_files() {
 			if ( ! preg_match( '/^[0-9]+\.(php|png|gif|jpeg)$/', $file ) )
 				continue;
 
-			$stat = stat( $dir . $file );
+			$stat = @stat( $dir . $file );
 			if ( $stat['mtime'] + 21600 < time() ) // 21600 secs == 6 hours
 				@unlink( $dir . $file );
 		}
