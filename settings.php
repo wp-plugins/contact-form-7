@@ -55,6 +55,12 @@ if ( ! function_exists( 'esc_sql' ) ) {
 	}
 }
 
+if ( ! function_exists( 'esc_url' ) ) {
+	function esc_url( $url, $protocols = null ) {
+		return clean_url( $url, $protocols, 'display' );
+	}
+}
+
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';

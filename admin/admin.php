@@ -353,7 +353,7 @@ function wpcf7_admin_url( $file, $query = array() ) {
 
 	$url = admin_url( $path );
 
-	return $url;
+	return esc_url( $url );
 }
 
 add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
@@ -364,7 +364,8 @@ function wpcf7_plugin_action_links( $links, $file ) {
 
 	$url = wpcf7_admin_url( 'admin.php' );
 
-	$settings_link = '<a href="' . $url . '">' . esc_html( __( 'Settings', 'wpcf7' ) ) . '</a>';
+	$settings_link = '<a href="' . esc_attr( $url ) . '">'
+		. esc_html( __( 'Settings', 'wpcf7' ) ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 
