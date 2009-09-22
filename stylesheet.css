@@ -53,3 +53,8 @@ span.wpcf7-list-item {
 .wpcf7-display-none {
 	display: none;
 }
+
+img.ajax-loader {
+	border: none;
+	vertical-align: middle;
+}
