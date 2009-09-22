@@ -176,7 +176,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 }
 
 if ( ! is_admin() && WPCF7_LOAD_JS )
-	add_action( 'init', 'wpcf7_enqueue_scripts' );
+	add_action( 'wp_print_scripts', 'wpcf7_enqueue_scripts' );
 
 function wpcf7_enqueue_scripts() {
 	$in_footer = true;

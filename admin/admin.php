@@ -171,21 +171,16 @@ var _wpcf7 = {
 <?php
 }
 
-add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
+add_action( 'admin_print_scripts', 'wpcf7_admin_enqueue_scripts' );
 
-function wpcf7_admin_load_js() {
-	global $pagenow;
+function wpcf7_admin_enqueue_scripts() {
+	global $plugin_page;
 
-	if ( ! is_admin() )
+	if ( ! isset( $plugin_page ) || 0 !== strpos( $plugin_page, WPCF7_PLUGIN_NAME ) )
 		return;
 
-	if ( 'admin.php' != $pagenow )
-		return;
-
-	if ( false === strpos( $_GET['page'], 'contact-form-7' ) )
-		return;
-
-	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/wpcf7-admin.js' ), array('jquery'), WPCF7_VERSION, true );
+	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/wpcf7-admin.js' ),
+		array('jquery'), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
