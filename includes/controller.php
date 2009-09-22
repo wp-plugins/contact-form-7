@@ -188,15 +188,15 @@ function wpcf7_enqueue_scripts() {
 }
 
 if ( WPCF7_LOAD_CSS )
-	add_action( 'wp_head', 'wpcf7_wp_head' );
+	add_action( 'wp_print_styles', 'wpcf7_enqueue_styles' );
 
-function wpcf7_wp_head() {
-	$stylesheet_url = wpcf7_plugin_url( 'stylesheet.css' );
-	echo '<link rel="stylesheet" href="' . $stylesheet_url . '" type="text/css" />';
+function wpcf7_enqueue_styles() {
+	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'stylesheet.css' ),
+		array(), WPCF7_VERSION, 'all' );
 
 	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-		$stylesheet_rtl_url = wpcf7_plugin_url( 'stylesheet-rtl.css' );
-		echo '<link rel="stylesheet" href="' . $stylesheet_rtl_url . '" type="text/css" />';
+		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'stylesheet-rtl.css' ),
+			array(), WPCF7_VERSION, 'all' );
 	}
 }
 

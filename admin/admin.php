@@ -4,6 +4,8 @@ function wpcf7_admin_has_edit_cap() {
 	return current_user_can( WPCF7_ADMIN_READ_WRITE_CAPABILITY );
 }
 
+add_action( 'admin_menu', 'wpcf7_admin_add_pages', 9 );
+
 function wpcf7_admin_add_pages() {
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
@@ -125,8 +127,6 @@ function wpcf7_admin_add_pages() {
 		'wpcf7_admin_management_page' );
 }
 
-add_action( 'admin_menu', 'wpcf7_admin_add_pages', 9 );
-
 function wpcf7_add_contact_page( $page_title, $menu_title, $access_level,
 	$file, $function = '', $icon_url = '' ) {
 
@@ -134,19 +134,31 @@ function wpcf7_add_contact_page( $page_title, $menu_title, $access_level,
 		$page_title, $menu_title, $access_level, $file, $function = '', $icon_url = '' );
 }
 
-function wpcf7_admin_head() {
+add_action( 'admin_print_styles', 'wpcf7_admin_enqueue_styles' );
+
+function wpcf7_admin_enqueue_styles() {
 	global $plugin_page;
 
 	if ( ! isset( $plugin_page ) || 0 !== strpos( $plugin_page, WPCF7_PLUGIN_NAME ) )
 		return;
 
-	$admin_stylesheet_url = wpcf7_plugin_url( 'admin/admin-stylesheet.css' );
-	echo '<link rel="stylesheet" href="' . $admin_stylesheet_url . '" type="text/css" />';
+	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/admin-stylesheet.css' ),
+		array(), WPCF7_VERSION, 'all' );
 
 	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-		$admin_stylesheet_rtl_url = wpcf7_plugin_url( 'admin/admin-stylesheet-rtl.css' );
-		echo '<link rel="stylesheet" href="' . $admin_stylesheet_rtl_url . '" type="text/css" />';
+		wp_enqueue_style( 'contact-form-7-admin-rtl',
+			wpcf7_plugin_url( 'admin/admin-stylesheet-rtl.css' ),
+			array(), WPCF7_VERSION, 'all' );
 	}
+}
+
+add_action( 'admin_head', 'wpcf7_admin_head' );
+
+function wpcf7_admin_head() {
+	global $plugin_page;
+
+	if ( ! isset( $plugin_page ) || 0 !== strpos( $plugin_page, WPCF7_PLUGIN_NAME ) )
+		return;
 
 ?>
 <script type="text/javascript">
@@ -159,7 +171,7 @@ var _wpcf7 = {
 <?php
 }
 
-add_action( 'admin_head', 'wpcf7_admin_head' );
+add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
 
 function wpcf7_admin_load_js() {
 	global $pagenow;
@@ -226,8 +238,6 @@ function wpcf7_admin_load_js() {
 	) );
 }
 
-add_action( 'wp_print_scripts', 'wpcf7_admin_load_js' );
-
 function wpcf7_admin_management_page() {
 	global $wp_version;
 
@@ -269,6 +279,8 @@ function wpcf7_admin_management_page() {
 }
 
 /* Install and default settings */
+
+add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
 
 function wpcf7_install() {
 	global $wpdb;
@@ -326,8 +338,6 @@ function wpcf7_install() {
 	}
 }
 
-add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
-
 /* Misc */
 
 function wpcf7_admin_url( $file, $query = array() ) {
@@ -346,6 +356,8 @@ function wpcf7_admin_url( $file, $query = array() ) {
 	return $url;
 }
 
+add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
+
 function wpcf7_plugin_action_links( $links, $file ) {
 	if ( $file != WPCF7_PLUGIN_BASENAME )
 		return $links;
@@ -358,8 +370,6 @@ function wpcf7_plugin_action_links( $links, $file ) {
 
 	return $links;
 }
-
-add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
 
 function wpcf7_donation_link() {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
