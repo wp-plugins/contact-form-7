@@ -43,14 +43,21 @@ class WPCF7_ContactForm {
 
 		$url .= '#' . $this->unit_tag;
 
+		$url = esc_url( $url );
+		$url = apply_filters( 'wpcf7_form_action_url', $url );
+
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
-		$form .= '<form action="' . $url . '" method="post" class="wpcf7-form"' . $enctype . '>';
-		$form .= '<div style="display: none;">';
-		$form .= '<input type="hidden" name="_wpcf7" value="' . $this->id . '" />';
-		$form .= '<input type="hidden" name="_wpcf7_version" value="' . WPCF7_VERSION . '" />';
-		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="' . $this->unit_tag . '" />';
-		$form .= '</div>';
+		$form .= '<form action="' . esc_attr( $url )
+			. '" method="post" class="wpcf7-form"' . $enctype . '>' . "\n";
+		$form .= '<div style="display: none;">' . "\n";
+		$form .= '<input type="hidden" name="_wpcf7" value="'
+			. esc_attr( $this->id ) . '" />' . "\n";
+		$form .= '<input type="hidden" name="_wpcf7_version" value="'
+			. esc_attr( WPCF7_VERSION ) . '" />' . "\n";
+		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="'
+			. esc_attr( $this->unit_tag ) . '" />' . "\n";
+		$form .= '</div>' . "\n";
 		$form .= $this->form_elements();
 
 		if ( ! $this->responses_count )
