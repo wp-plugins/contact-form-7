@@ -43,12 +43,12 @@ class WPCF7_ContactForm {
 
 		$url .= '#' . $this->unit_tag;
 
-		$url = esc_url( $url );
 		$url = apply_filters( 'wpcf7_form_action_url', $url );
+		$url = sanitize_url( $url );
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
-		$form .= '<form action="' . esc_attr( $url )
+		$form .= '<form action="' . $url
 			. '" method="post" class="wpcf7-form"' . $enctype . '>' . "\n";
 		$form .= '<div style="display: none;">' . "\n";
 		$form .= '<input type="hidden" name="_wpcf7" value="'

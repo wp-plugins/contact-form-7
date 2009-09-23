@@ -348,7 +348,7 @@ function wpcf7_admin_url( $file, $query = array() ) {
 
 	$url = admin_url( $path );
 
-	return esc_url( $url );
+	return sanitize_url( $url );
 }
 
 add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
