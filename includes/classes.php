@@ -440,14 +440,17 @@ class WPCF7_ContactForm {
 
 		$table_name = wpcf7_table_name();
 
+		$fields = array(
+			'title' => maybe_serialize( stripslashes_deep( $this->title ) ),
+			'form' => maybe_serialize( stripslashes_deep( $this->form ) ),
+			'mail' => maybe_serialize( stripslashes_deep( $this->mail ) ),
+			'mail_2' => maybe_serialize ( stripslashes_deep( $this->mail_2 ) ),
+			'messages' => maybe_serialize( stripslashes_deep( $this->messages ) ),
+			'additional_settings' =>
+				maybe_serialize( stripslashes_deep( $this->additional_settings ) ) );
+
 		if ( $this->initial ) {
-			$result = $wpdb->insert( $table_name, stripslashes_deep( array(
-				'title' => $this->title,
-				'form' => maybe_serialize( $this->form ),
-				'mail' => maybe_serialize( $this->mail ),
-				'mail_2' => maybe_serialize ( $this->mail_2 ),
-				'messages' => maybe_serialize( $this->messages ),
-				'additional_settings' => maybe_serialize( $this->additional_settings ) ) ) );
+			$result = $wpdb->insert( $table_name, $fields );
 
 			if ( $result ) {
 				$this->initial = false;
@@ -462,14 +465,8 @@ class WPCF7_ContactForm {
 			if ( ! (int) $this->id )
 				return false; // Missing ID
 
-			$result = $wpdb->update( $table_name, stripslashes_deep( array(
-				'title' => $this->title,
-				'form' => maybe_serialize( $this->form ),
-				'mail' => maybe_serialize( $this->mail ),
-				'mail_2' => maybe_serialize ( $this->mail_2 ),
-				'messages' => maybe_serialize( $this->messages ),
-				'additional_settings' => maybe_serialize( $this->additional_settings )
-				) ), array( 'cf7_unit_id' => absint( $this->id) ) );
+			$result = $wpdb->update( $table_name, $fields,
+				array( 'cf7_unit_id' => absint( $this->id) ) );
 
 			if ( false !== $result ) {
 				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );
