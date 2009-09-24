@@ -20,6 +20,8 @@ class WPCF7_ContactForm {
 	var $posted_data;
 	var $uploaded_files;
 
+	var $skip_mail = false;
+
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
 		if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
@@ -314,6 +316,9 @@ class WPCF7_ContactForm {
 		}
 
 		do_action_ref_array( 'wpcf7_before_send_mail', array( &$this ) );
+
+		if ( $this->skip_mail )
+			return true;
 
 		if ( $this->compose_and_send_mail( $this->mail ) ) {
 			if ( $this->mail_2['active'] )
