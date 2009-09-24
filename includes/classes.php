@@ -313,6 +313,8 @@ class WPCF7_ContactForm {
 			$this->posted_data[$name] = $value;
 		}
 
+		do_action_ref_array( 'wpcf7_before_send_mail', array( &$this ) );
+
 		if ( $this->compose_and_send_mail( $this->mail ) ) {
 			if ( $this->mail_2['active'] )
 				$this->compose_and_send_mail( $this->mail_2 );
