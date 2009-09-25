@@ -62,6 +62,10 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into Contact Form 7.
 
+= How to use Contact Form 7 in multilingual websites =
+
+Starting with version 2.0, Contact Form 7 can create multilingual contact form using the WPML plugin. See the detail on [WPML.org](http://wpml.org/wordpress-translation/translation-for-texts-by-other-plugins-and-themes/how-to-use-contact-form-7-in-multilingual-websites/).
+
 == Installation ==
 
 1. Upload the entire `contact-form-7` folder to the `/wp-content/plugins/` directory.
@@ -77,10 +81,6 @@ Please see [FAQ](http://contactform7.com/support/faq/).
 
 If you have any further questions,
 please submit them [to the support forum](http://wordpress.org/tags/contact-form-7?forum_id=10#postform).
-
-= How to use Contact Form 7 in multilingual websites =
-
-Starting with version 2.0, Contact Form 7 can create multilingual contact form using the WPML plugin. See the detail on [WPML.org](http://wpml.org/wordpress-translation/translation-for-texts-by-other-plugins-and-themes/how-to-use-contact-form-7-in-multilingual-websites/).
 
 == Screenshots ==
 
