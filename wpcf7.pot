@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 19:21+0900\n"
-"PO-Revision-Date: 2009-08-30 19:21+0900\n"
+"POT-Creation-Date: 2009-09-26 04:03+0900\n"
+"PO-Revision-Date: 2009-09-26 04:04+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,8 @@ msgstr ""
 
 #: contact-form-7/admin/admin-panel.php:17
 #: contact-form-7/admin/admin-panel.php:30
-#: contact-form-7/admin/admin.php:119
+#: contact-form-7/admin/admin.php:121
+#: contact-form-7/includes/functions.php:52
 msgid "Contact Form 7"
 msgstr ""
 
@@ -97,6 +98,7 @@ msgstr ""
 
 #: contact-form-7/admin/admin-panel.php:164
 #: contact-form-7/admin/admin-panel.php:225
+#: contact-form-7/includes/functions.php:50
 msgid "Message body:"
 msgstr ""
 
@@ -168,255 +170,255 @@ msgstr ""
 msgid "Additional Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:119
+#: contact-form-7/admin/admin.php:121
 msgid "Contact"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:125
 msgid "Edit Contact Forms"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:125
 msgid "Edit"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:178
+#: contact-form-7/admin/admin.php:185
 msgid "optional"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:179
+#: contact-form-7/admin/admin.php:186
 msgid "Generate Tag"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:180
+#: contact-form-7/admin/admin.php:187
 msgid "Text field"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:181
+#: contact-form-7/admin/admin.php:188
 msgid "Email field"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:182
+#: contact-form-7/admin/admin.php:189
 msgid "Text area"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:183
+#: contact-form-7/admin/admin.php:190
 msgid "Drop-down menu"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:184
+#: contact-form-7/admin/admin.php:191
 msgid "Checkboxes"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:185
+#: contact-form-7/admin/admin.php:192
 msgid "Radio buttons"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:186
+#: contact-form-7/admin/admin.php:193
 msgid "Acceptance"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:187
+#: contact-form-7/admin/admin.php:194
 msgid "Make this checkbox checked by default?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:188
+#: contact-form-7/admin/admin.php:195
 msgid "Make this checkbox work inversely?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:189
+#: contact-form-7/admin/admin.php:196
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:190
+#: contact-form-7/admin/admin.php:197
 msgid "CAPTCHA"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:191
+#: contact-form-7/admin/admin.php:198
 msgid "Quiz"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:192
+#: contact-form-7/admin/admin.php:199
 msgid "Quizzes"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:193
+#: contact-form-7/admin/admin.php:200
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:194
+#: contact-form-7/admin/admin.php:201
 msgid "File upload"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:195
+#: contact-form-7/admin/admin.php:202
 msgid "bytes"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:196
+#: contact-form-7/admin/admin.php:203
 msgid "Submit button"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:197
+#: contact-form-7/admin/admin.php:204
 msgid "Name"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:198
+#: contact-form-7/admin/admin.php:205
 msgid "Required field?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:199
+#: contact-form-7/admin/admin.php:206
 msgid "Allow multiple selections?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:200
+#: contact-form-7/admin/admin.php:207
 msgid "Insert a blank item as the first option?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:201
+#: contact-form-7/admin/admin.php:208
 msgid "Make checkboxes exclusive?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:202
+#: contact-form-7/admin/admin.php:209
 msgid "Choices"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:203
+#: contact-form-7/admin/admin.php:210
 msgid "Label"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:204
+#: contact-form-7/admin/admin.php:211
 msgid "Default value"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:205
+#: contact-form-7/admin/admin.php:212
 msgid "Akismet"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:206
+#: contact-form-7/admin/admin.php:213
 msgid "This field requires author's name"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:207
+#: contact-form-7/admin/admin.php:214
 msgid "This field requires author's URL"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:208
+#: contact-form-7/admin/admin.php:215
 msgid "This field requires author's email address"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:209
+#: contact-form-7/admin/admin.php:216
 msgid "Copy this code and paste it into the form left."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:210
+#: contact-form-7/admin/admin.php:217
 msgid "Foreground color"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:211
+#: contact-form-7/admin/admin.php:218
 msgid "Background color"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:212
+#: contact-form-7/admin/admin.php:219
 msgid "Image size"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:213
+#: contact-form-7/admin/admin.php:220
 msgid "Small"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:214
+#: contact-form-7/admin/admin.php:221
 msgid "Medium"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:215
+#: contact-form-7/admin/admin.php:222
 msgid "Large"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:216
+#: contact-form-7/admin/admin.php:223
 msgid "Image settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:217
+#: contact-form-7/admin/admin.php:224
 msgid "Input field settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:218
+#: contact-form-7/admin/admin.php:225
 msgid "For image"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:219
+#: contact-form-7/admin/admin.php:226
 msgid "For input field"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:220
+#: contact-form-7/admin/admin.php:227
 msgid "* One choice per line."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:221
+#: contact-form-7/admin/admin.php:228
 msgid "Show"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:222
+#: contact-form-7/admin/admin.php:229
 msgid "Hide"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:223
+#: contact-form-7/admin/admin.php:230
 msgid "File size limit"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:224
+#: contact-form-7/admin/admin.php:231
 msgid "Acceptable file types"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:225
+#: contact-form-7/admin/admin.php:232
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:236
+#: contact-form-7/admin/admin.php:241
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:239
+#: contact-form-7/admin/admin.php:244
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:242
+#: contact-form-7/admin/admin.php:247
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:245
+#: contact-form-7/admin/admin.php:250
 msgid "Database table created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:248
+#: contact-form-7/admin/admin.php:253
 msgid "Failed to create database table."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:321
+#: contact-form-7/admin/admin.php:328
 msgid "Contact form"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:355
+#: contact-form-7/admin/admin.php:347
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:376
+#: contact-form-7/admin/admin.php:366
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:377
+#: contact-form-7/admin/admin.php:367
 msgid "Is this plugin useful for you? If you like it, please help the developer."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:378
+#: contact-form-7/admin/admin.php:368
 msgid "Your contribution is needed for making this plugin better."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:379
+#: contact-form-7/admin/admin.php:369
 msgid "Developing a plugin and providing user support is really hard work. Please help."
 msgstr ""
 
-#: contact-form-7/includes/classes.php:537
+#: contact-form-7/includes/classes.php:552
 msgid "Untitled"
 msgstr ""
 
@@ -492,6 +494,10 @@ msgstr ""
 
 #: contact-form-7/includes/functions.php:43
 msgid "Send"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:51
+msgid "This mail is created by Contact Form 7 plugin for WordPress."
 msgstr ""
 
 #: contact-form-7/modules/captcha.php:62
