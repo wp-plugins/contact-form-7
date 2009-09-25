@@ -335,22 +335,6 @@ function wpcf7_install() {
 
 /* Misc */
 
-function wpcf7_admin_url( $file, $query = array() ) {
-	$file = trim( $file, ' /' );
-	if ( 'admin/' != substr( $file, 0, 6 ) )
-		$file = 'admin/' . $file;
-
-	$path = 'admin.php';
-	$path .= '?page=' . WPCF7_PLUGIN_NAME . '/' . $file;
-
-	if ( $query = build_query( $query ) )
-		$path .= '&' . $query;
-
-	$url = admin_url( $path );
-
-	return sanitize_url( $url );
-}
-
 add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
 
 function wpcf7_plugin_action_links( $links, $file ) {

@@ -15,6 +15,22 @@ function wpcf7_plugin_url( $path = '' ) {
 	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
 }
 
+function wpcf7_admin_url( $file, $query = array() ) {
+	$file = trim( $file, ' /' );
+	if ( 'admin/' != substr( $file, 0, 6 ) )
+		$file = 'admin/' . $file;
+
+	$path = 'admin.php';
+	$path .= '?page=' . WPCF7_PLUGIN_NAME . '/' . $file;
+
+	if ( $query = build_query( $query ) )
+		$path .= '&' . $query;
+
+	$url = admin_url( $path );
+
+	return sanitize_url( $url );
+}
+
 function wpcf7_table_name() {
 	global $wpdb;
 

@@ -47,7 +47,9 @@ function wpcf7_default_form_template() {
 function wpcf7_default_mail_template() {
 	$subject = '[your-subject]';
 	$sender = '[your-name] <[your-email]>';
-	$body = '[your-message]';
+	$body = __( 'Message body:', 'wpcf7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
+		. __( "This mail is created by Contact Form 7 plugin for WordPress.", 'wpcf7' )
+		. "\n\n" . __( 'Contact Form 7', 'wpcf7' ) . "\n" . 'http://contactform7.com';
 	$recipient = get_option( 'admin_email' );
 	return compact( 'subject', 'sender', 'body', 'recipient' );
 }
