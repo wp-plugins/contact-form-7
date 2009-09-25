@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7 in italiano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 19:21+0900\n"
-"PO-Revision-Date: 2009-09-01 21:37+0100\n"
+"POT-Creation-Date: 2009-09-26 04:03+0900\n"
+"PO-Revision-Date: 2009-09-25 21:46+0100\n"
 "Last-Translator: Gianni Diurno (aka gidibao) <gidibao@gmail.com>\n"
 "Language-Team: Gianni Diurno | http://gidibao.net/ <gidibao@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: contact-form-7/admin/admin-panel.php:9
 #, php-format
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Non esiste nel database la tabella di Contact Form 7t.</strong> Dovrai <a href=\"%s\">creare la tabella</a> affinché possa funzionare."
+msgstr "<strong>Non esiste nel database la tabella di Contact Form 7.</strong> Dovrai <a href=\"%s\">creare la tabella</a> affinché possa funzionare."
 
 #: contact-form-7/admin/admin-panel.php:12
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
@@ -27,7 +27,8 @@ msgstr "<strong>Non esiste nel database la tabella di Contact Form 7.</strong>"
 
 #: contact-form-7/admin/admin-panel.php:17
 #: contact-form-7/admin/admin-panel.php:30
-#: contact-form-7/admin/admin.php:119
+#: contact-form-7/admin/admin.php:121
+#: contact-form-7/includes/functions.php:52
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
@@ -86,7 +87,7 @@ msgstr "Oggetto:"
 #: contact-form-7/admin/admin-panel.php:144
 #: contact-form-7/admin/admin-panel.php:205
 msgid "Additional headers:"
-msgstr "Intestazioni aggiuntive"
+msgstr "Intestazioni aggiuntive:"
 
 #: contact-form-7/admin/admin-panel.php:149
 #: contact-form-7/admin/admin-panel.php:210
@@ -100,6 +101,7 @@ msgstr "Utilizza contenuti in HTML"
 
 #: contact-form-7/admin/admin-panel.php:164
 #: contact-form-7/admin/admin-panel.php:225
+#: contact-form-7/includes/functions.php:50
 msgid "Message body:"
 msgstr "Corpo del messaggio:"
 
@@ -171,255 +173,255 @@ msgstr "Non é stato possibile caricare il file (errore PHP)"
 msgid "Additional Settings"
 msgstr "Impostazioni aggiuntive"
 
-#: contact-form-7/admin/admin.php:119
+#: contact-form-7/admin/admin.php:121
 msgid "Contact"
 msgstr "C F 7"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:125
 msgid "Edit Contact Forms"
 msgstr "Modifica Contact Forms"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:125
 msgid "Edit"
 msgstr "Modifica"
 
-#: contact-form-7/admin/admin.php:178
+#: contact-form-7/admin/admin.php:185
 msgid "optional"
 msgstr "facoltativo"
 
-#: contact-form-7/admin/admin.php:179
+#: contact-form-7/admin/admin.php:186
 msgid "Generate Tag"
 msgstr "Genera tag"
 
-#: contact-form-7/admin/admin.php:180
+#: contact-form-7/admin/admin.php:187
 msgid "Text field"
 msgstr "Campo testo"
 
-#: contact-form-7/admin/admin.php:181
+#: contact-form-7/admin/admin.php:188
 msgid "Email field"
 msgstr "Campo email"
 
-#: contact-form-7/admin/admin.php:182
+#: contact-form-7/admin/admin.php:189
 msgid "Text area"
 msgstr "Area di testo"
 
-#: contact-form-7/admin/admin.php:183
+#: contact-form-7/admin/admin.php:190
 msgid "Drop-down menu"
-msgstr "Menu a tendina"
+msgstr "Menu a cascata"
 
-#: contact-form-7/admin/admin.php:184
+#: contact-form-7/admin/admin.php:191
 msgid "Checkboxes"
 msgstr "Caselle di verifica"
 
-#: contact-form-7/admin/admin.php:185
+#: contact-form-7/admin/admin.php:192
 msgid "Radio buttons"
-msgstr "Radio buttons"
+msgstr "Radio button"
 
-#: contact-form-7/admin/admin.php:186
+#: contact-form-7/admin/admin.php:193
 msgid "Acceptance"
 msgstr "Consenso"
 
-#: contact-form-7/admin/admin.php:187
+#: contact-form-7/admin/admin.php:194
 msgid "Make this checkbox checked by default?"
 msgstr "Desideri che questa casella di verifica sia selezionata (predefinito)?"
 
-#: contact-form-7/admin/admin.php:188
+#: contact-form-7/admin/admin.php:195
 msgid "Make this checkbox work inversely?"
 msgstr "Desideri che questa casella di verifica funzioni in modalità inversa?"
 
-#: contact-form-7/admin/admin.php:189
+#: contact-form-7/admin/admin.php:196
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "* Ciò indica che il visitatore dovrà de-selezionare la casella per esprimere il proprio consenso."
 
-#: contact-form-7/admin/admin.php:190
+#: contact-form-7/admin/admin.php:197
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/admin/admin.php:191
+#: contact-form-7/admin/admin.php:198
 msgid "Quiz"
 msgstr "Quesito"
 
-#: contact-form-7/admin/admin.php:192
+#: contact-form-7/admin/admin.php:199
 msgid "Quizzes"
 msgstr "Quesiti"
 
-#: contact-form-7/admin/admin.php:193
+#: contact-form-7/admin/admin.php:200
 msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* quesito|domanda (ad esempio: 1+1=?|2)"
+msgstr "* quesito|risposta (ad esempio: 1+1=?|2)"
 
-#: contact-form-7/admin/admin.php:194
+#: contact-form-7/admin/admin.php:201
 msgid "File upload"
-msgstr "File caricato"
+msgstr "Upload file"
 
-#: contact-form-7/admin/admin.php:195
+#: contact-form-7/admin/admin.php:202
 msgid "bytes"
 msgstr "bytes"
 
-#: contact-form-7/admin/admin.php:196
+#: contact-form-7/admin/admin.php:203
 msgid "Submit button"
 msgstr "Pulsante di invio"
 
-#: contact-form-7/admin/admin.php:197
+#: contact-form-7/admin/admin.php:204
 msgid "Name"
 msgstr "Nome"
 
-#: contact-form-7/admin/admin.php:198
+#: contact-form-7/admin/admin.php:205
 msgid "Required field?"
 msgstr "Campi obbligatori?"
 
-#: contact-form-7/admin/admin.php:199
+#: contact-form-7/admin/admin.php:206
 msgid "Allow multiple selections?"
 msgstr "Desideri permettere le selezioni multiple?"
 
-#: contact-form-7/admin/admin.php:200
+#: contact-form-7/admin/admin.php:207
 msgid "Insert a blank item as the first option?"
 msgstr "Desideri lasciare in bianco la prima opzione?"
 
-#: contact-form-7/admin/admin.php:201
+#: contact-form-7/admin/admin.php:208
 msgid "Make checkboxes exclusive?"
 msgstr "Desideri escludere le caselle di verifica?"
 
-#: contact-form-7/admin/admin.php:202
+#: contact-form-7/admin/admin.php:209
 msgid "Choices"
 msgstr "Opzioni"
 
-#: contact-form-7/admin/admin.php:203
+#: contact-form-7/admin/admin.php:210
 msgid "Label"
 msgstr "Etichetta"
 
-#: contact-form-7/admin/admin.php:204
+#: contact-form-7/admin/admin.php:211
 msgid "Default value"
 msgstr "Valore predefinito"
 
-#: contact-form-7/admin/admin.php:205
+#: contact-form-7/admin/admin.php:212
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/admin/admin.php:206
+#: contact-form-7/admin/admin.php:213
 msgid "This field requires author's name"
 msgstr "Questo campo necessita del nome autore"
 
-#: contact-form-7/admin/admin.php:207
+#: contact-form-7/admin/admin.php:214
 msgid "This field requires author's URL"
 msgstr "Questo campo necessita dell'URL autore"
 
-#: contact-form-7/admin/admin.php:208
+#: contact-form-7/admin/admin.php:215
 msgid "This field requires author's email address"
 msgstr "Questo campo necessita dell'indirizzo email autore"
 
-#: contact-form-7/admin/admin.php:209
+#: contact-form-7/admin/admin.php:216
 msgid "Copy this code and paste it into the form left."
 msgstr "Copia questo codice ed incollalo nel modulo a sinistra."
 
-#: contact-form-7/admin/admin.php:210
+#: contact-form-7/admin/admin.php:217
 msgid "Foreground color"
 msgstr "Colore di primo piano"
 
-#: contact-form-7/admin/admin.php:211
+#: contact-form-7/admin/admin.php:218
 msgid "Background color"
 msgstr "Colore di sfondo"
 
-#: contact-form-7/admin/admin.php:212
+#: contact-form-7/admin/admin.php:219
 msgid "Image size"
 msgstr "Dimensione immagine"
 
-#: contact-form-7/admin/admin.php:213
+#: contact-form-7/admin/admin.php:220
 msgid "Small"
 msgstr "Piccola"
 
-#: contact-form-7/admin/admin.php:214
+#: contact-form-7/admin/admin.php:221
 msgid "Medium"
 msgstr "Media"
 
-#: contact-form-7/admin/admin.php:215
+#: contact-form-7/admin/admin.php:222
 msgid "Large"
 msgstr "Grande"
 
-#: contact-form-7/admin/admin.php:216
+#: contact-form-7/admin/admin.php:223
 msgid "Image settings"
 msgstr "Impostazioni immagine"
 
-#: contact-form-7/admin/admin.php:217
+#: contact-form-7/admin/admin.php:224
 msgid "Input field settings"
 msgstr "Impostazione campo dati"
 
-#: contact-form-7/admin/admin.php:218
+#: contact-form-7/admin/admin.php:225
 msgid "For image"
 msgstr "Per immagine"
 
-#: contact-form-7/admin/admin.php:219
+#: contact-form-7/admin/admin.php:226
 msgid "For input field"
 msgstr "Per campo dati"
 
-#: contact-form-7/admin/admin.php:220
+#: contact-form-7/admin/admin.php:227
 msgid "* One choice per line."
 msgstr "* Una opzione per linea."
 
-#: contact-form-7/admin/admin.php:221
+#: contact-form-7/admin/admin.php:228
 msgid "Show"
 msgstr "Mostra"
 
-#: contact-form-7/admin/admin.php:222
+#: contact-form-7/admin/admin.php:229
 msgid "Hide"
 msgstr "Nascondi"
 
-#: contact-form-7/admin/admin.php:223
+#: contact-form-7/admin/admin.php:230
 msgid "File size limit"
 msgstr "Limite dimensione file"
 
-#: contact-form-7/admin/admin.php:224
+#: contact-form-7/admin/admin.php:231
 msgid "Acceptable file types"
 msgstr "Tipologia di file consentiti"
 
-#: contact-form-7/admin/admin.php:225
+#: contact-form-7/admin/admin.php:232
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr "Nota: per l'utilizzo del CAPTCHA é necessaria l'installazione del plugin Really Simple CAPTCHA."
 
-#: contact-form-7/admin/admin.php:236
+#: contact-form-7/admin/admin.php:241
 msgid "Contact form created."
 msgstr "Il modulo di contatto é stato creato."
 
-#: contact-form-7/admin/admin.php:239
+#: contact-form-7/admin/admin.php:244
 msgid "Contact form saved."
 msgstr "Il modulo di contatto é stato salvato. "
 
-#: contact-form-7/admin/admin.php:242
+#: contact-form-7/admin/admin.php:247
 msgid "Contact form deleted."
 msgstr "Il modulo di contatto é stato cancellato. "
 
-#: contact-form-7/admin/admin.php:245
+#: contact-form-7/admin/admin.php:250
 msgid "Database table created."
 msgstr "E' stata creata la tabella nel database."
 
-#: contact-form-7/admin/admin.php:248
+#: contact-form-7/admin/admin.php:253
 msgid "Failed to create database table."
 msgstr "Non é stato possibile creare la tabella nel database"
 
-#: contact-form-7/admin/admin.php:321
+#: contact-form-7/admin/admin.php:328
 msgid "Contact form"
 msgstr "Modulo di contatto"
 
-#: contact-form-7/admin/admin.php:355
+#: contact-form-7/admin/admin.php:347
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: contact-form-7/admin/admin.php:376
+#: contact-form-7/admin/admin.php:366
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr "Contact Form 7 ha bisogno del tuo sostegno. Effettua una donazione oggi stesso."
 
-#: contact-form-7/admin/admin.php:377
+#: contact-form-7/admin/admin.php:367
 msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Questo plugin ti é utile? Aiuta lo sviluppatore."
+msgstr "Questo plugin é utile per te? Allora, aiuta lo sviluppatore."
 
-#: contact-form-7/admin/admin.php:378
+#: contact-form-7/admin/admin.php:368
 msgid "Your contribution is needed for making this plugin better."
-msgstr "Il tuo contributo é necessario per potere rendere migliore questo plugin."
+msgstr "Il tuo contributo sarà necessario per potere rendere migliore questo plugin."
 
-#: contact-form-7/admin/admin.php:379
+#: contact-form-7/admin/admin.php:369
 msgid "Developing a plugin and providing user support is really hard work. Please help."
 msgstr "Lo sviluppo di un plugin ed il servizio di assistenza agli utenti comporta un notevole lavoro. Aiutami!"
 
-#: contact-form-7/includes/classes.php:537
+#: contact-form-7/includes/classes.php:552
 msgid "Untitled"
 msgstr "Senza titolo"
 
@@ -438,7 +440,7 @@ msgstr "Si é verificato un errore di convalida. Controlla i campi obbligatori e
 
 #: contact-form-7/includes/functions.php:14
 msgid "Please accept the terms to proceed."
-msgstr "Accetta i termini prima di procedere"
+msgstr "Accetta i termini prima di procedere."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Email address seems invalid."
@@ -446,27 +448,27 @@ msgstr "Pare che l'indirizzo email non sia valido."
 
 #: contact-form-7/includes/functions.php:18
 msgid "Please fill the required field."
-msgstr "Riempire tutti i campi richiesti. Grazie"
+msgstr "Compila tutti i campi richiesti. Grazie"
 
 #: contact-form-7/includes/functions.php:20
 msgid "Your entered code is incorrect."
-msgstr "Il codice che hai inserito non è valido"
+msgstr "Il codice che hai inserito non è valido."
 
 #: contact-form-7/includes/functions.php:22
 msgid "Your answer is not correct."
-msgstr "La risposta che hai inserito non é corretta"
+msgstr "La risposta che hai inserito non é corretta."
 
 #: contact-form-7/includes/functions.php:24
 msgid "Failed to upload file."
-msgstr "Si é verificato un errore durante il caricamento del file"
+msgstr "Si é verificato un errore durante il caricamento del file."
 
 #: contact-form-7/includes/functions.php:26
 msgid "This file type is not allowed."
-msgstr "Questo tipo di file non é permesso"
+msgstr "Questo tipo di file non é permesso."
 
 #: contact-form-7/includes/functions.php:28
 msgid "This file is too large."
-msgstr "Questo file é troppo grande"
+msgstr "Questo file é troppo grande."
 
 #: contact-form-7/includes/functions.php:30
 msgid "Failed to upload file. Error occurred."
@@ -496,6 +498,10 @@ msgstr "Il tuo messaggio"
 #: contact-form-7/includes/functions.php:43
 msgid "Send"
 msgstr "Invia"
+
+#: contact-form-7/includes/functions.php:51
+msgid "This mail is created by Contact Form 7 plugin for WordPress."
+msgstr "Questa email é stata creata con il plugin Contact Form 7"
 
 #: contact-form-7/modules/captcha.php:62
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
