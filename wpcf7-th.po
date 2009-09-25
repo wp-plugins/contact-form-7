@@ -1,0 +1,502 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-30 19:21+0900\n"
+"PO-Revision-Date: 2009-09-25 23:59+0700\n"
+"Last-Translator: kazama <anotherkaz@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/admin/admin-panel.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>ตารางฐานข้อมูลสำหรับ Contact Form 7 ยังไม่ได้ถูกสร้าง</strong> คุณต้อง <a href=\"%s\">สร้างตารางข้อมูล</a> เพื่อให้มันทำงานได้"
+
+#: contact-form-7/admin/admin-panel.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>ตารางฐานข้อมูลสำหรับ Contact Form 7 ยังไม่ได้ถูกสร้าง</strong> "
+
+#: contact-form-7/admin/admin-panel.php:17
+#: contact-form-7/admin/admin-panel.php:30
+#: contact-form-7/admin/admin.php:119
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin-panel.php:45
+msgid "Add new"
+msgstr "เพิ่มใหม่"
+
+#: contact-form-7/admin/admin-panel.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "คัดลอกโค๊ดนี้แล้ววางมันลงในเรื่อง หน้า หรือ ข้อความ text widget ของคุณ"
+
+#: contact-form-7/admin/admin-panel.php:75
+#: contact-form-7/admin/admin-panel.php:332
+msgid "Save"
+msgstr "บันทึก"
+
+#: contact-form-7/admin/admin-panel.php:82
+msgid "Copy"
+msgstr "คัดลอก"
+
+#: contact-form-7/admin/admin-panel.php:87
+msgid "Delete"
+msgstr "ลบ"
+
+#: contact-form-7/admin/admin-panel.php:89
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"คุณกำลังลบแบบฟอร์มติดต่อนี้\n"
+"  'Cancel' เพื่อหยุด 'OK' เพื่อลบ"
+
+#: contact-form-7/admin/admin-panel.php:102
+msgid "Form"
+msgstr "ฟอร์ม"
+
+#: contact-form-7/admin/admin-panel.php:120
+msgid "Mail"
+msgstr "เมล์"
+
+#: contact-form-7/admin/admin-panel.php:127
+#: contact-form-7/admin/admin-panel.php:188
+msgid "To:"
+msgstr "ถึง:"
+
+#: contact-form-7/admin/admin-panel.php:132
+#: contact-form-7/admin/admin-panel.php:193
+msgid "From:"
+msgstr "จาก:"
+
+#: contact-form-7/admin/admin-panel.php:137
+#: contact-form-7/admin/admin-panel.php:198
+msgid "Subject:"
+msgstr "หัวข้อ:"
+
+#: contact-form-7/admin/admin-panel.php:144
+#: contact-form-7/admin/admin-panel.php:205
+msgid "Additional headers:"
+msgstr "ส่วนหัวเพิ่มเติม:"
+
+#: contact-form-7/admin/admin-panel.php:149
+#: contact-form-7/admin/admin-panel.php:210
+msgid "File attachments:"
+msgstr "ไฟล์แนบ:"
+
+#: contact-form-7/admin/admin-panel.php:157
+#: contact-form-7/admin/admin-panel.php:218
+msgid "Use HTML content type"
+msgstr "ใช้ชนิดเนื้อหาแบบ HTML"
+
+#: contact-form-7/admin/admin-panel.php:164
+#: contact-form-7/admin/admin-panel.php:225
+msgid "Message body:"
+msgstr "เนื้อหาข้อความ:"
+
+#: contact-form-7/admin/admin-panel.php:174
+msgid "Mail (2)"
+msgstr "เมล์ (2)"
+
+#: contact-form-7/admin/admin-panel.php:180
+msgid "Use mail (2)"
+msgstr "ใช้เมล์l (2)"
+
+#: contact-form-7/admin/admin-panel.php:235
+msgid "Messages"
+msgstr "ข้อความ"
+
+#: contact-form-7/admin/admin-panel.php:243
+msgid "Sender's message was sent successfully"
+msgstr "ข้อความผู้ส่งถูกส่งเรียบร้อยแล้ว"
+
+#: contact-form-7/admin/admin-panel.php:248
+msgid "Sender's message was failed to send"
+msgstr "ข้อความผู้ส่งล้มเหลวในการส่ง"
+
+#: contact-form-7/admin/admin-panel.php:253
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet พิจารณาว่าการส่งเป็นการ spam"
+
+#: contact-form-7/admin/admin-panel.php:258
+msgid "Validation errors occurred"
+msgstr "การตรวจสอบผิดพลาด"
+
+#: contact-form-7/admin/admin-panel.php:263
+msgid "There is a field that sender is needed to fill in"
+msgstr "นี่คือช่องที่ผู้ส่งต้องการสำหรับใส่ข้อมูล"
+
+#: contact-form-7/admin/admin-panel.php:268
+msgid "Email address that sender entered is invalid"
+msgstr "อีเมล์ที่ผู้ส่งให้มานั้นใช้งานไม่ได้"
+
+#: contact-form-7/admin/admin-panel.php:273
+msgid "There is a field of term that sender is needed to accept"
+msgstr "มีช่องเงื่อนไขที่ผู้ต้องต้องยอมรับ"
+
+#: contact-form-7/admin/admin-panel.php:278
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "ผู้ส่งไม่ได้ใส่คำตอบที่ถูกต้องกับคำถาม"
+
+#: contact-form-7/admin/admin-panel.php:283
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "โค๊ดที่ผู้ส่งใส่ไม่ตรงกับ CAPTCHA"
+
+#: contact-form-7/admin/admin-panel.php:288
+msgid "Uploading a file fails for any reason"
+msgstr "การอัปโหลดไฟล์ล้มเหลวด้วยเหตุผลบางอย่าง"
+
+#: contact-form-7/admin/admin-panel.php:293
+msgid "Uploaded file is not allowed file type"
+msgstr "ชนิดไฟล์นี้ไม่อนุญาตให้อัปโหลด"
+
+#: contact-form-7/admin/admin-panel.php:298
+msgid "Uploaded file is too large"
+msgstr "ไฟล์ที่อัปโหลดใหญ่เกินไป"
+
+#: contact-form-7/admin/admin-panel.php:303
+msgid "Uploading a file fails for PHP error"
+msgstr "การอัปโหลดไฟล์ล้มเหลวเพราะ PHP ผิดพลาด"
+
+#: contact-form-7/admin/admin-panel.php:314
+msgid "Additional Settings"
+msgstr "การตั้งค่าเพิ่มเติม"
+
+#: contact-form-7/admin/admin.php:119
+msgid "Contact"
+msgstr "ติดต่อ"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "แก้ไขแบบฟอร์มติดต่อ"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: contact-form-7/admin/admin.php:178
+msgid "optional"
+msgstr "ตัวเลือก"
+
+#: contact-form-7/admin/admin.php:179
+msgid "Generate Tag"
+msgstr "สร้างป้ายกำกับ"
+
+#: contact-form-7/admin/admin.php:180
+msgid "Text field"
+msgstr "ช่องตัวอักษร"
+
+#: contact-form-7/admin/admin.php:181
+msgid "Email field"
+msgstr "ช่องใส่อีเมล์"
+
+#: contact-form-7/admin/admin.php:182
+msgid "Text area"
+msgstr "กล่องข้อความ"
+
+#: contact-form-7/admin/admin.php:183
+msgid "Drop-down menu"
+msgstr "เมนู Drop down"
+
+#: contact-form-7/admin/admin.php:184
+msgid "Checkboxes"
+msgstr "เช็คบ็อกซ์"
+
+#: contact-form-7/admin/admin.php:185
+msgid "Radio buttons"
+msgstr "Radio buttons"
+
+#: contact-form-7/admin/admin.php:186
+msgid "Acceptance"
+msgstr "ยอมรับ"
+
+#: contact-form-7/admin/admin.php:187
+msgid "Make this checkbox checked by default?"
+msgstr "ทำให้ checkbox นี้ถูกเลือกอยู่แล้ว?"
+
+#: contact-form-7/admin/admin.php:188
+msgid "Make this checkbox work inversely?"
+msgstr "ทำให้ checkbox นี้ทำงานกลับด้าน?"
+
+#: contact-form-7/admin/admin.php:189
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* หมายความว่าผู้เยี่ยมชมยอมรับเงื่อนไขที่ไม่เลือกตัวเลือกนี้"
+
+#: contact-form-7/admin/admin.php:190
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/admin/admin.php:191
+msgid "Quiz"
+msgstr "คำถาม"
+
+#: contact-form-7/admin/admin.php:192
+msgid "Quizzes"
+msgstr "คำถาม"
+
+#: contact-form-7/admin/admin.php:193
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* คำถาม|คำตอบ (ตัวอย่าง 1+1=?|2)"
+
+#: contact-form-7/admin/admin.php:194
+msgid "File upload"
+msgstr "ไฟล์อัปโหลด"
+
+#: contact-form-7/admin/admin.php:195
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/admin/admin.php:196
+msgid "Submit button"
+msgstr "ปุ่มส่ง"
+
+#: contact-form-7/admin/admin.php:197
+msgid "Name"
+msgstr "ชื่อ"
+
+#: contact-form-7/admin/admin.php:198
+msgid "Required field?"
+msgstr "ช่องที่ต้องการ?"
+
+#: contact-form-7/admin/admin.php:199
+msgid "Allow multiple selections?"
+msgstr "อนุญาตการเลือกหลายข้อ?"
+
+#: contact-form-7/admin/admin.php:200
+msgid "Insert a blank item as the first option?"
+msgstr "ใส่ช่องว่างเป็นตัวเลือกแรก"
+
+#: contact-form-7/admin/admin.php:201
+msgid "Make checkboxes exclusive?"
+msgstr "ให้เลือก checkboxes เดียว?"
+
+#: contact-form-7/admin/admin.php:202
+msgid "Choices"
+msgstr "ตัวเลือก"
+
+#: contact-form-7/admin/admin.php:203
+msgid "Label"
+msgstr "ป้ายชื่อ"
+
+#: contact-form-7/admin/admin.php:204
+msgid "Default value"
+msgstr "ค่ามาตรฐาน"
+
+#: contact-form-7/admin/admin.php:205
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/admin/admin.php:206
+msgid "This field requires author's name"
+msgstr "ช่องนี้ต้องการชื่อผู้เขียน"
+
+#: contact-form-7/admin/admin.php:207
+msgid "This field requires author's URL"
+msgstr "ช่องนี้ต้องการ URL ผู้เขียน"
+
+#: contact-form-7/admin/admin.php:208
+msgid "This field requires author's email address"
+msgstr "ช่องนี้ต้องการอีเมล์ผู้เขียน"
+
+#: contact-form-7/admin/admin.php:209
+msgid "Copy this code and paste it into the form left."
+msgstr "คัดลอกโค๊ดนี้และวางมันลงในฟอร์มด้านซ้าย"
+
+#: contact-form-7/admin/admin.php:210
+msgid "Foreground color"
+msgstr "สีด้านหน้า"
+
+#: contact-form-7/admin/admin.php:211
+msgid "Background color"
+msgstr "สีด้านหลัง"
+
+#: contact-form-7/admin/admin.php:212
+msgid "Image size"
+msgstr "ขนาดรูปภาพ"
+
+#: contact-form-7/admin/admin.php:213
+msgid "Small"
+msgstr "เล็ก"
+
+#: contact-form-7/admin/admin.php:214
+msgid "Medium"
+msgstr "ปานกลาง"
+
+#: contact-form-7/admin/admin.php:215
+msgid "Large"
+msgstr "ใหญ่"
+
+#: contact-form-7/admin/admin.php:216
+msgid "Image settings"
+msgstr "การตั้งค่ารูปภาพ"
+
+#: contact-form-7/admin/admin.php:217
+msgid "Input field settings"
+msgstr "การตั้งค่าช่องใส่ข้อมูล"
+
+#: contact-form-7/admin/admin.php:218
+msgid "For image"
+msgstr "สำหรับรูปภาพ"
+
+#: contact-form-7/admin/admin.php:219
+msgid "For input field"
+msgstr "สำหรับช่องใส่ข้อมูล"
+
+#: contact-form-7/admin/admin.php:220
+msgid "* One choice per line."
+msgstr "* หนึ่งตัวเลือกต่อบรรทัด"
+
+#: contact-form-7/admin/admin.php:221
+msgid "Show"
+msgstr "แสดง"
+
+#: contact-form-7/admin/admin.php:222
+msgid "Hide"
+msgstr "ซ่อน"
+
+#: contact-form-7/admin/admin.php:223
+msgid "File size limit"
+msgstr "ขนาดไฟล์จำกัด"
+
+#: contact-form-7/admin/admin.php:224
+msgid "Acceptable file types"
+msgstr "ชนิดไฟล์ที่ยอมรับได้"
+
+#: contact-form-7/admin/admin.php:225
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "หมายเหตุ: เพื่อใช้ CAPTCHA คุณต้องลงปลั๊กอิน Really Simple CAPTCHA "
+
+#: contact-form-7/admin/admin.php:236
+msgid "Contact form created."
+msgstr "สร้างแบบฟอร์มติดต่อแล้ว"
+
+#: contact-form-7/admin/admin.php:239
+msgid "Contact form saved."
+msgstr "บันทึกแบบฟอร์มติดต่อแล้ว"
+
+#: contact-form-7/admin/admin.php:242
+msgid "Contact form deleted."
+msgstr "ลบแบบฟอร์มติดต่อแล้ว"
+
+#: contact-form-7/admin/admin.php:245
+msgid "Database table created."
+msgstr "สร้างตารางฐานข้อมูลแล้ว"
+
+#: contact-form-7/admin/admin.php:248
+msgid "Failed to create database table."
+msgstr "ล้มเหลวในการสร้างตารางฐานข้อมูล"
+
+#: contact-form-7/admin/admin.php:321
+msgid "Contact form"
+msgstr "ฟอร์มติดต่อ"
+
+#: contact-form-7/admin/admin.php:355
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: contact-form-7/admin/admin.php:376
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 ต้องการการสนับสนุนจากคุณ โปรดช่วยบริจาคให้เรา"
+
+#: contact-form-7/admin/admin.php:377
+msgid "Is this plugin useful for you? If you like it, please help the developer."
+msgstr "ปลั๊กอินนี้มีประโยชน์กับคุณหรือไม่  ถ้าคุณชอบมัน  โปรดช่วยเหลือผู้พัฒนาด้วย"
+
+#: contact-form-7/admin/admin.php:378
+msgid "Your contribution is needed for making this plugin better."
+msgstr "การบริจาคของคุณจะช่วยให้ปลั๊กอินนี้พัฒนาได้ดีขึ้น"
+
+#: contact-form-7/admin/admin.php:379
+msgid "Developing a plugin and providing user support is really hard work. Please help."
+msgstr "การพัฒนาปลั๊กอินและให้ความช่วยเหลือแก่ผู้ใช้เวิร์ดเพรสเป็นงานที่ยากลำบาก  ขอได้โปรดเข้าใจและช่วยเหลือเราด้วย"
+
+#: contact-form-7/includes/classes.php:537
+msgid "Untitled"
+msgstr "ไม่มีหัวข้อ"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Your message was sent successfully. Thanks."
+msgstr "ข้อความของคุณได้ถูกส่งเรียบร้อยแล้ว  ขอบคุณ"
+
+#: contact-form-7/includes/functions.php:8
+#: contact-form-7/includes/functions.php:10
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "การส่งข้อความของคุณล้มเหลว  โปรดลองใหม่อีกครั้งหรือติดต่อผู้ควบคุมโดยทางอื่น"
+
+#: contact-form-7/includes/functions.php:12
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "การตรวจสอบผิดพลาด  โปรดยืนยันข้อมูลและการส่งอีกครั้ง"
+
+#: contact-form-7/includes/functions.php:14
+msgid "Please accept the terms to proceed."
+msgstr "โปรดยอมรับเงื่อนไขเพื่อทำงานต่อ"
+
+#: contact-form-7/includes/functions.php:16
+msgid "Email address seems invalid."
+msgstr "ดูเหมือนว่าอีเมล์ใช้ไม่ได้"
+
+#: contact-form-7/includes/functions.php:18
+msgid "Please fill the required field."
+msgstr "โปรดกรอข้อมูลลงในช่องที่ต้องการ"
+
+#: contact-form-7/includes/functions.php:20
+msgid "Your entered code is incorrect."
+msgstr "โค๊ดที่คุณใส่ไม่ถูกต้อง"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Your answer is not correct."
+msgstr "คำตอบของคุณไม่ถูกต้อง"
+
+#: contact-form-7/includes/functions.php:24
+msgid "Failed to upload file."
+msgstr "การอัปโหลดไฟล์ล้มเหลว"
+
+#: contact-form-7/includes/functions.php:26
+msgid "This file type is not allowed."
+msgstr "ชนิดไฟล์นี้ไม่อนุญาตให้ใช้"
+
+#: contact-form-7/includes/functions.php:28
+msgid "This file is too large."
+msgstr "ไฟล์นี้ใหญ่เกินไป"
+
+#: contact-form-7/includes/functions.php:30
+msgid "Failed to upload file. Error occurred."
+msgstr "ล้มเหลวในการอัปโหลดไฟล์ มีความผิดพลาดเกิดขึ้น"
+
+#: contact-form-7/includes/functions.php:35
+msgid "Your Name"
+msgstr "ชื่อของคุณ"
+
+#: contact-form-7/includes/functions.php:35
+#: contact-form-7/includes/functions.php:37
+msgid "(required)"
+msgstr "(ต้องการ)"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Your Email"
+msgstr "อีเมล์ของคุณ"
+
+#: contact-form-7/includes/functions.php:39
+msgid "Subject"
+msgstr "หัวข้อ"
+
+#: contact-form-7/includes/functions.php:41
+msgid "Your Message"
+msgstr "ข้อความของคุณ"
+
+#: contact-form-7/includes/functions.php:43
+msgid "Send"
+msgstr "ส่ง"
+
+#: contact-form-7/modules/captcha.php:62
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "เพื่อใช้ CAPTCHA คุณต้องติดตั้งปลั๊กอิน <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>"
+
