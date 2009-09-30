@@ -168,21 +168,6 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	$unit_tag = 'wpcf7-f' . $id . '-' . $wpcf7_processing_within . '-o' . $wpcf7_unit_count;
 	$wpcf7_contact_form->unit_tag = $unit_tag;
 
-	// Demo mode?
-	$demo_mode = false;
-
-	$demo_mode_settings = $wpcf7_contact_form->additional_setting( 'demo_mode', false );
-	foreach ( $demo_mode_settings as $demo_mode_setting ) {
-		if ( in_array( $demo_mode_setting, array( 'on', 'true', '1' ) ) ) {
-			$demo_mode = true;
-			break;
-		}
-	}
-
-	if ( $demo_mode ) {
-		$wpcf7_contact_form->skip_mail = true;
-	}
-
 	$form = $wpcf7_contact_form->form_html();
 
 	$wpcf7_contact_form = null;

@@ -315,6 +315,9 @@ class WPCF7_ContactForm {
 			$this->posted_data[$name] = $value;
 		}
 
+		if ( $this->in_demo_mode() )
+			$this->skip_mail = true;
+
 		do_action_ref_array( 'wpcf7_before_send_mail', array( &$this ) );
 
 		if ( $this->skip_mail )
@@ -416,6 +419,17 @@ class WPCF7_ContactForm {
 		}
 
 		return $values;
+	}
+
+	function in_demo_mode() {
+		$settings = $this->additional_setting( 'demo_mode', false );
+
+		foreach ( $settings as $setting ) {
+			if ( in_array( $setting, array( 'on', 'true', '1' ) ) )
+				return true;
+		}
+
+		return false;
 	}
 
 	/* Upgrade */
