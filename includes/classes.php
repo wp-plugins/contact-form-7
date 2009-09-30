@@ -169,7 +169,7 @@ class WPCF7_ContactForm {
 	}
 
 	function form_elements() {
-		$form = $this->form_do_shortcode();
+		$form = apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 
 		// Response output
 		$response_regex = '%\[\s*response\s*\]%';
