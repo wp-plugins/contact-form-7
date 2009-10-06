@@ -337,19 +337,22 @@ class WPCF7_ContactForm {
 		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
 		$callback = array( &$this, 'mail_callback' );
 
-		$mail_subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
-		$mail_sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
-		$mail_body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
-		$mail_recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
+		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
+		$sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
+		$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+		$recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
+		$additional_headers =
+			preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
 
-		$mail_headers = "From: $mail_sender\n";
+		extract( apply_filters( 'wpcf7_mail_components',
+			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers' ) ) );
+
+		$headers = "From: $sender\n";
 
 		if ( $mail_template['use_html'] )
-			$mail_headers .= "Content-Type: text/html\n";
+			$headers .= "Content-Type: text/html\n";
 
-		$mail_additional_headers = preg_replace_callback( $regex, $callback,
-			$mail_template['additional_headers'] );
-		$mail_headers .= trim( $mail_additional_headers ) . "\n";
+		$headers .= trim( $additional_headers ) . "\n";
 
 		if ( $this->uploaded_files ) {
 			$for_this_mail = array();
@@ -359,10 +362,9 @@ class WPCF7_ContactForm {
 				$for_this_mail[] = $path;
 			}
 
-			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers,
-				$for_this_mail );
+			return @wp_mail( $recipient, $subject, $body, $headers, $for_this_mail );
 		} else {
-			return @wp_mail( $mail_recipient, $mail_subject, $mail_body, $mail_headers );
+			return @wp_mail( $recipient, $subject, $body, $headers );
 		}
 	}
 
