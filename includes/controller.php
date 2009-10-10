@@ -6,7 +6,7 @@ function wpcf7_init_switch() {
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && 1 == (int) $_POST['_wpcf7_is_ajax_call'] ) {
 		wpcf7_ajax_json_echo();
 		exit();
-	} elseif ( ! is_admin() ) {
+	} elseif ( isset( $_POST['_wpcf7'] ) ) {
 		wpcf7_process_nonajax_submitting();
 	}
 }
@@ -175,7 +175,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	return $form;
 }
 
-if ( ! is_admin() && WPCF7_LOAD_JS )
+if ( WPCF7_LOAD_JS )
 	add_action( 'wp_print_scripts', 'wpcf7_enqueue_scripts' );
 
 function wpcf7_enqueue_scripts() {
