@@ -192,13 +192,7 @@ class WPCF7_ContactForm {
 		$result = array( 'valid' => true, 'reason' => array() );
 
 		foreach ( $fes as $fe ) {
-			$type = $fe['type'];
-			$name = $fe['name'];
-
-			if ( empty( $name ) )
-				continue;
-
-			$result = apply_filters( 'wpcf7_validate_' . $type, $result, $fe );
+			$result = apply_filters( 'wpcf7_validate_' . $fe['type'], $result, $fe );
 		}
 
 		return $result;
