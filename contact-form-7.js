@@ -96,6 +96,10 @@ function wpcf7ProcessJson(data) {
 	} else {
 		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
 	}
+
+	if (data.onSubmit)
+		jQuery.each(data.onSubmit, function(i, n) { eval(n) });
+
 	wpcf7ResponseOutput.append(data.message).slideDown('fast');
 }
 
