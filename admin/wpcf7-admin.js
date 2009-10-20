@@ -107,7 +107,7 @@ function updateTag() {
 function tagGenerator() {
   var menu = jQuery('<div class="tag-generator"></div>');
   
-  var dropdown_icon = jQuery('<img src="../wp-content/plugins/contact-form-7/images/dropdown.gif" />');
+  var dropdown_icon = jQuery('<img src="' + _wpcf7.pluginUrl + '/images/dropdown.gif" />');
   dropdown_icon.css({ 'vertical-align': 'bottom' });
   
   var selector = jQuery('<span>' + _wpcf7L10n.generateTag + '</span>');

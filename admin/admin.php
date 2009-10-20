@@ -164,7 +164,8 @@ function wpcf7_admin_head() {
 <script type="text/javascript">
 //<![CDATA[
 var _wpcf7 = {
-	captchaMod: <?php echo ( class_exists( 'ReallySimpleCaptcha' ) ) ? 'true' : 'false' ?>
+	captchaMod: <?php echo ( class_exists( 'ReallySimpleCaptcha' ) ) ? 'true' : 'false' ?>,
+	pluginUrl: '<?php echo wpcf7_plugin_url(); ?>'
 };
 //]]>
 </script>
