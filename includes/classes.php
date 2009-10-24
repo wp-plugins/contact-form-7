@@ -101,7 +101,9 @@ class WPCF7_ContactForm {
 
 	function validation_error( $name ) {
 		if ( $this->is_posted() && $ve = $_POST['_wpcf7_validation_errors']['messages'][$name] )
-			return '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
+			return apply_filters( 'wpcf7_validation_error',
+				'<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>',
+				$name, $this );
 
 		return '';
 	}
