@@ -96,7 +96,9 @@ if ( ! wpcf7_table_exists() ) {
 	</tbody>
 	</table>
 
-	<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
+<?php do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
 
 	<table class="widefat" style="margin-top: 1em;">
 	<thead><tr><th scope="col" colspan="2"><?php echo esc_html( __( 'Form', 'wpcf7' ) ); ?></th></tr></thead>
@@ -115,6 +117,12 @@ if ( ! wpcf7_table_exists() ) {
 	</tr>
 	</tbody>
 	</table>
+
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_form', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
 
 	<table class="widefat" style="margin-top: 1em;">
 	<thead><tr><th scope="col" colspan="2"><?php echo esc_html( __( 'Mail', 'wpcf7' ) ); ?></th></tr></thead>
@@ -169,6 +177,12 @@ if ( ! wpcf7_table_exists() ) {
 	</tr>
 	</tbody>
 	</table>
+
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_mail', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
 
 	<table class="widefat" style="margin-top: 1em;">
 	<thead><tr><th scope="col" colspan="2"><?php echo esc_html( __( 'Mail (2)', 'wpcf7' ) ); ?></th></tr></thead>
@@ -230,6 +244,12 @@ if ( ! wpcf7_table_exists() ) {
 	</tr>
 	</tbody>
 	</table>
+
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
 
 	<table class="widefat" style="margin-top: 1em;">
 	<thead><tr><th scope="col"><?php echo esc_html( __( 'Messages', 'wpcf7' ) ); ?> <span id="message-fields-toggle-switch"></span></th></tr></thead>
@@ -310,6 +330,12 @@ if ( ! wpcf7_table_exists() ) {
 	</tbody>
 	</table>
 
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_messages', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
+
 	<table class="widefat" style="margin-top: 1em;">
 	<thead><tr><th scope="col"><?php echo esc_html( __( 'Additional Settings', 'wpcf7' ) ); ?> <span id="additional-settings-fields-toggle-switch"></span></th></tr></thead>
 
@@ -336,7 +362,9 @@ if ( ! wpcf7_table_exists() ) {
 	</tbody>
 	</table>
 
-    <?php endif; ?>
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$cf ) ); ?>
 
 </form>
 
