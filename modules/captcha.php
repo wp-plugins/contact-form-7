@@ -5,6 +5,9 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'captchac', 'wpcf7_captcha_shortcode_handler', true );
+wpcf7_add_shortcode( 'captchar', 'wpcf7_captcha_shortcode_handler', true );
+
 function wpcf7_captcha_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -100,11 +103,10 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 	}
 }
 
-wpcf7_add_shortcode( 'captchac', 'wpcf7_captcha_shortcode_handler', true );
-wpcf7_add_shortcode( 'captchar', 'wpcf7_captcha_shortcode_handler', true );
-
 
 /* Validation filter */
+
+add_filter( 'wpcf7_validate_captchar', 'wpcf7_captcha_validation_filter', 10, 2 );
 
 function wpcf7_captcha_validation_filter( $result, $tag ) {
 	global $wpcf7_contact_form;
@@ -126,10 +128,10 @@ function wpcf7_captcha_validation_filter( $result, $tag ) {
 	return $result;
 }
 
-add_filter( 'wpcf7_validate_captchar', 'wpcf7_captcha_validation_filter', 10, 2 );
-
 
 /* Ajax echo filter */
+
+add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_captcha_ajax_echo_filter' );
 
 function wpcf7_captcha_ajax_echo_filter( $items ) {
 	global $wpcf7_contact_form;
@@ -168,8 +170,6 @@ function wpcf7_captcha_ajax_echo_filter( $items ) {
 	return $items;
 }
 
-add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_captcha_ajax_echo_filter' );
-
 
 /* CAPTCHA functions */
 
@@ -186,6 +186,20 @@ function wpcf7_init_captcha() {
 	$captcha->tmp_dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 	wp_mkdir_p( $captcha->tmp_dir );
 	return true;
+}
+
+function wpcf7_captcha_tmp_dir() {
+	if ( defined( 'WPCF7_CAPTCHA_TMP_DIR' ) )
+		return WPCF7_CAPTCHA_TMP_DIR;
+	else
+		return wpcf7_upload_dir( 'dir' ) . '/wpcf7_captcha';
+}
+
+function wpcf7_captcha_tmp_url() {
+	if ( defined( 'WPCF7_CAPTCHA_TMP_URL' ) )
+		return WPCF7_CAPTCHA_TMP_URL;
+	else
+		return wpcf7_upload_dir( 'url' ) . '/wpcf7_captcha';
 }
 
 function wpcf7_generate_captcha( $options = null ) {

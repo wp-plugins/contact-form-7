@@ -194,6 +194,13 @@ function wpcf7_init_uploads() {
 	}
 }
 
+function wpcf7_upload_tmp_dir() {
+	if ( defined( 'WPCF7_UPLOADS_TMP_DIR' ) )
+		return WPCF7_UPLOADS_TMP_DIR;
+	else
+		return wpcf7_upload_dir( 'dir' ) . '/wpcf7_uploads';
+}
+
 function wpcf7_cleanup_upload_files() {
 	$dir = trailingslashit( wpcf7_upload_tmp_dir() );
 

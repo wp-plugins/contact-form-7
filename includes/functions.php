@@ -113,27 +113,6 @@ function wpcf7_upload_dir( $type = false ) {
 	return array( 'dir' => $dir, 'url' => $url );
 }
 
-function wpcf7_captcha_tmp_dir() {
-	if ( defined( 'WPCF7_CAPTCHA_TMP_DIR' ) )
-		return WPCF7_CAPTCHA_TMP_DIR;
-	else
-		return wpcf7_upload_dir( 'dir' ) . '/wpcf7_captcha';
-}
-
-function wpcf7_captcha_tmp_url() {
-	if ( defined( 'WPCF7_CAPTCHA_TMP_URL' ) )
-		return WPCF7_CAPTCHA_TMP_URL;
-	else
-		return wpcf7_upload_dir( 'url' ) . '/wpcf7_captcha';
-}
-
-function wpcf7_upload_tmp_dir() {
-	if ( defined( 'WPCF7_UPLOADS_TMP_DIR' ) )
-		return WPCF7_UPLOADS_TMP_DIR;
-	else
-		return wpcf7_upload_dir( 'dir' ) . '/wpcf7_uploads';
-}
-
 function wpcf7_json( $items ) {
 	if ( is_array( $items ) ) {
 		if ( empty( $items ) )
