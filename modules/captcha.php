@@ -249,13 +249,18 @@ function wpcf7_remove_captcha( $prefix ) {
 }
 
 function wpcf7_cleanup_captcha_files() {
+	global $wpcf7_captcha;
+
+	if ( ! wpcf7_init_captcha() )
+		return false;
+	$captcha =& $wpcf7_captcha;
+
+	if ( is_callable( array( $captcha, 'cleanup' ) ) )
+		return $captcha->cleanup();
+
 	$dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 
-	if ( ! is_dir( $dir ) )
-		return false;
-	if ( ! is_readable( $dir ) )
-		return false;
-	if ( ! is_writable( $dir ) )
+	if ( ! is_dir( $dir ) || ! is_readable( $dir ) || ! is_writable( $dir ) )
 		return false;
 
 	if ( $handle = @opendir( $dir ) ) {
@@ -264,7 +269,7 @@ function wpcf7_cleanup_captcha_files() {
 				continue;
 
 			$stat = @stat( $dir . $file );
-			if ( $stat['mtime'] + 21600 < time() ) // 21600 secs == 6 hours
+			if ( $stat['mtime'] + 3600 < time() ) // 3600 secs == 1 hour
 				@unlink( $dir . $file );
 		}
 		closedir( $handle );
