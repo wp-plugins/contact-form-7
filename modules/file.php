@@ -3,6 +3,11 @@
 ** A base module for [file] and [file*]
 **/
 
+/* Shortcode handler */
+
+wpcf7_add_shortcode( 'file', 'wpcf7_file_shortcode_handler', true );
+wpcf7_add_shortcode( 'file*', 'wpcf7_file_shortcode_handler', true );
+
 function wpcf7_file_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -51,11 +56,10 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	return $html;
 }
 
-wpcf7_add_shortcode( 'file', 'wpcf7_file_shortcode_handler', true );
-wpcf7_add_shortcode( 'file*', 'wpcf7_file_shortcode_handler', true );
-
 
 /* Encode type filter */
+
+add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
 
 function wpcf7_file_form_enctype_filter( $enctype ) {
 	global $wpcf7_contact_form;
@@ -69,10 +73,11 @@ function wpcf7_file_form_enctype_filter( $enctype ) {
 	return $enctype;
 }
 
-add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
-
 
 /* Validation + upload handling filter */
+
+add_filter( 'wpcf7_validate_file', 'wpcf7_file_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_file*', 'wpcf7_file_validation_filter', 10, 2 );
 
 function wpcf7_file_validation_filter( $result, $tag ) {
 	global $wpcf7_contact_form;
@@ -172,9 +177,6 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 
 	return $result;
 }
-
-add_filter( 'wpcf7_validate_file', 'wpcf7_file_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_file*', 'wpcf7_file_validation_filter', 10, 2 );
 
 
 /* File uploading functions */

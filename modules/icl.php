@@ -14,6 +14,8 @@ if ( ! icl_wpcf7_wpml_available() )
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler', true );
+
 function icl_wpcf7_shortcode_handler( $tag ) {
 
 	if ( ! is_array( $tag ) )
@@ -38,10 +40,10 @@ function icl_wpcf7_shortcode_handler( $tag ) {
 	return '';
 }
 
-wpcf7_add_shortcode( 'icl', 'icl_wpcf7_shortcode_handler', true );
-
 
 /* Form tag filter */
+
+add_filter( 'wpcf7_form_tag', 'icl_wpcf7_form_tag_filter' );
 
 function icl_wpcf7_form_tag_filter( $tag ) {
 	if ( ! is_array( $tag ) )
@@ -107,10 +109,10 @@ function icl_wpcf7_form_tag_filter( $tag ) {
 	return $tag;
 }
 
-add_filter( 'wpcf7_form_tag', 'icl_wpcf7_form_tag_filter' );
-
 
 /* Message dispaly filter */
+
+add_filter( 'wpcf7_display_message', 'icl_wpcf7_display_message_filter' );
 
 function icl_wpcf7_display_message_filter( $message ) {
 	$shortcode_manager = new WPCF7_ShortcodeManager();
@@ -119,10 +121,10 @@ function icl_wpcf7_display_message_filter( $message ) {
 	return $shortcode_manager->do_shortcode( $message );
 }
 
-add_filter( 'wpcf7_display_message', 'icl_wpcf7_display_message_filter' );
-
 
 /* Collecting strings hook after saving */
+
+add_action( 'wpcf7_after_save', 'icl_wpcf7_collect_strings' );
 
 function icl_wpcf7_collect_strings( &$contact_form ) {
 	$scanned = $contact_form->form_scan_shortcode();
@@ -194,8 +196,6 @@ function icl_wpcf7_collect_strings( &$contact_form ) {
 		}
 	}
 }
-
-add_action( 'wpcf7_after_save', 'icl_wpcf7_collect_strings' );
 
 
 /* Functions */

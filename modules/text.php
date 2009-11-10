@@ -5,6 +5,11 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
+
 function wpcf7_text_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -79,13 +84,13 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	return $html;
 }
 
-wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
-
 
 /* Validation filter */
+
+add_filter( 'wpcf7_validate_text', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_text*', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
 
 function wpcf7_text_validation_filter( $result, $tag ) {
 	global $wpcf7_contact_form;
@@ -114,10 +119,5 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 
 	return $result;
 }
-
-add_filter( 'wpcf7_validate_text', 'wpcf7_text_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_text*', 'wpcf7_text_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
 
 ?>

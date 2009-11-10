@@ -5,6 +5,8 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
+
 function wpcf7_acceptance_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -55,10 +57,10 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	return $html;
 }
 
-wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
-
 
 /* Acceptance filter */
+
+add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 function wpcf7_acceptance_filter( $accepted ) {
 	global $wpcf7_contact_form;
@@ -82,7 +84,5 @@ function wpcf7_acceptance_filter( $accepted ) {
 
 	return $accepted;
 }
-
-add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 ?>

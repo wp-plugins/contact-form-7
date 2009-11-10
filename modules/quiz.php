@@ -5,6 +5,8 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
+
 function wpcf7_quiz_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -77,10 +79,10 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	return $html;
 }
 
-wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
-
 
 /* Validation filter */
+
+add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
 function wpcf7_quiz_validation_filter( $result, $tag ) {
 	global $wpcf7_contact_form;
@@ -99,10 +101,10 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 	return $result;
 }
 
-add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
-
 
 /* Ajax echo filter */
+
+add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_echo_filter' );
 
 function wpcf7_quiz_ajax_echo_filter( $items ) {
 	global $wpcf7_contact_form;
@@ -150,7 +152,5 @@ function wpcf7_quiz_ajax_echo_filter( $items ) {
 
 	return $items;
 }
-
-add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_echo_filter' );
 
 ?>

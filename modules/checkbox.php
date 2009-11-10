@@ -5,6 +5,10 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'checkbox', 'wpcf7_checkbox_shortcode_handler', true );
+wpcf7_add_shortcode( 'checkbox*', 'wpcf7_checkbox_shortcode_handler', true );
+wpcf7_add_shortcode( 'radio', 'wpcf7_checkbox_shortcode_handler', true );
+
 function wpcf7_checkbox_shortcode_handler( $tag ) {
 	global $wpcf7_contact_form;
 
@@ -120,12 +124,12 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	return $html;
 }
 
-wpcf7_add_shortcode( 'checkbox', 'wpcf7_checkbox_shortcode_handler', true );
-wpcf7_add_shortcode( 'checkbox*', 'wpcf7_checkbox_shortcode_handler', true );
-wpcf7_add_shortcode( 'radio', 'wpcf7_checkbox_shortcode_handler', true );
-
 
 /* Validation filter */
+
+add_filter( 'wpcf7_validate_checkbox', 'wpcf7_checkbox_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_checkbox*', 'wpcf7_checkbox_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_radio', 'wpcf7_checkbox_validation_filter', 10, 2 );
 
 function wpcf7_checkbox_validation_filter( $result, $tag ) {
 	global $wpcf7_contact_form;
@@ -155,9 +159,5 @@ function wpcf7_checkbox_validation_filter( $result, $tag ) {
 
 	return $result;
 }
-
-add_filter( 'wpcf7_validate_checkbox', 'wpcf7_checkbox_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_checkbox*', 'wpcf7_checkbox_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_radio', 'wpcf7_checkbox_validation_filter', 10, 2 );
 
 ?>

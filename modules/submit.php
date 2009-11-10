@@ -5,6 +5,8 @@
 
 /* Shortcode handler */
 
+wpcf7_add_shortcode( 'submit', 'wpcf7_submit_shortcode_handler' );
+
 function wpcf7_submit_shortcode_handler( $tag ) {
 	if ( ! is_array( $tag ) )
 		return '';
@@ -43,7 +45,5 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 	return $html;
 }
-
-wpcf7_add_shortcode( 'submit', 'wpcf7_submit_shortcode_handler' );
 
 ?>
