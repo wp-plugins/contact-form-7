@@ -48,8 +48,8 @@ function wpcf7_default_mail_template() {
 	$subject = '[your-subject]';
 	$sender = '[your-name] <[your-email]>';
 	$body = __( 'Message body:', 'wpcf7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
-		. __( "This mail is created by Contact Form 7 plugin for WordPress.", 'wpcf7' )
-		. "\n\n" . __( 'Contact Form 7', 'wpcf7' ) . "\n" . 'http://contactform7.com';
+		. sprintf( __( 'This mail is sent via contact form on %1$s %2$s', 'wpcf7' ),
+			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
 	$recipient = get_option( 'admin_email' );
 	return compact( 'subject', 'sender', 'body', 'recipient' );
 }
@@ -58,7 +58,9 @@ function wpcf7_default_mail_2_template() {
 	$active = false;
 	$subject = '[your-subject]';
 	$sender = '[your-name] <[your-email]>';
-	$body = '[your-message]';
+	$body = __( 'Message body:', 'wpcf7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
+		. sprintf( __( 'This mail is sent via contact form on %1$s %2$s', 'wpcf7' ),
+			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
 	$recipient = '[your-email]';
 	return compact( 'active', 'subject', 'sender', 'body', 'recipient' );
 }
