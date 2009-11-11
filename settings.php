@@ -42,7 +42,7 @@ function wpcf7_table_exists() {
 
 	$table_name = wpcf7_table_name();
 
-	return $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name;
+	return strtolower( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) == strtolower( $table_name );
 }
 
 // Pre-2.8 compatibility
