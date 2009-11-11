@@ -545,12 +545,12 @@ function wpcf7_contact_form( $id ) {
 
 	$contact_form = new WPCF7_ContactForm();
 	$contact_form->id = $row->cf7_unit_id;
-	$contact_form->title = stripslashes_deep( $row->title );
-	$contact_form->form = stripslashes_deep( maybe_unserialize( $row->form ) );
-	$contact_form->mail = stripslashes_deep( maybe_unserialize( $row->mail ) );
-	$contact_form->mail_2 = stripslashes_deep( maybe_unserialize( $row->mail_2 ) );
-	$contact_form->messages = stripslashes_deep( maybe_unserialize( $row->messages ) );
-	$contact_form->additional_settings = stripslashes_deep( maybe_unserialize( $row->additional_settings ) );
+	$contact_form->title = maybe_unserialize( $row->title );
+	$contact_form->form = maybe_unserialize( $row->form );
+	$contact_form->mail = maybe_unserialize( $row->mail );
+	$contact_form->mail_2 = maybe_unserialize( $row->mail_2 );
+	$contact_form->messages = maybe_unserialize( $row->messages );
+	$contact_form->additional_settings = maybe_unserialize( $row->additional_settings );
 
 	$contact_form->upgrade();
 
