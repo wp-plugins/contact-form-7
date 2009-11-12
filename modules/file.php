@@ -156,11 +156,16 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$uploads_dir = wpcf7_upload_tmp_dir();
 	wpcf7_init_uploads(); // Confirm upload dir
 
-	$filename = wp_unique_filename( $uploads_dir, $file['name'] );
+	$filename = $file['name'];
 
 	// If you get script file, it's a danger. Make it TXT file.
 	if ( preg_match( '/\.(php|pl|py|rb|cgi)\d?$/', $filename ) )
 		$filename .= '.txt';
+
+	// foo.php.jpg => foo.php_.jpg
+	$filename = wpcf7_sanitize_file_name( $filename );
+
+	$filename = wp_unique_filename( $uploads_dir, $filename );
 
 	$new_file = trailingslashit( $uploads_dir ) . $filename;
 
