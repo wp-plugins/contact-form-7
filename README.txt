@@ -73,14 +73,18 @@ Starting with version 2.0, Contact Form 7 can create multilingual contact form u
 
 You will find 'Contact' menu in your WordPress admin panel.
 
-For basic usage, you can also have a look at the [plugin homepage](http://contactform7.com/) and [FAQ](http://contactform7.com/support/faq/).
+For basic usage, you can also have a look at the [plugin homepage](http://contactform7.com/).
 
 == Frequently Asked Questions ==
 
-Please see [FAQ](http://contactform7.com/support/faq/).
+Do you have questions or issues with Contact Form 7? Use these support channels appropriately.
 
-If you have any further questions,
-please submit them [to the support forum](http://wordpress.org/tags/contact-form-7?forum_id=10#postform).
+1. [FAQ](http://contactform7.com/faq/)
+1. [Support Forum](http://wordpress.org/tags/contact-form-7?forum_id=10)
+1. [WordPress HelpCenter](http://wphelpcenter.com/)
+1. [Customization Service](http://contactform7.com/customization/)
+
+[Support](http://contactform7.com/support/)
 
 == Screenshots ==
 
@@ -88,4 +92,13 @@ please submit them [to the support forum](http://wordpress.org/tags/contact-form
 
 == Changelog ==
 
-[See change logs in author's blog.](http://ideasilo.wordpress.com/tag/contact-form-7/)
+= 2.0.7 =
+* add new filter hook (`wpcf7_validation_error`) and action hooks (`wpcf7_admin_after_general_settings`, `wpcf7_admin_after_form`, `wpcf7_admin_after_mail`, `wpcf7_admin_after_mail_2`, `wpcf7_admin_after_messages`, and `wpcf7_admin_after_additional_settings`)
+* call `$captcha->cleanup()` if available and shorten cleanup period (in `modules/captcha.php`)
+* various fixes with administration panels
+* improve DB table check
+* fix bug relating to disappearing backslashes
+* sanitize filenames with multiple extensions (relating to the issue discussed on [Ticket #11122](http://core.trac.wordpress.org/ticket/11122))
+* update translation for Persian (props: Mohammad Musavi)
+
+[Releases](http://contactform7.com/category/releases/)
