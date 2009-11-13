@@ -3,7 +3,7 @@
 /* No table warning */
 if ( ! wpcf7_table_exists() ) {
 	if ( current_user_can( 'activate_plugins' ) ) {
-		$create_table_link_url = wpcf7_admin_url( 'admin.php', array( 'wpcf7-create-table' => 1 ) );
+		$create_table_link_url = wpcf7_admin_url( array( 'wpcf7-create-table' => 1 ) );
 		$create_table_link_url = wp_nonce_url( $create_table_link_url, 'wpcf7-create-table' );
 		$message = sprintf(
 			__( '<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href="%s">create the table</a> for it to work.', 'wpcf7' ),
@@ -37,12 +37,12 @@ if ( ! wpcf7_table_exists() ) {
 
 	<ul class="subsubsub">
 	<?php foreach ( $contact_forms as $v ) : ?>
-	<li><a href="<?php echo wpcf7_admin_url( 'admin.php', array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>>
+	<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>>
 		<?php echo esc_html( $v->title ); ?></a> |</li>
 	<?php endforeach; ?>
 
 	<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
-	<li class="addnew"><a href="<?php echo wpcf7_admin_url( 'admin.php', array( 'contactform' => 'new' ) ); ?>"<?php if ( $unsaved ) echo ' class="current"'; ?>><?php echo esc_html( __( 'Add new', 'wpcf7' ) ); ?></a></li>
+	<li class="addnew"><a href="<?php echo wpcf7_admin_url( array( 'contactform' => 'new' ) ); ?>"<?php if ( $unsaved ) echo ' class="current"'; ?>><?php echo esc_html( __( 'Add new', 'wpcf7' ) ); ?></a></li>
 	<?php endif; ?>
 	</ul>
 
@@ -51,7 +51,7 @@ if ( ! wpcf7_table_exists() ) {
 <?php if ( $cf ) : ?>
 <?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
 
-<form method="post" action="<?php echo wpcf7_admin_url( 'admin.php', array( 'contactform' => $current ) ); ?>" id="wpcf7-admin-form-element">
+<form method="post" action="<?php echo wpcf7_admin_url( array( 'contactform' => $current ) ); ?>" id="wpcf7-admin-form-element">
 	<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
 	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
 
