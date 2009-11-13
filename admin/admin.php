@@ -246,8 +246,6 @@ function wpcf7_admin_management_page() {
 
 	$contact_forms = wpcf7_contact_forms();
 
-	$id = $_POST['wpcf7-id'];
-
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
