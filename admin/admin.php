@@ -226,8 +226,6 @@ function wpcf7_admin_enqueue_scripts() {
 }
 
 function wpcf7_admin_management_page() {
-	global $wp_version;
-
 	switch ( $_GET['message'] ) {
 		case 'created':
 			$updated_message = __( "Contact form created.", 'wpcf7' );
