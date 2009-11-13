@@ -127,11 +127,10 @@ function wpcf7_admin_add_pages() {
 		'wpcf7_admin_management_page' );
 }
 
-function wpcf7_add_contact_page( $page_title, $menu_title, $access_level,
-	$file, $function = '', $icon_url = '' ) {
+function wpcf7_add_contact_page( $page_title, $menu_title, $access_level, $file, $function = '' ) {
 
 	add_submenu_page( wpcf7_plugin_path( 'admin/admin.php' ),
-		$page_title, $menu_title, $access_level, $file, $function = '', $icon_url = '' );
+		$page_title, $menu_title, $access_level, $file, $function = '' );
 }
 
 add_action( 'admin_print_styles', 'wpcf7_admin_enqueue_styles' );
