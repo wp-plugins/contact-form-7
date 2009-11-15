@@ -32,7 +32,7 @@ if ( ! wpcf7_table_exists() ) {
 	<?php wpcf7_donation_link(); ?>
 
 	<?php if ( isset( $updated_message ) ) : ?>
-	<div id="message" class="updated fade"><p><?php echo $updated_message; ?></p></div>
+	<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
 	<?php endif; ?>
 
 	<ul class="subsubsub">
