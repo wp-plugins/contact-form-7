@@ -183,7 +183,7 @@ function wpcf7_enqueue_scripts() {
 	if ( 'header' === WPCF7_LOAD_JS )
 		$in_footer = false;
 
-	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'contact-form-7.js' ),
+	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'scripts.js' ),
 		array('jquery', 'jquery-form'), WPCF7_VERSION, $in_footer );
 }
 
@@ -191,11 +191,11 @@ if ( WPCF7_LOAD_CSS )
 	add_action( 'wp_print_styles', 'wpcf7_enqueue_styles' );
 
 function wpcf7_enqueue_styles() {
-	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'stylesheet.css' ),
+	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
 	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
-		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'stylesheet-rtl.css' ),
+		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'styles-rtl.css' ),
 			array(), WPCF7_VERSION, 'all' );
 	}
 }
