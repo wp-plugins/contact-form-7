@@ -25,28 +25,32 @@ if ( ! wpcf7_table_exists() ) {
 
 ?><div class="wrap wpcf7">
 
-	<?php screen_icon( 'edit-pages' ); ?>
+<?php screen_icon( 'edit-pages' ); ?>
 
-	<h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
+<h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
 
-	<?php wpcf7_donation_link(); ?>
+<?php wpcf7_donation_link(); ?>
 
-	<?php if ( isset( $updated_message ) ) : ?>
-	<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
-	<?php endif; ?>
+<?php if ( isset( $updated_message ) ) : ?>
+<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
+<?php endif; ?>
 
-	<ul class="subsubsub">
-	<?php foreach ( $contact_forms as $v ) : ?>
-	<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>>
-		<?php echo esc_html( $v->title ); ?></a> |</li>
-	<?php endforeach; ?>
+<ul class="subsubsub">
+<?php
+$first = array_shift( $contact_forms );
+if ( ! is_null( $first ) ) : ?>
+<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->id ) ); ?>"<?php if ( $first->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->title ); ?></a></li>
+<?php endif;
+foreach ( $contact_forms as $v ) : ?>
+<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->title ); ?></a></li>
+<?php endforeach; ?>
 
-	<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
-	<li class="addnew"><a href="<?php echo wpcf7_admin_url( array( 'contactform' => 'new' ) ); ?>"<?php if ( $unsaved ) echo ' class="current"'; ?>><?php echo esc_html( __( 'Add new', 'wpcf7' ) ); ?></a></li>
-	<?php endif; ?>
-	</ul>
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
+<li class="addnew"><a href="<?php echo wpcf7_admin_url( array( 'contactform' => 'new' ) ); ?>"<?php if ( $unsaved ) echo ' class="current"'; ?>><?php echo esc_html( __( 'Add new', 'wpcf7' ) ); ?></a></li>
+<?php endif; ?>
+</ul>
 
-	<br class="clear" />
+<br class="clear" />
 
 <?php if ( $cf ) : ?>
 <?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
