@@ -153,6 +153,9 @@ add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 function wpcf7_contact_form_tag_func( $atts ) {
 	global $wpcf7_contact_form, $wpcf7_unit_count, $wpcf7_processing_within;
 
+	if ( is_feed() )
+		return '[contact-form]';
+
 	if ( is_string( $atts ) )
 		$atts = explode( ' ', $atts, 2 );
 
