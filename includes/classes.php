@@ -373,13 +373,12 @@ class WPCF7_ContactForm {
 
 			return stripslashes( $submitted );
 
-		} else {
-			// Special [wpcf7.remote_ip] tag
-			if ( 'wpcf7.remote_ip' == $matches[1] )
-				return preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
-
-			return $matches[0];
 		}
+
+		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[1] ) )
+			return $special;
+
+		return $matches[0];
 	}
 
 	/* Message */
@@ -568,6 +567,43 @@ function wpcf7_contact_form_default_pack() {
 	$contact_form->messages = wpcf7_default_messages_template();
 
 	return $contact_form;
+}
+
+/* Default Filters */
+
+add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_remote_ip', 10, 2 );
+
+function wpcf7_special_mail_tag_for_remote_ip( $output, $name ) {
+	// Special [wpcf7.remote_ip] tag
+	if ( 'wpcf7.remote_ip' == $name )
+		$output = preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
+
+	return $output;
+}
+
+add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_post_data', 10, 2 );
+
+function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
+	if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
+		return $output;
+
+	if ( ! preg_match( '/^wpcf7-f(\d+)-p(\d+)-o(\d+)$/', $_POST['_wpcf7_unit_tag'], $matches ) )
+		return $output;
+
+	$post_id = (int) $matches[2];
+
+	if ( ! $post = get_post( $post_id ) )
+		return $output;
+
+	if ( 'wpcf7.post_id' == $name ) { // Special [wpcf7.post_id] tag
+		$output = (string) $post->ID;
+	} elseif ( 'wpcf7.post_name' == $name ) { // Special [wpcf7.post_name] tag
+		$output = $post->post_name;
+	} elseif ( 'wpcf7.post_title' == $name ) { // Special [wpcf7.post_title] tag
+		$output = $post->post_title;
+	}
+
+	return $output;
 }
 
 ?>
