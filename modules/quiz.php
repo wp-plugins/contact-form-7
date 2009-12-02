@@ -104,9 +104,10 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 
 /* Ajax echo filter */
 
-add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_echo_filter' );
+add_filter( 'wpcf7_ajax_onload', 'wpcf7_quiz_ajax_refill' );
+add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_refill' );
 
-function wpcf7_quiz_ajax_echo_filter( $items ) {
+function wpcf7_quiz_ajax_refill( $items ) {
 	global $wpcf7_contact_form;
 
 	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )

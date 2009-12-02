@@ -14,6 +14,15 @@ jQuery(document).ready(function() {
 		});
 	} catch (e) {
 	}
+
+	try {
+		if (_wpcf7.cached) {
+			jQuery('div.wpcf7 > form').each(function(i, n) {
+				wpcf7OnloadRefill(n);
+			});
+		}
+	} catch (e) {
+	}
 });
 
 // Exclusive checkbox
@@ -60,6 +69,25 @@ function wpcf7NotValidTip(into, message) {
 	});
 }
 
+function wpcf7OnloadRefill(form) {
+	var url = jQuery(form).attr('action');
+	if (0 < url.indexOf('#'))
+		url = url.substr(0, url.indexOf('#'));
+
+	var id = jQuery(form).find('input[name="_wpcf7"]').val();
+	var unitTag = jQuery(form).find('input[name="_wpcf7_unit_tag"]').val();
+
+	jQuery.getJSON(url,
+		{ _wpcf7_is_ajax_call: 1, _wpcf7: id },
+		function(data) {
+			if (data.captcha) {
+				wpcf7RefillCaptcha('#' + unitTag, data.captcha);
+				wpcf7RefillQuiz('#' + unitTag, data.quiz);
+			}
+		}
+	);
+}
+
 function wpcf7ProcessJson(data) {
 	var wpcf7ResponseOutput = jQuery(data.into).find('div.wpcf7-response-output');
 	wpcf7ClearResponseOutput();
@@ -72,20 +100,11 @@ function wpcf7ProcessJson(data) {
 	}
 
 	if (data.captcha) {
-		jQuery.each(data.captcha, function(i, n) {
-			jQuery(data.into).find(':input[name="' + i + '"]').clearFields();
-			jQuery(data.into).find('img.wpcf7-captcha-' + i).attr('src', n);
-			var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
-			jQuery(data.into).find('input:hidden[name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
-		});
+		wpcf7RefillCaptcha(data.into, data.captcha);
 	}
 
 	if (data.quiz) {
-		jQuery.each(data.quiz, function(i, n) {
-			jQuery(data.into).find(':input[name="' + i + '"]').clearFields();
-			jQuery(data.into).find(':input[name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
-			jQuery(data.into).find('input:hidden[name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
-		});
+		wpcf7RefillQuiz(data.into, data.quiz);
 	}
 
 	if (1 == data.spam) {
@@ -106,6 +125,23 @@ function wpcf7ProcessJson(data) {
 		jQuery.each(data.onSubmit, function(i, n) { eval(n) });
 
 	wpcf7ResponseOutput.append(data.message).slideDown('fast');
+}
+
+function wpcf7RefillCaptcha(form, captcha) {
+	jQuery.each(captcha, function(i, n) {
+		jQuery(form).find(':input[name="' + i + '"]').clearFields();
+		jQuery(form).find('img.wpcf7-captcha-' + i).attr('src', n);
+		var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
+		jQuery(form).find('input:hidden[name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
+	});
+}
+
+function wpcf7RefillQuiz(form, quiz) {
+	jQuery.each(quiz, function(i, n) {
+		jQuery(form).find(':input[name="' + i + '"]').clearFields();
+		jQuery(form).find(':input[name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
+		jQuery(form).find('input:hidden[name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
+	});
 }
 
 function wpcf7ClearResponseOutput() {
