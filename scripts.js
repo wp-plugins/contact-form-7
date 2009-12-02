@@ -80,8 +80,10 @@ function wpcf7OnloadRefill(form) {
 	jQuery.getJSON(url,
 		{ _wpcf7_is_ajax_call: 1, _wpcf7: id },
 		function(data) {
-			if (data.captcha) {
+			if (data && data.captcha) {
 				wpcf7RefillCaptcha('#' + unitTag, data.captcha);
+			}
+			if (data && data.quiz) {
 				wpcf7RefillQuiz('#' + unitTag, data.quiz);
 			}
 		}
