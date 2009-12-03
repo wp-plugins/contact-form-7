@@ -354,6 +354,12 @@ foreach ( $contact_forms as $v ) : ?>
 	</tbody>
 	</table>
 
+<?php endif; ?>
+
+<?php do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$cf ) ); ?>
+
+<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
+
 	<table class="widefat" style="margin-top: 1em;">
 	<tbody>
 	<tr>
@@ -367,8 +373,6 @@ foreach ( $contact_forms as $v ) : ?>
 	</table>
 
 <?php endif; ?>
-
-<?php do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$cf ) ); ?>
 
 </form>
 
