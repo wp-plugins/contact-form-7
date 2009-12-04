@@ -377,4 +377,12 @@ foreach ( $contact_forms as $v ) : ?>
 </form>
 
 <?php endif; ?>
+
+<div class="footlink">
+<a href="<?php echo sanitize_url( __( 'http://contactform7.com/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Contactform7.com', 'wpcf7' ) ); ?></a>&ensp;
+<a href="<?php echo sanitize_url( __( 'http://contactform7.com/docs/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Docs', 'wpcf7' ) ); ?></a> -
+<a href="<?php echo sanitize_url( __( 'http://contactform7.com/faq/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'FAQ', 'wpcf7' ) ); ?></a> -
+<a href="<?php echo sanitize_url( __( 'http://contactform7.com/support/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Support', 'wpcf7' ) ); ?></a>
+</div>
+
 </div>
