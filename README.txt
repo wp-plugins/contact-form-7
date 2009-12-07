@@ -43,7 +43,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
-* Lithuanian(lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
+* Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net)
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com)

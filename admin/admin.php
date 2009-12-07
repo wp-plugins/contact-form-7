@@ -133,6 +133,8 @@ function wpcf7_admin_enqueue_styles() {
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
 		return;
 
+	wp_enqueue_style( 'thickbox' );
+
 	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
@@ -169,6 +171,8 @@ function wpcf7_admin_enqueue_scripts() {
 
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
 		return;
+
+	wp_enqueue_script( 'thickbox' );
 
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
 		array('jquery'), WPCF7_VERSION, true );
@@ -248,7 +252,7 @@ function wpcf7_admin_management_page() {
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
-		$cf = wpcf7_contact_form_default_pack();
+		$cf = wpcf7_contact_form_default_pack( $_GET['locale'] );
 	} elseif ( $cf = wpcf7_contact_form( $_GET['contactform'] ) ) {
 		$current = (int) $_GET['contactform'];
 	} else {

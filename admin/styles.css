@@ -206,3 +206,7 @@ div.wpcf7 div.footlink {
 div.wpcf7 div.footlink a {
 	text-decoration: none;
 }
+
+#wpcf7-lang-select-modal {
+	display: none;
+}
