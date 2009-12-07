@@ -391,6 +391,10 @@ foreach ( $contact_forms as $v ) : ?>
 <?php
 	$available_locales = wpcf7_l10n();
 	$default_locale = get_locale();
+
+	if ( ! isset( $available_locales[$default_locale] ) )
+		$default_locale = 'en_US';
+
 ?>
 <h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
 <p><a href="<?php echo wpcf7_admin_url( array( 'contactform' => 'new' ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
