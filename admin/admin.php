@@ -349,8 +349,15 @@ function wpcf7_donation_link() {
 	if ( 'new' == $_GET['contactform'] || ! empty($_GET['message']) )
 		return;
 
+	$show_link = true;
+
 	$num = mt_rand(0, 99);
 	if ($num >= 10) // 90%
+		$show_link = false;
+
+	$show_link = apply_filters( 'wpcf7_show_donation_link', $show_link );
+
+	if ( ! $show_link )
 		return;
 
 	$texts = array(
