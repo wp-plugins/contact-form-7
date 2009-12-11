@@ -1,3 +1,17 @@
+#wpcf7-lang-select-modal {
+	display: none;
+}
+
+div.wpcf7 div.cf7com-links {
+	text-align: right;
+	font-size: .8em;
+	margin-top: -1.6em;
+}
+
+div.wpcf7 div.cf7com-links a {
+	text-decoration: none;
+}
+
 div.wpcf7 div.donation {
 	border-width: 1px;
 	border-style: solid;
@@ -166,6 +180,7 @@ div.tg-pane table td {
 }
 
 div.tg-pane input.tag {
+	width: 98%;
 	border: none;
 	color: #fff;
 	background-color: #8a796d;
@@ -173,6 +188,10 @@ div.tg-pane input.tag {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+
+div.tg-pane input.tg-name {
+	border-color: #555;
 }
 
 div.tg-dropdown {
@@ -194,18 +213,4 @@ div.tg-panetitle {
     font: bold 132% sans-serif;
     margin: 0 0 10px;
     color: #777;
-}
-
-div.wpcf7 div.cf7com-links {
-	text-align: right;
-	font-size: .8em;
-	margin-top: -1em;
-}
-
-div.wpcf7 div.cf7com-links a {
-	text-decoration: none;
-}
-
-#wpcf7-lang-select-modal {
-	display: none;
 }

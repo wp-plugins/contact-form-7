@@ -174,8 +174,11 @@ function wpcf7_admin_enqueue_scripts() {
 
 	wp_enqueue_script( 'thickbox' );
 
+	wp_enqueue_script( 'wpcf7-admin-taggenerator', wpcf7_plugin_url( 'admin/taggenerator.js' ),
+		array( 'jquery' ), WPCF7_VERSION, true );
+
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
-		array('jquery'), WPCF7_VERSION, true );
+		array( 'jquery' ), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
@@ -261,6 +264,7 @@ function wpcf7_admin_management_page() {
 		$cf = wpcf7_contact_form( $current );
 	}
 
+	require_once WPCF7_PLUGIN_DIR . '/admin/taggenerator.php';
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
 }
 

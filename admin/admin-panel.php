@@ -117,7 +117,8 @@ foreach ( $contact_forms as $v ) : ?>
 	</td>
 
 	<td scope="col" style="width: 50%;">
-	<div id="tag-generator-div"></div>
+<!--	<div id="tag-generator-div"></div> -->
+		<div id="taggenerator"></div>
 	</td>
 
 	</tr>
@@ -408,3 +409,5 @@ foreach ( $contact_forms as $v ) : ?>
 <input type="submit" class="button" value="<?php echo esc_attr( __( 'Add New', 'wpcf7' ) ); ?>" />
 </form>
 </div>
+
+<?php do_action_ref_array( 'wpcf7_admin_footer', array( &$cf ) ); ?>
