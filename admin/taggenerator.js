@@ -96,7 +96,16 @@
 
 		pane.append($('#' + $.tgPanes[tagType].content).clone().contents());
 
-		$.tgCreateTag(pane, tagType);
+		pane.find(':checkbox.exclusive').change(function() {
+			if ($(this).is(':checked'))
+				$(this).siblings(':checkbox.exclusive').removeAttr('checked');
+		});
+
+		if ($.isFunction($.tgPanes[tagType].change))
+			$.tgPanes[tagType].change(pane, tagType);
+		else
+			$.tgCreateTag(pane, tagType);
+
 		pane.find(':input').change(function() {
 			if ($.isFunction($.tgPanes[tagType].change))
 				$.tgPanes[tagType].change(pane, tagType);
@@ -176,6 +185,11 @@
 		if (size || maxlength)
 			options.push(size + '/' + maxlength);
 
+		var cols = pane.find(':input[name="cols"]').val();
+		var rows = pane.find(':input[name="rows"]').val();
+		if (cols || rows)
+			options.push(cols + 'x' + rows);
+
 		var idvalue = pane.find(':input[name="id"]').val();
 		if (idvalue)
 			options.push('id:' + idvalue);
@@ -205,18 +219,23 @@
 
 	$.tgPanes = {};
 
-	$(function() {
-		$(':checkbox.exclusive').change(function() {
-			if ($(this).is(':checked'))
-				$(this).siblings(':checkbox.exclusive').removeAttr('checked');
-		});
-	});
-
 })(jQuery);
 
 jQuery.tgPanes.text = {
 	title: _wpcf7L10n.textField,
 	content: 'wpcf7-tg-pane-text',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.email = {
+	title: _wpcf7L10n.emailField,
+	content: 'wpcf7-tg-pane-email',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.textarea = {
+	title: _wpcf7L10n.textArea,
+	content: 'wpcf7-tg-pane-textarea',
 	change: jQuery.tgCreateTag
 };
 

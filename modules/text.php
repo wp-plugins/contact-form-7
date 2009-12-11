@@ -126,10 +126,18 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_text' );
 
 function wpcf7_tg_pane_text( &$contact_form ) {
+	wpcf7_tg_pane_text_and_email( 'text' );
+	wpcf7_tg_pane_text_and_email( 'email' );
+}
+
+function wpcf7_tg_pane_text_and_email( $type = 'text' ) {
+	if ( 'email' != $type )
+		$type = 'text';
+
 ?>
-<div id="wpcf7-tg-pane-text" class="hidden">
+<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
 <form action="">
-<input type="hidden" name="type" value="text" />
+<input type="hidden" name="type" value="<?php echo $type; ?>" />
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'wpcf7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name" /></td></tr>
@@ -154,8 +162,14 @@ function wpcf7_tg_pane_text( &$contact_form ) {
 
 <tr>
 <td><?php echo esc_html( __( 'Akismet', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<?php if ( 'text' == $type ) : ?>
 <input type="checkbox" name="akismet-author-name" class="exclusive" />&nbsp;<?php echo esc_html( __( "This field requires author's name", 'wpcf7' ) ); ?><br />
-<input type="checkbox" name="akismet-author-url" class="exclusive" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'wpcf7' ) ); ?></td>
+<input type="checkbox" name="akismet-author-url" class="exclusive" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'wpcf7' ) ); ?>
+<?php else : ?>
+<input type="checkbox" name="akismet-author-email" />&nbsp;<?php echo esc_html( __( "This field requires author's email address", 'wpcf7' ) ); ?>
+<?php endif; ?>
+</td>
+
 <td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="default-value" /></td>
 </tr>
 </table>
