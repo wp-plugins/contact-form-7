@@ -619,6 +619,8 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 		$output = $post->post_name;
 	} elseif ( 'wpcf7.post_title' == $name ) { // Special [wpcf7.post_title] tag
 		$output = $post->post_title;
+	} elseif ( 'wpcf7.post_url' == $name ) { // Special [wpcf7.post_url] tag
+		$output = get_permalink( $post->ID );
 	}
 
 	return $output;
