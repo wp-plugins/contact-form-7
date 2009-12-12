@@ -204,7 +204,9 @@
 			'akismet-author-email': 'akismet:author_email',
 			'multiple-choices': 'multiple',
 			'insert-blank': 'include_blank',
-			'exclusive-checkbox': 'exclusive' },
+			'exclusive-checkbox': 'exclusive',
+			'default-on': 'default:on',
+			'invert': 'invert' },
 			function(i, n) {
 				if (pane.find(':input[name="' + i + '"]').is(':checked'))
 					options.push(n);
@@ -264,6 +266,12 @@ jQuery.tgPanes.checkbox = {
 jQuery.tgPanes.radio = {
 	title: _wpcf7L10n.radioButtons,
 	content: 'wpcf7-tg-pane-radio',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.acceptance = {
+	title: _wpcf7L10n.acceptance,
+	content: 'wpcf7-tg-pane-acceptance',
 	change: jQuery.tgCreateTag
 };
 

@@ -85,4 +85,42 @@ function wpcf7_acceptance_filter( $accepted ) {
 	return $accepted;
 }
 
+
+/* Tag generator */
+
+add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_acceptance' );
+
+function wpcf7_tg_pane_acceptance( &$contact_form ) {
+?>
+<div id="wpcf7-tg-pane-acceptance" class="hidden">
+<form action="">
+<input type="hidden" name="type" value="acceptance" />
+<table>
+<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+</table>
+
+<table>
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<br /><input type="checkbox" name="default-on" />&nbsp;<?php echo esc_html( __( "Make this checkbox checked by default?", 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="invert" />&nbsp;<?php echo esc_html( __( "Make this checkbox work inversely?", 'wpcf7' ) ); ?>
+<br /><span style="font-size: smaller;"><?php echo esc_html( __( "* That means visitor who accepts the term unchecks it.", 'wpcf7' ) ); ?></span>
+</td>
+</tr>
+</table>
+
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+</form>
+</div>
+<?php
+}
+
 ?>
