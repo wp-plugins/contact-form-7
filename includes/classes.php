@@ -556,7 +556,22 @@ function wpcf7_contact_form( $id ) {
 	return $contact_form;
 }
 
-function wpcf7_contact_form_default_pack() {
+function wpcf7_contact_form_default_pack( $locale = null ) {
+	global $l10n;
+
+	if ( $locale && $locale != get_locale() ) {
+		$mo_orig = $l10n['wpcf7'];
+		unset( $l10n['wpcf7'] );
+
+		if ( 'en_US' != $locale ) {
+			$mofile = wpcf7_plugin_path( 'languages/wpcf7-' . $locale . '.mo' );
+			if ( ! load_textdomain( 'wpcf7', $mofile ) ) {
+				$l10n['wpcf7'] = $mo_orig;
+				unset( $mo_orig );
+			}
+		}
+	}
+
 	$contact_form = new WPCF7_ContactForm();
 	$contact_form->initial = true;
 
@@ -565,6 +580,9 @@ function wpcf7_contact_form_default_pack() {
 	$contact_form->mail = wpcf7_default_mail_template();
 	$contact_form->mail_2 = wpcf7_default_mail_2_template();
 	$contact_form->messages = wpcf7_default_messages_template();
+
+	if ( isset( $mo_orig ) )
+		$l10n['wpcf7'] = $mo_orig;
 
 	return $contact_form;
 }
@@ -601,9 +619,9 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 		$output = $post->post_name;
 	} elseif ( 'wpcf7.post_title' == $name ) { // Special [wpcf7.post_title] tag
 		$output = $post->post_title;
-	} elseif ( 'wpcf7.post_url' == $name ) { // Special [wpcf7.post_url] tag 
-		$output = get_permalink( $post->ID ); 
-	} 
+	} elseif ( 'wpcf7.post_url' == $name ) { // Special [wpcf7.post_url] tag
+		$output = get_permalink( $post->ID );
+	}
 
 	return $output;
 }

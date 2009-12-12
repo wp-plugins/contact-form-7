@@ -133,6 +133,8 @@ function wpcf7_admin_enqueue_styles() {
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
 		return;
 
+	wp_enqueue_style( 'thickbox' );
+
 	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
@@ -170,8 +172,13 @@ function wpcf7_admin_enqueue_scripts() {
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
 		return;
 
+	wp_enqueue_script( 'thickbox' );
+
+	wp_enqueue_script( 'wpcf7-admin-taggenerator', wpcf7_plugin_url( 'admin/taggenerator.js' ),
+		array( 'jquery' ), WPCF7_VERSION, true );
+
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
-		array('jquery'), WPCF7_VERSION, true );
+		array( 'jquery' ), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
@@ -248,7 +255,7 @@ function wpcf7_admin_management_page() {
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
-		$cf = wpcf7_contact_form_default_pack();
+		$cf = wpcf7_contact_form_default_pack( $_GET['locale'] );
 	} elseif ( $cf = wpcf7_contact_form( $_GET['contactform'] ) ) {
 		$current = (int) $_GET['contactform'];
 	} else {
@@ -338,6 +345,21 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
+function wpcf7_cf7com_links() {
+	$links = '<div class="cf7com-links">'
+		. '<a href="' . sanitize_url( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
+		. esc_html( __( 'Contactform7.com', 'wpcf7' ) ) . '</a>&ensp;'
+		. '<a href="' . sanitize_url( __( 'http://contactform7.com/docs/', 'wpcf7' ) ) . '" target="_blank">'
+		. esc_html( __( 'Docs', 'wpcf7' ) ) . '</a> - '
+		. '<a href="' . sanitize_url( __( 'http://contactform7.com/faq/', 'wpcf7' ) ) . '" target="_blank">'
+		. esc_html( __( 'FAQ', 'wpcf7' ) ) . '</a> - '
+		. '<a href="' . sanitize_url( __( 'http://contactform7.com/support/', 'wpcf7' ) ) . '" target="_blank">'
+		. esc_html( __( 'Support', 'wpcf7' ) ) . '</a>'
+		. '</div>';
+
+	echo apply_filters( 'wpcf7_cf7com_links', $links );
+}
+
 function wpcf7_donation_link() {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
@@ -345,8 +367,15 @@ function wpcf7_donation_link() {
 	if ( 'new' == $_GET['contactform'] || ! empty($_GET['message']) )
 		return;
 
+	$show_link = true;
+
 	$num = mt_rand(0, 99);
 	if ($num >= 10) // 90%
+		$show_link = false;
+
+	$show_link = apply_filters( 'wpcf7_show_donation_link', $show_link );
+
+	if ( ! $show_link )
 		return;
 
 	$texts = array(
