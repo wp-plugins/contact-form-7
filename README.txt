@@ -1,7 +1,7 @@
 === Contact Form 7 ===
 Contributors: takayukister
 Donate link: http://pledgie.com/campaigns/3117
-Tags: contact, contact form, feedback, email, ajax, captcha, akismet, multilingual
+Tags: contact, contact form, feedback, email, ajax, captcha, akismet, WPML, multilingual
 Requires at least: 2.7
 Tested up to: 2.9-rare
 Stable tag: 2.0.7
@@ -43,7 +43,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
-* Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
+* Lithuanian(lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net)
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com)
@@ -61,6 +61,10 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Vietnamese (vi) - Thanh Hải, Hà
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into Contact Form 7.
+
+= How to use Contact Form 7 in multilingual websites =
+
+Starting with version 2.0, Contact Form 7 can create multilingual contact form using the WPML plugin. See the detail on [WPML.org](http://wpml.org/wordpress-translation/translation-for-texts-by-other-plugins-and-themes/how-to-use-contact-form-7-in-multilingual-websites/).
 
 == Installation ==
 

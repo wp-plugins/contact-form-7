@@ -1,17 +1,3 @@
-#wpcf7-lang-select-modal {
-	display: none;
-}
-
-div.wpcf7 div.cf7com-links {
-	text-align: right;
-	font-size: .8em;
-	margin-top: -1.6em;
-}
-
-div.wpcf7 div.cf7com-links a {
-	text-decoration: none;
-}
-
 div.wpcf7 div.donation {
 	border-width: 1px;
 	border-style: solid;
@@ -45,25 +31,20 @@ div.wpcf7 div.donation p em {
 div.wpcf7 ul.subsubsub {
 	white-space: normal;
 }
-
 ul.subsubsub li.addnew {
 	margin-left: 0.5em;
 }
-
 ul.subsubsub li.addnew a {
 	color: #e6255b;
 }
-
 ul.subsubsub li.addnew a:hover,
 ul.subsubsub li.addnew a:active {
   color: #999;
 }
-
 div.save-contact-form {
 	padding: 1.4em 0 0 0;
 	text-align: right;
 }
-
 div.actions-link {
 	position: absolute;
 	top: 0;
@@ -71,7 +52,6 @@ div.actions-link {
 	margin: 0;
 	padding: 0;
 }
-
 div.actions-link input {
 	padding: 0;
 	margin: 0;
@@ -80,27 +60,22 @@ div.actions-link input {
 	font-size: 11px;
 	cursor: pointer;
 }
-
 div.actions-link input.copy {
 	color: #006505;
 }
-
 div.actions-link input.delete {
 	color: #bc0b0b;
 }
-
 input#wpcf7-title {
 	color: #555;
 	background-color: #fff;
 	border: none;
 	font: bold 20px serif;
 }
-
 p.tagcode {
 	color: #333;
 	margin: 2ex 0 1ex 1em;
 }
-
 input#contact-form-anchor-text {
 	color: #fff;
 	background: #8a796d;
@@ -111,7 +86,6 @@ input#contact-form-anchor-text {
 	-webkit-border-radius: 6px;
 	border-radius: 6px; 
 }
-
 span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
 	margin-left: 1em;
 	font-weight: normal;
@@ -119,34 +93,27 @@ span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch
 	color: #2583ad;
 	cursor: pointer;
 }
-
 div.pseudo-hr {
 	border-bottom: 1px solid #fff;
 	margin: 0.7em 0;
 }
-
 input, textarea {
 	border: 1px solid #dfdfdf;
 }
-
 input.wide {
 	width: 100%;
 }
-
 textarea {
 	width: 100%;
 }
-
 label.disabled {
 	color: #777;
 }
-
 div.tag-generator {
 	position: relative;
 	background: #fff;
 	padding: 5px 0 5px 1px;
 }
-
 div.tg-pane {
     border: 1px dashed #999;
     background: #f1f1f1;
@@ -157,30 +124,24 @@ div.tg-pane {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
-
 div.tg-pane table {
 	width: 100%;
 	margin: 0 0 0.7em 0;
 }
-
 div.tg-pane table caption {
 	text-align: left;
 	padding: 0 0 0.2em 0;
 	font-weight: bolder;
 	color: #777;
 }
-
 div.tg-pane table code {
 	background-color: inherit;
 }
-
 div.tg-pane table td {
 	vertical-align: top;
 	width: 50%;
 }
-
 div.tg-pane input.tag {
-	width: 98%;
 	border: none;
 	color: #fff;
 	background-color: #8a796d;
@@ -189,11 +150,6 @@ div.tg-pane input.tag {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
-
-div.tg-pane input.tg-name {
-	border-color: #555;
-}
-
 div.tg-dropdown {
     position: absolute;
     top: 26px;
@@ -201,14 +157,12 @@ div.tg-dropdown {
     z-index: 10;
     border: 1px solid #ddd;
 }
-
 span.tg-closebutton {
     color: #777;
     font: bold 18px monospace;
     padding: 1px 4px;
     cursor: pointer;
 }
-
 div.tg-panetitle {
     font: bold 132% sans-serif;
     margin: 0 0 10px;
