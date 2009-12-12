@@ -198,18 +198,9 @@
 		if (classvalue)
 			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
 
-		$.each({
-			'akismet-author-name': 'akismet:author',
-			'akismet-author-url': 'akismet:author_url',
-			'akismet-author-email': 'akismet:author_email',
-			'multiple-choices': 'multiple',
-			'insert-blank': 'include_blank',
-			'exclusive-checkbox': 'exclusive',
-			'default-on': 'default:on',
-			'invert': 'invert' },
-			function(i, n) {
-				if (pane.find(':input[name="' + i + '"]').is(':checked'))
-					options.push(n);
+		pane.find(':checkbox.option').each(function(i) {
+			if ($(this).is(':checked'))
+				options.push($(this).attr('name'));
 		});
 
 		options = (options.length > 0) ? ' ' + options.join(' ') : '';

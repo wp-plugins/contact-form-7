@@ -110,8 +110,8 @@ function wpcf7_tg_pane_acceptance( &$contact_form ) {
 
 <tr>
 <td colspan="2">
-<br /><input type="checkbox" name="default-on" />&nbsp;<?php echo esc_html( __( "Make this checkbox checked by default?", 'wpcf7' ) ); ?>
-<br /><input type="checkbox" name="invert" />&nbsp;<?php echo esc_html( __( "Make this checkbox work inversely?", 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="default:on" class="option" />&nbsp;<?php echo esc_html( __( "Make this checkbox checked by default?", 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="invert" class="option" />&nbsp;<?php echo esc_html( __( "Make this checkbox work inversely?", 'wpcf7' ) ); ?>
 <br /><span style="font-size: smaller;"><?php echo esc_html( __( "* That means visitor who accepts the term unchecks it.", 'wpcf7' ) ); ?></span>
 </td>
 </tr>

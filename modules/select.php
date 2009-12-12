@@ -168,8 +168,8 @@ function wpcf7_tg_pane_menu( &$contact_form ) {
 </td>
 
 <td>
-<br /><input type="checkbox" name="multiple-choices" />&nbsp;<?php echo esc_html( __( 'Allow multiple selections?', 'wpcf7' ) ); ?>
-<br /><input type="checkbox" name="insert-blank" />&nbsp;<?php echo esc_html( __( 'Insert a blank item as the first option?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="multiple" class="option" />&nbsp;<?php echo esc_html( __( 'Allow multiple selections?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="include_blank" class="option" />&nbsp;<?php echo esc_html( __( 'Insert a blank item as the first option?', 'wpcf7' ) ); ?>
 </td>
 </tr>
 </table>

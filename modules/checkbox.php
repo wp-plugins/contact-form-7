@@ -203,7 +203,7 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 
 <?php if ( 'checkbox' == $type ) : ?>
 <td>
-<br /><input type="checkbox" name="exclusive-checkbox" />&nbsp;<?php echo esc_html( __( 'Make checkboxes exclusive?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="exclusive" class="option" />&nbsp;<?php echo esc_html( __( 'Make checkboxes exclusive?', 'wpcf7' ) ); ?>
 </td>
 <?php endif; ?>
 </tr>
