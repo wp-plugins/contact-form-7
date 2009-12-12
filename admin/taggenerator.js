@@ -266,4 +266,10 @@ jQuery.tgPanes.acceptance = {
 	change: jQuery.tgCreateTag
 };
 
+jQuery.tgPanes.quiz = {
+	title: _wpcf7L10n.quiz,
+	content: 'wpcf7-tg-pane-quiz',
+	change: jQuery.tgCreateTag
+};
+
 jQuery('#taggenerator').tagGenerator();

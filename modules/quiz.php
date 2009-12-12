@@ -154,4 +154,49 @@ function wpcf7_quiz_ajax_refill( $items ) {
 	return $items;
 }
 
+
+/* Tag generator */
+
+add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_quiz' );
+
+function wpcf7_tg_pane_quiz( &$contact_form ) {
+?>
+<div id="wpcf7-tg-pane-quiz" class="hidden">
+<form action="">
+<input type="hidden" name="type" value="quiz" />
+<table>
+<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+</table>
+
+<table>
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="size" class="numeric oneline" /></td>
+
+<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="maxlength" class="numeric oneline" /></td>
+</tr>
+
+<tr>
+<td><?php echo esc_html( __( 'Quizzes', 'wpcf7' ) ); ?><br />
+<textarea name="choices" class="choices"></textarea><br />
+<span style="font-size: smaller"><?php echo esc_html( __( "* quiz|answer (e.g. 1+1=?|2)", 'wpcf7' ) ); ?></span>
+</td>
+</tr>
+</table>
+
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+</form>
+</div>
+<?php
+}
+
 ?>
