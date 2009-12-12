@@ -194,6 +194,17 @@ div.tg-pane input.tg-name {
 	border-color: #555;
 }
 
+div.tg-pane input.oneline {
+	width: 98%;
+	font-size: smaller;
+}
+
+div.tg-pane textarea.choices {
+	width: 98%;
+	height: 100px;
+	font-size: smaller;
+}
+
 div.tg-dropdown {
     position: absolute;
     top: 26px;

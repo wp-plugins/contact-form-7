@@ -166,7 +166,7 @@
 			$(this).val(val);
 		});
 
-		pane.find(':input[name="default-value"]').each(function(i) {
+		pane.find(':input[name="default-value"], :input[name="choices"]').each(function(i) {
 			var val = $(this).val();
 			val = $.trim(val);
 			$(this).val(val);
@@ -198,20 +198,30 @@
 		if (classvalue)
 			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
 
-		if (pane.find(':input[name="akismet-author-name"]').is(':checked'))
-			options.push('akismet:author');
-
-		if (pane.find(':input[name="akismet-author-url"]').is(':checked'))
-			options.push('akismet:author_url');
-
-		if (pane.find(':input[name="akismet-author-email"]').is(':checked'))
-			options.push('akismet:author_email');
+		$.each({
+			'akismet-author-name': 'akismet:author',
+			'akismet-author-url': 'akismet:author_url',
+			'akismet-author-email': 'akismet:author_email',
+			'multiple-choices': 'multiple',
+			'insert-blank': 'include_blank',
+			'exclusive-checkbox': 'exclusive' },
+			function(i, n) {
+				if (pane.find(':input[name="' + i + '"]').is(':checked'))
+					options.push(n);
+		});
 
 		options = (options.length > 0) ? ' ' + options.join(' ') : '';
 
-		var value = pane.find(':input[name="default-value"]').val();
-		if (value)
+		var value = '';
+
+		if (pane.find(':input[name="choices"]').val()) {
+			$.each(pane.find(':input[name="choices"]').val().split("\n"), function(i, n) {
+				value += ' "' + n.replace(/["]/g, '&quot;') + '"';
+			});
+		} else if (pane.find(':input[name="default-value"]').val()) {
+			value = pane.find(':input[name="default-value"]').val();
 			value = ' "' + value.replace(/["]/g, '&quot;') + '"';
+		}
 
 		var tag = name ? '[' + type + ' ' + name + options + value + ']' : '';
 		pane.find(':input.tag').val(tag);
@@ -236,6 +246,24 @@ jQuery.tgPanes.email = {
 jQuery.tgPanes.textarea = {
 	title: _wpcf7L10n.textArea,
 	content: 'wpcf7-tg-pane-textarea',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.menu = {
+	title: _wpcf7L10n.menu,
+	content: 'wpcf7-tg-pane-menu',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.checkbox = {
+	title: _wpcf7L10n.checkboxes,
+	content: 'wpcf7-tg-pane-checkbox',
+	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.radio = {
+	title: _wpcf7L10n.radioButtons,
+	content: 'wpcf7-tg-pane-radio',
 	change: jQuery.tgCreateTag
 };
 

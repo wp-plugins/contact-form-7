@@ -137,4 +137,47 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 	return $result;
 }
 
+
+/* Tag generator */
+
+add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_menu' );
+
+function wpcf7_tg_pane_menu( &$contact_form ) {
+?>
+<div id="wpcf7-tg-pane-menu" class="hidden">
+<form action="">
+<input type="hidden" name="type" value="select" />
+<table>
+<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'wpcf7' ) ); ?></td></tr>
+<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+</table>
+
+<table>
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td><?php echo esc_html( __( 'Choices', 'wpcf7' ) ); ?><br />
+<textarea name="choices" class="choices"></textarea><br />
+<span style="font-size: smaller"><?php echo esc_html( __( "* One choice per line.", 'wpcf7' ) ); ?></span>
+</td>
+
+<td>
+<br /><input type="checkbox" name="multiple-choices" />&nbsp;<?php echo esc_html( __( 'Allow multiple selections?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="insert-blank" />&nbsp;<?php echo esc_html( __( 'Insert a blank item as the first option?', 'wpcf7' ) ); ?>
+</td>
+</tr>
+</table>
+
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+</form>
+</div>
+<?php
+}
+
 ?>

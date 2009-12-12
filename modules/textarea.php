@@ -121,28 +121,28 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 <input type="hidden" name="type" value="textarea" />
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'wpcf7' ) ); ?></td></tr>
-<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name" /></td></tr>
+<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
 
 <table>
 <tr>
 <td><code>cols</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="cols" class="numeric" /></td>
+<input type="text" name="cols" class="numeric oneline" /></td>
 
 <td><code>rows</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="rows" class="numeric" /></td>
+<input type="text" name="rows" class="numeric oneline" /></td>
 </tr>
 
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue" /></td>
+<input type="text" name="id" class="idvalue oneline" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue" /></td>
+<input type="text" name="class" class="classvalue oneline" /></td>
 </tr>
 
 <tr>
-<td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="default-value" /></td>
+<td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="default-value" class="oneline" /></td>
 </tr>
 </table>
 
