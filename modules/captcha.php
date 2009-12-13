@@ -172,6 +172,81 @@ function wpcf7_captcha_ajax_refill( $items ) {
 }
 
 
+/* Tag generator */
+
+add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_captcha' );
+
+function wpcf7_tg_pane_captcha( &$contact_form ) {
+?>
+<div id="wpcf7-tg-pane-captcha" class="hidden">
+<form action="">
+<table>
+
+<?php if ( ! class_exists( 'ReallySimpleCaptcha' ) ) : ?>
+<tr><td colspan="2"><strong style="color: #e6255b"><?php echo esc_html( __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7' ) ); ?></strong><br /><a href="http://wordpress.org/extend/plugins/really-simple-captcha/">http://wordpress.org/extend/plugins/really-simple-captcha/</a></td></tr>
+<?php endif; ?>
+
+<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+</table>
+
+<table>
+<caption><?php echo esc_html( __( "Image settings", 'wpcf7' ) ); ?></caption>
+
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td><?php echo esc_html( __( "Foreground color", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="fg" class="color oneline" /></td>
+
+<td><?php echo esc_html( __( "Background color", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="bg" class="color oneline" /></td>
+</tr>
+
+<tr><td colspan="2"><?php echo esc_html( __( "Image size", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="checkbox" name="size:s" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Small", 'wpcf7' ) ); ?>&emsp;
+<input type="checkbox" name="size:m" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Medium", 'wpcf7' ) ); ?>&emsp;
+<input type="checkbox" name="size:l" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Large", 'wpcf7' ) ); ?>
+</td></tr>
+</table>
+
+<table>
+<caption><?php echo esc_html( __( "Input field settings", 'wpcf7' ) ); ?></caption>
+
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id2" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class2" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="size" class="numeric oneline" /></td>
+
+<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="maxlength" class="numeric oneline" /></td>
+</tr>
+</table>
+
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?>
+<br />1) <?php echo esc_html( __( "For image", 'wpcf7' ) ); ?>
+<input type="text" class="tag tag1" readonly="readonly" onfocus="this.select()" />
+<br />2) <?php echo esc_html( __( "For input field", 'wpcf7' ) ); ?>
+<input type="text" class="tag tag2" readonly="readonly" onfocus="this.select()" />
+</div>
+</form>
+</div>
+<?php
+}
+
+
 /* CAPTCHA functions */
 
 function wpcf7_init_captcha() {

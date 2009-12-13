@@ -220,6 +220,103 @@
 		pane.find(':input.tag').val(tag);
 	}
 
+	$.tgCreateTagForCaptcha = function(pane, tagType) {
+		pane.find(':input').empty();
+
+		pane.find('input[name="name"]').each(function(i) {
+			var val = $(this).val();
+			val = val.replace(/[^0-9a-zA-Z:._-]/g, '').replace(/^[^a-zA-Z]+/, '');
+			if ('' == val) {
+				var rand = Math.floor(Math.random() * 1000);
+				val = tagType + '-' + rand;
+			}
+			$(this).val(val);
+		});
+
+		pane.find(':input.numeric').each(function(i) {
+			var val = $(this).val();
+			val = val.replace(/[^0-9]/g, '');
+			$(this).val(val);
+		});
+
+		pane.find(':input.idvalue').each(function(i) {
+			var val = $(this).val();
+			val = val.replace(/[^-0-9a-zA-Z_]/g, '');
+			$(this).val(val);
+		});
+
+		pane.find(':input.classvalue').each(function(i) {
+			var val = $(this).val();
+			val = $.map(val.split(' '), function(n) {
+				return n.replace(/[^-0-9a-zA-Z_]/g, '');
+			}).join(' ');
+			val = $.trim(val.replace(/\s+/g, ' '));
+			$(this).val(val);
+		});
+
+		pane.find(':input.color').each(function(i) {
+			var val = $(this).val();
+			val = val.replace(/[^0-9a-fA-F]/g, '');
+			$(this).val(val);
+		});
+
+		var name = pane.find(':input[name="name"]').val();
+
+		/* Challenge */
+		var type = 'captchac';
+
+		var options = [];
+
+		pane.find(':checkbox.option').each(function(i) {
+			if ($(this).is(':checked'))
+				options.push($(this).attr('name'));
+		});
+
+		var fg = pane.find(':input[name="fg"]').val();
+		if (fg)
+			options.push('fg:#' + fg);
+
+		var bg = pane.find(':input[name="bg"]').val();
+		if (bg)
+			options.push('bg:#' + bg);
+
+		var idvalue = pane.find(':input[name="id"]').val();
+		if (idvalue)
+			options.push('id:' + idvalue);
+
+		var classvalue = pane.find(':input[name="class"]').val();
+		if (classvalue)
+			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
+
+		options = (options.length > 0) ? ' ' + options.join(' ') : '';
+
+		var tag = name ? '[' + type + ' ' + name + options + ']' : '';
+		pane.find(':input.tag1').val(tag);
+
+		/* Response */
+		var type = 'captchar';
+
+		var options = [];
+
+		var idvalue = pane.find(':input[name="id2"]').val();
+		if (idvalue)
+			options.push('id:' + idvalue);
+
+		var classvalue = pane.find(':input[name="class2"]').val();
+		if (classvalue)
+			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
+
+		var size = pane.find(':input[name="size"]').val();
+		var maxlength = pane.find(':input[name="maxlength"]').val();
+		if (size || maxlength)
+			options.push(size + '/' + maxlength);
+
+		options = (options.length > 0) ? ' ' + options.join(' ') : '';
+
+		var tag = name ? '[' + type + ' ' + name + options + ']' : '';
+		pane.find(':input.tag2').val(tag);
+	}
+
 	$.tgPanes = {};
 
 })(jQuery);
@@ -270,6 +367,12 @@ jQuery.tgPanes.quiz = {
 	title: _wpcf7L10n.quiz,
 	content: 'wpcf7-tg-pane-quiz',
 	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.captcha = {
+	title: _wpcf7L10n.captcha,
+	content: 'wpcf7-tg-pane-captcha',
+	change: jQuery.tgCreateTagForCaptcha
 };
 
 jQuery('#taggenerator').tagGenerator();
