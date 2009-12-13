@@ -47,7 +47,7 @@
 		pane.hide();
 		menu.append(pane);
 
-		var dropdown = jQuery('<div class="tg-dropdown"></div>');
+		var dropdown = $('<div class="tg-dropdown"></div>');
 		dropdown.hide();
 		menu.append(dropdown);
 
@@ -331,72 +331,3 @@
 	$.tgPanes = {};
 
 })(jQuery);
-
-jQuery.tgPanes.text = {
-	title: _wpcf7L10n.textField,
-	content: 'wpcf7-tg-pane-text',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.email = {
-	title: _wpcf7L10n.emailField,
-	content: 'wpcf7-tg-pane-email',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.textarea = {
-	title: _wpcf7L10n.textArea,
-	content: 'wpcf7-tg-pane-textarea',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.menu = {
-	title: _wpcf7L10n.menu,
-	content: 'wpcf7-tg-pane-menu',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.checkbox = {
-	title: _wpcf7L10n.checkboxes,
-	content: 'wpcf7-tg-pane-checkbox',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.radio = {
-	title: _wpcf7L10n.radioButtons,
-	content: 'wpcf7-tg-pane-radio',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.acceptance = {
-	title: _wpcf7L10n.acceptance,
-	content: 'wpcf7-tg-pane-acceptance',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.quiz = {
-	title: _wpcf7L10n.quiz,
-	content: 'wpcf7-tg-pane-quiz',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.captcha = {
-	title: _wpcf7L10n.captcha,
-	content: 'wpcf7-tg-pane-captcha',
-	change: jQuery.tgCreateTagForCaptcha
-};
-
-jQuery.tgPanes.file = {
-	title: _wpcf7L10n.fileUpload,
-	content: 'wpcf7-tg-pane-file',
-	change: jQuery.tgCreateTag
-};
-
-jQuery.tgPanes.submit = {
-	title: _wpcf7L10n.submit,
-	content: 'wpcf7-tg-pane-submit',
-	change: jQuery.tgCreateTag,
-	nameless: 1
-};
-
-jQuery('#taggenerator').tagGenerator();

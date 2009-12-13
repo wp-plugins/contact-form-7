@@ -117,7 +117,6 @@ foreach ( $contact_forms as $v ) : ?>
 	</td>
 
 	<td scope="col" style="width: 50%;">
-<!--	<div id="tag-generator-div"></div> -->
 		<div id="taggenerator"></div>
 	</td>
 

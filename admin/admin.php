@@ -156,7 +156,6 @@ function wpcf7_admin_head() {
 <script type="text/javascript">
 //<![CDATA[
 var _wpcf7 = {
-	captchaMod: <?php echo ( class_exists( 'ReallySimpleCaptcha' ) ) ? 'true' : 'false' ?>,
 	pluginUrl: '<?php echo wpcf7_plugin_url(); ?>'
 };
 //]]>
@@ -178,9 +177,8 @@ function wpcf7_admin_enqueue_scripts() {
 		array( 'jquery' ), WPCF7_VERSION, true );
 
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
-		array( 'jquery' ), WPCF7_VERSION, true );
+		array( 'jquery', 'wpcf7-admin-taggenerator' ), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
-		'optional' => __( 'optional', 'wpcf7' ),
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
 		'textField' => __( 'Text field', 'wpcf7' ),
 		'emailField' => __( 'Email field', 'wpcf7' ),
@@ -189,46 +187,12 @@ function wpcf7_admin_enqueue_scripts() {
 		'checkboxes' => __( 'Checkboxes', 'wpcf7' ),
 		'radioButtons' => __( 'Radio buttons', 'wpcf7' ),
 		'acceptance' => __( 'Acceptance', 'wpcf7' ),
-		'isAcceptanceDefaultOn' => __( "Make this checkbox checked by default?", 'wpcf7' ),
-		'isAcceptanceInvert' => __( "Make this checkbox work inversely?", 'wpcf7' ),
-		'isAcceptanceInvertMeans' => __( "* That means visitor who accepts the term unchecks it.", 'wpcf7' ),
 		'captcha' => __( 'CAPTCHA', 'wpcf7' ),
 		'quiz' => __( 'Quiz', 'wpcf7' ),
-		'quizzes' => __( 'Quizzes', 'wpcf7' ),
-		'quizFormatDesc' => __( "* quiz|answer (e.g. 1+1=?|2)", 'wpcf7' ),
 		'fileUpload' => __( 'File upload', 'wpcf7' ),
-		'bytes' => __( 'bytes', 'wpcf7' ),
 		'submit' => __( 'Submit button', 'wpcf7' ),
-		'tagName' => __( 'Name', 'wpcf7' ),
-		'isRequiredField' => __( 'Required field?', 'wpcf7' ),
-		'allowsMultipleSelections' => __( 'Allow multiple selections?', 'wpcf7' ),
-		'insertFirstBlankOption' => __( 'Insert a blank item as the first option?', 'wpcf7' ),
-		'makeCheckboxesExclusive' => __( 'Make checkboxes exclusive?', 'wpcf7' ),
-		'menuChoices' => __( 'Choices', 'wpcf7' ),
-		'label' => __( 'Label', 'wpcf7' ),
-		'defaultValue' => __( 'Default value', 'wpcf7' ),
-		'akismet' => __( 'Akismet', 'wpcf7' ),
-		'akismetAuthor' => __( "This field requires author's name", 'wpcf7' ),
-		'akismetAuthorUrl' => __( "This field requires author's URL", 'wpcf7' ),
-		'akismetAuthorEmail' => __( "This field requires author's email address", 'wpcf7' ),
-		'generatedTag' => __( "Copy this code and paste it into the form left.", 'wpcf7' ),
-		'fgColor' => __( "Foreground color", 'wpcf7' ),
-		'bgColor' => __( "Background color", 'wpcf7' ),
-		'imageSize' => __( "Image size", 'wpcf7' ),
-		'imageSizeSmall' => __( "Small", 'wpcf7' ),
-		'imageSizeMedium' => __( "Medium", 'wpcf7' ),
-		'imageSizeLarge' => __( "Large", 'wpcf7' ),
-		'imageSettings' => __( "Image settings", 'wpcf7' ),
-		'inputFieldSettings' => __( "Input field settings", 'wpcf7' ),
-		'tagForImage' => __( "For image", 'wpcf7' ),
-		'tagForInputField' => __( "For input field", 'wpcf7' ),
-		'oneChoicePerLine' => __( "* One choice per line.", 'wpcf7' ),
 		'show' => __( "Show", 'wpcf7' ),
-		'hide' => __( "Hide", 'wpcf7' ),
-		'fileSizeLimit' => __( "File size limit", 'wpcf7' ),
-		'acceptableFileTypes' => __( "Acceptable file types", 'wpcf7' ),
-		'needReallySimpleCaptcha' => __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'wpcf7' )
-	) );
+		'hide' => __( "Hide", 'wpcf7' ) ) );
 }
 
 function wpcf7_admin_management_page() {
