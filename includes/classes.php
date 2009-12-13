@@ -46,7 +46,7 @@ class WPCF7_ContactForm {
 		$url .= '#' . $this->unit_tag;
 
 		$url = apply_filters( 'wpcf7_form_action_url', $url );
-		$url = sanitize_url( $url );
+		$url = esc_url_raw( $url );
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 

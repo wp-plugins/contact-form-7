@@ -16,7 +16,7 @@ function wpcf7_admin_url( $query = array() ) {
 
 	$url = admin_url( $path );
 
-	return sanitize_url( $url );
+	return esc_url_raw( $url );
 }
 
 function wpcf7_table_name() {

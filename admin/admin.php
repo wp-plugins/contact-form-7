@@ -311,13 +311,13 @@ function wpcf7_plugin_action_links( $links, $file ) {
 
 function wpcf7_cf7com_links() {
 	$links = '<div class="cf7com-links">'
-		. '<a href="' . sanitize_url( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Contactform7.com', 'wpcf7' ) ) . '</a>&ensp;'
-		. '<a href="' . sanitize_url( __( 'http://contactform7.com/docs/', 'wpcf7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/docs/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Docs', 'wpcf7' ) ) . '</a> - '
-		. '<a href="' . sanitize_url( __( 'http://contactform7.com/faq/', 'wpcf7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/faq/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'FAQ', 'wpcf7' ) ) . '</a> - '
-		. '<a href="' . sanitize_url( __( 'http://contactform7.com/support/', 'wpcf7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/support/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Support', 'wpcf7' ) ) . '</a>'
 		. '</div>';
 
