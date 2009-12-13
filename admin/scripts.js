@@ -1,5 +1,8 @@
 jQuery(document).ready(function() {
 	try {
+		jQuery('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
+			{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
+
 		jQuery('input#wpcf7-title:enabled').css({
 			cursor: 'pointer'
 		});
@@ -164,12 +167,5 @@ jQuery.extend(jQuery.tgPanes, {
 		title: _wpcf7L10n.submit,
 		content: 'wpcf7-tg-pane-submit',
 		nameless: 1
-	}
-});
-
-jQuery(document).ready(function() {
-	try {
-		jQuery('#taggenerator').tagGenerator();
-	} catch (e) {
 	}
 });

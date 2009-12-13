@@ -1,9 +1,9 @@
 (function($) {
 
-	$.fn.tagGenerator = function() {
+	$.fn.tagGenerator = function(title, options) {
 		var menu = $('<div class="tag-generator"></div>');
 
-		var selector = $('<span>' + _wpcf7L10n.generateTag + '</span>');
+		var selector = $('<span>' + title + '</span>');
 
 		selector.css({
 			border: '1px solid #ddd',
@@ -37,9 +37,11 @@
 			dropdown.hide();
 		});
 
-		var dropdown_icon = $('<img src="' + _wpcf7.pluginUrl + '/images/dropdown.gif" />');
-		dropdown_icon.css({ 'vertical-align': 'bottom' });
-		selector.append(dropdown_icon);
+		if (options.dropdownIconUrl) {
+			var dropdown_icon = $('<img src="' + options.dropdownIconUrl + '" />');
+			dropdown_icon.css({ 'vertical-align': 'bottom' });
+			selector.append(dropdown_icon);
+		}
 
 		menu.append(selector);
 
