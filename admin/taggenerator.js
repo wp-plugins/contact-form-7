@@ -198,6 +198,14 @@
 		if (classvalue)
 			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
 
+		var limit = pane.find(':input[name="limit"]').val();
+		if (limit)
+			options.push('limit:' + limit);
+
+		var filetypes = pane.find(':input[name="filetypes"]').val();
+		if (filetypes)
+			options.push('filetypes:' + filetypes.split(' ').join('|'));
+
 		pane.find(':checkbox.option').each(function(i) {
 			if ($(this).is(':checked'))
 				options.push($(this).attr('name'));
@@ -373,6 +381,12 @@ jQuery.tgPanes.captcha = {
 	title: _wpcf7L10n.captcha,
 	content: 'wpcf7-tg-pane-captcha',
 	change: jQuery.tgCreateTagForCaptcha
+};
+
+jQuery.tgPanes.file = {
+	title: _wpcf7L10n.fileUpload,
+	content: 'wpcf7-tg-pane-file',
+	change: jQuery.tgCreateTag
 };
 
 jQuery('#taggenerator').tagGenerator();
