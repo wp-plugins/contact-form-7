@@ -46,4 +46,37 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 	return $html;
 }
 
+
+/* Tag generator */
+
+add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_submit' );
+
+function wpcf7_tg_pane_submit( &$contact_form ) {
+?>
+<div id="wpcf7-tg-pane-submit" class="hidden">
+<form action="">
+<input type="hidden" name="type" value="submit" />
+<table>
+<tr>
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="id" class="idvalue oneline" /></td>
+
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="class" class="classvalue oneline" /></td>
+</tr>
+
+<tr>
+<td><?php echo esc_html( __( 'Label', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="text" name="default-value" class="oneline" /></td>
+
+<td></td>
+</tr>
+</table>
+
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+</form>
+</div>
+<?php
+}
+
 ?>

@@ -224,7 +224,10 @@
 			value = ' "' + value.replace(/["]/g, '&quot;') + '"';
 		}
 
-		var tag = name ? '[' + type + ' ' + name + options + value + ']' : '';
+		if ($.tgPanes[tagType].nameless)
+			var tag = '[' + type + options + value + ']';
+		else
+			var tag = name ? '[' + type + ' ' + name + options + value + ']' : '';
 		pane.find(':input.tag').val(tag);
 	}
 
@@ -387,6 +390,13 @@ jQuery.tgPanes.file = {
 	title: _wpcf7L10n.fileUpload,
 	content: 'wpcf7-tg-pane-file',
 	change: jQuery.tgCreateTag
+};
+
+jQuery.tgPanes.submit = {
+	title: _wpcf7L10n.submit,
+	content: 'wpcf7-tg-pane-submit',
+	change: jQuery.tgCreateTag,
+	nameless: 1
 };
 
 jQuery('#taggenerator').tagGenerator();
