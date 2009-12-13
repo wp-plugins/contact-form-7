@@ -5,13 +5,6 @@ function wpcf7_plugin_path( $path = '' ) {
 }
 
 function wpcf7_plugin_url( $path = '' ) {
-	global $wp_version;
-
-	if ( version_compare( $wp_version, '2.8', '<' ) ) { // Using WordPress 2.7
-		$path = path_join( WPCF7_PLUGIN_NAME, $path );
-		return plugins_url( $path );
-	}
-
 	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
 }
 
@@ -38,38 +31,6 @@ function wpcf7_table_exists() {
 	$table_name = wpcf7_table_name();
 
 	return strtolower( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) == strtolower( $table_name );
-}
-
-// Pre-2.8 compatibility
-if ( ! function_exists( 'esc_js' ) ) {
-	function esc_js( $text ) {
-		return js_escape( $text );
-	}
-}
-
-if ( ! function_exists( 'esc_html' ) ) {
-	function esc_html( $text ) {
-		return wp_specialchars( $text );
-	}
-}
-
-if ( ! function_exists( 'esc_attr' ) ) {
-	function esc_attr( $text ) {
-		return attribute_escape( $text );
-	}
-}
-
-if ( ! function_exists( 'esc_sql' ) ) {
-	function esc_sql( $text ) {
-		global $wpdb;
-		return $wpdb->escape( $text );
-	}
-}
-
-if ( ! function_exists( 'esc_url' ) ) {
-	function esc_url( $url, $protocols = null ) {
-		return clean_url( $url, $protocols, 'display' );
-	}
 }
 
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';

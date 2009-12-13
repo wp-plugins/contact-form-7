@@ -177,6 +177,7 @@ div.tg-pane table code {
 div.tg-pane table td {
 	vertical-align: top;
 	width: 50%;
+	border: none;
 }
 
 div.tg-pane input.tag {
