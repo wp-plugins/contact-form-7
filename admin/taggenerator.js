@@ -174,163 +174,74 @@
 			$(this).val(val);
 		});
 
-		var type = pane.find(':input[name="type"]').val();
-		if (pane.find(':input[name="required"]').is(':checked'))
-			type += '*';
+		pane.find('input.tag').each(function(i) {
+			var type = $(this).attr('name');
 
-		var name = pane.find(':input[name="name"]').val();
+			var scope = pane.find('.scope.' + type);
+			if (! scope.length)
+				scope = pane;
 
-		var options = [];
+			if (pane.find(':input[name="required"]').is(':checked'))
+				type += '*';
 
-		var size = pane.find(':input[name="size"]').val();
-		var maxlength = pane.find(':input[name="maxlength"]').val();
-		if (size || maxlength)
-			options.push(size + '/' + maxlength);
+			var name = pane.find(':input[name="name"]').val();
 
-		var cols = pane.find(':input[name="cols"]').val();
-		var rows = pane.find(':input[name="rows"]').val();
-		if (cols || rows)
-			options.push(cols + 'x' + rows);
+			var options = [];
 
-		pane.find('input:text.option').each(function(i) {
-			if (-1 < $.inArray($(this).attr('name'), ['size', 'maxlength', 'cols', 'rows']))
-				return;
+			var size = scope.find(':input[name="size"]').val();
+			var maxlength = scope.find(':input[name="maxlength"]').val();
+			if (size || maxlength)
+				options.push(size + '/' + maxlength);
 
-			var val = $(this).val();
+			var cols = scope.find(':input[name="cols"]').val();
+			var rows = scope.find(':input[name="rows"]').val();
+			if (cols || rows)
+				options.push(cols + 'x' + rows);
 
-			if (! val)
-				return;
+			scope.find('input:text.option').each(function(i) {
+				if (-1 < $.inArray($(this).attr('name'), ['size', 'maxlength', 'cols', 'rows']))
+					return;
 
-			if ($(this).hasClass('filetype'))
-				val = val.split(' ').join('|');
+				var val = $(this).val();
 
-			if ($(this).hasClass('color'))
-				val = '#' + val;
+				if (! val)
+					return;
 
-			if ('class' == $(this).attr('name')) {
-				$.each(val.split(' '), function(i, n) { options.push('class:' + n) });
-			} else {
-				options.push($(this).attr('name') + ':' + val);
-			}
-		});
+				if ($(this).hasClass('filetype'))
+					val = val.split(' ').join('|');
 
-		pane.find('input:checkbox.option').each(function(i) {
-			if ($(this).is(':checked'))
-				options.push($(this).attr('name'));
-		});
+				if ($(this).hasClass('color'))
+					val = '#' + val;
 
-		options = (options.length > 0) ? ' ' + options.join(' ') : '';
-
-		var value = '';
-
-		if (pane.find(':input[name="values"]').val()) {
-			$.each(pane.find(':input[name="values"]').val().split("\n"), function(i, n) {
-				value += ' "' + n.replace(/["]/g, '&quot;') + '"';
+				if ('class' == $(this).attr('name')) {
+					$.each(val.split(' '), function(i, n) { options.push('class:' + n) });
+				} else {
+					options.push($(this).attr('name') + ':' + val);
+				}
 			});
-		}
 
-		if ($.tgPanes[tagType].nameless)
-			var tag = '[' + type + options + value + ']';
-		else
-			var tag = name ? '[' + type + ' ' + name + options + value + ']' : '';
-		pane.find(':input.tag').val(tag);
-	}
+			scope.find('input:checkbox.option').each(function(i) {
+				if ($(this).is(':checked'))
+					options.push($(this).attr('name'));
+			});
 
-	$.tgCreateTagForCaptcha = function(pane, tagType) {
-		pane.find(':input').empty();
+			options = (options.length > 0) ? ' ' + options.join(' ') : '';
 
-		pane.find('input[name="name"]').each(function(i) {
-			var val = $(this).val();
-			val = val.replace(/[^0-9a-zA-Z:._-]/g, '').replace(/^[^a-zA-Z]+/, '');
-			if ('' == val) {
-				var rand = Math.floor(Math.random() * 1000);
-				val = tagType + '-' + rand;
+			var value = '';
+
+			if (scope.find(':input[name="values"]').val()) {
+				$.each(scope.find(':input[name="values"]').val().split("\n"), function(i, n) {
+					value += ' "' + n.replace(/["]/g, '&quot;') + '"';
+				});
 			}
-			$(this).val(val);
+
+			if ($.tgPanes[tagType].nameless)
+				var tag = '[' + type + options + value + ']';
+			else
+				var tag = name ? '[' + type + ' ' + name + options + value + ']' : '';
+
+			$(this).val(tag);
 		});
-
-		pane.find(':input.numeric').each(function(i) {
-			var val = $(this).val();
-			val = val.replace(/[^0-9]/g, '');
-			$(this).val(val);
-		});
-
-		pane.find(':input.idvalue').each(function(i) {
-			var val = $(this).val();
-			val = val.replace(/[^-0-9a-zA-Z_]/g, '');
-			$(this).val(val);
-		});
-
-		pane.find(':input.classvalue').each(function(i) {
-			var val = $(this).val();
-			val = $.map(val.split(' '), function(n) {
-				return n.replace(/[^-0-9a-zA-Z_]/g, '');
-			}).join(' ');
-			val = $.trim(val.replace(/\s+/g, ' '));
-			$(this).val(val);
-		});
-
-		pane.find(':input.color').each(function(i) {
-			var val = $(this).val();
-			val = val.replace(/[^0-9a-fA-F]/g, '');
-			$(this).val(val);
-		});
-
-		var name = pane.find(':input[name="name"]').val();
-
-		/* Challenge */
-		var type = 'captchac';
-
-		var options = [];
-
-		pane.find(':checkbox.option').each(function(i) {
-			if ($(this).is(':checked'))
-				options.push($(this).attr('name'));
-		});
-
-		var fg = pane.find(':input[name="fg"]').val();
-		if (fg)
-			options.push('fg:#' + fg);
-
-		var bg = pane.find(':input[name="bg"]').val();
-		if (bg)
-			options.push('bg:#' + bg);
-
-		var idvalue = pane.find(':input[name="id"]').val();
-		if (idvalue)
-			options.push('id:' + idvalue);
-
-		var classvalue = pane.find(':input[name="class"]').val();
-		if (classvalue)
-			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
-
-		options = (options.length > 0) ? ' ' + options.join(' ') : '';
-
-		var tag = name ? '[' + type + ' ' + name + options + ']' : '';
-		pane.find(':input.tag1').val(tag);
-
-		/* Response */
-		var type = 'captchar';
-
-		var options = [];
-
-		var idvalue = pane.find(':input[name="id2"]').val();
-		if (idvalue)
-			options.push('id:' + idvalue);
-
-		var classvalue = pane.find(':input[name="class2"]').val();
-		if (classvalue)
-			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
-
-		var size = pane.find(':input[name="size"]').val();
-		var maxlength = pane.find(':input[name="maxlength"]').val();
-		if (size || maxlength)
-			options.push(size + '/' + maxlength);
-
-		options = (options.length > 0) ? ' ' + options.join(' ') : '';
-
-		var tag = name ? '[' + type + ' ' + name + options + ']' : '';
-		pane.find(':input.tag2').val(tag);
 	}
 
 	$.tgPanes = {};

@@ -189,7 +189,7 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 <tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
 
-<table>
+<table class="scope captchac">
 <caption><?php echo esc_html( __( "Image settings", 'wpcf7' ) ); ?></caption>
 
 <tr>
@@ -215,15 +215,15 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 </td></tr>
 </table>
 
-<table>
+<table class="scope captchar">
 <caption><?php echo esc_html( __( "Input field settings", 'wpcf7' ) ); ?></caption>
 
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id2" class="idvalue oneline option" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class2" class="classvalue oneline option" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
@@ -237,9 +237,9 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?>
 <br />1) <?php echo esc_html( __( "For image", 'wpcf7' ) ); ?>
-<input type="text" class="tag tag1" readonly="readonly" onfocus="this.select()" />
+<input type="text" name="captchac" class="tag" readonly="readonly" onfocus="this.select()" />
 <br />2) <?php echo esc_html( __( "For input field", 'wpcf7' ) ); ?>
-<input type="text" class="tag tag2" readonly="readonly" onfocus="this.select()" />
+<input type="text" name="captchar" class="tag" readonly="readonly" onfocus="this.select()" />
 </div>
 </form>
 </div>

@@ -55,7 +55,6 @@ function wpcf7_tg_pane_submit( &$contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-submit" class="hidden">
 <form action="">
-<input type="hidden" name="type" value="submit" />
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
@@ -73,7 +72,7 @@ function wpcf7_tg_pane_submit( &$contact_form ) {
 </tr>
 </table>
 
-<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" name="submit" class="tag" readonly="readonly" onfocus="this.select()" /></div>
 </form>
 </div>
 <?php

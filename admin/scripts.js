@@ -154,8 +154,7 @@ jQuery.extend(jQuery.tgPanes, {
 
 	captcha: {
 		title: _wpcf7L10n.captcha,
-		content: 'wpcf7-tg-pane-captcha',
-		change: jQuery.tgCreateTagForCaptcha
+		content: 'wpcf7-tg-pane-captcha'
 	},
 
 	file: {
