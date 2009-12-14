@@ -102,10 +102,10 @@ function wpcf7_tg_pane_acceptance( &$contact_form ) {
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>

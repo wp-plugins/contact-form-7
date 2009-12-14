@@ -194,18 +194,18 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
 <td><?php echo esc_html( __( "Foreground color", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="fg" class="color oneline" /></td>
+<input type="text" name="fg" class="color oneline option" /></td>
 
 <td><?php echo esc_html( __( "Background color", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="bg" class="color oneline" /></td>
+<input type="text" name="bg" class="color oneline option" /></td>
 </tr>
 
 <tr><td colspan="2"><?php echo esc_html( __( "Image size", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
@@ -220,18 +220,18 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id2" class="idvalue oneline" /></td>
+<input type="text" name="id2" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class2" class="classvalue oneline" /></td>
+<input type="text" name="class2" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
 <td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="size" class="numeric oneline" /></td>
+<input type="text" name="size" class="numeric oneline option" /></td>
 
 <td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="maxlength" class="numeric oneline" /></td>
+<input type="text" name="maxlength" class="numeric oneline option" /></td>
 </tr>
 </table>
 

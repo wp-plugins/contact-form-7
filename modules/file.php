@@ -201,18 +201,18 @@ function wpcf7_tg_pane_file( &$contact_form ) {
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
 <td><?php echo esc_html( __( "File size limit", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'bytes', 'wpcf7' ) ); ?>) (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="limit" class="filesize oneline" /></td>
+<input type="text" name="limit" class="filesize oneline option" /></td>
 
 <td><?php echo esc_html( __( "Acceptable file types", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="filetypes" class="filetype oneline" /></td>
+<input type="text" name="filetypes" class="filetype oneline option" /></td>
 </tr>
 </table>
 

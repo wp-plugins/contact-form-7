@@ -192,23 +192,29 @@
 		if (cols || rows)
 			options.push(cols + 'x' + rows);
 
-		var idvalue = pane.find(':input[name="id"]').val();
-		if (idvalue)
-			options.push('id:' + idvalue);
+		pane.find('input:text.option').each(function(i) {
+			if (-1 < $.inArray($(this).attr('name'), ['size', 'maxlength', 'cols', 'rows']))
+				return;
 
-		var classvalue = pane.find(':input[name="class"]').val();
-		if (classvalue)
-			$.each(classvalue.split(' '), function(i, n) { options.push('class:' + n) });
+			var val = $(this).val();
 
-		var limit = pane.find(':input[name="limit"]').val();
-		if (limit)
-			options.push('limit:' + limit);
+			if (! val)
+				return;
 
-		var filetypes = pane.find(':input[name="filetypes"]').val();
-		if (filetypes)
-			options.push('filetypes:' + filetypes.split(' ').join('|'));
+			if ($(this).hasClass('filetype'))
+				val = val.split(' ').join('|');
 
-		pane.find(':checkbox.option').each(function(i) {
+			if ($(this).hasClass('color'))
+				val = '#' + val;
+
+			if ('class' == $(this).attr('name')) {
+				$.each(val.split(' '), function(i, n) { options.push('class:' + n) });
+			} else {
+				options.push($(this).attr('name') + ':' + val);
+			}
+		});
+
+		pane.find('input:checkbox.option').each(function(i) {
 			if ($(this).is(':checked'))
 				options.push($(this).attr('name'));
 		});

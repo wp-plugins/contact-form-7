@@ -127,18 +127,18 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
 <td><code>cols</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="cols" class="numeric oneline" /></td>
+<input type="text" name="cols" class="numeric oneline option" /></td>
 
 <td><code>rows</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="rows" class="numeric oneline" /></td>
+<input type="text" name="rows" class="numeric oneline option" /></td>
 </tr>
 
 <tr>

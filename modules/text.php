@@ -146,18 +146,18 @@ function wpcf7_tg_pane_text_and_email( $type = 'text' ) {
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline" /></td>
+<input type="text" name="id" class="idvalue oneline option" /></td>
 
 <td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline" /></td>
+<input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
 <td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="size" class="numeric oneline" /></td>
+<input type="text" name="size" class="numeric oneline option" /></td>
 
 <td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="maxlength" class="numeric oneline" /></td>
+<input type="text" name="maxlength" class="numeric oneline option" /></td>
 </tr>
 
 <tr>
