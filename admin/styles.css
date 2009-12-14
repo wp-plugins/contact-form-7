@@ -180,8 +180,8 @@ div.tg-pane table td {
 	border: none;
 }
 
-div.tg-pane input.tag {
-	width: 98%;
+div.tg-pane input.tag, div.tg-pane input.mail-tag {
+	width: 100%;
 	border: none;
 	color: #fff;
 	background-color: #7e4e0b;
@@ -189,6 +189,22 @@ div.tg-pane input.tag {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+
+div.tg-pane input.mail-tag {
+	width: 50%;
+	background-color: #404f03;
+}
+
+div.tg-mail-tag {
+	margin-top: 2.4em;
+	text-align: right;
+}
+
+div.tg-pane span.arrow {
+	font-family: monospace;
+	font-size: 1.2em;
+	color: #333;
 }
 
 div.tg-pane input.tg-name {
@@ -204,6 +220,10 @@ div.tg-pane textarea {
 	width: 98%;
 	height: 100px;
 	font-size: smaller;
+}
+
+div.tg-pane div.tg-tag {
+	margin: .4em 0;
 }
 
 div.tg-dropdown {

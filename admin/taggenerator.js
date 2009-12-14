@@ -242,6 +242,15 @@
 
 			$(this).val(tag);
 		});
+
+		pane.find('input.mail-tag').each(function(i) {
+			var name = pane.find(':input[name="name"]').val();
+
+			var tag = name ? '[' + name + ']' : '';
+
+			$(this).val(tag);
+		});
+
 	}
 
 	$.tgPanes = {};
