@@ -103,9 +103,9 @@ p.tagcode {
 
 input#contact-form-anchor-text {
 	color: #fff;
-	background: #8a796d;
+	background: #7e4e0b;
 	border: none;
-	width: 96%;
+	width: 99%;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -184,7 +184,7 @@ div.tg-pane input.tag {
 	width: 98%;
 	border: none;
 	color: #fff;
-	background-color: #8a796d;
+	background-color: #7e4e0b;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
