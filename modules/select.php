@@ -163,7 +163,7 @@ function wpcf7_tg_pane_menu( &$contact_form ) {
 
 <tr>
 <td><?php echo esc_html( __( 'Choices', 'wpcf7' ) ); ?><br />
-<textarea name="choices" class="choices"></textarea><br />
+<textarea name="values"></textarea><br />
 <span style="font-size: smaller"><?php echo esc_html( __( "* One choice per line.", 'wpcf7' ) ); ?></span>
 </td>
 

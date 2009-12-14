@@ -67,7 +67,7 @@ function wpcf7_tg_pane_submit( &$contact_form ) {
 
 <tr>
 <td><?php echo esc_html( __( 'Label', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="default-value" class="oneline" /></td>
+<input type="text" name="values" class="oneline" /></td>
 
 <td></td>
 </tr>

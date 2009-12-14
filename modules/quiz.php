@@ -187,7 +187,7 @@ function wpcf7_tg_pane_quiz( &$contact_form ) {
 
 <tr>
 <td><?php echo esc_html( __( 'Quizzes', 'wpcf7' ) ); ?><br />
-<textarea name="choices" class="choices"></textarea><br />
+<textarea name="values"></textarea><br />
 <span style="font-size: smaller"><?php echo esc_html( __( "* quiz|answer (e.g. 1+1=?|2)", 'wpcf7' ) ); ?></span>
 </td>
 </tr>

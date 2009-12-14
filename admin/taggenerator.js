@@ -168,7 +168,7 @@
 			$(this).val(val);
 		});
 
-		pane.find(':input[name="default-value"], :input[name="choices"]').each(function(i) {
+		pane.find(':input[name="values"]').each(function(i) {
 			var val = $(this).val();
 			val = $.trim(val);
 			$(this).val(val);
@@ -217,13 +217,10 @@
 
 		var value = '';
 
-		if (pane.find(':input[name="choices"]').val()) {
-			$.each(pane.find(':input[name="choices"]').val().split("\n"), function(i, n) {
+		if (pane.find(':input[name="values"]').val()) {
+			$.each(pane.find(':input[name="values"]').val().split("\n"), function(i, n) {
 				value += ' "' + n.replace(/["]/g, '&quot;') + '"';
 			});
-		} else if (pane.find(':input[name="default-value"]').val()) {
-			value = pane.find(':input[name="default-value"]').val();
-			value = ' "' + value.replace(/["]/g, '&quot;') + '"';
 		}
 
 		if ($.tgPanes[tagType].nameless)
