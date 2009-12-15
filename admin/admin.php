@@ -18,7 +18,9 @@ function wpcf7_admin_add_pages() {
 		}
 
 		$title = trim( $_POST['wpcf7-title'] );
+
 		$form = trim( $_POST['wpcf7-form'] );
+
 		$mail = array(
 			'subject' => trim( $_POST['wpcf7-mail-subject'] ),
 			'sender' => trim( $_POST['wpcf7-mail-sender'] ),
@@ -28,6 +30,7 @@ function wpcf7_admin_add_pages() {
 			'attachments' => trim( $_POST['wpcf7-mail-attachments'] ),
 			'use_html' => ( 1 == $_POST['wpcf7-mail-use-html'] ) ? true : false
 		);
+
 		$mail_2 = array(
 			'active' => ( 1 == $_POST['wpcf7-mail-2-active'] ) ? true : false,
 			'subject' => trim( $_POST['wpcf7-mail-2-subject'] ),
@@ -38,21 +41,14 @@ function wpcf7_admin_add_pages() {
 			'attachments' => trim( $_POST['wpcf7-mail-2-attachments'] ),
 			'use_html' => ( 1 == $_POST['wpcf7-mail-2-use-html'] ) ? true : false
 		);
-		$messages = array(
-			'mail_sent_ok' => trim( $_POST['wpcf7-message-mail-sent-ok'] ),
-			'mail_sent_ng' => trim( $_POST['wpcf7-message-mail-sent-ng'] ),
-			'akismet_says_spam' => trim( $_POST['wpcf7-message-akismet-says-spam'] ),
-			'validation_error' => trim( $_POST['wpcf7-message-validation-error'] ),
-			'accept_terms' => trim( $_POST['wpcf7-message-accept-terms'] ),
-			'invalid_email' => trim( $_POST['wpcf7-message-invalid-email'] ),
-			'invalid_required' => trim( $_POST['wpcf7-message-invalid-required'] ),
-			'quiz_answer_not_correct' => trim( $_POST['wpcf7-message-quiz-answer-not-correct'] ),
-			'captcha_not_match' => trim( $_POST['wpcf7-message-captcha-not-match'] ),
-			'upload_failed' => trim( $_POST['wpcf7-message-upload-failed'] ),
-			'upload_file_type_invalid' => trim( $_POST['wpcf7-message-upload-file-type-invalid'] ),
-			'upload_file_too_large' => trim( $_POST['wpcf7-message-upload-file-too-large'] ),
-			'upload_failed_php_error' => trim( $_POST['wpcf7-message-upload-failed-php-error'] )
-		);
+
+		$messages = $contact_form->messages;
+		foreach ( wpcf7_messages() as $key => $arr ) {
+			$field_name = 'wpcf7-message-' . strtr( $key, '_', '-' );
+			if ( isset( $_POST[$field_name] ) )
+				$messages[$key] = trim( $_POST[$field_name] );
+		}
+
 		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
 
 		$query = array();

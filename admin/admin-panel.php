@@ -265,70 +265,15 @@ foreach ( $contact_forms as $v ) : ?>
 	<td scope="col">
 	<div id="message-fields">
 
+<?php foreach ( wpcf7_messages() as $key => $arr ) :
+	$field_name = 'wpcf7-message-' . strtr( $key, '_', '-' );
+?>
 	<div class="message-field">
-	<label for="wpcf7-message-mail-sent-ok"><em># <?php echo esc_html( __( "Sender's message was sent successfully", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-mail-sent-ok" name="wpcf7-message-mail-sent-ok" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['mail_sent_ok'] ); ?>" />
+	<label for="<?php echo $field_name; ?>"><em># <?php echo esc_html( $arr['description'] ); ?></em></label><br />
+	<input type="text" id="<?php echo $field_name; ?>" name="<?php echo $field_name; ?>" class="wide" size="70" value="<?php echo esc_attr( $cf->messages[$key] ); ?>" />
 	</div>
 
-	<div class="message-field">
-	<label for="wpcf7-message-mail-sent-ng"><em># <?php echo esc_html( __( "Sender's message was failed to send", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-mail-sent-ng" name="wpcf7-message-mail-sent-ng" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['mail_sent_ng'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-akismet-says-spam"><em># <?php echo esc_html( __( "Akismet judged the sending activity as spamming", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-akismet-says-spam" name="wpcf7-message-akismet-says-spam" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['akismet_says_spam'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-validation-error"><em># <?php echo esc_html( __( "Validation errors occurred", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-validation-error" name="wpcf7-message-validation-error" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['validation_error'] ); ?>" />
-	</div>
-
-	<div class="message-field" style="margin-top: 1em;">
-	<label for="wpcf7-message-invalid-required"><em># <?php echo esc_html( __( "There is a field that sender is needed to fill in", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-invalid-required" name="wpcf7-message-invalid-required" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['invalid_required'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-invalid-email"><em># <?php echo esc_html( __( "Email address that sender entered is invalid", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-invalid-email" name="wpcf7-message-invalid-email" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['invalid_email'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-accept-terms"><em># <?php echo esc_html( __( "There is a field of term that sender is needed to accept", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-accept-terms" name="wpcf7-message-accept-terms" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['accept_terms'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-quiz-answer-not-correct"><em># <?php echo esc_html( __( "Sender doesn't enter the correct answer to the quiz", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-quiz-answer-not-correct" name="wpcf7-message-quiz-answer-not-correct" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['quiz_answer_not_correct'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-captcha-not-match"><em># <?php echo esc_html( __( "The code that sender entered does not match the CAPTCHA", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-captcha-not-match" name="wpcf7-message-captcha-not-match" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['captcha_not_match'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-upload-failed"><em># <?php echo esc_html( __( "Uploading a file fails for any reason", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-upload-failed" name="wpcf7-message-upload-failed" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_failed'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-upload-file-type-invalid"><em># <?php echo esc_html( __( "Uploaded file is not allowed file type", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-upload-file-type-invalid" name="wpcf7-message-upload-file-type-invalid" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_file_type_invalid'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-upload-file-too-large"><em># <?php echo esc_html( __( "Uploaded file is too large", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-upload-file-too-large" name="wpcf7-message-upload-file-too-large" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_file_too_large'] ); ?>" />
-	</div>
-
-	<div class="message-field">
-	<label for="wpcf7-message-upload-failed-php-error"><em># <?php echo esc_html( __( "Uploading a file fails for PHP error", 'wpcf7' ) ); ?></em></label><br />
-	<input type="text" id="wpcf7-message-upload-failed-php-error" name="wpcf7-message-upload-failed-php-error" class="wide" size="70" value="<?php echo esc_attr( $cf->messages['upload_failed_php_error'] ); ?>" />
-	</div>
+<?php endforeach; ?>
 
 	</div>
 	</td>

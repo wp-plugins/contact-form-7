@@ -184,6 +184,35 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 }
 
 
+/* Messages */
+
+add_filter( 'wpcf7_messages', 'wpcf7_file_messages' );
+
+function wpcf7_file_messages( $messages ) {
+	return array_merge( $messages, array(
+		'upload_failed' => array(
+			'description' => __( "Uploading a file fails for any reason", 'wpcf7' ),
+			'default' => __( 'Failed to upload file.', 'wpcf7' )
+		),
+
+		'upload_file_type_invalid' => array(
+			'description' => __( "Uploaded file is not allowed file type", 'wpcf7' ),
+			'default' => __( 'This file type is not allowed.', 'wpcf7' )
+		),
+
+		'upload_file_too_large' => array(
+			'description' => __( "Uploaded file is too large", 'wpcf7' ),
+			'default' => __( 'This file is too large.', 'wpcf7' )
+		),
+
+		'upload_failed_php_error' => array(
+			'description' => __( "Uploading a file fails for PHP error", 'wpcf7' ),
+			'default' => __( 'Failed to upload file. Error occurred.', 'wpcf7' )
+		)
+	) );
+}
+
+
 /* Tag generator */
 
 add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_file' );

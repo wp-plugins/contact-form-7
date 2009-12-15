@@ -141,6 +141,10 @@ label.disabled {
 	color: #777;
 }
 
+div.message-field {
+	margin: .2em 0 .4em;
+}
+
 div.tag-generator {
 	position: relative;
 	background: #fff;

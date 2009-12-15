@@ -155,6 +155,18 @@ function wpcf7_quiz_ajax_refill( $items ) {
 }
 
 
+/* Messages */
+
+add_filter( 'wpcf7_messages', 'wpcf7_quiz_messages' );
+
+function wpcf7_quiz_messages( $messages ) {
+	return array_merge( $messages, array( 'quiz_answer_not_correct' => array(
+		'description' => __( "Sender doesn't enter the correct answer to the quiz", 'wpcf7' ),
+		'default' => __( 'Your answer is not correct.', 'wpcf7' )
+	) ) );
+}
+
+
 /* Tag generator */
 
 add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_quiz' );

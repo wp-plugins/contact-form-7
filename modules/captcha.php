@@ -172,6 +172,18 @@ function wpcf7_captcha_ajax_refill( $items ) {
 }
 
 
+/* Messages */
+
+add_filter( 'wpcf7_messages', 'wpcf7_captcha_messages' );
+
+function wpcf7_captcha_messages( $messages ) {
+	return array_merge( $messages, array( 'captcha_not_match' => array(
+		'description' => __( "The code that sender entered does not match the CAPTCHA", 'wpcf7' ),
+		'default' => __( 'Your entered code is incorrect.', 'wpcf7' )
+	) ) );
+}
+
+
 /* Tag generator */
 
 add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_captcha' );

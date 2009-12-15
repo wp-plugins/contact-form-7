@@ -1,34 +1,44 @@
 <?php
 
-function wpcf7_default_message( $status ) {
-	switch ( $status ) {
-		case 'mail_sent_ok':
-			return __( 'Your message was sent successfully. Thanks.', 'wpcf7' );
-		case 'mail_sent_ng':
-			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-		case 'akismet_says_spam':
-			return __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' );
-		case 'validation_error':
-			return __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' );
-		case 'accept_terms':
-			return __( 'Please accept the terms to proceed.', 'wpcf7' );
-		case 'invalid_email':
-			return __( 'Email address seems invalid.', 'wpcf7' );
-		case 'invalid_required':
-			return __( 'Please fill the required field.', 'wpcf7' );
-		case 'captcha_not_match':
-			return __( 'Your entered code is incorrect.', 'wpcf7' );
-		case 'quiz_answer_not_correct':
-			return __( 'Your answer is not correct.', 'wpcf7' );
-		case 'upload_failed':
-			return __( 'Failed to upload file.', 'wpcf7' );
-		case 'upload_file_type_invalid':
-			return __( 'This file type is not allowed.', 'wpcf7' );
-		case 'upload_file_too_large':
-			return __( 'This file is too large.', 'wpcf7' );
-		case 'upload_failed_php_error':
-			return __( 'Failed to upload file. Error occurred.', 'wpcf7' );
-	}
+function wpcf7_messages() {
+	$messages = array(
+		'mail_sent_ok' => array(
+			'description' => __( "Sender's message was sent successfully", 'wpcf7' ),
+			'default' => __( 'Your message was sent successfully. Thanks.', 'wpcf7' )
+		),
+
+		'mail_sent_ng' => array(
+			'description' => __( "Sender's message was failed to send", 'wpcf7' ),
+			'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
+		),
+
+		'akismet_says_spam' => array(
+			'description' => __( "Akismet judged the sending activity as spamming", 'wpcf7' ),
+			'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
+		),
+
+		'validation_error' => array(
+			'description' => __( "Validation errors occurred", 'wpcf7' ),
+			'default' => __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' )
+		),
+
+		'accept_terms' => array(
+			'description' => __( "There is a field of term that sender is needed to accept", 'wpcf7' ),
+			'default' => __( 'Please accept the terms to proceed.', 'wpcf7' )
+		),
+
+		'invalid_email' => array(
+			'description' => __( "Email address that sender entered is invalid", 'wpcf7' ),
+			'default' => __( 'Email address seems invalid.', 'wpcf7' )
+		),
+
+		'invalid_required' => array(
+			'description' => __( "There is a field that sender is needed to fill in", 'wpcf7' ),
+			'default' => __( 'Please fill the required field.', 'wpcf7' )
+		)
+	);
+
+	return apply_filters( 'wpcf7_messages', $messages );
 }
 
 function wpcf7_default_form_template() {
@@ -66,24 +76,13 @@ function wpcf7_default_mail_2_template() {
 }
 
 function wpcf7_default_messages_template() {
-	$mail_sent_ok = wpcf7_default_message( 'mail_sent_ok' );
-	$mail_sent_ng = wpcf7_default_message( 'mail_sent_ng' );
-	$akismet_says_spam = wpcf7_default_message( 'akismet_says_spam' );
-	$validation_error = wpcf7_default_message( 'validation_error' );
-	$accept_terms = wpcf7_default_message( 'accept_terms' );
-	$invalid_email = wpcf7_default_message( 'invalid_email' );
-	$invalid_required = wpcf7_default_message( 'invalid_required' );
-	$quiz_answer_not_correct = wpcf7_default_message( 'quiz_answer_not_correct' );
-	$captcha_not_match = wpcf7_default_message( 'captcha_not_match' );
-	$upload_failed = wpcf7_default_message( 'upload_failed' );
-	$upload_file_type_invalid = wpcf7_default_message( 'upload_file_type_invalid' );
-	$upload_file_too_large = wpcf7_default_message( 'upload_file_too_large' );
-	$upload_failed_php_error = wpcf7_default_message( 'upload_failed_php_error' );
+	$messages = array();
 
-	return compact( 'mail_sent_ok', 'mail_sent_ng', 'akismet_says_spam',
-		'validation_error', 'accept_terms', 'invalid_email', 'invalid_required', 'quiz_answer_not_correct',
-		'captcha_not_match', 'upload_failed', 'upload_file_type_invalid', 'upload_file_too_large',
-		'upload_failed_php_error' );
+	foreach ( wpcf7_messages() as $key => $arr ) {
+		$messages[$key] = $arr['default'];
+	}
+
+	return $messages;
 }
 
 function wpcf7_upload_dir( $type = false ) {
