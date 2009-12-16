@@ -29,14 +29,6 @@ if ( ! wpcf7_table_exists() ) {
 
 <h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
 
-<?php wpcf7_cf7com_links(); ?>
-
-<?php wpcf7_donation_link(); ?>
-
-<?php if ( isset( $updated_message ) ) : ?>
-<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
-<?php endif; ?>
-
 <?php do_action_ref_array( 'wpcf7_admin_before_subsubsub', array( &$cf ) ); ?>
 
 <ul class="subsubsub">

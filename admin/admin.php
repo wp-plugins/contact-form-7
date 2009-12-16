@@ -192,24 +192,6 @@ function wpcf7_admin_enqueue_scripts() {
 }
 
 function wpcf7_admin_management_page() {
-	switch ( $_GET['message'] ) {
-		case 'created':
-			$updated_message = __( "Contact form created.", 'wpcf7' );
-			break;
-		case 'saved':
-			$updated_message = __( "Contact form saved.", 'wpcf7' );
-			break;
-		case 'deleted':
-			$updated_message = __( "Contact form deleted.", 'wpcf7' );
-			break;
-		case 'table_created':
-			$updated_message = __( "Database table created.", 'wpcf7' );
-			break;
-		case 'table_not_created':
-			$updated_message = __( "Failed to create database table.", 'wpcf7' );
-			break;
-	}
-
 	$contact_forms = wpcf7_contact_forms();
 
 	if ( 'new' == $_GET['contactform'] ) {
@@ -305,7 +287,9 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-function wpcf7_cf7com_links() {
+add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_cf7com_links', 9 );
+
+function wpcf7_cf7com_links( &$contact_form ) {
 	$links = '<div class="cf7com-links">'
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Contactform7.com', 'wpcf7' ) ) . '</a>&ensp;'
@@ -320,7 +304,38 @@ function wpcf7_cf7com_links() {
 	echo apply_filters( 'wpcf7_cf7com_links', $links );
 }
 
-function wpcf7_donation_link() {
+add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_updated_message' );
+
+function wpcf7_updated_message( &$contact_form ) {
+	switch ( $_GET['message'] ) {
+		case 'created':
+			$updated_message = __( "Contact form created.", 'wpcf7' );
+			break;
+		case 'saved':
+			$updated_message = __( "Contact form saved.", 'wpcf7' );
+			break;
+		case 'deleted':
+			$updated_message = __( "Contact form deleted.", 'wpcf7' );
+			break;
+		case 'table_created':
+			$updated_message = __( "Database table created.", 'wpcf7' );
+			break;
+		case 'table_not_created':
+			$updated_message = __( "Failed to create database table.", 'wpcf7' );
+			break;
+	}
+
+	if ( ! $updated_message )
+		return;
+
+?>
+<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
+<?php
+}
+
+add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_donation_link' );
+
+function wpcf7_donation_link( &$contact_form ) {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
 
