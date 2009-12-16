@@ -180,6 +180,9 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 
 	$wpcf7_contact_form->uploaded_files[$name] = $new_file;
 
+	if ( ! isset( $_POST[$name] ) )
+		$_POST[$name] = $filename;
+
 	return $result;
 }
 
