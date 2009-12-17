@@ -7,7 +7,7 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$pee = preg_replace( '|<br />\s*<br />|', "\n\n", $pee );
 	// Space things out a little
 	/* wpcf7: removed select and input */
-	$allblocks = '(?:table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr)';
+	$allblocks = '(?:table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr|fieldset)';
 	$pee = preg_replace( '!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee );
 	$pee = preg_replace( '!(</' . $allblocks . '>)!', "$1\n\n", $pee );
 	$pee = str_replace( array( "\r\n", "\r" ), "\n", $pee ); // cross-platform newlines
