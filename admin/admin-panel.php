@@ -321,7 +321,7 @@ foreach ( $contact_forms as $v ) : ?>
 
 </div>
 
-<div id="wpcf7-lang-select-modal">
+<div id="wpcf7-lang-select-modal" class="hidden">
 <?php
 	$available_locales = wpcf7_l10n();
 	$default_locale = get_locale();
