@@ -68,9 +68,8 @@ function icl_wpcf7_display_warning_message( &$contact_form ) {
 		return;
 
 	$message = __( "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. There is a simpler way for creating contact forms of other languages and you are recommended to use it.", 'wpcf7' );
-?>
-<div class="error"><p><?php echo esc_html( $message ); ?></p></div>
-<?php
+
+	echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
 }
 
 ?>

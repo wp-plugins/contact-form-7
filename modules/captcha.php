@@ -259,6 +259,37 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 }
 
 
+/* Warning message */
+
+add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_captcha_display_warning_message' );
+
+function wpcf7_captcha_display_warning_message( &$contact_form ) {
+	$has_tags = (bool) $contact_form->form_scan_shortcode(
+		array( 'type' => array( 'captchac' ) ) );
+
+	if ( ! $has_tags )
+		return;
+
+	if ( ! class_exists( 'ReallySimpleCaptcha' ) )
+		return;
+
+	$uploads_dir = wpcf7_captcha_tmp_dir();
+	wpcf7_init_captcha();
+
+	if ( ! is_dir( $uploads_dir ) || ! is_writable( $uploads_dir ) ) {
+		$message = sprintf( __( 'This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually.', 'wpcf7' ), $uploads_dir );
+
+		echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
+	}
+
+	if ( ! function_exists( 'imagecreatetruecolor' ) || ! function_exists( 'imagettftext' ) ) {
+		$message = __( 'This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server.', 'wpcf7' );
+
+		echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
+	}
+}
+
+
 /* CAPTCHA functions */
 
 function wpcf7_init_captcha() {
