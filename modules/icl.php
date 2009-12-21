@@ -48,7 +48,11 @@ function icl_wpcf7_display_message_filter( $message ) {
 add_action( 'wpcf7_admin_before_subsubsub', 'icl_wpcf7_display_warning_message' );
 
 function icl_wpcf7_display_warning_message( &$contact_form ) {
-	$has_icl_tags = (bool) $contact_form->form_scan_shortcode( array( 'type' => array( 'icl' ) ) );
+	if ( ! $contact_form )
+		return;
+
+	$has_icl_tags = (bool) $contact_form->form_scan_shortcode(
+		array( 'type' => array( 'icl' ) ) );
 
 	if ( ! $has_icl_tags ) {
 		$messages = (array) $contact_form->messages;

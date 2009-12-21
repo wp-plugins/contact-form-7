@@ -264,6 +264,9 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_captcha_display_warning_message' );
 
 function wpcf7_captcha_display_warning_message( &$contact_form ) {
+	if ( ! $contact_form )
+		return;
+
 	$has_tags = (bool) $contact_form->form_scan_shortcode(
 		array( 'type' => array( 'captchac' ) ) );
 
