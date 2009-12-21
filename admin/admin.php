@@ -243,7 +243,8 @@ function wpcf7_install() {
 		return false; // Failed to create
 
 	$legacy_data = get_option( 'wpcf7' );
-	if ( is_array( $legacy_data ) ) {
+	if ( is_array( $legacy_data )
+		&& is_array( $legacy_data['contact_forms'] ) && $legacy_data['contact_forms'] ) {
 		foreach ( $legacy_data['contact_forms'] as $key => $value ) {
 			$wpdb->insert( $table_name, array(
 				'cf7_unit_id' => $key,
