@@ -71,9 +71,9 @@ function icl_wpcf7_display_warning_message( &$contact_form ) {
 	if ( ! $has_icl_tags )
 		return;
 
-	$message = __( "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. There is a simpler way for creating contact forms of other languages and you are recommended to use it.", 'wpcf7' );
+	$message = __( "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it.", 'wpcf7' );
 
-	echo '<div class="error"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
+	echo '<div class="error"><p><strong>' . $message . '</strong></p></div>';
 }
 
 ?>
