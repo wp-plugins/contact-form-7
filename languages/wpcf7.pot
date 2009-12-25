@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 21:21+0900\n"
-"PO-Revision-Date: 2009-12-21 21:22+0900\n"
+"POT-Creation-Date: 2009-12-25 16:29+0900\n"
+"PO-Revision-Date: 2009-12-25 16:29+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -203,79 +203,79 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:264
+#: contact-form-7/admin/admin.php:265
 msgid "Contact form"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:283
+#: contact-form-7/admin/admin.php:284
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:294
+#: contact-form-7/admin/admin.php:295
 msgid "http://contactform7.com/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:296
 msgid "Contactform7.com"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:296
+#: contact-form-7/admin/admin.php:297
 msgid "http://contactform7.com/docs/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:297
+#: contact-form-7/admin/admin.php:298
 msgid "Docs"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:298
+#: contact-form-7/admin/admin.php:299
 msgid "http://contactform7.com/faq/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:299
+#: contact-form-7/admin/admin.php:300
 msgid "FAQ"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:300
+#: contact-form-7/admin/admin.php:301
 msgid "http://contactform7.com/support/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:301
+#: contact-form-7/admin/admin.php:302
 msgid "Support"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:312
+#: contact-form-7/admin/admin.php:313
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:316
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:318
+#: contact-form-7/admin/admin.php:319
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:321
+#: contact-form-7/admin/admin.php:322
 msgid "Database table created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:324
+#: contact-form-7/admin/admin.php:325
 msgid "Failed to create database table."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:357
+#: contact-form-7/admin/admin.php:358
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:358
+#: contact-form-7/admin/admin.php:359
 msgid "Is this plugin useful for you? If you like it, please help the developer."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:359
+#: contact-form-7/admin/admin.php:360
 msgid "Your contribution is needed for making this plugin better."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:360
+#: contact-form-7/admin/admin.php:361
 msgid "Developing a plugin and providing user support is really hard work. Please help."
 msgstr ""
 
@@ -598,7 +598,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:119
 #: contact-form-7/modules/captcha.php:250
-#: contact-form-7/modules/checkbox.php:211
+#: contact-form-7/modules/checkbox.php:213
 #: contact-form-7/modules/file.php:250
 msgid "Copy this code and paste it into the form left."
 msgstr ""
@@ -659,12 +659,12 @@ msgstr ""
 msgid "For input field"
 msgstr ""
 
-#: contact-form-7/modules/captcha.php:280
+#: contact-form-7/modules/captcha.php:283
 #, php-format
 msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr ""
 
-#: contact-form-7/modules/captcha.php:286
+#: contact-form-7/modules/captcha.php:289
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr ""
 
@@ -681,11 +681,19 @@ msgstr ""
 msgid "* One choice per line."
 msgstr ""
 
+#: contact-form-7/modules/checkbox.php:204
+msgid "Put a label first, a checkbox last?"
+msgstr ""
+
 #: contact-form-7/modules/checkbox.php:205
+msgid "Wrap each item with <label> tag?"
+msgstr ""
+
+#: contact-form-7/modules/checkbox.php:207
 msgid "Make checkboxes exclusive?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:215
 msgid "And, put this code into the Mail fields below."
 msgstr ""
 
@@ -737,13 +745,13 @@ msgstr ""
 msgid "And, put this code into the File Attachments field below."
 msgstr ""
 
-#: contact-form-7/modules/file.php:274
+#: contact-form-7/modules/file.php:277
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr ""
 
-#: contact-form-7/modules/icl.php:70
-msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. There is a simpler way for creating contact forms of other languages and you are recommended to use it."
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
 msgstr ""
 
 #: contact-form-7/modules/quiz.php:164
