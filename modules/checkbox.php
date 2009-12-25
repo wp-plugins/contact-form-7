@@ -200,11 +200,13 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 <span style="font-size: smaller"><?php echo esc_html( __( "* One choice per line.", 'wpcf7' ) ); ?></span>
 </td>
 
-<?php if ( 'checkbox' == $type ) : ?>
 <td>
+<br /><input type="checkbox" name="label_first" class="option" />&nbsp;<?php echo esc_html( __( 'Put a label first, a checkbox last?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="use_label_element" class="option" />&nbsp;<?php echo esc_html( __( 'Wrap each item with <label> tag?', 'wpcf7' ) ); ?>
+<?php if ( 'checkbox' == $type ) : ?>
 <br /><input type="checkbox" name="exclusive" class="option" />&nbsp;<?php echo esc_html( __( 'Make checkboxes exclusive?', 'wpcf7' ) ); ?>
-</td>
 <?php endif; ?>
+</td>
 </tr>
 </table>
 
