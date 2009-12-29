@@ -9,10 +9,15 @@ function wpcf7_plugin_url( $path = '' ) {
 }
 
 function wpcf7_admin_url( $query = array() ) {
-	$path = 'admin.php?page=wpcf7';
+	global $plugin_page;
+
+	if ( ! isset( $query['page'] ) )
+		$query['page'] = $plugin_page;
+
+	$path = 'admin.php';
 
 	if ( $query = build_query( $query ) )
-		$path .= '&' . $query;
+		$path .= '?' . $query;
 
 	$url = admin_url( $path );
 

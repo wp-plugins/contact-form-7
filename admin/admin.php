@@ -278,7 +278,7 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	if ( $file != WPCF7_PLUGIN_BASENAME )
 		return $links;
 
-	$url = wpcf7_admin_url();
+	$url = wpcf7_admin_url( array( 'page' => 'wpcf7' ) );
 
 	$settings_link = '<a href="' . esc_attr( $url ) . '">'
 		. esc_html( __( 'Settings', 'wpcf7' ) ) . '</a>';
