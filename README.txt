@@ -60,7 +60,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Ukrainian (uk_UA) - [Andrey Kovba](http://myserver.com.ua/)
 * Vietnamese (vi) - Thanh Hải, Hà
 
-If you have created your own language pack, or have an update of an existing one, you can send [gettext .po and .mo files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into Contact Form 7.
+If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [me](http://ideasilo.wordpress.com/about/) so that I can bundle it into Contact Form 7. You can [download the latest POT file from here](http://plugins.svn.wordpress.org/contact-form-7/trunk/languages/wpcf7.pot).
 
 == Installation ==
 
