@@ -29,7 +29,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Czech (cs_CZ) - Korry, [Radovan Fiser](http://algymsa.cz/)
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/), [Georg S. Adamsen](http://wordpress.blogos.dk/)
 * Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/), [Martin Hein](http://www.split-a-pixel.nl/)
-* Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee)
+* Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee), Egon Elbre
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/), [Maître Mô](http://maitremo.fr/)
 * Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
