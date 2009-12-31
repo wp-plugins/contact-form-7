@@ -88,13 +88,20 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 2.0.7 =
-* add new filter hook (`wpcf7_validation_error`) and action hooks (`wpcf7_admin_after_general_settings`, `wpcf7_admin_after_form`, `wpcf7_admin_after_mail`, `wpcf7_admin_after_mail_2`, `wpcf7_admin_after_messages`, and `wpcf7_admin_after_additional_settings`)
-* call `$captcha->cleanup()` if available and shorten cleanup period (in `modules/captcha.php`)
-* various fixes with administration panels
-* improve DB table check
-* fix bug relating to disappearing backslashes
-* sanitize filenames with multiple extensions (relating to the issue discussed on [Ticket #11122](http://core.trac.wordpress.org/ticket/11122))
-* update translation for Persian (props: Mohammad Musavi)
+= 2.1 =
+* required WordPress version is changed to WordPress 2.8 and higher
+* support new "special mail tags" `[wpcf7.post_id]`, `[wpcf7.post_name]`, `[wpcf7.post_title]`, and `[wpcf7.post_url]`
+* support multilingual contact form template
+* wholly reconstruct Tag Generator
+* show warning message when known issues are found on the web host
+* add uninstall.php
+* improve interoperability with cache plugins
+* do not show forms on feeds
+* update translations for Estonian (Egon Elbre), German (Ivan Graf), Hindi (Ashish), and Italian (Gianni Diurno)
 
 [Releases](http://contactform7.com/category/releases/)
+
+== Upgrade Notice ==
+
+= 2.1 =
+Required WordPress version is changed to WordPress 2.8 and higher. Multilingualization functionality is changed and you don't need `[icl]` tags any more.
