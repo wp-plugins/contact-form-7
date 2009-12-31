@@ -104,4 +104,4 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Upgrade Notice ==
 
 = 2.1 =
-Required WordPress version is changed to WordPress 2.8 and higher. Multilingualization functionality is changed and you don't need `[icl]` tags any more.
+Required WordPress version is changed to WordPress 2.8 and higher. Multilingualization functionality is improved and you don't need `[icl]` tags any more.
