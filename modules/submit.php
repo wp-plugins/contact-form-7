@@ -49,7 +49,12 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_submit' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_submit' );
+
+function wpcf7_add_tag_generator_submit() {
+	wpcf7_add_tag_generator( 110, 'submit', __( 'Submit button', 'wpcf7' ),
+		'wpcf7-tg-pane-submit', 'wpcf7_tg_pane_submit', array( 'nameless' => 1 ) );
+}
 
 function wpcf7_tg_pane_submit( &$contact_form ) {
 ?>

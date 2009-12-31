@@ -112,7 +112,12 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_textarea' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_textarea' );
+
+function wpcf7_add_tag_generator_textarea() {
+	wpcf7_add_tag_generator( 30, 'textarea', __( 'Text area', 'wpcf7' ),
+		'wpcf7-tg-pane-textarea', 'wpcf7_tg_pane_textarea' );
+}
 
 function wpcf7_tg_pane_textarea( &$contact_form ) {
 ?>

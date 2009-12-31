@@ -140,25 +140,6 @@ function wpcf7_admin_enqueue_styles() {
 	}
 }
 
-add_action( 'admin_head', 'wpcf7_admin_head' );
-
-function wpcf7_admin_head() {
-	global $plugin_page;
-
-	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
-		return;
-
-?>
-<script type="text/javascript">
-//<![CDATA[
-var _wpcf7 = {
-	pluginUrl: '<?php echo wpcf7_plugin_url(); ?>'
-};
-//]]>
-</script>
-<?php
-}
-
 add_action( 'admin_print_scripts', 'wpcf7_admin_enqueue_scripts' );
 
 function wpcf7_admin_enqueue_scripts() {
@@ -176,19 +157,30 @@ function wpcf7_admin_enqueue_scripts() {
 		array( 'jquery', 'wpcf7-admin-taggenerator' ), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
-		'textField' => __( 'Text field', 'wpcf7' ),
-		'emailField' => __( 'Email field', 'wpcf7' ),
-		'textArea' => __( 'Text area', 'wpcf7' ),
-		'menu' => __( 'Drop-down menu', 'wpcf7' ),
-		'checkboxes' => __( 'Checkboxes', 'wpcf7' ),
-		'radioButtons' => __( 'Radio buttons', 'wpcf7' ),
-		'acceptance' => __( 'Acceptance', 'wpcf7' ),
-		'captcha' => __( 'CAPTCHA', 'wpcf7' ),
-		'quiz' => __( 'Quiz', 'wpcf7' ),
-		'fileUpload' => __( 'File upload', 'wpcf7' ),
-		'submit' => __( 'Submit button', 'wpcf7' ),
 		'show' => __( "Show", 'wpcf7' ),
 		'hide' => __( "Hide", 'wpcf7' ) ) );
+}
+
+add_action( 'admin_head', 'wpcf7_admin_head' );
+
+function wpcf7_admin_head() {
+	global $plugin_page;
+
+	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
+		return;
+
+?>
+<script type="text/javascript">
+//<![CDATA[
+var _wpcf7 = {
+	pluginUrl: '<?php echo wpcf7_plugin_url(); ?>',
+	tagGenerators: {
+<?php wpcf7_print_tag_generators(); ?>
+	}
+};
+//]]>
+</script>
+<?php
 }
 
 function wpcf7_admin_management_page() {
@@ -207,6 +199,54 @@ function wpcf7_admin_management_page() {
 	}
 
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
+}
+
+/* Tag generator */
+
+function wpcf7_add_tag_generator( $key, $name, $title, $elm_id, $callback, $options = array() ) {
+	global $wpcf7_tag_generators;
+
+	$name = trim( $name );
+	if ( '' == $name )
+		return false;
+
+	if ( ! is_array( $wpcf7_tag_generators ) )
+		$wpcf7_tag_generators = array();
+
+	$wpcf7_tag_generators[$key] = array(
+		'name' => $name,
+		'title' => $title,
+		'content' => $elm_id,
+		'options' => $options );
+
+	if ( is_callable( $callback ) )
+		add_action( 'wpcf7_admin_footer', $callback );
+
+	return true;
+}
+
+function wpcf7_print_tag_generators() {
+	global $wpcf7_tag_generators;
+
+	ksort( $wpcf7_tag_generators );
+
+	$output = array();
+
+	foreach ( (array) $wpcf7_tag_generators as $tg ) {
+		$pane = "		" . esc_js( $tg['name'] ) . ": { ";
+		$pane .= "title: '" . esc_js( $tg['title'] ) . "'";
+		$pane .= ", content: '" . esc_js( $tg['content'] ) . "'";
+
+		foreach ( (array) $tg['options'] as $option_name => $option_value ) {
+			$pane .= ", $option_name: '" . esc_js( $option_value ) . "'";
+		}
+
+		$pane .= " }";
+
+		$output[] = $pane;
+	}
+
+	echo implode( ",\n", $output ) . "\n";
 }
 
 /* Install and default settings */

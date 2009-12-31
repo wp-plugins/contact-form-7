@@ -140,7 +140,12 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_menu' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_menu' );
+
+function wpcf7_add_tag_generator_menu() {
+	wpcf7_add_tag_generator( 40, 'menu', __( 'Drop-down menu', 'wpcf7' ),
+		'wpcf7-tg-pane-menu', 'wpcf7_tg_pane_menu' );
+}
 
 function wpcf7_tg_pane_menu( &$contact_form ) {
 ?>

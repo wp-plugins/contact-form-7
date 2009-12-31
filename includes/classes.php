@@ -474,7 +474,7 @@ class WPCF7_ContactForm {
 				return false; // Missing ID
 
 			$result = $wpdb->update( $table_name, $fields,
-				array( 'cf7_unit_id' => absint( $this->id) ) );
+				array( 'cf7_unit_id' => absint( $this->id ) ) );
 
 			if ( false !== $result ) {
 				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );

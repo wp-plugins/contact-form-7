@@ -1,5 +1,6 @@
 jQuery(document).ready(function() {
 	try {
+		jQuery.extend(jQuery.tgPanes, _wpcf7.tagGenerators);
 		jQuery('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
 			{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
 
@@ -107,64 +108,3 @@ function updateTag() {
 
 	jQuery('input#contact-form-anchor-text').val(tag);
 }
-
-
-/* Tag Generator */
-
-jQuery.extend(jQuery.tgPanes, {
-	text: {
-		title: _wpcf7L10n.textField,
-		content: 'wpcf7-tg-pane-text'
-	},
-
-	email: {
-		title: _wpcf7L10n.emailField,
-		content: 'wpcf7-tg-pane-email'
-	},
-
-	textarea: {
-		title: _wpcf7L10n.textArea,
-		content: 'wpcf7-tg-pane-textarea'
-	},
-
-	menu: {
-		title: _wpcf7L10n.menu,
-		content: 'wpcf7-tg-pane-menu'
-	},
-
-	checkbox: {
-		title: _wpcf7L10n.checkboxes,
-		content: 'wpcf7-tg-pane-checkbox'
-	},
-
-	radio: {
-		title: _wpcf7L10n.radioButtons,
-		content: 'wpcf7-tg-pane-radio'
-	},
-
-	acceptance: {
-		title: _wpcf7L10n.acceptance,
-		content: 'wpcf7-tg-pane-acceptance'
-	},
-
-	quiz: {
-		title: _wpcf7L10n.quiz,
-		content: 'wpcf7-tg-pane-quiz'
-	},
-
-	captcha: {
-		title: _wpcf7L10n.captcha,
-		content: 'wpcf7-tg-pane-captcha'
-	},
-
-	file: {
-		title: _wpcf7L10n.fileUpload,
-		content: 'wpcf7-tg-pane-file'
-	},
-
-	submit: {
-		title: _wpcf7L10n.submit,
-		content: 'wpcf7-tg-pane-submit',
-		nameless: 1
-	}
-});

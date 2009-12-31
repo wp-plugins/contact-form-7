@@ -218,7 +218,12 @@ function wpcf7_file_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_file' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_file' );
+
+function wpcf7_add_tag_generator_file() {
+	wpcf7_add_tag_generator( 100, 'file', __( 'File upload', 'wpcf7' ),
+		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
+}
 
 function wpcf7_tg_pane_file( &$contact_form ) {
 ?>

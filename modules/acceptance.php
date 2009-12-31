@@ -88,7 +88,12 @@ function wpcf7_acceptance_filter( $accepted ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_acceptance' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance' );
+
+function wpcf7_add_tag_generator_acceptance() {
+	wpcf7_add_tag_generator( 70, 'acceptance', __( 'Acceptance', 'wpcf7' ),
+		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
+}
 
 function wpcf7_tg_pane_acceptance( &$contact_form ) {
 ?>

@@ -186,7 +186,12 @@ function wpcf7_captcha_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'wpcf7_admin_footer', 'wpcf7_tg_pane_captcha' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha' );
+
+function wpcf7_add_tag_generator_captcha() {
+	wpcf7_add_tag_generator( 90, 'captcha', __( 'CAPTCHA', 'wpcf7' ),
+		'wpcf7-tg-pane-captcha', 'wpcf7_tg_pane_captcha' );
+}
 
 function wpcf7_tg_pane_captcha( &$contact_form ) {
 ?>
