@@ -57,12 +57,6 @@ function wpcf7_contact_forms() {
 	return $wpdb->get_results( "SELECT cf7_unit_id as id, title FROM $table_name" );
 }
 
-$wpcf7_contact_form = null;
-$wpcf7_request_uri = null;
-$wpcf7_processing_within = null;
-$wpcf7_unit_count = null;
-$wpcf7_widget_count = null;
-
 add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
 
 function wpcf7_set_request_uri() {
