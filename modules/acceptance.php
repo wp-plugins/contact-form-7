@@ -88,10 +88,10 @@ function wpcf7_acceptance_filter( $accepted ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance', 35 );
 
 function wpcf7_add_tag_generator_acceptance() {
-	wpcf7_add_tag_generator( 70, 'acceptance', __( 'Acceptance', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'acceptance', __( 'Acceptance', 'wpcf7' ),
 		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
 }
 

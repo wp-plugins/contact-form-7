@@ -186,10 +186,10 @@ function wpcf7_captcha_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
 
 function wpcf7_add_tag_generator_captcha() {
-	wpcf7_add_tag_generator( 90, 'captcha', __( 'CAPTCHA', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'captcha', __( 'CAPTCHA', 'wpcf7' ),
 		'wpcf7-tg-pane-captcha', 'wpcf7_tg_pane_captcha' );
 }
 

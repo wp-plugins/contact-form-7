@@ -140,10 +140,10 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_menu' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_menu', 25 );
 
 function wpcf7_add_tag_generator_menu() {
-	wpcf7_add_tag_generator( 40, 'menu', __( 'Drop-down menu', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'menu', __( 'Drop-down menu', 'wpcf7' ),
 		'wpcf7-tg-pane-menu', 'wpcf7_tg_pane_menu' );
 }
 

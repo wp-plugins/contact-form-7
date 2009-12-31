@@ -169,10 +169,10 @@ function wpcf7_quiz_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_quiz' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_quiz', 40 );
 
 function wpcf7_add_tag_generator_quiz() {
-	wpcf7_add_tag_generator( 80, 'quiz', __( 'Quiz', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'quiz', __( 'Quiz', 'wpcf7' ),
 		'wpcf7-tg-pane-quiz', 'wpcf7_tg_pane_quiz' );
 }
 

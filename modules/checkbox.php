@@ -163,13 +163,13 @@ function wpcf7_checkbox_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_checkbox_and_radio' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_checkbox_and_radio', 30 );
 
 function wpcf7_add_tag_generator_checkbox_and_radio() {
-	wpcf7_add_tag_generator( 50, 'checkbox', __( 'Checkboxes', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'checkbox', __( 'Checkboxes', 'wpcf7' ),
 		'wpcf7-tg-pane-checkbox', 'wpcf7_tg_pane_checkbox' );
 
-	wpcf7_add_tag_generator( 60, 'radio', __( 'Radio buttons', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'radio', __( 'Radio buttons', 'wpcf7' ),
 		'wpcf7-tg-pane-radio', 'wpcf7_tg_pane_radio' );
 }
 

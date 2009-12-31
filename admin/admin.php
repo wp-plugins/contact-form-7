@@ -161,9 +161,9 @@ function wpcf7_admin_enqueue_scripts() {
 		'hide' => __( "Hide", 'wpcf7' ) ) );
 }
 
-add_action( 'admin_head', 'wpcf7_admin_head' );
+add_action( 'admin_footer', 'wpcf7_admin_footer' );
 
-function wpcf7_admin_head() {
+function wpcf7_admin_footer() {
 	global $plugin_page;
 
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
@@ -171,14 +171,14 @@ function wpcf7_admin_head() {
 
 ?>
 <script type="text/javascript">
-//<![CDATA[
+/* <![CDATA[ */
 var _wpcf7 = {
 	pluginUrl: '<?php echo wpcf7_plugin_url(); ?>',
 	tagGenerators: {
 <?php wpcf7_print_tag_generators(); ?>
 	}
 };
-//]]>
+/* ]]> */
 </script>
 <?php
 }
@@ -203,7 +203,7 @@ function wpcf7_admin_management_page() {
 
 /* Tag generator */
 
-function wpcf7_add_tag_generator( $key, $name, $title, $elm_id, $callback, $options = array() ) {
+function wpcf7_add_tag_generator( $name, $title, $elm_id, $callback, $options = array() ) {
 	global $wpcf7_tag_generators;
 
 	$name = trim( $name );
@@ -213,8 +213,7 @@ function wpcf7_add_tag_generator( $key, $name, $title, $elm_id, $callback, $opti
 	if ( ! is_array( $wpcf7_tag_generators ) )
 		$wpcf7_tag_generators = array();
 
-	$wpcf7_tag_generators[$key] = array(
-		'name' => $name,
+	$wpcf7_tag_generators[$name] = array(
 		'title' => $title,
 		'content' => $elm_id,
 		'options' => $options );
@@ -228,17 +227,18 @@ function wpcf7_add_tag_generator( $key, $name, $title, $elm_id, $callback, $opti
 function wpcf7_print_tag_generators() {
 	global $wpcf7_tag_generators;
 
-	ksort( $wpcf7_tag_generators );
-
 	$output = array();
 
-	foreach ( (array) $wpcf7_tag_generators as $tg ) {
-		$pane = "		" . esc_js( $tg['name'] ) . ": { ";
+	foreach ( (array) $wpcf7_tag_generators as $name => $tg ) {
+		$pane = "		" . esc_js( $name ) . ": { ";
 		$pane .= "title: '" . esc_js( $tg['title'] ) . "'";
 		$pane .= ", content: '" . esc_js( $tg['content'] ) . "'";
 
 		foreach ( (array) $tg['options'] as $option_name => $option_value ) {
-			$pane .= ", $option_name: '" . esc_js( $option_value ) . "'";
+			if ( is_int( $option_value ) )
+				$pane .= ", $option_name: $option_value";
+			else
+				$pane .= ", $option_name: '" . esc_js( $option_value ) . "'";
 		}
 
 		$pane .= " }";

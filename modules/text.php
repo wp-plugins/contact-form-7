@@ -123,13 +123,13 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_text_and_email' );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_text_and_email', 15 );
 
 function wpcf7_add_tag_generator_text_and_email() {
-	wpcf7_add_tag_generator( 10, 'text', __( 'Text field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'text', __( 'Text field', 'wpcf7' ),
 		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
 
-	wpcf7_add_tag_generator( 20, 'email', __( 'Email field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'email', __( 'Email field', 'wpcf7' ),
 		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
 }
 
