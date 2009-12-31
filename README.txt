@@ -75,10 +75,10 @@ For basic usage, you can also have a look at the [plugin homepage](http://contac
 
 Do you have questions or issues with Contact Form 7? Use these support channels appropriately.
 
+1. [Docs](http://contactform7.com/docs/)
 1. [FAQ](http://contactform7.com/faq/)
 1. [Support Forum](http://wordpress.org/tags/contact-form-7?forum_id=10)
 1. [WordPress HelpCenter](http://wphelpcenter.com/)
-1. [Customization Service](http://contactform7.com/customization/)
 
 [Support](http://contactform7.com/support/)
 
