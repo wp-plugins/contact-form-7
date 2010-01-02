@@ -198,7 +198,7 @@ function wpcf7_admin_management_page() {
 		$cf = wpcf7_contact_form( $current );
 	}
 
-	require_once WPCF7_PLUGIN_DIR . '/admin/admin-panel.php';
+	require_once WPCF7_PLUGIN_DIR . '/admin/edit.php';
 }
 
 /* Tag generator */
