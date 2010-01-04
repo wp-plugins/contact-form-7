@@ -89,15 +89,14 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Changelog ==
 
 = 2.1 =
-* required WordPress version is changed to WordPress 2.8 and higher
-* support new "special mail tags" `[wpcf7.post_id]`, `[wpcf7.post_name]`, `[wpcf7.post_title]`, and `[wpcf7.post_url]`
-* support multilingual contact form template
-* wholly reconstruct Tag Generator
-* show warning message when known issues are found on the web host
-* add uninstall.php
-* improve interoperability with cache plugins
-* do not show forms on feeds
-* update translations for Estonian (Egon Elbre), German (Ivan Graf), Hindi (Ashish), and Italian (Gianni Diurno)
+* The required WordPress version has been changed and now requires WordPress 2.8 or higher. If you use WordPress 2.7, you will need to upgrade WordPress.
+* New "special mail tags" (`[wpcf7.post_id]`, `[wpcf7.post_name]`, `[wpcf7.post_title]`, and `[wpcf7.post_url]`) have been introduced.
+* The multilingualization functionality has been improved. You are now able to create contact forms in any languages with just a few clicks.
+* The Tag Generator's JavaScript coding has been wholly reconstructed and you can extend it from the additional modules.
+* Interoperability with cache plugins (WP Super Cache, etc.) has been improved.
+* When known issues are found on your web host, a warning message is shown on the administration panel.
+* Uninstall.php file has been added. This will clean up its table from your database when you remove Contact Form 7 from your site.
+* Translations for Estonian (by Egon Elbre), German (by Ivan Graf), Hindi (by Ashish) and Italian (by Gianni Diurno) have been updated.
 
 [Releases](http://contactform7.com/category/releases/)
 
