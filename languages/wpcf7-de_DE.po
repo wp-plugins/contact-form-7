@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form | V2.1.0\n"
+"Project-Id-Version: Contact Form | V2.1.0*\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-01 03:37+0900\n"
 "PO-Revision-Date: \n"
@@ -254,7 +254,7 @@ msgstr "Die Nachricht vom Absender ist fehlerhaft."
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/includes/functions.php:17
 msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Das Versenden der Nachricht war fehlerhaft. Bitte versuchen Sie es nocheinmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
+msgstr "Das versenden der Nachricht war fehlerhaft. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Akismet judged the sending activity as spamming"
@@ -266,7 +266,7 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:22
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingaben und drücken nochmals auf versenden."
+msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingaben und drücken nochmals auf Absenden."
 
 #: contact-form-7/includes/functions.php:26
 msgid "There is a field of term that sender is needed to accept"
@@ -274,7 +274,7 @@ msgstr "Sie müssen dieses Bedingungsfeld akzeptieren!"
 
 #: contact-form-7/includes/functions.php:27
 msgid "Please accept the terms to proceed."
-msgstr "Bitte akzeptieren Sie die Bedingungen, um fortzufahren."
+msgstr "Bitte akzeptieren Sie die Bedingungen um fortzufahren."
 
 #: contact-form-7/includes/functions.php:31
 msgid "Email address that sender entered is invalid"
@@ -282,7 +282,7 @@ msgstr "Die eingegebene Email Adresse ist ungültig!"
 
 #: contact-form-7/includes/functions.php:32
 msgid "Email address seems invalid."
-msgstr "Die E-Mail-Adresse scheint nicht gültig zu sein."
+msgstr "Die Email Adresse scheint nicht gültig zu sein."
 
 #: contact-form-7/includes/functions.php:36
 msgid "There is a field that sender is needed to fill in"
