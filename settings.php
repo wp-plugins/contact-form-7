@@ -43,13 +43,12 @@ require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/taggenerator.php';
 
-if ( is_admin() ) {
+if ( is_admin() )
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
-	require_once WPCF7_PLUGIN_DIR . '/admin/includes/taggenerator.php';
-} else {
+else
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
-}
 
 function wpcf7_contact_forms() {
 	global $wpdb;
