@@ -16,6 +16,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 = Translators =
 
+* Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
