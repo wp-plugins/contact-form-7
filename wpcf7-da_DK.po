@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 version 2.0.1\n"
+"Project-Id-Version: Contact Form 7 version 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-01 09:07+0100\n"
-"PO-Revision-Date: 2009-08-01 09:08+0100\n"
+"POT-Creation-Date: 2010-01-08 18:18+0100\n"
+"PO-Revision-Date: 2010-01-08 18:32+0100\n"
 "Last-Translator: Team Blogos <wordpress@blogos.dk>\n"
 "Language-Team: Team Blogos <wordpress@blogos.dk>\n"
 "MIME-Version: 1.0\n"
@@ -17,43 +17,143 @@ msgstr ""
 "Plural-Forms: nplurals=2;plural=n != 1;\n"
 "X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\contact-form-7\n"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:9
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:117
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:17
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:30
+msgid "Contact Form 7"
+msgstr "Kontaktformular 7"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:117
+msgid "Contact"
+msgstr "Kontakt"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
+msgid "Edit Contact Forms"
+msgstr "Redigér Kontaktformular 7"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
+msgid "Edit"
+msgstr "Redigér"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:159
+msgid "Generate Tag"
+msgstr "Lav mærke"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:160
+msgid "Show"
+msgstr "Vis"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:161
+msgid "Hide"
+msgstr "Skjul"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:305
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:324
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:335
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:336
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:337
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:338
+msgid "Docs"
+msgstr "Dokumenter"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:339
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:340
+msgid "FAQ"
+msgstr "FAQ"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:341
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:342
+msgid "Support"
+msgstr "Support"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:353
+msgid "Contact form created."
+msgstr "Kontaktformular oprettet."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:356
+msgid "Contact form saved."
+msgstr "Kontaktformular gemt."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:359
+msgid "Contact form deleted."
+msgstr "Kontaktformular slettet."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:362
+msgid "Database table created."
+msgstr "Databasetabel oprettet."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:365
+msgid "Failed to create database table."
+msgstr "Oprettelse af databasetabel mislykkedes."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:398
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Kontaktformular 7 behøver din støtte. Send en gave i dag."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:399
+msgid "Is this plugin useful for you? If you like it, please help the developer."
+msgstr "Kan du bruge dette plugin? Hvis du kan lide det, så hjælp udvikleren."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:400
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Dit bidrag behøves, hvis pluginnet skal blive bedre."
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:401
+msgid "Developing a plugin and providing user support is really hard work. Please help."
+msgstr "Udvikling af plugins og brugersupport er faktisk hårdt arbejde. Støt det!"
+
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:9
 #, php-format
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
 msgstr "<strong>Contact Form 7's databasetabel findes ikke.</strong> Du skal <a href=\"%s\">oprette tabellen</a>, hvis programmet skal fungere."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:12
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:12
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
 msgstr "<strong>Contact Form 7's databasetabel findes ikke.</strong>"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:17
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:30
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:118
-msgid "Contact Form 7"
-msgstr "Kontaktformular 7"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:45
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:45
 msgid "Add new"
 msgstr "Tilføj ny"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:67
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
 msgstr "Kopier og indsæt denne kode i dit indlæg, side eller indholdet i en tekst-widget."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:75
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:327
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:75
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "Gem"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:82
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:82
 msgid "Copy"
 msgstr "Kopiér"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:87
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:87
 msgid "Delete"
 msgstr "Slet"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:89
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -61,441 +161,655 @@ msgstr ""
 "Du er ved at slette din kontakt formular.\n"
 "Tryk 'Annullér' for at stoppe, 'OK' for at slette."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:102
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:104
 msgid "Form"
 msgstr "Formular"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:120
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:128
 msgid "Mail"
 msgstr "E-mail"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:127
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:188
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:135
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:202
 msgid "To:"
 msgstr "Til:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:132
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:193
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:140
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:207
 msgid "From:"
 msgstr "Fra:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:137
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:198
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:145
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:212
 msgid "Subject:"
 msgstr "Emne:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:144
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:205
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:152
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:219
 msgid "Additional headers:"
 msgstr "Yderligere headers:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:149
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:210
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:157
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:224
 msgid "File attachments:"
 msgstr "Filvedhæftninger:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:157
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:218
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:165
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:232
 msgid "Use HTML content type"
 msgstr "Brug HTML til indholdet"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:164
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:225
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:172
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:239
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:73
 msgid "Message body:"
 msgstr "Besked:"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:174
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:188
 msgid "Mail (2)"
 msgstr "Email (2)"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:180
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:194
 msgid "Use mail (2)"
 msgstr "Brug email (2)"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:235
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:255
 msgid "Messages"
 msgstr "Beskeder"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:243
-msgid "Sender's message was sent successfully"
-msgstr "Afsenders besked blev sendt"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:248
-msgid "Sender's message was failed to send"
-msgstr "Det mislykkedes at sende afsenders besked"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:253
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet bedømte afsendelsen som forsøg på at spamme"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:258
-msgid "Validation errors occurred"
-msgstr "Der forekom valideringsfejl"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:263
-msgid "There is a field that sender is needed to fill in"
-msgstr "Der er et felt, som afsender skal udfylde"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:268
-msgid "Email address that sender entered is invalid"
-msgstr "E-mail-adressen, som afsender indtastede, er ugyldig"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:273
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Der er et felt med betingelser, som afsender skal acceptere"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:278
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Afsender indtastede ikke det rigtige svar på quizzen"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:283
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Svaret, som afsender indtastede, matcher ikke CAPTCHA-kontrollen"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:288
-msgid "Uploading a file fails for any reason"
-msgstr "Uploadning af en fil mislykkedes af en eller anden grund"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:293
-msgid "Uploaded file is not allowed file type"
-msgstr "Uploadet fil har ikke en tilladt filtype"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:298
-msgid "Uploaded file is too large"
-msgstr "Uploadet fil er for stor"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin-panel.php:309
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:285
 msgid "Additional Settings"
 msgstr "Yderligere indstillinger"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:118
-msgid "Contact"
-msgstr "Kontakt"
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Brug standardsproget (%s)"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:121
-msgid "Edit Contact Forms"
-msgstr "Redigér Kontaktformular 7"
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:334
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "Tilføj ny"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:121
-msgid "Edit"
-msgstr "Redigér"
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "Eller"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:168
-msgid "optional"
-msgstr "valgfrit"
+#: d:\wordpress\plugins\contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(vælg sprog)"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:169
-msgid "Generate Tag"
-msgstr "Lav mærke"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:170
-msgid "Text field"
-msgstr "Tekstfelt"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:171
-msgid "Email field"
-msgstr "E-mail-felt"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:172
-msgid "Text area"
-msgstr "Tekstboks"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:173
-msgid "Drop-down menu"
-msgstr "Drop-down menu"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:174
-msgid "Checkboxes"
-msgstr "Afkrydsningsfelt"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:175
-msgid "Radio buttons"
-msgstr "Radioknapper"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:176
-msgid "Acceptance"
-msgstr "Accept"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:177
-msgid "Make this checkbox checked by default?"
-msgstr "Skal afkrydsningsfeltet være markeret som standard?"
-
-# tjekkes
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:178
-msgid "Make this checkbox work inversely?"
-msgstr "Skal afkrydsningsfeltet virke omvendt?"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:179
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Det betyder, at en besøgende, som accepterer betingelserne, afmarkerer det."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:180
-msgid "CAPTCHA"
-msgstr "CAPTCHA-kontrol"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:181
-msgid "Quiz"
-msgstr "Quiz"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:182
-msgid "Quizzes"
-msgstr "Quizzer"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:183
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "' quiz|svar (f.eks. 1+1=?|2)"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:184
-msgid "File upload"
-msgstr "Filupload"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:185
-msgid "bytes"
-msgstr "bytes"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:186
-msgid "Submit button"
-msgstr "Send-knap"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:187
-msgid "Name"
-msgstr "Navn"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:188
-msgid "Required field?"
-msgstr "Påkrævet felt?"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:189
-msgid "Allow multiple selections?"
-msgstr "Tillad flere valg?"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:190
-msgid "Insert a blank item as the first option?"
-msgstr "Indsæt et tomt punkt som første valgmulighed?"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:191
-msgid "Make checkboxes exclusive?"
-msgstr "Skal afkrydsningsfelter være eksklusive? (altså så der kun kan vælges én?)"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:192
-msgid "Choices"
-msgstr "Valg"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:193
-msgid "Label"
-msgstr "Tekst på knap"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:194
-msgid "Default value"
-msgstr "Standardværdi"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:195
-msgid "Akismet"
-msgstr "Akismet"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:196
-msgid "This field requires author's name"
-msgstr "Dette felt kræver forfatters navn"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:197
-msgid "This field requires author's URL"
-msgstr "Dette felt kræver forfatters URL"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:198
-msgid "This field requires author's email address"
-msgstr "Dette felt kræver forfatters e-mail-adresse"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:199
-msgid "Copy this code and paste it into the form left."
-msgstr "Kopier og indsæt denne kode i formularen til venstre"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:200
-msgid "Foreground color"
-msgstr "Forgrundsfarve"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:201
-msgid "Background color"
-msgstr "Baggrundsfarve"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:202
-msgid "Image size"
-msgstr "Billedstørrelse"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:203
-msgid "Small"
-msgstr "Lille"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:204
-msgid "Medium"
-msgstr "Medium"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:205
-msgid "Large"
-msgstr "Stor"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:206
-msgid "Image settings"
-msgstr "Billedindstillinger"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:207
-msgid "Input field settings"
-msgstr "Indstillinger for feltet"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:208
-msgid "For image"
-msgstr "For billedet"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:209
-msgid "For input field"
-msgstr "For indtastningsfeltet"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:210
-msgid "* One choice per line."
-msgstr "* Et valg per linje."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:211
-msgid "Show"
-msgstr "Vis"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:212
-msgid "Hide"
-msgstr "Skjul"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:213
-msgid "File size limit"
-msgstr "Begrænsning på filstørrelse"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:214
-msgid "Acceptable file types"
-msgstr "Tilladte filtyper"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:215
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Bemærk, at du for at bruge CAPTCHA, skal have Really Simple CAPTCHA-pluginnet installeret."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:226
-msgid "Contact form created."
-msgstr "Kontaktformular oprettet."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:229
-msgid "Contact form saved."
-msgstr "Kontaktformular gemt."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:232
-msgid "Contact form deleted."
-msgstr "Kontaktformular slettet."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:235
-msgid "Database table created."
-msgstr "Databasetabel oprettet."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:238
-msgid "Failed to create database table."
-msgstr "Oprettelse af databasetabel mislykkedes."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:311
-msgid "Contact form"
-msgstr "Kontaktformular"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:345
-msgid "Settings"
-msgstr "Indstillinger"
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:366
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Kontaktformular 7 behøver din støtte. Send en gave i dag."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:367
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Kan du bruge dette plugin? Hvis du kan lide det, så hjælp udvikleren."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:368
-msgid "Your contribution is needed for making this plugin better."
-msgstr "Dit bidrag behøves, hvis pluginnet skal blive bedre."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:369
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "Udvikling af plugins og brugersupport er faktisk hårdt arbejde. Støt det!"
-
-#: d:\wordpress\plugins\contact-form-7/includes/classes.php:536
+#: d:\wordpress\plugins\contact-form-7/includes/classes.php:568
 msgid "Untitled"
 msgstr "Uden titel"
 
 #: d:\wordpress\plugins\contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Afsenders besked blev sendt"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:7
 msgid "Your message was sent successfully. Thanks."
 msgstr "Din besked blev sendt. Tak."
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:8
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:10
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Det mislykkedes at sende afsenders besked"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:12
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:17
 msgid "Failed to send your message. Please try later or contact administrator by other way."
 msgstr "Beskeden blev ikke sendt. Prøv venligst senere eller kontakt administratoren på anden måde. "
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:12
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet bedømte afsendelsen som forsøg på at spamme"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Der forekom valideringsfejl"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:22
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Kontrollen af indtastningerne viste fejl. Gennemgå venligst felterne og send det igen"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:14
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Der er et felt med betingelser, som afsender skal acceptere"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:27
 msgid "Please accept the terms to proceed."
 msgstr "Acceptér venligst betingelserne for at fortsætte."
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:16
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "E-mail-adressen, som afsender indtastede, er ugyldig"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:32
 msgid "Email address seems invalid."
 msgstr "E-mail-adressen er ikke gyldig."
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:18
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Der er et felt, som afsender skal udfylde"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:37
 msgid "Please fill the required field."
 msgstr "Udfyld venligst de påkrævede felter."
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:20
-msgid "Your entered code is incorrect."
-msgstr "Dit indtastede svar er forkert."
-
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:22
-msgid "Your answer is not correct."
-msgstr "Dit indtastede svar er ikke korrekt."
-
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:24
-msgid "Failed to upload file."
-msgstr "Filupload mislykkedes"
-
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:26
-msgid "This file type is not allowed."
-msgstr "Denne filtype er ikke tilladt."
-
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:28
-msgid "This file is too large."
-msgstr "Filen er for stor."
-
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:33
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:45
 msgid "Your Name"
 msgstr "Dit navn"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:33
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:35
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:45
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:47
 msgid "(required)"
 msgstr "(påkrævet)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:35
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:47
 msgid "Your Email"
 msgstr "Din e-mail"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:37
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:49
 msgid "Subject"
 msgstr "Emne"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:39
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:51
 msgid "Your Message"
 msgstr "Din besked"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:41
-#: d:\wordpress\plugins\contact-form-7/modules/submit.php:37
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:53
 msgid "Send"
 msgstr "Send"
 
-#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:62
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:60
+#, php-format
+msgid "From: %s"
+msgstr "Fra: %s"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:61
+#, php-format
+msgid "Subject: %s"
+msgstr "Emne: %s"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:62
+msgid "Message Body:"
+msgstr "Besked:"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:63
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:74
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Denne mail er sendt via en kontaktformular på %1$s %2$s"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:163
+msgid "Albanian"
+msgstr "Albansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:164
+msgid "Arabic"
+msgstr "Arabisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:165
+msgid "Bangla"
+msgstr "Bangladeshisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:166
+msgid "Bosnian"
+msgstr "Bosnisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:167
+msgid "Brazilian Portuguese"
+msgstr "Brasiliansk-portugisisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:168
+msgid "Bulgarian"
+msgstr "Bulgarsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:169
+msgid "Catalan"
+msgstr "Katalansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:170
+msgid "Chinese (Simplified)"
+msgstr "Kinesisk (forsimplet)"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:171
+msgid "Chinese (Traditional)"
+msgstr "Kinesisk (traditionel)"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:172
+msgid "Croatian"
+msgstr "Kroatisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:173
+msgid "Czech"
+msgstr "Tjekkisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:174
+msgid "Danish"
+msgstr "Dansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:175
+msgid "Dutch"
+msgstr "Nederlandsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:176
+msgid "English"
+msgstr "Engelsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:177
+msgid "Estonian"
+msgstr "Estisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:178
+msgid "Finnish"
+msgstr "Finsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:179
+msgid "French"
+msgstr "Fransk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:180
+msgid "Georgian"
+msgstr "Georgisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:181
+msgid "German"
+msgstr "Tysk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:182
+msgid "Greek"
+msgstr "Græsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:183
+msgid "Hebrew"
+msgstr "Hebraisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:184
+msgid "Hindi"
+msgstr "Hindu"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:185
+msgid "Hungarian"
+msgstr "Ungarsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:186
+msgid "Indonesian"
+msgstr "Indonesisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:187
+msgid "Italian"
+msgstr "Italiensk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:188
+msgid "Japanese"
+msgstr "Japansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:189
+msgid "Korean"
+msgstr "Koreansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:190
+msgid "Latvian"
+msgstr "Lettisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:191
+msgid "Lithuanian"
+msgstr "Litauisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:192
+msgid "Norwegian"
+msgstr "Norsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:193
+msgid "Persian"
+msgstr "Persisk (farsi)"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:194
+msgid "Polish"
+msgstr "Polsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:195
+msgid "Portuguese"
+msgstr "Portugisisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:196
+msgid "Russian"
+msgstr "Russisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:197
+msgid "Romanian"
+msgstr "Rumænsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:198
+msgid "Serbian"
+msgstr "Serbisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:199
+msgid "Slovak"
+msgstr "Slovakisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:200
+msgid "Slovene"
+msgstr "Slovensk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:201
+msgid "Spanish"
+msgstr "Spansk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:202
+msgid "Swedish"
+msgstr "Svensk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:203
+msgid "Thai"
+msgstr "Thailandsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:204
+msgid "Turkish"
+msgstr "Tyrkisk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:205
+msgid "Ukrainian"
+msgstr "Ukrainsk"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:206
+msgid "Vietnamese"
+msgstr "Vietnamesisk"
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:94
+msgid "Acceptance"
+msgstr "Accept"
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:103
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:206
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:196
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:234
+msgid "Name"
+msgstr "Navn"
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:108
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:111
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:213
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:216
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:221
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:224
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:228
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:239
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:242
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:247
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:250
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:201
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:204
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:239
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:242
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:247
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:250
+msgid "optional"
+msgstr "valgfrit"
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:117
+msgid "Make this checkbox checked by default?"
+msgstr "Skal afkrydsningsfeltet være markeret som standard?"
+
+# tjekkes
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:118
+msgid "Make this checkbox work inversely?"
+msgstr "Skal afkrydsningsfeltet virke omvendt?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:119
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Det betyder, at en besøgende, som accepterer betingelserne, afmarkerer det."
+
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:124
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:255
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:224
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:255
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopier og indsæt denne kode i formularen til venstre"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:65
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
 msgstr "For at bruge CAPTCHA skal du have<a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> pluginnet installeret."
 
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:181
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Svaret, som afsender indtastede, matcher ikke CAPTCHA-kontrollen"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:182
+msgid "Your entered code is incorrect."
+msgstr "Dit indtastede svar er forkert."
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:192
+msgid "CAPTCHA"
+msgstr "CAPTCHA-kontrol"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:203
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Bemærk, at du for at bruge CAPTCHA, skal have Really Simple CAPTCHA-pluginnet installeret."
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:210
+msgid "Image settings"
+msgstr "Billedindstillinger"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:221
+msgid "Foreground color"
+msgstr "Forgrundsfarve"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:224
+msgid "Background color"
+msgstr "Baggrundsfarve"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:228
+msgid "Image size"
+msgstr "Billedstørrelse"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:229
+msgid "Small"
+msgstr "Lille"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:230
+msgid "Medium"
+msgstr "Medium"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:231
+msgid "Large"
+msgstr "Stor"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:236
+msgid "Input field settings"
+msgstr "Indstillinger for feltet"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:256
+msgid "For image"
+msgstr "For billedet"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:258
+msgid "For input field"
+msgstr "For indtastningsfeltet"
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:288
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Denne kontaktformular indeholder CAPTCHA-felter, men den midlertidige mappe til filerne (%s) eksisterer ikke eller er skrivbar. Du kan oprette mappen eller ændre adgangstilladelserne (permissions) selv."
+
+#: d:\wordpress\plugins\contact-form-7/modules/captcha.php:294
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Denne kontaktformular indeholder CAPTCHA-felter, men de nødvendige biblioteker (GD og FreeType) er ikke tilgængelige på din server."
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:169
+msgid "Checkboxes"
+msgstr "Afkrydsningsfelt"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:172
+msgid "Radio buttons"
+msgstr "Radioknapper"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:193
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:233
+msgid "Required field?"
+msgstr "Påkrævet felt?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:209
+msgid "Choices"
+msgstr "Valg"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:211
+msgid "* One choice per line."
+msgstr "* Et valg per linje."
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:215
+msgid "Put a label first, a checkbox last?"
+msgstr "Vil du have etiketten forrest og afkrydsningsfeltet sidst?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:216
+msgid "Wrap each item with <label> tag?"
+msgstr "Sæt <label>-tag uden om hver?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:218
+msgid "Make checkboxes exclusive?"
+msgstr "Skal afkrydsningsfelter være eksklusive? (altså så der kun kan vælges én?)"
+
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:226
+msgid "And, put this code into the Mail fields below."
+msgstr "Og indsæt denne kode i Mail-felterne nedenfor."
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:197
+msgid "Uploading a file fails for any reason"
+msgstr "Uploadning af en fil mislykkedes af en eller anden grund"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:198
+msgid "Failed to upload file."
+msgstr "Filupload mislykkedes"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:202
+msgid "Uploaded file is not allowed file type"
+msgstr "Uploadet fil har ikke en tilladt filtype"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:203
+msgid "This file type is not allowed."
+msgstr "Denne filtype er ikke tilladt."
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:207
+msgid "Uploaded file is too large"
+msgstr "Uploadet fil er for stor"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:208
+msgid "This file is too large."
+msgstr "Filen er for stor."
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:212
+msgid "Uploading a file fails for PHP error"
+msgstr "Uploadning af en fil mislykkedes på grund af en PHP-fejl"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:213
+msgid "Failed to upload file. Error occurred."
+msgstr "Filupload mislykkedes. En fejl opstod."
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:224
+msgid "File upload"
+msgstr "Filupload"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:247
+msgid "File size limit"
+msgstr "Begrænsning på filstørrelse"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:247
+msgid "bytes"
+msgstr "bytes"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:250
+msgid "Acceptable file types"
+msgstr "Tilladte filtyper"
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:257
+msgid "And, put this code into the File Attachments field below."
+msgstr "Og indsæt denne kode i feltet Filvedhæftninger nedenfor."
+
+#: d:\wordpress\plugins\contact-form-7/modules/file.php:282
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Denne kontaktformular indeholder felter for filuploadning, men den midlertidige mappe til filerne (%s) eksisterer ikke eller er skrivbar. Du kan oprette mappen eller ændre adgangstilladelserne (permissions) selv."
+
+#: d:\wordpress\plugins\contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Denne kontaktformular indeholder [icl]-tags, men de bruges ikke mere og virker ikke længere med denne version af Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">Der er en simplere måde at oprette kontaktformularer på andre sprog på</a>, og du anbefales at bruge den."
+
+#: d:\wordpress\plugins\contact-form-7/modules/quiz.php:164
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Afsender indtastede ikke det rigtige svar på quizzen"
+
+#: d:\wordpress\plugins\contact-form-7/modules/quiz.php:165
+msgid "Your answer is not correct."
+msgstr "Dit indtastede svar er ikke korrekt."
+
+#: d:\wordpress\plugins\contact-form-7/modules/quiz.php:175
+msgid "Quiz"
+msgstr "Quiz"
+
+#: d:\wordpress\plugins\contact-form-7/modules/quiz.php:205
+msgid "Quizzes"
+msgstr "Quizzer"
+
+#: d:\wordpress\plugins\contact-form-7/modules/quiz.php:207
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "' quiz|svar (f.eks. 1+1=?|2)"
+
+#: d:\wordpress\plugins\contact-form-7/modules/select.php:146
+msgid "Drop-down menu"
+msgstr "Drop-down menu"
+
+#: d:\wordpress\plugins\contact-form-7/modules/select.php:175
+msgid "Allow multiple selections?"
+msgstr "Tillad flere valg?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/select.php:176
+msgid "Insert a blank item as the first option?"
+msgstr "Indsæt et tomt punkt som første valgmulighed?"
+
+#: d:\wordpress\plugins\contact-form-7/modules/submit.php:55
+msgid "Submit button"
+msgstr "Send-knap"
+
+#: d:\wordpress\plugins\contact-form-7/modules/submit.php:73
+msgid "Label"
+msgstr "Tekst på knap"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:129
+msgid "Text field"
+msgstr "Tekstfelt"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:132
+msgid "Email field"
+msgstr "E-mail-felt"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:174
+msgid "Akismet"
+msgstr "Akismet"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:176
+msgid "This field requires author's name"
+msgstr "Dette felt kræver forfatters navn"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:177
+msgid "This field requires author's URL"
+msgstr "Dette felt kræver forfatters URL"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:179
+msgid "This field requires author's email address"
+msgstr "Dette felt kræver forfatters e-mail-adresse"
+
+#: d:\wordpress\plugins\contact-form-7/modules/text.php:183
+#: d:\wordpress\plugins\contact-form-7/modules/textarea.php:149
+msgid "Default value"
+msgstr "Standardværdi"
+
+#: d:\wordpress\plugins\contact-form-7/modules/textarea.php:118
+msgid "Text area"
+msgstr "Tekstboks"
+
+#~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
+#~ msgstr "Denne mail er genereret af pluginnet Contact Form 7 for WordPress."
 #~ msgid "(You need WordPress 2.7 or greater to use this feature)"
 #~ msgstr ""
 #~ "(Du skal bruge WordPress 2.7 eller nyere for at bruge denne funktion)"
