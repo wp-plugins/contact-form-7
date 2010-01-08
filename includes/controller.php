@@ -228,7 +228,7 @@ function wpcf7_enqueue_scripts() {
 		$in_footer = false;
 
 	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'scripts.js' ),
-		array('jquery', 'jquery-form'), WPCF7_VERSION, $in_footer );
+		array( 'jquery', 'jquery-form' ), WPCF7_VERSION, $in_footer );
 }
 
 if ( WPCF7_LOAD_CSS )
