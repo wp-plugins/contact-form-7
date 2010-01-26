@@ -4,7 +4,7 @@ Donate link: http://pledgie.com/campaigns/3117
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.8
 Tested up to: 2.9.1
-Stable tag: 2.1
+Stable tag: 2.1.1
 
 Just another contact form plugin. Simple but flexible.
 

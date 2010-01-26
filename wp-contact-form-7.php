@@ -4,7 +4,7 @@ Plugin Name: Contact Form 7
 Plugin URI: http://contactform7.com/
 Description: Just another contact form plugin. Simple but flexible.
 Author: Takayuki Miyoshi
-Version: 2.1
+Version: 2.1.1
 Author URI: http://ideasilo.wordpress.com/
 */
 
@@ -25,7 +25,7 @@ Author URI: http://ideasilo.wordpress.com/
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define( 'WPCF7_VERSION', '2.1' );
+define( 'WPCF7_VERSION', '2.1.1' );
 
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
