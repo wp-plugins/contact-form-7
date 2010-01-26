@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://pledgie.com/campaigns/3117
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.8
-Tested up to: 3.0-alpha
+Tested up to: 2.9.1
 Stable tag: 2.1
 
 Just another contact form plugin. Simple but flexible.
@@ -88,6 +88,11 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.1.1 =
+
+* Some other plugins that attempt to include files in inadvisable way were conflicting with Contact Form 7 2.1. A workaround for avoiding these types of issues has been introduced.
+* Translations for Chinese (traditional; James Wu), Danish (Georg S. Adamsen), German (Ivan Graf) and Italian (Gianni Diurno) have been updated. Translation for Afrikaans has been newly created by Schalk Burger.
 
 = 2.1 =
 * The required WordPress version has been changed and now requires WordPress 2.8 or higher. If you use WordPress 2.7, you will need to upgrade WordPress.
