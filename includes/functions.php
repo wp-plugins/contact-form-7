@@ -139,10 +139,7 @@ function wpcf7_json( $items ) {
 		} else { // Object
 			$children = array();
 			foreach ( $items as $key => $item ) {
-				$key = esc_js( (string) $key );
-				if ( preg_match( '/[^a-zA-Z]/', $key ) )
-					$key = '"' . $key . '"';
-
+				$key = '"' . esc_js( (string) $key ) . '"';
 				$children[] = $key . ': ' . wpcf7_json( $item );
 			}
 			return '{ ' . join( ', ', $children ) . ' }';
