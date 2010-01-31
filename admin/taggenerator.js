@@ -117,8 +117,6 @@
 	}
 
 	$.tgCreateTag = function(pane, tagType) {
-		pane.find(':input').empty();
-
 		pane.find('input[name="name"]').each(function(i) {
 			var val = $(this).val();
 			val = val.replace(/[^0-9a-zA-Z:._-]/g, '').replace(/^[^a-zA-Z]+/, '');
