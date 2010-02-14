@@ -203,8 +203,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	return $form;
 }
 
-if ( WPCF7_LOAD_JS )
-	add_action( 'wp_head', 'wpcf7_head' );
+add_action( 'wp_head', 'wpcf7_head' );
 
 function wpcf7_head() {
 	// Cached?
