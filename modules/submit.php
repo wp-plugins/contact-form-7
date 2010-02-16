@@ -40,7 +40,7 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 	$html = '<input type="submit" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 
-	if ( WPCF7_LOAD_JS )
+	if ( wpcf7_script_is() )
 		$html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . wpcf7_plugin_url( 'images/ajax-loader.gif' ) . '" />';
 
 	return $html;
