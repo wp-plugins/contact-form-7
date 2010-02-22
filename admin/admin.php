@@ -337,8 +337,8 @@ function wpcf7_donation_link( &$contact_form ) {
 
 	$show_link = true;
 
-	$num = mt_rand(0, 99);
-	if ($num >= 10) // 90%
+	$num = mt_rand( 0, 99 );
+	if ( $num >= 15 ) // 85%
 		$show_link = false;
 
 	$show_link = apply_filters( 'wpcf7_show_donation_link', $show_link );
@@ -348,18 +348,13 @@ function wpcf7_donation_link( &$contact_form ) {
 
 	$texts = array(
 		__( "Contact Form 7 needs your support. Please donate today.", 'wpcf7' ),
-		__( "Is this plugin useful for you? If you like it, please help the developer.", 'wpcf7' ),
-		__( "Your contribution is needed for making this plugin better.", 'wpcf7' ),
-		__( "Developing a plugin and providing user support is really hard work. Please help.", 'wpcf7' ) );
+		__( "Your contribution is needed for making this plugin better.", 'wpcf7' ) );
 
 	$text = $texts[array_rand( $texts )];
 
 ?>
 <div class="donation">
-<p><a href="http://www.pledgie.com/campaigns/3117">
-<img alt="Click here to lend your support to: Support Contact Form 7 and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/3117.png?skin_name=chrome" border="0" width="149" height="37" /></a>
-<em><?php echo esc_html( $text ); ?></em>
-</p>
+<p><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ); ?>"><?php echo esc_html( $text ); ?></a> <a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ); ?>" class="button"><?php echo esc_html( __( "Donate", 'wpcf7' ) ); ?></a></p>
 </div>
 <?php
 }

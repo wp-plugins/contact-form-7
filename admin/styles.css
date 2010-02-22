@@ -23,19 +23,19 @@ div.wpcf7 div.donation {
 }
 
 div.wpcf7 div.donation p {
-	margin: 0.5em 0;
+	margin: .7em 0;
 	line-height: 1;
 	padding: 2px;
+	font-size: 107%;
 }
 
-div.wpcf7 div.donation p img {
-	vertical-align: text-bottom;
-}
-
-div.wpcf7 div.donation p em {
-	padding-left: 1em;
-	color: #555;
+div.wpcf7 div.donation p a {
 	font-weight: bold;
+	color: #3f3f3f;
+}
+
+div.wpcf7 div.donation p a.button {
+	margin-left: 1em;
 }
 
 div.wpcf7 ul.subsubsub {
