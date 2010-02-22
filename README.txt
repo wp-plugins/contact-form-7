@@ -1,6 +1,6 @@
 === Contact Form 7 ===
 Contributors: takayukister
-Donate link: http://pledgie.com/campaigns/3117
+Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.8
 Tested up to: 2.9.1
