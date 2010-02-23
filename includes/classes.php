@@ -40,8 +40,8 @@ class WPCF7_ContactForm {
 
 		$url = wpcf7_get_request_uri();
 
-		if ( $frag = strstr( $uri, '#' ) )
-			$uri = substr( $uri, 0, -strlen( $frag ) );
+		if ( $frag = strstr( $url, '#' ) )
+			$url = substr( $url, 0, -strlen( $frag ) );
 
 		$url .= '#' . $this->unit_tag;
 
