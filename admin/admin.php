@@ -186,6 +186,8 @@ var _wpcf7 = {
 function wpcf7_admin_management_page() {
 	$contact_forms = wpcf7_contact_forms();
 
+	$unsaved = false;
+
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
@@ -300,6 +302,9 @@ function wpcf7_cf7com_links( &$contact_form ) {
 add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_updated_message' );
 
 function wpcf7_updated_message( &$contact_form ) {
+	if ( ! isset( $_GET['message'] ) )
+		return;
+
 	switch ( $_GET['message'] ) {
 		case 'created':
 			$updated_message = __( "Contact form created.", 'wpcf7' );

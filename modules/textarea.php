@@ -68,7 +68,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		else
 			$value = stripslashes_deep( $_POST[$name] );
 	} else {
-		$value = $values[0];
+		$value = isset( $values[0] ) ? $values[0] : '';
 
 		if ( ! empty( $content ) )
 			$value = $content;

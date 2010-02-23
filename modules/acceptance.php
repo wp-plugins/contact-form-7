@@ -49,6 +49,8 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	if ( wpcf7_script_is() )
 		$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
+	else
+		$onclick = '';
 
 	$checked = $default_on ? ' checked="checked"' : '';
 

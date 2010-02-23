@@ -58,10 +58,11 @@ class WPCF7_ShortcodeManager {
 		$scanned_tag['type'] = $tag;
 
 		if ( is_array( $attr ) ) {
-			if ( is_array( $attr['options'] ) && ! empty( $attr['options'] ) ) {
-				if ( $this->shortcode_tags[$tag]['has_name'] )
+			if ( is_array( $attr['options'] ) ) {
+				if ( $this->shortcode_tags[$tag]['has_name'] && ! empty( $attr['options'] ) )
 					$scanned_tag['name'] = array_shift( $attr['options'] );
-				$scanned_tag['options'] = $attr['options'];
+
+				$scanned_tag['options'] = (array) $attr['options'];
 			}
 			$scanned_tag['raw_values'] = (array) $attr['values'];
 
@@ -96,7 +97,7 @@ class WPCF7_ShortcodeManager {
 	}
 
 	function shortcode_parse_atts( $text ) {
-		$atts = array();
+		$atts = array( 'options' => array(), 'values' => array() );
 		$text = preg_replace( "/[\x{00a0}\x{200b}]+/u", " ", $text );
 		$text = stripcslashes( trim( $text ) );
 

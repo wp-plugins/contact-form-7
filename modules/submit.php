@@ -34,7 +34,7 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
-	$value = $values[0];
+	$value = isset( $values[0] ) ? $values[0] : '';
 	if ( empty( $value ) )
 		$value = __( 'Send', 'wpcf7' );
 

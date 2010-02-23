@@ -73,6 +73,8 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 	if ( preg_match( '/^checkbox[*]?$/', $type ) && ! $multiple && wpcf7_script_is() )
 		$onclick = ' onclick="wpcf7ExclusiveCheckbox(this);"';
+	else
+		$onclick = '';
 
 	$input_type = rtrim( $type, '*' );
 
