@@ -28,18 +28,21 @@ function wpcf7_admin_add_pages() {
 			'recipient' => trim( $_POST['wpcf7-mail-recipient'] ),
 			'additional_headers' => trim( $_POST['wpcf7-mail-additional-headers'] ),
 			'attachments' => trim( $_POST['wpcf7-mail-attachments'] ),
-			'use_html' => ( 1 == $_POST['wpcf7-mail-use-html'] ) ? true : false
+			'use_html' =>
+				isset( $_POST['wpcf7-mail-use-html'] ) && 1 == $_POST['wpcf7-mail-use-html']
 		);
 
 		$mail_2 = array(
-			'active' => ( 1 == $_POST['wpcf7-mail-2-active'] ) ? true : false,
+			'active' =>
+				isset( $_POST['wpcf7-mail-2-active'] ) && 1 == $_POST['wpcf7-mail-2-active'],
 			'subject' => trim( $_POST['wpcf7-mail-2-subject'] ),
 			'sender' => trim( $_POST['wpcf7-mail-2-sender'] ),
 			'body' => trim( $_POST['wpcf7-mail-2-body'] ),
 			'recipient' => trim( $_POST['wpcf7-mail-2-recipient'] ),
 			'additional_headers' => trim( $_POST['wpcf7-mail-2-additional-headers'] ),
 			'attachments' => trim( $_POST['wpcf7-mail-2-attachments'] ),
-			'use_html' => ( 1 == $_POST['wpcf7-mail-2-use-html'] ) ? true : false
+			'use_html' =>
+				isset( $_POST['wpcf7-mail-2-use-html'] ) && 1 == $_POST['wpcf7-mail-2-use-html']
 		);
 
 		$messages = $contact_form->messages;
@@ -188,10 +191,13 @@ function wpcf7_admin_management_page() {
 
 	$unsaved = false;
 
+	if ( ! isset( $_GET['contactform'] ) )
+		$_GET['contactform'] = '';
+
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
-		$cf = wpcf7_contact_form_default_pack( $_GET['locale'] );
+		$cf = wpcf7_contact_form_default_pack( isset( $_GET['locale'] ) ? $_GET['locale'] : '' );
 	} elseif ( $cf = wpcf7_contact_form( $_GET['contactform'] ) ) {
 		$current = (int) $_GET['contactform'];
 	} else {
