@@ -6,7 +6,7 @@ function wpcf7_init_switch() {
 	if ( 'GET' == $_SERVER['REQUEST_METHOD'] && isset( $_GET['_wpcf7_is_ajax_call'] ) ) {
 		wpcf7_ajax_onload();
 		exit();
-	} elseif ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_GET['_wpcf7_is_ajax_call'] ) ) {
+	} elseif ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['_wpcf7_is_ajax_call'] ) ) {
 		wpcf7_ajax_json_echo();
 		exit();
 	} elseif ( isset( $_POST['_wpcf7'] ) ) {
