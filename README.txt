@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.8
-Tested up to: 2.9.1
-Stable tag: 2.1.1
+Tested up to: 2.9.2
+Stable tag: 2.1.2
 
 Just another contact form plugin. Simple but flexible.
 
@@ -89,6 +89,13 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.1.2 =
+
+* Incorrect JSON syntax causing conflict with jQuery 1.4 has been fixed.
+* Some incompatibility issues with IE in admin panel have been fixed.
+* The logic verifying if a plugin’s JavaScript is loaded has been improved.
+* Translations for German (Ivan Graf) and Slovak (Patrik Bóna) have been updated. Translation for Malayalam has been created by RAHUL S.A.
 
 = 2.1.1 =
 
