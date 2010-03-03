@@ -33,7 +33,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee), Egon Elbre
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/), [Maître Mô](http://maitremo.fr/)
-* Galician (gl_ES) - Arume Desenvolvementos Informáticos
+* Galician (gl_ES) - [Arume Desenvolvementos Informáticos](http://www.arumeinformatica.es/)
 * Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de), [Ivan Graf](http://blog.bildergallery.com/)
 * Greek (el) - [Nick Mouratidis](http://www.kepik.gr/), [Pr. friedlich](http://friedlich.wordpress.com/)
