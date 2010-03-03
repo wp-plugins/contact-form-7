@@ -183,6 +183,7 @@ function wpcf7_l10n() {
 		'et' => __( 'Estonian', 'wpcf7' ),
 		'fi' => __( 'Finnish', 'wpcf7' ),
 		'fr_FR' => __( 'French', 'wpcf7' ),
+		'gl_ES' => __( 'Galician', 'wpcf7' ),
 		'ka_GE' => __( 'Georgian', 'wpcf7' ),
 		'de_DE' => __( 'German', 'wpcf7' ),
 		'el' => __( 'Greek', 'wpcf7' ),
