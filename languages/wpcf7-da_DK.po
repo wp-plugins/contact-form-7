@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 version 2.1\n"
+"Project-Id-Version: Contact Form 7 version 2.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-08 18:18+0100\n"
-"PO-Revision-Date: 2010-01-08 18:32+0100\n"
+"POT-Creation-Date: 2010-02-27 14:46+0100\n"
+"PO-Revision-Date: 2010-02-27 14:48+0100\n"
 "Last-Translator: Team Blogos <wordpress@blogos.dk>\n"
 "Language-Team: Team Blogos <wordpress@blogos.dk>\n"
 "MIME-Version: 1.0\n"
@@ -17,111 +17,111 @@ msgstr ""
 "Plural-Forms: nplurals=2;plural=n != 1;\n"
 "X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\contact-form-7\n"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:117
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
 #: d:\wordpress\plugins\contact-form-7/admin/edit.php:17
 #: d:\wordpress\plugins\contact-form-7/admin/edit.php:30
 msgid "Contact Form 7"
 msgstr "Kontaktformular 7"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:117
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
 msgid "Contact"
 msgstr "Kontakt"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:123
 msgid "Edit Contact Forms"
 msgstr "Redigér Kontaktformular 7"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:120
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:123
 msgid "Edit"
 msgstr "Redigér"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:159
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:162
 msgid "Generate Tag"
 msgstr "Lav mærke"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:160
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:163
 msgid "Show"
 msgstr "Vis"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:161
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:164
 msgid "Hide"
 msgstr "Skjul"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:305
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:265
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:324
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:284
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:335
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:295
 msgid "http://contactform7.com/"
 msgstr "http://contactform7.com/"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:336
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:296
 msgid "Contactform7.com"
 msgstr "Contactform7.com"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:337
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:297
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:338
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:298
 msgid "Docs"
 msgstr "Dokumenter"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:339
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:299
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:340
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:300
 msgid "FAQ"
 msgstr "FAQ"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:341
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:301
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:342
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:302
 msgid "Support"
 msgstr "Support"
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:353
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:316
 msgid "Contact form created."
 msgstr "Kontaktformular oprettet."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:356
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:319
 msgid "Contact form saved."
 msgstr "Kontaktformular gemt."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:359
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:322
 msgid "Contact form deleted."
 msgstr "Kontaktformular slettet."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:362
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:325
 msgid "Database table created."
 msgstr "Databasetabel oprettet."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:365
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:328
 msgid "Failed to create database table."
 msgstr "Oprettelse af databasetabel mislykkedes."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:398
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:361
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr "Kontaktformular 7 behøver din støtte. Send en gave i dag."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:399
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Kan du bruge dette plugin? Hvis du kan lide det, så hjælp udvikleren."
-
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:400
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:362
 msgid "Your contribution is needed for making this plugin better."
 msgstr "Dit bidrag behøves, hvis pluginnet skal blive bedre."
 
-#: d:\wordpress\plugins\contact-form-7/admin/admin.php:401
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "Udvikling af plugins og brugersupport er faktisk hårdt arbejde. Støt det!"
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:368
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: d:\wordpress\plugins\contact-form-7/admin/admin.php:368
+msgid "Donate"
+msgstr "Donér"
 
 #: d:\wordpress\plugins\contact-form-7/admin/edit.php:9
 #, php-format
@@ -201,7 +201,7 @@ msgstr "Brug HTML til indholdet"
 
 #: d:\wordpress\plugins\contact-form-7/admin/edit.php:172
 #: d:\wordpress\plugins\contact-form-7/admin/edit.php:239
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:73
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:78
 msgid "Message body:"
 msgstr "Besked:"
 
@@ -239,7 +239,7 @@ msgstr "Eller"
 msgid "(select language)"
 msgstr "(vælg sprog)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/classes.php:568
+#: d:\wordpress\plugins\contact-form-7/includes/classes.php:569
 msgid "Untitled"
 msgstr "Uden titel"
 
@@ -296,240 +296,248 @@ msgstr "Der er et felt, som afsender skal udfylde"
 msgid "Please fill the required field."
 msgstr "Udfyld venligst de påkrævede felter."
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:45
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:46
 msgid "Your Name"
 msgstr "Dit navn"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:45
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:47
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:46
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:48
 msgid "(required)"
 msgstr "(påkrævet)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:47
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:48
 msgid "Your Email"
 msgstr "Din e-mail"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:49
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:50
 msgid "Subject"
 msgstr "Emne"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:51
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:52
 msgid "Your Message"
 msgstr "Din besked"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:53
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:54
 msgid "Send"
 msgstr "Send"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:60
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:62
 #, php-format
 msgid "From: %s"
 msgstr "Fra: %s"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:61
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:63
 #, php-format
 msgid "Subject: %s"
 msgstr "Emne: %s"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:62
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:64
 msgid "Message Body:"
 msgstr "Besked:"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:63
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:74
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:65
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:79
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
 msgstr "Denne mail er sendt via en kontaktformular på %1$s %2$s"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:163
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:168
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:169
 msgid "Albanian"
 msgstr "Albansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:164
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:170
 msgid "Arabic"
 msgstr "Arabisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:165
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:171
 msgid "Bangla"
 msgstr "Bangladeshisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:166
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:172
 msgid "Bosnian"
 msgstr "Bosnisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:167
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:173
 msgid "Brazilian Portuguese"
 msgstr "Brasiliansk-portugisisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:168
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:174
 msgid "Bulgarian"
 msgstr "Bulgarsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:169
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:175
 msgid "Catalan"
 msgstr "Katalansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:170
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:176
 msgid "Chinese (Simplified)"
 msgstr "Kinesisk (forsimplet)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:171
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:177
 msgid "Chinese (Traditional)"
 msgstr "Kinesisk (traditionel)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:172
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:178
 msgid "Croatian"
 msgstr "Kroatisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:173
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:179
 msgid "Czech"
 msgstr "Tjekkisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:174
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:180
 msgid "Danish"
 msgstr "Dansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:175
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:181
 msgid "Dutch"
 msgstr "Nederlandsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:176
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:182
 msgid "English"
 msgstr "Engelsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:177
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:183
 msgid "Estonian"
 msgstr "Estisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:178
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:184
 msgid "Finnish"
 msgstr "Finsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:179
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:185
 msgid "French"
 msgstr "Fransk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:180
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:186
 msgid "Georgian"
 msgstr "Georgisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:181
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:187
 msgid "German"
 msgstr "Tysk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:182
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:188
 msgid "Greek"
 msgstr "Græsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:183
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:189
 msgid "Hebrew"
 msgstr "Hebraisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:184
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:190
 msgid "Hindi"
 msgstr "Hindu"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:185
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:191
 msgid "Hungarian"
 msgstr "Ungarsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:186
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:192
 msgid "Indonesian"
 msgstr "Indonesisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:187
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:193
 msgid "Italian"
 msgstr "Italiensk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:188
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:194
 msgid "Japanese"
 msgstr "Japansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:189
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:195
 msgid "Korean"
 msgstr "Koreansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:190
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:196
 msgid "Latvian"
 msgstr "Lettisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:191
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:197
 msgid "Lithuanian"
 msgstr "Litauisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:192
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:198
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:199
 msgid "Norwegian"
 msgstr "Norsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:193
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:200
 msgid "Persian"
 msgstr "Persisk (farsi)"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:194
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:201
 msgid "Polish"
 msgstr "Polsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:195
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:202
 msgid "Portuguese"
 msgstr "Portugisisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:196
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:203
 msgid "Russian"
 msgstr "Russisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:197
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:204
 msgid "Romanian"
 msgstr "Rumænsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:198
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:205
 msgid "Serbian"
 msgstr "Serbisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:199
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:206
 msgid "Slovak"
 msgstr "Slovakisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:200
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:207
 msgid "Slovene"
 msgstr "Slovensk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:201
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:208
 msgid "Spanish"
 msgstr "Spansk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:202
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:209
 msgid "Swedish"
 msgstr "Svensk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:203
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:210
 msgid "Thai"
 msgstr "Thailandsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:204
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:211
 msgid "Turkish"
 msgstr "Tyrkisk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:205
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:212
 msgid "Ukrainian"
 msgstr "Ukrainsk"
 
-#: d:\wordpress\plugins\contact-form-7/includes/functions.php:206
+#: d:\wordpress\plugins\contact-form-7/includes/functions.php:213
 msgid "Vietnamese"
 msgstr "Vietnamesisk"
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:94
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:96
 msgid "Acceptance"
 msgstr "Accept"
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:103
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:105
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:206
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:196
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:198
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:234
 msgid "Name"
 msgstr "Navn"
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:108
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:111
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:110
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:113
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:213
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:216
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:221
@@ -539,8 +547,8 @@ msgstr "Navn"
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:242
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:247
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:250
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:201
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:204
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:203
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:206
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:239
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:242
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:247
@@ -548,22 +556,22 @@ msgstr "Navn"
 msgid "optional"
 msgstr "valgfrit"
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:117
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:119
 msgid "Make this checkbox checked by default?"
 msgstr "Skal afkrydsningsfeltet være markeret som standard?"
 
 # tjekkes
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:118
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:120
 msgid "Make this checkbox work inversely?"
 msgstr "Skal afkrydsningsfeltet virke omvendt?"
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:119
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:121
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "* Det betyder, at en besøgende, som accepterer betingelserne, afmarkerer det."
 
-#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:124
+#: d:\wordpress\plugins\contact-form-7/modules/acceptance.php:126
 #: d:\wordpress\plugins\contact-form-7/modules/captcha.php:255
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:224
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:226
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:255
 msgid "Copy this code and paste it into the form left."
 msgstr "Kopier og indsæt denne kode i formularen til venstre"
@@ -637,40 +645,40 @@ msgstr "Denne kontaktformular indeholder CAPTCHA-felter, men den midlertidige ma
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr "Denne kontaktformular indeholder CAPTCHA-felter, men de nødvendige biblioteker (GD og FreeType) er ikke tilgængelige på din server."
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:169
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:171
 msgid "Checkboxes"
 msgstr "Afkrydsningsfelt"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:172
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:174
 msgid "Radio buttons"
 msgstr "Radioknapper"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:193
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:195
 #: d:\wordpress\plugins\contact-form-7/modules/file.php:233
 msgid "Required field?"
 msgstr "Påkrævet felt?"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:209
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:211
 msgid "Choices"
 msgstr "Valg"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:211
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:213
 msgid "* One choice per line."
 msgstr "* Et valg per linje."
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:215
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:217
 msgid "Put a label first, a checkbox last?"
 msgstr "Vil du have etiketten forrest og afkrydsningsfeltet sidst?"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:216
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:218
 msgid "Wrap each item with <label> tag?"
 msgstr "Sæt <label>-tag uden om hver?"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:218
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:220
 msgid "Make checkboxes exclusive?"
 msgstr "Skal afkrydsningsfelter være eksklusive? (altså så der kun kan vælges én?)"
 
-#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:226
+#: d:\wordpress\plugins\contact-form-7/modules/checkbox.php:228
 msgid "And, put this code into the Mail fields below."
 msgstr "Og indsæt denne kode i Mail-felterne nedenfor."
 
@@ -808,6 +816,15 @@ msgstr "Standardværdi"
 msgid "Text area"
 msgstr "Tekstboks"
 
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr ""
+#~ "Kan du bruge dette plugin? Hvis du kan lide det, så hjælp udvikleren."
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr ""
+#~ "Udvikling af plugins og brugersupport er faktisk hårdt arbejde. Støt det!"
 #~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
 #~ msgstr "Denne mail er genereret af pluginnet Contact Form 7 for WordPress."
 #~ msgid "(You need WordPress 2.7 or greater to use this feature)"
