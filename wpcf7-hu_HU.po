@@ -1,59 +1,155 @@
-# Original translate: HiA <hia@itblog.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7 v1.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-20 10:11+0100\n"
-"PO-Revision-Date: 2009-09-20 17:43+0900\n"
-"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"POT-Creation-Date: 2010-02-24 08:35+0900\n"
+"PO-Revision-Date: 2010-03-11 00:51+0100\n"
+"Last-Translator: FYGureout <webmester@sakraft.hu>\n"
+"Language-Team: HiA <hia@itblog.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language-Team: \n"
-"X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/admin-panel.php:9
-#, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>A bővítmény működéséhez szükséges adatbázis táblák nem léteznek</strong> <a href=\"%s\">Létre kell hozni azokat</a> a bővítmény működéséhez."
-
-#: ../admin/admin-panel.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>A bővítmény működéséhez szükséges adatbázis táblák nem léteznek</strong>"
-
-#: ../admin/admin-panel.php:17
-#: ../admin/admin-panel.php:30
-#: ../admin/admin.php:119
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: ../admin/admin-panel.php:45
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "Kapcsolat"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "Contact Form szerkesztése"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "Szerkeszt"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "Címke létrehozása"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "Mutat"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "Elrejt"
+
+#: contact-form-7/admin/admin.php:265
+msgid "Contact form"
+msgstr "Kapcsolat űrlap"
+
+#: contact-form-7/admin/admin.php:284
+msgid "Settings"
+msgstr "Bállítások"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Docs"
+msgstr "Dokumentumok"
+
+#: contact-form-7/admin/admin.php:299
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:300
+msgid "FAQ"
+msgstr "GYIK"
+
+#: contact-form-7/admin/admin.php:301
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:302
+msgid "Support"
+msgstr "Támogatás"
+
+#: contact-form-7/admin/admin.php:316
+msgid "Contact form created."
+msgstr "Kapcsolat űrlap létrehozva."
+
+#: contact-form-7/admin/admin.php:319
+msgid "Contact form saved."
+msgstr "Kapcsolat űrlap elmentve."
+
+#: contact-form-7/admin/admin.php:322
+msgid "Contact form deleted."
+msgstr "Kapcsolat űrlap törölve."
+
+#: contact-form-7/admin/admin.php:325
+msgid "Database table created."
+msgstr "Adatbázis tábla létrehozva"
+
+#: contact-form-7/admin/admin.php:328
+msgid "Failed to create database table."
+msgstr "Hiba az adatbázis tábla létrehozásakor"
+
+#: contact-form-7/admin/admin.php:361
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "A Contact Form 7 igényli az Ön támogatását. Kérjük, adományozzon még ma!"
+
+#: contact-form-7/admin/admin.php:362
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Az Ön együttműködése szükséges ahhoz, hogy a bővítményt még jobbá tegyük"
+
+#: contact-form-7/admin/admin.php:368
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:368
+msgid "Donate"
+msgstr "Adomány"
+
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>A Contact Form 7 adatbázis-tábla nem létezik.</strong> A továbblépshez a  <a href=\"%s\">táblát létre kell hozni</a>!"
+
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>A Contact Form 7 adatbázis-tábla nem létezik.</strong>"
+
+#: contact-form-7/admin/edit.php:45
 msgid "Add new"
 msgstr "Új hozzáadása"
 
-#: ../admin/admin-panel.php:67
+#: contact-form-7/admin/edit.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Másold és illeszd be ezt a kódot a bejegyzésdbe, oldaladba vagy szöveg widget tartalmába."
+msgstr "Másolja be és illessze be ezt a kódot a bejegyzésébe, oldalára, vagy szöveg-widget tartalmába."
 
-#: ../admin/admin-panel.php:75
-#: ../admin/admin-panel.php:332
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "Mentés"
 
-#: ../admin/admin-panel.php:82
+#: contact-form-7/admin/edit.php:82
 msgid "Copy"
 msgstr "Másolás"
 
-#: ../admin/admin-panel.php:87
+#: contact-form-7/admin/edit.php:87
 msgid "Delete"
 msgstr "Törlés"
 
-#: ../admin/admin-panel.php:89
+#: contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -61,449 +157,663 @@ msgstr ""
 "Ennek a kapcsolat űrlapnak a törlésére készül.\n"
 " 'Mégse', ha nem akarja, 'OK' a törléshez."
 
-#: ../admin/admin-panel.php:102
+#: contact-form-7/admin/edit.php:104
 msgid "Form"
 msgstr "Űrlap"
 
-#: ../admin/admin-panel.php:120
+#: contact-form-7/admin/edit.php:128
 msgid "Mail"
 msgstr "Levél"
 
-#: ../admin/admin-panel.php:127
-#: ../admin/admin-panel.php:188
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
 msgid "To:"
 msgstr "Címzett:"
 
-#: ../admin/admin-panel.php:132
-#: ../admin/admin-panel.php:193
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
 msgid "From:"
 msgstr "Feladó:"
 
-#: ../admin/admin-panel.php:137
-#: ../admin/admin-panel.php:198
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: ../admin/admin-panel.php:144
-#: ../admin/admin-panel.php:205
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
 msgid "Additional headers:"
-msgstr "További fejlécek:"
+msgstr "Haladó fejlécek:"
 
-#: ../admin/admin-panel.php:149
-#: ../admin/admin-panel.php:210
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
 msgid "File attachments:"
 msgstr "Csatolt fájlok:"
 
-#: ../admin/admin-panel.php:157
-#: ../admin/admin-panel.php:218
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
 msgid "Use HTML content type"
-msgstr "Használj HTML tartalmi típust"
+msgstr "Használjon HTML tartalmi típust"
 
-#: ../admin/admin-panel.php:164
-#: ../admin/admin-panel.php:225
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
 msgid "Message body:"
 msgstr "Üzenet törzse:"
 
-#: ../admin/admin-panel.php:174
+#: contact-form-7/admin/edit.php:188
 msgid "Mail (2)"
 msgstr "Levél (2)"
 
-#: ../admin/admin-panel.php:180
+#: contact-form-7/admin/edit.php:194
 msgid "Use mail (2)"
 msgstr "Levél (2) használata"
 
-#: ../admin/admin-panel.php:235
+#: contact-form-7/admin/edit.php:255
 msgid "Messages"
 msgstr "Üzenetek"
 
-#: ../admin/admin-panel.php:243
-msgid "Sender's message was sent successfully"
-msgstr "Az üzenet sikeresen el lett küldve"
-
-#: ../admin/admin-panel.php:248
-msgid "Sender's message was failed to send"
-msgstr "Sikertelen üzenet küldés"
-
-#: ../admin/admin-panel.php:253
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet spamnek tekintette a küldést"
-
-#: ../admin/admin-panel.php:258
-msgid "Validation errors occurred"
-msgstr "Jóváhagyás hiba történt"
-
-#: ../admin/admin-panel.php:263
-msgid "There is a field that sender is needed to fill in"
-msgstr "Van egy mező, amit a küldőnek ki kell töltenie"
-
-#: ../admin/admin-panel.php:268
-msgid "Email address that sender entered is invalid"
-msgstr "A beírt e-mail cím helytelen"
-
-#: ../admin/admin-panel.php:273
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Van egy mező, amit a küldőnek el kell fogadnia"
-
-#: ../admin/admin-panel.php:278
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Feladó nem adta meg a teszt kérdésre a helyes választ"
-
-#: ../admin/admin-panel.php:283
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "A küldő által beírt kód nem egyezik a CAPTCHA-val"
-
-#: ../admin/admin-panel.php:288
-msgid "Uploading a file fails for any reason"
-msgstr "Fájl feltöltés sikertelen"
-
-#: ../admin/admin-panel.php:293
-msgid "Uploaded file is not allowed file type"
-msgstr "Feltöltött fájl típusa nem megengedett"
-
-#: ../admin/admin-panel.php:298
-msgid "Uploaded file is too large"
-msgstr "Feltöltött fájl túl nagy"
-
-#: ../admin/admin-panel.php:303
-msgid "Uploading a file fails for PHP error"
-msgstr "Fájl feltöltés sikertelen PHP hiba miatt."
-
-#: ../admin/admin-panel.php:314
+#: contact-form-7/admin/edit.php:285
 msgid "Additional Settings"
-msgstr "További beállítások"
+msgstr "Haladó beállítások:"
 
-#: ../admin/admin.php:119
-msgid "Contact"
-msgstr "Kapcsolat"
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Alapértelmezett nyelv használata (%s)"
 
-#: ../admin/admin.php:123
-msgid "Edit Contact Forms"
-msgstr "Kapcsolati űrlap szerkesztése"
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "Új hozzáadása"
 
-#: ../admin/admin.php:123
-msgid "Edit"
-msgstr "Szerkesztés"
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "vagy"
 
-#: ../admin/admin.php:178
-msgid "optional"
-msgstr "választható"
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(nyelv választása)"
 
-#: ../admin/admin.php:179
-msgid "Generate Tag"
-msgstr "Általános Címke"
-
-#: ../admin/admin.php:180
-msgid "Text field"
-msgstr "Szöveg mező"
-
-#: ../admin/admin.php:181
-msgid "Email field"
-msgstr "E-mail mező"
-
-#: ../admin/admin.php:182
-msgid "Text area"
-msgstr "Többsoros szöveg"
-
-#: ../admin/admin.php:183
-msgid "Drop-down menu"
-msgstr "Lenyíló menü"
-
-#: ../admin/admin.php:184
-msgid "Checkboxes"
-msgstr "Jelölőnégyzetek"
-
-#: ../admin/admin.php:185
-msgid "Radio buttons"
-msgstr "Választógombok"
-
-#: ../admin/admin.php:186
-msgid "Acceptance"
-msgstr "Elfogadás"
-
-#: ../admin/admin.php:187
-msgid "Make this checkbox checked by default?"
-msgstr "Ez a jelölőnyégyzet alapértelmezettnek be legyen kapcsolva?"
-
-#: ../admin/admin.php:188
-msgid "Make this checkbox work inversely?"
-msgstr "Ez a jelölőnégyzet működjön fordítva?"
-
-#: ../admin/admin.php:189
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Azt jelenti, hogy az a látogató kikapcsolja, aki elfogadja a feltételeket."
-
-#: ../admin/admin.php:190
-msgid "CAPTCHA"
-msgstr "CAPTCHA"
-
-#: ../admin/admin.php:191
-msgid "Quiz"
-msgstr "Teszt"
-
-#: ../admin/admin.php:192
-msgid "Quizzes"
-msgstr "Tesztek"
-
-#: ../admin/admin.php:193
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* teszt|válasz (pl. 1+1=?|2)"
-
-#: ../admin/admin.php:194
-msgid "File upload"
-msgstr "Fájl feltöltés"
-
-#: ../admin/admin.php:195
-msgid "bytes"
-msgstr "bájtok"
-
-#: ../admin/admin.php:196
-msgid "Submit button"
-msgstr "Elfogadás gomb"
-
-#: ../admin/admin.php:197
-msgid "Name"
-msgstr "Név"
-
-#: ../admin/admin.php:198
-msgid "Required field?"
-msgstr "Kötelező mező?"
-
-#: ../admin/admin.php:199
-msgid "Allow multiple selections?"
-msgstr "Engedélyezett a többszörös választás?"
-
-#: ../admin/admin.php:200
-msgid "Insert a blank item as the first option?"
-msgstr "Első lehetőségnek egy üres tétel beszúrása?"
-
-#: ../admin/admin.php:201
-msgid "Make checkboxes exclusive?"
-msgstr "A jelölőnégyzetek kizáróak legyenek?"
-
-#: ../admin/admin.php:202
-msgid "Choices"
-msgstr "Lehetőségek"
-
-#: ../admin/admin.php:203
-msgid "Label"
-msgstr "Cimke"
-
-#: ../admin/admin.php:204
-msgid "Default value"
-msgstr "Alapértelmezett érték"
-
-#: ../admin/admin.php:205
-msgid "Akismet"
-msgstr "Akismet"
-
-#: ../admin/admin.php:206
-msgid "This field requires author's name"
-msgstr "Ebbe a mezőbe a szerző neve szükséges"
-
-#: ../admin/admin.php:207
-msgid "This field requires author's URL"
-msgstr "Ebbe a mezőbe a szerző URL-je szükséges"
-
-#: ../admin/admin.php:208
-msgid "This field requires author's email address"
-msgstr "Ebbe a mezőbe a szerző e-mail címe szükséges"
-
-#: ../admin/admin.php:209
-msgid "Copy this code and paste it into the form left."
-msgstr "Másold és illeszd be ezt a kódot a bal oldali űrlapba."
-
-#: ../admin/admin.php:210
-msgid "Foreground color"
-msgstr "Előtér szín"
-
-#: ../admin/admin.php:211
-msgid "Background color"
-msgstr "Háttér szín"
-
-#: ../admin/admin.php:212
-msgid "Image size"
-msgstr "Kép mérete"
-
-#: ../admin/admin.php:213
-msgid "Small"
-msgstr "Kicsi"
-
-#: ../admin/admin.php:214
-msgid "Medium"
-msgstr "Közepes"
-
-#: ../admin/admin.php:215
-msgid "Large"
-msgstr "Nagy"
-
-#: ../admin/admin.php:216
-msgid "Image settings"
-msgstr "Kép beállítások"
-
-#: ../admin/admin.php:217
-msgid "Input field settings"
-msgstr "Beviteli mező beállításai"
-
-#: ../admin/admin.php:218
-msgid "For image"
-msgstr "Képnek"
-
-#: ../admin/admin.php:219
-msgid "For input field"
-msgstr "Beviteli mezőnek"
-
-#: ../admin/admin.php:220
-msgid "* One choice per line."
-msgstr "* Egy választás soronként."
-
-#: ../admin/admin.php:221
-msgid "Show"
-msgstr "Mutat"
-
-#: ../admin/admin.php:222
-msgid "Hide"
-msgstr "Elrejt"
-
-#: ../admin/admin.php:223
-msgid "File size limit"
-msgstr "Fájl méret korlát"
-
-#: ../admin/admin.php:224
-msgid "Acceptable file types"
-msgstr "Használható fájl típusok"
-
-#: ../admin/admin.php:225
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Megjegyzés: CAPTCHA használatához a  Really Simple CAPTCHA plugin telepítése szükséges."
-
-#: ../admin/admin.php:236
-msgid "Contact form created."
-msgstr "Kapcsolat űrlap létrehozva."
-
-#: ../admin/admin.php:239
-msgid "Contact form saved."
-msgstr "Kapcsolat űrlap elmentve."
-
-#: ../admin/admin.php:242
-msgid "Contact form deleted."
-msgstr "Kapcsolat űrlap törölve."
-
-#: ../admin/admin.php:245
-msgid "Database table created."
-msgstr "Adatbázis táblák létrehozva."
-
-#: ../admin/admin.php:248
-msgid "Failed to create database table."
-msgstr "Adatbázis táblák létrehozása sikertelen."
-
-#: ../admin/admin.php:321
-msgid "Contact form"
-msgstr "Kapcsolat űrlap"
-
-#: ../admin/admin.php:355
-msgid "Settings"
-msgstr "Beállítások"
-
-#: ../admin/admin.php:376
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7-nek szüksége van a támogatásodra. Kérlek adományoz!"
-
-#: ../admin/admin.php:377
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Hasznos neked ez a plugin? Ha tetszik, kérlek segítsd a fejlesztőt!"
-
-#: ../admin/admin.php:378
-msgid "Your contribution is needed for making this plugin better."
-msgstr "Adakozásod szükséges, hogy jobb legyen ez a plugin. "
-
-#: ../admin/admin.php:379
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "Plugin fejlesztése és támogatása tényleg nehéz munka. Kérlek segíts!"
-
-#: ../includes/classes.php:541
+#: contact-form-7/includes/classes.php:569
 msgid "Untitled"
 msgstr "Cím nélkül"
 
-#: ../includes/functions.php:6
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Az üzenet sikeresen el lett küldve"
+
+#: contact-form-7/includes/functions.php:7
 msgid "Your message was sent successfully. Thanks."
 msgstr "Az üzenet sikeresen el lett küldve. Köszönjük!"
 
-#: ../includes/functions.php:8
-#: ../includes/functions.php:10
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Üzenet küldése sikertelen. Kérjük próbálja meg később vagy más módon keresse a kapcsolatot!"
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Sikertelen üzenet küldés"
 
-#: ../includes/functions.php:12
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Üzenet küldése sikertelen. Kérjük próbálja meg később, vagy más módon keresse a kapcsolatot!"
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet spamnek tekintette a küldést"
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Jóváhagyás hiba történt"
+
+#: contact-form-7/includes/functions.php:22
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Érvényesítési hiba. Kérem a mezők megerősítését és újra elfogadását!"
 
-#: ../includes/functions.php:14
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Van egy mező, amit a küldőnek el kell fogadnia"
+
+#: contact-form-7/includes/functions.php:27
 msgid "Please accept the terms to proceed."
 msgstr "Kérem a feltételek elfogadását a folytatáshoz!"
 
-#: ../includes/functions.php:16
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "A beírt e-mail cím helytelen"
+
+#: contact-form-7/includes/functions.php:32
 msgid "Email address seems invalid."
 msgstr "Az e-mail cím nem tűnik helyesnek."
 
-#: ../includes/functions.php:18
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Van egy mező, amit a küldőnek ki kell töltenie"
+
+#: contact-form-7/includes/functions.php:37
 msgid "Please fill the required field."
 msgstr "Kérem a szükséges mezők kitöltését!"
 
-#: ../includes/functions.php:20
-msgid "Your entered code is incorrect."
-msgstr "A beírt kódod hibás."
-
-#: ../includes/functions.php:22
-msgid "Your answer is not correct."
-msgstr "A válasz ."
-
-#: ../includes/functions.php:24
-msgid "Failed to upload file."
-msgstr "Sikertelen feltöltés."
-
-#: ../includes/functions.php:26
-msgid "This file type is not allowed."
-msgstr "Ez a fájl típus nem megengedett."
-
-#: ../includes/functions.php:28
-msgid "This file is too large."
-msgstr "Ez a fájl túl nagy."
-
-#: ../includes/functions.php:30
-msgid "Failed to upload file. Error occurred."
-msgstr "Sikertelen feltöltés."
-
-#: ../includes/functions.php:35
+#: contact-form-7/includes/functions.php:46
 msgid "Your Name"
-msgstr "Neved"
+msgstr "Név"
 
-#: ../includes/functions.php:35
-#: ../includes/functions.php:37
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
 msgid "(required)"
-msgstr "(szükséges)"
+msgstr "(kötelező)"
 
-#: ../includes/functions.php:37
+#: contact-form-7/includes/functions.php:48
 msgid "Your Email"
-msgstr "E-mail címed"
+msgstr "E-mail cím"
 
-#: ../includes/functions.php:39
+#: contact-form-7/includes/functions.php:50
 msgid "Subject"
 msgstr "Tárgy"
 
-#: ../includes/functions.php:41
+#: contact-form-7/includes/functions.php:52
 msgid "Your Message"
-msgstr "Üzeneted"
+msgstr "Üzenet"
 
-#: ../includes/functions.php:43
+#: contact-form-7/includes/functions.php:54
 msgid "Send"
 msgstr "Küldés"
 
-#: ../modules/captcha.php:62
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "CAPTCHA használatához a <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin telepítése szükséges."
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "Feladó: %s"
 
-#~ msgid "(You need WordPress 2.7 or greater to use this feature)"
-#~ msgstr "(Wordpress 2.7 vagy későbbi változat szükséges ehhez a funkcióhoz.)"
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "Tárgy: %s"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
+msgstr "Üzenet:"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Ez az email a %1$s kapcsolati űrlap használatával került kiküldésre:%2$s"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Afrikaans"
+msgstr "Afrikai"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Albanian"
+msgstr "Albán"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Arabic"
+msgstr "Arab"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Bangla"
+msgstr "Banglades"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Bosnian"
+msgstr "Bosnyák"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Brazilian Portuguese"
+msgstr "Portugál brazil"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Bulgarian"
+msgstr "Bulgár"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Catalan"
+msgstr "Katalán"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Chinese (Simplified)"
+msgstr "Kínai (egyszerűsített)"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Chinese (Traditional)"
+msgstr "Kínai (hagyományos)"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Croatian"
+msgstr "Horvát"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Czech"
+msgstr "Cseh"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Danish"
+msgstr "Dán"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Dutch"
+msgstr "Holland"
+
+#: contact-form-7/includes/functions.php:182
+msgid "English"
+msgstr "Angol"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Estonian"
+msgstr "Észt"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Finnish"
+msgstr "Finn"
+
+#: contact-form-7/includes/functions.php:185
+msgid "French"
+msgstr "Francia"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Georgian"
+msgstr "Grúz"
+
+#: contact-form-7/includes/functions.php:187
+msgid "German"
+msgstr "Német"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Greek"
+msgstr "Görög"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Hebrew"
+msgstr "Zsidó"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Hindi"
+msgstr "Hindi"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Hungarian"
+msgstr "Magyar"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Indonesian"
+msgstr "Indonéz"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Italian"
+msgstr "Olasz"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Japanese"
+msgstr "Japán"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Korean"
+msgstr "Kóreai"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Latvian"
+msgstr "Lett"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Lithuanian"
+msgstr "Litván"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Malayalam"
+msgstr "Maláj"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Norwegian"
+msgstr "Norvég"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Persian"
+msgstr "Perzsa"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Polish"
+msgstr "Lengyel"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Portuguese"
+msgstr "Portugál"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Russian"
+msgstr "Orosz"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Romanian"
+msgstr "Román"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Serbian"
+msgstr "Szerb"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Slovak"
+msgstr "Szlovák"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Slovene"
+msgstr "Szlovén"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Spanish"
+msgstr "Spanyol"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Swedish"
+msgstr "Svéd"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Thai"
+msgstr "Thai"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Turkish"
+msgstr "Török"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Ukrainian"
+msgstr "Ukrán"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Vietnamese"
+msgstr "Vietnami"
+
+#: contact-form-7/modules/acceptance.php:96
+msgid "Acceptance"
+msgstr "Elfogadás"
+
+#: contact-form-7/modules/acceptance.php:105
+#: contact-form-7/modules/captcha.php:206
+#: contact-form-7/modules/checkbox.php:198
+#: contact-form-7/modules/file.php:234
+msgid "Name"
+msgstr "Név"
+
+#: contact-form-7/modules/acceptance.php:110
+#: contact-form-7/modules/acceptance.php:113
+#: contact-form-7/modules/captcha.php:213
+#: contact-form-7/modules/captcha.php:216
+#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/captcha.php:239
+#: contact-form-7/modules/captcha.php:242
+#: contact-form-7/modules/captcha.php:247
+#: contact-form-7/modules/captcha.php:250
+#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/file.php:239
+#: contact-form-7/modules/file.php:242
+#: contact-form-7/modules/file.php:247
+#: contact-form-7/modules/file.php:250
+msgid "optional"
+msgstr "választható"
+
+#: contact-form-7/modules/acceptance.php:119
+msgid "Make this checkbox checked by default?"
+msgstr "Ez a jelölőnyégyzet alapértelmezettnek be legyen kapcsolva?"
+
+#: contact-form-7/modules/acceptance.php:120
+msgid "Make this checkbox work inversely?"
+msgstr "Ez a jelölőnégyzet működjön fordítva?"
+
+#: contact-form-7/modules/acceptance.php:121
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Azt jelenti, hogy az a látogató kikapcsolja, aki elfogadja a feltételeket."
+
+#: contact-form-7/modules/acceptance.php:126
+#: contact-form-7/modules/captcha.php:255
+#: contact-form-7/modules/checkbox.php:226
+#: contact-form-7/modules/file.php:255
+msgid "Copy this code and paste it into the form left."
+msgstr "Másolja- és illessze be ezt a kódot a bal oldali űrlapba."
+
+#: contact-form-7/modules/captcha.php:65
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "A CAPTCHA használatához a <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> bővítményt telepíteni kell."
+
+#: contact-form-7/modules/captcha.php:181
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "A küldő által beírt kód nem egyezik a CAPTCHA-val"
+
+#: contact-form-7/modules/captcha.php:182
+msgid "Your entered code is incorrect."
+msgstr "A beírt kód hibás."
+
+#: contact-form-7/modules/captcha.php:192
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:203
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Figyelem! A CAPTCHA használatához telepíteni kell a Really Simple CAPTCHA bővítményt!"
+
+#: contact-form-7/modules/captcha.php:210
+msgid "Image settings"
+msgstr "Képbeállítások"
+
+#: contact-form-7/modules/captcha.php:221
+msgid "Foreground color"
+msgstr "Előtér szín"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Background color"
+msgstr "Háttér szín"
+
+#: contact-form-7/modules/captcha.php:228
+msgid "Image size"
+msgstr "Kép mérete"
+
+#: contact-form-7/modules/captcha.php:229
+msgid "Small"
+msgstr "Kicsi"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Medium"
+msgstr "Közepes"
+
+#: contact-form-7/modules/captcha.php:231
+msgid "Large"
+msgstr "Nagy"
+
+#: contact-form-7/modules/captcha.php:236
+msgid "Input field settings"
+msgstr "Beviteli mező beállításai"
+
+#: contact-form-7/modules/captcha.php:256
+msgid "For image"
+msgstr "Képnek"
+
+#: contact-form-7/modules/captcha.php:258
+msgid "For input field"
+msgstr "Beviteli mezőnek"
+
+#: contact-form-7/modules/captcha.php:288
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ez a kapcsolati űrlap tartalmazza a CAPTCHA-mezőt, de a %s fájlok átmeneti könyvtára nem létezik, vagy nem írható. Ezt a könyvtárat kézzel kell létrehozni, vagy cserélni a könyvtár-jogokat."
+
+#: contact-form-7/modules/captcha.php:294
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Ez a kapcsolati űrlap tartalmazza a CAPTCHA-mezőt, de a hozzá szükséges könyvtárak (GD és FreeType) a szerveren nem érhetőek el."
+
+#: contact-form-7/modules/checkbox.php:171
+msgid "Checkboxes"
+msgstr "Jelölőnégyzetek"
+
+#: contact-form-7/modules/checkbox.php:174
+msgid "Radio buttons"
+msgstr "Választógombok"
+
+#: contact-form-7/modules/checkbox.php:195
+#: contact-form-7/modules/file.php:233
+msgid "Required field?"
+msgstr "Kötelező mező?"
+
+#: contact-form-7/modules/checkbox.php:211
+msgid "Choices"
+msgstr "Lehetőségek"
+
+#: contact-form-7/modules/checkbox.php:213
+msgid "* One choice per line."
+msgstr "* Egy választás soronként."
+
+#: contact-form-7/modules/checkbox.php:217
+msgid "Put a label first, a checkbox last?"
+msgstr "Először megjelöl, aztán ellenőriz?"
+
+#: contact-form-7/modules/checkbox.php:218
+msgid "Wrap each item with <label> tag?"
+msgstr "Mindegyik tételt <label> tag-gel megjelöljük?"
+
+#: contact-form-7/modules/checkbox.php:220
+msgid "Make checkboxes exclusive?"
+msgstr "A jelölőnégyzetek kizáróak legyenek?"
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "And, put this code into the Mail fields below."
+msgstr "és helyezze be ezt a kódott az alul található email-mezőbe."
+
+#: contact-form-7/modules/file.php:197
+msgid "Uploading a file fails for any reason"
+msgstr "Fájl feltöltés sikertelen"
+
+#: contact-form-7/modules/file.php:198
+msgid "Failed to upload file."
+msgstr "Sikertelen feltöltés."
+
+#: contact-form-7/modules/file.php:202
+msgid "Uploaded file is not allowed file type"
+msgstr "Feltöltött fájl típusa nem megengedett"
+
+#: contact-form-7/modules/file.php:203
+msgid "This file type is not allowed."
+msgstr "Ez a fájl típus nem megengedett."
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploaded file is too large"
+msgstr "Feltöltött fájl túl nagy"
+
+#: contact-form-7/modules/file.php:208
+msgid "This file is too large."
+msgstr "Ez a fájl túl nagy."
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploading a file fails for PHP error"
+msgstr "Fájl feltöltés PHP hibát okozott"
+
+#: contact-form-7/modules/file.php:213
+msgid "Failed to upload file. Error occurred."
+msgstr "Hiba történt a fájlfeltöltés közben. "
+
+#: contact-form-7/modules/file.php:224
+msgid "File upload"
+msgstr "Fájl feltöltése"
+
+#: contact-form-7/modules/file.php:247
+msgid "File size limit"
+msgstr "Fájl méret korlát"
+
+#: contact-form-7/modules/file.php:247
+msgid "bytes"
+msgstr "byte"
+
+#: contact-form-7/modules/file.php:250
+msgid "Acceptable file types"
+msgstr "Használható fájl típusok"
+
+#: contact-form-7/modules/file.php:257
+msgid "And, put this code into the File Attachments field below."
+msgstr "és tegyük ezt a kódot az alul lévő csatolt fájl mezőbe."
+
+#: contact-form-7/modules/file.php:282
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ez a kapcsolati űrlap tartalmazza a fájlfeltöltés mezőt, de a %s fájlok átmeneti könyvtára nem létezik, vagy nem írható. A könyvtárat kézzel kell létrehozni, vagy módosítani a jogokat."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Ez a kapcsolati űrlap tartalmazza az [icl] tag-et, de már elavult, és nem támogatja a Contact Form 7 ezen verziója.<a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">Itt egy egyszerűbb megoldás a kapcsolati űrlap létrehozásához más nyelven</a> és ajánlott ennek a használata."
+
+#: contact-form-7/modules/quiz.php:164
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "A felhasználó nem adott korrekt választ a quiz-kérdésre."
+
+#: contact-form-7/modules/quiz.php:165
+msgid "Your answer is not correct."
+msgstr "Hibás a válasz!"
+
+#: contact-form-7/modules/quiz.php:175
+msgid "Quiz"
+msgstr "Quiz"
+
+#: contact-form-7/modules/quiz.php:205
+msgid "Quizzes"
+msgstr "Quizek"
+
+#: contact-form-7/modules/quiz.php:207
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* quiz|válasz (pl.: 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:146
+msgid "Drop-down menu"
+msgstr "Lenyíló menü"
+
+#: contact-form-7/modules/select.php:175
+msgid "Allow multiple selections?"
+msgstr "Engedélyezett a többszörös választás?"
+
+#: contact-form-7/modules/select.php:176
+msgid "Insert a blank item as the first option?"
+msgstr "Első lehetőségnek egy üres tétel beszúrása?"
+
+#: contact-form-7/modules/submit.php:55
+msgid "Submit button"
+msgstr "Elfogadás gomb"
+
+#: contact-form-7/modules/submit.php:73
+msgid "Label"
+msgstr "Címke"
+
+#: contact-form-7/modules/text.php:129
+msgid "Text field"
+msgstr "Szövegmező"
+
+#: contact-form-7/modules/text.php:132
+msgid "Email field"
+msgstr "E-mail mező"
+
+#: contact-form-7/modules/text.php:174
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:176
+msgid "This field requires author's name"
+msgstr "Ebbe a mezőbe a szerző neve szükséges"
+
+#: contact-form-7/modules/text.php:177
+msgid "This field requires author's URL"
+msgstr "Ebbe a mezőbe a szerző URL-je szükséges"
+
+#: contact-form-7/modules/text.php:179
+msgid "This field requires author's email address"
+msgstr "Ebbe a mezőbe a szerző e-mail címe szükséges"
+
+#: contact-form-7/modules/text.php:183
+#: contact-form-7/modules/textarea.php:149
+msgid "Default value"
+msgstr "Alapértelmezett érték"
+
+#: contact-form-7/modules/textarea.php:118
+msgid "Text area"
+msgstr "Többsoros szöveg"
+
 #~ msgid "Delete this contact form"
 #~ msgstr "Ennek a kapcsolat űrlapnak a törlése."
+#~ msgid "(You need WordPress 2.7 or greater to use this feature)"
+#~ msgstr ""
+#~ "(Wordpress 2.7, vagy későbbi változat szükséges ehhez a funkcióhoz.)"
 
