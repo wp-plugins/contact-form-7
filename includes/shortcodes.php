@@ -59,11 +59,16 @@ class WPCF7_ShortcodeManager {
 
 		if ( is_array( $attr ) ) {
 			if ( is_array( $attr['options'] ) ) {
-				if ( $this->shortcode_tags[$tag]['has_name'] && ! empty( $attr['options'] ) )
+				if ( $this->shortcode_tags[$tag]['has_name'] && ! empty( $attr['options'] ) ) {
 					$scanned_tag['name'] = array_shift( $attr['options'] );
+
+					if ( ! wpcf7_is_name( $scanned_tag['name'] ) )
+						return $m[0]; // Invalid name is used. Ignore this tag.
+				}
 
 				$scanned_tag['options'] = (array) $attr['options'];
 			}
+
 			$scanned_tag['raw_values'] = (array) $attr['values'];
 
 			if ( WPCF7_USE_PIPE ) {

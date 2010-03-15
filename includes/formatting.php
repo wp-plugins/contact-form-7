@@ -132,4 +132,13 @@ function wpcf7_sanitize_file_name( $filename ) {
 	return $filename;
 }
 
+function wpcf7_is_name( $string ) {
+	// See http://www.w3.org/TR/html401/types.html#h-6.2
+	// ID and NAME tokens must begin with a letter ([A-Za-z])
+	// and may be followed by any number of letters, digits ([0-9]),
+	// hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
+
+	return preg_match( '/^[A-Za-z][-A-Za-z0-9_:.]*$/', $string );
+}
+
 ?>
