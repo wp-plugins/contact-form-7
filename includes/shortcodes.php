@@ -101,7 +101,7 @@ class WPCF7_ShortcodeManager {
 		$text = preg_replace( "/[\x{00a0}\x{200b}]+/u", " ", $text );
 		$text = stripcslashes( trim( $text ) );
 
-		$pattern = '%^([-0-9a-zA-Z:.#_/|\s]*?)((?:\s*"[^"]*"|\s*\'[^\']*\')*)$%';
+		$pattern = '%^([-+*=0-9a-zA-Z:.!?#$&@_/|\%\s]*?)((?:\s*"[^"]*"|\s*\'[^\']*\')*)$%';
 
 		if ( preg_match( $pattern, $text, $match ) ) {
 			if ( ! empty( $match[1] ) ) {
