@@ -166,6 +166,12 @@
 			$(this).val(val);
 		});
 
+		pane.find(':input.date').each(function(i) {
+			var val = $(this).val();
+			if (! val.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) // 'yyyy-mm-dd' ISO 8601 format
+				$(this).val('');
+		});
+
 		pane.find(':input[name="values"]').each(function(i) {
 			var val = $(this).val();
 			val = $.trim(val);
