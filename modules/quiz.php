@@ -125,8 +125,6 @@ function wpcf7_quiz_ajax_refill( $items ) {
 	$refill = array();
 
 	foreach ( $fes as $fe ) {
-		$fe = apply_filters( 'wpcf7_form_tag', $fe );
-
 		$name = $fe['name'];
 		$pipes = $fe['pipes'];
 
