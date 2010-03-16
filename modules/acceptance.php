@@ -24,6 +24,7 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
+	$tabindex_att = '';
 
 	$class_att .= ' wpcf7-acceptance';
 
@@ -36,6 +37,10 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 		} elseif ( 'invert' == $option ) {
 			$class_att .= ' wpcf7-invert';
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
+
 		}
 	}
 
@@ -44,6 +49,9 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
+
+	if ( '' !== $tabindex_att )
+		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	$default_on = (bool) preg_grep( '/^default:on$/i', $options );
 

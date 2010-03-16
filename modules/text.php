@@ -29,6 +29,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	$class_att = '';
 	$size_att = '';
 	$maxlength_att = '';
+	$tabindex_att = '';
 
 	if ( 'email' == $type || 'email*' == $type )
 		$class_att .= ' wpcf7-validates-as-email';
@@ -46,6 +47,10 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
 			$size_att = (int) $matches[1];
 			$maxlength_att = (int) $matches[2];
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
+
 		}
 	}
 
@@ -62,6 +67,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	if ( $maxlength_att )
 		$atts .= ' maxlength="' . $maxlength_att . '"';
+
+	if ( '' !== $tabindex_att )
+		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	// Value
 	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted() ) {

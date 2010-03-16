@@ -28,6 +28,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$class_att = '';
 	$cols_att = '';
 	$rows_att = '';
+	$tabindex_att = '';
 
 	if ( 'textarea*' == $type )
 		$class_att .= ' wpcf7-validates-as-required';
@@ -42,6 +43,10 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^([0-9]*)[x/]([0-9]*)$%', $option, $matches ) ) {
 			$cols_att = (int) $matches[1];
 			$rows_att = (int) $matches[2];
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
+
 		}
 	}
 
@@ -60,6 +65,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		$atts .= ' rows="' . $rows_att . '"';
 	else
 		$atts .= ' rows="10"'; // default size
+
+	if ( '' !== $tabindex_att )
+		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	// Value
 	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted() ) {

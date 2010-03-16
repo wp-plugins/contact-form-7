@@ -17,6 +17,7 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
+	$tabindex_att = '';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -24,6 +25,9 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$class_att .= ' ' . $matches[1];
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
 
 		}
 	}
@@ -33,6 +37,9 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
+
+	if ( '' !== $tabindex_att )
+		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	$value = isset( $values[0] ) ? $values[0] : '';
 	if ( empty( $value ) )

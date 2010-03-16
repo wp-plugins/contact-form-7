@@ -26,6 +26,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
+	$tabindex_att = '';
 
 	$defaults = array();
 
@@ -41,6 +42,10 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 		} elseif ( preg_match( '/^default:([0-9_]+)$/', $option, $matches ) ) {
 			$defaults = explode( '_', $matches[1] );
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
+
 		}
 	}
 
@@ -49,6 +54,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
+
+	if ( '' !== $tabindex_att )
+		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	$multiple = (bool) preg_grep( '%^multiple$%', $options );
 	$include_blank = (bool) preg_grep( '%^include_blank$%', $options );

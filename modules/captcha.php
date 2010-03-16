@@ -31,6 +31,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 	$class_att = '';
 	$size_att = '';
 	$maxlength_att = '';
+	$tabindex_att = '';
 
 	if ( 'captchac' == $type )
 		$class_att .= ' wpcf7-captcha-' . $name;
@@ -45,6 +46,10 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
 			$size_att = (int) $matches[1];
 			$maxlength_att = (int) $matches[2];
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
+
 		}
 	}
 
@@ -95,6 +100,9 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 		if ( $maxlength_att )
 			$atts .= ' maxlength="' . $maxlength_att . '"';
+
+		if ( '' !== $tabindex_att )
+			$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 		$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 		$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';

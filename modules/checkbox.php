@@ -27,6 +27,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
+	$tabindex_att = '';
 
 	$defaults = array();
 
@@ -57,6 +58,9 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		} elseif ( preg_match( '%^use[_-]?label[_-]?element$%', $option ) ) {
 			$use_label_element = true;
+
+		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
+			$tabindex_att = (int) $matches[1];
 
 		}
 	}
@@ -95,6 +99,13 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		$checked = $checked ? ' checked="checked"' : '';
 
+		if ( '' !== $tabindex_att ) {
+			$tabindex = sprintf( ' tabindex="%d"', $tabindex_att );
+			$tabindex_att += 1;
+		} else {
+			$tabindex = '';
+		}
+
 		if ( isset( $labels[$key] ) )
 			$label = $labels[$key];
 		else
@@ -102,9 +113,9 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		if ( $label_first ) { // put label first, input last
 			$item = '<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>&nbsp;';
-			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
+			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . $onclick . ' />';
 		} else {
-			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $onclick . ' />';
+			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . $onclick . ' />';
 			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>';
 		}
 
