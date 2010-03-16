@@ -43,7 +43,11 @@ function wpcf7() {
 		return;
 
 	$wpcf7 = (object) array(
-		'contactforms' => $wpdb->prefix . "contact_form_7" );
+		'contactforms' => $wpdb->prefix . "contact_form_7",
+		'processing_within' => '',
+		'widget_count' => 0,
+		'unit_count' => 0,
+		'global_unit_count' => 0 );
 }
 
 wpcf7();

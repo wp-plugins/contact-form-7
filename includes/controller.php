@@ -145,28 +145,37 @@ function wpcf7_process_nonajax_submitting() {
 	}
 }
 
-add_filter( 'the_content', 'wpcf7_the_content_filter', 9 );
+add_action( 'the_post', 'wpcf7_the_post' );
 
-function wpcf7_the_content_filter( $content ) {
-	global $wpcf7_processing_within, $wpcf7_unit_count;
+function wpcf7_the_post() {
+	global $wpcf7;
 
-	$wpcf7_processing_within = 'p' . get_the_ID();
-	$wpcf7_unit_count = 0;
+	$wpcf7->processing_within = 'p' . get_the_ID();
+	$wpcf7->unit_count = 0;
+}
 
-	return $content;
+add_action( 'loop_end', 'wpcf7_loop_end' );
+
+function wpcf7_loop_end() {
+	global $wpcf7;
+
+	$wpcf7->processing_within = '';
 }
 
 add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 
 function wpcf7_widget_text_filter( $content ) {
-	global $wpcf7_widget_count, $wpcf7_processing_within, $wpcf7_unit_count;
+	global $wpcf7;
 
-	$wpcf7_widget_count += 1;
-	$wpcf7_processing_within = 'w' . $wpcf7_widget_count;
-	$wpcf7_unit_count = 0;
+	$wpcf7->widget_count += 1;
+	$wpcf7->processing_within = 'w' . $wpcf7->widget_count;
+	$wpcf7->unit_count = 0;
 
 	$regex = '/\[\s*contact-form\s+(\d+(?:\s+.*)?)\]/';
-	return preg_replace_callback( $regex, 'wpcf7_widget_text_filter_callback', $content );
+	$content = preg_replace_callback( $regex, 'wpcf7_widget_text_filter_callback', $content );
+
+	$wpcf7->processing_within = '';
+	return $content;
 }
 
 function wpcf7_widget_text_filter_callback( $matches ) {
@@ -176,7 +185,7 @@ function wpcf7_widget_text_filter_callback( $matches ) {
 add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 
 function wpcf7_contact_form_tag_func( $atts ) {
-	global $wpcf7_contact_form, $wpcf7_unit_count, $wpcf7_processing_within;
+	global $wpcf7, $wpcf7_contact_form;
 
 	if ( is_feed() )
 		return '[contact-form]';
@@ -191,9 +200,22 @@ function wpcf7_contact_form_tag_func( $atts ) {
 	if ( ! ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) )
 		return '[contact-form 404 "Not Found"]';
 
-	$wpcf7_unit_count += 1;
+	if ( $wpcf7->processing_within ) { // Inside post content or text widget
+		$wpcf7->unit_count += 1;
+		$unit_count = $wpcf7->unit_count;
+		$processing_within = $wpcf7->processing_within;
 
-	$unit_tag = 'wpcf7-f' . $id . '-' . $wpcf7_processing_within . '-o' . $wpcf7_unit_count;
+	} else { // Inside template
+
+		if ( ! isset( $wpcf7->global_unit_count ) )
+			$wpcf7->global_unit_count = 0;
+
+		$wpcf7->global_unit_count += 1;
+		$unit_count = 1;
+		$processing_within = 't' . $wpcf7->global_unit_count;
+	}
+
+	$unit_tag = 'wpcf7-f' . $id . '-' . $processing_within . '-o' . $unit_count;
 	$wpcf7_contact_form->unit_tag = $unit_tag;
 
 	$form = $wpcf7_contact_form->form_html();
