@@ -14,6 +14,24 @@ Just another contact form plugin. Simple but flexible.
 
 Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on.
 
+* [Docs](http://contactform7.com/docs/)
+* [FAQ](http://contactform7.com/faq/)
+* [Support](http://contactform7.com/support/)
+
+= Thank you, contributors! =
+
+It is hard to continue WordPress plugin development and support without contribution from users like you. As the developer of the Contact Form 7 plugin, I'd like to genuinely thank everyone who has contributed.
+
+As a token of my appreciation, I am opening the **Contact Form 7 Contributors Club** and inviting those who have contributed more than expected.
+
+Club members are entitled to the following:
+
+* Listing on the [Contributors List](http://contactform7.com/donate/#contributors)
+* Free download of add-on modules/plugins for Contact Form 7
+* Access to the customization request channel
+
+[Read more](http://contactform7.com/donate/)
+
 = Translators =
 
 * Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
