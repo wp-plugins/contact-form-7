@@ -445,9 +445,7 @@ class WPCF7_ContactForm {
 	/* Save */
 
 	function save() {
-		global $wpdb;
-
-		$table_name = wpcf7_table_name();
+		global $wpdb, $wpcf7;
 
 		$fields = array(
 			'title' => maybe_serialize( stripslashes_deep( $this->title ) ),
@@ -459,7 +457,7 @@ class WPCF7_ContactForm {
 				maybe_serialize( stripslashes_deep( $this->additional_settings ) ) );
 
 		if ( $this->initial ) {
-			$result = $wpdb->insert( $table_name, $fields );
+			$result = $wpdb->insert( $wpcf7->contactforms, $fields );
 
 			if ( $result ) {
 				$this->initial = false;
@@ -474,7 +472,7 @@ class WPCF7_ContactForm {
 			if ( ! (int) $this->id )
 				return false; // Missing ID
 
-			$result = $wpdb->update( $table_name, $fields,
+			$result = $wpdb->update( $wpcf7->contactforms, $fields,
 				array( 'cf7_unit_id' => absint( $this->id ) ) );
 
 			if ( false !== $result ) {
@@ -503,15 +501,13 @@ class WPCF7_ContactForm {
 	}
 
 	function delete() {
-		global $wpdb;
+		global $wpdb, $wpcf7;
 
 		if ( $this->initial )
 			return;
 
-		$table_name = wpcf7_table_name();
-
 		$query = $wpdb->prepare(
-			"DELETE FROM $table_name WHERE cf7_unit_id = %d LIMIT 1",
+			"DELETE FROM $wpcf7->contactforms WHERE cf7_unit_id = %d LIMIT 1",
 			absint( $this->id ) );
 
 		$wpdb->query( $query );
@@ -522,13 +518,9 @@ class WPCF7_ContactForm {
 }
 
 function wpcf7_contact_form( $id ) {
-	global $wpdb;
+	global $wpdb, $wpcf7;
 
-	$table_name = wpcf7_table_name();
-
-	$id = (int) $id;
-
-	$query = $wpdb->prepare( "SELECT * FROM $table_name WHERE cf7_unit_id = %d", $id );
+	$query = $wpdb->prepare( "SELECT * FROM $wpcf7->contactforms WHERE cf7_unit_id = %d", $id );
 
 	if ( ! $row = $wpdb->get_row( $query ) )
 		return false; // No data

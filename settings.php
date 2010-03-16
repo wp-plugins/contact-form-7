@@ -24,19 +24,29 @@ function wpcf7_admin_url( $query = array() ) {
 	return esc_url_raw( $url );
 }
 
-function wpcf7_table_name() {
-	global $wpdb;
+function wpcf7_table_exists( $table = 'contactforms' ) {
+	global $wpdb, $wpcf7;
 
-	return $wpdb->prefix . "contact_form_7";
+	if ( 'contactforms' != $table )
+		return false;
+
+	if ( ! $table = $wpcf7->{$table} )
+		return false;
+
+	return strtolower( $wpdb->get_var( "SHOW TABLES LIKE '$table'" ) ) == strtolower( $table );
 }
 
-function wpcf7_table_exists() {
-	global $wpdb;
+function wpcf7() {
+	global $wpdb, $wpcf7;
 
-	$table_name = wpcf7_table_name();
+	if ( is_object( $wpcf7 ) )
+		return;
 
-	return strtolower( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) == strtolower( $table_name );
+	$wpcf7 = (object) array(
+		'contactforms' => $wpdb->prefix . "contact_form_7" );
 }
+
+wpcf7();
 
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
@@ -51,11 +61,9 @@ else
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
 
 function wpcf7_contact_forms() {
-	global $wpdb;
+	global $wpdb, $wpcf7;
 
-	$table_name = wpcf7_table_name();
-
-	return $wpdb->get_results( "SELECT cf7_unit_id as id, title FROM $table_name" );
+	return $wpdb->get_results( "SELECT cf7_unit_id as id, title FROM $wpcf7->contactforms" );
 }
 
 add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
