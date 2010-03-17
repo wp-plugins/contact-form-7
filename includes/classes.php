@@ -578,16 +578,20 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag', 10, 2 );
 
 function wpcf7_special_mail_tag( $output, $name ) {
-	if ( 'wpcf7.remote_ip' == $name )
+
+	// For backwards compat.
+	$name = preg_replace( '/^wpcf7\./', '_', $name );
+
+	if ( '_remote_ip' == $name )
 		$output = preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
 
-	elseif ( 'wpcf7.url' == $name )
+	elseif ( '_url' == $name )
 		$output = wpcf7_get_request_uri();
 
-	elseif ( 'wpcf7.date' == $name )
+	elseif ( '_date' == $name )
 		$output = date_i18n( get_option( 'date_format' ) );
 
-	elseif ( 'wpcf7.time' == $name )
+	elseif ( '_time' == $name )
 		$output = date_i18n( get_option( 'time_format' ) );
 
 	return $output;
@@ -596,27 +600,31 @@ function wpcf7_special_mail_tag( $output, $name ) {
 add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_user_data', 10, 2 );
 
 function wpcf7_special_mail_tag_for_user_data( $output, $name ) {
+
 	if ( ! is_user_logged_in() )
 		return $output;
 
 	$user = wp_get_current_user();
 
-	if ( 'wpcf7.user_login' == $name )
+	// For backwards compat.
+	$name = preg_replace( '/^wpcf7\./', '_', $name );
+
+	if ( '_user_login' == $name )
 		$output = $user->user_login;
 
-	elseif ( 'wpcf7.user_email' == $name )
+	elseif ( '_user_email' == $name )
 		$output = $user->user_email;
 
-	elseif ( 'wpcf7.user_url' == $name )
+	elseif ( '_user_url' == $name )
 		$output = $user->user_url;
 
-	elseif ( 'wpcf7.user_display_name' == $name )
+	elseif ( '_user_display_name' == $name )
 		$output = $user->display_name;
 
-	elseif ( 'wpcf7.user_first_name' == $name )
+	elseif ( '_user_first_name' == $name )
 		$output = $user->first_name;
 
-	elseif ( 'wpcf7.user_last_name' == $name )
+	elseif ( '_user_last_name' == $name )
 		$output = $user->last_name;
 
 	return $output;
@@ -625,6 +633,7 @@ function wpcf7_special_mail_tag_for_user_data( $output, $name ) {
 add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_post_data', 10, 2 );
 
 function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
+
 	if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
 		return $output;
 
@@ -636,15 +645,20 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 	if ( ! $post = get_post( $post_id ) )
 		return $output;
 
-	if ( 'wpcf7.post_id' == $name ) {
+	// For backwards compat.
+	$name = preg_replace( '/^wpcf7\./', '_', $name );
+
+	if ( '_post_id' == $name )
 		$output = (string) $post->ID;
-	} elseif ( 'wpcf7.post_name' == $name ) {
+
+	elseif ( '_post_name' == $name )
 		$output = $post->post_name;
-	} elseif ( 'wpcf7.post_title' == $name ) {
+
+	elseif ( '_post_title' == $name )
 		$output = $post->post_title;
-	} elseif ( 'wpcf7.post_url' == $name ) {
+
+	elseif ( '_post_url' == $name )
 		$output = get_permalink( $post->ID );
-	}
 
 	return $output;
 }
