@@ -370,10 +370,13 @@ class WPCF7_ContactForm {
 			$submitted = $this->posted_data[$matches[1]];
 
 			if ( is_array( $submitted ) )
-				$submitted = join( ', ', $submitted );
+				$replaced = join( ', ', $submitted );
+			else
+				$replaced = $submitted;
 
-			return stripslashes( $submitted );
+			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
 
+			return stripslashes( $replaced );
 		}
 
 		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[1] ) )
