@@ -331,7 +331,7 @@ class WPCF7_ContactForm {
 	}
 
 	function compose_and_send_mail( $mail_template ) {
-		$regex = '/\[\s*([a-zA-Z][0-9a-zA-Z:._-]*)\s*\]/';
+		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
 		$callback = array( &$this, 'mail_callback' );
 
 		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
