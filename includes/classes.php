@@ -575,12 +575,49 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 
 /* Default Filters */
 
-add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_remote_ip', 10, 2 );
+add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag', 10, 2 );
 
-function wpcf7_special_mail_tag_for_remote_ip( $output, $name ) {
-	// Special [wpcf7.remote_ip] tag
+function wpcf7_special_mail_tag( $output, $name ) {
 	if ( 'wpcf7.remote_ip' == $name )
 		$output = preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
+
+	elseif ( 'wpcf7.url' == $name )
+		$output = wpcf7_get_request_uri();
+
+	elseif ( 'wpcf7.date' == $name )
+		$output = date_i18n( get_option( 'date_format' ) );
+
+	elseif ( 'wpcf7.time' == $name )
+		$output = date_i18n( get_option( 'time_format' ) );
+
+	return $output;
+}
+
+add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_user_data', 10, 2 );
+
+function wpcf7_special_mail_tag_for_user_data( $output, $name ) {
+	if ( ! is_user_logged_in() )
+		return $output;
+
+	$user = wp_get_current_user();
+
+	if ( 'wpcf7.user_login' == $name )
+		$output = $user->user_login;
+
+	elseif ( 'wpcf7.user_email' == $name )
+		$output = $user->user_email;
+
+	elseif ( 'wpcf7.user_url' == $name )
+		$output = $user->user_url;
+
+	elseif ( 'wpcf7.user_display_name' == $name )
+		$output = $user->display_name;
+
+	elseif ( 'wpcf7.user_first_name' == $name )
+		$output = $user->first_name;
+
+	elseif ( 'wpcf7.user_last_name' == $name )
+		$output = $user->last_name;
 
 	return $output;
 }
@@ -599,13 +636,13 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 	if ( ! $post = get_post( $post_id ) )
 		return $output;
 
-	if ( 'wpcf7.post_id' == $name ) { // Special [wpcf7.post_id] tag
+	if ( 'wpcf7.post_id' == $name ) {
 		$output = (string) $post->ID;
-	} elseif ( 'wpcf7.post_name' == $name ) { // Special [wpcf7.post_name] tag
+	} elseif ( 'wpcf7.post_name' == $name ) {
 		$output = $post->post_name;
-	} elseif ( 'wpcf7.post_title' == $name ) { // Special [wpcf7.post_title] tag
+	} elseif ( 'wpcf7.post_title' == $name ) {
 		$output = $post->post_title;
-	} elseif ( 'wpcf7.post_url' == $name ) { // Special [wpcf7.post_url] tag
+	} elseif ( 'wpcf7.post_url' == $name ) {
 		$output = get_permalink( $post->ID );
 	}
 
