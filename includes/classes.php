@@ -597,39 +597,6 @@ function wpcf7_special_mail_tag( $output, $name ) {
 	return $output;
 }
 
-add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_user_data', 10, 2 );
-
-function wpcf7_special_mail_tag_for_user_data( $output, $name ) {
-
-	if ( ! is_user_logged_in() )
-		return $output;
-
-	$user = wp_get_current_user();
-
-	// For backwards compat.
-	$name = preg_replace( '/^wpcf7\./', '_', $name );
-
-	if ( '_user_login' == $name )
-		$output = $user->user_login;
-
-	elseif ( '_user_email' == $name )
-		$output = $user->user_email;
-
-	elseif ( '_user_url' == $name )
-		$output = $user->user_url;
-
-	elseif ( '_user_display_name' == $name )
-		$output = $user->display_name;
-
-	elseif ( '_user_first_name' == $name )
-		$output = $user->first_name;
-
-	elseif ( '_user_last_name' == $name )
-		$output = $user->last_name;
-
-	return $output;
-}
-
 add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_post_data', 10, 2 );
 
 function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
@@ -645,6 +612,8 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 	if ( ! $post = get_post( $post_id ) )
 		return $output;
 
+	$user = new WP_User( $post->post_author );
+
 	// For backwards compat.
 	$name = preg_replace( '/^wpcf7\./', '_', $name );
 
@@ -659,6 +628,12 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 
 	elseif ( '_post_url' == $name )
 		$output = get_permalink( $post->ID );
+
+	elseif ( '_post_author' == $name )
+		$output = $user->display_name;
+
+	elseif ( '_post_author_email' == $name )
+		$output = $user->user_email;
 
 	return $output;
 }
