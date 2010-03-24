@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 2.1 正體中文語系檔\n"
+"Project-Id-Version: Contact Form 2.2 正體中文語系檔\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-01 03:37+0900\n"
+"POT-Creation-Date: 2010-03-23 06:47+0900\n"
 "PO-Revision-Date: \n"
-"Last-Translator: James Wu <phptech@gmail.com>\n"
+"Last-Translator: James Wu <blog@jameswublg.com>\n"
 "Language-Team: http://jameswublog.com <phptech@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,43 +14,143 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: contact-form-7/admin/admin-panel.php:9
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "聯絡表單"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "編輯聯絡表單"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "編輯"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "標籤產生器"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "顯示"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "隱藏"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "聯絡表單"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "設定"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "教學文件"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "常見問題"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "支援"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Contact form created."
+msgstr "已新增聯絡表單。"
+
+#: contact-form-7/admin/admin.php:315
+msgid "Contact form saved."
+msgstr "已儲存聯絡表單。"
+
+#: contact-form-7/admin/admin.php:318
+msgid "Contact form deleted."
+msgstr "已刪除聯絡表單。"
+
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "資料庫資料表已建立。"
+
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "資料庫中的資料表建立失敗。"
+
+#: contact-form-7/admin/admin.php:357
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 需要您的支持，請今天就慷慨解囊。"
+
+#: contact-form-7/admin/admin.php:358
+msgid "Your contribution is needed for making this plugin better."
+msgstr "為了讓這個外掛更優質，我們需要您的捐款。"
+
+#: contact-form-7/admin/admin.php:364
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:364
+msgid "Donate"
+msgstr "捐款"
+
+#: contact-form-7/admin/edit.php:9
 #, php-format
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
 msgstr "<strong>所使用的資料庫資料表並不存在。</strong> 您必需要 <a href=\"%s\">建立一個資料表後</a> ，表單才能運作。"
 
-#: contact-form-7/admin/admin-panel.php:12
+#: contact-form-7/admin/edit.php:12
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
 msgstr "<strong>Contact Form 7 所使用的資料庫資料表並不存在。</strong>"
 
-#: contact-form-7/admin/admin-panel.php:17
-#: contact-form-7/admin/admin-panel.php:30
-#: contact-form-7/admin/admin.php:117
-msgid "Contact Form 7"
-msgstr "Contact Form 7"
-
-#: contact-form-7/admin/admin-panel.php:45
+#: contact-form-7/admin/edit.php:45
 msgid "Add new"
 msgstr "建立新聯絡表單"
 
-#: contact-form-7/admin/admin-panel.php:67
+#: contact-form-7/admin/edit.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
 msgstr "您可以把這段代碼複製到您的網誌文章、分頁或文字小工具(Text Widget)的內容中。"
 
-#: contact-form-7/admin/admin-panel.php:75
-#: contact-form-7/admin/admin-panel.php:309
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "儲存"
 
-#: contact-form-7/admin/admin-panel.php:82
+#: contact-form-7/admin/edit.php:82
 msgid "Copy"
 msgstr "複製"
 
-#: contact-form-7/admin/admin-panel.php:87
+#: contact-form-7/admin/edit.php:87
 msgid "Delete"
 msgstr "刪除"
 
-#: contact-form-7/admin/admin-panel.php:89
+#: contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -58,185 +158,85 @@ msgstr ""
 "您即將刪除這個聯絡表單。\n"
 "按「確定」刪除表單，或按「取消」取消刪除表單的動作。"
 
-#: contact-form-7/admin/admin-panel.php:104
+#: contact-form-7/admin/edit.php:104
 msgid "Form"
 msgstr "表單"
 
-#: contact-form-7/admin/admin-panel.php:128
+#: contact-form-7/admin/edit.php:128
 msgid "Mail"
 msgstr "郵件"
 
-#: contact-form-7/admin/admin-panel.php:135
-#: contact-form-7/admin/admin-panel.php:202
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
 msgid "To:"
 msgstr "收件人："
 
-#: contact-form-7/admin/admin-panel.php:140
-#: contact-form-7/admin/admin-panel.php:207
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
 msgid "From:"
 msgstr "寄件人："
 
-#: contact-form-7/admin/admin-panel.php:145
-#: contact-form-7/admin/admin-panel.php:212
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
 msgid "Subject:"
 msgstr "主旨："
 
-#: contact-form-7/admin/admin-panel.php:152
-#: contact-form-7/admin/admin-panel.php:219
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
 msgid "Additional headers:"
 msgstr "額外的信件標頭 (header) 資訊："
 
-#: contact-form-7/admin/admin-panel.php:157
-#: contact-form-7/admin/admin-panel.php:224
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
 msgid "File attachments:"
 msgstr "附加檔案："
 
-#: contact-form-7/admin/admin-panel.php:165
-#: contact-form-7/admin/admin-panel.php:232
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
 msgid "Use HTML content type"
 msgstr "使用HTML內文格式"
 
-#: contact-form-7/admin/admin-panel.php:172
-#: contact-form-7/admin/admin-panel.php:239
-#: contact-form-7/includes/functions.php:73
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
 msgid "Message body:"
 msgstr "郵件內容："
 
-#: contact-form-7/admin/admin-panel.php:188
+#: contact-form-7/admin/edit.php:188
 msgid "Mail (2)"
 msgstr "郵件(2)"
 
-#: contact-form-7/admin/admin-panel.php:194
+#: contact-form-7/admin/edit.php:194
 msgid "Use mail (2)"
 msgstr "使用郵件(2)"
 
-#: contact-form-7/admin/admin-panel.php:255
+#: contact-form-7/admin/edit.php:255
 msgid "Messages"
 msgstr "郵件內容"
 
-#: contact-form-7/admin/admin-panel.php:285
+#: contact-form-7/admin/edit.php:285
 msgid "Additional Settings"
 msgstr "額外的設定"
 
-#: contact-form-7/admin/admin-panel.php:333
+#: contact-form-7/admin/edit.php:333
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "使用預設語言(%s)"
 
-#: contact-form-7/admin/admin-panel.php:334
-#: contact-form-7/admin/admin-panel.php:347
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
 msgid "Add New"
 msgstr "建立新的聯絡表單"
 
-#: contact-form-7/admin/admin-panel.php:337
+#: contact-form-7/admin/edit.php:337
 msgid "Or"
 msgstr "或"
 
-#: contact-form-7/admin/admin-panel.php:342
+#: contact-form-7/admin/edit.php:342
 msgid "(select language)"
 msgstr "(選擇語言)"
 
-#: contact-form-7/admin/admin.php:117
-msgid "Contact"
-msgstr "聯絡表單"
-
-#: contact-form-7/admin/admin.php:120
-msgid "Edit Contact Forms"
-msgstr "編輯聯絡表單"
-
-#: contact-form-7/admin/admin.php:120
-msgid "Edit"
-msgstr "編輯"
-
-#: contact-form-7/admin/admin.php:159
-msgid "Generate Tag"
-msgstr "標籤產生器"
-
-#: contact-form-7/admin/admin.php:160
-msgid "Show"
-msgstr "顯示"
-
-#: contact-form-7/admin/admin.php:161
-msgid "Hide"
-msgstr "隱藏"
-
-#: contact-form-7/admin/admin.php:305
-msgid "Contact form"
-msgstr "聯絡表單"
-
-#: contact-form-7/admin/admin.php:324
-msgid "Settings"
-msgstr "設定"
-
-#: contact-form-7/admin/admin.php:335
-msgid "http://contactform7.com/"
-msgstr "http://contactform7.com/"
-
-#: contact-form-7/admin/admin.php:336
-msgid "Contactform7.com"
-msgstr "Contactform7.com"
-
-#: contact-form-7/admin/admin.php:337
-msgid "http://contactform7.com/docs/"
-msgstr "http://contactform7.com/docs/"
-
-#: contact-form-7/admin/admin.php:338
-msgid "Docs"
-msgstr "教學文件"
-
-#: contact-form-7/admin/admin.php:339
-msgid "http://contactform7.com/faq/"
-msgstr "http://contactform7.com/faq/"
-
-#: contact-form-7/admin/admin.php:340
-msgid "FAQ"
-msgstr "常見問題"
-
-#: contact-form-7/admin/admin.php:341
-msgid "http://contactform7.com/support/"
-msgstr "http://contactform7.com/support/"
-
-#: contact-form-7/admin/admin.php:342
-msgid "Support"
-msgstr "支援"
-
-#: contact-form-7/admin/admin.php:353
-msgid "Contact form created."
-msgstr "已新增聯絡表單。"
-
-#: contact-form-7/admin/admin.php:356
-msgid "Contact form saved."
-msgstr "已儲存聯絡表單。"
-
-#: contact-form-7/admin/admin.php:359
-msgid "Contact form deleted."
-msgstr "已刪除聯絡表單。"
-
-#: contact-form-7/admin/admin.php:362
-msgid "Database table created."
-msgstr "資料庫資料表已建立。"
-
-#: contact-form-7/admin/admin.php:365
-msgid "Failed to create database table."
-msgstr "資料庫中的資料表建立失敗。"
-
-#: contact-form-7/admin/admin.php:398
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 需要您的支持，請今天就慷慨解囊。"
-
-#: contact-form-7/admin/admin.php:399
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "您覺得本外掛實用嗎? 如果您喜歡這個外掛，請捐款支持本外掛的作者。"
-
-#: contact-form-7/admin/admin.php:400
-msgid "Your contribution is needed for making this plugin better."
-msgstr "為了讓這個外掛更好用，我們需要您的捐款。"
-
-#: contact-form-7/admin/admin.php:401
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "外掛程式的製作和幫助使用者解決技術上的問題，是很辛苦的工作。請捐款支持。"
-
-#: contact-form-7/includes/classes.php:568
+#: contact-form-7/includes/classes.php:564
 msgid "Untitled"
 msgstr "無標題"
 
@@ -293,436 +293,448 @@ msgstr " 有一個必需填寫的欄位不允許空白，請寄信者再確認�
 msgid "Please fill the required field."
 msgstr "請填寫必要欄位。"
 
-#: contact-form-7/includes/functions.php:45
+#: contact-form-7/includes/functions.php:46
 msgid "Your Name"
 msgstr "您的姓名"
 
-#: contact-form-7/includes/functions.php:45
-#: contact-form-7/includes/functions.php:47
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
 msgid "(required)"
 msgstr "〈需填寫〉"
 
-#: contact-form-7/includes/functions.php:47
+#: contact-form-7/includes/functions.php:48
 msgid "Your Email"
 msgstr "您的電子郵件信箱"
 
-#: contact-form-7/includes/functions.php:49
+#: contact-form-7/includes/functions.php:50
 msgid "Subject"
 msgstr "主旨"
 
-#: contact-form-7/includes/functions.php:51
+#: contact-form-7/includes/functions.php:52
 msgid "Your Message"
 msgstr "您的信件內容"
 
-#: contact-form-7/includes/functions.php:53
+#: contact-form-7/includes/functions.php:54
 msgid "Send"
 msgstr "傳送"
 
-#: contact-form-7/includes/functions.php:60
+#: contact-form-7/includes/functions.php:62
 #, php-format
 msgid "From: %s"
 msgstr "寄件人：%s"
 
-#: contact-form-7/includes/functions.php:61
+#: contact-form-7/includes/functions.php:63
 #, php-format
 msgid "Subject: %s"
 msgstr "主旨：%s"
 
-#: contact-form-7/includes/functions.php:62
+#: contact-form-7/includes/functions.php:64
 msgid "Message Body:"
 msgstr "郵件內文："
 
-#: contact-form-7/includes/functions.php:63
-#: contact-form-7/includes/functions.php:74
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
 msgstr "這從由 %1$s %2$s 使用聯絡表單所發送的郵件"
 
-#: contact-form-7/includes/functions.php:163
+#: contact-form-7/includes/functions.php:168
+msgid "Afrikaans"
+msgstr "南非荷蘭文"
+
+#: contact-form-7/includes/functions.php:169
 msgid "Albanian"
 msgstr "阿爾巴尼亞文"
 
-#: contact-form-7/includes/functions.php:164
+#: contact-form-7/includes/functions.php:170
 msgid "Arabic"
 msgstr "阿拉伯文"
 
-#: contact-form-7/includes/functions.php:165
+#: contact-form-7/includes/functions.php:171
 msgid "Bangla"
 msgstr "孟加拉文"
 
-#: contact-form-7/includes/functions.php:166
+#: contact-form-7/includes/functions.php:172
 msgid "Bosnian"
 msgstr "波斯尼亞文"
 
-#: contact-form-7/includes/functions.php:167
+#: contact-form-7/includes/functions.php:173
 msgid "Brazilian Portuguese"
 msgstr "巴西葡萄牙語"
 
-#: contact-form-7/includes/functions.php:168
+#: contact-form-7/includes/functions.php:174
 msgid "Bulgarian"
 msgstr "保加利亞文"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:175
 msgid "Catalan"
 msgstr "加泰羅尼亞文"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:176
 msgid "Chinese (Simplified)"
 msgstr "中文（簡體）"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:177
 msgid "Chinese (Traditional)"
 msgstr "中文（正體）"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:178
 msgid "Croatian"
 msgstr "克羅地亞文"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:179
 msgid "Czech"
 msgstr "捷克文"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:180
 msgid "Danish"
 msgstr "丹麥文"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:181
 msgid "Dutch"
 msgstr "荷蘭文"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:182
 msgid "English"
 msgstr "英文"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:183
 msgid "Estonian"
 msgstr "愛沙尼亞文"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:184
 msgid "Finnish"
 msgstr "芬蘭文"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:185
 msgid "French"
 msgstr "法文"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:186
+msgid "Galician"
+msgstr "加里西亞文"
+
+#: contact-form-7/includes/functions.php:187
 msgid "Georgian"
 msgstr "格魯吉亞文"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:188
 msgid "German"
 msgstr "德文"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:189
 msgid "Greek"
 msgstr "希臘文"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:190
 msgid "Hebrew"
 msgstr "希伯來文"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:191
 msgid "Hindi"
 msgstr "印度文"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:192
 msgid "Hungarian"
 msgstr "匈牙利文"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:193
 msgid "Indonesian"
 msgstr "印度尼西亞文"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:194
 msgid "Italian"
 msgstr "意大利文"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:195
 msgid "Japanese"
 msgstr "日文"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:196
 msgid "Korean"
 msgstr "韓文"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:197
 msgid "Latvian"
 msgstr "拉脫維亞文"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:198
 msgid "Lithuanian"
 msgstr "立陶宛文"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:199
+msgid "Malayalam"
+msgstr "馬來亞拉姆文"
+
+#: contact-form-7/includes/functions.php:200
 msgid "Norwegian"
 msgstr "挪威文"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:201
 msgid "Persian"
 msgstr "波斯文"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:202
 msgid "Polish"
 msgstr "波蘭文"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:203
 msgid "Portuguese"
 msgstr "葡萄牙文"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:204
 msgid "Russian"
 msgstr "俄文"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:205
 msgid "Romanian"
 msgstr "羅馬尼亞文"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:206
 msgid "Serbian"
 msgstr "塞爾維亞文"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:207
 msgid "Slovak"
 msgstr "斯洛伐克文"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:208
 msgid "Slovene"
 msgstr "斯洛文尼亞文"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:209
 msgid "Spanish"
 msgstr "西班牙文"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:210
 msgid "Swedish"
 msgstr "瑞典文"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:211
 msgid "Thai"
 msgstr "泰文"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:212
 msgid "Turkish"
 msgstr "土耳其文"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:213
 msgid "Ukrainian"
 msgstr "烏克蘭文"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:214
 msgid "Vietnamese"
 msgstr "越南文"
 
-#: contact-form-7/modules/acceptance.php:94
+#: contact-form-7/modules/acceptance.php:104
 msgid "Acceptance"
 msgstr "接受使用條款"
 
-#: contact-form-7/modules/acceptance.php:103
-#: contact-form-7/modules/captcha.php:206
-#: contact-form-7/modules/checkbox.php:196
-#: contact-form-7/modules/file.php:234
+#: contact-form-7/modules/acceptance.php:113
+#: contact-form-7/modules/captcha.php:214
+#: contact-form-7/modules/checkbox.php:209
+#: contact-form-7/modules/file.php:241
 msgid "Name"
 msgstr "物件名稱"
 
-#: contact-form-7/modules/acceptance.php:108
-#: contact-form-7/modules/acceptance.php:111
-#: contact-form-7/modules/captcha.php:213
-#: contact-form-7/modules/captcha.php:216
+#: contact-form-7/modules/acceptance.php:118
+#: contact-form-7/modules/acceptance.php:121
 #: contact-form-7/modules/captcha.php:221
 #: contact-form-7/modules/captcha.php:224
-#: contact-form-7/modules/captcha.php:228
-#: contact-form-7/modules/captcha.php:239
-#: contact-form-7/modules/captcha.php:242
+#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:232
+#: contact-form-7/modules/captcha.php:236
 #: contact-form-7/modules/captcha.php:247
 #: contact-form-7/modules/captcha.php:250
-#: contact-form-7/modules/checkbox.php:201
-#: contact-form-7/modules/checkbox.php:204
-#: contact-form-7/modules/file.php:239
-#: contact-form-7/modules/file.php:242
-#: contact-form-7/modules/file.php:247
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/captcha.php:255
+#: contact-form-7/modules/captcha.php:258
+#: contact-form-7/modules/checkbox.php:214
+#: contact-form-7/modules/checkbox.php:217
+#: contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257
 msgid "optional"
 msgstr "可不填"
 
-#: contact-form-7/modules/acceptance.php:117
+#: contact-form-7/modules/acceptance.php:127
 msgid "Make this checkbox checked by default?"
 msgstr "預設核選方塊為核取(已勾選)?"
 
-#: contact-form-7/modules/acceptance.php:118
+#: contact-form-7/modules/acceptance.php:128
 msgid "Make this checkbox work inversely?"
 msgstr "設定核取方塊被選取的狀態相反?"
 
-#: contact-form-7/modules/acceptance.php:119
+#: contact-form-7/modules/acceptance.php:129
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "*意思是如果使用者如果接受服務條款，則不需勾選核取方塊。"
 
-#: contact-form-7/modules/acceptance.php:124
-#: contact-form-7/modules/captcha.php:255
-#: contact-form-7/modules/checkbox.php:224
-#: contact-form-7/modules/file.php:255
+#: contact-form-7/modules/acceptance.php:134
+#: contact-form-7/modules/captcha.php:263
+#: contact-form-7/modules/checkbox.php:237
+#: contact-form-7/modules/file.php:262
 msgid "Copy this code and paste it into the form left."
 msgstr "把這段代碼複製後，貼到左方的表格"
 
-#: contact-form-7/modules/captcha.php:65
+#: contact-form-7/modules/captcha.php:70
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
 msgstr "使用圖片驗證(CAPTCHA)的功能前，您必需先安裝 <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>這個外掛。"
 
-#: contact-form-7/modules/captcha.php:181
+#: contact-form-7/modules/captcha.php:189
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "寄信者所輸入的圖片認證碼錯誤"
 
-#: contact-form-7/modules/captcha.php:182
+#: contact-form-7/modules/captcha.php:190
 msgid "Your entered code is incorrect."
 msgstr "您輸入的認證代碼錯誤。　"
 
-#: contact-form-7/modules/captcha.php:192
+#: contact-form-7/modules/captcha.php:200
 msgid "CAPTCHA"
 msgstr "CAPTCHA 驗證"
 
-#: contact-form-7/modules/captcha.php:203
+#: contact-form-7/modules/captcha.php:211
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr "作者註：使用圖片驗證(CAPTCHA)的功能前，您必需先安裝\"Really Simple CAPTCHA\"這個外掛。"
 
-#: contact-form-7/modules/captcha.php:210
+#: contact-form-7/modules/captcha.php:218
 msgid "Image settings"
 msgstr "圖片設定"
 
-#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/captcha.php:229
 msgid "Foreground color"
 msgstr "前景顏色"
 
-#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:232
 msgid "Background color"
 msgstr "背景顏色"
 
-#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/captcha.php:236
 msgid "Image size"
 msgstr "圖片尺寸"
 
-#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:237
 msgid "Small"
 msgstr "小"
 
-#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:238
 msgid "Medium"
 msgstr "中"
 
-#: contact-form-7/modules/captcha.php:231
+#: contact-form-7/modules/captcha.php:239
 msgid "Large"
 msgstr "大"
 
-#: contact-form-7/modules/captcha.php:236
+#: contact-form-7/modules/captcha.php:244
 msgid "Input field settings"
 msgstr "設定輸入欄位"
 
-#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/captcha.php:264
 msgid "For image"
 msgstr "圖片使用"
 
-#: contact-form-7/modules/captcha.php:258
+#: contact-form-7/modules/captcha.php:266
 msgid "For input field"
 msgstr "輸入欄位使用"
 
-#: contact-form-7/modules/captcha.php:288
+#: contact-form-7/modules/captcha.php:296
 #, php-format
 msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "這個聯絡表單中包含 CAPTCHA  的欄位，但是(%s) 這個檔案的臨時文件夾並 不存在或不可寫。您可以使用手動的方式新建一個檔案夾，或修改檔案夾的權限設定。"
 
-#: contact-form-7/modules/captcha.php:294
+#: contact-form-7/modules/captcha.php:302
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr "這個聯絡表單中包含 CAPTCHA 的欄位，但您的主機中並沒有可用的 GD 和 FreeType 這兩個必需的函式庫。"
 
-#: contact-form-7/modules/checkbox.php:169
+#: contact-form-7/modules/checkbox.php:182
 msgid "Checkboxes"
 msgstr "核選方塊"
 
-#: contact-form-7/modules/checkbox.php:172
+#: contact-form-7/modules/checkbox.php:185
 msgid "Radio buttons"
 msgstr "選項按鈕"
 
-#: contact-form-7/modules/checkbox.php:193
-#: contact-form-7/modules/file.php:233
+#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/file.php:240
 msgid "Required field?"
 msgstr "設定為必要欄位?"
 
-#: contact-form-7/modules/checkbox.php:209
+#: contact-form-7/modules/checkbox.php:222
 msgid "Choices"
 msgstr "選項"
 
-#: contact-form-7/modules/checkbox.php:211
+#: contact-form-7/modules/checkbox.php:224
 msgid "* One choice per line."
 msgstr "*每行只能有一個選項。"
 
-#: contact-form-7/modules/checkbox.php:215
+#: contact-form-7/modules/checkbox.php:228
 msgid "Put a label first, a checkbox last?"
 msgstr "標籤在前，選項在後?"
 
-#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/checkbox.php:229
 msgid "Wrap each item with <label> tag?"
 msgstr "使用<label> 標籤，建立表單內文字與表單標籤的關聯關係?"
 
-#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/checkbox.php:231
 msgid "Make checkboxes exclusive?"
 msgstr "設定核取方塊，為不允許修改(唯讀)?"
 
-#: contact-form-7/modules/checkbox.php:226
+#: contact-form-7/modules/checkbox.php:239
 msgid "And, put this code into the Mail fields below."
 msgstr "並且，把這段代碼複製到信件內文的欄位中。"
 
-#: contact-form-7/modules/file.php:197
+#: contact-form-7/modules/file.php:204
 msgid "Uploading a file fails for any reason"
 msgstr "檔案上傳的過程中，因不明原因導致上傳失敗。"
 
-#: contact-form-7/modules/file.php:198
+#: contact-form-7/modules/file.php:205
 msgid "Failed to upload file."
 msgstr "上傳檔案失敗。"
 
-#: contact-form-7/modules/file.php:202
+#: contact-form-7/modules/file.php:209
 msgid "Uploaded file is not allowed file type"
 msgstr "所上傳的檔案是不被允許的檔案種類"
 
-#: contact-form-7/modules/file.php:203
+#: contact-form-7/modules/file.php:210
 msgid "This file type is not allowed."
 msgstr "上傳的檔案不是允許的檔案種類。"
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:214
 msgid "Uploaded file is too large"
 msgstr "上傳擋案過大"
 
-#: contact-form-7/modules/file.php:208
+#: contact-form-7/modules/file.php:215
 msgid "This file is too large."
 msgstr "這個檔案過大。"
 
-#: contact-form-7/modules/file.php:212
+#: contact-form-7/modules/file.php:219
 msgid "Uploading a file fails for PHP error"
 msgstr "檔案上傳的過程中，因PHP錯誤導致上傳失敗。"
 
-#: contact-form-7/modules/file.php:213
+#: contact-form-7/modules/file.php:220
 msgid "Failed to upload file. Error occurred."
 msgstr "錯誤發生，檔案上傳失敗。"
 
-#: contact-form-7/modules/file.php:224
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr "檔案上傳"
 
-#: contact-form-7/modules/file.php:247
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr "檔案大小限制"
 
-#: contact-form-7/modules/file.php:247
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr "位元組"
 
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr "可接受上傳檔案的種類"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
 msgstr "並且，把這段代碼複製到附加檔案:的欄位中。"
 
-#: contact-form-7/modules/file.php:282
+#: contact-form-7/modules/file.php:289
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "這個聯絡表單中包含'檔案上傳欄位，但是(%s) 這個上傳檔案的臨時文件夾並 不存在或不可寫。您可以使用手動的方式新建一個檔案夾，或修改檔案夾的權限設定。"
@@ -731,79 +743,87 @@ msgstr "這個聯絡表單中包含'檔案上傳欄位，但是(%s) 這個上傳
 msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
 msgstr "這個聯絡表單中包含  [icl]  的標籤，但是他們在此版本的Contact Form & 中，已不再被使用並不會再有任何的功能。 <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">我們推薦您使用，更為簡便的方式來為其他語言建立聯絡表單。</a>"
 
-#: contact-form-7/modules/quiz.php:164
+#: contact-form-7/modules/quiz.php:170
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "寄信者沒有輸入測驗題目的正確答案"
 
-#: contact-form-7/modules/quiz.php:165
+#: contact-form-7/modules/quiz.php:171
 msgid "Your answer is not correct."
 msgstr "您的答案不正確。"
 
-#: contact-form-7/modules/quiz.php:175
+#: contact-form-7/modules/quiz.php:181
 msgid "Quiz"
 msgstr "測驗題目驗證"
 
-#: contact-form-7/modules/quiz.php:205
+#: contact-form-7/modules/quiz.php:211
 msgid "Quizzes"
 msgstr "測驗題庫"
 
-#: contact-form-7/modules/quiz.php:207
+#: contact-form-7/modules/quiz.php:213
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* 測驗題目|答案 (例如 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:146
+#: contact-form-7/modules/select.php:154
 msgid "Drop-down menu"
 msgstr "下拉式選單"
 
-#: contact-form-7/modules/select.php:175
+#: contact-form-7/modules/select.php:183
 msgid "Allow multiple selections?"
 msgstr "允許在下拉式選單中，可以選擇一個以上的選項?"
 
-#: contact-form-7/modules/select.php:176
+#: contact-form-7/modules/select.php:184
 msgid "Insert a blank item as the first option?"
 msgstr "要插入一個空白資料欄位，作為第一個選項?"
 
-#: contact-form-7/modules/submit.php:55
+#: contact-form-7/modules/submit.php:62
 msgid "Submit button"
 msgstr "提交按鈕"
 
-#: contact-form-7/modules/submit.php:73
+#: contact-form-7/modules/submit.php:80
 msgid "Label"
 msgstr "標籤"
 
-#: contact-form-7/modules/text.php:129
+#: contact-form-7/modules/text.php:137
 msgid "Text field"
 msgstr "文字欄位"
 
-#: contact-form-7/modules/text.php:132
+#: contact-form-7/modules/text.php:140
 msgid "Email field"
 msgstr "電子郵件欄位"
 
-#: contact-form-7/modules/text.php:174
+#: contact-form-7/modules/text.php:182
 msgid "Akismet"
 msgstr "Akismet（防止垃圾郵件的插件）"
 
-#: contact-form-7/modules/text.php:176
+#: contact-form-7/modules/text.php:184
 msgid "This field requires author's name"
 msgstr "這個欄位需要填寫作者的姓名"
 
-#: contact-form-7/modules/text.php:177
+#: contact-form-7/modules/text.php:185
 msgid "This field requires author's URL"
 msgstr "這個欄位需要填寫作者的網址"
 
-#: contact-form-7/modules/text.php:179
+#: contact-form-7/modules/text.php:187
 msgid "This field requires author's email address"
 msgstr "這個欄位需要填寫作者的電子郵件信箱"
 
-#: contact-form-7/modules/text.php:183
-#: contact-form-7/modules/textarea.php:149
+#: contact-form-7/modules/text.php:191
+#: contact-form-7/modules/textarea.php:157
 msgid "Default value"
 msgstr "預設值"
 
-#: contact-form-7/modules/textarea.php:118
+#: contact-form-7/modules/textarea.php:126
 msgid "Text area"
 msgstr "文字區塊"
 
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr "您覺得本外掛實用嗎? 如果您喜歡這個外掛，請捐款支持本外掛的作者。"
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr ""
+#~ "外掛程式的製作和幫助使用者解決技術上的問題，是很辛苦的工作。請捐款支持。"
 #~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
 #~ msgstr "這封信是由 WordPress 外掛 Contact Form 7  所產生。"
 #~ msgid "(You need WordPress 2.7 or greater to use this feature)"
