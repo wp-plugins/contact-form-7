@@ -16,6 +16,11 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 [__Contactform7.com__](http://contactform7.com/)
 
+* [Docs](http://contactform7.com/docs/)
+* [FAQ](http://contactform7.com/faq/)
+* [Support](http://contactform7.com/support/)
+* [Donate](http://contactform7.com/donate/)
+
 = Translators =
 
 * Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
