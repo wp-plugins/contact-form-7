@@ -14,7 +14,7 @@ Just another contact form plugin. Simple but flexible.
 
 Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on.
 
-[__Contactform7.com__](http://contactform7.com/)
+= Contactform7.com =
 
 * [Docs](http://contactform7.com/docs/)
 * [FAQ](http://contactform7.com/faq/)
