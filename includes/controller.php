@@ -250,6 +250,8 @@ function wpcf7_enqueue_scripts() {
 
 	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'scripts.js' ),
 		array( 'jquery', 'jquery-form' ), WPCF7_VERSION, $in_footer );
+
+	do_action( 'wpcf7_enqueue_scripts' );
 }
 
 function wpcf7_script_is() {
@@ -267,6 +269,8 @@ function wpcf7_enqueue_styles() {
 		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'styles-rtl.css' ),
 			array(), WPCF7_VERSION, 'all' );
 	}
+
+	do_action( 'wpcf7_enqueue_styles' );
 }
 
 function wpcf7_style_is() {
