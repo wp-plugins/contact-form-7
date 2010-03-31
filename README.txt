@@ -14,12 +14,13 @@ Just another contact form plugin. Simple but flexible.
 
 Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on.
 
-= Contactform7.com =
-
 * [Docs](http://contactform7.com/docs/)
 * [FAQ](http://contactform7.com/faq/)
 * [Support](http://contactform7.com/support/)
-* [Donate](http://contactform7.com/donate/)
+
+= Contact Form 7 Needs Your Support =
+
+It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider [__making a donation__](http://contactform7.com/donate/). Your donation will help encourage and support the plugin's continued development and better user support.
 
 = Translators =
 
