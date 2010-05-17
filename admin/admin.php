@@ -345,7 +345,8 @@ function wpcf7_donation_link( &$contact_form ) {
 	$show_link = true;
 
 	$num = mt_rand( 0, 99 );
-	if ( $num >= 15 ) // 85%
+
+	if ( $num >= 20 )
 		$show_link = false;
 
 	$show_link = apply_filters( 'wpcf7_show_donation_link', $show_link );
