@@ -336,10 +336,16 @@ class WPCF7_ContactForm {
 
 		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
 		$sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
-		$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
 		$recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
 		$additional_headers =
 			preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
+
+		if ( $mail_template['use_html'] ) {
+			$callback_html = array( &$this, 'mail_callback_html' );
+			$body = preg_replace_callback( $regex, $callback_html, $mail_template['body'] );
+		} else {
+			$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+		}
 
 		extract( apply_filters( 'wpcf7_mail_components',
 			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers' ) ) );
@@ -365,7 +371,11 @@ class WPCF7_ContactForm {
 		}
 	}
 
-	function mail_callback( $matches ) {
+	function mail_callback_html( $matches ) {
+		return $this->mail_callback( $matches, true );
+	}
+
+	function mail_callback( $matches, $html = false ) {
 		if ( isset( $this->posted_data[$matches[1]] ) ) {
 			$submitted = $this->posted_data[$matches[1]];
 
@@ -373,6 +383,9 @@ class WPCF7_ContactForm {
 				$replaced = join( ', ', $submitted );
 			else
 				$replaced = $submitted;
+
+			if ( $html )
+				$replaced = esc_html( $replaced );
 
 			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
 
