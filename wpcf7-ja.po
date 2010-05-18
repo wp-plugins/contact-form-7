@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-23 06:47+0900\n"
-"PO-Revision-Date: 2010-03-23 06:47+0900\n"
+"POT-Creation-Date: 2010-05-18 23:31+0900\n"
+"PO-Revision-Date: 2010-05-18 23:33+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -107,19 +107,19 @@ msgstr "データベーステーブルを作成しました。"
 msgid "Failed to create database table."
 msgstr "データベーステーブルを作成できませんでした。"
 
-#: contact-form-7/admin/admin.php:357
+#: contact-form-7/admin/admin.php:358
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr "Contact Form 7 はあなたの支援を必要としています。寄付をお願いします。"
 
-#: contact-form-7/admin/admin.php:358
+#: contact-form-7/admin/admin.php:359
 msgid "Your contribution is needed for making this plugin better."
 msgstr "あなたの貢献があればこのプラグインをもっと良くすることができます。"
 
-#: contact-form-7/admin/admin.php:364
+#: contact-form-7/admin/admin.php:365
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/ja/donate-2/"
 
-#: contact-form-7/admin/admin.php:364
+#: contact-form-7/admin/admin.php:365
 msgid "Donate"
 msgstr "寄付する"
 
@@ -239,7 +239,7 @@ msgstr "または"
 msgid "(select language)"
 msgstr "(言語を選択)"
 
-#: contact-form-7/includes/classes.php:564
+#: contact-form-7/includes/classes.php:577
 msgid "Untitled"
 msgstr "無題"
 
