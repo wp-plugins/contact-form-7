@@ -301,11 +301,11 @@ class WPCF7_ContactForm {
 				if ( is_array( $value) ) {
 					$new_value = array();
 					foreach ( $value as $v ) {
-						$new_value[] = $pipes->do_pipe( $v );
+						$new_value[] = $pipes->do_pipe( stripslashes( $v ) );
 					}
 					$value = $new_value;
 				} else {
-					$value = $pipes->do_pipe( $value );
+					$value = $pipes->do_pipe( stripslashes( $value ) );
 				}
 			}
 
