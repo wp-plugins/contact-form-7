@@ -99,6 +99,15 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 2.2.1 = 
+
+* Filters for special mail tags have been moved to modules/special-mail-tags.php.
+* A bug that caused erroneous formatting around `<fieldset>` tags has been fixed.
+* A bug of pipes, which happened when you used a label with apostrophe and the pipe wouldn't work, has been fixed.
+* `esc_html()` is applied to posted texts when the texts are inserted into the message body of HTML-formatted mail.
+* Action hooks, `wpcf7_enqueue_scripts` and `wpcf7_enqueue_styles`, have been added.
+* Translations for Italian (Gianni Diurno), German (Ivan Graf), French (Oncle Tom), Traditional Chinese (James Wu) and Hungarian (Farkas Győző) have been updated.
+
 = 2.2 =
 
 * Now you can embed contact forms into template files.
