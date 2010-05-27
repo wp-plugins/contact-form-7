@@ -39,7 +39,7 @@ It is hard to continue development and support for this plugin without contribut
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/), [Georg S. Adamsen](http://wordpress.blogos.dk/)
 * Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/), [Martin Hein](http://www.split-a-pixel.nl/)
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee), Egon Elbre
-* Finnish (fi) - [Miika Turunen](http://www.webwork.fi/), Mediajalostamo
+* Finnish (fi) - [Miika Turunen](http://www.webwork.fi/), [Mediajalostamo](http://www.mediajalostamo.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/), [Maître Mô](http://maitremo.fr/), [Oncle Tom](http://case.oncle-tom.net/)
 * Galician (gl_ES) - [Arume Desenvolvementos Informáticos](http://www.arumeinformatica.es/)
 * Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
