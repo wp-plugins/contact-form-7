@@ -28,7 +28,7 @@ function wpcf7_ajax_onload() {
 		}
 	}
 
-	$echo = wpcf7_json( $items );
+	$echo = json_encode( $items );
 
 	if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
@@ -100,7 +100,7 @@ function wpcf7_ajax_json_echo() {
 		}
 	}
 
-	$echo = wpcf7_json( $items );
+	$echo = json_encode( $items );
 
 	if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
