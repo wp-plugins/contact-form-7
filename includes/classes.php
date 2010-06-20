@@ -273,7 +273,7 @@ class WPCF7_ContactForm {
 
 		$query_string = '';
 		foreach ( $c as $key => $data )
-			$query_string .= $key . '=' . urlencode( stripslashes( $data ) ) . '&';
+			$query_string .= $key . '=' . urlencode( stripslashes( (string) $data ) ) . '&';
 
 		$response = akismet_http_post( $query_string, $akismet_api_host,
 			'/1.1/comment-check', $akismet_api_port );
