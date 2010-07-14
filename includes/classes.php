@@ -384,8 +384,11 @@ class WPCF7_ContactForm {
 			else
 				$replaced = $submitted;
 
-			if ( $html )
-				$replaced = esc_html( $replaced );
+			if ( $html ) {
+				$replaced = strip_tags( $replaced );
+				$replaced = wptexturize( $replaced );
+				$replaced = wpautop( $replaced );
+			}
 
 			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
 
