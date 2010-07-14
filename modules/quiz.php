@@ -28,6 +28,8 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$maxlength_att = '';
 	$tabindex_att = '';
 
+	$class_att .= ' wpcf7-quiz';
+
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$id_att = $matches[1];

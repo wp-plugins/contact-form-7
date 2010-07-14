@@ -30,6 +30,8 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$defaults = array();
 
+	$class_att .= ' wpcf7-select';
+
 	if ( 'select*' == $type )
 		$class_att .= ' wpcf7-validates-as-required';
 

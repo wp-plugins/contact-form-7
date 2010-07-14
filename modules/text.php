@@ -31,6 +31,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	$maxlength_att = '';
 	$tabindex_att = '';
 
+	$class_att .= ' wpcf7-text';
+
 	if ( 'email' == $type || 'email*' == $type )
 		$class_att .= ' wpcf7-validates-as-email';
 

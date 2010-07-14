@@ -27,6 +27,8 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	$class_att = '';
 	$tabindex_att = '';
 
+	$class_att .= ' wpcf7-file';
+
 	if ( 'file*' == $type )
 		$class_att .= ' wpcf7-validates-as-required';
 

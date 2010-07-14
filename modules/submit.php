@@ -19,6 +19,8 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 	$class_att = '';
 	$tabindex_att = '';
 
+	$class_att .= ' wpcf7-submit';
+
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$id_att = $matches[1];
