@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
-Tested up to: 2.9.2
-Stable tag: 2.2.1
+Tested up to: 3.0
+Stable tag: 2.3
 
 Just another contact form plugin. Simple but flexible.
 
@@ -99,22 +99,14 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 2.2.1 = 
+= 2.3 =
 
-* Filters for special mail tags have been moved to modules/special-mail-tags.php.
-* A bug that caused erroneous formatting around `<fieldset>` tags has been fixed.
-* A bug of pipes, which happened when you used a label with apostrophe and the pipe wouldn't work, has been fixed.
-* `esc_html()` is applied to posted texts when the texts are inserted into the message body of HTML-formatted mail.
-* Action hooks, `wpcf7_enqueue_scripts` and `wpcf7_enqueue_styles`, have been added.
-* Translations for Italian (Gianni Diurno), German (Ivan Graf), French (Oncle Tom), Traditional Chinese (James Wu) and Hungarian (Farkas Győző) have been updated.
-
-= 2.2 =
-
-* Now you can embed contact forms into template files.
-* The tab index option is newly supported for most of form tags.
-* New special mail tags have been added. These include the following: `[_url]`, `[_date]`, `[_time]`, `[_post_author]` and `[_post_author_email]`.
-* `wpcf7_mail_tag_replaced` filter has been introduced in includes/classes.php.
-* Translation for Galician has been created by Arume Desenvolvementos Informáticos.
-* Translations for Italian (Gianni Diurno), German (Ivan Graf), Danish (Georg S. Adamsen) and Hungarian (Farkas Győző) have been updated.
+* The required WordPress version has been changed and now requires WordPress 2.9 or higher. If you use WordPress 2.8, you will need to upgrade WordPress.
+* When you insert multi-line text input into the message body of HTML-formatted mail, Contact Form 7 automatically applies an 'autop' (auto paragraph) filter to the text. This makes it so that the original user input styles remain -- and does not break paragraph styles in the HTML view.
+* Translations for German (Ivan Graf), Finnish (Mediajalostamo), Thai (kazama) and Danish (Georg S. Adamsen) have been updated.
 
 [Releases](http://contactform7.com/category/releases/)
+
+== Upgrade Notice ==
+
+The required WordPress version has been changed and now requires WordPress 2.9 or higher. If you use WordPress 2.8, you will need to upgrade WordPress.
