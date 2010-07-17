@@ -332,27 +332,30 @@ class WPCF7_ContactForm {
 
 	function compose_and_send_mail( $mail_template ) {
 		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
-		$callback = array( &$this, 'mail_callback' );
+
+		$use_html = (bool) $mail_template['use_html'];
+
+		if ( $use_html )
+			$callback = array( &$this, 'mail_callback_html' );
+		else
+			$callback = array( &$this, 'mail_callback' );
 
 		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
 		$sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
 		$recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
 		$additional_headers =
 			preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
+		$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
 
-		if ( $mail_template['use_html'] ) {
-			$callback_html = array( &$this, 'mail_callback_html' );
-			$body = preg_replace_callback( $regex, $callback_html, $mail_template['body'] );
-		} else {
-			$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
-		}
+		if ( $use_html )
+			$body = wpautop( $body );
 
 		extract( apply_filters( 'wpcf7_mail_components',
 			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers' ) ) );
 
 		$headers = "From: $sender\n";
 
-		if ( $mail_template['use_html'] )
+		if ( $use_html )
 			$headers .= "Content-Type: text/html\n";
 
 		$headers .= trim( $additional_headers ) . "\n";
@@ -387,7 +390,6 @@ class WPCF7_ContactForm {
 			if ( $html ) {
 				$replaced = strip_tags( $replaced );
 				$replaced = wptexturize( $replaced );
-				$replaced = wpautop( $replaced );
 			}
 
 			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
