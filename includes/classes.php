@@ -289,12 +289,11 @@ class WPCF7_ContactForm {
 		$fes = $this->form_scan_shortcode();
 
 		foreach ( $fes as $fe ) {
-			$name = $fe['name'];
-			$pipes = $fe['pipes'];
-
-			if ( empty( $name ) )
+			if ( empty( $fe['name'] ) )
 				continue;
 
+			$name = $fe['name'];
+			$pipes = $fe['pipes'];
 			$value = $_POST[$name];
 
 			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
