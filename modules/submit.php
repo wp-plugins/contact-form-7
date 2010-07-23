@@ -49,8 +49,10 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 	$html = '<input type="submit" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 
-	if ( wpcf7_script_is() )
-		$html .= ' <img class="ajax-loader" style="visibility: hidden;" alt="ajax loader" src="' . wpcf7_plugin_url( 'images/ajax-loader.gif' ) . '" />';
+	if ( wpcf7_script_is() ) {
+		$src = apply_filters( 'wpcf7_ajax_loader', wpcf7_plugin_url( 'images/ajax-loader.gif' ) );
+		$html .= '<img class="ajax-loader" style="visibility: hidden;" alt="' . esc_attr( __( 'Sending ...', 'wpcf7' ) ) . '" src="' . esc_url_raw( $src ) . '" />';
+	}
 
 	return $html;
 }
