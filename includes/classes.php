@@ -172,19 +172,7 @@ class WPCF7_ContactForm {
 	}
 
 	function form_elements() {
-		$form = apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
-
-		// Response output
-		$response_regex = '%\[\s*response\s*\]%';
-		$form = preg_replace_callback( $response_regex,
-			array( &$this, 'response_replace_callback' ), $form );
-
-		return $form;
-	}
-
-	function response_replace_callback( $matches ) {
-		$this->responses_count += 1;
-		return $this->form_response_output();
+		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
 	/* Validate */
