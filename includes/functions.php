@@ -171,7 +171,7 @@ function wpcf7_l10n() {
 		'sv_SE' => __( 'Swedish', 'wpcf7' ),
 		'th' => __( 'Thai', 'wpcf7' ),
 		'tr_TR' => __( 'Turkish', 'wpcf7' ),
-		'uk_UA' => __( 'Ukrainian', 'wpcf7' ),
+		'uk' => __( 'Ukrainian', 'wpcf7' ),
 		'vi' => __( 'Vietnamese', 'wpcf7' )
 	);
 
