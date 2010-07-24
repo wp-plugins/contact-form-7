@@ -29,7 +29,7 @@ It is hard to continue development and support for this plugin without contribut
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
-* Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/)
+* Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), Gervásio Antônio
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
 * Catalan (ca) - [Jordi Sancho](http://www.qasolutions.net/blog), Robert Buj
 * Chinese, Simplified (zh_CN) - [Soz](http://www.webtoolol.com/)
