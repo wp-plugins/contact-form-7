@@ -101,10 +101,16 @@ class WPCF7_ContactForm {
 	}
 
 	function validation_error( $name ) {
-		if ( $this->is_posted() && $ve = $_POST['_wpcf7_validation_errors']['messages'][$name] )
-			return apply_filters( 'wpcf7_validation_error',
-				'<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>',
-				$name, $this );
+		if ( ! $this->is_posted() )
+			return '';
+
+		if ( ! isset( $_POST['_wpcf7_validation_errors'] ) )
+			return '';
+
+		if ( $ve = trim( $_POST['_wpcf7_validation_errors']['messages'][$name] ) ) {
+			$ve = '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
+			return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
+		}
 
 		return '';
 	}
