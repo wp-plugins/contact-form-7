@@ -99,6 +99,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 2.3.1 =
+
+* Fixed: wrongly applying 'autop' filter to message body of HTML-formatted mail.
+* Fixed: possible cause of some Ajax-related troubles.
+* Fixed: wrong HTML format of the result of [response] tag.
+* Fixed: rewrote a few codes for avoiding warnings.
+* Fixed: wrongly applying 'autop' filter to &lt;textarea&gt; contents.
+* You can customize ajax loader image with new wpcf7_ajax_loader filter.
+* Translations for Ukrainian (Ukrainian WordPress localization team), Brazilian Portuguese (Gervásio Antônio) and Serbian (Aleksandar Urošević) have been updated.
+
 = 2.3 =
 
 * The required WordPress version has been changed and now requires WordPress 2.9 or higher. If you use WordPress 2.8, you will need to upgrade WordPress.
