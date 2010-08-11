@@ -63,19 +63,19 @@ function wpcf7_ajax_json_echo() {
 						'message' => $reason );
 				}
 
-				$items['message'] = $wpcf7_contact_form->message( 'validation_error' );
+				$items['message'] = wpcf7_get_message( 'validation_error' );
 				$items['invalids'] = $invalids;
 
 			} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
-				$items['message'] = $wpcf7_contact_form->message( 'accept_terms' );
+				$items['message'] = wpcf7_get_message( 'accept_terms' );
 
 			} elseif ( $wpcf7_contact_form->akismet() ) { // Spam!
-				$items['message'] = $wpcf7_contact_form->message( 'akismet_says_spam' );
+				$items['message'] = wpcf7_get_message( 'akismet_says_spam' );
 				$items['spam'] = true;
 
 			} elseif ( $wpcf7_contact_form->mail() ) {
 				$items['mailSent'] = true;
-				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ok' );
+				$items['message'] = wpcf7_get_message( 'mail_sent_ok' );
 
 				$on_sent_ok = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
 				if ( ! empty( $on_sent_ok ) ) {
@@ -88,7 +88,7 @@ function wpcf7_ajax_json_echo() {
 				do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
 
 			} else {
-				$items['message'] = $wpcf7_contact_form->message( 'mail_sent_ng' );
+				$items['message'] = wpcf7_get_message( 'mail_sent_ng' );
 			}
 
 			// remove upload files
@@ -125,17 +125,17 @@ function wpcf7_process_nonajax_submitting() {
 		if ( ! $validation['valid'] ) {
 			$_POST['_wpcf7_validation_errors'] = array( 'id' => $id, 'messages' => $validation['reason'] );
 		} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'accept_terms' ) );
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_get_message( 'accept_terms' ) );
 		} elseif ( $wpcf7_contact_form->akismet() ) { // Spam!
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'akismet_says_spam' ), 'spam' => true );
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_get_message( 'akismet_says_spam' ), 'spam' => true );
 		} elseif ( $wpcf7_contact_form->mail() ) {
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => wpcf7_get_message( 'mail_sent_ok' ) );
 
 			do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
 
 			$wpcf7_contact_form->clear_post();
 		} else {
-			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'mail_sent_ng' ) );
+			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => wpcf7_get_message( 'mail_sent_ng' ) );
 		}
 
 		// remove upload files

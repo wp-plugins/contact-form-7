@@ -616,4 +616,13 @@ function wpcf7_get_validation_error( $name ) {
 	return $wpcf7_contact_form->validation_error( $name );
 }
 
+function wpcf7_get_message( $status ) {
+	global $wpcf7_contact_form;
+
+	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		return '';
+
+	return $wpcf7_contact_form->message( $status );
+}
+
 ?>

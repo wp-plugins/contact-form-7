@@ -96,8 +96,6 @@ add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
 
 function wpcf7_text_validation_filter( $result, $tag ) {
-	global $wpcf7_contact_form;
-
 	$type = $tag['type'];
 	$name = $tag['name'];
 
@@ -106,17 +104,17 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 	if ( 'text*' == $type ) {
 		if ( '' == $_POST[$name] ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
 	}
 
 	if ( 'email' == $type || 'email*' == $type ) {
 		if ( 'email*' == $type && '' == $_POST[$name] ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		} elseif ( '' != $_POST[$name] && ! is_email( $_POST[$name] ) ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_email' );
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_email' );
 		}
 	}
 

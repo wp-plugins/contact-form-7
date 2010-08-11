@@ -113,8 +113,6 @@ add_filter( 'wpcf7_validate_select', 'wpcf7_select_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_select*', 'wpcf7_select_validation_filter', 10, 2 );
 
 function wpcf7_select_validation_filter( $result, $tag ) {
-	global $wpcf7_contact_form;
-
 	$type = $tag['type'];
 	$name = $tag['name'];
 	$values = $tag['values'];
@@ -136,7 +134,7 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 			! is_array( $_POST[$name] ) && '---' == $_POST[$name] ||
 			is_array( $_POST[$name] ) && 1 == count( $_POST[$name] ) && '---' == $_POST[$name][0] ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = $wpcf7_contact_form->message( 'invalid_required' );
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
 	}
 

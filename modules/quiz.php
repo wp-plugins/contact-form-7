@@ -91,8 +91,6 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
 function wpcf7_quiz_validation_filter( $result, $tag ) {
-	global $wpcf7_contact_form;
-
 	$type = $tag['type'];
 	$name = $tag['name'];
 
@@ -101,7 +99,7 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 	$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
 	if ( $answer_hash != $expected_hash ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = $wpcf7_contact_form->message( 'quiz_answer_not_correct' );
+		$result['reason'][$name] = wpcf7_get_message( 'quiz_answer_not_correct' );
 	}
 
 	return $result;
