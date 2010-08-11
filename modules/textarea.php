@@ -71,10 +71,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 
 	// Value
 	if ( wpcf7_is_posted() ) {
-		if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['ok'] )
-			$value = '';
-		else
-			$value = stripslashes_deep( $_POST[$name] );
+		$value = stripslashes_deep( $_POST[$name] );
 	} else {
 		$value = isset( $values[0] ) ? $values[0] : '';
 

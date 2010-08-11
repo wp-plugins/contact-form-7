@@ -132,6 +132,8 @@ function wpcf7_process_nonajax_submitting() {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => true, 'message' => $wpcf7_contact_form->message( 'mail_sent_ok' ) );
 
 			do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
+
+			$wpcf7_contact_form->clear_post();
 		} else {
 			$_POST['_wpcf7_mail_sent'] = array( 'id' => $id, 'ok' => false, 'message' => $wpcf7_contact_form->message( 'mail_sent_ng' ) );
 		}

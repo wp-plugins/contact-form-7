@@ -76,13 +76,13 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	foreach ( $values as $key => $value ) {
 		$selected = false;
 
-		if ( ! $empty_select && in_array( $key + 1, (array) $defaults ) )
-			$selected = true;
-
 		if ( $posted ) {
 			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
 				$selected = true;
 			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
+				$selected = true;
+		} else {
+			if ( ! $empty_select && in_array( $key + 1, (array) $defaults ) )
 				$selected = true;
 		}
 

@@ -87,13 +87,13 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	foreach ( $values as $key => $value ) {
 		$checked = false;
 
-		if ( in_array( $key + 1, (array) $defaults ) )
-			$checked = true;
-
 		if ( $posted ) {
 			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
 				$checked = true;
 			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
+				$checked = true;
+		} else {
+			if ( in_array( $key + 1, (array) $defaults ) )
 				$checked = true;
 		}
 

@@ -33,6 +33,20 @@ class WPCF7_ContactForm {
 		return false;
 	}
 
+	function clear_post() {
+		$fes = $this->form_scan_shortcode();
+
+		foreach ( $fes as $fe ) {
+			$name = $fe['name'];
+
+			if ( empty( $name ) )
+				continue;
+
+			if ( isset( $_POST[$name] ) )
+				unset( $_POST[$name] );
+		}
+	}
+
 	/* Generating Form HTML */
 
 	function form_html() {
