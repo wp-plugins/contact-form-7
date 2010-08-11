@@ -71,7 +71,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$html = '';
 
-	$posted = is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted();
+	$posted = wpcf7_is_posted();
 
 	foreach ( $values as $key => $value ) {
 		$selected = false;

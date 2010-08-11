@@ -60,7 +60,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
 	// Value.
-	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted() )
+	if ( wpcf7_is_posted() )
 		$value = '';
 	else
 		$value = $values[0];

@@ -584,4 +584,13 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 	return $contact_form;
 }
 
+function wpcf7_is_posted() {
+	global $wpcf7_contact_form;
+
+	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		return false;
+
+	return $wpcf7_contact_form->is_posted();
+}
+
 ?>

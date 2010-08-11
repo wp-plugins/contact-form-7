@@ -82,7 +82,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 	$input_type = rtrim( $type, '*' );
 
-	$posted = is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted();
+	$posted = wpcf7_is_posted();
 
 	foreach ( $values as $key => $value ) {
 		$checked = false;
@@ -90,7 +90,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		if ( in_array( $key + 1, (array) $defaults ) )
 			$checked = true;
 
-		if ( $posted) {
+		if ( $posted ) {
 			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
 				$checked = true;
 			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )

@@ -74,7 +74,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	// Value
-	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) && $wpcf7_contact_form->is_posted() ) {
+	if ( wpcf7_is_posted() ) {
 		if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['ok'] )
 			$value = '';
 		else
