@@ -8,8 +8,6 @@
 wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
 
 function wpcf7_quiz_shortcode_handler( $tag ) {
-	global $wpcf7_contact_form;
-
 	if ( ! is_array( $tag ) )
 		return '';
 
@@ -80,9 +78,7 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
 	$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
 
-	$validation_error = '';
-	if ( is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		$validation_error = $wpcf7_contact_form->validation_error( $name );
+	$validation_error = wpcf7_get_validation_error( $name );
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 

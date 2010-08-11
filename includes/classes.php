@@ -607,4 +607,13 @@ function wpcf7_is_posted() {
 	return $wpcf7_contact_form->is_posted();
 }
 
+function wpcf7_get_validation_error( $name ) {
+	global $wpcf7_contact_form;
+
+	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		return '';
+
+	return $wpcf7_contact_form->validation_error( $name );
+}
+
 ?>
