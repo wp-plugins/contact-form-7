@@ -1,0 +1,850 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 Uk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-23 06:47+0900\n"
+"PO-Revision-Date: 2010-03-27 00:08+0300\n"
+"Last-Translator: Jurko Chervony <info@skinik.name>\n"
+"Language-Team: skinik <wordpress@skinik.name>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "Форма зв'язку"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "Редагувати контактні форми"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "Редагувати"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "Створити теґ"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "Показати"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "Сховати"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "Форма для зв'язку"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "Налаштування"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "Статті"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "ЧаПи"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "Підтримка"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Contact form created."
+msgstr "Контактну форму  створено."
+
+#: contact-form-7/admin/admin.php:315
+msgid "Contact form saved."
+msgstr "Контактну форму збережено."
+
+#: contact-form-7/admin/admin.php:318
+msgid "Contact form deleted."
+msgstr "Контактну форму видалено."
+
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "Таблицю у БД створено."
+
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "Невдала спроба створити таблицю у БД."
+
+#: contact-form-7/admin/admin.php:357
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 потребує Вашої підтримки. Зробіть пожертвування на розвиток плаґіну сьогодні."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Завдяки Вашому внеску плаґін стане кращим."
+
+#: contact-form-7/admin/admin.php:364
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:364
+msgid "Donate"
+msgstr "Пожертвування"
+
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>Таблиця у БД для Contact Form 7 не існує.</strong> Вам необхідно <a href=\"%s\">створити її</a> для того, щоб плаґін запрацював."
+
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>Таблиця у БД для Contact Form 7 не існує.</strong>"
+
+#: contact-form-7/admin/edit.php:45
+msgid "Add new"
+msgstr "Додати нову"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Скопіюйте і вставте цей код в Вашу сторінку або публікацію чи текстовий віджет."
+
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
+msgid "Save"
+msgstr "Зберегти"
+
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "Копіювати"
+
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "Видалити"
+
+#: contact-form-7/admin/edit.php:89
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Видалити цю форму?.\n"
+"  'Cancel' - залишити, 'OK' - видалити."
+
+#: contact-form-7/admin/edit.php:104
+msgid "Form"
+msgstr "Форма"
+
+#: contact-form-7/admin/edit.php:128
+msgid "Mail"
+msgstr "Пошта"
+
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
+msgid "To:"
+msgstr "Кому:"
+
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
+msgid "From:"
+msgstr "Від:"
+
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
+msgid "Subject:"
+msgstr "Тема:"
+
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "Додаткові заголовки"
+
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "Приєднані файли: "
+
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "Використовувати HTML у повідомленні"
+
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "Текст повідомлення:"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "Пошта (2)"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "Відправляти на пошту (2)"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "Повідомлення"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "Додаткові налаштування"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Використати мову за замовчуванням (%s)"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "Додати нову"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "Або"
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(оберіть мову)"
+
+#: contact-form-7/includes/classes.php:564
+msgid "Untitled"
+msgstr "Без назви"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Дякуємо! Ваше повідомлення відправлено."
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Дякуємо! Ваше повідомлення відправлено."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Не вдалося надіслати"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Помилка! Будь ласка спробуйте ще раз. Якщо помилка залишається, будь ласка, зв'яжіться з нами іншим шляхом. "
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet вважає Ваше повідомлення спамом. Спробуйте зв’язатися іншим шляхом."
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Помилки при заповненні"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Помилка при заповненні. Зверніть увагу на необхідні поля і відправте ще раз."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Необхідно відмітити"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "Відмітьте, якщо необхідно."
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "Е-mail адресу вказано невірно."
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "Еmail адресу вказано невірно."
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Необхідні поля для заповнення"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "Будь ласка, заповніть всі необхідні поля."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "Ваше ім'я"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(обов'язково)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "Ваш email"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
+msgstr "Тема"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "Повідомлення"
+
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "Відправити"
+
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "Від: %s"
+
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "Тема: %s"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
+msgstr "Текст повідомлення:"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Цього листа надіслано за допомогою контактної форми %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Afrikaans"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:169
+msgid "Albanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:170
+msgid "Arabic"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:171
+msgid "Bangla"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:172
+msgid "Bosnian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:173
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:174
+msgid "Bulgarian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:175
+msgid "Catalan"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:176
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:177
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:178
+msgid "Croatian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:179
+msgid "Czech"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:180
+msgid "Danish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:181
+msgid "Dutch"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:182
+msgid "English"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:183
+msgid "Estonian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:184
+msgid "Finnish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:185
+msgid "French"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:186
+msgid "Galician"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:187
+msgid "Georgian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:188
+msgid "German"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:189
+msgid "Greek"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:190
+msgid "Hebrew"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:191
+msgid "Hindi"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hungarian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:193
+msgid "Indonesian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:194
+msgid "Italian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:195
+msgid "Japanese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:196
+msgid "Korean"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:197
+msgid "Latvian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:198
+msgid "Lithuanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:199
+msgid "Malayalam"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:200
+msgid "Norwegian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:201
+msgid "Persian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:202
+msgid "Polish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:203
+msgid "Portuguese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:204
+msgid "Russian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:205
+msgid "Romanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:206
+msgid "Serbian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:207
+msgid "Slovak"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:208
+msgid "Slovene"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:209
+msgid "Spanish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:210
+msgid "Swedish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:211
+msgid "Thai"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:212
+msgid "Turkish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:213
+msgid "Ukrainian"
+msgstr "Ukrainian — Українська"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Vietnamese"
+msgstr ""
+
+#: contact-form-7/modules/acceptance.php:104
+msgid "Acceptance"
+msgstr "Погодження"
+
+#: contact-form-7/modules/acceptance.php:113
+#: contact-form-7/modules/captcha.php:214
+#: contact-form-7/modules/checkbox.php:209
+#: contact-form-7/modules/file.php:241
+msgid "Name"
+msgstr "Ім'я"
+
+#: contact-form-7/modules/acceptance.php:118
+#: contact-form-7/modules/acceptance.php:121
+#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:232
+#: contact-form-7/modules/captcha.php:236
+#: contact-form-7/modules/captcha.php:247
+#: contact-form-7/modules/captcha.php:250
+#: contact-form-7/modules/captcha.php:255
+#: contact-form-7/modules/captcha.php:258
+#: contact-form-7/modules/checkbox.php:214
+#: contact-form-7/modules/checkbox.php:217
+#: contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257
+msgid "optional"
+msgstr "додатково"
+
+#: contact-form-7/modules/acceptance.php:127
+msgid "Make this checkbox checked by default?"
+msgstr "Зробити цей чекбокс обраним за замовчуванням?"
+
+#: contact-form-7/modules/acceptance.php:128
+msgid "Make this checkbox work inversely?"
+msgstr "Зробити цей чекбокс працюючим навпаки?"
+
+#: contact-form-7/modules/acceptance.php:129
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Це означає, що відвідувач який відмітив пункт, відмінив вибір."
+
+#: contact-form-7/modules/acceptance.php:134
+#: contact-form-7/modules/captcha.php:263
+#: contact-form-7/modules/checkbox.php:237
+#: contact-form-7/modules/file.php:262
+msgid "Copy this code and paste it into the form left."
+msgstr "Скопіюйте і вставте цей код в Вашу сторінку"
+
+#: contact-form-7/modules/captcha.php:70
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Для використання каптчі, Вам необхідно встановити плаґін <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+
+#: contact-form-7/modules/captcha.php:189
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Невірний код каптчі."
+
+#: contact-form-7/modules/captcha.php:190
+msgid "Your entered code is incorrect."
+msgstr "Введено невірний контрольний код."
+
+#: contact-form-7/modules/captcha.php:200
+msgid "CAPTCHA"
+msgstr "Капча"
+
+#: contact-form-7/modules/captcha.php:211
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Примітка: Для використання каптчі, Вам необхідно встановити плаґін Really Simple CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:218
+msgid "Image settings"
+msgstr "Налаштування зображення"
+
+#: contact-form-7/modules/captcha.php:229
+msgid "Foreground color"
+msgstr "Колір переднього плану"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Background color"
+msgstr "Колір фону"
+
+#: contact-form-7/modules/captcha.php:236
+msgid "Image size"
+msgstr "Розмір зображення"
+
+#: contact-form-7/modules/captcha.php:237
+msgid "Small"
+msgstr "Маленький"
+
+#: contact-form-7/modules/captcha.php:238
+msgid "Medium"
+msgstr "Середній"
+
+#: contact-form-7/modules/captcha.php:239
+msgid "Large"
+msgstr "Великий"
+
+#: contact-form-7/modules/captcha.php:244
+msgid "Input field settings"
+msgstr "Налаштування полів вводу"
+
+#: contact-form-7/modules/captcha.php:264
+msgid "For image"
+msgstr "Для зображення"
+
+#: contact-form-7/modules/captcha.php:266
+msgid "For input field"
+msgstr "Для поля введення"
+
+#: contact-form-7/modules/captcha.php:296
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ця форма містить поля каптчі, але в тимчасова тека для файлів (%s) не існує або не доступна для запису. Ви можете створити її або встановити дозвіл на запис вручну."
+
+#: contact-form-7/modules/captcha.php:302
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Ця форма використовує каптчу і потрібна бібліотека GD, але вона не доступна на Вашому сервері."
+
+#: contact-form-7/modules/checkbox.php:182
+msgid "Checkboxes"
+msgstr "Чекбокси"
+
+#: contact-form-7/modules/checkbox.php:185
+msgid "Radio buttons"
+msgstr "Радіо-кнопки"
+
+#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/file.php:240
+msgid "Required field?"
+msgstr "Обов'язкове поле?"
+
+#: contact-form-7/modules/checkbox.php:222
+msgid "Choices"
+msgstr "Вибір"
+
+#: contact-form-7/modules/checkbox.php:224
+msgid "* One choice per line."
+msgstr "* По одній в рядку."
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "Put a label first, a checkbox last?"
+msgstr "Вставити спершу label, а checkbox після?"
+
+#: contact-form-7/modules/checkbox.php:229
+msgid "Wrap each item with <label> tag?"
+msgstr "Загорніть кожен елемент в теґ <label>"
+
+#: contact-form-7/modules/checkbox.php:231
+msgid "Make checkboxes exclusive?"
+msgstr "Зробити ці чекбокси ексклюзивними?"
+
+#: contact-form-7/modules/checkbox.php:239
+msgid "And, put this code into the Mail fields below."
+msgstr "Та вставте цей код у поле листа нижче"
+
+#: contact-form-7/modules/file.php:204
+msgid "Uploading a file fails for any reason"
+msgstr "Помилка завантаження файлу"
+
+#: contact-form-7/modules/file.php:205
+msgid "Failed to upload file."
+msgstr "Помилка при завантаженні файлу."
+
+#: contact-form-7/modules/file.php:209
+msgid "Uploaded file is not allowed file type"
+msgstr "Не дозволений тип файлів для завантаження"
+
+#: contact-form-7/modules/file.php:210
+msgid "This file type is not allowed."
+msgstr "Цей тип файлу не дозволений."
+
+#: contact-form-7/modules/file.php:214
+msgid "Uploaded file is too large"
+msgstr "Завантажений файл занадто великий"
+
+#: contact-form-7/modules/file.php:215
+msgid "This file is too large."
+msgstr "Цей файл завеликий."
+
+#: contact-form-7/modules/file.php:219
+msgid "Uploading a file fails for PHP error"
+msgstr "Збій при завантаженні"
+
+#: contact-form-7/modules/file.php:220
+msgid "Failed to upload file. Error occurred."
+msgstr "Збій при завантаженні файлу. Виникла помилка."
+
+#: contact-form-7/modules/file.php:231
+msgid "File upload"
+msgstr "Завантаження файлу"
+
+#: contact-form-7/modules/file.php:254
+msgid "File size limit"
+msgstr "Максимальний розмір файлу"
+
+#: contact-form-7/modules/file.php:254
+msgid "bytes"
+msgstr "байт"
+
+#: contact-form-7/modules/file.php:257
+msgid "Acceptable file types"
+msgstr "Допустимі типі файлів"
+
+#: contact-form-7/modules/file.php:264
+msgid "And, put this code into the File Attachments field below."
+msgstr "Та вставте цей код у поле прикріплення файлу до листа знизу."
+
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ця форма містить поля для завантаження файлів, але тимчасова тека для файлів (%s) не існує або не має права на запис. Ви можете створити її вручну або встановити дозвіл на запис."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr ""
+
+#: contact-form-7/modules/quiz.php:170
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Відправник не відповів на запитання"
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Your answer is not correct."
+msgstr "Ваша відповідь невірна."
+
+#: contact-form-7/modules/quiz.php:181
+msgid "Quiz"
+msgstr "Запитання"
+
+#: contact-form-7/modules/quiz.php:211
+msgid "Quizzes"
+msgstr "Запитання"
+
+#: contact-form-7/modules/quiz.php:213
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* запитання|відповідь (приклад: 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:154
+msgid "Drop-down menu"
+msgstr "Випадаюче меню"
+
+#: contact-form-7/modules/select.php:183
+msgid "Allow multiple selections?"
+msgstr "Дозволяти множинний вибір?"
+
+#: contact-form-7/modules/select.php:184
+msgid "Insert a blank item as the first option?"
+msgstr "Вставляти пустий пункт як першу опцію?"
+
+#: contact-form-7/modules/submit.php:62
+msgid "Submit button"
+msgstr "Кнопка відправки"
+
+#: contact-form-7/modules/submit.php:80
+msgid "Label"
+msgstr "Ярлик"
+
+#: contact-form-7/modules/text.php:137
+msgid "Text field"
+msgstr "Текстове поле"
+
+#: contact-form-7/modules/text.php:140
+msgid "Email field"
+msgstr "Поле e-mail"
+
+#: contact-form-7/modules/text.php:182
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:184
+msgid "This field requires author's name"
+msgstr "Це поле потребує ім'я автора"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's URL"
+msgstr "Це поле потребує URL автора"
+
+#: contact-form-7/modules/text.php:187
+msgid "This field requires author's email address"
+msgstr "Це поле потребує email автора"
+
+#: contact-form-7/modules/text.php:191
+#: contact-form-7/modules/textarea.php:157
+msgid "Default value"
+msgstr "Значення за замовчуванням"
+
+#: contact-form-7/modules/textarea.php:126
+msgid "Text area"
+msgstr "Багаторядкове текстове поле"
+
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr "Цей плаґін корисний для Вас? Допоможіть мені у його розробці."
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr "Розробляти плаґіни складно, будь ласка, допоможіть мені у цьому."
+#~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
+#~ msgstr "  "
+#~ msgid "Delete this contact form"
+#~ msgstr "Видалити цю форму"
+#~ msgid "Form content"
+#~ msgstr "Зміст форми"
+#~ msgid "Mail template"
+#~ msgstr "Шаблон листа"
+#~ msgid "Sender field:"
+#~ msgstr "Адреса відправника:"
+#~ msgid "Recipient address:"
+#~ msgstr "Адреса отримувача:"
+#~ msgid "Check this field as sender&#39;s name"
+#~ msgstr "Перевіряти це поле як им'я відправника"
+#~ msgid "Check this field as sender&#39;s email"
+#~ msgstr "Перевіряти це поле як e-mail"
+#~ msgid "Check this field as sender&#39;s URL"
+#~ msgstr "Перевіряти це поле як URL"
+#~ msgid "Don&#39;t check this field with Akismet"
+#~ msgstr "Перевіряти це поле за допомогою Akismet"
+#~ msgid "Insert"
+#~ msgstr "Вставити"
+

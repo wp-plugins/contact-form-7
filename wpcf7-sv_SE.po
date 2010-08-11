@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-15 03:27+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mattias Tengblad <mst@eyesx.com>\n"
+"Language-Team: WP-Support Sverige / Mattias Tengblad <info@wp-support.se / mst@eyesx.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+
+#: contact-form-7/wp-contact-form-7.php:405
+msgid "Contact form"
+msgstr "Kontaktformulär"
+
+#: contact-form-7/wp-contact-form-7.php:593
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:616
+msgid "optional"
+msgstr "valfri"
+
+#: contact-form-7/wp-contact-form-7.php:617
+msgid "Generate Tag"
+msgstr "Generera formatering"
+
+#: contact-form-7/wp-contact-form-7.php:618
+msgid "Text field"
+msgstr "Textfält"
+
+#: contact-form-7/wp-contact-form-7.php:619
+msgid "Email field"
+msgstr "E-postfält"
+
+#: contact-form-7/wp-contact-form-7.php:620
+msgid "Text area"
+msgstr "Meddelandefält"
+
+#: contact-form-7/wp-contact-form-7.php:621
+msgid "Drop-down menu"
+msgstr "Rullgardinsmeny"
+
+#: contact-form-7/wp-contact-form-7.php:622
+msgid "Checkboxes"
+msgstr "Checkboxar"
+
+#: contact-form-7/wp-contact-form-7.php:623
+msgid "Radio buttons"
+msgstr "Radioknappar"
+
+#: contact-form-7/wp-contact-form-7.php:624
+msgid "Acceptance"
+msgstr "Godkännande"
+
+#: contact-form-7/wp-contact-form-7.php:625
+msgid "Make this checkbox checked by default?"
+msgstr "Skall denna checkbox vara ifylld som standard?"
+
+#: contact-form-7/wp-contact-form-7.php:626
+msgid "Make this checkbox work inversely?"
+msgstr "Gör så att denna checkbox måste avmarkeras?"
+
+#: contact-form-7/wp-contact-form-7.php:627
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Det betyder att besökare som accepterar villkoren måste avmarkera det."
+
+#: contact-form-7/wp-contact-form-7.php:628
+msgid "CAPTCHA"
+msgstr "CAPTCHA (Bildverifikation)"
+
+#: contact-form-7/wp-contact-form-7.php:629
+msgid "Quiz"
+msgstr "Antispam-fråga"
+
+#: contact-form-7/wp-contact-form-7.php:630
+msgid "Quizzes"
+msgstr "Antispam-frågor"
+
+#: contact-form-7/wp-contact-form-7.php:631
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* fråga|svar (ex. 1+1=?|2)"
+
+#: contact-form-7/wp-contact-form-7.php:632
+msgid "File upload"
+msgstr "Filuppladdning"
+
+#: contact-form-7/wp-contact-form-7.php:633
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/wp-contact-form-7.php:634
+msgid "Submit button"
+msgstr "Skicka-knapp"
+
+#: contact-form-7/wp-contact-form-7.php:635
+msgid "Name"
+msgstr "Namn"
+
+#: contact-form-7/wp-contact-form-7.php:636
+msgid "Required field?"
+msgstr "Obligatoriskt fält?"
+
+#: contact-form-7/wp-contact-form-7.php:637
+msgid "Allow multiple selections?"
+msgstr "Tillåt flera val?"
+
+#: contact-form-7/wp-contact-form-7.php:638
+msgid "Insert a blank item as the first option?"
+msgstr "Lägg till ett tomt objekt som första val?"
+
+#: contact-form-7/wp-contact-form-7.php:639
+msgid "Make checkboxes exclusive?"
+msgstr "Göra checkboxarna exklusiva?"
+
+#: contact-form-7/wp-contact-form-7.php:640
+msgid "Choices"
+msgstr "Val"
+
+#: contact-form-7/wp-contact-form-7.php:641
+msgid "Label"
+msgstr "Märkning"
+
+#: contact-form-7/wp-contact-form-7.php:642
+msgid "Default value"
+msgstr "Standardvärde"
+
+#: contact-form-7/wp-contact-form-7.php:643
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:644
+msgid "This field requires author's name"
+msgstr "Det här fältet kräver författarens namn"
+
+#: contact-form-7/wp-contact-form-7.php:645
+msgid "This field requires author's URL"
+msgstr "Det här fältet kräver författarens webbadress"
+
+#: contact-form-7/wp-contact-form-7.php:646
+msgid "This field requires author's email address"
+msgstr "Det här fältet kräver författarens e-postadress"
+
+#: contact-form-7/wp-contact-form-7.php:647
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopiera och klistra denna kod i formuläret."
+
+#: contact-form-7/wp-contact-form-7.php:648
+msgid "Foreground color"
+msgstr "Förgrundsfärg"
+
+#: contact-form-7/wp-contact-form-7.php:649
+msgid "Background color"
+msgstr "Bakgrundsfärg"
+
+#: contact-form-7/wp-contact-form-7.php:650
+msgid "Image size"
+msgstr "Bildstorlek"
+
+#: contact-form-7/wp-contact-form-7.php:651
+msgid "Small"
+msgstr "Liten"
+
+#: contact-form-7/wp-contact-form-7.php:652
+msgid "Medium"
+msgstr "Mellan"
+
+#: contact-form-7/wp-contact-form-7.php:653
+msgid "Large"
+msgstr "Stor"
+
+#: contact-form-7/wp-contact-form-7.php:654
+msgid "Image settings"
+msgstr "Bildinställningar"
+
+#: contact-form-7/wp-contact-form-7.php:655
+msgid "Input field settings"
+msgstr "Inställningar för inmatningsfält"
+
+#: contact-form-7/wp-contact-form-7.php:656
+msgid "For image"
+msgstr "För bild"
+
+#: contact-form-7/wp-contact-form-7.php:657
+msgid "For input field"
+msgstr "För inmatningsfält"
+
+#: contact-form-7/wp-contact-form-7.php:658
+msgid "* One choice per line."
+msgstr "* Ett val per rad."
+
+#: contact-form-7/wp-contact-form-7.php:659
+msgid "Show"
+msgstr "Visa"
+
+#: contact-form-7/wp-contact-form-7.php:660
+msgid "Hide"
+msgstr "Göm"
+
+#: contact-form-7/wp-contact-form-7.php:661
+msgid "File size limit"
+msgstr "Gräns för filstorlek"
+
+#: contact-form-7/wp-contact-form-7.php:662
+msgid "Acceptable file types"
+msgstr "Tillåtna filtyper"
+
+#: contact-form-7/wp-contact-form-7.php:663
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Notera: För att använda CAPTCHA så behöver du ha Really Simple CAPTCHA-tillägget installerat."
+
+#: contact-form-7/wp-contact-form-7.php:690
+msgid "Contact form created."
+msgstr "Kontaktformulär skapat."
+
+#: contact-form-7/wp-contact-form-7.php:693
+msgid "Contact form saved."
+msgstr "Kontaktformulär sparat."
+
+#: contact-form-7/wp-contact-form-7.php:696
+msgid "Contact form deleted."
+msgstr "Kontaktformulär raderat."
+
+#: contact-form-7/wp-contact-form-7.php:707
+msgid "Untitled"
+msgstr "Namnlös"
+
+#: contact-form-7/wp-contact-form-7.php:734
+msgid "Your Name"
+msgstr "Ditt namn"
+
+#: contact-form-7/wp-contact-form-7.php:734
+#: contact-form-7/wp-contact-form-7.php:736
+msgid "(required)"
+msgstr "(obligatoriskt)"
+
+#: contact-form-7/wp-contact-form-7.php:736
+msgid "Your Email"
+msgstr "Din e-post"
+
+#: contact-form-7/wp-contact-form-7.php:738
+msgid "Subject"
+msgstr "Ämne"
+
+#: contact-form-7/wp-contact-form-7.php:740
+msgid "Your Message"
+msgstr "Ditt meddelande"
+
+#: contact-form-7/wp-contact-form-7.php:742
+#: contact-form-7/wp-contact-form-7.php:1476
+msgid "Send"
+msgstr "Skicka"
+
+#: contact-form-7/wp-contact-form-7.php:796
+msgid "Your message was sent successfully. Thanks."
+msgstr "Tack för ditt meddelande!"
+
+#: contact-form-7/wp-contact-form-7.php:798
+#: contact-form-7/wp-contact-form-7.php:800
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Ett fel uppstog när ditt meddelande skulle skickas. Var vänlig försök senare."
+
+#: contact-form-7/wp-contact-form-7.php:802
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Valideringsfel. Var vänlig undersök fälten du fyllt i och försök igen."
+
+#: contact-form-7/wp-contact-form-7.php:804
+msgid "Please accept the terms to proceed."
+msgstr "Acceptera villkoren för att fortsätta."
+
+#: contact-form-7/wp-contact-form-7.php:806
+msgid "Email address seems invalid."
+msgstr "Du har angivit en felaktig e-postadress."
+
+#: contact-form-7/wp-contact-form-7.php:808
+msgid "Please fill the required field."
+msgstr "Vänligen fyll i alla obligatoriska fält."
+
+#: contact-form-7/wp-contact-form-7.php:810
+msgid "Your entered code is incorrect."
+msgstr "Verifieringskoden du angav är felaktig."
+
+#: contact-form-7/wp-contact-form-7.php:812
+msgid "Your answer is not correct."
+msgstr "Verifieringskoden du angav är felaktig."
+
+#: contact-form-7/wp-contact-form-7.php:814
+msgid "Failed to upload file."
+msgstr "Filen kunde inte laddas upp."
+
+#: contact-form-7/wp-contact-form-7.php:816
+msgid "This file type is not allowed."
+msgstr "Filtypen är inte tillåten."
+
+#: contact-form-7/wp-contact-form-7.php:818
+msgid "This file is too large."
+msgstr "Filen är för stor."
+
+#: contact-form-7/wp-contact-form-7.php:1417
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "För att använda CAPTCHA så behöver du ha <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>-tillägget installerat."
+
+#: contact-form-7/includes/admin-panel.php:20
+msgid "Add new"
+msgstr "Lägg till ny"
+
+#: contact-form-7/includes/admin-panel.php:42
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopiera in denna kod i ditt inlägg, på din sida eller textwidget."
+
+#: contact-form-7/includes/admin-panel.php:49
+#: contact-form-7/includes/admin-panel.php:262
+msgid "Save"
+msgstr "Spara"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Copy"
+msgstr "Kopiera"
+
+#: contact-form-7/includes/admin-panel.php:60
+msgid "Delete"
+msgstr "Radera"
+
+#: contact-form-7/includes/admin-panel.php:61
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Är du säker på att du vill radera detta kontaktformulär? \n"
+" Klicka 'Avbryt' för att avbryta, 'OK' för att radera."
+
+#: contact-form-7/includes/admin-panel.php:75
+msgid "Form"
+msgstr "Formulär"
+
+#: contact-form-7/includes/admin-panel.php:95
+msgid "Mail"
+msgstr "Mottagarmail"
+
+#: contact-form-7/includes/admin-panel.php:102
+#: contact-form-7/includes/admin-panel.php:154
+msgid "To:"
+msgstr "Till:"
+
+#: contact-form-7/includes/admin-panel.php:106
+#: contact-form-7/includes/admin-panel.php:158
+msgid "From:"
+msgstr "Från:"
+
+#: contact-form-7/includes/admin-panel.php:110
+#: contact-form-7/includes/admin-panel.php:162
+msgid "Subject:"
+msgstr "Ämne:"
+
+#: contact-form-7/includes/admin-panel.php:115
+#: contact-form-7/includes/admin-panel.php:167
+msgid "File attachments:"
+msgstr "Bilagor:"
+
+#: contact-form-7/includes/admin-panel.php:117
+#: contact-form-7/includes/admin-panel.php:169
+msgid "(You need WordPress 2.7 or greater to use this feature)"
+msgstr "(Du måste köra WordPress 2.7 eller senare för att kunna använda denna funktion)"
+
+#: contact-form-7/includes/admin-panel.php:125
+#: contact-form-7/includes/admin-panel.php:177
+msgid "Use HTML content type"
+msgstr "Använd HTML som innehållstyp"
+
+#: contact-form-7/includes/admin-panel.php:130
+#: contact-form-7/includes/admin-panel.php:182
+msgid "Message body:"
+msgstr "Meddelandefält:"
+
+#: contact-form-7/includes/admin-panel.php:141
+msgid "Mail (2)"
+msgstr "Sekundärt mail"
+
+#: contact-form-7/includes/admin-panel.php:148
+msgid "Use mail (2)"
+msgstr "Använd ett sekundärt mottagarmail"
+
+#: contact-form-7/includes/admin-panel.php:193
+msgid "Messages"
+msgstr "Meddelanden"
+
+#: contact-form-7/includes/admin-panel.php:201
+msgid "Sender's message was sent successfully"
+msgstr "Om besökarens meddelade skickades"
+
+#: contact-form-7/includes/admin-panel.php:205
+msgid "Sender's message was failed to send"
+msgstr "Om besökarens meddelande inte kunde skickas"
+
+#: contact-form-7/includes/admin-panel.php:209
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Om Akismet bedömer sändningen som spamaktivitet"
+
+#: contact-form-7/includes/admin-panel.php:213
+msgid "Validation errors occurred"
+msgstr "Om valideringsfel uppstår"
+
+#: contact-form-7/includes/admin-panel.php:217
+msgid "There is a field that sender is needed to fill in"
+msgstr "Om det finns obligatoriska fält att fylla i"
+
+#: contact-form-7/includes/admin-panel.php:221
+msgid "Email address that sender entered is invalid"
+msgstr "Om e-postadressen angiven av besöakren är felaktig"
+
+#: contact-form-7/includes/admin-panel.php:225
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Om det finns ett fält för villkor som besökaren måste godkänna"
+
+#: contact-form-7/includes/admin-panel.php:229
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Om användaren anger ett felaktigt svar för antispam-frågan"
+
+#: contact-form-7/includes/admin-panel.php:233
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Om verifieringskoden besökaren anger inte matchar CAPTCHA-koden"
+
+#: contact-form-7/includes/admin-panel.php:237
+msgid "Uploading a file fails for any reason"
+msgstr "Om filuppladdningen misslyckas av någon anledning"
+
+#: contact-form-7/includes/admin-panel.php:241
+msgid "Uploaded file is not allowed file type"
+msgstr "Om den uppladdade filen är av en ej tillåten filtyp"
+
+#: contact-form-7/includes/admin-panel.php:245
+msgid "Uploaded file is too large"
+msgstr "Om den uppladdade filen är för stor"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "Radera detta kontaktformulär"
+

@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 Bulgarian translation\n"
+"POT-Creation-Date: 2007-10-24 13:47+0900\n"
+"PO-Revision-Date: 2008-01-26 00:00+0200\n"
+"Last-Translator: Iliyan Darganov <iliyan@darganov.com>\n"
+"Language-Team: Iliyan Darganov <iliyan@darganov.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:251
+msgid "Contact form"
+msgstr "Форма за контакт"
+
+#: contact-form-7/wp-contact-form-7.php:336
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/wp-contact-form-7.php:352
+msgid "optional"
+msgstr "незадължително"
+
+#: contact-form-7/wp-contact-form-7.php:353
+msgid "Generate Tag"
+msgstr "Генериране на етикет"
+
+#: contact-form-7/wp-contact-form-7.php:354
+msgid "Text field"
+msgstr "Текстово поле"
+
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "Email field"
+msgstr "Поле за email"
+
+#: contact-form-7/wp-contact-form-7.php:356
+msgid "Text area"
+msgstr "Текстова област"
+
+#: contact-form-7/wp-contact-form-7.php:357
+msgid "Drop-down menu"
+msgstr "Падащо меню"
+
+#: contact-form-7/wp-contact-form-7.php:358
+msgid "Checkboxes"
+msgstr "Отметки"
+
+#: contact-form-7/wp-contact-form-7.php:359
+msgid "Radio buttons"
+msgstr "Радио бутони"
+
+#: contact-form-7/wp-contact-form-7.php:360
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:361
+msgid "Submit button"
+msgstr "Бутон за изпращане"
+
+#: contact-form-7/wp-contact-form-7.php:362
+msgid "Name"
+msgstr "Име"
+
+#: contact-form-7/wp-contact-form-7.php:363
+msgid "Required field?"
+msgstr "Задължително поле?"
+
+#: contact-form-7/wp-contact-form-7.php:364
+msgid "Allow multiple selections?"
+msgstr "Възможност за избор на повече от едно?"
+
+#: contact-form-7/wp-contact-form-7.php:365
+msgid "Insert a blank item as the first option?"
+msgstr "Вмъкване на празно поле за първа стойност?"
+
+#: contact-form-7/wp-contact-form-7.php:366
+msgid "Make checkboxes exclusive?"
+msgstr "Да бъдат ли отметките специални?"
+
+#: contact-form-7/wp-contact-form-7.php:367
+msgid "Choices"
+msgstr "Стойности"
+
+#: contact-form-7/wp-contact-form-7.php:368
+msgid "Label"
+msgstr "Надпис"
+
+#: contact-form-7/wp-contact-form-7.php:369
+msgid "Default value"
+msgstr "Стойност по подразбиране"
+
+#: contact-form-7/wp-contact-form-7.php:370
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:371
+msgid "This field requires author's name"
+msgstr "Това поле изисква името на автора"
+
+#: contact-form-7/wp-contact-form-7.php:372
+msgid "This field requires author's URL"
+msgstr "Това поле изисква URL адреса на автора"
+
+#: contact-form-7/wp-contact-form-7.php:373
+msgid "This field requires author's email address"
+msgstr "Това поле изисква email адреса на автора"
+
+#: contact-form-7/wp-contact-form-7.php:374
+msgid "Copy and paste this code into the form"
+msgstr "Копирайте и сложете този код във формата"
+
+#: contact-form-7/wp-contact-form-7.php:375
+msgid "Foreground color"
+msgstr "Цвят на текста"
+
+#: contact-form-7/wp-contact-form-7.php:376
+msgid "Background color"
+msgstr "Фонов цвят"
+
+#: contact-form-7/wp-contact-form-7.php:377
+msgid "Image size"
+msgstr "Размер на изображението"
+
+#: contact-form-7/wp-contact-form-7.php:378
+msgid "Small"
+msgstr "Малък"
+
+#: contact-form-7/wp-contact-form-7.php:379
+msgid "Medium"
+msgstr "Среден"
+
+#: contact-form-7/wp-contact-form-7.php:380
+msgid "Large"
+msgstr "Голям"
+
+#: contact-form-7/wp-contact-form-7.php:381
+msgid "Image settings"
+msgstr "Настройки на изображението"
+
+#: contact-form-7/wp-contact-form-7.php:382
+msgid "Input field settings"
+msgstr "Настройки на полето за въвеждане"
+
+#: contact-form-7/wp-contact-form-7.php:383
+msgid "For image"
+msgstr "За изображение"
+
+#: contact-form-7/wp-contact-form-7.php:384
+msgid "For input field"
+msgstr "За поле за въвеждане"
+
+#: contact-form-7/wp-contact-form-7.php:385
+msgid "* One choice per line."
+msgstr "* На ред по една стойност."
+
+#: contact-form-7/wp-contact-form-7.php:404
+msgid "Contact form created."
+msgstr "Формата за контакт е създадена."
+
+#: contact-form-7/wp-contact-form-7.php:407
+msgid "Contact form saved."
+msgstr "Формата за контакт е запазена."
+
+#: contact-form-7/wp-contact-form-7.php:410
+msgid "Contact form deleted."
+msgstr "Формата за контакт е изтрита."
+
+#: contact-form-7/wp-contact-form-7.php:417
+msgid "Untitled"
+msgstr "Без име"
+
+#: contact-form-7/wp-contact-form-7.php:441
+msgid "Your Name"
+msgstr "Вашето име"
+
+#: contact-form-7/wp-contact-form-7.php:441
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "(required)"
+msgstr "(задължително)"
+
+#: contact-form-7/wp-contact-form-7.php:443
+msgid "Your Email"
+msgstr "Вашият Email"
+
+#: contact-form-7/wp-contact-form-7.php:445
+msgid "Subject"
+msgstr "Относно"
+
+#: contact-form-7/wp-contact-form-7.php:447
+msgid "Your Message"
+msgstr "Вашето съобщение"
+
+#: contact-form-7/wp-contact-form-7.php:449
+#: contact-form-7/wp-contact-form-7.php:893
+msgid "Send"
+msgstr "Изпращане"
+
+#: contact-form-7/wp-contact-form-7.php:478
+msgid "Your message was sent successfully. Thanks."
+msgstr "Вашето съобщение беше успешно изпратено."
+
+#: contact-form-7/wp-contact-form-7.php:480
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Неуспешно изпращане на съобщението. Моля, опитайте по-късно или се свържете с администратора."
+
+#: contact-form-7/wp-contact-form-7.php:482
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Възникнаха грешки при проверката. Моля, проверете полетата и изпратете формата отново."
+
+#: contact-form-7/wp-contact-form-7.php:484
+msgid "Email address seems invalid."
+msgstr "Изглежда email адресът не е валиден."
+
+#: contact-form-7/wp-contact-form-7.php:486
+msgid "Please fill the required field."
+msgstr "Моля, попълнете задължителното поле."
+
+#: contact-form-7/wp-contact-form-7.php:488
+msgid "Your entered code is incorrect."
+msgstr "Въведеният код не е верен."
+
+#: contact-form-7/includes/admin-panel.php:15
+msgid "Add new"
+msgstr "Добавяне на нова форма за контакт"
+
+#: contact-form-7/includes/admin-panel.php:28
+msgid "Copy and paste this code into your post content."
+msgstr "Копирайте и сложете този код в съдържанието на Вашата публикация."
+
+#: contact-form-7/includes/admin-panel.php:33
+msgid "Form"
+msgstr "Форма"
+
+#: contact-form-7/includes/admin-panel.php:37
+msgid "Mail"
+msgstr "Поща"
+
+#: contact-form-7/includes/admin-panel.php:39
+#: contact-form-7/includes/admin-panel.php:60
+msgid "To:"
+msgstr "До:"
+
+#: contact-form-7/includes/admin-panel.php:43
+#: contact-form-7/includes/admin-panel.php:64
+msgid "From:"
+msgstr "От:"
+
+#: contact-form-7/includes/admin-panel.php:47
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Subject:"
+msgstr "Относно:"
+
+#: contact-form-7/includes/admin-panel.php:51
+#: contact-form-7/includes/admin-panel.php:72
+msgid "Message body:"
+msgstr "Съобщение:"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Mail (2)"
+msgstr "Поща (2)"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Use mail (2)"
+msgstr "Използване на Поща (2)"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Save"
+msgstr "Запазване"
+
+#: contact-form-7/includes/admin-panel.php:86
+msgid "Delete this contact form"
+msgstr "Изтриване на формата за контакт"
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Сигурни ли сте, че искате да изтриете тази форма за контакт.\n"
+"  'Cancel' за отказ, 'OK' за изтриване."
+

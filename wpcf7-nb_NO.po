@@ -1,0 +1,266 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-10-25 10:57+0900\n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"Language-Team: Kjetil M. Bergem\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-Language: Norwegian Bokmal\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:238
+msgid "Contact form"
+msgstr "Kontaktskjema"
+
+#: contact-form-7/wp-contact-form-7.php:323
+#: contact-form-7/includes/admin-panel.php:5
+msgid "Contact Form 7"
+msgstr "Kontaktskjema 7"
+
+#: contact-form-7/wp-contact-form-7.php:339
+msgid "optional"
+msgstr "valgfri"
+
+#: contact-form-7/wp-contact-form-7.php:340
+msgid "Generate Tag"
+msgstr "Lag stikkord"
+
+#: contact-form-7/wp-contact-form-7.php:341
+msgid "Text field"
+msgstr "Tekstfelt"
+
+#: contact-form-7/wp-contact-form-7.php:342
+msgid "Email field"
+msgstr "Epostfelt"
+
+#: contact-form-7/wp-contact-form-7.php:343
+msgid "Text area"
+msgstr "Tekstboks"
+
+#: contact-form-7/wp-contact-form-7.php:344
+msgid "Drop-down menu"
+msgstr "Gardinvalg meny"
+
+#: contact-form-7/wp-contact-form-7.php:345
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/wp-contact-form-7.php:346
+msgid "Submit button"
+msgstr "Send knapp"
+
+#: contact-form-7/wp-contact-form-7.php:347
+msgid "Name"
+msgstr "Navn"
+
+#: contact-form-7/wp-contact-form-7.php:348
+msgid "Required field?"
+msgstr "N¿dvendige felt?"
+
+#: contact-form-7/wp-contact-form-7.php:349
+msgid "Choices"
+msgstr "Valg"
+
+#: contact-form-7/wp-contact-form-7.php:350
+msgid "Label"
+msgstr "Merknad"
+
+#: contact-form-7/wp-contact-form-7.php:351
+msgid "Default value"
+msgstr "Standardvalg"
+
+#: contact-form-7/wp-contact-form-7.php:352
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/wp-contact-form-7.php:353
+msgid "This field requires author's name"
+msgstr "Personen mŒ skrive inn sitt navn"
+
+#: contact-form-7/wp-contact-form-7.php:354
+msgid "This field requires author's URL"
+msgstr "Personen mŒ skrive inn sin nettsideadresse"
+
+#: contact-form-7/wp-contact-form-7.php:355
+msgid "This field requires author's email address"
+msgstr "Personen mŒ skrive inn sin epostadresse"
+
+#: contact-form-7/wp-contact-form-7.php:356
+msgid "Copy and paste this code into the form"
+msgstr "Kopier og lim inn denne koden i skjemaet"
+
+#: contact-form-7/wp-contact-form-7.php:357
+msgid "Foreground color"
+msgstr "Forgrunnsfarge"
+
+#: contact-form-7/wp-contact-form-7.php:358
+msgid "Background color"
+msgstr "Bakgrunnsfarge"
+
+#: contact-form-7/wp-contact-form-7.php:359
+msgid "Image size"
+msgstr "Bildest¿rrelse"
+
+#: contact-form-7/wp-contact-form-7.php:360
+msgid "Small"
+msgstr "Liten"
+
+#: contact-form-7/wp-contact-form-7.php:361
+msgid "Medium"
+msgstr "Medium"
+
+#: contact-form-7/wp-contact-form-7.php:362
+msgid "Large"
+msgstr "Stor"
+
+#: contact-form-7/wp-contact-form-7.php:363
+msgid "Image settings"
+msgstr "Bildeinnstillinger"
+
+#: contact-form-7/wp-contact-form-7.php:364
+msgid "Input field settings"
+msgstr "Innstillinger til skjemafeltet"
+
+#: contact-form-7/wp-contact-form-7.php:365
+msgid "For image"
+msgstr "For bildet"
+
+#: contact-form-7/wp-contact-form-7.php:366
+msgid "For input field"
+msgstr "For skjemafeltet"
+
+#: contact-form-7/wp-contact-form-7.php:367
+msgid "* One choice per line."
+msgstr "* Ett valg per linje."
+
+#: contact-form-7/wp-contact-form-7.php:386
+msgid "Contact form created."
+msgstr "Kontaktskjemaet ble laget."
+
+#: contact-form-7/wp-contact-form-7.php:389
+msgid "Contact form saved."
+msgstr "Kontaktskjemaet ble lagret."
+
+#: contact-form-7/wp-contact-form-7.php:392
+msgid "Contact form deleted."
+msgstr "Kontaktskjemaet ble slettet."
+
+#: contact-form-7/wp-contact-form-7.php:399
+msgid "Untitled"
+msgstr "Uten tittel"
+
+#: contact-form-7/wp-contact-form-7.php:423
+msgid "Your Name"
+msgstr "Ditt navn"
+
+#: contact-form-7/wp-contact-form-7.php:423
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "(required)"
+msgstr "(n¿dvendig)"
+
+#: contact-form-7/wp-contact-form-7.php:425
+msgid "Your Email"
+msgstr "Din epost"
+
+#: contact-form-7/wp-contact-form-7.php:427
+msgid "Subject"
+msgstr "Emne"
+
+#: contact-form-7/wp-contact-form-7.php:429
+msgid "Your Message"
+msgstr "Din beskjed"
+
+#: contact-form-7/wp-contact-form-7.php:431
+#: contact-form-7/wp-contact-form-7.php:813
+msgid "Send"
+msgstr "Send"
+
+#: contact-form-7/wp-contact-form-7.php:460
+msgid "Your message was sent successfully. Thanks."
+msgstr "Din beskjed ble sent. Takk skal du ha."
+
+#: contact-form-7/wp-contact-form-7.php:462
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Beskjeden ble ikke sent. Pr¿v igjen senere eller kontakt administratorer pŒ en annen mŒte. "
+
+#: contact-form-7/wp-contact-form-7.php:464
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Flere skjemafeil ble oppdaget. Vennligst fyll inn feltene og pr¿v Œ sende igjen."
+
+#: contact-form-7/wp-contact-form-7.php:466
+msgid "Email address seems invalid."
+msgstr "Epostadressen virket ugyldig."
+
+#: contact-form-7/wp-contact-form-7.php:468
+msgid "Please fill the required field."
+msgstr "Vennligst fyll inn de n¿dvendige feltene."
+
+#: contact-form-7/wp-contact-form-7.php:470
+msgid "Your entered code is incorrect."
+msgstr "Koden du skrev inn var ikke riktig."
+
+#: contact-form-7/includes/admin-panel.php:15
+msgid "Add new"
+msgstr "Legg til ny"
+
+#: contact-form-7/includes/admin-panel.php:28
+msgid "Copy and paste this code into your post content."
+msgstr "Kopier og lim inn denne koden i innholdsfeltet i posten din."
+
+#: contact-form-7/includes/admin-panel.php:33
+msgid "Form"
+msgstr "Skjema"
+
+#: contact-form-7/includes/admin-panel.php:37
+msgid "Mail"
+msgstr "Epost"
+
+#: contact-form-7/includes/admin-panel.php:39
+#: contact-form-7/includes/admin-panel.php:60
+msgid "To:"
+msgstr "Til:"
+
+#: contact-form-7/includes/admin-panel.php:43
+#: contact-form-7/includes/admin-panel.php:64
+msgid "From:"
+msgstr "Fra:"
+
+#: contact-form-7/includes/admin-panel.php:47
+#: contact-form-7/includes/admin-panel.php:68
+msgid "Subject:"
+msgstr "Emne:"
+
+#: contact-form-7/includes/admin-panel.php:51
+#: contact-form-7/includes/admin-panel.php:72
+msgid "Message body:"
+msgstr "Beskjed:"
+
+#: contact-form-7/includes/admin-panel.php:56
+msgid "Mail (2)"
+msgstr "Epost (2)"
+
+#: contact-form-7/includes/admin-panel.php:58
+msgid "Use mail (2)"
+msgstr "Bruk epost (2)"
+
+#: contact-form-7/includes/admin-panel.php:80
+msgid "Save"
+msgstr "Lagre"
+
+#: contact-form-7/includes/admin-panel.php:86
+msgid "Delete this contact form"
+msgstr "Slett dette kontaktskjemaet"
+
+#: contact-form-7/includes/admin-panel.php:87
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "Du holder pŒ Œ slette dette kontaktskjemaet. Trykk 'Avbryt' for Œ stoppe, 'OK' for Œ slette."
+

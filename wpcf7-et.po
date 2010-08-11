@@ -1,0 +1,819 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-25 16:29+0900\n"
+"PO-Revision-Date: 2009-12-29 18:24+0300\n"
+"Last-Translator: Egon Elbre <egon.elbre@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Eesti keel\n"
+"X-Poedit-Country: EESTI\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/admin/admin-panel.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>Contact Form 7 andmebaasi tabelit ei ole olemas.</strong> Pead <a href=\"%s\">looma tabeli</a>, et see töötaks."
+
+#: contact-form-7/admin/admin-panel.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>Contact Form 7 andmebaasi tabelit ei ole olemas.</strong>"
+
+#: contact-form-7/admin/admin-panel.php:17
+#: contact-form-7/admin/admin-panel.php:30
+#: contact-form-7/admin/admin.php:117
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin-panel.php:45
+msgid "Add new"
+msgstr "Lisa uus"
+
+#: contact-form-7/admin/admin-panel.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Lõika ja kleebi see kood postituse sisse, sinna kus tahad kontaktivormi näha."
+
+#: contact-form-7/admin/admin-panel.php:75
+#: contact-form-7/admin/admin-panel.php:309
+msgid "Save"
+msgstr "Salvesta"
+
+#: contact-form-7/admin/admin-panel.php:82
+msgid "Copy"
+msgstr "Kopeeri"
+
+#: contact-form-7/admin/admin-panel.php:87
+msgid "Delete"
+msgstr "Kustuta"
+
+#: contact-form-7/admin/admin-panel.php:89
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "Kas soovid kustutada kontaktivormi?"
+
+#: contact-form-7/admin/admin-panel.php:104
+msgid "Form"
+msgstr "Vorm"
+
+#: contact-form-7/admin/admin-panel.php:128
+msgid "Mail"
+msgstr "Email"
+
+#: contact-form-7/admin/admin-panel.php:135
+#: contact-form-7/admin/admin-panel.php:202
+msgid "To:"
+msgstr "Saaja:"
+
+#: contact-form-7/admin/admin-panel.php:140
+#: contact-form-7/admin/admin-panel.php:207
+msgid "From:"
+msgstr "Saatja:"
+
+#: contact-form-7/admin/admin-panel.php:145
+#: contact-form-7/admin/admin-panel.php:212
+msgid "Subject:"
+msgstr "Teema:"
+
+#: contact-form-7/admin/admin-panel.php:152
+#: contact-form-7/admin/admin-panel.php:219
+msgid "Additional headers:"
+msgstr "Lisa päised:"
+
+#: contact-form-7/admin/admin-panel.php:157
+#: contact-form-7/admin/admin-panel.php:224
+msgid "File attachments:"
+msgstr "Faili lisandid:"
+
+#: contact-form-7/admin/admin-panel.php:165
+#: contact-form-7/admin/admin-panel.php:232
+msgid "Use HTML content type"
+msgstr "Kasuta HTML-i sisu tüüpi"
+
+#: contact-form-7/admin/admin-panel.php:172
+#: contact-form-7/admin/admin-panel.php:239
+#: contact-form-7/includes/functions.php:73
+msgid "Message body:"
+msgstr "Sõnumi sisu:"
+
+#: contact-form-7/admin/admin-panel.php:188
+msgid "Mail (2)"
+msgstr "Email (2)"
+
+#: contact-form-7/admin/admin-panel.php:194
+msgid "Use mail (2)"
+msgstr "Kasuta emaili (2)"
+
+#: contact-form-7/admin/admin-panel.php:255
+msgid "Messages"
+msgstr "Teated"
+
+#: contact-form-7/admin/admin-panel.php:285
+msgid "Additional Settings"
+msgstr "Lisaseaded"
+
+#: contact-form-7/admin/admin-panel.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Kasuta vaikekeelt (%s)"
+
+#: contact-form-7/admin/admin-panel.php:334
+#: contact-form-7/admin/admin-panel.php:347
+msgid "Add New"
+msgstr "Lisa uus"
+
+#: contact-form-7/admin/admin-panel.php:337
+msgid "Or"
+msgstr "või"
+
+#: contact-form-7/admin/admin-panel.php:342
+msgid "(select language)"
+msgstr "(vali keel)"
+
+#: contact-form-7/admin/admin.php:117
+msgid "Contact"
+msgstr "Kontakt"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Edit Contact Forms"
+msgstr "Muuda Kontaktivorme"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Edit"
+msgstr "Muuda"
+
+#: contact-form-7/admin/admin.php:178
+msgid "Generate Tag"
+msgstr "Välja loomine"
+
+#: contact-form-7/admin/admin.php:179
+msgid "Text field"
+msgstr "Tekstiväli (1 rida)"
+
+#: contact-form-7/admin/admin.php:180
+msgid "Email field"
+msgstr "Email väli"
+
+#: contact-form-7/admin/admin.php:181
+msgid "Text area"
+msgstr "Teksti kast"
+
+#: contact-form-7/admin/admin.php:182
+msgid "Drop-down menu"
+msgstr "Rippmenüü"
+
+#: contact-form-7/admin/admin.php:183
+msgid "Checkboxes"
+msgstr "Valikkastid"
+
+#: contact-form-7/admin/admin.php:184
+msgid "Radio buttons"
+msgstr "Valiknupud"
+
+#: contact-form-7/admin/admin.php:185
+msgid "Acceptance"
+msgstr "Aktsepteerimine"
+
+#: contact-form-7/admin/admin.php:186
+msgid "CAPTCHA"
+msgstr "TURVAKOOD"
+
+#: contact-form-7/admin/admin.php:187
+msgid "Quiz"
+msgstr "Küsimustik"
+
+#: contact-form-7/admin/admin.php:188
+msgid "File upload"
+msgstr "Faili üleslaadimine"
+
+#: contact-form-7/admin/admin.php:189
+msgid "Submit button"
+msgstr "Saatmise nupp"
+
+#: contact-form-7/admin/admin.php:190
+msgid "Show"
+msgstr "Näita"
+
+#: contact-form-7/admin/admin.php:191
+msgid "Hide"
+msgstr "Peida"
+
+#: contact-form-7/admin/admin.php:265
+msgid "Contact form"
+msgstr "Kontaktivorm"
+
+#: contact-form-7/admin/admin.php:284
+msgid "Settings"
+msgstr "Seaded"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Docs"
+msgstr "Dokumentatsioon"
+
+#: contact-form-7/admin/admin.php:299
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:300
+msgid "FAQ"
+msgstr "KKK"
+
+#: contact-form-7/admin/admin.php:301
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:302
+msgid "Support"
+msgstr "Tugi"
+
+#: contact-form-7/admin/admin.php:313
+msgid "Contact form created."
+msgstr "Kontaktivorm on loodud."
+
+#: contact-form-7/admin/admin.php:316
+msgid "Contact form saved."
+msgstr "Kontaktivorm on salvestatud."
+
+#: contact-form-7/admin/admin.php:319
+msgid "Contact form deleted."
+msgstr "Kontaktivorm on kustutatud."
+
+#: contact-form-7/admin/admin.php:322
+msgid "Database table created."
+msgstr "Andmebaasi tabel loodud."
+
+#: contact-form-7/admin/admin.php:325
+msgid "Failed to create database table."
+msgstr "Andmebaasi tabeli loomine ebaõnnestus."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 vajab sinu tuge. Palun toeta täna."
+
+#: contact-form-7/admin/admin.php:359
+msgid "Is this plugin useful for you? If you like it, please help the developer."
+msgstr "Kas see plugin on sulle kasulik? Kui jah, siis aita arendajaid."
+
+#: contact-form-7/admin/admin.php:360
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Sinu panust on vaja, et teha seda pluginat paremaks"
+
+#: contact-form-7/admin/admin.php:361
+msgid "Developing a plugin and providing user support is really hard work. Please help."
+msgstr "Plugina arendamine ja abi pakkumine on raske töö. Toetage arendajaid."
+
+#: contact-form-7/includes/classes.php:568
+msgid "Untitled"
+msgstr "Nimetu"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Teie sõnum on saadetud. Aitäh!"
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Teie sõnum on saadetud. Aitäh!"
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Saatja kirja saatmine  ebaõnnestus"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Sõnumi saatmine ebaõnnestus. Palun proovige hiljem või võtke ühendust muul viisil."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet otsustas, et saatmistegevus on spämm"
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Valideerimise vead"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Vormi täitmisel esines vigu. Palun kontrollige ja saatke uuesti."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Saatja jättis aktsepteerimata tingimustega"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "Tingimustega nõustumine on vajalik"
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "Emaili aadress on vigane"
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "Emaili aadress on vigane"
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Saatja jättis täitmata ühe nõutud välja"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "Palun täitke nõutud väljad"
+
+#: contact-form-7/includes/functions.php:45
+msgid "Your Name"
+msgstr "Nimi"
+
+#: contact-form-7/includes/functions.php:45
+#: contact-form-7/includes/functions.php:47
+msgid "(required)"
+msgstr "(nõutav)"
+
+#: contact-form-7/includes/functions.php:47
+msgid "Your Email"
+msgstr "Email"
+
+#: contact-form-7/includes/functions.php:49
+msgid "Subject"
+msgstr "Teema"
+
+#: contact-form-7/includes/functions.php:51
+msgid "Your Message"
+msgstr "Teade"
+
+#: contact-form-7/includes/functions.php:53
+msgid "Send"
+msgstr "Saada"
+
+#: contact-form-7/includes/functions.php:60
+#, php-format
+msgid "From: %s"
+msgstr "Saatja: %s"
+
+#: contact-form-7/includes/functions.php:61
+#, php-format
+msgid "Subject: %s"
+msgstr "Teema: %s"
+
+#: contact-form-7/includes/functions.php:62
+msgid "Message Body:"
+msgstr "Sõnumi sisu:"
+
+#: contact-form-7/includes/functions.php:63
+#: contact-form-7/includes/functions.php:74
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Email saadetakse %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:163
+msgid "Albanian"
+msgstr "Albaania"
+
+#: contact-form-7/includes/functions.php:164
+msgid "Arabic"
+msgstr "Araabia"
+
+#: contact-form-7/includes/functions.php:165
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:166
+msgid "Bosnian"
+msgstr "Bosnia"
+
+#: contact-form-7/includes/functions.php:167
+msgid "Brazilian Portuguese"
+msgstr "Brasiilia Porugali"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Bulgarian"
+msgstr "Bulgaaria"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Catalan"
+msgstr "Katalaani"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Chinese (Simplified)"
+msgstr "Hiina (Lihtsustatud)"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Chinese (Traditional)"
+msgstr "Hiina (Traditsiooniline)"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Croatian"
+msgstr "Horvaatia"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Czech"
+msgstr "Tšehhi"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Danish"
+msgstr "Taani"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Dutch"
+msgstr "Hollandi"
+
+#: contact-form-7/includes/functions.php:176
+msgid "English"
+msgstr "Inglise"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Estonian"
+msgstr "Eesti"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Finnish"
+msgstr "Soome"
+
+#: contact-form-7/includes/functions.php:179
+msgid "French"
+msgstr "Prantsuse"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Georgian"
+msgstr "Jordaania"
+
+#: contact-form-7/includes/functions.php:181
+msgid "German"
+msgstr "Saksa"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Greek"
+msgstr "Kreeka"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Hebrew"
+msgstr "Heebrea"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Hindi"
+msgstr "Hindi"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Hungarian"
+msgstr "Ungari"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Indonesian"
+msgstr "Indoneesia"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Italian"
+msgstr "Itaalia"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Japanese"
+msgstr "Jaapani"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Korean"
+msgstr "Korea"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Latvian"
+msgstr "Läti"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Lithuanian"
+msgstr "Leedu"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Norwegian"
+msgstr "Norra"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Persian"
+msgstr "Pärsia"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Polish"
+msgstr "Poola"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Portuguese"
+msgstr "Portugali"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Russian"
+msgstr "Vene"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Romanian"
+msgstr "Rumeenia"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Serbian"
+msgstr "Serbia"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Slovak"
+msgstr "Slovaki"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Slovene"
+msgstr "Sloveenia"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Spanish"
+msgstr "Hispaania"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Swedish"
+msgstr "Rootsi"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Thai"
+msgstr "Tai"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Turkish"
+msgstr "Türgi"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Ukrainian"
+msgstr "Ukrainia"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Vietnamese"
+msgstr "Vietnami"
+
+#: contact-form-7/modules/acceptance.php:98
+#: contact-form-7/modules/captcha.php:201
+#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/file.php:229
+msgid "Name"
+msgstr "Nimi"
+
+#: contact-form-7/modules/acceptance.php:103
+#: contact-form-7/modules/acceptance.php:106
+#: contact-form-7/modules/captcha.php:208
+#: contact-form-7/modules/captcha.php:211
+#: contact-form-7/modules/captcha.php:216
+#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:223
+#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:242
+#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/checkbox.php:190
+#: contact-form-7/modules/checkbox.php:193
+#: contact-form-7/modules/file.php:234
+#: contact-form-7/modules/file.php:237
+#: contact-form-7/modules/file.php:242
+#: contact-form-7/modules/file.php:245
+msgid "optional"
+msgstr "võib tühjaks jätta"
+
+#: contact-form-7/modules/acceptance.php:112
+msgid "Make this checkbox checked by default?"
+msgstr "Vaikimisi täidetud"
+
+#: contact-form-7/modules/acceptance.php:113
+msgid "Make this checkbox work inversely?"
+msgstr "Pane valikkastid tagurpidi tööle"
+
+#: contact-form-7/modules/acceptance.php:114
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* See tähendab et aktsepteeriv külastaja võtab linnukese ära"
+
+#: contact-form-7/modules/acceptance.php:119
+#: contact-form-7/modules/captcha.php:250
+#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/file.php:250
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopeeri see kood ja kleebi see vormi."
+
+#: contact-form-7/modules/captcha.php:65
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Selleks, et kasutada TURVAKOOD-i, peab olema paigaldatud <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin."
+
+#: contact-form-7/modules/captcha.php:181
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Kood mida saataja sisestas ei kattu TURVAKOOD-iga."
+
+#: contact-form-7/modules/captcha.php:182
+msgid "Your entered code is incorrect."
+msgstr "Sisestatud kood on vale"
+
+#: contact-form-7/modules/captcha.php:198
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "NB: Selleks, et kasutada TURVAKOOD-i, peab olema paigaldatud \"Really Simple Captcha\" plugin."
+
+#: contact-form-7/modules/captcha.php:205
+msgid "Image settings"
+msgstr "Pildi seaded"
+
+#: contact-form-7/modules/captcha.php:216
+msgid "Foreground color"
+msgstr "Teksti värv"
+
+#: contact-form-7/modules/captcha.php:219
+msgid "Background color"
+msgstr "Taustavärv"
+
+#: contact-form-7/modules/captcha.php:223
+msgid "Image size"
+msgstr "Pildi suurus"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Small"
+msgstr "Väike"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Medium"
+msgstr "Keskmine"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Large"
+msgstr "Suur"
+
+#: contact-form-7/modules/captcha.php:231
+msgid "Input field settings"
+msgstr "Sisestusvälja seaded"
+
+#: contact-form-7/modules/captcha.php:251
+msgid "For image"
+msgstr "Pildile"
+
+#: contact-form-7/modules/captcha.php:253
+msgid "For input field"
+msgstr "Sisestusväljale"
+
+#: contact-form-7/modules/captcha.php:283
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "See kontaktivorm sisaldab TURVAKOODI välju, aga failide ajutine kaust (%s) ei eksisteeri või ei ole kirjutatav. Võite teha kausta või muuta selle õigusi käsitsi."
+
+#: contact-form-7/modules/captcha.php:289
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "See kontaktivorm sisaldab TURVAKOODI välju, aga vajalikud teegid (GD ja FreeType) ei ole saadaval teie serveril."
+
+#: contact-form-7/modules/checkbox.php:182
+#: contact-form-7/modules/file.php:228
+msgid "Required field?"
+msgstr "Nõutud väli?"
+
+#: contact-form-7/modules/checkbox.php:198
+msgid "Choices"
+msgstr "Valikud"
+
+#: contact-form-7/modules/checkbox.php:200
+msgid "* One choice per line."
+msgstr "* Üks valik rea kohta"
+
+#: contact-form-7/modules/checkbox.php:204
+msgid "Put a label first, a checkbox last?"
+msgstr "Paiguta pealkiri ning siis valikkast?"
+
+#: contact-form-7/modules/checkbox.php:205
+msgid "Wrap each item with <label> tag?"
+msgstr "Kirjuta iga kirje <label> siltide vahele. (näiteks <label>kirje</label>)"
+
+#: contact-form-7/modules/checkbox.php:207
+msgid "Make checkboxes exclusive?"
+msgstr "Tee valikkastid üksteist välistavaks?"
+
+#: contact-form-7/modules/checkbox.php:215
+msgid "And, put this code into the Mail fields below."
+msgstr "Ja lisa see kood Emaili väljadesse alla."
+
+#: contact-form-7/modules/file.php:197
+msgid "Uploading a file fails for any reason"
+msgstr "Üleslaadimine ebaõnnestus mingil põhjusel:"
+
+#: contact-form-7/modules/file.php:198
+msgid "Failed to upload file."
+msgstr "Üleslaadimine ebaõnnestus."
+
+#: contact-form-7/modules/file.php:202
+msgid "Uploaded file is not allowed file type"
+msgstr "Üles laetud fail ei ole lubatud tüüpi."
+
+#: contact-form-7/modules/file.php:203
+msgid "This file type is not allowed."
+msgstr "Sellist tüüpi fail ei ole lubatud."
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploaded file is too large"
+msgstr "Üles laetud fail on liiga suur"
+
+#: contact-form-7/modules/file.php:208
+msgid "This file is too large."
+msgstr "Fail on liiga suur."
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploading a file fails for PHP error"
+msgstr "Faili üleslaadimine ebaõnnestus PHP vea tõttu"
+
+#: contact-form-7/modules/file.php:213
+msgid "Failed to upload file. Error occurred."
+msgstr "Üleslaadimine ebaõnnestus. Viga."
+
+#: contact-form-7/modules/file.php:242
+msgid "File size limit"
+msgstr "Failisuuruse limiit"
+
+#: contact-form-7/modules/file.php:242
+msgid "bytes"
+msgstr "baiti"
+
+#: contact-form-7/modules/file.php:245
+msgid "Acceptable file types"
+msgstr "Lubatud failitüübid"
+
+#: contact-form-7/modules/file.php:252
+msgid "And, put this code into the File Attachments field below."
+msgstr "Ja lisa see kood Manuste välja."
+
+#: contact-form-7/modules/file.php:277
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "See kontaktivorm sisaldab välju faili üleslaadimiseks aga ajutine kaust (%s) failide jaoks ei eksiteeri või ei ole kirjutatav. Võite tekitada kausta või muuta selle õigusi käsitsi."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Kontaktivorm sisaldab [icl] msilte, aga need on vanad ja ei tööta enam selle versiooniga. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">On olemas lihtsam viis kirjutada mitmekeelseid vorme</a> ja soovitame teil seda meetodit kasutada."
+
+#: contact-form-7/modules/quiz.php:164
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Saataja ei sisestanud õiget vastust küsimusele"
+
+#: contact-form-7/modules/quiz.php:165
+msgid "Your answer is not correct."
+msgstr "Sisestatud kood on vale."
+
+#: contact-form-7/modules/quiz.php:200
+msgid "Quizzes"
+msgstr "Küsimustikud"
+
+#: contact-form-7/modules/quiz.php:202
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* küsimus|vastus (näiteks 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:170
+msgid "Allow multiple selections?"
+msgstr "Luba mitut valikut?"
+
+#: contact-form-7/modules/select.php:171
+msgid "Insert a blank item as the first option?"
+msgstr "Lisa tühi rida esimeseks valikuks?"
+
+#: contact-form-7/modules/submit.php:68
+msgid "Label"
+msgstr "Nimi"
+
+#: contact-form-7/modules/text.php:163
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:165
+msgid "This field requires author's name"
+msgstr "Autori nimi on nõutud"
+
+#: contact-form-7/modules/text.php:166
+msgid "This field requires author's URL"
+msgstr "Autori URL-i on nõutud"
+
+#: contact-form-7/modules/text.php:168
+msgid "This field requires author's email address"
+msgstr "Autori email aadress on nõutud"
+
+#: contact-form-7/modules/text.php:172
+#: contact-form-7/modules/textarea.php:144
+msgid "Default value"
+msgstr "Vaikimisi väärtus"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "Kustuta see kontaktivorm"
+#~ msgid "Form content"
+#~ msgstr "Lomakkeen sisältö"
+#~ msgid "Mail template"
+#~ msgstr "Sähköpostimalli"
+#~ msgid "Sender field:"
+#~ msgstr "Lähettäjä:"
+#~ msgid "Recipient address:"
+#~ msgstr "Vastaanottajan osoite:"
+#~ msgid "Insert"
+#~ msgstr "Syötä"
+
