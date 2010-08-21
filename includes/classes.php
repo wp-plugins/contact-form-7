@@ -136,8 +136,10 @@ class WPCF7_ContactForm {
 
 		$form = $this->form;
 
-		if ( WPCF7_AUTOP )
+		if ( WPCF7_AUTOP ) {
+			$form = $wpcf7_shortcode_manager->normalize_shortcode( $form );
 			$form = wpcf7_autop( $form );
+		}
 
 		$form = $wpcf7_shortcode_manager->do_shortcode( $form );
 		$this->scanned_form_tags = $wpcf7_shortcode_manager->scanned_tags;

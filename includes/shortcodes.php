@@ -21,16 +21,33 @@ class WPCF7_ShortcodeManager {
 		unset( $this->shortcode_tags[$tag] );
 	}
 
-	function do_shortcode( $content, $exec = true ) {
-		$this->exec = (bool) $exec;
-		$this->scanned_tags = array();
-
-		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags) )
+	function normalize_shortcode( $content ) {
+		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags ) )
 			return $content;
 
 		$pattern = $this->get_shortcode_regex();
 		return preg_replace_callback( '/' . $pattern . '/s',
-			array(&$this, 'do_shortcode_tag'), $content );
+			array( &$this, 'normalize_space_cb' ), $content );
+	}
+
+	function normalize_space_cb( $m ) {
+		// allow [[foo]] syntax for escaping a tag
+		if ( $m[1] == '[' && $m[6] == ']' )
+			return $m[0];
+
+		return preg_replace( '/\s+/', ' ', $m[0] );
+	}
+
+	function do_shortcode( $content, $exec = true ) {
+		$this->exec = (bool) $exec;
+		$this->scanned_tags = array();
+
+		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags ) )
+			return $content;
+
+		$pattern = $this->get_shortcode_regex();
+		return preg_replace_callback( '/' . $pattern . '/s',
+			array( &$this, 'do_shortcode_tag' ), $content );
 	}
 
 	function scan_shortcode( $content ) {
