@@ -23,6 +23,7 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	$atts = '';
 	$id_att = '';
 	$class_att = '';
+	$size_att = '';
 	$tabindex_att = '';
 
 	$class_att .= ' wpcf7-file';
@@ -37,6 +38,9 @@ function wpcf7_file_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$class_att .= ' ' . $matches[1];
 
+		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
+			$size_att = (int) $matches[1];
+
 		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
 			$tabindex_att = (int) $matches[1];
 
@@ -48,6 +52,11 @@ function wpcf7_file_shortcode_handler( $tag ) {
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
+
+	if ( $size_att )
+		$atts .= ' size="' . $size_att . '"';
+	else
+		$atts .= ' size="40"'; // default size
 
 	if ( '' !== $tabindex_att )
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
