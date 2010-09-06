@@ -618,14 +618,14 @@ function wpcf7_is_posted() {
 
 function wpcf7_get_validation_error( $name ) {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return false;
+		return '';
 
 	return $contact_form->validation_error( $name );
 }
 
 function wpcf7_get_message( $status ) {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return false;
+		return '';
 
 	return $contact_form->message( $status );
 }
