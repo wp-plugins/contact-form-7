@@ -187,7 +187,8 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	// Make sure the uploaded file is only readable for the owner process
 	@chmod( $new_file, 0400 );
 
-	wpcf7_add_uploaded_file( $name, $new_file );
+	if ( $contact_form = wpcf7_get_current_contact_form() )
+		$contact_form->uploaded_files[$name] = $new_file;
 
 	if ( ! isset( $_POST[$name] ) )
 		$_POST[$name] = $filename;
