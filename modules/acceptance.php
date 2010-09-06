@@ -53,7 +53,7 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	$default_on = (bool) preg_grep( '/^default:on$/i', $options );
 
-	if ( wpcf7_script_is() )
+	if ( wpcf7_script_is() && ! wpcf7_acceptance_as_validation() )
 		$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
 	else
 		$onclick = '';
@@ -62,7 +62,39 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $onclick . $checked . ' />';
 
+	$validation_error = wpcf7_get_validation_error( $name );
+
+	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+
 	return $html;
+}
+
+
+/* Validation filter */
+
+add_filter( 'wpcf7_validate_acceptance', 'wpcf7_acceptance_validation_filter', 10, 2 );
+
+function wpcf7_acceptance_validation_filter( $result, $tag ) {
+	if ( ! wpcf7_acceptance_as_validation() )
+		return $result;
+
+	$name = $tag['name'];
+
+	if ( empty( $name ) )
+		return $result;
+
+	$options = (array) $tag['options'];
+
+	$value = $_POST[$name] ? 1 : 0;
+
+	$invert = (bool) preg_grep( '%^invert$%', $options );
+
+	if ( $invert && $value || ! $invert && ! $value ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = wpcf7_get_message( 'accept_terms' );
+	}
+
+	return $result;
 }
 
 
@@ -89,6 +121,29 @@ function wpcf7_acceptance_filter( $accepted ) {
 	}
 
 	return $accepted;
+}
+
+add_filter( 'wpcf7_form_class_attr', 'wpcf7_acceptance_form_class_attr' );
+
+function wpcf7_acceptance_form_class_attr( $class ) {
+	if ( wpcf7_acceptance_as_validation() )
+		return $class . ' wpcf7-acceptance-as-validation';
+
+	return $class;
+}
+
+function wpcf7_acceptance_as_validation() {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
+
+	$settings = $contact_form->additional_setting( 'acceptance_as_validation', false );
+
+	foreach ( $settings as $setting ) {
+		if ( in_array( $setting, array( 'on', 'true', '1' ) ) )
+			return true;
+	}
+
+	return false;
 }
 
 

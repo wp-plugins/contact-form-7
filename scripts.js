@@ -32,6 +32,9 @@ function wpcf7ExclusiveCheckbox(elem) {
 
 // Toggle submit button
 function wpcf7ToggleSubmit(form) {
+	if (jQuery(form).hasClass('wpcf7-acceptance-as-validation'))
+		return;
+
 	var submit = jQuery(form).find('input:submit');
 	if (! submit.length) return;
 
@@ -41,8 +44,9 @@ function wpcf7ToggleSubmit(form) {
 	submit.removeAttr('disabled');
 	acceptances.each(function(i, n) {
 		n = jQuery(n);
-		if (n.hasClass('wpcf7-invert') && n.is(':checked') || ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
-		submit.attr('disabled', 'disabled');
+		if (n.hasClass('wpcf7-invert') && n.is(':checked')
+		|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
+			submit.attr('disabled', 'disabled');
 	});
 }
 
