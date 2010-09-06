@@ -137,16 +137,13 @@ add_filter( 'wpcf7_ajax_onload', 'wpcf7_captcha_ajax_refill' );
 add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_captcha_ajax_refill' );
 
 function wpcf7_captcha_ajax_refill( $items ) {
-	global $wpcf7_contact_form;
-
-	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
 		return $items;
 
 	if ( ! is_array( $items ) )
 		return $items;
 
-	$fes = $wpcf7_contact_form->form_scan_shortcode(
-		array( 'type' => 'captchac' ) );
+	$fes = $contact_form->form_scan_shortcode( array( 'type' => 'captchac' ) );
 
 	if ( empty( $fes ) )
 		return $items;

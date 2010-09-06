@@ -76,9 +76,10 @@ function wpcf7_file_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
 
 function wpcf7_file_form_enctype_filter( $enctype ) {
-	global $wpcf7_contact_form;
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return $enctype;
 
-	$multipart = (bool) $wpcf7_contact_form->form_scan_shortcode(
+	$multipart = (bool) $contact_form->form_scan_shortcode(
 		array( 'type' => array( 'file', 'file*' ) ) );
 
 	if ( $multipart )
@@ -94,8 +95,6 @@ add_filter( 'wpcf7_validate_file', 'wpcf7_file_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_file*', 'wpcf7_file_validation_filter', 10, 2 );
 
 function wpcf7_file_validation_filter( $result, $tag ) {
-	global $wpcf7_contact_form;
-
 	$type = $tag['type'];
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
@@ -192,7 +191,8 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	// Make sure the uploaded file is only readable for the owner process
 	@chmod( $new_file, 0400 );
 
-	$wpcf7_contact_form->uploaded_files[$name] = $new_file;
+	if ( $contact_form = wpcf7_get_current_contact_form() )
+		$contact_form->uploaded_files[$name] = $new_file;
 
 	if ( ! isset( $_POST[$name] ) )
 		$_POST[$name] = $filename;

@@ -8,8 +8,6 @@
 wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
 
 function wpcf7_acceptance_shortcode_handler( $tag ) {
-	global $wpcf7_contact_form;
-
 	if ( ! is_array( $tag ) )
 		return '';
 
@@ -73,9 +71,10 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 function wpcf7_acceptance_filter( $accepted ) {
-	global $wpcf7_contact_form;
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return $accepted;
 
-	$fes = $wpcf7_contact_form->form_scan_shortcode( array( 'type' => 'acceptance' ) );
+	$fes = $contact_form->form_scan_shortcode( array( 'type' => 'acceptance' ) );
 
 	foreach ( $fes as $fe ) {
 		$name = $fe['name'];

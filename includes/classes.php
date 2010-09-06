@@ -600,31 +600,34 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 	return $contact_form;
 }
 
-function wpcf7_is_posted() {
+function wpcf7_get_current_contact_form() {
 	global $wpcf7_contact_form;
 
 	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
+		return null;
+
+	return $wpcf7_contact_form;
+}
+
+function wpcf7_is_posted() {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
 		return false;
 
-	return $wpcf7_contact_form->is_posted();
+	return $contact_form->is_posted();
 }
 
 function wpcf7_get_validation_error( $name ) {
-	global $wpcf7_contact_form;
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
 
-	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		return '';
-
-	return $wpcf7_contact_form->validation_error( $name );
+	return $contact_form->validation_error( $name );
 }
 
 function wpcf7_get_message( $status ) {
-	global $wpcf7_contact_form;
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
 
-	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		return '';
-
-	return $wpcf7_contact_form->message( $status );
+	return $contact_form->message( $status );
 }
 
 ?>
