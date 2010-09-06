@@ -71,10 +71,7 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 function wpcf7_acceptance_filter( $accepted ) {
-	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return $accepted;
-
-	$fes = $contact_form->form_scan_shortcode( array( 'type' => 'acceptance' ) );
+	$fes = wpcf7_scan_shortcode( array( 'type' => 'acceptance' ) );
 
 	foreach ( $fes as $fe ) {
 		$name = $fe['name'];

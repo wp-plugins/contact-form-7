@@ -630,4 +630,11 @@ function wpcf7_get_message( $status ) {
 	return $contact_form->message( $status );
 }
 
+function wpcf7_scan_shortcode( $cond = null ) {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return null;
+
+	return $contact_form->form_scan_shortcode( $cond );
+}
+
 ?>

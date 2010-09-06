@@ -76,11 +76,7 @@ function wpcf7_file_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
 
 function wpcf7_file_form_enctype_filter( $enctype ) {
-	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return $enctype;
-
-	$multipart = (bool) $contact_form->form_scan_shortcode(
-		array( 'type' => array( 'file', 'file*' ) ) );
+	$multipart = (bool) wpcf7_scan_shortcode( array( 'type' => array( 'file', 'file*' ) ) );
 
 	if ( $multipart )
 		$enctype = ' enctype="multipart/form-data"';

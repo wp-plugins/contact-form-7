@@ -112,13 +112,10 @@ add_filter( 'wpcf7_ajax_onload', 'wpcf7_quiz_ajax_refill' );
 add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_refill' );
 
 function wpcf7_quiz_ajax_refill( $items ) {
-	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return $items;
-
 	if ( ! is_array( $items ) )
 		return $items;
 
-	$fes = $contact_form->form_scan_shortcode( array( 'type' => 'quiz' ) );
+	$fes = wpcf7_scan_shortcode( array( 'type' => 'quiz' ) );
 
 	if ( empty( $fes ) )
 		return $items;
