@@ -637,4 +637,16 @@ function wpcf7_scan_shortcode( $cond = null ) {
 	return $contact_form->form_scan_shortcode( $cond );
 }
 
+function wpcf7_add_uploaded_file( $name, $file ) {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
+
+	if ( ! is_array( $contact_form->uploaded_files ) )
+		$contact_form->uploaded_files = array();
+
+	$contact_form->uploaded_files[$name] = $file;
+
+	return $contact_form->uploaded_files;
+}
+
 ?>
