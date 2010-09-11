@@ -2,7 +2,13 @@ jQuery(document).ready(function() {
 	try {
 		jQuery('div.wpcf7 > form').ajaxForm({
 			beforeSubmit: wpcf7BeforeSubmit,
-			data: {'_wpcf7_is_ajax_call': 1},
+			beforeSerialize: function(jqForm, options) {
+				jqForm.find('.wpcf7-use-title-as-watermark.watermark').each(function(i, n) {
+					jQuery(n).val('');
+				});
+				return true;
+			},
+			data: { '_wpcf7_is_ajax_call': 1 },
 			dataType: 'json',
 			success: wpcf7ProcessJson
 		});
@@ -30,12 +36,6 @@ jQuery(document).ready(function() {
 				if ('' == jQuery(this).val()) {
 					jQuery(this).val(jQuery(this).attr('title'));
 					jQuery(this).addClass('watermark');
-				}
-			});
-
-			input.submit(function() {
-				if (jQuery(this).hasClass('watermark')) {
-					jQuery(this).val('');
 				}
 			});
 		});
