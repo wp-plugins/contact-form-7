@@ -59,3 +59,7 @@ div.wpcf7 img.ajax-loader {
 	vertical-align: middle;
 	margin-left: 4px;
 }
+
+div.wpcf7 .watermark {
+	color: #888;
+}

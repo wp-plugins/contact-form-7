@@ -12,6 +12,32 @@ jQuery(document).ready(function() {
 		jQuery('div.wpcf7 > form').each(function(i, n) {
 			wpcf7ToggleSubmit(jQuery(n));
 		});
+
+		jQuery('.wpcf7-use-title-as-watermark').each(function(i, n) {
+			var input = jQuery(n);
+			input.val(input.attr('title'));
+			input.addClass('watermark');
+
+			input.focus(function() {
+				if (jQuery(this).hasClass('watermark')) {
+					jQuery(this).val('');
+					jQuery(this).removeClass('watermark');
+				}
+			});
+
+			input.blur(function() {
+				if ('' == jQuery(this).val()) {
+					jQuery(this).val(jQuery(this).attr('title'));
+					jQuery(this).addClass('watermark');
+				}
+			});
+
+			input.submit(function() {
+				if (jQuery(this).hasClass('watermark')) {
+					jQuery(this).val('');
+				}
+			});
+		});
 	} catch (e) {
 	}
 

@@ -28,6 +28,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	$size_att = '';
 	$maxlength_att = '';
 	$tabindex_att = '';
+	$title_att = '';
 
 	$class_att .= ' wpcf7-text';
 
@@ -54,6 +55,17 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		}
 	}
 
+	$value = (string) reset( $values );
+
+	if ( wpcf7_script_is() && $value && preg_grep( '%^watermark$%', $options ) ) {
+		$class_att .= ' wpcf7-use-title-as-watermark';
+		$title_att .= sprintf( ' %s', $value );
+		$value = '';
+	}
+
+	if ( wpcf7_is_posted() )
+		$value = stripslashes_deep( $_POST[$name] );
+
 	if ( $id_att )
 		$atts .= ' id="' . trim( $id_att ) . '"';
 
@@ -71,12 +83,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( '' !== $tabindex_att )
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
-	// Value
-	if ( wpcf7_is_posted() ) {
-		$value = stripslashes_deep( $_POST[$name] );
-	} else {
-		$value = isset( $values[0] ) ? $values[0] : '';
-	}
+	if ( $title_att )
+		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
 
 	$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 
