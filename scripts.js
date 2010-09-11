@@ -2,6 +2,7 @@ jQuery(document).ready(function() {
 	try {
 		jQuery('div.wpcf7 > form').ajaxForm({
 			beforeSubmit: wpcf7BeforeSubmit,
+			data: {'_wpcf7_is_ajax_call': 1},
 			dataType: 'json',
 			success: wpcf7ProcessJson
 		});
@@ -79,9 +80,6 @@ function wpcf7ToggleSubmit(form) {
 function wpcf7BeforeSubmit(formData, jqForm, options) {
 	wpcf7ClearResponseOutput();
 	jQuery('img.ajax-loader', jqForm[0]).css({ visibility: 'visible' });
-
-	formData.push({name: '_wpcf7_is_ajax_call', value: 1});
-	jQuery(jqForm[0]).append('<input type="hidden" name="_wpcf7_is_ajax_call" value="1" />');
 
 	return true;
 }
