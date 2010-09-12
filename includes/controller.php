@@ -249,7 +249,7 @@ function wpcf7_enqueue_scripts() {
 	// jquery.form.js originally bundled with WordPress is out of date and deprecated
 	// so we need to deregister it and re-register the latest one
 	wp_deregister_script( 'jquery-form' );
-	wp_enqueue_script( 'jquery-form', wpcf7_plugin_url( 'jquery.form.js' ),
+	wp_register_script( 'jquery-form', wpcf7_plugin_url( 'jquery.form.js' ),
 		array( 'jquery' ), '2.47', true );
 
 	$in_footer = true;
