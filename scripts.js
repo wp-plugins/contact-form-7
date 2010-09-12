@@ -63,10 +63,14 @@
 			});
 
 			$('div.wpcf7 > form').each(function(i, n) {
-				wpcf7ToggleSubmit($(n));
-
 				if (_wpcf7.cached)
 					wpcf7OnloadRefill($(n));
+
+				$(n).toggleSubmit();
+
+				$(n).find('.wpcf7-acceptance').click(function() {
+					$(n).toggleSubmit();
+				});
 
 				$(n).find('.wpcf7-exclusive-checkbox').each(function(i, n) {
 					$(n).find('input:checkbox').click(function() {
@@ -99,25 +103,30 @@
 		}
 	});
 
-	// Toggle submit button
-	function wpcf7ToggleSubmit(form) {
-		if ($(form).hasClass('wpcf7-acceptance-as-validation'))
-			return;
+	$.fn.toggleSubmit = function() {
+		return this.each(function() {
+			var form = $(this);
+			if (this.tagName.toLowerCase() != 'form')
+				form = $(this).find('form').first();
 
-		var submit = $(form).find('input:submit');
-		if (! submit.length) return;
+			if (form.hasClass('wpcf7-acceptance-as-validation'))
+				return;
 
-		var acceptances = $(form).find('input:checkbox.wpcf7-acceptance');
-		if (! acceptances.length) return;
+			var submit = form.find('input:submit');
+			if (! submit.length) return;
 
-		submit.removeAttr('disabled');
-		acceptances.each(function(i, n) {
-			n = $(n);
-			if (n.hasClass('wpcf7-invert') && n.is(':checked')
-			|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
-				submit.attr('disabled', 'disabled');
+			var acceptances = form.find('input:checkbox.wpcf7-acceptance');
+			if (! acceptances.length) return;
+
+			submit.removeAttr('disabled');
+			acceptances.each(function(i, n) {
+				n = $(n);
+				if (n.hasClass('wpcf7-invert') && n.is(':checked')
+				|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
+					submit.attr('disabled', 'disabled');
+			});
 		});
-	}
+	};
 
 	function wpcf7NotValidTip(into, message) {
 		$(into).append('<span class="wpcf7-not-valid-tip">' + message + '</span>');

@@ -53,14 +53,9 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	$default_on = (bool) preg_grep( '/^default:on$/i', $options );
 
-	if ( wpcf7_script_is() && ! wpcf7_acceptance_as_validation() )
-		$onclick = ' onclick="wpcf7ToggleSubmit(this.form);"';
-	else
-		$onclick = '';
-
 	$checked = $default_on ? ' checked="checked"' : '';
 
-	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $onclick . $checked . ' />';
+	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $checked . ' />';
 
 	$validation_error = wpcf7_get_validation_error( $name );
 
