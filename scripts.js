@@ -9,7 +9,7 @@
 
 			$('div.wpcf7 > form').ajaxForm({
 				beforeSubmit: function(formData, jqForm, options) {
-					wpcf7ClearResponseOutput();
+					jqForm.clearResponseOutput();
 					jqForm.find('img.ajax-loader').css({ visibility: 'visible' });
 					return true;
 				},
@@ -21,7 +21,45 @@
 				},
 				data: { '_wpcf7_is_ajax_call': 1 },
 				dataType: 'json',
-				success: wpcf7ProcessJson
+				success: function(data) {
+					var wpcf7ResponseOutput = $(data.into).find('div.wpcf7-response-output');
+					$(data.into).clearResponseOutput();
+
+					if (data.invalids) {
+						$.each(data.invalids, function(i, n) {
+							wpcf7NotValidTip($(data.into).find(n.into), n.message);
+						});
+						wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
+					}
+
+					if (data.captcha)
+						wpcf7RefillCaptcha(data.into, data.captcha);
+
+					if (data.quiz)
+						wpcf7RefillQuiz(data.into, data.quiz);
+
+					if (1 == data.spam)
+						wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
+
+					if (1 == data.mailSent) {
+						$(data.into).find('form').resetForm().clearForm();
+						wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
+
+						if (data.onSentOk)
+							$.each(data.onSentOk, function(i, n) { eval(n) });
+					} else {
+						wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
+					}
+
+					if (data.onSubmit)
+						$.each(data.onSubmit, function(i, n) { eval(n) });
+
+					$(data.into).find('.wpcf7-use-title-as-watermark.watermark').each(function(i, n) {
+						$(n).val($(n).attr('title'));
+					});
+
+					wpcf7ResponseOutput.append(data.message).slideDown('fast');
+				}
 			});
 
 			$('div.wpcf7 > form').each(function(i, n) {
@@ -113,45 +151,6 @@
 		);
 	}
 
-	function wpcf7ProcessJson(data) {
-		var wpcf7ResponseOutput = $(data.into).find('div.wpcf7-response-output');
-		wpcf7ClearResponseOutput();
-
-		if (data.invalids) {
-			$.each(data.invalids, function(i, n) {
-				wpcf7NotValidTip($(data.into).find(n.into), n.message);
-			});
-			wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
-		}
-
-		if (data.captcha) {
-			wpcf7RefillCaptcha(data.into, data.captcha);
-		}
-
-		if (data.quiz) {
-			wpcf7RefillQuiz(data.into, data.quiz);
-		}
-
-		if (1 == data.spam) {
-			wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
-		}
-
-		if (1 == data.mailSent) {
-			$(data.into).find('form').resetForm().clearForm();
-			wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
-
-			if (data.onSentOk)
-				$.each(data.onSentOk, function(i, n) { eval(n) });
-		} else {
-			wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
-		}
-
-		if (data.onSubmit)
-			$.each(data.onSubmit, function(i, n) { eval(n) });
-
-		wpcf7ResponseOutput.append(data.message).slideDown('fast');
-	}
-
 	function wpcf7RefillCaptcha(form, captcha) {
 		$.each(captcha, function(i, n) {
 			$(form).find(':input[name="' + i + '"]').clearFields();
@@ -169,10 +168,12 @@
 		});
 	}
 
-	function wpcf7ClearResponseOutput() {
-		$('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
-		$('span.wpcf7-not-valid-tip').remove();
-		$('img.ajax-loader').css({ visibility: 'hidden' });
-	}
+	$.fn.clearResponseOutput = function() {
+		return this.each(function() {
+			$(this).find('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
+			$(this).find('span.wpcf7-not-valid-tip').remove();
+			$(this).find('img.ajax-loader').css({ visibility: 'hidden' });
+		});
+	};
 
 })(jQuery);
