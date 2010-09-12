@@ -1,174 +1,178 @@
-jQuery(document).ready(function() {
-	try {
-		if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
-			_wpcf7 = {};
+(function($) {
 
-		_wpcf7 = jQuery.extend({ cached: 0 }, _wpcf7);
+	$(function() {
+		try {
+			if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
+				_wpcf7 = {};
 
-		jQuery('div.wpcf7 > form').ajaxForm({
-			beforeSubmit: function(formData, jqForm, options) {
-				wpcf7ClearResponseOutput();
-				jqForm.find('img.ajax-loader').css({ visibility: 'visible' });
-				return true;
-			},
-			beforeSerialize: function(jqForm, options) {
-				jqForm.find('.wpcf7-use-title-as-watermark.watermark').each(function(i, n) {
-					jQuery(n).val('');
+			_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
+
+			$('div.wpcf7 > form').ajaxForm({
+				beforeSubmit: function(formData, jqForm, options) {
+					wpcf7ClearResponseOutput();
+					jqForm.find('img.ajax-loader').css({ visibility: 'visible' });
+					return true;
+				},
+				beforeSerialize: function(jqForm, options) {
+					jqForm.find('.wpcf7-use-title-as-watermark.watermark').each(function(i, n) {
+						$(n).val('');
+					});
+					return true;
+				},
+				data: { '_wpcf7_is_ajax_call': 1 },
+				dataType: 'json',
+				success: wpcf7ProcessJson
+			});
+
+			$('div.wpcf7 > form').each(function(i, n) {
+				wpcf7ToggleSubmit($(n));
+
+				if (_wpcf7.cached)
+					wpcf7OnloadRefill($(n));
+			});
+
+			$('.wpcf7-use-title-as-watermark').each(function(i, n) {
+				var input = $(n);
+				input.val(input.attr('title'));
+				input.addClass('watermark');
+
+				input.focus(function() {
+					if ($(this).hasClass('watermark')) {
+						$(this).val('');
+						$(this).removeClass('watermark');
+					}
 				});
-				return true;
-			},
-			data: { '_wpcf7_is_ajax_call': 1 },
-			dataType: 'json',
-			success: wpcf7ProcessJson
-		});
 
-		jQuery('div.wpcf7 > form').each(function(i, n) {
-			wpcf7ToggleSubmit(jQuery(n));
-
-			if (_wpcf7.cached)
-				wpcf7OnloadRefill(jQuery(n));
-		});
-
-		jQuery('.wpcf7-use-title-as-watermark').each(function(i, n) {
-			var input = jQuery(n);
-			input.val(input.attr('title'));
-			input.addClass('watermark');
-
-			input.focus(function() {
-				if (jQuery(this).hasClass('watermark')) {
-					jQuery(this).val('');
-					jQuery(this).removeClass('watermark');
-				}
+				input.blur(function() {
+					if ('' == $(this).val()) {
+						$(this).val($(this).attr('title'));
+						$(this).addClass('watermark');
+					}
+				});
 			});
-
-			input.blur(function() {
-				if ('' == jQuery(this).val()) {
-					jQuery(this).val(jQuery(this).attr('title'));
-					jQuery(this).addClass('watermark');
-				}
-			});
-		});
-	} catch (e) {
-	}
-});
-
-// Exclusive checkbox
-function wpcf7ExclusiveCheckbox(elem) {
-	jQuery(elem.form).find('input:checkbox[name="' + elem.name + '"]').not(elem).removeAttr('checked');
-}
-
-// Toggle submit button
-function wpcf7ToggleSubmit(form) {
-	if (jQuery(form).hasClass('wpcf7-acceptance-as-validation'))
-		return;
-
-	var submit = jQuery(form).find('input:submit');
-	if (! submit.length) return;
-
-	var acceptances = jQuery(form).find('input:checkbox.wpcf7-acceptance');
-	if (! acceptances.length) return;
-
-	submit.removeAttr('disabled');
-	acceptances.each(function(i, n) {
-		n = jQuery(n);
-		if (n.hasClass('wpcf7-invert') && n.is(':checked')
-		|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
-			submit.attr('disabled', 'disabled');
-	});
-}
-
-function wpcf7NotValidTip(into, message) {
-	jQuery(into).append('<span class="wpcf7-not-valid-tip">' + message + '</span>');
-	jQuery('span.wpcf7-not-valid-tip').mouseover(function() {
-		jQuery(this).fadeOut('fast');
-	});
-	jQuery(into).find(':input').mouseover(function() {
-		jQuery(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
-	});
-	jQuery(into).find(':input').focus(function() {
-		jQuery(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
-	});
-}
-
-function wpcf7OnloadRefill(form) {
-	var url = jQuery(form).attr('action');
-	if (0 < url.indexOf('#'))
-		url = url.substr(0, url.indexOf('#'));
-
-	var id = jQuery(form).find('input[name="_wpcf7"]').val();
-	var unitTag = jQuery(form).find('input[name="_wpcf7_unit_tag"]').val();
-
-	jQuery.getJSON(url,
-		{ _wpcf7_is_ajax_call: 1, _wpcf7: id },
-		function(data) {
-			if (data && data.captcha) {
-				wpcf7RefillCaptcha('#' + unitTag, data.captcha);
-			}
-			if (data && data.quiz) {
-				wpcf7RefillQuiz('#' + unitTag, data.quiz);
-			}
+		} catch (e) {
 		}
-	);
-}
+	});
 
-function wpcf7ProcessJson(data) {
-	var wpcf7ResponseOutput = jQuery(data.into).find('div.wpcf7-response-output');
-	wpcf7ClearResponseOutput();
+	// Exclusive checkbox
+	function wpcf7ExclusiveCheckbox(elem) {
+		$(elem.form).find('input:checkbox[name="' + elem.name + '"]').not(elem).removeAttr('checked');
+	}
 
-	if (data.invalids) {
-		jQuery.each(data.invalids, function(i, n) {
-			wpcf7NotValidTip(jQuery(data.into).find(n.into), n.message);
+	// Toggle submit button
+	function wpcf7ToggleSubmit(form) {
+		if ($(form).hasClass('wpcf7-acceptance-as-validation'))
+			return;
+
+		var submit = $(form).find('input:submit');
+		if (! submit.length) return;
+
+		var acceptances = $(form).find('input:checkbox.wpcf7-acceptance');
+		if (! acceptances.length) return;
+
+		submit.removeAttr('disabled');
+		acceptances.each(function(i, n) {
+			n = $(n);
+			if (n.hasClass('wpcf7-invert') && n.is(':checked')
+			|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
+				submit.attr('disabled', 'disabled');
 		});
-		wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
 	}
 
-	if (data.captcha) {
-		wpcf7RefillCaptcha(data.into, data.captcha);
+	function wpcf7NotValidTip(into, message) {
+		$(into).append('<span class="wpcf7-not-valid-tip">' + message + '</span>');
+		$('span.wpcf7-not-valid-tip').mouseover(function() {
+			$(this).fadeOut('fast');
+		});
+		$(into).find(':input').mouseover(function() {
+			$(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
+		});
+		$(into).find(':input').focus(function() {
+			$(into).find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
+		});
 	}
 
-	if (data.quiz) {
-		wpcf7RefillQuiz(data.into, data.quiz);
+	function wpcf7OnloadRefill(form) {
+		var url = $(form).attr('action');
+		if (0 < url.indexOf('#'))
+			url = url.substr(0, url.indexOf('#'));
+
+		var id = $(form).find('input[name="_wpcf7"]').val();
+		var unitTag = $(form).find('input[name="_wpcf7_unit_tag"]').val();
+
+		$.getJSON(url,
+			{ _wpcf7_is_ajax_call: 1, _wpcf7: id },
+			function(data) {
+				if (data && data.captcha) {
+					wpcf7RefillCaptcha('#' + unitTag, data.captcha);
+				}
+				if (data && data.quiz) {
+					wpcf7RefillQuiz('#' + unitTag, data.quiz);
+				}
+			}
+		);
 	}
 
-	if (1 == data.spam) {
-		wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
+	function wpcf7ProcessJson(data) {
+		var wpcf7ResponseOutput = $(data.into).find('div.wpcf7-response-output');
+		wpcf7ClearResponseOutput();
+
+		if (data.invalids) {
+			$.each(data.invalids, function(i, n) {
+				wpcf7NotValidTip($(data.into).find(n.into), n.message);
+			});
+			wpcf7ResponseOutput.addClass('wpcf7-validation-errors');
+		}
+
+		if (data.captcha) {
+			wpcf7RefillCaptcha(data.into, data.captcha);
+		}
+
+		if (data.quiz) {
+			wpcf7RefillQuiz(data.into, data.quiz);
+		}
+
+		if (1 == data.spam) {
+			wpcf7ResponseOutput.addClass('wpcf7-spam-blocked');
+		}
+
+		if (1 == data.mailSent) {
+			$(data.into).find('form').resetForm().clearForm();
+			wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
+
+			if (data.onSentOk)
+				$.each(data.onSentOk, function(i, n) { eval(n) });
+		} else {
+			wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
+		}
+
+		if (data.onSubmit)
+			$.each(data.onSubmit, function(i, n) { eval(n) });
+
+		wpcf7ResponseOutput.append(data.message).slideDown('fast');
 	}
 
-	if (1 == data.mailSent) {
-		jQuery(data.into).find('form').resetForm().clearForm();
-		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ok');
-
-		if (data.onSentOk)
-			jQuery.each(data.onSentOk, function(i, n) { eval(n) });
-	} else {
-		wpcf7ResponseOutput.addClass('wpcf7-mail-sent-ng');
+	function wpcf7RefillCaptcha(form, captcha) {
+		$.each(captcha, function(i, n) {
+			$(form).find(':input[name="' + i + '"]').clearFields();
+			$(form).find('img.wpcf7-captcha-' + i).attr('src', n);
+			var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
+			$(form).find('input:hidden[name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
+		});
 	}
 
-	if (data.onSubmit)
-		jQuery.each(data.onSubmit, function(i, n) { eval(n) });
+	function wpcf7RefillQuiz(form, quiz) {
+		$.each(quiz, function(i, n) {
+			$(form).find(':input[name="' + i + '"]').clearFields();
+			$(form).find(':input[name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
+			$(form).find('input:hidden[name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
+		});
+	}
 
-	wpcf7ResponseOutput.append(data.message).slideDown('fast');
-}
+	function wpcf7ClearResponseOutput() {
+		$('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
+		$('span.wpcf7-not-valid-tip').remove();
+		$('img.ajax-loader').css({ visibility: 'hidden' });
+	}
 
-function wpcf7RefillCaptcha(form, captcha) {
-	jQuery.each(captcha, function(i, n) {
-		jQuery(form).find(':input[name="' + i + '"]').clearFields();
-		jQuery(form).find('img.wpcf7-captcha-' + i).attr('src', n);
-		var match = /([0-9]+)\.(png|gif|jpeg)$/.exec(n);
-		jQuery(form).find('input:hidden[name="_wpcf7_captcha_challenge_' + i + '"]').attr('value', match[1]);
-	});
-}
-
-function wpcf7RefillQuiz(form, quiz) {
-	jQuery.each(quiz, function(i, n) {
-		jQuery(form).find(':input[name="' + i + '"]').clearFields();
-		jQuery(form).find(':input[name="' + i + '"]').siblings('span.wpcf7-quiz-label').text(n[0]);
-		jQuery(form).find('input:hidden[name="_wpcf7_quiz_answer_' + i + '"]').attr('value', n[1]);
-	});
-}
-
-function wpcf7ClearResponseOutput() {
-	jQuery('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
-	jQuery('span.wpcf7-not-valid-tip').remove();
-	jQuery('img.ajax-loader').css({ visibility: 'hidden' });
-}
+})(jQuery);
