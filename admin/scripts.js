@@ -1,112 +1,116 @@
-jQuery(document).ready(function() {
-	try {
-		jQuery.extend(jQuery.tgPanes, _wpcf7.tagGenerators);
-		jQuery('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
-			{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
+(function($) {
 
-		jQuery('input#wpcf7-title:enabled').css({
-			cursor: 'pointer'
-		});
+	$(function() {
+		try {
+			$.extend($.tgPanes, _wpcf7.tagGenerators);
+			$('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
+				{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
 
-		jQuery('input#wpcf7-title').mouseover(function() {
-			jQuery(this).not('.focus').css({
-				'background-color': '#ffffdd'
+			$('input#wpcf7-title:enabled').css({
+				cursor: 'pointer'
 			});
-		});
 
-		jQuery('input#wpcf7-title').mouseout(function() {
-			jQuery(this).css({
-				'background-color': '#fff'
+			$('input#wpcf7-title').mouseover(function() {
+				$(this).not('.focus').css({
+					'background-color': '#ffffdd'
+				});
 			});
-		});
 
-		jQuery('input#wpcf7-title').focus(function() {
-			jQuery(this).addClass('focus');
-			jQuery(this).css({
-				cursor: 'text',
-				color: '#333',
-				border: '1px solid #777',
-				font: 'normal 13px Verdana, Arial, Helvetica, sans-serif',
-				'background-color': '#fff'
+			$('input#wpcf7-title').mouseout(function() {
+				$(this).css({
+					'background-color': '#fff'
+				});
 			});
-		});
 
-		jQuery('input#wpcf7-title').blur(function() {
-			jQuery(this).removeClass('focus');
-			jQuery(this).css({
-				cursor: 'pointer',
-				color: '#555',
-				border: 'none',
-				font: 'bold 20px serif',
-				'background-color': '#fff'
+			$('input#wpcf7-title').focus(function() {
+				$(this).addClass('focus');
+				$(this).css({
+					cursor: 'text',
+					color: '#333',
+					border: '1px solid #777',
+					font: 'normal 13px Verdana, Arial, Helvetica, sans-serif',
+					'background-color': '#fff'
+				});
 			});
-		});
 
-		jQuery('input#wpcf7-title').change(function() {
+			$('input#wpcf7-title').blur(function() {
+				$(this).removeClass('focus');
+				$(this).css({
+					cursor: 'pointer',
+					color: '#555',
+					border: 'none',
+					font: 'bold 20px serif',
+					'background-color': '#fff'
+				});
+			});
+
+			$('input#wpcf7-title').change(function() {
+				updateTag();
+			});
+
 			updateTag();
-		});
 
-		updateTag();
+			if ($.support.objectAll) {
+				if (! $('#wpcf7-mail-2-active').is(':checked'))
+					$('#mail-2-fields').hide();
 
-		if (jQuery.support.objectAll) {
-			if (! jQuery('#wpcf7-mail-2-active').is(':checked'))
-				jQuery('#mail-2-fields').hide();
+				$('#wpcf7-mail-2-active').click(function() {
+					if ($('#mail-2-fields').is(':hidden')
+					&& $('#wpcf7-mail-2-active').is(':checked')) {
+						$('#mail-2-fields').slideDown('fast');
+					} else if ($('#mail-2-fields').is(':visible')
+					&& $('#wpcf7-mail-2-active').not(':checked')) {
+						$('#mail-2-fields').slideUp('fast');
+					}
+				});
+			}
 
-			jQuery('#wpcf7-mail-2-active').click(function() {
-				if (jQuery('#mail-2-fields').is(':hidden')
-				&& jQuery('#wpcf7-mail-2-active').is(':checked')) {
-					jQuery('#mail-2-fields').slideDown('fast');
-				} else if (jQuery('#mail-2-fields').is(':visible')
-				&& jQuery('#wpcf7-mail-2-active').not(':checked')) {
-					jQuery('#mail-2-fields').slideUp('fast');
+			$('#message-fields-toggle-switch').text(_wpcf7L10n.show);
+			$('#message-fields').hide();
+
+			$('#message-fields-toggle-switch').click(function() {
+				if ($('#message-fields').is(':hidden')) {
+					$('#message-fields').slideDown('fast');
+					$('#message-fields-toggle-switch').text(_wpcf7L10n.hide);
+				} else {
+					$('#message-fields').hide('fast');
+					$('#message-fields-toggle-switch').text(_wpcf7L10n.show);
 				}
 			});
-		}
 
-		jQuery('#message-fields-toggle-switch').text(_wpcf7L10n.show);
-		jQuery('#message-fields').hide();
-
-		jQuery('#message-fields-toggle-switch').click(function() {
-			if (jQuery('#message-fields').is(':hidden')) {
-				jQuery('#message-fields').slideDown('fast');
-				jQuery('#message-fields-toggle-switch').text(_wpcf7L10n.hide);
+			if ('' == $.trim($('#wpcf7-additional-settings').text())) {
+				$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
+				$('#additional-settings-fields').hide();
 			} else {
-				jQuery('#message-fields').hide('fast');
-				jQuery('#message-fields-toggle-switch').text(_wpcf7L10n.show);
+				$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
+				$('#additional-settings-fields').show();
 			}
-		});
 
-		if ('' == jQuery.trim(jQuery('#wpcf7-additional-settings').text())) {
-			jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
-			jQuery('#additional-settings-fields').hide();
-		} else {
-			jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
-			jQuery('#additional-settings-fields').show();
+			$('#additional-settings-fields-toggle-switch').click(function() {
+				if ($('#additional-settings-fields').is(':hidden')) {
+					$('#additional-settings-fields').slideDown('fast');
+					$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
+				} else {
+					$('#additional-settings-fields').hide('fast');
+					$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
+				}
+			});
+
+		} catch (e) {
 		}
+	});
 
-		jQuery('#additional-settings-fields-toggle-switch').click(function() {
-			if (jQuery('#additional-settings-fields').is(':hidden')) {
-				jQuery('#additional-settings-fields').slideDown('fast');
-				jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
-			} else {
-				jQuery('#additional-settings-fields').hide('fast');
-				jQuery('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
-			}
-		});
+	function updateTag() {
+		var title = $('input#wpcf7-title').val();
 
-	} catch (e) {
+		if (title)
+			title = title.replace(/["'\[\]]/g, '');
+
+		$('input#wpcf7-title').val(title);
+		var current = $('input#wpcf7-id').val();
+		var tag = '[contact-form ' + current + ' "' + title + '"]';
+
+		$('input#contact-form-anchor-text').val(tag);
 	}
-});
 
-function updateTag() {
-	var title = jQuery('input#wpcf7-title').val();
-
-	if (title)
-		title = title.replace(/["'\[\]]/g, '');
-
-	jQuery('input#wpcf7-title').val(title);
-	var current = jQuery('input#wpcf7-id').val();
-	var tag = '[contact-form ' + current + ' "' + title + '"]';
-
-	jQuery('input#contact-form-anchor-text').val(tag);
-}
+})(jQuery);
