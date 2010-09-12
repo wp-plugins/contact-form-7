@@ -63,20 +63,25 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		}
 	}
 
+	$multiple = false;
+	$exclusive = (bool) preg_grep( '%^exclusive$%', $options );
+
+	if ( 'checkbox' == $type || 'checkbox*' == $type ) {
+		$multiple = ! $exclusive;
+	} else { // radio
+		$exclusive = false;
+	}
+
+	if ( $exclusive )
+		$class_att .= ' wpcf7-exclusive-checkbox';
+
 	if ( $id_att )
 		$atts .= ' id="' . trim( $id_att ) . '"';
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
-	$multiple = preg_match( '/^checkbox[*]?$/', $type ) && ! preg_grep( '%^exclusive$%', $options );
-
 	$html = '';
-
-	if ( preg_match( '/^checkbox[*]?$/', $type ) && ! $multiple && wpcf7_script_is() )
-		$onclick = ' onclick="wpcf7ExclusiveCheckbox(this);"';
-	else
-		$onclick = '';
 
 	$input_type = rtrim( $type, '*' );
 
@@ -111,9 +116,9 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		if ( $label_first ) { // put label first, input last
 			$item = '<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>&nbsp;';
-			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . $onclick . ' />';
+			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . ' />';
 		} else {
-			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . $onclick . ' />';
+			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . ' />';
 			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>';
 		}
 
