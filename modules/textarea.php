@@ -154,6 +154,10 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 
 <tr>
 <td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
+
+<td>
+<br /><input type="checkbox" name="watermark" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as watermark?', 'wpcf7' ) ); ?>
+</td>
 </tr>
 </table>
 
