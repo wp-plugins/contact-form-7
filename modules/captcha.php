@@ -382,7 +382,7 @@ function wpcf7_remove_captcha( $prefix ) {
 		return false;
 	$captcha =& $wpcf7_captcha;
 
-	if ( preg_match( '/[^0-9a-zA-Z_]/', $prefix ) )
+	if ( preg_match( '/[^0-9]/', $prefix ) ) // Contact Form 7 generates $prefix with mt_rand()
 		return false;
 
 	$captcha->remove( $prefix );
