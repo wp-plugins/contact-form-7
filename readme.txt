@@ -12,9 +12,11 @@ Just another contact form plugin. Simple but flexible.
 
 Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on.
 
-* [Docs](http://contactform7.com/docs/)
-* [FAQ](http://contactform7.com/faq/)
-* [Support](http://contactform7.com/support/)
+= Plugin's Official Site =
+
+Contact Form 7 [(http://contactform7.com)](http://contactform7.com/)
+
+* [Docs](http://contactform7.com/docs/) - [FAQ](http://contactform7.com/faq/) - [Support](http://contactform7.com/support/)
 
 = Contact Form 7 Needs Your Support =
 
@@ -97,21 +99,13 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 2.3.1 =
+= 2.4 =
 
-* Fixed: wrongly applying 'autop' filter to message body of HTML-formatted mail.
-* Fixed: possible cause of some Ajax-related troubles.
-* Fixed: wrong HTML format of the result of [response] tag.
-* Fixed: rewrote a few codes for avoiding warnings.
-* Fixed: wrongly applying 'autop' filter to &lt;textarea&gt; contents.
-* You can customize ajax loader image with new wpcf7_ajax_loader filter.
-* Translations for Ukrainian (Ukrainian WordPress localization team), Brazilian Portuguese (Gervásio Antônio) and Serbian (Aleksandar Urošević) have been updated.
-
-= 2.3 =
-
-* The required WordPress version has been changed and now requires WordPress 2.9 or higher. If you use WordPress 2.8, you will need to upgrade WordPress.
-* When you insert multi-line text input into the message body of HTML-formatted mail, Contact Form 7 automatically applies an 'autop' (auto paragraph) filter to the text. This makes it so that the original user input styles remain -- and does not break paragraph styles in the HTML view.
-* Translations for German (Ivan Graf), Finnish (Mediajalostamo), Thai (kazama) and Danish (Georg S. Adamsen) have been updated.
+* Moved PO files to the external branch. They were space-consuming and enlarging the plugin package.
+* Added an option for size attribute of &lt;input type="file"&gt;.
+* Added 'acceptance_as_validation' additional setting. This setting allows you to use acceptance checkbox as object of validation.
+* Added watermark support to text, email and textarea tags.
+* Use the latest jQuery Form plugin instead of the old one which WordPress bundles.
 
 [Releases](http://contactform7.com/category/releases/)
 
