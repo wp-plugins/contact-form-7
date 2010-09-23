@@ -99,6 +99,11 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 2.4.1 =
+
+* Fixed a bug causing fatal error on WordPress 2.9.
+* Translations for Norwegian (Peter Holme) and Italian (Gianni Diurno) have been updated.
+
 = 2.4 =
 
 * Moved PO files to the external branch. They were space-consuming and enlarging the plugin package.
