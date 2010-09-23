@@ -95,13 +95,27 @@ function wpcf7_default_messages_template() {
 	return $messages;
 }
 
+function wpcf7_is_multisite() { // will be removed when WordPress 2.9 is not supported
+	if ( function_exists( 'is_multisite' ) )
+		return is_multisite();
+
+	return false;
+}
+
+function wpcf7_is_main_site() { // will be removed when WordPress 2.9 is not supported
+	if ( function_exists( 'is_main_site' ) )
+		return is_main_site();
+
+	return false;
+}
+
 function wpcf7_upload_dir( $type = false ) {
 	global $switched;
 
 	$siteurl = get_option( 'siteurl' );
 	$upload_path = trim( get_option( 'upload_path' ) );
 
-	$main_override = is_multisite() && defined( 'MULTISITE' ) && is_main_site();
+	$main_override = wpcf7_is_multisite() && defined( 'MULTISITE' ) && wpcf7_is_main_site();
 
 	if ( empty( $upload_path ) ) {
 		$dir = WP_CONTENT_DIR . '/uploads';
@@ -131,7 +145,7 @@ function wpcf7_upload_dir( $type = false ) {
 		$url = trailingslashit( $siteurl ) . UPLOADS;
 	}
 
-	if ( is_multisite() && ! $main_override
+	if ( wpcf7_is_multisite() && ! $main_override
 	&& ( ! isset( $switched ) || $switched === false ) ) {
 
 		if ( defined( 'BLOGUPLOADDIR' ) )
