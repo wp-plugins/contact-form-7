@@ -197,6 +197,7 @@ function wpcf7_l10n() {
 		'ko_KR' => __( 'Korean', 'wpcf7' ),
 		'lv' => __( 'Latvian', 'wpcf7' ),
 		'lt_LT' => __( 'Lithuanian', 'wpcf7' ),
+		'ms_MY' => __( 'Malay', 'wpcf7' ),
 		'ml_IN' => __( 'Malayalam', 'wpcf7' ),
 		'nb_NO' => __( 'Norwegian', 'wpcf7' ),
 		'fa_IR' => __( 'Persian', 'wpcf7' ),
