@@ -106,7 +106,6 @@ input#contact-form-anchor-text {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
-	direction: ltr;
 }
 
 span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
