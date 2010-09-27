@@ -14,7 +14,7 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 = Plugin's Official Site =
 
-Contact Form 7 [(http://contactform7.com)](http://contactform7.com/)
+Contact Form 7 ([http://contactform7.com](http://contactform7.com/))
 
 * [Docs](http://contactform7.com/docs/) - [FAQ](http://contactform7.com/faq/) - [Support](http://contactform7.com/support/)
 
