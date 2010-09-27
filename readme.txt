@@ -54,6 +54,7 @@ It is hard to continue development and support for this plugin without contribut
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
 * Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
+* Macedonian (mk_MK) - Darko
 * Malay (ms_MY) - [Zairul Azmil](http://www.zairul.com/)
 * Malayalam (ml_IN) - [RAHUL.S.A](http://www.infution.co.cc/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net), [Peter Holme](http://holme.se/nettsteder/)
