@@ -1,10 +1,9 @@
 === Contact Form 7 ===
 Contributors: takayukister
-Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
 Tested up to: 3.0.1
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 
 Just another contact form plugin. Simple but flexible.
 
@@ -96,6 +95,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.4.2 =
+
+* Translation for Macedonian has been created by Darko.
+* Translation for Malay has been created by Zairul Azmil.
+* Translations for Danish (Georg S. Adamsen), French (Maître Mô), German (Ivan Graf), Latvian (Sandis Veinbergs) and Persian (Mohammad Musavi) have been updated.
 
 = 2.4.1 =
 
