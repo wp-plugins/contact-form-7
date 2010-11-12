@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form | V2.4\n"
+"Project-Id-Version: Contact Form | V2.4.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-22 16:34+0900\n"
-"PO-Revision-Date: 2010-09-23 18:07+0100\n"
+"POT-Creation-Date: 2010-09-25 19:03+0900\n"
+"PO-Revision-Date: 2010-11-12 17:20+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -341,191 +341,195 @@ msgstr "Nachrichtentext:"
 msgid "This mail is sent via contact form on %1$s %2$s"
 msgstr "Dieses Mail wurde über das Kontaktformular von %1$s (%2$s) gesendet"
 
-#: contact-form-7/includes/functions.php:155
+#: contact-form-7/includes/functions.php:169
 msgid "Afrikaans"
 msgstr "Afrikanisch"
 
-#: contact-form-7/includes/functions.php:156
+#: contact-form-7/includes/functions.php:170
 msgid "Albanian"
 msgstr "Albanisch"
 
-#: contact-form-7/includes/functions.php:157
+#: contact-form-7/includes/functions.php:171
 msgid "Arabic"
 msgstr "Arabisch"
 
-#: contact-form-7/includes/functions.php:158
+#: contact-form-7/includes/functions.php:172
 msgid "Bangla"
 msgstr "Bengalisch"
 
-#: contact-form-7/includes/functions.php:159
+#: contact-form-7/includes/functions.php:173
 msgid "Bosnian"
 msgstr "Bosnisch"
 
-#: contact-form-7/includes/functions.php:160
+#: contact-form-7/includes/functions.php:174
 msgid "Brazilian Portuguese"
 msgstr "Brasilianisch Portugiesisch"
 
-#: contact-form-7/includes/functions.php:161
+#: contact-form-7/includes/functions.php:175
 msgid "Bulgarian"
 msgstr "Bulgarisch"
 
-#: contact-form-7/includes/functions.php:162
+#: contact-form-7/includes/functions.php:176
 msgid "Catalan"
 msgstr "Katalanisch"
 
-#: contact-form-7/includes/functions.php:163
+#: contact-form-7/includes/functions.php:177
 msgid "Chinese (Simplified)"
 msgstr "Chinesisch (Vereinfacht)"
 
-#: contact-form-7/includes/functions.php:164
+#: contact-form-7/includes/functions.php:178
 msgid "Chinese (Traditional)"
 msgstr "Chinesisch (Traditionell)"
 
-#: contact-form-7/includes/functions.php:165
+#: contact-form-7/includes/functions.php:179
 msgid "Croatian"
 msgstr "Kroatisch"
 
-#: contact-form-7/includes/functions.php:166
+#: contact-form-7/includes/functions.php:180
 msgid "Czech"
 msgstr "Tschechisch"
 
-#: contact-form-7/includes/functions.php:167
+#: contact-form-7/includes/functions.php:181
 msgid "Danish"
 msgstr "Dänisch"
 
-#: contact-form-7/includes/functions.php:168
+#: contact-form-7/includes/functions.php:182
 msgid "Dutch"
 msgstr "Holländisch"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:183
 msgid "English"
 msgstr "Englisch"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:184
 msgid "Estonian"
 msgstr "Estonian"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:185
 msgid "Finnish"
 msgstr "Finnisch"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:186
 msgid "French"
 msgstr "Französisch"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:187
 msgid "Galician"
 msgstr "Galicisch"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:188
 msgid "Georgian"
 msgstr "Georgisch"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:189
 msgid "German"
 msgstr "Deutsch"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:190
 msgid "Greek"
 msgstr "Griechisch"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:191
 msgid "Hebrew"
 msgstr "Hebräisch"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:192
 msgid "Hindi"
 msgstr "Hindisch"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:193
 msgid "Hungarian"
 msgstr "Ungarisch"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:194
 msgid "Indonesian"
 msgstr "Indonesisch"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:195
 msgid "Italian"
 msgstr "Italienisch"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:196
 msgid "Japanese"
 msgstr "Japanisch"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:197
 msgid "Korean"
 msgstr "Koreanisch"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:198
 msgid "Latvian"
 msgstr "Lettisch"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:199
 msgid "Lithuanian"
 msgstr "Litauisch"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:200
+msgid "Malay"
+msgstr "Malaysisch"
+
+#: contact-form-7/includes/functions.php:201
 msgid "Malayalam"
 msgstr "Malayalam"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:202
 msgid "Norwegian"
 msgstr "Norwegisch"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:203
 msgid "Persian"
 msgstr "Persisch"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:204
 msgid "Polish"
 msgstr "Polnisch"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:205
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:206
 msgid "Russian"
 msgstr "Russisch"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:207
 msgid "Romanian"
 msgstr "Rumänisch"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:208
 msgid "Serbian"
 msgstr "Serbisch"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:209
 msgid "Slovak"
 msgstr "Slowakisch"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:210
 msgid "Slovene"
 msgstr "Slovenisch"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:211
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:212
 msgid "Swedish"
 msgstr "Schwedisch"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:213
 msgid "Thai"
 msgstr "Thailändisch"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:214
 msgid "Turkish"
 msgstr "Türkisch"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:215
 msgid "Ukrainian"
 msgstr "Ukrainisch"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:216
 msgid "Vietnamese"
 msgstr "Vietnamesisch"
 
