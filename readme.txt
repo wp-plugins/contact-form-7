@@ -22,6 +22,7 @@ Contact Form 7 ([http://contactform7.com](http://contactform7.com/))
 * Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi
+* Armenian (hy_AM) - [Emmanuelle Traduction](http://www.translatonline.com/)
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), [Gervásio Antônio](http://twitter.com/gervasioantonio)

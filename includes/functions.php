@@ -169,6 +169,7 @@ function wpcf7_l10n() {
 		'af' => __( 'Afrikaans', 'wpcf7' ),
 		'sq' => __( 'Albanian', 'wpcf7' ),
 		'ar' => __( 'Arabic', 'wpcf7' ),
+		'hy_AM' => __( 'Armenian', 'wpcf7' ),
 		'bn_BD' => __( 'Bangla', 'wpcf7' ),
 		'bs' => __( 'Bosnian', 'wpcf7' ),
 		'pt_BR' => __( 'Brazilian Portuguese', 'wpcf7' ),
