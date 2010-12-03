@@ -1,0 +1,832 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-25 19:03+0900\n"
+"PO-Revision-Date: 2010-12-01 15:21+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "Հետադարձ կապ"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "Խմբագրել Կոնտակտային ձեւեր"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "Խմբագրել"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "Առաջացնում Tag"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "Ցույց տալ"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "Թաքցնել"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "Կոնտակտային ձեւ"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "Պարամետրեր"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "Docs"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "ՀՏՀ"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "Աջակցություն"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Contact form created."
+msgstr "Կոնտակտային ձեւ ստեղծում."
+
+#: contact-form-7/admin/admin.php:315
+msgid "Contact form saved."
+msgstr "Կոնտակտային ձեւ պահպանվել."
+
+#: contact-form-7/admin/admin.php:318
+msgid "Contact form deleted."
+msgstr "Կոնտակտային ձեւ ջնջված է."
+
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "Տվյալների բազայի սեղան ստեղծված է."
+
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "Չհաջողվեց ստեղծել բազայի սեղան."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 կարիք ունի ձեր աջակցության. Խնդրում ենք նվիրաբերել այսօր."
+
+#: contact-form-7/admin/admin.php:359
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Ձեր ավանդի համար անհրաժեշտ է կատարել այս plugin ավելի լավ."
+
+#: contact-form-7/admin/admin.php:365
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:365
+msgid "Donate"
+msgstr "Նվիրաբերել"
+
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>Տվյալների բազայի սեղան Կապ Ձեւ 7 գոյություն չունի.</strong> Դուք պետք է <a href=\"%s\">ստեղծել աղյուսակ</a>դրա համար է աշխատել."
+
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>Տվյալների բազայի սեղան Կապ Ձեւ 7 գոյություն չունի.</strong>"
+
+#: contact-form-7/admin/edit.php:45
+msgid "Add new"
+msgstr "Ավելացնել նոր"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Պատճենել այս կոդը եւ տեղադրեք այն Ձեր գրառմանը, էջ կամ տեքստային widget բովանդակություն."
+
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
+msgid "Save"
+msgstr "Պահպանել"
+
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "Պատճենել"
+
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "Ջնջել"
+
+#: contact-form-7/admin/edit.php:89
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Դուք պատրաստվում եք ջնջել այս շփման ձեւը.\n"
+"  'Չեղարկել' դադարեցնելու, 'OK' to ջնջելու."
+
+#: contact-form-7/admin/edit.php:104
+msgid "Form"
+msgstr "Ֆորմա"
+
+#: contact-form-7/admin/edit.php:128
+msgid "Mail"
+msgstr "Փոստ"
+
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
+msgid "To:"
+msgstr "Նշված տեղում"
+
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
+msgid "From:"
+msgstr "Նշվածից․"
+
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
+msgid "Subject:"
+msgstr "Դուք փնտրել էք:"
+
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "Լրացուցիչ ներլցնելու համար:"
+
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "Պատկեր հավելվածների:"
+
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "Օգտագործել HTML բովանդակության տեսակ"
+
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "Հաղորդագրություն մարմին"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "Փոստ (2)"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "Օգտագործման Փոստ (2)"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "Հաղորդագրություններ"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "Լրացուցիչ կայանքներ"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Օգտագործել լռելյայն լեզու (%s)"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "Ավելացնել նոր"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "Կամ"
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(Ընտրել լեզուն)"
+
+#: contact-form-7/includes/classes.php:590
+msgid "Untitled"
+msgstr "Անանուն"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Ուղարկողի ի ուղերձն ուղարկված է հաջողությամբ"
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "[Ձեր ուղերձն ուղարկված է հաջողությամբ. շնորհակալություն"
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Ուղարկողի ի ուղերձը չի ուղարկել"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Չհաջողվեց ուղարկել Ձեր հաղորդագրությունը. Խնդրում ենք փորձել ավելի ուշ կամ կապնվեք կառավարչին այլ ճանապարհով."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet դատվելու ուղարկող գործունեությանը, ինչպես սպամի"
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Վավերացում սխալները տեղի է ունեցել"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Վավերացում սխալները տեղի է ունեցել Խնդրում ենք հաստատել, դաշտերը եւ ներկայացնել այն կրկին."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Կա մի դաշտ ժամկետային է, որ ուղարկողի համար հարկավոր է ընդունել"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "Խնդրում եմ ընդունեք պայմանները շարունակել."
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "Փոստային հասցեն, որ ուղարկողի Մուտքագրված անվավեր"
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "Էլփոստի հասցեն, կարծես անվավեր."
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Կա մի դաշտ է, որ ուղարկողի համար հարկավոր է լրացնել"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "Խնդրում ենք լրացնել պահանջվող դաշտ."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "Ձեր անունը"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(պահանջվում է)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "Ձեր նամակները"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
+msgstr "Դուք փնտրել էք"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "Ձեր հաղորդագրությունը"
+
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "Նշվածից․ %s"
+
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "Դուք փնտրել էք: %s"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
+msgstr "Հաղորդագրություն մարմինը :"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Այս նամակը է ուղարկվի փոստով շփման ձեւ է %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Afrikaans"
+msgstr "Աֆրիկաան"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Albanian"
+msgstr "Ալբաներեն"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Arabic"
+msgstr "Արաբերեն"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Bosnian"
+msgstr "Բոսնիերեն"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Brazilian Portuguese"
+msgstr "Բրազիլական պորտուգալերեն"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Bulgarian"
+msgstr "Բուլղարացի"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Catalan"
+msgstr "Կատալան"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Chinese (Simplified)"
+msgstr "Չինարեն (պարզեցված)"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Chinese (Traditional)"
+msgstr "Չինարեն (ավանդական)"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Croatian"
+msgstr "Խորվաթերեն"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Czech"
+msgstr "Չեխերեն"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Danish"
+msgstr "Դանիական"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Dutch"
+msgstr "Հոլանդերեն"
+
+#: contact-form-7/includes/functions.php:183
+msgid "English"
+msgstr "Անգլերեն"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Estonian"
+msgstr "Էստոներեն"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Finnish"
+msgstr "Ֆիններեն"
+
+#: contact-form-7/includes/functions.php:186
+msgid "French"
+msgstr "Ֆրանսերեն"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Galician"
+msgstr "Գալիերեն"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Georgian"
+msgstr "Վրացական"
+
+#: contact-form-7/includes/functions.php:189
+msgid "German"
+msgstr "Գերմաներեն"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Greek"
+msgstr "Հուներեն"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Hebrew"
+msgstr "Հրեական"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hindi"
+msgstr "Հինդի"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Hungarian"
+msgstr "Հունգարերեն"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Indonesian"
+msgstr "Ինդոնեզերեն"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Italian"
+msgstr "Իտալերեն"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Japanese"
+msgstr "Ճապոներեն"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Korean"
+msgstr "Կորեերեն"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Latvian"
+msgstr "Լատվիական"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Lithuanian"
+msgstr "Լիտվական"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Malay"
+msgstr "Մալայերեն"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Malayalam"
+msgstr "Կերալերեն"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Norwegian"
+msgstr "Նորվեգերեն"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Persian"
+msgstr "Պարսիկ"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Polish"
+msgstr "Լեհերեն"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Portuguese"
+msgstr "Պորտուգալերեն"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Russian"
+msgstr "Ռուսերեն"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Romanian"
+msgstr "Ռումիներեն"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Serbian"
+msgstr "Սերբերեն"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Slovak"
+msgstr "Սլովակերեն"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Slovene"
+msgstr "Սլովեն"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Spanish"
+msgstr "Իսպաներեն"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Swedish"
+msgstr "Շվեդերեն"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Thai"
+msgstr "Թայլանդերեն"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Turkish"
+msgstr "Թրքերեն"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Ukrainian"
+msgstr "Ուկրաիներեն"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Vietnamese"
+msgstr "Վիետնամերեն"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "Ընդունման"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/file.php:244
+msgid "Name"
+msgstr "Անուն"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:260
+msgid "optional"
+msgstr "Ընտրովի"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "Դարձրեք այս մակնշման պատուհանը ստուգված Լռությամբ ?"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "Դարձրեք այս մակնշման պատուհանը աշխատանքներ ?"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Դա նշանակում է այցելուն, ով ընդունում է ժամկետային unchecks այն."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/file.php:265
+msgid "Copy this code and paste it into the form left."
+msgstr "Պատճենել այս կոդը եւ տեղադրեք այն ձեւը մնացել."
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Օգտագործել CAPTCHA, դուք պետք է <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Իսկապես Հասարակ CAPTCHA</a> plugin տեղադրված."
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Կոդը, որ ուղարկողի մտել, չի համապատասխանում CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "Ձեր մուտքագրված կոդը ճիշտ չէ."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Նշում: օգտագործելու CAPTCHA, դուք պետք Իսկապես Վիքիփեդիա, ազատ CAPTCHA plugin տեղադրված."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "Պատկեր պարամետրեր"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "Առաջնային պլանի գույն"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "Ֆոնի գույնը"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "Պատկերի չափերը"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "Փոքր"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "Միջին"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "Մեծ"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "Մուտքագրման դաշտի պարամետրեր"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "Համար պատկերը"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "Համար մուտքագրման դաշտի"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Այս շփման ձեւը պարունակում CAPTCHA բնագավառներում, բայց ժամանակավոր թղթապանակը համար ֆայլեր (%s) գոյություն չունի կամ չի կարող գրել.  Դուք կարող եք ստեղծել այն թղթապանակը կամ փոխելու իր թույլտվության ձեռքով."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Այս շփման ձեւը պարունակում CAPTCHA բնագավառներում, սակայն անհրաժեշտ գրադարանների (GD եւ FreeType) հասանելի չեն Ձեր սերվերի վրա."
+
+#: contact-form-7/modules/checkbox.php:181
+msgid "Checkboxes"
+msgstr "Նշումները"
+
+#: contact-form-7/modules/checkbox.php:184
+msgid "Radio buttons"
+msgstr "Ռադիո կոճակներ"
+
+#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/file.php:243
+msgid "Required field?"
+msgstr "Պահանջվող դաշտը ?"
+
+#: contact-form-7/modules/checkbox.php:221
+msgid "Choices"
+msgstr "Ընտրությունը"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "* One choice per line."
+msgstr "* Մի ընտրություն մեկ տողով."
+
+#: contact-form-7/modules/checkbox.php:227
+msgid "Put a label first, a checkbox last?"
+msgstr "Հագնել որի պիտակի վրա «Նախ մակնշման պատուհանը վերջին ?"
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "Wrap each item with <label> tag?"
+msgstr "Շալ յուրաքանչյուր նյութի հետ <label> tag?"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Make checkboxes exclusive?"
+msgstr "Կատարեք նշումները բացառիկ"
+
+#: contact-form-7/modules/checkbox.php:238
+msgid "And, put this code into the Mail fields below."
+msgstr "Եւ դնել սույն օրենսգրքի մեջ Փոստ fields ստորեւ."
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploading a file fails for any reason"
+msgstr "Վերբեռնելուց ֆայլի չկարողանա որեւէ պատճառով"
+
+#: contact-form-7/modules/file.php:208
+msgid "Failed to upload file."
+msgstr "Չհաջողվեց բեռնել ֆայլը."
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploaded file is not allowed file type"
+msgstr "Վերբեռնված ֆայլը չի թույլատրվում ֆայլ տեսակը"
+
+#: contact-form-7/modules/file.php:213
+msgid "This file type is not allowed."
+msgstr "Այս ֆայլը տեսակը չի թույլատրվում."
+
+#: contact-form-7/modules/file.php:217
+msgid "Uploaded file is too large"
+msgstr "Վերբեռնված ֆայլում չափազանց մեծ է"
+
+#: contact-form-7/modules/file.php:218
+msgid "This file is too large."
+msgstr "յս ֆայլում չափազանց մեծ է."
+
+#: contact-form-7/modules/file.php:222
+msgid "Uploading a file fails for PHP error"
+msgstr "Վերբեռնելուց ֆայլի ձախողվի համար PHP սխալ"
+
+#: contact-form-7/modules/file.php:223
+msgid "Failed to upload file. Error occurred."
+msgstr "Չհաջողվեց բեռնել ֆայլը. Սխալ պատահեց."
+
+#: contact-form-7/modules/file.php:234
+msgid "File upload"
+msgstr "Պատկեր վերբեռնել"
+
+#: contact-form-7/modules/file.php:257
+msgid "File size limit"
+msgstr "Ֆայլի չափ, սահմանաչափ"
+
+#: contact-form-7/modules/file.php:257
+msgid "bytes"
+msgstr "բայտ"
+
+#: contact-form-7/modules/file.php:260
+msgid "Acceptable file types"
+msgstr "Ընդունելի ֆայլի տեսակների"
+
+#: contact-form-7/modules/file.php:267
+msgid "And, put this code into the File Attachments field below."
+msgstr "Եւ դնել սույն օրենսգրքի մեջ Պատկեր Հավելվածներ դաշտ են ստորեւ."
+
+#: contact-form-7/modules/file.php:292
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Այս շփման ձեւը պարունակում CAPTCHA բնագավառներում, բայց ժամանակավոր թղթապանակը համար ֆայլեր (%s) գոյություն չունի կամ չի կարող գրել.  Դուք կարող եք ստեղծել այն թղթապանակը կամ փոխելու իր թույլտվության ձեռքով."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Այս շփման ձեւը պարունակում է [icl] թեգերը են, բայց նրանք հնացած եւ այլեւս չեն գործում այս տարբերակը Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">Կա մի պարզ միջոց ստեղծման համար շփման ձեւերի ուրիշ լեզուներով,</a> եւ ձեզ են Հանձնարարվում է օգտագործել այն."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Ուղարկողի չի մտնի ճիշտ պատասխանը վիկտորինայի"
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "Ձեր պատասխանը ճիշտ չէ."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "Կատակել"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "Ստուգարքների"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* կատակել | պատասխանել (e.g. 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "Կաթիլ պարզ ցանկի"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "Թույլ են տալիս բազմաթիվ ընտրանքները?"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "Տեղադրել դատարկ նյութը, որպես առաջին տարբերակը?"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "Ուղարկում ..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "Ներկայացնել կոճակը"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "Պիտակ"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "Տեքստային դաշտ"
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "փոստ դաշտ"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "Այս դաշտը պահանջում հեղինակի անունը"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "Այս դաշտը պահանջում հեղինակի URL"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "Այս դաշտը պահանջում հեղինակի էլեկտրոնային փոստի հասցեն"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "Լռությամբ արժեքը"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "Օգտագործեք այս տեքստը, ինչպես ջրի մակարդակի նշագիծ ?"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "Տեքստ տարածք"
+
