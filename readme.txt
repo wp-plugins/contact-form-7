@@ -1,5 +1,6 @@
 === Contact Form 7 ===
 Contributors: takayukister
+Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
 Tested up to: 3.0.1
@@ -16,6 +17,10 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 Contact Form 7 ([http://contactform7.com](http://contactform7.com/))
 
 * [Docs](http://contactform7.com/docs/) - [FAQ](http://contactform7.com/faq/) - [Support](http://contactform7.com/support/)
+
+= Contact Form 7 Needs Your Support =
+
+It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider [__making a donation__](http://contactform7.com/donate/). Your donation will help encourage and support the plugin's continued development and better user support.
 
 = Translators =
 

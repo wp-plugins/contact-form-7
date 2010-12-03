@@ -333,7 +333,7 @@ function wpcf7_updated_message( &$contact_form ) {
 <?php
 }
 
-// add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_donation_link' );
+add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_donation_link' );
 
 function wpcf7_donation_link( &$contact_form ) {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
