@@ -1,6 +1,6 @@
 /*!
  * jQuery Form Plugin
- * version: 2.47 (04-SEP-2010)
+ * version: 2.51 (04-DEC-2010)
  * @requires jQuery v1.3.2 or later
  *
  * Examples and documentation at: http://malsup.com/jquery/form/
@@ -18,11 +18,11 @@
 	to bind your own submit handler to the form.  For example,
 
 	$(document).ready(function() {
-		$('#myForm').bind('submit', function() {
+		$('#myForm').bind('submit', function(e) {
+			e.preventDefault(); // <-- important
 			$(this).ajaxSubmit({
 				target: '#output'
 			});
-			return false; // <-- important!
 		});
 	});
 
@@ -54,7 +54,8 @@ $.fn.ajaxSubmit = function(options) {
 		options = { success: options };
 	}
 
-	var url = $.trim(this.attr('action'));
+	var action = this.attr('action');
+	var url = (typeof action === 'string') ? $.trim(action) : '';
 	if (url) {
 		// clean url (don't include hash vaue)
 		url = (url.match(/^([^#]+)/)||[])[1];
@@ -366,8 +367,12 @@ $.fn.ajaxSubmit = function(options) {
 					else if (scr) {
 						// account for browsers injecting pre around json response
 						var pre = doc.getElementsByTagName('pre')[0];
+						var b = doc.getElementsByTagName('body')[0];
 						if (pre) {
-							xhr.responseText = pre.innerHTML;
+							xhr.responseText = pre.textContent;
+						}
+						else if (b) {
+							xhr.responseText = b.innerHTML;
 						}
 					}			  
 				}
@@ -517,7 +522,7 @@ $.fn.formToArray = function(semantic) {
 		return a;
 	}
 	
-	var i,j,n,v,el;
+	var i,j,n,v,el,max,jmax;
 	for(i=0, max=els.length; i < max; i++) {
 		el = els[i];
 		n = el.name;
