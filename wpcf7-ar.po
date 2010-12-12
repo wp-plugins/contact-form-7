@@ -1,349 +1,834 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-08 23:29+0900\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
-"Language-Team: www.adsl2u.com <webmaster@adsl2u.com>\n"
+"POT-Creation-Date: 2010-09-25 19:03+0900\n"
+"PO-Revision-Date: 2010-12-12 20:13+0400\n"
+"Last-Translator: yaser mohammed ahmed <fubu_sss_05@hotmail.com>\n"
+"Language-Team: Englize.com <yaser@englize.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Arabic\n"
-"X-Poedit-Country: SAUDI ARABIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: UNITED ARAB EMIRATES\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:323
-msgid "Contact form"
-msgstr "نموذج للاتصال"
-
-#: contact-form-7/wp-contact-form-7.php:456
-#: contact-form-7/includes/admin-panel.php:5
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
 msgid "Contact Form 7"
-msgstr "نموذج للاتصال 7"
+msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:494
-msgid "optional"
-msgstr "اختياري"
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "مراسلة"
 
-#: contact-form-7/wp-contact-form-7.php:495
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "تحرير إستمارات المراسلة"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "تحرير"
+
+#: contact-form-7/admin/admin.php:162
 msgid "Generate Tag"
-msgstr "خيارات النموذج"
+msgstr "خيارات الإستمارة"
 
-#: contact-form-7/wp-contact-form-7.php:496
-msgid "Text field"
-msgstr "خانة نص"
-
-#: contact-form-7/wp-contact-form-7.php:497
-msgid "Email field"
-msgstr "خانة البريد الألكتروني"
-
-#: contact-form-7/wp-contact-form-7.php:498
-msgid "Text area"
-msgstr "منطقة الكتابه"
-
-#: contact-form-7/wp-contact-form-7.php:499
-msgid "Drop-down menu"
-msgstr "قائمة منسدلة"
-
-#: contact-form-7/wp-contact-form-7.php:500
-msgid "Checkboxes"
-msgstr "صناديق الاختيار"
-
-#: contact-form-7/wp-contact-form-7.php:501
-msgid "Radio buttons"
-msgstr "أزرار الاختيار(Radio)"
-
-#: contact-form-7/wp-contact-form-7.php:502
-msgid "Acceptance"
-msgstr "القبول"
-
-#: contact-form-7/wp-contact-form-7.php:503
-msgid "Make this checkbox checked by default?"
-msgstr "جعل صندوق الخيارات صناديق محددة تلقائياً؟"
-
-#: contact-form-7/wp-contact-form-7.php:504
-msgid "Make this checkbox work inversely?"
-msgstr "جعل صندوق الخيارات يعمل عكسياً؟"
-
-#: contact-form-7/wp-contact-form-7.php:505
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* هذا يعني أن الزائر الذي قبل الاتفاقية لم يقم بتحديد الخيار."
-
-#: contact-form-7/wp-contact-form-7.php:506
-msgid "CAPTCHA"
-msgstr "CAPTCHA اختبار الكود"
-
-#: contact-form-7/wp-contact-form-7.php:507
-msgid "Submit button"
-msgstr "زر الارسال"
-
-#: contact-form-7/wp-contact-form-7.php:508
-msgid "Name"
-msgstr "الاسم"
-
-#: contact-form-7/wp-contact-form-7.php:509
-msgid "Required field?"
-msgstr "طلب الخانة؟"
-
-#: contact-form-7/wp-contact-form-7.php:510
-msgid "Allow multiple selections?"
-msgstr "السماح بالخيارات المتعددة؟"
-
-#: contact-form-7/wp-contact-form-7.php:511
-msgid "Insert a blank item as the first option?"
-msgstr "إدراج عنصر فارغ في بداية الخيار؟"
-
-#: contact-form-7/wp-contact-form-7.php:512
-msgid "Make checkboxes exclusive?"
-msgstr "جعل الخيارات حصرية؟"
-
-#: contact-form-7/wp-contact-form-7.php:513
-msgid "Choices"
-msgstr "الاختيارات"
-
-#: contact-form-7/wp-contact-form-7.php:514
-msgid "Label"
-msgstr "علامة"
-
-#: contact-form-7/wp-contact-form-7.php:515
-msgid "Default value"
-msgstr "قيمة افتراضية"
-
-#: contact-form-7/wp-contact-form-7.php:516
-msgid "Akismet"
-msgstr "Akismet لصد التعليقات المزعجة"
-
-#: contact-form-7/wp-contact-form-7.php:517
-msgid "This field requires author's name"
-msgstr "هذه الخانة تطلب اسم مقدم الطلب"
-
-#: contact-form-7/wp-contact-form-7.php:518
-msgid "This field requires author's URL"
-msgstr "هذه الخانة تطلب الموقع الخاص بمقدم الطلب"
-
-#: contact-form-7/wp-contact-form-7.php:519
-msgid "This field requires author's email address"
-msgstr "هذه الخانة تطلب البريد الألكتروني من مقدم الطلب"
-
-#: contact-form-7/wp-contact-form-7.php:520
-msgid "Copy and paste this code into the form"
-msgstr "انسخ الكود ثم ألصقه في النموذج"
-
-#: contact-form-7/wp-contact-form-7.php:521
-msgid "Foreground color"
-msgstr "لون المقدمة"
-
-#: contact-form-7/wp-contact-form-7.php:522
-msgid "Background color"
-msgstr "لون الخلفية"
-
-#: contact-form-7/wp-contact-form-7.php:523
-msgid "Image size"
-msgstr "حجم الصورة"
-
-#: contact-form-7/wp-contact-form-7.php:524
-msgid "Small"
-msgstr "صغير"
-
-#: contact-form-7/wp-contact-form-7.php:525
-msgid "Medium"
-msgstr "وسط"
-
-#: contact-form-7/wp-contact-form-7.php:526
-msgid "Large"
-msgstr "كبير"
-
-#: contact-form-7/wp-contact-form-7.php:527
-msgid "Image settings"
-msgstr "اعدادات الصورة"
-
-#: contact-form-7/wp-contact-form-7.php:528
-msgid "Input field settings"
-msgstr "خيارات الإدخال في الخانة"
-
-#: contact-form-7/wp-contact-form-7.php:529
-msgid "For image"
-msgstr "للصورة"
-
-#: contact-form-7/wp-contact-form-7.php:530
-msgid "For input field"
-msgstr "للإدخالات في الخانة"
-
-#: contact-form-7/wp-contact-form-7.php:531
-msgid "* One choice per line."
-msgstr "* خيار في كل سطر."
-
-#: contact-form-7/wp-contact-form-7.php:532
+#: contact-form-7/admin/admin.php:163
 msgid "Show"
-msgstr "اظهار"
+msgstr "عرض"
 
-#: contact-form-7/wp-contact-form-7.php:533
+#: contact-form-7/admin/admin.php:164
 msgid "Hide"
-msgstr "اخفاء"
+msgstr "إخفاء"
 
-#: contact-form-7/wp-contact-form-7.php:559
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "استمارة المراسلة"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "مستندات"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "الدعم الفني"
+
+#: contact-form-7/admin/admin.php:312
 msgid "Contact form created."
-msgstr "صنع نموذج اتصال."
+msgstr "تم إنشاء إستمارة المراسلة."
 
-#: contact-form-7/wp-contact-form-7.php:562
+#: contact-form-7/admin/admin.php:315
 msgid "Contact form saved."
-msgstr "حفظ نموذج اتصال."
+msgstr "تم حفظ الإستمارة."
 
-#: contact-form-7/wp-contact-form-7.php:565
+#: contact-form-7/admin/admin.php:318
 msgid "Contact form deleted."
-msgstr "حذف نموذج اتصال."
+msgstr "تم حذف الإستمارة."
 
-#: contact-form-7/wp-contact-form-7.php:576
-msgid "Untitled"
-msgstr "بدون عنوان"
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "تم إنشاء جدول قاعدة البيانات"
 
-#: contact-form-7/wp-contact-form-7.php:603
-msgid "Your Name"
-msgstr "اسمك"
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "فشل في إنشاء جدول قاعدة البيانات."
 
-#: contact-form-7/wp-contact-form-7.php:603
-#: contact-form-7/wp-contact-form-7.php:605
-msgid "(required)"
-msgstr "مطلوب"
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 يحتاج إلى دعمك. تبرع لنا اليوم!"
 
-#: contact-form-7/wp-contact-form-7.php:605
-msgid "Your Email"
-msgstr "بريدك"
+#: contact-form-7/admin/admin.php:359
+msgid "Your contribution is needed for making this plugin better."
+msgstr "مشاركتك مطلوبة لجعل الإضافة تتطور بشكل أفضل مستقبلا ً."
 
-#: contact-form-7/wp-contact-form-7.php:607
-msgid "Subject"
-msgstr "الموضوع"
+#: contact-form-7/admin/admin.php:365
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/wp-contact-form-7.php:609
-msgid "Your Message"
-msgstr "رسالتك"
+#: contact-form-7/admin/admin.php:365
+msgid "Donate"
+msgstr "تبرّع"
 
-#: contact-form-7/wp-contact-form-7.php:611
-#: contact-form-7/wp-contact-form-7.php:1158
-msgid "Send"
-msgstr "إرسال"
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>جدول قاعدة البيانات لهذه الإضافة غير موجود.</strong> يتوجب عليك <a href=\"%s\">إنشاء جدول</a> لكي يعمل."
 
-#: contact-form-7/wp-contact-form-7.php:659
-msgid "Your message was sent successfully. Thanks."
-msgstr "لقد تم إرسال رسالتك , شكراً لك."
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>جدول قاعدة البيانات لهذه الإضافة غير موجود.</strong>"
 
-#: contact-form-7/wp-contact-form-7.php:661
-#: contact-form-7/wp-contact-form-7.php:663
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "فشل في إرسال رسالتك , رجاءً حاول لاحقاً أو قم بالاتصال بمسؤول الموقع بطريقة أخرى"
-
-#: contact-form-7/wp-contact-form-7.php:665
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "حدث خطأ في التحقق من البيانات ، رجاءاً قم بإعادة ملء الخانات ومن ثم إعادة الإرسال."
-
-#: contact-form-7/wp-contact-form-7.php:667
-msgid "Please accept the terms to proceed."
-msgstr "رجاءً قم بالموافقه على الشروط حتى تستمر."
-
-#: contact-form-7/wp-contact-form-7.php:669
-msgid "Email address seems invalid."
-msgstr "يبدو أن البريد الألكتروني خاطئ."
-
-#: contact-form-7/wp-contact-form-7.php:671
-msgid "Please fill the required field."
-msgstr "رجاْءً قم بتعبئة جميع الخانات المطلوبة."
-
-#: contact-form-7/wp-contact-form-7.php:673
-msgid "Your entered code is incorrect."
-msgstr "الكود الذي أدخلته غير صحيح."
-
-#: contact-form-7/includes/admin-panel.php:16
+#: contact-form-7/admin/edit.php:45
 msgid "Add new"
-msgstr "أضف جديد"
+msgstr "إضافة جديد"
 
-#: contact-form-7/includes/admin-panel.php:32
-msgid "Copy and paste this code into your post content."
-msgstr "انسخ الكود ثم ألصقه داخل المحتوى الذي تريده."
+#: contact-form-7/admin/edit.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "أنسخ هذا الكود وقم بلصقه بداخل موضوعك، صفحتك، أو حتى في المربعات الجانبيّة."
 
-#: contact-form-7/includes/admin-panel.php:38
-msgid "Form"
-msgstr "نموذج"
-
-#: contact-form-7/includes/admin-panel.php:42
-msgid "Mail"
-msgstr "بريد"
-
-#: contact-form-7/includes/admin-panel.php:44
-#: contact-form-7/includes/admin-panel.php:67
-msgid "To:"
-msgstr "إلى:"
-
-#: contact-form-7/includes/admin-panel.php:48
-#: contact-form-7/includes/admin-panel.php:71
-msgid "From:"
-msgstr "من:"
-
-#: contact-form-7/includes/admin-panel.php:52
-#: contact-form-7/includes/admin-panel.php:75
-msgid "Subject:"
-msgstr "الموضوع:"
-
-#: contact-form-7/includes/admin-panel.php:56
-#: contact-form-7/includes/admin-panel.php:79
-msgid "Message body:"
-msgstr "محتوى الرسالة:"
-
-#: contact-form-7/includes/admin-panel.php:61
-msgid "Mail (2)"
-msgstr "بريد (2)"
-
-#: contact-form-7/includes/admin-panel.php:63
-msgid "Use mail (2)"
-msgstr "استخدم بريد (2)"
-
-#: contact-form-7/includes/admin-panel.php:87
-msgid "Messages"
-msgstr "رسائل"
-
-#: contact-form-7/includes/admin-panel.php:93
-msgid "Sender's message was sent successfully"
-msgstr "تم إرسال الرسالة بنجاح"
-
-#: contact-form-7/includes/admin-panel.php:97
-msgid "Sender's message was failed to send"
-msgstr "لم يتم إرسال الرسالة"
-
-#: contact-form-7/includes/admin-panel.php:101
-msgid "Akismet judged the sending activity as spamming"
-msgstr "لقد تم تصنيف هذه الرسالة من الرسائل المزعجة عن طريق Akismet "
-
-#: contact-form-7/includes/admin-panel.php:105
-msgid "Validation errors occurred"
-msgstr "حدثت مشكلة أثناء التحقق من البيانات"
-
-#: contact-form-7/includes/admin-panel.php:109
-msgid "There is a field of term that sender is needed to accept"
-msgstr "هناك خانة في الشروط يحتاج المرسل إلى الموافقه عليها."
-
-#: contact-form-7/includes/admin-panel.php:113
-msgid "Email address that sender entered is invalid"
-msgstr "البريد الذي أدخله المرسل غير صحيح"
-
-#: contact-form-7/includes/admin-panel.php:117
-msgid "There is a field that sender is needed to fill in"
-msgstr "هناك خانة يحتاج المرسل إلى ملأها."
-
-#: contact-form-7/includes/admin-panel.php:121
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "الكود الذي أدخله المرسل لم يتطابق مع خاصية CAPTCHA"
-
-#: contact-form-7/includes/admin-panel.php:130
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "حفظ"
 
-#: contact-form-7/includes/admin-panel.php:137
-msgid "Delete this contact form"
-msgstr "احذف نموذج الاتصال هذا"
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "نسخ"
 
-#: contact-form-7/includes/admin-panel.php:138
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "حذف"
+
+#: contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
-msgstr "انت على وشك حذف نموذج الاتصال المحدد.أضغط \"إلغاء\" أو \"نعم\" للحذف."
+msgstr ""
+"أنت على وشك حذف إستمارة المراسلة هذه. \n"
+"\"إلغاء\" لإلغاء العملية، \"موافق\" للحذف."
+
+#: contact-form-7/admin/edit.php:104
+msgid "Form"
+msgstr "استمارة"
+
+#: contact-form-7/admin/edit.php:128
+msgid "Mail"
+msgstr "البريد الأول"
+
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
+msgid "To:"
+msgstr "إلى:"
+
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
+msgid "From:"
+msgstr "من:"
+
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
+msgid "Subject:"
+msgstr "العنوان:"
+
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "ترويسة إضافية:"
+
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "الملفات المُرفقة:"
+
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "إستخدام HTML في الرسالة"
+
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "الرسالة:"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "البريد الثاني"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "استخدم البريد الثاني"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "الرسائل"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "الإعدادات الإضافية"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "اللغة الإفتراضية (%s)"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "إضافة جديد"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "أو"
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "أختيار اللغة))"
+
+#: contact-form-7/includes/classes.php:590
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "تم إرسال الرسالة بنجاح"
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "تم إرسال الرسالة بنجاح. شكراً"
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "فشل في إرسال الرسالة"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "فشل في إرسال الرسالة. الرجاء المحاولة مجدداً أو مخاطبة المسؤول عن الموقع بطريقة أخرى مثل الفيس بوك أو التويتر."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet أعتبر محاولة الإرسال هذه على أنها سبام."
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "حدث خطأ أثناء التحقق"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "حدث خطأ أثناء التحقق. الرجاء التأكد من الحقول ومعاودة الإرسال مجدداً."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "يوجد حقل خاص بشروط الخدمة، يجب على المرسل الموافقة عليها."
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "الرجاء الموافقة على الشروط لإكمال العمليّة."
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "البريد الإلكتروني الذي قام بإدخاله المرسل غير صحيح"
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "يبدو أن البريد الإلكتروني خاطئ"
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "يوجد حقل يتوجب على المرسل تعبئته"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "الرجاء أكمل الحقول الناقصة"
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "أسمك الكريم"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(مطلوب)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "بريدك الإلكتروني"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
+msgstr "العنوان"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "رسالتك"
+
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "إرسال"
+
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "من: %s"
+
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "العنوان: %s"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
+msgstr "الرسالة:"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "هذه الرسالة أرسلت من %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Afrikaans"
+msgstr "الأفريكانية"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Albanian"
+msgstr "الألبانية"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Arabic"
+msgstr "العربيّة"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Bangla"
+msgstr "البنغالية"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Bosnian"
+msgstr "البوسنيّة"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Brazilian Portuguese"
+msgstr "البرتغالية البرازيلية"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Bulgarian"
+msgstr "البلغاريّة"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Catalan"
+msgstr "كاتالاني"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Chinese (Simplified)"
+msgstr "الصينية المُبسطة"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Chinese (Traditional)"
+msgstr "الصينية (التقليدية)"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Croatian"
+msgstr "الكرواتية"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Czech"
+msgstr "التشيكية"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Danish"
+msgstr "الدنماركيّة"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Dutch"
+msgstr "الهولندية"
+
+#: contact-form-7/includes/functions.php:183
+msgid "English"
+msgstr "الإنجليزيّة"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Estonian"
+msgstr "الاستونية"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Finnish"
+msgstr "الفنلنديّة"
+
+#: contact-form-7/includes/functions.php:186
+msgid "French"
+msgstr "الفرنسية"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Galician"
+msgstr "الجاليكية"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Georgian"
+msgstr "الجورجيّة"
+
+#: contact-form-7/includes/functions.php:189
+msgid "German"
+msgstr "الألمانيّة"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Greek"
+msgstr "اليونانية"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Hebrew"
+msgstr "العبرية"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hindi"
+msgstr "الهنديّة"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Hungarian"
+msgstr "الهنجاريّة"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Indonesian"
+msgstr "الأندونيسية"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Italian"
+msgstr "الإيطاليّة"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Japanese"
+msgstr "اليابانيّة"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Korean"
+msgstr "الكوريّة"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Latvian"
+msgstr "اللاتيفية"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Lithuanian"
+msgstr "اللتوانيّة"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Malay"
+msgstr "الملايو"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Malayalam"
+msgstr "المالايالامية"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Norwegian"
+msgstr "النرويجيّة"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Persian"
+msgstr "الفارسيّة"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Polish"
+msgstr "البولنديّة"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Portuguese"
+msgstr "البرتغاليّة"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Russian"
+msgstr "الروسيّة"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Romanian"
+msgstr "الرومانيّة"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Serbian"
+msgstr "الصربيّة"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Slovak"
+msgstr "السلوفاكيّة"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Slovene"
+msgstr "السلوفينيّة"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Spanish"
+msgstr "الأسبانيّة"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Swedish"
+msgstr "السويديّة"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Thai"
+msgstr "التايلنديّة"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Turkish"
+msgstr "التركيّة"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Ukrainian"
+msgstr "الأوكرانيّة"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Vietnamese"
+msgstr "الفيتناميّة"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "قبول"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/file.php:244
+msgid "Name"
+msgstr "الأسم"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:260
+msgid "optional"
+msgstr "اختياري"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "جعل هذا الخيّار مفعّل تلقائياً؟"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "جعل هذا الخيار يعمل بشكل عكسي؟"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* النجمة تعني أن الزوار الذين وافقوا على الشروط لم يقوموا بتحديد الخيار."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/file.php:265
+msgid "Copy this code and paste it into the form left."
+msgstr "أنسخ هذا الكود وألصقه بداخل الإستمارة ليظهر لديك."
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "لإستخدام التحقق البشري، عليك أن تقوم بتنزيل إضافة <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "الكود الذي قمت بإدخاله في التحقق البشري غير مُتطابق"
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "لقد قمت بإدخال كود خاطئ."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "التحقق البشري"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "ملاحظة: لإستخدام التحقق البشري، عليك أن تقوم بتنزيل إضافة Really Simple CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "إعدادات الصورة"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "لون المقدمة"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "لون الخلفية"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "حجم الصورة"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "صغير"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "متوسط"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "كبير"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "إعدادات حقل الإدخال"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "للصورة"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "لحقل الإدخال الخاص بالتحقق البشري"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "هذه الإستمارة الخاصة بالتراسل تحتوي على حقل التحقق البشري، لكن المجلد المؤقت الخاص بالملفات (%s) غير موجود أو غير قابل للكتابة عليه. عليك إنشاء مجلد جديد أو تغيير صلاحياته يدوياً إن وجد."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "هذه الإستمارة الخاصة بالتراسل تحتوي على حقل التحقق البشري، لكن مكتبة الصور GD غير متوفرة على السيرفر كما يبدو."
+
+#: contact-form-7/modules/checkbox.php:181
+msgid "Checkboxes"
+msgstr "صناديق الأختيار"
+
+#: contact-form-7/modules/checkbox.php:184
+msgid "Radio buttons"
+msgstr "الأزرار الأختيار (Radio)"
+
+#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/file.php:243
+msgid "Required field?"
+msgstr "حقل مطلوب؟"
+
+#: contact-form-7/modules/checkbox.php:221
+msgid "Choices"
+msgstr "اختيارات"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "* One choice per line."
+msgstr "* اختيار واحد لكل سطر"
+
+#: contact-form-7/modules/checkbox.php:227
+msgid "Put a label first, a checkbox last?"
+msgstr "جعل الأسم في الأعلى والخيار في الأسفل؟"
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "Wrap each item with <label> tag?"
+msgstr "جعل اسامي الأختيارات بنفس لون وشكل الأختيارات الدائرية، أي ضم الخيارات بوسم واحد."
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Make checkboxes exclusive?"
+msgstr "منع الإختيار المُـتعدد؟"
+
+#: contact-form-7/modules/checkbox.php:238
+msgid "And, put this code into the Mail fields below."
+msgstr "و أضف هذا الكود بداخل حقول البريد في الأسفل."
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploading a file fails for any reason"
+msgstr "فشل في رفع الملف لسبب ما."
+
+#: contact-form-7/modules/file.php:208
+msgid "Failed to upload file."
+msgstr "فشل في رفع الملف"
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploaded file is not allowed file type"
+msgstr "صيغة الملف المرفوع غير مسموح بها"
+
+#: contact-form-7/modules/file.php:213
+msgid "This file type is not allowed."
+msgstr "هذا النوع من الملفات غير مسموح به"
+
+#: contact-form-7/modules/file.php:217
+msgid "Uploaded file is too large"
+msgstr "الملف المرفوع كبير جداً"
+
+#: contact-form-7/modules/file.php:218
+msgid "This file is too large."
+msgstr "هذا الملف كبير جداً"
+
+#: contact-form-7/modules/file.php:222
+msgid "Uploading a file fails for PHP error"
+msgstr "فشل في رفع الملف بسبب خطأ في PHP"
+
+#: contact-form-7/modules/file.php:223
+msgid "Failed to upload file. Error occurred."
+msgstr "خطأ في رفع الملف."
+
+#: contact-form-7/modules/file.php:234
+msgid "File upload"
+msgstr "رفع ملف"
+
+#: contact-form-7/modules/file.php:257
+msgid "File size limit"
+msgstr "الحد الأقصى لحجم الملف"
+
+#: contact-form-7/modules/file.php:257
+msgid "bytes"
+msgstr "بايت"
+
+#: contact-form-7/modules/file.php:260
+msgid "Acceptable file types"
+msgstr "أنواع الملفات المقبولة"
+
+#: contact-form-7/modules/file.php:267
+msgid "And, put this code into the File Attachments field below."
+msgstr "و أضف هذا الكود بداخل حقل الملفات المُرفقة في الأسفل."
+
+#: contact-form-7/modules/file.php:292
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "هذه الإستمارة تحتوي على حقول لرفع الملفات، لكن المجلد المؤقت الخاص بالملفات (%s) غير موجود أو غير قابل للكتابة عليه. عليك أن تنشئ مجلد جديد أو إعطاء التصاريح بشكل يدوي لجعله قابل للكتابة."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "هذه الإستمارة تحتوي على أوسمة [icl]، لكنها لم تعد صالحة للإستخدام مع هذا الإصدار من الإضافة. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">هناك طريقة أسهل لإنشاء إستمارة تراسل باللغات الأخرى</a>وننصح بها."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "لم تقم بإدخال إجابة صحيحة للإختبار."
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "إجابتك غير صحيحة."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "سؤال"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "الأسئلة"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* سؤال|جواب (على سبيل المثال 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "قائمة منسدلة"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "السماح للإختيارات المُتعددة؟"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "إدخال عنصر فارغ كأول خيار؟"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "جاري الإرسال ..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "زر الإرسال"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "وسم"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "حقل النص"
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "حقل البريد الإلكتروني"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Label"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "إنشاء حقل لطلب أسم مرسل الرسالة"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "إنشاء حقل لطلب رابط موقع مُرسل الرسالة"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "إنشاء حقل لطلب البريد الإلكتروني لمرسل الرسالة"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "القيمة الإفتراضيّة"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "أستخدام النص كعلامة مائية لحفظ الحقوق؟"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "صندوق النص"
 
