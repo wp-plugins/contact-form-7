@@ -26,7 +26,7 @@ It is hard to continue development and support for this plugin without contribut
 
 * Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
-* Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi
+* Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi, Yaser Mohammed
 * Armenian (hy_AM) - [Emmanuelle Traduction](http://www.translatonline.com/)
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
