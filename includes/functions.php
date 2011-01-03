@@ -212,6 +212,7 @@ function wpcf7_l10n() {
 		'sl_SI' => __( 'Slovene', 'wpcf7' ),
 		'es_ES' => __( 'Spanish', 'wpcf7' ),
 		'sv_SE' => __( 'Swedish', 'wpcf7' ),
+		'ta' => __( 'Tamil', 'wpcf7' ),
 		'th' => __( 'Thai', 'wpcf7' ),
 		'tr_TR' => __( 'Turkish', 'wpcf7' ),
 		'uk' => __( 'Ukrainian', 'wpcf7' ),
