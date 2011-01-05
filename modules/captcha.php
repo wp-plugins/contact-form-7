@@ -56,10 +56,10 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		$atts .= ' class="' . trim( $class_att ) . '"';
 
 	// Value.
-	if ( wpcf7_is_posted() )
-		$value = '';
-	else
+	if ( ! wpcf7_is_posted() && isset( $values[0] ) )
 		$value = $values[0];
+	else
+		$value = '';
 
 	if ( 'captchac' == $type ) {
 		if ( ! class_exists( 'ReallySimpleCaptcha' ) ) {

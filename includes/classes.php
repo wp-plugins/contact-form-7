@@ -117,10 +117,12 @@ class WPCF7_ContactForm {
 		if ( ! $this->is_posted() )
 			return '';
 
-		if ( ! isset( $_POST['_wpcf7_validation_errors'] ) )
+		if ( ! isset( $_POST['_wpcf7_validation_errors']['messages'][$name] ) )
 			return '';
 
-		if ( $ve = trim( $_POST['_wpcf7_validation_errors']['messages'][$name] ) ) {
+		$ve = trim( $_POST['_wpcf7_validation_errors']['messages'][$name] );
+
+		if ( ! empty( $ve ) ) {
 			$ve = '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
 			return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
 		}
@@ -164,27 +166,31 @@ class WPCF7_ContactForm {
 
 		for ( $i = 0, $size = count( $scanned ); $i < $size; $i++ ) {
 
-			if ( is_string( $cond['type'] ) && ! empty( $cond['type'] ) ) {
-				if ( $scanned[$i]['type'] != $cond['type'] ) {
-					unset( $scanned[$i] );
-					continue;
-				}
-			} elseif ( is_array( $cond['type'] ) ) {
-				if ( ! in_array( $scanned[$i]['type'], $cond['type'] ) ) {
-					unset( $scanned[$i] );
-					continue;
+			if ( isset( $cond['type'] ) ) {
+				if ( is_string( $cond['type'] ) && ! empty( $cond['type'] ) ) {
+					if ( $scanned[$i]['type'] != $cond['type'] ) {
+						unset( $scanned[$i] );
+						continue;
+					}
+				} elseif ( is_array( $cond['type'] ) ) {
+					if ( ! in_array( $scanned[$i]['type'], $cond['type'] ) ) {
+						unset( $scanned[$i] );
+						continue;
+					}
 				}
 			}
 
-			if ( is_string( $cond['name'] ) && ! empty( $cond['name'] ) ) {
-				if ( $scanned[$i]['name'] != $cond['name'] ) {
-					unset ( $scanned[$i] );
-					continue;
-				}
-			} elseif ( is_array( $cond['name'] ) ) {
-				if ( ! in_array( $scanned[$i]['name'], $cond['name'] ) ) {
-					unset( $scanned[$i] );
-					continue;
+			if ( isset( $cond['name'] ) ) {
+				if ( is_string( $cond['name'] ) && ! empty( $cond['name'] ) ) {
+					if ( $scanned[$i]['name'] != $cond['name'] ) {
+						unset ( $scanned[$i] );
+						continue;
+					}
+				} elseif ( is_array( $cond['name'] ) ) {
+					if ( ! in_array( $scanned[$i]['name'], $cond['name'] ) ) {
+						unset( $scanned[$i] );
+						continue;
+					}
 				}
 			}
 		}
