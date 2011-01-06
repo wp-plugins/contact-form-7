@@ -63,7 +63,7 @@ It is hard to continue development and support for this plugin without contribut
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - [Dmitry Volotovich](http://www.volnov.com)
-* Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/)
+* Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/), Anunturi Jibo
 * Serbian (sr_RS) - [Vedran](http://www.seorabbit.com/), [Aleksandar Urošević](http://blog.urosevic.net/)
 * Slovak (sk) - [Patrik Bóna](http://www.mrhead.sk/)
 * Slovene (sl_SI) - [Mihael Simonič](http://smihael.bplaced.net)
@@ -107,7 +107,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 * Translation for Armenian has been created by Emmanuelle Traduction.
 * Translation for Tamil has been created by Nitin Aggarwal.
-* Translations for German (Ivan Graf), Dutch (Rene) and Arabic (Yaser Mohammed) have been updated.
+* Translations for German (Ivan Graf), Dutch (Rene), Arabic (Yaser Mohammed) and Romanian (Anunturi Jibo) have been updated.
 * Bundled jquery.form has been updated to 2.52.
 
 = 2.4.2 =
