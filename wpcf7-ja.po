@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 21:32+0900\n"
-"PO-Revision-Date: 2010-12-10 21:34+0900\n"
+"POT-Creation-Date: 2011-01-06 09:35+0900\n"
+"PO-Revision-Date: 2011-01-06 09:38+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -239,7 +239,7 @@ msgstr "または"
 msgid "(select language)"
 msgstr "(言語を選択)"
 
-#: contact-form-7/includes/classes.php:590
+#: contact-form-7/includes/classes.php:596
 msgid "Untitled"
 msgstr "無題"
 
@@ -526,18 +526,22 @@ msgid "Swedish"
 msgstr "スウェーデン語"
 
 #: contact-form-7/includes/functions.php:215
+msgid "Tamil"
+msgstr "タミル語"
+
+#: contact-form-7/includes/functions.php:216
 msgid "Thai"
 msgstr "タイ語"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:217
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:218
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:219
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
