@@ -103,6 +103,13 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 2.4.3 =
+
+* Translation for Armenian has been created by Emmanuelle Traduction.
+* Translation for Tamil has been created by Nitin Aggarwal.
+* Translations for German (Ivan Graf), Dutch (Rene) and Arabic (Yaser Mohammed) have been updated.
+* Bundled jquery.form has been updated to 2.52.
+
 = 2.4.2 =
 
 * Translation for Macedonian has been created by Darko.
