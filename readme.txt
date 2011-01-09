@@ -63,7 +63,7 @@ It is hard to continue development and support for this plugin without contribut
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - Dmitry Volotovich
-* Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/), Anunturi Jibo
+* Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/), [Anunturi Jibo](http://www.jibo.ro/)
 * Serbian (sr_RS) - [Vedran](http://www.seorabbit.com/), [Aleksandar Urošević](http://blog.urosevic.net/)
 * Slovak (sk) - [Patrik Bóna](http://www.mrhead.sk/)
 * Slovene (sl_SI) - [Mihael Simonič](http://smihael.bplaced.net)
