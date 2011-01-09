@@ -1,0 +1,248 @@
+div.wpcf7 div.cf7com-links {
+	text-align: right;
+	font-size: .8em;
+	margin-top: -1.6em;
+}
+
+div.wpcf7 div.cf7com-links a {
+	text-decoration: none;
+}
+
+div.wpcf7 div.donation {
+	border-width: 1px;
+	border-style: solid;
+	padding: 0 0.6em;
+	margin: 5px 0 15px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #ffffe0;
+	border-color: #e6db55;
+	text-align: center;
+}
+
+div.wpcf7 div.donation p {
+	margin: .7em 0;
+	line-height: 1;
+	padding: 2px;
+	font-size: 107%;
+}
+
+div.wpcf7 div.donation p a {
+	font-weight: bold;
+	color: #3f3f3f;
+}
+
+div.wpcf7 div.donation p a.button {
+	margin-left: 1em;
+}
+
+div.wpcf7 ul.subsubsub {
+	white-space: normal;
+}
+
+ul.subsubsub li.addnew {
+	margin-left: 0.5em;
+}
+
+ul.subsubsub li.addnew a {
+	color: #e6255b;
+}
+
+ul.subsubsub li.addnew a:hover,
+ul.subsubsub li.addnew a:active {
+  color: #999;
+}
+
+div.save-contact-form {
+	padding: 1.4em 0 0 0;
+	text-align: right;
+}
+
+div.actions-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+}
+
+div.actions-link input {
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: #fff;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+div.actions-link input.copy {
+	color: #006505;
+}
+
+div.actions-link input.delete {
+	color: #bc0b0b;
+}
+
+input#wpcf7-title {
+	color: #555;
+	background-color: #fff;
+	border: none;
+	font: bold 20px serif;
+}
+
+p.tagcode {
+	color: #333;
+	margin: 2ex 0 1ex 1em;
+}
+
+input#contact-form-anchor-text {
+	color: #fff;
+	background: #7e4e0b;
+	border: none;
+	width: 99%;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
+	margin-left: 1em;
+	font-weight: normal;
+	font-size: smaller;
+	color: #2583ad;
+	cursor: pointer;
+}
+
+div.pseudo-hr {
+	border-bottom: 1px solid #fff;
+	margin: 0.7em 0;
+}
+
+input, textarea {
+	border: 1px solid #dfdfdf;
+}
+
+input.wide {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+label.disabled {
+	color: #777;
+}
+
+div.message-field {
+	margin: .2em 0 .4em;
+}
+
+div.tag-generator {
+	position: relative;
+	background: #fff;
+	padding: 5px 0 5px 1px;
+}
+
+div.tg-pane {
+    border: 1px dashed #999;
+    background: #f1f1f1;
+    margin: 1ex 0 0 0;
+    padding: 10px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+div.tg-pane table {
+	width: 100%;
+	margin: 0 0 0.7em 0;
+}
+
+div.tg-pane table caption {
+	text-align: left;
+	padding: 0 0 0.2em 0;
+	font-weight: bolder;
+	color: #777;
+}
+
+div.tg-pane table code {
+	background-color: inherit;
+}
+
+div.tg-pane table td {
+	vertical-align: top;
+	width: 50%;
+	border: none;
+}
+
+div.tg-pane input.tag, div.tg-pane input.mail-tag {
+	width: 100%;
+	border: none;
+	color: #fff;
+	background-color: #7e4e0b;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+div.tg-pane input.mail-tag {
+	width: 50%;
+	background-color: #404f03;
+}
+
+div.tg-mail-tag {
+	margin-top: 2.4em;
+	text-align: right;
+}
+
+div.tg-pane span.arrow {
+	font-family: monospace;
+	font-size: 1.2em;
+	color: #333;
+}
+
+div.tg-pane input.tg-name {
+	border-color: #555;
+}
+
+div.tg-pane input.oneline {
+	width: 98%;
+	font-size: smaller;
+}
+
+div.tg-pane textarea {
+	width: 98%;
+	height: 100px;
+	font-size: smaller;
+}
+
+div.tg-pane div.tg-tag {
+	margin: .4em 0;
+}
+
+div.tg-dropdown {
+    position: absolute;
+    top: 26px;
+	left: 0;
+    z-index: 10;
+    border: 1px solid #ddd;
+}
+
+span.tg-closebutton {
+    color: #777;
+    font: bold 18px monospace;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+
+div.tg-panetitle {
+    font: bold 132% sans-serif;
+    margin: 0 0 10px;
+    color: #777;
+}

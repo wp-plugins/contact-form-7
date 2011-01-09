@@ -1,0 +1,22 @@
+ul.subsubsub li.addnew {
+	margin-left: 0;
+	margin-right: 0.5em;
+}
+div.save-contact-form {
+	direction: rtl;
+}
+div.actions-link {
+	right: auto;
+	left: 0;
+}
+span#message-fields-toggle-switch {
+	margin-left: 0;
+	margin-right: 1em;
+}
+div.tg-pane table caption {
+	text-align: right;
+}
+div.tg-dropdown {
+	left: auto;
+	right: 0;
+}
