@@ -1,0 +1,841 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-10 21:32+0900\n"
+"PO-Revision-Date: 2011-01-11 05:38+0900\n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
+"Language-Team: Nitin Aggarwal <nitin@offshoreally.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Tamil\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
+msgid "Contact Form 7"
+msgstr "தொடர்பு படிவம் 7"
+
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "தொடர்பு"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "தொடர்பு படிவங்களைத் திருத்தவும்"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "திருத்தவும்"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "குறிச்சொல்லை உற்பத்தி செய்யவும்"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "காட்டவும்"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "மறைக்கவும்"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "தொடர்பு படிவம்"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "ஆவணங்கள்"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "அடிக்கடி கேட்கப்படும் கேள்விகள்"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "ஆதரவு"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Contact form created."
+msgstr "தொடர்பு படிவம் உருவாக்கப்பட்டது."
+
+#: contact-form-7/admin/admin.php:315
+msgid "Contact form saved."
+msgstr "தொடர்பு படிவம் சேமிக்கப்பட்டது."
+
+#: contact-form-7/admin/admin.php:318
+msgid "Contact form deleted."
+msgstr "தொடர்பு படிவம் நீக்கப்பட்டது."
+
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "தரவுத்தள அட்டவணை உருவாக்கப்பட்டது."
+
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "தரவுத்தள அட்டவணை உருவாக்குவது தோல்வியடைந்தது."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "தொடர்பு படிவம் 7 –க்கு உங்கள் ஆதரவு தேவை. தயவுசெய்து இன்று கொடையளிக்கவும்."
+
+#: contact-form-7/admin/admin.php:359
+msgid "Your contribution is needed for making this plugin better."
+msgstr "இந்த நீட்சியைத் தயாரிப்பதற்கு உங்கள் பங்களிப்பு தேவைப்படுகிறது."
+
+#: contact-form-7/admin/admin.php:365
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:365
+msgid "Donate"
+msgstr "கொடையளிக்கவும்"
+
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>தொடர்பு படிவம் 7 –க்கான தரவுத்தள அட்டவணை இல்லை.</strong> நீங்கள் <a href=\"%s\"> அது வேலைசெய்வதற்கான அட்டவணையை </a> உருவாக்க வேண்டும்."
+
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong> தொடர்பு படிவம் 7 –க்கான தரவுத்தள அட்டவணை இல்லை.</strong>"
+
+#: contact-form-7/admin/edit.php:45
+msgid "Add new"
+msgstr "புதிதாகச் சேர்க்கவும்"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "இந்த குறியீட்டை நகலெடுத்து, உங்கள் இடுகை, பக்கம் அல்லது உரைப் பலகையில் ஒட்டவும். "
+
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
+msgid "Save"
+msgstr "சேமிக்கவும்"
+
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "நகலெடுக்கவும்"
+
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "நீக்கவும்"
+
+#: contact-form-7/admin/edit.php:89
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"இந்த தொடர்பு படிவத்தை நீங்கள் நீக்கப் போகிறீர்கள்.\n"
+" நிறுத்துவதற்கு 'இரத்துசெய்யவும்', நீக்குவதற்கு 'சரி' கிளிக் செய்யவும்."
+
+#: contact-form-7/admin/edit.php:104
+msgid "Form"
+msgstr "படிவம்"
+
+#: contact-form-7/admin/edit.php:128
+msgid "Mail"
+msgstr "அஞ்சல்"
+
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
+msgid "To:"
+msgstr "பெறுனர்:"
+
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
+msgid "From:"
+msgstr "அனுப்புனர்:"
+
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
+msgid "Subject:"
+msgstr "பொருள்:"
+
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "கூடுதல் தலைப்புகள்:"
+
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "கோப்பு இணைப்புகள்:"
+
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "எச்டிஎம்எல் உள்ளடக்க வகையைப் பயன்படுத்தவும்"
+
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "தகவலின் முக்கியப் பகுதி"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "கடிதம் (2)"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "கடிதம் (2) –ஐப் பயன்படுத்தவும்"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "தகவல்கள்"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "கூடுதல் அமைப்புகள்"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "இயல்பான மொழி (%s) –ஐப் பயன்படுத்தவும்"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "புதிதாகச் சேர்க்கவும்"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "அல்லது "
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(மொழியைத் தேர்ந்தெடுக்கவும்)"
+
+#: contact-form-7/includes/classes.php:590
+msgid "Untitled"
+msgstr "தலைப்பிடப்படாதது"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "அனுப்புனரின் தகவல் வெற்றிகரமாக அனுப்பப்பட்டது"
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "உங்கள் தகவல் வெற்றிகரமாக அனுப்பப்பட்டது. நன்றி."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "அனுப்புனரின் தகவலை அனுப்புவது தோல்வியடைந்தது"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "உங்கள் தகவலை அனுப்புவது தோல்வியடைந்தது. தயவுசெய்து பிறகு முயற்சி செய்யவும் அல்லது வேறு வழியில் நிர்வாகியைத் தொடர்புகொள்ளவும்."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "அனுப்புதல் நடவடிக்கையை அகிஸ்மெட் வீண்செய்தி என்று முடிவு செய்துள்ளது "
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "சரிபார்த்தல் பிழைகள் ஏற்பட்டுள்ளன"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "சரிபார்த்தல் பிழைகள் ஏற்பட்டுள்ளன. களங்களை உறுதிப்படுத்தி தயவுசெய்து மீண்டும் அதனைச் சமர்ப்பிக்கவும்."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "அனுப்புனர் ஒத்துக்கொள்ள வேண்டிய நிபந்தனைக் களம் ஒன்று அதில் உள்ளது "
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "தொடர்வதற்கு நிபந்தனைகளை தயவுசெய்து ஒத்துக்கொள்ளவும்."
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "அனுப்புனர் உள்ளீடு செய்த மின்னஞ்சல் முகவரி ஏற்றுக்கொள்ளதக்கதல்ல"
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "மின்னஞ்சல் முகவரி ஏற்றுக்கொள்ளதக்கதல்ல என்று தெரிகிறது"
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "அனுப்புனர் பூர்த்தி செய்யவேண்டிய களம் ஒன்று அதில் உள்ளது"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "தேவைப்படும் களத்தைப் பூர்த்தி செய்யவும்"
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "உங்கள் பெயர்"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(தேவைப்படுகிறது)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "உங்கள் மின்னஞ்சல்"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
+msgstr "பொருள்"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "உங்கள் தகவல்"
+
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "அனுப்பவும்"
+
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "அனுப்புனர்: %s"
+
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "தகவல் பொருள்: %s "
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
+msgstr "தகவலின் முக்கியப் பகுதி:"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "இந்த அஞ்சல் %1$s %2$s மூலம் தொடர்பு படிவம் வழியாக அனுப்பப் படுகிறது"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Afrikaans"
+msgstr "ஆஃப்ரிகான்ஸ்"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Albanian"
+msgstr "அல்பேனியன்"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Arabic"
+msgstr "அராபிக்"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Armenian"
+msgstr "ஆர்மீனியன்"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Bangla"
+msgstr "பங்களா"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Bosnian"
+msgstr "போஸ்னியன்"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Brazilian Portuguese"
+msgstr "பிரேசிலியன் போர்த்துகீஸ்"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Bulgarian"
+msgstr "பல்கேரியன்"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Catalan"
+msgstr "கடலான்"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Chinese (Simplified)"
+msgstr "சைனீஸ் (எளிமைப்படுத்தப்பட்டது)"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Chinese (Traditional)"
+msgstr "சைனீஸ் (பாரம்பரியமானது)"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Croatian"
+msgstr "குரோவேஷியன்"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Czech"
+msgstr "ஸெக்"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Danish"
+msgstr "டானிஷ்"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Dutch"
+msgstr "டச்சு"
+
+#: contact-form-7/includes/functions.php:184
+msgid "English"
+msgstr "ஆங்கிலம்"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Estonian"
+msgstr "எஸ்டோனியன்"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Finnish"
+msgstr "பின்னிஷ்"
+
+#: contact-form-7/includes/functions.php:187
+msgid "French"
+msgstr "பிரெஞ்சு"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Galician"
+msgstr "கலிசியன்"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Georgian"
+msgstr "ஜியார்ஜியன்"
+
+#: contact-form-7/includes/functions.php:190
+msgid "German"
+msgstr "ஜெர்மன்"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Greek"
+msgstr "கிரீக்"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hebrew"
+msgstr "ஹீப்ரு"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Hindi"
+msgstr "இந்தி"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Hungarian"
+msgstr "ஹங்கேரியன்"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Indonesian"
+msgstr "இந்தோனேஷியன்"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Italian"
+msgstr "இத்தாலியன்"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Japanese"
+msgstr "ஜாப்பனீஸ்"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Korean"
+msgstr "கொரியன்"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Latvian"
+msgstr "லாட்வியன்"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Lithuanian"
+msgstr "லிதுவேனியன்"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Macedonian"
+msgstr "மாசிடோனியன்"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Malay"
+msgstr "மலாய்"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Malayalam"
+msgstr "மலையாளம்"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Norwegian"
+msgstr "நார்வேஜியன்"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Persian"
+msgstr "பெர்ஷியன்"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Polish"
+msgstr "போலிஷ்"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Portuguese"
+msgstr "போர்த்துகீஸ்"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Russian"
+msgstr "ரஷ்யன்"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Romanian"
+msgstr "ரோமானியன்"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Serbian"
+msgstr "செர்பியன்"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Slovak"
+msgstr "ஸ்லோவாக்"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Slovene"
+msgstr "ஸ்லோவேனே"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Spanish"
+msgstr "ஸ்பானிஷ்"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Swedish"
+msgstr "ஸ்வீடிஷ்"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Thai"
+msgstr "தாய்"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Turkish"
+msgstr "டர்கிஷ்"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Ukrainian"
+msgstr "உக்ரேனியன்"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Vietnamese"
+msgstr "வியட்னாமீஸ்"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "ஒத்துக்கொள்ளுதல்"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/file.php:244
+msgid "Name"
+msgstr "பெயர்"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:260
+msgid "optional"
+msgstr "விருப்புரிமையானது"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "இந்த குறியிடுதல் கட்டத்தை இயல்பாகக் குறியிட்டு வைக்கவா?"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "இந்த குறியிடுதல் கட்டத்தை நேர்மாறாக வேலை செய்ய வைக்கவா?"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "*அதன் பொருள், நிபந்தனையை ஒத்துககொள்ளும் வருகையாளர் அதனைக் குறி்அகற்றம் செய்வார்."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/file.php:265
+msgid "Copy this code and paste it into the form left."
+msgstr "இந்த குறியீட்டை நகலெடுத்து, இடது பக்க, படிவத்தில் ஒட்டவும்."
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "கேப்ட்சாவைப் பயன்படுத்துவதற்கு, உங்களுக்கு <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">உண்மையில் எளிமையான கேப்ட்சா</a> நீட்சியை நிறுவுவது தேவைப்படும். "
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "அனுப்புனர் உள்ளீடு செய்த குறியீடு கேப்ட்சா உடன் பொருந்தவில்லை"
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "நீங்கள் உள்ளீடு செய்த குறியீடு சரியானதல்ல."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "கேப்ட்சா"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "குறிப்பு: கேப்ட்சாவைப் பயன்படுத்துவதற்கு உங்களுக்கு உண்மையில் எளிமையான கேப்ட்சா நீட்சியை நிறுவுவது தேவைப்படும்."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "படத்துக்கான அமைப்புகள்"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "முன்புல நிறம்"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "பின்புல நிறம்"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "படத்தின் அளவு"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "சிறியது"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "நடுத்தரமான அளவு"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "பெரியது"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "உள்ளீட்டு கள அமைப்புகள்"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "படத்துக்கானது"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "உள்ளீட்டு களத்துக்கானது"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "இந்த தொடர்பு படிவம் கேப்ட்சா களங்களைக் கொண்டுள்ளது, ஆனால் கோப்புகளுக்கான தற்காலிக உறை (%s) இல்லை அல்லது அது எழுதக்கூடியதாக இல்லை. நீங்கள் அந்த உறையை உருவாக்கலாம் அல்லது அதன் அனுமதியைக் கைமுறையாக மாற்றலாம்."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "இந்த தொடர்பு படிவம் கேப்ட்சா களங்களைக் கொண்டுள்ளது, ஆனால் தேவையான நூலகங்கள் (ஜிடி மற்றும் ஃபிரீடைப்) உங்கள் சேவையகத்தில் இல்லை."
+
+#: contact-form-7/modules/checkbox.php:181
+msgid "Checkboxes"
+msgstr "குறியிடுதல் கட்டங்கள்"
+
+#: contact-form-7/modules/checkbox.php:184
+msgid "Radio buttons"
+msgstr "ரேடியோ பட்டன்கள்"
+
+#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/file.php:243
+msgid "Required field?"
+msgstr "தேவையான களம் எது?"
+
+#: contact-form-7/modules/checkbox.php:221
+msgid "Choices"
+msgstr "விருப்பத்தேர்வுகள்"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "* One choice per line."
+msgstr "* ஒரு வரிக்கு ஒரு விருப்பத்தேர்வு. "
+
+#: contact-form-7/modules/checkbox.php:227
+msgid "Put a label first, a checkbox last?"
+msgstr "ஒரு விவரச்சீட்டை முதலாவதாகவும், ஒரு குறியிடுதல் கட்டத்தைக் கடைசியாகவும் வைக்கவா?"
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "Wrap each item with <label> tag?"
+msgstr "ஒவ்வொரு இனத்தையும் <விவரச்சீட்டு> குறிச்சொல்லுடன் சேர்த்து உறையிட்டு வைக்கவா?"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Make checkboxes exclusive?"
+msgstr "குறியிடுதல் கட்டங்களைத் தனிப்பட்டவையாக ஆக்கவா?"
+
+#: contact-form-7/modules/checkbox.php:238
+msgid "And, put this code into the Mail fields below."
+msgstr "கீழே உள்ள அஞ்சல் களங்களில் இந்த குறியீட்டை வைக்கவா."
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploading a file fails for any reason"
+msgstr "எந்த காரணத்தாலும் ஒரு கோப்பைத் தரவேற்றம் செய்வது தோல்வியடையலாம்."
+
+#: contact-form-7/modules/file.php:208
+msgid "Failed to upload file."
+msgstr "கோப்பைத் தரவேற்றம் செய்வது தோல்வியடைந்தது"
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploaded file is not allowed file type"
+msgstr "தரவேற்றம் செய்த கோப்பு அனுமதிக்கப்பட்ட கோப்பு வகையைச் சேர்ந்தது அல்ல"
+
+#: contact-form-7/modules/file.php:213
+msgid "This file type is not allowed."
+msgstr "கோப்பு வகை அனுமதிக்கப்பட்டது அல்ல"
+
+#: contact-form-7/modules/file.php:217
+msgid "Uploaded file is too large"
+msgstr "தரவேற்றம் செய்த கோப்பு மிகவும் பெரியது"
+
+#: contact-form-7/modules/file.php:218
+msgid "This file is too large."
+msgstr "கோப்பு மிகவும் பெரியது"
+
+#: contact-form-7/modules/file.php:222
+msgid "Uploading a file fails for PHP error"
+msgstr "கோப்பைத் தரவேற்றம் செய்வது பிஎச்பி பிழை காரணமாக தோல்வியடைந்தது"
+
+#: contact-form-7/modules/file.php:223
+msgid "Failed to upload file. Error occurred."
+msgstr "கோப்பைத் தரவேற்றம் செய்வது தோல்வியடைந்தது. பிழை ஏற்பட்டுள்ளது."
+
+#: contact-form-7/modules/file.php:234
+msgid "File upload"
+msgstr "கோப்பு தரவேற்றம்"
+
+#: contact-form-7/modules/file.php:257
+msgid "File size limit"
+msgstr "கோப்பு அளவு வரையறை"
+
+#: contact-form-7/modules/file.php:257
+msgid "bytes"
+msgstr "பைட்டுகள்"
+
+#: contact-form-7/modules/file.php:260
+msgid "Acceptable file types"
+msgstr "ஏற்கத்தக்க கோப்பு வகைகள்"
+
+#: contact-form-7/modules/file.php:267
+msgid "And, put this code into the File Attachments field below."
+msgstr "கீழே உள்ள கோப்பு இணைப்புகள் களத்தில் இந்த குறியீட்டை வைக்கவும்."
+
+#: contact-form-7/modules/file.php:292
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "இந்த தொடர்பு படிவம் கோப்பு தரவேற்றத்துக்கான களங்களைக் கொண்டுள்ளது, ஆனால் கோப்புகளுக்கான தற்காலிக உறை (%s) இல்லை அல்லது அது எழுதக்கூடியதாக இல்லை. நீங்கள் அந்த உறையை உருவாக்கலாம் அல்லது அதன் அனுமதியைக் கைமுறையாக மாற்றலாம்."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "இந்த தொடர்பு படிவம் [icl] குறிச்சொற்களைக் கொண்டுள்ளது, ஆனால் அவை பயனற்றவையாக உள்ளன, இந்த தொடர்பு படிவம் 7 பதிப்புடன் அவை மேற்கொண்டு செயல்படவில்லை. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">மற்ற மொழிகளில் தொடர்பு படிவங்களை உருவாக்குவதற்கு மேலும் எளிமையான வழி இங்கு உள்ளது</a>  நீங்கள் இதனைப் பயன்படுத்தும்படி பரிந்துரைக்கப்படுகிறது.  "
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "அனுப்புனர் புதிருக்கான சரியான விடையை உள்ளீடு செய்யவில்லை"
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "உங்கள் விடை சரியானதல்ல."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "புதிர்"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "புதிர்கள்"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* புதிர்|விடை (எ.கா. 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "கீழ்-இறங்கு பட்டி"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "பல தேர்ந்தெடுத்தல்களை அனுமதிக்கவா?"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "முதல் விருப்பத்தேர்வாக ஒரு வெற்று இனத்தைச் சேர்க்கவா? "
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "அனுப்பப்படுகிறது..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "பட்டனை சமர்ப்பிக்கவும்"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "விவரச்சீட்டு"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "உரைக் களம்"
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "மின்னஞ்சல் களம்"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "அகிஸ்மெட்"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "இந்த களத்துக்கு ஆசிரியரின் பெயர் தேவைப்படுகிறது"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "இந்த களத்துக்கு ஆசிரியரின் யூஆர்எல் தேவைப்படுகிறது"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "இந்த களத்துக்கு ஆசிரியரின் மின்னஞ்சல் முகவரி தேவைப்படுகிறது"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "இயல்பான மதிப்பு"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "இந்த உரையை நீரோட்டக்குறியாகப் பயன்படுத்தவா?"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "உரைப் பகுதி"
+
