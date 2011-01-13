@@ -13,8 +13,12 @@ function wpcf7_special_mail_tag( $output, $name ) {
 	if ( '_remote_ip' == $name )
 		$output = preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
 
-	elseif ( '_url' == $name )
-		$output = get_option( 'home' ) . wpcf7_get_request_uri();
+	elseif ( '_url' == $name ) {
+		$url = untrailingslashit( home_url() );
+		$url = preg_replace( '%(?<!:|/)/.*$%', '', $url );
+		$url .= wpcf7_get_request_uri();
+		$output = $url;
+	}
 
 	elseif ( '_date' == $name )
 		$output = date_i18n( get_option( 'date_format' ) );
