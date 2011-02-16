@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Contact Form | V2.4.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-06 09:35+0900\n"
-"PO-Revision-Date: 2011-01-11 19:24+0100\n"
+"PO-Revision-Date: 2011-02-16 17:22+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -258,7 +258,7 @@ msgstr "Die Nachricht vom Absender ist fehlerhaft."
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/includes/functions.php:17
 msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Das versenden der Nachricht war fehlerhaft. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
+msgstr "Das Versenden der Nachricht war fehlerhaft. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Akismet judged the sending activity as spamming"
@@ -298,7 +298,7 @@ msgstr "Bitte füllen Sie dieses Pflichtfeld aus!"
 
 #: contact-form-7/includes/functions.php:46
 msgid "Your Name"
-msgstr "Ihre Name"
+msgstr "Ihr Name"
 
 #: contact-form-7/includes/functions.php:46
 #: contact-form-7/includes/functions.php:48
