@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
-Tested up to: 3.0.4
-Stable tag: 2.4.3
+Tested up to: 3.0.5
+Stable tag: 2.4.4
 
 Just another contact form plugin. Simple but flexible.
 
@@ -103,6 +103,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.4.4 =
+
+* Translation for Sinhala has been created by Nitin Aggarwal.
+* Translations for German (Ivan Graf), Russian (Denis Voituk), Simplified Chinese (Keefe Dunn) and Polish (RafalDesign) have been updated.
+* Fixed wrong [_url] special mail tag output.
 
 = 2.4.3 =
 
