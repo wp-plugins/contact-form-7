@@ -143,7 +143,7 @@ function wpcf7_admin_enqueue_styles() {
 	}
 }
 
-add_action( 'admin_print_scripts', 'wpcf7_admin_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
 
 function wpcf7_admin_enqueue_scripts() {
 	global $plugin_page;

@@ -243,7 +243,7 @@ var _wpcf7 = { cached: 1 };
 }
 
 if ( WPCF7_LOAD_JS )
-	add_action( 'wp_print_scripts', 'wpcf7_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_scripts' );
 
 function wpcf7_enqueue_scripts() {
 	// jquery.form.js originally bundled with WordPress is out of date and deprecated
