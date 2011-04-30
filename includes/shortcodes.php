@@ -35,7 +35,18 @@ class WPCF7_ShortcodeManager {
 		if ( $m[1] == '[' && $m[6] == ']' )
 			return $m[0];
 
-		return preg_replace( '/\s+/', ' ', $m[0] );
+		$tag = $m[2];
+		$attr = trim( preg_replace( '/\s+/', ' ', $m[3] ) );
+		$content = trim( $m[5] );
+
+		$result = $m[1] . '[' . $tag
+			. ( $attr ? ' ' . $attr : '' )
+			. ( $m[4] ? ' ' . $m[4] : '' )
+			. ']'
+			. ( $content ? $content . '[/' . $tag . ']' : '' )
+			. $m[6];
+
+		return $result;
 	}
 
 	function do_shortcode( $content, $exec = true ) {
