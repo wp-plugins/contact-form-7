@@ -57,7 +57,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	$value = (string) reset( $values );
 
-	if ( wpcf7_script_is() && $value && preg_grep( '%^watermark$%', $options ) ) {
+	if ( wpcf7_script_is() && preg_grep( '%^watermark$%', $options ) ) {
 		$class_att .= ' wpcf7-use-title-as-watermark';
 		$title_att .= sprintf( ' %s', $value );
 		$value = '';
