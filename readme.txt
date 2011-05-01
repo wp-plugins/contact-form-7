@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
-Tested up to: 3.0.5
+Tested up to: 3.1.2
 Stable tag: 2.4.4
 
 Just another contact form plugin. Simple but flexible.
@@ -103,6 +103,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.4.5 =
+
+* Fixed the bug that makes it not accept "0" value as watermark.
+* Fixed too much normalization to form-tag shortcode with content.
+* Fixed wrong regexp pattern for form-tag shortcode with content.
+* Check $_POST of checkboxes and select menus to avoid warnings.
+* Use proper action hook for enqueueing scripts: wp_enqueue_scripts and admin_enqueue_scripts.
+* Bundled jquery.form has been updated to 2.72.
+* Translations for Czech (Tomas Vesely) has been updated.
 
 = 2.4.4 =
 
