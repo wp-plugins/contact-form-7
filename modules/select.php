@@ -74,7 +74,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	foreach ( $values as $key => $value ) {
 		$selected = false;
 
-		if ( $posted ) {
+		if ( $posted && ! empty( $_POST[$name] ) ) {
 			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
 				$selected = true;
 			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
@@ -117,16 +117,18 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 	$name = $tag['name'];
 	$values = $tag['values'];
 
-	if ( is_array( $_POST[$name] ) ) {
-		foreach ( $_POST[$name] as $key => $value ) {
-			$value = stripslashes( $value );
-			if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
-				unset( $_POST[$name][$key] );
+	if ( ! empty( $_POST[$name] ) ) {
+		if ( is_array( $_POST[$name] ) ) {
+			foreach ( $_POST[$name] as $key => $value ) {
+				$value = stripslashes( $value );
+				if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
+					unset( $_POST[$name][$key] );
+			}
+		} else {
+			$value = stripslashes( $_POST[$name] );
+			if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
+				$_POST[$name] = '';
 		}
-	} else {
-		$value = stripslashes( $_POST[$name] );
-		if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
-			$_POST[$name] = '';
 	}
 
 	if ( 'select*' == $type ) {
