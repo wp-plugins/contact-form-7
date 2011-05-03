@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 00:21+0900\n"
-"PO-Revision-Date: 2009-01-08 18:00+0700\n"
-"Last-Translator: Thanh Hai, Ha <thanhhai.ha@gmail.com>\n"
-"Language-Team: Thanh Hai, ha <thanhhai.ha@gmail.com>\n"
+"POT-Creation-Date: 2011-01-06 09:35+0900\n"
+"PO-Revision-Date: 2011-05-03 15:50+0700\n"
+"Last-Translator: \n"
+"Language-Team: Khang Minh <contact@betterwp.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,389 +17,830 @@ msgstr ""
 "X-Poedit-Country: VIET NAM\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:391
-msgid "Contact form"
-msgstr "Biểu mẫu liên hệ"
-
-#: contact-form-7/wp-contact-form-7.php:548
-#: contact-form-7/includes/admin-panel.php:5
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:566
-msgid "optional"
-msgstr "tùy chọn"
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "Contact"
 
-#: contact-form-7/wp-contact-form-7.php:567
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "Chỉnh sửa các biểu mẫu"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "Tùy chỉnh"
+
+#: contact-form-7/admin/admin.php:162
 msgid "Generate Tag"
-msgstr "Tạo Thẻ"
+msgstr "Tạo thẻ"
 
-#: contact-form-7/wp-contact-form-7.php:568
-msgid "Text field"
-msgstr "Trường văn bản"
-
-#: contact-form-7/wp-contact-form-7.php:569
-msgid "Email field"
-msgstr "Trường thư điện tử"
-
-#: contact-form-7/wp-contact-form-7.php:570
-msgid "Text area"
-msgstr "Khung nhập liệu"
-
-#: contact-form-7/wp-contact-form-7.php:571
-msgid "Drop-down menu"
-msgstr "Danh sách chọn"
-
-#: contact-form-7/wp-contact-form-7.php:572
-msgid "Checkboxes"
-msgstr "Ô kiểm"
-
-#: contact-form-7/wp-contact-form-7.php:573
-msgid "Radio buttons"
-msgstr "Nút chọn"
-
-#: contact-form-7/wp-contact-form-7.php:574
-msgid "Acceptance"
-msgstr "Chấp nhận"
-
-#: contact-form-7/wp-contact-form-7.php:575
-msgid "Make this checkbox checked by default?"
-msgstr "Mặc định chọn sẵn"
-
-#: contact-form-7/wp-contact-form-7.php:576
-msgid "Make this checkbox work inversely?"
-msgstr "Có tác dụng ngược lại"
-
-#: contact-form-7/wp-contact-form-7.php:577
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Có nghĩa là khách ghé không đánh dấu chọn nếu chấp nhận."
-
-#: contact-form-7/wp-contact-form-7.php:578
-msgid "CAPTCHA"
-msgstr "CAPTCHA"
-
-#: contact-form-7/wp-contact-form-7.php:579
-msgid "File upload"
-msgstr "Đính kèm tập tin"
-
-#: contact-form-7/wp-contact-form-7.php:580
-msgid "Submit button"
-msgstr "Nút gửi"
-
-#: contact-form-7/wp-contact-form-7.php:581
-msgid "Name"
-msgstr "Tên"
-
-#: contact-form-7/wp-contact-form-7.php:582
-msgid "Required field?"
-msgstr "Trường bắt buộc"
-
-#: contact-form-7/wp-contact-form-7.php:583
-msgid "Allow multiple selections?"
-msgstr "Cho phép chọn nhiều mục"
-
-#: contact-form-7/wp-contact-form-7.php:584
-msgid "Insert a blank item as the first option?"
-msgstr "Để trống lựa chọn đầu tiên"
-
-#: contact-form-7/wp-contact-form-7.php:585
-msgid "Make checkboxes exclusive?"
-msgstr "Tạo các ô kiểm riêng biệt"
-
-#: contact-form-7/wp-contact-form-7.php:586
-msgid "Choices"
-msgstr "Các lựa chọn"
-
-#: contact-form-7/wp-contact-form-7.php:587
-msgid "Label"
-msgstr "Nhãn"
-
-#: contact-form-7/wp-contact-form-7.php:588
-msgid "Default value"
-msgstr "Giá trị mặc định"
-
-#: contact-form-7/wp-contact-form-7.php:589
-msgid "Akismet"
-msgstr "Akismet"
-
-#: contact-form-7/wp-contact-form-7.php:590
-msgid "This field requires author's name"
-msgstr "Yêu cầu người gửi phải nhập tên"
-
-#: contact-form-7/wp-contact-form-7.php:591
-msgid "This field requires author's URL"
-msgstr "Yêu cầu người gửi phải nhập URL"
-
-#: contact-form-7/wp-contact-form-7.php:592
-msgid "This field requires author's email address"
-msgstr "Yêu cầu người gửi phải nhập địa chỉ thư điện tử"
-
-#: contact-form-7/wp-contact-form-7.php:593
-msgid "Copy this code and paste it into the form left."
-msgstr "Sao chép đoạn mã này và dán vào bên trái."
-
-#: contact-form-7/wp-contact-form-7.php:594
-msgid "Foreground color"
-msgstr "Màu chữ"
-
-#: contact-form-7/wp-contact-form-7.php:595
-msgid "Background color"
-msgstr "Màu nền"
-
-#: contact-form-7/wp-contact-form-7.php:596
-msgid "Image size"
-msgstr "Kích cỡ hình ảnh"
-
-#: contact-form-7/wp-contact-form-7.php:597
-msgid "Small"
-msgstr "Nhỏ"
-
-#: contact-form-7/wp-contact-form-7.php:598
-msgid "Medium"
-msgstr "Vừa"
-
-#: contact-form-7/wp-contact-form-7.php:599
-msgid "Large"
-msgstr "To"
-
-#: contact-form-7/wp-contact-form-7.php:600
-msgid "Image settings"
-msgstr "Thiết lập hình ảnh"
-
-#: contact-form-7/wp-contact-form-7.php:601
-msgid "Input field settings"
-msgstr "Thiết lập ô nhập liệu"
-
-#: contact-form-7/wp-contact-form-7.php:602
-msgid "For image"
-msgstr "Dùng cho hình ảnh"
-
-#: contact-form-7/wp-contact-form-7.php:603
-msgid "For input field"
-msgstr "Dùng cho ô nhập liệu"
-
-#: contact-form-7/wp-contact-form-7.php:604
-msgid "* One choice per line."
-msgstr "* Mỗi một lựa chọn trên một dòng."
-
-#: contact-form-7/wp-contact-form-7.php:605
+#: contact-form-7/admin/admin.php:163
 msgid "Show"
 msgstr "Hiển thị"
 
-#: contact-form-7/wp-contact-form-7.php:606
+#: contact-form-7/admin/admin.php:164
 msgid "Hide"
 msgstr "Ẩn"
 
-#: contact-form-7/wp-contact-form-7.php:607
-msgid "File size limit"
-msgstr "Giới hạn kích cỡ tập tin"
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr ""
 
-#: contact-form-7/wp-contact-form-7.php:608
-msgid "Acceptable file types"
-msgstr "Chấp nhận các loại tập tin"
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "Cấu hình"
 
-#: contact-form-7/wp-contact-form-7.php:634
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "Tư liệu tham khảo"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "Câu hỏi thường gặp"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: contact-form-7/admin/admin.php:312
 msgid "Contact form created."
-msgstr "Biểu mẫu liên hệ đã được tạo."
+msgstr "Biểu mẫu đã được tạo."
 
-#: contact-form-7/wp-contact-form-7.php:637
+#: contact-form-7/admin/admin.php:315
 msgid "Contact form saved."
-msgstr "Biểu mẫu liên hệ đã được lưu."
+msgstr "Thay đổi đã được lưu."
 
-#: contact-form-7/wp-contact-form-7.php:640
+#: contact-form-7/admin/admin.php:318
 msgid "Contact form deleted."
-msgstr "Biểu mẫu liên hệ đã được xóa."
+msgstr "Biểu mẫu đã được xóa."
 
-#: contact-form-7/wp-contact-form-7.php:651
-msgid "Untitled"
-msgstr "Không có tiêu đề"
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "Bảng dữ liệu đã được tạo."
 
-#: contact-form-7/wp-contact-form-7.php:678
-msgid "Your Name"
-msgstr "Tên của bạn"
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "Không tạo được bảng dữ liệu."
 
-#: contact-form-7/wp-contact-form-7.php:678
-#: contact-form-7/wp-contact-form-7.php:680
-msgid "(required)"
-msgstr "(bắt buộc)"
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Plugin Contact Form 7 này cần sự hỗ trợ từ cộng đồng. Xin hãy ủng hộ cho plugin này hôm nay."
 
-#: contact-form-7/wp-contact-form-7.php:680
-msgid "Your Email"
-msgstr "Địa chỉ thư điện tử của bạn"
+#: contact-form-7/admin/admin.php:359
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Để plugin này ngày một tôt hơn, sự đóng góp của bạn là rất cần thiết."
 
-#: contact-form-7/wp-contact-form-7.php:682
-msgid "Subject"
-msgstr "Tiêu đề"
+#: contact-form-7/admin/admin.php:365
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/wp-contact-form-7.php:684
-msgid "Your Message"
-msgstr "Thông điệp của bạn"
+#: contact-form-7/admin/admin.php:365
+msgid "Donate"
+msgstr "Ủng hộ"
 
-#: contact-form-7/wp-contact-form-7.php:686
-#: contact-form-7/wp-contact-form-7.php:1325
-msgid "Send"
-msgstr "Gửi"
+#: contact-form-7/admin/edit.php:9
+#, php-format
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>Bảng dữ liệu cho plugin này không tồn tại.</strong> Bạn phải <a href=\"%s\">tạo một bảng dữ liệu</a> mới."
 
-#: contact-form-7/wp-contact-form-7.php:739
-msgid "Your message was sent successfully. Thanks."
-msgstr "Thông điệp của bạn đã được gửi đi. Cảm ơn."
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>Bảng dữ liệu cho plugin này không tồn tại..</strong>"
 
-#: contact-form-7/wp-contact-form-7.php:741
-#: contact-form-7/wp-contact-form-7.php:743
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Hệ thống không thể gửi thông điệp của bạn. Vui lòng thử lại vào lúc khác hoặc liên hệ bằng cách khác."
-
-#: contact-form-7/wp-contact-form-7.php:745
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Có lỗi xảy ra trong quá trình kiểm tra. Hãy kiểm tra các ô nhập liệu và gửi lại lần nữa."
-
-#: contact-form-7/wp-contact-form-7.php:747
-msgid "Please accept the terms to proceed."
-msgstr "Bạn phải chấp nhận các điều khoản để tiếp tục."
-
-#: contact-form-7/wp-contact-form-7.php:749
-msgid "Email address seems invalid."
-msgstr "Địa chỉ thư điện tử không hợp lệ."
-
-#: contact-form-7/wp-contact-form-7.php:751
-msgid "Please fill the required field."
-msgstr "Vui lòng nhập các thông tin bắt buộc."
-
-#: contact-form-7/wp-contact-form-7.php:753
-msgid "Your entered code is incorrect."
-msgstr "Đoạn mã bạn nhập vào không đúng."
-
-#: contact-form-7/wp-contact-form-7.php:755
-msgid "Failed to upload file."
-msgstr "Quá trình tải tập tin lên thất bại."
-
-#: contact-form-7/wp-contact-form-7.php:757
-msgid "This file type is not allowed."
-msgstr "Loại tập tin này không được phép sử dụng."
-
-#: contact-form-7/wp-contact-form-7.php:759
-msgid "This file is too large."
-msgstr "Tập tin này quá to."
-
-#: contact-form-7/includes/admin-panel.php:20
+#: contact-form-7/admin/edit.php:45
 msgid "Add new"
-msgstr "Thêm biểu mẫu mới"
+msgstr "Thêm biểu mẫu"
 
-#: contact-form-7/includes/admin-panel.php:42
+#: contact-form-7/admin/edit.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Sao chép đoạn mã này và dán vào nội dung của bài viết, trang tin hoặc widget."
+msgstr "Hãy sao chép đoạn mã này và dán vào trong phần nội dung bài viết của bạn, có thể dán vào cả widget."
 
-#: contact-form-7/includes/admin-panel.php:49
-#: contact-form-7/includes/admin-panel.php:253
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "Lưu"
 
-#: contact-form-7/includes/admin-panel.php:55
-msgid "Delete this contact form"
-msgstr "Xóa biểu mẫu liên hệ này"
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "Sao chép"
 
-#: contact-form-7/includes/admin-panel.php:56
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "Xóa"
+
+#: contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
-msgstr "Bạn có muốn xóa biểu mẫu liên hệ này?"
+msgstr ""
+"Bạn thực lòng muốn xóa biểu mẫu này?\n"
+"  'Cancel' để quay trở lại, 'OK' để tiến hành xóa."
 
-#: contact-form-7/includes/admin-panel.php:70
+#: contact-form-7/admin/edit.php:104
 msgid "Form"
 msgstr "Biểu mẫu"
 
-#: contact-form-7/includes/admin-panel.php:90
+#: contact-form-7/admin/edit.php:128
 msgid "Mail"
-msgstr "Thư điện tử"
+msgstr "Thiết lập mail"
 
-#: contact-form-7/includes/admin-panel.php:97
-#: contact-form-7/includes/admin-panel.php:149
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
 msgid "To:"
-msgstr "Gửi đến:"
+msgstr "Gửi tới"
 
-#: contact-form-7/includes/admin-panel.php:101
-#: contact-form-7/includes/admin-panel.php:153
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
 msgid "From:"
-msgstr "Gửi từ:"
+msgstr "Gửi từ"
 
-#: contact-form-7/includes/admin-panel.php:105
-#: contact-form-7/includes/admin-panel.php:157
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
 msgid "Subject:"
+msgstr "Tiêu đề"
+
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "Phần header phụ thêm"
+
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "File đính kèm"
+
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "Sử dụng mã HTML cho phần nội dung của thư"
+
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "Nội dung của thư"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "Thiết lập mail (2)"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "Sử dụng thiết lập thư này?"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "Các thông báo cho người gửi biểu mẫu:"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "Cấu hình khác"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Sử dụng ngôn ngữ mặc định (%s)"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "Thêm"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "Hoặc"
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(lựa chọn ngôn ngữ)"
+
+#: contact-form-7/includes/classes.php:596
+msgid "Untitled"
+msgstr "Biểu mẫu này chưa có tiêu đề"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Thông điệp của người gửi đã được chuyển đi thành công."
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Thông điệp của bạn đã được chuyển đi thành công. Xin cảm ơn."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Việc chuyển thông điệp của người gửi không thành công."
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "Thông điệp của bạn đã không được gửi đi. Xin hãy thử lại hoặc liên hệ với quản trị viên bằng các cách khác."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Việc gửi thông điệp của khách bị Akismet đánh dấu là spam."
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "Thông tin không hợp lệ."
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Thông tin không hợp lệ. Xin hãy kiểm tra lại các ô thông tin và gửi lại."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "Nếu có một ô yêu cầu chấp nhận điều khoản thì khi người gửi thông điệp không chấp nhận, plugin sẽ thông báo:"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "Xin hãy chấp nhận các điều khoản để tiếp tục."
+
+#: contact-form-7/includes/functions.php:31
+msgid "Email address that sender entered is invalid"
+msgstr "Địa chỉ Email của người gửi không hợp lệ."
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "Địa chỉ Email không hợp lệ."
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "Có một ô trống mà người gửi cần phải điền"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "Thông tin bắt buộc."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "Tên của bạn"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(bắt buộc)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "Địa chỉ Email"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
 msgstr "Tiêu đề:"
 
-#: contact-form-7/includes/admin-panel.php:110
-#: contact-form-7/includes/admin-panel.php:162
-msgid "File attachments:"
-msgstr "Đính kèm tập tin:"
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "Thông điệp"
 
-#: contact-form-7/includes/admin-panel.php:112
-#: contact-form-7/includes/admin-panel.php:164
-msgid "(You need WordPress 2.7 or greater to use this feature)"
-msgstr "(Bạn cần phải cài đặt WordPress 2.7 hoặc mới hơn để sử dụng chức năng này)"
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "Gửi đi"
 
-#: contact-form-7/includes/admin-panel.php:120
-#: contact-form-7/includes/admin-panel.php:172
-msgid "Use HTML content type"
-msgstr "Sử dụng kiểu nội dung HTML"
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "Gửi đến từ: %s"
 
-#: contact-form-7/includes/admin-panel.php:125
-#: contact-form-7/includes/admin-panel.php:177
-msgid "Message body:"
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "Tiêu đề: %s"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Message Body:"
 msgstr "Nội dung thông điệp:"
 
-#: contact-form-7/includes/admin-panel.php:136
-msgid "Mail (2)"
-msgstr "Thư điện tử (2)"
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Email này được gửi bằng form liên lạc trên trang %1$s %2$s"
 
-#: contact-form-7/includes/admin-panel.php:143
-msgid "Use mail (2)"
-msgstr "Sử dụng thư điện tử (2)"
+#: contact-form-7/includes/functions.php:169
+msgid "Afrikaans"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:188
-msgid "Messages"
-msgstr "Các thông điệp"
+#: contact-form-7/includes/functions.php:170
+msgid "Albanian"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:196
-msgid "Sender's message was sent successfully"
-msgstr "Thông điệp đã được gửi đi thành công"
+#: contact-form-7/includes/functions.php:171
+msgid "Arabic"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:200
-msgid "Sender's message was failed to send"
-msgstr "Hệ thống không thể gửi thông điệp đi"
+#: contact-form-7/includes/functions.php:172
+msgid "Armenian"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:204
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet đánh giá các hoạt động gửi thư quấy nhiễu"
+#: contact-form-7/includes/functions.php:173
+msgid "Bangla"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:208
-msgid "Validation errors occurred"
-msgstr "Có lỗi xảy ra trong quá trình kiểm tra"
+#: contact-form-7/includes/functions.php:174
+msgid "Bosnian"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:212
-msgid "There is a field that sender is needed to fill in"
-msgstr "Người dùng chưa nhập thông tin yêu cầu"
+#: contact-form-7/includes/functions.php:175
+msgid "Brazilian Portuguese"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:216
-msgid "Email address that sender entered is invalid"
-msgstr "Địa chỉ thư điện tử người gửi không hợp lệ"
+#: contact-form-7/includes/functions.php:176
+msgid "Bulgarian"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:220
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Người dùng chưa chấp nhận điều khoản"
+#: contact-form-7/includes/functions.php:177
+msgid "Catalan"
+msgstr ""
 
-#: contact-form-7/includes/admin-panel.php:224
+#: contact-form-7/includes/functions.php:178
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:179
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:180
+msgid "Croatian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:181
+msgid "Czech"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:182
+msgid "Danish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:183
+msgid "Dutch"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:184
+msgid "English"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:185
+msgid "Estonian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:186
+msgid "Finnish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:187
+msgid "French"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:188
+msgid "Galician"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:189
+msgid "Georgian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:190
+msgid "German"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:191
+msgid "Greek"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hebrew"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:193
+msgid "Hindi"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:194
+msgid "Hungarian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:195
+msgid "Indonesian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:196
+msgid "Italian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:197
+msgid "Japanese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:198
+msgid "Korean"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:199
+msgid "Latvian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:200
+msgid "Lithuanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:201
+msgid "Macedonian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:202
+msgid "Malay"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:203
+msgid "Malayalam"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:204
+msgid "Norwegian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:205
+msgid "Persian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:206
+msgid "Polish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:207
+msgid "Portuguese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:208
+msgid "Russian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:209
+msgid "Romanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:210
+msgid "Serbian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:211
+msgid "Slovak"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:212
+msgid "Slovene"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:213
+msgid "Spanish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:214
+msgid "Swedish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:215
+msgid "Tamil"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:216
+msgid "Thai"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:217
+msgid "Turkish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:218
+msgid "Ukrainian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:219
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "Chấp nhận"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/file.php:244
+msgid "Name"
+msgstr "Tên"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:260
+msgid "optional"
+msgstr "không bắt buộc"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "Mặc định lựa chọn này"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "Lựa chọn chấp nhận ngược"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Có nghĩa là người gửi muốn chấp nhận điều kiện thì phải bỏ chọn ô checkbox."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/file.php:265
+msgid "Copy this code and paste it into the form left."
+msgstr "Sao chép đoạn mã này và dán vào biểu mẫu bên trái"
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Để sử dụng CAPTCHA, bạn cần cài thêm plugin sau đây: <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+
+#: contact-form-7/modules/captcha.php:177
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Đoạn mã người gửi nhập vào không khớp với CAPTCHA"
+msgstr "Mã người gửi nhập không khớp với CAPTCHA"
 
-#: contact-form-7/includes/admin-panel.php:228
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "Bạn đã nhập sai mã CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Lưu ý: Để dùng được CAPTCHA, bạn cần cài plugin Really Simple CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "Cấu hình cho ảnh"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "Màu chữ"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "Màu nền"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "Kích thước của ảnh"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "Cỡ nhỏ"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "Cỡ trung bình"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "Cỡ lớn"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "Cấu hình cho ô trống"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "Dành cho ảnh"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "Dành cho ô trống"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Biểu mẫu này có sử dụng ô CAPTCHA, song thư mục lưu file (%s) không tồn tại hoặc không thể ghi lên được. Bạn cần tự tạo folder đó hoặc thay đổi quyền hạn của nó."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Biểu mẫu này có sử dụng ô CAPTCHA, song các thư viện cần thiết như GD và FreeType không được cài đặt trên máy chủ của bạn."
+
+#: contact-form-7/modules/checkbox.php:181
+msgid "Checkboxes"
+msgstr "Cấu hình cho ô checkbox"
+
+#: contact-form-7/modules/checkbox.php:184
+msgid "Radio buttons"
+msgstr "Cấu hình cho nút radio"
+
+#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/file.php:243
+msgid "Required field?"
+msgstr "Bắt buộc phải điền?"
+
+#: contact-form-7/modules/checkbox.php:221
+msgid "Choices"
+msgstr "Các lựa chọn"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "* One choice per line."
+msgstr "* Mỗi lựa chọn trên một dòng"
+
+#: contact-form-7/modules/checkbox.php:227
+msgid "Put a label first, a checkbox last?"
+msgstr "Đặt tên trước, sau đó mới đặt ô checkbox"
+
+#: contact-form-7/modules/checkbox.php:228
+msgid "Wrap each item with <label> tag?"
+msgstr "Tạo một thẻ <label> xung quanh mỗi ô checkbox?"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Make checkboxes exclusive?"
+msgstr ""
+
+#: contact-form-7/modules/checkbox.php:238
+msgid "And, put this code into the Mail fields below."
+msgstr "Tiếp theo, hãy chuyển đoạn mã này vào những ô có nhãn Mail ở phía dưới."
+
+#: contact-form-7/modules/file.php:207
 msgid "Uploading a file fails for any reason"
-msgstr "Quá trình tải tập tin lên thất bại không rõ nguyên nhân"
+msgstr "Lỗi không xác định được khi tải file lên."
 
-#: contact-form-7/includes/admin-panel.php:232
+#: contact-form-7/modules/file.php:208
+msgid "Failed to upload file."
+msgstr "Không tải được file lên."
+
+#: contact-form-7/modules/file.php:212
 msgid "Uploaded file is not allowed file type"
-msgstr "Tập tin tải lên không phải là loại tập tin cho phép"
+msgstr "File được tải lên không phải loại file được chấp nhận."
 
-#: contact-form-7/includes/admin-panel.php:236
+#: contact-form-7/modules/file.php:213
+msgid "This file type is not allowed."
+msgstr "Loại file này không được hỗ trợ."
+
+#: contact-form-7/modules/file.php:217
 msgid "Uploaded file is too large"
-msgstr "Tập tin tải lên quá to"
+msgstr "File được tải lên quá lớn."
+
+#: contact-form-7/modules/file.php:218
+msgid "This file is too large."
+msgstr "File bạn định tải quá lớn."
+
+#: contact-form-7/modules/file.php:222
+msgid "Uploading a file fails for PHP error"
+msgstr "Có lỗi PHP xảy ra khi tải file lên."
+
+#: contact-form-7/modules/file.php:223
+msgid "Failed to upload file. Error occurred."
+msgstr "Không tải được file lên."
+
+#: contact-form-7/modules/file.php:234
+msgid "File upload"
+msgstr "Ô tải file"
+
+#: contact-form-7/modules/file.php:257
+msgid "File size limit"
+msgstr "Giới hạn dung lượng file"
+
+#: contact-form-7/modules/file.php:257
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/modules/file.php:260
+msgid "Acceptable file types"
+msgstr "Các định dạng file được chấp nhận"
+
+#: contact-form-7/modules/file.php:267
+msgid "And, put this code into the File Attachments field below."
+msgstr "Tiếp theo, sao chép đoạn mã này vào phần File đính kèm ở dưới."
+
+#: contact-form-7/modules/file.php:292
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Biểu mẫu này có sử dụng ô tải file, song thư mục được lựa chọn để lưu các file tải lên (%s) không tồn tại hoặc không thể ghi được. Bạn cần tự tạo folder đó và thay đổi quyền hạn của nó."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Biểu mẫu này sử dụng thẻ shortcode [icl], song thẻ này không còn hoạt động đối với phiên bản này của Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">Có một cách đơn giản hơn để tạo các biểu mẫu sử dụng các ngôn ngữ khác</a> và ban nên sử dụng cách thức đó thay vì sử dụng thẻ [icl]."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Người gửi không trả lời đúng đáp án của câu hỏi."
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "Đáp án cho câu hỏi không đúng."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "Câu hỏi"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "Các câu hỏi"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* câu hỏi|đáp án (ví dụ 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr ""
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "Cho phép lựa nhiều hơn một lựa chọn?"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "Thêm một lựa chọn trống trên cùng?"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "Đang gửi ..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "Nút submit"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "Nhãn"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr ""
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr ""
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "Chọn kiểm tra tên người gửi"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "Chọn kiểm tra đường link của người gửi"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "Chọn kiểm tra địa chỉ Email của người gửi"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "Giá trị mặc định"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "Sử dụng đoạn chữ này làm dòng chữ mờ gợi ý cho người gửi?"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr ""
 
