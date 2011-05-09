@@ -63,7 +63,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$value = '';
 	}
 
-	if ( wpcf7_is_posted() )
+	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
 		$value = stripslashes_deep( $_POST[$name] );
 
 	if ( $id_att )
