@@ -61,7 +61,7 @@ function wpcf7_submit( $ajax = false ) {
 		$result['message'] = wpcf7_get_message( 'accept_terms' );
 
 	} elseif ( apply_filters( 'wpcf7_spam', false ) ) { // Spam!
-		$result['message'] = wpcf7_get_message( 'akismet_says_spam' ); // ToDo: use general name
+		$result['message'] = wpcf7_get_message( 'spam' );
 		$result['spam'] = true;
 
 	} elseif ( $wpcf7_contact_form->mail() ) {

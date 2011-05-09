@@ -12,11 +12,6 @@ function wpcf7_messages() {
 			'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
 		),
 
-		'akismet_says_spam' => array(
-			'description' => __( "Akismet judged the sending activity as spamming", 'wpcf7' ),
-			'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
-		),
-
 		'validation_error' => array(
 			'description' => __( "Validation errors occurred", 'wpcf7' ),
 			'default' => __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' )
