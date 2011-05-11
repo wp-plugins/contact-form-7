@@ -234,7 +234,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 
 	$id = (int) array_shift( $atts );
 
-	if ( ! ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) )
+	if ( ! ( $wpcf7_contact_form = wpcf7_get_contact_form_by_old_id( $id ) ) )
 		return '[contact-form 404 "Not Found"]';
 
 	if ( $wpcf7->processing_within ) { // Inside post content or text widget
@@ -252,7 +252,7 @@ function wpcf7_contact_form_tag_func( $atts ) {
 		$processing_within = 't' . $wpcf7->global_unit_count;
 	}
 
-	$unit_tag = 'wpcf7-f' . $id . '-' . $processing_within . '-o' . $unit_count;
+	$unit_tag = 'wpcf7-f' . $wpcf7_contact_form->id . '-' . $processing_within . '-o' . $unit_count;
 	$wpcf7_contact_form->unit_tag = $unit_tag;
 
 	$form = $wpcf7_contact_form->form_html();

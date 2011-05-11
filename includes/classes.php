@@ -398,45 +398,33 @@ class WPCF7_ContactForm {
 	/* Save */
 
 	function save() {
-		global $wpdb, $wpcf7;
+		$postarr = array(
+			'ID' => (int) $this->id,
+			'post_type' => 'wpcf7_contact_form',
+			'post_status' => 'publish',
+			'post_title' => $this->title );
 
-		$fields = array(
-			'title' => maybe_serialize( stripslashes_deep( $this->title ) ),
-			'form' => maybe_serialize( stripslashes_deep( $this->form ) ),
-			'mail' => maybe_serialize( stripslashes_deep( $this->mail ) ),
-			'mail_2' => maybe_serialize ( stripslashes_deep( $this->mail_2 ) ),
-			'messages' => maybe_serialize( stripslashes_deep( $this->messages ) ),
-			'additional_settings' =>
-				maybe_serialize( stripslashes_deep( $this->additional_settings ) ) );
+		$post_id = wp_insert_post( $postarr );
 
-		if ( $this->initial ) {
-			$result = $wpdb->insert( $wpcf7->contactforms, $fields );
+		if ( $post_id ) {
+			update_post_meta( $post_id, 'form', $this->form );
+			update_post_meta( $post_id, 'mail', $this->mail );
+			update_post_meta( $post_id, 'mail_2', $this->mail_2 );
+			update_post_meta( $post_id, 'messages', $this->messages );
+			update_post_meta( $post_id, 'additional_settings', $this->additional_settings );
 
-			if ( $result ) {
+			if ( $this->initial ) {
 				$this->initial = false;
-				$this->id = $wpdb->insert_id;
-
+				$this->id = $post_id;
 				do_action_ref_array( 'wpcf7_after_create', array( &$this ) );
 			} else {
-				return false; // Failed to save
-			}
-
-		} else { // Update
-			if ( ! (int) $this->id )
-				return false; // Missing ID
-
-			$result = $wpdb->update( $wpcf7->contactforms, $fields,
-				array( 'cf7_unit_id' => absint( $this->id ) ) );
-
-			if ( false !== $result ) {
 				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );
-			} else {
-				return false; // Failed to save
 			}
+
+			do_action_ref_array( 'wpcf7_after_save', array( &$this ) );
 		}
 
-		do_action_ref_array( 'wpcf7_after_save', array( &$this ) );
-		return true; // Succeeded to save
+		return $post_id;
 	}
 
 	function copy() {
@@ -454,16 +442,10 @@ class WPCF7_ContactForm {
 	}
 
 	function delete() {
-		global $wpdb, $wpcf7;
-
 		if ( $this->initial )
 			return;
 
-		$query = $wpdb->prepare(
-			"DELETE FROM $wpcf7->contactforms WHERE cf7_unit_id = %d LIMIT 1",
-			absint( $this->id ) );
-
-		$wpdb->query( $query );
+		wp_delete_post( $this->id, true );
 
 		$this->initial = true;
 		$this->id = null;
@@ -471,25 +453,33 @@ class WPCF7_ContactForm {
 }
 
 function wpcf7_contact_form( $id ) {
-	global $wpdb, $wpcf7;
+	$post = get_post( $id );
 
-	$query = $wpdb->prepare( "SELECT * FROM $wpcf7->contactforms WHERE cf7_unit_id = %d", $id );
-
-	if ( ! $row = $wpdb->get_row( $query ) )
-		return false; // No data
+	if ( empty( $post ) || 'wpcf7_contact_form' != get_post_type( $post ) )
+		return false;
 
 	$contact_form = new WPCF7_ContactForm();
-	$contact_form->id = $row->cf7_unit_id;
-	$contact_form->title = maybe_unserialize( $row->title );
-	$contact_form->form = maybe_unserialize( $row->form );
-	$contact_form->mail = maybe_unserialize( $row->mail );
-	$contact_form->mail_2 = maybe_unserialize( $row->mail_2 );
-	$contact_form->messages = maybe_unserialize( $row->messages );
-	$contact_form->additional_settings = maybe_unserialize( $row->additional_settings );
+	$contact_form->id = $post->ID;
+	$contact_form->title = $post->post_title;
+	$contact_form->form = get_post_meta( $post->ID, 'form', true );
+	$contact_form->mail = get_post_meta( $post->ID, 'mail', true );
+	$contact_form->mail_2 = get_post_meta( $post->ID, 'mail_2', true );
+	$contact_form->messages = get_post_meta( $post->ID, 'messages', true );
+	$contact_form->additional_settings = get_post_meta( $post->ID, 'additional_settings', true );
 
 	$contact_form->upgrade();
 
 	return $contact_form;
+}
+
+function wpcf7_get_contact_form_by_old_id( $old_id ) {
+	global $wpdb;
+
+	$q = "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_old_cf7_unit_id'"
+		. $wpdb->prepare( " AND meta_value = %d", $old_id );
+
+	if ( $new_id = $wpdb->get_var( $q ) )
+		return wpcf7_contact_form( $new_id );
 }
 
 function wpcf7_contact_form_default_pack( $locale = null ) {

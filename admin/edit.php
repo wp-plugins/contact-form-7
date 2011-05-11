@@ -1,29 +1,4 @@
-<?php
-
-/* No table warning */
-if ( ! wpcf7_table_exists() ) {
-	if ( current_user_can( 'activate_plugins' ) ) {
-		$create_table_link_url = wpcf7_admin_url( array( 'wpcf7-create-table' => 1 ) );
-		$create_table_link_url = wp_nonce_url( $create_table_link_url, 'wpcf7-create-table' );
-		$message = sprintf(
-			__( '<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href="%s">create the table</a> for it to work.', 'wpcf7' ),
-			$create_table_link_url );
-	} else {
-		$message = __( "<strong>The database table for Contact Form 7 does not exist.</strong>", 'wpcf7' );
-	}
-?>
-	<div class="wrap">
-	<?php screen_icon( 'edit-pages' ); ?>
-	<h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
-	<div id="message" class="updated fade">
-	<p><?php echo $message; ?></p>
-	</div>
-	</div>
-<?php
-	return;
-}
-
-?><div class="wrap wpcf7">
+<div class="wrap wpcf7">
 
 <?php screen_icon( 'edit-pages' ); ?>
 
@@ -35,10 +10,10 @@ if ( ! wpcf7_table_exists() ) {
 <?php
 $first = array_shift( $contact_forms );
 if ( ! is_null( $first ) ) : ?>
-<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->id ) ); ?>"<?php if ( $first->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->title ); ?></a></li>
+<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->ID ) ); ?>"<?php if ( $first->ID == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->post_title ); ?></a></li>
 <?php endif;
 foreach ( $contact_forms as $v ) : ?>
-<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->title ); ?></a></li>
+<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->ID ) ); ?>"<?php if ( $v->ID == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->post_title ); ?></a></li>
 <?php endforeach; ?>
 
 <?php if ( wpcf7_admin_has_edit_cap() ) : ?>
@@ -53,7 +28,7 @@ foreach ( $contact_forms as $v ) : ?>
 
 <form method="post" action="<?php echo wpcf7_admin_url( array( 'contactform' => $current ) ); ?>" id="wpcf7-admin-form-element">
 	<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
-	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo $current; ?>" />
+	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
 
 	<table class="widefat">
 	<tbody>
