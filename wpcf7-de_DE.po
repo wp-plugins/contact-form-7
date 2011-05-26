@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form | V2.4.3\n"
+"Project-Id-Version: Contact Form 7 | V2.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-06 09:35+0900\n"
-"PO-Revision-Date: 2011-02-16 17:22+0100\n"
+"PO-Revision-Date: 2011-05-25 23:43+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Formular"
 
 #: contact-form-7/admin/admin.php:123
 msgid "Edit Contact Forms"
-msgstr "Bearbeite Contact Forms"
+msgstr "Kontaktformulare bearbeiten"
 
 #: contact-form-7/admin/admin.php:123
 msgid "Edit"
@@ -37,7 +37,7 @@ msgstr "Bearbeiten"
 
 #: contact-form-7/admin/admin.php:162
 msgid "Generate Tag"
-msgstr "Generiere Tag"
+msgstr "Tag generieren"
 
 #: contact-form-7/admin/admin.php:163
 msgid "Show"
@@ -45,7 +45,7 @@ msgstr "Anzeigen"
 
 #: contact-form-7/admin/admin.php:164
 msgid "Hide"
-msgstr "Verstecken"
+msgstr "Ausblenden"
 
 #: contact-form-7/admin/admin.php:261
 msgid "Contact form"
@@ -113,7 +113,7 @@ msgstr "Contact Form 7 braucht Ihre Unterstützung. Bitte spenden Sie noch heute
 
 #: contact-form-7/admin/admin.php:359
 msgid "Your contribution is needed for making this plugin better."
-msgstr "Ihr Beitrag ist für die Herstellung dieses Plugin sehr nützlich."
+msgstr "Ihr Beitrag wird benötigt, um dieses Plugin stetig zu verbessern."
 
 #: contact-form-7/admin/admin.php:365
 msgid "http://contactform7.com/donate/"
@@ -121,12 +121,12 @@ msgstr "http://contactform7.com/donate/"
 
 #: contact-form-7/admin/admin.php:365
 msgid "Donate"
-msgstr "Spende"
+msgstr "Spenden"
 
 #: contact-form-7/admin/edit.php:9
 #, php-format
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Die Datenbanktabelle für Contact Form 7 ist nicht vorhanden.</strong> Sie müssen zuerst eine <a href=\"%s\">Tabelle erstellen</a>."
+msgstr "<strong>Die Datenbanktabelle für Contact Form 7 ist nicht vorhanden.</strong> Sie müssen zuerst eine <a href=\"%s\">Tabelle erstellen.</a>"
 
 #: contact-form-7/admin/edit.php:12
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
@@ -138,7 +138,7 @@ msgstr "Neues Formular"
 
 #: contact-form-7/admin/edit.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Kopieren Sie diesen Code und fügen ihn in Ihrem Artikel, Seite oder Text-Widget ein."
+msgstr "Kopieren Sie diesen Code und fügen ihn in einem Artikel, einer Seite oder einem Text Widget ein."
 
 #: contact-form-7/admin/edit.php:75
 #: contact-form-7/admin/edit.php:309
@@ -237,7 +237,7 @@ msgstr "oder"
 
 #: contact-form-7/admin/edit.php:342
 msgid "(select language)"
-msgstr "(wähle Sprache)"
+msgstr "(Sprache wählen)"
 
 #: contact-form-7/includes/classes.php:596
 msgid "Untitled"
@@ -253,16 +253,16 @@ msgstr "Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!"
 
 #: contact-form-7/includes/functions.php:11
 msgid "Sender's message was failed to send"
-msgstr "Die Nachricht vom Absender ist fehlerhaft."
+msgstr "Die Nachricht vom Absender konnte nicht gesendet werden."
 
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/includes/functions.php:17
 msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Das Versenden der Nachricht war fehlerhaft. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
+msgstr "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Akismet judged the sending activity as spamming"
-msgstr "Die Webseite Akismet beurteilt Ihre Nachricht als Spam."
+msgstr "Akismet beurteilt Ihre Nachricht als Spam."
 
 #: contact-form-7/includes/functions.php:21
 msgid "Validation errors occurred"
@@ -270,7 +270,7 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:22
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingaben und drücken nochmals auf senden."
+msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingaben und klicken nochmals auf senden."
 
 #: contact-form-7/includes/functions.php:26
 msgid "There is a field of term that sender is needed to accept"
@@ -307,7 +307,7 @@ msgstr "(Pflichtfeld)"
 
 #: contact-form-7/includes/functions.php:48
 msgid "Your Email"
-msgstr "Ihre Email"
+msgstr "Ihre Email Adresse"
 
 #: contact-form-7/includes/functions.php:50
 msgid "Subject"
@@ -475,7 +475,7 @@ msgstr "Mazedonisch"
 
 #: contact-form-7/includes/functions.php:202
 msgid "Malay"
-msgstr "Malaysisch"
+msgstr "Malaiisch"
 
 #: contact-form-7/includes/functions.php:203
 msgid "Malayalam"
@@ -578,11 +578,11 @@ msgstr "optional"
 
 #: contact-form-7/modules/acceptance.php:173
 msgid "Make this checkbox checked by default?"
-msgstr "Auswahlbox standardmässig aktivieren?"
+msgstr "Diese Auswahlbox standardmässig aktivieren?"
 
 #: contact-form-7/modules/acceptance.php:174
 msgid "Make this checkbox work inversely?"
-msgstr "Auswahlbox umkehren (Invert)?"
+msgstr "Diese Auswahlbox umkehren (Invert)?"
 
 #: contact-form-7/modules/acceptance.php:175
 msgid "* That means visitor who accepts the term unchecks it."
@@ -613,7 +613,7 @@ msgstr "Captcha"
 
 #: contact-form-7/modules/captcha.php:199
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Hinweis: Um Captcha zu verwenden, muss dieses Plugin installiert sein."
+msgstr "Hinweis: Um Captcha zu verwenden, muss das Really Simple CAPTCHA Plugin installiert sein."
 
 #: contact-form-7/modules/captcha.php:206
 msgid "Image settings"
@@ -731,7 +731,7 @@ msgstr "Das hochladen der Datei verursachte einen PHP Error."
 
 #: contact-form-7/modules/file.php:223
 msgid "Failed to upload file. Error occurred."
-msgstr "Das hochladen der Datei ist fehlgeschlagen. Es sind Fehler aufgetreten."
+msgstr "Das hochladen der Datei ist fehlgeschlagen. Es ist ein Fehler aufgetreten."
 
 #: contact-form-7/modules/file.php:234
 msgid "File upload"
@@ -816,7 +816,7 @@ msgstr "Email Feld"
 
 #: contact-form-7/modules/text.php:183
 msgid "Akismet"
-msgstr "Askimet"
+msgstr "Akismet"
 
 #: contact-form-7/modules/text.php:185
 msgid "This field requires author's name"
@@ -838,7 +838,7 @@ msgstr "Standardwert"
 #: contact-form-7/modules/text.php:197
 #: contact-form-7/modules/textarea.php:159
 msgid "Use this text as watermark?"
-msgstr "Verwenden Sie diesen Text als Wasserzeichen?"
+msgstr "Diesen Text als Wasserzeichen nutzen?"
 
 #: contact-form-7/modules/textarea.php:125
 msgid "Text area"
