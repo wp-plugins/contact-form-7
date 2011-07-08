@@ -49,7 +49,7 @@ It is hard to continue development and support for this plugin without contribut
 * Hebrew (he_IL) - [Yaron Ofer](http://www.gadgetguru.co.il/)
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/), [Ashish](http://outshinesolutions.com/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/), [János Csárdi-Braunstein](http://blogocska.org/), [Farkas Győző](http://www.sakraft.hu/)
-* Indonesian (id_ID) - [Hendry Lee](http://blogbuildingu.com/)
+* Indonesian (Bahasa Indonesia; id_ID) - [Hendry Lee](http://blogbuildingu.com/), [Belajar Seo Indonesia](http://dhany.web.id/panduan-seo)
 * Italian (it_IT) - [Bruno](http://www.brunosalzano.com), [Gianni Diurno](http://gidibao.net/)
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
@@ -74,7 +74,7 @@ It is hard to continue development and support for this plugin without contribut
 * Thai (th) - [kazama](http://blog.wordthai.com/)
 * Turkish (tr_TR) - [Roman Neumuller](http://katpatuka.wordpress.com), [Hasan Yılmaz](http://hedefturkce.com/), [Emin Buğra Saral](http://www.rahmetli.info/)
 * Ukrainian (uk) - [Andrey Kovba](http://myserver.com.ua/), [Ukrainian WordPress localization team](http://wordpress.co.ua/plugins/contact-form-7.html)
-* Vietnamese (vi) - Thanh Hải, Hà
+* Vietnamese (vi) - Thanh Hải, Hà, [Khang Minh](http://betterwp.net/)
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [me](http://ideasilo.wordpress.com/about/) so that I can bundle it into Contact Form 7. You can [download the latest POT file from here](http://plugins.svn.wordpress.org/contact-form-7/trunk/languages/wpcf7.pot).
 
