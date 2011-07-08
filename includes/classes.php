@@ -37,10 +37,10 @@ class WPCF7_ContactForm {
 		$fes = $this->form_scan_shortcode();
 
 		foreach ( $fes as $fe ) {
-			$name = $fe['name'];
-
-			if ( empty( $name ) )
+			if ( ! isset( $fe['name'] ) || empty( $fe['name'] ) )
 				continue;
+
+			$name = $fe['name'];
 
 			if ( isset( $_POST[$name] ) )
 				unset( $_POST[$name] );
@@ -238,7 +238,8 @@ class WPCF7_ContactForm {
 		$fes = $this->form_scan_shortcode();
 
 		foreach ( $fes as $fe ) {
-			if ( ! is_array( $fe['options'] ) ) continue;
+			if ( ! isset( $fe['name'] ) || ! is_array( $fe['options'] ) )
+				continue;
 
 			if ( preg_grep( '%^akismet:author$%', $fe['options'] ) && '' == $author ) {
 				$author = $_POST[$fe['name']];
