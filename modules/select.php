@@ -132,9 +132,7 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 	}
 
 	if ( 'select*' == $type ) {
-		if ( empty( $_POST[$name] ) ||
-			! is_array( $_POST[$name] ) && '---' == $_POST[$name] ||
-			is_array( $_POST[$name] ) && 1 == count( $_POST[$name] ) && '---' == $_POST[$name][0] ) {
+		if ( empty( $_POST[$name] ) && '0' !== $_POST[$name] ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
