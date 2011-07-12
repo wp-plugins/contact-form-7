@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 09:35+0900\n"
-"PO-Revision-Date: 2011-01-06 09:35+0900\n"
+"POT-Creation-Date: 2011-07-12 22:07+0900\n"
+"PO-Revision-Date: 2011-07-12 22:08+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -235,7 +235,7 @@ msgstr ""
 msgid "(select language)"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:596
+#: contact-form-7/includes/classes.php:597
 msgid "Untitled"
 msgstr ""
 
@@ -506,38 +506,42 @@ msgid "Serbian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:211
-msgid "Slovak"
+msgid "Sinhala"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:212
-msgid "Slovene"
+msgid "Slovak"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:213
-msgid "Spanish"
+msgid "Slovene"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:214
-msgid "Swedish"
+msgid "Spanish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:215
-msgid "Tamil"
+msgid "Swedish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:216
-msgid "Thai"
+msgid "Tamil"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:217
-msgid "Turkish"
+msgid "Thai"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:218
-msgid "Ukrainian"
+msgid "Turkish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:219
+msgid "Ukrainian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:220
 msgid "Vietnamese"
 msgstr ""
 
@@ -547,7 +551,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:159
 #: contact-form-7/modules/captcha.php:202
-#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/checkbox.php:210
 #: contact-form-7/modules/file.php:244
 msgid "Name"
 msgstr ""
@@ -563,8 +567,8 @@ msgstr ""
 #: contact-form-7/modules/captcha.php:238
 #: contact-form-7/modules/captcha.php:243
 #: contact-form-7/modules/captcha.php:246
-#: contact-form-7/modules/checkbox.php:213
-#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/checkbox.php:215
+#: contact-form-7/modules/checkbox.php:218
 #: contact-form-7/modules/file.php:249
 #: contact-form-7/modules/file.php:252
 #: contact-form-7/modules/file.php:257
@@ -586,7 +590,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:180
 #: contact-form-7/modules/captcha.php:251
-#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/checkbox.php:238
 #: contact-form-7/modules/file.php:265
 msgid "Copy this code and paste it into the form left."
 msgstr ""
@@ -660,40 +664,40 @@ msgstr ""
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:181
+#: contact-form-7/modules/checkbox.php:183
 msgid "Checkboxes"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:184
+#: contact-form-7/modules/checkbox.php:186
 msgid "Radio buttons"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/checkbox.php:207
 #: contact-form-7/modules/file.php:243
 msgid "Required field?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:221
+#: contact-form-7/modules/checkbox.php:223
 msgid "Choices"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/checkbox.php:225
 msgid "* One choice per line."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:227
+#: contact-form-7/modules/checkbox.php:229
 msgid "Put a label first, a checkbox last?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:228
+#: contact-form-7/modules/checkbox.php:230
 msgid "Wrap each item with <label> tag?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:230
+#: contact-form-7/modules/checkbox.php:232
 msgid "Make checkboxes exclusive?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:238
+#: contact-form-7/modules/checkbox.php:240
 msgid "And, put this code into the Mail fields below."
 msgstr ""
 
