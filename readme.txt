@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.0
-Tested up to: 3.1.2
-Stable tag: 2.4.5
+Tested up to: 3.2
+Stable tag: 2.4.6
 
 Just another contact form plugin. Simple but flexible.
 
@@ -97,57 +97,3 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. [WordPress HelpCenter](http://wphelpcenter.com/)
 
 [Support](http://contactform7.com/support/)
-
-== Screenshots ==
-
-1. screenshot-1.png
-
-== Changelog ==
-
-= 2.4.5 =
-
-* Fixed the bug that makes it not accept "0" value as watermark.
-* Fixed too much normalization to form-tag shortcode with content.
-* Fixed wrong regexp pattern for form-tag shortcode with content.
-* Check $_POST of checkboxes and select menus to avoid warnings.
-* Use proper action hook for enqueueing scripts: wp_enqueue_scripts and admin_enqueue_scripts.
-* Bundled jquery.form has been updated to 2.72.
-* Translations for Czech (Tomas Vesely) has been updated.
-
-= 2.4.4 =
-
-* Translation for Sinhala has been created by Nitin Aggarwal.
-* Translations for German (Ivan Graf), Russian (Denis Voituk), Simplified Chinese (Keefe Dunn) and Polish (RafalDesign) have been updated.
-* Fixed wrong [_url] special mail tag output.
-
-= 2.4.3 =
-
-* Translation for Armenian has been created by Emmanuelle Traduction.
-* Translation for Tamil has been created by Nitin Aggarwal.
-* Translations for German (Ivan Graf), Dutch (Rene), Arabic (Yaser Mohammed) and Romanian (Anunturi Jibo) have been updated.
-* Bundled jquery.form has been updated to 2.52.
-
-= 2.4.2 =
-
-* Translation for Macedonian has been created by Darko.
-* Translation for Malay has been created by Zairul Azmil.
-* Translations for Danish (Georg S. Adamsen), French (Maître Mô), German (Ivan Graf), Latvian (Sandis Veinbergs) and Persian (Mohammad Musavi) have been updated.
-
-= 2.4.1 =
-
-* Fixed a bug causing fatal error on WordPress 2.9.
-* Translations for Norwegian (Peter Holme) and Italian (Gianni Diurno) have been updated.
-
-= 2.4 =
-
-* Moved PO files to the external branch. They were space-consuming and enlarging the plugin package.
-* Added an option for size attribute of &lt;input type="file"&gt;.
-* Added 'acceptance_as_validation' additional setting. This setting allows you to use acceptance checkbox as object of validation.
-* Added watermark support to text, email and textarea tags.
-* Use the latest jQuery Form plugin instead of the old one which WordPress bundles.
-
-[Releases](http://contactform7.com/category/releases/)
-
-== Upgrade Notice ==
-
-The required WordPress version has been changed and now requires WordPress 2.9 or higher. If you use WordPress 2.8, you will need to upgrade WordPress.
