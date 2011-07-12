@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 2.9
-Tested up to: 3.1.2
+Tested up to: 3.2
 Stable tag: 2.4.5
 
 Just another contact form plugin. Simple but flexible.
@@ -94,7 +94,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. [Docs](http://contactform7.com/docs/)
 1. [FAQ](http://contactform7.com/faq/)
 1. [Support Forum](http://wordpress.org/tags/contact-form-7?forum_id=10)
-1. [WordPress HelpCenter](http://wphelpcenter.com/)
+1. [WordPress HelpCenter](http://wphelpcenter.com/plugins/contact-form-7/)
 
 [Support](http://contactform7.com/support/)
 
@@ -103,6 +103,13 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.4.6 =
+
+* Fixed the bug that didn't accept '0' as valid value of drop-down menu.
+* Fixed the incorrect shortcode regexp blocking use of multiline content of textarea.
+* Updated jquery.form.js to 2.83.
+* Translations for Vietnamese (Khang Minh), Brazilian Portuguese (Caciano Gabriel Batista), Traditional Chinese (James Wu), Bahasa Indonesia (Belajar Seo Indonesia), German (Ivan Graf) and Hungarian (Farkas Győző) have been updated.
 
 = 2.4.5 =
 
