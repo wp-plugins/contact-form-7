@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V2.4.5\n"
+"Project-Id-Version: Contact Form 7 | V2.4.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 09:35+0900\n"
-"PO-Revision-Date: 2011-05-25 23:43+0100\n"
+"POT-Creation-Date: 2011-07-12 22:07+0900\n"
+"PO-Revision-Date: 2011-07-13 17:01+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -239,7 +239,7 @@ msgstr "oder"
 msgid "(select language)"
 msgstr "(Sprache wählen)"
 
-#: contact-form-7/includes/classes.php:596
+#: contact-form-7/includes/classes.php:597
 msgid "Untitled"
 msgstr "Ohne Titel"
 
@@ -270,7 +270,7 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:22
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars. Bitte überprüfen Sie Ihre Eingaben und klicken nochmals auf senden."
+msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken nochmals auf senden."
 
 #: contact-form-7/includes/functions.php:26
 msgid "There is a field of term that sender is needed to accept"
@@ -510,38 +510,42 @@ msgid "Serbian"
 msgstr "Serbisch"
 
 #: contact-form-7/includes/functions.php:211
+msgid "Sinhala"
+msgstr "Singhalesisch"
+
+#: contact-form-7/includes/functions.php:212
 msgid "Slovak"
 msgstr "Slowakisch"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:213
 msgid "Slovene"
 msgstr "Slovenisch"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:214
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:215
 msgid "Swedish"
 msgstr "Schwedisch"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:216
 msgid "Tamil"
 msgstr "Tamilisch"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:217
 msgid "Thai"
 msgstr "Thailändisch"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:218
 msgid "Turkish"
 msgstr "Türkisch"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:219
 msgid "Ukrainian"
 msgstr "Ukrainisch"
 
-#: contact-form-7/includes/functions.php:219
+#: contact-form-7/includes/functions.php:220
 msgid "Vietnamese"
 msgstr "Vietnamesisch"
 
@@ -551,7 +555,7 @@ msgstr "Zustimmung"
 
 #: contact-form-7/modules/acceptance.php:159
 #: contact-form-7/modules/captcha.php:202
-#: contact-form-7/modules/checkbox.php:208
+#: contact-form-7/modules/checkbox.php:210
 #: contact-form-7/modules/file.php:244
 msgid "Name"
 msgstr "Name"
@@ -567,8 +571,8 @@ msgstr "Name"
 #: contact-form-7/modules/captcha.php:238
 #: contact-form-7/modules/captcha.php:243
 #: contact-form-7/modules/captcha.php:246
-#: contact-form-7/modules/checkbox.php:213
-#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/checkbox.php:215
+#: contact-form-7/modules/checkbox.php:218
 #: contact-form-7/modules/file.php:249
 #: contact-form-7/modules/file.php:252
 #: contact-form-7/modules/file.php:257
@@ -590,7 +594,7 @@ msgstr "* Bedeutet, dass der Besucher die Bedingungen akzeptiert wenn er die Aus
 
 #: contact-form-7/modules/acceptance.php:180
 #: contact-form-7/modules/captcha.php:251
-#: contact-form-7/modules/checkbox.php:236
+#: contact-form-7/modules/checkbox.php:238
 #: contact-form-7/modules/file.php:265
 msgid "Copy this code and paste it into the form left."
 msgstr "Kopieren Sie diesen Code und fügen ihn in das Formular links ein."
@@ -664,40 +668,40 @@ msgstr "Dieses Kontaktformular enthält CAPTCHA-Felder, aber der temporäre Ordn
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr "Dieses Kontaktformular enthält CAPTCHA-Felder, aber die benötigten Bibliotheken (GD und FreeType) sind nicht auf Ihrem Server verfügbar."
 
-#: contact-form-7/modules/checkbox.php:181
+#: contact-form-7/modules/checkbox.php:183
 msgid "Checkboxes"
 msgstr "Auswahlbox"
 
-#: contact-form-7/modules/checkbox.php:184
+#: contact-form-7/modules/checkbox.php:186
 msgid "Radio buttons"
 msgstr "Radio Button"
 
-#: contact-form-7/modules/checkbox.php:205
+#: contact-form-7/modules/checkbox.php:207
 #: contact-form-7/modules/file.php:243
 msgid "Required field?"
 msgstr "Pflichtfeld?"
 
-#: contact-form-7/modules/checkbox.php:221
+#: contact-form-7/modules/checkbox.php:223
 msgid "Choices"
 msgstr "Auswahlmöglichkeiten"
 
-#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/checkbox.php:225
 msgid "* One choice per line."
 msgstr "* Eine Auswahlmöglichkeit pro Zeile."
 
-#: contact-form-7/modules/checkbox.php:227
+#: contact-form-7/modules/checkbox.php:229
 msgid "Put a label first, a checkbox last?"
 msgstr "Erste Auswahlmöglichkeit setzen, danach eine Auswahlbox?"
 
-#: contact-form-7/modules/checkbox.php:228
+#: contact-form-7/modules/checkbox.php:230
 msgid "Wrap each item with <label> tag?"
 msgstr "Jede Position mit einem <label> Tag umbrechen?"
 
-#: contact-form-7/modules/checkbox.php:230
+#: contact-form-7/modules/checkbox.php:232
 msgid "Make checkboxes exclusive?"
 msgstr "Exklusive Auswahlboxen erstellen?"
 
-#: contact-form-7/modules/checkbox.php:238
+#: contact-form-7/modules/checkbox.php:240
 msgid "And, put this code into the Mail fields below."
 msgstr "Und setzen Sie diesen Code in das Nachrichtentext Feld unterhalb ein."
 
@@ -731,7 +735,7 @@ msgstr "Das hochladen der Datei verursachte einen PHP Error."
 
 #: contact-form-7/modules/file.php:223
 msgid "Failed to upload file. Error occurred."
-msgstr "Das hochladen der Datei ist fehlgeschlagen. Es ist ein Fehler aufgetreten."
+msgstr "Das hochladen der Datei ist fehlgeschlagen! Es ist ein Fehler aufgetreten."
 
 #: contact-form-7/modules/file.php:234
 msgid "File upload"
