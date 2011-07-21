@@ -43,7 +43,7 @@ It is hard to continue development and support for this plugin without contribut
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/), [Mediajalostamo](http://www.mediajalostamo.fi/)
 * French (fr_FR) - [Jillij](http://www.jillij.com/), [Oncle Tom](http://case.oncle-tom.net/), [Maître Mô](http://maitremo.fr/)
 * Galician (gl_ES) - [Arume Desenvolvementos Informáticos](http://www.arumeinformatica.es/)
-* Georgian (ka_GE) - [Nodar Davituri](http://omedia.ge/)
+* Georgian (ka_GE) - [Nodar Rocko Davituri](http://davituri.com/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de), [Ivan Graf](http://blog.bildergallery.com/)
 * Greek (el) - [Nick Mouratidis](http://www.kepik.gr/), [Pr. friedlich](http://friedlich.wordpress.com/)
 * Hebrew (he_IL) - [Yaron Ofer](http://www.gadgetguru.co.il/)
