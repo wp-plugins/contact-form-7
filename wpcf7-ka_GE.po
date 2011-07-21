@@ -1,11 +1,10 @@
-# translation of wpcf7-pl_PL.po to Polish
-# Zbigniew Czernik <czernik@tlen.pl>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: wpcf7-ru_RU\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-01-01 20:48+0400\n"
-"Last-Translator: Nodar Davituri <nodar@davituri.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-12 22:07+0900\n"
+"PO-Revision-Date: 2011-07-21 14:32+0400\n"
+"Last-Translator: Nodar Rocko Davituri <ndavituri@gmail.com>\n"
 "Language-Team: Russian <volotovich@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,126 +17,143 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:224
-#: contact-form-7/wp-contact-form-7.php:297
-msgid "Contact form"
-msgstr "კონტაქტის ფორმა"
-
-#: contact-form-7/wp-contact-form-7.php:253
-#: contact-form-7/includes/admin-panel.php:5
+#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/edit.php:17
+#: contact-form-7/admin/edit.php:30
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:273
+#: contact-form-7/admin/admin.php:120
+msgid "Contact"
+msgstr "კონტაქტი"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit Contact Forms"
+msgstr "კონტაქტის ფორმების რედაქტირება"
+
+#: contact-form-7/admin/admin.php:123
+msgid "Edit"
+msgstr "რედაქტირება"
+
+#: contact-form-7/admin/admin.php:162
+msgid "Generate Tag"
+msgstr "ტეგის გენერირება"
+
+#: contact-form-7/admin/admin.php:163
+msgid "Show"
+msgstr "ჩვენება"
+
+#: contact-form-7/admin/admin.php:164
+msgid "Hide"
+msgstr "დამალვა"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form"
+msgstr "კონტაქტის ფორმა"
+
+#: contact-form-7/admin/admin.php:280
+msgid "Settings"
+msgstr "პარამეტრები"
+
+#: contact-form-7/admin/admin.php:291
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:292
+msgid "Contactform7.com"
+msgstr "contactform7.com"
+
+#: contact-form-7/admin/admin.php:293
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:294
+msgid "Docs"
+msgstr "დოკუმენტაცია"
+
+#: contact-form-7/admin/admin.php:295
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:296
+msgid "FAQ"
+msgstr "ხდკ"
+
+#: contact-form-7/admin/admin.php:297
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Support"
+msgstr "დახმარება"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Contact form created."
+msgstr "კონტაქტის ფორმა შექმნილია."
+
+#: contact-form-7/admin/admin.php:315
+msgid "Contact form saved."
+msgstr "კონტაქტის ფორმა დამახსოვრებულია."
+
+#: contact-form-7/admin/admin.php:318
+msgid "Contact form deleted."
+msgstr "კონტაქტის ფორმა წაშლილია."
+
+#: contact-form-7/admin/admin.php:321
+msgid "Database table created."
+msgstr "ბაზის ცხრილი შექმნილია."
+
+#: contact-form-7/admin/admin.php:324
+msgid "Failed to create database table."
+msgstr "ბაზის ცხრილის შექმნა ვერ მოხერხდა."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7-ს თქვენი მხარდაჭერა ესაჭიროება. გთხოვთ გადარიცხოთ დღესვე."
+
+#: contact-form-7/admin/admin.php:359
+msgid "Your contribution is needed for making this plugin better."
+msgstr "თქვენი შემოწირულობა ამ პლაგინის გაუმჯობესებას მოხმარდება."
+
+#: contact-form-7/admin/admin.php:365
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:365
+msgid "Donate"
+msgstr "შემოწირულობა"
+
+#: contact-form-7/admin/edit.php:9
 #, php-format
-msgid "Contact form \"%s\" deleted. "
-msgstr "ფორმა \"%s\" წაშლილია."
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
+msgstr "<strong>ცხრილი ბაზაში Contact Form 7-სთვის არ არსებობს.</strong> პლაგინის ასამუშავებლად საჭიროა <a href=\"%s\">ცხრილის შექმნა</a>."
 
-#: contact-form-7/wp-contact-form-7.php:289
-#, php-format
-msgid "Contact form \"%s\" saved. "
-msgstr "ფორმა \"%s\" შენახულია."
+#: contact-form-7/admin/edit.php:12
+msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
+msgstr "<strong>ცხრილი ბაზაში Contact Form 7-სთვის არ არსებობს.</strong>"
 
-#: contact-form-7/wp-contact-form-7.php:318
-msgid "Your Name"
-msgstr "თქვენი სახელი"
-
-#: contact-form-7/wp-contact-form-7.php:318
-#: contact-form-7/wp-contact-form-7.php:320
-msgid "(required)"
-msgstr "(სავალდებულოა)"
-
-#: contact-form-7/wp-contact-form-7.php:320
-msgid "Your Email"
-msgstr "თქვენი ელფოსტა"
-
-#: contact-form-7/wp-contact-form-7.php:322
-msgid "Subject"
-msgstr "სათაური"
-
-#: contact-form-7/wp-contact-form-7.php:324
-msgid "Your Message"
-msgstr "შეტყობინება"
-
-#: contact-form-7/wp-contact-form-7.php:326
-#: contact-form-7/wp-contact-form-7.php:738
-msgid "Send"
-msgstr "გაგზავნა"
-
-#: contact-form-7/wp-contact-form-7.php:345
-msgid "Your message was sent successfully. Thanks."
-msgstr "გმადლობ, თქვენი შეტყობინება წარმატებით გაიგზავნა."
-
-#: contact-form-7/wp-contact-form-7.php:347
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "შეტყობინების გაგზავნისას მოხდა შეცდომა. გთხოვთ სცადეთ მოგვიანებით ან საიტის ადმინისტრატორს სხვა ფორმით დაუკავშირდით."
-
-#: contact-form-7/wp-contact-form-7.php:349
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "შეცდომა. გთხოვთ გადაამოწმოთ შევსებული ველები და სცადოთ გაგზავნა თავიდან."
-
-#: contact-form-7/wp-contact-form-7.php:351
-msgid "Email address seems invalid."
-msgstr "ელფოსტის მისამართი არასწორია."
-
-#: contact-form-7/wp-contact-form-7.php:353
-msgid "Please fill the required field."
-msgstr "გთხოვთ შეავსოთ ყველა სავალდებულო ველი."
-
-#: contact-form-7/wp-contact-form-7.php:355
-msgid "Your entered code is incorrect."
-msgstr "შეყვანილი კოდი არასწორია."
-
-#: contact-form-7/includes/admin-panel.php:19
-#: contact-form-7/includes/admin-panel.php:22
+#: contact-form-7/admin/edit.php:45
 msgid "Add new"
 msgstr "ახლის დამატება"
 
-#: contact-form-7/includes/admin-panel.php:34
-msgid "Title"
-msgstr "სათაური"
+#: contact-form-7/admin/edit.php:67
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "დააკოპირეთ და ჩასვით ეს კოდი თქვენს პოსტში, გვერდში ან ტექსტური ვიდჯეტის კონტენტში."
 
-#: contact-form-7/includes/admin-panel.php:39
-msgid "Copy and paste this code into your post content."
-msgstr "დააკოპირეთ და ჩასვით ეს კოდი თქვენს პოსტში."
-
-#: contact-form-7/includes/admin-panel.php:45
-msgid "Form content"
-msgstr "ფორმის შიგთავსი"
-
-#: contact-form-7/includes/admin-panel.php:60
-msgid "Mail template"
-msgstr "ელფოსტის შაბლონი"
-
-#: contact-form-7/includes/admin-panel.php:61
-msgid "Subject field:"
-msgstr "სათაურის ველი:"
-
-#: contact-form-7/includes/admin-panel.php:63
-msgid "Sender field:"
-msgstr "გამგზავნის ველი:"
-
-#: contact-form-7/includes/admin-panel.php:65
-msgid "Message body:"
-msgstr "შეტყობინების ტექსტი:"
-
-#: contact-form-7/includes/admin-panel.php:69
-msgid "Options"
-msgstr "პარამეტრები"
-
-#: contact-form-7/includes/admin-panel.php:70
-msgid "Recipient address:"
-msgstr "მიმღების მისამართი:"
-
-#: contact-form-7/includes/admin-panel.php:75
+#: contact-form-7/admin/edit.php:75
+#: contact-form-7/admin/edit.php:309
 msgid "Save"
 msgstr "შენახვა"
 
-#: contact-form-7/includes/admin-panel.php:82
-msgid "Delete this contact form"
-msgstr "ამ ფორმის წაშლა"
+#: contact-form-7/admin/edit.php:82
+msgid "Copy"
+msgstr "კოპირება"
 
-#: contact-form-7/includes/admin-panel.php:83
+#: contact-form-7/admin/edit.php:87
+msgid "Delete"
+msgstr "წაშლა"
+
+#: contact-form-7/admin/edit.php:89
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -145,69 +161,723 @@ msgstr ""
 "ნამდვილად გსურთ ამ ფორმის წაშლა?.\n"
 "  'Cancel' - არ წაშალო, 'OK' - წაშალე."
 
-#: contact-form-7/includes/admin-panel.php:137
-msgid "Akismet"
-msgstr "Akismet"
+#: contact-form-7/admin/edit.php:104
+msgid "Form"
+msgstr "ფორმა"
 
-#: contact-form-7/includes/admin-panel.php:138
-msgid "Check this field as sender&#39;s name"
-msgstr "ამ ველის, როგორც გამგზავნის სახელის შემოწმება"
+#: contact-form-7/admin/edit.php:128
+msgid "Mail"
+msgstr "ელფოსტა"
 
-#: contact-form-7/includes/admin-panel.php:139
-msgid "Check this field as sender&#39;s email"
-msgstr "ამ ველის, როგორც ელფოსტის შემოწმება"
+#: contact-form-7/admin/edit.php:135
+#: contact-form-7/admin/edit.php:202
+msgid "To:"
+msgstr "ვის:"
 
-#: contact-form-7/includes/admin-panel.php:140
-msgid "Check this field as sender&#39;s URL"
-msgstr "ამ ველის, როგორც URL-ის შემოწმება"
+#: contact-form-7/admin/edit.php:140
+#: contact-form-7/admin/edit.php:207
+msgid "From:"
+msgstr "ვისგან:"
 
-#: contact-form-7/includes/admin-panel.php:141
-msgid "Don&#39;t check this field with Akismet"
-msgstr "ამ ველის შემოწმება Akismet-ით"
+#: contact-form-7/admin/edit.php:145
+#: contact-form-7/admin/edit.php:212
+msgid "Subject:"
+msgstr "სათაური:"
 
-#: contact-form-7/includes/admin-panel.php:148
-#: contact-form-7/includes/admin-panel.php:161
-#: contact-form-7/includes/admin-panel.php:194
-msgid "Default value"
-msgstr "ნაგულისხმევი მნიშვნელობა"
+#: contact-form-7/admin/edit.php:152
+#: contact-form-7/admin/edit.php:219
+msgid "Additional headers:"
+msgstr "დამატებითი ჰედერები:"
 
-#: contact-form-7/includes/admin-panel.php:169
-msgid "Choices"
-msgstr "ვარიანტები"
+#: contact-form-7/admin/edit.php:157
+#: contact-form-7/admin/edit.php:224
+msgid "File attachments:"
+msgstr "მიმაგრებული ფაილები:"
 
-#: contact-form-7/includes/admin-panel.php:170
-msgid "* One choice per line."
-msgstr "* ერთი თითო ხაზზე."
+#: contact-form-7/admin/edit.php:165
+#: contact-form-7/admin/edit.php:232
+msgid "Use HTML content type"
+msgstr "გამოიყენოს HTML content type"
 
-#: contact-form-7/includes/admin-panel.php:178
+#: contact-form-7/admin/edit.php:172
+#: contact-form-7/admin/edit.php:239
+#: contact-form-7/includes/functions.php:78
+msgid "Message body:"
+msgstr "შეტყობინების ტექსტი:"
+
+#: contact-form-7/admin/edit.php:188
+msgid "Mail (2)"
+msgstr "ელფოსტა (2)"
+
+#: contact-form-7/admin/edit.php:194
+msgid "Use mail (2)"
+msgstr "ელფოსტა (2)-ის გამოყენება"
+
+#: contact-form-7/admin/edit.php:255
+msgid "Messages"
+msgstr "შეტყობინებები"
+
+#: contact-form-7/admin/edit.php:285
+msgid "Additional Settings"
+msgstr "დამატებითი პარამეტრები"
+
+#: contact-form-7/admin/edit.php:333
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "ნაგულისხმევი ენის გამოყენება (%s)"
+
+#: contact-form-7/admin/edit.php:334
+#: contact-form-7/admin/edit.php:347
+msgid "Add New"
+msgstr "ახლის დამატება"
+
+#: contact-form-7/admin/edit.php:337
+msgid "Or"
+msgstr "ან"
+
+#: contact-form-7/admin/edit.php:342
+msgid "(select language)"
+msgstr "(აირჩიეთ ენა)"
+
+#: contact-form-7/includes/classes.php:597
+msgid "Untitled"
+msgstr "უსათაურო"
+
+#: contact-form-7/includes/functions.php:6
+#, fuzzy
+msgid "Sender's message was sent successfully"
+msgstr "გმადლობ, თქვენი შეტყობინება წარმატებით გაიგზავნა."
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "გმადლობ, თქვენი შეტყობინება წარმატებით გაიგზავნა."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "გამგზავნის შეტყობინება ვერ გაიგზავნა"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:17
+msgid "Failed to send your message. Please try later or contact administrator by other way."
+msgstr "შეტყობინების გაგზავნისას მოხდა შეცდომა. გთხოვთ სცადეთ მოგვიანებით ან საიტის ადმინისტრატორს სხვა ფორმით დაუკავშირდით."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet-მა გაგზავნის ქმედება სპამად შეაფასა"
+
+#: contact-form-7/includes/functions.php:21
+msgid "Validation errors occurred"
+msgstr "მოხდა შეცდომები ვალიდაციისას"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "შეცდომა. გთხოვთ გადაამოწმოთ შევსებული ველები და სცადოთ გაგზავნა თავიდან."
+
+#: contact-form-7/includes/functions.php:26
+msgid "There is a field of term that sender is needed to accept"
+msgstr "გაგზავნამდე გამგზავნი უნდა დაეთანხმოს პირობებს"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Please accept the terms to proceed."
+msgstr "გაგრძელებამდე გთხოვთ დაეთანხმოთ პირობებს."
+
+#: contact-form-7/includes/functions.php:31
+#, fuzzy
+msgid "Email address that sender entered is invalid"
+msgstr "ელფოსტის მისამართი არასწორია."
+
+#: contact-form-7/includes/functions.php:32
+msgid "Email address seems invalid."
+msgstr "ელფოსტის მისამართი არასწორია."
+
+#: contact-form-7/includes/functions.php:36
+msgid "There is a field that sender is needed to fill in"
+msgstr "დარჩენილია შესავსები ველი"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Please fill the required field."
+msgstr "გთხოვთ შეავსოთ ყველა სავალდებულო ველი."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Your Name"
+msgstr "თქვენი სახელი"
+
+#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:48
+msgid "(required)"
+msgstr "(სავალდებულოა)"
+
+#: contact-form-7/includes/functions.php:48
+msgid "Your Email"
+msgstr "თქვენი ელფოსტა"
+
+#: contact-form-7/includes/functions.php:50
+msgid "Subject"
+msgstr "სათაური"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Your Message"
+msgstr "შეტყობინება"
+
+#: contact-form-7/includes/functions.php:54
+msgid "Send"
+msgstr "გაგზავნა"
+
+#: contact-form-7/includes/functions.php:62
+#, php-format
+msgid "From: %s"
+msgstr "ვისგან: %s"
+
+#: contact-form-7/includes/functions.php:63
+#, php-format
+msgid "Subject: %s"
+msgstr "სათაური: %s"
+
+#: contact-form-7/includes/functions.php:64
+#, fuzzy
+msgid "Message Body:"
+msgstr "შეტყობინების ტექსტი:"
+
+#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:79
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "ეს წერილი გამოიგზავნა საკონტაქტო ფორმიდან: %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Afrikaans"
+msgstr "აფრიკაანსი"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Albanian"
+msgstr "ალბანური"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Arabic"
+msgstr "არაბული"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Armenian"
+msgstr "სომხური"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Bangla"
+msgstr "ბანგლა"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Bosnian"
+msgstr "ბოსნიური"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Brazilian Portuguese"
+msgstr "ბრაზილიური პორტუგალიური"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Bulgarian"
+msgstr "ბულგარული"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Catalan"
+msgstr "კატალანური"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Chinese (Simplified)"
+msgstr "ჩინური (გამარტივებული)"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Chinese (Traditional)"
+msgstr "ჩინური (ტრადიციული)"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Croatian"
+msgstr "ხორვატული"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Czech"
+msgstr "ჩეხური"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Danish"
+msgstr "დანიური"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Dutch"
+msgstr "ნიდერლანდური"
+
+#: contact-form-7/includes/functions.php:184
+msgid "English"
+msgstr "ინგლისური"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Estonian"
+msgstr "ესტონური"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Finnish"
+msgstr "ფინური"
+
+#: contact-form-7/includes/functions.php:187
+msgid "French"
+msgstr "ფრანგული"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Galician"
+msgstr "გალისიური"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Georgian"
+msgstr "ქართული"
+
+#: contact-form-7/includes/functions.php:190
+msgid "German"
+msgstr "გერმანული"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Greek"
+msgstr "ბერძნული"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Hebrew"
+msgstr "ჰიბრუ"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Hindi"
+msgstr "ჰინდი"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Hungarian"
+msgstr "უნგრული"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Indonesian"
+msgstr "ინდონეზიური"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Italian"
+msgstr "იტალიური"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Japanese"
+msgstr "იაპონური"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Korean"
+msgstr "კორეული"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Latvian"
+msgstr "ლატვიური"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Lithuanian"
+msgstr "ლიტვური"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Macedonian"
+msgstr "მაკედონიური"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Malay"
+msgstr "მალაიური"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Malayalam"
+msgstr "მალაიალამი"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Norwegian"
+msgstr "ნორვეგიული"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Persian"
+msgstr "სპარსული"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Polish"
+msgstr "პოლონური"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Portuguese"
+msgstr "პორტუგალიური"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Russian"
+msgstr "რუსული"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Romanian"
+msgstr "რუმინული"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Serbian"
+msgstr "სერბული"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Sinhala"
+msgstr "სინჰალა"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Slovak"
+msgstr "სლოვაკური"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Slovene"
+msgstr "სლოვენიური"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Spanish"
+msgstr "ესპანური"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Swedish"
+msgstr "შვედური"
+
+#: contact-form-7/includes/functions.php:216
+#, fuzzy
+msgid "Tamil"
+msgstr "სათაური"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Thai"
+msgstr "ტაი"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Turkish"
+msgstr "თურქული"
+
+#: contact-form-7/includes/functions.php:219
+msgid "Ukrainian"
+msgstr "უკრაინული"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Vietnamese"
+msgstr "ვიეტნამური"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "დათანხმება"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+#: contact-form-7/modules/checkbox.php:210
+#: contact-form-7/modules/file.php:244
+msgid "Name"
+msgstr "სახელი"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/checkbox.php:215
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:260
+msgid "optional"
+msgstr "არასავალდებულო"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "იყოს თოლია ჩართული ნაგულისხმევად?"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "იმუშაოს თოლიამ საპირისპიროდ?"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* ანუ, ვიზიტორმა თანხმობის გამოსახატად ის უნდა ამორთოს"
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/checkbox.php:238
+#: contact-form-7/modules/file.php:265
+msgid "Copy this code and paste it into the form left."
+msgstr "დააკოპირეთ ეს კოდი და ჩასვით ფორმაში მარცხნივ."
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "CAPTCHA-ს ჩასართავად საჭიროა <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> პლაგინის დაყენება."
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "გამგზავნის შეყვანილი კოდი არ ემთხვევა CAPTCHA-ს."
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "შეყვანილი კოდი არასწორია."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "შენიშვნა: CAPTCHA-ს ჩასართავად საჭიროა Really Simple CAPTCHA პლაგინის დაყენება."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "სურათის პარამეტრები"
+
+#: contact-form-7/modules/captcha.php:217
 msgid "Foreground color"
 msgstr "მთავარი ფერი"
 
-#: contact-form-7/includes/admin-panel.php:179
+#: contact-form-7/modules/captcha.php:220
 msgid "Background color"
 msgstr "ფონის ფერი"
 
-#: contact-form-7/includes/admin-panel.php:180
+#: contact-form-7/modules/captcha.php:224
 msgid "Image size"
 msgstr "სურათის ზომა"
 
-#: contact-form-7/includes/admin-panel.php:182
+#: contact-form-7/modules/captcha.php:225
 msgid "Small"
 msgstr "პატარა"
 
-#: contact-form-7/includes/admin-panel.php:183
+#: contact-form-7/modules/captcha.php:226
 msgid "Medium"
 msgstr "საშუალო"
 
-#: contact-form-7/includes/admin-panel.php:184
+#: contact-form-7/modules/captcha.php:227
 msgid "Large"
 msgstr "დიდი"
 
-#: contact-form-7/includes/admin-panel.php:199
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "შესავსები ველების პარამეტრები"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "სურათისთვის"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "ფორმის ველისთვის"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "კონტაქტის ფორმა შეიცავს CAPTCHA ველებს, მაგრამ ფაილების დროებითი საქაღალდე (%s) არ არსებობს ან მასში ჩაწერა შეზღუდულია. თქვენ შეგიძლიათ ხელით შექმნათ ეს საქაღალდე ან შეცვალოთ მასზე უფლებები."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "ეს კონტაქტის ფორმა შეიცავს CAPTCHA ველებს, მაგრამ საჭირო ბიბლიოთეკები (GD და FreeType) თქვენს სერვერზე მიუწვდომელია."
+
+#: contact-form-7/modules/checkbox.php:183
+msgid "Checkboxes"
+msgstr "თოლიები"
+
+#: contact-form-7/modules/checkbox.php:186
+msgid "Radio buttons"
+msgstr "არჩევანის ღილაკები"
+
+#: contact-form-7/modules/checkbox.php:207
+#: contact-form-7/modules/file.php:243
+msgid "Required field?"
+msgstr "სავალდებულოა"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "Choices"
+msgstr "ვარიანტები"
+
+#: contact-form-7/modules/checkbox.php:225
+msgid "* One choice per line."
+msgstr "* ერთი თითო ხაზზე."
+
+#: contact-form-7/modules/checkbox.php:229
+msgid "Put a label first, a checkbox last?"
+msgstr "ჯერ დასახელება, შემდეგ თოლია"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Wrap each item with <label> tag?"
+msgstr "ყოველი ელემენტის ჩასმა <label> ტეგში"
+
+#: contact-form-7/modules/checkbox.php:232
+msgid "Make checkboxes exclusive?"
+msgstr "ექსკლუზიური თოლიები"
+
+#: contact-form-7/modules/checkbox.php:240
+msgid "And, put this code into the Mail fields below."
+msgstr "და ჩასვით ეს კოდი ელფოსტის ველებში"
+
+#: contact-form-7/modules/file.php:207
+msgid "Uploading a file fails for any reason"
+msgstr "ფაილის ატვირთვა ჩაიშლება ნებისმიერი მიზეზით"
+
+#: contact-form-7/modules/file.php:208
+msgid "Failed to upload file."
+msgstr "ფაილის ატვირთვა ჩაიშალა."
+
+#: contact-form-7/modules/file.php:212
+msgid "Uploaded file is not allowed file type"
+msgstr "ამ ტიპის ფაილის ატვირთვა დაუშვებელია"
+
+#: contact-form-7/modules/file.php:213
+msgid "This file type is not allowed."
+msgstr "ამ ტიპის ფაილი დაუშვებელია."
+
+#: contact-form-7/modules/file.php:217
+msgid "Uploaded file is too large"
+msgstr "ატვირთული ფაილი ზედმეტად დიდი ზომისაა."
+
+#: contact-form-7/modules/file.php:218
+msgid "This file is too large."
+msgstr "ეს ფაილი ზედმეტად დიდი ზომისაა."
+
+#: contact-form-7/modules/file.php:222
+msgid "Uploading a file fails for PHP error"
+msgstr "ფაილის ატვირთვა ჩაიშალა PHP-ს შეცდომის გამო"
+
+#: contact-form-7/modules/file.php:223
+msgid "Failed to upload file. Error occurred."
+msgstr "ფაილის ატვირთვა ჩაიშალა. მოხდა შეცდომა."
+
+#: contact-form-7/modules/file.php:234
+msgid "File upload"
+msgstr "ფაილის ატვირთვა"
+
+#: contact-form-7/modules/file.php:257
+msgid "File size limit"
+msgstr "ფაილის ზომის ლიმიტი"
+
+#: contact-form-7/modules/file.php:257
+msgid "bytes"
+msgstr "ბაიტი"
+
+#: contact-form-7/modules/file.php:260
+msgid "Acceptable file types"
+msgstr "დასაშვები ფაილის ტიპები"
+
+#: contact-form-7/modules/file.php:267
+msgid "And, put this code into the File Attachments field below."
+msgstr "და ჩასვით ეს კოდი მიმაგრებული ფაილების ველში."
+
+#: contact-form-7/modules/file.php:292
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "კონტაქტის ფორმა შეიცავს ფაილის ასატვირთ ველებს, მაგრამ ფაილების დროებითი საქაღალდე (%s) არ არსებობს ან მასში ჩაწერა შეზღუდულია. თქვენ შეგიძლიათ ხელით შექმნათ ეს საქაღალდე ან შეცვალოთ მასზე უფლებები."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "ეს კონტაქტის ფორმა შეიცავს [icl] ტეგებს, მაგრამ ისინი Contact Form 7-ის ამ ვერსიაში აღარ მუშაობენ. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">სხვა ენებზე ფორმის შექმნის უფრო ადვილი გზაც არსებობს</a> და მისი გამოყენება რეკომენდირებულია."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "გამგზავნმა შეკითხვას არასწორად უპასუხა"
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "პასუხი არასწორია"
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "შეკითხვა"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "შეკითხვები"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* შეკითხვა|პასუხი (მაგ. 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "ჩამოსაშლელი მენიუ"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "დავუშვათ რამდენიმეს მონიშვნა"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "პირველი ელემენტი იყოს ცარიელი"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "იგზავნება..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "გაგზავნის ღილაკი"
+
+#: contact-form-7/modules/submit.php:84
 msgid "Label"
 msgstr "იარლიყი"
 
-#: contact-form-7/includes/admin-panel.php:206
-msgid "Insert"
-msgstr "ჩასმა"
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "ერთხაზიანი ტექსტური ველი"
 
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "ელფოსტა ჩაიშალა"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "ეს ველი საჭიროებს ავტორის სახელს"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "ეს ველი საჭიროებს ავტორის URL-ს"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "ეს ველი საჭიროებს ავტორის ელფოსტის მისამართს"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "ნაგულისხმევი მნიშვნელობა"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "ამ ტექსტის გამოყენება წყლოვან ნიშნად"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "ტექსტის ველი"
+
+#~ msgid "Check this field as sender&#39;s URL"
+#~ msgstr "ამ ველის, როგორც URL-ის შემოწმება"
+
+#~ msgid "Check this field as sender&#39;s email"
+#~ msgstr "ამ ველის, როგორც ელფოსტის შემოწმება"
+
+#~ msgid "Check this field as sender&#39;s name"
+#~ msgstr "ამ ველის, როგორც გამგზავნის სახელის შემოწმება"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "ამ ფორმის წაშლა"
+
+#~ msgid "Don&#39;t check this field with Akismet"
+#~ msgstr "ამ ველის შემოწმება Akismet-ით"
+
+#~ msgid "Form content"
+#~ msgstr "ფორმის შიგთავსი"
+
+#~ msgid "Insert"
+#~ msgstr "ჩასმა"
+
+#~ msgid "Mail template"
+#~ msgstr "ელფოსტის შაბლონი"
+
+#~ msgid "Recipient address:"
+#~ msgstr "მიმღების მისამართი:"
+
+#~ msgid "Sender field:"
+#~ msgstr "გამგზავნის ველი:"
