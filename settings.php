@@ -24,18 +24,6 @@ function wpcf7_admin_url( $query = array() ) {
 	return esc_url_raw( $url );
 }
 
-function wpcf7_table_exists( $table = 'contactforms' ) {
-	global $wpdb, $wpcf7;
-
-	if ( 'contactforms' != $table )
-		return false;
-
-	if ( ! $table = $wpcf7->{$table} )
-		return false;
-
-	return strtolower( $wpdb->get_var( "SHOW TABLES LIKE '$table'" ) ) == strtolower( $table );
-}
-
 function wpcf7() {
 	global $wpdb, $wpcf7;
 
@@ -43,7 +31,6 @@ function wpcf7() {
 		return;
 
 	$wpcf7 = (object) array(
-		'contactforms' => $wpdb->prefix . "contact_form_7",
 		'processing_within' => '',
 		'widget_count' => 0,
 		'unit_count' => 0,
