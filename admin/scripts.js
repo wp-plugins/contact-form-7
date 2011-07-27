@@ -108,7 +108,7 @@
 
 		$('input#wpcf7-title').val(title);
 		var postId = $('input#post_ID').val();
-		var tag = '[contact-form id="' + postId + '" title="' + title + '"]';
+		var tag = '[contact-form-7 id="' + postId + '" title="' + title + '"]';
 		$('input#contact-form-anchor-text').val(tag);
 
 		var oldId = $('input#wpcf7-id').val();

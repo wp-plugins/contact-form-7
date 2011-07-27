@@ -204,38 +204,45 @@ add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 function wpcf7_widget_text_filter( $content ) {
 	global $wpcf7;
 
+	if ( ! preg_match( '/\[\s*contact-form(-7)?\s.*?\]/', $content ) )
+		return $content;
+
 	$wpcf7->widget_count += 1;
 	$wpcf7->processing_within = 'w' . $wpcf7->widget_count;
 	$wpcf7->unit_count = 0;
 
-	$regex = '/\[\s*contact-form\s+(\d+(?:\s+.*)?)\]/';
-	$content = preg_replace_callback( $regex, 'wpcf7_widget_text_filter_callback', $content );
+	$content = do_shortcode( $content );
 
 	$wpcf7->processing_within = '';
+
 	return $content;
 }
 
-function wpcf7_widget_text_filter_callback( $matches ) {
-	return do_shortcode( $matches[0] );
-}
+/* Shortcodes */
 
+add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
 add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 
-function wpcf7_contact_form_tag_func( $atts ) {
+function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	global $wpcf7, $wpcf7_contact_form;
 
 	if ( is_feed() )
-		return '[contact-form]';
+		return '[contact-form-7]';
 
-	if ( is_string( $atts ) )
-		$atts = explode( ' ', $atts, 2 );
+	if ( 'contact-form-7' == $code ) {
+		$atts = shortcode_atts( array( 'id' => 0, 'title' => '' ), $atts );
+		$id = (int) $atts['id'];
+		$wpcf7_contact_form = wpcf7_contact_form( $id );
+	} else {
+		if ( is_string( $atts ) )
+			$atts = explode( ' ', $atts, 2 );
 
-	$atts = (array) $atts;
+		$id = (int) array_shift( $atts );
+		$wpcf7_contact_form = wpcf7_get_contact_form_by_old_id( $id );
+	}
 
-	$id = (int) array_shift( $atts );
-
-	if ( ! ( $wpcf7_contact_form = wpcf7_get_contact_form_by_old_id( $id ) ) )
-		return '[contact-form 404 "Not Found"]';
+	if ( ! $wpcf7_contact_form )
+		return '[contact-form-7 404 "Not Found"]';
 
 	if ( $wpcf7->processing_within ) { // Inside post content or text widget
 		$wpcf7->unit_count += 1;
