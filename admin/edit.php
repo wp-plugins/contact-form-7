@@ -28,6 +28,7 @@ foreach ( $contact_forms as $v ) : ?>
 
 <form method="post" action="<?php echo wpcf7_admin_url( array( 'contactform' => $current ) ); ?>" id="wpcf7-admin-form-element">
 	<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
+	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $current; ?>" />
 	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
 
 	<table class="widefat">
@@ -42,6 +43,12 @@ foreach ( $contact_forms as $v ) : ?>
 			<?php echo esc_html( __( "Copy this code and paste it into your post, page or text widget content.", 'wpcf7' ) ); ?><br />
 
 			<input type="text" id="contact-form-anchor-text" onfocus="this.select();" readonly="readonly" />
+		</p>
+
+		<p class="tagcode" style="display: none;">
+			<?php echo esc_html( __( "Old code is also available.", 'wpcf7' ) ); ?><br />
+
+			<input type="text" id="contact-form-anchor-text-old" onfocus="this.select();" readonly="readonly" />
 		</p>
 		<?php endif; ?>
 

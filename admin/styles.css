@@ -97,7 +97,7 @@ p.tagcode {
 	margin: 2ex 0 1ex 1em;
 }
 
-input#contact-form-anchor-text {
+input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	color: #fff;
 	background: #7e4e0b;
 	border: none;

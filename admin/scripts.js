@@ -107,10 +107,16 @@
 			title = title.replace(/["'\[\]]/g, '');
 
 		$('input#wpcf7-title').val(title);
-		var current = $('input#wpcf7-id').val();
-		var tag = '[contact-form ' + current + ' "' + title + '"]';
-
+		var postId = $('input#post_ID').val();
+		var tag = '[contact-form id="' + postId + '" title="' + title + '"]';
 		$('input#contact-form-anchor-text').val(tag);
+
+		var oldId = $('input#wpcf7-id').val();
+
+		if (0 != oldId) {
+			var tagOld = '[contact-form ' + oldId + ' "' + title + '"]';
+			$('input#contact-form-anchor-text-old').val(tagOld).parent('p.tagcode').show();
+		}
 	}
 
 })(jQuery);

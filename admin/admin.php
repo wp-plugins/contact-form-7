@@ -9,7 +9,7 @@ add_action( 'admin_menu', 'wpcf7_admin_add_pages', 9 );
 function wpcf7_admin_add_pages() {
 
 	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
-		$id = $_POST['wpcf7-id'];
+		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-save_' . $id );
 
 		if ( ! $contact_form = wpcf7_contact_form( $id ) ) {
@@ -71,7 +71,7 @@ function wpcf7_admin_add_pages() {
 		wp_redirect( $redirect_to );
 		exit();
 	} elseif ( isset( $_POST['wpcf7-copy'] ) && wpcf7_admin_has_edit_cap() ) {
-		$id = $_POST['wpcf7-id'];
+		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-copy_' . $id );
 
 		$query = array();
@@ -90,7 +90,7 @@ function wpcf7_admin_add_pages() {
 		wp_redirect( $redirect_to );
 		exit();
 	} elseif ( isset( $_POST['wpcf7-delete'] ) && wpcf7_admin_has_edit_cap() ) {
-		$id = $_POST['wpcf7-id'];
+		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-delete_' . $id );
 
 		if ( $contact_form = wpcf7_contact_form( $id ) )
