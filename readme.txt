@@ -2,8 +2,8 @@
 Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
-Requires at least: 3.0
-Tested up to: 3.2
+Requires at least: 3.2
+Tested up to: 3.2.1
 Stable tag: 2.4.6
 
 Just another contact form plugin. Simple but flexible.
