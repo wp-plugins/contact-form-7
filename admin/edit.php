@@ -1,4 +1,4 @@
-<div class="wrap wpcf7">
+<div class="wrap">
 
 <?php screen_icon( 'edit-pages' ); ?>
 

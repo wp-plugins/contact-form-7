@@ -1,14 +1,14 @@
-div.wpcf7 div.cf7com-links {
+div.wrap div.cf7com-links {
 	text-align: right;
 	font-size: .8em;
 	margin-top: -1.6em;
 }
 
-div.wpcf7 div.cf7com-links a {
+div.wrap div.cf7com-links a {
 	text-decoration: none;
 }
 
-div.wpcf7 div.donation {
+div.wrap div.donation {
 	border-width: 1px;
 	border-style: solid;
 	padding: 0 0.6em;
@@ -22,23 +22,23 @@ div.wpcf7 div.donation {
 	text-align: center;
 }
 
-div.wpcf7 div.donation p {
+div.wrap div.donation p {
 	margin: .7em 0;
 	line-height: 1;
 	padding: 2px;
 	font-size: 107%;
 }
 
-div.wpcf7 div.donation p a {
+div.wrap div.donation p a {
 	font-weight: bold;
 	color: #3f3f3f;
 }
 
-div.wpcf7 div.donation p a.button {
+div.wrap div.donation p a.button {
 	margin-left: 1em;
 }
 
-div.wpcf7 ul.subsubsub {
+div.wrap ul.subsubsub {
 	white-space: normal;
 }
 
