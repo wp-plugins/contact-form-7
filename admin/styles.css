@@ -55,6 +55,13 @@ ul.subsubsub li.addnew a:active {
   color: #999;
 }
 
+#titlediv {
+	margin-bottom: 20px;
+	position: relative;
+	border: 1px solid #c7c7c7;
+	padding: 6px;
+}
+
 div.save-contact-form {
 	padding: 1.4em 0 0 0;
 	text-align: right;
@@ -65,7 +72,7 @@ div.actions-link {
 	top: 0;
 	right: 0;
 	margin: 0;
-	padding: 0;
+	padding: 6px;
 }
 
 div.actions-link input {
@@ -94,18 +101,31 @@ input#wpcf7-title {
 
 p.tagcode {
 	color: #333;
-	margin: 2ex 0 1ex 1em;
+	margin: 2ex 0 1ex 0;
 }
 
 input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	color: #fff;
 	background: #7e4e0b;
 	border: none;
-	width: 99%;
+	width: 100%;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+
+.postbox .half, .postbox .half-left, .postbox .half-right {
+	float: left;
+	width: 50%;
+}
+
+.postbox .half-right > * {
+	margin-left: 10px;
+}
+
+.postbox .mail-field, .postbox .message-field {
+	margin-bottom: 6px;
 }
 
 span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
@@ -117,8 +137,8 @@ span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch
 }
 
 div.pseudo-hr {
-	border-bottom: 1px solid #fff;
-	margin: 0.7em 0;
+	border-bottom: 1px solid transparent;
+	margin: 12px 0;
 }
 
 input, textarea {
@@ -137,14 +157,10 @@ label.disabled {
 	color: #777;
 }
 
-div.message-field {
-	margin: .2em 0 .4em;
-}
-
 div.tag-generator {
 	position: relative;
-	background: #fff;
-	padding: 5px 0 5px 1px;
+	background: transparent;
+	padding: 0 0 5px 1px;
 }
 
 div.tg-pane {

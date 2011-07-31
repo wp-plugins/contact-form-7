@@ -194,6 +194,7 @@ function wpcf7_admin_management_page() {
 		$cf = wpcf7_contact_form( $current );
 	}
 
+	require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
 	require_once WPCF7_PLUGIN_DIR . '/admin/edit.php';
 }
 
@@ -254,7 +255,7 @@ function wpcf7_updated_message( &$contact_form ) {
 		return;
 
 ?>
-<div id="message" class="updated fade"><p><?php echo esc_html( $updated_message ); ?></p></div>
+<div id="message" class="updated"><p><?php echo esc_html( $updated_message ); ?></p></div>
 <?php
 }
 
