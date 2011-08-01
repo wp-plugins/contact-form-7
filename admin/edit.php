@@ -82,7 +82,11 @@ if ( wpcf7_admin_has_edit_cap() ) {
 		'wpcf7_mail_meta_box', 'wpcf7_contact_form', 'mail', 'core' );
 
 	add_meta_box( 'mail2div', __( 'Mail (2)', 'wpcf7' ),
-		'wpcf7_mail_2_meta_box', 'wpcf7_contact_form', 'mail_2', 'core' );
+		'wpcf7_mail_meta_box', 'wpcf7_contact_form', 'mail_2', 'core',
+		array(
+			'id' => 'wpcf7-mail-2',
+			'name' => 'mail_2',
+			'use' => __( 'Use mail (2)', 'wpcf7' ) ) );
 
 	add_meta_box( 'messagesdiv', __( 'Messages', 'wpcf7' ),
 		'wpcf7_messages_meta_box', 'wpcf7_contact_form', 'messages', 'core' );
