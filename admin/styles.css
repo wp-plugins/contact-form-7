@@ -125,7 +125,12 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 }
 
 .postbox .mail-field, .postbox .message-field {
-	margin-bottom: 6px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+.postbox .mail-field label, .postbox .message-field label {
+	line-height: 1.4em;
 }
 
 div.pseudo-hr {
