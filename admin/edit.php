@@ -76,46 +76,49 @@ foreach ( $contact_forms as $v ) : ?>
 
 if ( wpcf7_admin_has_edit_cap() ) {
 	add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
-		'wpcf7_form_meta_box', 'wpcf7_contact_form', 'form', 'core' );
+		'wpcf7_form_meta_box', 'cfseven', 'form', 'core' );
 
 	add_meta_box( 'maildiv', __( 'Mail', 'wpcf7' ),
-		'wpcf7_mail_meta_box', 'wpcf7_contact_form', 'mail', 'core' );
+		'wpcf7_mail_meta_box', 'cfseven', 'mail', 'core' );
 
 	add_meta_box( 'mail2div', __( 'Mail (2)', 'wpcf7' ),
-		'wpcf7_mail_meta_box', 'wpcf7_contact_form', 'mail_2', 'core',
+		'wpcf7_mail_meta_box', 'cfseven', 'mail_2', 'core',
 		array(
 			'id' => 'wpcf7-mail-2',
 			'name' => 'mail_2',
 			'use' => __( 'Use mail (2)', 'wpcf7' ) ) );
 
 	add_meta_box( 'messagesdiv', __( 'Messages', 'wpcf7' ),
-		'wpcf7_messages_meta_box', 'wpcf7_contact_form', 'messages', 'core' );
+		'wpcf7_messages_meta_box', 'cfseven', 'messages', 'core' );
 
 	add_meta_box( 'additionalsettingsdiv', __( 'Additional Settings', 'wpcf7' ),
-		'wpcf7_additional_settings_meta_box', 'wpcf7_contact_form', 'additional_settings', 'core' );
+		'wpcf7_additional_settings_meta_box', 'cfseven', 'additional_settings', 'core' );
 }
 
 do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$cf ) );
 
-do_meta_boxes( 'wpcf7_contact_form', 'form', $cf );
+do_meta_boxes( 'cfseven', 'form', $cf );
 
 do_action_ref_array( 'wpcf7_admin_after_form', array( &$cf ) );
 
-do_meta_boxes( 'wpcf7_contact_form', 'mail', $cf );
+do_meta_boxes( 'cfseven', 'mail', $cf );
 
 do_action_ref_array( 'wpcf7_admin_after_mail', array( &$cf ) );
 
-do_meta_boxes( 'wpcf7_contact_form', 'mail_2', $cf );
+do_meta_boxes( 'cfseven', 'mail_2', $cf );
 
 do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$cf ) );
 
-do_meta_boxes( 'wpcf7_contact_form', 'messages', $cf );
+do_meta_boxes( 'cfseven', 'messages', $cf );
 
 do_action_ref_array( 'wpcf7_admin_after_messages', array( &$cf ) );
 
-do_meta_boxes( 'wpcf7_contact_form', 'additional_settings', $cf );
+do_meta_boxes( 'cfseven', 'additional_settings', $cf );
 
 do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$cf ) );
+
+wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
+wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 
 ?>
 	</div>

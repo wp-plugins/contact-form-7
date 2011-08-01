@@ -65,6 +65,8 @@
 				});
 			});
 
+			postboxes.add_postbox_toggles('cfseven');
+
 		} catch (e) {
 		}
 	});

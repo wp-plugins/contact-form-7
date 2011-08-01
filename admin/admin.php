@@ -136,6 +136,7 @@ function wpcf7_admin_enqueue_scripts() {
 		return;
 
 	wp_enqueue_script( 'thickbox' );
+	wp_enqueue_script( 'postbox' );
 
 	wp_enqueue_script( 'wpcf7-admin-taggenerator', wpcf7_plugin_url( 'admin/taggenerator.js' ),
 		array( 'jquery' ), WPCF7_VERSION, true );
