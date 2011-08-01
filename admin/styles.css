@@ -169,6 +169,7 @@ div.tg-pane {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+	line-height: 140%;
 }
 
 div.tg-pane table {
@@ -191,6 +192,7 @@ div.tg-pane table td {
 	vertical-align: top;
 	width: 50%;
 	border: none;
+	padding: 2px 0;
 }
 
 div.tg-pane input.tag, div.tg-pane input.mail-tag {
