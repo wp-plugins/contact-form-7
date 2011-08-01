@@ -128,14 +128,6 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	margin-bottom: 6px;
 }
 
-span#message-fields-toggle-switch, span#additional-settings-fields-toggle-switch {
-	margin-left: 1em;
-	font-weight: normal;
-	font-size: smaller;
-	color: #2583ad;
-	cursor: pointer;
-}
-
 div.pseudo-hr {
 	border-bottom: 1px solid transparent;
 	margin: 8px 0;

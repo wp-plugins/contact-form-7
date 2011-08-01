@@ -65,37 +65,6 @@
 				});
 			});
 
-			$('#message-fields-toggle-switch').text(_wpcf7L10n.show);
-			$('#message-fields').hide();
-
-			$('#message-fields-toggle-switch').click(function() {
-				if ($('#message-fields').is(':hidden')) {
-					$('#message-fields').slideDown('fast');
-					$('#message-fields-toggle-switch').text(_wpcf7L10n.hide);
-				} else {
-					$('#message-fields').hide('fast');
-					$('#message-fields-toggle-switch').text(_wpcf7L10n.show);
-				}
-			});
-
-			if ('' == $.trim($('#wpcf7-additional-settings').text())) {
-				$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
-				$('#additional-settings-fields').hide();
-			} else {
-				$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
-				$('#additional-settings-fields').show();
-			}
-
-			$('#additional-settings-fields-toggle-switch').click(function() {
-				if ($('#additional-settings-fields').is(':hidden')) {
-					$('#additional-settings-fields').slideDown('fast');
-					$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.hide);
-				} else {
-					$('#additional-settings-fields').hide('fast');
-					$('#additional-settings-fields-toggle-switch').text(_wpcf7L10n.show);
-				}
-			});
-
 		} catch (e) {
 		}
 	});

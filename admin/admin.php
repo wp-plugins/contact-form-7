@@ -143,9 +143,7 @@ function wpcf7_admin_enqueue_scripts() {
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
 		array( 'jquery', 'wpcf7-admin-taggenerator' ), WPCF7_VERSION, true );
 	wp_localize_script( 'wpcf7-admin', '_wpcf7L10n', array(
-		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
-		'show' => __( "Show", 'wpcf7' ),
-		'hide' => __( "Hide", 'wpcf7' ) ) );
+		'generateTag' => __( 'Generate Tag', 'wpcf7' ) ) );
 }
 
 add_action( 'admin_footer', 'wpcf7_admin_footer' );
