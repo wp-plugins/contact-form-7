@@ -4,11 +4,13 @@ function wpcf7_admin_has_edit_cap() {
 	return current_user_can( WPCF7_ADMIN_READ_WRITE_CAPABILITY );
 }
 
-add_action( 'admin_menu', 'wpcf7_admin_add_pages', 9 );
+add_action( 'admin_init', 'wpcf7_admin_init' );
 
-function wpcf7_admin_add_pages() {
+function wpcf7_admin_init() {
+	if ( ! wpcf7_admin_has_edit_cap() )
+		return;
 
-	if ( isset( $_POST['wpcf7-save'] ) && wpcf7_admin_has_edit_cap() ) {
+	if ( isset( $_POST['wpcf7-save'] ) ) {
 		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-save_' . $id );
 
@@ -17,7 +19,7 @@ function wpcf7_admin_add_pages() {
 			$contact_form->initial = true;
 		}
 
-		$title = trim( $_POST['wpcf7-title'] );
+		$contact_form->title = trim( $_POST['wpcf7-title'] );
 
 		$form = trim( $_POST['wpcf7-form'] );
 
@@ -54,15 +56,14 @@ function wpcf7_admin_add_pages() {
 
 		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
 
+		$props = apply_filters( 'wpcf7_contact_form_admin_posted_properties',
+			compact( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' ) );
+
+		foreach ( (array) $props as $key => $prop )
+			$contact_form->{$key} = $prop;
+
 		$query = array();
 		$query['message'] = ( $contact_form->initial ) ? 'created' : 'saved';
-
-		$contact_form->title = $title;
-		$contact_form->form = $form;
-		$contact_form->mail = $mail;
-		$contact_form->mail_2 = $mail_2;
-		$contact_form->messages = $messages;
-		$contact_form->additional_settings = $additional_settings;
 
 		$contact_form->save();
 
@@ -70,7 +71,9 @@ function wpcf7_admin_add_pages() {
 		$redirect_to = wpcf7_admin_url( $query );
 		wp_redirect( $redirect_to );
 		exit();
-	} elseif ( isset( $_POST['wpcf7-copy'] ) && wpcf7_admin_has_edit_cap() ) {
+	}
+
+	if ( isset( $_POST['wpcf7-copy'] ) ) {
 		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-copy_' . $id );
 
@@ -89,7 +92,9 @@ function wpcf7_admin_add_pages() {
 		$redirect_to = wpcf7_admin_url( $query );
 		wp_redirect( $redirect_to );
 		exit();
-	} elseif ( isset( $_POST['wpcf7-delete'] ) && wpcf7_admin_has_edit_cap() ) {
+	}
+
+	if ( isset( $_POST['wpcf7-delete'] ) ) {
 		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-delete_' . $id );
 
@@ -100,7 +105,11 @@ function wpcf7_admin_add_pages() {
 		wp_redirect( $redirect_to );
 		exit();
 	}
+}
 
+add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
+
+function wpcf7_admin_menu() {
 	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
 		WPCF7_ADMIN_READ_CAPABILITY, 'wpcf7', 'wpcf7_admin_management_page' );
 
