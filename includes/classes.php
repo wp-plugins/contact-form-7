@@ -501,10 +501,13 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 	$contact_form->initial = true;
 
 	$contact_form->title = __( 'Untitled', 'wpcf7' );
-	$contact_form->form = wpcf7_default_form_template();
-	$contact_form->mail = wpcf7_default_mail_template();
-	$contact_form->mail_2 = wpcf7_default_mail_2_template();
-	$contact_form->messages = wpcf7_default_messages_template();
+
+	$props = apply_filters( 'wpcf7_contact_form_properties',
+		array( 'form', 'mail', 'mail_2', 'messages' ),
+		'default' );
+
+	foreach ( (array) $props as $prop )
+		$contact_form->{$prop} = wpcf7_get_default_template( $prop );
 
 	if ( isset( $mo_orig ) )
 		$l10n['wpcf7'] = $mo_orig;

@@ -36,6 +36,21 @@ function wpcf7_messages() {
 	return apply_filters( 'wpcf7_messages', $messages );
 }
 
+function wpcf7_get_default_template( $prop = 'form' ) {
+	if ( 'form' == $prop )
+		$template = wpcf7_default_form_template();
+	elseif ( 'mail' == $prop )
+		$template = wpcf7_default_mail_template();
+	elseif ( 'mail_2' == $prop )
+		$template = wpcf7_default_mail_2_template();
+	elseif ( 'messages' == $prop )
+		$template = wpcf7_default_messages_template();
+	else
+		$template = null;
+
+	return apply_filters( 'wpcf7_default_template', $template, $prop );
+}
+
 function wpcf7_default_form_template() {
 	$template =
 		'<p>' . __( 'Your Name', 'wpcf7' ) . ' ' . __( '(required)', 'wpcf7' ) . '<br />' . "\n"
