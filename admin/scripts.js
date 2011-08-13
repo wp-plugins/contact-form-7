@@ -6,42 +6,22 @@
 			$('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
 				{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
 
-			$('input#wpcf7-title:enabled').css({
-				cursor: 'pointer'
-			});
+			$('input#wpcf7-title:disabled').css({cursor: 'default'});
 
 			$('input#wpcf7-title').mouseover(function() {
-				$(this).not('.focus').css({
-					'background-color': '#ffffdd'
-				});
+				$(this).not('.focus').addClass('mouseover');
 			});
 
 			$('input#wpcf7-title').mouseout(function() {
-				$(this).css({
-					'background-color': '#fff'
-				});
+				$(this).removeClass('mouseover');
 			});
 
 			$('input#wpcf7-title').focus(function() {
-				$(this).addClass('focus');
-				$(this).css({
-					cursor: 'text',
-					color: '#333',
-					border: '1px solid #777',
-					font: 'normal 13px Verdana, Arial, Helvetica, sans-serif',
-					'background-color': '#fff'
-				});
+				$(this).addClass('focus').removeClass('mouseover');
 			});
 
 			$('input#wpcf7-title').blur(function() {
 				$(this).removeClass('focus');
-				$(this).css({
-					cursor: 'pointer',
-					color: '#555',
-					border: 'none',
-					font: 'bold 20px serif',
-					'background-color': '#fff'
-				});
 			});
 
 			$('input#wpcf7-title').change(function() {

@@ -79,7 +79,6 @@ div.actions-link input {
 	padding: 0;
 	margin: 0;
 	border: none;
-	background-color: #fff;
 	font-size: 11px;
 	cursor: pointer;
 }
@@ -94,9 +93,22 @@ div.actions-link input.delete {
 
 input#wpcf7-title {
 	color: #555;
-	background-color: #fff;
 	border: none;
 	font: bold 20px serif;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+input#wpcf7-title.focus {
+	color: #333;
+	border: 1px solid #777;
+	font: normal 13px Verdana, Arial, Helvetica, sans-serif;
+	cursor: text;
+	background-color: transparent;
+}
+
+input#wpcf7-title.mouseover {
+	background-color: #ffffdd;
 }
 
 p.tagcode {
