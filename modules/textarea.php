@@ -85,7 +85,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	if ( $title_att )
 		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
 
-	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_html( $value ) . '</textarea>';
+	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_textarea( $value ) . '</textarea>';
 
 	$validation_error = wpcf7_get_validation_error( $name );
 

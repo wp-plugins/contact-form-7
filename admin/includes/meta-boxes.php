@@ -4,7 +4,7 @@
 
 function wpcf7_form_meta_box( $post ) {
 ?>
-<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="20"><?php echo esc_html( $post->form ); ?></textarea></div>
+<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="20"><?php echo esc_textarea( $post->form ); ?></textarea></div>
 
 <div class="half-right"><div id="taggenerator"></div></div>
 
@@ -59,7 +59,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-additional-headers"><?php echo esc_html( __( 'Additional headers:', 'wpcf7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-additional-headers" name="<?php echo $id; ?>-additional-headers" cols="100" rows="2"><?php echo esc_html( $mail['additional_headers'] ); ?></textarea>
+	<textarea id="<?php echo $id; ?>-additional-headers" name="<?php echo $id; ?>-additional-headers" cols="100" rows="2"><?php echo esc_textarea( $mail['additional_headers'] ); ?></textarea>
 	</div>
 
 	<div class="mail-field">
@@ -78,7 +78,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <div class="half-right">
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message body:', 'wpcf7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="16"><?php echo esc_html( $mail['body'] ); ?></textarea>
+	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="16"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
 	</div>
 </div>
 
@@ -102,7 +102,7 @@ function wpcf7_messages_meta_box( $post ) {
 
 function wpcf7_additional_settings_meta_box( $post ) {
 ?>
-<textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8"><?php echo esc_html( $post->additional_settings ); ?></textarea>
+<textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8"><?php echo esc_textarea( $post->additional_settings ); ?></textarea>
 <?php
 }
 
