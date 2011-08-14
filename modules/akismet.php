@@ -20,18 +20,19 @@ function wpcf7_akismet( $spam ) {
 		if ( ! isset( $fe['name'] ) || ! is_array( $fe['options'] ) )
 			continue;
 
-		if ( preg_grep( '%^akismet:author$%', $fe['options'] ) && '' == $author ) {
-			$author = $_POST[$fe['name']];
+		if ( preg_grep( '%^akismet:author$%', $fe['options'] ) ) {
+			$author .= ' ' . $_POST[$fe['name']];
+			$author = trim( $author );
 			$akismet_ready = true;
 		}
 
 		if ( preg_grep( '%^akismet:author_email$%', $fe['options'] ) && '' == $author_email ) {
-			$author_email = $_POST[$fe['name']];
+			$author_email = trim( $_POST[$fe['name']] );
 			$akismet_ready = true;
 		}
 
 		if ( preg_grep( '%^akismet:author_url$%', $fe['options'] ) && '' == $author_url ) {
-			$author_url = $_POST[$fe['name']];
+			$author_url = trim( $_POST[$fe['name']] );
 			$akismet_ready = true;
 		}
 
