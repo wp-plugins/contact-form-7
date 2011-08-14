@@ -81,11 +81,13 @@ function wpcf7_ajax_json_echo() {
 				@unlink( $path );
 			}
 
+			$items = apply_filters( 'wpcf7_ajax_json_echo', $items, $result );
+
 			$wpcf7_contact_form = null;
 		}
 	}
 
-	$echo = json_encode( apply_filters( 'wpcf7_ajax_json_echo', $items ) );
+	$echo = json_encode( $items );
 
 	if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
