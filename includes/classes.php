@@ -13,7 +13,7 @@ class WPCF7_ContactForm {
 	var $scanned_form_tags;
 
 	var $posted_data;
-	var $uploaded_files;
+	var $uploaded_files = array();
 
 	var $skip_mail = false;
 
@@ -277,8 +277,17 @@ class WPCF7_ContactForm {
 		if ( $use_html )
 			$body = wpautop( $body );
 
-		extract( apply_filters( 'wpcf7_mail_components',
-			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers' ) ) );
+		$attachments = array();
+
+		foreach ( (array) $this->uploaded_files as $name => $path ) {
+			if ( false === strpos( $mail_template['attachments'], "[${name}]" ) || empty( $path ) )
+				continue;
+
+			$attachments[] = $path;
+		}
+
+		extract( apply_filters( 'wpcf7_mail_components', compact(
+			'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' ) ) );
 
 		$headers = "From: $sender\n";
 
@@ -287,18 +296,7 @@ class WPCF7_ContactForm {
 
 		$headers .= trim( $additional_headers ) . "\n";
 
-		if ( $this->uploaded_files ) {
-			$for_this_mail = array();
-			foreach ( $this->uploaded_files as $name => $path ) {
-				if ( false === strpos( $mail_template['attachments'], "[${name}]" ) )
-					continue;
-				$for_this_mail[] = $path;
-			}
-
-			return @wp_mail( $recipient, $subject, $body, $headers, $for_this_mail );
-		} else {
-			return @wp_mail( $recipient, $subject, $body, $headers );
-		}
+		return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
 	}
 
 	function mail_callback_html( $matches ) {
