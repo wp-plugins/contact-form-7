@@ -248,8 +248,15 @@ class WPCF7_ContactForm {
 			return true;
 
 		if ( $this->compose_and_send_mail( $this->mail ) ) {
+			$additional_mail = array();
+
 			if ( $this->mail_2['active'] )
-				$this->compose_and_send_mail( $this->mail_2 );
+				$additional_mail[] = $this->mail_2;
+
+			$additional_mail = apply_filters( 'wpcf7_additional_mail', $additional_mail, $this );
+
+			foreach ( $additional_mail as $mail )
+				$this->compose_and_send_mail( $mail );
 
 			return true;
 		}
