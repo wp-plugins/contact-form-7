@@ -411,8 +411,10 @@ class WPCF7_ContactForm {
 				array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' ),
 				'save' );
 
-			foreach ( (array) $props as $prop )
-				update_post_meta( $post_id, $prop, $this->{$prop} );
+			foreach ( (array) $props as $prop ) {
+				if ( isset( $this->{$prop} ) )
+					update_post_meta( $post_id, $prop, $this->{$prop} );
+			}
 
 			if ( $this->initial ) {
 				$this->initial = false;
@@ -487,7 +489,19 @@ function wpcf7_get_contact_form_by_old_id( $old_id ) {
 }
 
 function wpcf7_contact_form_default_pack( $locale = null ) {
+	// For backward compatibility
+
+	return wpcf7_get_contact_form_default_pack( array( 'locale' => $locale ) );
+}
+
+function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	global $l10n;
+
+	$defaults = array( 'locale' => null, 'title' => '' );
+	$args = wp_parse_args( $args, $defaults );
+
+	$locale = $args['locale'];
+	$title = $args['title'];
 
 	if ( $locale && $locale != get_locale() ) {
 		$mo_orig = $l10n['wpcf7'];
@@ -505,7 +519,7 @@ function wpcf7_contact_form_default_pack( $locale = null ) {
 	$contact_form = new WPCF7_ContactForm();
 	$contact_form->initial = true;
 
-	$contact_form->title = __( 'Untitled', 'wpcf7' );
+	$contact_form->title = ( $title ? $title : __( 'Untitled', 'wpcf7' ) );
 
 	$props = apply_filters( 'wpcf7_contact_form_properties',
 		array( 'form', 'mail', 'mail_2', 'messages' ),

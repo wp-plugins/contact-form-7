@@ -193,7 +193,8 @@ function wpcf7_admin_management_page() {
 	if ( 'new' == $_GET['contactform'] ) {
 		$unsaved = true;
 		$current = -1;
-		$cf = wpcf7_contact_form_default_pack( isset( $_GET['locale'] ) ? $_GET['locale'] : '' );
+		$cf = wpcf7_get_contact_form_default_pack(
+			array( 'locale' => ( isset( $_GET['locale'] ) ? $_GET['locale'] : '' ) ) );
 	} elseif ( $cf = wpcf7_contact_form( $_GET['contactform'] ) ) {
 		$current = (int) $_GET['contactform'];
 	} else {

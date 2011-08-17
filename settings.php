@@ -193,19 +193,10 @@ function wpcf7_install() {
 
 	wpcf7_load_plugin_textdomain();
 
-	$postarr = array(
-		'post_type' => 'wpcf7_contact_form',
-		'post_status' => 'publish',
-		'post_title' => __( 'Contact form', 'wpcf7' ) . ' 1' );
+	$contact_form = wpcf7_get_contact_form_default_pack(
+		array( 'title' => sprintf( __( 'Contact form %d', 'wpcf7' ), 1 ) ) );
 
-	$post_id = wp_insert_post( $postarr );
-
-	if ( $post_id ) {
-		update_post_meta( $post_id, 'form', wpcf7_default_form_template() );
-		update_post_meta( $post_id, 'mail', wpcf7_default_mail_template() );
-		update_post_meta( $post_id, 'mail_2', wpcf7_default_mail_2_template() );
-		update_post_meta( $post_id, 'messages', wpcf7_default_messages_template() );
-	}
+	$contact_form->save();
 
 	$opt['version'] = WPCF7_VERSION;
 
