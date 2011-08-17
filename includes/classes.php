@@ -522,7 +522,7 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	$contact_form->title = ( $title ? $title : __( 'Untitled', 'wpcf7' ) );
 
 	$props = apply_filters( 'wpcf7_contact_form_properties',
-		array( 'form', 'mail', 'mail_2', 'messages' ),
+		array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' ),
 		'default' );
 
 	foreach ( (array) $props as $prop )

@@ -47,7 +47,8 @@ function wpcf7_admin_init() {
 				isset( $_POST['wpcf7-mail-2-use-html'] ) && 1 == $_POST['wpcf7-mail-2-use-html']
 		);
 
-		$messages = $contact_form->messages;
+		$messages = isset( $contact_form->messages ) ? $contact_form->messages : array();
+
 		foreach ( wpcf7_messages() as $key => $arr ) {
 			$field_name = 'wpcf7-message-' . strtr( $key, '_', '-' );
 			if ( isset( $_POST[$field_name] ) )
@@ -185,12 +186,13 @@ function wpcf7_admin_management_page() {
 		'order' => 'ASC',
 		'post_type' => 'wpcf7_contact_form' ) );
 
+	$cf = null;
 	$unsaved = false;
 
 	if ( ! isset( $_GET['contactform'] ) )
 		$_GET['contactform'] = '';
 
-	if ( 'new' == $_GET['contactform'] ) {
+	if ( 'new' == $_GET['contactform'] && wpcf7_admin_has_edit_cap() ) {
 		$unsaved = true;
 		$current = -1;
 		$cf = wpcf7_get_contact_form_default_pack(
@@ -199,8 +201,11 @@ function wpcf7_admin_management_page() {
 		$current = (int) $_GET['contactform'];
 	} else {
 		$first = reset( $contact_forms ); // Returns first item
-		$current = $first->ID;
-		$cf = wpcf7_contact_form( $current );
+
+		if ( $first ) {
+			$current = $first->ID;
+			$cf = wpcf7_contact_form( $current );
+		}
 	}
 
 	require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
