@@ -103,7 +103,7 @@ function wpcf7_upgrade() {
 
 	update_option( 'wpcf7', $opt );
 
-	if ( is_admin() && 'wpcf7' == $_GET['page'] ) {
+	if ( is_admin() && isset( $_GET['page'] ) && 'wpcf7' == $_GET['page'] ) {
 		wp_redirect( wpcf7_admin_url( array( 'page' => 'wpcf7' ) ) );
 		exit();
 	}
@@ -140,6 +140,9 @@ function wpcf7_convert_to_cpt( $new_ver, $old_ver ) {
 		return;
 
 	$table_name = $wpdb->prefix . "contact_form_7";
+
+	if ( ! $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) )
+		return;
 
 	$old_rows = $wpdb->get_results( "SELECT * FROM $table_name" );
 
