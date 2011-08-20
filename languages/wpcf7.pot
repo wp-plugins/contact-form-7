@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-17 02:10+0900\n"
-"PO-Revision-Date: 2011-08-17 02:13+0900\n"
+"POT-Creation-Date: 2011-08-20 16:08+0900\n"
+"PO-Revision-Date: 2011-08-20 16:09+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,92 +27,93 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-#: contact-form-7/settings.php:196
-msgid "Contact form"
+#: contact-form-7/settings.php:197
+#, php-format
+msgid "Contact form %d"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:113
+#: contact-form-7/admin/admin.php:114
 #: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:113
+#: contact-form-7/admin/admin.php:114
 msgid "Contact"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:116
+#: contact-form-7/admin/admin.php:117
 msgid "Edit Contact Forms"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:116
+#: contact-form-7/admin/admin.php:117
 msgid "Edit"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:156
+#: contact-form-7/admin/admin.php:157
 msgid "Generate Tag"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:220
+#: contact-form-7/admin/admin.php:226
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:231
+#: contact-form-7/admin/admin.php:237
 msgid "http://contactform7.com/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:232
+#: contact-form-7/admin/admin.php:238
 msgid "Contactform7.com"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:233
+#: contact-form-7/admin/admin.php:239
 msgid "http://contactform7.com/docs/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:234
+#: contact-form-7/admin/admin.php:240
 msgid "Docs"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:235
+#: contact-form-7/admin/admin.php:241
 msgid "http://contactform7.com/faq/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:236
+#: contact-form-7/admin/admin.php:242
 msgid "FAQ"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:237
+#: contact-form-7/admin/admin.php:243
 msgid "http://contactform7.com/support/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:238
+#: contact-form-7/admin/admin.php:244
 msgid "Support"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:252
+#: contact-form-7/admin/admin.php:258
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:255
+#: contact-form-7/admin/admin.php:261
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:258
+#: contact-form-7/admin/admin.php:264
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:298
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:293
+#: contact-form-7/admin/admin.php:299
 msgid "Your contribution is needed for making this plugin better."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:299
+#: contact-form-7/admin/admin.php:305
 msgid "http://contactform7.com/donate/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:299
+#: contact-form-7/admin/admin.php:305
 msgid "Donate"
 msgstr ""
 
@@ -214,7 +215,7 @@ msgstr ""
 msgid "Message body:"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:508
+#: contact-form-7/includes/classes.php:523
 msgid "Untitled"
 msgstr ""
 
