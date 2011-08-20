@@ -269,20 +269,21 @@ class WPCF7_ContactForm {
 
 		$use_html = (bool) $mail_template['use_html'];
 
-		if ( $use_html )
-			$callback = array( &$this, 'mail_callback_html' );
-		else
-			$callback = array( &$this, 'mail_callback' );
+		$callback = array( &$this, 'mail_callback' );
+		$callback_html = array( &$this, 'mail_callback_html' );
 
 		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
 		$sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
 		$recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
 		$additional_headers =
 			preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
-		$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
 
-		if ( $use_html )
+		if ( $use_html ) {
+			$body = preg_replace_callback( $regex, $callback_html, $mail_template['body'] );
 			$body = wpautop( $body );
+		} else {
+			$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+		}
 
 		$attachments = array();
 
