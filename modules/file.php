@@ -171,9 +171,6 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	if ( preg_match( '/\.(php|pl|py|rb|cgi)\d?$/', $filename ) )
 		$filename .= '.txt';
 
-	// foo.php.jpg => foo.php_.jpg
-	$filename = wpcf7_sanitize_file_name( $filename );
-
 	$filename = wp_unique_filename( $uploads_dir, $filename );
 
 	$new_file = trailingslashit( $uploads_dir ) . $filename;

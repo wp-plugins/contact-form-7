@@ -76,62 +76,6 @@ function wpcf7_canonicalize( $text ) {
 	return $text;
 }
 
-function wpcf7_sanitize_file_name( $filename ) {
-	/* Memo:
-	// This function does sanitization introduced in http://core.trac.wordpress.org/ticket/11122
-	// WordPress 2.8.6 will implement it in sanitize_file_name().
-	// While Contact Form 7's file uploading function uses wp_unique_filename(), and
-	// it in turn calls sanitize_file_name(). Therefore this wpcf7_sanitize_file_name() will be
-	// redundant and unnecessary when you use Contact Form 7 on WordPress 2.8.6 or higher.
-	// This function is provided just for the sake of protecting who uses older WordPress.
-	*/
-
-	// Split the filename into a base and extension[s]
-	$parts = explode( '.', $filename );
-
-	// Return if only one extension
-	if ( count( $parts ) <= 2 )
-		return $filename;
-
-	// Process multiple extensions
-	$filename = array_shift( $parts );
-	$extension = array_pop( $parts );
-
-	$mimes = array( 'jpg|jpeg|jpe', 'gif', 'png', 'bmp',
-		'tif|tiff', 'ico', 'asf|asx|wax|wmv|wmx', 'avi',
-		'divx', 'mov|qt', 'mpeg|mpg|mpe', 'txt|c|cc|h',
-		'rtx', 'css', 'htm|html', 'mp3|m4a', 'mp4|m4v',
-		'ra|ram', 'wav', 'ogg', 'mid|midi', 'wma', 'rtf',
-		'js', 'pdf', 'doc|docx', 'pot|pps|ppt|pptx', 'wri',
-		'xla|xls|xlsx|xlt|xlw', 'mdb', 'mpp', 'swf', 'class',
-		'tar', 'zip', 'gz|gzip', 'exe',
-		// openoffice formats
-		'odt', 'odp', 'ods', 'odg', 'odc', 'odb', 'odf' );
-
-	// Loop over any intermediate extensions.
-	// Munge them with a trailing underscore if they are a 2 - 5 character
-	// long alpha string not in the extension whitelist.
-	foreach ( (array) $parts as $part) {
-		$filename .= '.' . $part;
-
-		if ( preg_match( '/^[a-zA-Z]{2,5}\d?$/', $part ) ) {
-			$allowed = false;
-			foreach ( $mimes as $ext_preg ) {
-				$ext_preg = '!(^' . $ext_preg . ')$!i';
-				if ( preg_match( $ext_preg, $part ) ) {
-					$allowed = true;
-					break;
-				}
-			}
-			if ( ! $allowed )
-				$filename .= '_';
-		}
-	}
-	$filename .= '.' . $extension;
-
-	return $filename;
-}
-
 function wpcf7_is_name( $string ) {
 	// See http://www.w3.org/TR/html401/types.html#h-6.2
 	// ID and NAME tokens must begin with a letter ([A-Za-z])
