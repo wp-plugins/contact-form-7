@@ -9,7 +9,7 @@ function wpcf7_messages() {
 
 		'mail_sent_ng' => array(
 			'description' => __( "Sender's message was failed to send", 'wpcf7' ),
-			'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
+			'default' => __( 'Failed to send your message. Please try later or contact the administrator by another method.', 'wpcf7' )
 		),
 
 		'validation_error' => array(

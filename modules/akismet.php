@@ -98,7 +98,7 @@ add_filter( 'wpcf7_messages', 'wpcf7_akismet_messages' );
 function wpcf7_akismet_messages( $messages ) {
 	return array_merge( $messages, array( 'akismet_says_spam' => array(
 		'description' => __( "Akismet judged the sending activity as spamming", 'wpcf7' ),
-		'default' => __( 'Failed to send your message. Please try later or contact administrator by other way.', 'wpcf7' )
+		'default' => __( 'Failed to send your message. Please try later or contact the administrator by another method.', 'wpcf7' )
 	) ) );
 }
 
