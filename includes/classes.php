@@ -253,7 +253,8 @@ class WPCF7_ContactForm {
 			if ( $this->mail_2['active'] )
 				$additional_mail[] = $this->mail_2;
 
-			$additional_mail = apply_filters( 'wpcf7_additional_mail', $additional_mail, $this );
+			$additional_mail = apply_filters_ref_array( 'wpcf7_additional_mail',
+				array( $additional_mail, &$this ) );
 
 			foreach ( $additional_mail as $mail )
 				$this->compose_and_send_mail( $mail );
@@ -294,8 +295,9 @@ class WPCF7_ContactForm {
 			$attachments[] = $path;
 		}
 
-		extract( apply_filters( 'wpcf7_mail_components', compact(
-			'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' ) ) );
+		extract( apply_filters_ref_array( 'wpcf7_mail_components', array( 
+			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' ),
+			&$this ) ) );
 
 		$headers = "From: $sender\n";
 
@@ -439,7 +441,7 @@ class WPCF7_ContactForm {
 		$new->messages = $this->messages;
 		$new->additional_settings = $this->additional_settings;
 
-		$new = apply_filters( 'wpcf7_copy', $new, $this );
+		$new = apply_filters_ref_array( 'wpcf7_copy', array( &$new, &$this ) );
 
 		return $new;
 	}
@@ -473,7 +475,7 @@ function wpcf7_contact_form( $id ) {
 
 	$contact_form->upgrade();
 
-	$contact_form = apply_filters( 'wpcf7_contact_form', $contact_form );
+	$contact_form = apply_filters_ref_array( 'wpcf7_contact_form', array( &$contact_form ) );
 
 	return $contact_form;
 }
@@ -530,7 +532,10 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	if ( isset( $mo_orig ) )
 		$l10n['wpcf7'] = $mo_orig;
 
-	return apply_filters( 'wpcf7_contact_form_default_pack', $contact_form, $args );
+	$contact_form = apply_filters_ref_array( 'wpcf7_contact_form_default_pack',
+		array( &$contact_form, $args ) );
+
+	return $contact_form;
 }
 
 function wpcf7_get_current_contact_form() {
