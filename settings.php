@@ -177,30 +177,20 @@ function wpcf7_convert_to_cpt( $new_ver, $old_ver ) {
 add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
 
 function wpcf7_install() {
-	$opt = get_option( 'wpcf7' );
-
-	if ( ! is_array( $opt ) )
-		$opt = array();
-
-	$contact_forms = get_posts( array(
-		'numberposts' => -1,
-		'orderby' => 'ID',
-		'order' => 'ASC',
-		'post_type' => 'wpcf7_contact_form' ) );
-
-	if ( $opt || $contact_forms )
+	if ( $opt = get_option( 'wpcf7' ) )
 		return;
 
 	wpcf7_load_plugin_textdomain();
+	wpcf7_register_post_types();
+	wpcf7_upgrade();
+
+	if ( get_posts( array( 'post_type' => 'wpcf7_contact_form' ) ) )
+		return;
 
 	$contact_form = wpcf7_get_contact_form_default_pack(
 		array( 'title' => sprintf( __( 'Contact form %d', 'wpcf7' ), 1 ) ) );
 
 	$contact_form->save();
-
-	$opt['version'] = WPCF7_VERSION;
-
-	update_option( 'wpcf7', $opt );
 }
 
 ?>
