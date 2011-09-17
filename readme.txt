@@ -97,3 +97,18 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. [WordPress HelpCenter](http://wphelpcenter.com/)
 
 [Support](http://contactform7.com/support/)
+
+== Screenshots ==
+
+1. screenshot-1.png 
+
+== Changelog ==
+
+= 3.0 =
+
+* Contact Form 7 3.0 utilizes Custom Post Types feature to save contact forms. It does not create its own table (contact_form_7) anymore.
+* New shortcode format has been introduced. New format is like this: [contact-form-7 id="1234" title="Contact form 1"]. Note that new one starts with contact-form-7 instead of contact-form.
+* Contact Form 7 3.0 works with WordPress version 3.2 or higher. This also means that you need PHP version 5.2.4 or higher and MySQL version 5.0 or higher (these are minimum requirements for WordPress 3.2).
+* Translations for Japanese, German, Georgian, Italian and Spanish have been updated.
+* Admin panel has been enhanced. Now it uses meta boxes.
+* Bundled jquery.form.js has been updated to 2.84.
