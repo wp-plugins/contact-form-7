@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-03 18:06+0900\n"
-"PO-Revision-Date: 2011-09-03 18:13+0900\n"
+"POT-Creation-Date: 2011-09-17 22:01+0900\n"
+"PO-Revision-Date: 2011-09-20 02:06+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Just another contact form plugin. Simple but flexible."
 msgstr "お問い合わせフォームプラグイン。シンプル、でも柔軟。"
 
-#: contact-form-7/settings.php:127
+#: contact-form-7/settings.php:99
 msgid "Contact Forms"
 msgstr "コンタクトフォーム"
 
-#: contact-form-7/settings.php:128
+#: contact-form-7/settings.php:100
 msgid "Contact Form"
 msgstr "コンタクトフォーム"
 
-#: contact-form-7/settings.php:197
+#: contact-form-7/settings.php:191
 #, php-format
 msgid "Contact form %d"
 msgstr "コンタクトフォーム %d"
@@ -61,7 +61,7 @@ msgstr "設定"
 
 #: contact-form-7/admin/admin.php:237
 msgid "http://contactform7.com/"
-msgstr "http://contactform7.com/ja/"
+msgstr "http://ja.contactform7.com/"
 
 #: contact-form-7/admin/admin.php:238
 msgid "Contactform7.com"
@@ -69,7 +69,7 @@ msgstr "Contactform7.com (日本語)"
 
 #: contact-form-7/admin/admin.php:239
 msgid "http://contactform7.com/docs/"
-msgstr "http://contactform7.com/ja/docs-2/"
+msgstr "http://ja.contactform7.com/docs/"
 
 #: contact-form-7/admin/admin.php:240
 msgid "Docs"
@@ -77,7 +77,7 @@ msgstr "使い方"
 
 #: contact-form-7/admin/admin.php:241
 msgid "http://contactform7.com/faq/"
-msgstr "http://contactform7.com/ja/faq-2/"
+msgstr "http://ja.contactform7.com/faq/"
 
 #: contact-form-7/admin/admin.php:242
 msgid "FAQ"
@@ -85,7 +85,7 @@ msgstr "FAQ"
 
 #: contact-form-7/admin/admin.php:243
 msgid "http://contactform7.com/support/"
-msgstr "http://contactform7.com/ja/support-2/"
+msgstr "http://ja.contactform7.com/support/"
 
 #: contact-form-7/admin/admin.php:244
 msgid "Support"
@@ -113,7 +113,7 @@ msgstr "あなたの貢献があればこのプラグインをもっと良くす
 
 #: contact-form-7/admin/admin.php:305
 msgid "http://contactform7.com/donate/"
-msgstr "http://contactform7.com/ja/donate-2/"
+msgstr "http://ja.contactform7.com/donate/"
 
 #: contact-form-7/admin/admin.php:305
 msgid "Donate"
@@ -647,7 +647,7 @@ msgid "Radio buttons"
 msgstr "ラジオボタン"
 
 #: contact-form-7/modules/checkbox.php:207
-#: contact-form-7/modules/file.php:243
+#: contact-form-7/modules/file.php:240
 #: contact-form-7/modules/select.php:159
 #: contact-form-7/modules/text.php:161
 #: contact-form-7/modules/textarea.php:134
@@ -683,59 +683,59 @@ msgstr "チェックボックスを排他化しますか?"
 msgid "And, put this code into the Mail fields below."
 msgstr "それから、このコードを下のメールの項目中に置いてください。"
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:204
 msgid "Uploading a file fails for any reason"
 msgstr "ファイルのアップロードが何らかの理由により失敗している"
 
-#: contact-form-7/modules/file.php:208
+#: contact-form-7/modules/file.php:205
 msgid "Failed to upload file."
 msgstr "ファイルのアップロードに失敗しました。"
 
-#: contact-form-7/modules/file.php:212
+#: contact-form-7/modules/file.php:209
 msgid "Uploaded file is not allowed file type"
 msgstr "アップロードされたファイルが許可されたファイル形式に適合しない"
 
-#: contact-form-7/modules/file.php:213
+#: contact-form-7/modules/file.php:210
 msgid "This file type is not allowed."
 msgstr "許可されていないファイル形式です。"
 
-#: contact-form-7/modules/file.php:217
+#: contact-form-7/modules/file.php:214
 msgid "Uploaded file is too large"
 msgstr "アップロードされたファイルが大きすぎる"
 
-#: contact-form-7/modules/file.php:218
+#: contact-form-7/modules/file.php:215
 msgid "This file is too large."
 msgstr "ファイルが大きすぎます。"
 
-#: contact-form-7/modules/file.php:222
+#: contact-form-7/modules/file.php:219
 msgid "Uploading a file fails for PHP error"
 msgstr "ファイルのアップロードが PHP のエラーにより失敗している"
 
-#: contact-form-7/modules/file.php:223
+#: contact-form-7/modules/file.php:220
 msgid "Failed to upload file. Error occurred."
 msgstr "ファイルのアップロードに失敗しました。エラーが発生しています。"
 
-#: contact-form-7/modules/file.php:234
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr "ファイルのアップロード"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr "ファイルサイズの上限"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr "バイト"
 
-#: contact-form-7/modules/file.php:260
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr "受け入れ可能なファイル形式"
 
-#: contact-form-7/modules/file.php:267
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
 msgstr "それから、このコードを下のファイル添付の項目中に置いてください。"
 
-#: contact-form-7/modules/file.php:292
+#: contact-form-7/modules/file.php:289
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "このコンタクトフォームはファイルアップロード項目を含んでいますが、そのファイルのための一時フォルダ (%s) が存在しないか、あるいは書き込み可能ではありません。このフォルダを手動で作成するか、パーミッションの変更を行うと解決できるでしょう。"
