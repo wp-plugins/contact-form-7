@@ -1,0 +1,828 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-17 22:01+0900\n"
+"PO-Revision-Date: 2011-10-16 13:46+0900\n"
+"Last-Translator: Rupert Agnew Lanuza <rupert.lanuza@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Tagalog\n"
+"X-Poedit-Country: PHILIPPINES\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Isa na namang kontak form plugin. Simple pero tumutugma."
+
+#: contact-form-7/settings.php:99
+msgid "Contact Forms"
+msgstr "Kontak Forms"
+
+#: contact-form-7/settings.php:100
+msgid "Contact Form"
+msgstr "Kontak Form"
+
+#: contact-form-7/settings.php:191
+#, php-format
+msgid "Contact form %d"
+msgstr "Kontak mula kay %d"
+
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
+msgid "Contact Form 7"
+msgstr "Kontak Form 7"
+
+#: contact-form-7/admin/admin.php:114
+msgid "Contact"
+msgstr "Kontak"
+
+#: contact-form-7/admin/admin.php:117
+msgid "Edit Contact Forms"
+msgstr "Baguhin ang Kontak Forms"
+
+#: contact-form-7/admin/admin.php:117
+msgid "Edit"
+msgstr "Baguhin"
+
+#: contact-form-7/admin/admin.php:157
+msgid "Generate Tag"
+msgstr "Gumawa ng Tag"
+
+#: contact-form-7/admin/admin.php:226
+msgid "Settings"
+msgstr "Isaayos"
+
+#: contact-form-7/admin/admin.php:237
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:238
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:239
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:240
+msgid "Docs"
+msgstr "Mga Dokyumento"
+
+#: contact-form-7/admin/admin.php:241
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:242
+msgid "FAQ"
+msgstr "Karaniwang Tanong"
+
+#: contact-form-7/admin/admin.php:243
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:244
+msgid "Support"
+msgstr "Suporta"
+
+#: contact-form-7/admin/admin.php:258
+msgid "Contact form created."
+msgstr "Nakagawa ng Kontak Form"
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form saved."
+msgstr "Naitala ang Kontak form"
+
+#: contact-form-7/admin/admin.php:264
+msgid "Contact form deleted."
+msgstr "Nabura ang Kontak form"
+
+#: contact-form-7/admin/admin.php:298
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Kailangan ng Kontak Form 7 ang inyong suporta. Mag bigay ng donasyon ngayon."
+
+#: contact-form-7/admin/admin.php:299
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Ang inyong kontribusyon ay kinakailangan upang mapabuti ang plugin na ito."
+
+#: contact-form-7/admin/admin.php:305
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:305
+msgid "Donate"
+msgstr "Donasyon"
+
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
+msgstr "Magdagdag ng Bago"
+
+#: contact-form-7/admin/edit.php:41
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopyahin ang code na ito at idikit sa iyong isinulat, pahina o sa laman ng text widget."
+
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "Ang lumang code ay maari rin na gamitin."
+
+#: contact-form-7/admin/edit.php:55
+msgid "Save"
+msgstr "Naitala"
+
+#: contact-form-7/admin/edit.php:62
+msgid "Copy"
+msgstr "Kopyahin"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Delete"
+msgstr "Burahin"
+
+#: contact-form-7/admin/edit.php:69
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Binubura mo ang ang kontak form na ito. \n"
+" 'Kanselahin' upang huminto, 'Magpatuloy' upang burahin."
+
+#: contact-form-7/admin/edit.php:78
+msgid "Form"
+msgstr "Form"
+
+#: contact-form-7/admin/edit.php:81
+msgid "Mail"
+msgstr "Sulat"
+
+#: contact-form-7/admin/edit.php:84
+msgid "Mail (2)"
+msgstr "Sulat (2)"
+
+#: contact-form-7/admin/edit.php:89
+msgid "Use mail (2)"
+msgstr "Gamitin ang sulat (2)"
+
+#: contact-form-7/admin/edit.php:91
+msgid "Messages"
+msgstr "Mga mensahe"
+
+#: contact-form-7/admin/edit.php:94
+msgid "Additional Settings"
+msgstr "Karagdagang Pagsasaayos"
+
+#: contact-form-7/admin/edit.php:141
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Gamtin ang pangunahing lingwahe (%s)"
+
+#: contact-form-7/admin/edit.php:145
+msgid "Or"
+msgstr "O"
+
+#: contact-form-7/admin/edit.php:150
+msgid "(select language)"
+msgstr "(pumili ng lingwahe)"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Para Kay:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Mula kay:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Paksa:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Karagdagang Panimula"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Nakalakip na Dokumento:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "HTML ang gamiting uri ng laman"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:88
+msgid "Message body:"
+msgstr "Nilalaman ng mensahe:"
+
+#: contact-form-7/includes/classes.php:524
+msgid "Untitled"
+msgstr "Walang titolo"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Ang mensahe mula sa sumulat ay naipadala."
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Ang iyong mensahe ay naipadala. Salamat."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Ang mensahe mula sa sumulat ay hndi naipadala."
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/modules/akismet.php:101
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Hindi naipadala ang iyong mensahe. Maaraing subukan sa ilang sandali o kontakin ang namamahala sa ibang paraan."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Validation errors occurred"
+msgstr "Nagkaroon ng problema sa beripikasyon."
+
+#: contact-form-7/includes/functions.php:17
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Nagkaroon ng problema sa beripikasyon. Suriin ang mga parte at ipadala muli."
+
+#: contact-form-7/includes/functions.php:21
+msgid "There is a field of term that sender is needed to accept"
+msgstr "May parte ng kasunduan na dapat sang-ayunan ng sumulat."
+
+#: contact-form-7/includes/functions.php:22
+msgid "Please accept the terms to proceed."
+msgstr "Tanggapin ang kasunduan upang magpatuloy."
+
+#: contact-form-7/includes/functions.php:26
+msgid "Email address that sender entered is invalid"
+msgstr "Ang email address ng sumulat ay hindi akma. "
+
+#: contact-form-7/includes/functions.php:27
+msgid "Email address seems invalid."
+msgstr "Mukang hindi akma ang email address."
+
+#: contact-form-7/includes/functions.php:31
+msgid "There is a field that sender is needed to fill in"
+msgstr "May parte na kailangang punan ng sumulat."
+
+#: contact-form-7/includes/functions.php:32
+msgid "Please fill the required field."
+msgstr "Punan ang kailangang field."
+
+#: contact-form-7/includes/functions.php:56
+msgid "Your Name"
+msgstr "Iyong Pangalan"
+
+#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/functions.php:58
+msgid "(required)"
+msgstr "(kailangan)"
+
+#: contact-form-7/includes/functions.php:58
+msgid "Your Email"
+msgstr "Iyong Email"
+
+#: contact-form-7/includes/functions.php:60
+msgid "Subject"
+msgstr "Paksa"
+
+#: contact-form-7/includes/functions.php:62
+msgid "Your Message"
+msgstr "Iyong Mensahe"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Send"
+msgstr "Ipadala"
+
+#: contact-form-7/includes/functions.php:72
+#, php-format
+msgid "From: %s"
+msgstr "Mula kay: %s"
+
+#: contact-form-7/includes/functions.php:73
+#, php-format
+msgid "Subject: %s"
+msgstr "Paksa: %s"
+
+#: contact-form-7/includes/functions.php:74
+msgid "Message Body:"
+msgstr "Nilalaman ng mensahe:"
+
+#: contact-form-7/includes/functions.php:75
+#: contact-form-7/includes/functions.php:89
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Ang liham na ito ay ipinadala mula sa kontak form noong %1$s%2$s"
+
+#: contact-form-7/includes/functions.php:165
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: contact-form-7/includes/functions.php:166
+msgid "Albanian"
+msgstr "Albanian"
+
+#: contact-form-7/includes/functions.php:167
+msgid "Arabic"
+msgstr "Arabic"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Armenian"
+msgstr "Armenian"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Bosnian"
+msgstr "Bosnian"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Brazilian Portuguese"
+msgstr "Brazilian Portuguese"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Bulgarian"
+msgstr "Bulgarian"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Catalan"
+msgstr "Catalan"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Chinese (Simplified)"
+msgstr "Chinese (Pina simple)"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Chinese (Traditional)"
+msgstr "Chinese (Tradisyonal)"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Croatian"
+msgstr "Croatian"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Czech"
+msgstr "Czech"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Danish"
+msgstr "Danish"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Dutch"
+msgstr "Dutch"
+
+#: contact-form-7/includes/functions.php:180
+msgid "English"
+msgstr "Ingles"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Estonian"
+msgstr "Estonian"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Finnish"
+msgstr "Finnish"
+
+#: contact-form-7/includes/functions.php:183
+msgid "French"
+msgstr "French"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Galician"
+msgstr "Galician"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Georgian"
+msgstr "Georgian"
+
+#: contact-form-7/includes/functions.php:186
+msgid "German"
+msgstr "German"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Greek"
+msgstr "Griyego"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Hebrew"
+msgstr "Hebrew"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Hindi"
+msgstr "Hindi"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Italian"
+msgstr "Italyano"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Japanese"
+msgstr "Hapon"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Korean"
+msgstr "Korean"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Latvian"
+msgstr "Latvian"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Lithuanian"
+msgstr "Lithuanian"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Macedonian"
+msgstr "Macedonian"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Malay"
+msgstr "Malay"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Norwegian"
+msgstr "Norwegian"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Persian"
+msgstr "Persian"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Polish"
+msgstr "Polish"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Portuguese"
+msgstr "Portuguese"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Russian"
+msgstr "Russian"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Romanian"
+msgstr "Romanian"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Serbian"
+msgstr "Serbian"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Slovak"
+msgstr "Slovak"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Slovene"
+msgstr "Slovene"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Spanish"
+msgstr "Spanish"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Swedish"
+msgstr "Swedish"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Tamil"
+msgstr "Tamil"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Thai"
+msgstr "Thai"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Turkish"
+msgstr "Turkish"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Ukrainian"
+msgstr "Ukrainian"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Vietnamese"
+msgstr "Vietnamese"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "Pagtanggap"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+msgid "Name"
+msgstr "Pangalan"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+msgid "optional"
+msgstr "opsyon"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "Gawing naka sangayon ang pangunahing laman ng kahon na ito."
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "Gawin ang checkbox na ito na gumagana ng baliktaran?"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "*Ibigsabihin nito ay ang bisitang tumanggap ng kasunduan ay inalis ang pagkaka tsek nito."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopyain ang code na ito at idikit sa kaliwang parte ng form."
+
+#: contact-form-7/modules/akismet.php:100
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Napagdesisyonan ni Akismet na ang uri ng pagpapadala ay spamming."
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Upang gamitin ang CAPTCHA, kailangan mo ang <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin na naka-instol."
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Ang code na ipinadala ng sumulat ay hindi tugma sa CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "Ang ipinadala mong code ay hndi tama."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Paalala: Upang gamiting ang CAPTCHA, kailangan mo ang Really Simple CAPTCHA plugin na naka-instol."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "Pagsasaayos ng Imahe"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "Kulay ng foreground"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "Kulay ng paligid"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "Laki ng imahe"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "Maliit"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "Katamtaman"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "Malaki"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "Pagsasaayos ng input field"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "Para sa imahe"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "Para sa input field"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang pansamantalang polder ng mga dokument (%s) ay hndi matagpuan o hindi maaring lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon nito."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang kinakailangan mga laybrary (GD and FreeType) ay hindi matagpauan sa iyong serber."
+
+#: contact-form-7/modules/checkbox.php:183
+msgid "Checkboxes"
+msgstr "Checkboxes"
+
+#: contact-form-7/modules/checkbox.php:186
+msgid "Radio buttons"
+msgstr "Radio buttons"
+
+#: contact-form-7/modules/checkbox.php:207
+#: contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:159
+#: contact-form-7/modules/text.php:161
+#: contact-form-7/modules/textarea.php:134
+msgid "Required field?"
+msgstr "Kinakailangang Parte?"
+
+#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/select.php:173
+msgid "Choices"
+msgstr "Pagpipilian"
+
+#: contact-form-7/modules/checkbox.php:225
+#: contact-form-7/modules/select.php:175
+msgid "* One choice per line."
+msgstr "* Isang pili bawat linya."
+
+#: contact-form-7/modules/checkbox.php:229
+msgid "Put a label first, a checkbox last?"
+msgstr "Maglagay muna ng pangalan, checkbox sa huli?"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Wrap each item with <label> tag?"
+msgstr "Palibutan ang bawat laman ng <label> tag?"
+
+#: contact-form-7/modules/checkbox.php:232
+msgid "Make checkboxes exclusive?"
+msgstr "Gawing ekslusibo ang mga checkbox."
+
+#: contact-form-7/modules/checkbox.php:240
+#: contact-form-7/modules/select.php:187
+#: contact-form-7/modules/text.php:204
+#: contact-form-7/modules/textarea.php:166
+msgid "And, put this code into the Mail fields below."
+msgstr "At, ilagay ang code na ito sa ilalim ng fields ng liham."
+
+#: contact-form-7/modules/file.php:204
+msgid "Uploading a file fails for any reason"
+msgstr "Ang pagpapadala ng dokumento ay nagkaproblema sa hndi malamang dahilan."
+
+#: contact-form-7/modules/file.php:205
+msgid "Failed to upload file."
+msgstr "Ang dokumento ay hindi naipadala."
+
+#: contact-form-7/modules/file.php:209
+msgid "Uploaded file is not allowed file type"
+msgstr "Ang uri ng ipinadalang dokumento ay hindi pinapayagan."
+
+#: contact-form-7/modules/file.php:210
+msgid "This file type is not allowed."
+msgstr "Ang dokumentong ito ay hindi pinapayagan."
+
+#: contact-form-7/modules/file.php:214
+msgid "Uploaded file is too large"
+msgstr "Ang ipinadalang dokumento ay masyadong malaki."
+
+#: contact-form-7/modules/file.php:215
+msgid "This file is too large."
+msgstr "Ang dokumentong ito ay masyadong malaki."
+
+#: contact-form-7/modules/file.php:219
+msgid "Uploading a file fails for PHP error"
+msgstr "Ang pagpapadala ng dokumento para sa PHP ay nagkaproblema"
+
+#: contact-form-7/modules/file.php:220
+msgid "Failed to upload file. Error occurred."
+msgstr "Hindi naipadala ang dokumento. May nangyaring problema."
+
+#: contact-form-7/modules/file.php:231
+msgid "File upload"
+msgstr "Magpadala ng dokumento"
+
+#: contact-form-7/modules/file.php:254
+msgid "File size limit"
+msgstr "Limitasyon ng laki ng dokumento"
+
+#: contact-form-7/modules/file.php:254
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/modules/file.php:257
+msgid "Acceptable file types"
+msgstr "Tinatanggap na uri ng dokumento"
+
+#: contact-form-7/modules/file.php:264
+msgid "And, put this code into the File Attachments field below."
+msgstr "At, ilagay ang code na ito sa ilalim ng mga nakalakip na dokumento."
+
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ang kontak form na ito ay may kasamang pagpapadala ng dokumento, ngunit ang pansamantalang polder para sa mga dokumento (%s) ay hindi matagpuan o hindi maaring lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon nito."
+
+#: contact-form-7/modules/icl.php:74
+msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
+msgstr "Ang kontak form na ito ay may kasamang [id] tags, ngunit sila ay hindi na ginagamit o hindi na gumagana sa bersyong ito ng Kontak Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">May mas madaling paraan upang gumawa ng kontak forms ng ibang lingwahe</a> at ito ay inirerekomenda sa iyo."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Ang nagpadala ay hndi naitala ang tamang sagot sa pagsusulit"
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "Mali ang iyong sagot."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "Pagsusulit"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "Mga pagsusulit"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* pagsusulit|sagot (halimbawa 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "Drop-down ng mga pagpipilian"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "Payagan ang maramihang pagpili?"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "Maglagay ng blangkong laman para sa unang opsyon?"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "Ipinapadala ..."
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "Buton ng pagpapadala"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "Pangalan"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "Text field"
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "Email field"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "Ang parteng ito ay kinakailangang ng pangalan ng sumulat"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "Ang parteng ito ay kinakailangang ng URL ng sumulat"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "Ang parteng ito ay kinakailangang ng email address  ng sumulat"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "Pangunahing laman"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "Gamitin ang letrang ito bilang watermark?"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "Text area"
+
