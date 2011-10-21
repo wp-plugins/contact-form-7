@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 22:01+0900\n"
-"PO-Revision-Date: 2011-09-20 02:06+0900\n"
+"POT-Creation-Date: 2011-10-21 20:14+0900\n"
+"PO-Revision-Date: 2011-10-21 20:17+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -249,7 +249,7 @@ msgid "Validation errors occurred. Please confirm the fields and submit it again
 msgstr "入力内容に不備があります。確認してもう一度送信してください。"
 
 #: contact-form-7/includes/functions.php:21
-msgid "There is a field of term that sender is needed to accept"
+msgid "There are terms that the sender must accept"
 msgstr "承諾が必要な項目が承諾されていない"
 
 #: contact-form-7/includes/functions.php:22
@@ -257,7 +257,7 @@ msgid "Please accept the terms to proceed."
 msgstr "進めるには条項の承諾が必要です。"
 
 #: contact-form-7/includes/functions.php:26
-msgid "Email address that sender entered is invalid"
+msgid "Email address that the sender entered is invalid"
 msgstr "入力されたメールアドレスの形式が正しくない"
 
 #: contact-form-7/includes/functions.php:27
@@ -265,7 +265,7 @@ msgid "Email address seems invalid."
 msgstr "メールアドレスの形式が正しくないようです。"
 
 #: contact-form-7/includes/functions.php:31
-msgid "There is a field that sender is needed to fill in"
+msgid "There is a field that the sender must fill in"
 msgstr "入力必須の項目が入力されていない"
 
 #: contact-form-7/includes/functions.php:32
@@ -514,14 +514,18 @@ msgid "Thai"
 msgstr "タイ語"
 
 #: contact-form-7/includes/functions.php:214
+msgid "Tagalog"
+msgstr "タガログ語"
+
+#: contact-form-7/includes/functions.php:215
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:216
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:217
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
