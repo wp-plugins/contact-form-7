@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 16:43+0900\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2011-17-10 20:00+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Schalk Burger\n"
-"MIME-Version: 1.0\n"
+"MIME-Version: 1.1\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Afrikaans\n"
@@ -20,11 +20,11 @@ msgstr ""
 #: contact-form-7/admin/admin-panel.php:9
 #, php-format
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Die databasis tabel vir Contact Form 7 bestaan nie.</strong> Jy moet eers 'n <a href=\"%s\">tabel skep</a> vir dit om te werk."
+msgstr "<strong>Die databasistabel vir Contact Form 7 bestaan nie.</strong> Jy moet eers 'n <a href=\"%s\">tabel skep</a> vir dit om te werk."
 
 #: contact-form-7/admin/admin-panel.php:12
 msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>Die databasis tabel vir Contact Form 7 bestaan nie.</strong>"
+msgstr "<strong>Die databasistabel vir Contact Form 7 bestaan nie.</strong>"
 
 #: contact-form-7/admin/admin-panel.php:17
 #: contact-form-7/admin/admin-panel.php:30
@@ -38,7 +38,7 @@ msgstr "Nuwe byvoeging"
 
 #: contact-form-7/admin/admin-panel.php:67
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Kopie die code en sit dit in jou berig, bladsy of teks widget."
+msgstr "Kopieer die code en sit dit in jou berig, bladsy of teks widget."
 
 #: contact-form-7/admin/admin-panel.php:75
 #: contact-form-7/admin/admin-panel.php:309
@@ -47,7 +47,7 @@ msgstr "Stoor"
 
 #: contact-form-7/admin/admin-panel.php:82
 msgid "Copy"
-msgstr "Kopie"
+msgstr "Kopieer"
 
 #: contact-form-7/admin/admin-panel.php:87
 msgid "Delete"
@@ -59,7 +59,7 @@ msgid ""
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "Jy is besig om hierdie kontak vorm te verwyder.\n"
-" 'Kanseleer' om te stop, 'OK' om dit te skrap."
+" 'Cancel' om te stop, 'OK' om dit te skrap."
 
 #: contact-form-7/admin/admin-panel.php:104
 msgid "Form"
@@ -92,7 +92,7 @@ msgstr "Aanvullende headers:"
 #: contact-form-7/admin/admin-panel.php:157
 #: contact-form-7/admin/admin-panel.php:224
 msgid "File attachments:"
-msgstr "LÍer skakels:"
+msgstr "Lêer skakels:"
 
 #: contact-form-7/admin/admin-panel.php:165
 #: contact-form-7/admin/admin-panel.php:232
@@ -119,7 +119,7 @@ msgstr "Boodskappe"
 
 #: contact-form-7/admin/admin-panel.php:285
 msgid "Additional Settings"
-msgstr "Aanvullende Stellings"
+msgstr "Addisionele Stellings"
 
 #: contact-form-7/admin/admin-panel.php:333
 #, php-format
@@ -185,7 +185,7 @@ msgstr "http://contactform7.com/docs/"
 
 #: contact-form-7/admin/admin.php:338
 msgid "Docs"
-msgstr "Docs"
+msgstr "Dokumente"
 
 #: contact-form-7/admin/admin.php:339
 msgid "http://contactform7.com/faq/"
@@ -205,7 +205,7 @@ msgstr "Hulp"
 
 #: contact-form-7/admin/admin.php:353
 msgid "Contact form created."
-msgstr "Kontak vorm geskape"
+msgstr "Kontak vorm geskep"
 
 #: contact-form-7/admin/admin.php:356
 msgid "Contact form saved."
@@ -217,15 +217,15 @@ msgstr "Kontak vorm verwyder"
 
 #: contact-form-7/admin/admin.php:362
 msgid "Database table created."
-msgstr "Databasis tabel geskape"
+msgstr "Databasis tabel geskep"
 
 #: contact-form-7/admin/admin.php:365
 msgid "Failed to create database table."
-msgstr "Kon nie databasis tabel skape nie."
+msgstr "Kon nie databasistabel skep nie."
 
 #: contact-form-7/admin/admin.php:398
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 benodig jou ondersteuning. Skenk 'n donasie asseblief."
+msgstr "Contact Form 7 benodig jou ondersteuning. Maak 'n donasie asseblief."
 
 #: contact-form-7/admin/admin.php:399
 msgid "Is this plugin useful for you? If you like it, please help the developer."
@@ -253,7 +253,7 @@ msgstr "Jou boodskap was suksevol gestuur. Dankie."
 
 #: contact-form-7/includes/functions.php:11
 msgid "Sender's message was failed to send"
-msgstr "Boodskap het nie gestuur nie."
+msgstr "Boodskap was nie gestuur nie."
 
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/includes/functions.php:17
@@ -262,7 +262,7 @@ msgstr "Kon nie boodskap stuur nie. Probeer later weer of kontak die administrat
 
 #: contact-form-7/includes/functions.php:16
 msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet het die stuur van die boodskap as spam opgetel."
+msgstr "Akismet het die boodskap as spam opgetel."
 
 #: contact-form-7/includes/functions.php:21
 msgid "Validation errors occurred"
@@ -303,7 +303,7 @@ msgstr "Jou Naam"
 #: contact-form-7/includes/functions.php:45
 #: contact-form-7/includes/functions.php:47
 msgid "(required)"
-msgstr "(vereis)"
+msgstr "(verpligtend)"
 
 #: contact-form-7/includes/functions.php:47
 msgid "Your Email"
@@ -315,7 +315,7 @@ msgstr "Onderwerp"
 
 #: contact-form-7/includes/functions.php:51
 msgid "Your Message"
-msgstr "Jou Boodskappe"
+msgstr "Jou Boodskap"
 
 #: contact-form-7/includes/functions.php:53
 msgid "Send"
@@ -515,7 +515,7 @@ msgstr "OekraÔens"
 
 #: contact-form-7/includes/functions.php:206
 msgid "Vietnamese"
-msgstr "ViÎtnamees"
+msgstr "Viêtnamees"
 
 #: contact-form-7/modules/acceptance.php:94
 msgid "Acceptance"
@@ -565,11 +565,11 @@ msgstr "Dit beteken dat die besoeker wie die terme aanvaar die boks deselekteer"
 #: contact-form-7/modules/checkbox.php:224
 #: contact-form-7/modules/file.php:255
 msgid "Copy this code and paste it into the form left."
-msgstr "Kopie die code en sit dit in die vorm links."
+msgstr "Kopieer die code en sit dit in die vorm links."
 
 #: contact-form-7/modules/captcha.php:65
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Om CAPTCHA te gebruik kort jy <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installeer."
+msgstr "Om CAPTCHA te gebruik kort jy <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installeerder."
 
 #: contact-form-7/modules/captcha.php:181
 msgid "The code that sender entered does not match the CAPTCHA"
@@ -585,7 +585,7 @@ msgstr "CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:203
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Let op: Om CAPTCH te gebruik, moet eally Simple CAPTCHA plugin installeer wees."
+msgstr "Let op: Om CAPTCH te gebruik, moet Really Simple CAPTCHA plugin installeer wees."
 
 #: contact-form-7/modules/captcha.php:210
 msgid "Image settings"
@@ -630,7 +630,7 @@ msgstr "Vir inset area"
 #: contact-form-7/modules/captcha.php:288
 #, php-format
 msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Hierdie kontak vorm bevat CAPTCH vorm areas, maar die tydelike plek vir lÍers (%s) bestaan nie of is nie skryfbaar nie. Jy kan die plek skep of dit self toelaatbaar maak."
+msgstr "Hierdie kontak vorm bevat CAPTCH vorm areas, maar die tydelike plek vir lêers (%s) bestaan nie of is nie skryfbaar nie. Jy kan die plek skep of dit self toelaatbaar maak."
 
 #: contact-form-7/modules/captcha.php:294
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
@@ -647,7 +647,7 @@ msgstr "Radio-knoppies"
 #: contact-form-7/modules/checkbox.php:193
 #: contact-form-7/modules/file.php:233
 msgid "Required field?"
-msgstr "Vereiste vorm area"
+msgstr "Verpligte vorm area?"
 
 #: contact-form-7/modules/checkbox.php:209
 msgid "Choices"
@@ -675,43 +675,43 @@ msgstr "En voeg hierdie kode in die Mail vorm areas onder in."
 
 #: contact-form-7/modules/file.php:197
 msgid "Uploading a file fails for any reason"
-msgstr "LÍer oplaai faal vir enige rede"
+msgstr "Lêer oplaai faal vir enige rede"
 
 #: contact-form-7/modules/file.php:198
 msgid "Failed to upload file."
-msgstr "Kon nie die lÍer oplaai nie."
+msgstr "Kon nie die lêer oplaai nie."
 
 #: contact-form-7/modules/file.php:202
 msgid "Uploaded file is not allowed file type"
-msgstr "LÍer is nie die regte tipe lÍer vir oplaai nie"
+msgstr "Lêer is nie die regte tipe lêer vir oplaai nie"
 
 #: contact-form-7/modules/file.php:203
 msgid "This file type is not allowed."
-msgstr "Hierdie lÍer tipe is nie toegelaat nie."
+msgstr "Hierdie lêer tipe is nie toegelaat nie."
 
 #: contact-form-7/modules/file.php:207
 msgid "Uploaded file is too large"
-msgstr "LÍer is te groot om op te laai."
+msgstr "Lêer is te groot om op te laai."
 
 #: contact-form-7/modules/file.php:208
 msgid "This file is too large."
-msgstr "Die lÍer is te groot."
+msgstr "Die lêer is te groot."
 
 #: contact-form-7/modules/file.php:212
 msgid "Uploading a file fails for PHP error"
-msgstr "LÍer oplaai faal aan gesien van PHP probleem"
+msgstr "Lêer oplaai het misluk aangesien van PHP probleem"
 
 #: contact-form-7/modules/file.php:213
 msgid "Failed to upload file. Error occurred."
-msgstr "Kon nie die lÍer oplaai nie. Het fout begaan."
+msgstr "Kon nie die lêer oplaai nie. Het fout begaan."
 
 #: contact-form-7/modules/file.php:224
 msgid "File upload"
-msgstr "LÍer oplaai"
+msgstr "Lêer oplaai"
 
 #: contact-form-7/modules/file.php:247
 msgid "File size limit"
-msgstr "LÍer grootte limiet"
+msgstr "Lêer grootte limiet"
 
 #: contact-form-7/modules/file.php:247
 msgid "bytes"
@@ -719,16 +719,16 @@ msgstr "grepe"
 
 #: contact-form-7/modules/file.php:250
 msgid "Acceptable file types"
-msgstr "Aanvaarbare lÍer tipes"
+msgstr "Aanvaarbare lêer tipes"
 
 #: contact-form-7/modules/file.php:257
 msgid "And, put this code into the File Attachments field below."
-msgstr "En sit hierdie code in die LÍer Skakels veld area onder."
+msgstr "En sit hierdie code in die Lêer Skakels veld area onder."
 
 #: contact-form-7/modules/file.php:282
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Die kontak vorm bevat lÍer oplaai vorm areas, maar die tydelike plek vir lÍers (%s) bestaan nie of is nie skryfbaar nie. Jy kan die plek skep of dit self toelaatbaar maak."
+msgstr "Die kontak vorm bevat lêer oplaai vorm areas, maar die tydelike plek vir lêers (%s) bestaan nie of is nie skryfbaar nie. Jy kan die plek skep of dit self toelaatbaar maak."
 
 #: contact-form-7/modules/icl.php:74
 msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
@@ -764,7 +764,7 @@ msgstr "Laat meervoudige seleksies toe?"
 
 #: contact-form-7/modules/select.php:176
 msgid "Insert a blank item as the first option?"
-msgstr "Voeg 'n leÎ opsie in as die eerste opsie?"
+msgstr "Voeg 'n leê opsie in as die eerste opsie?"
 
 #: contact-form-7/modules/submit.php:55
 msgid "Submit button"
@@ -801,9 +801,8 @@ msgstr "Hierdie vorm area benodig die skrywer se e-pos adres"
 #: contact-form-7/modules/text.php:183
 #: contact-form-7/modules/textarea.php:149
 msgid "Default value"
-msgstr "Bestek waarde"
+msgstr "Standaard waarde"
 
 #: contact-form-7/modules/textarea.php:118
 msgid "Text area"
 msgstr "Teks area"
-
