@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 22:01+0900\n"
-"PO-Revision-Date: 2011-10-21 20:28+0900\n"
+"POT-Creation-Date: 2011-10-21 20:14+0900\n"
+"PO-Revision-Date: 2011-10-21 20:32+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: Schalk Burger\n"
 "MIME-Version: 1.0\n"
@@ -249,7 +249,7 @@ msgid "Validation errors occurred. Please confirm the fields and submit it again
 msgstr "Validasie probleme het voorgeval. Maak seker die vorm areas is ingevul en probeer weer stuur."
 
 #: contact-form-7/includes/functions.php:21
-msgid "There is a field of term that sender is needed to accept"
+msgid "There are terms that the sender must accept"
 msgstr "Daar is 'n vorm area of term wat aanvaar moet word voor dit gestuur kan word"
 
 #: contact-form-7/includes/functions.php:22
@@ -257,7 +257,7 @@ msgid "Please accept the terms to proceed."
 msgstr "Aanvaar die terme asseblief om voort te gaan."
 
 #: contact-form-7/includes/functions.php:26
-msgid "Email address that sender entered is invalid"
+msgid "Email address that the sender entered is invalid"
 msgstr "E-pos adres van die afsender is ongeldig"
 
 #: contact-form-7/includes/functions.php:27
@@ -265,7 +265,7 @@ msgid "Email address seems invalid."
 msgstr "E-pos adres blyk ongeldig."
 
 #: contact-form-7/includes/functions.php:31
-msgid "There is a field that sender is needed to fill in"
+msgid "There is a field that the sender must fill in"
 msgstr "Daar is 'n vorm area wat die afsender moet invul. "
 
 #: contact-form-7/includes/functions.php:32
@@ -514,14 +514,18 @@ msgid "Thai"
 msgstr "Thai"
 
 #: contact-form-7/includes/functions.php:214
+msgid "Tagalog"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:215
 msgid "Turkish"
 msgstr "Turks"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:216
 msgid "Ukrainian"
 msgstr "Oekraïns"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:217
 msgid "Vietnamese"
 msgstr "Viêtnamees"
 
@@ -639,6 +643,9 @@ msgid "This contact form contains CAPTCHA fields, but the necessary libraries (G
 msgstr "Hierdie kontak vorm bevat CAPTCH vorm areas, maar die nodige sagteware biblioteke (GD en FreeType) is nie beskikbaar op hierdie bediener."
 
 #: contact-form-7/modules/checkbox.php:183
+msgid "Checkboxes"
+msgstr ""
+
 #: contact-form-7/modules/checkbox.php:186
 msgid "Radio buttons"
 msgstr "Radio-knoppies"
