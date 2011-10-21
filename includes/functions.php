@@ -18,17 +18,17 @@ function wpcf7_messages() {
 		),
 
 		'accept_terms' => array(
-			'description' => __( "There is a field of term that sender is needed to accept", 'wpcf7' ),
+			'description' => __( "There are terms that the sender must accept", 'wpcf7' ),
 			'default' => __( 'Please accept the terms to proceed.', 'wpcf7' )
 		),
 
 		'invalid_email' => array(
-			'description' => __( "Email address that sender entered is invalid", 'wpcf7' ),
+			'description' => __( "Email address that the sender entered is invalid", 'wpcf7' ),
 			'default' => __( 'Email address seems invalid.', 'wpcf7' )
 		),
 
 		'invalid_required' => array(
-			'description' => __( "There is a field that sender is needed to fill in", 'wpcf7' ),
+			'description' => __( "There is a field that the sender must fill in", 'wpcf7' ),
 			'default' => __( 'Please fill the required field.', 'wpcf7' )
 		)
 	);
