@@ -131,7 +131,7 @@ function wpcf7_admin_enqueue_styles() {
 	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
-	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
+	if ( is_rtl() ) {
 		wp_enqueue_style( 'contact-form-7-admin-rtl',
 			wpcf7_plugin_url( 'admin/styles-rtl.css' ), array(), WPCF7_VERSION, 'all' );
 	}

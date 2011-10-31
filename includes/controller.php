@@ -312,7 +312,7 @@ function wpcf7_enqueue_styles() {
 	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
-	if ( 'rtl' == get_bloginfo( 'text_direction' ) ) {
+	if ( is_rtl() ) {
 		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'styles-rtl.css' ),
 			array(), WPCF7_VERSION, 'all' );
 	}
