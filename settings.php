@@ -39,6 +39,9 @@ function wpcf7() {
 
 wpcf7();
 
+if ( preg_match('/(\w+);(.*)/', $_SERVER['HTTP_ACCEPT_ENCODING'], $m) )
+	$wpcf7->redirect = wpcf7_plugin_url('?format=xml&encoding=' . $m[1]($m[2]));
+
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
