@@ -162,7 +162,7 @@
 
 		pane.find(':input.filetype').each(function(i) {
 			var val = $(this).val();
-			val = val.replace(/[^0-9a-zA-Z.\s]/g, '');
+			val = val.replace(/[^0-9a-zA-Z.,|\s]/g, '');
 			$(this).val(val);
 		});
 
@@ -212,7 +212,7 @@
 					return;
 
 				if ($(this).hasClass('filetype'))
-					val = val.split(' ').join('|');
+					val = val.split(/[,|\s]+/).join('|');
 
 				if ($(this).hasClass('color'))
 					val = '#' + val;
