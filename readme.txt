@@ -29,6 +29,7 @@ It is hard to continue development and support for this plugin without contribut
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi, [Yaser Mohammed](http://www.englize.com/)
 * Armenian (hy_AM) - [Emmanuelle Traduction](http://www.translatonline.com/)
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
+* Belarusian (be_BY) - [Igor Dubilei](http://www.itransition.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), [Gervásio Antônio](http://twitter.com/gervasioantonio)
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
