@@ -85,4 +85,9 @@ function wpcf7_is_name( $string ) {
 	return preg_match( '/^[A-Za-z][-A-Za-z0-9_:.]*$/', $string );
 }
 
+function wpcf7_sanitize_unit_tag( $tag ) {
+	$tag = preg_replace( '/[^A-Za-z0-9_-]/', '', $tag );
+	return $tag;
+}
+
 ?>

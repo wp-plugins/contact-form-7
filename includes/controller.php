@@ -41,7 +41,7 @@ function wpcf7_ajax_json_echo() {
 
 	if ( isset( $_POST['_wpcf7'] ) ) {
 		$id = (int) $_POST['_wpcf7'];
-		$unit_tag = $_POST['_wpcf7_unit_tag'];
+		$unit_tag = wpcf7_sanitize_unit_tag( $_POST['_wpcf7_unit_tag'] );
 
 		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
 
