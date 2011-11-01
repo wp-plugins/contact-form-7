@@ -21,7 +21,7 @@ function wpcf7_ajax_onload() {
 
 	$echo = json_encode( $items );
 
-	if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
+	if ( wpcf7_is_xhr() ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
 		echo $echo;
 	}
@@ -84,7 +84,7 @@ function wpcf7_ajax_json_echo() {
 
 	$echo = json_encode( $items );
 
-	if ( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ) {
+	if ( wpcf7_is_xhr() ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
 		echo $echo;
 	} else {
@@ -93,6 +93,13 @@ function wpcf7_ajax_json_echo() {
 	}
 
 	exit();
+}
+
+function wpcf7_is_xhr() {
+	if ( ! isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) )
+		return false;
+
+	return $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
 }
 
 add_action( 'init', 'wpcf7_submit_nonajax', 11 );
