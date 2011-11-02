@@ -1,0 +1,884 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-02 11:27+0900\n"
+"PO-Revision-Date: 2011-11-02 16:36+0530\n"
+"Last-Translator: shivangi <shivangi@outshinesolutions.com>\n"
+"Language-Team: Team Ajoft <info@ajoft.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Maltese\n"
+"X-Poedit-Country: MALTA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Biss ieħor  plugin formola ta 'kuntatt.  Sempliċi imma flessibbli."
+
+#: contact-form-7/settings.php:99
+msgid "Contact Forms"
+msgstr "Kuntatt  Formoli"
+
+#: contact-form-7/settings.php:100
+msgid "Contact Form"
+msgstr "Kuntatt  Form"
+
+#: contact-form-7/settings.php:191
+#, php-format
+msgid "Contact form %d"
+msgstr "Kuntatt %d forma "
+
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
+msgid "Contact Form 7"
+msgstr "Kuntatt  Forma 7"
+
+#: contact-form-7/admin/admin.php:114
+msgid "Contact"
+msgstr "Kuntatt"
+
+#: contact-form-7/admin/admin.php:117
+msgid "Edit Contact Forms"
+msgstr "Edit  Formoli Kuntatt"
+
+#: contact-form-7/admin/admin.php:117
+msgid "Edit"
+msgstr "Edit"
+
+#: contact-form-7/admin/admin.php:157
+msgid "Generate Tag"
+msgstr "Iġġenera  Tag"
+
+#: contact-form-7/admin/admin.php:226
+msgid "Settings"
+msgstr "Settings"
+
+#: contact-form-7/admin/admin.php:237
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:238
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:239
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:240
+msgid "Docs"
+msgstr "Docs"
+
+#: contact-form-7/admin/admin.php:241
+msgid "http://contactform7.com/faq/"
+msgstr "Docs"
+
+#: contact-form-7/admin/admin.php:242
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact-form-7/admin/admin.php:243
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:244
+msgid "Support"
+msgstr "appoġġ"
+
+#: contact-form-7/admin/admin.php:258
+msgid "Contact form created."
+msgstr "Kuntatt  forma maħluqa."
+
+#: contact-form-7/admin/admin.php:261
+msgid "Contact form saved."
+msgstr "Kuntatt  forma ffrankati."
+
+#: contact-form-7/admin/admin.php:264
+msgid "Contact form deleted."
+msgstr "Kuntatt  forma mħassra."
+
+#: contact-form-7/admin/admin.php:298
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Kuntatt  Forma 7 bżonn l-appoġġ  tiegħek. Jekk jogħġbok jiddonaw illum."
+
+#: contact-form-7/admin/admin.php:299
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Kontribuzzjoni tiegħek tkun meħtieġa sabiex tagħmel dan plugin aħjar."
+
+#: contact-form-7/admin/admin.php:305
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:305
+msgid "Donate"
+msgstr "jiddonaw"
+
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+#, fuzzy
+msgid "Add New"
+msgstr "Żid  ġodda"
+
+#: contact-form-7/admin/edit.php:41
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopja ta 'din  il-kodiċi u paste fil-kontenut tiegħek widget, wara l-paġna  jew test."
+
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "Kodiċi  antik huwa wkoll disponibbli."
+
+#: contact-form-7/admin/edit.php:55
+msgid "Save"
+msgstr "Ħlief"
+
+#: contact-form-7/admin/edit.php:62
+msgid "Copy"
+msgstr "kopja"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Delete"
+msgstr "Ħassar"
+
+#: contact-form-7/admin/edit.php:69
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Int wasalt biex tħassar din il-formola ta 'kuntatt.  \n"
+"   \"Ikkanċella\" biex tieqaf, \"OK\" li titħassar."
+
+#: contact-form-7/admin/edit.php:78
+msgid "Form"
+msgstr "formola"
+
+#: contact-form-7/admin/edit.php:81
+msgid "Mail"
+msgstr "Mail"
+
+#: contact-form-7/admin/edit.php:84
+msgid "Mail (2)"
+msgstr "Mail (2)"
+
+#: contact-form-7/admin/edit.php:89
+msgid "Use mail (2)"
+msgstr "Posta  Użu (2)"
+
+#: contact-form-7/admin/edit.php:91
+msgid "Messages"
+msgstr "messaġġi"
+
+#: contact-form-7/admin/edit.php:94
+msgid "Additional Settings"
+msgstr "Settings  addizzjonali"
+
+#: contact-form-7/admin/edit.php:141
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Uża l-lingwa default (%s)"
+
+#: contact-form-7/admin/edit.php:145
+msgid "Or"
+msgstr "jew"
+
+#: contact-form-7/admin/edit.php:150
+msgid "(select language)"
+msgstr "(lingwa  jagħżel)"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "għal:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "minn:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "suġġett"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Headers  addizzjonali:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Fajl  annessi:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Jużaw tip kontenut HTML"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:88
+msgid "Message body:"
+msgstr "Korp messaġġ:"
+
+#: contact-form-7/includes/classes.php:524
+msgid "Untitled"
+msgstr "Untitled"
+
+#: contact-form-7/includes/functions.php:6
+msgid "Sender's message was sent successfully"
+msgstr "Messaġġ  mittent intbagħtet b'suċċess"
+
+#: contact-form-7/includes/functions.php:7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Messaġġ  tiegħek kien mibgħut b'suċċess. Grazzi."
+
+#: contact-form-7/includes/functions.php:11
+msgid "Sender's message was failed to send"
+msgstr "Messaġġ  mittent kienet naqset li tibgħat"
+
+#: contact-form-7/includes/functions.php:12
+#: contact-form-7/modules/akismet.php:101
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Naqas li  jibgħat messaġġ tiegħek.  Jekk jogħġbok ipprova  aktar tard jew ikkuntattja l-amministratur b'metodu ieħor."
+
+#: contact-form-7/includes/functions.php:16
+msgid "Validation errors occurred"
+msgstr "Żbalji validazzjoni seħħew"
+
+#: contact-form-7/includes/functions.php:17
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Żbalji validazzjoni seħħew. Jekk jogħġbok ikkonferma l-oqsma  u jissottomettu mill-ġdid."
+
+#: contact-form-7/includes/functions.php:21
+msgid "There are terms that the sender must accept"
+msgstr "Jeżistu termini li l-mittent irid jaċċetta"
+
+#: contact-form-7/includes/functions.php:22
+msgid "Please accept the terms to proceed."
+msgstr "Jekk jogħġbok aċċetta t-termini li jipproċedi."
+
+#: contact-form-7/includes/functions.php:26
+msgid "Email address that the sender entered is invalid"
+msgstr "ndirizz email li l-mittent mdaħħla hija invalida"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Email address seems invalid."
+msgstr "Indirizz email tidher invalidu."
+
+#: contact-form-7/includes/functions.php:31
+msgid "There is a field that the sender must fill in"
+msgstr "Hemm qasam li l-mittent irid jimla"
+
+#: contact-form-7/includes/functions.php:32
+msgid "Please fill the required field."
+msgstr "Jekk jogħġbok imla l-kamp meħtieġ."
+
+#: contact-form-7/includes/functions.php:56
+msgid "Your Name"
+msgstr "Your Name"
+
+#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/functions.php:58
+msgid "(required)"
+msgstr "(meħtieġ"
+
+#: contact-form-7/includes/functions.php:58
+msgid "Your Email"
+msgstr "Your Email"
+
+#: contact-form-7/includes/functions.php:60
+msgid "Subject"
+msgstr "suġġett"
+
+#: contact-form-7/includes/functions.php:62
+msgid "Your Message"
+msgstr "messaġġ tiegħek"
+
+#: contact-form-7/includes/functions.php:64
+msgid "Send"
+msgstr "Ibgħat"
+
+#: contact-form-7/includes/functions.php:72
+#, php-format
+msgid "From: %s"
+msgstr "Minn: %s"
+
+#: contact-form-7/includes/functions.php:73
+#, php-format
+msgid "Subject: %s"
+msgstr "Suġġett: %s"
+
+#: contact-form-7/includes/functions.php:74
+msgid "Message Body:"
+msgstr "Korp  messaġġ:"
+
+#: contact-form-7/includes/functions.php:75
+#: contact-form-7/includes/functions.php:89
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Dan il-posta  tintbagħat bil-formola  ta 'kuntatt fuq %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:165
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: contact-form-7/includes/functions.php:166
+msgid "Albanian"
+msgstr "Albaniż"
+
+#: contact-form-7/includes/functions.php:167
+msgid "Arabic"
+msgstr "Għarbi"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Armenian"
+msgstr "Armen"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Belarusian"
+msgstr "Belarus"
+
+#: contact-form-7/includes/functions.php:171
+msgid "Bosnian"
+msgstr "Bosnijaċi"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Brazilian Portuguese"
+msgstr "Portugiż  Brażiljan"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Bulgarian"
+msgstr "Bulgaru"
+
+#: contact-form-7/includes/functions.php:174
+msgid "Catalan"
+msgstr "Katalan"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Chinese (Simplified)"
+msgstr "Ċiniż  (Semplifikat)"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Chinese (Traditional)"
+msgstr "Ċiniż  (Tradizzjonali)"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Croatian"
+msgstr "Kroat"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Czech"
+msgstr "Ċeka"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Danish"
+msgstr "danish"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Dutch"
+msgstr "Olandiż"
+
+#: contact-form-7/includes/functions.php:181
+msgid "English"
+msgstr "Ingliż"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Estonian"
+msgstr "Estonjan"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Finnish"
+msgstr "Finlandiż"
+
+#: contact-form-7/includes/functions.php:184
+msgid "French"
+msgstr "Franċiż"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Galician"
+msgstr "Galicia"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Georgian"
+msgstr "Ġorġjan"
+
+#: contact-form-7/includes/functions.php:187
+msgid "German"
+msgstr "Ġermaniż"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Greek"
+msgstr "Grieg"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Hebrew"
+msgstr "Ebrajk"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Hindi"
+msgstr "Ħindi"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Hungarian"
+msgstr "Ungeriż"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Indonesian"
+msgstr "Indoneżjan"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Italian"
+msgstr "Taljan"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Japanese"
+msgstr "Ġappuniż"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Korean"
+msgstr "Koreana"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Latvian"
+msgstr "Latvjan"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Lithuanian"
+msgstr "Litwana"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Macedonian"
+msgstr "Maċedonjan"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Malay"
+msgstr "Malajan"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Malayalam"
+msgstr "Malajalam"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Norwegian"
+msgstr "Norveġiż"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Persian"
+msgstr "Persjan"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Polish"
+msgstr "Pollakk"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Portuguese"
+msgstr "Portugiż"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Russian"
+msgstr "Russu"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Romanian"
+msgstr "Rumen"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Serbian"
+msgstr "Serb"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Slovak"
+msgstr "Slovakka"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Slovene"
+msgstr "Slovena"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Spanish"
+msgstr "Spanjol"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Swedish"
+msgstr "Svediż"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Tamil"
+msgstr "tamil"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Thai"
+msgstr "Tajlandiż"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Turkish"
+msgstr "Tork"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Ukrainian"
+msgstr "Ukraina"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Vietnamese"
+msgstr "Vjetnamiż"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "aċċettazzjoni"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+msgid "Name"
+msgstr "isem"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+msgid "optional"
+msgstr "mhux obbligatorju"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "Jagħmlu dan Checkbox ċċekkjati  awtomatikament?"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "Jagħmlu dan Checkbox xogħol  invers?"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Dan ifisser viżitatur li taċċetta l-unchecks tul dan."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopja ta 'din  il-kodiċi u paste fil-forma  tax-xellug."
+
+#: contact-form-7/modules/akismet.php:100
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet  ġġudikati l-attività li jibgħat bħala spamming"
+
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Biex tuża  CAPTCHA, inti għandek bżonn <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\"> CAPTCHA Really Simple </a> plugin installat."
+
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Il-kodiċi  daħal mittent li ma taqbilx ma l-CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "Kodiċi  daħal tiegħek hija żbaljata."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Nota: Biex tuża CAPTCHA, inti għandek bżonn Really Simple CAPTCHA plugin installat."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "image  settings"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "kulur miksub"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "kulur fl-isfond"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "daqs immaġini"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "żgħar"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "medji"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "kbir"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "Qasam  settings tal-input"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "għall-immaġni"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "Għall-qasam  tad-dħul"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Din il-formola ta 'kuntatt fih oqsma CAPTCHA, iżda l-folder temporanju għall-fajls (%s) ma jeżistix jew ma jkunx writable. Tista 'toħloq il-folder jew bidla  permess tagħha manwalment."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Din il-formola ta 'kuntatt fih oqsma CAPTCHA, iżda l-libreriji meħtieġa (GD u FreeType) mhumiex disponibbli fuq server tiegħek."
+
+#: contact-form-7/modules/checkbox.php:183
+msgid "Checkboxes"
+msgstr "Checkboxes"
+
+#: contact-form-7/modules/checkbox.php:186
+msgid "Radio buttons"
+msgstr "radju  buttuni"
+
+#: contact-form-7/modules/checkbox.php:207
+#: contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:159
+#: contact-form-7/modules/text.php:161
+#: contact-form-7/modules/textarea.php:134
+msgid "Required field?"
+msgstr "Meħtieġa  qasam?"
+
+#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/select.php:173
+msgid "Choices"
+msgstr "għażliet"
+
+#: contact-form-7/modules/checkbox.php:225
+#: contact-form-7/modules/select.php:175
+msgid "* One choice per line."
+msgstr "*  Wieħed għażla għal kull linja."
+
+#: contact-form-7/modules/checkbox.php:229
+msgid "Put a label first, a checkbox last?"
+msgstr "Poġġi  tikketta ewwel, Checkbox aħħar?"
+
+#: contact-form-7/modules/checkbox.php:230
+msgid "Wrap each item with <label> tag?"
+msgstr "Kebbeb  kull oġġett ma tag <label>?"
+
+#: contact-form-7/modules/checkbox.php:232
+msgid "Make checkboxes exclusive?"
+msgstr "Għamla  checkboxes esklużività?"
+
+#: contact-form-7/modules/checkbox.php:240
+#: contact-form-7/modules/select.php:187
+#: contact-form-7/modules/text.php:204
+#: contact-form-7/modules/textarea.php:166
+msgid "And, put this code into the Mail fields below."
+msgstr "U, tpoġġi dan il-kodiċi fl-oqsma Mail  hawn taħt."
+
+#: contact-form-7/modules/file.php:204
+msgid "Uploading a file fails for any reason"
+msgstr "Uploading  fajl jonqos għal xi raġuni"
+
+#: contact-form-7/modules/file.php:205
+msgid "Failed to upload file."
+msgstr "Naqset milli upload fajl."
+
+#: contact-form-7/modules/file.php:209
+msgid "Uploaded file is not allowed file type"
+msgstr "File uploaded mhux permess tip fajl"
+
+#: contact-form-7/modules/file.php:210
+msgid "This file type is not allowed."
+msgstr "Dan it-tip fajl ma jkunx permess."
+
+#: contact-form-7/modules/file.php:214
+msgid "Uploaded file is too large"
+msgstr "File uploaded huwa kbir wisq"
+
+#: contact-form-7/modules/file.php:215
+msgid "This file is too large."
+msgstr "Dan il-fajl huwa kbir wisq."
+
+#: contact-form-7/modules/file.php:219
+msgid "Uploading a file fails for PHP error"
+msgstr "Uploading  fajl jonqos għal żball PHP"
+
+#: contact-form-7/modules/file.php:220
+msgid "Failed to upload file. Error occurred."
+msgstr "Naqset milli upload fajl. Ġara żball."
+
+#: contact-form-7/modules/file.php:231
+msgid "File upload"
+msgstr "file upload"
+
+#: contact-form-7/modules/file.php:254
+msgid "File size limit"
+msgstr "Limitu tad-daqs tal-fajl"
+
+#: contact-form-7/modules/file.php:254
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/modules/file.php:257
+msgid "Acceptable file types"
+msgstr "Tipi  Aċċettabbli fajl"
+
+#: contact-form-7/modules/file.php:264
+msgid "And, put this code into the File Attachments field below."
+msgstr "U, tpoġġi dan il-kodiċi fil-qasam  Mehmużin Fajl hawn taħt."
+
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Din il-formola ta 'kuntatt fih oqsma uploading fajl, iżda l-folder temporanju għall-fajls (% s) ma jeżistix jew ma jkunx writable.  Tista 'toħloq il-folder jew  bidla permess tagħha manwalment."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Mittenti  ma jidħolx it-tweġiba  korretta għall-kwizz"
+
+#: contact-form-7/modules/quiz.php:161
+msgid "Your answer is not correct."
+msgstr "Tweġiba  tiegħek mhux korrett."
+
+#: contact-form-7/modules/quiz.php:171
+msgid "Quiz"
+msgstr "kwizz"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "Quizzes"
+msgstr "Kwiżżijiet"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "*  Kwizz | tweġiba (per eżempju, 1 1 =  |? 2)"
+
+#: contact-form-7/modules/select.php:150
+msgid "Drop-down menu"
+msgstr "Drop-down menu"
+
+#: contact-form-7/modules/select.php:179
+msgid "Allow multiple selections?"
+msgstr "Ħalli  selezzjonijiet multipli?"
+
+#: contact-form-7/modules/select.php:180
+msgid "Insert a blank item as the first option?"
+msgstr "Daħħal  oġġett bjank kif l-ewwel għażla?"
+
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "Mittenti"
+
+#: contact-form-7/modules/submit.php:66
+msgid "Submit button"
+msgstr "Issottometti  buttuna"
+
+#: contact-form-7/modules/submit.php:84
+msgid "Label"
+msgstr "tikketta"
+
+#: contact-form-7/modules/text.php:138
+msgid "Text field"
+msgstr "qasam tat-test"
+
+#: contact-form-7/modules/text.php:141
+msgid "Email field"
+msgstr "qasam  email"
+
+#: contact-form-7/modules/text.php:183
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:185
+msgid "This field requires author's name"
+msgstr "Dan il-qasam teħtieġ l-isem  awtur"
+
+#: contact-form-7/modules/text.php:186
+msgid "This field requires author's URL"
+msgstr "Dan il-qasam jeħtieġ ikteb  awtur"
+
+#: contact-form-7/modules/text.php:188
+msgid "This field requires author's email address"
+msgstr "Dan il-qasam teħtieġ l-indirizz email awtur"
+
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
+msgid "Default value"
+msgstr "valur awtomatiċi"
+
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "Uża  dan it-test kif watermark?"
+
+#: contact-form-7/modules/textarea.php:125
+msgid "Text area"
+msgstr "qasam test"
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong> "
+#~ "You must <a href=\"%s\">create the table</a> for it to work."
+#~ msgstr ""
+#~ "<strong>  tabella database għall-Formola  Kuntatt 7 ma teżistix. </"
+#~ "strong> Int trid href=\"%s\"> <a toħloq il-mejda </a> biex din taħdem."
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
+#~ msgstr ""
+#~ "<strong>  It-tabella database għall-Formola Kuntatt 7 ma teżistix.  </"
+#~ "strong>"
+
+#~ msgid "Show"
+#~ msgstr "Uri"
+
+#~ msgid "Database table created."
+#~ msgstr "Tabella database maħluqa."
+
+#~ msgid "Failed to create database table."
+#~ msgstr "Fallew milli joħolqu tabella database."
+
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr ""
+#~ "Huwa dan  plugin utli għalik? Jekk  inti bhalu, jekk jogħġbok tgħin lill-"
+#~ "iżviluppatur."
+
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr ""
+#~ "L-iżvilupp  plugin u jipprovdi appoġġ għall-utent huwa verament  ħidma "
+#~ "iebsa. Jekk jogħġbok jgħinu."
+
+#~ msgid "Form content"
+#~ msgstr "Contingut del formulari"
+
+#~ msgid "Mail template"
+#~ msgstr "Plantilla d'email"
+
+#~ msgid "Sender field:"
+#~ msgstr "Camp de remitent:"
+
+#~ msgid "Recipient address:"
+#~ msgstr "Adreça del destinatari:"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "Esborar aquest formulari de contacte"
+
+#~ msgid "Insert"
+#~ msgstr "Inserir "
