@@ -107,6 +107,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 3.0.1 =
+
+* Removed unused icl.php file from modules folder.
+* Replaced deprecated get_bloginfo('text_direction') with is_rtl().
+* Made “Acceptable file types” field in the File upload tag generator being able to accept comma (,) and pipe (|) as separating character in addition to space.
+* Added sanitization for $_POST['_wpcf7_unit_tag'] value for avoiding possible abuse.
+* Updated jquery.form.js to 2.87.
+* Translations for Tagalog, Belarusian, and Maltese have been created.
+* Translations for Italian, German, Japanese, Russian, Latvian, and Afrikaans have been updated.
+
 = 3.0 =
 
 * Contact Form 7 3.0 utilizes Custom Post Types feature to save contact forms. It does not create its own table (contact_form_7) anymore.
