@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V3.0.1 X\n"
+"Project-Id-Version: Contact Form 7 | V3.0.1 X1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-02 23:11+0900\n"
-"PO-Revision-Date: 2011-11-14 19:49+0100\n"
+"PO-Revision-Date: 2011-11-14 20:06+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -246,7 +246,7 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:17
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken Sie nochmals auf senden."
+msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken Sie nochmals auf 'Senden'."
 
 #: contact-form-7/includes/functions.php:21
 msgid "There are terms that the sender must accept"
