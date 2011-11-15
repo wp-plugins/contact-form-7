@@ -17,7 +17,7 @@ function wpcf7_special_mail_tag( $output, $name ) {
 		$url = untrailingslashit( home_url() );
 		$url = preg_replace( '%(?<!:|/)/.*$%', '', $url );
 		$url .= wpcf7_get_request_uri();
-		$output = $url;
+		$output = esc_url( $url );
 	}
 
 	elseif ( '_date' == $name )
