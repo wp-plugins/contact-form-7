@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V3.0.1\n"
+"Project-Id-Version: Contact Form 7 | V3.0.1 X\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-02 23:11+0900\n"
-"PO-Revision-Date: 2011-11-05 10:11+0100\n"
+"PO-Revision-Date: 2011-11-14 19:49+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: contact-form-7/wp-contact-form-7.php:5
 msgid "Just another contact form plugin. Simple but flexible."
-msgstr "Bloss ein anderes Kontaktformular Plugin. Einfach aber flexibel."
+msgstr "Nur ein weiteres Kontaktformular-Plugin. Einfach, aber flexibel."
 
 #: contact-form-7/settings.php:99
 msgid "Contact Forms"
@@ -127,7 +127,7 @@ msgstr "Neues Formular"
 
 #: contact-form-7/admin/edit.php:41
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Kopieren Sie diesen Code und fügen ihn in einem Artikel, einer Seite oder einem Text Widget ein."
+msgstr "Kopieren Sie diesen Code und fügen Sie ihn in einem Artikel, einer Seite oder einem Text-Widget ein."
 
 #: contact-form-7/admin/edit.php:47
 msgid "Old code is also available."
@@ -151,7 +151,7 @@ msgid ""
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "Soll dieses Kontaktformular wirklich gelöscht werden?\n"
-"'Abbrechen' um zu stoppen oder 'OK' um zu löschen."
+"Klicken Sie auf 'Abbrechen', um das Formular nicht zu löschen oder 'OK', um das Löschen zu bestätigen."
 
 #: contact-form-7/admin/edit.php:78
 msgid "Form"
@@ -225,7 +225,7 @@ msgstr "Ohne Titel"
 
 #: contact-form-7/includes/functions.php:6
 msgid "Sender's message was sent successfully"
-msgstr "Die Nachricht vom Absender wurde erfolgreich gesendet."
+msgstr "Die Nachricht des Absenders wurde erfolgreich gesendet."
 
 #: contact-form-7/includes/functions.php:7
 msgid "Your message was sent successfully. Thanks."
@@ -233,12 +233,12 @@ msgstr "Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!"
 
 #: contact-form-7/includes/functions.php:11
 msgid "Sender's message was failed to send"
-msgstr "Die Nachricht vom Absender konnte nicht gesendet werden."
+msgstr "Die Nachricht des Absenders konnte nicht gesendet werden."
 
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/modules/akismet.php:101
 msgid "Failed to send your message. Please try later or contact the administrator by another method."
-msgstr "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren den Administrator mit einem anderen Verfahren."
+msgstr "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es noch einmal zu einem späteren Zeitpunkt oder informieren Sie den Administrator der Webseite."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Validation errors occurred"
@@ -246,11 +246,11 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:17
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken nochmals auf senden."
+msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken Sie nochmals auf senden."
 
 #: contact-form-7/includes/functions.php:21
 msgid "There are terms that the sender must accept"
-msgstr "Es gibt Bedingungen, die der Absender aktzeptieren muss."
+msgstr "Es gibt Bedingungen, die der Absender akzeptieren muss."
 
 #: contact-form-7/includes/functions.php:22
 msgid "Please accept the terms to proceed."
@@ -258,11 +258,11 @@ msgstr "Bitte akzeptieren Sie die Bedingungen um fortzufahren."
 
 #: contact-form-7/includes/functions.php:26
 msgid "Email address that the sender entered is invalid"
-msgstr "Die E-Mail Adresse des Absenders ist ungültig!"
+msgstr "Die E-Mail-Adresse des Absenders ist ungültig!"
 
 #: contact-form-7/includes/functions.php:27
 msgid "Email address seems invalid."
-msgstr "Die E-Mail Adresse scheint nicht gültig zu sein."
+msgstr "Die E-Mail-Adresse scheint nicht gültig zu sein."
 
 #: contact-form-7/includes/functions.php:31
 msgid "There is a field that the sender must fill in"
@@ -283,7 +283,7 @@ msgstr "(Pflichtfeld)"
 
 #: contact-form-7/includes/functions.php:58
 msgid "Your Email"
-msgstr "Ihre E-Mail Adresse"
+msgstr "Ihre E-Mail-Adresse"
 
 #: contact-form-7/includes/functions.php:60
 msgid "Subject"
@@ -315,7 +315,7 @@ msgstr "Nachrichtentext:"
 #: contact-form-7/includes/functions.php:89
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Dieses Mail wurde über das Kontaktformular von %1$s (%2$s) gesendet"
+msgstr "Diese E-Mail wurde über das Kontaktformular von %1$s (%2$s) gesendet"
 
 #: contact-form-7/includes/functions.php:165
 msgid "Afrikaans"
@@ -570,12 +570,12 @@ msgstr "Diese Auswahlbox umkehren (Invert)?"
 
 #: contact-form-7/modules/acceptance.php:175
 msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Bedeutet, dass der Besucher die Bedingungen akzeptiert wenn er die Auswahlbox deaktiviert."
+msgstr "* Bedeutet, dass der Besucher die Bedingungen akzeptiert, indem er die Auswahlbox deaktiviert."
 
 #: contact-form-7/modules/acceptance.php:180
 #: contact-form-7/modules/captcha.php:251
 msgid "Copy this code and paste it into the form left."
-msgstr "Kopieren Sie diesen Code und fügen ihn in das Formular links ein."
+msgstr "Kopieren Sie den Code und fügen diesen in das Formular links ein."
 
 #: contact-form-7/modules/akismet.php:100
 msgid "Akismet judged the sending activity as spamming"
@@ -583,11 +583,11 @@ msgstr "Akismet beurteilt Ihre Nachricht als Spam."
 
 #: contact-form-7/modules/captcha.php:66
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Um den Captcha Code anzuzeigen, muss dieses <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Plugin</a> installiert sein."
+msgstr "Um den Captcha-Code anzuzeigen, muss dieses <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Plugin</a> installiert sein."
 
 #: contact-form-7/modules/captcha.php:177
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Der eingegebene Code stimmt nicht mit dem angezeigten Captcha Code überein!"
+msgstr "Der eingegebene Code stimmt nicht mit dem angezeigten Captcha-Code überein!"
 
 #: contact-form-7/modules/captcha.php:178
 msgid "Your entered code is incorrect."
@@ -603,7 +603,7 @@ msgstr "Hinweis: Um Captcha zu verwenden, muss das Really Simple CAPTCHA Plugin 
 
 #: contact-form-7/modules/captcha.php:206
 msgid "Image settings"
-msgstr "Bild Einstellungen"
+msgstr "Bildeinstellungen"
 
 #: contact-form-7/modules/captcha.php:217
 msgid "Foreground color"
@@ -615,7 +615,7 @@ msgstr "Hintergrundfarbe"
 
 #: contact-form-7/modules/captcha.php:224
 msgid "Image size"
-msgstr "Bild Grösse"
+msgstr "Bildgrösse"
 
 #: contact-form-7/modules/captcha.php:225
 msgid "Small"
@@ -631,7 +631,7 @@ msgstr "Gross"
 
 #: contact-form-7/modules/captcha.php:232
 msgid "Input field settings"
-msgstr "Eingabefeld Einstellungen"
+msgstr "Eingabefeld-Einstellungen"
 
 #: contact-form-7/modules/captcha.php:252
 msgid "For image"
@@ -693,7 +693,7 @@ msgstr "Exklusive Auswahlboxen erstellen?"
 #: contact-form-7/modules/text.php:204
 #: contact-form-7/modules/textarea.php:166
 msgid "And, put this code into the Mail fields below."
-msgstr "Und setzen Sie diesen Code in das Nachrichtentext Feld unterhalb ein."
+msgstr "Und setzen Sie diesen Code in das Nachrichtentextfeld unterhalb ein."
 
 #: contact-form-7/modules/file.php:204
 msgid "Uploading a file fails for any reason"
@@ -721,7 +721,7 @@ msgstr "Diese Datei ist zu gross."
 
 #: contact-form-7/modules/file.php:219
 msgid "Uploading a file fails for PHP error"
-msgstr "Das hochladen der Datei verursachte einen PHP Error."
+msgstr "Das hochladen der Datei verursachte einen PHP-Error."
 
 #: contact-form-7/modules/file.php:220
 msgid "Failed to upload file. Error occurred."
@@ -729,11 +729,11 @@ msgstr "Das hochladen der Datei ist fehlgeschlagen! Es ist ein Fehler aufgetrete
 
 #: contact-form-7/modules/file.php:231
 msgid "File upload"
-msgstr "Datei Upload"
+msgstr "Datei-Upload"
 
 #: contact-form-7/modules/file.php:254
 msgid "File size limit"
-msgstr "Dateigrössen Begrenzung"
+msgstr "Dateigrössenbegrenzung"
 
 #: contact-form-7/modules/file.php:254
 msgid "bytes"
@@ -745,12 +745,12 @@ msgstr "Akzeptierte Dateitypen"
 
 #: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
-msgstr "Und setzen Sie diesen Code in das Datei Anhang Feld unterhalb ein."
+msgstr "Und setzen Sie diesen Code in das Datei-Anhang-Feld unterhalb ein."
 
 #: contact-form-7/modules/file.php:289
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Dieses Kontaktformular enthält Datei Upload Felder, aber der temporäre Ordner für die Dateien (%s) ist nicht vorhanden oder nicht beschreibbar. Sie können den Ordner anlegen oder die Berechtigung manuell ändern."
+msgstr "Dieses Kontaktformular enthält Datei-Upload-Felder, aber der temporäre Ordner für die Dateien (%s) ist nicht vorhanden oder nicht beschreibbar. Sie können den Ordner anlegen oder die Berechtigung manuell ändern."
 
 #: contact-form-7/modules/quiz.php:160
 msgid "Sender doesn't enter the correct answer to the quiz"
@@ -790,7 +790,7 @@ msgstr "Senden ..."
 
 #: contact-form-7/modules/submit.php:66
 msgid "Submit button"
-msgstr "Senden Button"
+msgstr "Senden-Button"
 
 #: contact-form-7/modules/submit.php:84
 msgid "Label"
@@ -798,11 +798,11 @@ msgstr "Beschriftung"
 
 #: contact-form-7/modules/text.php:138
 msgid "Text field"
-msgstr "Text Feld"
+msgstr "Textfeld"
 
 #: contact-form-7/modules/text.php:141
 msgid "Email field"
-msgstr "E-Mail Feld"
+msgstr "E-Mail-Feld"
 
 #: contact-form-7/modules/text.php:183
 msgid "Akismet"
@@ -818,7 +818,7 @@ msgstr "Dieses Feld erfordert die URL des Autors"
 
 #: contact-form-7/modules/text.php:188
 msgid "This field requires author's email address"
-msgstr "Dieses Feld erfordert die E-Mail Adresse des Autors"
+msgstr "Dieses Feld erfordert die E-Mail-Adresse des Autors"
 
 #: contact-form-7/modules/text.php:194
 #: contact-form-7/modules/textarea.php:156
@@ -832,7 +832,7 @@ msgstr "Diesen Text als Wasserzeichen nutzen?"
 
 #: contact-form-7/modules/textarea.php:125
 msgid "Text area"
-msgstr "Text Bereich"
+msgstr "Textbereich"
 
 #~ msgid ""
 #~ "This contact form contains [icl] tags, but they are obsolete and no "
