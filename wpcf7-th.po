@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-18 23:31+0900\n"
-"PO-Revision-Date: 2010-06-15 15:12+0700\n"
-"Last-Translator: kazama <anotherkaz@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2011-11-02 23:11+0900\n"
+"PO-Revision-Date: 2011-11-18 23:21+0700\n"
+"Last-Translator: ToshiK <woorank@gmail.com>\n"
+"Language-Team: ToshiK <woorank@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,145 +13,139 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Thai\n"
+"X-Poedit-Country: THAILAND\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/admin/admin.php:120
-#: contact-form-7/admin/edit.php:17
-#: contact-form-7/admin/edit.php:30
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "มันเป็นแค่ปลั๊กอิน contact form. ดูธรรมดาแต่ยืดหยุ่น"
+
+#: contact-form-7/settings.php:99
+msgid "Contact Forms"
+msgstr "ฟอร์มติดต่อหลายๆฟอร์ม"
+
+#: contact-form-7/settings.php:100
+msgid "Contact Form"
+msgstr "ฟอร์มติดต่อ"
+
+#: contact-form-7/settings.php:191
+#, php-format
+msgid "Contact form %d"
+msgstr "ฟอร์มติดต่อ %d"
+
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/admin.php:114
 msgid "Contact"
 msgstr "ติดต่อ"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:117
 msgid "Edit Contact Forms"
-msgstr "แก้ไขแบบฟอร์มติดต่อ"
+msgstr "แก้ไขฟอร์มติดต่อ"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:117
 msgid "Edit"
 msgstr "แก้ไข"
 
-#: contact-form-7/admin/admin.php:162
+#: contact-form-7/admin/admin.php:157
 msgid "Generate Tag"
 msgstr "สร้างป้ายกำกับ"
 
-#: contact-form-7/admin/admin.php:163
-msgid "Show"
-msgstr "แสดง"
-
-#: contact-form-7/admin/admin.php:164
-msgid "Hide"
-msgstr "ซ่อน"
-
-#: contact-form-7/admin/admin.php:261
-msgid "Contact form"
-msgstr "ฟอร์มติดต่อ"
-
-#: contact-form-7/admin/admin.php:280
+#: contact-form-7/admin/admin.php:226
 msgid "Settings"
 msgstr "การตั้งค่า"
 
-#: contact-form-7/admin/admin.php:291
+#: contact-form-7/admin/admin.php:237
 msgid "http://contactform7.com/"
 msgstr "http://contactform7.com/"
 
-#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:238
 msgid "Contactform7.com"
 msgstr "Contactform7.com"
 
-#: contact-form-7/admin/admin.php:293
+#: contact-form-7/admin/admin.php:239
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:294
+#: contact-form-7/admin/admin.php:240
 msgid "Docs"
 msgstr "เอกสารคู่มือ"
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:241
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:296
+#: contact-form-7/admin/admin.php:242
 msgid "FAQ"
 msgstr "คำถามที่พบบ่อย"
 
-#: contact-form-7/admin/admin.php:297
+#: contact-form-7/admin/admin.php:243
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:298
+#: contact-form-7/admin/admin.php:244
 msgid "Support"
 msgstr "ทีมงานช่วยเหลือ"
 
-#: contact-form-7/admin/admin.php:312
+#: contact-form-7/admin/admin.php:258
 msgid "Contact form created."
 msgstr "สร้างแบบฟอร์มติดต่อแล้ว"
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:261
 msgid "Contact form saved."
 msgstr "บันทึกแบบฟอร์มติดต่อแล้ว"
 
-#: contact-form-7/admin/admin.php:318
+#: contact-form-7/admin/admin.php:264
 msgid "Contact form deleted."
 msgstr "ลบแบบฟอร์มติดต่อแล้ว"
 
-#: contact-form-7/admin/admin.php:321
-msgid "Database table created."
-msgstr "สร้างตารางฐานข้อมูลแล้ว"
-
-#: contact-form-7/admin/admin.php:324
-msgid "Failed to create database table."
-msgstr "ล้มเหลวในการสร้างตารางฐานข้อมูล"
-
-#: contact-form-7/admin/admin.php:358
+#: contact-form-7/admin/admin.php:298
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr "Contact Form 7 ต้องการการสนับสนุนจากคุณ โปรดช่วยบริจาคให้เรา"
 
-#: contact-form-7/admin/admin.php:359
+#: contact-form-7/admin/admin.php:299
 msgid "Your contribution is needed for making this plugin better."
-msgstr "การบริจาคของคุณจะช่วยให้ปลั๊กอินนี้พัฒนาได้ดีขึ้น"
+msgstr "การบริจาคของคุณจะช่วยให้ผู้พัฒนาปลั๊กอินนี้พัฒนาได้ดีขึ้น"
 
-#: contact-form-7/admin/admin.php:365
+#: contact-form-7/admin/admin.php:305
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:365
+#: contact-form-7/admin/admin.php:305
 msgid "Donate"
 msgstr "บริจาค"
 
-#: contact-form-7/admin/edit.php:9
-#, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>ตารางฐานข้อมูลสำหรับ Contact Form 7 ยังไม่ได้ถูกสร้าง</strong> คุณต้อง <a href=\"%s\">สร้างตารางข้อมูล</a> เพื่อให้มันทำงานได้"
-
-#: contact-form-7/admin/edit.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>ตารางฐานข้อมูลสำหรับ Contact Form 7 ยังไม่ได้ถูกสร้าง</strong> "
-
-#: contact-form-7/admin/edit.php:45
-msgid "Add new"
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
 msgstr "เพิ่มใหม่"
 
-#: contact-form-7/admin/edit.php:67
+#: contact-form-7/admin/edit.php:41
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "คัดลอกโค๊ดนี้แล้ววางมันลงในเรื่อง หน้า หรือ ข้อความ text widget ของคุณ"
+msgstr "คัดลอกโค้ดนี้แล้ววางมันลงในเรื่อง หน้า หรือ ข้อควม text widget ของคุณ"
 
-#: contact-form-7/admin/edit.php:75
-#: contact-form-7/admin/edit.php:309
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "โค้ดเก่าๆยังคงใช้ได้อยู่"
+
+#: contact-form-7/admin/edit.php:55
 msgid "Save"
 msgstr "บันทึก"
 
-#: contact-form-7/admin/edit.php:82
+#: contact-form-7/admin/edit.php:62
 msgid "Copy"
 msgstr "คัดลอก"
 
-#: contact-form-7/admin/edit.php:87
+#: contact-form-7/admin/edit.php:67
 msgid "Delete"
 msgstr "ลบ"
 
-#: contact-form-7/admin/edit.php:89
+#: contact-form-7/admin/edit.php:69
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -159,85 +153,73 @@ msgstr ""
 "คุณกำลังลบแบบฟอร์มติดต่อนี้\n"
 "  'Cancel' เพื่อหยุด 'OK' เพื่อลบ"
 
-#: contact-form-7/admin/edit.php:104
+#: contact-form-7/admin/edit.php:78
 msgid "Form"
 msgstr "ฟอร์ม"
 
-#: contact-form-7/admin/edit.php:128
+#: contact-form-7/admin/edit.php:81
 msgid "Mail"
 msgstr "เมล์"
 
-#: contact-form-7/admin/edit.php:135
-#: contact-form-7/admin/edit.php:202
-msgid "To:"
-msgstr "ถึง:"
-
-#: contact-form-7/admin/edit.php:140
-#: contact-form-7/admin/edit.php:207
-msgid "From:"
-msgstr "จาก:"
-
-#: contact-form-7/admin/edit.php:145
-#: contact-form-7/admin/edit.php:212
-msgid "Subject:"
-msgstr "หัวข้อ:"
-
-#: contact-form-7/admin/edit.php:152
-#: contact-form-7/admin/edit.php:219
-msgid "Additional headers:"
-msgstr "ส่วนหัวเพิ่มเติม:"
-
-#: contact-form-7/admin/edit.php:157
-#: contact-form-7/admin/edit.php:224
-msgid "File attachments:"
-msgstr "ไฟล์แนบ:"
-
-#: contact-form-7/admin/edit.php:165
-#: contact-form-7/admin/edit.php:232
-msgid "Use HTML content type"
-msgstr "ใช้ชนิดเนื้อหาแบบ HTML"
-
-#: contact-form-7/admin/edit.php:172
-#: contact-form-7/admin/edit.php:239
-#: contact-form-7/includes/functions.php:78
-msgid "Message body:"
-msgstr "เนื้อหาข้อความ:"
-
-#: contact-form-7/admin/edit.php:188
+#: contact-form-7/admin/edit.php:84
 msgid "Mail (2)"
 msgstr "เมล์ (2)"
 
-#: contact-form-7/admin/edit.php:194
+#: contact-form-7/admin/edit.php:89
 msgid "Use mail (2)"
-msgstr "ใช้เมล์l (2)"
+msgstr "ใช้เมล์! (2)"
 
-#: contact-form-7/admin/edit.php:255
+#: contact-form-7/admin/edit.php:91
 msgid "Messages"
 msgstr "ข้อความ"
 
-#: contact-form-7/admin/edit.php:285
+#: contact-form-7/admin/edit.php:94
 msgid "Additional Settings"
 msgstr "การตั้งค่าเพิ่มเติม"
 
-#: contact-form-7/admin/edit.php:333
+#: contact-form-7/admin/edit.php:141
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "ใช้ภาษามาตรฐาน  (%s)"
 
-#: contact-form-7/admin/edit.php:334
-#: contact-form-7/admin/edit.php:347
-msgid "Add New"
-msgstr "เพิ่มใหม่"
-
-#: contact-form-7/admin/edit.php:337
+#: contact-form-7/admin/edit.php:145
 msgid "Or"
 msgstr "หรือ"
 
-#: contact-form-7/admin/edit.php:342
+#: contact-form-7/admin/edit.php:150
 msgid "(select language)"
 msgstr "(เลือกภาษา)"
 
-#: contact-form-7/includes/classes.php:577
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "ถึง:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "จาก:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "หัวข้อ:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "ส่วนหัวเพิ่มเติม:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "ไฟล์แนบ:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "ใช้ชนิดเนื้อหาแบบ HTML"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:88
+msgid "Message body:"
+msgstr "เนื้อหาข้อความ:"
+
+#: contact-form-7/includes/classes.php:524
 msgid "Untitled"
 msgstr "ไม่มีหัวข้อ"
 
@@ -254,432 +236,462 @@ msgid "Sender's message was failed to send"
 msgstr "ข้อความผู้ส่งล้มเหลวในการส่ง"
 
 #: contact-form-7/includes/functions.php:12
-#: contact-form-7/includes/functions.php:17
-msgid "Failed to send your message. Please try later or contact administrator by other way."
+#: contact-form-7/modules/akismet.php:101
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
 msgstr "การส่งข้อความของคุณล้มเหลว  โปรดลองใหม่อีกครั้งหรือติดต่อผู้ควบคุมโดยทางอื่น"
 
 #: contact-form-7/includes/functions.php:16
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet พิจารณาว่าการส่งเป็นการ spam"
-
-#: contact-form-7/includes/functions.php:21
 msgid "Validation errors occurred"
 msgstr "การตรวจสอบผิดพลาด"
 
-#: contact-form-7/includes/functions.php:22
+#: contact-form-7/includes/functions.php:17
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "การตรวจสอบผิดพลาด  โปรดยืนยันข้อมูลและการส่งอีกครั้ง"
 
-#: contact-form-7/includes/functions.php:26
-msgid "There is a field of term that sender is needed to accept"
+#: contact-form-7/includes/functions.php:21
+msgid "There are terms that the sender must accept"
 msgstr "มีช่องเงื่อนไขที่ผู้ต้องต้องยอมรับ"
 
-#: contact-form-7/includes/functions.php:27
+#: contact-form-7/includes/functions.php:22
 msgid "Please accept the terms to proceed."
 msgstr "โปรดยอมรับเงื่อนไขเพื่อทำงานต่อ"
 
-#: contact-form-7/includes/functions.php:31
-msgid "Email address that sender entered is invalid"
+#: contact-form-7/includes/functions.php:26
+msgid "Email address that the sender entered is invalid"
 msgstr "อีเมล์ที่ผู้ส่งให้มานั้นใช้งานไม่ได้"
 
-#: contact-form-7/includes/functions.php:32
+#: contact-form-7/includes/functions.php:27
 msgid "Email address seems invalid."
 msgstr "ดูเหมือนว่าอีเมล์ใช้ไม่ได้"
 
-#: contact-form-7/includes/functions.php:36
-msgid "There is a field that sender is needed to fill in"
+#: contact-form-7/includes/functions.php:31
+msgid "There is a field that the sender must fill in"
 msgstr "นี่คือช่องที่ผู้ส่งต้องการสำหรับใส่ข้อมูล"
 
-#: contact-form-7/includes/functions.php:37
+#: contact-form-7/includes/functions.php:32
 msgid "Please fill the required field."
 msgstr "โปรดกรอข้อมูลลงในช่องที่ต้องการ"
 
-#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:56
 msgid "Your Name"
 msgstr "ชื่อของคุณ"
 
-#: contact-form-7/includes/functions.php:46
-#: contact-form-7/includes/functions.php:48
+#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/functions.php:58
 msgid "(required)"
 msgstr "(ต้องการ)"
 
-#: contact-form-7/includes/functions.php:48
+#: contact-form-7/includes/functions.php:58
 msgid "Your Email"
 msgstr "อีเมล์ของคุณ"
 
-#: contact-form-7/includes/functions.php:50
+#: contact-form-7/includes/functions.php:60
 msgid "Subject"
 msgstr "หัวข้อ"
 
-#: contact-form-7/includes/functions.php:52
+#: contact-form-7/includes/functions.php:62
 msgid "Your Message"
 msgstr "ข้อความของคุณ"
 
-#: contact-form-7/includes/functions.php:54
+#: contact-form-7/includes/functions.php:64
 msgid "Send"
 msgstr "ส่ง"
 
-#: contact-form-7/includes/functions.php:62
+#: contact-form-7/includes/functions.php:72
 #, php-format
 msgid "From: %s"
 msgstr "จาก: %s"
 
-#: contact-form-7/includes/functions.php:63
+#: contact-form-7/includes/functions.php:73
 #, php-format
 msgid "Subject: %s"
 msgstr "หัวข้อ: %s"
 
-#: contact-form-7/includes/functions.php:64
+#: contact-form-7/includes/functions.php:74
 msgid "Message Body:"
 msgstr "เนื้อหาข้อความ:"
 
-#: contact-form-7/includes/functions.php:65
-#: contact-form-7/includes/functions.php:79
+#: contact-form-7/includes/functions.php:75
+#: contact-form-7/includes/functions.php:89
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
 msgstr "อีเมล์นี้ถูกส่งผ่านทางแบบฟอร์มติดต่อบน %1$s %2$s"
 
-#: contact-form-7/includes/functions.php:168
+#: contact-form-7/includes/functions.php:165
 msgid "Afrikaans"
 msgstr "ภาษาแอฟริกัน"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:166
 msgid "Albanian"
 msgstr "ภาษาอัลเบเนียน"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:167
 msgid "Arabic"
 msgstr "ภาษาอารบิก"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:168
+msgid "Armenian"
+msgstr "ภาษาอาร์เมเนียน"
+
+#: contact-form-7/includes/functions.php:169
 msgid "Bangla"
 msgstr "ภาษาบังกลา"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:170
+msgid "Belarusian"
+msgstr "ภาษาเบลารุสเซียน"
+
+#: contact-form-7/includes/functions.php:171
 msgid "Bosnian"
 msgstr "ภาษาบอสเนียน"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:172
 msgid "Brazilian Portuguese"
 msgstr "ภาษาบราซิล (โปรตุกีส)"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:173
 msgid "Bulgarian"
 msgstr "ภาษาบัลแกเรียน"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:174
 msgid "Catalan"
 msgstr "ภาษาคาตาลัน"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:175
 msgid "Chinese (Simplified)"
 msgstr "ภาษาจีน (Simplified)"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:176
 msgid "Chinese (Traditional)"
 msgstr "ภาษาจีน (Traditional)"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:177
 msgid "Croatian"
 msgstr "ภาษาโครเอเชียน"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:178
 msgid "Czech"
 msgstr "ภาษาเช็ค"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:179
 msgid "Danish"
 msgstr "ภาษาเดนนิช"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:180
 msgid "Dutch"
 msgstr "ภาษาดัตช์"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:181
 msgid "English"
 msgstr "ภาษาอังกฤษ"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:182
 msgid "Estonian"
-msgstr "ภาษาเอสโตเนียน"
+msgstr "ภาษามาเลย์"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:183
 msgid "Finnish"
 msgstr "ภาษาฟินนิช"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:184
 msgid "French"
 msgstr "ภาษาฝรั่งเศส"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:185
 msgid "Galician"
 msgstr "ภาษากาลิเซียน"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:186
 msgid "Georgian"
 msgstr "ภาษาจอร์เจียน"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:187
 msgid "German"
 msgstr "ภาษาเยอรมัน"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:188
 msgid "Greek"
 msgstr "ภาษากรีก"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:189
 msgid "Hebrew"
 msgstr "ภาษาฮีบรู"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:190
 msgid "Hindi"
 msgstr "ภาษาฮินดู"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:191
 msgid "Hungarian"
 msgstr "ภาษาฮังกาเรียน"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:192
 msgid "Indonesian"
 msgstr "ภาษาอินโดนีเซีย"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:193
 msgid "Italian"
 msgstr "ภาษาอิตาเลียน"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:194
 msgid "Japanese"
 msgstr "ภาษาญี่ปุ่น"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:195
 msgid "Korean"
 msgstr "ภาษาเกาหลี"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:196
 msgid "Latvian"
 msgstr "ภาษาลัตเวียน"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:197
 msgid "Lithuanian"
 msgstr "ภาษาลิทัวเนียน"
 
+#: contact-form-7/includes/functions.php:198
+msgid "Macedonian"
+msgstr "ภาษามาเซโดเนียน"
+
 #: contact-form-7/includes/functions.php:199
-msgid "Malayalam"
-msgstr "ภาษามาลายาลาม"
+msgid "Malay"
+msgstr "ภาษามาเลย์"
 
 #: contact-form-7/includes/functions.php:200
+msgid "Malayalam"
+msgstr "ภาษามาลายาลัม"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Maltese"
+msgstr "ภาษามัลตีส"
+
+#: contact-form-7/includes/functions.php:202
 msgid "Norwegian"
 msgstr "ภาษานอร์เวย์"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:203
 msgid "Persian"
 msgstr "ภาษาเปอร์เซียน"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:204
 msgid "Polish"
 msgstr "ภาษาโปแลนด์"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:205
 msgid "Portuguese"
 msgstr "ภาษาโปรตุเกส"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:206
 msgid "Russian"
-msgstr "ภาษารัสเซีย"
+msgstr "ภาษารัสเซียน"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:207
 msgid "Romanian"
 msgstr "ภาษาโรมาเนียน"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:208
 msgid "Serbian"
 msgstr "ภาษาเซอร์เบียน"
 
-#: contact-form-7/includes/functions.php:207
+#: contact-form-7/includes/functions.php:209
+msgid "Sinhala"
+msgstr "ภาษาสิงหล"
+
+#: contact-form-7/includes/functions.php:210
 msgid "Slovak"
 msgstr "ภาษาสโลวัค"
 
-#: contact-form-7/includes/functions.php:208
+#: contact-form-7/includes/functions.php:211
 msgid "Slovene"
 msgstr "ภาษาสโลวีเนีย"
 
-#: contact-form-7/includes/functions.php:209
+#: contact-form-7/includes/functions.php:212
 msgid "Spanish"
 msgstr "ภาษาสเปน"
 
-#: contact-form-7/includes/functions.php:210
+#: contact-form-7/includes/functions.php:213
 msgid "Swedish"
 msgstr "ภาษาสวีเดน"
 
-#: contact-form-7/includes/functions.php:211
+#: contact-form-7/includes/functions.php:214
+msgid "Tamil"
+msgstr "ภาษาทมิฬ"
+
+#: contact-form-7/includes/functions.php:215
 msgid "Thai"
 msgstr "ภาษาไทย"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:216
+msgid "Tagalog"
+msgstr "ภาษาตากาล็อก"
+
+#: contact-form-7/includes/functions.php:217
 msgid "Turkish"
 msgstr "ภาษาตุรกี"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:218
 msgid "Ukrainian"
 msgstr "ภาษายูเครน"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:219
 msgid "Vietnamese"
-msgstr "ภาษาเวียตนาม"
+msgstr "ภาษาเวียดนาม"
 
-#: contact-form-7/modules/acceptance.php:104
+#: contact-form-7/modules/acceptance.php:150
 msgid "Acceptance"
 msgstr "ยอมรับ"
 
-#: contact-form-7/modules/acceptance.php:113
-#: contact-form-7/modules/captcha.php:214
-#: contact-form-7/modules/checkbox.php:209
-#: contact-form-7/modules/file.php:241
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
 msgid "Name"
 msgstr "ชื่อ"
 
-#: contact-form-7/modules/acceptance.php:118
-#: contact-form-7/modules/acceptance.php:121
-#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
 #: contact-form-7/modules/captcha.php:224
-#: contact-form-7/modules/captcha.php:229
-#: contact-form-7/modules/captcha.php:232
-#: contact-form-7/modules/captcha.php:236
-#: contact-form-7/modules/captcha.php:247
-#: contact-form-7/modules/captcha.php:250
-#: contact-form-7/modules/captcha.php:255
-#: contact-form-7/modules/captcha.php:258
-#: contact-form-7/modules/checkbox.php:214
-#: contact-form-7/modules/checkbox.php:217
-#: contact-form-7/modules/file.php:246
-#: contact-form-7/modules/file.php:249
-#: contact-form-7/modules/file.php:254
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
 msgid "optional"
 msgstr "ตัวเลือก"
 
-#: contact-form-7/modules/acceptance.php:127
+#: contact-form-7/modules/acceptance.php:173
 msgid "Make this checkbox checked by default?"
 msgstr "ทำให้ checkbox นี้ถูกเลือกอยู่แล้ว?"
 
-#: contact-form-7/modules/acceptance.php:128
+#: contact-form-7/modules/acceptance.php:174
 msgid "Make this checkbox work inversely?"
 msgstr "ทำให้ checkbox นี้ทำงานกลับด้าน?"
 
-#: contact-form-7/modules/acceptance.php:129
+#: contact-form-7/modules/acceptance.php:175
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "* หมายความว่าผู้เยี่ยมชมยอมรับเงื่อนไขที่ไม่เลือกตัวเลือกนี้"
 
-#: contact-form-7/modules/acceptance.php:134
-#: contact-form-7/modules/captcha.php:263
-#: contact-form-7/modules/checkbox.php:237
-#: contact-form-7/modules/file.php:262
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
 msgid "Copy this code and paste it into the form left."
 msgstr "คัดลอกโค๊ดนี้และวางมันลงในฟอร์มด้านซ้าย"
 
-#: contact-form-7/modules/captcha.php:70
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "เพื่อใช้ CAPTCHA คุณต้องติดตั้งปลั๊กอิน <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>"
+#: contact-form-7/modules/akismet.php:100
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet พิจารณาว่าการส่งเป็นการ spam"
 
-#: contact-form-7/modules/captcha.php:189
+#: contact-form-7/modules/captcha.php:66
+msgid "To use CAPTCHA, you need &lt;a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\"&gt;Really Simple CAPTCHA&lt;/a&gt; plugin installed."
+msgstr "เพื่อใช้ CAPTCHA คุณต้องติดตั้งปลั๊กอิน &lt;a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\"&gt;Really Simple CAPTCHA&lt;/a&gt;"
+
+#: contact-form-7/modules/captcha.php:177
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "โค๊ดที่ผู้ส่งใส่ไม่ตรงกับ CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:190
+#: contact-form-7/modules/captcha.php:178
 msgid "Your entered code is incorrect."
 msgstr "โค๊ดที่คุณใส่ไม่ถูกต้อง"
 
-#: contact-form-7/modules/captcha.php:200
+#: contact-form-7/modules/captcha.php:188
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:211
+#: contact-form-7/modules/captcha.php:199
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr "หมายเหตุ: เพื่อใช้ CAPTCHA คุณต้องลงปลั๊กอิน Really Simple CAPTCHA "
 
-#: contact-form-7/modules/captcha.php:218
+#: contact-form-7/modules/captcha.php:206
 msgid "Image settings"
 msgstr "การตั้งค่ารูปภาพ"
 
-#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:217
 msgid "Foreground color"
 msgstr "สีด้านหน้า"
 
-#: contact-form-7/modules/captcha.php:232
+#: contact-form-7/modules/captcha.php:220
 msgid "Background color"
 msgstr "สีด้านหลัง"
 
-#: contact-form-7/modules/captcha.php:236
+#: contact-form-7/modules/captcha.php:224
 msgid "Image size"
 msgstr "ขนาดรูปภาพ"
 
-#: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:225
 msgid "Small"
 msgstr "เล็ก"
 
-#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:226
 msgid "Medium"
 msgstr "ปานกลาง"
 
-#: contact-form-7/modules/captcha.php:239
+#: contact-form-7/modules/captcha.php:227
 msgid "Large"
 msgstr "ใหญ่"
 
-#: contact-form-7/modules/captcha.php:244
+#: contact-form-7/modules/captcha.php:232
 msgid "Input field settings"
 msgstr "การตั้งค่าช่องใส่ข้อมูล"
 
-#: contact-form-7/modules/captcha.php:264
+#: contact-form-7/modules/captcha.php:252
 msgid "For image"
 msgstr "สำหรับรูปภาพ"
 
-#: contact-form-7/modules/captcha.php:266
+#: contact-form-7/modules/captcha.php:254
 msgid "For input field"
 msgstr "สำหรับช่องใส่ข้อมูล"
 
-#: contact-form-7/modules/captcha.php:296
+#: contact-form-7/modules/captcha.php:284
 #, php-format
 msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "แบบฟอร์มติดต่อนี้ประกอบด้วยช่อง CAPTCHA หลายช่อง แต่โฟลเดอร์ชั่วคราวสำหรับไฟล์  (%s) ไม่มีอยู่จริง หรือไม่สามารถเขียนทับได้  คุณสามารถสร้างโฟลเดอร์ หรือเปลี่ยนการอนุญาตด้วยตัวเอง"
 
-#: contact-form-7/modules/captcha.php:302
+#: contact-form-7/modules/captcha.php:290
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
 msgstr "แบบฟอร์มติดต่อนี้ประกอบด้วยช่อง CAPTCHA หลายช่อง แต่ libraries ที่จำเป็น (GD and FreeType) นั้นใช้งานไม่ได้บนเซิร์ฟเวอร์ของคุณ"
 
-#: contact-form-7/modules/checkbox.php:182
+#: contact-form-7/modules/checkbox.php:183
 msgid "Checkboxes"
 msgstr "เช็คบ็อกซ์"
 
-#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/checkbox.php:186
 msgid "Radio buttons"
 msgstr "Radio buttons"
 
-#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/checkbox.php:207
 #: contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:159
+#: contact-form-7/modules/text.php:161
+#: contact-form-7/modules/textarea.php:134
 msgid "Required field?"
 msgstr "ช่องที่ต้องการ?"
 
-#: contact-form-7/modules/checkbox.php:222
+#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/select.php:173
 msgid "Choices"
 msgstr "ตัวเลือก"
 
-#: contact-form-7/modules/checkbox.php:224
+#: contact-form-7/modules/checkbox.php:225
+#: contact-form-7/modules/select.php:175
 msgid "* One choice per line."
 msgstr "* หนึ่งตัวเลือกต่อบรรทัด"
 
-#: contact-form-7/modules/checkbox.php:228
+#: contact-form-7/modules/checkbox.php:229
 msgid "Put a label first, a checkbox last?"
 msgstr "ใส่ป้ายชื่อก่อน แล้วเช็คบ็อกซ์ทีหลัง?"
 
-#: contact-form-7/modules/checkbox.php:229
-msgid "Wrap each item with <label> tag?"
-msgstr "ปิดแต่ละรายการด้วยป้ายกำกับ <label> ?"
+#: contact-form-7/modules/checkbox.php:230
+msgid "Wrap each item with &lt;label&gt; tag?"
+msgstr "ปิดแต่ละรายการด้วยป้ายกำกับ &lt;label&gt; ?"
 
-#: contact-form-7/modules/checkbox.php:231
+#: contact-form-7/modules/checkbox.php:232
 msgid "Make checkboxes exclusive?"
 msgstr "ให้เลือก checkboxes เดียว?"
 
-#: contact-form-7/modules/checkbox.php:239
+#: contact-form-7/modules/checkbox.php:240
+#: contact-form-7/modules/select.php:187
+#: contact-form-7/modules/text.php:204
+#: contact-form-7/modules/textarea.php:166
 msgid "And, put this code into the Mail fields below."
 msgstr "และใส่โค๊ดนี้ลงในช่องเมล์ด้านล่าง"
 
@@ -740,80 +752,85 @@ msgstr "และใส่โค๊ดนี้ลงในช่องแนบ
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "แบบฟอร์มติดต่อนี้ประกอบด้วยช่องอัพโหลดไฟล์หลายช่อง  แต่โฟลเดอร์ชั่วคราวสำหรับไฟล์  (%s) ไม่มีอยู่จริง หรือไม่สามารถเขียนทับได้  คุณสามารถสร้างโฟลเดอร์ หรือเปลี่ยนการอนุญาตด้วยตัวเอง"
 
-#: contact-form-7/modules/icl.php:74
-msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
-msgstr "แบบฟอร์มติดต่อนี้ประกอบด้วยป้ายกำกับ [icl] หลายป้ายกำกับ  แต่พวกมันล้าสมัยและใช้ไม่ได้กับคำสั่งของ Contact Form 7 รุ่นนี้ <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">นี่คือวิธีที่ง่ายที่สุดในการสร้างแบบฟอร์มติดต่อของภาษาอื่น</a> และเราแนะนำให้คุณใช้มัน"
-
-#: contact-form-7/modules/quiz.php:170
+#: contact-form-7/modules/quiz.php:160
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "ผู้ส่งไม่ได้ใส่คำตอบที่ถูกต้องกับคำถาม"
 
-#: contact-form-7/modules/quiz.php:171
+#: contact-form-7/modules/quiz.php:161
 msgid "Your answer is not correct."
 msgstr "คำตอบของคุณไม่ถูกต้อง"
 
-#: contact-form-7/modules/quiz.php:181
+#: contact-form-7/modules/quiz.php:171
 msgid "Quiz"
 msgstr "คำถาม"
 
-#: contact-form-7/modules/quiz.php:211
+#: contact-form-7/modules/quiz.php:201
 msgid "Quizzes"
 msgstr "คำถาม"
 
-#: contact-form-7/modules/quiz.php:213
+#: contact-form-7/modules/quiz.php:203
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* คำถาม|คำตอบ (ตัวอย่าง 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:154
+#: contact-form-7/modules/select.php:150
 msgid "Drop-down menu"
 msgstr "เมนู Drop down"
 
-#: contact-form-7/modules/select.php:183
+#: contact-form-7/modules/select.php:179
 msgid "Allow multiple selections?"
-msgstr "อนุญาตการเลือกหลายข้อ?"
+msgstr "อนุญาติการเลือกหลายข้อ?"
 
-#: contact-form-7/modules/select.php:184
+#: contact-form-7/modules/select.php:180
 msgid "Insert a blank item as the first option?"
 msgstr "ใส่ช่องว่างเป็นตัวเลือกแรก"
 
-#: contact-form-7/modules/submit.php:62
+#: contact-form-7/modules/submit.php:54
+msgid "Sending ..."
+msgstr "กำลังส่ง ..."
+
+#: contact-form-7/modules/submit.php:66
 msgid "Submit button"
 msgstr "ปุ่มส่ง"
 
-#: contact-form-7/modules/submit.php:80
+#: contact-form-7/modules/submit.php:84
 msgid "Label"
 msgstr "ป้ายชื่อ"
 
-#: contact-form-7/modules/text.php:137
+#: contact-form-7/modules/text.php:138
 msgid "Text field"
 msgstr "ช่องตัวอักษร"
 
-#: contact-form-7/modules/text.php:140
+#: contact-form-7/modules/text.php:141
 msgid "Email field"
 msgstr "ช่องใส่อีเมล์"
 
-#: contact-form-7/modules/text.php:182
+#: contact-form-7/modules/text.php:183
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:184
+#: contact-form-7/modules/text.php:185
 msgid "This field requires author's name"
 msgstr "ช่องนี้ต้องการชื่อผู้เขียน"
 
-#: contact-form-7/modules/text.php:185
+#: contact-form-7/modules/text.php:186
 msgid "This field requires author's URL"
 msgstr "ช่องนี้ต้องการ URL ผู้เขียน"
 
-#: contact-form-7/modules/text.php:187
+#: contact-form-7/modules/text.php:188
 msgid "This field requires author's email address"
 msgstr "ช่องนี้ต้องการอีเมล์ผู้เขียน"
 
-#: contact-form-7/modules/text.php:191
-#: contact-form-7/modules/textarea.php:157
+#: contact-form-7/modules/text.php:194
+#: contact-form-7/modules/textarea.php:156
 msgid "Default value"
 msgstr "ค่ามาตรฐาน"
 
-#: contact-form-7/modules/textarea.php:126
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/textarea.php:159
+msgid "Use this text as watermark?"
+msgstr "ใช้ข้อความเป็นลายน้ำ?"
+
+#: contact-form-7/modules/textarea.php:125
 msgid "Text area"
 msgstr "กล่องข้อความ"
 
