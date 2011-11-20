@@ -207,7 +207,7 @@ function wpcf7_l10n() {
 		'ro_RO' => __( 'Romanian', 'wpcf7' ),
 		'sr_RS' => __( 'Serbian', 'wpcf7' ),
 		'si_LK' => __( 'Sinhala', 'wpcf7' ),
-		'sk' => __( 'Slovak', 'wpcf7' ),
+		'sk_SK' => __( 'Slovak', 'wpcf7' ),
 		'sl_SI' => __( 'Slovene', 'wpcf7' ),
 		'es_ES' => __( 'Spanish', 'wpcf7' ),
 		'sv_SE' => __( 'Swedish', 'wpcf7' ),
