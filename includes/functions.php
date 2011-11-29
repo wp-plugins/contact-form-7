@@ -179,6 +179,7 @@ function wpcf7_l10n() {
 		'da_DK' => __( 'Danish', 'wpcf7' ),
 		'nl_NL' => __( 'Dutch', 'wpcf7' ),
 		'en_US' => __( 'English', 'wpcf7' ),
+		'eo_EO' => __( 'Esperanto', 'wpcf7' ),
 		'et' => __( 'Estonian', 'wpcf7' ),
 		'fi' => __( 'Finnish', 'wpcf7' ),
 		'fr_FR' => __( 'French', 'wpcf7' ),
