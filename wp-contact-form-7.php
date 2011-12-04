@@ -29,6 +29,8 @@ Version: 3.0.1
 
 define( 'WPCF7_VERSION', '3.0.1' );
 
+define( 'WPCF7_REQUIRED_WP_VERSION', '3.2' );
+
 if ( ! defined( 'WPCF7_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 

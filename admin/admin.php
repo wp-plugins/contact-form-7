@@ -307,4 +307,24 @@ function wpcf7_donation_link( &$contact_form ) {
 <?php
 }
 
+add_action( 'admin_notices', 'wpcf7_old_wp_version_error', 9 );
+
+function wpcf7_old_wp_version_error() {
+	global $plugin_page;
+
+	if ( 'wpcf7' != $plugin_page )
+		return;
+
+	$wp_version = get_bloginfo( 'version' );
+
+	if ( ! version_compare( $wp_version, WPCF7_REQUIRED_WP_VERSION, '<' ) )
+		return;
+
+?>
+<div class="error">
+<p><?php echo sprintf( __( '<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href="%3$s">update WordPress</a> first.', 'wpcf7' ), WPCF7_VERSION, WPCF7_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) ); ?></p>
+</div>
+<?php
+}
+
 ?>
