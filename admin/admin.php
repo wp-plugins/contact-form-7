@@ -279,7 +279,7 @@ function wpcf7_donation_link( &$contact_form ) {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
 
-	if ( 'new' == $_GET['contactform'] || ! empty($_GET['message']) )
+	if ( 'new' == $_GET['contactform'] || ! empty( $_GET['message'] ) )
 		return;
 
 	$show_link = true;

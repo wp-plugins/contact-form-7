@@ -2,6 +2,8 @@
 
 	$(function() {
 		try {
+			$('div.cf7com-links').insertAfter($('div.wrap h2:first'));
+
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
 			$('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
 				{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
