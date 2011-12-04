@@ -223,4 +223,11 @@ function wpcf7_l10n() {
 	return $l10n;
 }
 
+function wpcf7_is_rtl() {
+	if ( function_exists( 'is_rtl' ) )
+		return is_rtl();
+
+	return false;
+}
+
 ?>
