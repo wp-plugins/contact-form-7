@@ -47,10 +47,12 @@ function wpcf7_autop( $pee, $br = 1 ) {
 
 function wpcf7_strip_quote( $text ) {
 	$text = trim( $text );
+
 	if ( preg_match( '/^"(.*)"$/', $text, $matches ) )
 		$text = $matches[1];
 	elseif ( preg_match( "/^'(.*)'$/", $text, $matches ) )
 		$text = $matches[1];
+
 	return $text;
 }
 
@@ -60,9 +62,33 @@ function wpcf7_strip_quote_deep( $arr ) {
 
 	if ( is_array( $arr ) ) {
 		$result = array();
-		foreach ( $arr as $key => $text ) {
-			$result[$key] = wpcf7_strip_quote( $text );
-		}
+
+		foreach ( $arr as $key => $text )
+			$result[$key] = wpcf7_strip_quote_deep( $text );
+
+		return $result;
+	}
+}
+
+function wpcf7_normalize_newline( $text, $to = "\n" ) {
+	$nls = array( "\r\n", "\r", "\n" );
+
+	if ( ! in_array( $to, $nls ) )
+		return $text;
+
+	return str_replace( $nls, $to, $text );
+}
+
+function wpcf7_normalize_newline_deep( $arr, $to = "\n" ) {
+	if ( is_string( $arr ) )
+		return wpcf7_normalize_newline( $arr, $to );
+
+	if ( is_array( $arr ) ) {
+		$result = array();
+
+		foreach ( $arr as $key => $text )
+			$result[$key] = wpcf7_normalize_newline_deep( $text, $to );
+
 		return $result;
 	}
 }

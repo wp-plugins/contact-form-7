@@ -410,11 +410,10 @@ class WPCF7_ContactForm {
 		$post_id = wp_insert_post( $postarr );
 
 		if ( $post_id ) {
-			update_post_meta( $post_id, 'form', $this->form );
-			update_post_meta( $post_id, 'mail', $this->mail );
-			update_post_meta( $post_id, 'mail_2', $this->mail_2 );
-			update_post_meta( $post_id, 'messages', $this->messages );
-			update_post_meta( $post_id, 'additional_settings', $this->additional_settings );
+			$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+			foreach ( $metas as $meta )
+				update_post_meta( $post_id, $meta, wpcf7_normalize_newline_deep( $this->{$meta} ) );
 
 			if ( $this->initial ) {
 				$this->initial = false;
