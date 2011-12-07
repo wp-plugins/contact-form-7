@@ -1,13 +1,5 @@
 <?php
 
-function wpcf7_plugin_path( $path = '' ) {
-	return path_join( WPCF7_PLUGIN_DIR, trim( $path, '/' ) );
-}
-
-function wpcf7_plugin_url( $path = '' ) {
-	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
-}
-
 function wpcf7() {
 	global $wpdb, $wpcf7;
 
