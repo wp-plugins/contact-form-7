@@ -8,22 +8,6 @@ function wpcf7_plugin_url( $path = '' ) {
 	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
 }
 
-function wpcf7_admin_url( $query = array() ) {
-	global $plugin_page;
-
-	if ( ! isset( $query['page'] ) )
-		$query['page'] = $plugin_page;
-
-	$path = 'admin.php';
-
-	if ( $query = build_query( $query ) )
-		$path .= '?' . $query;
-
-	$url = admin_url( $path );
-
-	return esc_url_raw( $url );
-}
-
 function wpcf7() {
 	global $wpdb, $wpcf7;
 
@@ -126,7 +110,7 @@ function wpcf7_upgrade() {
 	update_option( 'wpcf7', $opt );
 
 	if ( is_admin() && isset( $_GET['page'] ) && 'wpcf7' == $_GET['page'] ) {
-		wp_redirect( wpcf7_admin_url( array( 'page' => 'wpcf7' ) ) );
+		wp_redirect( wpcf7_admin_url() );
 		exit();
 	}
 }
