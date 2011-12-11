@@ -143,12 +143,13 @@ function wpcf7_convert_to_cpt( $new_ver, $old_ver ) {
 
 		if ( $post_id ) {
 			update_post_meta( $post_id, '_old_cf7_unit_id', $row->cf7_unit_id );
-			update_post_meta( $post_id, 'form', maybe_unserialize( $row->form ) );
-			update_post_meta( $post_id, 'mail', maybe_unserialize( $row->mail ) );
-			update_post_meta( $post_id, 'mail_2', maybe_unserialize( $row->mail_2 ) );
-			update_post_meta( $post_id, 'messages', maybe_unserialize( $row->messages ) );
-			update_post_meta( $post_id, 'additional_settings',
-				maybe_unserialize( $row->additional_settings ) );
+
+			$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+			foreach ( $metas as $meta ) {
+				update_post_meta( $post_id, $meta,
+					wpcf7_normalize_newline_deep( maybe_unserialize( $row->{$meta} ) ) );
+			}
 		}
 	}
 }
