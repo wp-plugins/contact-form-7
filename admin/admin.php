@@ -70,7 +70,7 @@ function wpcf7_admin_init() {
 
 		$query['contactform'] = $contact_form->id;
 		$redirect_to = wpcf7_admin_url( $query );
-		wp_redirect( $redirect_to );
+		wp_safe_redirect( $redirect_to );
 		exit();
 	}
 
@@ -91,7 +91,7 @@ function wpcf7_admin_init() {
 		}
 
 		$redirect_to = wpcf7_admin_url( $query );
-		wp_redirect( $redirect_to );
+		wp_safe_redirect( $redirect_to );
 		exit();
 	}
 
@@ -103,7 +103,7 @@ function wpcf7_admin_init() {
 			$contact_form->delete();
 
 		$redirect_to = wpcf7_admin_url( array( 'message' => 'deleted' ) );
-		wp_redirect( $redirect_to );
+		wp_safe_redirect( $redirect_to );
 		exit();
 	}
 }

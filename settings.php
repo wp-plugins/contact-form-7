@@ -102,7 +102,7 @@ function wpcf7_upgrade() {
 	update_option( 'wpcf7', $opt );
 
 	if ( is_admin() && isset( $_GET['page'] ) && 'wpcf7' == $_GET['page'] ) {
-		wp_redirect( wpcf7_admin_url() );
+		wp_safe_redirect( wpcf7_admin_url() );
 		exit();
 	}
 }
