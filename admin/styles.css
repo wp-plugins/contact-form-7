@@ -13,8 +13,6 @@ div.wrap div.donation {
 	border-style: solid;
 	padding: 0 0.6em;
 	margin: 5px 0 15px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	background-color: #ffffe0;
@@ -125,8 +123,6 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	background: #7e4e0b;
 	border: none;
 	width: 100%;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
@@ -181,8 +177,6 @@ div.tg-pane {
     background: #f1f1f1;
     margin: 1ex 0 0 0;
     padding: 10px;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	line-height: 140%;
@@ -216,8 +210,6 @@ div.tg-pane input.tag, div.tg-pane input.mail-tag {
 	border: none;
 	color: #fff;
 	background-color: #7e4e0b;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
