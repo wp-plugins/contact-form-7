@@ -313,7 +313,7 @@ function wpcf7_script_is() {
 }
 
 if ( WPCF7_LOAD_CSS )
-	add_action( 'wp_print_styles', 'wpcf7_enqueue_styles' );
+	add_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_styles' );
 
 function wpcf7_enqueue_styles() {
 	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'styles.css' ),

@@ -118,7 +118,7 @@ function wpcf7_admin_menu() {
 		WPCF7_ADMIN_READ_CAPABILITY, 'wpcf7', 'wpcf7_admin_management_page' );
 }
 
-add_action( 'admin_print_styles', 'wpcf7_admin_enqueue_styles' );
+add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_styles' );
 
 function wpcf7_admin_enqueue_styles() {
 	global $plugin_page;
