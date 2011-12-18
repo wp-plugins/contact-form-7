@@ -118,7 +118,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 * Use wp_enqueue_scripts and admin_enqueue_scripts action hooks instead of wp_print_styles and admin_print_styles.
 * Use wp_safe_redirect() instead of wp_redirect().
 * Updated jquery.form.js to 2.94.
-* Translations for Esperanto has been created.
+* Translation for Esperanto has been created.
 * Translations for German, Japanese, Malay, Thai, Slovak, and Hungarian have been updated.
 
 = 3.0.1 =
