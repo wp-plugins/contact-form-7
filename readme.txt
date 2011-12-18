@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.2
-Tested up to: 3.2.1
-Stable tag: 3.0.1
+Tested up to: 3.3
+Stable tag: 3.0.2
 
 Just another contact form plugin. Simple but flexible.
 
@@ -107,6 +107,19 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.0.2 =
+
+* Show alert messages when you use it on old version of WordPress.
+* Introduce wpcf7_is_rtl() to avoid “not exist” error of is_rtl().
+* Take back data conversion from Contact Form 7 1.x.
+* Normalize newline characters to \n (line feed) on save (fix export/import problem).
+* Rewrite wpcf7_admin_url() and use menu_page_url() inside it.
+* Use wp_enqueue_scripts and admin_enqueue_scripts action hooks instead of wp_print_styles and admin_print_styles.
+* Use wp_safe_redirect() instead of wp_redirect().
+* Updated jquery.form.js to 2.94.
+* Translations for Esperanto has been created.
+* Translations for German, Japanese, Malay, Thai, Slovak, and Hungarian have been updated.
 
 = 3.0.1 =
 
