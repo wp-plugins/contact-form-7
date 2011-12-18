@@ -71,6 +71,9 @@ function wpcf7_strip_quote_deep( $arr ) {
 }
 
 function wpcf7_normalize_newline( $text, $to = "\n" ) {
+	if ( ! is_string( $text ) )
+		return $text;
+
 	$nls = array( "\r\n", "\r", "\n" );
 
 	if ( ! in_array( $to, $nls ) )
@@ -80,9 +83,6 @@ function wpcf7_normalize_newline( $text, $to = "\n" ) {
 }
 
 function wpcf7_normalize_newline_deep( $arr, $to = "\n" ) {
-	if ( is_string( $arr ) )
-		return wpcf7_normalize_newline( $arr, $to );
-
 	if ( is_array( $arr ) ) {
 		$result = array();
 
@@ -91,6 +91,8 @@ function wpcf7_normalize_newline_deep( $arr, $to = "\n" ) {
 
 		return $result;
 	}
+
+	return wpcf7_normalize_newline( $arr, $to );
 }
 
 function wpcf7_canonicalize( $text ) {
