@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.2
 Tested up to: 3.3
-Stable tag: 3.0.2
+Stable tag: 3.0.2.1
 
 Just another contact form plugin. Simple but flexible.
 
@@ -107,6 +107,10 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.0.2.1 =
+
+* Fix a critical bug of losing checkbox option values when you save contact form.
 
 = 3.0.2 =
 
