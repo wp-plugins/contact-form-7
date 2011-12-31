@@ -85,8 +85,16 @@ class WPCF7_ShortcodeManager {
 		$tag = $m[2];
 		$attr = $this->shortcode_parse_atts( $m[3] );
 
-		$scanned_tag = array();
-		$scanned_tag['type'] = $tag;
+		$scanned_tag = array(
+			'type' =>$tag,
+			'name' => '',
+			'options' => array(),
+			'raw_values' => array(),
+			'values' => array(),
+			'pipes' => null,
+			'labels' => array(),
+			'attr' => '',
+			'content' => '' );
 
 		if ( is_array( $attr ) ) {
 			if ( is_array( $attr['options'] ) ) {
