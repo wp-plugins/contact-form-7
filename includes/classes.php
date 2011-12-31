@@ -208,6 +208,8 @@ class WPCF7_ContactForm {
 			$result = apply_filters( 'wpcf7_validate_' . $fe['type'], $result, $fe );
 		}
 
+		$result = apply_filters( 'wpcf7_validate', $result );
+
 		return $result;
 	}
 
