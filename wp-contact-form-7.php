@@ -10,7 +10,7 @@ Domain Path: /languages/
 Version: 3.0.2.1
 */
 
-/*  Copyright 2007-2011 Takayuki Miyoshi (email: takayukister at gmail.com)
+/*  Copyright 2007-2012 Takayuki Miyoshi (email: takayukister at gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
