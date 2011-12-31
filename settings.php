@@ -81,7 +81,7 @@ function wpcf7_register_post_types() {
 
 /* Upgrading */
 
-add_action( 'init', 'wpcf7_upgrade' );
+add_action( 'admin_init', 'wpcf7_upgrade' );
 
 function wpcf7_upgrade() {
 	$opt = get_option( 'wpcf7' );
