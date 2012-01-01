@@ -5,7 +5,7 @@
 			$('div.cf7com-links').insertAfter($('div.wrap h2:first'));
 
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
-			$('#taggenerator').tagGenerator(_wpcf7L10n.generateTag,
+			$('#taggenerator').tagGenerator(_wpcf7.generateTag,
 				{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
 
 			$('input#wpcf7-title:disabled').css({cursor: 'default'});
