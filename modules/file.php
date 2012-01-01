@@ -91,7 +91,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$name = $tag['name'];
 	$options = (array) $tag['options'];
 
-	$file = $_FILES[$name];
+	$file = isset( $_FILES[$name] ) ? $_FILES[$name] : null;
 
 	if ( $file['error'] && UPLOAD_ERR_NO_FILE != $file['error'] ) {
 		$result['valid'] = false;
