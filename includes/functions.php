@@ -250,4 +250,10 @@ function wpcf7_is_rtl() {
 	return false;
 }
 
+function wpcf7_ajax_loader() {
+	$url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
+
+	return apply_filters( 'wpcf7_ajax_loader', $url );
+}
+
 ?>
