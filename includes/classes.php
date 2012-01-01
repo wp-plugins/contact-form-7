@@ -249,11 +249,14 @@ class WPCF7_ContactForm {
 		if ( $this->skip_mail )
 			return true;
 
-		if ( $this->compose_and_send_mail( $this->mail ) ) {
+		$result = $this->compose_and_send_mail(
+			$this->setup_mail_template( $this->mail, 'mail' ) );
+
+		if ( $result ) {
 			$additional_mail = array();
 
 			if ( $this->mail_2['active'] )
-				$additional_mail[] = $this->mail_2;
+				$additional_mail[] = $this->setup_mail_template( $this->mail_2, 'mail_2' );
 
 			$additional_mail = apply_filters_ref_array( 'wpcf7_additional_mail',
 				array( $additional_mail, &$this ) );
@@ -267,7 +270,25 @@ class WPCF7_ContactForm {
 		return false;
 	}
 
+	function setup_mail_template( $mail_template, $name = '' ) {
+		$defaults = array(
+			'subject' => '', 'sender' => '', 'body' => '',
+			'recipient' => '', 'additional_headers' => '',
+			'attachments' => '', 'use_html' => false );
+
+		$mail_template = wp_parse_args( $mail_template, $defaults );
+
+		$name = trim( $name );
+
+		if ( ! empty( $name ) )
+			$mail_template['name'] = $name;
+
+		return $mail_template;
+	}
+
 	function compose_and_send_mail( $mail_template ) {
+		$this->mail_template_in_process = $mail_template;
+
 		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
 
 		$use_html = (bool) $mail_template['use_html'];
