@@ -19,14 +19,14 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$size_att = '';
-	$maxlength_att = '';
-	$tabindex_att = '';
+	$validation_error = wpcf7_get_validation_error( $name );
 
-	$class_att .= ' wpcf7-quiz';
+	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = '';
+
+	$class_att = wpcf7_form_controls_class( $type );
+
+	if ( $validation_error )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -77,8 +77,6 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$html = '<span class="wpcf7-quiz-label">' . esc_html( $question ) . '</span>&nbsp;';
 	$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
 	$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
-
-	$validation_error = wpcf7_get_validation_error( $name );
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 

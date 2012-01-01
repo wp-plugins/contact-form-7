@@ -21,17 +21,16 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$tabindex_att = '';
+	$validation_error = wpcf7_get_validation_error( $name );
+
+	$atts = $id_att = $tabindex_att = '';
 
 	$defaults = array();
 
-	$class_att .= ' wpcf7-select';
+	$class_att = wpcf7_form_controls_class( $type );
 
-	if ( 'select*' == $type )
-		$class_att .= ' wpcf7-validates-as-required';
+	if ( $validation_error )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -98,8 +97,6 @@ function wpcf7_select_shortcode_handler( $tag ) {
 		$atts .= ' multiple="multiple"';
 
 	$html = '<select name="' . $name . ( $multiple ? '[]' : '' ) . '"' . $atts . '>' . $html . '</select>';
-
-	$validation_error = wpcf7_get_validation_error( $name );
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 

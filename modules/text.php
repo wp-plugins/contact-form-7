@@ -22,21 +22,18 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$size_att = '';
-	$maxlength_att = '';
-	$tabindex_att = '';
-	$title_att = '';
+	$validation_error = wpcf7_get_validation_error( $name );
 
-	$class_att .= ' wpcf7-text';
+	$atts = $id_att = $size_att = $maxlength_att = '';
+	$tabindex_att = $title_att = '';
+
+	$class_att = wpcf7_form_controls_class( $type, 'wpcf7-text' );
 
 	if ( 'email' == $type || 'email*' == $type )
 		$class_att .= ' wpcf7-validates-as-email';
 
-	if ( 'text*' == $type || 'email*' == $type )
-		$class_att .= ' wpcf7-validates-as-required';
+	if ( $validation_error )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -87,8 +84,6 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
 
 	$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
-
-	$validation_error = wpcf7_get_validation_error( $name );
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 

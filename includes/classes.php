@@ -585,4 +585,23 @@ function wpcf7_scan_shortcode( $cond = null ) {
 	return $contact_form->form_scan_shortcode( $cond );
 }
 
+function wpcf7_form_controls_class( $type, $default = '' ) {
+	$type = trim( $type );
+	$default = explode( ' ', $default );
+
+	$classes = array_merge( array( 'wpcf7-form-control' ), $default );
+
+	$typebase = rtrim( $type, '*' );
+	$required = ( '*' == substr( $type, -1 ) );
+
+	$classes[] = 'wpcf7-' . $typebase;
+
+	if ( $required )
+		$classes[] = 'wpcf7-validates-as-required';
+
+	$classes = array_unique( $classes );
+
+	return implode( ' ', $classes );
+}
+
 ?>

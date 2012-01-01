@@ -19,12 +19,14 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$tabindex_att = '';
+	$validation_error = wpcf7_get_validation_error( $name );
 
-	$class_att .= ' wpcf7-acceptance';
+	$atts = $id_att = $tabindex_att = '';
+
+	$class_att = wpcf7_form_controls_class( $type );
+
+	if ( $validation_error )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -57,8 +59,6 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 
 	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $checked . ' />';
 
-	$validation_error = wpcf7_get_validation_error( $name );
-
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
 	return $html;
@@ -80,7 +80,7 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 
 	$options = (array) $tag['options'];
 
-	$value = $_POST[$name] ? 1 : 0;
+	$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
 
 	$invert = (bool) preg_grep( '%^invert$%', $options );
 

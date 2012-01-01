@@ -28,6 +28,7 @@
 					if (data.invalids) {
 						$.each(data.invalids, function(i, n) {
 							$(data.into).find(n.into).wpcf7NotValidTip(n.message);
+							$(data.into).find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
 						});
 						ro.addClass('wpcf7-validation-errors');
 					}

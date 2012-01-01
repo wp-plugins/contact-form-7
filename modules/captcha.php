@@ -22,15 +22,15 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 	$validation_error = wpcf7_get_validation_error( $name );
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$size_att = '';
-	$maxlength_att = '';
-	$tabindex_att = '';
+	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = '';
+
+	$class_att = wpcf7_form_controls_class( $type );
 
 	if ( 'captchac' == $type )
 		$class_att .= ' wpcf7-captcha-' . $name;
+
+	if ( $validation_error && 'captchar' == $type )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {

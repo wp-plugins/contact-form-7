@@ -20,16 +20,14 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$size_att = '';
-	$tabindex_att = '';
+	$validation_error = wpcf7_get_validation_error( $name );
 
-	$class_att .= ' wpcf7-file';
+	$atts = $id_att = $size_att = $tabindex_att = '';
 
-	if ( 'file*' == $type )
-		$class_att .= ' wpcf7-validates-as-required';
+	$class_att = wpcf7_form_controls_class( $type );
+
+	if ( $validation_error )
+		$class_att .= ' wpcf7-not-valid';
 
 	foreach ( $options as $option ) {
 		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
@@ -62,8 +60,6 @@ function wpcf7_file_shortcode_handler( $tag ) {
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
 	$html = '<input type="file" name="' . $name . '"' . $atts . ' value="1" />';
-
-	$validation_error = wpcf7_get_validation_error( $name );
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
