@@ -491,6 +491,15 @@ function wpcf7_get_contact_form_by_old_id( $old_id ) {
 		return wpcf7_contact_form( $new_id );
 }
 
+function wpcf7_get_contact_form_by_title( $title ) {
+	$page = get_page_by_title( $title, OBJECT, 'wpcf7_contact_form' );
+
+	if ( $page )
+		return wpcf7_contact_form( $page->ID );
+
+	return null;
+}
+
 function wpcf7_contact_form_default_pack( $locale = null ) {
 	// For backward compatibility
 

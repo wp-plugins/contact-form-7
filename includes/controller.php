@@ -235,8 +235,13 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 
 	if ( 'contact-form-7' == $code ) {
 		$atts = shortcode_atts( array( 'id' => 0, 'title' => '' ), $atts );
+
 		$id = (int) $atts['id'];
-		$wpcf7_contact_form = wpcf7_contact_form( $id );
+		$title = trim( $atts['title'] );
+
+		if ( ! $wpcf7_contact_form = wpcf7_contact_form( $id ) )
+			$wpcf7_contact_form = wpcf7_get_contact_form_by_title( $title );
+
 	} else {
 		if ( is_string( $atts ) )
 			$atts = explode( ' ', $atts, 2 );
