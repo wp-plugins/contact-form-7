@@ -28,6 +28,7 @@ It is hard to continue development and support for this plugin without contribut
 * Albanian (sq) - [Olgi Zenullari](http://www.olgizenullari.com/)
 * Arabic (ar) - [Tarek Chaaban](http://www.chaaban.info/), Muhammed Lardi, [Yaser Maadan](http://www.englize.com/)
 * Armenian (hy_AM) - [Emmanuelle Traduction](http://www.translatonline.com/)
+* Azeri (az_AZ) - [Zaur Bayramov](http://bloglayaq.com/)
 * Bangla (bn_BD) - [SM Mehdi Akram](http://www.shamokaldarpon.com/)
 * Belarusian (be_BY) - [Igor Dubilei](http://www.iflexion.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
