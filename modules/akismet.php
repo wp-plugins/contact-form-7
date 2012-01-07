@@ -87,6 +87,8 @@ function wpcf7_akismet( $spam ) {
 	if ( 'true' == $response[1] )
 		$spam = true;
 
+	$spam = apply_filters( 'wpcf7_akismet_comment_check', $spam, $c );
+
 	return $spam;
 }
 
