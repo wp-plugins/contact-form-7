@@ -317,9 +317,13 @@ class WPCF7_ContactForm {
 			$attachments[] = $path;
 		}
 
-		extract( apply_filters_ref_array( 'wpcf7_mail_components', array( 
-			compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' ),
-			&$this ) ) );
+		$components = compact(
+			'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' );
+
+		$components = apply_filters_ref_array( 'wpcf7_mail_components',
+			array( $components, &$this ) );
+
+		extract( $components );
 
 		$headers = "From: $sender\n";
 
