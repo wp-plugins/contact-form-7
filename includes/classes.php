@@ -249,8 +249,7 @@ class WPCF7_ContactForm {
 		if ( $this->skip_mail )
 			return true;
 
-		$result = $this->compose_and_send_mail(
-			$this->setup_mail_template( $this->mail, 'mail' ) );
+		$result = $this->compose_mail( $this->setup_mail_template( $this->mail, 'mail' ) );
 
 		if ( $result ) {
 			$additional_mail = array();
@@ -262,7 +261,7 @@ class WPCF7_ContactForm {
 				array( $additional_mail, &$this ) );
 
 			foreach ( $additional_mail as $mail )
-				$this->compose_and_send_mail( $mail );
+				$this->compose_mail( $mail );
 
 			return true;
 		}
@@ -286,7 +285,7 @@ class WPCF7_ContactForm {
 		return $mail_template;
 	}
 
-	function compose_and_send_mail( $mail_template ) {
+	function compose_mail( $mail_template, $send = true ) {
 		$this->mail_template_in_process = $mail_template;
 
 		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
@@ -329,7 +328,10 @@ class WPCF7_ContactForm {
 
 		$headers .= trim( $additional_headers ) . "\n";
 
-		return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
+		if ( $send )
+			return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
+
+		return compact( 'subject', 'sender', 'body', 'recipient', 'headers', 'attachments' );
 	}
 
 	function mail_callback_html( $matches ) {
