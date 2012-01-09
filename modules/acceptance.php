@@ -98,6 +98,9 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
 
 function wpcf7_acceptance_filter( $accepted ) {
+	if ( ! $accepted )
+		return $accepted;
+
 	$fes = wpcf7_scan_shortcode( array( 'type' => 'acceptance' ) );
 
 	foreach ( $fes as $fe ) {

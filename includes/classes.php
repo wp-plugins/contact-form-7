@@ -213,6 +213,12 @@ class WPCF7_ContactForm {
 		return $result;
 	}
 
+	function accepted() {
+		$accepted = true;
+
+		return apply_filters( 'wpcf7_acceptance', $accepted );
+	}
+
 	function spam() {
 		$spam = false;
 

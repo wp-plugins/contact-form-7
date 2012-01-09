@@ -152,7 +152,7 @@ function wpcf7_submit( $ajax = false ) {
 		$result['invalid_reasons'] = $validation['reason'];
 		$result['message'] = wpcf7_get_message( 'validation_error' );
 
-	} elseif ( ! apply_filters( 'wpcf7_acceptance', true ) ) { // Not accepted terms
+	} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
 		$result['message'] = wpcf7_get_message( 'accept_terms' );
 
 	} elseif ( $wpcf7_contact_form->spam() ) { // Spam!
