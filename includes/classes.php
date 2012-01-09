@@ -60,14 +60,9 @@ class WPCF7_ContactForm {
 
 		$form .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
 			. ' class="' . esc_attr( $class ) . '"' . $enctype . '>' . "\n";
-		$form .= '<div style="display: none;">' . "\n";
-		$form .= '<input type="hidden" name="_wpcf7" value="'
-			. esc_attr( $this->id ) . '" />' . "\n";
-		$form .= '<input type="hidden" name="_wpcf7_version" value="'
-			. esc_attr( WPCF7_VERSION ) . '" />' . "\n";
-		$form .= '<input type="hidden" name="_wpcf7_unit_tag" value="'
-			. esc_attr( $this->unit_tag ) . '" />' . "\n";
-		$form .= '</div>' . "\n";
+
+		$form .= $this->form_hidden_fields();
+
 		$form .= $this->form_elements();
 
 		if ( ! $this->responses_count )
@@ -78,6 +73,23 @@ class WPCF7_ContactForm {
 		$form .= '</div>';
 
 		return $form;
+	}
+
+	function form_hidden_fields() {
+		$hidden_fields = array(
+			'_wpcf7' => $this->id,
+			'_wpcf7_version' => WPCF7_VERSION,
+			'_wpcf7_unit_tag' => $this->unit_tag );
+
+		$content = '';
+
+		foreach ( $hidden_fields as $name => $value ) {
+			$content .= '<input type="hidden"'
+				. ' name="' . esc_attr( $name ) . '"'
+				. ' value="' . esc_attr( $value ) . '" />' . "\n";
+		}
+
+		return '<div style="display: none;">' . "\n" . $content . '</div>' . "\n";
 	}
 
 	function form_response_output() {
