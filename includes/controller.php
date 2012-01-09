@@ -145,6 +145,8 @@ function wpcf7_submit( $ajax = false ) {
 		'mail_sent' => false,
 		'scripts_on_sent_ok' => null );
 
+	$wpcf7_contact_form->posted_data = $_POST;
+
 	$validation = $wpcf7_contact_form->validate();
 
 	if ( ! $validation['valid'] ) { // Validation error occured
