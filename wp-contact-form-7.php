@@ -68,6 +68,9 @@ if ( ! defined( 'WPCF7_ADMIN_READ_CAPABILITY' ) )
 if ( ! defined( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY' ) )
 	define( 'WPCF7_ADMIN_READ_WRITE_CAPABILITY', 'publish_pages' );
 
+if ( ! defined( 'WPCF7_VERIFY_NONCE' ) )
+	define( 'WPCF7_VERIFY_NONCE', true );
+
 require_once WPCF7_PLUGIN_DIR . '/settings.php';
 
 ?>

@@ -81,6 +81,9 @@ class WPCF7_ContactForm {
 			'_wpcf7_version' => WPCF7_VERSION,
 			'_wpcf7_unit_tag' => $this->unit_tag );
 
+		if ( WPCF7_VERIFY_NONCE )
+			$hidden_fields['_wpnonce'] = wp_create_nonce( $this->unit_tag );
+
 		$content = '';
 
 		foreach ( $hidden_fields as $name => $value ) {
@@ -234,7 +237,14 @@ class WPCF7_ContactForm {
 	function spam() {
 		$spam = false;
 
+		if ( WPCF7_VERIFY_NONCE && ! $this->verify_nonce() )
+			$spam = true;
+
 		return apply_filters( 'wpcf7_spam', $spam );
+	}
+
+	function verify_nonce() {
+		return wp_verify_nonce( $_POST['_wpnonce'], $_POST['_wpcf7_unit_tag'] );
 	}
 
 	/* Mail */
