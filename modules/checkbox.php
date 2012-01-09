@@ -141,21 +141,6 @@ add_filter( 'wpcf7_validate_radio', 'wpcf7_checkbox_validation_filter', 10, 2 );
 function wpcf7_checkbox_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
-	$values = $tag['values'];
-
-	if ( ! empty( $_POST[$name] ) ) {
-		if ( is_array( $_POST[$name] ) ) {
-			foreach ( $_POST[$name] as $key => $value ) {
-				$value = stripslashes( $value );
-				if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
-					unset( $_POST[$name][$key] );
-			}
-		} else {
-			$value = stripslashes( $_POST[$name] );
-			if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
-				$_POST[$name] = '';
-		}
-	}
 
 	if ( 'checkbox*' == $type ) {
 		if ( empty( $_POST[$name] ) ) {

@@ -63,7 +63,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$empty_select = empty( $values );
 	if ( $empty_select || $include_blank ) {
 		array_unshift( $labels, '---' );
-		array_unshift( $values, '---' );
+		array_unshift( $values, '' );
 	}
 
 	$html = '';
@@ -112,19 +112,11 @@ add_filter( 'wpcf7_validate_select*', 'wpcf7_select_validation_filter', 10, 2 );
 function wpcf7_select_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
-	$values = $tag['values'];
 
-	if ( ! empty( $_POST[$name] ) ) {
-		if ( is_array( $_POST[$name] ) ) {
-			foreach ( $_POST[$name] as $key => $value ) {
-				$value = stripslashes( $value );
-				if ( ! in_array( $value, (array) $values ) ) // Not in given choices.
-					unset( $_POST[$name][$key] );
-			}
-		} else {
-			$value = stripslashes( $_POST[$name] );
-			if ( ! in_array( $value, (array) $values ) ) //  Not in given choices.
-				$_POST[$name] = '';
+	if ( isset( $_POST[$name] ) && is_array( $_POST[$name] ) ) {
+		foreach ( $_POST[$name] as $key => $value ) {
+			if ( '' === $value )
+				unset( $_POST[$name][$key] );
 		}
 	}
 
