@@ -8,6 +8,9 @@ add_filter( 'wpcf7_spam', 'wpcf7_akismet' );
 function wpcf7_akismet( $spam ) {
 	global $akismet_api_host, $akismet_api_port;
 
+	if ( $spam )
+		return $spam;
+
 	if ( ! function_exists( 'akismet_get_key' ) || ! akismet_get_key() )
 		return false;
 

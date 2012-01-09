@@ -213,6 +213,12 @@ class WPCF7_ContactForm {
 		return $result;
 	}
 
+	function spam() {
+		$spam = false;
+
+		return apply_filters( 'wpcf7_spam', $spam );
+	}
+
 	/* Mail */
 
 	function mail() {

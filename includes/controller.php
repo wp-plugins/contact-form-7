@@ -155,7 +155,7 @@ function wpcf7_submit( $ajax = false ) {
 	} elseif ( ! apply_filters( 'wpcf7_acceptance', true ) ) { // Not accepted terms
 		$result['message'] = wpcf7_get_message( 'accept_terms' );
 
-	} elseif ( apply_filters( 'wpcf7_spam', false ) ) { // Spam!
+	} elseif ( $wpcf7_contact_form->spam() ) { // Spam!
 		$result['message'] = wpcf7_get_message( 'spam' );
 		$result['spam'] = true;
 
