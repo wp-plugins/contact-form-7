@@ -322,7 +322,7 @@ class WPCF7_ContactForm {
 	function compose_mail( $mail_template, $send = true ) {
 		$this->mail_template_in_process = $mail_template;
 
-		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
+		$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
 
 		$use_html = (bool) $mail_template['use_html'];
 
@@ -377,8 +377,12 @@ class WPCF7_ContactForm {
 	}
 
 	function mail_callback( $matches, $html = false ) {
-		if ( isset( $this->posted_data[$matches[1]] ) ) {
-			$submitted = $this->posted_data[$matches[1]];
+		// allow [[foo]] syntax for escaping a tag
+		if ( $matches[1] == '[' && $matches[3] == ']' )
+			return substr( $matches[0], 1, -1 );
+
+		if ( isset( $this->posted_data[$matches[2]] ) ) {
+			$submitted = $this->posted_data[$matches[2]];
 
 			if ( is_array( $submitted ) )
 				$replaced = join( ', ', $submitted );
@@ -395,7 +399,7 @@ class WPCF7_ContactForm {
 			return stripslashes( $replaced );
 		}
 
-		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[1] ) )
+		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[2] ) )
 			return $special;
 
 		return $matches[0];
