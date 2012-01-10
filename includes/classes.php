@@ -223,6 +223,32 @@ class WPCF7_ContactForm {
 
 		$this->posted_data = $_POST;
 
+		$fes = $this->form_scan_shortcode();
+
+		foreach ( $fes as $fe ) {
+			if ( empty( $fe['name'] ) )
+				continue;
+
+			$name = $fe['name'];
+			$pipes = $fe['pipes'];
+			$value = $_POST[$name];
+
+			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+				if ( is_array( $value) ) {
+					$new_value = array();
+
+					foreach ( $value as $v )
+						$new_value[] = $pipes->do_pipe( stripslashes( $v ) );
+
+					$value = $new_value;
+				} else {
+					$value = $pipes->do_pipe( stripslashes( $value ) );
+				}
+			}
+
+			$this->posted_data[$name] = $value;
+		}
+
 		$validation = $this->validate();
 
 		if ( ! $validation['valid'] ) { // Validation error occured
@@ -302,31 +328,6 @@ class WPCF7_ContactForm {
 	/* Mail */
 
 	function mail() {
-		$fes = $this->form_scan_shortcode();
-
-		foreach ( $fes as $fe ) {
-			if ( empty( $fe['name'] ) )
-				continue;
-
-			$name = $fe['name'];
-			$pipes = $fe['pipes'];
-			$value = $_POST[$name];
-
-			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
-				if ( is_array( $value) ) {
-					$new_value = array();
-					foreach ( $value as $v ) {
-						$new_value[] = $pipes->do_pipe( stripslashes( $v ) );
-					}
-					$value = $new_value;
-				} else {
-					$value = $pipes->do_pipe( stripslashes( $value ) );
-				}
-			}
-
-			$this->posted_data[$name] = $value;
-		}
-
 		if ( $this->in_demo_mode() )
 			$this->skip_mail = true;
 
