@@ -50,7 +50,7 @@ function wpcf7_ajax_json_echo() {
 				'into' => '#' . $unit_tag,
 				'captcha' => null );
 
-			$result = wpcf7_submit( true );
+			$result = $wpcf7_contact_form->submit( true );
 
 			if ( ! empty( $result['message'] ) )
 				$items['message'] = $result['message'];
@@ -113,7 +113,7 @@ function wpcf7_submit_nonajax() {
 	$id = (int) $_POST['_wpcf7'];
 
 	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
-		$result = wpcf7_submit();
+		$result = $wpcf7_contact_form->submit();
 
 		if ( ! $result['valid'] ) {
 			$_POST['_wpcf7_validation_errors'] = array(
@@ -129,63 +129,6 @@ function wpcf7_submit_nonajax() {
 
 		$wpcf7_contact_form = null;
 	}
-}
-
-function wpcf7_submit( $ajax = false ) {
-	global $wpcf7_contact_form;
-
-	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		return false;
-
-	$result = array(
-		'valid' => true,
-		'invalid_reasons' => array(),
-		'spam' => false,
-		'message' => '',
-		'mail_sent' => false,
-		'scripts_on_sent_ok' => null );
-
-	$wpcf7_contact_form->posted_data = $_POST;
-
-	$validation = $wpcf7_contact_form->validate();
-
-	if ( ! $validation['valid'] ) { // Validation error occured
-		$result['valid'] = false;
-		$result['invalid_reasons'] = $validation['reason'];
-		$result['message'] = wpcf7_get_message( 'validation_error' );
-
-	} elseif ( ! $wpcf7_contact_form->accepted() ) { // Not accepted terms
-		$result['message'] = wpcf7_get_message( 'accept_terms' );
-
-	} elseif ( $wpcf7_contact_form->spam() ) { // Spam!
-		$result['message'] = wpcf7_get_message( 'spam' );
-		$result['spam'] = true;
-
-	} elseif ( $wpcf7_contact_form->mail() ) {
-		$result['mail_sent'] = true;
-		$result['message'] = wpcf7_get_message( 'mail_sent_ok' );
-
-		do_action_ref_array( 'wpcf7_mail_sent', array( &$wpcf7_contact_form ) );
-
-		if ( $ajax ) {
-			$on_sent_ok = $wpcf7_contact_form->additional_setting( 'on_sent_ok', false );
-
-			if ( ! empty( $on_sent_ok ) )
-				$result['scripts_on_sent_ok'] = array_map( 'wpcf7_strip_quote', $on_sent_ok );
-		} else {
-			$wpcf7_contact_form->clear_post();
-		}
-
-	} else {
-		$result['message'] = wpcf7_get_message( 'mail_sent_ng' );
-	}
-
-	// remove upload files
-	foreach ( (array) $wpcf7_contact_form->uploaded_files as $name => $path ) {
-		@unlink( $path );
-	}
-
-	return $result;
 }
 
 add_action( 'the_post', 'wpcf7_the_post' );

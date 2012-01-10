@@ -212,6 +212,58 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
+	function submit( $ajax = false ) {
+		$result = array(
+			'valid' => true,
+			'invalid_reasons' => array(),
+			'spam' => false,
+			'message' => '',
+			'mail_sent' => false,
+			'scripts_on_sent_ok' => null );
+
+		$this->posted_data = $_POST;
+
+		$validation = $this->validate();
+
+		if ( ! $validation['valid'] ) { // Validation error occured
+			$result['valid'] = false;
+			$result['invalid_reasons'] = $validation['reason'];
+			$result['message'] = $this->message( 'validation_error' );
+
+		} elseif ( ! $this->accepted() ) { // Not accepted terms
+			$result['message'] = $this->message( 'accept_terms' );
+
+		} elseif ( $this->spam() ) { // Spam!
+			$result['message'] = $this->message( 'spam' );
+			$result['spam'] = true;
+
+		} elseif ( $this->mail() ) {
+			$result['mail_sent'] = true;
+			$result['message'] = $this->message( 'mail_sent_ok' );
+
+			do_action_ref_array( 'wpcf7_mail_sent', array( &$this ) );
+
+			if ( $ajax ) {
+				$on_sent_ok = $this->additional_setting( 'on_sent_ok', false );
+
+				if ( ! empty( $on_sent_ok ) )
+					$result['scripts_on_sent_ok'] = array_map( 'wpcf7_strip_quote', $on_sent_ok );
+			} else {
+				$this->clear_post();
+			}
+
+		} else {
+			$result['message'] = $this->message( 'mail_sent_ng' );
+		}
+
+		// remove upload files
+		foreach ( (array) $this->uploaded_files as $name => $path ) {
+			@unlink( $path );
+		}
+
+		return $result;
+	}
+
 	/* Validate */
 
 	function validate() {
