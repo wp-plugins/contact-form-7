@@ -212,16 +212,8 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
-	function submit( $ajax = false ) {
-		$result = array(
-			'valid' => true,
-			'invalid_reasons' => array(),
-			'spam' => false,
-			'message' => '',
-			'mail_sent' => false,
-			'scripts_on_sent_ok' => null );
-
-		$this->posted_data = $_POST;
+	function setup_posted_data() {
+		$posted_data = (array) $_POST;
 
 		$fes = $this->form_scan_shortcode();
 
@@ -246,8 +238,24 @@ class WPCF7_ContactForm {
 				}
 			}
 
-			$this->posted_data[$name] = $value;
+			$posted_data[$name] = $value;
 		}
+
+		$this->posted_data = apply_filters( 'wpcf7_posted_data', $posted_data );
+
+		return $this->posted_data;
+	}
+
+	function submit( $ajax = false ) {
+		$result = array(
+			'valid' => true,
+			'invalid_reasons' => array(),
+			'spam' => false,
+			'message' => '',
+			'mail_sent' => false,
+			'scripts_on_sent_ok' => null );
+
+		$this->setup_posted_data();
 
 		$validation = $this->validate();
 
