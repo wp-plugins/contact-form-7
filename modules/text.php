@@ -59,7 +59,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$title_att .= sprintf( ' %s', $value );
 		$value = '';
 
-	} elseif ( empty( $value ) ) {
+	} elseif ( empty( $value ) && is_user_logged_in() ) {
+		$user = wp_get_current_user();
+
 		$user_options = array(
 			'default:user_login' => 'user_login',
 			'default:user_email' => 'user_email',
@@ -69,19 +71,11 @@ function wpcf7_text_shortcode_handler( $tag ) {
 			'default:user_nickname' => 'nickname',
 			'default:user_display_name' => 'display_name' );
 
-		$options_match = preg_grep(
-			'%^(' . implode( '|', array_map( 'preg_quote', array_keys( $user_options ) ) )  . ')$%',
-			$options );
-
-		if ( $options_match ) {
-			$user = wp_get_current_user();
-
-			if ( ! empty( $user->ID ) ) {
-				$prop = $user_options[$options_match[0]];
+		foreach ( $user_options as $option => $prop ) {
+			if ( preg_grep( '%^' . $option . '$%', $options ) ) {
 				$value = $user->{$prop};
+				break;
 			}
-		} else {
-			$value = (string) wpcf7_get_var( $name );
 		}
 	}
 

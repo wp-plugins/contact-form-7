@@ -257,33 +257,4 @@ function wpcf7_ajax_loader() {
 	return apply_filters( 'wpcf7_ajax_loader', $url );
 }
 
-function wpcf7_get_var( $name, $args = array() ) {
-	global $wp;
-
-	$defaults = array(
-		'type' => 'get',
-		'except_query_vars' => true );
-
-	$args = wp_parse_args( $args, $defaults );
-
-	$query_var_keys = $wp->query_vars ? array_keys( $wp->query_vars ) : array();
-
-	$is_query_var = in_array( $name, $query_var_keys );
-
-	$var = '';
-
-	if ( $args['except_query_vars'] && $is_query_var ) {
-		// Do nothing.
-	} else {
-		if ( 'get' == $args['type'] && isset( $_GET[$name] ) )
-			$var = $_GET[$name];
-		elseif ( 'post' == $args['type'] && isset( $_POST[$name] ) )
-			$var = $_POST[$name];
-		elseif ( 'cookie' == $args['type'] && isset( $_COOKIE[$name] ) )
-			$var = $_COOKIE[$name];
-	}
-
-	return apply_filters( 'wpcf7_get_var', $var, $name, $args );
-}
-
 ?>

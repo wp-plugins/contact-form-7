@@ -62,8 +62,6 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		$class_att .= ' wpcf7-use-title-as-watermark';
 		$title_att .= sprintf( ' %s', $value );
 		$value = '';
-	} elseif ( empty( $value ) ) {
-		$value = (string) wpcf7_get_var( $name );
 	}
 
 	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
