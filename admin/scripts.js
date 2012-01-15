@@ -6,7 +6,7 @@
 
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
 			$('#taggenerator').tagGenerator(_wpcf7.generateTag,
-				{ dropdownIconUrl: _wpcf7.pluginUrl + '/images/dropdown.gif' });
+				{ dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif' });
 
 			$('input#wpcf7-title:disabled').css({cursor: 'default'});
 
