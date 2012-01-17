@@ -1,6 +1,6 @@
 <div class="wrap">
 
-<?php screen_icon( 'edit-pages' ); ?>
+<?php screen_icon(); ?>
 
 <h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
 
