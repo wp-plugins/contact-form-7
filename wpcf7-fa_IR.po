@@ -2,510 +2,848 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-14 12:03+0330\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Mohammad Musavi <mohammad at musavis.com>\n"
-"Language-Team: musavis.com <mohammad at musavis.com>\n"
+"POT-Creation-Date: 2012-01-08 12:16+0900\n"
+"PO-Revision-Date: 2012-01-21 14:34+0400\n"
+"Last-Translator: Mohsen Firoozmandan <info@rankbazar.com>\n"
+"Language-Team: Rank Bazar Team <mohsen at rankbazar.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Persian\n"
-"X-Poedit-Country: Iran\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: e:\\mohammad\\xampp2\\htdocs\\wordpress\\wp-content\\plugins\\contact-form-7\\\n"
-"X-Poedit-SearchPath-0: e:\\mohammad\\xampp2\\htdocs\\wordpress\\wp-content\\plugins\\contact-form-7\n"
+"X-Poedit-Country: IRAN\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:9
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "یک پلاگین ساخت فرم تماس دیگر، ساده اما انعطاف پذیر."
+
+#: contact-form-7/settings.php:75
+msgid "Contact Forms"
+msgstr "فرم تماس"
+
+#: contact-form-7/settings.php:76
+msgid "Contact Form"
+msgstr "فرم تماس"
+
+#: contact-form-7/settings.php:168
 #, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "جدول پایگاه داده برای افزونه فرم تماس 7 وجود ندارد. برای کارکرد آن باید <a href=\"%s\">آنرا ایجاد کنید</a>"
+msgid "Contact form %d"
+msgstr "فرم تماس %d"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "جدول پایگاه داده برای افزونه فرم تماس 7 وجود ندارد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:17
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:30
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:121
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:52
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "فرم تماس نسخه 7"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:45
-msgid "Add new"
-msgstr "جدید"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:67
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "این کد را کپی نموده و در نوشته، برگه یا ابزارک خود بچسبانید."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:75
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:332
-msgid "Save"
-msgstr "ذخیره"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:82
-msgid "Copy"
-msgstr "کپی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:87
-msgid "Delete"
-msgstr "حذف"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:89
-msgid ""
-"You are about to delete this contact form.\n"
-"  'Cancel' to stop, 'OK' to delete."
-msgstr "شما در حال حذف این فرم تماس هستید. آیا از حذف این فرم اطمینان دارید؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:102
-msgid "Form"
-msgstr "فرم"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:120
-msgid "Mail"
-msgstr "پست الکترونیک"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:127
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:188
-msgid "To:"
-msgstr "گیرنده:"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:132
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:193
-msgid "From:"
-msgstr "فرستنده:"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:137
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:198
-msgid "Subject:"
-msgstr "موضوع:"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:144
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:205
-msgid "Additional headers:"
-msgstr "هدرهای اضافی:"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:149
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:210
-msgid "File attachments:"
-msgstr "فایل های الصاق شده:"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:157
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:218
-msgid "Use HTML content type"
-msgstr "استفاده از HTML در محتوا"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:164
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:225
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:50
-msgid "Message body:"
-msgstr "متن نامه"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:174
-msgid "Mail (2)"
-msgstr "پست الکترونیک 2"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:180
-msgid "Use mail (2)"
-msgstr "استفاده از پست الکترونیک 2"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:235
-msgid "Messages"
-msgstr "پیغام ها"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:243
-msgid "Sender's message was sent successfully"
-msgstr "پیام با موفقیت ارسال شد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:248
-msgid "Sender's message was failed to send"
-msgstr "ارسال ناموفق بود"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:253
-msgid "Akismet judged the sending activity as spamming"
-msgstr "آکیسمت متن ارسالی را هرزنامه تشخیص داد"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:258
-msgid "Validation errors occurred"
-msgstr "خطای تائید رخ داد"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:263
-msgid "There is a field that sender is needed to fill in"
-msgstr "ارسال کننده ملزم به تکمیل فیلدهای الزامیست."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:268
-msgid "Email address that sender entered is invalid"
-msgstr "آدرس پست الکترونیک وارد شده نامعتبر به نظر می رسد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:273
-msgid "There is a field of term that sender is needed to accept"
-msgstr "ارسال کننده فرم ملزم به پذیرش فیلد الزامیست."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:278
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "پاسخ شما به پرسش امنیتی اشتباه است."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:283
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "کد امنیتی وارد شده معتبر نیست."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:288
-msgid "Uploading a file fails for any reason"
-msgstr "آپلود فایل به هر علتی با مشکل مواجه می شود."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:293
-msgid "Uploaded file is not allowed file type"
-msgstr "پسوند فایل آپلود شده مجاز نمی باشد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:298
-msgid "Uploaded file is too large"
-msgstr "حجم فایل آپلود شده بیش از حد مجاز است."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:303
-msgid "Uploading a file fails for PHP error"
-msgstr "آپلود فایل به علل خطای PHP با مشکل مواجه شد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin-panel.php:314
-msgid "Additional Settings"
-msgstr "تنظیمات اضافی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:121
+#: contact-form-7/admin/admin.php:114
 msgid "Contact"
 msgstr "تماس"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:125
+#: contact-form-7/admin/admin.php:117
 msgid "Edit Contact Forms"
-msgstr "ویرایش فرم های تماس"
+msgstr "ویرایش فرم تماس"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:125
+#: contact-form-7/admin/admin.php:117
 msgid "Edit"
 msgstr "ویرایش"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:185
-msgid "optional"
-msgstr "انتخابی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:186
+#: contact-form-7/admin/admin.php:166
 msgid "Generate Tag"
 msgstr "برچسب عمومی"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:187
-msgid "Text field"
-msgstr "فیلد متنی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:188
-msgid "Email field"
-msgstr "فیلد ایمیل"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:189
-msgid "Text area"
-msgstr "فضای متنی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:190
-msgid "Drop-down menu"
-msgstr "منوی بازشو"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:191
-msgid "Checkboxes"
-msgstr "جعبه علامتگذاری"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:192
-msgid "Radio buttons"
-msgstr "دکمه انتخابی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:193
-msgid "Acceptance"
-msgstr "پذیرش"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:194
-msgid "Make this checkbox checked by default?"
-msgstr "آیا این جعبه به صورت پیش فرض تیک خورده باشد؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:195
-msgid "Make this checkbox work inversely?"
-msgstr "این جعبه بصورت برعکس عمل نماید؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:196
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* این بدین معناست که کسی که شرایط را می پذیرد آنرا به حالت تیک نخورده در می آورد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:197
-msgid "CAPTCHA"
-msgstr "کد امنیتی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:198
-msgid "Quiz"
-msgstr "پرسش"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:199
-msgid "Quizzes"
-msgstr "پرسش ها"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:200
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* پرسش|پاسخ (مثال: 1+1؟|2)"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:201
-msgid "File upload"
-msgstr "آپلود فایل"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:202
-msgid "bytes"
-msgstr "بایت"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:203
-msgid "Submit button"
-msgstr "ارسال"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:204
-msgid "Name"
-msgstr "نام فیلد"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:205
-msgid "Required field?"
-msgstr "گزینه اجباری"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:206
-msgid "Allow multiple selections?"
-msgstr "مجاز به انتخاب چند گزینه به طور همزمان؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:207
-msgid "Insert a blank item as the first option?"
-msgstr "آیتم خالی به عنوان اولین انتخاب قرار داده شود؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:208
-msgid "Make checkboxes exclusive?"
-msgstr "جعبه های علامتگذاری به صورت انحصاری باشند؟"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:209
-msgid "Choices"
-msgstr "انتخاب ها"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:210
-msgid "Label"
-msgstr "برچسب"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:211
-msgid "Default value"
-msgstr "مقدار پیش فرض"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:212
-msgid "Akismet"
-msgstr "اکیسمت"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:213
-msgid "This field requires author's name"
-msgstr "این گزینه نیازمند نام نویسنده است"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:214
-msgid "This field requires author's URL"
-msgstr "این گزینه نیازمند آدرس اینترنتی نویسنده است"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:215
-msgid "This field requires author's email address"
-msgstr "این گزینه نیازمند آدرس پست الکترونیک نویسنده است"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:216
-msgid "Copy this code and paste it into the form left."
-msgstr "این کد را در فرم خود بچسبانید"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:217
-msgid "Foreground color"
-msgstr "رنگ پیش زمینه"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:218
-msgid "Background color"
-msgstr "رنگ پس زمینه"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:219
-msgid "Image size"
-msgstr "اندازه تصویر"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:220
-msgid "Small"
-msgstr "کوچک"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:221
-msgid "Medium"
-msgstr "متوسط"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:222
-msgid "Large"
-msgstr "بزرگ"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:223
-msgid "Image settings"
-msgstr "تنظیمات تصویر"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:224
-msgid "Input field settings"
-msgstr "قرار دادن تنظیمات گزینه"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:225
-msgid "For image"
-msgstr "برای تصویر"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:226
-msgid "For input field"
-msgstr "برای گزینه ورودی"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:227
-msgid "* One choice per line."
-msgstr "* یک انتخاب در هر سطر"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:228
-msgid "Show"
-msgstr "نمایش"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:229
-msgid "Hide"
-msgstr "پنهان"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:230
-msgid "File size limit"
-msgstr "حجم مجاز آپلود"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:231
-msgid "Acceptable file types"
-msgstr "فایل های مجاز"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:232
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "تذکر: جهت استفاده از تصاویرامنیتی (کپچا) باید افزونه Really Simple CAPTCHA را نصب نمائید."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:241
-msgid "Contact form created."
-msgstr "فرم تماس ایجاد شد"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:244
-msgid "Contact form saved."
-msgstr "فرم تماس ذخیره شد"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:247
-msgid "Contact form deleted."
-msgstr "فرم تماس حذف گردید"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:250
-msgid "Database table created."
-msgstr "جدول پایگاه داده ایجاد شد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:253
-msgid "Failed to create database table."
-msgstr "ایجاد جدول پایگاه داده ناموفق بود."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:328
-msgid "Contact form"
-msgstr "فرم تماس"
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:347
+#: contact-form-7/admin/admin.php:215
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:366
+#: contact-form-7/admin/admin.php:226
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/?lang=fa"
+
+#: contact-form-7/admin/admin.php:227
+msgid "Contactform7.com"
+msgstr "Contactform7.com فارسی"
+
+#: contact-form-7/admin/admin.php:228
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:229
+msgid "Docs"
+msgstr "مستندات"
+
+#: contact-form-7/admin/admin.php:230
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:231
+msgid "FAQ"
+msgstr "پرسش و پاسخ"
+
+#: contact-form-7/admin/admin.php:232
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:233
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: contact-form-7/admin/admin.php:247
+msgid "Contact form created."
+msgstr "فرم تماس ایجاد شد."
+
+#: contact-form-7/admin/admin.php:250
+msgid "Contact form saved."
+msgstr "فرم تماس ذخیره شد."
+
+#: contact-form-7/admin/admin.php:253
+msgid "Contact form deleted."
+msgstr "فرم تماس حذف شد."
+
+#: contact-form-7/admin/admin.php:287
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "فرم تماس نسخه 7 به یاری شما نیازمند است. لطفاً کمک های مالی خود را برای ما ارسال فرمائید."
+msgstr "فرم تماس نسخه 7 به حمایت شما نیاز دارد. همین امروز کمک کنید."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:367
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "آیا این افزونه برای شما مفید بوده اس؟ در صورتیکه از آن رضایتمندید، لطفاً به توسعه دهنده آن کمک نمائید."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:368
+#: contact-form-7/admin/admin.php:288
 msgid "Your contribution is needed for making this plugin better."
-msgstr "برای بهبود این افزونه به مشارکت صمیمانه شما نیازمندیم."
+msgstr "کمک شما برای ارتقا این پلاگین لازم است."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/admin/admin.php:369
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "توسعه افزونه و ارائه خدمات پشتیبانی کار بسیار طاقت فرسایی است. لطفاً ما را یاری نمائید."
+#: contact-form-7/admin/admin.php:294
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/classes.php:562
+#: contact-form-7/admin/admin.php:294
+msgid "Donate"
+msgstr "حمایت مالی"
+
+#: contact-form-7/admin/admin.php:314
+#, php-format
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>پلاگین فرم تماس 7 %1$s  نیاز به وردپرس %2$s و یا بالاتر دارد.</strong> لطفا ابتدا<a href=\"%3$s\">وردپرس خود را ارتقا</a> دهید"
+
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
+msgstr "جدید"
+
+#: contact-form-7/admin/edit.php:41
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "این کد را کپی کرده و در پست، صفحه خود قرار دهید."
+
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "کد قدیمی هم موجود است."
+
+#: contact-form-7/admin/edit.php:55
+msgid "Save"
+msgstr "ذخیره"
+
+#: contact-form-7/admin/edit.php:62
+msgid "Copy"
+msgstr "کپی"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Delete"
+msgstr "حذف"
+
+#: contact-form-7/admin/edit.php:69
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"شما در حال حذف این فرم هستید\n"
+"آیا از حذف آن اطمینان دارید "
+
+#: contact-form-7/admin/edit.php:78
+msgid "Form"
+msgstr "فرم"
+
+#: contact-form-7/admin/edit.php:81
+msgid "Mail"
+msgstr "پست الکترونیک"
+
+#: contact-form-7/admin/edit.php:84
+msgid "Mail (2)"
+msgstr "ایمیل 2"
+
+#: contact-form-7/admin/edit.php:89
+msgid "Use mail (2)"
+msgstr "استفاده از ایمیل 2"
+
+#: contact-form-7/admin/edit.php:91
+msgid "Messages"
+msgstr "پیام"
+
+#: contact-form-7/admin/edit.php:94
+msgid "Additional Settings"
+msgstr "تنظیمات اضافی"
+
+#: contact-form-7/admin/edit.php:141
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "استفاده از زبان پیشفرض (%s)"
+
+#: contact-form-7/admin/edit.php:145
+msgid "Or"
+msgstr "یا"
+
+#: contact-form-7/admin/edit.php:150
+msgid "(select language)"
+msgstr "(انتخاب زبان)"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "به:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "از:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "موضوع:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "اطلاعات هدر:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "پیوست فایل:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "استفاده از فرمت HTML"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:108
+msgid "Message body:"
+msgstr "متن پیام:"
+
+#: contact-form-7/includes/classes.php:561
 msgid "Untitled"
 msgstr "بی نام و نشان"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:6
+#: contact-form-7/includes/controller.php:300
+msgid "Sending ..."
+msgstr "در حال ارسال ..."
+
+#: contact-form-7/includes/functions.php:26
+msgid "Sender's message was sent successfully"
+msgstr "پیام با موفقیت ارسال شد"
+
+#: contact-form-7/includes/functions.php:27
 msgid "Your message was sent successfully. Thanks."
-msgstr "پیغام شما با موفقیت ارسال شد. متشکریم."
+msgstr "پیام شما با موفقی ارسال شد. از شما متشکریم."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:8
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:10
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "متأسفانه ارسال پیغام شما با مشکل مواجه شد. لطفاً بعداً مجدداً سعی نموده یا از روشی دیگر با مدیر سایت تماس حاصل فرمائید."
+#: contact-form-7/includes/functions.php:31
+msgid "Sender's message was failed to send"
+msgstr "ارسال ناموفق بود"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:12
+#: contact-form-7/includes/functions.php:32
+#: contact-form-7/modules/akismet.php:103
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "ارسال پیام موفقیت آمیز نبود. لطفا دوباره سعی کنید و یا با مدیر سایت از طریق دیگری تماس بگیرید."
+
+#: contact-form-7/includes/functions.php:36
+msgid "Validation errors occurred"
+msgstr "تائید ناموفق"
+
+#: contact-form-7/includes/functions.php:37
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "تائید ناموفق. لطفاً گزینه مورد نظر را تائید نموده و مجدداً سعی نمائید."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:14
+#: contact-form-7/includes/functions.php:41
+msgid "There are terms that the sender must accept"
+msgstr "ارسال کننده باید شرایط ارسال ایمیل را قبول کند."
+
+#: contact-form-7/includes/functions.php:42
 msgid "Please accept the terms to proceed."
-msgstr "لطفاً برای ادامه، شرایط ارسال نامه را پذیرفته و تائید نمائید."
+msgstr "لطفاً برای ادامه، شرایط ارسال نامه را پذیرفته و تائید کنید."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:16
+#: contact-form-7/includes/functions.php:46
+msgid "Email address that the sender entered is invalid"
+msgstr "آدرس پست الکترونیک معتبر نیست"
+
+#: contact-form-7/includes/functions.php:47
 msgid "Email address seems invalid."
-msgstr "آدرس پست الکترونیک وارد شده نامعتبر به نظر می رسد."
+msgstr "آدرس پست الکترونیک معتبر نمی باشد."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:18
+#: contact-form-7/includes/functions.php:51
+msgid "There is a field that the sender must fill in"
+msgstr "از پر کردن همه فیلد ها اطمینان حاصل کنید"
+
+#: contact-form-7/includes/functions.php:52
 msgid "Please fill the required field."
-msgstr "لطفاً گزینه های اجباری را تکمیل نمائید."
+msgstr "لطفا فیلد های الزامی را پر کنید."
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:20
-msgid "Your entered code is incorrect."
-msgstr "کد وارده اشتباه است."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:22
-msgid "Your answer is not correct."
-msgstr "پاسخ وارده اشتباه است."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:24
-msgid "Failed to upload file."
-msgstr "الصاق فایل با مشکل مواجه شد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:26
-msgid "This file type is not allowed."
-msgstr "الصاق این نوع فایل مجاز نمی باشد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:28
-msgid "This file is too large."
-msgstr "اندازه این فایل بیش از حد بزرگ است."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:30
-msgid "Failed to upload file. Error occurred."
-msgstr "الصاق فایل ناموفق بود. خطایی رخ داد."
-
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:35
+#: contact-form-7/includes/functions.php:76
 msgid "Your Name"
-msgstr "نام و نام خانوادگی"
+msgstr "نام شما"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:35
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:37
+#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:78
 msgid "(required)"
-msgstr "(گزینه الزامی)"
+msgstr "(الزامی)"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:37
+#: contact-form-7/includes/functions.php:78
 msgid "Your Email"
-msgstr "پست الکترونیک"
+msgstr "ایمیل شما"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:39
+#: contact-form-7/includes/functions.php:80
 msgid "Subject"
 msgstr "موضوع"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:41
+#: contact-form-7/includes/functions.php:82
 msgid "Your Message"
-msgstr "پیغام"
+msgstr "پیام شما"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:43
+#: contact-form-7/includes/functions.php:84
 msgid "Send"
 msgstr "ارسال"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/includes/functions.php:51
-msgid "This mail is created by Contact Form 7 plugin for WordPress."
-msgstr "این نامه با استفاده از افزونه فرم تماس 7 ایجاد شده است."
+#: contact-form-7/includes/functions.php:92
+#, php-format
+msgid "From: %s"
+msgstr "از:  %s"
 
-#: e:\mohammad\xampp2\htdocs\wordpress\wp-content\plugins\contact-form-7/modules/captcha.php:62
+#: contact-form-7/includes/functions.php:93
+#, php-format
+msgid "Subject: %s"
+msgstr "موضوع: %s"
+
+#: contact-form-7/includes/functions.php:94
+msgid "Message Body:"
+msgstr "متن پیام:"
+
+#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:109
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "این ایمیل از طریق فرم تماس در  %1$s %2$s ارسال شد"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Afrikaans"
+msgstr "آفریقایی"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Albanian"
+msgstr "آلبانیایی"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Arabic"
+msgstr "عربی"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Armenian"
+msgstr "ارمنی"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Azeri"
+msgstr "آذری"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Bangla"
+msgstr "بنگالی"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Belarusian"
+msgstr "بلاروسی"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Bosnian"
+msgstr "بوسنیایی"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Brazilian Portuguese"
+msgstr "پرتغالی"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Bulgarian"
+msgstr "بلغاری"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Catalan"
+msgstr "کاتالان"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Chinese (Simplified)"
+msgstr "چینی (ساده شده)"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Chinese (Traditional)"
+msgstr "چینی (سنتی)"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Croatian"
+msgstr "کرواتی"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Czech"
+msgstr "چکوسلواکی"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Danish"
+msgstr "دانمارکی"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Dutch"
+msgstr "هلندی"
+
+#: contact-form-7/includes/functions.php:202
+msgid "English"
+msgstr "انگلیسی"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Esperanto"
+msgstr "اسپرانتویی"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Estonian"
+msgstr "استونی"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Finnish"
+msgstr "فنلاندی"
+
+#: contact-form-7/includes/functions.php:206
+msgid "French"
+msgstr "فرانسوی"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Galician"
+msgstr "گالیسیایی"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Georgian"
+msgstr "گرجستانی"
+
+#: contact-form-7/includes/functions.php:209
+msgid "German"
+msgstr "آلمانی"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Greek"
+msgstr "یونانی"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Hebrew"
+msgstr "هبری"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Hindi"
+msgstr "هندی"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Hungarian"
+msgstr "مجارستانی"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Indonesian"
+msgstr "اندونزیایی"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Italian"
+msgstr "ایتالیایی"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Japanese"
+msgstr "ژاپنی"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Korean"
+msgstr "کره ای"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Latvian"
+msgstr "لتونی"
+
+#: contact-form-7/includes/functions.php:219
+msgid "Lithuanian"
+msgstr "لیتوانی"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Macedonian"
+msgstr "مقدونی"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Malay"
+msgstr "ماله ای"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Malayalam"
+msgstr "مالایالامی"
+
+#: contact-form-7/includes/functions.php:223
+msgid "Maltese"
+msgstr "مالتی"
+
+#: contact-form-7/includes/functions.php:224
+msgid "Norwegian"
+msgstr "نروژی"
+
+#: contact-form-7/includes/functions.php:225
+msgid "Persian"
+msgstr "فارسی"
+
+#: contact-form-7/includes/functions.php:226
+msgid "Polish"
+msgstr "لهستانی"
+
+#: contact-form-7/includes/functions.php:227
+msgid "Portuguese"
+msgstr "پرتغالی"
+
+#: contact-form-7/includes/functions.php:228
+msgid "Russian"
+msgstr "روسی"
+
+#: contact-form-7/includes/functions.php:229
+msgid "Romanian"
+msgstr "رومانیایی"
+
+#: contact-form-7/includes/functions.php:230
+msgid "Serbian"
+msgstr "صربستانی"
+
+#: contact-form-7/includes/functions.php:231
+msgid "Sinhala"
+msgstr "سینهالی"
+
+#: contact-form-7/includes/functions.php:232
+msgid "Slovak"
+msgstr "اسلواکی"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Slovene"
+msgstr "اسلوونی"
+
+#: contact-form-7/includes/functions.php:234
+msgid "Spanish"
+msgstr "اسپانیایی"
+
+#: contact-form-7/includes/functions.php:235
+msgid "Swedish"
+msgstr "سوئدی"
+
+#: contact-form-7/includes/functions.php:236
+msgid "Tamil"
+msgstr "تامیل"
+
+#: contact-form-7/includes/functions.php:237
+msgid "Thai"
+msgstr "تایلندی"
+
+#: contact-form-7/includes/functions.php:238
+msgid "Tagalog"
+msgstr "تاگالوگ"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Turkish"
+msgstr "ترکی"
+
+#: contact-form-7/includes/functions.php:240
+msgid "Ukrainian"
+msgstr "اوکراینی"
+
+#: contact-form-7/includes/functions.php:241
+msgid "Vietnamese"
+msgstr "ویتنامی"
+
+#: contact-form-7/modules/acceptance.php:150
+msgid "Acceptance"
+msgstr "پذیرش"
+
+#: contact-form-7/modules/acceptance.php:159
+#: contact-form-7/modules/captcha.php:202
+msgid "Name"
+msgstr "نام"
+
+#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:209
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:235
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+msgid "optional"
+msgstr "انتخابی"
+
+#: contact-form-7/modules/acceptance.php:173
+msgid "Make this checkbox checked by default?"
+msgstr "این چک باکس را به صورت پیشفرض انتخاب کن؟"
+
+#: contact-form-7/modules/acceptance.php:174
+msgid "Make this checkbox work inversely?"
+msgstr "انجام معکوس چک باکس؟"
+
+#: contact-form-7/modules/acceptance.php:175
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* این بدین معناست که کسی که شرایط را می پذیرد آنرا به حالت تیک نخورده در می آورد."
+
+#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/captcha.php:251
+msgid "Copy this code and paste it into the form left."
+msgstr "این کد را کپی کرده و در فرم خود قرار دهید."
+
+#: contact-form-7/modules/akismet.php:102
+msgid "Akismet judged the sending activity as spamming"
+msgstr "آکیسمت متن ارسالی را هرزنامه تشخیص داد"
+
+#: contact-form-7/modules/captcha.php:66
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "برای استفاده از تصاویر امنیتی (کپچا)، باید <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> را نصب نمائید."
+msgstr "تذکر: جهت استفاده از تصاویرامنیتی (کپچا) باید افزونه <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>  را نصب نمائید."
 
-#~ msgid "(You need WordPress 2.7 or greater to use this feature)"
-#~ msgstr "(جهت استفاده از این قابلیت نیاز به وردپرس نسخه 2.7 به بالا دارید)"
-#~ msgid "Delete this contact form"
-#~ msgstr "حذف این فرم تماس"
+#: contact-form-7/modules/captcha.php:177
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "کد امنیتی وارد شده معتبر نیست"
+
+#: contact-form-7/modules/captcha.php:178
+msgid "Your entered code is incorrect."
+msgstr "کد وارد شده صحیح نیست."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:199
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "تذکر: جهت استفاده از تصاویرامنیتی (کپچا) باید افزونه Really Simple CAPTCHA را نصب نمائید."
+
+#: contact-form-7/modules/captcha.php:206
+msgid "Image settings"
+msgstr "تنظیمات تصویر"
+
+#: contact-form-7/modules/captcha.php:217
+msgid "Foreground color"
+msgstr "رنگ پیش زمینه"
+
+#: contact-form-7/modules/captcha.php:220
+msgid "Background color"
+msgstr "رنگ پس زمینه"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Image size"
+msgstr "اندازی تصویر"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Small"
+msgstr "کوچک"
+
+#: contact-form-7/modules/captcha.php:226
+msgid "Medium"
+msgstr "متوسط"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Large"
+msgstr "بزرگ"
+
+#: contact-form-7/modules/captcha.php:232
+msgid "Input field settings"
+msgstr "تنظیمات فیلد ورودی"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For image"
+msgstr "برای تصویر"
+
+#: contact-form-7/modules/captcha.php:254
+msgid "For input field"
+msgstr "برای فیلد ورودی"
+
+#: contact-form-7/modules/captcha.php:284
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "این فرم حاوی فیلد کپچا است، اما فولدر موقتی فایل  (%s) وجود ندارد و یا قابل نوشتن نیست. شما میتوانید این فولدر را ایجاد کنید و یا دسترسی آنرا قابل نوشتن کنید."
+
+#: contact-form-7/modules/captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "این فرم حاوی فیلد کپچا است، اما کتابخانه GD - FreeType روی سرور فعال نیست"
+
+#: contact-form-7/modules/checkbox.php:176
+msgid "Checkboxes"
+msgstr "چک باکس ها"
+
+#: contact-form-7/modules/checkbox.php:179
+msgid "Radio buttons"
+msgstr "دکمه انتخابی"
+
+#: contact-form-7/modules/checkbox.php:200
+#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/select.php:156
+#: contact-form-7/modules/text.php:156
+#: contact-form-7/modules/textarea.php:136
+msgid "Required field?"
+msgstr "فیلد اجباری؟"
+
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/select.php:170
+msgid "Choices"
+msgstr "انتخاب ها"
+
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/select.php:172
+msgid "* One choice per line."
+msgstr "* یک انتخاب در هر خط."
+
+#: contact-form-7/modules/checkbox.php:222
+msgid "Put a label first, a checkbox last?"
+msgstr "ابتدا برچسب و سپس چک باکس ؟"
+
+#: contact-form-7/modules/checkbox.php:223
+msgid "Wrap each item with <label> tag?"
+msgstr "قرار دادن هر آیتم همراه با برچسب؟"
+
+#: contact-form-7/modules/checkbox.php:225
+msgid "Make checkboxes exclusive?"
+msgstr "چک باکس به صورت انحصاری باشد؟"
+
+#: contact-form-7/modules/checkbox.php:233
+#: contact-form-7/modules/select.php:184
+#: contact-form-7/modules/text.php:199
+#: contact-form-7/modules/textarea.php:168
+msgid "And, put this code into the Mail fields below."
+msgstr "و، این کد را در فیلد پست الکترونیک زیر قرار دهید."
+
+#: contact-form-7/modules/file.php:200
+msgid "Uploading a file fails for any reason"
+msgstr "آپلود فایل با مشکل مواجه شد"
+
+#: contact-form-7/modules/file.php:201
+msgid "Failed to upload file."
+msgstr "آپلود فایل موفقیت آمیز نبود."
+
+#: contact-form-7/modules/file.php:205
+msgid "Uploaded file is not allowed file type"
+msgstr "پسوند فایل آپلود شده مجاز نمی باشد"
+
+#: contact-form-7/modules/file.php:206
+msgid "This file type is not allowed."
+msgstr "آپلود این نوع فایل مجاز نیست."
+
+#: contact-form-7/modules/file.php:210
+msgid "Uploaded file is too large"
+msgstr "فایل آپلود شده بیش از اندازه بزرگ است"
+
+#: contact-form-7/modules/file.php:211
+msgid "This file is too large."
+msgstr "این فایل بیش از اندازه بزرگ است."
+
+#: contact-form-7/modules/file.php:215
+msgid "Uploading a file fails for PHP error"
+msgstr "آپلود فایل به علل خطای PHP با مشکل مواجه شد."
+
+#: contact-form-7/modules/file.php:216
+msgid "Failed to upload file. Error occurred."
+msgstr "آپلود فایل موفقیت آمیز نبود. خطایی رخ داد."
+
+#: contact-form-7/modules/file.php:227
+msgid "File upload"
+msgstr "آپلود فایل"
+
+#: contact-form-7/modules/file.php:250
+msgid "File size limit"
+msgstr "محدودیت در سایز فایل"
+
+#: contact-form-7/modules/file.php:250
+msgid "bytes"
+msgstr "بایت"
+
+#: contact-form-7/modules/file.php:253
+msgid "Acceptable file types"
+msgstr "فایل های مجاز"
+
+#: contact-form-7/modules/file.php:260
+msgid "And, put this code into the File Attachments field below."
+msgstr "و، این کد را در فیلد پیوست فایل زیر قرار دهید."
+
+#: contact-form-7/modules/file.php:285
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "این فرم تماس حاوی فیلد آپلود فایل است، اما به صورت موفق فولدر آپلود، برای فایل (%s) وجود ندارد و یا قابل نوشتن نیست. شما می توانید این فولدر را ایجاد کنید و یا دسترسی آنرا تغییر دهید."
+
+#: contact-form-7/modules/quiz.php:158
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "پاسخ شما به پرسش امنیتی اشتباه است."
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Your answer is not correct."
+msgstr "پاسخ شما صحیح نیست."
+
+#: contact-form-7/modules/quiz.php:169
+msgid "Quiz"
+msgstr "پرسش"
+
+#: contact-form-7/modules/quiz.php:199
+msgid "Quizzes"
+msgstr "پرسش ها"
+
+#: contact-form-7/modules/quiz.php:201
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* پرسش | پاسخ (مثلا 1+1=؟ | 2)"
+
+#: contact-form-7/modules/select.php:147
+msgid "Drop-down menu"
+msgstr "منو بازشو"
+
+#: contact-form-7/modules/select.php:176
+msgid "Allow multiple selections?"
+msgstr "مجاز به انتخاب چند گزینه به طور همزمان؟"
+
+#: contact-form-7/modules/select.php:177
+msgid "Insert a blank item as the first option?"
+msgstr "آیتم خالی به عنوان اولین انتخاب قرار داده شود؟"
+
+#: contact-form-7/modules/submit.php:58
+msgid "Submit button"
+msgstr "دکمه ارسال"
+
+#: contact-form-7/modules/submit.php:76
+msgid "Label"
+msgstr "برچسب"
+
+#: contact-form-7/modules/text.php:133
+msgid "Text field"
+msgstr "فیلد متنی"
+
+#: contact-form-7/modules/text.php:136
+msgid "Email field"
+msgstr "فیلد پست الکترونیک"
+
+#: contact-form-7/modules/text.php:178
+msgid "Akismet"
+msgstr "اکیسمت"
+
+#: contact-form-7/modules/text.php:180
+msgid "This field requires author's name"
+msgstr "این گزینه نیازمند نام نویسنده است"
+
+#: contact-form-7/modules/text.php:181
+msgid "This field requires author's URL"
+msgstr "این گزینه نیازمند آدرس اینترنتی نویسنده است"
+
+#: contact-form-7/modules/text.php:183
+msgid "This field requires author's email address"
+msgstr "این گزینه نیازمند آدرس پست الکترونیک نویسنده است"
+
+#: contact-form-7/modules/text.php:189
+#: contact-form-7/modules/textarea.php:158
+msgid "Default value"
+msgstr "مقدار پیشفرض"
+
+#: contact-form-7/modules/text.php:192
+#: contact-form-7/modules/textarea.php:161
+msgid "Use this text as watermark?"
+msgstr "استفاده از این نوشته به عنوان واترمارک"
+
+#: contact-form-7/modules/textarea.php:127
+msgid "Text area"
+msgstr "فضای متنی"
 
