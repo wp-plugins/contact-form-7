@@ -63,7 +63,7 @@ It is hard to continue development and support for this plugin without contribut
 * Malayalam (ml_IN) - [RAHUL.S.A](http://www.infution.co.cc/)
 * Maltese (mt_MT) - [Ajoft Technologies](http://www.ajoft.com/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net), [Peter Holme](http://holme.se/nettsteder/)
-* Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/)
+* Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/), [Mohsen Firoozmandan](http://www.rankbazar.com/)
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com), [RafalDesign](http://www.rafaldesign.pl/)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com)
 * Russian (ru_RU) - Dmitry Volotovich, [kg69design](http://kg69design.com/), [Denis Voituk](http://artprima.cz/)
