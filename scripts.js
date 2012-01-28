@@ -59,7 +59,7 @@
 						$(n).val($(n).attr('title'));
 					});
 
-					ro.append(data.message).slideDown('fast');
+					$(data.into).wpcf7FillResponseOutput(data.message);
 				}
 			});
 
@@ -205,6 +205,12 @@
 			$(this).find('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
 			$(this).find('span.wpcf7-not-valid-tip').remove();
 			$(this).find('img.ajax-loader').css({ visibility: 'hidden' });
+		});
+	};
+
+	$.fn.wpcf7FillResponseOutput = function(message) {
+		return this.each(function() {
+			$(this).find('div.wpcf7-response-output').append(message).slideDown('fast');
 		});
 	};
 
