@@ -22,7 +22,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 	$validation_error = wpcf7_get_validation_error( $name );
 
-	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = '';
+	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = $title_att = '';
 
 	$class_att = wpcf7_form_controls_class( $type );
 
@@ -49,17 +49,24 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		}
 	}
 
+	// Value.
+	$value = '';
+
+	if ( 'captchar' == $type && ! wpcf7_is_posted() && isset( $values[0] ) ) {
+		$value = $values[0];
+
+		if ( wpcf7_script_is() && preg_grep( '%^watermark$%', $options ) ) {
+			$class_att .= ' wpcf7-use-title-as-watermark';
+			$title_att .= sprintf( ' %s', $value );
+			$value = '';
+		}
+	}
+
 	if ( $id_att )
 		$atts .= ' id="' . trim( $id_att ) . '"';
 
 	if ( $class_att )
 		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	// Value.
-	if ( ! wpcf7_is_posted() && isset( $values[0] ) )
-		$value = $values[0];
-	else
-		$value = '';
 
 	if ( 'captchac' == $type ) {
 		if ( ! class_exists( 'ReallySimpleCaptcha' ) ) {
@@ -99,6 +106,9 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 		if ( '' !== $tabindex_att )
 			$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
+
+		if ( '' !== $title_att )
+			$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
 
 		$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 		$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
