@@ -43,7 +43,6 @@
 						ro.addClass('wpcf7-spam-blocked');
 
 					if (1 == data.mailSent) {
-						$(data.into).find('form').resetForm().clearForm();
 						ro.addClass('wpcf7-mail-sent-ok');
 
 						if (data.onSentOk)
@@ -54,6 +53,9 @@
 
 					if (data.onSubmit)
 						$.each(data.onSubmit, function(i, n) { eval(n) });
+
+					if (1 == data.mailSent)
+						$(data.into).find('form').resetForm().clearForm();
 
 					$(data.into).find('.wpcf7-use-title-as-watermark.watermark').each(function(i, n) {
 						$(n).val($(n).attr('title'));
