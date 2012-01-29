@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.2
-Tested up to: 3.3
+Tested up to: 3.3.1
 Stable tag: 3.0.2.1
 
 Just another contact form plugin. Simple but flexible.
@@ -113,38 +113,20 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 3.0.2.1 =
+= 3.1 =
 
-* Fix a critical bug of losing checkbox option values when you save contact form.
+* Offer nonce verification for contact forms.
+* Add several options to retrieve logged-in user info as default value of field.
+* Introduce wpcf7_validate filter for validation independent from specific form tag type.
+* Search contact form by title when failed to find by ID.
+* Include all $_POST variables into $cf->posted_data and make them referable from mail.
+* Add watermark option to captchar (CAPTCHA-response) field.
+* Introduce wpcf7_ajax_loader() function and wpcf7_ajax_loader filter.
+* Introduce wpcf7_akismet_comment_check filter.
+* Introduce menu icons created by Takao Honda.
+* Translation for Azeri has been created.
+* Translations for Italian, Russian, Arabic, Danish, Persian, Romanian, and Portuguese have been updated.
 
-= 3.0.2 =
+== Upgrade Notice ==
 
-* Show alert messages when you use it on old version of WordPress.
-* Introduce wpcf7_is_rtl() to avoid “not exist” error of is_rtl().
-* Take back data conversion from Contact Form 7 1.x.
-* Normalize newline characters to \n (line feed) on save (fix export/import problem).
-* Rewrite wpcf7_admin_url() and use menu_page_url() inside it.
-* Use wp_enqueue_scripts and admin_enqueue_scripts action hooks instead of wp_print_styles and admin_print_styles.
-* Use wp_safe_redirect() instead of wp_redirect().
-* Updated jquery.form.js to 2.94.
-* Translation for Esperanto has been created.
-* Translations for German, Japanese, Malay, Thai, Slovak, and Hungarian have been updated.
-
-= 3.0.1 =
-
-* Removed unused icl.php file from modules folder.
-* Replaced deprecated get_bloginfo('text_direction') with is_rtl().
-* Made “Acceptable file types” field in the File upload tag generator being able to accept comma (,) and pipe (|) as separating character in addition to space.
-* Added sanitization for $_POST['_wpcf7_unit_tag'] value for avoiding possible abuse.
-* Updated jquery.form.js to 2.87.
-* Translations for Tagalog, Belarusian, and Maltese have been created.
-* Translations for Italian, German, Japanese, Russian, Latvian, and Afrikaans have been updated.
-
-= 3.0 =
-
-* Contact Form 7 3.0 utilizes Custom Post Types feature to save contact forms. It does not create its own table (contact_form_7) anymore.
-* New shortcode format has been introduced. New format is like this: [contact-form-7 id="1234" title="Contact form 1"]. Note that new one starts with contact-form-7 instead of contact-form.
-* Contact Form 7 3.0 works with WordPress version 3.2 or higher. This also means that you need PHP version 5.2.4 or higher and MySQL version 5.0 or higher (these are minimum requirements for WordPress 3.2).
-* Translations for Japanese, German, Georgian, Italian and Spanish have been updated.
-* Admin panel has been enhanced. Now it uses meta boxes.
-* Bundled jquery.form.js has been updated to 2.84.
+The current version of Contact Form 7 requires WordPress 3.2 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
