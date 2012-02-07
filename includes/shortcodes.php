@@ -39,6 +39,8 @@ class WPCF7_ShortcodeManager {
 		$attr = trim( preg_replace( '/\s+/', ' ', $m[3] ) );
 		$content = trim( $m[5] );
 
+		$content = str_replace( "\n", '<WPPreserveNewline />', $content );
+
 		$result = $m[1] . '[' . $tag
 			. ( $attr ? ' ' . $attr : '' )
 			. ( $m[4] ? ' ' . $m[4] : '' )
