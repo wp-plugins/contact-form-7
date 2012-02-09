@@ -153,7 +153,7 @@ add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 function wpcf7_widget_text_filter( $content ) {
 	global $wpcf7;
 
-	if ( ! preg_match( '/\[\s*contact-form(-7)?\s.*?\]/', $content ) )
+	if ( ! preg_match( '/\[[\r\n\t ]*contact-form(-7)?[\r\n\t ].*?\]/', $content ) )
 		return $content;
 
 	$wpcf7->widget_count += 1;

@@ -484,7 +484,7 @@ class WPCF7_ContactForm {
 		$values = array();
 
 		foreach ( $tmp_settings as $setting ) {
-			if ( preg_match('/^([a-zA-Z0-9_]+)\s*:(.*)$/', $setting, $matches ) ) {
+			if ( preg_match('/^([a-zA-Z0-9_]+)[\t ]*:(.*)$/', $setting, $matches ) ) {
 				if ( $matches[1] != $name )
 					continue;
 
