@@ -222,8 +222,13 @@ class WPCF7_ContactForm {
 				continue;
 
 			$name = $fe['name'];
+
+			if ( ! isset( $_POST[$name] ) )
+				continue;
+
+			$value = $_POST[$name];
+
 			$pipes = $fe['pipes'];
-			$value = isset( $_POST[$name] ) ? $_POST[$name] : '';
 
 			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
 				if ( is_array( $value) ) {
