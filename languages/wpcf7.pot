@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-29 16:04+0900\n"
-"PO-Revision-Date: 2012-01-29 16:04+0900\n"
+"POT-Creation-Date: 2012-02-22 15:57+0900\n"
+"PO-Revision-Date: 2012-02-22 15:58+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,71 +53,71 @@ msgstr ""
 msgid "Generate Tag"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:216
+#: contact-form-7/admin/admin.php:244
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:227
+#: contact-form-7/admin/admin.php:255
 msgid "http://contactform7.com/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:228
+#: contact-form-7/admin/admin.php:256
 msgid "Contactform7.com"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:229
+#: contact-form-7/admin/admin.php:257
 msgid "http://contactform7.com/docs/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:230
+#: contact-form-7/admin/admin.php:258
 msgid "Docs"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:231
+#: contact-form-7/admin/admin.php:259
 msgid "http://contactform7.com/faq/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:232
+#: contact-form-7/admin/admin.php:260
 msgid "FAQ"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:233
+#: contact-form-7/admin/admin.php:261
 msgid "http://contactform7.com/support/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:234
+#: contact-form-7/admin/admin.php:262
 msgid "Support"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:248
+#: contact-form-7/admin/admin.php:276
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:251
+#: contact-form-7/admin/admin.php:279
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:254
+#: contact-form-7/admin/admin.php:282
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:288
+#: contact-form-7/admin/admin.php:316
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:289
+#: contact-form-7/admin/admin.php:317
 msgid "Your contribution is needed for making this plugin better."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "http://contactform7.com/donate/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "Donate"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:343
 #, php-format
 msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
 msgstr ""
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Message body:"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:660
+#: contact-form-7/includes/classes.php:665
 msgid "Untitled"
 msgstr ""
 
@@ -339,7 +339,7 @@ msgid "Armenian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:189
-msgid "Azeri"
+msgid "Azerbaijani"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:190
