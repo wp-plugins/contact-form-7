@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.2
 Tested up to: 3.3.1
-Stable tag: 3.1
+Stable tag: 3.1.1
 
 Just another contact form plugin. Simple but flexible.
 
@@ -112,6 +112,15 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.1.1 =
+
+* Introduce wpcf7_verify_nonce() and wpcf7_create_nonce() for front-end use. This fixes the wrong nonce issue on cached pages.
+* Preserve new line characters in form shortcode contents to bypass auto-p filter.
+* Use [\r\n\t ] instead of [\s] in regex to prevent issues of checkbox/radio options containing some UTF-8 characters are dropped.
+* Bug fixed: tag generator menu is incorrectly shown on WordPress 3.2.x.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 2.96.
+* Translations for Latvian, Hebrew, German, and Japanese have been updated.
 
 = 3.1 =
 
