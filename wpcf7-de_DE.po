@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V3.1\n"
+"Project-Id-Version: Contact Form 7 | V3.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-29 16:04+0900\n"
-"PO-Revision-Date: 2012-02-02 10:56+0100\n"
+"POT-Creation-Date: 2012-02-22 15:57+0900\n"
+"PO-Revision-Date: 2012-02-22 21:29+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,71 +55,71 @@ msgstr "Bearbeiten"
 msgid "Generate Tag"
 msgstr "Tag generieren"
 
-#: contact-form-7/admin/admin.php:216
+#: contact-form-7/admin/admin.php:244
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: contact-form-7/admin/admin.php:227
+#: contact-form-7/admin/admin.php:255
 msgid "http://contactform7.com/"
 msgstr "http://contactform7.com/"
 
-#: contact-form-7/admin/admin.php:228
+#: contact-form-7/admin/admin.php:256
 msgid "Contactform7.com"
 msgstr "Contactform7.com"
 
-#: contact-form-7/admin/admin.php:229
+#: contact-form-7/admin/admin.php:257
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:230
+#: contact-form-7/admin/admin.php:258
 msgid "Docs"
 msgstr "Dokumente"
 
-#: contact-form-7/admin/admin.php:231
+#: contact-form-7/admin/admin.php:259
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:232
+#: contact-form-7/admin/admin.php:260
 msgid "FAQ"
 msgstr "Faq"
 
-#: contact-form-7/admin/admin.php:233
+#: contact-form-7/admin/admin.php:261
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:234
+#: contact-form-7/admin/admin.php:262
 msgid "Support"
 msgstr "Support"
 
-#: contact-form-7/admin/admin.php:248
+#: contact-form-7/admin/admin.php:276
 msgid "Contact form created."
 msgstr "Kontaktformular erstellt."
 
-#: contact-form-7/admin/admin.php:251
+#: contact-form-7/admin/admin.php:279
 msgid "Contact form saved."
 msgstr "Kontaktformular gespeichert."
 
-#: contact-form-7/admin/admin.php:254
+#: contact-form-7/admin/admin.php:282
 msgid "Contact form deleted."
 msgstr "Kontaktformular gelöscht."
 
-#: contact-form-7/admin/admin.php:288
+#: contact-form-7/admin/admin.php:316
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr "Contact Form 7 braucht Ihre Unterstützung. Bitte spenden Sie noch heute."
 
-#: contact-form-7/admin/admin.php:289
+#: contact-form-7/admin/admin.php:317
 msgid "Your contribution is needed for making this plugin better."
 msgstr "Ihr Beitrag wird benötigt, um dieses Plugin stetig zu verbessern."
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "Donate"
 msgstr "Spenden"
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:343
 #, php-format
 msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
 msgstr "<strong>Contact Form 7 %1$s erfordert WordPress %2$s oder höher.</strong> Bitte <a href=\"%3$s\">aktualisieren Sie Wordpress</a> zuerst."
@@ -224,7 +224,7 @@ msgstr "HTML-Content-Typ verwenden"
 msgid "Message body:"
 msgstr "Nachrichtentext:"
 
-#: contact-form-7/includes/classes.php:660
+#: contact-form-7/includes/classes.php:665
 msgid "Untitled"
 msgstr "Ohne Titel"
 
@@ -343,7 +343,7 @@ msgid "Armenian"
 msgstr "Armenisch"
 
 #: contact-form-7/includes/functions.php:189
-msgid "Azeri"
+msgid "Azerbaijani"
 msgstr "Aserbaidschanisch"
 
 #: contact-form-7/includes/functions.php:190
@@ -846,6 +846,9 @@ msgstr "Diesen Text als Wasserzeichen nutzen?"
 #: contact-form-7/modules/textarea.php:127
 msgid "Text area"
 msgstr "Textbereich"
+
+#~ msgid "Azeri"
+#~ msgstr "Aserbaidschanisch"
 
 #~ msgid ""
 #~ "This contact form contains [icl] tags, but they are obsolete and no "
