@@ -314,10 +314,25 @@ function wpcf7_init_captcha() {
 
 	if ( ! is_object( $wpcf7_captcha ) )
 		$wpcf7_captcha = new ReallySimpleCaptcha();
-	$captcha =& $wpcf7_captcha;
 
-	$captcha->tmp_dir = trailingslashit( wpcf7_captcha_tmp_dir() );
-	wp_mkdir_p( $captcha->tmp_dir );
+	$dir = trailingslashit( wpcf7_captcha_tmp_dir() );
+
+	if ( ! wp_mkdir_p( $dir ) )
+		return false;
+
+	$wpcf7_captcha->tmp_dir = $dir;
+
+	$htaccess_file = $dir . '.htaccess';
+
+	if ( ! file_exists( $htaccess_file ) ) {
+		if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
+			fwrite( $handle, '<Files ~ "\\.txt$">' . "\n" );
+			fwrite( $handle, '    Deny from all' . "\n" );
+			fwrite( $handle, '</Files>' . "\n" );
+			fclose( $handle );
+		}
+	}
+
 	return true;
 }
 
@@ -340,39 +355,38 @@ function wpcf7_generate_captcha( $options = null ) {
 
 	if ( ! wpcf7_init_captcha() )
 		return false;
-	$captcha =& $wpcf7_captcha;
 
-	if ( ! is_dir( $captcha->tmp_dir ) || ! is_writable( $captcha->tmp_dir ) )
+	if ( ! is_dir( $wpcf7_captcha->tmp_dir ) || ! is_writable( $wpcf7_captcha->tmp_dir ) )
 		return false;
 
 	$img_type = imagetypes();
 	if ( $img_type & IMG_PNG )
-		$captcha->img_type = 'png';
+		$wpcf7_captcha->img_type = 'png';
 	elseif ( $img_type & IMG_GIF )
-		$captcha->img_type = 'gif';
+		$wpcf7_captcha->img_type = 'gif';
 	elseif ( $img_type & IMG_JPG )
-		$captcha->img_type = 'jpeg';
+		$wpcf7_captcha->img_type = 'jpeg';
 	else
 		return false;
 
 	if ( is_array( $options ) ) {
 		if ( isset( $options['img_size'] ) )
-			$captcha->img_size = $options['img_size'];
+			$wpcf7_captcha->img_size = $options['img_size'];
 		if ( isset( $options['base'] ) )
-			$captcha->base = $options['base'];
+			$wpcf7_captcha->base = $options['base'];
 		if ( isset( $options['font_size'] ) )
-			$captcha->font_size = $options['font_size'];
+			$wpcf7_captcha->font_size = $options['font_size'];
 		if ( isset( $options['font_char_width'] ) )
-			$captcha->font_char_width = $options['font_char_width'];
+			$wpcf7_captcha->font_char_width = $options['font_char_width'];
 		if ( isset( $options['fg'] ) )
-			$captcha->fg = $options['fg'];
+			$wpcf7_captcha->fg = $options['fg'];
 		if ( isset( $options['bg'] ) )
-			$captcha->bg = $options['bg'];
+			$wpcf7_captcha->bg = $options['bg'];
 	}
 
 	$prefix = mt_rand();
-	$captcha_word = $captcha->generate_random_word();
-	return $captcha->generate_image( $prefix, $captcha_word );
+	$captcha_word = $wpcf7_captcha->generate_random_word();
+	return $wpcf7_captcha->generate_image( $prefix, $captcha_word );
 }
 
 function wpcf7_check_captcha( $prefix, $response ) {
@@ -380,9 +394,8 @@ function wpcf7_check_captcha( $prefix, $response ) {
 
 	if ( ! wpcf7_init_captcha() )
 		return false;
-	$captcha =& $wpcf7_captcha;
 
-	return $captcha->check( $prefix, $response );
+	return $wpcf7_captcha->check( $prefix, $response );
 }
 
 function wpcf7_remove_captcha( $prefix ) {
@@ -390,12 +403,11 @@ function wpcf7_remove_captcha( $prefix ) {
 
 	if ( ! wpcf7_init_captcha() )
 		return false;
-	$captcha =& $wpcf7_captcha;
 
 	if ( preg_match( '/[^0-9]/', $prefix ) ) // Contact Form 7 generates $prefix with mt_rand()
 		return false;
 
-	$captcha->remove( $prefix );
+	$wpcf7_captcha->remove( $prefix );
 }
 
 function wpcf7_cleanup_captcha_files() {
@@ -403,10 +415,9 @@ function wpcf7_cleanup_captcha_files() {
 
 	if ( ! wpcf7_init_captcha() )
 		return false;
-	$captcha =& $wpcf7_captcha;
 
-	if ( is_callable( array( $captcha, 'cleanup' ) ) )
-		return $captcha->cleanup();
+	if ( is_callable( array( $wpcf7_captcha, 'cleanup' ) ) )
+		return $wpcf7_captcha->cleanup();
 
 	$dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 
@@ -415,7 +426,7 @@ function wpcf7_cleanup_captcha_files() {
 
 	if ( $handle = @opendir( $dir ) ) {
 		while ( false !== ( $file = readdir( $handle ) ) ) {
-			if ( ! preg_match( '/^[0-9]+\.(php|png|gif|jpeg)$/', $file ) )
+			if ( ! preg_match( '/^[0-9]+\.(php|txt|png|gif|jpeg)$/', $file ) )
 				continue;
 
 			$stat = @stat( $dir . $file );
