@@ -317,20 +317,24 @@ function wpcf7_init_captcha() {
 
 	$dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 
+	$wpcf7_captcha->tmp_dir = $dir;
+
+	if ( is_callable( array( $wpcf7_captcha, 'make_tmp_dir' ) ) )
+		return $wpcf7_captcha->make_tmp_dir();
+
 	if ( ! wp_mkdir_p( $dir ) )
 		return false;
 
-	$wpcf7_captcha->tmp_dir = $dir;
-
 	$htaccess_file = $dir . '.htaccess';
 
-	if ( ! file_exists( $htaccess_file ) ) {
-		if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
-			fwrite( $handle, '<Files ~ "\\.txt$">' . "\n" );
-			fwrite( $handle, '    Deny from all' . "\n" );
-			fwrite( $handle, '</Files>' . "\n" );
-			fclose( $handle );
-		}
+	if ( file_exists( $htaccess_file ) )
+		return true;
+
+	if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
+		fwrite( $handle, '<Files ~ "\\.txt$">' . "\n" );
+		fwrite( $handle, '    Deny from all' . "\n" );
+		fwrite( $handle, '</Files>' . "\n" );
+		fclose( $handle );
 	}
 
 	return true;
