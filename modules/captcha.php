@@ -331,8 +331,10 @@ function wpcf7_init_captcha() {
 		return true;
 
 	if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
-		fwrite( $handle, '<Files ~ "\\.txt$">' . "\n" );
-		fwrite( $handle, '    Deny from all' . "\n" );
+		fwrite( $handle, 'Order deny,allow' . "\n" );
+		fwrite( $handle, 'Deny from all' . "\n" );
+		fwrite( $handle, '<Files ~ "^[0-9A-Za-z]+\\.(jpeg|gif|png)$">' . "\n" );
+		fwrite( $handle, '    Allow from all' . "\n" );
 		fwrite( $handle, '</Files>' . "\n" );
 		fclose( $handle );
 	}
