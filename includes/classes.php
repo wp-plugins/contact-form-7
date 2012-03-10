@@ -222,11 +222,10 @@ class WPCF7_ContactForm {
 				continue;
 
 			$name = $fe['name'];
+			$value = '';
 
-			if ( ! isset( $_POST[$name] ) )
-				continue;
-
-			$value = $_POST[$name];
+			if ( isset( $posted_data[$name] ) )
+				$value = $posted_data[$name];
 
 			$pipes = $fe['pipes'];
 
