@@ -1,213 +1,849 @@
-# Mihael Simonič, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: wpcf7-de_DE\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-10-25 13:59+0200\n"
-"Last-Translator: Mihael Simonič\n"
-"Language-Team: Slovenian\n"
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-22 15:57+0900\n"
+"PO-Revision-Date: 2012-03-19 01:34+0100\n"
+"Last-Translator: Jani Roskar <jani.roskar@gmail.com>\n"
+"Language-Team: QB - Creative Studio // Jani Roskar <jani@qb.si>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Slovene\n"
-"X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
-"X-Generator: Lokalize 0.2\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 
-#: contact-form-7/wp-contact-form-7.php:224
-#: contact-form-7/wp-contact-form-7.php:297
-msgid "Contact form"
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Še eden vtičnik za kontaktne obrazce. Preprost a fleksibilen."
+
+#: contact-form-7/settings.php:75
+msgid "Contact Forms"
+msgstr "Kontaktni obrazci"
+
+#: contact-form-7/settings.php:76
+msgid "Contact Form"
 msgstr "Kontaktni obrazec"
 
-#: contact-form-7/wp-contact-form-7.php:253
-#: contact-form-7/includes/admin-panel.php:5
+#: contact-form-7/settings.php:168
+#, php-format
+msgid "Contact form %d"
+msgstr "Kontaktni obrazec %d"
+
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/wp-contact-form-7.php:273
+#: contact-form-7/admin/admin.php:114
+msgid "Contact"
+msgstr "Kontakt"
+
+#: contact-form-7/admin/admin.php:118
+msgid "Edit Contact Forms"
+msgstr "Uredi Kontaktne obrazce"
+
+#: contact-form-7/admin/admin.php:118
+msgid "Edit"
+msgstr "Uredi"
+
+#: contact-form-7/admin/admin.php:167
+msgid "Generate Tag"
+msgstr "Generiraj tag"
+
+#: contact-form-7/admin/admin.php:244
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: contact-form-7/admin/admin.php:255
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:256
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:257
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:258
+msgid "Docs"
+msgstr "Dok"
+
+#: contact-form-7/admin/admin.php:259
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:260
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact-form-7/admin/admin.php:261
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:262
+msgid "Support"
+msgstr "Podpora"
+
+#: contact-form-7/admin/admin.php:276
+msgid "Contact form created."
+msgstr "Kontaktni obrazec ustvarjen."
+
+#: contact-form-7/admin/admin.php:279
+msgid "Contact form saved."
+msgstr "Kontaktni obrazec shranjen."
+
+#: contact-form-7/admin/admin.php:282
+msgid "Contact form deleted."
+msgstr "Kontaktni obrazec izbrisan."
+
+#: contact-form-7/admin/admin.php:316
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 potrebuje tvojo podporo. Prosim doniraj še danes."
+
+#: contact-form-7/admin/admin.php:317
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Tvoj prispevek bo pripomogel k izboljšanju tega vtičnika."
+
+#: contact-form-7/admin/admin.php:323
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:323
+msgid "Donate"
+msgstr "Doniraj"
+
+#: contact-form-7/admin/admin.php:343
 #, php-format
-msgid "Contact form \"%s\" deleted. "
-msgstr "Kontaktni obrazec \"%s\" je bil izbrisan."
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Contact Form 7 %1$s potrebuje WordPress %2$s ali več.</strong> Prosim <a href=\"%3$s\">posodobi WordPress</a>."
 
-#: contact-form-7/wp-contact-form-7.php:289
-#, php-format
-msgid "Contact form \"%s\" saved. "
-msgstr "Kontaktni obrazec \"%s\"je bil shranjen."
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
+msgstr "Dodaj"
 
-#: contact-form-7/wp-contact-form-7.php:318
-msgid "Your Name"
-msgstr "Vaše pravo ime"
+#: contact-form-7/admin/edit.php:41
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopiraj to kodo in jo prilepi v objavo, stran ali tekstovni vtičnik."
 
-#: contact-form-7/wp-contact-form-7.php:318
-#: contact-form-7/wp-contact-form-7.php:320
-msgid "(required)"
-msgstr "(obvezno)"
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "Stara koda je prav tako na voljo."
 
-#: contact-form-7/wp-contact-form-7.php:320
-msgid "Your Email"
-msgstr "Vaš E-naslov"
-
-#: contact-form-7/wp-contact-form-7.php:322
-msgid "Subject"
-msgstr "Predmet"
-
-#: contact-form-7/wp-contact-form-7.php:324
-msgid "Your Message"
-msgstr "Vaše sporočilo"
-
-#: contact-form-7/wp-contact-form-7.php:326
-#: contact-form-7/wp-contact-form-7.php:738
-msgid "Send"
-msgstr "Pošlji"
-
-#: contact-form-7/wp-contact-form-7.php:345
-msgid "Your message was sent successfully. Thanks."
-msgstr "Vaše sproročilo je bilo uspešno poslano. Hvala."
-
-#: contact-form-7/wp-contact-form-7.php:347
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Med pošiljanjem sporočila je prišlo do napake. Prosimo poskustite kasnjeje ali pa kontaktirate administratorja strani drugače."
-
-#: contact-form-7/wp-contact-form-7.php:349
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Obrazec je neveljaven. Prosimo preverite vsebino polij."
-
-#: contact-form-7/wp-contact-form-7.php:351
-msgid "Email address seems invalid."
-msgstr "Vaš E-naslov vsebuje nedovoljene znake."
-
-#: contact-form-7/wp-contact-form-7.php:353
-msgid "Please fill the required field."
-msgstr "Prosimo, da izpolnite vsa obvezna pojla."
-
-#: contact-form-7/wp-contact-form-7.php:355
-msgid "Your entered code is incorrect."
-msgstr "Vnešana koda je napačna."
-
-#: contact-form-7/includes/admin-panel.php:19
-#: contact-form-7/includes/admin-panel.php:22
-msgid "Add new"
-msgstr "Dodaj nov obrazec"
-
-#: contact-form-7/includes/admin-panel.php:34
-msgid "Title"
-msgstr "Naslov"
-
-#: contact-form-7/includes/admin-panel.php:39
-msgid "Copy and paste this code into your post content."
-msgstr "Kopirajte in prilepite to besedilo v sporočilo."
-
-#: contact-form-7/includes/admin-panel.php:45
-msgid "Form content"
-msgstr "Vsebina obrazca"
-
-#: contact-form-7/includes/admin-panel.php:60
-msgid "Mail template"
-msgstr "Predlagano besedilo e-pošte"
-
-#: contact-form-7/includes/admin-panel.php:61
-msgid "Subject field:"
-msgstr "Naslov teme:"
-
-#: contact-form-7/includes/admin-panel.php:63
-msgid "Sender field:"
-msgstr "Pošiljatelj:"
-
-#: contact-form-7/includes/admin-panel.php:65
-msgid "Message body:"
-msgstr "Telo sporočila:"
-
-#: contact-form-7/includes/admin-panel.php:69
-msgid "Options"
-msgstr "Možnosti"
-
-#: contact-form-7/includes/admin-panel.php:70
-msgid "Recipient address:"
-msgstr "Naslov prejemnika:"
-
-#: contact-form-7/includes/admin-panel.php:75
+#: contact-form-7/admin/edit.php:55
 msgid "Save"
 msgstr "Shrani"
 
-#: contact-form-7/includes/admin-panel.php:82
-msgid "Delete this contact form"
-msgstr "Izbriši ta kontaktni obrazec"
+#: contact-form-7/admin/edit.php:62
+msgid "Copy"
+msgstr "Kopiraj"
 
-#: contact-form-7/includes/admin-panel.php:83
+#: contact-form-7/admin/edit.php:67
+msgid "Delete"
+msgstr "Izbriši"
+
+#: contact-form-7/admin/edit.php:69
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
-"Izbrisali boste ta kontaktni formular.\n"
-" 'Prekliči' za prekinitev in 'OK' za nadaljevanje."
+"Želeli ste izbrisat kontakni obrazec .\n"
+"'Prekliči' za preklic, 'Vredu' za izbris."
 
-#: contact-form-7/includes/admin-panel.php:137
-msgid "Akismet"
-msgstr "Akismet"
+#: contact-form-7/admin/edit.php:78
+msgid "Form"
+msgstr "Obrazec"
 
-#: contact-form-7/includes/admin-panel.php:138
-msgid "Check this field as sender&#39;s name"
-msgstr "To polje vsebuje pošiljateljevo ime. Preveri za spam."
+#: contact-form-7/admin/edit.php:81
+msgid "Mail"
+msgstr "Mail"
 
-#: contact-form-7/includes/admin-panel.php:139
-msgid "Check this field as sender&#39;s email"
-msgstr "To polje vsebuje pošiljateljev e-naslov. Preveri za spam."
+#: contact-form-7/admin/edit.php:84
+msgid "Mail (2)"
+msgstr "Mail (2)"
 
-#: contact-form-7/includes/admin-panel.php:140
-msgid "Check this field as sender&#39;s URL"
-msgstr "To polje vsebuje naslov pošiljateljeve spletne strani. Preveri za spam."
+#: contact-form-7/admin/edit.php:89
+msgid "Use mail (2)"
+msgstr "Uporabi mail (2)"
 
-#: contact-form-7/includes/admin-panel.php:141
-msgid "Don&#39;t check this field with Akismet"
-msgstr "Ne preveri tega polja z orodjem Askimet - preverjalnik za spam."
+#: contact-form-7/admin/edit.php:91
+msgid "Messages"
+msgstr "Sporočilo"
 
-#: contact-form-7/includes/admin-panel.php:148
-#: contact-form-7/includes/admin-panel.php:161
-#: contact-form-7/includes/admin-panel.php:194
-msgid "Default value"
-msgstr "Privzeta vrednost"
+#: contact-form-7/admin/edit.php:94
+msgid "Additional Settings"
+msgstr "Dodatne nastavitve"
 
-#: contact-form-7/includes/admin-panel.php:169
-msgid "Choices"
-msgstr "Izbira"
+#: contact-form-7/admin/edit.php:141
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Uporabi privzeti jezik (%s)"
 
-#: contact-form-7/includes/admin-panel.php:170
-msgid "* One choice per line."
-msgstr "* Ena možnost izbire na vrstico"
+#: contact-form-7/admin/edit.php:145
+msgid "Or"
+msgstr "ali"
 
-#: contact-form-7/includes/admin-panel.php:178
+#: contact-form-7/admin/edit.php:150
+msgid "(select language)"
+msgstr "(izberi jezik)"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Za:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Od:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Zadeva:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Dodatne glave:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Priponka:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Uporabi HTML jezik"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:108
+msgid "Message body:"
+msgstr "Sporočilo"
+
+#: contact-form-7/includes/classes.php:665
+msgid "Untitled"
+msgstr "Brez naslova"
+
+#: contact-form-7/includes/controller.php:245
+msgid "Sending ..."
+msgstr "Pošiljam ..."
+
+#: contact-form-7/includes/functions.php:26
+msgid "Sender's message was sent successfully"
+msgstr "Sporočilo je bilo uspešno poslano"
+
+#: contact-form-7/includes/functions.php:27
+msgid "Your message was sent successfully. Thanks."
+msgstr "Sporočilo je bilo uspešno poslano. Hvala!"
+
+#: contact-form-7/includes/functions.php:31
+msgid "Sender's message was failed to send"
+msgstr "Sporočilo ni bilo poslano."
+
+#: contact-form-7/includes/functions.php:32
+#: contact-form-7/modules/akismet.php:106
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Sporočilo ni bilo poslano. Prosim poskusi znova ali kontaktiraj administratorja."
+
+#: contact-form-7/includes/functions.php:36
+msgid "Validation errors occurred"
+msgstr "Napaka pri preverjanju"
+
+#: contact-form-7/includes/functions.php:37
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Napaka pri preverjanju. Preveri polja in poskusi znova."
+
+#: contact-form-7/includes/functions.php:41
+msgid "There are terms that the sender must accept"
+msgstr "Obstajajo pogoji s katerimi se mora pošiljatelj strinjati"
+
+#: contact-form-7/includes/functions.php:42
+msgid "Please accept the terms to proceed."
+msgstr "Prosim, sprejmite pogoje za nadaljevanje."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Email address that the sender entered is invalid"
+msgstr "Email naslov katerega je vpisal pošiljatelj ni veljaven."
+
+#: contact-form-7/includes/functions.php:47
+msgid "Email address seems invalid."
+msgstr "Email naslov izgleda napačen."
+
+#: contact-form-7/includes/functions.php:51
+msgid "There is a field that the sender must fill in"
+msgstr "Obstajajo polja, ki jih je potrebno izpolniti"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Please fill the required field."
+msgstr "Prosim izpolni potrebna polja."
+
+#: contact-form-7/includes/functions.php:76
+msgid "Your Name"
+msgstr "Ime"
+
+#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:78
+msgid "(required)"
+msgstr "(obvezno)"
+
+#: contact-form-7/includes/functions.php:78
+msgid "Your Email"
+msgstr "Vaš eMail"
+
+#: contact-form-7/includes/functions.php:80
+msgid "Subject"
+msgstr "Zadeva"
+
+#: contact-form-7/includes/functions.php:82
+msgid "Your Message"
+msgstr "Sporočilo"
+
+#: contact-form-7/includes/functions.php:84
+msgid "Send"
+msgstr "Pošlji"
+
+#: contact-form-7/includes/functions.php:92
+#, php-format
+msgid "From: %s"
+msgstr "Od: %s"
+
+#: contact-form-7/includes/functions.php:93
+#, php-format
+msgid "Subject: %s"
+msgstr "Zadeva: %s"
+
+#: contact-form-7/includes/functions.php:94
+msgid "Message Body:"
+msgstr "Sporočilo:"
+
+#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:109
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "To sporočilo je bilo poslano iz kontaktnega obrazca na %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Albanian"
+msgstr "Albanian"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Arabic"
+msgstr "Arabic"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Armenian"
+msgstr "Armenian"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Azerbaijani"
+msgstr "Azerbaijani"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Belarusian"
+msgstr "Belarusian"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Bosnian"
+msgstr "Bosnian"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Brazilian Portuguese"
+msgstr "Brazilian Portuguese"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Bulgarian"
+msgstr "Bulgarian"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Catalan"
+msgstr "Catalan"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Chinese (Simplified)"
+msgstr "Chinese (Simplified)"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Chinese (Traditional)"
+msgstr "Chinese (Traditional)"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Croatian"
+msgstr "Croatian"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Czech"
+msgstr "Czech"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Danish"
+msgstr "Danish"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Dutch"
+msgstr "Dutch"
+
+#: contact-form-7/includes/functions.php:202
+msgid "English"
+msgstr "English"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Estonian"
+msgstr "Estonian"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Finnish"
+msgstr "Finnish"
+
+#: contact-form-7/includes/functions.php:206
+msgid "French"
+msgstr "French"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Galician"
+msgstr "Galician"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Georgian"
+msgstr "Georgian"
+
+#: contact-form-7/includes/functions.php:209
+msgid "German"
+msgstr "German"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Greek"
+msgstr "Greek"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Hebrew"
+msgstr "Hebrew"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Hindi"
+msgstr "Hindi"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Italian"
+msgstr "Italian"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Japanese"
+msgstr "Japanese"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Korean"
+msgstr "Korean"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Latvian"
+msgstr "Latvian"
+
+#: contact-form-7/includes/functions.php:219
+msgid "Lithuanian"
+msgstr "Lithuanian"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Macedonian"
+msgstr "Macedonian"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Malay"
+msgstr "Malay"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: contact-form-7/includes/functions.php:223
+msgid "Maltese"
+msgstr "Maltese"
+
+#: contact-form-7/includes/functions.php:224
+msgid "Norwegian"
+msgstr "Norwegian"
+
+#: contact-form-7/includes/functions.php:225
+msgid "Persian"
+msgstr "Persian"
+
+#: contact-form-7/includes/functions.php:226
+msgid "Polish"
+msgstr "Polish"
+
+#: contact-form-7/includes/functions.php:227
+msgid "Portuguese"
+msgstr "Portuguese"
+
+#: contact-form-7/includes/functions.php:228
+msgid "Russian"
+msgstr "Russian"
+
+#: contact-form-7/includes/functions.php:229
+msgid "Romanian"
+msgstr "Romanian"
+
+#: contact-form-7/includes/functions.php:230
+msgid "Serbian"
+msgstr "Serbian"
+
+#: contact-form-7/includes/functions.php:231
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: contact-form-7/includes/functions.php:232
+msgid "Slovak"
+msgstr "Slovak"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Slovene"
+msgstr "Slovenian"
+
+#: contact-form-7/includes/functions.php:234
+msgid "Spanish"
+msgstr "Spanish"
+
+#: contact-form-7/includes/functions.php:235
+msgid "Swedish"
+msgstr "Swedish"
+
+#: contact-form-7/includes/functions.php:236
+msgid "Tamil"
+msgstr "Tamil"
+
+#: contact-form-7/includes/functions.php:237
+msgid "Thai"
+msgstr "Thai"
+
+#: contact-form-7/includes/functions.php:238
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Turkish"
+msgstr "Turkish"
+
+#: contact-form-7/includes/functions.php:240
+msgid "Ukrainian"
+msgstr "Ukrainian"
+
+#: contact-form-7/includes/functions.php:241
+msgid "Vietnamese"
+msgstr "Vietnamese"
+
+#: contact-form-7/modules/acceptance.php:153
+msgid "Acceptance"
+msgstr "Sprejem"
+
+#: contact-form-7/modules/acceptance.php:162
+#: contact-form-7/modules/captcha.php:212
+msgid "Name"
+msgstr "Ime"
+
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/captcha.php:256
+msgid "optional"
+msgstr "opcijsko"
+
+#: contact-form-7/modules/acceptance.php:176
+msgid "Make this checkbox checked by default?"
+msgstr "Označim to polje za privzeto?"
+
+#: contact-form-7/modules/acceptance.php:177
+msgid "Make this checkbox work inversely?"
+msgstr "Želiš da to polje deluje obratno?"
+
+#: contact-form-7/modules/acceptance.php:178
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* To pomeni da obiskovalec, ki sprejme izraz ODkljuka to polje."
+
+#: contact-form-7/modules/acceptance.php:183
+#: contact-form-7/modules/captcha.php:261
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopiraj to kodo in jo prilepi v polje na levi."
+
+#: contact-form-7/modules/akismet.php:105
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet ocenjuje pošiljanje kot škodoželjno (spam)."
+
+#: contact-form-7/modules/captcha.php:73
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Za uporabo CAPTCHA, potrebujete naložen vtičnik <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+
+#: contact-form-7/modules/captcha.php:187
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Znaki, se ne ujemajo s CAPTCHA kodo."
+
+#: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Koda, ki je bila vnešena je nepravilna."
+
+#: contact-form-7/modules/captcha.php:198
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:209
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Pomni: Za uporabo CAPTCHA, potrebujete naložen vtičnik Really Simple CAPTCHA."
+
+#: contact-form-7/modules/captcha.php:216
+msgid "Image settings"
+msgstr "Nastavitve slike"
+
+#: contact-form-7/modules/captcha.php:227
 msgid "Foreground color"
 msgstr "Barva ospredja"
 
-#: contact-form-7/includes/admin-panel.php:179
+#: contact-form-7/modules/captcha.php:230
 msgid "Background color"
-msgstr "Brava ozadja"
+msgstr "Barva ozadja"
 
-#: contact-form-7/includes/admin-panel.php:180
+#: contact-form-7/modules/captcha.php:234
 msgid "Image size"
 msgstr "Velikost slike"
 
-#: contact-form-7/includes/admin-panel.php:182
+#: contact-form-7/modules/captcha.php:235
 msgid "Small"
-msgstr "majhna"
+msgstr "Majhna"
 
-#: contact-form-7/includes/admin-panel.php:183
+#: contact-form-7/modules/captcha.php:236
 msgid "Medium"
-msgstr "srednja "
+msgstr "Srednja"
 
-#: contact-form-7/includes/admin-panel.php:184
+#: contact-form-7/modules/captcha.php:237
 msgid "Large"
-msgstr "velika"
+msgstr "Velika"
 
-#: contact-form-7/includes/admin-panel.php:199
+#: contact-form-7/modules/captcha.php:242
+msgid "Input field settings"
+msgstr "Nastavitve vnosnega polja"
+
+#: contact-form-7/modules/captcha.php:262
+msgid "For image"
+msgstr "Za sliko"
+
+#: contact-form-7/modules/captcha.php:264
+msgid "For input field"
+msgstr "Za vnostno polje"
+
+#: contact-form-7/modules/captcha.php:294
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Kontaktni obrazec vsebuje CAPTCHA polje, ampak trenutna mapa za datoteko (%s) ne obstaja ali ni zapisljiva. Ustvarite mapo ali ročno spremenite pravice mape."
+
+#: contact-form-7/modules/captcha.php:300
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Kontaktni obrazec vsebuje CAPTCHA polje, vendar potrebne knjižice (GD in FreeType) niso na voljo na strežniku."
+
+#: contact-form-7/modules/checkbox.php:161
+msgid "Checkboxes"
+msgstr "Potrditvena polja"
+
+#: contact-form-7/modules/checkbox.php:164
+msgid "Radio buttons"
+msgstr "Radio gumbi"
+
+#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/select.php:148
+#: contact-form-7/modules/text.php:175
+#: contact-form-7/modules/textarea.php:136
+msgid "Required field?"
+msgstr "Obvezno polje?"
+
+#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/select.php:162
+msgid "Choices"
+msgstr "Izbire"
+
+#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/select.php:164
+msgid "* One choice per line."
+msgstr "* Ena izbira na vrstico."
+
+#: contact-form-7/modules/checkbox.php:207
+msgid "Put a label first, a checkbox last?"
+msgstr "Vstavim oznako pred potrditvenim poljem?"
+
+#: contact-form-7/modules/checkbox.php:208
+msgid "Wrap each item with <label> tag?"
+msgstr "Vstavim vsak element v <label> oznako?"
+
+#: contact-form-7/modules/checkbox.php:210
+msgid "Make checkboxes exclusive?"
+msgstr "Naredim potrditvena polja ekskluzivna?"
+
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/select.php:176
+#: contact-form-7/modules/text.php:218
+#: contact-form-7/modules/textarea.php:168
+msgid "And, put this code into the Mail fields below."
+msgstr "In vstavite to kodo v polje za Mail spodaj."
+
+#: contact-form-7/modules/file.php:200
+msgid "Uploading a file fails for any reason"
+msgstr "Nalaganje datoteke je spodletelo zaradi "
+
+#: contact-form-7/modules/file.php:201
+msgid "Failed to upload file."
+msgstr "Napaka pri nalaganju."
+
+#: contact-form-7/modules/file.php:205
+msgid "Uploaded file is not allowed file type"
+msgstr "Format datoteke ni veljaven"
+
+#: contact-form-7/modules/file.php:206
+msgid "This file type is not allowed."
+msgstr "Format datoteke ni dovoljen."
+
+#: contact-form-7/modules/file.php:210
+msgid "Uploaded file is too large"
+msgstr "Datoteka je prevelika"
+
+#: contact-form-7/modules/file.php:211
+msgid "This file is too large."
+msgstr "Datoteka je prevelika."
+
+#: contact-form-7/modules/file.php:215
+msgid "Uploading a file fails for PHP error"
+msgstr "Nalaganje datoteke je spodletelo zaradi PHP napake"
+
+#: contact-form-7/modules/file.php:216
+msgid "Failed to upload file. Error occurred."
+msgstr "Nalaganje spodletelo. Prišlo je do napake."
+
+#: contact-form-7/modules/file.php:227
+msgid "File upload"
+msgstr "Datoteka"
+
+#: contact-form-7/modules/file.php:250
+msgid "File size limit"
+msgstr "Omejitev velikosti"
+
+#: contact-form-7/modules/file.php:250
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/modules/file.php:253
+msgid "Acceptable file types"
+msgstr "Sprejemljive vrste datotek"
+
+#: contact-form-7/modules/file.php:260
+msgid "And, put this code into the File Attachments field below."
+msgstr "In vstavite to kodo v polje priloge spodaj."
+
+#: contact-form-7/modules/file.php:285
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Kontaktni obrazec vsebuje polje za priponke, vendar začasna mapa za datoteke (%s) ne obstaja ali ni zapisljiva. Ustvari mapo ali ročno uredi dovoljenja mape."
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Pošiljatelj je napačno vpisal odgovor kviza"
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Your answer is not correct."
+msgstr "Odgovor ni pravilen."
+
+#: contact-form-7/modules/quiz.php:170
+msgid "Quiz"
+msgstr "Kviz"
+
+#: contact-form-7/modules/quiz.php:200
+msgid "Quizzes"
+msgstr "Kvizi"
+
+#: contact-form-7/modules/quiz.php:202
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* kviz|odgovor ( Primer: 1+1=?|2 )"
+
+#: contact-form-7/modules/select.php:139
+msgid "Drop-down menu"
+msgstr "Spustni meni"
+
+#: contact-form-7/modules/select.php:168
+msgid "Allow multiple selections?"
+msgstr "Omogočim več izbir?"
+
+#: contact-form-7/modules/select.php:169
+msgid "Insert a blank item as the first option?"
+msgstr "Vstavim prazen element kot prvo možnost?"
+
+#: contact-form-7/modules/submit.php:58
+msgid "Submit button"
+msgstr "Gumb pošlji"
+
+#: contact-form-7/modules/submit.php:76
 msgid "Label"
 msgstr "Oznaka"
 
-#: contact-form-7/includes/admin-panel.php:206
-msgid "Insert"
-msgstr "Vstavi"
+#: contact-form-7/modules/text.php:152
+msgid "Text field"
+msgstr "Besedilno polje"
+
+#: contact-form-7/modules/text.php:155
+msgid "Email field"
+msgstr "Email polje"
+
+#: contact-form-7/modules/text.php:197
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:199
+msgid "This field requires author's name"
+msgstr "To polje zahteva ime avtorja"
+
+#: contact-form-7/modules/text.php:200
+msgid "This field requires author's URL"
+msgstr "To polje zahteva avtorjev URL"
+
+#: contact-form-7/modules/text.php:202
+msgid "This field requires author's email address"
+msgstr "To polje zahteva avtorjev eMail naslov"
+
+#: contact-form-7/modules/text.php:208
+#: contact-form-7/modules/textarea.php:158
+msgid "Default value"
+msgstr "Privzeta vrednost"
+
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:161
+msgid "Use this text as watermark?"
+msgstr "Uporabim to besedilo kot vedni žig?"
+
+#: contact-form-7/modules/textarea.php:127
+msgid "Text area"
+msgstr "Besedilno območje"
 
