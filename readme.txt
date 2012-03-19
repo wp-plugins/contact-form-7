@@ -71,7 +71,7 @@ It is hard to continue development and support for this plugin without contribut
 * Serbian (sr_RS) - [Vedran](http://www.seorabbit.com/), [Aleksandar Urošević](http://blog.urosevic.net/)
 * Sinhala (si_LK) - [Nitin Aggarwal](http://offshoreally.com/)
 * Slovak (sk_SK) - [Patrik Bóna](http://www.mrhead.sk/)
-* Slovene (sl_SI) - [Mihael Simonič](http://smihael.bplaced.net)
+* Slovene (sl_SI) - [Mihael Simonič](http://smihael.bplaced.net), Jani Roskar
 * Spanish (es_ES) - [Jordi Sancho](http://www.qasolutions.net/blog), [Vladimir Prieto](http://vladimir.prie.to/), [Federico Mikaelian](http://www.fedemika.com.ar/), [Matias Baldanza](http://matiasbaldanza.com/), [Carlos Agnese](http://albumdecarlitos.com.ar/)
 * Swedish (sv_SE) - [Fredrik Jonsson](http://www.fredda-o-ac.se/), [the Swedish community](http://wp-support.se/)
 * Tagalog (tl) - [Rupert Agnew Lanuza](http://wheretobuy.com.ph/)
