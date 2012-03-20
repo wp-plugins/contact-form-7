@@ -20,7 +20,10 @@ function wpcf7_akismet( $spam ) {
 	$fes = wpcf7_scan_shortcode();
 
 	foreach ( $fes as $fe ) {
-		if ( ! isset( $fe['name'] ) || ! is_array( $fe['options'] ) )
+		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
+			continue;
+
+		if ( ! is_array( $fe['options'] ) )
 			continue;
 
 		if ( preg_grep( '%^akismet:author$%', $fe['options'] ) ) {
