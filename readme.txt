@@ -57,7 +57,7 @@ It is hard to continue development and support for this plugin without contribut
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
-* Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/)
+* Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/), [Vincent G](http://www.host1free.com/)
 * Macedonian (mk_MK) - [Darko](http://www.findermind.com/)
 * Malay (ms_MY) - [Zairul Azmil](http://www.zairul.com/)
 * Malayalam (ml_IN) - [RAHUL.S.A](http://www.infution.co.cc/)
