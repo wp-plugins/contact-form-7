@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7\n"
+"Project-Id-Version: Contact Form 7 | V3.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-23 14:23+0200\n"
-"PO-Revision-Date: 2009-08-23 15:16+0300\n"
-"Last-Translator: Ernestas Kardzys <projects@ernestas.info>\n"
+"POT-Creation-Date: 2012-02-22 15:57+0900\n"
+"PO-Revision-Date: 2012-04-04 00:12-0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,476 +13,906 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: SWITZERLAND\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/admin/admin-panel.php:9
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Dar vienas susisiekimo formų papildinys. Paprastas, tačiau lankstus."
+
+#: contact-form-7/settings.php:75
+msgid "Contact Forms"
+msgstr "Susisiekimo Formos"
+
+#: contact-form-7/settings.php:76
+msgid "Contact Form"
+msgstr "Susisiekimo Forma"
+
+#: contact-form-7/settings.php:168
 #, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Contact Form 7 duomenų lentelė neegzistuoja.</strong> Jūs privalote <a href=\"%s\">sukurti lentelę</a> kad ji veiktų."
+msgid "Contact form %d"
+msgstr "Susisiekimo forma %d"
 
-#: contact-form-7/admin/admin-panel.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>Contact Form 7 duomenų lentelė neegzistuoja.</strong>"
-
-#: contact-form-7/admin/admin-panel.php:17
-#: contact-form-7/admin/admin-panel.php:30
-#: contact-form-7/admin/admin.php:118
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin-panel.php:45
-msgid "Add new"
-msgstr "Pridėti naują"
-
-#: contact-form-7/admin/admin-panel.php:67
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Nukopijuokite šį kodą ir įterpkite į Jūsų žinutę, puslapį ar tekstinį įskiepį."
-
-#: contact-form-7/admin/admin-panel.php:75
-#: contact-form-7/admin/admin-panel.php:327
-msgid "Save"
-msgstr "Išsaugoti"
-
-#: contact-form-7/admin/admin-panel.php:82
-msgid "Copy"
-msgstr "Nukopijuoti"
-
-#: contact-form-7/admin/admin-panel.php:87
-msgid "Delete"
-msgstr "Ištrinti"
-
-#: contact-form-7/admin/admin-panel.php:89
-#: contact-form-7/admin/admin-panel.php:102
-msgid "Form"
-msgstr "Forma"
-
-#: contact-form-7/admin/admin-panel.php:120
-msgid "Mail"
-msgstr "Paštas"
-
-#: contact-form-7/admin/admin-panel.php:127
-#: contact-form-7/admin/admin-panel.php:188
-msgid "To:"
-msgstr "Kam:"
-
-#: contact-form-7/admin/admin-panel.php:132
-#: contact-form-7/admin/admin-panel.php:193
-msgid "From:"
-msgstr "Nuo:"
-
-#: contact-form-7/admin/admin-panel.php:137
-#: contact-form-7/admin/admin-panel.php:198
-msgid "Subject:"
-msgstr "Antraštė:"
-
-#: contact-form-7/admin/admin-panel.php:144
-#: contact-form-7/admin/admin-panel.php:205
-msgid "Additional headers:"
-msgstr "Papildomos antraštės:"
-
-#: contact-form-7/admin/admin-panel.php:149
-#: contact-form-7/admin/admin-panel.php:210
-msgid "File attachments:"
-msgstr "Failo priedai:"
-
-#: contact-form-7/admin/admin-panel.php:157
-#: contact-form-7/admin/admin-panel.php:218
-msgid "Use HTML content type"
-msgstr "Naudoti HTML turinį"
-
-#: contact-form-7/admin/admin-panel.php:164
-#: contact-form-7/admin/admin-panel.php:225
-msgid "Message body:"
-msgstr "Žinutės tekstas"
-
-#: contact-form-7/admin/admin-panel.php:174
-msgid "Mail (2)"
-msgstr "Mail(2)"
-
-#: contact-form-7/admin/admin-panel.php:180
-msgid "Use mail (2)"
-msgstr "Naudoti mail(2)"
-
-#: contact-form-7/admin/admin-panel.php:235
-msgid "Messages"
-msgstr "Žinutės"
-
-#: contact-form-7/admin/admin-panel.php:243
-msgid "Sender's message was sent successfully"
-msgstr "Siuntėjo žinutė sėkmingai išsiųsta"
-
-#: contact-form-7/admin/admin-panel.php:248
-msgid "Sender's message was failed to send"
-msgstr "Nepavyko išsiųsti siuntėjo žinutės"
-
-#: contact-form-7/admin/admin-panel.php:253
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet nusprendė, kad siuntimo veiksmai yra 'spam'as'"
-
-#: contact-form-7/admin/admin-panel.php:258
-msgid "Validation errors occurred"
-msgstr "Įvyko įvertinimo klaidos"
-
-#: contact-form-7/admin/admin-panel.php:263
-msgid "There is a field that sender is needed to fill in"
-msgstr "Būtina užpildyti vieną lauką"
-
-#: contact-form-7/admin/admin-panel.php:268
-msgid "Email address that sender entered is invalid"
-msgstr "Siuntėjo įvestas el. pašto adresas yra neteisingas"
-
-#: contact-form-7/admin/admin-panel.php:273
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Siuntėjas privalo sutikti su viena iš sąlygų"
-
-#: contact-form-7/admin/admin-panel.php:278
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Siuntėjas neįvedė teisingo apklausos atsakymo"
-
-#: contact-form-7/admin/admin-panel.php:283
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Siuntėjo įvestas kodas nesutampa"
-
-#: contact-form-7/admin/admin-panel.php:288
-msgid "Uploading a file fails for any reason"
-msgstr "Failų nusiuntimas nepavyksta dėl bet kokios priežasties"
-
-#: contact-form-7/admin/admin-panel.php:293
-msgid "Uploaded file is not allowed file type"
-msgstr "Nusiųstas failas yra neleidžiamo tipo"
-
-#: contact-form-7/admin/admin-panel.php:298
-msgid "Uploaded file is too large"
-msgstr "Nusiųstas failas yra per didelis"
-
-#: contact-form-7/admin/admin-panel.php:309
-msgid "Additional Settings"
-msgstr "Papildomi nustatymai"
+#: contact-form-7/admin/admin.php:114
+msgid "Contact"
+msgstr "Susisiekimo"
 
 #: contact-form-7/admin/admin.php:118
-msgid "Contact"
-msgstr "Kontaktas"
-
-#: contact-form-7/admin/admin.php:121
 msgid "Edit Contact Forms"
-msgstr "Redaguoti kontaktų formas"
+msgstr "Redaguoti Susisiekimo Formas"
 
-#: contact-form-7/admin/admin.php:121
+#: contact-form-7/admin/admin.php:118
 msgid "Edit"
 msgstr "Redaguoti"
 
-#: contact-form-7/admin/admin.php:168
-msgid "optional"
-msgstr "papildomi"
-
-#: contact-form-7/admin/admin.php:169
+#: contact-form-7/admin/admin.php:167
 msgid "Generate Tag"
-msgstr "Generuoti žymą"
+msgstr "Kurti Gairę"
 
-#: contact-form-7/admin/admin.php:170
-msgid "Text field"
-msgstr "Tekstinis laukas"
-
-#: contact-form-7/admin/admin.php:171
-msgid "Email field"
-msgstr "El. pašto laukas"
-
-#: contact-form-7/admin/admin.php:172
-msgid "Text area"
-msgstr "Teksto laukelis"
-
-#: contact-form-7/admin/admin.php:173
-msgid "Drop-down menu"
-msgstr "Išsiskleidžiantis meniu"
-
-#: contact-form-7/admin/admin.php:174
-msgid "Checkboxes"
-msgstr "Varnele žymimas laukelis"
-
-#: contact-form-7/admin/admin.php:175
-msgid "Radio buttons"
-msgstr "Pasirinkimo laukelis"
-
-#: contact-form-7/admin/admin.php:176
-msgid "Acceptance"
-msgstr "Sutikmas"
-
-#: contact-form-7/admin/admin.php:177
-msgid "Make this checkbox checked by default?"
-msgstr "Pažymėti šį laukelį varnele standartiškai?"
-
-#: contact-form-7/admin/admin.php:178
-msgid "Make this checkbox work inversely?"
-msgstr "Ar reikia, kad laukelis veiktų priešingai?"
-
-#: contact-form-7/admin/admin.php:179
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Tai reiškia, kad sutinkantis su sąlygomis lankytojas nužymi."
-
-#: contact-form-7/admin/admin.php:180
-msgid "CAPTCHA"
-msgstr "CAPTCH"
-
-#: contact-form-7/admin/admin.php:181
-msgid "Quiz"
-msgstr "Apklausa"
-
-#: contact-form-7/admin/admin.php:182
-msgid "Quizzes"
-msgstr "Apklausos"
-
-#: contact-form-7/admin/admin.php:183
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* apklausa|atsakymas (pvz. 1+1=?|2)"
-
-#: contact-form-7/admin/admin.php:184
-msgid "File upload"
-msgstr "Failų nustiuntimas"
-
-#: contact-form-7/admin/admin.php:185
-msgid "bytes"
-msgstr "baitų"
-
-#: contact-form-7/admin/admin.php:186
-msgid "Submit button"
-msgstr "Nusiuntimo mygtukas"
-
-#: contact-form-7/admin/admin.php:187
-msgid "Name"
-msgstr "Vardas"
-
-#: contact-form-7/admin/admin.php:188
-msgid "Required field?"
-msgstr "Būtinas laukas?"
-
-#: contact-form-7/admin/admin.php:189
-msgid "Allow multiple selections?"
-msgstr "Leisti pažymėti kelis?"
-
-#: contact-form-7/admin/admin.php:190
-msgid "Insert a blank item as the first option?"
-msgstr "Įterpti tuščią laukelį kaip pirmą pasirinkimą?"
-
-#: contact-form-7/admin/admin.php:191
-msgid "Make checkboxes exclusive?"
-msgstr "Pavesti varnele žymimus laukelius išskirtiniais?"
-
-#: contact-form-7/admin/admin.php:192
-msgid "Choices"
-msgstr "Pasirinkimai"
-
-#: contact-form-7/admin/admin.php:193
-msgid "Label"
-msgstr "Žymė"
-
-#: contact-form-7/admin/admin.php:194
-msgid "Default value"
-msgstr "Standartinė reikšmė"
-
-#: contact-form-7/admin/admin.php:195
-msgid "Akismet"
-msgstr "Akismet"
-
-#: contact-form-7/admin/admin.php:196
-msgid "This field requires author's name"
-msgstr "Šis laukas reikalauja autoriaus vardo"
-
-#: contact-form-7/admin/admin.php:197
-msgid "This field requires author's URL"
-msgstr "Šis laukas reikalauja autoriaus interneto svetainės adreso"
-
-#: contact-form-7/admin/admin.php:198
-msgid "This field requires author's email address"
-msgstr "Šis laukas reikalauja autoriaus el. pašto"
-
-#: contact-form-7/admin/admin.php:199
-msgid "Copy this code and paste it into the form left."
-msgstr "Nukopijuokite šį kodą ir įterpkite formoje kairėje"
-
-#: contact-form-7/admin/admin.php:200
-msgid "Foreground color"
-msgstr "Pagrindinė spalva"
-
-#: contact-form-7/admin/admin.php:201
-msgid "Background color"
-msgstr "Fono spalva"
-
-#: contact-form-7/admin/admin.php:202
-msgid "Image size"
-msgstr "Paveiksliuko dydis"
-
-#: contact-form-7/admin/admin.php:203
-msgid "Small"
-msgstr "Mažas"
-
-#: contact-form-7/admin/admin.php:204
-msgid "Medium"
-msgstr "Vidutinis"
-
-#: contact-form-7/admin/admin.php:205
-msgid "Large"
-msgstr "Didelis"
-
-#: contact-form-7/admin/admin.php:206
-msgid "Image settings"
-msgstr "Paveiksliuko nustatymai"
-
-#: contact-form-7/admin/admin.php:207
-msgid "Input field settings"
-msgstr "Įvesties lauko nustatymai"
-
-#: contact-form-7/admin/admin.php:208
-msgid "For image"
-msgstr "Paveiksliukui"
-
-#: contact-form-7/admin/admin.php:209
-msgid "For input field"
-msgstr "Įvesties laukui"
-
-#: contact-form-7/admin/admin.php:210
-msgid "* One choice per line."
-msgstr "* Vienas pasirinkimas eilutėje."
-
-#: contact-form-7/admin/admin.php:211
-msgid "Show"
-msgstr "Rodyti"
-
-#: contact-form-7/admin/admin.php:212
-msgid "Hide"
-msgstr "Paslėpti"
-
-#: contact-form-7/admin/admin.php:213
-msgid "File size limit"
-msgstr "Failo dydžio riba"
-
-#: contact-form-7/admin/admin.php:214
-msgid "Acceptable file types"
-msgstr "Priimtini failų tipai"
-
-#: contact-form-7/admin/admin.php:215
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Pastaba: norėdami naudoti CAPTCH, privalote įdiegti Really Simple CAPTCHA įskiepį."
-
-#: contact-form-7/admin/admin.php:226
-msgid "Contact form created."
-msgstr "Kontaktų forma sukurta"
-
-#: contact-form-7/admin/admin.php:229
-msgid "Contact form saved."
-msgstr "Kontaktų forma išsaugota"
-
-#: contact-form-7/admin/admin.php:232
-msgid "Contact form deleted."
-msgstr "Kontaktų forma ištrinta"
-
-#: contact-form-7/admin/admin.php:235
-msgid "Database table created."
-msgstr "Duomenų bazės lentelė sukurta."
-
-#: contact-form-7/admin/admin.php:238
-msgid "Failed to create database table."
-msgstr "Nepavyko sukurti duomenų bazės lentelės."
-
-#: contact-form-7/admin/admin.php:311
-msgid "Contact form"
-msgstr "Kontaktų forma"
-
-#: contact-form-7/admin/admin.php:345
+#: contact-form-7/admin/admin.php:244
 msgid "Settings"
-msgstr "Nustatymai"
+msgstr "Nuostatos"
 
-#: contact-form-7/admin/admin.php:366
+#: contact-form-7/admin/admin.php:255
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: contact-form-7/admin/admin.php:256
+msgid "Contactform7.com"
+msgstr "Contactform7.com"
+
+#: contact-form-7/admin/admin.php:257
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:258
+msgid "Docs"
+msgstr "Dokumentacija"
+
+#: contact-form-7/admin/admin.php:259
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:260
+msgid "FAQ"
+msgstr "Dažniausiai Užduodami Klausimai"
+
+#: contact-form-7/admin/admin.php:261
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:262
+msgid "Support"
+msgstr "Pagalba"
+
+#: contact-form-7/admin/admin.php:276
+msgid "Contact form created."
+msgstr "Susisiekimo forma sukurta."
+
+#: contact-form-7/admin/admin.php:279
+msgid "Contact form saved."
+msgstr "Susisiekimo forma įrašyta."
+
+#: contact-form-7/admin/admin.php:282
+msgid "Contact form deleted."
+msgstr "Susisiekimo forma ištrinta."
+
+#: contact-form-7/admin/admin.php:316
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 reikia Jūsų palaikymo. Prašau paremti šiandien"
+msgstr "Contact Form 7 reikalinga Jūsų pagalba. Prašome paaukoti šiandien."
 
-#: contact-form-7/admin/admin.php:367
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Ar šis įskiepis yra Jums naudingas? Jeigu jis jums patiko, prašau padėti kūrėjui."
-
-#: contact-form-7/admin/admin.php:368
+#: contact-form-7/admin/admin.php:317
 msgid "Your contribution is needed for making this plugin better."
-msgstr "Jūsų parama reikalinga šio įskiepio tobulinimui"
+msgstr "Jūsų bendradarbiavimas yra labai svarbus tobulinant papildinį."
 
-#: contact-form-7/admin/admin.php:369
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "Įskiepio tobulinimas ir pagalba vartotojams yra sunkus darbas. Prašau padėti"
+#: contact-form-7/admin/admin.php:323
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/includes/classes.php:536
+#: contact-form-7/admin/admin.php:323
+msgid "Donate"
+msgstr "Paaukoti"
+
+#: contact-form-7/admin/admin.php:343
+#, php-format
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Contact Form 7 %1$s reikalauja WordPress %2$s arba naujesnio. </strong> Prašome pirmiau <a href=\"%3$s\">atnaujinti WordPress</a>."
+
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
+msgstr "Pridėti Naują"
+
+#: contact-form-7/admin/edit.php:41
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Nukopijuokite šį kodą ir įkelkite jį į savo įrašą, puslapį ar teksto valdiklio turinį."
+
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "Senasis kodas taip pat įmanomas."
+
+#: contact-form-7/admin/edit.php:55
+msgid "Save"
+msgstr "Įrašyti"
+
+#: contact-form-7/admin/edit.php:62
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: contact-form-7/admin/edit.php:67
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: contact-form-7/admin/edit.php:69
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Jūs bandote ištrinti šią susisiekimo formą. \n"
+"'Cancel', kad atšauktumėte trynimo procesą, 'OK', kad ištrinti."
+
+#: contact-form-7/admin/edit.php:78
+msgid "Form"
+msgstr "Forma"
+
+#: contact-form-7/admin/edit.php:81
+msgid "Mail"
+msgstr "Paštas"
+
+#: contact-form-7/admin/edit.php:84
+msgid "Mail (2)"
+msgstr "Paštas (2)"
+
+#: contact-form-7/admin/edit.php:89
+msgid "Use mail (2)"
+msgstr "Naudoti paštą (2)"
+
+#: contact-form-7/admin/edit.php:91
+msgid "Messages"
+msgstr "Pranešimai"
+
+#: contact-form-7/admin/edit.php:94
+msgid "Additional Settings"
+msgstr "Pridėtinės Nuostatos"
+
+#: contact-form-7/admin/edit.php:141
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Naudoti numatytąją kalbą (%s)"
+
+#: contact-form-7/admin/edit.php:145
+msgid "Or"
+msgstr "arba"
+
+#: contact-form-7/admin/edit.php:150
+msgid "(select language)"
+msgstr "(pasirinkite kalbą)"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Į:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Nuo:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Tema:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Pridėtinės puslapinės antraštės:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Rinkmenų priedai:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Naudoti HTML turinio tipą"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:108
+msgid "Message body:"
+msgstr "Pagrindinė laiško dalis:"
+
+#: contact-form-7/includes/classes.php:665
 msgid "Untitled"
-msgstr "Bevardė"
+msgstr "Bevardis"
 
-#: contact-form-7/includes/functions.php:6
-msgid "Your message was sent successfully. Thanks."
-msgstr "Jūsų žinutė išsiųsta sėkmingai. Ačiū."
-
-#: contact-form-7/includes/functions.php:8
-#: contact-form-7/includes/functions.php:10
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Nepavyko išsiųsti Jūsų žinutės. Prašau pabandyti vėliau arba susiekite su administratoriumi kitu būdu."
-
-#: contact-form-7/includes/functions.php:12
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Įvyko patikrinimo klaidų. Prašau patikrinti laukelius ir nusiųskite formą dar kartą."
-
-#: contact-form-7/includes/functions.php:14
-msgid "Please accept the terms to proceed."
-msgstr "Norėdami tęsti, prašau prašau sutikti su sąlygomis."
-
-#: contact-form-7/includes/functions.php:16
-msgid "Email address seems invalid."
-msgstr "Neteisingas el. pašto adresas"
-
-#: contact-form-7/includes/functions.php:18
-msgid "Please fill the required field."
-msgstr "Prašau užpildyti reikalaujamą lauką."
-
-#: contact-form-7/includes/functions.php:20
-msgid "Your entered code is incorrect."
-msgstr "Įvestas neteisingas kodas."
-
-#: contact-form-7/includes/functions.php:22
-msgid "Your answer is not correct."
-msgstr "Jūsų atsakymas yra neteisingas."
-
-#: contact-form-7/includes/functions.php:24
-msgid "Failed to upload file."
-msgstr "Nepavyko nusiųsti failo."
+#: contact-form-7/includes/controller.php:245
+msgid "Sending ..."
+msgstr "Siunčiama ..."
 
 #: contact-form-7/includes/functions.php:26
-msgid "This file type is not allowed."
-msgstr "Šis failo tipas yra neleidžiamas."
+msgid "Sender's message was sent successfully"
+msgstr "Siuntėjo pranešimas išsiųstas sėkmingai"
 
-#: contact-form-7/includes/functions.php:28
-msgid "This file is too large."
-msgstr "Failas yra per didelis"
+#: contact-form-7/includes/functions.php:27
+msgid "Your message was sent successfully. Thanks."
+msgstr "Jūsų pranešimas išsiųstas sėkmingai. Ačiū."
 
-#: contact-form-7/includes/functions.php:33
-msgid "Your Name"
-msgstr "Jūsų vardas"
+#: contact-form-7/includes/functions.php:31
+msgid "Sender's message was failed to send"
+msgstr "Siuntėjo pranešimo išsiųsti nepavyko"
 
-#: contact-form-7/includes/functions.php:33
-#: contact-form-7/includes/functions.php:35
-msgid "(required)"
-msgstr "(būtinas)"
+#: contact-form-7/includes/functions.php:32
+#: contact-form-7/modules/akismet.php:106
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Nepavyko išsiųsti Jūsų pranešimo."
 
-#: contact-form-7/includes/functions.php:35
-msgid "Your Email"
-msgstr "Jūsų el. paštas"
+#: contact-form-7/includes/functions.php:36
+msgid "Validation errors occurred"
+msgstr "Įsipynė tikrinimo klaidų"
 
 #: contact-form-7/includes/functions.php:37
-msgid "Subject"
-msgstr "Antraštė"
-
-#: contact-form-7/includes/functions.php:39
-msgid "Your Message"
-msgstr "Jūsų žinutė"
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Įsipynė tikrinimo klaidų. Prašome patvirtinti laukelius ir pateikti tai vėl."
 
 #: contact-form-7/includes/functions.php:41
-#: contact-form-7/modules/submit.php:37
+msgid "There are terms that the sender must accept"
+msgstr "Yra taisyklių, su kuriomis siuntėjas turi sutikti"
+
+#: contact-form-7/includes/functions.php:42
+msgid "Please accept the terms to proceed."
+msgstr "Prašome prieš pradedant sutikti su taisyklėmis."
+
+#: contact-form-7/includes/functions.php:46
+msgid "Email address that the sender entered is invalid"
+msgstr "Elektroninio pašto adresas, kurį įrašė siuntėjas, yra neteisingas"
+
+#: contact-form-7/includes/functions.php:47
+msgid "Email address seems invalid."
+msgstr "Elektroninio pašto adresas atrodo neteisingas"
+
+#: contact-form-7/includes/functions.php:51
+msgid "There is a field that the sender must fill in"
+msgstr "Yra laukelis, kurį siuntėjas privalo užpildyti"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Please fill the required field."
+msgstr "Prašome užpildyti privalomąjį laukelį."
+
+#: contact-form-7/includes/functions.php:76
+msgid "Your Name"
+msgstr "Jūsų Vardas"
+
+#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:78
+msgid "(required)"
+msgstr "(privaloma)"
+
+#: contact-form-7/includes/functions.php:78
+msgid "Your Email"
+msgstr "Jūsų Elektroninio pašto adresas"
+
+#: contact-form-7/includes/functions.php:80
+msgid "Subject"
+msgstr "Tema"
+
+#: contact-form-7/includes/functions.php:82
+msgid "Your Message"
+msgstr "Jūsų Pranešimas"
+
+#: contact-form-7/includes/functions.php:84
 msgid "Send"
 msgstr "Siųsti"
 
-#: contact-form-7/modules/captcha.php:62
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Norėdami naudoti CAPTCHA, jums reikia įdiegti <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> įskiepį."
+#: contact-form-7/includes/functions.php:92
+#, php-format
+msgid "From: %s"
+msgstr "Nuo: %s"
 
+#: contact-form-7/includes/functions.php:93
+#, php-format
+msgid "Subject: %s"
+msgstr "Tema: %s"
+
+#: contact-form-7/includes/functions.php:94
+msgid "Message Body:"
+msgstr "Pagrindinė laiško dalis:"
+
+#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:109
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Šis laiškas išsiųstas per susisiekimo formą, esančią %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Afrikaans"
+msgstr "afrikanso"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Albanian"
+msgstr "albanų"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Arabic"
+msgstr "arabų"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Armenian"
+msgstr "armėnų"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Azerbaijani"
+msgstr "azerbaidžaniečių"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Bangla"
+msgstr "Bangladešo"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Belarusian"
+msgstr "baltarusių"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Bosnian"
+msgstr "bosnių"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Brazilian Portuguese"
+msgstr "portugalų (Brazilija)"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Bulgarian"
+msgstr "bulgarų"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Catalan"
+msgstr "katalonų"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Chinese (Simplified)"
+msgstr "kinų (Supraprastinta)"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Chinese (Traditional)"
+msgstr "kinų (Tradicinė)"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Croatian"
+msgstr "kroatų"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Czech"
+msgstr "čekų"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Danish"
+msgstr "danų"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Dutch"
+msgstr "olandų"
+
+#: contact-form-7/includes/functions.php:202
+msgid "English"
+msgstr "anglų"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Esperanto"
+msgstr "esperanto"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Estonian"
+msgstr "estų"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Finnish"
+msgstr "suomių"
+
+#: contact-form-7/includes/functions.php:206
+msgid "French"
+msgstr "prancūzų"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Galician"
+msgstr "galisų"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Georgian"
+msgstr "gruzinų"
+
+#: contact-form-7/includes/functions.php:209
+msgid "German"
+msgstr "vokiečių"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Greek"
+msgstr "graikų"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Hebrew"
+msgstr "hebrajų"
+
+#: contact-form-7/includes/functions.php:212
+msgid "Hindi"
+msgstr "hindi"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Hungarian"
+msgstr "vengrų"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Indonesian"
+msgstr "indoneziečių"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Italian"
+msgstr "italų"
+
+#: contact-form-7/includes/functions.php:216
+msgid "Japanese"
+msgstr "joponų"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Korean"
+msgstr "korejiečių"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Latvian"
+msgstr "latvių"
+
+#: contact-form-7/includes/functions.php:219
+msgid "Lithuanian"
+msgstr "lietuvių"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Macedonian"
+msgstr "makedonų"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Malay"
+msgstr "malajų"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Malayalam"
+msgstr "malajalių"
+
+#: contact-form-7/includes/functions.php:223
+msgid "Maltese"
+msgstr "maltiečių"
+
+#: contact-form-7/includes/functions.php:224
+msgid "Norwegian"
+msgstr "norvegų"
+
+#: contact-form-7/includes/functions.php:225
+msgid "Persian"
+msgstr "persų"
+
+#: contact-form-7/includes/functions.php:226
+msgid "Polish"
+msgstr "lenkų"
+
+#: contact-form-7/includes/functions.php:227
+msgid "Portuguese"
+msgstr "portugalų"
+
+#: contact-form-7/includes/functions.php:228
+msgid "Russian"
+msgstr "rusų"
+
+#: contact-form-7/includes/functions.php:229
+msgid "Romanian"
+msgstr "rumunų"
+
+#: contact-form-7/includes/functions.php:230
+msgid "Serbian"
+msgstr "serbų"
+
+#: contact-form-7/includes/functions.php:231
+msgid "Sinhala"
+msgstr "sinhalų"
+
+#: contact-form-7/includes/functions.php:232
+msgid "Slovak"
+msgstr "slovakų"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Slovene"
+msgstr "slovėnų"
+
+#: contact-form-7/includes/functions.php:234
+msgid "Spanish"
+msgstr "ispanų"
+
+#: contact-form-7/includes/functions.php:235
+msgid "Swedish"
+msgstr "švedų"
+
+#: contact-form-7/includes/functions.php:236
+msgid "Tamil"
+msgstr "tamilų"
+
+#: contact-form-7/includes/functions.php:237
+msgid "Thai"
+msgstr "tajų"
+
+#: contact-form-7/includes/functions.php:238
+msgid "Tagalog"
+msgstr "tagalų"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Turkish"
+msgstr "turkų"
+
+#: contact-form-7/includes/functions.php:240
+msgid "Ukrainian"
+msgstr "ukrainiečių"
+
+#: contact-form-7/includes/functions.php:241
+msgid "Vietnamese"
+msgstr "vietnamiečių"
+
+#: contact-form-7/modules/acceptance.php:153
+msgid "Acceptance"
+msgstr "Priėmimas"
+
+#: contact-form-7/modules/acceptance.php:162
+#: contact-form-7/modules/captcha.php:212
+msgid "Name"
+msgstr "Vardas"
+
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/captcha.php:256
+msgid "optional"
+msgstr "pasirinktinis"
+
+#: contact-form-7/modules/acceptance.php:176
+msgid "Make this checkbox checked by default?"
+msgstr "Ar pažymėti šį pažymimąjį langelį pagal numatytasias nuostatas?"
+
+#: contact-form-7/modules/acceptance.php:177
+msgid "Make this checkbox work inversely?"
+msgstr "Pažymėti šį pažymimąjį langelį atvirkščiai?"
+
+#: contact-form-7/modules/acceptance.php:178
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Tai reiškia, jog svečias, kuris sutiks su taisyklėmis, turės panaikinti žymėjimą."
+
+#: contact-form-7/modules/acceptance.php:183
+#: contact-form-7/modules/captcha.php:261
+msgid "Copy this code and paste it into the form left."
+msgstr "Nukopijuokite šį kodą ir įkelkite jį į formą kairėje."
+
+#: contact-form-7/modules/akismet.php:105
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet nustatė, jog siunčiami brukalai"
+
+#: contact-form-7/modules/captcha.php:73
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Kad galėtumėte naudoti CAPTCHA, Jums reikia sėkmingai įdiegto <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> papildinio."
+
+#: contact-form-7/modules/captcha.php:187
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Kodas, kurį įvedė siuntėjas neatitinka CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Jūsų įvestas kodas neteisingas."
+
+#: contact-form-7/modules/captcha.php:198
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:209
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Pastaba: Kad galėtumėte naudoti Captcha, Jūs turite turėti sėkmingai įdiegtą  Really Simple CAPTCHA papildinį."
+
+#: contact-form-7/modules/captcha.php:216
+msgid "Image settings"
+msgstr "Vaizdo nuostatos"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Foreground color"
+msgstr "Priekinio plano spalva"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Background color"
+msgstr "Fono spalva"
+
+#: contact-form-7/modules/captcha.php:234
+msgid "Image size"
+msgstr "Vaizdo dydis"
+
+#: contact-form-7/modules/captcha.php:235
+msgid "Small"
+msgstr "Mažas"
+
+#: contact-form-7/modules/captcha.php:236
+msgid "Medium"
+msgstr "Vidutinis"
+
+#: contact-form-7/modules/captcha.php:237
+msgid "Large"
+msgstr "Didelis"
+
+#: contact-form-7/modules/captcha.php:242
+msgid "Input field settings"
+msgstr "Įvesties laukelio nuostatos"
+
+#: contact-form-7/modules/captcha.php:262
+msgid "For image"
+msgstr "Vaizdui"
+
+#: contact-form-7/modules/captcha.php:264
+msgid "For input field"
+msgstr "Įvesties laukeliui"
+
+#: contact-form-7/modules/captcha.php:294
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Šioje susisiekimo formoje yra CAPTCHA laukelių, bet laikinasis rinkmenų (%s) katalogas neegzistuoja arba nėra įrašytinas. Jūs galite sukurti aplanką arba pakeisti jo leidimus rankiniu būdu."
+
+#: contact-form-7/modules/captcha.php:300
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Šioje susisiekimo formoje yra CAPTCHA laukelių, bet reikalingos kolekcijos (GD ir FreeType) Jūsų serveryje yra neprieinamos."
+
+#: contact-form-7/modules/checkbox.php:161
+msgid "Checkboxes"
+msgstr "Pažymimieji langeliai"
+
+#: contact-form-7/modules/checkbox.php:164
+msgid "Radio buttons"
+msgstr "Radijos mygtukai"
+
+#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/select.php:148
+#: contact-form-7/modules/text.php:175
+#: contact-form-7/modules/textarea.php:136
+msgid "Required field?"
+msgstr "Reikalingas laukelis?"
+
+#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/select.php:162
+msgid "Choices"
+msgstr "Pasirinkimai"
+
+#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/select.php:164
+msgid "* One choice per line."
+msgstr "* Vienas pasirinkimas eilutėje."
+
+#: contact-form-7/modules/checkbox.php:207
+msgid "Put a label first, a checkbox last?"
+msgstr "Pirmiausiai pridėti etiketę, o pažymimasis langelis paskiau?"
+
+#: contact-form-7/modules/checkbox.php:208
+msgid "Wrap each item with <label> tag?"
+msgstr "Priskirti kiekvienam elementui <eteiketę> gairę?"
+
+#: contact-form-7/modules/checkbox.php:210
+msgid "Make checkboxes exclusive?"
+msgstr "Padaryti pažymimuosius langelius išskirtiniais?"
+
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/select.php:176
+#: contact-form-7/modules/text.php:218
+#: contact-form-7/modules/textarea.php:168
+msgid "And, put this code into the Mail fields below."
+msgstr "Ir įkelkite šį kodą į Pašto laukelius žemiau."
+
+#: contact-form-7/modules/file.php:200
+msgid "Uploading a file fails for any reason"
+msgstr "Rinkmenos siuntimas gali nepavykti dėl bet kokios priežasties"
+
+#: contact-form-7/modules/file.php:201
+msgid "Failed to upload file."
+msgstr "Nepavyko išsiųsti rinkmenos."
+
+#: contact-form-7/modules/file.php:205
+msgid "Uploaded file is not allowed file type"
+msgstr "Išsiųsta rinkmena yra neleistino rinkmenos tipo."
+
+#: contact-form-7/modules/file.php:206
+msgid "This file type is not allowed."
+msgstr "Šis rinkmenos tipas - neleistinas."
+
+#: contact-form-7/modules/file.php:210
+msgid "Uploaded file is too large"
+msgstr "Išsiųsta rinkmena per didelė"
+
+#: contact-form-7/modules/file.php:211
+msgid "This file is too large."
+msgstr "Ši rinkmena yra per didelė."
+
+#: contact-form-7/modules/file.php:215
+msgid "Uploading a file fails for PHP error"
+msgstr "Rinkmenos išsiuntimas nepavyko dėl PHP klaidos"
+
+#: contact-form-7/modules/file.php:216
+msgid "Failed to upload file. Error occurred."
+msgstr "Nepavyko išsiųsti rinkmenos. Įvyko klaida."
+
+#: contact-form-7/modules/file.php:227
+msgid "File upload"
+msgstr "Rinkmenos siuntimas"
+
+#: contact-form-7/modules/file.php:250
+msgid "File size limit"
+msgstr "Rinkmenos dydžio apribojimas"
+
+#: contact-form-7/modules/file.php:250
+msgid "bytes"
+msgstr "Baitais"
+
+#: contact-form-7/modules/file.php:253
+msgid "Acceptable file types"
+msgstr "Priimtini rinkmenų tipai"
+
+#: contact-form-7/modules/file.php:260
+msgid "And, put this code into the File Attachments field below."
+msgstr "Ir įkelkite šį kodą į Rinkmenų Priedų laukelį žemiau."
+
+#: contact-form-7/modules/file.php:285
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Šioje susisiekimo formoje yra nusiuntimo laukeliai, bet laikinasis aplankas rinkmenoms (%s) neegzistuoja arba nėra įrašytinas. Jūs galite sukurti aplanką arba pakeisti jo leidimus rankiniu būdu."
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Siuntėjas neįrašė teisingo mįslės atsakymo."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Your answer is not correct."
+msgstr "Jūsų atsakymas neteisingas."
+
+#: contact-form-7/modules/quiz.php:170
+msgid "Quiz"
+msgstr "Mįslė"
+
+#: contact-form-7/modules/quiz.php:200
+msgid "Quizzes"
+msgstr "Mįslės"
+
+#: contact-form-7/modules/quiz.php:202
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* mįslė|atsakymas (pvz. 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:139
+msgid "Drop-down menu"
+msgstr "Išskleidžiamasis meniu"
+
+#: contact-form-7/modules/select.php:168
+msgid "Allow multiple selections?"
+msgstr "Leisti dauginius pažymėjimus?"
+
+#: contact-form-7/modules/select.php:169
+msgid "Insert a blank item as the first option?"
+msgstr "Įterpti tuščią elementą, kaip pirmąją parinktį?"
+
+#: contact-form-7/modules/submit.php:58
+msgid "Submit button"
+msgstr "Pateikimo mygtukas"
+
+#: contact-form-7/modules/submit.php:76
+msgid "Label"
+msgstr "Etiketė"
+
+#: contact-form-7/modules/text.php:152
+msgid "Text field"
+msgstr "Teksto laukelis"
+
+#: contact-form-7/modules/text.php:155
+msgid "Email field"
+msgstr "Elektroninio pašto laukelis"
+
+#: contact-form-7/modules/text.php:197
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:199
+msgid "This field requires author's name"
+msgstr "Šis laukelis reikalauja autoriaus vardo"
+
+#: contact-form-7/modules/text.php:200
+msgid "This field requires author's URL"
+msgstr "Šis laukelis reikalauja autoriaus Universaliosios nuorodos"
+
+#: contact-form-7/modules/text.php:202
+msgid "This field requires author's email address"
+msgstr "Šis laukelis reikalauja autoriaus elektroninio pašto adreso"
+
+#: contact-form-7/modules/text.php:208
+#: contact-form-7/modules/textarea.php:158
+msgid "Default value"
+msgstr "Numatytoji reikšmė"
+
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:161
+msgid "Use this text as watermark?"
+msgstr "Naudoti šį tekstą kaip vandenženklį?"
+
+#: contact-form-7/modules/textarea.php:127
+msgid "Text area"
+msgstr "Teksto sritis"
+
+#~ msgid "Azeri"
+#~ msgstr "Aserbaidschanisch"
+
+#~ msgid ""
+#~ "This contact form contains [icl] tags, but they are obsolete and no "
+#~ "longer functioning on this version of Contact Form 7. <a href=\"http://"
+#~ "contactform7.com/2009/12/25/contact-form-in-your-language/"
+#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">There "
+#~ "is a simpler way for creating contact forms of other languages</a> and "
+#~ "you are recommended to use it."
+#~ msgstr ""
+#~ "Dieses Kontaktformular enthÃ¤lt [icl] Tags, aber sie sind veraltet und "
+#~ "nicht funktionieren nicht mehr in dieser Version von Contact Form 7. <a "
+#~ "href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/"
+#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">Es ist "
+#~ "ein einfacher Weg, ein Kontaktformulars in anderen Sprachen zu erstellen</"
+#~ "a> und es wird empfohlen, dies zu verwenden."
+
+#~ msgid "Show"
+#~ msgstr "Anzeigen"
+
+#~ msgid "Hide"
+#~ msgstr "Ausblenden"
+
+#~ msgid "Database table created."
+#~ msgstr "Datenbanktabelle erstellt."
+
+#~ msgid "Failed to create database table."
+#~ msgstr "Fehler beim Erstellen einer Datenbanktabelle."
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong> "
+#~ "You must <a href=\"%s\">create the table</a> for it to work."
+#~ msgstr ""
+#~ "<strong>Die Datenbanktabelle fÃ¼r Contact Form 7 ist nicht vorhanden.</"
+#~ "strong> Sie mÃ¼ssen zuerst eine <a href=\"%s\">Tabelle erstellen.</a>"
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
+#~ msgstr ""
+#~ "<strong>Die Datenbanktabelle fÃ¼r Contact Form 7 ist nicht vorhanden.</"
+#~ "strong>"
+
+#~ msgid "Add new"
+#~ msgstr "Neues Formular"
+
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr ""
+#~ "Ist dieses Plugin nÃ¼tzlich fÃ¼r Sie? Wenn es Ihnen gefÃ¤llt, helfen Sie dem "
+#~ "Entwickler."
+
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr ""
+#~ "Die Entwicklung eines Plugins sowie die vielen Support Anfragen "
+#~ "verbrauchen viel Zeit. Helfen Sie uns mit einer Spende."
+
+#~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
+#~ msgstr "Dieses Mail ist vom Wordpress Plugin Contact Form 7 erstellt."
+
+#~ msgid "(You need WordPress 2.7 or greater to use this feature)"
+#~ msgstr ""
+#~ "(Um diese Funktion nutzen zu kÃ¶nnen, benÃ¶tigen Sie WordPress Version 2.7 "
+#~ "oder hÃ¶her)"
+
+#~ msgid "Delete this contact form"
+#~ msgstr "Dieses Kontaktformular lÃ¶schen."
