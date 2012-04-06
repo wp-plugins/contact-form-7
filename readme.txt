@@ -113,6 +113,14 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 3.1.2 =
+
+* Auto-generate .htaccess file in the CAPTCHA’s temporary folder to hide answer files in it.
+* Make sure all fields given by form-tags are in the posted_data property.
+* Fix the RTL style sheet for admin pages.
+* Bug fixed: names of uploaded files don’t appear in mail body.
+* Translations for German, Hungarian, Slovene, and Lithuanian have been updated.
+
 = 3.1.1 =
 
 * Introduce wpcf7_verify_nonce() and wpcf7_create_nonce() for front-end use. This fixes the wrong nonce issue on cached pages.
