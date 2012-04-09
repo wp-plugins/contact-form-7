@@ -119,6 +119,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 * Make sure all fields given by form-tags are in the posted_data property.
 * Fix the RTL style sheet for admin pages.
 * Bug fixed: names of uploaded files don’t appear in mail body.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.08.
 * Translations for German, Hungarian, Slovene, and Lithuanian have been updated.
 
 = 3.1.1 =
