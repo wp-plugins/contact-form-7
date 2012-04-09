@@ -231,7 +231,7 @@ function wpcf7_enqueue_scripts() {
 	// so we need to deregister it and re-register the latest one
 	wp_deregister_script( 'jquery-form' );
 	wp_register_script( 'jquery-form', wpcf7_plugin_url( 'jquery.form.js' ),
-		array( 'jquery' ), '2.96', true );
+		array( 'jquery' ), '3.08', true );
 
 	$in_footer = true;
 	if ( 'header' === WPCF7_LOAD_JS )
