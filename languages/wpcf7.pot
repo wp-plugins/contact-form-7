@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-22 15:57+0900\n"
-"PO-Revision-Date: 2012-02-22 15:58+0900\n"
+"POT-Creation-Date: 2012-04-12 22:04+0900\n"
+"PO-Revision-Date: 2012-04-12 22:04+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Message body:"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:665
+#: contact-form-7/includes/classes.php:664
 msgid "Untitled"
 msgstr ""
 
@@ -241,7 +241,7 @@ msgid "Sender's message was failed to send"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:32
-#: contact-form-7/modules/akismet.php:106
+#: contact-form-7/modules/akismet.php:109
 msgid "Failed to send your message. Please try later or contact the administrator by another method."
 msgstr ""
 
@@ -590,7 +590,7 @@ msgstr ""
 msgid "Copy this code and paste it into the form left."
 msgstr ""
 
-#: contact-form-7/modules/akismet.php:105
+#: contact-form-7/modules/akismet.php:108
 msgid "Akismet judged the sending activity as spamming"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgid "Radio buttons"
 msgstr ""
 
 #: contact-form-7/modules/checkbox.php:185
-#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/file.php:237
 #: contact-form-7/modules/select.php:148
 #: contact-form-7/modules/text.php:175
 #: contact-form-7/modules/textarea.php:136
@@ -708,59 +708,59 @@ msgstr ""
 msgid "And, put this code into the Mail fields below."
 msgstr ""
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr ""
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr ""
 
-#: contact-form-7/modules/file.php:205
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
 msgstr ""
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr ""
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr ""
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr ""
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr ""
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr ""
 
-#: contact-form-7/modules/file.php:227
+#: contact-form-7/modules/file.php:228
 msgid "File upload"
 msgstr ""
 
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/file.php:251
 msgid "File size limit"
 msgstr ""
 
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/file.php:251
 msgid "bytes"
 msgstr ""
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "Acceptable file types"
 msgstr ""
 
-#: contact-form-7/modules/file.php:260
+#: contact-form-7/modules/file.php:261
 msgid "And, put this code into the File Attachments field below."
 msgstr ""
 
-#: contact-form-7/modules/file.php:285
+#: contact-form-7/modules/file.php:286
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr ""
