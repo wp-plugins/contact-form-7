@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-29 16:04+0900\n"
-"PO-Revision-Date: 2012-02-01 12:00+0200\n"
+"POT-Creation-Date: 2012-04-12 22:04+0900\n"
+"PO-Revision-Date: 2012-05-01 00:00+0200\n"
 "Last-Translator: Kleofass.lv <spam@kleofass.lv>\n"
 "Language-Team: Kleofass.lv <spam@kleofass.lv>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr "Cits kontaktu formas spraudnis. Vienkāršs, bet elastīgs."
 
 #: contact-form-7/settings.php:75
 msgid "Contact Forms"
-msgstr "Kontaktu Formas"
+msgstr "Kontaktu formas"
 
 #: contact-form-7/settings.php:76
 msgid "Contact Form"
-msgstr "Kontaktu Forma"
+msgstr "Kontaktu forma"
 
 #: contact-form-7/settings.php:168
 #, php-format
@@ -37,7 +37,7 @@ msgstr "Kontaktu forma %d"
 #: contact-form-7/admin/admin.php:114
 #: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
-msgstr "Kontaktu Forma 7"
+msgstr "Kontaktu forma 7"
 
 #: contact-form-7/admin/admin.php:114
 msgid "Contact"
@@ -55,74 +55,74 @@ msgstr "Labot"
 msgid "Generate Tag"
 msgstr "Ģenerēt birku"
 
-#: contact-form-7/admin/admin.php:216
+#: contact-form-7/admin/admin.php:244
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: contact-form-7/admin/admin.php:227
+#: contact-form-7/admin/admin.php:255
 msgid "http://contactform7.com/"
 msgstr "http://contactform7.com/"
 
-#: contact-form-7/admin/admin.php:228
+#: contact-form-7/admin/admin.php:256
 msgid "Contactform7.com"
 msgstr "Contactform7.com"
 
-#: contact-form-7/admin/admin.php:229
+#: contact-form-7/admin/admin.php:257
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:230
+#: contact-form-7/admin/admin.php:258
 msgid "Docs"
 msgstr "Dokumenti"
 
-#: contact-form-7/admin/admin.php:231
+#: contact-form-7/admin/admin.php:259
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:232
+#: contact-form-7/admin/admin.php:260
 msgid "FAQ"
 msgstr "Jautājumi un atbildes"
 
-#: contact-form-7/admin/admin.php:233
+#: contact-form-7/admin/admin.php:261
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:234
+#: contact-form-7/admin/admin.php:262
 msgid "Support"
 msgstr "Atbalsts"
 
-#: contact-form-7/admin/admin.php:248
+#: contact-form-7/admin/admin.php:276
 msgid "Contact form created."
 msgstr "Kontaktu forma izveidota."
 
-#: contact-form-7/admin/admin.php:251
+#: contact-form-7/admin/admin.php:279
 msgid "Contact form saved."
 msgstr "Kontaktu forma saglabāta."
 
-#: contact-form-7/admin/admin.php:254
+#: contact-form-7/admin/admin.php:282
 msgid "Contact form deleted."
 msgstr "Kontaktu forma dzēsta."
 
-#: contact-form-7/admin/admin.php:288
+#: contact-form-7/admin/admin.php:316
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Kontaktu Forma 7 nepieciešams jūsu atbalsts. Lūdzu ziedot šodien."
+msgstr "Kontaktu formai 7 nepieciešams jūsu atbalsts. Lūdzu ziedot šodien."
 
-#: contact-form-7/admin/admin.php:289
+#: contact-form-7/admin/admin.php:317
 msgid "Your contribution is needed for making this plugin better."
 msgstr "Jūsu ieguldījums ir vajadzīgs, lai izveidotu šo spraudni labāku."
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:323
 msgid "Donate"
 msgstr "Ziedot"
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:343
 #, php-format
 msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
-msgstr "<strong>Kontaktu Forma 7 %1$s pieprasa WordPress %2$s vai jaunāku.</strong> Lūdzu, vispirms <a href=\"%3$s\">atjauniniet WordPress</a>."
+msgstr "<strong>Kontaktu forma 7 %1$s pieprasa WordPress %2$s vai jaunāku.</strong> Lūdzu, vispirms <a href=\"%3$s\">atjauniniet WordPress</a>."
 
 #: contact-form-7/admin/edit.php:20
 #: contact-form-7/admin/edit.php:142
@@ -132,7 +132,7 @@ msgstr "Pievienot jaunu"
 
 #: contact-form-7/admin/edit.php:41
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Nokopēt un ievietot šo kodu jūsu ziņas saturā."
+msgstr "Nokopē un ievieto šo kodu ziņas, lapas vai sīkrīku saturā."
 
 #: contact-form-7/admin/edit.php:47
 msgid "Old code is also available."
@@ -156,7 +156,7 @@ msgid ""
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "Tiks izdzēsta šī kontaktu forma.\n"
-"  'Cancel' - lai apturētu, 'OK' - lai dzēstu."
+"  'Atcelt' - lai apturētu, 'Labi' - lai dzēstu."
 
 #: contact-form-7/admin/edit.php:78
 msgid "Form"
@@ -180,12 +180,12 @@ msgstr "Ziņas"
 
 #: contact-form-7/admin/edit.php:94
 msgid "Additional Settings"
-msgstr "Papildu iestatījumi"
+msgstr "Papildus iestatījumi"
 
 #: contact-form-7/admin/edit.php:141
 #, php-format
 msgid "Use the default language (%s)"
-msgstr "Izmantojiet noklusējuma valodu (%s)"
+msgstr "Izmantot noklusējuma valodu (%s)"
 
 #: contact-form-7/admin/edit.php:145
 msgid "Or"
@@ -209,7 +209,7 @@ msgstr "Temats:"
 
 #: contact-form-7/admin/includes/meta-boxes.php:61
 msgid "Additional headers:"
-msgstr "Papildus galvenēm:"
+msgstr "Papildus galvenes:"
 
 #: contact-form-7/admin/includes/meta-boxes.php:66
 msgid "File attachments:"
@@ -217,35 +217,35 @@ msgstr "Failu pielikumi:"
 
 #: contact-form-7/admin/includes/meta-boxes.php:74
 msgid "Use HTML content type"
-msgstr "Izmantojiet HTML satura veidu"
+msgstr "Izmantot HTML satura veidu"
 
 #: contact-form-7/admin/includes/meta-boxes.php:80
 #: contact-form-7/includes/functions.php:108
 msgid "Message body:"
 msgstr "Ziņa:"
 
-#: contact-form-7/includes/classes.php:660
+#: contact-form-7/includes/classes.php:664
 msgid "Untitled"
 msgstr "Bez nosaukuma"
 
 #: contact-form-7/includes/controller.php:245
 msgid "Sending ..."
-msgstr "Sūta ..."
+msgstr "Nosūta ..."
 
 #: contact-form-7/includes/functions.php:26
 msgid "Sender's message was sent successfully"
-msgstr "Sūtītāja ziņa tika nosūtīta veiksmīgi"
+msgstr "Sūtītāja ziņa tika veiksmīgi nosūtīta"
 
 #: contact-form-7/includes/functions.php:27
 msgid "Your message was sent successfully. Thanks."
-msgstr "Jūsu ziņa ir veiksmīgi nosūtīta. Paldies."
+msgstr "Jūsu ziņa tika veiksmīgi nosūtīta. Paldies."
 
 #: contact-form-7/includes/functions.php:31
 msgid "Sender's message was failed to send"
 msgstr "Sūtītāja ziņu neizdevās nosūtīt"
 
 #: contact-form-7/includes/functions.php:32
-#: contact-form-7/modules/akismet.php:106
+#: contact-form-7/modules/akismet.php:109
 msgid "Failed to send your message. Please try later or contact the administrator by another method."
 msgstr "Kļūda nosūtot jūsu ziņu. Lūdzu mēģiniet vēlāk vai sazinieties ar administratoru citā veidā."
 
@@ -255,11 +255,11 @@ msgstr "Atgadījās apstiprināšanas kļūda"
 
 #: contact-form-7/includes/functions.php:37
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Atgadījās apstiprināšanas kļūda. Lūdzu apstipriniet laukus un nosūtiet to atkal."
+msgstr "Atgadījās apstiprināšanas kļūda. Lūdzu pārbaudiet ievadlaukus un nosūtiet to atkal."
 
 #: contact-form-7/includes/functions.php:41
 msgid "There are terms that the sender must accept"
-msgstr "Ir noteikumi, kas sūtītājam jāapstiprina"
+msgstr "Ir noteikumi, kuri sūtītājam jāapstiprina"
 
 #: contact-form-7/includes/functions.php:42
 msgid "Please accept the terms to proceed."
@@ -275,11 +275,11 @@ msgstr "E-pasta adrese ir nederīga."
 
 #: contact-form-7/includes/functions.php:51
 msgid "There is a field that the sender must fill in"
-msgstr "Ir lauki, kuri sūtītājam ir jāaizpilda"
+msgstr "Ir lauki, kuri sūtītājam jāaizpilda"
 
 #: contact-form-7/includes/functions.php:52
 msgid "Please fill the required field."
-msgstr "Lūdzu aizpildiet nepieciešamos laukus."
+msgstr "Lūdzu aizpildiet obligātos laukus."
 
 #: contact-form-7/includes/functions.php:76
 msgid "Your Name"
@@ -324,7 +324,7 @@ msgstr "Ziņa:"
 #: contact-form-7/includes/functions.php:109
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Šis pasts ir nosūtīts, izmantojot kontaktu formu %1$s %2$s"
+msgstr "Šis e-pasts ir nosūtīts, izmantojot kontaktu formu %1$s %2$s"
 
 #: contact-form-7/includes/functions.php:185
 msgid "Afrikaans"
@@ -343,8 +343,8 @@ msgid "Armenian"
 msgstr "Armēņu"
 
 #: contact-form-7/includes/functions.php:189
-msgid "Azeri"
-msgstr "Azeri"
+msgid "Azerbaijani"
+msgstr "Azerbaidžāņu"
 
 #: contact-form-7/includes/functions.php:190
 msgid "Bangla"
@@ -352,19 +352,19 @@ msgstr "Bengāļu"
 
 #: contact-form-7/includes/functions.php:191
 msgid "Belarusian"
-msgstr "Baltkrievijas"
+msgstr "Baltkrievu"
 
 #: contact-form-7/includes/functions.php:192
 msgid "Bosnian"
-msgstr "Bosnijas"
+msgstr "Bosniešu"
 
 #: contact-form-7/includes/functions.php:193
 msgid "Brazilian Portuguese"
-msgstr "Brazīlijas Portugāļu"
+msgstr "Brazīļu portugāļu"
 
 #: contact-form-7/includes/functions.php:194
 msgid "Bulgarian"
-msgstr "Bulgārijas"
+msgstr "Bulgāru"
 
 #: contact-form-7/includes/functions.php:195
 msgid "Catalan"
@@ -372,23 +372,23 @@ msgstr "Katalāņu"
 
 #: contact-form-7/includes/functions.php:196
 msgid "Chinese (Simplified)"
-msgstr "Ķīniešu (Vienkāršotā)"
+msgstr "Ķīniešu (vienkāršotā)"
 
 #: contact-form-7/includes/functions.php:197
 msgid "Chinese (Traditional)"
-msgstr "Ķīniešu (Tradicionālā)"
+msgstr "Ķīniešu (tradicionālā)"
 
 #: contact-form-7/includes/functions.php:198
 msgid "Croatian"
-msgstr "Horvātijas"
+msgstr "Horvātu"
 
 #: contact-form-7/includes/functions.php:199
 msgid "Czech"
-msgstr "Čehijas"
+msgstr "Čehu"
 
 #: contact-form-7/includes/functions.php:200
 msgid "Danish"
-msgstr "Dānijas"
+msgstr "Dāņu"
 
 #: contact-form-7/includes/functions.php:201
 msgid "Dutch"
@@ -404,11 +404,11 @@ msgstr "Esperanto"
 
 #: contact-form-7/includes/functions.php:204
 msgid "Estonian"
-msgstr "Igaunijas"
+msgstr "Igauņu"
 
 #: contact-form-7/includes/functions.php:205
 msgid "Finnish"
-msgstr "Somijas"
+msgstr "Somu"
 
 #: contact-form-7/includes/functions.php:206
 msgid "French"
@@ -428,7 +428,7 @@ msgstr "Vācu"
 
 #: contact-form-7/includes/functions.php:210
 msgid "Greek"
-msgstr "Grieķijas"
+msgstr "Grieķu"
 
 #: contact-form-7/includes/functions.php:211
 msgid "Hebrew"
@@ -440,31 +440,31 @@ msgstr "Hindi"
 
 #: contact-form-7/includes/functions.php:213
 msgid "Hungarian"
-msgstr "Ungārijas"
+msgstr "Ungāru"
 
 #: contact-form-7/includes/functions.php:214
 msgid "Indonesian"
-msgstr "Indonēzijas"
+msgstr "Indonēziešu"
 
 #: contact-form-7/includes/functions.php:215
 msgid "Italian"
-msgstr "Itālijas"
+msgstr "Itāļu"
 
 #: contact-form-7/includes/functions.php:216
 msgid "Japanese"
-msgstr "Japānas"
+msgstr "Japāņu"
 
 #: contact-form-7/includes/functions.php:217
 msgid "Korean"
-msgstr "Korejas"
+msgstr "Korejiešu"
 
 #: contact-form-7/includes/functions.php:218
 msgid "Latvian"
-msgstr "Latvijas"
+msgstr "Latviešu"
 
 #: contact-form-7/includes/functions.php:219
 msgid "Lithuanian"
-msgstr "Lietuvas"
+msgstr "Lietuviešu"
 
 #: contact-form-7/includes/functions.php:220
 msgid "Macedonian"
@@ -484,7 +484,7 @@ msgstr "Maltiešu"
 
 #: contact-form-7/includes/functions.php:224
 msgid "Norwegian"
-msgstr "Norvēģijas"
+msgstr "Norvēģu"
 
 #: contact-form-7/includes/functions.php:225
 msgid "Persian"
@@ -492,7 +492,7 @@ msgstr "Persiešu"
 
 #: contact-form-7/includes/functions.php:226
 msgid "Polish"
-msgstr "Polijas"
+msgstr "Poļu"
 
 #: contact-form-7/includes/functions.php:227
 msgid "Portuguese"
@@ -504,11 +504,11 @@ msgstr "Krievu"
 
 #: contact-form-7/includes/functions.php:229
 msgid "Romanian"
-msgstr "Rumānijas"
+msgstr "Rumāņu"
 
 #: contact-form-7/includes/functions.php:230
 msgid "Serbian"
-msgstr "Serbijas"
+msgstr "Serbu"
 
 #: contact-form-7/includes/functions.php:231
 msgid "Sinhala"
@@ -516,7 +516,7 @@ msgstr "Sinhala"
 
 #: contact-form-7/includes/functions.php:232
 msgid "Slovak"
-msgstr "Slovākijas"
+msgstr "Slovāku"
 
 #: contact-form-7/includes/functions.php:233
 msgid "Slovene"
@@ -524,11 +524,11 @@ msgstr "Slovēņu"
 
 #: contact-form-7/includes/functions.php:234
 msgid "Spanish"
-msgstr "Spānijas"
+msgstr "Spāņu"
 
 #: contact-form-7/includes/functions.php:235
 msgid "Swedish"
-msgstr "Zviedrijas"
+msgstr "Zviedru"
 
 #: contact-form-7/includes/functions.php:236
 msgid "Tamil"
@@ -544,7 +544,7 @@ msgstr "Tagalogu"
 
 #: contact-form-7/includes/functions.php:239
 msgid "Turkish"
-msgstr "Turcijas"
+msgstr "Turku"
 
 #: contact-form-7/includes/functions.php:240
 msgid "Ukrainian"
@@ -556,7 +556,7 @@ msgstr "Vjetnamiešu"
 
 #: contact-form-7/modules/acceptance.php:153
 msgid "Acceptance"
-msgstr "Pieņemšana"
+msgstr "Akceptēšana"
 
 #: contact-form-7/modules/acceptance.php:162
 #: contact-form-7/modules/captcha.php:212
@@ -579,7 +579,7 @@ msgstr "neobligāts"
 
 #: contact-form-7/modules/acceptance.php:176
 msgid "Make this checkbox checked by default?"
-msgstr "Izveidot pēc noklusējuma kā atzīmētu šo izvēles rūtiņu?"
+msgstr "Izveidot šo izvēles rūtiņu kā atzīmētu pēc noklusējuma?"
 
 #: contact-form-7/modules/acceptance.php:177
 msgid "Make this checkbox work inversely?"
@@ -592,9 +592,9 @@ msgstr "* Tas nozīmē, ka apmeklētājam ir jāizķeksē to, lai apstiprinātu 
 #: contact-form-7/modules/acceptance.php:183
 #: contact-form-7/modules/captcha.php:261
 msgid "Copy this code and paste it into the form left."
-msgstr "Nokopēt un ievietot šo kodu formā."
+msgstr "Nokopē un ievieto šo kodu formā pa kreisi."
 
-#: contact-form-7/modules/akismet.php:105
+#: contact-form-7/modules/akismet.php:108
 msgid "Akismet judged the sending activity as spamming"
 msgstr "Akismet sūtīšanas darbību novērtēja kā mēstuļošanu"
 
@@ -608,7 +608,7 @@ msgstr "Kods, kuru sūtītājs ievadīja, neatbilst CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:188
 msgid "Your entered code is incorrect."
-msgstr "Jūsu ierakstītais kods ir nepareizs."
+msgstr "Jūsu ievadītais kods ir nepareizs."
 
 #: contact-form-7/modules/captcha.php:198
 msgid "CAPTCHA"
@@ -676,12 +676,12 @@ msgid "Radio buttons"
 msgstr "Radio pogas"
 
 #: contact-form-7/modules/checkbox.php:185
-#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/file.php:237
 #: contact-form-7/modules/select.php:148
 #: contact-form-7/modules/text.php:175
 #: contact-form-7/modules/textarea.php:136
 msgid "Required field?"
-msgstr "Nepieciešamais lauks?"
+msgstr "Obligāts lauks?"
 
 #: contact-form-7/modules/checkbox.php:201
 #: contact-form-7/modules/select.php:162
@@ -691,80 +691,80 @@ msgstr "Izvēles"
 #: contact-form-7/modules/checkbox.php:203
 #: contact-form-7/modules/select.php:164
 msgid "* One choice per line."
-msgstr "* Viena izvēle uz līniju."
+msgstr "* Vienu variantu vienā rindā."
 
 #: contact-form-7/modules/checkbox.php:207
 msgid "Put a label first, a checkbox last?"
-msgstr "Uzlikt etiķeti kā pirmo, rūtiņu pēdējo?"
+msgstr "Ievietot virsrakstu kā pirmo, rūtiņu - pēdējo?"
 
 #: contact-form-7/modules/checkbox.php:208
 msgid "Wrap each item with <label> tag?"
-msgstr "Ietīt katru ziņu ar <etiķete> birku?"
+msgstr "Ietīt katru punktu ar <virsraksts> birku?"
 
 #: contact-form-7/modules/checkbox.php:210
 msgid "Make checkboxes exclusive?"
-msgstr "Padarīt izvēles rūtiņas par ekskluzīvu?"
+msgstr "Padarīt izvēles rūtiņas par izņēmumu?"
 
 #: contact-form-7/modules/checkbox.php:218
 #: contact-form-7/modules/select.php:176
 #: contact-form-7/modules/text.php:218
 #: contact-form-7/modules/textarea.php:168
 msgid "And, put this code into the Mail fields below."
-msgstr "Un, nodot šo kodu E-pasts laukā."
+msgstr "Un, ievieto šo kodu zem E-pasts lauka."
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr "Faila augšupielāde neizdevās"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr "Neizdevās augšupielādēt failu."
 
-#: contact-form-7/modules/file.php:205
-msgid "Uploaded file is not allowed file type"
-msgstr "Augšupielādētais fails ir neatļautais faila veids"
-
 #: contact-form-7/modules/file.php:206
+msgid "Uploaded file is not allowed file type"
+msgstr "Augšupielādētā faila veids nav atļauts"
+
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr "Šī faila veids, nav atļauts."
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr "Augšupielādētais fails ir pārāk liels"
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr "Šis fails ir pārāk liels."
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr "Augšupielādēt failu neizdevās - PHP kļūda"
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr "Neizdevās augšupielādēt failu. Kļūda."
 
-#: contact-form-7/modules/file.php:227
+#: contact-form-7/modules/file.php:228
 msgid "File upload"
 msgstr "Faila augšupielāde"
 
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/file.php:251
 msgid "File size limit"
-msgstr "Faila lieluma ierobežojums"
+msgstr "Faila izmēra ierobežojums"
 
-#: contact-form-7/modules/file.php:250
+#: contact-form-7/modules/file.php:251
 msgid "bytes"
 msgstr "baiti"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "Acceptable file types"
 msgstr "Pieņemamie failu veidi"
 
-#: contact-form-7/modules/file.php:260
+#: contact-form-7/modules/file.php:261
 msgid "And, put this code into the File Attachments field below."
-msgstr "Un, nodot šo kodu Failu pielikumi laukā."
+msgstr "Un, ievieto šo kodu zem Failu pielikumi lauka."
 
-#: contact-form-7/modules/file.php:285
+#: contact-form-7/modules/file.php:286
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
 msgstr "Šī kontaktu forma satur failu augšupielādes laukus, bet pagaidu mape failiem (%s) nepastāv vai nav rakstāma. Jūs varat izveidot mapi vai mainīt tās atļauju manuāli."
@@ -799,11 +799,11 @@ msgstr "Atļaut daudzkārtīgas izvēles?"
 
 #: contact-form-7/modules/select.php:169
 msgid "Insert a blank item as the first option?"
-msgstr "Ievietot tukšu ziņu, kā pirmo izvēli?"
+msgstr "Ievietot tukšu izvēlni, kā pirmo izvēli?"
 
 #: contact-form-7/modules/submit.php:58
 msgid "Submit button"
-msgstr "Apstiprināšanas poga"
+msgstr "Nosūtīšanas poga"
 
 #: contact-form-7/modules/submit.php:76
 msgid "Label"
