@@ -1,6 +1,15 @@
 <?php
 
-add_action( 'init', 'wpcf7_ajax_onload', 11 );
+add_action( 'init', 'wpcf7_control_init', 11 );
+
+function wpcf7_control_init() {
+	wpcf7_ajax_onload();
+	wpcf7_ajax_json_echo();
+	wpcf7_submit_nonajax();
+
+	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
+	add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
+}
 
 function wpcf7_ajax_onload() {
 	global $wpcf7_contact_form;
@@ -28,8 +37,6 @@ function wpcf7_ajax_onload() {
 
 	exit();
 }
-
-add_action( 'init', 'wpcf7_ajax_json_echo', 11 );
 
 function wpcf7_ajax_json_echo() {
 	global $wpcf7_contact_form;
@@ -102,8 +109,6 @@ function wpcf7_is_xhr() {
 	return $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
 }
 
-add_action( 'init', 'wpcf7_submit_nonajax', 11 );
-
 function wpcf7_submit_nonajax() {
 	global $wpcf7_contact_form;
 
@@ -168,9 +173,6 @@ function wpcf7_widget_text_filter( $content ) {
 }
 
 /* Shortcodes */
-
-add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
-add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 
 function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	global $wpcf7, $wpcf7_contact_form;
