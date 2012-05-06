@@ -17,41 +17,6 @@ function wpcf7_flamingo_init() {
 	}
 }
 
-add_filter( 'flamingo_contact_history_column', 'wpcf7_flamingo_contact_history_column', 10, 2 );
-
-function wpcf7_flamingo_contact_history_column( $output, $item ) {
-	if ( ! class_exists( 'Flamingo_Inbound_Message' ) )
-		return;
-
-	Flamingo_Inbound_Message::find( array(
-		'channel' => 'contact-form-7',
-		's' => $item->email ) );
-
-	$count = (int) Flamingo_Inbound_Message::$found_items;
-
-	if ( 0 == $count ) {
-		return $output;
-	} elseif ( 1 == $count ) {
-		$history = __( '1 Message via Contact Form 7', 'wpcf7' );
-	} else {
-		$history = str_replace( '%',
-			number_format_i18n( $count ), __( '% Messages via Contact Form 7', 'wpcf7' ) );
-	}
-
-	if ( 0 < $count ) {
-		$link = sprintf( 'admin.php?page=flamingo_inbound&channel=contact-form-7&s=%s',
-			urlencode( $item->email ) );
-		$history = '<a href="' . admin_url( $link ) . '">' . $history . '</a>';
-	}
-
-	if ( ! empty( $output ) )
-		$output .= '<br />';
-
-	$output .= $history;
-
-	return $output;
-}
-
 add_action( 'wpcf7_before_send_mail', 'wpcf7_flamingo_before_send_mail' );
 
 function wpcf7_flamingo_before_send_mail( $contactform ) {
