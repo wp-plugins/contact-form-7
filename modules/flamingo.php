@@ -26,10 +26,18 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 	if ( empty( $contactform->posted_data ) || ! empty( $contactform->skip_mail ) )
 		return;
 
+	$fields_senseless = $contactform->form_scan_shortcode(
+		array( 'type' => array( 'captchar', 'quiz', 'acceptance' ) ) );
+
+	$exclude_names = array();
+
+	foreach ( $fields_senseless as $tag )
+		$exclude_names[] = $tag['name'];
+
 	$posted_data = $contactform->posted_data;
 
 	foreach ( $posted_data as $key => $value ) {
-		if ( '_' == substr( $key, 0, 1 ) )
+		if ( '_' == substr( $key, 0, 1 ) || in_array( $key, $exclude_names ) )
 			unset( $posted_data[$key] );
 	}
 
