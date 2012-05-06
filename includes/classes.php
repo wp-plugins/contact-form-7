@@ -2,6 +2,8 @@
 
 class WPCF7_ContactForm {
 
+	const post_type = 'wpcf7_contact_form';
+
 	var $initial = false;
 
 	var $id;
@@ -16,6 +18,13 @@ class WPCF7_ContactForm {
 	var $uploaded_files = array();
 
 	var $skip_mail = false;
+
+	public static function register_post_type() {
+		register_post_type( self::post_type, array(
+			'labels' => array(
+				'name' => __( 'Contact Forms', 'wpcf7' ),
+				'singular_name' => __( 'Contact Form', 'wpcf7' ) ) ) );
+	}
 
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {

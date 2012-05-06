@@ -70,13 +70,8 @@ function wpcf7_load_plugin_textdomain() {
 add_action( 'init', 'wpcf7_register_post_types' );
 
 function wpcf7_register_post_types() {
-	$args = array(
-		'labels' => array(
-			'name' => __( 'Contact Forms', 'wpcf7' ),
-			'singular_name' => __( 'Contact Form', 'wpcf7' ) )
-	);
-
-	register_post_type( 'wpcf7_contact_form', $args );
+	/* Custom Post Types */
+	WPCF7_ContactForm::register_post_type();
 }
 
 /* Upgrading */
