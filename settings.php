@@ -1,20 +1,5 @@
 <?php
 
-function wpcf7() {
-	global $wpdb, $wpcf7;
-
-	if ( is_object( $wpcf7 ) )
-		return;
-
-	$wpcf7 = (object) array(
-		'processing_within' => '',
-		'widget_count' => 0,
-		'unit_count' => 0,
-		'global_unit_count' => 0 );
-}
-
-wpcf7();
-
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
@@ -26,20 +11,6 @@ if ( is_admin() )
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
 else
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
-
-add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
-
-function wpcf7_set_request_uri() {
-	global $wpcf7_request_uri;
-
-	$wpcf7_request_uri = add_query_arg( array() );
-}
-
-function wpcf7_get_request_uri() {
-	global $wpcf7_request_uri;
-
-	return (string) $wpcf7_request_uri;
-}
 
 /* Loading modules */
 
@@ -57,20 +28,52 @@ function wpcf7_load_modules() {
 	}
 }
 
-/* L10N */
+add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
 
-add_action( 'init', 'wpcf7_load_plugin_textdomain' );
+function wpcf7_set_request_uri() {
+	global $wpcf7_request_uri;
+
+	$wpcf7_request_uri = add_query_arg( array() );
+}
+
+function wpcf7_get_request_uri() {
+	global $wpcf7_request_uri;
+
+	return (string) $wpcf7_request_uri;
+}
+
+add_action( 'init', 'wpcf7_init' );
+
+function wpcf7_init() {
+	wpcf7();
+
+	// L10N
+	wpcf7_load_plugin_textdomain();
+
+	// Custom Post Type
+	wpcf7_register_post_types();
+
+	do_action( 'wpcf7_init' );
+}
+
+function wpcf7() {
+	global $wpcf7;
+
+	if ( is_object( $wpcf7 ) )
+		return;
+
+	$wpcf7 = (object) array(
+		'processing_within' => '',
+		'widget_count' => 0,
+		'unit_count' => 0,
+		'global_unit_count' => 0 );
+}
 
 function wpcf7_load_plugin_textdomain() {
 	load_plugin_textdomain( 'wpcf7', false, 'contact-form-7/languages' );
 }
 
-/* Custom Post Type: Contact Form */
-
-add_action( 'init', 'wpcf7_register_post_types' );
-
 function wpcf7_register_post_types() {
-	/* Custom Post Types */
 	WPCF7_ContactForm::register_post_type();
 }
 
