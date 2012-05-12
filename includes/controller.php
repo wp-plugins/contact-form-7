@@ -6,9 +6,6 @@ function wpcf7_control_init() {
 	wpcf7_ajax_onload();
 	wpcf7_ajax_json_echo();
 	wpcf7_submit_nonajax();
-
-	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
-	add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 }
 
 function wpcf7_ajax_onload() {
@@ -173,6 +170,13 @@ function wpcf7_widget_text_filter( $content ) {
 }
 
 /* Shortcodes */
+
+add_action( 'plugins_loaded', 'wpcf7_add_shortcodes', 1 );
+
+function wpcf7_add_shortcodes() {
+	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
+	add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
+}
 
 function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	global $wpcf7, $wpcf7_contact_form;
