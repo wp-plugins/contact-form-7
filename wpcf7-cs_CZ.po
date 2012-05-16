@@ -1,865 +1,849 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Contact Form 7 v.3.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 09:35+0900\n"
-"PO-Revision-Date: 2011-02-28 13:36+0100\n"
-"Last-Translator: globus2008 <globus@email.cz>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2012-02-22 15:57+0900\n"
+"PO-Revision-Date: 2012-04-22 11:26+0100\n"
+"Last-Translator: Pavel Bilek <info@chcistranky.eu>\n"
+"Language-Team: Pavel Bilek <info@chcistranky.eu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=3; \\ plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/admin/admin.php:120
-#: contact-form-7/admin/edit.php:17
-#: contact-form-7/admin/edit.php:30
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Prostě další plugin pro kontaktní formulář. Jednoduchý ale flexibilní."
+
+#: contact-form-7/settings.php:75
+msgid "Contact Forms"
+msgstr "Kontaktní formuláře"
+
+#: contact-form-7/settings.php:76
+msgid "Contact Form"
+msgstr "Kontaktní formulář"
+
+#: contact-form-7/settings.php:168
+#, php-format
+msgid "Contact form %d"
+msgstr "Kontaktní formulář  %d"
+
+#: contact-form-7/admin/admin.php:114
+#: contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:120
+#: contact-form-7/admin/admin.php:114
 msgid "Contact"
 msgstr "Kontakt"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:118
 msgid "Edit Contact Forms"
-msgstr "Správa kontaktních formulářů"
+msgstr "Upravit kontaktní formuláře"
 
-#: contact-form-7/admin/admin.php:123
+#: contact-form-7/admin/admin.php:118
 msgid "Edit"
 msgstr "Upravit"
 
-#: contact-form-7/admin/admin.php:162
+#: contact-form-7/admin/admin.php:167
 msgid "Generate Tag"
-msgstr "Generuj Tag"
+msgstr "Generovat kód:"
 
-#: contact-form-7/admin/admin.php:163
-msgid "Show"
-msgstr "Ukázat"
-
-#: contact-form-7/admin/admin.php:164
-msgid "Hide"
-msgstr "Skrýt"
-
-#: contact-form-7/admin/admin.php:261
-msgid "Contact form"
-msgstr "Kontaktní formulář"
-
-#: contact-form-7/admin/admin.php:280
+#: contact-form-7/admin/admin.php:244
 msgid "Settings"
 msgstr "Nastavení"
 
-#: contact-form-7/admin/admin.php:291
+#: contact-form-7/admin/admin.php:255
 msgid "http://contactform7.com/"
 msgstr "http://contactform7.com/"
 
-#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:256
 msgid "Contactform7.com"
 msgstr "Contactform7.com"
 
-#: contact-form-7/admin/admin.php:293
+#: contact-form-7/admin/admin.php:257
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:294
+#: contact-form-7/admin/admin.php:258
 msgid "Docs"
-msgstr "Docs"
+msgstr "Dokumentace"
 
-#: contact-form-7/admin/admin.php:295
+#: contact-form-7/admin/admin.php:259
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:296
-#, fuzzy
+#: contact-form-7/admin/admin.php:260
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact-form-7/admin/admin.php:297
+#: contact-form-7/admin/admin.php:261
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:298
-#, fuzzy
+#: contact-form-7/admin/admin.php:262
 msgid "Support"
-msgstr "Jak nás podpořit?"
+msgstr "Podpora"
 
-#: contact-form-7/admin/admin.php:312
+#: contact-form-7/admin/admin.php:276
 msgid "Contact form created."
-msgstr "Formulář vytvořen"
+msgstr "Kontaktní formulář byl vytvořen."
 
-#: contact-form-7/admin/admin.php:315
+#: contact-form-7/admin/admin.php:279
 msgid "Contact form saved."
-msgstr "Formulář uložen"
+msgstr "Kontaktní formulář byl uložen."
 
-#: contact-form-7/admin/admin.php:318
+#: contact-form-7/admin/admin.php:282
 msgid "Contact form deleted."
-msgstr "Contact form deleted"
+msgstr "Kontaktní formulář byl smazán."
 
-#: contact-form-7/admin/admin.php:321
-msgid "Database table created."
-msgstr "Databázové tabulky byly vytvořeny."
-
-#: contact-form-7/admin/admin.php:324
-msgid "Failed to create database table."
-msgstr "Databázové tabulky se nepodařilo vytvořit."
-
-#: contact-form-7/admin/admin.php:358
+#: contact-form-7/admin/admin.php:316
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Kontaktní formulář 7 se bez vaší pomoci neobejde. Oceňte jej právě dnes."
+msgstr "Contact Form 7 potřebuje Vaší podporu. Přispějte prosím ještě dnes."
 
-#: contact-form-7/admin/admin.php:359
+#: contact-form-7/admin/admin.php:317
 msgid "Your contribution is needed for making this plugin better."
-msgstr "Váš finanční příspěvek je třeba, aby byl plugin ještě lepší."
+msgstr "Váš příspěvek je třeba pro neustálé vylepšování tohoto pluginu."
 
-#: contact-form-7/admin/admin.php:365
+#: contact-form-7/admin/admin.php:323
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:365
-#, fuzzy
+#: contact-form-7/admin/admin.php:323
 msgid "Donate"
-msgstr "Přispějte"
+msgstr "Přispět"
 
-#: contact-form-7/admin/edit.php:9
+#: contact-form-7/admin/admin.php:343
 #, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Databázová tabulka pro Contact Form 7 neexistuje.</strong> Musíte ji <a href=\"%s\">vytvořit</a>, aby plugin fungoval."
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Contact Form 7 %1$s vyžaduje verzi WordPressu %2$s nebo vyšší.</strong> Aktualizujte prosím verzi <a href=\"%3$s\">WordPressu</a>."
 
-#: contact-form-7/admin/edit.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>Databázová tabulka pluginu Contact Form 7 neexistuje</strong>."
+#: contact-form-7/admin/edit.php:20
+#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:155
+msgid "Add New"
+msgstr "Přidat nový"
 
-#: contact-form-7/admin/edit.php:45
-msgid "Add new"
-msgstr "Přidej nový"
-
-#: contact-form-7/admin/edit.php:67
+#: contact-form-7/admin/edit.php:41
 msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Zkopírujte tento kód a vložte jej do článku, stránky nebo widgetu."
+msgstr "Zkopírujte tento kód a vložte jej do Vaší stránky, příspěvku nebo postraního panelu."
 
-#: contact-form-7/admin/edit.php:75
-#: contact-form-7/admin/edit.php:309
+#: contact-form-7/admin/edit.php:47
+msgid "Old code is also available."
+msgstr "Můžete použít i starší verzi kódu."
+
+#: contact-form-7/admin/edit.php:55
 msgid "Save"
 msgstr "Uložit"
 
-#: contact-form-7/admin/edit.php:82
+#: contact-form-7/admin/edit.php:62
 msgid "Copy"
-msgstr "Kopírovat"
+msgstr "Zkopírovat"
 
-#: contact-form-7/admin/edit.php:87
+#: contact-form-7/admin/edit.php:67
 msgid "Delete"
 msgstr "Smazat"
 
-#: contact-form-7/admin/edit.php:89
+#: contact-form-7/admin/edit.php:69
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
-msgstr "Chcete smazat tento formulář?"
+msgstr ""
+"Chcete smazat kontaktní formulář? \n"
+"  'Storno' zrušíte akci, 'OK' smažete formulář."
 
-#: contact-form-7/admin/edit.php:104
+#: contact-form-7/admin/edit.php:78
 msgid "Form"
 msgstr "Formulář"
 
-#: contact-form-7/admin/edit.php:128
+#: contact-form-7/admin/edit.php:81
 msgid "Mail"
-msgstr "Mail"
+msgstr "Email"
 
-#: contact-form-7/admin/edit.php:135
-#: contact-form-7/admin/edit.php:202
-msgid "To:"
-msgstr "Komu:"
-
-#: contact-form-7/admin/edit.php:140
-#: contact-form-7/admin/edit.php:207
-msgid "From:"
-msgstr "Od:"
-
-#: contact-form-7/admin/edit.php:145
-#: contact-form-7/admin/edit.php:212
-msgid "Subject:"
-msgstr "Předmět:"
-
-#: contact-form-7/admin/edit.php:152
-#: contact-form-7/admin/edit.php:219
-msgid "Additional headers:"
-msgstr "Doplňky do hlavičky:"
-
-#: contact-form-7/admin/edit.php:157
-#: contact-form-7/admin/edit.php:224
-msgid "File attachments:"
-msgstr "Přílohy:"
-
-#: contact-form-7/admin/edit.php:165
-#: contact-form-7/admin/edit.php:232
-msgid "Use HTML content type"
-msgstr "Použij e-mail s HTML obsahem"
-
-#: contact-form-7/admin/edit.php:172
-#: contact-form-7/admin/edit.php:239
-#: contact-form-7/includes/functions.php:78
-msgid "Message body:"
-msgstr "Zpráva:"
-
-#: contact-form-7/admin/edit.php:188
+#: contact-form-7/admin/edit.php:84
 msgid "Mail (2)"
-msgstr "Mail (2)"
+msgstr "Druhý email."
 
-#: contact-form-7/admin/edit.php:194
+#: contact-form-7/admin/edit.php:89
 msgid "Use mail (2)"
-msgstr "Použij mail (2)"
+msgstr "Použít druhý email."
 
-#: contact-form-7/admin/edit.php:255
+#: contact-form-7/admin/edit.php:91
 msgid "Messages"
 msgstr "Zprávy"
 
-#: contact-form-7/admin/edit.php:285
+#: contact-form-7/admin/edit.php:94
 msgid "Additional Settings"
 msgstr "Další nastavení"
 
-#: contact-form-7/admin/edit.php:333
-#, fuzzy, php-format
+#: contact-form-7/admin/edit.php:141
+#, php-format
 msgid "Use the default language (%s)"
-msgstr "Použít vodoznak"
+msgstr "Použít výchozí jazyk (%s)"
 
-#: contact-form-7/admin/edit.php:334
-#: contact-form-7/admin/edit.php:347
-#, fuzzy
-msgid "Add New"
-msgstr "Přidat novou galerii"
-
-#: contact-form-7/admin/edit.php:337
+#: contact-form-7/admin/edit.php:145
 msgid "Or"
-msgstr "nebo"
+msgstr "Nebo"
 
-#: contact-form-7/admin/edit.php:342
-#, fuzzy
+#: contact-form-7/admin/edit.php:150
 msgid "(select language)"
-msgstr "Vybrat album"
+msgstr "(vybrat jazyk)"
 
-#: contact-form-7/includes/classes.php:596
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Komu:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Od:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Doplňková záhlaví:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Přílohy:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Použít v obsahu HTML"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:108
+msgid "Message body:"
+msgstr "Tělo zprávy:"
+
+#: contact-form-7/includes/classes.php:665
 msgid "Untitled"
-msgstr "Untitled"
+msgstr "Bez názvu"
 
-#: contact-form-7/includes/functions.php:6
+#: contact-form-7/includes/controller.php:245
+msgid "Sending ..."
+msgstr "Odesílám..."
+
+#: contact-form-7/includes/functions.php:26
 msgid "Sender's message was sent successfully"
-msgstr "Vaše zpráva byla úspěšně odeslána. Děkujeme."
+msgstr "Odesílatelova zpráva byla úspěšně odeslána"
 
-#: contact-form-7/includes/functions.php:7
+#: contact-form-7/includes/functions.php:27
 msgid "Your message was sent successfully. Thanks."
 msgstr "Vaše zpráva byla úspěšně odeslána. Děkujeme."
 
-#: contact-form-7/includes/functions.php:11
-msgid "Sender's message was failed to send"
-msgstr "Zprávu se nepodařilo odeslat"
-
-#: contact-form-7/includes/functions.php:12
-#: contact-form-7/includes/functions.php:17
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "Nepodařilo se odeslat zprávu. Opakujte později, nebo kontaktujte administátora."
-
-#: contact-form-7/includes/functions.php:16
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet usoudil, že toto odesílání e-mailů je spamování."
-
-#: contact-form-7/includes/functions.php:21
-msgid "Validation errors occurred"
-msgstr "Při ověřování správnosti nastala chyba"
-
-#: contact-form-7/includes/functions.php:22
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Chyba v ověření. Zkontrolujte prosím všechna povinná pole."
-
-#: contact-form-7/includes/functions.php:26
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Pokud nezaškrtnete povinné políčko, e-mail nelze odeslat."
-
-#: contact-form-7/includes/functions.php:27
-msgid "Please accept the terms to proceed."
-msgstr "Přijměte prosím podmínky, abyste mohli pokračovat."
-
 #: contact-form-7/includes/functions.php:31
-msgid "Email address that sender entered is invalid"
-msgstr "E-mailová adresa je zadána špatně."
+msgid "Sender's message was failed to send"
+msgstr "Odesílatelova zpráva nebyla odeslána"
 
 #: contact-form-7/includes/functions.php:32
-msgid "Email address seems invalid."
-msgstr "Emailová adresa není v platném tvaru."
+#: contact-form-7/modules/akismet.php:106
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Vaše zpráva nebyla odeslána. Prosím zkuste odeslat zprávu později nebo kontaktujte administrátora."
 
 #: contact-form-7/includes/functions.php:36
-msgid "There is a field that sender is needed to fill in"
-msgstr "Nevyplnili jste povinné políčko."
+msgid "Validation errors occurred"
+msgstr "Chyba ověření."
 
 #: contact-form-7/includes/functions.php:37
-msgid "Please fill the required field."
-msgstr "Vyplňte prosím povinná pole."
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Chyba ověření. Prosím ověřte správnost pole a odešlete znovu."
+
+#: contact-form-7/includes/functions.php:41
+msgid "There are terms that the sender must accept"
+msgstr "Musíte souhlasit s podmínkami odesílatele"
+
+#: contact-form-7/includes/functions.php:42
+msgid "Please accept the terms to proceed."
+msgstr "Přijměte podmínky pro pokračování."
 
 #: contact-form-7/includes/functions.php:46
+msgid "Email address that the sender entered is invalid"
+msgstr "Emailová adresa odesílatele není zadaná správně"
+
+#: contact-form-7/includes/functions.php:47
+msgid "Email address seems invalid."
+msgstr "Emailová adresa se nezdá správně."
+
+#: contact-form-7/includes/functions.php:51
+msgid "There is a field that the sender must fill in"
+msgstr "Toto pole musí být vyplněno"
+
+#: contact-form-7/includes/functions.php:52
+msgid "Please fill the required field."
+msgstr "Prosím, vyplňte vyžadovaná pole."
+
+#: contact-form-7/includes/functions.php:76
 msgid "Your Name"
 msgstr "Vaše jméno"
 
-#: contact-form-7/includes/functions.php:46
-#: contact-form-7/includes/functions.php:48
+#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:78
 msgid "(required)"
 msgstr "(vyžadováno)"
 
-#: contact-form-7/includes/functions.php:48
+#: contact-form-7/includes/functions.php:78
 msgid "Your Email"
-msgstr "Váš Email"
+msgstr "Váš email"
 
-#: contact-form-7/includes/functions.php:50
+#: contact-form-7/includes/functions.php:80
 msgid "Subject"
-msgstr "Předmět zprávy"
+msgstr "Předmět"
 
-#: contact-form-7/includes/functions.php:52
+#: contact-form-7/includes/functions.php:82
 msgid "Your Message"
 msgstr "Vaše zpráva"
 
-#: contact-form-7/includes/functions.php:54
+#: contact-form-7/includes/functions.php:84
 msgid "Send"
 msgstr "Odeslat"
 
-#: contact-form-7/includes/functions.php:62
-#, fuzzy, php-format
+#: contact-form-7/includes/functions.php:92
+#, php-format
 msgid "From: %s"
-msgstr "Email mittente"
+msgstr "Od: %s"
 
-#: contact-form-7/includes/functions.php:63
-#, fuzzy, php-format
+#: contact-form-7/includes/functions.php:93
+#, php-format
 msgid "Subject: %s"
-msgstr "Předmět"
+msgstr "Předmět: %s"
 
-#: contact-form-7/includes/functions.php:64
-#, fuzzy
+#: contact-form-7/includes/functions.php:94
 msgid "Message Body:"
 msgstr "Zpráva:"
 
-#: contact-form-7/includes/functions.php:65
-#: contact-form-7/includes/functions.php:79
+#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:109
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Tento email byl odeslán pomocí Contact form na %1$s %2$s"
+msgstr "Tento email byl odeslán pomocí kontaktního formuláře stránek %1$s %2$s"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:185
 msgid "Afrikaans"
-msgstr "Afrikaans"
+msgstr "Afrikánština"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:186
 msgid "Albanian"
-msgstr "Albanian"
+msgstr "Albánština"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:187
 msgid "Arabic"
-msgstr "Arabic"
+msgstr "Arabština"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:188
 msgid "Armenian"
-msgstr "Armenian"
+msgstr "Arménština"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:189
+msgid "Azerbaijani"
+msgstr "Azerbajdžánština"
+
+#: contact-form-7/includes/functions.php:190
 msgid "Bangla"
-msgstr "Bangla"
+msgstr "Bengálština"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:191
+msgid "Belarusian"
+msgstr "Běloruština"
+
+#: contact-form-7/includes/functions.php:192
 msgid "Bosnian"
-msgstr "Bosnian"
+msgstr "Bosenština"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:193
 msgid "Brazilian Portuguese"
-msgstr "Brazilian Portuguese"
+msgstr "Brazilská portugalština"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:194
 msgid "Bulgarian"
-msgstr "Bulgarian"
+msgstr "Bulharština"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:195
 msgid "Catalan"
-msgstr "Catalan"
+msgstr "Katalánština"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:196
 msgid "Chinese (Simplified)"
-msgstr "Chinese (Simplified)"
+msgstr "Čínština (zjednodušená)"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:197
 msgid "Chinese (Traditional)"
-msgstr "Chinese (Traditional)"
+msgstr "Čínština (tradiční)"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:198
 msgid "Croatian"
-msgstr "Croatian"
+msgstr "Chorvatština"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:199
 msgid "Czech"
 msgstr "Čeština"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:200
 msgid "Danish"
-msgstr "Danish"
+msgstr "Dánština"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:201
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "Holandština"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:202
 msgid "English"
-msgstr "English"
+msgstr "Angličtina"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:203
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: contact-form-7/includes/functions.php:204
 msgid "Estonian"
-msgstr "Estonian"
+msgstr "Estonština"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:205
 msgid "Finnish"
-msgstr "Finnish"
+msgstr "Finština"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:206
 msgid "French"
-msgstr "French"
+msgstr "Francouzština"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:207
 msgid "Galician"
 msgstr "Galician"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:208
 msgid "Georgian"
-msgstr "Georgian"
+msgstr "Gruzínština"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:209
 msgid "German"
-msgstr "German"
+msgstr "Němčina"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:210
 msgid "Greek"
-msgstr "Greek"
+msgstr "Řečtina"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:211
 msgid "Hebrew"
-msgstr "Hebrew"
+msgstr "Hebrejština"
 
-#: contact-form-7/includes/functions.php:193
-#, fuzzy
+#: contact-form-7/includes/functions.php:212
 msgid "Hindi"
-msgstr "Skrýt"
+msgstr "Hindština"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:213
 msgid "Hungarian"
-msgstr "Hungarian"
+msgstr "Maďarština"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:214
 msgid "Indonesian"
-msgstr "Indonesian"
+msgstr "Indonéština"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:215
 msgid "Italian"
-msgstr "Italian"
+msgstr "Italština"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:216
 msgid "Japanese"
-msgstr "Japanese"
+msgstr "Japonština"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:217
 msgid "Korean"
-msgstr "Korean"
+msgstr "Korejština"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:218
 msgid "Latvian"
-msgstr "Latvian"
+msgstr "Lotyština"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:219
 msgid "Lithuanian"
-msgstr "Lithuanian"
+msgstr "Litevština"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:220
 msgid "Macedonian"
-msgstr "Macedonian"
+msgstr "Makedonština"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:221
 msgid "Malay"
-msgstr "Malay"
+msgstr "Malajština"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:222
 msgid "Malayalam"
 msgstr "Malayalam"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:223
+msgid "Maltese"
+msgstr "Maltština"
+
+#: contact-form-7/includes/functions.php:224
 msgid "Norwegian"
-msgstr "Norwegian"
+msgstr "Norština"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:225
 msgid "Persian"
-msgstr "Persian"
+msgstr "Perština"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:226
 msgid "Polish"
-msgstr "Polish"
+msgstr "Polština"
 
-#: contact-form-7/includes/functions.php:207
+#: contact-form-7/includes/functions.php:227
 msgid "Portuguese"
-msgstr "Portuguese"
+msgstr "Portugalština"
 
-#: contact-form-7/includes/functions.php:208
+#: contact-form-7/includes/functions.php:228
 msgid "Russian"
-msgstr "Russian"
+msgstr "Ruština"
 
-#: contact-form-7/includes/functions.php:209
+#: contact-form-7/includes/functions.php:229
 msgid "Romanian"
-msgstr "Romanian"
+msgstr "Rumunština"
 
-#: contact-form-7/includes/functions.php:210
+#: contact-form-7/includes/functions.php:230
 msgid "Serbian"
-msgstr "Serbian"
+msgstr "Srbština"
 
-#: contact-form-7/includes/functions.php:211
+#: contact-form-7/includes/functions.php:231
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: contact-form-7/includes/functions.php:232
 msgid "Slovak"
-msgstr "Slovak"
+msgstr "Slovenština"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:233
 msgid "Slovene"
-msgstr "Slovene"
+msgstr "Slovinština"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:234
 msgid "Spanish"
-msgstr "Spanish"
+msgstr "Španělština"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:235
 msgid "Swedish"
-msgstr "Swedish"
+msgstr "Švédština"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:236
 msgid "Tamil"
 msgstr "Tamil"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:237
 msgid "Thai"
-msgstr "Thai"
+msgstr "Thaiština"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:238
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: contact-form-7/includes/functions.php:239
 msgid "Turkish"
-msgstr "Turkish"
+msgstr "Turečtina"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:240
 msgid "Ukrainian"
-msgstr "Ukrainian"
+msgstr "Ukrajinština"
 
-#: contact-form-7/includes/functions.php:219
+#: contact-form-7/includes/functions.php:241
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr "Vietnamština"
 
-#: contact-form-7/modules/acceptance.php:150
+#: contact-form-7/modules/acceptance.php:153
 msgid "Acceptance"
-msgstr "Přijímám"
+msgstr "Schválení"
 
-#: contact-form-7/modules/acceptance.php:159
-#: contact-form-7/modules/captcha.php:202
-#: contact-form-7/modules/checkbox.php:208
-#: contact-form-7/modules/file.php:244
+#: contact-form-7/modules/acceptance.php:162
+#: contact-form-7/modules/captcha.php:212
 msgid "Name"
 msgstr "Jméno"
 
-#: contact-form-7/modules/acceptance.php:164
 #: contact-form-7/modules/acceptance.php:167
-#: contact-form-7/modules/captcha.php:209
-#: contact-form-7/modules/captcha.php:212
-#: contact-form-7/modules/captcha.php:217
-#: contact-form-7/modules/captcha.php:220
-#: contact-form-7/modules/captcha.php:224
-#: contact-form-7/modules/captcha.php:235
-#: contact-form-7/modules/captcha.php:238
-#: contact-form-7/modules/captcha.php:243
-#: contact-form-7/modules/captcha.php:246
-#: contact-form-7/modules/checkbox.php:213
-#: contact-form-7/modules/checkbox.php:216
-#: contact-form-7/modules/file.php:249
-#: contact-form-7/modules/file.php:252
-#: contact-form-7/modules/file.php:257
-#: contact-form-7/modules/file.php:260
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/captcha.php:256
 msgid "optional"
-msgstr "volitelné"
+msgstr "volitelně"
 
-#: contact-form-7/modules/acceptance.php:173
+#: contact-form-7/modules/acceptance.php:176
 msgid "Make this checkbox checked by default?"
-msgstr "Má být zaškrtávací políčko zaškrtnuté samo od sebe?"
+msgstr "Nastavit zaškrtnutí jako výchozí volbu?"
 
-#: contact-form-7/modules/acceptance.php:174
+#: contact-form-7/modules/acceptance.php:177
 msgid "Make this checkbox work inversely?"
-msgstr "Má zaškrtávací políčko pracovat naopak?"
+msgstr "Vytvořit inverzní zaškrtávací tlačítko?"
 
-#: contact-form-7/modules/acceptance.php:175
+#: contact-form-7/modules/acceptance.php:178
 msgid "* That means visitor who accepts the term unchecks it."
-msgstr "To znamená, že pokud návštěvník podmínky přijímá, tak políčko musí odškrtnout."
+msgstr "* nezaškrtnuto"
 
-#: contact-form-7/modules/acceptance.php:180
-#: contact-form-7/modules/captcha.php:251
-#: contact-form-7/modules/checkbox.php:236
-#: contact-form-7/modules/file.php:265
+#: contact-form-7/modules/acceptance.php:183
+#: contact-form-7/modules/captcha.php:261
 msgid "Copy this code and paste it into the form left."
 msgstr "Zkopírujte tento kód a vložte jej do formuláře vlevo."
 
-#: contact-form-7/modules/captcha.php:66
+#: contact-form-7/modules/akismet.php:105
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismet posoudil toto odesílání jako spam"
+
+#: contact-form-7/modules/captcha.php:73
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Používání CAPTCHY je podmíněno instalací pluginu <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+msgstr "Pokud chcete používat plugin <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> musí být naistalován."
 
-#: contact-form-7/modules/captcha.php:177
+#: contact-form-7/modules/captcha.php:187
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Špatně jste opsali kontrolní kód CAPTCHA, zkuste to prosím znovu."
-
-#: contact-form-7/modules/captcha.php:178
-msgid "Your entered code is incorrect."
-msgstr "Vložený ověřovací kód není správně."
+msgstr "Ověřovací kód CAPTCHA zadaný odesílatelem není zadaný správně"
 
 #: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Vložený kód není správný."
+
+#: contact-form-7/modules/captcha.php:198
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:199
+#: contact-form-7/modules/captcha.php:209
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Poznámka: CAPTCHA vyžaduje nainstalovaný plugin Really Simple CAPTCHA."
+msgstr "Upozornění: Pro použití ověřování CAPTCHA musíte mít nainstalovaný plugin Really Simple CAPTCHA."
 
-#: contact-form-7/modules/captcha.php:206
+#: contact-form-7/modules/captcha.php:216
 msgid "Image settings"
-msgstr "Nastavení obrázku"
+msgstr "Nastavení obrázků"
 
-#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:227
 msgid "Foreground color"
-msgstr "Barva písma"
+msgstr "Barva popředí"
 
-#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:230
 msgid "Background color"
 msgstr "Barva pozadí"
 
-#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:234
 msgid "Image size"
 msgstr "Velikost obrázku"
 
-#: contact-form-7/modules/captcha.php:225
+#: contact-form-7/modules/captcha.php:235
 msgid "Small"
 msgstr "Malý"
 
-#: contact-form-7/modules/captcha.php:226
+#: contact-form-7/modules/captcha.php:236
 msgid "Medium"
 msgstr "Střední"
 
-#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:237
 msgid "Large"
 msgstr "Velký"
 
-#: contact-form-7/modules/captcha.php:232
+#: contact-form-7/modules/captcha.php:242
 msgid "Input field settings"
-msgstr "Parametry vstupního pole"
+msgstr "Nastavení vstupního pole"
 
-#: contact-form-7/modules/captcha.php:252
+#: contact-form-7/modules/captcha.php:262
 msgid "For image"
-msgstr "For image"
+msgstr "Pro obrázek"
 
-#: contact-form-7/modules/captcha.php:254
+#: contact-form-7/modules/captcha.php:264
 msgid "For input field"
 msgstr "Pro vstupní pole"
 
-#: contact-form-7/modules/captcha.php:284
+#: contact-form-7/modules/captcha.php:294
 #, php-format
 msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Tento kontaktní formulář obsahuje CAPTCHA pole, ale dočasný adresář pro soubory  (%s)  neexistuje nebo není zapisovatelný. Můžete vytvořit adresář nebo změnit povolení manuálně."
+msgstr "Tento kontaktní formulář obsahuje CAPTCHA ověřovací pole, ale složka se soubory (%s) neexistuje nebo není povolen zápis. Vytvořte prosím složku nebo změnte atribut manuálně."
 
-#: contact-form-7/modules/captcha.php:290
+#: contact-form-7/modules/captcha.php:300
 msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
-msgstr "Tento kontaktní formulář obsahuje CAPTCHA pole, ale nezbytné knihovny (GD a FreeType) nejsou na serveru dostupné."
+msgstr "Tento kontaktní formulář obsahuje CAPTCHA ověřovací pole, ale potřebná knihovna (GD and FreeType) není na Vašem serveru k dispozici."
 
-#: contact-form-7/modules/checkbox.php:181
+#: contact-form-7/modules/checkbox.php:161
 msgid "Checkboxes"
 msgstr "Zaškrtávací políčka"
 
-#: contact-form-7/modules/checkbox.php:184
+#: contact-form-7/modules/checkbox.php:164
 msgid "Radio buttons"
-msgstr "Tlačítku typu Radio "
+msgstr "Přepínací tlačítka"
 
-#: contact-form-7/modules/checkbox.php:205
-#: contact-form-7/modules/file.php:243
+#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/file.php:236
+#: contact-form-7/modules/select.php:148
+#: contact-form-7/modules/text.php:175
+#: contact-form-7/modules/textarea.php:136
 msgid "Required field?"
 msgstr "Vyžadované pole?"
 
-#: contact-form-7/modules/checkbox.php:221
+#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/select.php:162
 msgid "Choices"
-msgstr "Možnosti"
+msgstr "Volby"
 
-#: contact-form-7/modules/checkbox.php:223
+#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/select.php:164
 msgid "* One choice per line."
-msgstr "* Jedna možnost na řádku"
+msgstr "* Jedna volba na řádek."
 
-#: contact-form-7/modules/checkbox.php:227
+#: contact-form-7/modules/checkbox.php:207
 msgid "Put a label first, a checkbox last?"
-msgstr "Vložte napřed popisek pole, zaškrtávací pole (checkbox) naposled?"
+msgstr "Vložit popis první a zaškrtávací políčko jako poslední?"
 
-#: contact-form-7/modules/checkbox.php:228
+#: contact-form-7/modules/checkbox.php:208
 msgid "Wrap each item with <label> tag?"
-msgstr "Ohraničte každou položku <popis> tagy<"
+msgstr "Přidat ke každé položce <label> štítek?"
 
-#: contact-form-7/modules/checkbox.php:230
+#: contact-form-7/modules/checkbox.php:210
 msgid "Make checkboxes exclusive?"
-msgstr "Mají být políčka exkluzivní?"
+msgstr "Vytvořit výhradní zaškrtávací tlačítko?"
 
-#: contact-form-7/modules/checkbox.php:238
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/select.php:176
+#: contact-form-7/modules/text.php:218
+#: contact-form-7/modules/textarea.php:168
 msgid "And, put this code into the Mail fields below."
-msgstr "A vložte tento kód do emailového pole níže."
+msgstr "a vložte tento kód do emailového pole níže."
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:200
 msgid "Uploading a file fails for any reason"
-msgstr "Nahrávání souboru se nepodařilo."
+msgstr "Nahrávání souboru selhalo z neznámé příčiny"
 
-#: contact-form-7/modules/file.php:208
+#: contact-form-7/modules/file.php:201
 msgid "Failed to upload file."
-msgstr "Nahrání souboru se nepodařilo."
+msgstr "Nahrání souboru se nezdařilo."
 
-#: contact-form-7/modules/file.php:212
+#: contact-form-7/modules/file.php:205
 msgid "Uploaded file is not allowed file type"
-msgstr "Nahrávaný soubor je nepovoleného typu."
+msgstr "Typ nahrávaného souboru není povolen"
 
-#: contact-form-7/modules/file.php:213
+#: contact-form-7/modules/file.php:206
 msgid "This file type is not allowed."
-msgstr "Tento typ souboru není povolený."
+msgstr "Tento typ souboru není povolen."
 
-#: contact-form-7/modules/file.php:217
+#: contact-form-7/modules/file.php:210
 msgid "Uploaded file is too large"
-msgstr "Nahrávaný soubor je příliš velký."
+msgstr "Nahrávaný soubor je příliš velký"
 
-#: contact-form-7/modules/file.php:218
+#: contact-form-7/modules/file.php:211
 msgid "This file is too large."
-msgstr "Soubor je příliš velký."
+msgstr "Tento soubor je příliš velký."
 
-#: contact-form-7/modules/file.php:222
+#: contact-form-7/modules/file.php:215
 msgid "Uploading a file fails for PHP error"
-msgstr "Nahrávání souboru se nepodařilo kvůli chybě v PHP."
+msgstr "Nahrávání souboru selhalo kvůli PHP chybě"
 
-#: contact-form-7/modules/file.php:223
+#: contact-form-7/modules/file.php:216
 msgid "Failed to upload file. Error occurred."
-msgstr "Nahrát soubor se nepodařilo."
+msgstr "Nahrávání souboru selhalo."
 
-#: contact-form-7/modules/file.php:234
+#: contact-form-7/modules/file.php:227
 msgid "File upload"
 msgstr "Nahrát soubor"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:250
 msgid "File size limit"
 msgstr "Maximální velikost souboru"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:250
 msgid "bytes"
-msgstr "bajtů"
+msgstr "bytů"
 
-#: contact-form-7/modules/file.php:260
+#: contact-form-7/modules/file.php:253
 msgid "Acceptable file types"
 msgstr "Povolené typy souborů"
 
-#: contact-form-7/modules/file.php:267
+#: contact-form-7/modules/file.php:260
 msgid "And, put this code into the File Attachments field below."
-msgstr "A vložte tento kód do  pole pro přílohy níže."
+msgstr "a vložte tento kód pole \"přílohy\" níže."
 
-#: contact-form-7/modules/file.php:292
+#: contact-form-7/modules/file.php:285
 #, php-format
 msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Tento kontaktní formulář obsahuje pole pro upload souborů, ale dočasný adresář pro soubory  (%s)  neexistuje nebo není zapisovatelný. Můžete vytvořit adresář nebo změnit povolení manuálně."
+msgstr "Tento kontaktní formulář obsahuje funkci nahrávání souborů, ale složka pro soubory (%s) neexistuje nebo není povolen zápis. Vytvořte prosím složku nebo změnte atribut manuálně."
 
-#: contact-form-7/modules/icl.php:74
-msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
-msgstr "Tento kontaktní formulář obsahuje [icl] tagy, ale ty jsou již zastaralé a ve verzi Contact form 7 již nepodporované. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">Zde lze nalézt jednoduchý popis, jak vytvořit kontaktní formuláře pro jiné jazyky</a>. Tento způsob doporučujeme."
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Odesílatel nezadal správnou odpověď na kontrolní otázku"
 
 #: contact-form-7/modules/quiz.php:160
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Špatně jste odpověděli na kvíz, zkuste to prosím znovu."
-
-#: contact-form-7/modules/quiz.php:161
 msgid "Your answer is not correct."
-msgstr "Vaše odpověď je chybná."
+msgstr "Vaše odpověď není správná."
 
-#: contact-form-7/modules/quiz.php:171
+#: contact-form-7/modules/quiz.php:170
 msgid "Quiz"
-msgstr "Příklad"
+msgstr "Kontrolní otázka"
 
-#: contact-form-7/modules/quiz.php:201
+#: contact-form-7/modules/quiz.php:200
 msgid "Quizzes"
-msgstr "Příklady"
+msgstr "Kontrolní otázky"
 
-#: contact-form-7/modules/quiz.php:203
+#: contact-form-7/modules/quiz.php:202
 msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* příklad|odpověď (např. 1+1=?|2)"
+msgstr "* kontrolní otázka|odpověď (e.g. 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:150
+#: contact-form-7/modules/select.php:139
 msgid "Drop-down menu"
 msgstr "Rozbalovací menu"
 
-#: contact-form-7/modules/select.php:179
+#: contact-form-7/modules/select.php:168
 msgid "Allow multiple selections?"
 msgstr "Povolit vícenásobný výběr?"
 
-#: contact-form-7/modules/select.php:180
+#: contact-form-7/modules/select.php:169
 msgid "Insert a blank item as the first option?"
-msgstr "Vložit jako první možnost prázdnou položku?"
+msgstr "Vložit práznou hodnotu jako první možnost?"
 
-#: contact-form-7/modules/submit.php:54
-msgid "Sending ..."
-msgstr "Odesílání ..."
-
-#: contact-form-7/modules/submit.php:66
+#: contact-form-7/modules/submit.php:58
 msgid "Submit button"
-msgstr "Potvrzovací tlačítko"
+msgstr "Tlačítko odeslat"
 
-#: contact-form-7/modules/submit.php:84
+#: contact-form-7/modules/submit.php:76
 msgid "Label"
-msgstr "Popis"
+msgstr "Štítek"
 
-#: contact-form-7/modules/text.php:138
+#: contact-form-7/modules/text.php:152
 msgid "Text field"
 msgstr "Textové pole"
 
-#: contact-form-7/modules/text.php:141
+#: contact-form-7/modules/text.php:155
 msgid "Email field"
-msgstr "E-mailové pole"
+msgstr "Emailové pole"
 
-#: contact-form-7/modules/text.php:183
+#: contact-form-7/modules/text.php:197
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:185
+#: contact-form-7/modules/text.php:199
 msgid "This field requires author's name"
-msgstr "Toto pole musí obsahovat jméno autora"
+msgstr "Toto pole vyžaduje jméno autora"
 
-#: contact-form-7/modules/text.php:186
+#: contact-form-7/modules/text.php:200
 msgid "This field requires author's URL"
-msgstr "Toto pole musí obsahovat URL autora"
+msgstr "Toto pole vyžaduje URL autora"
 
-#: contact-form-7/modules/text.php:188
+#: contact-form-7/modules/text.php:202
 msgid "This field requires author's email address"
-msgstr "Toto pole musí obsahovat autorův e-mail"
+msgstr "Toto pole vyžaduje emailovou adresu autora"
 
-#: contact-form-7/modules/text.php:194
-#: contact-form-7/modules/textarea.php:156
+#: contact-form-7/modules/text.php:208
+#: contact-form-7/modules/textarea.php:158
 msgid "Default value"
 msgstr "Výchozí hodnota"
 
-#: contact-form-7/modules/text.php:197
-#: contact-form-7/modules/textarea.php:159
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:161
 msgid "Use this text as watermark?"
 msgstr "Použít tento text jako vodoznak?"
 
-#: contact-form-7/modules/textarea.php:125
+#: contact-form-7/modules/textarea.php:127
 msgid "Text area"
-msgstr "Pole pro psaní delšího textu (textarea)"
+msgstr "Textovou oblast"
 
-#~ msgid ""
-#~ "Is this plugin useful for you? If you like it, please help the developer."
-#~ msgstr ""
-#~ "Je pro vás tento plugin užitečný? Pokud se vám líbí, pomožte jeho tvůrci."
-
-#~ msgid ""
-#~ "Developing a plugin and providing user support is really hard work. "
-#~ "Please help."
-#~ msgstr ""
-#~ "Vývoj pluginu a poskytování pomoci uživatelům je opravdu náročná práce. "
-#~ "Pomožte prosím."
-
-#~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
-#~ msgstr ""
-#~ "Tento e-mail byl odeslán pomocí pluginu Contact Form 7 pro Wordpress. "
-
-#~ msgid "Delete this contact form"
-#~ msgstr "Smaž tento formulář."
