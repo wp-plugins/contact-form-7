@@ -10,10 +10,10 @@
 <?php
 $first = array_shift( $contact_forms );
 if ( ! is_null( $first ) ) : ?>
-<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->ID ) ); ?>"<?php if ( $first->ID == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->post_title ); ?></a></li>
+<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->id ) ); ?>"<?php if ( $first->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->title ); ?></a></li>
 <?php endif;
 foreach ( $contact_forms as $v ) : ?>
-<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->ID ) ); ?>"<?php if ( $v->ID == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->post_title ); ?></a></li>
+<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->title ); ?></a></li>
 <?php endforeach; ?>
 
 <?php if ( wpcf7_admin_has_edit_cap() ) : ?>

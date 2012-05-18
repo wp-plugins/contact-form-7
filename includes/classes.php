@@ -4,6 +4,8 @@ class WPCF7_ContactForm {
 
 	const post_type = 'wpcf7_contact_form';
 
+	public static $found_items = 0;
+
 	var $initial = false;
 
 	var $id;
@@ -24,6 +26,31 @@ class WPCF7_ContactForm {
 			'labels' => array(
 				'name' => __( 'Contact Forms', 'wpcf7' ),
 				'singular_name' => __( 'Contact Form', 'wpcf7' ) ) ) );
+	}
+
+	public static function find( $args = '' ) {
+		$defaults = array(
+			'post_status' => 'any',
+			'posts_per_page' => -1,
+			'offset' => 0,
+			'orderby' => 'ID',
+			'order' => 'ASC' );
+
+		$args = wp_parse_args( $args, $defaults );
+
+		$args['post_type'] = self::post_type;
+
+		$q = new WP_Query();
+		$posts = $q->query( $args );
+
+		self::$found_items = $q->found_posts;
+
+		$objs = array();
+
+		foreach ( (array) $posts as $post )
+			$objs[] = new self( $post );
+
+		return $objs;
 	}
 
 	public function __construct( $post = null ) {

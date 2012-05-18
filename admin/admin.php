@@ -198,11 +198,7 @@ _wpcf7.tagGenerators = <?php echo json_encode( $taggenerators ) ?>;
 }
 
 function wpcf7_admin_management_page() {
-	$contact_forms = get_posts( array(
-		'numberposts' => -1,
-		'orderby' => 'ID',
-		'order' => 'ASC',
-		'post_type' => 'wpcf7_contact_form' ) );
+	$contact_forms = WPCF7_ContactForm::find();
 
 	$cf = null;
 	$unsaved = false;
@@ -221,8 +217,8 @@ function wpcf7_admin_management_page() {
 		$first = reset( $contact_forms ); // Returns first item
 
 		if ( $first ) {
-			$current = $first->ID;
-			$cf = wpcf7_contact_form( $current );
+			$cf = $first;
+			$current = $cf->id;
 		}
 	}
 
