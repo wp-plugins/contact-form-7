@@ -128,13 +128,8 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 	if ( false === strpos( $hook_suffix, 'wpcf7' ) )
 		return;
 
-	wp_enqueue_style( 'thickbox' );
-	wp_enqueue_script( 'thickbox' );
-
-	wp_enqueue_script( 'postbox' );
-
 	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/styles.css' ),
-		array(), WPCF7_VERSION, 'all' );
+		array( 'thickbox' ), WPCF7_VERSION, 'all' );
 
 	if ( wpcf7_is_rtl() ) {
 		wp_enqueue_style( 'contact-form-7-admin-rtl',
@@ -145,7 +140,8 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 		array( 'jquery' ), WPCF7_VERSION, true );
 
 	wp_enqueue_script( 'wpcf7-admin', wpcf7_plugin_url( 'admin/scripts.js' ),
-		array( 'jquery', 'wpcf7-admin-taggenerator' ), WPCF7_VERSION, true );
+		array( 'jquery', 'thickbox', 'postbox', 'wpcf7-admin-taggenerator' ),
+		WPCF7_VERSION, true );
 
 	$taggenerators = array();
 
