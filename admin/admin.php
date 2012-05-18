@@ -120,15 +120,18 @@ function wpcf7_load_contact_form_admin() {
 	}
 }
 
-add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_styles' );
+add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
 
-function wpcf7_admin_enqueue_styles() {
-	global $plugin_page;
+function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
+	global $wpcf7_tag_generators;
 
-	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
+	if ( false === strpos( $hook_suffix, 'wpcf7' ) )
 		return;
 
 	wp_enqueue_style( 'thickbox' );
+	wp_enqueue_script( 'thickbox' );
+
+	wp_enqueue_script( 'postbox' );
 
 	wp_enqueue_style( 'contact-form-7-admin', wpcf7_plugin_url( 'admin/styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
@@ -137,18 +140,6 @@ function wpcf7_admin_enqueue_styles() {
 		wp_enqueue_style( 'contact-form-7-admin-rtl',
 			wpcf7_plugin_url( 'admin/styles-rtl.css' ), array(), WPCF7_VERSION, 'all' );
 	}
-}
-
-add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
-
-function wpcf7_admin_enqueue_scripts() {
-	global $plugin_page, $wpcf7_tag_generators;
-
-	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
-		return;
-
-	wp_enqueue_script( 'thickbox' );
-	wp_enqueue_script( 'postbox' );
 
 	wp_enqueue_script( 'wpcf7-admin-taggenerator', wpcf7_plugin_url( 'admin/taggenerator.js' ),
 		array( 'jquery' ), WPCF7_VERSION, true );
