@@ -4,9 +4,21 @@ function wpcf7_admin_has_edit_cap() {
 	return current_user_can( 'wpcf7_edit_contact_forms' );
 }
 
-add_action( 'admin_init', 'wpcf7_admin_init' );
+add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
 
-function wpcf7_admin_init() {
+function wpcf7_admin_menu() {
+	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
+		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page',
+		wpcf7_plugin_url( 'admin/images/menu-icon.png' ) );
+
+	$contact_form_admin = add_submenu_page( 'wpcf7',
+		__( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
+		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page' );
+
+	add_action( 'load-' . $contact_form_admin, 'wpcf7_load_contact_form_admin' );
+}
+
+function wpcf7_load_contact_form_admin() {
 	if ( ! wpcf7_admin_has_edit_cap() )
 		return;
 
@@ -106,17 +118,6 @@ function wpcf7_admin_init() {
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}
-}
-
-add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
-
-function wpcf7_admin_menu() {
-	add_menu_page( __( 'Contact Form 7', 'wpcf7' ), __( 'Contact', 'wpcf7' ),
-		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page',
-		wpcf7_plugin_url( 'admin/images/menu-icon.png' ) );
-
-	add_submenu_page( 'wpcf7', __( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
-		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page' );
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_styles' );
