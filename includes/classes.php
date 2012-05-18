@@ -26,6 +26,28 @@ class WPCF7_ContactForm {
 				'singular_name' => __( 'Contact Form', 'wpcf7' ) ) ) );
 	}
 
+	public function __construct( $post = null ) {
+		$this->initial = true;
+
+		$post = get_post( $post );
+
+		if ( $post && self::post_type == get_post_type( $post ) ) {
+			$this->initial = false;
+			$this->id = $post->ID;
+			$this->title = $post->post_title;
+
+			$this->form = get_post_meta( $post->ID, 'form', true );
+			$this->mail = get_post_meta( $post->ID, 'mail', true );
+			$this->mail_2 = get_post_meta( $post->ID, 'mail_2', true );
+			$this->messages = get_post_meta( $post->ID, 'messages', true );
+			$this->additional_settings = get_post_meta( $post->ID, 'additional_settings', true );
+
+			$this->upgrade();
+		}
+
+		do_action_ref_array( 'wpcf7_contact_form', array( &$this ) );
+	}
+
 	// Return true if this form is the same one as currently POSTed.
 	function is_posted() {
 		if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
@@ -598,24 +620,10 @@ class WPCF7_ContactForm {
 }
 
 function wpcf7_contact_form( $id ) {
-	$post = get_post( $id );
+	$contact_form = new WPCF7_ContactForm( $id );
 
-	if ( empty( $post ) || 'wpcf7_contact_form' != get_post_type( $post ) )
+	if ( $contact_form->initial )
 		return false;
-
-	$contact_form = new WPCF7_ContactForm();
-	$contact_form->id = $post->ID;
-	$contact_form->title = $post->post_title;
-
-	$contact_form->form = get_post_meta( $post->ID, 'form', true );
-	$contact_form->mail = get_post_meta( $post->ID, 'mail', true );
-	$contact_form->mail_2 = get_post_meta( $post->ID, 'mail_2', true );
-	$contact_form->messages = get_post_meta( $post->ID, 'messages', true );
-	$contact_form->additional_settings = get_post_meta( $post->ID, 'additional_settings', true );
-
-	$contact_form->upgrade();
-
-	$contact_form = apply_filters_ref_array( 'wpcf7_contact_form', array( &$contact_form ) );
 
 	return $contact_form;
 }
