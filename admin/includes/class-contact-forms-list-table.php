@@ -8,7 +8,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 	public static function define_columns() {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'title' => __( 'Title', 'wpcf7' ) );
+			'title' => __( 'Title', 'wpcf7' ),
+			'author' => __( 'Author', 'wpcf7' ) );
 
 		return $columns;
 	}
@@ -38,6 +39,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		if ( ! empty( $_REQUEST['orderby'] ) ) {
 			if ( 'title' == $_REQUEST['orderby'] )
 				$args['orderby'] = 'title';
+			elseif ( 'author' == $_REQUEST['orderby'] )
+				$args['orderby'] = 'author';
 		}
 
 		if ( ! empty( $_REQUEST['order'] ) ) {
@@ -64,7 +67,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 	function get_sortable_columns() {
 		$columns = array(
-			'title' => array( 'title', true ) );
+			'title' => array( 'title', true ),
+			'author' => array( 'author', false ) );
 
 		return $columns;
 	}
@@ -100,6 +104,17 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 			esc_html( $item->title ) );
 
 		return '<strong>' . $a . '</strong> ' . $this->row_actions( $actions );
+    }
+
+	function column_author( $item ) {
+		$post = get_post( $item->id );
+
+		if ( ! $post )
+			return;
+
+		$author = get_userdata( $post->post_author );
+
+		return esc_html( $author->display_name );
     }
 }
 
