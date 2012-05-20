@@ -155,18 +155,20 @@ function wpcf7_load_contact_form_admin() {
 		exit();
 	}
 
-	$current_screen = get_current_screen();
+	if ( empty( $_GET['post'] ) ) {
+		$current_screen = get_current_screen();
 
-	if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) )
-		require_once WPCF7_PLUGIN_DIR . '/admin/includes/class-contact-forms-list-table.php';
+		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) )
+			require_once WPCF7_PLUGIN_DIR . '/admin/includes/class-contact-forms-list-table.php';
 
-	add_filter( 'manage_' . $current_screen->id . '_columns',
-		array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
+		add_filter( 'manage_' . $current_screen->id . '_columns',
+			array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
 
-	add_screen_option( 'per_page', array(
-		'label' => __( 'Contact Forms', 'wpcf7' ),
-		'default' => 20,
-		'option' => 'cfseven_contact_forms_per_page' ) );
+		add_screen_option( 'per_page', array(
+			'label' => __( 'Contact Forms', 'wpcf7' ),
+			'default' => 20,
+			'option' => 'cfseven_contact_forms_per_page' ) );
+	}
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
