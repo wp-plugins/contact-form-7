@@ -18,9 +18,11 @@ if ( ! defined( 'ABSPATH' ) )
 <?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
 
 <form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $current ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
-	<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
+	<?php if ( wpcf7_admin_has_edit_cap() )
+		wp_nonce_field( 'wpcf7-save-contact-form_' . $current ); ?>
 	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $current; ?>" />
 	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
+	<input type="hidden" id="hiddenaction" name="action" value="save" />
 
 	<div id="poststuff" class="metabox-holder">
 
@@ -49,16 +51,16 @@ if ( ! defined( 'ABSPATH' ) )
 
 		<?php if ( wpcf7_admin_has_edit_cap() && ! $unsaved ) : ?>
 		<div class="actions-link">
-			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy_' . $current ); ?>
+			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $current ); ?>
 			<input type="submit" name="wpcf7-copy" class="copy" value="<?php echo esc_attr( __( 'Copy', 'wpcf7' ) ); ?>"
-			<?php echo "onclick=\"this.form._wpnonce.value = '$copy_nonce'; return true;\""; ?> />
+			<?php echo "onclick=\"this.form._wpnonce.value = '$copy_nonce'; this.form.action.value = 'copy'; return true;\""; ?> />
 			|
 
-			<?php $delete_nonce = wp_create_nonce( 'wpcf7-delete_' . $current ); ?>
+			<?php $delete_nonce = wp_create_nonce( 'wpcf7-delete-contact-form_' . $current ); ?>
 			<input type="submit" name="wpcf7-delete" class="delete" value="<?php echo esc_attr( __( 'Delete', 'wpcf7' ) ); ?>"
 			<?php echo "onclick=\"if (confirm('" .
 				esc_js( __( "You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7' ) ) .
-				"')) {this.form._wpnonce.value = '$delete_nonce'; return true;} return false;\""; ?> />
+				"')) {this.form._wpnonce.value = '$delete_nonce'; this.form.action.value = 'delete'; return true;} return false;\""; ?> />
 		</div>
 		<?php endif; ?>
 	</div>

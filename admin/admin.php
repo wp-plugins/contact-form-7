@@ -34,9 +34,9 @@ function wpcf7_load_contact_form_admin() {
 
 	$action = wpcf7_current_action();
 
-	if ( isset( $_POST['wpcf7-save'] ) ) {
+	if ( 'save' == $action ) {
 		$id = $_POST['post_ID'];
-		check_admin_referer( 'wpcf7-save_' . $id );
+		check_admin_referer( 'wpcf7-save-contact-form_' . $id );
 
 		if ( ! $contact_form = wpcf7_contact_form( $id ) ) {
 			$contact_form = new WPCF7_ContactForm();
@@ -98,9 +98,9 @@ function wpcf7_load_contact_form_admin() {
 		exit();
 	}
 
-	if ( isset( $_POST['wpcf7-copy'] ) ) {
+	if ( 'copy' == $action ) {
 		$id = $_POST['post_ID'];
-		check_admin_referer( 'wpcf7-copy_' . $id );
+		check_admin_referer( 'wpcf7-copy-contact-form_' . $id );
 
 		$query = array();
 
@@ -119,27 +119,21 @@ function wpcf7_load_contact_form_admin() {
 		exit();
 	}
 
-	if ( isset( $_POST['wpcf7-delete'] ) ) {
-		$id = $_POST['post_ID'];
-		check_admin_referer( 'wpcf7-delete_' . $id );
-
-		if ( $contact_form = wpcf7_contact_form( $id ) )
-			$contact_form->delete();
-
-		$redirect_to = wpcf7_admin_url( array( 'message' => 'deleted' ) );
-		wp_safe_redirect( $redirect_to );
-		exit();
-	}
-
-	if ( 'delete' == $action && ! empty( $_REQUEST['post'] ) ) {
-		if ( ! is_array( $_REQUEST['post'] ) )
+	if ( 'delete' == $action ) {
+		if ( ! empty( $_POST['post_ID'] ) )
+			check_admin_referer( 'wpcf7-delete-contact-form_' . $_POST['post_ID'] );
+		elseif ( ! is_array( $_REQUEST['post'] ) )
 			check_admin_referer( 'wpcf7-delete-contact-form_' . $_REQUEST['post'] );
 		else
 			check_admin_referer( 'bulk-posts' );
 
+		$posts = empty( $_POST['post_ID'] )
+			? (array) $_REQUEST['post']
+			: (array) $_POST['post_ID'];
+
 		$deleted = 0;
 
-		foreach ( (array) $_REQUEST['post'] as $post ) {
+		foreach ( $posts as $post ) {
 			$post = new WPCF7_ContactForm( $post );
 
 			if ( empty( $post ) )
