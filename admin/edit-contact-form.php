@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 		<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
 		<div class="save-contact-form">
-			<input type="submit" class="button" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'wpcf7' ) ); ?>" />
+			<input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'wpcf7' ) ); ?>" />
 		</div>
 		<?php endif; ?>
 
