@@ -328,8 +328,12 @@ function wpcf7_admin_updated_message() {
 	if ( empty( $_REQUEST['message'] ) )
 		return;
 
-	if ( 'deleted' == $_REQUEST['message'] )
-		$updated_message = esc_html( __( 'Contact forms deleted.', 'wpcf7' ) );
+	if ( 'created' == $_REQUEST['message'] )
+		$updated_message = esc_html( __( 'Contact form created.', 'wpcf7' ) );
+	elseif ( 'saved' == $_REQUEST['message'] )
+		$updated_message = esc_html( __( 'Contact form saved.', 'wpcf7' ) );
+	elseif ( 'deleted' == $_REQUEST['message'] )
+		$updated_message = esc_html( __( 'Contact form deleted.', 'wpcf7' ) );
 
 	if ( empty( $updated_message ) )
 		return;
@@ -370,32 +374,6 @@ function wpcf7_cf7com_links( &$contact_form ) {
 		. '</div>';
 
 	echo apply_filters( 'wpcf7_cf7com_links', $links );
-}
-
-add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_updated_message' );
-
-function wpcf7_updated_message( &$contact_form ) {
-	if ( ! isset( $_GET['message'] ) )
-		return;
-
-	switch ( $_GET['message'] ) {
-		case 'created':
-			$updated_message = __( "Contact form created.", 'wpcf7' );
-			break;
-		case 'saved':
-			$updated_message = __( "Contact form saved.", 'wpcf7' );
-			break;
-		case 'deleted':
-			$updated_message = __( "Contact form deleted.", 'wpcf7' );
-			break;
-	}
-
-	if ( ! $updated_message )
-		return;
-
-?>
-<div id="message" class="updated"><p><?php echo esc_html( $updated_message ); ?></p></div>
-<?php
 }
 
 add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_donation_link' );
