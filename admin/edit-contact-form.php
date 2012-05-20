@@ -10,12 +10,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 <h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
 
-<?php do_action( 'wpcf7_admin_updated_message' ); ?>
-
-<?php do_action_ref_array( 'wpcf7_admin_before_subsubsub', array( &$cf ) ); ?>
-
-<ul class="subsubsub">
-</ul>
+<?php do_action( 'wpcf7_admin_notices' ); ?>
 
 <br class="clear" />
 

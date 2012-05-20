@@ -5,7 +5,7 @@
 div.wrap div.cf7com-links {
 	text-align: right;
 	font-size: .9em;
-	margin-top: -1.6em;
+	margin: -2em 1em 1em 0;
 }
 
 div.wrap div.cf7com-links a {
@@ -38,27 +38,6 @@ div.wrap div.donation p a {
 
 div.wrap div.donation p a.button {
 	margin-left: 1em;
-}
-
-div.wrap ul.subsubsub {
-	white-space: normal;
-}
-
-ul.subsubsub li.addnew {
-	margin-left: 0.5em;
-}
-
-ul.subsubsub li.addnew a {
-	color: #e6255b;
-}
-
-ul.subsubsub li.addnew a.current {
-	border: 1px solid #bbb;
-}
-
-ul.subsubsub li.addnew a:hover,
-ul.subsubsub li.addnew a:active {
-  color: #999;
 }
 
 #titlediv {

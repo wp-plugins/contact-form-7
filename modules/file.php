@@ -267,10 +267,10 @@ function wpcf7_tg_pane_file( &$contact_form ) {
 
 /* Warning message */
 
-add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_file_display_warning_message' );
+add_action( 'wpcf7_admin_notices', 'wpcf7_file_display_warning_message' );
 
-function wpcf7_file_display_warning_message( &$contact_form ) {
-	if ( ! $contact_form )
+function wpcf7_file_display_warning_message() {
+	if ( empty( $_GET['post'] ) || ! $contact_form = wpcf7_contact_form( $_GET['post'] ) )
 		return;
 
 	$has_tags = (bool) $contact_form->form_scan_shortcode(

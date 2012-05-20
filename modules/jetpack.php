@@ -1,13 +1,8 @@
 <?php
 
-add_action( 'admin_notices', 'wpcf7_jetpack_admin_notices' );
+add_action( 'wpcf7_admin_notices', 'wpcf7_jetpack_admin_notices' );
 
 function wpcf7_jetpack_admin_notices() {
-	$current_screen = get_current_screen();
-
-	if ( false === strpos( $current_screen->id, 'wpcf7' ) )
-		return;
-
 	if ( ! class_exists( 'Jetpack' )
 	|| ! Jetpack::is_module( 'contact-form' )
 	|| ! in_array( 'contact-form', Jetpack::get_active_modules() ) )

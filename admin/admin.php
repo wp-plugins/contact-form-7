@@ -281,7 +281,7 @@ function wpcf7_admin_management_page() {
 	}
 ?></h2>
 
-<?php do_action( 'wpcf7_admin_updated_message' ); ?>
+<?php do_action( 'wpcf7_admin_notices' ); ?>
 
 <form method="get" action="">
 	<input type="hidden" name="page" value="<?php echo esc_attr( $_REQUEST['page'] ); ?>" />
@@ -322,7 +322,23 @@ function wpcf7_admin_management_page() {
 
 /* Misc */
 
-add_action( 'wpcf7_admin_updated_message', 'wpcf7_admin_updated_message' );
+add_action( 'wpcf7_admin_notices', 'wpcf7_admin_before_subsubsub' );
+
+function wpcf7_admin_before_subsubsub() {
+	// wpcf7_admin_before_subsubsub is deprecated. Use wpcf7_admin_notices instead.
+
+	$current_screen = get_current_screen();
+
+	if ( 'toplevel_page_wpcf7' != $current_screen->id )
+		return;
+
+	if ( empty( $_GET['post'] ) || ! $contact_form = wpcf7_contact_form( $_GET['post'] ) )
+		return;
+
+	do_action_ref_array( 'wpcf7_admin_before_subsubsub', array( &$contact_form ) );
+}
+
+add_action( 'wpcf7_admin_notices', 'wpcf7_admin_updated_message' );
 
 function wpcf7_admin_updated_message() {
 	if ( empty( $_REQUEST['message'] ) )
@@ -359,9 +375,9 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_cf7com_links', 9 );
+add_action( 'wpcf7_admin_notices', 'wpcf7_cf7com_links', 9 );
 
-function wpcf7_cf7com_links( &$contact_form ) {
+function wpcf7_cf7com_links() {
 	$links = '<div class="cf7com-links">'
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Contactform7.com', 'wpcf7' ) ) . '</a>&ensp;'
@@ -376,13 +392,16 @@ function wpcf7_cf7com_links( &$contact_form ) {
 	echo apply_filters( 'wpcf7_cf7com_links', $links );
 }
 
-add_action( 'wpcf7_admin_before_subsubsub', 'wpcf7_donation_link' );
+add_action( 'wpcf7_admin_notices', 'wpcf7_donation_link' );
 
-function wpcf7_donation_link( &$contact_form ) {
+function wpcf7_donation_link() {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
 
-	if ( 'new' == $_GET['post'] || ! empty( $_GET['message'] ) )
+	if ( ! empty( $_REQUEST['post'] ) && 'new' == $_REQUEST['post'] )
+		return;
+
+	if ( ! empty( $_REQUEST['message'] ) )
 		return;
 
 	$show_link = true;
