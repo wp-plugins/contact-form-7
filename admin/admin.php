@@ -228,7 +228,7 @@ function wpcf7_admin_management_page() {
 
 	if ( $cf ) {
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
-		require_once WPCF7_PLUGIN_DIR . '/admin/edit.php';
+		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
 		return;
 	}
 

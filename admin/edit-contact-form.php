@@ -1,4 +1,10 @@
-<div class="wrap">
+<?php
+
+// don't load directly
+if ( ! defined( 'ABSPATH' ) )
+	die( '-1' );
+
+?><div class="wrap">
 
 <?php screen_icon(); ?>
 
