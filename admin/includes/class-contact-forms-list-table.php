@@ -16,8 +16,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 	function __construct() {
 		parent::__construct( array(
-			'singular' => 'contactform',
-			'plural' => 'contactforms',
+			'singular' => 'post',
+			'plural' => 'posts',
 			'ajax' => false ) );
 	}
 
@@ -75,7 +75,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 	function get_bulk_actions() {
 		$actions = array(
-			'trash' => __( 'Move to Trash', 'wpcf7' ) );
+			'delete' => __( 'Delete', 'wpcf7' ) );
 
 		return $actions;
 	}

@@ -1,8 +1,6 @@
 <?php
 
-function wpcf7_admin_has_edit_cap() {
-	return current_user_can( 'wpcf7_edit_contact_forms' );
-}
+require_once WPCF7_PLUGIN_DIR . '/admin/admin-functions.php';
 
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
 
@@ -33,6 +31,8 @@ function wpcf7_set_screen_options( $result, $option, $value ) {
 function wpcf7_load_contact_form_admin() {
 	if ( ! wpcf7_admin_has_edit_cap() )
 		return;
+
+	$action = wpcf7_current_action();
 
 	if ( isset( $_POST['wpcf7-save'] ) ) {
 		$id = $_POST['post_ID'];
@@ -127,6 +127,36 @@ function wpcf7_load_contact_form_admin() {
 			$contact_form->delete();
 
 		$redirect_to = wpcf7_admin_url( array( 'message' => 'deleted' ) );
+		wp_safe_redirect( $redirect_to );
+		exit();
+	}
+
+	if ( 'delete' == $action && ! empty( $_REQUEST['post'] ) ) {
+		if ( ! is_array( $_REQUEST['post'] ) )
+			check_admin_referer( 'wpcf7-delete-contact-form_' . $_REQUEST['post'] );
+		else
+			check_admin_referer( 'bulk-posts' );
+
+		$deleted = 0;
+
+		foreach ( (array) $_REQUEST['post'] as $post ) {
+			$post = new WPCF7_ContactForm( $post );
+
+			if ( empty( $post ) )
+				continue;
+
+			if ( ! current_user_can( 'wpcf7_delete_contact_form', $post->id ) )
+				wp_die( __( 'You are not allowed to delete this item.', 'wpcf7' ) );
+
+			if ( ! $post->delete() )
+				wp_die( __( 'Error in deleting.', 'wpcf7' ) );
+
+			$deleted += 1;
+		}
+
+		if ( ! empty( $deleted ) )
+			$redirect_to = wpcf7_admin_url( array( 'message' => 'deleted' ) );
+
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}
@@ -291,6 +321,23 @@ function wpcf7_admin_management_page() {
 }
 
 /* Misc */
+
+add_action( 'wpcf7_admin_updated_message', 'wpcf7_admin_updated_message' );
+
+function wpcf7_admin_updated_message() {
+	if ( empty( $_REQUEST['message'] ) )
+		return;
+
+	if ( 'deleted' == $_REQUEST['message'] )
+		$updated_message = esc_html( __( 'Contact forms deleted.', 'wpcf7' ) );
+
+	if ( empty( $updated_message ) )
+		return;
+
+?>
+<div id="message" class="updated"><p><?php echo $updated_message; ?></p></div>
+<?php
+}
 
 add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
 

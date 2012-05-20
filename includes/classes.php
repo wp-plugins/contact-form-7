@@ -649,10 +649,13 @@ class WPCF7_ContactForm {
 		if ( $this->initial )
 			return;
 
-		wp_delete_post( $this->id, true );
+		if ( wp_delete_post( $this->id, true ) ) {
+			$this->initial = true;
+			$this->id = null;
+			return true;
+		}
 
-		$this->initial = true;
-		$this->id = null;
+		return false;
 	}
 }
 
