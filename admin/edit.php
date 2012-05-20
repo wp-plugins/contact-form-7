@@ -7,18 +7,6 @@
 <?php do_action_ref_array( 'wpcf7_admin_before_subsubsub', array( &$cf ) ); ?>
 
 <ul class="subsubsub">
-<?php
-$first = array_shift( $contact_forms );
-if ( ! is_null( $first ) ) : ?>
-<li><a href="<?php echo wpcf7_admin_url( array( 'contactform' => $first->id ) ); ?>"<?php if ( $first->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $first->title ); ?></a></li>
-<?php endif;
-foreach ( $contact_forms as $v ) : ?>
-<li>| <a href="<?php echo wpcf7_admin_url( array( 'contactform' => $v->id ) ); ?>"<?php if ( $v->id == $current ) echo ' class="current"'; ?>><?php echo esc_html( $v->title ); ?></a></li>
-<?php endforeach; ?>
-
-<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
-<li class="addnew"><a class="button thickbox<?php if ( $unsaved ) echo ' current'; ?>" href="#TB_inline?height=300&width=400&inlineId=wpcf7-lang-select-modal"><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></li>
-<?php endif; ?>
 </ul>
 
 <br class="clear" />
@@ -26,7 +14,7 @@ foreach ( $contact_forms as $v ) : ?>
 <?php if ( $cf ) : ?>
 <?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
 
-<form method="post" action="<?php echo wpcf7_admin_url( array( 'contactform' => $current ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
+<form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $current ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
 	<?php if ( wpcf7_admin_has_edit_cap() ) wp_nonce_field( 'wpcf7-save_' . $current ); ?>
 	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $current; ?>" />
 	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
@@ -127,33 +115,6 @@ wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 
 <?php endif; ?>
 
-</div>
-
-<div id="wpcf7-lang-select-modal" class="hidden">
-<?php
-	$available_locales = wpcf7_l10n();
-	$default_locale = get_locale();
-
-	if ( ! isset( $available_locales[$default_locale] ) )
-		$default_locale = 'en_US';
-
-?>
-<h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
-<p><a href="<?php echo wpcf7_admin_url( array( 'contactform' => 'new' ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
-
-<?php unset( $available_locales[$default_locale] ); ?>
-<h4><?php echo esc_html( __( 'Or', 'wpcf7' ) ); ?></h4>
-<form action="" method="get">
-<input type="hidden" name="page" value="wpcf7" />
-<input type="hidden" name="contactform" value="new" />
-<select name="locale">
-<option value="" selected="selected"><?php echo esc_html( __( '(select language)', 'wpcf7' ) ); ?></option>
-<?php foreach ( $available_locales as $code => $locale ) : ?>
-<option value="<?php echo esc_attr( $code ); ?>"><?php echo esc_html( $locale ); ?></option>
-<?php endforeach; ?>
-</select>
-<input type="submit" class="button" value="<?php echo esc_attr( __( 'Add New', 'wpcf7' ) ); ?>" />
-</form>
 </div>
 
 <?php do_action_ref_array( 'wpcf7_admin_footer', array( &$cf ) ); ?>

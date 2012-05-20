@@ -18,6 +18,18 @@ function wpcf7_admin_menu() {
 	add_action( 'load-' . $contact_form_admin, 'wpcf7_load_contact_form_admin' );
 }
 
+add_filter( 'set-screen-option', 'wpcf7_set_screen_options', 10, 3 );
+
+function wpcf7_set_screen_options( $result, $option, $value ) {
+	$wpcf7_screens = array(
+		'cfseven_contact_forms_per_page' );
+
+	if ( in_array( $option, $wpcf7_screens ) )
+		$result = $value;
+
+	return $result;
+}
+
 function wpcf7_load_contact_form_admin() {
 	if ( ! wpcf7_admin_has_edit_cap() )
 		return;
@@ -80,7 +92,7 @@ function wpcf7_load_contact_form_admin() {
 
 		$contact_form->save();
 
-		$query['contactform'] = $contact_form->id;
+		$query['post'] = $contact_form->id;
 		$redirect_to = wpcf7_admin_url( $query );
 		wp_safe_redirect( $redirect_to );
 		exit();
@@ -96,10 +108,10 @@ function wpcf7_load_contact_form_admin() {
 			$new_contact_form = $contact_form->copy();
 			$new_contact_form->save();
 
-			$query['contactform'] = $new_contact_form->id;
+			$query['post'] = $new_contact_form->id;
 			$query['message'] = 'created';
 		} else {
-			$query['contactform'] = $contact_form->id;
+			$query['post'] = $contact_form->id;
 		}
 
 		$redirect_to = wpcf7_admin_url( $query );
@@ -118,6 +130,19 @@ function wpcf7_load_contact_form_admin() {
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}
+
+	$current_screen = get_current_screen();
+
+	if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) )
+		require_once WPCF7_PLUGIN_DIR . '/admin/includes/class-contact-forms-list-table.php';
+
+	add_filter( 'manage_' . $current_screen->id . '_columns',
+		array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
+
+	add_screen_option( 'per_page', array(
+		'label' => __( 'Contact Forms', 'wpcf7' ),
+		'default' => 20,
+		'option' => 'cfseven_contact_forms_per_page' ) );
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
@@ -186,32 +211,83 @@ _wpcf7.tagGenerators = <?php echo json_encode( $taggenerators ) ?>;
 }
 
 function wpcf7_admin_management_page() {
-	$contact_forms = WPCF7_ContactForm::find();
-
 	$cf = null;
 	$unsaved = false;
 
-	if ( ! isset( $_GET['contactform'] ) )
-		$_GET['contactform'] = '';
+	if ( ! isset( $_GET['post'] ) )
+		$_GET['post'] = '';
 
-	if ( 'new' == $_GET['contactform'] && wpcf7_admin_has_edit_cap() ) {
+	if ( 'new' == $_GET['post'] && wpcf7_admin_has_edit_cap() ) {
 		$unsaved = true;
 		$current = -1;
 		$cf = wpcf7_get_contact_form_default_pack(
 			array( 'locale' => ( isset( $_GET['locale'] ) ? $_GET['locale'] : '' ) ) );
-	} elseif ( $cf = wpcf7_contact_form( $_GET['contactform'] ) ) {
-		$current = (int) $_GET['contactform'];
-	} else {
-		$first = reset( $contact_forms ); // Returns first item
-
-		if ( $first ) {
-			$cf = $first;
-			$current = $cf->id;
-		}
+	} elseif ( $cf = wpcf7_contact_form( $_GET['post'] ) ) {
+		$current = (int) $_GET['post'];
 	}
 
-	require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
-	require_once WPCF7_PLUGIN_DIR . '/admin/edit.php';
+	if ( $cf ) {
+		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
+		require_once WPCF7_PLUGIN_DIR . '/admin/edit.php';
+		return;
+	}
+
+	$list_table = new WPCF7_Contact_Form_List_Table();
+	$list_table->prepare_items();
+
+?>
+<div class="wrap">
+<?php screen_icon(); ?>
+
+<h2><?php
+	echo esc_html( __( 'Contact Form 7', 'wpcf7' ) );
+
+	echo ' <a href="#TB_inline?height=300&width=400&inlineId=wpcf7-lang-select-modal" class="add-new-h2 thickbox">' . esc_html( __( 'Add New', 'wpcf7' ) ) . '</a>';
+
+	if ( ! empty( $_REQUEST['s'] ) ) {
+		echo sprintf( '<span class="subtitle">'
+			. __( 'Search results for &#8220;%s&#8221;', 'wpcf7' )
+			. '</span>', esc_html( $_REQUEST['s'] ) );
+	}
+?></h2>
+
+<?php do_action( 'wpcf7_admin_updated_message' ); ?>
+
+<form method="get" action="">
+	<input type="hidden" name="page" value="<?php echo esc_attr( $_REQUEST['page'] ); ?>" />
+	<?php $list_table->search_box( __( 'Search Contact Forms', 'wpcf7' ), 'wpcf7-contact' ); ?>
+	<?php $list_table->display(); ?>
+</form>
+
+</div>
+
+<div id="wpcf7-lang-select-modal" class="hidden">
+<?php
+	$available_locales = wpcf7_l10n();
+	$default_locale = get_locale();
+
+	if ( ! isset( $available_locales[$default_locale] ) )
+		$default_locale = 'en_US';
+
+?>
+<h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
+<p><a href="<?php echo wpcf7_admin_url( array( 'post' => 'new' ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
+
+<?php unset( $available_locales[$default_locale] ); ?>
+<h4><?php echo esc_html( __( 'Or', 'wpcf7' ) ); ?></h4>
+<form action="" method="get">
+<input type="hidden" name="page" value="wpcf7" />
+<input type="hidden" name="post" value="new" />
+<select name="locale">
+<option value="" selected="selected"><?php echo esc_html( __( '(select language)', 'wpcf7' ) ); ?></option>
+<?php foreach ( $available_locales as $code => $locale ) : ?>
+<option value="<?php echo esc_attr( $code ); ?>"><?php echo esc_html( $locale ); ?></option>
+<?php endforeach; ?>
+</select>
+<input type="submit" class="button" value="<?php echo esc_attr( __( 'Add New', 'wpcf7' ) ); ?>" />
+</form>
+</div>
+<?php
 }
 
 /* Misc */
@@ -281,7 +357,7 @@ function wpcf7_donation_link( &$contact_form ) {
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
 
-	if ( 'new' == $_GET['contactform'] || ! empty( $_GET['message'] ) )
+	if ( 'new' == $_GET['post'] || ! empty( $_GET['message'] ) )
 		return;
 
 	$show_link = true;
