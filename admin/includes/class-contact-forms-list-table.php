@@ -28,6 +28,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 		$args = array(
 			'posts_per_page' => $per_page,
+			'orderby' => 'title',
+			'order' => 'ASC',
 			'offset' => ( $this->get_pagenum() - 1 ) * $per_page );
 
 		if ( ! empty( $_REQUEST['s'] ) )
@@ -38,8 +40,12 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 				$args['orderby'] = 'title';
 		}
 
-		if ( ! empty( $_REQUEST['order'] ) && 'asc' == strtolower( $_REQUEST['order'] ) )
-			$args['order'] = 'ASC';
+		if ( ! empty( $_REQUEST['order'] ) ) {
+			if ( 'asc' == strtolower( $_REQUEST['order'] ) )
+				$args['order'] = 'ASC';
+			elseif ( 'desc' == strtolower( $_REQUEST['order'] ) )
+				$args['order'] = 'DESC';
+		}
 
 		$this->items = WPCF7_ContactForm::find( $args );
 
