@@ -591,17 +591,27 @@ class WPCF7_ContactForm {
 	/* Save */
 
 	function save() {
+		$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+		$post_content = '';
+
+		foreach ( $metas as $meta ) {
+			$props = (array) $this->{$meta};
+
+			foreach ( $props as $prop )
+				$post_content .= "\n" . trim( $prop );
+		}
+
 		$postarr = array(
 			'ID' => (int) $this->id,
-			'post_type' => 'wpcf7_contact_form',
+			'post_type' => self::post_type,
 			'post_status' => 'publish',
-			'post_title' => $this->title );
+			'post_title' => $this->title,
+			'post_content' => trim( $post_content ) );
 
 		$post_id = wp_insert_post( $postarr );
 
 		if ( $post_id ) {
-			$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
-
 			foreach ( $metas as $meta )
 				update_post_meta( $post_id, $meta, wpcf7_normalize_newline_deep( $this->{$meta} ) );
 
