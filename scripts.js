@@ -25,6 +25,8 @@
 					var ro = $(data.into).find('div.wpcf7-response-output');
 					$(data.into).wpcf7ClearResponseOutput();
 
+					$(data.into).find('.wpcf7-form-control').removeClass('wpcf7-not-valid');
+
 					if (data.invalids) {
 						$.each(data.invalids, function(i, n) {
 							$(data.into).find(n.into).wpcf7NotValidTip(n.message);
