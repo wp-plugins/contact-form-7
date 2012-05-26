@@ -174,8 +174,6 @@ function wpcf7_load_contact_form_admin() {
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
 
 function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
-	global $wpcf7_tag_generators;
-
 	if ( false === strpos( $hook_suffix, 'wpcf7' ) )
 		return;
 
@@ -194,18 +192,10 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 		array( 'jquery', 'thickbox', 'postbox', 'wpcf7-admin-taggenerator' ),
 		WPCF7_VERSION, true );
 
-	$taggenerators = array();
-
-	foreach ( (array) $wpcf7_tag_generators as $name => $tg ) {
-		$taggenerators[$name] = array_merge(
-			(array) $tg['options'],
-			array( 'title' => $tg['title'], 'content' => $tg['content'] ) );
-	}
-
 	wp_localize_script( 'wpcf7-admin', '_wpcf7', array(
 		'generateTag' => __( 'Generate Tag', 'wpcf7' ),
 		'pluginUrl' => wpcf7_plugin_url(),
-		'tagGenerators' => $taggenerators ) );
+		'tagGenerators' => wpcf7_tag_generators() ) );
 }
 
 add_action( 'admin_print_footer_scripts', 'wpcf7_print_taggenerators_json', 20 );

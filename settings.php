@@ -6,7 +6,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/capabilities.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/taggenerator.php';
 
 if ( is_admin() )
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
