@@ -236,14 +236,16 @@ function wpcf7_enqueue_scripts() {
 	// jquery.form.js originally bundled with WordPress is out of date and deprecated
 	// so we need to deregister it and re-register the latest one
 	wp_deregister_script( 'jquery-form' );
-	wp_register_script( 'jquery-form', wpcf7_plugin_url( 'jquery.form.js' ),
+	wp_register_script( 'jquery-form',
+		wpcf7_plugin_url( 'includes/js/jquery.form.js' ),
 		array( 'jquery' ), '3.09', true );
 
 	$in_footer = true;
 	if ( 'header' === WPCF7_LOAD_JS )
 		$in_footer = false;
 
-	wp_enqueue_script( 'contact-form-7', wpcf7_plugin_url( 'scripts.js' ),
+	wp_enqueue_script( 'contact-form-7',
+		wpcf7_plugin_url( 'includes/js/scripts.js' ),
 		array( 'jquery', 'jquery-form' ), WPCF7_VERSION, $in_footer );
 
 	$_wpcf7 = array(
@@ -266,11 +268,13 @@ if ( WPCF7_LOAD_CSS )
 	add_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_styles' );
 
 function wpcf7_enqueue_styles() {
-	wp_enqueue_style( 'contact-form-7', wpcf7_plugin_url( 'styles.css' ),
+	wp_enqueue_style( 'contact-form-7',
+		wpcf7_plugin_url( 'includes/css/styles.css' ),
 		array(), WPCF7_VERSION, 'all' );
 
 	if ( wpcf7_is_rtl() ) {
-		wp_enqueue_style( 'contact-form-7-rtl', wpcf7_plugin_url( 'styles-rtl.css' ),
+		wp_enqueue_style( 'contact-form-7-rtl',
+			wpcf7_plugin_url( 'includes/css/styles-rtl.css' ),
 			array(), WPCF7_VERSION, 'all' );
 	}
 
