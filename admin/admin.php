@@ -233,7 +233,7 @@ _wpcf7.tagGenerators = <?php echo json_encode( $taggenerators ) ?>;
 }
 
 function wpcf7_admin_management_page() {
-	$cf = null;
+	$post = null;
 	$unsaved = false;
 
 	if ( ! isset( $_GET['post'] ) )
@@ -241,14 +241,14 @@ function wpcf7_admin_management_page() {
 
 	if ( 'new' == $_GET['post'] && current_user_can( 'wpcf7_edit_contact_forms' ) ) {
 		$unsaved = true;
-		$current = -1;
-		$cf = wpcf7_get_contact_form_default_pack(
+		$post_id = -1;
+		$post = wpcf7_get_contact_form_default_pack(
 			array( 'locale' => ( isset( $_GET['locale'] ) ? $_GET['locale'] : '' ) ) );
-	} elseif ( $cf = wpcf7_contact_form( $_GET['post'] ) ) {
-		$current = (int) $_GET['post'];
+	} elseif ( $post = wpcf7_contact_form( $_GET['post'] ) ) {
+		$post_id = (int) $_GET['post'];
 	}
 
-	if ( $cf ) {
+	if ( $post ) {
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
 		return;

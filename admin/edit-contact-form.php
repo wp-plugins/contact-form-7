@@ -21,25 +21,25 @@ if ( ! defined( 'ABSPATH' ) )
 <br class="clear" />
 
 <?php
-if ( $cf ) :
+if ( $post ) :
 
-	if ( current_user_can( 'wpcf7_edit_contact_form', $current ) )
+	if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
 		$disabled = '';
 	else
 		$disabled = ' disabled="disabled"';
 ?>
 
-<form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $current ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
-	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) )
-		wp_nonce_field( 'wpcf7-save-contact-form_' . $current ); ?>
-	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $current; ?>" />
-	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
+<form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $post_id ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
+	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
+		wp_nonce_field( 'wpcf7-save-contact-form_' . $post_id ); ?>
+	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $post_id; ?>" />
+	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $post->id, '_old_cf7_unit_id', true ); ?>" />
 	<input type="hidden" id="hiddenaction" name="action" value="save" />
 
 	<div id="poststuff" class="metabox-holder">
 
 	<div id="titlediv">
-		<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo esc_attr( $cf->title ); ?>"<?php echo $disabled; ?> />
+		<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo esc_attr( $post->title ); ?>"<?php echo $disabled; ?> />
 
 		<?php if ( ! $unsaved ) : ?>
 		<p class="tagcode">
@@ -55,20 +55,20 @@ if ( $cf ) :
 		</p>
 		<?php endif; ?>
 
-		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) ) : ?>
+		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
 		<div class="save-contact-form">
 			<input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'wpcf7' ) ); ?>" />
 		</div>
 		<?php endif; ?>
 
-		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) && ! $unsaved ) : ?>
+		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) && ! $unsaved ) : ?>
 		<div class="actions-link">
-			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $current ); ?>
+			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $post_id ); ?>
 			<input type="submit" name="wpcf7-copy" class="copy" value="<?php echo esc_attr( __( 'Copy', 'wpcf7' ) ); ?>"
 			<?php echo "onclick=\"this.form._wpnonce.value = '$copy_nonce'; this.form.action.value = 'copy'; return true;\""; ?> />
 			|
 
-			<?php $delete_nonce = wp_create_nonce( 'wpcf7-delete-contact-form_' . $current ); ?>
+			<?php $delete_nonce = wp_create_nonce( 'wpcf7-delete-contact-form_' . $post_id ); ?>
 			<input type="submit" name="wpcf7-delete" class="delete" value="<?php echo esc_attr( __( 'Delete', 'wpcf7' ) ); ?>"
 			<?php echo "onclick=\"if (confirm('" .
 				esc_js( __( "You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'wpcf7' ) ) .
@@ -79,7 +79,7 @@ if ( $cf ) :
 
 <?php
 
-if ( current_user_can( 'wpcf7_edit_contact_form', $current ) ) {
+if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) {
 	add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
 		'wpcf7_form_meta_box', 'cfseven', 'form', 'core' );
 
@@ -100,27 +100,27 @@ if ( current_user_can( 'wpcf7_edit_contact_form', $current ) ) {
 		'wpcf7_additional_settings_meta_box', 'cfseven', 'additional_settings', 'core' );
 }
 
-do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'form', $cf );
+do_meta_boxes( 'cfseven', 'form', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_form', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_form', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'mail', $cf );
+do_meta_boxes( 'cfseven', 'mail', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_mail', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_mail', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'mail_2', $cf );
+do_meta_boxes( 'cfseven', 'mail_2', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'messages', $cf );
+do_meta_boxes( 'cfseven', 'messages', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_messages', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_messages', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'additional_settings', $cf );
+do_meta_boxes( 'cfseven', 'additional_settings', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$cf ) );
+do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$post ) );
 
 wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
@@ -136,4 +136,4 @@ wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 
 <?php wpcf7_admin_lang_select_modal(); ?>
 
-<?php do_action_ref_array( 'wpcf7_admin_footer', array( &$cf ) ); ?>
+<?php do_action_ref_array( 'wpcf7_admin_footer', array( &$post ) ); ?>
