@@ -619,14 +619,19 @@ class WPCF7_ContactForm {
 				$post_content .= "\n" . trim( $prop );
 		}
 
-		$postarr = array(
-			'ID' => (int) $this->id,
-			'post_type' => self::post_type,
-			'post_status' => 'publish',
-			'post_title' => $this->title,
-			'post_content' => trim( $post_content ) );
-
-		$post_id = wp_insert_post( $postarr );
+		if ( $this->initial ) {
+			$post_id = wp_insert_post( array(
+				'post_type' => self::post_type,
+				'post_status' => 'publish',
+				'post_title' => $this->title,
+				'post_content' => trim( $post_content ) ) );
+		} else {
+			$post_id = wp_update_post( array(
+				'ID' => (int) $this->id,
+				'post_status' => 'publish',
+				'post_title' => $this->title,
+				'post_content' => trim( $post_content ) ) );
+		}
 
 		if ( $post_id ) {
 			foreach ( $metas as $meta )
