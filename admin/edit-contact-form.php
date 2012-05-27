@@ -8,7 +8,13 @@ if ( ! defined( 'ABSPATH' ) )
 
 <?php screen_icon(); ?>
 
-<h2><?php echo esc_html( __( 'Contact Form 7', 'wpcf7' ) ); ?></h2>
+<h2><?php
+	echo esc_html( __( 'Contact Form 7', 'wpcf7' ) );
+
+	if ( ! $unsaved ) {
+		echo ' <a href="#TB_inline?height=300&width=400&inlineId=wpcf7-lang-select-modal" class="add-new-h2 thickbox">' . esc_html( __( 'Add New', 'wpcf7' ) ) . '</a>';
+	}
+?></h2>
 
 <?php do_action( 'wpcf7_admin_notices' ); ?>
 
@@ -121,5 +127,7 @@ wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 <?php endif; ?>
 
 </div>
+
+<?php wpcf7_admin_lang_select_modal(); ?>
 
 <?php do_action_ref_array( 'wpcf7_admin_footer', array( &$cf ) ); ?>

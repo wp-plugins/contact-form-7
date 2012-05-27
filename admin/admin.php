@@ -276,9 +276,11 @@ function wpcf7_admin_management_page() {
 </form>
 
 </div>
-
-<div id="wpcf7-lang-select-modal" class="hidden">
 <?php
+	wpcf7_admin_lang_select_modal();
+}
+
+function wpcf7_admin_lang_select_modal() {
 	$available_locales = wpcf7_l10n();
 	$default_locale = get_locale();
 
@@ -286,6 +288,7 @@ function wpcf7_admin_management_page() {
 		$default_locale = 'en_US';
 
 ?>
+<div id="wpcf7-lang-select-modal" class="hidden">
 <h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
 <p><a href="<?php echo wpcf7_admin_url( array( 'post' => 'new' ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
 
