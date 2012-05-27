@@ -252,3 +252,8 @@ div.tg-panetitle {
     margin: 0 0 10px;
     color: #777;
 }
+
+input.shortcode-in-list-table {
+	width: 100%;
+	border: none;
+}

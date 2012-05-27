@@ -9,7 +9,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
 			'title' => __( 'Title', 'wpcf7' ),
-			'author' => __( 'Author', 'wpcf7' ) );
+			'author' => __( 'Author', 'wpcf7' ),
+			'shortcode' => __( 'Shortcode', 'wpcf7' ) );
 
 		return $columns;
 	}
@@ -125,6 +126,20 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 		return esc_html( $author->display_name );
     }
+
+	function column_shortcode( $item ) {
+		$shortcodes = array(
+			sprintf( '[contact-form-7 id="%1$d" title="%2$s"]', $item->id, $item->title ) );
+
+		$output = '';
+
+		foreach ( $shortcodes as $shortcode ) {
+			$output .= "\n" . '<input type="text" onfocus="this.select();" readonly="readonly"
+				value="' . esc_attr( $shortcode ) . '" class="shortcode-in-list-table" />';
+		}
+
+		return trim( $output );
+	}
 }
 
 ?>
