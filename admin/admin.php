@@ -99,7 +99,10 @@ function wpcf7_load_contact_form_admin() {
 	}
 
 	if ( 'copy' == $action ) {
-		$id = $_POST['post_ID'];
+		$id = empty( $_POST['post_ID'] )
+			? absint( $_REQUEST['post'] )
+			: absint( $_POST['post_ID'] );
+
 		check_admin_referer( 'wpcf7-copy-contact-form_' . $id );
 
 		$query = array();
