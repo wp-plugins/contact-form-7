@@ -20,11 +20,17 @@ if ( ! defined( 'ABSPATH' ) )
 
 <br class="clear" />
 
-<?php if ( $cf ) : ?>
-<?php $disabled = ( wpcf7_admin_has_edit_cap() ) ? '' : ' disabled="disabled"'; ?>
+<?php
+if ( $cf ) :
+
+	if ( current_user_can( 'wpcf7_edit_contact_form', $current ) )
+		$disabled = '';
+	else
+		$disabled = ' disabled="disabled"';
+?>
 
 <form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $current ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
-	<?php if ( wpcf7_admin_has_edit_cap() )
+	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) )
 		wp_nonce_field( 'wpcf7-save-contact-form_' . $current ); ?>
 	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $current; ?>" />
 	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $cf->id, '_old_cf7_unit_id', true ); ?>" />
@@ -49,13 +55,13 @@ if ( ! defined( 'ABSPATH' ) )
 		</p>
 		<?php endif; ?>
 
-		<?php if ( wpcf7_admin_has_edit_cap() ) : ?>
+		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) ) : ?>
 		<div class="save-contact-form">
 			<input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'wpcf7' ) ); ?>" />
 		</div>
 		<?php endif; ?>
 
-		<?php if ( wpcf7_admin_has_edit_cap() && ! $unsaved ) : ?>
+		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $current ) && ! $unsaved ) : ?>
 		<div class="actions-link">
 			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $current ); ?>
 			<input type="submit" name="wpcf7-copy" class="copy" value="<?php echo esc_attr( __( 'Copy', 'wpcf7' ) ); ?>"
@@ -73,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 <?php
 
-if ( wpcf7_admin_has_edit_cap() ) {
+if ( current_user_can( 'wpcf7_edit_contact_form', $current ) ) {
 	add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
 		'wpcf7_form_meta_box', 'cfseven', 'form', 'core' );
 

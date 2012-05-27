@@ -29,14 +29,14 @@ function wpcf7_set_screen_options( $result, $option, $value ) {
 }
 
 function wpcf7_load_contact_form_admin() {
-	if ( ! wpcf7_admin_has_edit_cap() )
-		return;
-
 	$action = wpcf7_current_action();
 
 	if ( 'save' == $action ) {
 		$id = $_POST['post_ID'];
 		check_admin_referer( 'wpcf7-save-contact-form_' . $id );
+
+		if ( ! current_user_can( 'wpcf7_edit_contact_form', $id ) )
+			wp_die( __( 'You are not allowed to edit this item.', 'wpcf7' ) );
 
 		if ( ! $contact_form = wpcf7_contact_form( $id ) ) {
 			$contact_form = new WPCF7_ContactForm();
@@ -104,6 +104,9 @@ function wpcf7_load_contact_form_admin() {
 			: absint( $_POST['post_ID'] );
 
 		check_admin_referer( 'wpcf7-copy-contact-form_' . $id );
+
+		if ( ! current_user_can( 'wpcf7_edit_contact_form', $id ) )
+			wp_die( __( 'You are not allowed to edit this item.', 'wpcf7' ) );
 
 		$query = array();
 
@@ -236,7 +239,7 @@ function wpcf7_admin_management_page() {
 	if ( ! isset( $_GET['post'] ) )
 		$_GET['post'] = '';
 
-	if ( 'new' == $_GET['post'] && wpcf7_admin_has_edit_cap() ) {
+	if ( 'new' == $_GET['post'] && current_user_can( 'wpcf7_edit_contact_forms' ) ) {
 		$unsaved = true;
 		$current = -1;
 		$cf = wpcf7_get_contact_form_default_pack(

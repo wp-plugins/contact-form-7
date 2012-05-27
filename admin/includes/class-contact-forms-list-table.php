@@ -99,7 +99,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$actions = array(
 			'edit' => '<a href="' . $edit_link . '">' . __( 'Edit', 'wpcf7' ) . '</a>' );
 
-		if ( wpcf7_admin_has_edit_cap() ) {
+		if ( current_user_can( 'wpcf7_edit_contact_form', $item->id ) ) {
 			$copy_link = wp_nonce_url(
 				add_query_arg( array( 'action' => 'copy' ), $url ),
 				'wpcf7-copy-contact-form_' . absint( $item->id ) );
