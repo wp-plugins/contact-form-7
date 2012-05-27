@@ -26,14 +26,7 @@
 					$(data.into).wpcf7ClearResponseOutput();
 
 					$(data.into).find('.wpcf7-form-control').removeClass('wpcf7-not-valid');
-
-					if (data.invalids) {
-						$.each(data.invalids, function(i, n) {
-							$(data.into).find(n.into).wpcf7NotValidTip(n.message);
-							$(data.into).find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
-						});
-						ro.addClass('wpcf7-validation-errors');
-					}
+					$(data.into).find('form.wpcf7-form').removeClass('invalid spam sent failed');
 
 					if (data.captcha)
 						$(data.into).wpcf7RefillCaptcha(data.captcha);
@@ -41,16 +34,29 @@
 					if (data.quiz)
 						$(data.into).wpcf7RefillQuiz(data.quiz);
 
-					if (1 == data.spam)
-						ro.addClass('wpcf7-spam-blocked');
+					if (data.invalids) {
+						$.each(data.invalids, function(i, n) {
+							$(data.into).find(n.into).wpcf7NotValidTip(n.message);
+							$(data.into).find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
+						});
 
-					if (1 == data.mailSent) {
+						ro.addClass('wpcf7-validation-errors');
+						$(data.into).find('form.wpcf7-form').addClass('invalid');
+
+					} else if (1 == data.spam) {
+						ro.addClass('wpcf7-spam-blocked');
+						$(data.into).find('form.wpcf7-form').addClass('spam');
+
+					} else if (1 == data.mailSent) {
 						ro.addClass('wpcf7-mail-sent-ok');
+						$(data.into).find('form.wpcf7-form').addClass('sent');
 
 						if (data.onSentOk)
 							$.each(data.onSentOk, function(i, n) { eval(n) });
+
 					} else {
 						ro.addClass('wpcf7-mail-sent-ng');
+						$(data.into).find('form.wpcf7-form').addClass('failed');
 					}
 
 					if (data.onSubmit)

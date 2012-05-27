@@ -113,8 +113,25 @@ class WPCF7_ContactForm {
 		$url .= '#' . $this->unit_tag;
 
 		$url = apply_filters( 'wpcf7_form_action_url', $url );
+
+		$class = 'wpcf7-form';
+
+		if ( $this->is_posted() ) {
+			if ( ! empty( $_POST['_wpcf7_validation_errors'] ) ) {
+				$class .= ' invalid';
+			} elseif ( ! empty( $_POST['_wpcf7_mail_sent'] ) ) {
+				if ( ! empty( $_POST['_wpcf7_mail_sent']['spam'] ) )
+					$class .= ' spam';
+				elseif ( ! empty( $_POST['_wpcf7_mail_sent']['ok'] ) )
+					$class .= ' sent';
+				else
+					$class .= ' failed';
+			}
+		}
+
+		$class = apply_filters( 'wpcf7_form_class_attr', $class );
+
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
-		$class = apply_filters( 'wpcf7_form_class_attr', 'wpcf7-form' );
 
 		$form .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
 			. ' class="' . esc_attr( $class ) . '"' . $enctype . '>' . "\n";
