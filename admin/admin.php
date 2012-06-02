@@ -383,8 +383,6 @@ add_action( 'wpcf7_admin_notices', 'wpcf7_cf7com_links', 9 );
 
 function wpcf7_cf7com_links() {
 	$links = '<div class="cf7com-links">'
-		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/', 'wpcf7' ) ) . '" target="_blank">'
-		. esc_html( __( 'Contactform7.com', 'wpcf7' ) ) . '</a>&ensp;'
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/docs/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Docs', 'wpcf7' ) ) . '</a> - '
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/faq/', 'wpcf7' ) ) . '" target="_blank">'

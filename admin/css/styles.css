@@ -10,6 +10,7 @@ div.wrap div.cf7com-links {
 
 div.wrap div.cf7com-links a {
 	text-decoration: none;
+	font-weight: bold;
 }
 
 div.wrap div.donation {
@@ -21,7 +22,6 @@ div.wrap div.donation {
 	border-radius: 3px;
 	background-color: #ffffe0;
 	border-color: #e6db55;
-	text-align: center;
 }
 
 div.wrap div.donation p {
@@ -32,12 +32,13 @@ div.wrap div.donation p {
 }
 
 div.wrap div.donation p a {
-	font-weight: bold;
 	color: #3f3f3f;
+	text-decoration: none;
 }
 
 div.wrap div.donation p a.button {
 	margin-left: 1em;
+	font-weight: bold;
 }
 
 #titlediv {
