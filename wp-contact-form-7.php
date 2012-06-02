@@ -38,10 +38,10 @@ if ( ! defined( 'WPCF7_PLUGIN_NAME' ) )
 	define( 'WPCF7_PLUGIN_NAME', trim( dirname( WPCF7_PLUGIN_BASENAME ), '/' ) );
 
 if ( ! defined( 'WPCF7_PLUGIN_DIR' ) )
-	define( 'WPCF7_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . WPCF7_PLUGIN_NAME );
+	define( 'WPCF7_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
 
 if ( ! defined( 'WPCF7_PLUGIN_URL' ) )
-	define( 'WPCF7_PLUGIN_URL', WP_PLUGIN_URL . '/' . WPCF7_PLUGIN_NAME );
+	define( 'WPCF7_PLUGIN_URL', untrailingslashit( plugins_url( '', __FILE__ ) ) );
 
 if ( ! defined( 'WPCF7_PLUGIN_MODULES_DIR' ) )
 	define( 'WPCF7_PLUGIN_MODULES_DIR', WPCF7_PLUGIN_DIR . '/modules' );

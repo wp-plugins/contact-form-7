@@ -5,7 +5,12 @@ function wpcf7_plugin_path( $path = '' ) {
 }
 
 function wpcf7_plugin_url( $path = '' ) {
-	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
+	$url = untrailingslashit( WPCF7_PLUGIN_URL );
+
+	if ( ! empty( $path ) && is_string( $path ) && false === strpos( $path, '..' ) )
+		$url .= '/' . ltrim( $path, '/' );
+
+	return $url;
 }
 
 function wpcf7_deprecated_function( $function, $version, $replacement = null ) {
