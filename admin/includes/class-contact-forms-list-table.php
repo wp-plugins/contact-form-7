@@ -10,7 +10,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 			'cb' => '<input type="checkbox" />',
 			'title' => __( 'Title', 'wpcf7' ),
 			'author' => __( 'Author', 'wpcf7' ),
-			'shortcode' => __( 'Shortcode', 'wpcf7' ) );
+			'shortcode' => __( 'Shortcode', 'wpcf7' ),
+			'date' => __( 'Date', 'wpcf7' ) );
 
 		return $columns;
 	}
@@ -42,6 +43,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 				$args['orderby'] = 'title';
 			elseif ( 'author' == $_REQUEST['orderby'] )
 				$args['orderby'] = 'author';
+			elseif ( 'date' == $_REQUEST['orderby'] )
+				$args['orderby'] = 'date';
 		}
 
 		if ( ! empty( $_REQUEST['order'] ) ) {
@@ -69,7 +72,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 	function get_sortable_columns() {
 		$columns = array(
 			'title' => array( 'title', true ),
-			'author' => array( 'author', false ) );
+			'author' => array( 'author', false ),
+			'date' => array( 'date', false ) );
 
 		return $columns;
 	}
@@ -140,6 +144,26 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 		return trim( $output );
 	}
+
+	function column_date( $item ) {
+		$post = get_post( $item->id );
+
+		if ( ! $post )
+			return;
+
+		$t_time = mysql2date( __( 'Y/m/d g:i:s A', 'wpcf7' ), $post->post_date, true );
+		$m_time = $post->post_date;
+		$time = mysql2date( 'G', $post->post_date ) - get_option( 'gmt_offset' ) * 3600;
+
+		$time_diff = time() - $time;
+
+		if ( $time_diff > 0 && $time_diff < 24*60*60 )
+			$h_time = sprintf( __( '%s ago', 'wpcf7' ), human_time_diff( $time ) );
+		else
+			$h_time = mysql2date( __( 'Y/m/d', 'wpcf7' ), $m_time );
+
+		return '<abbr title="' . $t_time . '">' . $h_time . '</abbr>';
+    }
 }
 
 ?>
