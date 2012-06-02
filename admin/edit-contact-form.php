@@ -29,7 +29,7 @@ if ( $post ) :
 		$disabled = ' disabled="disabled"';
 ?>
 
-<form method="post" action="<?php echo wpcf7_admin_url( array( 'post' => $post_id ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
+<form method="post" action="<?php echo esc_url( add_query_arg( array( 'post' => $post_id ), menu_page_url( 'wpcf7', false ) ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
 	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
 		wp_nonce_field( 'wpcf7-save-contact-form_' . $post_id ); ?>
 	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $post_id; ?>" />

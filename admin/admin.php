@@ -93,7 +93,9 @@ function wpcf7_load_contact_form_admin() {
 		$contact_form->save();
 
 		$query['post'] = $contact_form->id;
-		$redirect_to = wpcf7_admin_url( $query );
+
+		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
+
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}
@@ -120,7 +122,8 @@ function wpcf7_load_contact_form_admin() {
 			$query['post'] = $contact_form->id;
 		}
 
-		$redirect_to = wpcf7_admin_url( $query );
+		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
+
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}
@@ -154,8 +157,12 @@ function wpcf7_load_contact_form_admin() {
 			$deleted += 1;
 		}
 
+		$query = array();
+
 		if ( ! empty( $deleted ) )
-			$redirect_to = wpcf7_admin_url( array( 'message' => 'deleted' ) );
+			$query['message'] = 'deleted';
+
+		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
 
 		wp_safe_redirect( $redirect_to );
 		exit();
@@ -300,7 +307,7 @@ function wpcf7_admin_lang_select_modal() {
 ?>
 <div id="wpcf7-lang-select-modal" class="hidden">
 <h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
-<p><a href="<?php echo wpcf7_admin_url( array( 'post' => 'new' ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
+<p><a href="<?php echo esc_url( add_query_arg( array( 'post' => 'new' ), menu_page_url( 'wpcf7', false ) ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
 
 <?php unset( $available_locales[$default_locale] ); ?>
 <h4><?php echo esc_html( __( 'Or', 'wpcf7' ) ); ?></h4>
@@ -364,9 +371,7 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	if ( $file != WPCF7_PLUGIN_BASENAME )
 		return $links;
 
-	$url = wpcf7_admin_url();
-
-	$settings_link = '<a href="' . esc_attr( $url ) . '">'
+	$settings_link = '<a href="' . menu_page_url( 'wpcf7', false ) . '">'
 		. esc_html( __( 'Settings', 'wpcf7' ) ) . '</a>';
 
 	array_unshift( $links, $settings_link );

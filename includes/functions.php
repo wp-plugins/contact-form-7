@@ -8,16 +8,15 @@ function wpcf7_plugin_url( $path = '' ) {
 	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
 }
 
-function wpcf7_admin_url( $args = array() ) {
-	$defaults = array( 'page' => 'wpcf7' );
-	$args = wp_parse_args( $args, $defaults );
+function wpcf7_deprecated_function( $function, $version, $replacement = null ) {
+	do_action( 'wpcf7_deprecated_function_run', $function, $replacement, $version );
 
-	$url = menu_page_url( $args['page'], false );
-	unset( $args['page'] );
-
-	$url = add_query_arg( $args, $url );
-
-	return esc_url_raw( $url );
+	if ( WP_DEBUG && apply_filters( 'wpcf7_deprecated_function_trigger_error', true ) ) {
+		if ( ! is_null( $replacement ) )
+			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead.', 'wpcf7' ), $function, $version, $replacement ) );
+		else
+			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available.', 'wpcf7' ), $function, $version ) );
+	}
 }
 
 function wpcf7_messages() {
