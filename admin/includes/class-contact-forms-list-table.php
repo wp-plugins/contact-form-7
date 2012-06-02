@@ -9,8 +9,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
 			'title' => __( 'Title', 'wpcf7' ),
-			'author' => __( 'Author', 'wpcf7' ),
 			'shortcode' => __( 'Shortcode', 'wpcf7' ),
+			'author' => __( 'Author', 'wpcf7' ),
 			'date' => __( 'Date', 'wpcf7' ) );
 
 		return $columns;
