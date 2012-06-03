@@ -709,12 +709,6 @@ function wpcf7_get_contact_form_by_title( $title ) {
 	return null;
 }
 
-function wpcf7_contact_form_default_pack( $locale = null ) {
-	// For backward compatibility
-
-	return wpcf7_get_contact_form_default_pack( array( 'locale' => $locale ) );
-}
-
 function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	global $l10n;
 

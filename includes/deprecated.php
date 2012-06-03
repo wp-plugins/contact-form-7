@@ -17,4 +17,10 @@ function wpcf7_admin_url( $args = array() ) {
 	return esc_url_raw( $url );
 }
 
+function wpcf7_contact_form_default_pack( $locale = null ) {
+	wpcf7_deprecated_function( __FUNCTION__, '3.0', 'wpcf7_get_contact_form_default_pack()' );
+
+	return wpcf7_get_contact_form_default_pack( array( 'locale' => $locale ) );
+}
+
 ?>
