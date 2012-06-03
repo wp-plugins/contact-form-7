@@ -701,7 +701,7 @@ function wpcf7_get_contact_form_by_old_id( $old_id ) {
 }
 
 function wpcf7_get_contact_form_by_title( $title ) {
-	$page = get_page_by_title( $title, OBJECT, 'wpcf7_contact_form' );
+	$page = get_page_by_title( $title, OBJECT, WPCF7_ContactForm::post_type );
 
 	if ( $page )
 		return wpcf7_contact_form( $page->ID );
