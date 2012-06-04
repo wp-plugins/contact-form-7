@@ -116,6 +116,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 = 3.2 =
 
 * Enhanced admin panel. Introduced list table view for contact forms.
+* Moved the Contact menu to the upper position (just below the Comments).
 * Show alert message when Jetpack contact form is active.
 * Introduced Flamingo module.
 * Made capabilities more customizable.
