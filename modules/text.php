@@ -149,6 +149,9 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_text_and_email', 15 );
 
 function wpcf7_add_tag_generator_text_and_email() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'text', __( 'Text field', 'wpcf7' ),
 		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
 

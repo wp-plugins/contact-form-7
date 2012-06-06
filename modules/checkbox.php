@@ -158,6 +158,9 @@ function wpcf7_checkbox_validation_filter( $result, $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_checkbox_and_radio', 30 );
 
 function wpcf7_add_tag_generator_checkbox_and_radio() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'checkbox', __( 'Checkboxes', 'wpcf7' ),
 		'wpcf7-tg-pane-checkbox', 'wpcf7_tg_pane_checkbox' );
 

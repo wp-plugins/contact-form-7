@@ -167,6 +167,9 @@ function wpcf7_quiz_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_quiz', 40 );
 
 function wpcf7_add_tag_generator_quiz() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'quiz', __( 'Quiz', 'wpcf7' ),
 		'wpcf7-tg-pane-quiz', 'wpcf7_tg_pane_quiz' );
 }

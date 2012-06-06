@@ -55,6 +55,9 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_submit', 55 );
 
 function wpcf7_add_tag_generator_submit() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'submit', __( 'Submit button', 'wpcf7' ),
 		'wpcf7-tg-pane-submit', 'wpcf7_tg_pane_submit', array( 'nameless' => 1 ) );
 }

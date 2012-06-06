@@ -195,6 +195,9 @@ function wpcf7_captcha_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
 
 function wpcf7_add_tag_generator_captcha() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'captcha', __( 'CAPTCHA', 'wpcf7' ),
 		'wpcf7-tg-pane-captcha', 'wpcf7_tg_pane_captcha' );
 }

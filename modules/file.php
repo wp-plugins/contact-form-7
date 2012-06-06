@@ -225,6 +225,9 @@ function wpcf7_file_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_file', 50 );
 
 function wpcf7_add_tag_generator_file() {
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
 	wpcf7_add_tag_generator( 'file', __( 'File upload', 'wpcf7' ),
 		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
 }
