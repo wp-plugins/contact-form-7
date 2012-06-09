@@ -11,7 +11,7 @@ function wpcf7_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
 	$caps = array_diff( $caps, array_keys( $meta_caps ) );
 
-	if ( array_key_exists( $cap, $meta_caps ) )
+	if ( isset( $meta_caps[$cap] ) )
 		$caps[] = $meta_caps[$cap];
 
 	return $caps;
