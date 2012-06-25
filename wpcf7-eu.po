@@ -1,0 +1,955 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-02 21:39+0900\n"
+"PO-Revision-Date: 2012-06-25 08:31+0100\n"
+"Last-Translator: karrikas <karrikas@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Hau kontaktu inprimakiak sortzeko plugin bat baino ez da. Sinplea baina malgua."
+
+#: contact-form-7/settings.php:167
+#, php-format
+msgid "Contact form %d"
+msgstr "Kontaktu inprimakia %d"
+
+#: contact-form-7/admin/admin.php:8
+#: contact-form-7/admin/admin.php:276
+#: contact-form-7/admin/edit-contact-form.php:12
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: contact-form-7/admin/admin.php:8
+msgid "Contact"
+msgstr "Kontaktua"
+
+#: contact-form-7/admin/admin.php:13
+msgid "Edit Contact Forms"
+msgstr "Editatu kontaktu inprimakiak"
+
+#: contact-form-7/admin/admin.php:13
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "Editatu"
+
+#: contact-form-7/admin/admin.php:39
+#: contact-form-7/admin/admin.php:111
+msgid "You are not allowed to edit this item."
+msgstr "Ez zaude baimendua elementu hau editatzeko."
+
+#: contact-form-7/admin/admin.php:152
+msgid "You are not allowed to delete this item."
+msgstr "Ez zaude baimendua elementu hau ezabatzeko."
+
+#: contact-form-7/admin/admin.php:155
+msgid "Error in deleting."
+msgstr "Akatsa ezabatzerakoan."
+
+#: contact-form-7/admin/admin.php:181
+#: contact-form-7/includes/classes.php:27
+msgid "Contact Forms"
+msgstr "Kontaktu Inprimakiak"
+
+#: contact-form-7/admin/admin.php:213
+msgid "Generate Tag"
+msgstr "Etiketak sortu"
+
+#: contact-form-7/admin/admin.php:278
+#: contact-form-7/admin/admin.php:310
+#: contact-form-7/admin/admin.php:323
+#: contact-form-7/admin/edit-contact-form.php:15
+msgid "Add New"
+msgstr "Berria gehitu"
+
+#: contact-form-7/admin/admin.php:282
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Emaitza &#8220;%s&#8221;-rentzat"
+
+#: contact-form-7/admin/admin.php:291
+msgid "Search Contact Forms"
+msgstr "Kontaktu Inprimakiak Bilatu"
+
+#: contact-form-7/admin/admin.php:309
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Erabili lehenetsitako hizkuntza (%s)"
+
+#: contact-form-7/admin/admin.php:313
+msgid "Or"
+msgstr "Edo"
+
+#: contact-form-7/admin/admin.php:318
+msgid "(select language)"
+msgstr "(aukeratu hizkuntza)"
+
+#: contact-form-7/admin/admin.php:354
+msgid "Contact form created."
+msgstr "Kontaktu inprimakia sortua."
+
+#: contact-form-7/admin/admin.php:356
+msgid "Contact form saved."
+msgstr "Kontaktu inprimakia gordea."
+
+#: contact-form-7/admin/admin.php:358
+msgid "Contact form deleted."
+msgstr "Kontaktu inprimakia ezabatua."
+
+#: contact-form-7/admin/admin.php:375
+msgid "Settings"
+msgstr "Ezarpenak"
+
+#: contact-form-7/admin/admin.php:386
+msgid "http://contactform7.com/docs/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:387
+msgid "Docs"
+msgstr "Dokumentazioa"
+
+#: contact-form-7/admin/admin.php:388
+msgid "http://contactform7.com/faq/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:389
+msgid "FAQ"
+msgstr "Ohiko galderak"
+
+#: contact-form-7/admin/admin.php:390
+msgid "http://contactform7.com/support/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:391
+msgid "Support"
+msgstr "Sostengua"
+
+#: contact-form-7/admin/admin.php:422
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7 zure sostengua behar du. Egin dohaintza gaur."
+
+#: contact-form-7/admin/admin.php:423
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Zure ekarpena beharrezkoa da plugin hau hobetzeko."
+
+#: contact-form-7/admin/admin.php:429
+msgid "http://contactform7.com/donate/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:429
+msgid "Donate"
+msgstr "Dohaintza egin"
+
+#: contact-form-7/admin/admin.php:449
+#, php-format
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Contact Form 7 %1$s WordPress %2$s bertsioa edo handiagoa behar du.</strong> Mesedez <a href=\"%3$s\">WordPress eguneratu</a> lehenengo."
+
+#: contact-form-7/admin/edit-contact-form.php:46
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopiatu kodea hau eta itsatsi zure albiste, orri eta widget-etan."
+
+#: contact-form-7/admin/edit-contact-form.php:52
+msgid "Old code is also available."
+msgstr "Kode zaharra ere eskuragarri dago."
+
+#: contact-form-7/admin/edit-contact-form.php:60
+msgid "Save"
+msgstr "Gorde"
+
+#: contact-form-7/admin/edit-contact-form.php:67
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+msgid "Copy"
+msgstr "Kopiatu"
+
+#: contact-form-7/admin/edit-contact-form.php:72
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: contact-form-7/admin/edit-contact-form.php:74
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Kontaktu inprimakia ezabatuko duzu.\n"
+"'Ezeztatu' gelditzeko, 'Onartu' ezabatzeko."
+
+#: contact-form-7/admin/edit-contact-form.php:83
+msgid "Form"
+msgstr "Inprimakia"
+
+#: contact-form-7/admin/edit-contact-form.php:86
+msgid "Mail"
+msgstr "E-posta"
+
+#: contact-form-7/admin/edit-contact-form.php:89
+msgid "Mail (2)"
+msgstr "E-posta (2)"
+
+#: contact-form-7/admin/edit-contact-form.php:94
+msgid "Use mail (2)"
+msgstr "Erabiltzaile e-posta (2)"
+
+#: contact-form-7/admin/edit-contact-form.php:96
+msgid "Messages"
+msgstr "Mezuak"
+
+#: contact-form-7/admin/edit-contact-form.php:99
+msgid "Additional Settings"
+msgstr "Ezarpen osagarriak"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+msgid "Title"
+msgstr "Titulua"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+msgid "Shortcode"
+msgstr "Shortcodea"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+msgid "Author"
+msgstr "Egilea"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+msgid "Date"
+msgstr "Fetsa"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "Editatu &#8220;%s&#8221;"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+msgid "Y/m/d g:i:s A"
+msgstr "Y/m/d g:i:s A"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+msgid "%s ago"
+msgstr "Orain dela %s"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+msgid "Y/m/d"
+msgstr "Y/m/d"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Nori:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Nork:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Gaia:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Buruki osagarriak:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Atxikitako artxiboak:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Erabili HTML eduki mota"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:112
+msgid "Message body:"
+msgstr "Mezuaren gorpua:"
+
+#: contact-form-7/includes/classes.php:28
+msgid "Contact Form"
+msgstr "Kontaktu Inprimakia"
+
+#: contact-form-7/includes/classes.php:743
+msgid "Untitled"
+msgstr "Izen gabe"
+
+#: contact-form-7/includes/controller.php:253
+msgid "Sending ..."
+msgstr "Bidaltzen..."
+
+#: contact-form-7/includes/functions.php:21
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
+msgstr "%1$s is <strong>zaharkitua dago</strong> Contact Form 7 %2$s bertsiotik! Honen ordez erabili %3$s ."
+
+#: contact-form-7/includes/functions.php:23
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
+msgstr "%1$s is <strong>zaharkitua dago</strong> Contact Form 7  %2$s bertsiotik eta ez dago alternatibarik eskuragarri."
+
+#: contact-form-7/includes/functions.php:30
+msgid "Sender's message was sent successfully"
+msgstr "Igorlearen mezua ongi bidali da"
+
+#: contact-form-7/includes/functions.php:31
+msgid "Your message was sent successfully. Thanks."
+msgstr "Zure mezua ongi bidali da. Eskerrik asko."
+
+#: contact-form-7/includes/functions.php:35
+msgid "Sender's message was failed to send"
+msgstr "Igorlearen mezua huts egin du bidaltzean"
+
+#: contact-form-7/includes/functions.php:36
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Ezin izan da zure mezua bidali. Saiatu beranduago edo jarri harremanetan administratzailearekin beste bide batetik. "
+
+#: contact-form-7/includes/functions.php:40
+msgid "Validation errors occurred"
+msgstr "Balidatze akatsak daude"
+
+#: contact-form-7/includes/functions.php:41
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Balidatze akatsak daude. Errepasatu eremuak eta bidali berriz. "
+
+#: contact-form-7/includes/functions.php:45
+msgid "There are terms that the sender must accept"
+msgstr "Igorleak onartu behar dituen baldintzak daude"
+
+#: contact-form-7/includes/functions.php:46
+msgid "Please accept the terms to proceed."
+msgstr "Onartu baldintzak jarraitzeko."
+
+#: contact-form-7/includes/functions.php:50
+msgid "Email address that the sender entered is invalid"
+msgstr "Igorleak jarri duen e-posta helbidea ez da zuzena"
+
+#: contact-form-7/includes/functions.php:51
+msgid "Email address seems invalid."
+msgstr "E-posta ez da zuzena."
+
+#: contact-form-7/includes/functions.php:55
+msgid "There is a field that the sender must fill in"
+msgstr "Igorleak bete behar duen eremu bat dago"
+
+#: contact-form-7/includes/functions.php:56
+msgid "Please fill the required field."
+msgstr "Bete beharreko eremua."
+
+#: contact-form-7/includes/functions.php:80
+msgid "Your Name"
+msgstr "Zure Izena"
+
+#: contact-form-7/includes/functions.php:80
+#: contact-form-7/includes/functions.php:82
+msgid "(required)"
+msgstr "(beharrezkoa)"
+
+#: contact-form-7/includes/functions.php:82
+msgid "Your Email"
+msgstr "Zure E-posta"
+
+#: contact-form-7/includes/functions.php:84
+msgid "Subject"
+msgstr "Gaia"
+
+#: contact-form-7/includes/functions.php:86
+msgid "Your Message"
+msgstr "Mezua"
+
+#: contact-form-7/includes/functions.php:88
+msgid "Send"
+msgstr "Bidali"
+
+#: contact-form-7/includes/functions.php:96
+#, php-format
+msgid "From: %s"
+msgstr "Nork: %s"
+
+#: contact-form-7/includes/functions.php:97
+#, php-format
+msgid "Subject: %s"
+msgstr "Gaia: %s"
+
+#: contact-form-7/includes/functions.php:98
+msgid "Message Body:"
+msgstr "Mezuaren gorpua:"
+
+#: contact-form-7/includes/functions.php:99
+#: contact-form-7/includes/functions.php:113
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Kontaktu inprimakiaren bitartez bidali da posta %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Afrikaans"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:190
+msgid "Albanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:191
+msgid "Arabic"
+msgstr "Arabiarra"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Armenian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:193
+msgid "Azerbaijani"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:194
+msgid "Bangla"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:195
+msgid "Belarusian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:196
+msgid "Bosnian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:197
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:198
+msgid "Bulgarian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:199
+msgid "Catalan"
+msgstr "Katalana"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:201
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:202
+msgid "Croatian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:203
+msgid "Czech"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:204
+msgid "Danish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:205
+msgid "Dutch"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:206
+msgid "English"
+msgstr "Inglesa"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Esperanto"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:208
+msgid "Estonian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:209
+msgid "Finnish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:210
+msgid "French"
+msgstr "Frantsesa"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Galician"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:212
+msgid "Georgian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:213
+msgid "German"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:214
+msgid "Greek"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:215
+msgid "Hebrew"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:216
+msgid "Hindi"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:217
+msgid "Hungarian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:218
+msgid "Indonesian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:219
+msgid "Italian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:220
+msgid "Japanese"
+msgstr "Japoniarra"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Korean"
+msgstr "Korearra"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Latvian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:223
+msgid "Lithuanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:224
+msgid "Macedonian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:225
+msgid "Malay"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:226
+msgid "Malayalam"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:227
+msgid "Maltese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:228
+msgid "Norwegian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:229
+msgid "Persian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:230
+msgid "Polish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:231
+msgid "Portuguese"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:232
+msgid "Russian"
+msgstr "Errusiarra"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Romanian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:234
+msgid "Serbian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:235
+msgid "Sinhala"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:236
+msgid "Slovak"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:237
+msgid "Slovene"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:238
+msgid "Spanish"
+msgstr "Espainola"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Swedish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:240
+msgid "Tamil"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:241
+msgid "Thai"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:242
+msgid "Tagalog"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:243
+msgid "Turkish"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:244
+msgid "Ukrainian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:245
+msgid "Vietnamese"
+msgstr ""
+
+#: contact-form-7/modules/acceptance.php:153
+msgid "Acceptance"
+msgstr "Onespena"
+
+#: contact-form-7/modules/acceptance.php:162
+#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/checkbox.php:188
+#: contact-form-7/modules/file.php:238
+#: contact-form-7/modules/quiz.php:179
+#: contact-form-7/modules/select.php:149
+#: contact-form-7/modules/text.php:176
+#: contact-form-7/modules/textarea.php:137
+msgid "Name"
+msgstr "Izena"
+
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/checkbox.php:193
+#: contact-form-7/modules/checkbox.php:196
+#: contact-form-7/modules/file.php:243
+#: contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:251
+#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/quiz.php:184
+#: contact-form-7/modules/quiz.php:187
+#: contact-form-7/modules/quiz.php:192
+#: contact-form-7/modules/quiz.php:195
+#: contact-form-7/modules/select.php:154
+#: contact-form-7/modules/select.php:157
+#: contact-form-7/modules/submit.php:68
+#: contact-form-7/modules/submit.php:71
+#: contact-form-7/modules/submit.php:76
+#: contact-form-7/modules/text.php:181
+#: contact-form-7/modules/text.php:184
+#: contact-form-7/modules/text.php:189
+#: contact-form-7/modules/text.php:192
+#: contact-form-7/modules/text.php:197
+#: contact-form-7/modules/text.php:208
+#: contact-form-7/modules/textarea.php:142
+#: contact-form-7/modules/textarea.php:145
+#: contact-form-7/modules/textarea.php:150
+#: contact-form-7/modules/textarea.php:153
+#: contact-form-7/modules/textarea.php:158
+msgid "optional"
+msgstr "aukerakoa"
+
+#: contact-form-7/modules/acceptance.php:176
+msgid "Make this checkbox checked by default?"
+msgstr "Markatu checkbox hau lehenetsi bezala?"
+
+#: contact-form-7/modules/acceptance.php:177
+msgid "Make this checkbox work inversely?"
+msgstr "Markatu checkbox hau alderantziz ibili dadin?"
+
+#: contact-form-7/modules/acceptance.php:178
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Honek esan nahi du erabiltzaileak checkboxeko marka kendu behar duela."
+
+#: contact-form-7/modules/acceptance.php:183
+#: contact-form-7/modules/captcha.php:261
+#: contact-form-7/modules/checkbox.php:216
+#: contact-form-7/modules/file.php:259
+#: contact-form-7/modules/quiz.php:207
+#: contact-form-7/modules/select.php:174
+#: contact-form-7/modules/submit.php:83
+#: contact-form-7/modules/text.php:216
+#: contact-form-7/modules/textarea.php:166
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopiatu kodea hau eta itsatsi alboko inprimakian."
+
+#: contact-form-7/modules/akismet.php:108
+msgid "Akismet judged the sending activity as spamming"
+msgstr "Akismetek erabaki du bidalketa eragiketa hau spama dela"
+
+#: contact-form-7/modules/captcha.php:73
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "CAPTCHA erabiltzeko <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugina instalatu behar duzu."
+
+#: contact-form-7/modules/captcha.php:187
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Igorleak sartutako kodea ez dator bat CAPTCHArekin"
+
+#: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Sartutako kodea ez da zuzena. "
+
+#: contact-form-7/modules/captcha.php:198
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:209
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Adi: CAPTCHA erabili ahal izateko Really Simple CAPTCHA plugina instalatua izan behar duzu."
+
+#: contact-form-7/modules/captcha.php:216
+msgid "Image settings"
+msgstr "Irudi ezarpenak"
+
+#: contact-form-7/modules/captcha.php:227
+msgid "Foreground color"
+msgstr "Aurrealdeko kolorea"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Background color"
+msgstr "Atzealdeko kolorea"
+
+#: contact-form-7/modules/captcha.php:234
+msgid "Image size"
+msgstr "Irudiaren tamaina"
+
+#: contact-form-7/modules/captcha.php:235
+msgid "Small"
+msgstr "Txikia"
+
+#: contact-form-7/modules/captcha.php:236
+msgid "Medium"
+msgstr "Erdiparekoa"
+
+#: contact-form-7/modules/captcha.php:237
+msgid "Large"
+msgstr "Handia"
+
+#: contact-form-7/modules/captcha.php:242
+msgid "Input field settings"
+msgstr "Sarrera eremuaren ezarpenak"
+
+#: contact-form-7/modules/captcha.php:262
+msgid "For image"
+msgstr "Irudiarentzat"
+
+#: contact-form-7/modules/captcha.php:264
+msgid "For input field"
+msgstr "Sarrera eremuarentzat"
+
+#: contact-form-7/modules/captcha.php:294
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Kontaktu inprimaki honek CAPTCHA eremua du, baina artxibo hauek gordetzeko karpeta (%s) ez da aurkitzen edo ez ditu idazteko baimenak. Zeuk sortu dezakezu karpeta edo baimenak aldatu."
+
+#: contact-form-7/modules/captcha.php:300
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Kontaktu inprimaki honek CAPTCHA eremua du, baina beharrezko liburutegiak (GD eta FreeType) ez daude zure zerbitzarian. "
+
+#: contact-form-7/modules/checkbox.php:161
+msgid "Checkboxes"
+msgstr ""
+
+#: contact-form-7/modules/checkbox.php:164
+msgid "Radio buttons"
+msgstr ""
+
+#: contact-form-7/modules/checkbox.php:185
+#: contact-form-7/modules/file.php:237
+#: contact-form-7/modules/select.php:148
+#: contact-form-7/modules/text.php:175
+#: contact-form-7/modules/textarea.php:136
+msgid "Required field?"
+msgstr "Beharrezko eremua?"
+
+#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/select.php:162
+msgid "Choices"
+msgstr "Aukerak"
+
+#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/select.php:164
+msgid "* One choice per line."
+msgstr "* Aukera bakarra lerro bakoitzean."
+
+#: contact-form-7/modules/checkbox.php:207
+msgid "Put a label first, a checkbox last?"
+msgstr "Testuak lehengo eta checkboxa ondoren?"
+
+#: contact-form-7/modules/checkbox.php:208
+msgid "Wrap each item with <label> tag?"
+msgstr "Bildu aukera bakoitza <label> etiketarekin?"
+
+#: contact-form-7/modules/checkbox.php:210
+msgid "Make checkboxes exclusive?"
+msgstr "Egin checkboxak esklusiboak?"
+
+#: contact-form-7/modules/checkbox.php:218
+#: contact-form-7/modules/select.php:176
+#: contact-form-7/modules/text.php:218
+#: contact-form-7/modules/textarea.php:168
+msgid "And, put this code into the Mail fields below."
+msgstr "Eta jarri kodea hau beheko E-posta eremuan."
+
+#: contact-form-7/modules/file.php:201
+msgid "Uploading a file fails for any reason"
+msgstr "Fitxategi igoerak huts egin du."
+
+#: contact-form-7/modules/file.php:202
+msgid "Failed to upload file."
+msgstr "Artxibo igoerak huts egin du."
+
+#: contact-form-7/modules/file.php:206
+msgid "Uploaded file is not allowed file type"
+msgstr "Igoera artxibo mota ez dago onartua. "
+
+#: contact-form-7/modules/file.php:207
+msgid "This file type is not allowed."
+msgstr "Artxibo mota hau ez da onartzen."
+
+#: contact-form-7/modules/file.php:211
+msgid "Uploaded file is too large"
+msgstr "Igoera artxiboa handiegia da."
+
+#: contact-form-7/modules/file.php:212
+msgid "This file is too large."
+msgstr "Artxibo hau handiegia da."
+
+#: contact-form-7/modules/file.php:216
+msgid "Uploading a file fails for PHP error"
+msgstr "Fitxategi igoera huts egin du PHP akats batengatik"
+
+#: contact-form-7/modules/file.php:217
+msgid "Failed to upload file. Error occurred."
+msgstr "Artxibo igoerak huts egin du. Akats bat gertatu da."
+
+#: contact-form-7/modules/file.php:228
+msgid "File upload"
+msgstr "Artxiboa igo"
+
+#: contact-form-7/modules/file.php:251
+msgid "File size limit"
+msgstr "Artxibo pisu muga"
+
+#: contact-form-7/modules/file.php:251
+msgid "bytes"
+msgstr "byteak"
+
+#: contact-form-7/modules/file.php:254
+msgid "Acceptable file types"
+msgstr "Onartzen diren fitxategi motak"
+
+#: contact-form-7/modules/file.php:261
+msgid "And, put this code into the File Attachments field below."
+msgstr "Eta, jarri kode hau azpiko atxikien eremuan. "
+
+#: contact-form-7/modules/file.php:286
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Kontaktu inprimaki honek artxiboak igotzeko eremuak dauzka, baina igoera karpeta (%s) ez da existitzen edo ez ditu idazteko baimenak. Zeuk sortu dezakezu karpeta edo baimenak aldatu."
+
+#: contact-form-7/modules/jetpack.php:14
+#, php-format
+msgid "<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr "<strong>Jetpack-ek batzuetan arazoak sor ditzake beste pluginentzat .</strong> <a href=\"%s\" target=\"_blank\">Ikusi nola saihestu.</a>"
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Igorleak ez du eman erantzun zuzena galderarentzat."
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Your answer is not correct."
+msgstr "Zure erantzuna ez da zuzena."
+
+#: contact-form-7/modules/quiz.php:170
+msgid "Quiz"
+msgstr "Galdera"
+
+#: contact-form-7/modules/quiz.php:200
+msgid "Quizzes"
+msgstr "Galderak"
+
+#: contact-form-7/modules/quiz.php:202
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* galdera|erantzuna (adib. 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:139
+msgid "Drop-down menu"
+msgstr "Zabaltzen den menua"
+
+#: contact-form-7/modules/select.php:168
+msgid "Allow multiple selections?"
+msgstr "Baimendu aukera anitza?"
+
+#: contact-form-7/modules/select.php:169
+msgid "Insert a blank item as the first option?"
+msgstr "Sartu aukera hutsa lehen balio moduan?"
+
+#: contact-form-7/modules/submit.php:58
+msgid "Submit button"
+msgstr "Bidalketa botoia"
+
+#: contact-form-7/modules/submit.php:76
+msgid "Label"
+msgstr "Etiketa"
+
+#: contact-form-7/modules/text.php:152
+msgid "Text field"
+msgstr "Testu eremua"
+
+#: contact-form-7/modules/text.php:155
+msgid "Email field"
+msgstr "E-posta eremua"
+
+#: contact-form-7/modules/text.php:197
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:199
+msgid "This field requires author's name"
+msgstr "Eremuak egilearen izena bete behar du "
+
+#: contact-form-7/modules/text.php:200
+msgid "This field requires author's URL"
+msgstr "Eremuak egilearen URLa bete behar du"
+
+#: contact-form-7/modules/text.php:202
+msgid "This field requires author's email address"
+msgstr "Eremuak egilearen e-posta bete behar du"
+
+#: contact-form-7/modules/text.php:208
+#: contact-form-7/modules/textarea.php:158
+msgid "Default value"
+msgstr "Lehenetsitako balioa"
+
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:161
+msgid "Use this text as watermark?"
+msgstr "Erabili testua hau ur marka moduan?"
+
+#: contact-form-7/modules/textarea.php:127
+msgid "Text area"
+msgstr "Testu eremua"
+
