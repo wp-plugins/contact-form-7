@@ -192,6 +192,7 @@ function wpcf7_l10n() {
 		'hy_AM' => __( 'Armenian', 'wpcf7' ),
 		'az_AZ' => __( 'Azerbaijani', 'wpcf7' ),
 		'bn_BD' => __( 'Bangla', 'wpcf7' ),
+		'eu' => __( 'Basque', 'wpcf7' ),
 		'be_BY' => __( 'Belarusian', 'wpcf7' ),
 		'bs' => __( 'Bosnian', 'wpcf7' ),
 		'pt_BR' => __( 'Brazilian Portuguese', 'wpcf7' ),
