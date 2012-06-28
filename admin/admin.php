@@ -285,9 +285,7 @@ function wpcf7_admin_management_page() {
 
 	if ( $wpcf7_contact_form ) {
 		$post =& $wpcf7_contact_form;
-
-		$unsaved = $post->initial;
-		$post_id = $unsaved ? -1 : $post->id;
+		$post_id = $post->initial ? -1 : $post->id;
 
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
