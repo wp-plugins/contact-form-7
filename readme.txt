@@ -104,7 +104,6 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. [Docs](http://contactform7.com/docs/)
 1. [FAQ](http://contactform7.com/faq/)
 1. [Support Forum](http://wordpress.org/support/plugin/contact-form-7)
-1. [WordPress HelpCenter](http://wphelpcenter.com/plugins/contact-form-7/)
 
 [Support](http://contactform7.com/support/)
 
