@@ -79,46 +79,25 @@ if ( $post ) :
 
 <?php
 
-if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) {
-	add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
-		'wpcf7_form_meta_box', 'cfseven', 'form', 'core' );
-
-	add_meta_box( 'maildiv', __( 'Mail', 'wpcf7' ),
-		'wpcf7_mail_meta_box', 'cfseven', 'mail', 'core' );
-
-	add_meta_box( 'mail2div', __( 'Mail (2)', 'wpcf7' ),
-		'wpcf7_mail_meta_box', 'cfseven', 'mail_2', 'core',
-		array(
-			'id' => 'wpcf7-mail-2',
-			'name' => 'mail_2',
-			'use' => __( 'Use mail (2)', 'wpcf7' ) ) );
-
-	add_meta_box( 'messagesdiv', __( 'Messages', 'wpcf7' ),
-		'wpcf7_messages_meta_box', 'cfseven', 'messages', 'core' );
-
-	add_meta_box( 'additionalsettingsdiv', __( 'Additional Settings', 'wpcf7' ),
-		'wpcf7_additional_settings_meta_box', 'cfseven', 'additional_settings', 'core' );
-}
-
 do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'form', $post );
+do_meta_boxes( null, 'form', $post );
 
 do_action_ref_array( 'wpcf7_admin_after_form', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'mail', $post );
+do_meta_boxes( null, 'mail', $post );
 
 do_action_ref_array( 'wpcf7_admin_after_mail', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'mail_2', $post );
+do_meta_boxes( null, 'mail_2', $post );
 
 do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'messages', $post );
+do_meta_boxes( null, 'messages', $post );
 
 do_action_ref_array( 'wpcf7_admin_after_messages', array( &$post ) );
 
-do_meta_boxes( 'cfseven', 'additional_settings', $post );
+do_meta_boxes( null, 'additional_settings', $post );
 
 do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$post ) );
 

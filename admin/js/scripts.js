@@ -47,7 +47,7 @@
 				});
 			});
 
-			postboxes.add_postbox_toggles('cfseven');
+			postboxes.add_postbox_toggles(_wpcf7.screenId);
 
 		} catch (e) {
 		}
