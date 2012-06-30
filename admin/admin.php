@@ -181,24 +181,7 @@ function wpcf7_load_contact_form_admin() {
 		$post = wpcf7_contact_form( $_GET['post'] );
 
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id ) ) {
-		add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
-			'wpcf7_form_meta_box', null, 'form', 'core' );
-
-		add_meta_box( 'maildiv', __( 'Mail', 'wpcf7' ),
-			'wpcf7_mail_meta_box', null, 'mail', 'core' );
-
-		add_meta_box( 'mail2div', __( 'Mail (2)', 'wpcf7' ),
-			'wpcf7_mail_meta_box', null, 'mail_2', 'core',
-			array(
-				'id' => 'wpcf7-mail-2',
-				'name' => 'mail_2',
-				'use' => __( 'Use mail (2)', 'wpcf7' ) ) );
-
-		add_meta_box( 'messagesdiv', __( 'Messages', 'wpcf7' ),
-			'wpcf7_messages_meta_box', null, 'messages', 'core' );
-
-		add_meta_box( 'additionalsettingsdiv', __( 'Additional Settings', 'wpcf7' ),
-			'wpcf7_additional_settings_meta_box', null, 'additional_settings', 'core' );
+		wpcf7_add_meta_boxes( $post->id );
 
 	} else {
 		$current_screen = get_current_screen();
@@ -351,6 +334,29 @@ function wpcf7_admin_lang_select_modal() {
 </form>
 </div>
 <?php
+}
+
+function wpcf7_add_meta_boxes( $post_id ) {
+	add_meta_box( 'formdiv', __( 'Form', 'wpcf7' ),
+		'wpcf7_form_meta_box', null, 'form', 'core' );
+
+	add_meta_box( 'maildiv', __( 'Mail', 'wpcf7' ),
+		'wpcf7_mail_meta_box', null, 'mail', 'core' );
+
+	add_meta_box( 'mail2div', __( 'Mail (2)', 'wpcf7' ),
+		'wpcf7_mail_meta_box', null, 'mail_2', 'core',
+		array(
+			'id' => 'wpcf7-mail-2',
+			'name' => 'mail_2',
+			'use' => __( 'Use mail (2)', 'wpcf7' ) ) );
+
+	add_meta_box( 'messagesdiv', __( 'Messages', 'wpcf7' ),
+		'wpcf7_messages_meta_box', null, 'messages', 'core' );
+
+	add_meta_box( 'additionalsettingsdiv', __( 'Additional Settings', 'wpcf7' ),
+		'wpcf7_additional_settings_meta_box', null, 'additional_settings', 'core' );
+
+	do_action( 'wpcf7_add_meta_boxes', $post_id );
 }
 
 /* Misc */
