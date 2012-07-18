@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V3.2*\n"
+"Project-Id-Version: Contact Form 7 | V3.2**\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-02 21:39+0900\n"
-"PO-Revision-Date: 2012-06-09 11:48+0100\n"
+"PO-Revision-Date: 2012-07-17 21:18+0100\n"
 "Last-Translator: Ivan Graf <contact@bildergallery.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgstr "http://contactform7.com/faq/"
 
 #: contact-form-7/admin/admin.php:389
 msgid "FAQ"
-msgstr "Faq"
+msgstr "FAQ"
 
 #: contact-form-7/admin/admin.php:390
 msgid "http://contactform7.com/support/"
@@ -318,7 +318,7 @@ msgstr "Fehler beim Ausfüllen des Formulars!"
 
 #: contact-form-7/includes/functions.php:41
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und klicken Sie nochmals auf 'Senden'."
+msgstr "Fehler beim Ausfüllen des Formulars! Bitte überprüfen Sie Ihre Eingaben und versuchen es erneut."
 
 #: contact-form-7/includes/functions.php:45
 msgid "There are terms that the sender must accept"
@@ -678,7 +678,7 @@ msgstr "Diese Auswahlbox standardmässig aktivieren?"
 
 #: contact-form-7/modules/acceptance.php:177
 msgid "Make this checkbox work inversely?"
-msgstr "Diese Auswahlbox umkehren (Invert)?"
+msgstr "Soll diese Auswahlbox umgekehrt funktionieren?"
 
 #: contact-form-7/modules/acceptance.php:178
 msgid "* That means visitor who accepts the term unchecks it."
@@ -702,11 +702,11 @@ msgstr "Akismet beurteilt Ihre Nachricht als Spam."
 
 #: contact-form-7/modules/captcha.php:73
 msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Um den Captcha-Code anzuzeigen, muss dieses <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Plugin</a> installiert sein."
+msgstr "Um den CAPTCHA-Code anzuzeigen, muss dieses <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Plugin</a> installiert sein."
 
 #: contact-form-7/modules/captcha.php:187
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Der eingegebene Code stimmt nicht mit dem angezeigten Captcha-Code überein!"
+msgstr "Der eingegebene Code stimmt nicht mit dem angezeigten CAPTCHA-Code überein!"
 
 #: contact-form-7/modules/captcha.php:188
 msgid "Your entered code is incorrect."
@@ -714,11 +714,11 @@ msgstr "Ihr eingegebener Code ist falsch."
 
 #: contact-form-7/modules/captcha.php:198
 msgid "CAPTCHA"
-msgstr "Captcha"
+msgstr "CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:209
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Hinweis: Um Captcha zu verwenden, muss das Really Simple CAPTCHA Plugin installiert sein."
+msgstr "Hinweis: Um CAPTCHA zu verwenden, muss das Really Simple CAPTCHA Plugin installiert sein."
 
 #: contact-form-7/modules/captcha.php:216
 msgid "Image settings"
@@ -801,7 +801,7 @@ msgstr "Erste Auswahlmöglichkeit setzen, danach eine Auswahlbox?"
 
 #: contact-form-7/modules/checkbox.php:208
 msgid "Wrap each item with <label> tag?"
-msgstr "Jede Position mit einem <label> Tag umbrechen?"
+msgstr "Jede Element mit einem <label> Tag umbrechen?"
 
 #: contact-form-7/modules/checkbox.php:210
 msgid "Make checkboxes exclusive?"
@@ -816,11 +816,11 @@ msgstr "Und setzen Sie diesen Code in das Nachrichtentextfeld unterhalb ein."
 
 #: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
-msgstr "Fehler aus unbekannten Gründen beim hochladen der Datei."
+msgstr "Fehler aus unbekannten Gründen beim Hochladen der Datei."
 
 #: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
-msgstr "Das hochladen der Datei ist fehlgeschlagen."
+msgstr "Das Hochladen der Datei ist fehlgeschlagen."
 
 #: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
@@ -840,11 +840,11 @@ msgstr "Diese Datei ist zu gross."
 
 #: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
-msgstr "Das hochladen der Datei verursachte einen PHP-Error."
+msgstr "Das Hochladen der Datei verursachte einen PHP-Error."
 
 #: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
-msgstr "Das hochladen der Datei ist fehlgeschlagen! Es ist ein Fehler aufgetreten."
+msgstr "Das Hochladen der Datei ist fehlgeschlagen! Es ist ein Fehler aufgetreten."
 
 #: contact-form-7/modules/file.php:228
 msgid "File upload"
@@ -874,7 +874,7 @@ msgstr "Dieses Kontaktformular enthält Datei-Upload-Felder, aber der temporäre
 #: contact-form-7/modules/jetpack.php:14
 #, php-format
 msgid "<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
-msgstr "<strong>Jetpack kann in Verbindung mit anderen Plugins zu Problemen führen.</strong> <a href=\"%s\" target=\"_blank\">Sehen Sie hier, wie Sie es es vermeiden können.</a>"
+msgstr "<strong>Jetpack kann in Verbindung mit anderen Plugins zu Problemen führen.</strong> <a href=\"%s\" target=\"_blank\">Hier sehen Sie, wie es sich vermeiden lässt.</a>"
 
 #: contact-form-7/modules/quiz.php:159
 msgid "Sender doesn't enter the correct answer to the quiz"
