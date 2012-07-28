@@ -65,7 +65,7 @@ It is hard to continue development and support for this plugin without contribut
 * Maltese (mt_MT) - [Ajoft Technologies](http://www.ajoft.com/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net), [Peter Holme](http://holme.se/nettsteder/)
 * Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/), [Mohsen Firoozmandan](http://www.rankbazar.com/)
-* Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com), [RafalDesign](http://www.rafaldesign.pl/)
+* Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com), [RafalDesign](http://www.rafaldesign.pl/), [Bartosz Arendt](http://digitalfactory.pl/)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com), [Pedro Nave](http://pedronave.com/)
 * Russian (ru_RU) - Dmitry Volotovich, [kg69design](http://kg69design.com/), [Denis Voituk](http://artprima.cz/)
 * Romanian (ro_RO) - [Stas Sushkov](http://stas.nerd.ro/), [Anunturi Jibo](http://www.jibo.ro/), [Marius Olar](http://webdudes.ro/)
