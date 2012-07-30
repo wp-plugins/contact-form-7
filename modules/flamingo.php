@@ -41,9 +41,22 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 			unset( $posted_data[$key] );
 	}
 
+	$meta = array(
+		'remote_ip' => apply_filters( 'wpcf7_special_mail_tags', '', '_remote_ip' ),
+		'url' => apply_filters( 'wpcf7_special_mail_tags', '', '_url' ),
+		'date' => apply_filters( 'wpcf7_special_mail_tags', '', '_date' ),
+		'time' => apply_filters( 'wpcf7_special_mail_tags', '', '_time' ),
+		'post_id' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_id' ),
+		'post_name' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_name' ),
+		'post_title' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_title' ),
+		'post_url' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_url' ),
+		'post_author' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_author' ),
+		'post_author_email' => apply_filters( 'wpcf7_special_mail_tags', '', '_post_author_email' ) );
+
 	$args = array(
 		'channel' => 'contact-form-7',
 		'fields' => $posted_data,
+		'meta' => $meta,
 		'email' => '',
 		'name' => '',
 		'from' => '',
