@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.2
-Tested up to: 3.3.2
-Stable tag: 3.2
+Tested up to: 3.4.1
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,18 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.2.1 =
+
+* Fixed: Error for use of array_key_exists function with invalid first argument.
+* Fixed: Adding unnecessary rewrite rules.
+* Fixed: "Screen Options" doesn't appear on each contact form edit screen.
+* Change the comment_type value sent to Akismet from 'contactform7' to 'contact-form' following their blog post.
+* Introduce wpcf7_add_meta_boxes function and action with the same name. This makes it easier to add custom meta boxes to the edit screen.
+* Pass meta informations of each form submission (e.g. client's IP address) to Flamingo.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.14 and compressed with YUI compressor.
+* Translation for Basque has been created.
+* Translations for German, Italian, and Polish have been updated.
 
 = 3.2 =
 
