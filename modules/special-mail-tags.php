@@ -13,6 +13,9 @@ function wpcf7_special_mail_tag( $output, $name ) {
 	if ( '_remote_ip' == $name )
 		$output = preg_replace( '/[^0-9a-f.:, ]/', '', $_SERVER['REMOTE_ADDR'] );
 
+	elseif ( '_user_agent' == $name )
+		$output = substr( $_SERVER['HTTP_USER_AGENT'], 0, 254 );
+
 	elseif ( '_url' == $name ) {
 		$url = untrailingslashit( home_url() );
 		$url = preg_replace( '%(?<!:|/)/.*$%', '', $url );
