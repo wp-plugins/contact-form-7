@@ -65,11 +65,14 @@ class WPCF7_ContactForm {
 			$this->id = $post->ID;
 			$this->title = $post->post_title;
 
-			$this->form = get_post_meta( $post->ID, 'form', true );
-			$this->mail = get_post_meta( $post->ID, 'mail', true );
-			$this->mail_2 = get_post_meta( $post->ID, 'mail_2', true );
-			$this->messages = get_post_meta( $post->ID, 'messages', true );
-			$this->additional_settings = get_post_meta( $post->ID, 'additional_settings', true );
+			$props = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+			foreach ( $props as $prop ) {
+				if ( metadata_exists( 'post', $post->ID, '_' . $prop ) )
+					$this->{$prop} = get_post_meta( $post->ID, '_' . $prop, true );
+				else
+					$this->{$prop} = get_post_meta( $post->ID, $prop, true );
+			}
 
 			$this->upgrade();
 		}
@@ -649,8 +652,12 @@ class WPCF7_ContactForm {
 		}
 
 		if ( $post_id ) {
-			foreach ( $metas as $meta )
-				update_post_meta( $post_id, $meta, wpcf7_normalize_newline_deep( $this->{$meta} ) );
+			foreach ( $metas as $meta ) {
+				update_post_meta( $post_id, '_' . $meta,
+					wpcf7_normalize_newline_deep( $this->{$meta} ) );
+
+				delete_post_meta( $post_id, $meta );
+			}
 
 			if ( $this->initial ) {
 				$this->initial = false;

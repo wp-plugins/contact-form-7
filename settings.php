@@ -141,7 +141,7 @@ function wpcf7_convert_to_cpt( $new_ver, $old_ver ) {
 			$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
 
 			foreach ( $metas as $meta ) {
-				update_post_meta( $post_id, $meta,
+				update_post_meta( $post_id, '_' . $meta,
 					wpcf7_normalize_newline_deep( maybe_unserialize( $row->{$meta} ) ) );
 			}
 		}
