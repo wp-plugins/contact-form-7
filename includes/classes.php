@@ -407,11 +407,24 @@ class WPCF7_ContactForm {
 		if ( WPCF7_VERIFY_NONCE && ! $this->verify_nonce() )
 			$spam = true;
 
+		if ( $this->blacklist_check() )
+			$spam = true;
+
 		return apply_filters( 'wpcf7_spam', $spam );
 	}
 
 	function verify_nonce() {
 		return wpcf7_verify_nonce( $_POST['_wpnonce'], $this->id );
+	}
+
+	function blacklist_check() {
+		$target = wpcf7_array_flatten( $this->posted_data );
+		$target[] = $_SERVER['REMOTE_ADDR'];
+		$target[] = $_SERVER['HTTP_USER_AGENT'];
+
+		$target = implode( "\n", $target );
+
+		return wpcf7_blacklist_check( $target );
 	}
 
 	/* Mail */
