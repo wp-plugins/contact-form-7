@@ -235,34 +235,6 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 		'tagGenerators' => wpcf7_tag_generators() ) );
 }
 
-add_action( 'admin_print_footer_scripts', 'wpcf7_print_taggenerators_json', 20 );
-
-function wpcf7_print_taggenerators_json() { // for backward compatibility
-	global $plugin_page, $wpcf7_tag_generators;
-
-	if ( ! version_compare( get_bloginfo( 'version' ), '3.3-dev', '<' ) )
-		return;
-
-	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
-		return;
-
-	$taggenerators = array();
-
-	foreach ( (array) $wpcf7_tag_generators as $name => $tg ) {
-		$taggenerators[$name] = array_merge(
-			(array) $tg['options'],
-			array( 'title' => $tg['title'], 'content' => $tg['content'] ) );
-	}
-
-?>
-<script type="text/javascript">
-/* <![CDATA[ */
-_wpcf7.tagGenerators = <?php echo json_encode( $taggenerators ) ?>;
-/* ]]> */
-</script>
-<?php
-}
-
 function wpcf7_admin_management_page() {
 	global $wpcf7_contact_form;
 
