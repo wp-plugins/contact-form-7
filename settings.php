@@ -148,6 +148,36 @@ function wpcf7_convert_to_cpt( $new_ver, $old_ver ) {
 	}
 }
 
+add_action( 'wpcf7_upgrade', 'wpcf7_prepend_underscore', 10, 2 );
+
+function wpcf7_prepend_underscore( $new_ver, $old_ver ) {
+	if ( version_compare( $old_ver, '3.0-dev', '<' ) )
+		return;
+
+	if ( ! version_compare( $old_ver, '3.3-dev', '<' ) )
+		return;
+
+	$posts = WPCF7_ContactForm::find( array(
+		'post_status' => 'any',
+		'posts_per_page' => -1 ) );
+
+	foreach ( $posts as $post ) {
+		$props = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+		foreach ( $props as $prop ) {
+			if ( metadata_exists( 'post', $post->id, '_' . $prop ) )
+				continue;
+
+			if ( metadata_exists( 'post', $post->id, $prop ) ) {
+				update_post_meta( $post->id, '_' . $prop,
+					get_post_meta( $post->id, $prop, true ) );
+
+				delete_post_meta( $post->id, $prop );
+			}
+		}
+	}
+}
+
 /* Install and default settings */
 
 add_action( 'activate_' . WPCF7_PLUGIN_BASENAME, 'wpcf7_install' );
