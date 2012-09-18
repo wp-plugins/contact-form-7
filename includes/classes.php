@@ -65,9 +65,9 @@ class WPCF7_ContactForm {
 			$this->id = $post->ID;
 			$this->title = $post->post_title;
 
-			$props = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+			$props = $this->get_properties();
 
-			foreach ( $props as $prop ) {
+			foreach ( $props as $prop => $value ) {
 				if ( metadata_exists( 'post', $post->ID, '_' . $prop ) )
 					$this->{$prop} = get_post_meta( $post->ID, '_' . $prop, true );
 				else
@@ -78,6 +78,17 @@ class WPCF7_ContactForm {
 		}
 
 		do_action_ref_array( 'wpcf7_contact_form', array( &$this ) );
+	}
+
+	function get_properties() {
+		$prop_names = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+
+		$properties = array();
+
+		foreach ( $prop_names as $prop_name )
+			$properties[$prop_name] = isset( $this->{$prop_name} ) ? $this->{$prop_name} : '';
+
+		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
 	}
 
 	// Return true if this form is the same one as currently POSTed.
@@ -626,16 +637,9 @@ class WPCF7_ContactForm {
 	/* Save */
 
 	function save() {
-		$metas = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+		$props = $this->get_properties();
 
-		$post_content = '';
-
-		foreach ( $metas as $meta ) {
-			$props = (array) $this->{$meta};
-
-			foreach ( $props as $prop )
-				$post_content .= "\n" . trim( $prop );
-		}
+		$post_content = implode( "\n", wpcf7_array_flatten( $props ) );
 
 		if ( $this->initial ) {
 			$post_id = wp_insert_post( array(
@@ -652,12 +656,8 @@ class WPCF7_ContactForm {
 		}
 
 		if ( $post_id ) {
-			foreach ( $metas as $meta ) {
-				update_post_meta( $post_id, '_' . $meta,
-					wpcf7_normalize_newline_deep( $this->{$meta} ) );
-
-				delete_post_meta( $post_id, $meta );
-			}
+			foreach ( $props as $prop => $value )
+				update_post_meta( $post_id, '_' . $prop, wpcf7_normalize_newline_deep( $value ) );
 
 			if ( $this->initial ) {
 				$this->initial = false;
@@ -678,11 +678,10 @@ class WPCF7_ContactForm {
 		$new->initial = true;
 		$new->title = $this->title . '_copy';
 
-		$new->form = $this->form;
-		$new->mail = $this->mail;
-		$new->mail_2 = $this->mail_2;
-		$new->messages = $this->messages;
-		$new->additional_settings = $this->additional_settings;
+		$props = $this->get_properties();
+
+		foreach ( $props as $prop => $value )
+			$new->{$prop} = $value;
 
 		$new = apply_filters_ref_array( 'wpcf7_copy', array( &$new, &$this ) );
 
@@ -758,11 +757,10 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 
 	$contact_form->title = ( $title ? $title : __( 'Untitled', 'wpcf7' ) );
 
-	$contact_form->form = wpcf7_get_default_template( 'form' );
-	$contact_form->mail = wpcf7_get_default_template( 'mail' );
-	$contact_form->mail_2 = wpcf7_get_default_template( 'mail_2' );
-	$contact_form->messages = wpcf7_get_default_template( 'messages' );
-	$contact_form->additional_settings = wpcf7_get_default_template( 'additional_settings' );
+	$props = $contact_form->get_properties();
+
+	foreach ( $props as $prop => $value )
+		$contact_form->{$prop} = wpcf7_get_default_template( $prop );
 
 	if ( isset( $mo_orig ) )
 		$l10n['wpcf7'] = $mo_orig;

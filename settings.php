@@ -162,18 +162,14 @@ function wpcf7_prepend_underscore( $new_ver, $old_ver ) {
 		'posts_per_page' => -1 ) );
 
 	foreach ( $posts as $post ) {
-		$props = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+		$props = $post->get_properties();
 
-		foreach ( $props as $prop ) {
+		foreach ( $props as $prop => $value ) {
 			if ( metadata_exists( 'post', $post->id, '_' . $prop ) )
 				continue;
 
-			if ( metadata_exists( 'post', $post->id, $prop ) ) {
-				update_post_meta( $post->id, '_' . $prop,
-					get_post_meta( $post->id, $prop, true ) );
-
-				delete_post_meta( $post->id, $prop );
-			}
+			update_post_meta( $post->id, '_' . $prop, $value );
+			delete_post_meta( $post->id, $prop );
 		}
 	}
 }
