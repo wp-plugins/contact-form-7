@@ -203,7 +203,7 @@ class WPCF7_ContactForm {
 				}
 			} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $this->id ) {
 				$class .= ' wpcf7-validation-errors';
-				$content = $this->message( 'validation_error' );
+				$content = $_POST['_wpcf7_validation_errors']['message'];
 			}
 		} else {
 			$class .= ' wpcf7-display-none';
@@ -584,6 +584,8 @@ class WPCF7_ContactForm {
 	function message( $status ) {
 		$messages = $this->messages;
 		$message = isset( $messages[$status] ) ? $messages[$status] : '';
+
+		$message = $this->replace_mail_tags( $message, true );
 
 		return apply_filters( 'wpcf7_display_message', $message, $status );
 	}

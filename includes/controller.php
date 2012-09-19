@@ -120,6 +120,7 @@ function wpcf7_submit_nonajax() {
 		if ( ! $result['valid'] ) {
 			$_POST['_wpcf7_validation_errors'] = array(
 				'id' => $id,
+				'message' => $result['message'],
 				'messages' => $result['invalid_reasons'] );
 		} else {
 			$_POST['_wpcf7_mail_sent'] = array(
