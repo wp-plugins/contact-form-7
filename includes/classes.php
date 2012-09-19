@@ -563,12 +563,12 @@ class WPCF7_ContactForm {
 				$replaced = wptexturize( $replaced );
 			}
 
-			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
+			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted, $html );
 
 			return stripslashes( $replaced );
 		}
 
-		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[2] ) )
+		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[2], $html ) )
 			return $special;
 
 		return $matches[0];

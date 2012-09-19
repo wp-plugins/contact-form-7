@@ -47,7 +47,7 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 	$meta = array();
 
 	foreach ( $special_mail_tags as $smt )
-		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags', '', '_' . $smt );
+		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags', '', '_' . $smt, false );
 
 	$args = array(
 		'channel' => 'contact-form-7',
