@@ -491,24 +491,18 @@ class WPCF7_ContactForm {
 	function compose_mail( $mail_template, $send = true ) {
 		$this->mail_template_in_process = $mail_template;
 
-		$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
-
 		$use_html = (bool) $mail_template['use_html'];
 
-		$callback = array( &$this, 'mail_callback' );
-		$callback_html = array( &$this, 'mail_callback_html' );
-
-		$subject = preg_replace_callback( $regex, $callback, $mail_template['subject'] );
-		$sender = preg_replace_callback( $regex, $callback, $mail_template['sender'] );
-		$recipient = preg_replace_callback( $regex, $callback, $mail_template['recipient'] );
-		$additional_headers =
-			preg_replace_callback( $regex, $callback, $mail_template['additional_headers'] );
+		$subject = $this->replace_mail_tags( $mail_template['subject'] );
+		$sender = $this->replace_mail_tags( $mail_template['sender'] );
+		$recipient = $this->replace_mail_tags( $mail_template['recipient'] );
+		$additional_headers = $this->replace_mail_tags( $mail_template['additional_headers'] );
 
 		if ( $use_html ) {
-			$body = preg_replace_callback( $regex, $callback_html, $mail_template['body'] );
+			$body = $this->replace_mail_tags( $mail_template['body'], true );
 			$body = wpautop( $body );
 		} else {
-			$body = preg_replace_callback( $regex, $callback, $mail_template['body'] );
+			$body = $this->replace_mail_tags( $mail_template['body'] );
 		}
 
 		$attachments = array();
@@ -539,6 +533,17 @@ class WPCF7_ContactForm {
 			return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
 
 		return compact( 'subject', 'sender', 'body', 'recipient', 'headers', 'attachments' );
+	}
+
+	function replace_mail_tags( $content, $html = false ) {
+		$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
+
+		if ( $html )
+			$callback = array( &$this, 'mail_callback_html' );
+		else
+			$callback = array( &$this, 'mail_callback' );
+
+		return preg_replace_callback( $regex, $callback, $content );
 	}
 
 	function mail_callback_html( $matches ) {
