@@ -80,6 +80,9 @@ function wpcf7_ajax_json_echo() {
 			if ( ! empty( $result['scripts_on_sent_ok'] ) )
 				$items['onSentOk'] = $result['scripts_on_sent_ok'];
 
+			if ( ! empty( $result['scripts_on_submit'] ) )
+				$items['onSubmit'] = $result['scripts_on_submit'];
+
 			$items = apply_filters( 'wpcf7_ajax_json_echo', $items, $result );
 
 			$wpcf7_contact_form = null;

@@ -348,7 +348,8 @@ class WPCF7_ContactForm {
 			'spam' => false,
 			'message' => '',
 			'mail_sent' => false,
-			'scripts_on_sent_ok' => null );
+			'scripts_on_sent_ok' => null,
+			'scripts_on_submit' => null );
 
 		$this->setup_posted_data();
 
@@ -383,6 +384,13 @@ class WPCF7_ContactForm {
 
 		} else {
 			$result['message'] = $this->message( 'mail_sent_ng' );
+		}
+
+		if ( $ajax ) {
+			$on_submit = $this->additional_setting( 'on_submit', false );
+
+			if ( ! empty( $on_submit ) )
+				$result['scripts_on_submit'] = array_map( 'wpcf7_strip_quote', $on_submit );
 		}
 
 		// remove upload files
