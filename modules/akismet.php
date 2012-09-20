@@ -7,50 +7,28 @@
 add_filter( 'wpcf7_spam', 'wpcf7_akismet' );
 
 function wpcf7_akismet( $spam ) {
-	global $akismet_api_host, $akismet_api_port;
-
 	if ( $spam )
 		return $spam;
 
 	if ( ! function_exists( 'akismet_get_key' ) || ! akismet_get_key() )
 		return false;
 
-	$akismet_ready = false;
-	$author = $author_email = $author_url = $content = '';
-
-	$fes = wpcf7_scan_shortcode();
-
-	foreach ( $fes as $fe ) {
-		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
-			continue;
-
-		if ( ! is_array( $fe['options'] ) )
-			continue;
-
-		if ( preg_grep( '%^akismet:author$%', $fe['options'] ) ) {
-			$author .= ' ' . $_POST[$fe['name']];
-			$author = trim( $author );
-			$akismet_ready = true;
-		}
-
-		if ( preg_grep( '%^akismet:author_email$%', $fe['options'] ) && '' == $author_email ) {
-			$author_email = trim( $_POST[$fe['name']] );
-			$akismet_ready = true;
-		}
-
-		if ( preg_grep( '%^akismet:author_url$%', $fe['options'] ) && '' == $author_url ) {
-			$author_url = trim( $_POST[$fe['name']] );
-			$akismet_ready = true;
-		}
-
-		if ( '' != $content )
-			$content .= "\n\n";
-
-		$content .= $_POST[$fe['name']];
-	}
-
-	if ( ! $akismet_ready )
+	if ( ! $params = wpcf7_akismet_submitted_params() )
 		return false;
+
+	$c = array();
+
+	if ( ! empty( $params['author'] ) )
+		$c['comment_author'] = $params['author'];
+
+	if ( ! empty( $params['author_email'] ) )
+		$c['comment_author_email'] = $params['author_email'];
+
+	if ( ! empty( $params['author_url'] ) )
+		$c['comment_author_url'] = $params['author_url'];
+
+	if ( ! empty( $params['content'] ) )
+		$c['comment_content'] = $params['content'];
 
 	$c['blog'] = get_option( 'home' );
 	$c['blog_lang'] = get_locale();
@@ -65,18 +43,6 @@ function wpcf7_akismet( $spam ) {
 	if ( $permalink = get_permalink() )
 		$c['permalink'] = $permalink;
 
-	if ( '' != $author )
-		$c['comment_author'] = $author;
-
-	if ( '' != $author_email )
-		$c['comment_author_email'] = $author_email;
-
-	if ( '' != $author_url )
-		$c['comment_author_url'] = $author_url;
-
-	if ( '' != $content )
-		$c['comment_content'] = $content;
-
 	$ignore = array( 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' );
 
 	foreach ( $_SERVER as $key => $value ) {
@@ -84,9 +50,61 @@ function wpcf7_akismet( $spam ) {
 			$c["$key"] = $value;
 	}
 
+	return wpcf7_akismet_comment_check( $c );
+}
+
+function wpcf7_akismet_submitted_params() {
+	$params = array(
+		'author' => '',
+		'author_email' => '',
+		'author_url' => '' );
+
+	$content = '';
+
+	$fes = wpcf7_scan_shortcode();
+
+	foreach ( $fes as $fe ) {
+		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
+			continue;
+
+		$value = trim( $_POST[$fe['name']] );
+		$options = (array) $fe['options'];
+
+		if ( preg_grep( '%^akismet:author$%', $options ) ) {
+			$params['author'] = trim( $params['author'] . ' ' . $value );
+
+		} elseif ( preg_grep( '%^akismet:author_email$%', $options ) ) {
+			if ( '' == $params['author_email'] )
+				$params['author_email'] = $value;
+
+		} elseif ( preg_grep( '%^akismet:author_url$%', $options ) ) {
+			if ( '' == $params['author_url'] )
+				$params['author_url'] = $value;
+		}
+
+		$content = trim( $content . "\n\n" . $value );
+	}
+
+	$params = array_filter( $params );
+
+	if ( ! $params )
+		return false;
+
+	$params['content'] = $content;
+
+	return $params;
+}
+
+function wpcf7_akismet_comment_check( $comment ) {
+	global $akismet_api_host, $akismet_api_port;
+
+	if ( $contact_form = wpcf7_get_current_contact_form() )
+		$contact_form->akismet_comment = $comment;
+
+	$spam = false;
 	$query_string = '';
 
-	foreach ( $c as $key => $data )
+	foreach ( $comment as $key => $data )
 		$query_string .= $key . '=' . urlencode( stripslashes( (string) $data ) ) . '&';
 
 	$response = akismet_http_post( $query_string,
@@ -95,9 +113,7 @@ function wpcf7_akismet( $spam ) {
 	if ( 'true' == $response[1] )
 		$spam = true;
 
-	$spam = apply_filters( 'wpcf7_akismet_comment_check', $spam, $c );
-
-	return $spam;
+	return apply_filters( 'wpcf7_akismet_comment_check', $spam, $comment );
 }
 
 
