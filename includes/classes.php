@@ -133,16 +133,14 @@ class WPCF7_ContactForm {
 		$class = 'wpcf7-form';
 
 		if ( $this->is_posted() ) {
-			if ( ! empty( $_POST['_wpcf7_validation_errors'] ) ) {
+			if ( empty( $_POST['_wpcf7_result']['valid'] ) )
 				$class .= ' invalid';
-			} elseif ( ! empty( $_POST['_wpcf7_mail_sent'] ) ) {
-				if ( ! empty( $_POST['_wpcf7_mail_sent']['spam'] ) )
-					$class .= ' spam';
-				elseif ( ! empty( $_POST['_wpcf7_mail_sent']['ok'] ) )
-					$class .= ' sent';
-				else
-					$class .= ' failed';
-			}
+			elseif ( ! empty( $_POST['_wpcf7_result']['spam'] ) )
+				$class .= ' spam';
+			elseif ( ! empty( $_POST['_wpcf7_result']['mail_sent'] ) )
+				$class .= ' sent';
+			else
+				$class .= ' failed';
 		}
 
 		$class = apply_filters( 'wpcf7_form_class_attr', $class );
@@ -191,20 +189,18 @@ class WPCF7_ContactForm {
 		$content = '';
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
-			if ( isset( $_POST['_wpcf7_mail_sent'] ) && $_POST['_wpcf7_mail_sent']['id'] == $this->id ) {
-				if ( $_POST['_wpcf7_mail_sent']['ok'] ) {
-					$class .= ' wpcf7-mail-sent-ok';
-					$content = $_POST['_wpcf7_mail_sent']['message'];
-				} else {
-					$class .= ' wpcf7-mail-sent-ng';
-					if ( $_POST['_wpcf7_mail_sent']['spam'] )
-						$class .= ' wpcf7-spam-blocked';
-					$content = $_POST['_wpcf7_mail_sent']['message'];
-				}
-			} elseif ( isset( $_POST['_wpcf7_validation_errors'] ) && $_POST['_wpcf7_validation_errors']['id'] == $this->id ) {
+
+			if ( empty( $_POST['_wpcf7_result']['valid'] ) )
 				$class .= ' wpcf7-validation-errors';
-				$content = $_POST['_wpcf7_validation_errors']['message'];
-			}
+			elseif ( ! empty( $_POST['_wpcf7_result']['spam'] ) )
+				$class .= ' wpcf7-spam-blocked';
+			elseif ( ! empty( $_POST['_wpcf7_result']['mail_sent'] ) )
+				$class .= ' wpcf7-mail-sent-ok';
+			else
+				$class .= ' wpcf7-mail-sent-ng';
+
+			$content = $_POST['_wpcf7_result']['message'];
+
 		} else {
 			$class .= ' wpcf7-display-none';
 		}
@@ -218,17 +214,16 @@ class WPCF7_ContactForm {
 		if ( ! $this->is_posted() )
 			return '';
 
-		if ( ! isset( $_POST['_wpcf7_validation_errors']['messages'][$name] ) )
+		if ( ! isset( $_POST['_wpcf7_result']['invalid_reasons'][$name] ) )
 			return '';
 
-		$ve = trim( $_POST['_wpcf7_validation_errors']['messages'][$name] );
+		$ve = trim( $_POST['_wpcf7_result']['invalid_reasons'][$name] );
 
-		if ( ! empty( $ve ) ) {
-			$ve = '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
-			return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
-		}
+		if ( empty( $ve ) )
+			return '';
 
-		return '';
+		$ve = '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
+		return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
 	}
 
 	/* Form Elements */

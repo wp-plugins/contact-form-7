@@ -117,24 +117,10 @@ function wpcf7_submit_nonajax() {
 
 	$id = (int) $_POST['_wpcf7'];
 
-	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
-		$result = $wpcf7_contact_form->submit();
+	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) )
+		$_POST['_wpcf7_result'] = $wpcf7_contact_form->submit();
 
-		if ( ! $result['valid'] ) {
-			$_POST['_wpcf7_validation_errors'] = array(
-				'id' => $id,
-				'message' => $result['message'],
-				'messages' => $result['invalid_reasons'] );
-		} else {
-			$_POST['_wpcf7_mail_sent'] = array(
-				'id' => $id,
-				'ok' => $result['mail_sent'],
-				'message' => $result['message'],
-				'spam' => $result['spam'] );
-		}
-
-		$wpcf7_contact_form = null;
-	}
+	$wpcf7_contact_form = null;
 }
 
 add_action( 'the_post', 'wpcf7_the_post' );
