@@ -41,36 +41,33 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 			unset( $posted_data[$key] );
 	}
 
-	$special_mail_tags = array( 'remote_ip', 'user_agent', 'url', 'date', 'time',
-		'post_id', 'post_name', 'post_title', 'post_url', 'post_author', 'post_author_email' );
+	$email = isset( $posted_data['your-email'] ) ? trim( $posted_data['your-email'] ) : '';
+	$name = isset( $posted_data['your-name'] ) ? trim( $posted_data['your-name'] ) : '';
+	$subject = isset( $posted_data['your-subject'] ) ? trim( $posted_data['your-subject'] ) : '';
 
 	$meta = array();
+
+	$special_mail_tags = array( 'remote_ip', 'user_agent', 'url', 'date', 'time',
+		'post_id', 'post_name', 'post_title', 'post_url', 'post_author', 'post_author_email' );
 
 	foreach ( $special_mail_tags as $smt )
 		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags', '', '_' . $smt, false );
 
-	$args = array(
+	if ( isset( $contactform->akismet_comment ) )
+		$meta['akismet'] = $contactform->akismet_comment;
+
+	Flamingo_Contact::add( array(
+		'email' => $email,
+		'name' => $name ) );
+
+	Flamingo_Inbound_Message::add( array(
 		'channel' => 'contact-form-7',
+		'subject' => $subject,
+		'from' => trim( sprintf( '%s <%s>', $name, $email ) ),
+		'from_name' => $name,
+		'from_email' => $email,
 		'fields' => $posted_data,
-		'meta' => $meta,
-		'email' => '',
-		'name' => '',
-		'from' => '',
-		'subject' => '' );
-
-	if ( ! empty( $posted_data['your-email'] ) )
-		$args['from_email'] = $args['email'] = trim( $posted_data['your-email'] );
-
-	if ( ! empty( $posted_data['your-name'] ) )
-		$args['from_name'] = $args['name'] = trim( $posted_data['your-name'] );
-
-	if ( ! empty( $posted_data['your-subject'] ) )
-		$args['subject'] = trim( $posted_data['your-subject'] );
-
-	$args['from'] = trim( sprintf( '%s <%s>', $args['from_name'], $args['from_email'] ) );
-
-	Flamingo_Contact::add( $args );
-	Flamingo_Inbound_Message::add( $args );
+		'meta' => $meta ) );
 }
 
 ?>
