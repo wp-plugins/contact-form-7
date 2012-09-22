@@ -98,9 +98,6 @@ function wpcf7_akismet_submitted_params() {
 function wpcf7_akismet_comment_check( $comment ) {
 	global $akismet_api_host, $akismet_api_port;
 
-	if ( $contact_form = wpcf7_get_current_contact_form() )
-		$contact_form->akismet_comment = $comment;
-
 	$spam = false;
 	$query_string = '';
 
@@ -112,6 +109,9 @@ function wpcf7_akismet_comment_check( $comment ) {
 
 	if ( 'true' == $response[1] )
 		$spam = true;
+
+	if ( $contact_form = wpcf7_get_current_contact_form() )
+		$contact_form->akismet = array( 'comment' => $comment, 'spam' => $spam );
 
 	return apply_filters( 'wpcf7_akismet_comment_check', $spam, $comment );
 }

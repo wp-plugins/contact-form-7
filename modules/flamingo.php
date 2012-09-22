@@ -53,8 +53,8 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 	foreach ( $special_mail_tags as $smt )
 		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags', '', '_' . $smt, false );
 
-	if ( isset( $contactform->akismet_comment ) )
-		$meta['akismet'] = $contactform->akismet_comment;
+	if ( isset( $contactform->akismet ) )
+		$akismet = (array) $contactform->akismet;
 
 	Flamingo_Contact::add( array(
 		'email' => $email,
@@ -67,7 +67,8 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 		'from_name' => $name,
 		'from_email' => $email,
 		'fields' => $posted_data,
-		'meta' => $meta ) );
+		'meta' => $meta,
+		'akismet' => $akismet ) );
 }
 
 ?>
