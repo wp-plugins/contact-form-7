@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.3
-Tested up to: 3.4.1
+Tested up to: 3.4.2
 Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -113,30 +113,20 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 3.2.1 =
+= 3.3 =
 
-* Fixed: Error for use of array_key_exists function with invalid first argument.
-* Fixed: Adding unnecessary rewrite rules.
-* Fixed: "Screen Options" doesn't appear on each contact form edit screen.
-* Change the comment_type value sent to Akismet from 'contactform7' to 'contact-form' following their blog post.
-* Introduce wpcf7_add_meta_boxes function and action with the same name. This makes it easier to add custom meta boxes to the edit screen.
-* Pass meta informations of each form submission (e.g. client's IP address) to Flamingo.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.14 and compressed with YUI compressor.
-* Translation for Basque has been created.
-* Translations for German, Italian, and Polish have been updated.
-
-= 3.2 =
-
-* Enhanced admin panel. Introduced list table view for contact forms.
-* Moved the Contact menu to the upper position (just below the Comments).
-* Show alert message when Jetpack contact form is active.
-* Introduced Flamingo module.
-* Made capabilities more customizable.
-* wpcf7_admin_url() is deprecated. Use admin_url() or menu_page_url() instead.
-* Changed the default defined value of constants WPCF7_PLUGIN_DIR and WPCF7_PLUGIN_URL.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.09 and compressed with YUI compressor.
-* Translations for Latvian, Swedish, and Czech have been updated.
+* New: Introduce a new special mail tag [_user_agent] for user agent information.
+* New: Make WordPress Comment Blacklist applicable for inputs through contact forms.
+* New: Introduce new form of mail tag [\_raw\_{field name}]. This allows to output raw user input those have not been modified with pipes.
+* New: Make mail tags available in response messages.
+* New: Introduce new additional setting on_submit. It works like on_sent_ok and has one-line JavaScript code, but on_submit code is fired regardless of whether or not the mail has been sent successfully.
+* New: Introduce 5 new jQuery custom event triggers (invalid.wpcf7, spam.wpcf7, mailsent.wpcf7, mailfailed.wpcf7, submit.wpcf7).
+* Fix: Nonce used in a form have been changed to have no time limit.
+* Fix: Make every post meta’s key have underscore prefix.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.15 and compressed with YUI compressor.
+* The required WordPress version has been changed and now requires WordPress 3.3 or higher. If you use WordPress 3.2, you will need to upgrade WordPress.
+* Translations for Arabic and German have been updated.
 
 == Upgrade Notice ==
 
-The current version of Contact Form 7 requires WordPress 3.2 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
+The current version of Contact Form 7 requires WordPress 3.3 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
