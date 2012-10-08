@@ -205,9 +205,13 @@ class WPCF7_ContactForm {
 			$class .= ' wpcf7-display-none';
 		}
 
-		$class = ' class="' . $class . '"';
+		$class = trim( $class );
 
-		return '<div' . $class . '>' . $content . '</div>';
+		$output = sprintf( '<div class="%1$s">%2$s</div>',
+			$class, esc_html( $content ) );
+
+		return apply_filters( 'wpcf7_form_response_output',
+			$output, $class, $content, $this );
 	}
 
 	function validation_error( $name ) {
