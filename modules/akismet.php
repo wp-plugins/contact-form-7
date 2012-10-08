@@ -54,6 +54,9 @@ function wpcf7_akismet( $spam ) {
 }
 
 function wpcf7_akismet_submitted_params() {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
+
 	$params = array(
 		'author' => '',
 		'author_email' => '',
@@ -64,10 +67,21 @@ function wpcf7_akismet_submitted_params() {
 	$fes = wpcf7_scan_shortcode();
 
 	foreach ( $fes as $fe ) {
-		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
+		if ( empty( $fe['name'] ) )
 			continue;
 
-		$value = trim( $_POST[$fe['name']] );
+		$name = $fe['name'];
+
+		if ( empty( $contact_form->posted_data[$name] ) )
+			continue;
+
+		$value = $contact_form->posted_data[$name];
+
+		if ( is_array( $value ) )
+			$value = implode( ', ', wpcf7_array_flatten( $value ) );
+
+		$value = trim( $value );
+
 		$options = (array) $fe['options'];
 
 		if ( preg_grep( '%^akismet:author$%', $options ) ) {
