@@ -119,6 +119,8 @@ class WPCF7_ContactForm {
 	/* Generating Form HTML */
 
 	function form_html() {
+		global $wpcf7;
+
 		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 
 		$url = wpcf7_get_request_uri();
@@ -133,11 +135,11 @@ class WPCF7_ContactForm {
 		$class = 'wpcf7-form';
 
 		if ( $this->is_posted() ) {
-			if ( empty( $_POST['_wpcf7_result']['valid'] ) )
+			if ( empty( $wpcf7->result['valid'] ) )
 				$class .= ' invalid';
-			elseif ( ! empty( $_POST['_wpcf7_result']['spam'] ) )
+			elseif ( ! empty( $wpcf7->result['spam'] ) )
 				$class .= ' spam';
-			elseif ( ! empty( $_POST['_wpcf7_result']['mail_sent'] ) )
+			elseif ( ! empty( $wpcf7->result['mail_sent'] ) )
 				$class .= ' sent';
 			else
 				$class .= ' failed';
@@ -185,21 +187,24 @@ class WPCF7_ContactForm {
 	}
 
 	function form_response_output() {
+		global $wpcf7;
+
 		$class = 'wpcf7-response-output';
 		$content = '';
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 
-			if ( empty( $_POST['_wpcf7_result']['valid'] ) )
+			if ( empty( $wpcf7->result['valid'] ) )
 				$class .= ' wpcf7-validation-errors';
-			elseif ( ! empty( $_POST['_wpcf7_result']['spam'] ) )
+			elseif ( ! empty( $wpcf7->result['spam'] ) )
 				$class .= ' wpcf7-spam-blocked';
-			elseif ( ! empty( $_POST['_wpcf7_result']['mail_sent'] ) )
+			elseif ( ! empty( $wpcf7->result['mail_sent'] ) )
 				$class .= ' wpcf7-mail-sent-ok';
 			else
 				$class .= ' wpcf7-mail-sent-ng';
 
-			$content = $_POST['_wpcf7_result']['message'];
+			if ( ! empty( $wpcf7->result['message'] ) )
+				$content = $wpcf7->result['message'];
 
 		} else {
 			$class .= ' wpcf7-display-none';
@@ -215,13 +220,15 @@ class WPCF7_ContactForm {
 	}
 
 	function validation_error( $name ) {
+		global $wpcf7;
+
 		if ( ! $this->is_posted() )
 			return '';
 
-		if ( ! isset( $_POST['_wpcf7_result']['invalid_reasons'][$name] ) )
+		if ( ! isset( $wpcf7->result['invalid_reasons'][$name] ) )
 			return '';
 
-		$ve = trim( $_POST['_wpcf7_result']['invalid_reasons'][$name] );
+		$ve = trim( $wpcf7->result['invalid_reasons'][$name] );
 
 		if ( empty( $ve ) )
 			return '';

@@ -110,7 +110,7 @@ function wpcf7_is_xhr() {
 }
 
 function wpcf7_submit_nonajax() {
-	global $wpcf7_contact_form;
+	global $wpcf7, $wpcf7_contact_form;
 
 	if ( ! isset( $_POST['_wpcf7'] ) )
 		return;
@@ -118,7 +118,7 @@ function wpcf7_submit_nonajax() {
 	$id = (int) $_POST['_wpcf7'];
 
 	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) )
-		$_POST['_wpcf7_result'] = $wpcf7_contact_form->submit();
+		$wpcf7->result = $wpcf7_contact_form->submit();
 
 	$wpcf7_contact_form = null;
 }

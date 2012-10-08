@@ -67,7 +67,8 @@ function wpcf7() {
 		'processing_within' => '',
 		'widget_count' => 0,
 		'unit_count' => 0,
-		'global_unit_count' => 0 );
+		'global_unit_count' => 0,
+		'result' => array() );
 }
 
 function wpcf7_load_plugin_textdomain() {
