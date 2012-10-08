@@ -41,6 +41,11 @@ function wpcf7_messages() {
 			'default' => __( 'Validation errors occurred. Please confirm the fields and submit it again.', 'wpcf7' )
 		),
 
+		'spam' => array(
+			'description' => __( "Submission was referred to as spam", 'wpcf7' ),
+			'default' => __( 'Failed to send your message. Please try later or contact the administrator by another method.', 'wpcf7' )
+		),
+
 		'accept_terms' => array(
 			'description' => __( "There are terms that the sender must accept", 'wpcf7' ),
 			'default' => __( 'Please accept the terms to proceed.', 'wpcf7' )

@@ -116,25 +116,4 @@ function wpcf7_akismet_comment_check( $comment ) {
 	return apply_filters( 'wpcf7_akismet_comment_check', $spam, $comment );
 }
 
-
-/* Messages */
-
-add_filter( 'wpcf7_messages', 'wpcf7_akismet_messages' );
-
-function wpcf7_akismet_messages( $messages ) {
-	return array_merge( $messages, array( 'akismet_says_spam' => array(
-		'description' => __( "Akismet judged the sending activity as spamming", 'wpcf7' ),
-		'default' => __( 'Failed to send your message. Please try later or contact the administrator by another method.', 'wpcf7' )
-	) ) );
-}
-
-add_filter( 'wpcf7_display_message', 'wpcf7_akismet_display_message', 10, 2 );
-
-function wpcf7_akismet_display_message( $message, $status ) {
-	if ( 'spam' == $status && empty( $message ) )
-		$message = wpcf7_get_message( 'akismet_says_spam' );
-
-	return $message;
-}
-
 ?>
