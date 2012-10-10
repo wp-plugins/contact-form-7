@@ -64,21 +64,10 @@ function wpcf7_akismet_submitted_params() {
 	$fes = wpcf7_scan_shortcode();
 
 	foreach ( $fes as $fe ) {
-		if ( empty( $fe['name'] ) )
+		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
 			continue;
 
-		$name = $fe['name'];
-
-		$value = wpcf7_get_posted_data( $name );
-
-		if ( is_null( $value ) )
-			continue;
-
-		if ( is_array( $value ) )
-			$value = implode( ', ', wpcf7_array_flatten( $value ) );
-
-		$value = trim( $value );
-
+		$value = trim( $_POST[$fe['name']] );
 		$options = (array) $fe['options'];
 
 		if ( preg_grep( '%^akismet:author$%', $options ) ) {
