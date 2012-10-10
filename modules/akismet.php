@@ -67,7 +67,13 @@ function wpcf7_akismet_submitted_params() {
 		if ( ! isset( $fe['name'] ) || ! isset( $_POST[$fe['name']] ) )
 			continue;
 
-		$value = trim( $_POST[$fe['name']] );
+		$value = $_POST[$fe['name']];
+
+		if ( is_array( $value ) )
+			$value = implode( ', ', wpcf7_array_flatten( $value ) );
+
+		$value = trim( $value );
+
 		$options = (array) $fe['options'];
 
 		if ( preg_grep( '%^akismet:author$%', $options ) ) {
