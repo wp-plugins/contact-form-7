@@ -79,9 +79,7 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 		return $result;
 
 	$options = (array) $tag['options'];
-
-	$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
-
+	$value = (bool) wpcf7_get_posted_data( $name );
 	$invert = (bool) preg_grep( '%^invert$%', $options );
 
 	if ( $invert && $value || ! $invert && ! $value ) {
@@ -110,8 +108,7 @@ function wpcf7_acceptance_filter( $accepted ) {
 		if ( empty( $name ) )
 			continue;
 
-		$value = $_POST[$name] ? 1 : 0;
-
+		$value = (bool) wpcf7_get_posted_data( $name );
 		$invert = (bool) preg_grep( '%^invert$%', $options );
 
 		if ( $invert && $value || ! $invert && ! $value )

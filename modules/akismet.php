@@ -54,9 +54,6 @@ function wpcf7_akismet( $spam ) {
 }
 
 function wpcf7_akismet_submitted_params() {
-	if ( ! $contact_form = wpcf7_get_current_contact_form() )
-		return false;
-
 	$params = array(
 		'author' => '',
 		'author_email' => '',
@@ -72,10 +69,10 @@ function wpcf7_akismet_submitted_params() {
 
 		$name = $fe['name'];
 
-		if ( empty( $contact_form->posted_data[$name] ) )
-			continue;
+		$value = wpcf7_get_posted_data( $name );
 
-		$value = $contact_form->posted_data[$name];
+		if ( is_null( $value ) )
+			continue;
 
 		if ( is_array( $value ) )
 			$value = implode( ', ', wpcf7_array_flatten( $value ) );

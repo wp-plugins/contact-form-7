@@ -347,6 +347,13 @@ class WPCF7_ContactForm {
 		return $this->posted_data;
 	}
 
+	function get_posted_data( $name ) {
+		if ( isset( $this->posted_data[$name] ) )
+			return $this->posted_data[$name];
+
+		return null;
+	}
+
 	function submit( $ajax = false ) {
 		$result = array(
 			'valid' => true,
@@ -806,6 +813,13 @@ function wpcf7_is_posted() {
 		return false;
 
 	return $contact_form->is_posted();
+}
+
+function wpcf7_get_posted_data( $name ) {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+		return false;
+
+	return $contact_form->get_posted_data( $name );
 }
 
 function wpcf7_get_validation_error( $name ) {
