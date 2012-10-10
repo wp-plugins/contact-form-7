@@ -126,16 +126,15 @@ function wpcf7_captcha_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 
-	$_POST[$name] = (string) $_POST[$name];
+	$prefix = (string) wpcf7_get_posted_data( '_wpcf7_captcha_challenge_' . $name );
+	$response = (string) wpcf7_get_posted_data( $name );
 
-	$captchac = '_wpcf7_captcha_challenge_' . $name;
-
-	if ( ! wpcf7_check_captcha( $_POST[$captchac], $_POST[$name] ) ) {
+	if ( ! wpcf7_check_captcha( $prefix, $response ) ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'captcha_not_match' );
 	}
 
-	wpcf7_remove_captcha( $_POST[$captchac] );
+	wpcf7_remove_captcha( $prefix );
 
 	return $result;
 }
