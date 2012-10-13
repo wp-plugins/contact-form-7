@@ -113,6 +113,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 3.3.1 =
+
+* Fixed: Apply esc_html() to response outputs. In the case it is necessary to use HTML tags in the response messages, new wpcf7_form_response_output filter is available.
+* Fixed: Don't use $_POST for internal data passing. Use global $wpcf7 variable instead.
+* Fixed: Treat array value correctly in the Akismet module.
+* Fixed: Escape outputs of [_user_agent] spacial mail tags used in the HTML mode.
+* Fixed: Don't show the notice about conflicting with Jetpack to new users who rarely see such conflicts.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.18.
+* Translations for Danish and Finnish have been updated.
+
 = 3.3 =
 
 * New: Introduce a new special mail tag [_user_agent] for user agent information.
