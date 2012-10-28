@@ -77,7 +77,7 @@ It is hard to continue development and support for this plugin without contribut
 * Swedish (sv_SE) - [Fredrik Jonsson](http://www.fredda-o-ac.se/), [the Swedish community](http://wp-support.se/)
 * Tagalog (tl) - [Rupert Agnew Lanuza](http://wheretobuy.com.ph/)
 * Tamil (ta) - [Nitin Aggarwal](http://offshoreally.com/)
-* Thai (th) - [kazama](http://blog.wordthai.com/), [ToshiK](http://www.tuntikorn.com/)
+* Thai (th) - [ToshiK](http://www.tuntikorn.com/), [kazama](http://blog.wordthai.com/)
 * Turkish (tr_TR) - [Roman Neumuller](http://katpatuka.wordpress.com), [Hasan Yılmaz](http://hedefturkce.com/), [Emin Buğra Saral](http://www.rahmetli.info/)
 * Ukrainian (uk) - [Andrey Kovba](http://myserver.com.ua/), [Ukrainian WordPress localization team](http://wordpress.co.ua/plugins/contact-form-7.html)
 * Vietnamese (vi) - Thanh Hải, Hà, [Khang Minh](http://betterwp.net/)
