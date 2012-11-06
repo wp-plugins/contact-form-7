@@ -541,7 +541,10 @@ class WPCF7_ContactForm {
 		if ( $use_html )
 			$headers .= "Content-Type: text/html\n";
 
-		$headers .= trim( $additional_headers ) . "\n";
+		$additional_headers = trim( $additional_headers );
+
+		if ( $additional_headers )
+			$headers .= $additional_headers . "\n";
 
 		if ( $send )
 			return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
