@@ -222,6 +222,7 @@ function wpcf7_l10n() {
 		'hi_IN' => __( 'Hindi', 'wpcf7' ),
 		'hu_HU' => __( 'Hungarian', 'wpcf7' ),
 		'id_ID' => __( 'Indonesian', 'wpcf7' ),
+		'ga_IE' => __( 'Irish', 'wpcf7' ),
 		'it_IT' => __( 'Italian', 'wpcf7' ),
 		'ja' => __( 'Japanese', 'wpcf7' ),
 		'ko_KR' => __( 'Korean', 'wpcf7' ),

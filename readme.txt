@@ -54,6 +54,7 @@ It is hard to continue development and support for this plugin without contribut
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/), [Ashish](http://outshinesolutions.com/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/), [János Csárdi-Braunstein](http://blogocska.org/), [Farkas Győző](http://www.sakraft.hu/)
 * Indonesian (Bahasa Indonesia; id_ID) - [Hendry Lee](http://blogbuildingu.com/), [Belajar Seo Indonesia](http://dhany.web.id/panduan-seo)
+* Irish (ga_IE) - [Vikas Arora](http://www.wiznicworld.com/)
 * Italian (it_IT) - [Bruno](http://www.brunosalzano.com), [Gianni Diurno](http://gidibao.net/)
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
 * Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
