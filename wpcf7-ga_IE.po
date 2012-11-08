@@ -1,0 +1,962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-13 01:37+0900\n"
+"PO-Revision-Date: 2012-11-08 11:01+0530\n"
+"Last-Translator: Ajeet <Ajeetbook@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Ach eile breiseán bhfoirm teagmhála. Simplí ach solúbtha."
+
+#: contact-form-7/settings.php:194
+#, php-format
+msgid "Contact form %d"
+msgstr "Déan teagmháil le% d fhoirm"
+
+#: contact-form-7/admin/admin.php:8
+#: contact-form-7/admin/admin.php:258
+#: contact-form-7/admin/edit-contact-form.php:12
+#: contact-form-7/modules/flamingo.php:14
+msgid "Contact Form 7"
+msgstr "Déan teagmháil le Foirm 7"
+
+#: contact-form-7/admin/admin.php:8
+msgid "Contact"
+msgstr "Teagmháil"
+
+#: contact-form-7/admin/admin.php:13
+msgid "Edit Contact Forms"
+msgstr "Cuir Foirmeacha Teagmháil"
+
+#: contact-form-7/admin/admin.php:13
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "Cuir"
+
+#: contact-form-7/admin/admin.php:41
+#: contact-form-7/admin/admin.php:113
+msgid "You are not allowed to edit this item."
+msgstr "Níl cead agat a chur in eagar an mhír seo."
+
+#: contact-form-7/admin/admin.php:154
+msgid "You are not allowed to delete this item."
+msgstr "Níl cead agat a scriosadh an mír seo."
+
+#: contact-form-7/admin/admin.php:157
+msgid "Error in deleting."
+msgstr "Earráid i scriosadh."
+
+#: contact-form-7/admin/admin.php:196
+#: contact-form-7/includes/classes.php:27
+msgid "Contact Forms"
+msgstr "Foirmeacha Teagmháil"
+
+#: contact-form-7/admin/admin.php:233
+msgid "Generate Tag"
+msgstr "Gin Clib"
+
+#: contact-form-7/admin/admin.php:260
+#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:305
+#: contact-form-7/admin/edit-contact-form.php:15
+msgid "Add New"
+msgstr "Cuir Nua"
+
+#: contact-form-7/admin/admin.php:264
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Cuardaigh Torthaí le haghaidh &#8220;%s&#8221;"
+
+#: contact-form-7/admin/admin.php:273
+msgid "Search Contact Forms"
+msgstr "Foirmeacha Teagmháil Cuardaigh"
+
+#: contact-form-7/admin/admin.php:291
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Bain úsáid as an teanga réamhshocraithe (%s)"
+
+#: contact-form-7/admin/admin.php:295
+msgid "Or"
+msgstr "nó"
+
+#: contact-form-7/admin/admin.php:300
+msgid "(select language)"
+msgstr "(a roghnú teanga)"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Form"
+msgstr "Foirm"
+
+#: contact-form-7/admin/admin.php:315
+msgid "Mail"
+msgstr "ríomhphost"
+
+#: contact-form-7/admin/admin.php:318
+msgid "Mail (2)"
+msgstr "Ríomhphost (2)"
+
+#: contact-form-7/admin/admin.php:323
+msgid "Use mail (2)"
+msgstr "Bain úsáid as ríomhphost (2)"
+
+#: contact-form-7/admin/admin.php:325
+msgid "Messages"
+msgstr "teachtaireachtaí"
+
+#: contact-form-7/admin/admin.php:328
+msgid "Additional Settings"
+msgstr "Socruithe breise"
+
+#: contact-form-7/admin/admin.php:359
+msgid "Contact form created."
+msgstr "Déan teagmháil le foirm a cruthaíodh."
+
+#: contact-form-7/admin/admin.php:361
+msgid "Contact form saved."
+msgstr "Déan teagmháil le foirm shábháil."
+
+#: contact-form-7/admin/admin.php:363
+msgid "Contact form deleted."
+msgstr "Déan teagmháil le foirm a scriosadh."
+
+#: contact-form-7/admin/admin.php:380
+msgid "Settings"
+msgstr "Socruithe"
+
+#: contact-form-7/admin/admin.php:391
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:392
+msgid "Docs"
+msgstr "Docs"
+
+#: contact-form-7/admin/admin.php:393
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:394
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact-form-7/admin/admin.php:395
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:396
+msgid "Support"
+msgstr "Tacaíocht"
+
+#: contact-form-7/admin/admin.php:427
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Déan teagmháil le riachtanais Foirm 7 do chuid tacaíochta. Le do thoil bhronnadh inniu."
+
+#: contact-form-7/admin/admin.php:428
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Tá do ranníocaíocht ag teastáil le haghaidh a dhéanamh an mbreiseán seo níos fearr."
+
+#: contact-form-7/admin/admin.php:434
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:434
+msgid "Donate"
+msgstr "Síntiúis"
+
+#: contact-form-7/admin/admin.php:454
+#, php-format
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Foirm Teagmhála  Éilíonn 7 %1$s WordPress %2$s nó níos airde. </ strong> le do thoil <a href=\"%3$s\">thabhairt cothrom le dáta WordPress </a> ar dtús."
+
+#: contact-form-7/admin/edit-contact-form.php:46
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Cóipeáil an cód agus é a ghreamú isteach i do ábhar ghiuirléid poist, leathanach nó téacs."
+
+#: contact-form-7/admin/edit-contact-form.php:52
+msgid "Old code is also available."
+msgstr "Tá cód Sean ar fáil freisin."
+
+#: contact-form-7/admin/edit-contact-form.php:60
+msgid "Save"
+msgstr "Sábháil"
+
+#: contact-form-7/admin/edit-contact-form.php:67
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+msgid "Copy"
+msgstr "Cóipeáil"
+
+#: contact-form-7/admin/edit-contact-form.php:72
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
+msgid "Delete"
+msgstr "Scrios"
+
+#: contact-form-7/admin/edit-contact-form.php:74
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Tá tú ar tí seo a scriosadh bhfoirm teagmhála.\n"
+"    'Cancel' chun stop a chur, 'OK' a scriosadh Foirm Teagmhála."
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+msgid "Title"
+msgstr "Teideal"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+msgid "Shortcode"
+msgstr "shortcode"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+msgid "Author"
+msgstr "údar"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+msgid "Date"
+msgstr "údar"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "Cuir &#8220;%s&#8221;"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+msgid "Y/m/d g:i:s A"
+msgstr "Y/m/d g:i:s A"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+msgid "%s ago"
+msgstr "%s ó shin"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+msgid "Y/m/d"
+msgstr "Y/m/d"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Chuig:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "ó:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Ábhar:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Ceanntásca Breise:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "iatáin comhaid:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Bain úsáid as cineál ábhar HTML"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:117
+msgid "Message body:"
+msgstr "Comhlacht Teachtaireacht:"
+
+#: contact-form-7/includes/classes.php:28
+msgid "Contact Form"
+msgstr "Déan teagmháil le Foirm"
+
+#: contact-form-7/includes/classes.php:779
+msgid "Untitled"
+msgstr "untitled"
+
+#: contact-form-7/includes/controller.php:243
+msgid "Sending ..."
+msgstr "Seoladh ..."
+
+#: contact-form-7/includes/functions.php:21
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
+msgstr "%1$s i léig <strong>léig</strong> ó Teagmháil Foirm 7 leagan %2$s! Bain úsáid as %3$s ina ionad."
+
+#: contact-form-7/includes/functions.php:23
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
+msgstr "%1$s i léig <strong>deprecated</strong> ó leagan Foirm 7 Teagmhála %2$s gan aon ar fáil malartacha."
+
+#: contact-form-7/includes/functions.php:30
+msgid "Sender's message was sent successfully"
+msgstr "Cuireadh teachtaireacht tseoltóra go rathúil"
+
+#: contact-form-7/includes/functions.php:31
+msgid "Your message was sent successfully. Thanks."
+msgstr "Cuireadh do theachtaireacht go rathúil. Go raibh maith agat."
+
+#: contact-form-7/includes/functions.php:35
+msgid "Sender's message was failed to send"
+msgstr "Bhí theip teachtaireacht tseoltóra a sheoladh"
+
+#: contact-form-7/includes/functions.php:36
+#: contact-form-7/includes/functions.php:46
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr "Theip ar sheoladh do theachtaireacht. Bain triail as níos déanaí, nó an riarthóir i dteagmháil ar mhodh eile."
+
+#: contact-form-7/includes/functions.php:40
+msgid "Validation errors occurred"
+msgstr "Earráidí Bailíochtú tharla"
+
+#: contact-form-7/includes/functions.php:41
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Earráidí Bailíochtú tharla. Dearbhaigh le do thoil na réimsí agus é a chur isteach arís."
+
+#: contact-form-7/includes/functions.php:45
+msgid "Submission was referred to as spam"
+msgstr "Cuireadh Aighneacht mar spam"
+
+#: contact-form-7/includes/functions.php:50
+msgid "There are terms that the sender must accept"
+msgstr "Tá téarmaí nach mór don seoltóir glacadh"
+
+#: contact-form-7/includes/functions.php:51
+msgid "Please accept the terms to proceed."
+msgstr "Le do thoil glacadh leis na téarmaí chun dul ar aghaidh."
+
+#: contact-form-7/includes/functions.php:55
+msgid "Email address that the sender entered is invalid"
+msgstr "Is é seoladh ríomhphoist a tháinig an seoltóir neamhbhailí"
+
+#: contact-form-7/includes/functions.php:56
+msgid "Email address seems invalid."
+msgstr "Dealraíonn Seoladh ríomhphoist neamhbhailí."
+
+#: contact-form-7/includes/functions.php:60
+msgid "There is a field that the sender must fill in"
+msgstr "Tá réimse nach mór don seoltóir a líonadh isteach"
+
+#: contact-form-7/includes/functions.php:61
+msgid "Please fill the required field."
+msgstr "Líon isteach an réimse riachtanach."
+
+#: contact-form-7/includes/functions.php:85
+msgid "Your Name"
+msgstr "Do Ainm"
+
+#: contact-form-7/includes/functions.php:85
+#: contact-form-7/includes/functions.php:87
+msgid "(required)"
+msgstr "(riachtanach)"
+
+#: contact-form-7/includes/functions.php:87
+msgid "Your Email"
+msgstr "Do Ríomhphost"
+
+#: contact-form-7/includes/functions.php:89
+msgid "Subject"
+msgstr "Faoi réir"
+
+#: contact-form-7/includes/functions.php:91
+msgid "Your Message"
+msgstr "Do Teachtaireacht"
+
+#: contact-form-7/includes/functions.php:93
+#: contact-form-7/modules/submit.php:45
+msgid "Send"
+msgstr "Seol"
+
+#: contact-form-7/includes/functions.php:101
+#, php-format
+msgid "From: %s"
+msgstr "ó:% s"
+
+#: contact-form-7/includes/functions.php:102
+#, php-format
+msgid "Subject: %s"
+msgstr "Ábhar:% s"
+
+#: contact-form-7/includes/functions.php:103
+msgid "Message Body:"
+msgstr "Comhlacht Teachtaireacht:"
+
+#: contact-form-7/includes/functions.php:104
+#: contact-form-7/includes/functions.php:118
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Tá an post sheoladh tríd bhfoirm teagmhála ar %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Albanian"
+msgstr "Albanian"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Arabic"
+msgstr "Arabic"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Armenian"
+msgstr "Armenian"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Azerbaijani"
+msgstr "Azerbaijani"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Bangla"
+msgstr "Bangla"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Basque"
+msgstr "Basque"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Belarusian"
+msgstr "Belarusian"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Bosnian"
+msgstr "Bosnian"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Brazilian Portuguese"
+msgstr "Brasaíle Portaingéilis"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Bulgarian"
+msgstr "Bulgarian"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Catalan"
+msgstr "Catalan"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Chinese (Simplified)"
+msgstr "Chinese (Simplithe)"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Chinese (Traditional)"
+msgstr "Chinese (Traidisiúnta)"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Croatian"
+msgstr "Croatian"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Czech"
+msgstr "Czech"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Danish"
+msgstr "Danish"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Dutch"
+msgstr "Dutch"
+
+#: contact-form-7/includes/functions.php:212
+msgid "English"
+msgstr "English"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Estonian"
+msgstr "Estonian"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Finnish"
+msgstr "Finnish"
+
+#: contact-form-7/includes/functions.php:216
+msgid "French"
+msgstr "French"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Galician"
+msgstr "Galician"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Georgian"
+msgstr "Georgian"
+
+#: contact-form-7/includes/functions.php:219
+msgid "German"
+msgstr "German"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Greek"
+msgstr "Greek"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Hebrew"
+msgstr "Hebrew"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Hindi"
+msgstr "Hindi"
+
+#: contact-form-7/includes/functions.php:223
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: contact-form-7/includes/functions.php:224
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: contact-form-7/includes/functions.php:225
+msgid "Italian"
+msgstr "Italian"
+
+#: contact-form-7/includes/functions.php:226
+msgid "Japanese"
+msgstr "Japanese"
+
+#: contact-form-7/includes/functions.php:227
+msgid "Korean"
+msgstr "Korean"
+
+#: contact-form-7/includes/functions.php:228
+msgid "Latvian"
+msgstr "Latvian"
+
+#: contact-form-7/includes/functions.php:229
+msgid "Lithuanian"
+msgstr "Lithuanian"
+
+#: contact-form-7/includes/functions.php:230
+msgid "Macedonian"
+msgstr "Macedonian"
+
+#: contact-form-7/includes/functions.php:231
+msgid "Malay"
+msgstr "Malay"
+
+#: contact-form-7/includes/functions.php:232
+msgid "Malayalam"
+msgstr "Mailéalaimis"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Maltese"
+msgstr "Máltais"
+
+#: contact-form-7/includes/functions.php:234
+msgid "Norwegian"
+msgstr "Ioruais"
+
+#: contact-form-7/includes/functions.php:235
+msgid "Persian"
+msgstr "Peirsis"
+
+#: contact-form-7/includes/functions.php:236
+msgid "Polish"
+msgstr "Polainnis"
+
+#: contact-form-7/includes/functions.php:237
+msgid "Portuguese"
+msgstr "Portaingéilis"
+
+#: contact-form-7/includes/functions.php:238
+msgid "Russian"
+msgstr "Rúisis"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Romanian"
+msgstr "Rómáinis"
+
+#: contact-form-7/includes/functions.php:240
+msgid "Serbian"
+msgstr "Seirbis"
+
+#: contact-form-7/includes/functions.php:241
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: contact-form-7/includes/functions.php:242
+msgid "Slovak"
+msgstr "Slóvaice"
+
+#: contact-form-7/includes/functions.php:243
+msgid "Slovene"
+msgstr "Slóivéinis"
+
+#: contact-form-7/includes/functions.php:244
+msgid "Spanish"
+msgstr "Spáinnis"
+
+#: contact-form-7/includes/functions.php:245
+msgid "Swedish"
+msgstr "Sualainnis"
+
+#: contact-form-7/includes/functions.php:246
+msgid "Tamil"
+msgstr "Tamil"
+
+#: contact-form-7/includes/functions.php:247
+msgid "Thai"
+msgstr "Téalainnis"
+
+#: contact-form-7/includes/functions.php:248
+msgid "Tagalog"
+msgstr "Tagálaigis"
+
+#: contact-form-7/includes/functions.php:249
+msgid "Turkish"
+msgstr "Tuircis"
+
+#: contact-form-7/includes/functions.php:250
+msgid "Ukrainian"
+msgstr "Úcráinis"
+
+#: contact-form-7/includes/functions.php:251
+msgid "Vietnamese"
+msgstr "Vítneaimis"
+
+#: contact-form-7/modules/acceptance.php:156
+msgid "Acceptance"
+msgstr "Glacadh"
+
+#: contact-form-7/modules/acceptance.php:165
+#: contact-form-7/modules/captcha.php:215
+#: contact-form-7/modules/checkbox.php:191
+#: contact-form-7/modules/file.php:241
+#: contact-form-7/modules/quiz.php:182
+#: contact-form-7/modules/select.php:152
+#: contact-form-7/modules/text.php:179
+#: contact-form-7/modules/textarea.php:140
+msgid "Name"
+msgstr "Ainm"
+
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/acceptance.php:173
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:225
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:233
+#: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/captcha.php:259
+#: contact-form-7/modules/checkbox.php:196
+#: contact-form-7/modules/checkbox.php:199
+#: contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/quiz.php:187
+#: contact-form-7/modules/quiz.php:190
+#: contact-form-7/modules/quiz.php:195
+#: contact-form-7/modules/quiz.php:198
+#: contact-form-7/modules/select.php:157
+#: contact-form-7/modules/select.php:160
+#: contact-form-7/modules/submit.php:71
+#: contact-form-7/modules/submit.php:74
+#: contact-form-7/modules/submit.php:79
+#: contact-form-7/modules/text.php:184
+#: contact-form-7/modules/text.php:187
+#: contact-form-7/modules/text.php:192
+#: contact-form-7/modules/text.php:195
+#: contact-form-7/modules/text.php:200
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:145
+#: contact-form-7/modules/textarea.php:148
+#: contact-form-7/modules/textarea.php:153
+#: contact-form-7/modules/textarea.php:156
+#: contact-form-7/modules/textarea.php:161
+msgid "optional"
+msgstr "roghnach"
+
+#: contact-form-7/modules/acceptance.php:179
+msgid "Make this checkbox checked by default?"
+msgstr "Déan an ticbhosca sheiceáil de réir réamhshocraithe?"
+
+#: contact-form-7/modules/acceptance.php:180
+msgid "Make this checkbox work inversely?"
+msgstr "Déan an ticbhosca obair inversely?"
+
+#: contact-form-7/modules/acceptance.php:181
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Ciallaíonn sé cuairteoirí a ghlacann an unchecks téarma é."
+
+#: contact-form-7/modules/acceptance.php:186
+#: contact-form-7/modules/captcha.php:264
+#: contact-form-7/modules/checkbox.php:219
+#: contact-form-7/modules/file.php:262
+#: contact-form-7/modules/quiz.php:210
+#: contact-form-7/modules/select.php:177
+#: contact-form-7/modules/submit.php:86
+#: contact-form-7/modules/text.php:219
+#: contact-form-7/modules/textarea.php:169
+msgid "Copy this code and paste it into the form left."
+msgstr "Cóipeáil an cód agus é a ghreamú isteach an fhoirm ar chlé."
+
+#: contact-form-7/modules/captcha.php:73
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Chun úsáid a CAPTCHA, is gá duit <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">CAPTCHA i ndáiríre simplí</a> breiseán suiteáilte."
+
+#: contact-form-7/modules/captcha.php:187
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Ní dhéanann an cód a tháinig seoltóir mheaitseáil leis an CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Tá do cód isteach mícheart."
+
+#: contact-form-7/modules/captcha.php:201
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:212
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Tabhair faoi deara: CAPTCHA Chun úsáid, is gá duit plugin CAPTCHA Really Simple suiteáilte."
+
+#: contact-form-7/modules/captcha.php:219
+msgid "Image settings"
+msgstr "socruithe Íomhá"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Foreground color"
+msgstr "dath an tulra"
+
+#: contact-form-7/modules/captcha.php:233
+msgid "Background color"
+msgstr "dath an chúlra"
+
+#: contact-form-7/modules/captcha.php:237
+msgid "Image size"
+msgstr "méid Image"
+
+#: contact-form-7/modules/captcha.php:238
+msgid "Small"
+msgstr "Beaga"
+
+#: contact-form-7/modules/captcha.php:239
+msgid "Medium"
+msgstr "Meánach"
+
+#: contact-form-7/modules/captcha.php:240
+msgid "Large"
+msgstr "Móra"
+
+#: contact-form-7/modules/captcha.php:245
+msgid "Input field settings"
+msgstr "Suímh réimse Ionchur"
+
+#: contact-form-7/modules/captcha.php:265
+msgid "For image"
+msgstr "Chun íomhá"
+
+#: contact-form-7/modules/captcha.php:267
+msgid "For input field"
+msgstr "Le haghaidh réimse ionchur"
+
+#: contact-form-7/modules/captcha.php:297
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Tá an fhoirm teagmhála réimsí CAPTCHA, ach ní hionann an fillteán sealadach chun na comhaid (%s) ann nó nach bhfuil inscríofa. Is féidir leat a chruthú ar an fillteán nó a cead a athrú de láimh."
+
+#: contact-form-7/modules/captcha.php:303
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Tá an fhoirm teagmhála réimsí CAPTCHA, ach nach bhfuil na leabharlanna is gá (GD agus FreeType) ar fáil ar do fhreastalaí."
+
+#: contact-form-7/modules/checkbox.php:164
+msgid "Checkboxes"
+msgstr "ticbhoscaí"
+
+#: contact-form-7/modules/checkbox.php:167
+msgid "Radio buttons"
+msgstr "cnaipí raidió"
+
+#: contact-form-7/modules/checkbox.php:188
+#: contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:151
+#: contact-form-7/modules/text.php:178
+#: contact-form-7/modules/textarea.php:139
+msgid "Required field?"
+msgstr "Teastáil réimse?"
+
+#: contact-form-7/modules/checkbox.php:204
+#: contact-form-7/modules/select.php:165
+msgid "Choices"
+msgstr "roghanna"
+
+#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/select.php:167
+msgid "* One choice per line."
+msgstr "* Rogha amháin in aghaidh an líne."
+
+#: contact-form-7/modules/checkbox.php:210
+msgid "Put a label first, a checkbox last?"
+msgstr "Cuir lipéad ar dtús, a ticbhosca seo caite?"
+
+#: contact-form-7/modules/checkbox.php:211
+msgid "Wrap each item with <label> tag?"
+msgstr "Wrap gach mír le tag <label> "
+
+#: contact-form-7/modules/checkbox.php:213
+msgid "Make checkboxes exclusive?"
+msgstr "Déan ticbhoscaí eisiach?"
+
+#: contact-form-7/modules/checkbox.php:221
+#: contact-form-7/modules/select.php:179
+#: contact-form-7/modules/text.php:221
+#: contact-form-7/modules/textarea.php:171
+msgid "And, put this code into the Mail fields below."
+msgstr "Agus, a chur ar an gcód seo isteach i réimsí Mail thíos."
+
+#: contact-form-7/modules/file.php:201
+msgid "Uploading a file fails for any reason"
+msgstr "A uaslódáil comhad a theipeann ar chúis ar bith"
+
+#: contact-form-7/modules/file.php:202
+msgid "Failed to upload file."
+msgstr "Theip ar chomhad a uaslódáil."
+
+#: contact-form-7/modules/file.php:206
+msgid "Uploaded file is not allowed file type"
+msgstr "Ní comhad Uasluchtaithe cheadaítear cineál comhaid"
+
+#: contact-form-7/modules/file.php:207
+msgid "This file type is not allowed."
+msgstr "Ní hé seo an cineál comhaid a cheadaítear."
+
+#: contact-form-7/modules/file.php:211
+msgid "Uploaded file is too large"
+msgstr "Is chomhad a d'uaslódáil ró-mhór"
+
+#: contact-form-7/modules/file.php:212
+msgid "This file is too large."
+msgstr "Is é seo an comhad ró-mhór."
+
+#: contact-form-7/modules/file.php:216
+msgid "Uploading a file fails for PHP error"
+msgstr "A uaslódáil comhad a theipeann ar earráid PHP"
+
+#: contact-form-7/modules/file.php:217
+msgid "Failed to upload file. Error occurred."
+msgstr "Theip ar chomhad a uaslódáil. Tharla earráid."
+
+#: contact-form-7/modules/file.php:231
+msgid "File upload"
+msgstr "Comhad uaslódáil"
+
+#: contact-form-7/modules/file.php:254
+msgid "File size limit"
+msgstr "Teorainn mhéide Comhad"
+
+#: contact-form-7/modules/file.php:254
+msgid "bytes"
+msgstr "bytes"
+
+#: contact-form-7/modules/file.php:257
+msgid "Acceptable file types"
+msgstr "Cineálacha comhaid Inghlactha"
+
+#: contact-form-7/modules/file.php:264
+msgid "And, put this code into the File Attachments field below."
+msgstr "Agus, a chur ar an gcód seo isteach i réimse an Comhad Ceangaltáin thíos."
+
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Tá an fhoirm teagmhála réimsí uaslódáil comhad, ach ní hionann an fillteán sealadach chun na comhaid (%s) ann nó nach bhfuil inscríofa. Is féidir leat a chruthú ar an fillteán nó a cead a athrú de láimh."
+
+#: contact-form-7/modules/jetpack.php:21
+#, php-format
+msgid "<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr "<strong>Is féidir Jetpack fadhbanna do plugins eile i gcásanna áirithe. </ strong> <a href=\"%s\" target=\"_blank\"> Féach ar conas chun é a sheachaint. </a>"
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Ní Seoltóir dul isteach ar an fhreagra ceart go dtí an tráth na gceist"
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Your answer is not correct."
+msgstr "Níl do fhreagra ceart."
+
+#: contact-form-7/modules/quiz.php:173
+msgid "Quiz"
+msgstr "tráth na gceist"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "Quizzes"
+msgstr "tráth na gceist"
+
+#: contact-form-7/modules/quiz.php:205
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* Tráth na gCeist | freagra (mar shampla 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:142
+msgid "Drop-down menu"
+msgstr "Roghchlár anuas"
+
+#: contact-form-7/modules/select.php:171
+msgid "Allow multiple selections?"
+msgstr "Ceadaigh roghnúcháin il?"
+
+#: contact-form-7/modules/select.php:172
+msgid "Insert a blank item as the first option?"
+msgstr "Cuir isteach mír bán mar an chéad rogha?"
+
+#: contact-form-7/modules/submit.php:61
+msgid "Submit button"
+msgstr "Cuir isteach cnaipe"
+
+#: contact-form-7/modules/submit.php:79
+msgid "Label"
+msgstr "lipéad"
+
+#: contact-form-7/modules/text.php:155
+msgid "Text field"
+msgstr "réimse Téacs"
+
+#: contact-form-7/modules/text.php:158
+msgid "Email field"
+msgstr "réimse R-phost"
+
+#: contact-form-7/modules/text.php:200
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:202
+msgid "This field requires author's name"
+msgstr "Éilíonn an réimse seo ainm an údair"
+
+#: contact-form-7/modules/text.php:203
+msgid "This field requires author's URL"
+msgstr "Éilíonn an réimse seo údar URL"
+
+#: contact-form-7/modules/text.php:205
+msgid "This field requires author's email address"
+msgstr "Éilíonn an réimse seo seoladh ríomhphoist an údair"
+
+#: contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:161
+msgid "Default value"
+msgstr "luach réamhshocraithe"
+
+#: contact-form-7/modules/text.php:214
+#: contact-form-7/modules/textarea.php:164
+msgid "Use this text as watermark?"
+msgstr "Bain úsáid as an téacs Uisce?"
+
+#: contact-form-7/modules/textarea.php:130
+msgid "Text area"
+msgstr "limistéar Téacs"
+
