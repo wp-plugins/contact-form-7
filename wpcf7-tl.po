@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-17 22:01+0900\n"
-"PO-Revision-Date: 2011-10-16 13:46+0900\n"
-"Last-Translator: Rupert Agnew Lanuza <rupert.lanuza@gmail.com>\n"
+"PO-Revision-Date: 2012-11-12 18:33+0800\n"
+"Last-Translator: april <april.cagoco@firstpagewebsearch.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Tagalog\n"
-"X-Poedit-Country: PHILIPPINES\n"
+"Language: tl_PH\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
@@ -34,8 +34,7 @@ msgstr "Kontak Form"
 msgid "Contact form %d"
 msgstr "Kontak mula kay %d"
 
-#: contact-form-7/admin/admin.php:114
-#: contact-form-7/admin/edit.php:5
+#: contact-form-7/admin/admin.php:114 contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Kontak Form 7"
 
@@ -105,11 +104,13 @@ msgstr "Nabura ang Kontak form"
 
 #: contact-form-7/admin/admin.php:298
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Kailangan ng Kontak Form 7 ang inyong suporta. Mag bigay ng donasyon ngayon."
+msgstr ""
+"Kailangan ng Kontak Form 7 ang inyong suporta. Mag bigay ng donasyon ngayon."
 
 #: contact-form-7/admin/admin.php:299
 msgid "Your contribution is needed for making this plugin better."
-msgstr "Ang inyong kontribusyon ay kinakailangan upang mapabuti ang plugin na ito."
+msgstr ""
+"Ang inyong kontribusyon ay kinakailangan upang mapabuti ang plugin na ito."
 
 #: contact-form-7/admin/admin.php:305
 msgid "http://contactform7.com/donate/"
@@ -119,15 +120,17 @@ msgstr "http://contactform7.com/donate/"
 msgid "Donate"
 msgstr "Donasyon"
 
-#: contact-form-7/admin/edit.php:20
-#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:20 contact-form-7/admin/edit.php:142
 #: contact-form-7/admin/edit.php:155
 msgid "Add New"
 msgstr "Magdagdag ng Bago"
 
 #: contact-form-7/admin/edit.php:41
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Kopyahin ang code na ito at idikit sa iyong isinulat, pahina o sa laman ng text widget."
+msgid ""
+"Copy this code and paste it into your post, page or text widget content."
+msgstr ""
+"Kopyahin ang code na ito at idikit sa iyong isinulat, pahina o sa laman ng "
+"text widget."
 
 #: contact-form-7/admin/edit.php:47
 msgid "Old code is also available."
@@ -237,16 +240,22 @@ msgstr "Ang mensahe mula sa sumulat ay hndi naipadala."
 
 #: contact-form-7/includes/functions.php:12
 #: contact-form-7/modules/akismet.php:101
-msgid "Failed to send your message. Please try later or contact the administrator by another method."
-msgstr "Hindi naipadala ang iyong mensahe. Maaraing subukan sa ilang sandali o kontakin ang namamahala sa ibang paraan."
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"Hindi naipadala ang iyong mensahe. Maaraing subukan sa ilang sandali o "
+"kontakin ang namamahala sa ibang paraan."
 
 #: contact-form-7/includes/functions.php:16
 msgid "Validation errors occurred"
 msgstr "Nagkaroon ng problema sa beripikasyon."
 
 #: contact-form-7/includes/functions.php:17
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Nagkaroon ng problema sa beripikasyon. Suriin ang mga parte at ipadala muli."
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
+msgstr ""
+"Nagkaroon ng problema sa beripikasyon. Suriin ang mga parte at ipadala muli."
 
 #: contact-form-7/includes/functions.php:21
 msgid "There is a field of term that sender is needed to accept"
@@ -558,7 +567,9 @@ msgstr "Gawin ang checkbox na ito na gumagana ng baliktaran?"
 
 #: contact-form-7/modules/acceptance.php:175
 msgid "* That means visitor who accepts the term unchecks it."
-msgstr "*Ibigsabihin nito ay ang bisitang tumanggap ng kasunduan ay inalis ang pagkaka tsek nito."
+msgstr ""
+"*Ibigsabihin nito ay ang bisitang tumanggap ng kasunduan ay inalis ang "
+"pagkaka tsek nito."
 
 #: contact-form-7/modules/acceptance.php:180
 #: contact-form-7/modules/captcha.php:251
@@ -570,8 +581,13 @@ msgid "Akismet judged the sending activity as spamming"
 msgstr "Napagdesisyonan ni Akismet na ang uri ng pagpapadala ay spamming."
 
 #: contact-form-7/modules/captcha.php:66
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Upang gamitin ang CAPTCHA, kailangan mo ang <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin na naka-instol."
+msgid ""
+"To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
+"really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr ""
+"Upang gamitin ang CAPTCHA, kailangan mo ang <a href=\"http://wordpress.org/"
+"extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin na "
+"naka-instol."
 
 #: contact-form-7/modules/captcha.php:177
 msgid "The code that sender entered does not match the CAPTCHA"
@@ -587,7 +603,9 @@ msgstr "CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:199
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Paalala: Upang gamiting ang CAPTCHA, kailangan mo ang Really Simple CAPTCHA plugin na naka-instol."
+msgstr ""
+"Paalala: Upang gamiting ang CAPTCHA, kailangan mo ang Really Simple CAPTCHA "
+"plugin na naka-instol."
 
 #: contact-form-7/modules/captcha.php:206
 msgid "Image settings"
@@ -631,12 +649,23 @@ msgstr "Para sa input field"
 
 #: contact-form-7/modules/captcha.php:284
 #, php-format
-msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang pansamantalang polder ng mga dokument (%s) ay hndi matagpuan o hindi maaring lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon nito."
+msgid ""
+"This contact form contains CAPTCHA fields, but the temporary folder for the "
+"files (%s) does not exist or is not writable. You can create the folder or "
+"change its permission manually."
+msgstr ""
+"Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang "
+"pansamantalang polder ng mga dokument (%s) ay hndi matagpuan o hindi maaring "
+"lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon nito."
 
 #: contact-form-7/modules/captcha.php:290
-msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
-msgstr "Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang kinakailangan mga laybrary (GD and FreeType) ay hindi matagpauan sa iyong serber."
+msgid ""
+"This contact form contains CAPTCHA fields, but the necessary libraries (GD "
+"and FreeType) are not available on your server."
+msgstr ""
+"Ang kontak form na ito ay may lamang CAPTCHA fields, ngunit ang "
+"kinakailangan mga laybrary (GD and FreeType) ay hindi matagpauan sa iyong "
+"serber."
 
 #: contact-form-7/modules/checkbox.php:183
 msgid "Checkboxes"
@@ -646,10 +675,8 @@ msgstr "Checkboxes"
 msgid "Radio buttons"
 msgstr "Radio buttons"
 
-#: contact-form-7/modules/checkbox.php:207
-#: contact-form-7/modules/file.php:240
-#: contact-form-7/modules/select.php:159
-#: contact-form-7/modules/text.php:161
+#: contact-form-7/modules/checkbox.php:207 contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:159 contact-form-7/modules/text.php:161
 #: contact-form-7/modules/textarea.php:134
 msgid "Required field?"
 msgstr "Kinakailangang Parte?"
@@ -677,15 +704,15 @@ msgid "Make checkboxes exclusive?"
 msgstr "Gawing ekslusibo ang mga checkbox."
 
 #: contact-form-7/modules/checkbox.php:240
-#: contact-form-7/modules/select.php:187
-#: contact-form-7/modules/text.php:204
+#: contact-form-7/modules/select.php:187 contact-form-7/modules/text.php:204
 #: contact-form-7/modules/textarea.php:166
 msgid "And, put this code into the Mail fields below."
 msgstr "At, ilagay ang code na ito sa ilalim ng fields ng liham."
 
 #: contact-form-7/modules/file.php:204
 msgid "Uploading a file fails for any reason"
-msgstr "Ang pagpapadala ng dokumento ay nagkaproblema sa hndi malamang dahilan."
+msgstr ""
+"Ang pagpapadala ng dokumento ay nagkaproblema sa hndi malamang dahilan."
 
 #: contact-form-7/modules/file.php:205
 msgid "Failed to upload file."
@@ -737,12 +764,31 @@ msgstr "At, ilagay ang code na ito sa ilalim ng mga nakalakip na dokumento."
 
 #: contact-form-7/modules/file.php:289
 #, php-format
-msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Ang kontak form na ito ay may kasamang pagpapadala ng dokumento, ngunit ang pansamantalang polder para sa mga dokumento (%s) ay hindi matagpuan o hindi maaring lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon nito."
+msgid ""
+"This contact form contains file uploading fields, but the temporary folder "
+"for the files (%s) does not exist or is not writable. You can create the "
+"folder or change its permission manually."
+msgstr ""
+"Ang kontak form na ito ay may kasamang pagpapadala ng dokumento, ngunit ang "
+"pansamantalang polder para sa mga dokumento (%s) ay hindi matagpuan o hindi "
+"maaring lagyan ng laman. Maari kang gumawa ng polder o palitan ang permisyon "
+"nito."
 
 #: contact-form-7/modules/icl.php:74
-msgid "This contact form contains [icl] tags, but they are obsolete and no longer functioning on this version of Contact Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a simpler way for creating contact forms of other languages</a> and you are recommended to use it."
-msgstr "Ang kontak form na ito ay may kasamang [id] tags, ngunit sila ay hindi na ginagamit o hindi na gumagana sa bersyong ito ng Kontak Form 7. <a href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/#Creating_contact_form_in_different_languages\" target=\"_blank\">May mas madaling paraan upang gumawa ng kontak forms ng ibang lingwahe</a> at ito ay inirerekomenda sa iyo."
+msgid ""
+"This contact form contains [icl] tags, but they are obsolete and no longer "
+"functioning on this version of Contact Form 7. <a href=\"http://contactform7."
+"com/2009/12/25/contact-form-in-your-language/"
+"#Creating_contact_form_in_different_languages\" target=\"_blank\">There is a "
+"simpler way for creating contact forms of other languages</a> and you are "
+"recommended to use it."
+msgstr ""
+"Ang kontak form na ito ay may kasamang [id] tags, ngunit sila ay hindi na "
+"ginagamit o hindi na gumagana sa bersyong ito ng Kontak Form 7. <a href="
+"\"http://contactform7.com/2009/12/25/contact-form-in-your-language/"
+"#Creating_contact_form_in_different_languages\" target=\"_blank\">May mas "
+"madaling paraan upang gumawa ng kontak forms ng ibang lingwahe</a> at ito ay "
+"inirerekomenda sa iyo."
 
 #: contact-form-7/modules/quiz.php:160
 msgid "Sender doesn't enter the correct answer to the quiz"
@@ -812,17 +858,14 @@ msgstr "Ang parteng ito ay kinakailangang ng URL ng sumulat"
 msgid "This field requires author's email address"
 msgstr "Ang parteng ito ay kinakailangang ng email address  ng sumulat"
 
-#: contact-form-7/modules/text.php:194
-#: contact-form-7/modules/textarea.php:156
+#: contact-form-7/modules/text.php:194 contact-form-7/modules/textarea.php:156
 msgid "Default value"
 msgstr "Pangunahing laman"
 
-#: contact-form-7/modules/text.php:197
-#: contact-form-7/modules/textarea.php:159
+#: contact-form-7/modules/text.php:197 contact-form-7/modules/textarea.php:159
 msgid "Use this text as watermark?"
 msgstr "Gamitin ang letrang ito bilang watermark?"
 
 #: contact-form-7/modules/textarea.php:125
 msgid "Text area"
 msgstr "Text area"
-
