@@ -22,6 +22,14 @@ Contact Form 7 can manage multiple contact forms, plus you can customize the for
 
 It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider [__making a donation__](http://contactform7.com/donate/). Your donation will help encourage and support the plugin's continued development and better user support.
 
+= Recommended Plugins =
+
+The following are other recommended plugins by the author of Contact Form 7.
+
+* [Flamingo](http://wordpress.org/extend/plugins/flamingo/) - With Flamingo, you can save submitted messages via contact forms in the database.
+* [Really Simple CAPTCHA](http://wordpress.org/extend/plugins/really-simple-captcha/) - Really Simple CAPTCHA is a simple CAPTCHA module which works well with Contact Form 7.
+* [Bogo](http://wordpress.org/extend/plugins/bogo/) - Bogo is a straight-forward multilingual plugin that doesn't cause headaches.
+
 = Translators =
 
 * Afrikaans (af) - [Schalk Burger](http://www.schalkburger.za.net/)
