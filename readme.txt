@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.3
-Tested up to: 3.4.2
+Tested up to: 3.5
 Stable tag: 3.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -121,6 +121,14 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.3.2 =
+
+* Fixed: Add the additional headers only when they are not empty.
+* Fixed: Don't load hidden files in the modules folder.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.21.
+* Irish translation has been created by Vikas Arora.
+* Translations for German, Thai, Hungarian and Tagalog have been updated.
 
 = 3.3.1 =
 
