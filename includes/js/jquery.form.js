@@ -1,6 +1,6 @@
 /*!
  * jQuery Form Plugin
- * version: 3.21 (1-DEC-2012)
+ * version: 3.23 (11-DEC-2012)
  * @requires jQuery v1.5 or later
  *
  * Examples and documentation at: http://malsup.com/jquery/form/
@@ -342,12 +342,14 @@ $.fn.ajaxSubmit = function(options) {
                 var e = (status === 'timeout' ? 'timeout' : 'aborted');
                 log('aborting upload... ' + e);
                 this.aborted = 1;
-                // #214
-                if (io.contentWindow.document.execCommand) {
-                    try { // #214
+
+                try { // #214, #257
+                    if (io.contentWindow.document.execCommand) {
                         io.contentWindow.document.execCommand('Stop');
-                    } catch(ignore) {}
-                }
+                    }
+                } 
+                catch(ignore) {}
+
                 $io.attr('src', s.iframeSrc); // abort op in progress
                 xhr.error = e;
                 if (s.error)
@@ -1043,6 +1045,13 @@ $.fn.clearFields = $.fn.clearInputs = function(includeHidden) {
         else if (tag == 'select') {
             this.selectedIndex = -1;
         }
+		else if (t == "file") {
+			if ($.browser.msie) {
+				$(this).replaceWith($(this).clone());
+			} else {
+				$(this).val('');
+			}
+		}
         else if (includeHidden) {
             // includeHidden can be the value true, or it can be a selector string
             // indicating a special test; for example:

@@ -126,7 +126,7 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 * Fixed: Add the additional headers only when they are not empty.
 * Fixed: Don't load hidden files in the modules folder.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.21.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.23.
 * Irish translation has been created by Vikas Arora.
 * Translations for German, Thai, Hungarian and Tagalog have been updated.
 
