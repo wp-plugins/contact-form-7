@@ -5,19 +5,19 @@ msgstr ""
 "Project-Id-Version: wpcf7-ru_RU\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-23 21:05+0100\n"
-"PO-Revision-Date: 2011-12-23 21:10+0100\n"
-"Last-Translator: ArtPrima.cz <ask@artprima.cz>\n"
+"PO-Revision-Date: 2012-12-15 15:02+0200\n"
+"Last-Translator: kg69design <kg69design@gmail.com>\n"
 "Language-Team: ArtPrima.cz <ask@artprima.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: Russia\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 1.4.6\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/settings.php:75
@@ -33,8 +33,7 @@ msgstr "Contact Form"
 msgid "Contact form %d"
 msgstr "Форма для контакта %d"
 
-#: contact-form-7/admin/admin.php:114
-#: contact-form-7/admin/edit.php:5
+#: contact-form-7/admin/admin.php:114 contact-form-7/admin/edit.php:5
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
@@ -104,7 +103,9 @@ msgstr "Контактная форма удалена."
 
 #: contact-form-7/admin/admin.php:298
 msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 нуждается в вашей поддержке. Пожалуйста, сделайте донацию сегодня."
+msgstr ""
+"Contact Form 7 нуждается в вашей поддержке. Пожалуйста, сделайте донацию "
+"сегодня."
 
 #: contact-form-7/admin/admin.php:299
 msgid "Your contribution is needed for making this plugin better."
@@ -120,18 +121,24 @@ msgstr "Пожертвовать"
 
 #: contact-form-7/admin/admin.php:325
 #, php-format
-msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
-msgstr "<strong>Contact Form 7 %1$s требует WordPress %2$s или новее.</strong> Пожалуйста, сначала <a href=\"%3$s\">обновите WordPress</a>."
+msgid ""
+"<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
+"Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr ""
+"<strong>Contact Form 7 %1$s требует WordPress %2$s или новее.</strong> "
+"Пожалуйста, сначала <a href=\"%3$s\">обновите WordPress</a>."
 
-#: contact-form-7/admin/edit.php:20
-#: contact-form-7/admin/edit.php:142
+#: contact-form-7/admin/edit.php:20 contact-form-7/admin/edit.php:142
 #: contact-form-7/admin/edit.php:155
 msgid "Add New"
 msgstr "Добавить новую"
 
 #: contact-form-7/admin/edit.php:41
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Скопируйте этот код и вставьте его в свой пост, страницу или текстовый виджет."
+msgid ""
+"Copy this code and paste it into your post, page or text widget content."
+msgstr ""
+"Скопируйте этот код и вставьте его в свой пост, страницу или текстовый "
+"виджет."
 
 #: contact-form-7/admin/edit.php:47
 msgid "Old code is also available."
@@ -241,15 +248,20 @@ msgstr "Сообщение не удалось отправить"
 
 #: contact-form-7/includes/functions.php:32
 #: contact-form-7/modules/akismet.php:101
-msgid "Failed to send your message. Please try later or contact the administrator by another method."
-msgstr "Ошибка при отправке сообщения. Попытайтесь позже или обратитесь к администратору сайта."
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"Ошибка при отправке сообщения. Попытайтесь позже или обратитесь к "
+"администратору сайта."
 
 #: contact-form-7/includes/functions.php:36
 msgid "Validation errors occurred"
 msgstr "Возникли ошибки валидации"
 
 #: contact-form-7/includes/functions.php:37
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Ошибка заполнения. Заполните все поля и отправьте снова."
 
 #: contact-form-7/includes/functions.php:41
@@ -319,7 +331,7 @@ msgstr "Тело сообщения:"
 #: contact-form-7/includes/functions.php:109
 #, php-format
 msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Это сообщение отправлено посредством контактной формы на %1$s %2$s"
+msgstr "Это сообщение отправлено с помощью контактной формы на %1$s %2$s"
 
 #: contact-form-7/includes/functions.php:185
 msgid "Afrikaans"
@@ -578,7 +590,9 @@ msgstr "Заставить этот чек-бокс работать наобо�
 
 #: contact-form-7/modules/acceptance.php:175
 msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Это значит, что посетитель, который принимает условия, снимает отметку с чек-бокса"
+msgstr ""
+"* Это значит, что посетитель, который принимает условия, снимает отметку с "
+"чек-бокса"
 
 #: contact-form-7/modules/acceptance.php:180
 #: contact-form-7/modules/captcha.php:251
@@ -590,8 +604,13 @@ msgid "Akismet judged the sending activity as spamming"
 msgstr "Akismet определил отправление как спам"
 
 #: contact-form-7/modules/captcha.php:66
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Чтобы использовать CAPTCHA, вам нужно установить плагин <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
+msgid ""
+"To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
+"really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr ""
+"Чтобы использовать CAPTCHA, вам нужно установить плагин <a href=\"http://"
+"wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</"
+"a>."
 
 #: contact-form-7/modules/captcha.php:177
 msgid "The code that sender entered does not match the CAPTCHA"
@@ -607,7 +626,9 @@ msgstr "CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:199
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Внимание: чтобы использовать CAPTCHA, вам нужно установить плагин Really Simple CAPTCHA."
+msgstr ""
+"Внимание: чтобы использовать CAPTCHA, вам нужно установить плагин Really "
+"Simple CAPTCHA."
 
 #: contact-form-7/modules/captcha.php:206
 msgid "Image settings"
@@ -651,12 +672,22 @@ msgstr "Для поля ввода"
 
 #: contact-form-7/modules/captcha.php:284
 #, php-format
-msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Эта контактная форма содержит поля CAPTCHA, но временная папка для файлов (%s) не существует или закрыта на запись. Вы можете создать эту папку или изменить её права вручную."
+msgid ""
+"This contact form contains CAPTCHA fields, but the temporary folder for the "
+"files (%s) does not exist or is not writable. You can create the folder or "
+"change its permission manually."
+msgstr ""
+"Эта контактная форма содержит поля CAPTCHA, но временная папка для файлов "
+"(%s) не существует или закрыта на запись. Вы можете создать эту папку или "
+"изменить её права вручную."
 
 #: contact-form-7/modules/captcha.php:290
-msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
-msgstr "Эта контактная форма содержит поля CAPTCHA, но необходимые библиотеки (GD и FreeType) недоступны на вашем сервере."
+msgid ""
+"This contact form contains CAPTCHA fields, but the necessary libraries (GD "
+"and FreeType) are not available on your server."
+msgstr ""
+"Эта контактная форма содержит поля CAPTCHA, но необходимые библиотеки (GD и "
+"FreeType) недоступны на вашем сервере."
 
 #: contact-form-7/modules/checkbox.php:183
 msgid "Checkboxes"
@@ -666,10 +697,8 @@ msgstr "Checkboxes"
 msgid "Radio buttons"
 msgstr "Radio buttons"
 
-#: contact-form-7/modules/checkbox.php:207
-#: contact-form-7/modules/file.php:240
-#: contact-form-7/modules/select.php:159
-#: contact-form-7/modules/text.php:161
+#: contact-form-7/modules/checkbox.php:207 contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:159 contact-form-7/modules/text.php:161
 #: contact-form-7/modules/textarea.php:134
 msgid "Required field?"
 msgstr "Обязательные поля?"
@@ -697,11 +726,10 @@ msgid "Make checkboxes exclusive?"
 msgstr "Сделать чек-боксы взаимоисключающими?"
 
 #: contact-form-7/modules/checkbox.php:240
-#: contact-form-7/modules/select.php:187
-#: contact-form-7/modules/text.php:204
+#: contact-form-7/modules/select.php:187 contact-form-7/modules/text.php:204
 #: contact-form-7/modules/textarea.php:166
 msgid "And, put this code into the Mail fields below."
-msgstr "И вставьте следующий код в тело письма ниже"
+msgstr "И вставьте следующий код в тело сообщения ниже"
 
 #: contact-form-7/modules/file.php:204
 msgid "Uploading a file fails for any reason"
@@ -753,12 +781,18 @@ msgstr "Разрешенные типы файлов"
 
 #: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
-msgstr "И вставьте следующий код в поле Прикреплееные файлы ниже"
+msgstr "И вставьте следующий код в поле Прикрепленные файлы ниже"
 
 #: contact-form-7/modules/file.php:289
 #, php-format
-msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Эта контактная форма содержит поля загрузки файлов, но временная папка для файлов (%s) не существует или закрыта для записи. Вы можете создать эту папку или изменить разрешения вручную."
+msgid ""
+"This contact form contains file uploading fields, but the temporary folder "
+"for the files (%s) does not exist or is not writable. You can create the "
+"folder or change its permission manually."
+msgstr ""
+"Эта контактная форма содержит поля загрузки файлов, но временная папка для "
+"файлов (%s) не существует или закрыта для записи. Вы можете создать эту "
+"папку или изменить разрешения вручную."
 
 #: contact-form-7/modules/quiz.php:160
 msgid "Sender doesn't enter the correct answer to the quiz"
@@ -766,7 +800,7 @@ msgstr "Отправитель не вводит корректный ответ
 
 #: contact-form-7/modules/quiz.php:161
 msgid "Your answer is not correct."
-msgstr "Вы ввели некорретный ответ."
+msgstr "Вы ввели некорректный ответ."
 
 #: contact-form-7/modules/quiz.php:171
 msgid "Quiz"
@@ -828,13 +862,11 @@ msgstr "Это поле требует URL автора"
 msgid "This field requires author's email address"
 msgstr "Это поле требует email-адрес автора"
 
-#: contact-form-7/modules/text.php:194
-#: contact-form-7/modules/textarea.php:156
+#: contact-form-7/modules/text.php:194 contact-form-7/modules/textarea.php:156
 msgid "Default value"
 msgstr "Значение по умолчанию"
 
-#: contact-form-7/modules/text.php:197
-#: contact-form-7/modules/textarea.php:159
+#: contact-form-7/modules/text.php:197 contact-form-7/modules/textarea.php:159
 msgid "Use this text as watermark?"
 msgstr "Использовать этот текст в качестве водяного знака?"
 
