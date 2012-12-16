@@ -8,7 +8,7 @@
 		selector.css({
 			border: '1px solid #ddd',
 			padding: '2px 4px',
-			background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0',
+			background: '#fff url(' + options.fadebuttImageUrl + ') repeat-x 0 0',
 			'-moz-border-radius': '3px',
 			'-khtml-border-radius': '3px',
 			'-webkit-border-radius': '3px',
@@ -26,7 +26,7 @@
 		});
 		selector.mouseup(function() {
 			$(this).css({
-				background: '#fff url( ../wp-admin/images/fade-butt.png ) repeat-x 0 0'
+				background: '#fff url(' + options.fadebuttImageUrl + ') repeat-x 0 0'
 			});
 		});
 		selector.click(function() {
