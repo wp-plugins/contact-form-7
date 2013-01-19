@@ -1,502 +1,1029 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7\n"
+"Project-Id-Version: Contact Form 7 3.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 19:21+0900\n"
-"PO-Revision-Date: 2009-09-09 02:56+0900\n"
-"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
-"Language-Team: Hedef Türkçe <iletisim@hedeftürkce.com>\n"
+"POT-Creation-Date: 2012-12-04 11:43+0900\n"
+"PO-Revision-Date: 2013-01-19 22:08+0200\n"
+"Last-Translator: Burak Yavuz <BouRock(at)live.com>\n"
+"Language-Team: BouRock <BouRock@live.com>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
 
-#: contact-form-7/admin/admin-panel.php:9
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Sıradan bir iletişim formu eklentisi. Basit ama esnek."
+
+#: contact-form-7/settings.php:194
 #, php-format
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong> You must <a href=\"%s\">create the table</a> for it to work."
-msgstr "<strong>Contact Form 7 için gerekli veritabanı tablosu bulunmuyor.</strong> Çalışması için <a href=\"%s\">tabloyu oluşturmalısınız.</a>"
+msgid "Contact form %d"
+msgstr "İletişim formu %d"
 
-#: contact-form-7/admin/admin-panel.php:12
-msgid "<strong>The database table for Contact Form 7 does not exist.</strong>"
-msgstr "<strong>The database table for Contact Form 7 does not exist.</strong>"
-
-#: contact-form-7/admin/admin-panel.php:17
-#: contact-form-7/admin/admin-panel.php:30
-#: contact-form-7/admin/admin.php:119
+#: contact-form-7/admin/admin.php:8 contact-form-7/admin/admin.php:258
+#: contact-form-7/admin/edit-contact-form.php:12
+#: contact-form-7/modules/flamingo.php:14
 msgid "Contact Form 7"
-msgstr "İletişim Formu 7"
+msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin-panel.php:45
-msgid "Add new"
-msgstr "Yeni ekle"
+#: contact-form-7/admin/admin.php:8
+msgid "Contact"
+msgstr "İletişim"
 
-#: contact-form-7/admin/admin-panel.php:67
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Aşağıdaki kodu kopyalayıp yazı içeriğinize yapıştırın."
+#: contact-form-7/admin/admin.php:13
+msgid "Edit Contact Forms"
+msgstr "İletişim Formlarını Düzenle"
 
-#: contact-form-7/admin/admin-panel.php:75
-#: contact-form-7/admin/admin-panel.php:332
+#: contact-form-7/admin/admin.php:13
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "Düzenle"
+
+#: contact-form-7/admin/admin.php:41 contact-form-7/admin/admin.php:113
+msgid "You are not allowed to edit this item."
+msgstr "Bu öğeyi düzenlemenize izin verilmiyor."
+
+#: contact-form-7/admin/admin.php:154
+msgid "You are not allowed to delete this item."
+msgstr "Bu öğeyi silmenize izin verilmiyor."
+
+#: contact-form-7/admin/admin.php:157
+msgid "Error in deleting."
+msgstr "Silmede hata oldu."
+
+#: contact-form-7/admin/admin.php:196 contact-form-7/includes/classes.php:27
+msgid "Contact Forms"
+msgstr "İletişim Formları"
+
+#: contact-form-7/admin/admin.php:233
+msgid "Generate Tag"
+msgstr "Etiket Oluştur"
+
+#: contact-form-7/admin/admin.php:260 contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:305
+#: contact-form-7/admin/edit-contact-form.php:15
+msgid "Add New"
+msgstr "Yeni Ekle"
+
+#: contact-form-7/admin/admin.php:264
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "&#8220;%s&#8221; için arama sonuçları"
+
+#: contact-form-7/admin/admin.php:273
+msgid "Search Contact Forms"
+msgstr "İletişim Formlarını Ara"
+
+#: contact-form-7/admin/admin.php:291
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "Varsayılan dili (%s) kullan"
+
+#: contact-form-7/admin/admin.php:295
+msgid "Or"
+msgstr "Veya"
+
+#: contact-form-7/admin/admin.php:300
+msgid "(select language)"
+msgstr "(dil seçin)"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Form"
+msgstr "Form"
+
+#: contact-form-7/admin/admin.php:315
+msgid "Mail"
+msgstr "Posta"
+
+#: contact-form-7/admin/admin.php:318
+msgid "Mail (2)"
+msgstr "Posta (2)"
+
+#: contact-form-7/admin/admin.php:323
+msgid "Use mail (2)"
+msgstr "Posta (2) kullan"
+
+#: contact-form-7/admin/admin.php:325
+msgid "Messages"
+msgstr "İletiler"
+
+#: contact-form-7/admin/admin.php:328
+msgid "Additional Settings"
+msgstr "İlave Ayarlar"
+
+#: contact-form-7/admin/admin.php:359
+msgid "Contact form created."
+msgstr "İletişim formu oluşturuldu."
+
+#: contact-form-7/admin/admin.php:361
+msgid "Contact form saved."
+msgstr "İletişim formu kaydedildi."
+
+#: contact-form-7/admin/admin.php:363
+msgid "Contact form deleted."
+msgstr "İletişim formu silindi."
+
+#: contact-form-7/admin/admin.php:380
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: contact-form-7/admin/admin.php:391
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:392
+msgid "Docs"
+msgstr "Belgeler"
+
+#: contact-form-7/admin/admin.php:393
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:394
+msgid "FAQ"
+msgstr "SSS"
+
+#: contact-form-7/admin/admin.php:395
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:396
+msgid "Support"
+msgstr "Destek"
+
+#: contact-form-7/admin/admin.php:427
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Contact Form 7'nin desteğinize ihtiyacı var. Lütfen bugün bağış yapın."
+
+#: contact-form-7/admin/admin.php:428
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Bu eklentiyi daha iyi yapmak için katkılarınız gerekli."
+
+#: contact-form-7/admin/admin.php:434
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:434
+msgid "Donate"
+msgstr "Bağış"
+
+#: contact-form-7/admin/admin.php:454
+#, php-format
+msgid ""
+"<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
+"Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr ""
+"<strong>Contact Form 7 %1$s, WordPress %2$s veya daha yükseğini gerektirir.</"
+"strong> Lütfen önce <a href=\"%3$s\">WordPress'i güncelleyin</a>."
+
+#: contact-form-7/admin/edit-contact-form.php:46
+msgid ""
+"Copy this code and paste it into your post, page or text widget content."
+msgstr ""
+"Bu kodu kopyalayın ve bunu yazı, sayfa veya metin parçacığı içeriğinize "
+"yapıştırın."
+
+#: contact-form-7/admin/edit-contact-form.php:52
+msgid "Old code is also available."
+msgstr "Aynı zamanda eski kod mevcuttur."
+
+#: contact-form-7/admin/edit-contact-form.php:60
 msgid "Save"
 msgstr "Kaydet"
 
-#: contact-form-7/admin/admin-panel.php:82
+#: contact-form-7/admin/edit-contact-form.php:67
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
 msgid "Copy"
 msgstr "Kopyala"
 
-#: contact-form-7/admin/admin-panel.php:87
+#: contact-form-7/admin/edit-contact-form.php:72
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
 msgid "Delete"
 msgstr "Sil"
 
-#: contact-form-7/admin/admin-panel.php:89
+#: contact-form-7/admin/edit-contact-form.php:74
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "Bu iletişim formunu silmek üzeresiniz.\n"
-"  Durdurmak için 'İptal',  silmek için 'Tamam'."
+"  Durdurmak için 'İptal',  silmek için 'TAMAM'."
 
-#: contact-form-7/admin/admin-panel.php:102
-msgid "Form"
-msgstr "Form"
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+msgid "Title"
+msgstr "Başlık"
 
-#: contact-form-7/admin/admin-panel.php:120
-msgid "Mail"
-msgstr "Posta"
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+msgid "Shortcode"
+msgstr "Kısa kod"
 
-#: contact-form-7/admin/admin-panel.php:127
-#: contact-form-7/admin/admin-panel.php:188
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+msgid "Author"
+msgstr "Yazar"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+msgid "Date"
+msgstr "Tarih"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "&#8220;%s&#8221; Düzenle"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+msgid "Y/m/d g:i:s A"
+msgstr "d.m.Y H:i:s"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+msgid "%s ago"
+msgstr "%s önce"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+msgid "Y/m/d"
+msgstr "d.m.Y"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
 msgid "To:"
 msgstr "Kime:"
 
-#: contact-form-7/admin/admin-panel.php:132
-#: contact-form-7/admin/admin-panel.php:193
+#: contact-form-7/admin/includes/meta-boxes.php:49
 msgid "From:"
-msgstr "Gönderen:"
+msgstr "Kimden:"
 
-#: contact-form-7/admin/admin-panel.php:137
-#: contact-form-7/admin/admin-panel.php:198
+#: contact-form-7/admin/includes/meta-boxes.php:54
 msgid "Subject:"
 msgstr "Konu:"
 
-#: contact-form-7/admin/admin-panel.php:144
-#: contact-form-7/admin/admin-panel.php:205
+#: contact-form-7/admin/includes/meta-boxes.php:61
 msgid "Additional headers:"
-msgstr "Ek başlıklar:"
+msgstr "İlave başlıklar:"
 
-#: contact-form-7/admin/admin-panel.php:149
-#: contact-form-7/admin/admin-panel.php:210
+#: contact-form-7/admin/includes/meta-boxes.php:66
 msgid "File attachments:"
-msgstr "Eklenti Dosyalar:"
+msgstr "Dosya ekleri:"
 
-#: contact-form-7/admin/admin-panel.php:157
-#: contact-form-7/admin/admin-panel.php:218
+#: contact-form-7/admin/includes/meta-boxes.php:74
 msgid "Use HTML content type"
 msgstr "HTML içerik türünü kullan"
 
-#: contact-form-7/admin/admin-panel.php:164
-#: contact-form-7/admin/admin-panel.php:225
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:117
 msgid "Message body:"
 msgstr "İleti gövdesi:"
 
-#: contact-form-7/admin/admin-panel.php:174
-msgid "Mail (2)"
-msgstr "Posta (2)"
-
-#: contact-form-7/admin/admin-panel.php:180
-msgid "Use mail (2)"
-msgstr "Posta (2) kullan"
-
-#: contact-form-7/admin/admin-panel.php:235
-msgid "Messages"
-msgstr "İleti"
-
-#: contact-form-7/admin/admin-panel.php:243
-msgid "Sender's message was sent successfully"
-msgstr "İletiniz başarıyla gönderildi. Teşekkürler."
-
-#: contact-form-7/admin/admin-panel.php:248
-msgid "Sender's message was failed to send"
-msgstr "Gönderen'in mesajı gönderilemedi"
-
-#: contact-form-7/admin/admin-panel.php:253
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet gönderenin işlemini spam olarak değerlendirdi"
-
-#: contact-form-7/admin/admin-panel.php:258
-msgid "Validation errors occurred"
-msgstr "Onaylama hatası oluştu"
-
-#: contact-form-7/admin/admin-panel.php:263
-msgid "There is a field that sender is needed to fill in"
-msgstr "Gönderenin doldurması gereken alan bulunuyor"
-
-#: contact-form-7/admin/admin-panel.php:268
-msgid "Email address that sender entered is invalid"
-msgstr "E-posta adresi geçersiz görünüyor."
-
-#: contact-form-7/admin/admin-panel.php:273
-msgid "There is a field of term that sender is needed to accept"
-msgstr "Gönderenin kabul etmesi gereken bir alan bulunuyor"
-
-#: contact-form-7/admin/admin-panel.php:278
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Gönderen quiz cevabını doğru girmedi"
-
-#: contact-form-7/admin/admin-panel.php:283
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Gönderenin girdiği kod CAPTCHA ile uyuşmuyor"
-
-#: contact-form-7/admin/admin-panel.php:288
-msgid "Uploading a file fails for any reason"
-msgstr "Dosya yükleme işleme başarısız"
-
-#: contact-form-7/admin/admin-panel.php:293
-msgid "Uploaded file is not allowed file type"
-msgstr "Yüklenen dosya geçerli formatı taşımıyor"
-
-#: contact-form-7/admin/admin-panel.php:298
-msgid "Uploaded file is too large"
-msgstr "Yüklenen dosya çok büyük"
-
-#: contact-form-7/admin/admin-panel.php:303
-msgid "Uploading a file fails for PHP error"
-msgstr "Dosya  PHP hatasından dolayı yüklenemedi"
-
-#: contact-form-7/admin/admin-panel.php:314
-msgid "Additional Settings"
-msgstr "Ek ayarlar"
-
-#: contact-form-7/admin/admin.php:119
-msgid "Contact"
-msgstr "İletişim formu"
-
-#: contact-form-7/admin/admin.php:123
-msgid "Edit Contact Forms"
-msgstr "İletişim Formu 7"
-
-#: contact-form-7/admin/admin.php:123
-msgid "Edit"
-msgstr "Düzenle"
-
-#: contact-form-7/admin/admin.php:178
-msgid "optional"
-msgstr "seçimli"
-
-#: contact-form-7/admin/admin.php:179
-msgid "Generate Tag"
-msgstr "Etiket Oluştur"
-
-#: contact-form-7/admin/admin.php:180
-msgid "Text field"
-msgstr "Metin alanı"
-
-#: contact-form-7/admin/admin.php:181
-msgid "Email field"
-msgstr "E-posta alanı"
-
-#: contact-form-7/admin/admin.php:182
-msgid "Text area"
-msgstr "Metin alanı"
-
-#: contact-form-7/admin/admin.php:183
-msgid "Drop-down menu"
-msgstr "Açılır menü"
-
-#: contact-form-7/admin/admin.php:184
-msgid "Checkboxes"
-msgstr "Onay kutuları"
-
-#: contact-form-7/admin/admin.php:185
-msgid "Radio buttons"
-msgstr "Seçenek butonları"
-
-#: contact-form-7/admin/admin.php:186
-msgid "Acceptance"
-msgstr "Kabul"
-
-#: contact-form-7/admin/admin.php:187
-msgid "Make this checkbox checked by default?"
-msgstr "Bu kutu varsayılan olarak seçili olsun mu?"
-
-#: contact-form-7/admin/admin.php:188
-msgid "Make this checkbox work inversely?"
-msgstr "Onay kutusu ters çalışsın mı?"
-
-#: contact-form-7/admin/admin.php:189
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Koşulu kabul eden ziyaretçi onayı kaldırıyor anlamındadır."
-
-#: contact-form-7/admin/admin.php:190
-msgid "CAPTCHA"
-msgstr "CAPTCHA"
-
-#: contact-form-7/admin/admin.php:191
-msgid "Quiz"
-msgstr "Quiz"
-
-#: contact-form-7/admin/admin.php:192
-msgid "Quizzes"
-msgstr "Quizler"
-
-#: contact-form-7/admin/admin.php:193
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* quiz|cevap (örnek 1+1=?|2)"
-
-#: contact-form-7/admin/admin.php:194
-msgid "File upload"
-msgstr "Dosya yükleme"
-
-#: contact-form-7/admin/admin.php:195
-msgid "bytes"
-msgstr "byte"
-
-#: contact-form-7/admin/admin.php:196
-msgid "Submit button"
-msgstr "Gönderim butonu"
-
-#: contact-form-7/admin/admin.php:197
-msgid "Name"
-msgstr "İsim"
-
-#: contact-form-7/admin/admin.php:198
-msgid "Required field?"
-msgstr "Gerekli alan?"
-
-#: contact-form-7/admin/admin.php:199
-msgid "Allow multiple selections?"
-msgstr "Çoklu seçime izin verilsin mi?"
-
-#: contact-form-7/admin/admin.php:200
-msgid "Insert a blank item as the first option?"
-msgstr "İlk seçenek olarak boş bir öğe eklensin mi?"
-
-#: contact-form-7/admin/admin.php:201
-msgid "Make checkboxes exclusive?"
-msgstr "Onay kutuları tek satırlı olsun mu?"
-
-#: contact-form-7/admin/admin.php:202
-msgid "Choices"
-msgstr "Seçimler"
-
-#: contact-form-7/admin/admin.php:203
-msgid "Label"
-msgstr "Etiket"
-
-#: contact-form-7/admin/admin.php:204
-msgid "Default value"
-msgstr "Varsayılan değer"
-
-#: contact-form-7/admin/admin.php:205
-msgid "Akismet"
-msgstr "Akismet"
-
-#: contact-form-7/admin/admin.php:206
-msgid "This field requires author's name"
-msgstr "Bu alanda yazarın adı olmalı"
-
-#: contact-form-7/admin/admin.php:207
-msgid "This field requires author's URL"
-msgstr "Bu alanda yazarın sitesi olmalı"
-
-#: contact-form-7/admin/admin.php:208
-msgid "This field requires author's email address"
-msgstr "Bu alanda yazarın e-posta adresi olmalı"
-
-#: contact-form-7/admin/admin.php:209
-msgid "Copy this code and paste it into the form left."
-msgstr "Bu kodu kopyalayıp formun içine yapıştırın"
-
-#: contact-form-7/admin/admin.php:210
-msgid "Foreground color"
-msgstr "Önalan rengi"
-
-#: contact-form-7/admin/admin.php:211
-msgid "Background color"
-msgstr "Artalan rengi"
-
-#: contact-form-7/admin/admin.php:212
-msgid "Image size"
-msgstr "Görüntü boyutu"
-
-#: contact-form-7/admin/admin.php:213
-msgid "Small"
-msgstr "Küçük"
-
-#: contact-form-7/admin/admin.php:214
-msgid "Medium"
-msgstr "Orta"
-
-#: contact-form-7/admin/admin.php:215
-msgid "Large"
-msgstr "Büyük"
-
-#: contact-form-7/admin/admin.php:216
-msgid "Image settings"
-msgstr "Görüntü ayarları"
-
-#: contact-form-7/admin/admin.php:217
-msgid "Input field settings"
-msgstr "Girdi alanı ayarları"
-
-#: contact-form-7/admin/admin.php:218
-msgid "For image"
-msgstr "Görüntü için"
-
-#: contact-form-7/admin/admin.php:219
-msgid "For input field"
-msgstr "Girdi alanı için"
-
-#: contact-form-7/admin/admin.php:220
-msgid "* One choice per line."
-msgstr "* Her satıra bir seçim."
-
-#: contact-form-7/admin/admin.php:221
-msgid "Show"
-msgstr "Göster"
-
-#: contact-form-7/admin/admin.php:222
-msgid "Hide"
-msgstr "Gizle"
-
-#: contact-form-7/admin/admin.php:223
-msgid "File size limit"
-msgstr "Dosya boyut limiti"
-
-#: contact-form-7/admin/admin.php:224
-msgid "Acceptable file types"
-msgstr "Yüklenebilir dosya türleri"
-
-#: contact-form-7/admin/admin.php:225
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Not: CAPTCHA kullanmak için, Really Simple CAPTCHA eklentisi yüklü olmalı."
-
-#: contact-form-7/admin/admin.php:236
-msgid "Contact form created."
-msgstr "İletişim formu oluşturuldu."
-
-#: contact-form-7/admin/admin.php:239
-msgid "Contact form saved."
-msgstr "İletişim formu kaydedildi."
-
-#: contact-form-7/admin/admin.php:242
-msgid "Contact form deleted."
-msgstr "İletişim formu silindi."
-
-#: contact-form-7/admin/admin.php:245
-msgid "Database table created."
-msgstr "Veritabanı tablosu yaratıldı."
-
-#: contact-form-7/admin/admin.php:248
-msgid "Failed to create database table."
-msgstr "Veritabanı tablosu yaratılamadı."
-
-#: contact-form-7/admin/admin.php:321
-msgid "Contact form"
-msgstr "İletişim formu"
-
-#: contact-form-7/admin/admin.php:355
-msgid "Settings"
-msgstr "Görüntü ayarları"
-
-#: contact-form-7/admin/admin.php:376
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 desteğinizi beklyor. Lütfen bugün bağış yapın."
-
-#: contact-form-7/admin/admin.php:377
-msgid "Is this plugin useful for you? If you like it, please help the developer."
-msgstr "Bu eklenti işinize yaradı mı? Eğer yaradıysa, geliştiriciye yardım ediniz."
-
-#: contact-form-7/admin/admin.php:378
-msgid "Your contribution is needed for making this plugin better."
-msgstr "Bu eklentiyi daha iyi yapmak için görüşlerinize ihtiyaç duyuyoruz."
-
-#: contact-form-7/admin/admin.php:379
-msgid "Developing a plugin and providing user support is really hard work. Please help."
-msgstr "Bir eklentiyi geliştirmek ve kullanıcı desteği sunmak gerçekten çok zor. Lütfen yardımcı olun."
-
-#: contact-form-7/includes/classes.php:537
+#: contact-form-7/includes/classes.php:28
+msgid "Contact Form"
+msgstr "İletişim Formu"
+
+#: contact-form-7/includes/classes.php:782
 msgid "Untitled"
 msgstr "Başlıksız"
 
-#: contact-form-7/includes/functions.php:6
+#: contact-form-7/includes/controller.php:243
+msgid "Sending ..."
+msgstr "Gönderiliyor ..."
+
+#: contact-form-7/includes/functions.php:21
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use "
+"%3$s instead."
+msgstr ""
+"%1$s, Contact Form 7 %2$s sürümünden bu yana <strong>önerilmemekte</strong>! "
+"Bunun yerine %3$s kullanın."
+
+#: contact-form-7/includes/functions.php:23
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with "
+"no alternative available."
+msgstr ""
+"%1$s, mevcut alternatifi olmadan Contact Form 7 %2$s sürümünden bu yana "
+"<strong>önerilmemekte</strong>."
+
+#: contact-form-7/includes/functions.php:30
+msgid "Sender's message was sent successfully"
+msgstr "Gönderenin iletisi başarılı olarak gönderildi."
+
+#: contact-form-7/includes/functions.php:31
 msgid "Your message was sent successfully. Thanks."
-msgstr "İletiniz başarıyla gönderildi. Teşekkürler."
+msgstr "İletiniz başarılı olarak gönderildi. Teşekkürler."
 
-#: contact-form-7/includes/functions.php:8
-#: contact-form-7/includes/functions.php:10
-msgid "Failed to send your message. Please try later or contact administrator by other way."
-msgstr "İletiniz gönderilemedi. Lütfen daha sonra tekrar deneyin ya da yönetici ile farklı bir şekilde iletişime geçin."
+#: contact-form-7/includes/functions.php:35
+msgid "Sender's message was failed to send"
+msgstr "Gönderenin iletisi göndermek için başarısız oldu"
 
-#: contact-form-7/includes/functions.php:12
-msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Geçerlilik hataları meydana geldi. Lütfen alanları doğrulayın ve gönderimi onaylayın."
+#: contact-form-7/includes/functions.php:36
+#: contact-form-7/includes/functions.php:46
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"İletinizi gönderme başarısız oldu. Lütfen daha sonra tekrar deneyin ya da "
+"yönetici ile başka bir yöntemle iletişime geçin."
 
-#: contact-form-7/includes/functions.php:14
+#: contact-form-7/includes/functions.php:40
+msgid "Validation errors occurred"
+msgstr "Onaylama hataları meydana geldi"
+
+#: contact-form-7/includes/functions.php:41
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
+msgstr ""
+"Onaylama hataları meydana geldi. Lütfen alanları doğrulayın ve tekrar "
+"gönderin."
+
+#: contact-form-7/includes/functions.php:45
+msgid "Submission was referred to as spam"
+msgstr "Sunuş istenmeyen ileti olarak gönderildi"
+
+#: contact-form-7/includes/functions.php:50
+msgid "There are terms that the sender must accept"
+msgstr "Gönderenin kabul etmek zorunda olduğu koşullar var"
+
+#: contact-form-7/includes/functions.php:51
 msgid "Please accept the terms to proceed."
 msgstr "İlerlemek için lütfen koşulları kabul edin."
 
-#: contact-form-7/includes/functions.php:16
-msgid "Email address seems invalid."
-msgstr "E-posta adresi geçersiz görünüyor."
+#: contact-form-7/includes/functions.php:55
+msgid "Email address that the sender entered is invalid"
+msgstr "Gönderenin girdiği eposta adresi geçersiz"
 
-#: contact-form-7/includes/functions.php:18
+#: contact-form-7/includes/functions.php:56
+msgid "Email address seems invalid."
+msgstr "Eposta adresi geçersiz görünüyor."
+
+#: contact-form-7/includes/functions.php:60
+msgid "There is a field that the sender must fill in"
+msgstr "Gönderenin doldurmak zorunda olduğu bir alan var"
+
+#: contact-form-7/includes/functions.php:61
 msgid "Please fill the required field."
 msgstr "Lütfen gerekli alanları doldurun."
 
-#: contact-form-7/includes/functions.php:20
-msgid "Your entered code is incorrect."
-msgstr "Girdiğiniz kod doğru değil."
-
-#: contact-form-7/includes/functions.php:22
-msgid "Your answer is not correct."
-msgstr "Girdiğiniz kod doğru değil."
-
-#: contact-form-7/includes/functions.php:24
-msgid "Failed to upload file."
-msgstr "Dosya yükleme başarısız."
-
-#: contact-form-7/includes/functions.php:26
-msgid "This file type is not allowed."
-msgstr "Bu dosya türü kabul edilmiyor."
-
-#: contact-form-7/includes/functions.php:28
-msgid "This file is too large."
-msgstr "Bu alanda yazarın adı olmalı"
-
-#: contact-form-7/includes/functions.php:30
-msgid "Failed to upload file. Error occurred."
-msgstr "Dosya yükleme başarısız. Hata oluştu."
-
-#: contact-form-7/includes/functions.php:35
+#: contact-form-7/includes/functions.php:85
 msgid "Your Name"
-msgstr "İsim"
+msgstr "Adınız"
 
-#: contact-form-7/includes/functions.php:35
-#: contact-form-7/includes/functions.php:37
+#: contact-form-7/includes/functions.php:85
+#: contact-form-7/includes/functions.php:87
 msgid "(required)"
 msgstr "(gerekli)"
 
-#: contact-form-7/includes/functions.php:37
+#: contact-form-7/includes/functions.php:87
 msgid "Your Email"
-msgstr "E-posta"
+msgstr "Epostanız"
 
-#: contact-form-7/includes/functions.php:39
+#: contact-form-7/includes/functions.php:89
 msgid "Subject"
 msgstr "Konu"
 
-#: contact-form-7/includes/functions.php:41
+#: contact-form-7/includes/functions.php:91
 msgid "Your Message"
-msgstr "İleti"
+msgstr "İletiniz"
 
-#: contact-form-7/includes/functions.php:43
+#: contact-form-7/includes/functions.php:93
+#: contact-form-7/modules/submit.php:45
 msgid "Send"
 msgstr "Gönder"
 
-#: contact-form-7/modules/captcha.php:62
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "CAPTCHA kullanmak için, <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> eklentisi yüklü olmalı."
+#: contact-form-7/includes/functions.php:101
+#, php-format
+msgid "From: %s"
+msgstr "Kimden: %s"
+
+#: contact-form-7/includes/functions.php:102
+#, php-format
+msgid "Subject: %s"
+msgstr "Konu: %s"
+
+#: contact-form-7/includes/functions.php:103
+msgid "Message Body:"
+msgstr "İleti Gövdesi:"
+
+#: contact-form-7/includes/functions.php:104
+#: contact-form-7/includes/functions.php:118
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Bu posta %1$s %2$s adresindeki iletişim formu yoluyla gönderildi"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Afrikaans"
+msgstr "Afrikaanca"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Albanian"
+msgstr "Arnavutça"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Arabic"
+msgstr "Arapça"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Armenian"
+msgstr "Ermenice"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Azerbaijani"
+msgstr "Azerice"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Bangla"
+msgstr "Bengalce"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Basque"
+msgstr "Baskça "
+
+#: contact-form-7/includes/functions.php:201
+msgid "Belarusian"
+msgstr "Beyaz Rusça"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Bosnian"
+msgstr "Boşnakça"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Brazilian Portuguese"
+msgstr "Brezilya Portekizcesi"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Bulgarian"
+msgstr "Bulgarca"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Catalan"
+msgstr "Katalanca"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Chinese (Simplified)"
+msgstr "Çince (Basitleştirilmiş)"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Chinese (Traditional)"
+msgstr "Çince (Geleneksel)"
+
+#: contact-form-7/includes/functions.php:208
+msgid "Croatian"
+msgstr "Hırvatça"
+
+#: contact-form-7/includes/functions.php:209
+msgid "Czech"
+msgstr "Çekçe"
+
+#: contact-form-7/includes/functions.php:210
+msgid "Danish"
+msgstr "Danca"
+
+#: contact-form-7/includes/functions.php:211
+msgid "Dutch"
+msgstr "Flemenkçe"
+
+#: contact-form-7/includes/functions.php:212
+msgid "English"
+msgstr "İngilizce"
+
+#: contact-form-7/includes/functions.php:213
+msgid "Esperanto"
+msgstr "Esperanto dili"
+
+#: contact-form-7/includes/functions.php:214
+msgid "Estonian"
+msgstr "Estçe"
+
+#: contact-form-7/includes/functions.php:215
+msgid "Finnish"
+msgstr "Fince"
+
+#: contact-form-7/includes/functions.php:216
+msgid "French"
+msgstr "Fransızca"
+
+#: contact-form-7/includes/functions.php:217
+msgid "Galician"
+msgstr "Galiçyaca"
+
+#: contact-form-7/includes/functions.php:218
+msgid "Georgian"
+msgstr "Gürcüce"
+
+#: contact-form-7/includes/functions.php:219
+msgid "German"
+msgstr "Almanca"
+
+#: contact-form-7/includes/functions.php:220
+msgid "Greek"
+msgstr "Yunanca"
+
+#: contact-form-7/includes/functions.php:221
+msgid "Hebrew"
+msgstr "İbranice"
+
+#: contact-form-7/includes/functions.php:222
+msgid "Hindi"
+msgstr "Hintçe"
+
+#: contact-form-7/includes/functions.php:223
+msgid "Hungarian"
+msgstr "Macarca"
+
+#: contact-form-7/includes/functions.php:224
+msgid "Indonesian"
+msgstr "Endonezce"
+
+#: contact-form-7/includes/functions.php:225
+msgid "Irish"
+msgstr "İrlandaca "
+
+#: contact-form-7/includes/functions.php:226
+msgid "Italian"
+msgstr "İtalyanca"
+
+#: contact-form-7/includes/functions.php:227
+msgid "Japanese"
+msgstr "Japonca"
+
+#: contact-form-7/includes/functions.php:228
+msgid "Korean"
+msgstr "Korece"
+
+#: contact-form-7/includes/functions.php:229
+msgid "Latvian"
+msgstr "Letonca"
+
+#: contact-form-7/includes/functions.php:230
+msgid "Lithuanian"
+msgstr "Litvanca"
+
+#: contact-form-7/includes/functions.php:231
+msgid "Macedonian"
+msgstr "Makedonca"
+
+#: contact-form-7/includes/functions.php:232
+msgid "Malay"
+msgstr "Malayca"
+
+#: contact-form-7/includes/functions.php:233
+msgid "Malayalam"
+msgstr "Malayamca"
+
+#: contact-form-7/includes/functions.php:234
+msgid "Maltese"
+msgstr "Malta dili "
+
+#: contact-form-7/includes/functions.php:235
+msgid "Norwegian"
+msgstr "Norveççe"
+
+#: contact-form-7/includes/functions.php:236
+msgid "Persian"
+msgstr "Farsça"
+
+#: contact-form-7/includes/functions.php:237
+msgid "Polish"
+msgstr "Lehçe"
+
+#: contact-form-7/includes/functions.php:238
+msgid "Portuguese"
+msgstr "Portekizce"
+
+#: contact-form-7/includes/functions.php:239
+msgid "Russian"
+msgstr "Rusça"
+
+#: contact-form-7/includes/functions.php:240
+msgid "Romanian"
+msgstr "Romence"
+
+#: contact-form-7/includes/functions.php:241
+msgid "Serbian"
+msgstr "Sırpça"
+
+#: contact-form-7/includes/functions.php:242
+msgid "Sinhala"
+msgstr "Sinhalese dili"
+
+#: contact-form-7/includes/functions.php:243
+msgid "Slovak"
+msgstr "Slovakça"
+
+#: contact-form-7/includes/functions.php:244
+msgid "Slovene"
+msgstr "Slovence"
+
+#: contact-form-7/includes/functions.php:245
+msgid "Spanish"
+msgstr "İspanyolca"
+
+#: contact-form-7/includes/functions.php:246
+msgid "Swedish"
+msgstr "İsveççe"
+
+#: contact-form-7/includes/functions.php:247
+msgid "Tamil"
+msgstr "Tamilce"
+
+#: contact-form-7/includes/functions.php:248
+msgid "Thai"
+msgstr "Tayca"
+
+#: contact-form-7/includes/functions.php:249
+msgid "Tagalog"
+msgstr "Tagalog dili"
+
+#: contact-form-7/includes/functions.php:250
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: contact-form-7/includes/functions.php:251
+msgid "Ukrainian"
+msgstr "Ukraynaca"
+
+#: contact-form-7/includes/functions.php:252
+msgid "Vietnamese"
+msgstr "Vietnamca"
+
+#: contact-form-7/modules/acceptance.php:156
+msgid "Acceptance"
+msgstr "Kabul etme"
+
+#: contact-form-7/modules/acceptance.php:165
+#: contact-form-7/modules/captcha.php:215
+#: contact-form-7/modules/checkbox.php:191 contact-form-7/modules/file.php:241
+#: contact-form-7/modules/quiz.php:182 contact-form-7/modules/select.php:152
+#: contact-form-7/modules/text.php:179 contact-form-7/modules/textarea.php:140
+msgid "Name"
+msgstr "Adı"
+
+#: contact-form-7/modules/acceptance.php:170
+#: contact-form-7/modules/acceptance.php:173
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:225
+#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:233
+#: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:248
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/captcha.php:259
+#: contact-form-7/modules/checkbox.php:196
+#: contact-form-7/modules/checkbox.php:199 contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/quiz.php:187
+#: contact-form-7/modules/quiz.php:190 contact-form-7/modules/quiz.php:195
+#: contact-form-7/modules/quiz.php:198 contact-form-7/modules/select.php:157
+#: contact-form-7/modules/select.php:160 contact-form-7/modules/submit.php:71
+#: contact-form-7/modules/submit.php:74 contact-form-7/modules/submit.php:79
+#: contact-form-7/modules/text.php:184 contact-form-7/modules/text.php:187
+#: contact-form-7/modules/text.php:192 contact-form-7/modules/text.php:195
+#: contact-form-7/modules/text.php:200 contact-form-7/modules/text.php:211
+#: contact-form-7/modules/textarea.php:145
+#: contact-form-7/modules/textarea.php:148
+#: contact-form-7/modules/textarea.php:153
+#: contact-form-7/modules/textarea.php:156
+#: contact-form-7/modules/textarea.php:161
+msgid "optional"
+msgstr "isteğe bağlı"
+
+#: contact-form-7/modules/acceptance.php:179
+msgid "Make this checkbox checked by default?"
+msgstr "Bu işaretleme kutusu varsayılan olarak işaretli olsun mu?"
+
+#: contact-form-7/modules/acceptance.php:180
+msgid "Make this checkbox work inversely?"
+msgstr "Bu işaretleme kutusu tersine çalışsın mı?"
+
+#: contact-form-7/modules/acceptance.php:181
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Koşulu kabul eden ziyaretçi onayı kaldırır anlamındadır."
+
+#: contact-form-7/modules/acceptance.php:186
+#: contact-form-7/modules/captcha.php:264
+#: contact-form-7/modules/checkbox.php:219 contact-form-7/modules/file.php:262
+#: contact-form-7/modules/quiz.php:210 contact-form-7/modules/select.php:177
+#: contact-form-7/modules/submit.php:86 contact-form-7/modules/text.php:219
+#: contact-form-7/modules/textarea.php:169
+msgid "Copy this code and paste it into the form left."
+msgstr "Bu kodu kopyalayın ve formun içine yapıştırın."
+
+#: contact-form-7/modules/captcha.php:73
+msgid ""
+"To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
+"really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr ""
+"CAPTCHA kullanmak için, <a href=\"http://wordpress.org/extend/plugins/really-"
+"simple-captcha/\">Really Simple CAPTCHA</a> eklentisini yüklemiş olmanız "
+"gerekir."
+
+#: contact-form-7/modules/captcha.php:187
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Gönderenin girdiği kod CAPTCHA ile eşleşmiyor"
+
+#: contact-form-7/modules/captcha.php:188
+msgid "Your entered code is incorrect."
+msgstr "Girdiğiniz kod doğru değil."
+
+#: contact-form-7/modules/captcha.php:201
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: contact-form-7/modules/captcha.php:212
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr ""
+"Not: CAPTCHA kullanmak için, Really Simple CAPTCHA eklentisini yüklemiş "
+"olmanız gerekir."
+
+#: contact-form-7/modules/captcha.php:219
+msgid "Image settings"
+msgstr "Resim ayarları"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Foreground color"
+msgstr "Önplan rengi"
+
+#: contact-form-7/modules/captcha.php:233
+msgid "Background color"
+msgstr "Arkaplan rengi"
+
+#: contact-form-7/modules/captcha.php:237
+msgid "Image size"
+msgstr "Resim boyutu"
+
+#: contact-form-7/modules/captcha.php:238
+msgid "Small"
+msgstr "Küçük"
+
+#: contact-form-7/modules/captcha.php:239
+msgid "Medium"
+msgstr "Orta"
+
+#: contact-form-7/modules/captcha.php:240
+msgid "Large"
+msgstr "Büyük"
+
+#: contact-form-7/modules/captcha.php:245
+msgid "Input field settings"
+msgstr "Girdi alanı ayarları"
+
+#: contact-form-7/modules/captcha.php:265
+msgid "For image"
+msgstr "Resim için"
+
+#: contact-form-7/modules/captcha.php:267
+msgid "For input field"
+msgstr "Girdi alanı için"
+
+#: contact-form-7/modules/captcha.php:297
+#, php-format
+msgid ""
+"This contact form contains CAPTCHA fields, but the temporary folder for the "
+"files (%s) does not exist or is not writable. You can create the folder or "
+"change its permission manually."
+msgstr ""
+"Bu iletişim formu CAPTCHA alanları içeriyor ama dosyalar (%s) için geçici "
+"klasör mevcut değil ya da yazılabilir değil. Klasörü oluşturabilir veya "
+"iznini el ile değiştirebilirsiniz."
+
+#: contact-form-7/modules/captcha.php:303
+msgid ""
+"This contact form contains CAPTCHA fields, but the necessary libraries (GD "
+"and FreeType) are not available on your server."
+msgstr ""
+"Bu iletişim formu CAPTCHA alanları içeriyor ama gerekli kütüphaneler (GD ve "
+"FreeType) sunucunuzda mevcut değil."
+
+#: contact-form-7/modules/checkbox.php:164
+msgid "Checkboxes"
+msgstr "İşaretleme kutuları"
+
+#: contact-form-7/modules/checkbox.php:167
+msgid "Radio buttons"
+msgstr "Seçenek düğmeleri"
+
+#: contact-form-7/modules/checkbox.php:188 contact-form-7/modules/file.php:240
+#: contact-form-7/modules/select.php:151 contact-form-7/modules/text.php:178
+#: contact-form-7/modules/textarea.php:139
+msgid "Required field?"
+msgstr "Gerekli alan mı?"
+
+#: contact-form-7/modules/checkbox.php:204
+#: contact-form-7/modules/select.php:165
+msgid "Choices"
+msgstr "Seçimler"
+
+#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/select.php:167
+msgid "* One choice per line."
+msgstr "* Her satıra bir seçim."
+
+#: contact-form-7/modules/checkbox.php:210
+msgid "Put a label first, a checkbox last?"
+msgstr "Önce bir etiket koyulsun, en son işaretleme kutusu olsun mu?"
+
+#: contact-form-7/modules/checkbox.php:211
+msgid "Wrap each item with <label> tag?"
+msgstr "Her öğeyi <label> etiketi ile sarsın mı?"
+
+#: contact-form-7/modules/checkbox.php:213
+msgid "Make checkboxes exclusive?"
+msgstr "İşaretleme kutuları özel olsun mu?"
+
+#: contact-form-7/modules/checkbox.php:221
+#: contact-form-7/modules/select.php:179 contact-form-7/modules/text.php:221
+#: contact-form-7/modules/textarea.php:171
+msgid "And, put this code into the Mail fields below."
+msgstr "Ve, bu kodu aşağıdaki Posta alanları içine koyun."
+
+#: contact-form-7/modules/file.php:201
+msgid "Uploading a file fails for any reason"
+msgstr "Dosyayı gönderme herhangi bir nedenden başarısız"
+
+#: contact-form-7/modules/file.php:202
+msgid "Failed to upload file."
+msgstr "Dosya gönderme başarısız."
+
+#: contact-form-7/modules/file.php:206
+msgid "Uploaded file is not allowed file type"
+msgstr "Gönderilen dosya izin verilmeyen dosya biçimi"
+
+#: contact-form-7/modules/file.php:207
+msgid "This file type is not allowed."
+msgstr "Bu dosya türüne izin verilmiyor."
+
+#: contact-form-7/modules/file.php:211
+msgid "Uploaded file is too large"
+msgstr "Gönderilen dosya çok büyük"
+
+#: contact-form-7/modules/file.php:212
+msgid "This file is too large."
+msgstr "Bu dosya çok büyük."
+
+#: contact-form-7/modules/file.php:216
+msgid "Uploading a file fails for PHP error"
+msgstr "Dosyayı gönderme PHP hatasından dolayı başarısız"
+
+#: contact-form-7/modules/file.php:217
+msgid "Failed to upload file. Error occurred."
+msgstr "Dosya gönderme başarısız. Hata meydana geldi."
+
+#: contact-form-7/modules/file.php:231
+msgid "File upload"
+msgstr "Dosya gönderme"
+
+#: contact-form-7/modules/file.php:254
+msgid "File size limit"
+msgstr "Dosya boyutu sınırı"
+
+#: contact-form-7/modules/file.php:254
+msgid "bytes"
+msgstr "bayt"
+
+#: contact-form-7/modules/file.php:257
+msgid "Acceptable file types"
+msgstr "Kabul edilebilir dosya türleri"
+
+#: contact-form-7/modules/file.php:264
+msgid "And, put this code into the File Attachments field below."
+msgstr "Ve, bu kodu aşağıdaki Dosya Ekleri alanı içine koyun."
+
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid ""
+"This contact form contains file uploading fields, but the temporary folder "
+"for the files (%s) does not exist or is not writable. You can create the "
+"folder or change its permission manually."
+msgstr ""
+"Bu iletişim formu dosya gönderme alanları içeriyor ama dosyalar (%s) için "
+"geçici klasör mevcut değil ya da yazılabilir değil. Klasörü oluşturabilir "
+"veya iznini el ile değiştirebilirsiniz."
+
+#: contact-form-7/modules/jetpack.php:21
+#, php-format
+msgid ""
+"<strong>Jetpack may cause problems for other plugins in certain cases.</"
+"strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr ""
+"<strong>Jetpack belli durumlarda diğer eklentiler için sorunlara neden "
+"olabilir.</strong> <a href=\"%s\" target=\"_blank\">Nasıl önleneceğine bakın."
+"</a>"
+
+#: contact-form-7/modules/quiz.php:159
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Gönderen küçük soruya doğru yanıtı girmedi"
+
+#: contact-form-7/modules/quiz.php:160
+msgid "Your answer is not correct."
+msgstr "Yanıtınız doğru değil."
+
+#: contact-form-7/modules/quiz.php:173
+msgid "Quiz"
+msgstr "Küçük Soru"
+
+#: contact-form-7/modules/quiz.php:203
+msgid "Quizzes"
+msgstr "Küçük Sorular"
+
+#: contact-form-7/modules/quiz.php:205
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* küçük soru|yanıt (örnek 1+1=?|2)"
+
+#: contact-form-7/modules/select.php:142
+msgid "Drop-down menu"
+msgstr "Aşağı açılır menü"
+
+#: contact-form-7/modules/select.php:171
+msgid "Allow multiple selections?"
+msgstr "Çoklu seçimlere izin verilsin mi?"
+
+#: contact-form-7/modules/select.php:172
+msgid "Insert a blank item as the first option?"
+msgstr "İlk seçenek olarak boş bir öğe eklensin mi?"
+
+#: contact-form-7/modules/submit.php:61
+msgid "Submit button"
+msgstr "Gönder düğmesi"
+
+#: contact-form-7/modules/submit.php:79
+msgid "Label"
+msgstr "Etiket"
+
+#: contact-form-7/modules/text.php:155
+msgid "Text field"
+msgstr "Metin alanı"
+
+#: contact-form-7/modules/text.php:158
+msgid "Email field"
+msgstr "Eposta alanı"
+
+#: contact-form-7/modules/text.php:200
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:202
+msgid "This field requires author's name"
+msgstr "Bu alan yazarın adını gerektirir"
+
+#: contact-form-7/modules/text.php:203
+msgid "This field requires author's URL"
+msgstr "Bu alan yazarın URL'sini gerektirir"
+
+#: contact-form-7/modules/text.php:205
+msgid "This field requires author's email address"
+msgstr "Bu alan yazarın eposta adresini gerektirir"
+
+#: contact-form-7/modules/text.php:211 contact-form-7/modules/textarea.php:161
+msgid "Default value"
+msgstr "Varsayılan değer"
+
+#: contact-form-7/modules/text.php:214 contact-form-7/modules/textarea.php:164
+msgid "Use this text as watermark?"
+msgstr "Bu metin filigran olarak kullanılsın mı?"
+
+#: contact-form-7/modules/textarea.php:130
+msgid "Text area"
+msgstr "Metin alanı"
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong> "
+#~ "You must <a href=\"%s\">create the table</a> for it to work."
+#~ msgstr ""
+#~ "<strong>Contact Form 7 için gerekli veritabanı tablosu bulunmuyor.</"
+#~ "strong> Çalışması için <a href=\"%s\">tabloyu oluşturmalısınız.</a>"
+
+#~ msgid ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
+#~ msgstr ""
+#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
+
+#~ msgid "Akismet judged the sending activity as spamming"
+#~ msgstr "Akismet gönderenin işlemini spam olarak değerlendirdi"
+
+#~ msgid "Show"
+#~ msgstr "Göster"
+
+#~ msgid "Hide"
+#~ msgstr "Gizle"
+
+#~ msgid "Database table created."
+#~ msgstr "Veritabanı tablosu yaratıldı."
+
+#~ msgid "Failed to create database table."
+#~ msgstr "Veritabanı tablosu yaratılamadı."
+
+#~ msgid ""
+#~ "Is this plugin useful for you? If you like it, please help the developer."
+#~ msgstr ""
+#~ "Bu eklenti işinize yaradı mı? Eğer yaradıysa, geliştiriciye yardım ediniz."
+
+#~ msgid ""
+#~ "Developing a plugin and providing user support is really hard work. "
+#~ "Please help."
+#~ msgstr ""
+#~ "Bir eklentiyi geliştirmek ve kullanıcı desteği sunmak gerçekten çok zor. "
+#~ "Lütfen yardımcı olun."
 
 #~ msgid "Delete this contact form"
 #~ msgstr "Bu iletişim formunu sil"
-
