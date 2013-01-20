@@ -122,6 +122,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 3.3.3 =
+
+* Fixed: Logic of resolving upload directory on WordPress 3.5 multi-site install.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.25.0.
+* Translations for French, German, Russian and Turkish have been updated.
+
 = 3.3.2 =
 
 * Fixed: Add the additional headers only when they are not empty.
