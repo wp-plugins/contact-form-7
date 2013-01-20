@@ -22,6 +22,9 @@
 				data: { '_wpcf7_is_ajax_call': 1 },
 				dataType: 'json',
 				success: function(data) {
+					if (! $.isPlainObject(data) || $.isEmptyObject(data))
+						return;
+
 					var ro = $(data.into).find('div.wpcf7-response-output');
 					$(data.into).wpcf7ClearResponseOutput();
 
