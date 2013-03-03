@@ -58,6 +58,12 @@ class WPCF7_ContactForm {
 	public function __construct( $post = null ) {
 		$this->initial = true;
 
+		$this->form = '';
+		$this->mail = array();
+		$this->mail_2 = array();
+		$this->messages = array();
+		$this->additional_settings = '';
+
 		$post = get_post( $post );
 
 		if ( $post && self::post_type == get_post_type( $post ) ) {
@@ -644,17 +650,16 @@ class WPCF7_ContactForm {
 	/* Upgrade */
 
 	function upgrade() {
-		if ( ! isset( $this->mail['recipient'] ) )
-			$this->mail['recipient'] = get_option( 'admin_email' );
+		if ( is_array( $this->mail ) ) {
+			if ( ! isset( $this->mail['recipient'] ) )
+				$this->mail['recipient'] = get_option( 'admin_email' );
+		}
 
-
-		if ( ! is_array( $this->messages ) )
-			$this->messages = array();
-
-
-		foreach ( wpcf7_messages() as $key => $arr ) {
-			if ( ! isset( $this->messages[$key] ) )
-				$this->messages[$key] = $arr['default'];
+		if ( is_array( $this->messages ) ) {
+			foreach ( wpcf7_messages() as $key => $arr ) {
+				if ( ! isset( $this->messages[$key] ) )
+					$this->messages[$key] = $arr['default'];
+			}
 		}
 	}
 
