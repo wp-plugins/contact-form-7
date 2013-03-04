@@ -13,6 +13,14 @@ if ( is_admin() )
 else
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
 
+add_action( 'plugins_loaded', 'wpcf7_init_shortcode_manager', 1 );
+
+function wpcf7_init_shortcode_manager() {
+	global $wpcf7_shortcode_manager;
+
+	$wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
+}
+
 /* Loading modules */
 
 add_action( 'plugins_loaded', 'wpcf7_load_modules', 1 );

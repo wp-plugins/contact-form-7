@@ -166,30 +166,32 @@ class WPCF7_ShortcodeManager {
 
 }
 
-$wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
-
 function wpcf7_add_shortcode( $tag, $func, $has_name = false ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->add_shortcode( $tag, $func, $has_name );
+	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
+		return $wpcf7_shortcode_manager->add_shortcode( $tag, $func, $has_name );
 }
 
 function wpcf7_remove_shortcode( $tag ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->remove_shortcode( $tag );
+	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
+		return $wpcf7_shortcode_manager->remove_shortcode( $tag );
 }
 
 function wpcf7_do_shortcode( $content ) {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->do_shortcode( $content );
+	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
+		return $wpcf7_shortcode_manager->do_shortcode( $content );
 }
 
 function wpcf7_get_shortcode_regex() {
 	global $wpcf7_shortcode_manager;
 
-	return $wpcf7_shortcode_manager->get_shortcode_regex();
+	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
+		return $wpcf7_shortcode_manager->get_shortcode_regex();
 }
 
 ?>
