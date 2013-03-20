@@ -77,32 +77,4 @@ function wpcf7_special_mail_tag_for_post_data( $output, $name ) {
 	return $output;
 }
 
-add_filter( 'wpcf7_special_mail_tags', 'wpcf7_special_mail_tag_for_raw_post', 10, 3 );
-
-function wpcf7_special_mail_tag_for_raw_post( $output, $name, $html ) {
-	if ( ! preg_match( '/^_raw_(.+)/', $name, $matches ) )
-		return $output;
-
-	$tag_name = trim( $matches[1] );
-
-	if ( empty( $_POST[$tag_name] ) )
-		return $output;
-
-	$submitted = $_POST[$tag_name];
-
-	if ( is_array( $submitted ) )
-		$replaced = implode( ', ', $submitted );
-	else
-		$replaced = $submitted;
-
-	if ( $html ) {
-		$replaced = strip_tags( $replaced );
-		$replaced = wptexturize( $replaced );
-	}
-
-	$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted, $html );
-
-	return stripslashes( $replaced );
-}
-
 ?>

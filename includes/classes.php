@@ -578,8 +578,22 @@ class WPCF7_ContactForm {
 		if ( $matches[1] == '[' && $matches[3] == ']' )
 			return substr( $matches[0], 1, -1 );
 
-		if ( isset( $this->posted_data[$matches[2]] ) ) {
-			$submitted = $this->posted_data[$matches[2]];
+		$tag = $matches[0];
+		$tagname = $matches[2];
+
+		$do_not_heat = false;
+
+		if ( preg_match( '/^_raw_(.+)$/', $tagname, $matches ) ) {
+			$tagname = trim( $matches[1] );
+			$do_not_heat = true;
+		}
+
+		if ( isset( $this->posted_data[$tagname] ) ) {
+
+			if ( $do_not_heat )
+				$submitted = isset( $_POST[$tagname] ) ? $_POST[$tagname] : '';
+			else
+				$submitted = $this->posted_data[$tagname];
 
 			if ( is_array( $submitted ) )
 				$replaced = join( ', ', $submitted );
@@ -591,15 +605,18 @@ class WPCF7_ContactForm {
 				$replaced = wptexturize( $replaced );
 			}
 
-			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted, $html );
+			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced,
+				$submitted, $html );
 
 			return stripslashes( $replaced );
 		}
 
-		if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[2], $html ) )
+		$special = apply_filters( 'wpcf7_special_mail_tags', '', $tagname, $html );
+
+		if ( ! empty( $special ) )
 			return $special;
 
-		return $matches[0];
+		return $tag;
 	}
 
 	/* Message */
