@@ -142,8 +142,10 @@ function wpcf7_checkbox_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 
+	$value = isset( $_POST[$name] ) ? (array) $_POST[$name] : array();
+
 	if ( 'checkbox*' == $type ) {
-		if ( empty( $_POST[$name] ) ) {
+		if ( empty( $value ) ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}

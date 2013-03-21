@@ -92,9 +92,12 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 
-	$answer = wpcf7_canonicalize( $_POST[$name] );
+	$answer = isset( $_POST[$name] ) ? wpcf7_canonicalize( $_POST[$name] ) : '';
 	$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
-	$expected_hash = $_POST['_wpcf7_quiz_answer_' . $name];
+
+	$expected_hash = isset( $_POST['_wpcf7_quiz_answer_' . $name] )
+		? (string) $_POST['_wpcf7_quiz_answer_' . $name]
+		: '';
 
 	if ( $answer_hash != $expected_hash ) {
 		$result['valid'] = false;

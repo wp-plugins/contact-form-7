@@ -121,20 +121,22 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 
-	$_POST[$name] = trim( strtr( (string) $_POST[$name], "\n", " " ) );
+	$value = isset( $_POST[$name] )
+		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
+		: '';
 
 	if ( 'text*' == $type ) {
-		if ( '' == $_POST[$name] ) {
+		if ( '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
 	}
 
 	if ( 'email' == $type || 'email*' == $type ) {
-		if ( 'email*' == $type && '' == $_POST[$name] ) {
+		if ( 'email*' == $type && '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
-		} elseif ( '' != $_POST[$name] && ! is_email( $_POST[$name] ) ) {
+		} elseif ( '' != $value && ! is_email( $value ) ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_email' );
 		}

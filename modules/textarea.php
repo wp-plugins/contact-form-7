@@ -106,10 +106,10 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
 
-	$_POST[$name] = (string) $_POST[$name];
+	$value = isset( $_POST[$name] ) ? (string) $_POST[$name] : '';
 
 	if ( 'textarea*' == $type ) {
-		if ( '' == $_POST[$name] ) {
+		if ( '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
