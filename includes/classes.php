@@ -396,6 +396,8 @@ class WPCF7_ContactForm {
 
 		} else {
 			$result['message'] = $this->message( 'mail_sent_ng' );
+
+			do_action_ref_array( 'wpcf7_mail_failed', array( &$this ) );
 		}
 
 		if ( $ajax ) {
