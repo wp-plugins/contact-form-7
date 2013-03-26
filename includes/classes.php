@@ -156,6 +156,7 @@ class WPCF7_ContactForm {
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
 		$form .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
+			. ' novalidate="novalidate"'
 			. ' class="' . esc_attr( $class ) . '"' . $enctype . '>' . "\n";
 
 		$form .= $this->form_hidden_fields();
