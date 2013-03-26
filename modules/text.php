@@ -25,7 +25,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	$validation_error = wpcf7_get_validation_error( $name );
 
 	$atts = $id_att = $size_att = $maxlength_att = '';
-	$tabindex_att = $title_att = '';
+	$tabindex_att = $placeholder_att = '';
 
 	$class_att = wpcf7_form_controls_class( $type, 'wpcf7-text' );
 
@@ -54,11 +54,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	$value = (string) reset( $values );
 
-	if ( wpcf7_script_is() && preg_grep( '%^watermark$%', $options ) ) {
-		$class_att .= ' wpcf7-use-title-as-watermark';
-		$title_att .= sprintf( ' %s', $value );
+	if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
+		$placeholder_att = $value;
 		$value = '';
-
 	} elseif ( empty( $value ) && is_user_logged_in() ) {
 		$user = wp_get_current_user();
 
@@ -99,8 +97,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( '' !== $tabindex_att )
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
-	if ( $title_att )
-		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
+	if ( $placeholder_att )
+		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
 
 	if ( wpcf7_support_html5() ) {
 		$type_att = trim( $type, '*' );
@@ -219,7 +217,7 @@ function wpcf7_tg_pane_text_and_email( $type = 'text' ) {
 <td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
 
 <td>
-<br /><input type="checkbox" name="watermark" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as watermark?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="placeholder" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as placeholder?', 'wpcf7' ) ); ?>
 </td>
 </tr>
 </table>

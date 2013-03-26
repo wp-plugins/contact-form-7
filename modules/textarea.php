@@ -29,7 +29,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$cols_att = '';
 	$rows_att = '';
 	$tabindex_att = '';
-	$title_att = '';
+	$placeholder_att = '';
 
 	$class_att = wpcf7_form_controls_class( $type );
 
@@ -58,9 +58,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	if ( ! empty( $content ) )
 		$value = $content;
 
-	if ( wpcf7_script_is() && preg_grep( '%^watermark$%', $options ) ) {
-		$class_att .= ' wpcf7-use-title-as-watermark';
-		$title_att .= sprintf( ' %s', $value );
+
+	if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
+		$placeholder_att = $value;
 		$value = '';
 	}
 
@@ -86,8 +86,8 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	if ( '' !== $tabindex_att )
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
-	if ( $title_att )
-		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
+	if ( $placeholder_att )
+		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
 
 	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_textarea( $value ) . '</textarea>';
 
@@ -161,7 +161,7 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 <td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
 
 <td>
-<br /><input type="checkbox" name="watermark" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as watermark?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="placeholder" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as placeholder?', 'wpcf7' ) ); ?>
 </td>
 </tr>
 </table>

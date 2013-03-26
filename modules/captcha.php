@@ -22,7 +22,8 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 	$validation_error = wpcf7_get_validation_error( $name );
 
-	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = $title_att = '';
+	$atts = $id_att = $size_att = $maxlength_att = '';
+	$tabindex_att = $placeholder_att = '';
 
 	$class_att = wpcf7_form_controls_class( $type );
 
@@ -55,9 +56,8 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 	if ( 'captchar' == $type && ! wpcf7_is_posted() && isset( $values[0] ) ) {
 		$value = $values[0];
 
-		if ( wpcf7_script_is() && preg_grep( '%^watermark$%', $options ) ) {
-			$class_att .= ' wpcf7-use-title-as-watermark';
-			$title_att .= sprintf( ' %s', $value );
+		if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
+			$placeholder_att = $value;
 			$value = '';
 		}
 	}
@@ -107,8 +107,8 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		if ( '' !== $tabindex_att )
 			$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
 
-		if ( '' !== $title_att )
-			$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
+		if ( $placeholder_att )
+			$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
 
 		$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 		$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
