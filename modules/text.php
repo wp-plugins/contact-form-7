@@ -102,7 +102,13 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( $title_att )
 		$atts .= sprintf( ' title="%s"', trim( esc_attr( $title_att ) ) );
 
-	$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
+	if ( wpcf7_support_html5() ) {
+		$type_att = trim( $type, '*' );
+	} else {
+		$type_att = 'text';
+	}
+
+	$html = '<input type="' . $type_att . '" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
 
 	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
 
