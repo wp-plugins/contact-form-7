@@ -272,4 +272,8 @@ function wpcf7_array_flatten( $input ) {
 	return $output;
 }
 
+function wpcf7_support_html5() {
+	return (bool) apply_filters( 'wpcf7_support_html5', true );
+}
+
 ?>
