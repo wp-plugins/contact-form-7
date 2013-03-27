@@ -133,4 +133,9 @@ function wpcf7_is_tel( $tel ) {
 	return apply_filters( 'wpcf7_is_tel', $result, $tel );
 }
 
+function wpcf7_is_number( $number ) {
+	$result = is_numeric( $number );
+	return apply_filters( 'wpcf7_is_number', $result, $number );
+}
+
 ?>

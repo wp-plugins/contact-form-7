@@ -129,7 +129,7 @@
 
 		pane.find(':input.numeric').each(function(i) {
 			var val = $(this).val();
-			val = val.replace(/[^0-9]/g, '');
+			val = val.replace(/[^0-9.-]/g, '');
 			$(this).val(val);
 		});
 
@@ -197,13 +197,20 @@
 			if (size || maxlength)
 				options.push(size + '/' + maxlength);
 
+			var min = scope.find(':input[name="min"]').val();
+			var max = scope.find(':input[name="max"]').val();
+			if (min || max)
+				options.push(min + '-' + max);
+
 			var cols = scope.find(':input[name="cols"]').val();
 			var rows = scope.find(':input[name="rows"]').val();
 			if (cols || rows)
 				options.push(cols + 'x' + rows);
 
 			scope.find('input:text.option').each(function(i) {
-				if (-1 < $.inArray($(this).attr('name'), ['size', 'maxlength', 'cols', 'rows']))
+				var excluded = ['size', 'maxlength', 'min', 'max', 'cols', 'rows'];
+
+				if (-1 < $.inArray($(this).attr('name'), excluded))
 					return;
 
 				var val = $(this).val();
