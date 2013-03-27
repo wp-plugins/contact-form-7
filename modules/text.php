@@ -184,6 +184,29 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 }
 
 
+/* Messages */
+
+add_filter( 'wpcf7_messages', 'wpcf7_text_messages' );
+
+function wpcf7_text_messages( $messages ) {
+	return array_merge( $messages, array(
+		'invalid_email' => array(
+			'description' => __( "Email address that the sender entered is invalid", 'wpcf7' ),
+			'default' => __( 'Email address seems invalid.', 'wpcf7' )
+		),
+
+		'invalid_url' => array(
+			'description' => __( "URL that the sender entered is invalid", 'wpcf7' ),
+			'default' => __( 'URL seems invalid.', 'wpcf7' )
+		),
+
+		'invalid_tel' => array(
+			'description' => __( "Telephone number that the sender entered is invalid", 'wpcf7' ),
+			'default' => __( 'Telephone number seems invalid.', 'wpcf7' )
+		) ) );
+}
+
+
 /* Tag generator */
 
 add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );

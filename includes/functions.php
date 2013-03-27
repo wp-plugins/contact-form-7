@@ -51,21 +51,6 @@ function wpcf7_messages() {
 			'default' => __( 'Please accept the terms to proceed.', 'wpcf7' )
 		),
 
-		'invalid_email' => array(
-			'description' => __( "Email address that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'Email address seems invalid.', 'wpcf7' )
-		),
-
-		'invalid_url' => array(
-			'description' => __( "URL that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'URL seems invalid.', 'wpcf7' )
-		),
-
-		'invalid_tel' => array(
-			'description' => __( "Telephone number that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'Telephone number seems invalid.', 'wpcf7' )
-		),
-
 		'invalid_required' => array(
 			'description' => __( "There is a field that the sender must fill in", 'wpcf7' ),
 			'default' => __( 'Please fill the required field.', 'wpcf7' )
