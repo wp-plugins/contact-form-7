@@ -118,4 +118,9 @@ function wpcf7_sanitize_unit_tag( $tag ) {
 	return $tag;
 }
 
+function wpcf7_is_email( $email ) {
+	$result = is_email( $email );
+	return apply_filters( 'wpcf7_is_email', $result, $email );
+}
+
 ?>

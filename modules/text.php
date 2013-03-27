@@ -140,7 +140,7 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		if ( 'email*' == $type && '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
-		} elseif ( '' != $value && ! is_email( $value ) ) {
+		} elseif ( '' != $value && ! wpcf7_is_email( $value ) ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_email' );
 		}
