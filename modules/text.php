@@ -1,6 +1,9 @@
 <?php
 /**
-** A base module for [text], [text*], [email], and [email*]
+** A base module for the following types of tags:
+** 	[text] and [text*]		# Single-line text field
+** 	[email] and [email*]	# Email address field
+** 	[url] and [url*]		# URL field
 **/
 
 /* Shortcode handler */
@@ -9,6 +12,8 @@ wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'url', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'url*', 'wpcf7_text_shortcode_handler', true );
 
 function wpcf7_text_shortcode_handler( $tag ) {
 	if ( ! is_array( $tag ) )
@@ -31,6 +36,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	if ( 'email' == $type || 'email*' == $type )
 		$class_att .= ' wpcf7-validates-as-email';
+
+	if ( 'url' == $type || 'url*' == $type )
+		$class_att .= ' wpcf7-validates-as-url';
 
 	if ( $validation_error )
 		$class_att .= ' wpcf7-not-valid';
@@ -120,6 +128,8 @@ add_filter( 'wpcf7_validate_text', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_text*', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_url', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_url*', 'wpcf7_text_validation_filter', 10, 2 );
 
 function wpcf7_text_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
@@ -146,15 +156,25 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
+	if ( 'url' == $type || 'url*' == $type ) {
+		if ( 'url*' == $type && '' == $value ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+		} elseif ( '' != $value && ! wpcf7_is_url( $value ) ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_url' );
+		}
+	}
+
 	return $result;
 }
 
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_text_and_email', 15 );
+add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );
 
-function wpcf7_add_tag_generator_text_and_email() {
+function wpcf7_add_tag_generator_text() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
@@ -163,18 +183,25 @@ function wpcf7_add_tag_generator_text_and_email() {
 
 	wpcf7_add_tag_generator( 'email', __( 'Email field', 'wpcf7' ),
 		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
+
+	wpcf7_add_tag_generator( 'url', __( 'URL field', 'wpcf7' ),
+		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
 }
 
 function wpcf7_tg_pane_text( &$contact_form ) {
-	wpcf7_tg_pane_text_and_email( 'text' );
+	wpcf7_tg_pane_text_and_relatives( 'text' );
 }
 
 function wpcf7_tg_pane_email( &$contact_form ) {
-	wpcf7_tg_pane_text_and_email( 'email' );
+	wpcf7_tg_pane_text_and_relatives( 'email' );
 }
 
-function wpcf7_tg_pane_text_and_email( $type = 'text' ) {
-	if ( 'email' != $type )
+function wpcf7_tg_pane_url( &$contact_form ) {
+	wpcf7_tg_pane_text_and_relatives( 'url' );
+}
+
+function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
+	if ( ! in_array( $type, array( 'email', 'url' ) ) )
 		$type = 'text';
 
 ?>
@@ -205,10 +232,11 @@ function wpcf7_tg_pane_text_and_email( $type = 'text' ) {
 <tr>
 <td colspan="2"><?php echo esc_html( __( 'Akismet', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
 <?php if ( 'text' == $type ) : ?>
-<input type="checkbox" name="akismet:author" class="exclusive option" />&nbsp;<?php echo esc_html( __( "This field requires author's name", 'wpcf7' ) ); ?><br />
-<input type="checkbox" name="akismet:author_url" class="exclusive option" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'wpcf7' ) ); ?>
-<?php else : ?>
+<input type="checkbox" name="akismet:author" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's name", 'wpcf7' ) ); ?><br />
+<?php elseif ( 'email' == $type ) : ?>
 <input type="checkbox" name="akismet:author_email" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's email address", 'wpcf7' ) ); ?>
+<?php elseif ( 'url' == $type ) : ?>
+<input type="checkbox" name="akismet:author_url" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'wpcf7' ) ); ?>
 <?php endif; ?>
 </td>
 </tr>

@@ -123,4 +123,9 @@ function wpcf7_is_email( $email ) {
 	return apply_filters( 'wpcf7_is_email', $result, $email );
 }
 
+function wpcf7_is_url( $url ) {
+	$result = ( false !== filter_var( $url, FILTER_VALIDATE_URL ) );
+	return apply_filters( 'wpcf7_is_url', $result, $url );
+}
+
 ?>
