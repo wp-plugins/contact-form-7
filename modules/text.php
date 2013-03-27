@@ -1,9 +1,10 @@
 <?php
 /**
 ** A base module for the following types of tags:
-** 	[text] and [text*]		# Single-line text field
-** 	[email] and [email*]	# Email address field
-** 	[url] and [url*]		# URL field
+** 	[text] and [text*]		# Single-line text
+** 	[email] and [email*]	# Email address
+** 	[url] and [url*]		# URL
+** 	[tel] and [tel*]		# Telephone number
 **/
 
 /* Shortcode handler */
@@ -14,6 +15,8 @@ wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'url', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'url*', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'tel', 'wpcf7_text_shortcode_handler', true );
+wpcf7_add_shortcode( 'tel*', 'wpcf7_text_shortcode_handler', true );
 
 function wpcf7_text_shortcode_handler( $tag ) {
 	if ( ! is_array( $tag ) )
@@ -27,6 +30,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( empty( $name ) )
 		return '';
 
+	$basetype = trim( $type, '*' );
+
 	$validation_error = wpcf7_get_validation_error( $name );
 
 	$atts = $id_att = $size_att = $maxlength_att = '';
@@ -34,11 +39,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	$class_att = wpcf7_form_controls_class( $type, 'wpcf7-text' );
 
-	if ( 'email' == $type || 'email*' == $type )
-		$class_att .= ' wpcf7-validates-as-email';
-
-	if ( 'url' == $type || 'url*' == $type )
-		$class_att .= ' wpcf7-validates-as-url';
+	if ( in_array( $basetype, array( 'email', 'url', 'tel' ) ) )
+		$class_att .= ' wpcf7-validates-as-' . $basetype;
 
 	if ( $validation_error )
 		$class_att .= ' wpcf7-not-valid';
@@ -109,7 +111,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
 
 	if ( wpcf7_support_html5() ) {
-		$type_att = trim( $type, '*' );
+		$type_att = $basetype;
 	} else {
 		$type_att = 'text';
 	}
@@ -130,6 +132,8 @@ add_filter( 'wpcf7_validate_email', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_email*', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_url', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_url*', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_tel', 'wpcf7_text_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_tel*', 'wpcf7_text_validation_filter', 10, 2 );
 
 function wpcf7_text_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
@@ -166,6 +170,16 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
+	if ( 'tel' == $type || 'tel*' == $type ) {
+		if ( 'tel*' == $type && '' == $value ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+		} elseif ( '' != $value && ! wpcf7_is_tel( $value ) ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_tel' );
+		}
+	}
+
 	return $result;
 }
 
@@ -186,6 +200,9 @@ function wpcf7_add_tag_generator_text() {
 
 	wpcf7_add_tag_generator( 'url', __( 'URL field', 'wpcf7' ),
 		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
+
+	wpcf7_add_tag_generator( 'tel', __( 'Telephone number field', 'wpcf7' ),
+		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
 }
 
 function wpcf7_tg_pane_text( &$contact_form ) {
@@ -200,8 +217,12 @@ function wpcf7_tg_pane_url( &$contact_form ) {
 	wpcf7_tg_pane_text_and_relatives( 'url' );
 }
 
+function wpcf7_tg_pane_tel( &$contact_form ) {
+	wpcf7_tg_pane_text_and_relatives( 'tel' );
+}
+
 function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
-	if ( ! in_array( $type, array( 'email', 'url' ) ) )
+	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) )
 		$type = 'text';
 
 ?>
@@ -229,6 +250,7 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 <input type="text" name="maxlength" class="numeric oneline option" /></td>
 </tr>
 
+<?php if ( in_array( $type, array( 'text', 'email', 'url' ) ) ) : ?>
 <tr>
 <td colspan="2"><?php echo esc_html( __( 'Akismet', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
 <?php if ( 'text' == $type ) : ?>
@@ -240,6 +262,7 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 <?php endif; ?>
 </td>
 </tr>
+<?php endif; ?>
 
 <tr>
 <td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>

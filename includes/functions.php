@@ -61,6 +61,11 @@ function wpcf7_messages() {
 			'default' => __( 'URL seems invalid.', 'wpcf7' )
 		),
 
+		'invalid_tel' => array(
+			'description' => __( "Telephone number that the sender entered is invalid", 'wpcf7' ),
+			'default' => __( 'Telephone number seems invalid.', 'wpcf7' )
+		),
+
 		'invalid_required' => array(
 			'description' => __( "There is a field that the sender must fill in", 'wpcf7' ),
 			'default' => __( 'Please fill the required field.', 'wpcf7' )
