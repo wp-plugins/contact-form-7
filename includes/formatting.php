@@ -138,4 +138,13 @@ function wpcf7_is_number( $number ) {
 	return apply_filters( 'wpcf7_is_number', $result, $number );
 }
 
+function wpcf7_is_date( $date ) {
+	$result = preg_match( '/^([0-9]{4,})-([0-9]{2})-([0-9]{2})$/', $date, $matches );
+
+	if ( $result )
+		$result = checkdate( $matches[2], $matches[3], $matches[1] );
+
+	return apply_filters( 'wpcf7_is_date', $result, $date );
+}
+
 ?>

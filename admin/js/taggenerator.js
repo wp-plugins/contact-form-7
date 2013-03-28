@@ -168,7 +168,7 @@
 
 		pane.find(':input.date').each(function(i) {
 			var val = $(this).val();
-			if (! val.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) // 'yyyy-mm-dd' ISO 8601 format
+			if (! val.match(/^\d{4}-\d{2}-\d{2}$/)) // 'yyyy-mm-dd' ISO 8601 format
 				$(this).val('');
 		});
 
