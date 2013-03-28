@@ -2,12 +2,15 @@
 /**
 ** A base module for the following types of tags:
 ** 	[number] and [number*]		# Number
+** 	[range] and [range*]		# Range
 **/
 
 /* Shortcode handler */
 
 wpcf7_add_shortcode( 'number', 'wpcf7_number_shortcode_handler', true );
 wpcf7_add_shortcode( 'number*', 'wpcf7_number_shortcode_handler', true );
+wpcf7_add_shortcode( 'range', 'wpcf7_number_shortcode_handler', true );
+wpcf7_add_shortcode( 'range*', 'wpcf7_number_shortcode_handler', true );
 
 function wpcf7_number_shortcode_handler( $tag ) {
 	if ( ! is_array( $tag ) )
@@ -104,6 +107,8 @@ function wpcf7_number_shortcode_handler( $tag ) {
 
 add_filter( 'wpcf7_validate_number', 'wpcf7_number_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_number*', 'wpcf7_number_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_range', 'wpcf7_number_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_range*', 'wpcf7_number_validation_filter', 10, 2 );
 
 function wpcf7_number_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
@@ -124,20 +129,18 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 		}
 	}
 
-	if ( 'number' == $type || 'number*' == $type ) {
-		if ( 'number*' == $type && '' == $value ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
-		} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_number' );
-		} elseif ( '' != $value && '' != $min_att && (float) $value < $min_att ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'number_too_small' );
-		} elseif ( '' != $value && '' != $max_att && $max_att < (float) $value ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'number_too_large' );
-		}
+	if ( '*' == substr( $type, -1 ) && '' == $value ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+	} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = wpcf7_get_message( 'invalid_number' );
+	} elseif ( '' != $value && '' != $min_att && (float) $value < $min_att ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = wpcf7_get_message( 'number_too_small' );
+	} elseif ( '' != $value && '' != $max_att && $max_att < (float) $value ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = wpcf7_get_message( 'number_too_large' );
 	}
 
 	return $result;
@@ -175,12 +178,19 @@ function wpcf7_add_tag_generator_number() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'number', __( 'Number field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'number', __( 'Number (spinbox)', 'wpcf7' ),
 		'wpcf7-tg-pane-number', 'wpcf7_tg_pane_number' );
+
+	wpcf7_add_tag_generator( 'range', __( 'Number (slider)', 'wpcf7' ),
+		'wpcf7-tg-pane-range', 'wpcf7_tg_pane_range' );
 }
 
 function wpcf7_tg_pane_number( &$contact_form ) {
 	wpcf7_tg_pane_number_and_relatives( 'number' );
+}
+
+function wpcf7_tg_pane_range( &$contact_form ) {
+	wpcf7_tg_pane_number_and_relatives( 'range' );
 }
 
 function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
