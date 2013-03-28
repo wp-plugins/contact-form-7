@@ -218,13 +218,13 @@ function wpcf7_add_tag_generator_text() {
 	wpcf7_add_tag_generator( 'text', __( 'Text field', 'wpcf7' ),
 		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
 
-	wpcf7_add_tag_generator( 'email', __( 'Email field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'email', __( 'Email', 'wpcf7' ),
 		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
 
-	wpcf7_add_tag_generator( 'url', __( 'URL field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'url', __( 'URL', 'wpcf7' ),
 		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
 
-	wpcf7_add_tag_generator( 'tel', __( 'Telephone number field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'tel', __( 'Telephone number', 'wpcf7' ),
 		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
 }
 
@@ -267,10 +267,10 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 
 <tr>
 <td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="size" class="numeric oneline option" /></td>
+<input type="number" name="size" class="numeric oneline option" min="1" /></td>
 
 <td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="maxlength" class="numeric oneline option" /></td>
+<input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <?php if ( in_array( $type, array( 'text', 'email', 'url' ) ) ) : ?>

@@ -219,12 +219,13 @@ div.tg-pane input.tg-name {
 }
 
 div.tg-pane input.oneline {
-	width: 98%;
+	width: 94%;
 	font-size: smaller;
+	-moz-box-sizing: border-box;
 }
 
 div.tg-pane textarea {
-	width: 98%;
+	width: 94%;
 	height: 100px;
 	font-size: smaller;
 }

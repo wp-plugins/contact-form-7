@@ -151,10 +151,10 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 
 <tr>
 <td><code>cols</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="cols" class="numeric oneline option" /></td>
+<input type="number" name="cols" class="numeric oneline option" min="1" /></td>
 
 <td><code>rows</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="rows" class="numeric oneline option" /></td>
+<input type="number" name="rows" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <tr>

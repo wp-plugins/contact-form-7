@@ -45,9 +45,11 @@ function wpcf7_number_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$class_att .= ' ' . $matches[1];
 
-		} elseif ( preg_match( '%^(-?[0-9]+)?-(-?[0-9]+)?$%', $option, $matches ) ) {
-			$min_att = isset( $matches[1] ) ? $matches[1] : '';
-			$max_att = isset( $matches[2] ) ? $matches[2] : '';
+		} elseif ( preg_match( '%^min:(-?[0-9]+)$%', $option, $matches ) ) {
+			$min_att = $matches[1];
+
+		} elseif ( preg_match( '%^max:(-?[0-9]+)$%', $option, $matches ) ) {
+			$max_att = $matches[1];
 
 		} elseif ( preg_match( '%^step:([1-9][0-9]*)$%', $option, $matches ) ) {
 			$step_att = (int) $matches[1];
@@ -119,13 +121,11 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
 		: '';
 
-	$min_att = $max_att = '';
-
 	foreach ( $options as $option ) {
-		if ( preg_match( '%^(-?[0-9]+)?-(-?[0-9]+)?$%', $option, $matches ) ) {
-			$min_att = isset( $matches[1] ) ? $matches[1] : '';
-			$max_att = isset( $matches[2] ) ? $matches[2] : '';
-			break;
+		if ( preg_match( '%^min:(-?[0-9]+)$%', $option, $matches ) ) {
+			$min_att = $matches[1];
+		} elseif ( preg_match( '%^max:(-?[0-9]+)$%', $option, $matches ) ) {
+			$max_att = $matches[1];
 		}
 	}
 
@@ -216,15 +216,15 @@ function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
 
 <tr>
 <td><code>min</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="min" class="numeric oneline option" /></td>
+<input type="number" name="min" class="numeric oneline option" /></td>
 
 <td><code>max</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="max" class="numeric oneline option" /></td>
+<input type="number" name="max" class="numeric oneline option" /></td>
 </tr>
 
 <tr>
 <td><code>step</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="step" class="numeric oneline option" /></td>
+<input type="number" name="step" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <tr>

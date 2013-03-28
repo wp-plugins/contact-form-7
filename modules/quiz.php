@@ -196,10 +196,10 @@ function wpcf7_tg_pane_quiz( &$contact_form ) {
 
 <tr>
 <td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="size" class="numeric oneline option" /></td>
+<input type="number" name="size" class="numeric oneline option" min="1" /></td>
 
 <td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="maxlength" class="numeric oneline option" /></td>
+<input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <tr>

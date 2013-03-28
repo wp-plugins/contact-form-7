@@ -214,7 +214,7 @@ function wpcf7_tg_pane_date_and_relatives( $type = 'date' ) {
 
 <tr>
 <td><code>step</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
-<input type="text" name="step" class="numeric oneline option" /></td>
+<input type="number" name="step" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <tr>
