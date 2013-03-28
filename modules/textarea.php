@@ -28,6 +28,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$class_att = '';
 	$cols_att = '';
 	$rows_att = '';
+	$maxlength_att = '';
 	$tabindex_att = '';
 	$placeholder_att = '';
 
@@ -43,9 +44,15 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
 			$class_att .= ' ' . $matches[1];
 
-		} elseif ( preg_match( '%^([0-9]*)[x/]([0-9]*)$%', $option, $matches ) ) {
-			$cols_att = (int) $matches[1];
-			$rows_att = (int) $matches[2];
+		} elseif ( preg_match( '%^(?:([0-9]*)x([0-9]*))?(?:/([0-9]+))?$%', $option, $matches ) ) {
+			if ( isset( $matches[1] ) )
+				$cols_att = (int) $matches[1];
+
+			if ( isset( $matches[2] ) )
+				$rows_att = (int) $matches[2];
+
+			if ( isset( $matches[3] ) )
+				$maxlength_att = (int) $matches[3];
 
 		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
 			$tabindex_att = (int) $matches[1];
@@ -82,6 +89,9 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		$atts .= ' rows="' . $rows_att . '"';
 	else
 		$atts .= ' rows="10"'; // default size
+
+	if ( $maxlength_att )
+		$atts .= ' maxlength="' . $maxlength_att . '"';
 
 	if ( '' !== $tabindex_att )
 		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
@@ -155,6 +165,11 @@ function wpcf7_tg_pane_textarea( &$contact_form ) {
 
 <td><code>rows</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
 <input type="number" name="rows" class="numeric oneline option" min="1" /></td>
+</tr>
+
+<tr>
+<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <tr>

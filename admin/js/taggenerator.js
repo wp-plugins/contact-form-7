@@ -192,15 +192,17 @@
 
 			var options = [];
 
-			var size = scope.find(':input[name="size"]').val();
-			var maxlength = scope.find(':input[name="maxlength"]').val();
-			if (size || maxlength)
-				options.push(size + '/' + maxlength);
+			var size = scope.find(':input[name="size"]').val() || '';
+			var maxlength = scope.find(':input[name="maxlength"]').val() || '';
+			var cols = scope.find(':input[name="cols"]').val() || '';
+			var rows = scope.find(':input[name="rows"]').val() || '';
 
-			var cols = scope.find(':input[name="cols"]').val();
-			var rows = scope.find(':input[name="rows"]').val();
-			if (cols || rows)
+			if ((cols || rows) && maxlength)
+				options.push(cols + 'x' + rows + '/' + maxlength);
+			else if (cols || rows)
 				options.push(cols + 'x' + rows);
+			else if (size || maxlength)
+				options.push(size + '/' + maxlength);
 
 			scope.find('input.option').not(':checkbox,:radio').each(function(i) {
 				var excluded = ['size', 'maxlength', 'cols', 'rows'];

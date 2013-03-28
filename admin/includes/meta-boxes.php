@@ -4,7 +4,7 @@
 
 function wpcf7_form_meta_box( $post ) {
 ?>
-<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="20"><?php echo esc_textarea( $post->form ); ?></textarea></div>
+<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24"><?php echo esc_textarea( $post->form ); ?></textarea></div>
 
 <div class="half-right"><div id="taggenerator"></div></div>
 
