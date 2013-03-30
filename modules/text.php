@@ -36,14 +36,6 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
 
-	if ( $matches = $tag->get_first_match_option( '%^([0-9]*)/([0-9]*)$%' ) ) {
-		if ( '' !== $matches[1] )
-			$atts['size'] = $matches[1];
-
-		if ( '' !== $matches[2] )
-			$atts['maxlength'] = $matches[2];
-	}
-
 	$value = (string) reset( $tag->values );
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
@@ -72,17 +64,21 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
 		$value = stripslashes_deep( $_POST[$name] );
 
-	$atts = wpcf7_format_atts( $atts );
+	$atts['value'] = $value;
 
 	if ( wpcf7_support_html5() ) {
-		$type = $tag->basetype;
+		$atts['type'] = $tag->basetype;
 	} else {
-		$type = 'text';
+		$atts['type'] = 'text';
 	}
 
+	$atts['name'] = $tag->name;
+
+	$atts = wpcf7_format_atts( $atts );
+
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %2$s"><input type="%1$s" name="%2$s" value="%4$s"%3$s />%5$s</span>',
-		$type, $tag->name, $atts, esc_attr( $value ), $validation_error );
+		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+		$tag->name, $atts, $validation_error );
 
 	return $html;
 }

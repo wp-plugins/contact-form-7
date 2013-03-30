@@ -250,6 +250,19 @@ class WPCF7_Shortcode {
 		if ( $matches )
 			$atts['tabindex'] = $matches[1];
 
+		// size & maxlength
+		if ( isset( $atts['size'] ) ) {
+			$matches = $this->get_first_match_option( '%^([0-9]*)/([0-9]*)$%' );
+
+			if ( $matches ) {
+				if ( '' !== $matches[1] )
+					$atts['size'] = $matches[1];
+
+				if ( '' !== $matches[2] )
+					$atts['maxlength'] = $matches[2];
+			}
+		}
+
 		return $atts;
 	}
 
