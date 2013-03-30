@@ -89,6 +89,7 @@ class WPCF7_ShortcodeManager {
 
 		$scanned_tag = array(
 			'type' => $tag,
+			'basetype' => trim( $tag, '*' ),
 			'name' => '',
 			'options' => array(),
 			'raw_values' => array(),
@@ -192,6 +193,85 @@ function wpcf7_get_shortcode_regex() {
 
 	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
 		return $wpcf7_shortcode_manager->get_shortcode_regex();
+}
+
+class WPCF7_Shortcode {
+
+	public $type;
+	public $basetype;
+	public $name = '';
+	public $options = array();
+	public $raw_values = array();
+	public $values = array();
+	public $pipes;
+	public $labels = array();
+	public $attr = '';
+	public $content = '';
+
+	public function __construct( $tag ) {
+		foreach ( $tag as $key => $value ) {
+			if ( property_exists( __CLASS__, $key ) )
+				$this->{$key} = $value;
+		}
+	}
+
+	public function has_option( $opt ) {
+		$pattern = sprintf( '/^%s(:.+)?$/', preg_quote( $opt, '/' ) );
+		return (bool) preg_grep( $pattern, $this->options );
+	}
+
+	public function make_common_atts( $atts = '' ) {
+		$defaults = array(
+			'id' => '',
+			'class' => '',
+			'tabindex' => '' );
+
+		$atts = wp_parse_args( $atts, $defaults );
+
+		// id
+		$matches = $this->get_first_match_option( '%^id:([-0-9a-zA-Z_]+)$%' );
+
+		if ( $matches )
+			$atts['id'] = $matches[1];
+
+		// class
+		$matches_a = $this->get_all_match_options( '%^class:([-0-9a-zA-Z_]+)$%' );
+
+		if ( $matches_a ) {
+			foreach ( $matches_a as $matches )
+				$atts['class'] .= ' ' . $matches[1];
+
+			$atts['class'] = trim( $atts['class'] );
+		}
+
+		// tabindex
+		$matches = $this->get_first_match_option( '%^tabindex:(\d+)$%' );
+
+		if ( $matches )
+			$atts['tabindex'] = $matches[1];
+
+		return $atts;
+	}
+
+	public function get_first_match_option( $pattern ) {
+		foreach( (array) $this->options as $option ) {
+			if ( preg_match( $pattern, $option, $matches ) )
+				return $matches;
+		}
+
+		return false;
+	}
+
+	public function get_all_match_options( $pattern ) {
+		$result = array();
+
+		foreach( (array) $this->options as $option ) {
+			if ( preg_match( $pattern, $option, $matches ) )
+				$result[] = $matches;
+		}
+
+		return $result;
+	}
 }
 
 ?>

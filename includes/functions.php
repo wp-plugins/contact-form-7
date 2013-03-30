@@ -271,4 +271,17 @@ function wpcf7_support_html5() {
 	return (bool) apply_filters( 'wpcf7_support_html5', true );
 }
 
+function wpcf7_format_atts( $atts ) {
+	$html = '';
+
+	foreach ( $atts as $key => $value ) {
+		$value = trim( $value );
+
+		if ( '' !== $value )
+			$html .= sprintf( ' %s="%s"', $key, esc_attr( $value ) );
+	}
+
+	return $html;
+}
+
 ?>

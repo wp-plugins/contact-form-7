@@ -19,53 +19,35 @@ wpcf7_add_shortcode( 'tel', 'wpcf7_text_shortcode_handler', true );
 wpcf7_add_shortcode( 'tel*', 'wpcf7_text_shortcode_handler', true );
 
 function wpcf7_text_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
+	$class = wpcf7_form_controls_class( $tag->type, 'wpcf7-text' );
 
-	$basetype = trim( $type, '*' );
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = $id_att = $size_att = $maxlength_att = '';
-	$tabindex_att = $placeholder_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type, 'wpcf7-text' );
-
-	if ( in_array( $basetype, array( 'email', 'url', 'tel' ) ) )
-		$class_att .= ' wpcf7-validates-as-' . $basetype;
+	if ( in_array( $tag->basetype, array( 'email', 'url', 'tel' ) ) )
+		$class .= ' wpcf7-validates-as-' . $tag->basetype;
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
+	if ( $matches = $tag->get_first_match_option( '%^([0-9]*)/([0-9]*)$%' ) ) {
+		if ( '' !== $matches[1] )
+			$atts['size'] = $matches[1];
 
-		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
-			$size_att = (int) $matches[1];
-			$maxlength_att = (int) $matches[2];
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
+		if ( '' !== $matches[2] )
+			$atts['maxlength'] = $matches[2];
 	}
 
-	$value = (string) reset( $values );
+	$value = (string) reset( $tag->values );
 
-	if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
-		$placeholder_att = $value;
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
 		$value = '';
 	} elseif ( empty( $value ) && is_user_logged_in() ) {
 		$user = wp_get_current_user();
@@ -80,7 +62,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 			'default:user_display_name' => 'display_name' );
 
 		foreach ( $user_options as $option => $prop ) {
-			if ( preg_grep( '%^' . $option . '$%', $options ) ) {
+			if ( $tag->has_option( $option ) ) {
 				$value = $user->{$prop};
 				break;
 			}
@@ -90,35 +72,17 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
 		$value = stripslashes_deep( $_POST[$name] );
 
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( $size_att )
-		$atts .= ' size="' . $size_att . '"';
-	else
-		$atts .= ' size="40"'; // default size
-
-	if ( $maxlength_att )
-		$atts .= ' maxlength="' . $maxlength_att . '"';
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
-
-	if ( $placeholder_att )
-		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
+	$atts = wpcf7_format_atts( $atts );
 
 	if ( wpcf7_support_html5() ) {
-		$type_att = $basetype;
+		$type = $tag->basetype;
 	} else {
-		$type_att = 'text';
+		$type = 'text';
 	}
 
-	$html = '<input type="' . $type_att . '" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
-
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %2$s"><input type="%1$s" name="%2$s" value="%4$s"%3$s />%5$s</span>',
+		$type, $tag->name, $atts, esc_attr( $value ), $validation_error );
 
 	return $html;
 }
@@ -136,8 +100,10 @@ add_filter( 'wpcf7_validate_tel', 'wpcf7_text_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_tel*', 'wpcf7_text_validation_filter', 10, 2 );
 
 function wpcf7_text_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
