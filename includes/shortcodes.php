@@ -252,31 +252,60 @@ class WPCF7_Shortcode {
 
 		// size & maxlength
 		if ( isset( $atts['size'] ) ) {
-			$matches = $this->get_first_match_option( '%^([0-9]*)/([0-9]*)$%' );
+			$matches_a = $this->get_all_match_options(
+				'%^([0-9]*)/([0-9]*)$%' );
 
-			if ( $matches ) {
-				if ( '' !== $matches[1] )
-					$atts['size'] = $matches[1];
+			if ( $matches_a ) {
+				$size = $maxlength = '';
 
-				if ( '' !== $matches[2] )
-					$atts['maxlength'] = $matches[2];
+				foreach ( $matches_a as $matches ) {
+					if ( isset( $matches[1] ) && '' !== $matches[1]
+					&& '' === $size )
+						$size = $matches[1];
+
+					if ( isset( $matches[2] ) && '' !== $matches[2]
+					&& '' === $maxlength )
+						$maxlength = $matches[2];
+				}
+
+				if ( '' !== $size )
+					$atts['size'] = $size;
+
+				if ( '' !== $maxlength )
+					$atts['maxlength'] = $maxlength;
 			}
 		}
 
 		// cols, rows & maxlength
 		if ( isset( $atts['cols'] ) || isset( $atts['rows'] ) ) {
-			$matches = $this->get_first_match_option(
+			$matches_a = $this->get_all_match_options(
 				'%^(?:([0-9]*)x([0-9]*))?(?:/([0-9]+))?$%' );
 
-			if ( $matches ) {
-				if ( isset( $matches[1] ) && '' !== $matches[1] )
-					$atts['cols'] = $matches[1];
+			if ( $matches_a ) {
+				$cols = $rows = $maxlength = '';
 
-				if ( isset( $matches[2] ) && '' !== $matches[2] )
-					$atts['rows'] = $matches[2];
+				foreach ( $matches_a as $matches ) {
+					if ( isset( $matches[1] ) && '' !== $matches[1]
+					&& '' === $cols )
+						$cols = $matches[1];
 
-				if ( isset( $matches[3] ) && '' !== $matches[3] )
-					$atts['maxlength'] = $matches[3];
+					if ( isset( $matches[2] ) && '' !== $matches[2]
+					&& '' === $rows )
+						$rows = $matches[2];
+
+					if ( isset( $matches[3] ) && '' !== $matches[3]
+					&& '' === $maxlength )
+						$maxlength = $matches[3];
+				}
+
+				if ( '' !== $cols )
+					$atts['cols'] = $cols;
+
+				if ( '' !== $rows )
+					$atts['rows'] = $rows;
+
+				if ( '' !== $maxlength )
+					$atts['maxlength'] = $maxlength;
 			}
 		}
 
