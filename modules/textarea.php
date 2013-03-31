@@ -9,99 +9,41 @@ wpcf7_add_shortcode( 'textarea', 'wpcf7_textarea_shortcode_handler', true );
 wpcf7_add_shortcode( 'textarea*', 'wpcf7_textarea_shortcode_handler', true );
 
 function wpcf7_textarea_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
-	$content = $tag['content'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = '';
-	$id_att = '';
-	$class_att = '';
-	$cols_att = '';
-	$rows_att = '';
-	$maxlength_att = '';
-	$tabindex_att = '';
-	$placeholder_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type );
+	$class = wpcf7_form_controls_class( $tag->type );
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	$atts = $tag->make_common_atts(
+		array( 'class' => $class, 'cols' => '40', 'rows' => '10' ) );
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
+	$value = (string) reset( $tag->values );
 
-		} elseif ( preg_match( '%^(?:([0-9]*)x([0-9]*))?(?:/([0-9]+))?$%', $option, $matches ) ) {
-			if ( isset( $matches[1] ) )
-				$cols_att = (int) $matches[1];
+	if ( '' !== $tag->content )
+		$value = $tag->content;
 
-			if ( isset( $matches[2] ) )
-				$rows_att = (int) $matches[2];
-
-			if ( isset( $matches[3] ) )
-				$maxlength_att = (int) $matches[3];
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
-	}
-
-	$value = (string) reset( $values );
-
-	if ( ! empty( $content ) )
-		$value = $content;
-
-
-	if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
-		$placeholder_att = $value;
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
 		$value = '';
 	}
 
 	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
 		$value = stripslashes_deep( $_POST[$name] );
 
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
+	$atts['name'] = $tag->name;
 
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
+	$atts = wpcf7_format_atts( $atts );
 
-	if ( $cols_att )
-		$atts .= ' cols="' . $cols_att . '"';
-	else
-		$atts .= ' cols="40"'; // default size
-
-	if ( $rows_att )
-		$atts .= ' rows="' . $rows_att . '"';
-	else
-		$atts .= ' rows="10"'; // default size
-
-	if ( $maxlength_att )
-		$atts .= ' maxlength="' . $maxlength_att . '"';
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
-
-	if ( $placeholder_att )
-		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
-
-	$html = '<textarea name="' . $name . '"' . $atts . '>' . esc_textarea( $value ) . '</textarea>';
-
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><textarea %2$s>%3$s</textarea>%4$s</span>',
+		$tag->name, $atts, esc_textarea( $value ), $validation_error );
 
 	return $html;
 }
@@ -113,8 +55,10 @@ add_filter( 'wpcf7_validate_textarea', 'wpcf7_textarea_validation_filter', 10, 2
 add_filter( 'wpcf7_validate_textarea*', 'wpcf7_textarea_validation_filter', 10, 2 );
 
 function wpcf7_textarea_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$value = isset( $_POST[$name] ) ? (string) $_POST[$name] : '';
 

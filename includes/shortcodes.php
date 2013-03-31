@@ -263,6 +263,23 @@ class WPCF7_Shortcode {
 			}
 		}
 
+		// cols, rows & maxlength
+		if ( isset( $atts['cols'] ) || isset( $atts['rows'] ) ) {
+			$matches = $this->get_first_match_option(
+				'%^(?:([0-9]*)x([0-9]*))?(?:/([0-9]+))?$%' );
+
+			if ( $matches ) {
+				if ( isset( $matches[1] ) && '' !== $matches[1] )
+					$atts['cols'] = $matches[1];
+
+				if ( isset( $matches[2] ) && '' !== $matches[2] )
+					$atts['rows'] = $matches[2];
+
+				if ( isset( $matches[3] ) && '' !== $matches[3] )
+					$atts['maxlength'] = $matches[3];
+			}
+		}
+
 		return $atts;
 	}
 
