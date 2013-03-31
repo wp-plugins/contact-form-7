@@ -34,8 +34,8 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 		$value = '';
 	}
 
-	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
-		$value = stripslashes_deep( $_POST[$name] );
+	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
+		$value = stripslashes_deep( $_POST[$tag->name] );
 
 	$atts['name'] = $tag->name;
 
