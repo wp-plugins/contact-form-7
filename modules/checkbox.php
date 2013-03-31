@@ -10,111 +10,89 @@ wpcf7_add_shortcode( 'checkbox*', 'wpcf7_checkbox_shortcode_handler', true );
 wpcf7_add_shortcode( 'radio', 'wpcf7_checkbox_shortcode_handler', true );
 
 function wpcf7_checkbox_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
-	$labels = (array) $tag['labels'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
+	$class = wpcf7_form_controls_class( $tag->type );
 
-	$validation_error = wpcf7_get_validation_error( $name );
+	if ( $validation_error )
+		$class .= ' wpcf7-not-valid';
 
-	$atts = $id_att = $tabindex_att = '';
+	$label_first = $tag->has_option( 'label_first' );
+	$use_label_element = $tag->has_option( 'use_label_element' );
+	$exclusive = $tag->has_option( 'exclusive' );
+	$multiple = false;
+
+	if ( 'checkbox' == $tag->basetype )
+		$multiple = ! $exclusive;
+	else // radio
+		$exclusive = false;
+
+	if ( $exclusive )
+		$class .= ' wpcf7-exclusive-checkbox';
+
+	$atts = $tag->make_common_atts( array( 'class' => $class ) );
 
 	$defaults = array();
 
-	$label_first = false;
-	$use_label_element = false;
+	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) )
+		$defaults = explode( '_', $matches[1] );
 
-	$class_att = wpcf7_form_controls_class( $type );
+	if ( isset( $_POST[$tag->name] ) )
+		$post = $_POST[$tag->name];
+	else
+		$post = $multiple ? array() : '';
 
-	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
-
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
-
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
-
-		} elseif ( preg_match( '/^default:([0-9_]+)$/', $option, $matches ) ) {
-			$defaults = explode( '_', $matches[1] );
-
-		} elseif ( preg_match( '%^label[_-]?first$%', $option ) ) {
-			$label_first = true;
-
-		} elseif ( preg_match( '%^use[_-]?label[_-]?element$%', $option ) ) {
-			$use_label_element = true;
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
-	}
-
-	$multiple = false;
-	$exclusive = (bool) preg_grep( '%^exclusive$%', $options );
-
-	if ( 'checkbox' == $type || 'checkbox*' == $type ) {
-		$multiple = ! $exclusive;
-	} else { // radio
-		$exclusive = false;
-	}
-
-	if ( $exclusive )
-		$class_att .= ' wpcf7-exclusive-checkbox';
-
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
+	$is_posted = wpcf7_is_posted();
 
 	$html = '';
 
-	$input_type = rtrim( $type, '*' );
-
-	$posted = wpcf7_is_posted();
-
-	foreach ( $values as $key => $value ) {
+	foreach ( (array) $tag->values as $key => $value ) {
 		$checked = false;
 
-		if ( $posted && ! empty( $_POST[$name] ) ) {
-			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
+		if ( $is_posted && ! empty( $post ) ) {
+			if ( $multiple && in_array( esc_sql( $value ), (array) $post ) )
 				$checked = true;
-			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
+			if ( ! $multiple && $post == esc_sql( $value ) )
 				$checked = true;
 		} else {
 			if ( in_array( $key + 1, (array) $defaults ) )
 				$checked = true;
 		}
 
-		$checked = $checked ? ' checked="checked"' : '';
+		$tabindex = '';
 
-		if ( '' !== $tabindex_att ) {
-			$tabindex = sprintf( ' tabindex="%d"', $tabindex_att );
-			$tabindex_att += 1;
-		} else {
-			$tabindex = '';
+		if ( '' !== $atts['tabindex'] ) {
+			$tabindex = $atts['tabindex'];
+			$atts['tabindex'] += 1;
 		}
 
-		if ( isset( $labels[$key] ) )
-			$label = $labels[$key];
+		if ( isset( $tag->labels[$key] ) )
+			$label = $tag->labels[$key];
 		else
 			$label = $value;
 
+		$item_atts = array(
+			'type' => $tag->basetype,
+			'name' => $tag->name . ( $multiple ? '[]' : '' ),
+			'value' => $value,
+			'checked' => $checked ? 'checked' : '',
+			'tabindex' => $tabindex ? $tabindex : '' );
+
+		$item_atts = wpcf7_format_atts( $item_atts );
+
 		if ( $label_first ) { // put label first, input last
-			$item = '<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>&nbsp;';
-			$item .= '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . ' />';
+			$item = sprintf(
+				'<span class="wpcf7-list-item-label">%1$s</span>&nbsp;<input %2$s />',
+				esc_html( $label ), $item_atts );
 		} else {
-			$item = '<input type="' . $input_type . '" name="' . $name . ( $multiple ? '[]' : '' ) . '" value="' . esc_attr( $value ) . '"' . $checked . $tabindex . ' />';
-			$item .= '&nbsp;<span class="wpcf7-list-item-label">' . esc_html( $label ) . '</span>';
+			$item = sprintf(
+				'<input %2$s />&nbsp;<span class="wpcf7-list-item-label">%1$s</span>',
+				esc_html( $label ), $item_atts );
 		}
 
 		if ( $use_label_element )
@@ -124,9 +102,13 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		$html .= $item;
 	}
 
-	$html = '<span' . $atts . '>' . $html . '</span>';
+	unset( $atts['tabindex'] );
 
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$atts = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><span %2$s>%3$s</span>%4$s</span>',
+		$tag->name, $atts, $html, $validation_error );
 
 	return $html;
 }
@@ -139,8 +121,10 @@ add_filter( 'wpcf7_validate_checkbox*', 'wpcf7_checkbox_validation_filter', 10, 
 add_filter( 'wpcf7_validate_radio', 'wpcf7_checkbox_validation_filter', 10, 2 );
 
 function wpcf7_checkbox_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$value = isset( $_POST[$name] ) ? (array) $_POST[$name] : array();
 
