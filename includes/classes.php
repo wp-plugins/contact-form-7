@@ -862,7 +862,7 @@ function wpcf7_scan_shortcode( $cond = null ) {
 
 function wpcf7_form_controls_class( $type, $default = '' ) {
 	$type = trim( $type );
-	$default = explode( ' ', $default );
+	$default = array_filter( explode( ' ', $default ) );
 
 	$classes = array_merge( array( 'wpcf7-form-control' ), $default );
 

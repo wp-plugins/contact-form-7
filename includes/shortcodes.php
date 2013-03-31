@@ -216,7 +216,7 @@ class WPCF7_Shortcode {
 	}
 
 	public function has_option( $opt ) {
-		$pattern = sprintf( '/^%s(:.+)?$/', preg_quote( $opt, '/' ) );
+		$pattern = sprintf( '/^%s(:.+)?$/i', preg_quote( $opt, '/' ) );
 		return (bool) preg_grep( $pattern, $this->options );
 	}
 

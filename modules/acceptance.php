@@ -8,58 +8,35 @@
 wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
 
 function wpcf7_acceptance_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = $id_att = $tabindex_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type );
+	$class = wpcf7_form_controls_class( $tag->type );
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	if ( $tag->has_option( 'invert' ) )
+		$class .= ' wpcf7-invert';
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
+	$atts = $tag->make_common_atts( array( 'class' => $class ) );
 
-		} elseif ( 'invert' == $option ) {
-			$class_att .= ' wpcf7-invert';
+	if ( $tag->has_option( 'default:on' ) )
+		$atts['checked'] = 'checked';
 
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
+	$atts['type'] = 'checkbox';
+	$atts['name'] = $tag->name;
+	$atts['value'] = '1';
 
-		}
-	}
+	$atts = wpcf7_format_atts( $atts );
 
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
-
-	$default_on = (bool) preg_grep( '/^default:on$/i', $options );
-
-	$checked = $default_on ? ' checked="checked"' : '';
-
-	$html = '<input type="checkbox" name="' . $name . '" value="1"' . $atts . $checked . ' />';
-
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+		$tag->name, $atts, $validation_error );
 
 	return $html;
 }
@@ -73,16 +50,12 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 	if ( ! wpcf7_acceptance_as_validation() )
 		return $result;
 
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
 
-	if ( empty( $name ) )
-		return $result;
-
-	$options = (array) $tag['options'];
-
+	$name = $tag->name;
 	$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
 
-	$invert = (bool) preg_grep( '%^invert$%', $options );
+	$invert = $tag->has_option( 'invert' );
 
 	if ( $invert && $value || ! $invert && ! $value ) {
 		$result['valid'] = false;
@@ -110,7 +83,7 @@ function wpcf7_acceptance_filter( $accepted ) {
 		if ( empty( $name ) )
 			continue;
 
-		$value = $_POST[$name] ? 1 : 0;
+		$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
 
 		$invert = (bool) preg_grep( '%^invert$%', $options );
 
