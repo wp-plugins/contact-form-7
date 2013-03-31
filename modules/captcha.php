@@ -9,109 +9,82 @@ wpcf7_add_shortcode( 'captchac', 'wpcf7_captcha_shortcode_handler', true );
 wpcf7_add_shortcode( 'captchar', 'wpcf7_captcha_shortcode_handler', true );
 
 function wpcf7_captcha_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( 'captchac' == $tag->type && ! class_exists( 'ReallySimpleCaptcha' ) )
+		return '<em>' . __( 'To use CAPTCHA, you need <a href="http://wordpress.org/extend/plugins/really-simple-captcha/">Really Simple CAPTCHA</a> plugin installed.', 'wpcf7' ) . '</em>';
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
+	$class = wpcf7_form_controls_class( $tag->type );
 
-	$validation_error = wpcf7_get_validation_error( $name );
+	if ( 'captchac' == $tag->type ) {
+		$class .= ' wpcf7-captcha-' . $tag->name;
 
-	$atts = $id_att = $size_att = $maxlength_att = '';
-	$tabindex_att = $placeholder_att = '';
+		$atts = $tag->make_common_atts( array( 'class' => $class ) );
 
-	$class_att = wpcf7_form_controls_class( $type );
+		unset( $atts['tabindex'] );
 
-	if ( 'captchac' == $type )
-		$class_att .= ' wpcf7-captcha-' . $name;
+		$op = array( // Default
+			'img_size' => array( 72, 24 ),
+			'base' => array( 6, 18 ),
+			'font_size' => 14,
+			'font_char_width' => 15 );
 
-	if ( $validation_error && 'captchar' == $type )
-		$class_att .= ' wpcf7-not-valid';
-
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
-
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
-
-		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
-			$size_att = (int) $matches[1];
-			$maxlength_att = (int) $matches[2];
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
-	}
-
-	// Value.
-	$value = '';
-
-	if ( 'captchar' == $type && ! wpcf7_is_posted() && isset( $values[0] ) ) {
-		$value = $values[0];
-
-		if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
-			$placeholder_att = $value;
-			$value = '';
-		}
-	}
-
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( 'captchac' == $type ) {
-		if ( ! class_exists( 'ReallySimpleCaptcha' ) ) {
-			return '<em>' . __( 'To use CAPTCHA, you need <a href="http://wordpress.org/extend/plugins/really-simple-captcha/">Really Simple CAPTCHA</a> plugin installed.', 'wpcf7' ) . '</em>';
-		}
-
-		$op = array();
-		// Default
-		$op['img_size'] = array( 72, 24 );
-		$op['base'] = array( 6, 18 );
-		$op['font_size'] = 14;
-		$op['font_char_width'] = 15;
-
-		$op = array_merge( $op, wpcf7_captchac_options( $options ) );
+		$op = array_merge( $op, wpcf7_captchac_options( $tag->options ) );
 
 		if ( ! $filename = wpcf7_generate_captcha( $op ) )
 			return '';
 
-		if ( is_array( $op['img_size'] ) )
-			$atts .= ' width="' . $op['img_size'][0] . '" height="' . $op['img_size'][1] . '"';
+		if ( ! empty( $op['img_size'] ) ) {
+			if ( isset( $op['img_size'][0] ) )
+				$atts['width'] = $op['img_size'][0];
 
-		$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
-		$html = '<img alt="captcha" src="' . $captcha_url . '"' . $atts . ' />';
-		$ref = substr( $filename, 0, strrpos( $filename, '.' ) );
-		$html = '<input type="hidden" name="_wpcf7_captcha_challenge_' . $name . '" value="' . $ref . '" />' . $html;
+			if ( isset( $op['img_size'][1] ) )
+				$atts['height'] = $op['img_size'][1];
+		}
+
+		$atts['alt'] = 'captcha';
+		$atts['src'] = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+
+		$atts = wpcf7_format_atts( $atts );
+
+		$prefix = substr( $filename, 0, strrpos( $filename, '.' ) );
+
+		$html = sprintf(
+			'<input type="hidden" name="_wpcf7_captcha_challenge_%1$s" value="%2$s" /><img %3$s />',
+			$tag->name, $prefix, $atts );
 
 		return $html;
 
-	} elseif ( 'captchar' == $type ) {
-		if ( $size_att )
-			$atts .= ' size="' . $size_att . '"';
-		else
-			$atts .= ' size="40"'; // default size
+	} elseif ( 'captchar' == $tag->type ) {
+		if ( $validation_error )
+			$class .= ' wpcf7-not-valid';
 
-		if ( $maxlength_att )
-			$atts .= ' maxlength="' . $maxlength_att . '"';
+		$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
 
-		if ( '' !== $tabindex_att )
-			$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
+		$value = (string) reset( $tag->values );
 
-		if ( $placeholder_att )
-			$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
+		if ( wpcf7_is_posted() )
+			$value = '';
 
-		$html = '<input type="text" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
-		$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+		if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+			$atts['placeholder'] = $value;
+			$value = '';
+		}
+
+		$atts['value'] = $value;
+		$atts['type'] = 'text';
+		$atts['name'] = $tag->name;
+
+		$atts = wpcf7_format_atts( $atts );
+
+		$html = sprintf(
+			'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+			$tag->name, $atts, $validation_error );
 
 		return $html;
 	}
@@ -123,8 +96,10 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_validate_captchar', 'wpcf7_captcha_validation_filter', 10, 2 );
 
 function wpcf7_captcha_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$captchac = '_wpcf7_captcha_challenge_' . $name;
 
