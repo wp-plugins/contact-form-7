@@ -26,20 +26,9 @@ function wpcf7_date_shortcode_handler( $tag ) {
 
 	$atts = $tag->make_common_atts( array( 'class' => $class ) );
 
-	$min_pattern = '%^min:([0-9]{4}-[0-9]{2}-[0-9]{2})$%';
-
-	if ( $matches = $tag->get_first_match_option( $min_pattern ) )
-		$atts['min'] = $matches[1];
-
-	$max_pattern = '%^max:([0-9]{4}-[0-9]{2}-[0-9]{2})$%';
-
-	if ( $matches = $tag->get_first_match_option( $max_pattern ) )
-		$atts['max'] = $matches[1];
-
-	$step_pattern = '%^step:([1-9][0-9]*)$%';
-
-	if ( $matches = $tag->get_first_match_option( $step_pattern ) )
-		$atts['step'] = $matches[1];
+	$atts['min'] = $tag->get_option( 'min', 'date', true );
+	$atts['max'] = $tag->get_option( 'max', 'date', true );
+	$atts['step'] = $tag->get_option( 'step', 'int', true );
 
 	$value = (string) reset( $tag->values );
 
@@ -81,21 +70,13 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 
 	$type = $tag->type;
 	$name = $tag->name;
-	$options = $tag->options;
+
+	$min = $tag->get_option( 'min', 'date', true );
+	$max = $tag->get_option( 'max', 'date', true );
 
 	$value = isset( $_POST[$name] )
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
 		: '';
-
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^min:([0-9]{4}-[0-9]{2}-[0-9]{2})$%', $option, $matches ) ) {
-			$min_att = $matches[1];
-
-		} elseif ( preg_match( '%^max:([0-9]{4}-[0-9]{2}-[0-9]{2})$%', $option, $matches ) ) {
-			$max_att = $matches[1];
-
-		}
-	}
 
 	if ( '*' == substr( $type, -1 ) && '' == $value ) {
 		$result['valid'] = false;
@@ -103,10 +84,10 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 	} elseif ( '' != $value && ! wpcf7_is_date( $value ) ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_date' );
-	} elseif ( '' != $value && ! empty( $min_att ) && $value < $min_att ) {
+	} elseif ( '' != $value && ! empty( $min ) && $value < $min ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'date_too_early' );
-	} elseif ( '' != $value && ! empty( $max_att ) && $max_att < $value ) {
+	} elseif ( '' != $value && ! empty( $max ) && $max < $value ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'date_too_late' );
 	}

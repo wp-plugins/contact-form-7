@@ -220,6 +220,39 @@ class WPCF7_Shortcode {
 		return (bool) preg_grep( $pattern, $this->options );
 	}
 
+	public function get_option( $opt, $pattern = '', $single = false ) {
+		if ( 'date' == $pattern )
+			$pattern = '[0-9]{4}-[0-9]{2}-[0-9]{2}';
+		elseif ( 'int' == $pattern )
+			$pattern = '[1-9][0-9]*';
+
+		if ( '' == $pattern )
+			$pattern = '.+';
+
+		$pattern = sprintf( '/^%s:%s$/i', preg_quote( $opt, '/' ), $pattern );
+
+		if ( $single ) {
+			$matches = $this->get_first_match_option( $pattern );
+
+			if ( ! $matches )
+				return false;
+
+			return substr( $matches[0], strlen( $opt ) + 1 );
+		} else {
+			$matches_a = $this->get_all_match_options( $pattern );
+
+			if ( ! $matches_a )
+				return false;
+
+			$results = array();
+
+			foreach ( $matches_a as $matches )
+				$results[] = substr( $matches[0], strlen( $opt ) + 1 );
+
+			return $results;
+		}
+	}
+
 	public function make_common_atts( $atts = '' ) {
 		$defaults = array(
 			'id' => '',
