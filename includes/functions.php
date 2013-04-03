@@ -274,14 +274,14 @@ function wpcf7_support_html5() {
 function wpcf7_format_atts( $atts ) {
 	$html = '';
 
-	if ( isset( $atts['type'] ) ) {
-		$html .= sprintf( ' type="%s"', esc_attr( trim( $atts['type'] ) ) );
-		unset( $atts['type'] );
-	}
+	$prioritized_atts = array( 'type', 'name', 'value' );
 
-	if ( isset( $atts['name'] ) ) {
-		$html .= sprintf( ' name="%s"', esc_attr( trim( $atts['name'] ) ) );
-		unset( $atts['name'] );
+	foreach ( $prioritized_atts as $att ) {
+		if ( isset( $atts[$att] ) ) {
+			$value = trim( $atts[$att] );
+			$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
+			unset( $atts[$att] );
+		}
 	}
 
 	foreach ( $atts as $key => $value ) {
