@@ -9,59 +9,31 @@ wpcf7_add_shortcode( 'file', 'wpcf7_file_shortcode_handler', true );
 wpcf7_add_shortcode( 'file*', 'wpcf7_file_shortcode_handler', true );
 
 function wpcf7_file_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = $id_att = $size_att = $tabindex_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type );
+	$class = wpcf7_form_controls_class( $tag->type );
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
+	unset( $atts['maxlength'] );
 
-		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
-			$size_att = (int) $matches[1];
+	$atts['type'] = 'file';
+	$atts['name'] = $tag->name;
+	$atts['value'] = '1';
 
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
+	$atts = wpcf7_format_atts( $atts );
 
-		}
-	}
-
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( $size_att )
-		$atts .= ' size="' . $size_att . '"';
-	else
-		$atts .= ' size="40"'; // default size
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
-
-	$html = '<input type="file" name="' . $name . '"' . $atts . ' value="1" />';
-
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+		$tag->name, $atts, $validation_error );
 
 	return $html;
 }
@@ -87,9 +59,10 @@ add_filter( 'wpcf7_validate_file', 'wpcf7_file_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_file*', 'wpcf7_file_validation_filter', 10, 2 );
 
 function wpcf7_file_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$file = isset( $_FILES[$name] ) ? $_FILES[$name] : null;
 
@@ -108,29 +81,44 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	if ( ! is_uploaded_file( $file['tmp_name'] ) )
 		return $result;
 
-	$file_type_pattern = '';
-	$allowed_size = 1048576; // default size 1 MB
+	$allowed_file_types = array();
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^filetypes:(.+)$%', $option, $matches ) ) {
-			$file_types = explode( '|', $matches[1] );
+	if ( $file_types_a = $tag->get_option( 'filetypes' ) ) {
+		foreach ( $file_types_a as $file_types ) {
+			$file_types = explode( '|', $file_types );
+
 			foreach ( $file_types as $file_type ) {
 				$file_type = trim( $file_type, '.' );
-				$file_type = str_replace(
-					array( '.', '+', '*', '?' ), array( '\.', '\+', '\*', '\?' ), $file_type );
-				$file_type_pattern .= '|' . $file_type;
+				$file_type = str_replace( array( '.', '+', '*', '?' ),
+					array( '\.', '\+', '\*', '\?' ), $file_type );
+				$allowed_file_types[] = $file_type;
 			}
+		}
+	}
 
-		} elseif ( preg_match( '/^limit:([1-9][0-9]*)([kKmM]?[bB])?$/', $option, $matches ) ) {
-			$allowed_size = (int) $matches[1];
+	$allowed_file_types = array_unique( $allowed_file_types );
+	$file_type_pattern = implode( '|', $allowed_file_types );
 
-			$kbmb = strtolower( $matches[2] );
-			if ( 'kb' == $kbmb ) {
-				$allowed_size *= 1024;
-			} elseif ( 'mb' == $kbmb ) {
-				$allowed_size *= 1024 * 1024;
+	$allowed_size = 1048576; // default size 1 MB
+
+	if ( $file_size_a = $tag->get_option( 'limit' ) ) {
+		$limit_pattern = '/^([1-9][0-9]*)([kKmM]?[bB])?$/';
+
+		foreach ( $file_size_a as $file_size ) {
+			if ( preg_match( $limit_pattern, $file_size, $matches ) ) {
+				$allowed_size = (int) $matches[1];
+
+				if ( ! empty( $matches[2] ) ) {
+					$kbmb = strtolower( $matches[2] );
+
+					if ( 'kb' == $kbmb )
+						$allowed_size *= 1024;
+					elseif ( 'mb' == $kbmb )
+						$allowed_size *= 1024 * 1024;
+				}
+
+				break;
 			}
-
 		}
 	}
 
