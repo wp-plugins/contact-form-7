@@ -221,10 +221,13 @@ class WPCF7_Shortcode {
 	}
 
 	public function get_option( $opt, $pattern = '', $single = false ) {
-		if ( 'date' == $pattern )
-			$pattern = '[0-9]{4}-[0-9]{2}-[0-9]{2}';
-		elseif ( 'int' == $pattern )
-			$pattern = '[1-9][0-9]*';
+		$preset_patterns = array(
+			'date'			=> '[0-9]{4}-[0-9]{2}-[0-9]{2}',
+			'int'			=> '[0-9]+',
+			'signed_int'	=> '-?[0-9]+' );
+
+		if ( isset( $preset_patterns[$pattern] ) )
+			$pattern = $preset_patterns[$pattern];
 
 		if ( '' == $pattern )
 			$pattern = '.+';

@@ -13,93 +13,51 @@ wpcf7_add_shortcode( 'range', 'wpcf7_number_shortcode_handler', true );
 wpcf7_add_shortcode( 'range*', 'wpcf7_number_shortcode_handler', true );
 
 function wpcf7_number_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$values = (array) $tag['values'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
+	$class = wpcf7_form_controls_class( $tag->type );
 
-	$basetype = trim( $type, '*' );
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = $id_att = $min_att = $max_att = $step_att = '';
-	$tabindex_att = $placeholder_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type );
-
-	$class_att .= ' wpcf7-validates-as-number';
+	$class .= ' wpcf7-validates-as-number';
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	$atts = $tag->make_common_atts( array( 'class' => $class ) );
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
+	$atts['min'] = $tag->get_option( 'min', 'signed_int', true );
+	$atts['max'] = $tag->get_option( 'max', 'signed_int', true );
+	$atts['step'] = $tag->get_option( 'step', 'int', true );
 
-		} elseif ( preg_match( '%^min:(-?[0-9]+)$%', $option, $matches ) ) {
-			$min_att = $matches[1];
+	$value = (string) reset( $tag->values );
 
-		} elseif ( preg_match( '%^max:(-?[0-9]+)$%', $option, $matches ) ) {
-			$max_att = $matches[1];
-
-		} elseif ( preg_match( '%^step:([1-9][0-9]*)$%', $option, $matches ) ) {
-			$step_att = (int) $matches[1];
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
-	}
-
-	$value = (string) reset( $values );
-
-	if ( preg_grep( '%^placeholder|watermark$%', $options ) ) {
-		$placeholder_att = $value;
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
 		$value = '';
 	}
 
-	if ( wpcf7_is_posted() && isset( $_POST[$name] ) )
-		$value = stripslashes_deep( $_POST[$name] );
+	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
+		$value = stripslashes_deep( $_POST[$tag->name] );
 
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( '' !== $min_att )
-		$atts .= ' min="' . $min_att . '"';
-
-	if ( '' !== $max_att )
-		$atts .= ' max="' . $max_att . '"';
-
-	if ( '' !== $step_att )
-		$atts .= ' step="' . $step_att . '"';
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
-
-	if ( $placeholder_att )
-		$atts .= sprintf( ' placeholder="%s"', esc_attr( $placeholder_att ) );
+	$atts['value'] = $value;
 
 	if ( wpcf7_support_html5() ) {
-		$type_att = $basetype;
+		$atts['type'] = $tag->basetype;
 	} else {
-		$type_att = 'text';
+		$atts['type'] = 'text';
 	}
 
-	$html = '<input type="' . $type_att . '" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $atts . ' />';
+	$atts['name'] = $tag->name;
 
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$atts = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+		$tag->name, $atts, $validation_error );
 
 	return $html;
 }
@@ -113,21 +71,17 @@ add_filter( 'wpcf7_validate_range', 'wpcf7_number_validation_filter', 10, 2 );
 add_filter( 'wpcf7_validate_range*', 'wpcf7_number_validation_filter', 10, 2 );
 
 function wpcf7_number_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
 		: '';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^min:(-?[0-9]+)$%', $option, $matches ) ) {
-			$min_att = $matches[1];
-		} elseif ( preg_match( '%^max:(-?[0-9]+)$%', $option, $matches ) ) {
-			$max_att = $matches[1];
-		}
-	}
+	$min = $tag->get_option( 'min', 'signed_int', true );
+	$max = $tag->get_option( 'max', 'signed_int', true );
 
 	if ( '*' == substr( $type, -1 ) && '' == $value ) {
 		$result['valid'] = false;
@@ -135,10 +89,10 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 	} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_number' );
-	} elseif ( '' != $value && '' != $min_att && (float) $value < $min_att ) {
+	} elseif ( '' != $value && '' != $min && (float) $value < (float) $min ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'number_too_small' );
-	} elseif ( '' != $value && '' != $max_att && $max_att < (float) $value ) {
+	} elseif ( '' != $value && '' != $max && (float) $max < (float) $value ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'number_too_large' );
 	}
