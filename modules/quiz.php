@@ -8,59 +8,21 @@
 wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
 
 function wpcf7_quiz_shortcode_handler( $tag ) {
-	if ( ! is_array( $tag ) )
+	$tag = new WPCF7_Shortcode( $tag );
+
+	if ( empty( $tag->name ) )
 		return '';
 
-	$type = $tag['type'];
-	$name = $tag['name'];
-	$options = (array) $tag['options'];
-	$pipes = $tag['pipes'];
+	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	if ( empty( $name ) )
-		return '';
-
-	$validation_error = wpcf7_get_validation_error( $name );
-
-	$atts = $id_att = $size_att = $maxlength_att = $tabindex_att = '';
-
-	$class_att = wpcf7_form_controls_class( $type );
+	$class = wpcf7_form_controls_class( $tag->type );
 
 	if ( $validation_error )
-		$class_att .= ' wpcf7-not-valid';
+		$class .= ' wpcf7-not-valid';
 
-	foreach ( $options as $option ) {
-		if ( preg_match( '%^id:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$id_att = $matches[1];
+	$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
 
-		} elseif ( preg_match( '%^class:([-0-9a-zA-Z_]+)$%', $option, $matches ) ) {
-			$class_att .= ' ' . $matches[1];
-
-		} elseif ( preg_match( '%^([0-9]*)[/x]([0-9]*)$%', $option, $matches ) ) {
-			$size_att = (int) $matches[1];
-			$maxlength_att = (int) $matches[2];
-
-		} elseif ( preg_match( '%^tabindex:(\d+)$%', $option, $matches ) ) {
-			$tabindex_att = (int) $matches[1];
-
-		}
-	}
-
-	if ( $id_att )
-		$atts .= ' id="' . trim( $id_att ) . '"';
-
-	if ( $class_att )
-		$atts .= ' class="' . trim( $class_att ) . '"';
-
-	if ( $size_att )
-		$atts .= ' size="' . $size_att . '"';
-	else
-		$atts .= ' size="40"'; // default size
-
-	if ( $maxlength_att )
-		$atts .= ' maxlength="' . $maxlength_att . '"';
-
-	if ( '' !== $tabindex_att )
-		$atts .= sprintf( ' tabindex="%d"', $tabindex_att );
+	$pipes = $tag->pipes;
 
 	if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
 		$pipe = $pipes->random_pipe();
@@ -74,11 +36,15 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 
 	$answer = wpcf7_canonicalize( $answer );
 
-	$html = '<span class="wpcf7-quiz-label">' . esc_html( $question ) . '</span>&nbsp;';
-	$html .= '<input type="text" name="' . $name . '"' . $atts . ' />';
-	$html .= '<input type="hidden" name="_wpcf7_quiz_answer_' . $name . '" value="' . wp_hash( $answer, 'wpcf7_quiz' ) . '" />';
+	$atts['type'] = 'text';
+	$atts['name'] = $tag->name;
 
-	$html = '<span class="wpcf7-form-control-wrap ' . $name . '">' . $html . $validation_error . '</span>';
+	$atts = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><span class="wpcf7-quiz-label">%2$s</span>&nbsp;<input %3$s /><input type="hidden" name="_wpcf7_quiz_answer_%1$s" value="%4$s" />%5$s</span>',
+		$tag->name, esc_html( $question ), $atts,
+		wp_hash( $answer, 'wpcf7_quiz' ), $validation_error );
 
 	return $html;
 }
@@ -89,8 +55,10 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
 function wpcf7_quiz_validation_filter( $result, $tag ) {
-	$type = $tag['type'];
-	$name = $tag['name'];
+	$tag = new WPCF7_Shortcode( $tag );
+
+	$type = $tag->type;
+	$name = $tag->name;
 
 	$answer = isset( $_POST[$name] ) ? wpcf7_canonicalize( $_POST[$name] ) : '';
 	$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );

@@ -222,9 +222,9 @@ class WPCF7_Shortcode {
 
 	public function get_option( $opt, $pattern = '', $single = false ) {
 		$preset_patterns = array(
-			'date'			=> '[0-9]{4}-[0-9]{2}-[0-9]{2}',
-			'int'			=> '[0-9]+',
-			'signed_int'	=> '-?[0-9]+' );
+			'date' => '[0-9]{4}-[0-9]{2}-[0-9]{2}',
+			'int' => '[0-9]+',
+			'signed_int' => '-?[0-9]+' );
 
 		if ( isset( $preset_patterns[$pattern] ) )
 			$pattern = $preset_patterns[$pattern];
