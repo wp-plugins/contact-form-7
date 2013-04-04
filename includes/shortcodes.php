@@ -224,7 +224,8 @@ class WPCF7_Shortcode {
 		$preset_patterns = array(
 			'date' => '[0-9]{4}-[0-9]{2}-[0-9]{2}',
 			'int' => '[0-9]+',
-			'signed_int' => '-?[0-9]+' );
+			'signed_int' => '-?[0-9]+',
+			'class' => '[-0-9a-zA-Z_]+' );
 
 		if ( isset( $preset_patterns[$pattern] ) )
 			$pattern = $preset_patterns[$pattern];
@@ -256,10 +257,18 @@ class WPCF7_Shortcode {
 		}
 	}
 
+	public function make_class_attr( $default = '' ) {
+		if ( is_string( $default ) )
+			$default = explode( ' ', $default );
+
+		$options = array_merge( $default, $this->get_option( 'class', 'class' ) );
+
+		return implode( ' ', array_unique( $options ) );
+	}
+
 	public function make_common_atts( $atts = '' ) {
 		$defaults = array(
 			'id' => '',
-			'class' => '',
 			'tabindex' => '' );
 
 		$atts = wp_parse_args( $atts, $defaults );
@@ -269,16 +278,6 @@ class WPCF7_Shortcode {
 
 		if ( $matches )
 			$atts['id'] = $matches[1];
-
-		// class
-		$matches_a = $this->get_all_match_options( '%^class:([-0-9a-zA-Z_]+)$%' );
-
-		if ( $matches_a ) {
-			foreach ( $matches_a as $matches )
-				$atts['class'] .= ' ' . $matches[1];
-
-			$atts['class'] = trim( $atts['class'] );
-		}
 
 		// tabindex
 		$matches = $this->get_first_match_option( '%^tabindex:(\d+)$%' );

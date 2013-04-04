@@ -35,7 +35,9 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	if ( $exclusive )
 		$class .= ' wpcf7-exclusive-checkbox';
 
-	$atts = $tag->make_common_atts( array( 'class' => $class ) );
+	$atts = $tag->make_common_atts();
+
+	$atts['class'] = $tag->make_class_attr( $class );
 
 	$defaults = array();
 

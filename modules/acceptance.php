@@ -23,7 +23,9 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'invert' ) )
 		$class .= ' wpcf7-invert';
 
-	$atts = $tag->make_common_atts( array( 'class' => $class ) );
+	$atts = $tag->make_common_atts();
+
+	$atts['class'] = $tag->make_class_attr( $class );
 
 	if ( $tag->has_option( 'default:on' ) )
 		$atts['checked'] = 'checked';

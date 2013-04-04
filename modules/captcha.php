@@ -24,7 +24,9 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 	if ( 'captchac' == $tag->type ) {
 		$class .= ' wpcf7-captcha-' . $tag->name;
 
-		$atts = $tag->make_common_atts( array( 'class' => $class ) );
+		$atts = $tag->make_common_atts();
+
+		$atts['class'] = $tag->make_class_attr( $class );
 
 		unset( $atts['tabindex'] );
 
@@ -64,7 +66,9 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		if ( $validation_error )
 			$class .= ' wpcf7-not-valid';
 
-		$atts = $tag->make_common_atts( array( 'class' => $class, 'size' => '40' ) );
+		$atts = $tag->make_common_atts( array( 'size' => '40' ) );
+
+		$atts['class'] = $tag->make_class_attr( $class );
 
 		$value = (string) reset( $tag->values );
 

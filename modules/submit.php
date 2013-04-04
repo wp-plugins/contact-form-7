@@ -12,7 +12,9 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 
 	$class = wpcf7_form_controls_class( $tag->type );
 
-	$atts = $tag->make_common_atts( array( 'class' => $class ) );
+	$atts = $tag->make_common_atts();
+
+	$atts['class'] = $tag->make_class_attr( $class );
 
 	$value = isset( $tag->values[0] ) ? $tag->values[0] : '';
 

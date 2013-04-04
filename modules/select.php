@@ -21,7 +21,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	if ( $validation_error )
 		$class .= ' wpcf7-not-valid';
 
-	$atts = $tag->make_common_atts( array( 'class' => $class ) );
+	$atts = $tag->make_common_atts();
+
+	$atts['class'] = $tag->make_class_attr( $class );
 
 	$defaults = array();
 
