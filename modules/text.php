@@ -107,22 +107,21 @@ add_filter( 'wpcf7_validate_tel*', 'wpcf7_text_validation_filter', 10, 2 );
 function wpcf7_text_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
 		: '';
 
-	if ( 'text*' == $type ) {
+	if ( 'text*' == $tag->type ) {
 		if ( '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}
 	}
 
-	if ( 'email' == $type || 'email*' == $type ) {
-		if ( 'email*' == $type && '' == $value ) {
+	if ( 'email' == $tag->basetype ) {
+		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		} elseif ( '' != $value && ! wpcf7_is_email( $value ) ) {
@@ -131,8 +130,8 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
-	if ( 'url' == $type || 'url*' == $type ) {
-		if ( 'url*' == $type && '' == $value ) {
+	if ( 'url' == $tag->basetype ) {
+		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		} elseif ( '' != $value && ! wpcf7_is_url( $value ) ) {
@@ -141,8 +140,8 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
-	if ( 'tel' == $type || 'tel*' == $type ) {
-		if ( 'tel*' == $type && '' == $value ) {
+	if ( 'tel' == $tag->basetype ) {
+		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		} elseif ( '' != $value && ! wpcf7_is_tel( $value ) ) {

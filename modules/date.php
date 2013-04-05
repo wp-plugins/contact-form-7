@@ -74,7 +74,6 @@ add_filter( 'wpcf7_validate_date*', 'wpcf7_date_validation_filter', 10, 2 );
 function wpcf7_date_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	$min = $tag->get_option( 'min', 'date', true );
@@ -84,7 +83,7 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
 		: '';
 
-	if ( '*' == substr( $type, -1 ) && '' == $value ) {
+	if ( $tag->is_required() && '' == $value ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 	} elseif ( '' != $value && ! wpcf7_is_date( $value ) ) {

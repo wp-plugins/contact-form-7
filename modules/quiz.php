@@ -63,7 +63,6 @@ add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 function wpcf7_quiz_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	$answer = isset( $_POST[$name] ) ? wpcf7_canonicalize( $_POST[$name] ) : '';

@@ -98,7 +98,6 @@ add_filter( 'wpcf7_validate_select*', 'wpcf7_select_validation_filter', 10, 2 );
 function wpcf7_select_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	if ( isset( $_POST[$name] ) && is_array( $_POST[$name] ) ) {
@@ -108,8 +107,9 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 		}
 	}
 
-	if ( 'select*' == $type ) {
-		if ( ! isset( $_POST[$name] ) || empty( $_POST[$name] ) && '0' !== $_POST[$name] ) {
+	if ( $tag->is_required() ) {
+		if ( ! isset( $_POST[$name] )
+		|| empty( $_POST[$name] ) && '0' !== $_POST[$name] ) {
 			$result['valid'] = false;
 			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		}

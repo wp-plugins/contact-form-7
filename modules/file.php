@@ -64,7 +64,6 @@ add_filter( 'wpcf7_validate_file*', 'wpcf7_file_validation_filter', 10, 2 );
 function wpcf7_file_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	$file = isset( $_FILES[$name] ) ? $_FILES[$name] : null;
@@ -75,7 +74,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 		return $result;
 	}
 
-	if ( empty( $file['tmp_name'] ) && 'file*' == $type ) {
+	if ( empty( $file['tmp_name'] ) && $tag->is_required() ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 		return $result;

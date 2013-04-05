@@ -79,7 +79,6 @@ add_filter( 'wpcf7_validate_range*', 'wpcf7_number_validation_filter', 10, 2 );
 function wpcf7_number_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
-	$type = $tag->type;
 	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
@@ -89,7 +88,7 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 	$min = $tag->get_option( 'min', 'signed_int', true );
 	$max = $tag->get_option( 'max', 'signed_int', true );
 
-	if ( '*' == substr( $type, -1 ) && '' == $value ) {
+	if ( $tag->is_required() && '' == $value ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
 	} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
