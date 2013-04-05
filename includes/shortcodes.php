@@ -261,9 +261,13 @@ class WPCF7_Shortcode {
 		if ( is_string( $default ) )
 			$default = explode( ' ', $default );
 
-		$options = array_merge( $default, $this->get_option( 'class', 'class' ) );
+		$options = array_merge(
+			(array) $default,
+			(array) $this->get_option( 'class', 'class' ) );
 
-		return implode( ' ', array_unique( $options ) );
+		$options = array_filter( array_unique( $options ) );
+
+		return implode( ' ', $options );
 	}
 
 	public function make_common_atts( $atts = '' ) {
