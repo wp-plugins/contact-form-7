@@ -24,6 +24,8 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts = $tag->make_common_atts( array( 'cols' => '40', 'rows' => '10' ) );
 
 	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 	$value = (string) reset( $tag->values );
 

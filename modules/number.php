@@ -30,6 +30,8 @@ function wpcf7_number_shortcode_handler( $tag ) {
 	$atts = $tag->make_common_atts();
 
 	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['min'] = $tag->get_option( 'min', 'signed_int', true );
 	$atts['max'] = $tag->get_option( 'max', 'signed_int', true );
 	$atts['step'] = $tag->get_option( 'step', 'int', true );

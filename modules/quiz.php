@@ -23,6 +23,8 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$atts = $tag->make_common_atts( array( 'size' => '40' ) );
 
 	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 	$pipes = $tag->pipes;
 

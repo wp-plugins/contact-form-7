@@ -21,14 +21,13 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 	$class = wpcf7_form_controls_class( $tag->type );
 
-	if ( 'captchac' == $tag->type ) {
+	if ( 'captchac' == $tag->type ) { // CAPTCHA-Challenge (image)
 		$class .= ' wpcf7-captcha-' . $tag->name;
 
 		$atts = $tag->make_common_atts();
 
 		$atts['class'] = $tag->make_class_attr( $class );
-
-		unset( $atts['tabindex'] );
+		$atts['id'] = $tag->get_option( 'id', 'id', true );
 
 		$op = array( // Default
 			'img_size' => array( 72, 24 ),
@@ -62,13 +61,15 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 
 		return $html;
 
-	} elseif ( 'captchar' == $tag->type ) {
+	} elseif ( 'captchar' == $tag->type ) { // CAPTCHA-Response (input)
 		if ( $validation_error )
 			$class .= ' wpcf7-not-valid';
 
 		$atts = $tag->make_common_atts( array( 'size' => '40' ) );
 
 		$atts['class'] = $tag->make_class_attr( $class );
+		$atts['id'] = $tag->get_option( 'id', 'id', true );
+		$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 		$value = (string) reset( $tag->values );
 

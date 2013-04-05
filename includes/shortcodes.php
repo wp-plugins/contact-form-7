@@ -225,7 +225,8 @@ class WPCF7_Shortcode {
 			'date' => '[0-9]{4}-[0-9]{2}-[0-9]{2}',
 			'int' => '[0-9]+',
 			'signed_int' => '-?[0-9]+',
-			'class' => '[-0-9a-zA-Z_]+' );
+			'class' => '[-0-9a-zA-Z_]+',
+			'id' => '[-0-9a-zA-Z_]+' );
 
 		if ( isset( $preset_patterns[$pattern] ) )
 			$pattern = $preset_patterns[$pattern];
@@ -271,23 +272,9 @@ class WPCF7_Shortcode {
 	}
 
 	public function make_common_atts( $atts = '' ) {
-		$defaults = array(
-			'id' => '',
-			'tabindex' => '' );
+		$defaults = array();
 
 		$atts = wp_parse_args( $atts, $defaults );
-
-		// id
-		$matches = $this->get_first_match_option( '%^id:([-0-9a-zA-Z_]+)$%' );
-
-		if ( $matches )
-			$atts['id'] = $matches[1];
-
-		// tabindex
-		$matches = $this->get_first_match_option( '%^tabindex:(\d+)$%' );
-
-		if ( $matches )
-			$atts['tabindex'] = $matches[1];
 
 		// size & maxlength
 		if ( isset( $atts['size'] ) ) {

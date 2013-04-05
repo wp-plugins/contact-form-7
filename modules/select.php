@@ -24,6 +24,8 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$atts = $tag->make_common_atts();
 
 	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 	$defaults = array();
 
