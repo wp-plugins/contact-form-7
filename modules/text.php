@@ -42,6 +42,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
+	if ( $tag->has_option( 'readonly' ) )
+		$atts['readonly'] = 'readonly';
+
 	$value = (string) reset( $tag->values );
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {

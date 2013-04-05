@@ -33,6 +33,9 @@ function wpcf7_date_shortcode_handler( $tag ) {
 	$atts['max'] = $tag->get_option( 'max', 'date', true );
 	$atts['step'] = $tag->get_option( 'step', 'int', true );
 
+	if ( $tag->has_option( 'readonly' ) )
+		$atts['readonly'] = 'readonly';
+
 	$value = (string) reset( $tag->values );
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
