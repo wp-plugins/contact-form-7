@@ -27,6 +27,7 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
+	$atts['aria-required'] = 'true';
 
 	$pipes = $tag->pipes;
 

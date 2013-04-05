@@ -45,6 +45,9 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'readonly' ) )
 		$atts['readonly'] = 'readonly';
 
+	if ( $tag->is_required() )
+		$atts['aria-required'] = 'true';
+
 	$value = (string) reset( $tag->values );
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {

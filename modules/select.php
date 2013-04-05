@@ -27,6 +27,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
+	if ( $tag->is_required() )
+		$atts['aria-required'] = 'true';
+
 	$defaults = array();
 
 	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) )

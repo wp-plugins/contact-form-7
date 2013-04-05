@@ -28,6 +28,9 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
+	if ( $tag->is_required() )
+		$atts['aria-required'] = 'true';
+
 	$atts['type'] = 'file';
 	$atts['name'] = $tag->name;
 	$atts['value'] = '1';
