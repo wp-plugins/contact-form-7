@@ -258,7 +258,7 @@ class WPCF7_Shortcode {
 		}
 	}
 
-	public function make_class_attr( $default = '' ) {
+	public function get_class_option( $default = '' ) {
 		if ( is_string( $default ) )
 			$default = explode( ' ', $default );
 
@@ -271,71 +271,51 @@ class WPCF7_Shortcode {
 		return implode( ' ', $options );
 	}
 
-	public function make_common_atts( $atts = '' ) {
-		$defaults = array();
+	public function get_size_option( $default = '' ) {
+		$matches_a = $this->get_all_match_options( '%^([0-9]*)/[0-9]*$%' );
 
-		$atts = wp_parse_args( $atts, $defaults );
-
-		// size & maxlength
-		if ( isset( $atts['size'] ) ) {
-			$matches_a = $this->get_all_match_options(
-				'%^([0-9]*)/([0-9]*)$%' );
-
-			if ( $matches_a ) {
-				$size = $maxlength = '';
-
-				foreach ( $matches_a as $matches ) {
-					if ( isset( $matches[1] ) && '' !== $matches[1]
-					&& '' === $size )
-						$size = $matches[1];
-
-					if ( isset( $matches[2] ) && '' !== $matches[2]
-					&& '' === $maxlength )
-						$maxlength = $matches[2];
-				}
-
-				if ( '' !== $size )
-					$atts['size'] = $size;
-
-				if ( '' !== $maxlength )
-					$atts['maxlength'] = $maxlength;
-			}
+		foreach ( (array) $matches_a as $matches ) {
+			if ( isset( $matches[1] ) && '' !== $matches[1] )
+				return $matches[1];
 		}
 
-		// cols, rows & maxlength
-		if ( isset( $atts['cols'] ) || isset( $atts['rows'] ) ) {
-			$matches_a = $this->get_all_match_options(
-				'%^(?:([0-9]*)x([0-9]*))?(?:/([0-9]+))?$%' );
+		return $default;
+	}
 
-			if ( $matches_a ) {
-				$cols = $rows = $maxlength = '';
+	public function get_maxlength_option( $default = '' ) {
+		$matches_a = $this->get_all_match_options(
+			'%^(?:[0-9]*x?[0-9]*)?/([0-9]+)$%' );
 
-				foreach ( $matches_a as $matches ) {
-					if ( isset( $matches[1] ) && '' !== $matches[1]
-					&& '' === $cols )
-						$cols = $matches[1];
-
-					if ( isset( $matches[2] ) && '' !== $matches[2]
-					&& '' === $rows )
-						$rows = $matches[2];
-
-					if ( isset( $matches[3] ) && '' !== $matches[3]
-					&& '' === $maxlength )
-						$maxlength = $matches[3];
-				}
-
-				if ( '' !== $cols )
-					$atts['cols'] = $cols;
-
-				if ( '' !== $rows )
-					$atts['rows'] = $rows;
-
-				if ( '' !== $maxlength )
-					$atts['maxlength'] = $maxlength;
-			}
+		foreach ( (array) $matches_a as $matches ) {
+			if ( isset( $matches[1] ) && '' !== $matches[1] )
+				return $matches[1];
 		}
 
-		return $atts;
+		return $default;
+	}
+
+	public function get_cols_option( $default = '' ) {
+		$matches_a = $this->get_all_match_options(
+			'%^([0-9]*)x([0-9]*)(?:/[0-9]+)?$%' );
+
+		foreach ( (array) $matches_a as $matches ) {
+			if ( isset( $matches[1] ) && '' !== $matches[1] )
+				return $matches[1];
+		}
+
+		return $default;
+	}
+
+	public function get_rows_option( $default = '' ) {
+		$matches_a = $this->get_all_match_options(
+			'%^([0-9]*)x([0-9]*)(?:/[0-9]+)?$%' );
+
+		foreach ( (array) $matches_a as $matches ) {
+			if ( isset( $matches[2] ) && '' !== $matches[2] )
+				return $matches[2];
+		}
+
+		return $default;
 	}
 
 	public function get_first_match_option( $pattern ) {

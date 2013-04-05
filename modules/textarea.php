@@ -21,9 +21,12 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	if ( $validation_error )
 		$class .= ' wpcf7-not-valid';
 
-	$atts = $tag->make_common_atts( array( 'cols' => '40', 'rows' => '10' ) );
+	$atts = array();
 
-	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['cols'] = $tag->get_cols_option( '40' );
+	$atts['rows'] = $tag->get_rows_option( '10' );
+	$atts['maxlength'] = $tag->get_maxlength_option();
+	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 

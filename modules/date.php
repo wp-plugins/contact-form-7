@@ -24,9 +24,9 @@ function wpcf7_date_shortcode_handler( $tag ) {
 	if ( $validation_error )
 		$class .= ' wpcf7-not-valid';
 
-	$atts = $tag->make_common_atts();
+	$atts = array();
 
-	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['min'] = $tag->get_option( 'min', 'date', true );

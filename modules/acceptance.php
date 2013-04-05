@@ -23,9 +23,9 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'invert' ) )
 		$class .= ' wpcf7-invert';
 
-	$atts = $tag->make_common_atts();
+	$atts = array();
 
-	$atts['class'] = $tag->make_class_attr( $class );
+	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
