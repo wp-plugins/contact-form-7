@@ -67,6 +67,7 @@ div.actions-link input {
 	border: none;
 	font-size: 11px;
 	cursor: pointer;
+	background: inherit;
 }
 
 div.actions-link input.copy {
