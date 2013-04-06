@@ -151,6 +151,11 @@ label.disabled {
 	color: #777;
 }
 
+#messagesdiv div.inside {
+	height: 28em;
+	overflow: auto;
+}
+
 div.tag-generator {
 	position: relative;
 	background: transparent;
