@@ -5,8 +5,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'file', 'wpcf7_file_shortcode_handler', true );
-wpcf7_add_shortcode( 'file*', 'wpcf7_file_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_file', 5 );
+
+function wpcf7_add_shortcode_file() {
+	wpcf7_add_shortcode( array( 'file', 'file*' ),
+		'wpcf7_file_shortcode_handler', true );
+}
 
 function wpcf7_file_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

@@ -5,8 +5,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'textarea', 'wpcf7_textarea_shortcode_handler', true );
-wpcf7_add_shortcode( 'textarea*', 'wpcf7_textarea_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_textarea', 5 );
+
+function wpcf7_add_shortcode_textarea() {
+	wpcf7_add_shortcode( array( 'textarea', 'textarea*' ),
+		'wpcf7_textarea_shortcode_handler', true );
+}
 
 function wpcf7_textarea_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

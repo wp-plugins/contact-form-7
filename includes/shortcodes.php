@@ -11,10 +11,16 @@ class WPCF7_ShortcodeManager {
 	var $exec = true;
 
 	function add_shortcode( $tag, $func, $has_name = false ) {
-		if ( is_callable( $func ) )
+		if ( ! is_callable( $func ) )
+			return;
+
+		$tags = array_filter( array_unique( (array) $tag ) );
+
+		foreach ( $tags as $tag ) {
 			$this->shortcode_tags[$tag] = array(
 				'function' => $func,
 				'has_name' => (boolean) $has_name );
+		}
 	}
 
 	function remove_shortcode( $tag ) {

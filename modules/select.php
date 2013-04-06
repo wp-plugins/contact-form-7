@@ -5,8 +5,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'select', 'wpcf7_select_shortcode_handler', true );
-wpcf7_add_shortcode( 'select*', 'wpcf7_select_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_select', 5 );
+
+function wpcf7_add_shortcode_select() {
+	wpcf7_add_shortcode( array( 'select', 'select*' ),
+		'wpcf7_select_shortcode_handler', true );
+}
 
 function wpcf7_select_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

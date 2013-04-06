@@ -7,10 +7,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'number', 'wpcf7_number_shortcode_handler', true );
-wpcf7_add_shortcode( 'number*', 'wpcf7_number_shortcode_handler', true );
-wpcf7_add_shortcode( 'range', 'wpcf7_number_shortcode_handler', true );
-wpcf7_add_shortcode( 'range*', 'wpcf7_number_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_number', 5 );
+
+function wpcf7_add_shortcode_number() {
+	wpcf7_add_shortcode( array( 'number', 'number*', 'range', 'range*' ),
+		'wpcf7_number_shortcode_handler', true );
+}
 
 function wpcf7_number_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

@@ -5,7 +5,11 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'submit', 'wpcf7_submit_shortcode_handler' );
+add_action( 'init', 'wpcf7_add_shortcode_submit', 5 );
+
+function wpcf7_add_shortcode_submit() {
+	wpcf7_add_shortcode( 'submit', 'wpcf7_submit_shortcode_handler' );
+}
 
 function wpcf7_submit_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

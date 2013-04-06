@@ -5,7 +5,11 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_quiz', 5 );
+
+function wpcf7_add_shortcode_quiz() {
+	wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );
+}
 
 function wpcf7_quiz_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

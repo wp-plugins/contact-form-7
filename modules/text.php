@@ -9,14 +9,13 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'text', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'text*', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'email*', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'url', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'url*', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'tel', 'wpcf7_text_shortcode_handler', true );
-wpcf7_add_shortcode( 'tel*', 'wpcf7_text_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_text', 5 );
+
+function wpcf7_add_shortcode_text() {
+	wpcf7_add_shortcode(
+		array( 'text', 'text*', 'email', 'email*', 'url', 'url*', 'tel', 'tel*' ),
+		'wpcf7_text_shortcode_handler', true );
+}
 
 function wpcf7_text_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

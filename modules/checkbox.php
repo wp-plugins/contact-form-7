@@ -5,9 +5,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'checkbox', 'wpcf7_checkbox_shortcode_handler', true );
-wpcf7_add_shortcode( 'checkbox*', 'wpcf7_checkbox_shortcode_handler', true );
-wpcf7_add_shortcode( 'radio', 'wpcf7_checkbox_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_checkbox', 5 );
+
+function wpcf7_add_shortcode_checkbox() {
+	wpcf7_add_shortcode( array( 'checkbox', 'checkbox*', 'radio' ), 
+		'wpcf7_checkbox_shortcode_handler', true );
+}
 
 function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

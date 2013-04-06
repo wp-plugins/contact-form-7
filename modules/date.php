@@ -6,8 +6,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'date', 'wpcf7_date_shortcode_handler', true );
-wpcf7_add_shortcode( 'date*', 'wpcf7_date_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_date', 5 );
+
+function wpcf7_add_shortcode_date() {
+	wpcf7_add_shortcode( array( 'date', 'date*' ),
+		'wpcf7_date_shortcode_handler', true );
+}
 
 function wpcf7_date_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );

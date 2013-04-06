@@ -5,7 +5,12 @@
 
 /* Shortcode handler */
 
-wpcf7_add_shortcode( 'acceptance', 'wpcf7_acceptance_shortcode_handler', true );
+add_action( 'init', 'wpcf7_add_shortcode_acceptance', 5 );
+
+function wpcf7_add_shortcode_acceptance() {
+	wpcf7_add_shortcode( 'acceptance',
+		'wpcf7_acceptance_shortcode_handler', true );
+}
 
 function wpcf7_acceptance_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
