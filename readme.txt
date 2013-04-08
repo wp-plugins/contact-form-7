@@ -2,8 +2,8 @@
 Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
-Requires at least: 3.3
-Tested up to: 3.5
+Requires at least: 3.5
+Tested up to: 3.5.1
 Stable tag: 3.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -93,10 +93,6 @@ The following are other recommended plugins by the author of Contact Form 7.
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [me](http://ideasilo.wordpress.com/about/) so that I can bundle it into Contact Form 7. You can download the latest [POT file](http://plugins.svn.wordpress.org/contact-form-7/trunk/languages/wpcf7.pot), and [PO files in each language](http://plugins.svn.wordpress.org/contact-form-7/branches/languages/).
 
-= Icon Design =
-
-* [Takao Honda](http://www.takaohonda.jp/)
-
 == Installation ==
 
 1. Upload the entire `contact-form-7` folder to the `/wp-content/plugins/` directory.
@@ -122,44 +118,15 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
-= 3.3.3 =
+= 3.4 =
 
-* Fixed: Logic of resolving upload directory on WordPress 3.5 multi-site install.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.25.0.
-* Translations for French, German, Russian and Turkish have been updated.
-
-= 3.3.2 =
-
-* Fixed: Add the additional headers only when they are not empty.
-* Fixed: Don't load hidden files in the modules folder.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.23.
-* Irish translation has been created by Vikas Arora.
-* Translations for German, Thai, Hungarian and Tagalog have been updated.
-
-= 3.3.1 =
-
-* Fixed: Apply esc_html() to response outputs. In the case it is necessary to use HTML tags in the response messages, new wpcf7_form_response_output filter is available.
-* Fixed: Don't use $_POST for internal data passing. Use global $wpcf7 variable instead.
-* Fixed: Treat array value correctly in the Akismet module.
-* Fixed: Escape outputs of [_user_agent] spacial mail tags used in the HTML mode.
-* Fixed: Don't show the notice about conflicting with Jetpack to new users who rarely see such conflicts.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.18.
-* Translations for Danish and Finnish have been updated.
-
-= 3.3 =
-
-* New: Introduce a new special mail tag [_user_agent] for user agent information.
-* New: Make WordPress Comment Blacklist applicable for inputs through contact forms.
-* New: Introduce new form of mail tag [\_raw\_{field name}]. This allows to output raw user input those have not been modified with pipes.
-* New: Make mail tags available in response messages.
-* New: Introduce new additional setting on_submit. It works like on_sent_ok and has one-line JavaScript code, but on_submit code is fired regardless of whether or not the mail has been sent successfully.
-* New: Introduce 5 new jQuery custom event triggers (invalid.wpcf7, spam.wpcf7, mailsent.wpcf7, mailfailed.wpcf7, submit.wpcf7).
-* Fix: Nonce used in a form have been changed to have no time limit.
-* Fix: Make every post meta’s key have underscore prefix.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.15 and compressed with YUI compressor.
-* The required WordPress version has been changed and now requires WordPress 3.3 or higher. If you use WordPress 3.2, you will need to upgrade WordPress.
-* Translations for Arabic and German have been updated.
-
-== Upgrade Notice ==
-
-The current version of Contact Form 7 requires WordPress 3.3 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
+* Introduced the following form-tags: [url] and [url\*] for URL field, [tel] and [tel\*] for telephone number field, [number], [number\*], [range] and [range\*] for number input field, and [date] and [date\*] for date input field.
+* Changed the type attribute of email field ([email] and [email\*]) from text to email.
+* Support the use of the maxlength attribute for textarea ([textarea] and [textarea\*]).
+* Support the use of HTML5 placeholder attribute (watermark is still supported and works as an alias of placeholder).
+* Support the use of readonly attribute.
+* Add the attribute aria-required="true" to each required field.
+* Introduced WPCF7_Shortcode class and rewrote all shortcode handler functions using it.
+* The following action and filter hooks have been introduced: wpcf7_mail_failed, wpcf7_support_html5, wpcf7_form_novalidate, wpcf7_is_email, wpcf7_is_url, wpcf7_is_tel, wpcf7_is_number, wpcf7_is_date and wpcf7_map_meta_cap.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.32.0.
+* The required WordPress version has been changed and now requires WordPress 3.5 or higher.
