@@ -109,7 +109,7 @@ function wpcf7_default_mail_2_template() {
 	$active = false;
 	$subject = '[your-subject]';
 	$sender = '[your-name] <[your-email]>';
-	$body = __( 'Message body:', 'wpcf7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
+	$body = __( 'Message Body:', 'wpcf7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
 		. sprintf( __( 'This mail is sent via contact form on %1$s %2$s', 'wpcf7' ),
 			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
 	$recipient = '[your-email]';
