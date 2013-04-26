@@ -7,6 +7,9 @@
 
 			_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
 
+			_wpcf7.supportHtml5Placeholder
+				= 'placeholder' in document.createElement('input');
+
 			$('div.wpcf7 > form').ajaxForm({
 				beforeSubmit: function(formData, jqForm, options) {
 					jqForm.wpcf7ClearResponseOutput();
@@ -107,7 +110,7 @@
 				$(n).find('[placeholder]').each(function(i, n) {
 					var input = $(n);
 
-					if ('placeholder' in input.get(0))
+					if (_wpcf7.supportHtml5Placeholder)
 						return;
 
 					input.val(input.attr('placeholder'));
