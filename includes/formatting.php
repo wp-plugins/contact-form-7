@@ -129,7 +129,7 @@ function wpcf7_is_url( $url ) {
 }
 
 function wpcf7_is_tel( $tel ) {
-	$result = preg_match( '/^[0-9+-]*$/', $tel );
+	$result = preg_match( '/^[+]?[0-9() -]*$/', $tel );
 	return apply_filters( 'wpcf7_is_tel', $result, $tel );
 }
 
