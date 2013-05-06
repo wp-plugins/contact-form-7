@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 3.4
+Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.4.1 =
+
+* Fixed: Watermark option doesn't work on old browsers.
+* Fixed: Telephone number validation doesn't accept space and parentheses.
+* Translations for Russian, Slovak, Hungarian, German and Turkish have been updated.
 
 = 3.4 =
 
