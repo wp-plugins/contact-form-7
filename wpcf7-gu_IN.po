@@ -1,0 +1,1073 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-06 18:43+0900\n"
+"PO-Revision-Date: 2013-05-17 14:36+0530\n"
+"Last-Translator: Ajeet <Ajeetbook@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: contact-form-7\n"
+
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "જસ્ટ અન્ય સંપર્ક ફોર્મ પ્લગઇન. સરળ પણ સાનુકૂળ."
+
+#: contact-form-7/settings.php:202
+#, php-format
+msgid "Contact form %d"
+msgstr "સંપર્ક ફોર્મ %d"
+
+#: contact-form-7/admin/admin.php:8 contact-form-7/admin/admin.php:258
+#: contact-form-7/admin/edit-contact-form.php:12
+#: contact-form-7/modules/flamingo.php:14
+msgid "Contact Form 7"
+msgstr "ફોર્મ 7 સંપર્ક"
+
+#: contact-form-7/admin/admin.php:8
+msgid "Contact"
+msgstr "સંપર્ક"
+
+#: contact-form-7/admin/admin.php:13
+msgid "Edit Contact Forms"
+msgstr "સંપર્ક ફોર્મ સંપાદિત કરો"
+
+#: contact-form-7/admin/admin.php:13
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "સંપાદિત કરો"
+
+#: contact-form-7/admin/admin.php:41 contact-form-7/admin/admin.php:113
+msgid "You are not allowed to edit this item."
+msgstr "તમે આ આઇટમ સંપાદિત કરવા માટે મંજૂરી નથી."
+
+#: contact-form-7/admin/admin.php:154
+msgid "You are not allowed to delete this item."
+msgstr "તમે આ આઇટમ કાઢી નાખવા માટે મંજૂરી નથી."
+
+#: contact-form-7/admin/admin.php:157
+msgid "Error in deleting."
+msgstr "કાઢી નાંખવાનું ભૂલ આવી."
+
+#: contact-form-7/admin/admin.php:196 contact-form-7/includes/classes.php:27
+msgid "Contact Forms"
+msgstr "ફોર્મ સંપર્ક"
+
+#: contact-form-7/admin/admin.php:233
+msgid "Generate Tag"
+msgstr "ટેગ બનાવો"
+
+#: contact-form-7/admin/admin.php:260 contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:305
+#: contact-form-7/admin/edit-contact-form.php:15
+msgid "Add New"
+msgstr "નવી ઉમેરો"
+
+#: contact-form-7/admin/admin.php:264
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "માટે શોધ પરિણામ &#8220;%s&#8221;"
+
+#: contact-form-7/admin/admin.php:273
+msgid "Search Contact Forms"
+msgstr "શોધ સંપર્ક ફોર્મ"
+
+#: contact-form-7/admin/admin.php:291
+#, php-format
+msgid "Use the default language (%s)"
+msgstr "મૂળભૂત ભાષા વાપરો (%s)"
+
+#: contact-form-7/admin/admin.php:295
+msgid "Or"
+msgstr "અથવા"
+
+#: contact-form-7/admin/admin.php:300
+msgid "(select language)"
+msgstr "(પસંદ કરો ભાષા)"
+
+#: contact-form-7/admin/admin.php:312
+msgid "Form"
+msgstr "ફોર્મ"
+
+#: contact-form-7/admin/admin.php:315
+msgid "Mail"
+msgstr "ટપાલ"
+
+#: contact-form-7/admin/admin.php:318
+msgid "Mail (2)"
+msgstr "ટપાલ (2)"
+
+#: contact-form-7/admin/admin.php:323
+msgid "Use mail (2)"
+msgstr "મેલ વાપરો (2)"
+
+#: contact-form-7/admin/admin.php:325
+msgid "Messages"
+msgstr "સંદેશાઓ"
+
+#: contact-form-7/admin/admin.php:328
+msgid "Additional Settings"
+msgstr "વધારાના સેટિંગ્સ"
+
+#: contact-form-7/admin/admin.php:359
+msgid "Contact form created."
+msgstr "ફોર્મ બનાવનાર સંપર્ક કરો."
+
+#: contact-form-7/admin/admin.php:361
+msgid "Contact form saved."
+msgstr "ફોર્મ સાચવી સંપર્ક કરો."
+
+#: contact-form-7/admin/admin.php:363
+msgid "Contact form deleted."
+msgstr "ફોર્મ કાઢી સંપર્ક કરો."
+
+#: contact-form-7/admin/admin.php:380
+msgid "Settings"
+msgstr "સેટિંગ્સ"
+
+#: contact-form-7/admin/admin.php:391
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: contact-form-7/admin/admin.php:392
+msgid "Docs"
+msgstr "ડૉક્સ"
+
+#: contact-form-7/admin/admin.php:393
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: contact-form-7/admin/admin.php:394
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact-form-7/admin/admin.php:395
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: contact-form-7/admin/admin.php:396
+msgid "Support"
+msgstr "આધાર"
+
+#: contact-form-7/admin/admin.php:427
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "ફોર્મ 7 તમારા સપોર્ટ જરૂર સંપર્ક કરો. આજે દાન કરો."
+
+#: contact-form-7/admin/admin.php:428
+msgid "Your contribution is needed for making this plugin better."
+msgstr "તમારા ફાળો આ પલ્ગઇનની સારી બનાવવા માટે જરૂરી છે."
+
+#: contact-form-7/admin/admin.php:434
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: contact-form-7/admin/admin.php:434
+msgid "Donate"
+msgstr "દાન કરવું"
+
+#: contact-form-7/admin/admin.php:454
+#, php-format
+msgid ""
+"<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
+"Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr ""
+"<strong>સંપર્કફોર્મ7 %1$s માટે WordPress %2$s અથવા ઉચ્ચ જરૂરી છે. </strong> href="
+"\"%3$s\"> સુધારા WordPress કરો </a> પ્રથમ <a કરો."
+
+#: contact-form-7/admin/edit-contact-form.php:46
+msgid ""
+"Copy this code and paste it into your post, page or text widget content."
+msgstr "આ કોડ કૉપિ કરો અને તમારી પોસ્ટ, પૃષ્ઠ અથવા લખાણ વિજેટ સામગ્રી પેસ્ટ કરો."
+
+#: contact-form-7/admin/edit-contact-form.php:52
+msgid "Old code is also available."
+msgstr "ઓલ્ડ કોડ પણ ઉપલબ્ધ છે."
+
+#: contact-form-7/admin/edit-contact-form.php:60
+msgid "Save"
+msgstr "સેવ કરો"
+
+#: contact-form-7/admin/edit-contact-form.php:67
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+msgid "Copy"
+msgstr "કૉપિ કરો"
+
+#: contact-form-7/admin/edit-contact-form.php:72
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
+msgid "Delete"
+msgstr "કાઢી નાખો"
+
+#: contact-form-7/admin/edit-contact-form.php:74
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"તમે આ સંપર્કને ફોર્મ કાઢી છે. એ \n"
+"   'ઓકે' ને કાઢી નાખવા, બંધ કરવા માટે 'રદ કરો'."
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+msgid "Title"
+msgstr "શીર્ષક"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+msgid "Shortcode"
+msgstr "લઘુકોડ"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+msgid "Author"
+msgstr "લેખક"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+#: contact-form-7/modules/date.php:138
+msgid "Date"
+msgstr "તારીખ"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "સંપાદિત કરો &#8220;%s&#8221;"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+msgid "Y/m/d g:i:s A"
+msgstr "Y/m/d g:i:s A"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+msgid "%s ago"
+msgstr "%s અગાઉ"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+msgid "Y/m/d"
+msgstr "Y/m/d"
+
+#: contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "માટે"
+
+#: contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "પ્રતિ:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "વિષય:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "વધારાની હેડરો:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "ફાઇલ જોડાણો:"
+
+#: contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "HTML સામગ્રી પ્રકાર વાપરો"
+
+#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/includes/functions.php:112
+msgid "Message body:"
+msgstr "સંદેશ શરીર:"
+
+#: contact-form-7/includes/classes.php:28
+msgid "Contact Form"
+msgstr "સંપર્ક ફોર્મ"
+
+#: contact-form-7/includes/classes.php:810
+msgid "Untitled"
+msgstr "અનામાંકિત"
+
+#: contact-form-7/includes/controller.php:243
+msgid "Sending ..."
+msgstr "મોકલી રહ્યું છે ..."
+
+#: contact-form-7/includes/functions.php:21
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use "
+"%3$s instead."
+msgstr ""
+"%1$s છે <strong>અપ્રચલિત</strong> સંપર્ક ફોર્મ 7 આવૃત્તિ થી %2$s! વાપરવું %3$s તેના "
+"બદલે."
+
+#: contact-form-7/includes/functions.php:23
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with "
+"no alternative available."
+msgstr ""
+"%1$s છે <strong>અપ્રચલિત</strong> સંપર્ક ફોર્મ 7 આવૃત્તિ થી %2$s ઉપલબ્ધ નથી વૈકલ્પિક છે."
+
+#: contact-form-7/includes/functions.php:30
+msgid "Sender's message was sent successfully"
+msgstr "પ્રેષકનું સંદેશ સફળતાપૂર્વક મોકલવામાં આવ્યો હતો"
+
+#: contact-form-7/includes/functions.php:31
+msgid "Your message was sent successfully. Thanks."
+msgstr "તમારો સંદેશ સફળતાપૂર્વક મોકલવામાં આવી હતી. આભાર."
+
+#: contact-form-7/includes/functions.php:35
+msgid "Sender's message was failed to send"
+msgstr "પ્રેષકનું સંદેશ મોકલવામાં નિષ્ફળ આવી હતી"
+
+#: contact-form-7/includes/functions.php:36
+#: contact-form-7/includes/functions.php:46
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"તમારો સંદેશ મોકલવામાં નિષ્ફળ રહ્યા. પાછળથી પ્રયાસ કરો અથવા અન્ય પદ્ધતિ દ્વારા "
+"વ્યવસ્થાપકનો સંપર્ક કરો."
+
+#: contact-form-7/includes/functions.php:40
+msgid "Validation errors occurred"
+msgstr "માન્યતા ભૂલો આવી"
+
+#: contact-form-7/includes/functions.php:41
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "માન્યતા ભૂલો આવી. ક્ષેત્રોમાં પુષ્ટિ અને તેને ફરીથી સબમિટ કરો."
+
+#: contact-form-7/includes/functions.php:45
+msgid "Submission was referred to as spam"
+msgstr "ભર્યા સ્પામ તરીકે ઓળખવામાં આવી હતી"
+
+#: contact-form-7/includes/functions.php:50
+msgid "There are terms that the sender must accept"
+msgstr "પ્રેષક સ્વીકારવી જ જોઈએ કે જે શરતો હોય છે"
+
+#: contact-form-7/includes/functions.php:51
+msgid "Please accept the terms to proceed."
+msgstr "આગળ વધવા માટે શરતો સ્વીકારવી કરો."
+
+#: contact-form-7/includes/functions.php:55
+msgid "There is a field that the sender must fill in"
+msgstr "પ્રેષક ભરવા આવશ્યક છે કે ક્ષેત્ર છે"
+
+#: contact-form-7/includes/functions.php:56
+msgid "Please fill the required field."
+msgstr "જરૂરી ક્ષેત્ર ભરો."
+
+#: contact-form-7/includes/functions.php:80
+msgid "Your Name"
+msgstr "તમારું નામ"
+
+#: contact-form-7/includes/functions.php:80
+#: contact-form-7/includes/functions.php:82
+msgid "(required)"
+msgstr "(જરૂરી)"
+
+#: contact-form-7/includes/functions.php:82
+msgid "Your Email"
+msgstr "તમારા ઇમેઇલ"
+
+#: contact-form-7/includes/functions.php:84
+msgid "Subject"
+msgstr "વિષય"
+
+#: contact-form-7/includes/functions.php:86
+msgid "Your Message"
+msgstr "તમારો સંદેશ"
+
+#: contact-form-7/includes/functions.php:88
+#: contact-form-7/modules/submit.php:24
+msgid "Send"
+msgstr "મોકલો"
+
+#: contact-form-7/includes/functions.php:96
+#, php-format
+msgid "From: %s"
+msgstr "માંથી:%s "
+
+#: contact-form-7/includes/functions.php:97
+#, php-format
+msgid "Subject: %s"
+msgstr "વિષય: %s"
+
+#: contact-form-7/includes/functions.php:98
+msgid "Message Body:"
+msgstr "સંદેશ શારીરિક:"
+
+#: contact-form-7/includes/functions.php:99
+#: contact-form-7/includes/functions.php:113
+#, php-format
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "આ મેઇલ પર સંપર્ક ફોર્મ મારફતે મોકલાય છે %1$s %2$s"
+
+#: contact-form-7/includes/functions.php:149
+msgid "Afrikaans"
+msgstr "આફ્રિકન્સ"
+
+#: contact-form-7/includes/functions.php:150
+msgid "Albanian"
+msgstr "અલ્બેનિયન"
+
+#: contact-form-7/includes/functions.php:151
+msgid "Arabic"
+msgstr "અરબી ભાષા"
+
+#: contact-form-7/includes/functions.php:152
+msgid "Armenian"
+msgstr "આર્મેનિયન"
+
+#: contact-form-7/includes/functions.php:153
+msgid "Azerbaijani"
+msgstr "અઝરબૈજાની"
+
+#: contact-form-7/includes/functions.php:154
+msgid "Bangla"
+msgstr "બાંગ્લા"
+
+#: contact-form-7/includes/functions.php:155
+msgid "Basque"
+msgstr "બાસ્ક"
+
+#: contact-form-7/includes/functions.php:156
+msgid "Belarusian"
+msgstr "બેલારુસિયન"
+
+#: contact-form-7/includes/functions.php:157
+msgid "Bosnian"
+msgstr "બોસ્નિયન"
+
+#: contact-form-7/includes/functions.php:158
+msgid "Brazilian Portuguese"
+msgstr "બ્રાઝિલીયન પોર્ટુગીઝ"
+
+#: contact-form-7/includes/functions.php:159
+msgid "Bulgarian"
+msgstr "બલ્ગેરિયન"
+
+#: contact-form-7/includes/functions.php:160
+msgid "Catalan"
+msgstr "કતલાન"
+
+#: contact-form-7/includes/functions.php:161
+msgid "Chinese (Simplified)"
+msgstr "ચિની (સરળ)"
+
+#: contact-form-7/includes/functions.php:162
+msgid "Chinese (Traditional)"
+msgstr "ચિની (પરંપરાગત)"
+
+#: contact-form-7/includes/functions.php:163
+msgid "Croatian"
+msgstr "ક્રોએશિયન"
+
+#: contact-form-7/includes/functions.php:164
+msgid "Czech"
+msgstr "ચેક"
+
+#: contact-form-7/includes/functions.php:165
+msgid "Danish"
+msgstr "ડેનિશ"
+
+#: contact-form-7/includes/functions.php:166
+msgid "Dutch"
+msgstr "ડચ"
+
+#: contact-form-7/includes/functions.php:167
+msgid "English"
+msgstr "ઇંગલિશ"
+
+#: contact-form-7/includes/functions.php:168
+msgid "Esperanto"
+msgstr "યુરોપિયન ભાષાને આધારે બનાવેલી એક કૃત્રિમ ભાષા"
+
+#: contact-form-7/includes/functions.php:169
+msgid "Estonian"
+msgstr "એસ્ટોનિયન"
+
+#: contact-form-7/includes/functions.php:170
+msgid "Finnish"
+msgstr "ફિનિશ"
+
+#: contact-form-7/includes/functions.php:171
+msgid "French"
+msgstr "ફ્રેન્ચ"
+
+#: contact-form-7/includes/functions.php:172
+msgid "Galician"
+msgstr "Galician"
+
+#: contact-form-7/includes/functions.php:173
+msgid "Georgian"
+msgstr "જ્યોર્જિઅન"
+
+#: contact-form-7/includes/functions.php:174
+msgid "German"
+msgstr "જર્મન"
+
+#: contact-form-7/includes/functions.php:175
+msgid "Greek"
+msgstr "ગ્રીક"
+
+#: contact-form-7/includes/functions.php:176
+msgid "Hebrew"
+msgstr "યહૂદી ભાષા"
+
+#: contact-form-7/includes/functions.php:177
+msgid "Hindi"
+msgstr "હિન્દી"
+
+#: contact-form-7/includes/functions.php:178
+msgid "Hungarian"
+msgstr "હંગેરિયન"
+
+#: contact-form-7/includes/functions.php:179
+msgid "Indonesian"
+msgstr "ઇન્ડોનેશિયન"
+
+#: contact-form-7/includes/functions.php:180
+msgid "Irish"
+msgstr "આઇરિશ"
+
+#: contact-form-7/includes/functions.php:181
+msgid "Italian"
+msgstr "ઇટાલિયન"
+
+#: contact-form-7/includes/functions.php:182
+msgid "Japanese"
+msgstr "જાપાનીઝ"
+
+#: contact-form-7/includes/functions.php:183
+msgid "Korean"
+msgstr "કોરિયન"
+
+#: contact-form-7/includes/functions.php:184
+msgid "Latvian"
+msgstr "લાતવિયન"
+
+#: contact-form-7/includes/functions.php:185
+msgid "Lithuanian"
+msgstr "લિથુનિયન"
+
+#: contact-form-7/includes/functions.php:186
+msgid "Macedonian"
+msgstr "મેસેડોનિયન"
+
+#: contact-form-7/includes/functions.php:187
+msgid "Malay"
+msgstr "મલય"
+
+#: contact-form-7/includes/functions.php:188
+msgid "Malayalam"
+msgstr "મલયાલમ"
+
+#: contact-form-7/includes/functions.php:189
+msgid "Maltese"
+msgstr "માલ્ટિઝ"
+
+#: contact-form-7/includes/functions.php:190
+msgid "Norwegian"
+msgstr "નોર્વેજીયન"
+
+#: contact-form-7/includes/functions.php:191
+msgid "Persian"
+msgstr "ફારસી"
+
+#: contact-form-7/includes/functions.php:192
+msgid "Polish"
+msgstr "પોલિશ"
+
+#: contact-form-7/includes/functions.php:193
+msgid "Portuguese"
+msgstr "પોર્ટુગીઝ"
+
+#: contact-form-7/includes/functions.php:194
+msgid "Russian"
+msgstr "રશિયન"
+
+#: contact-form-7/includes/functions.php:195
+msgid "Romanian"
+msgstr "રોમાનિયન"
+
+#: contact-form-7/includes/functions.php:196
+msgid "Serbian"
+msgstr "સર્બિયન"
+
+#: contact-form-7/includes/functions.php:197
+msgid "Sinhala"
+msgstr "સિંહાલા"
+
+#: contact-form-7/includes/functions.php:198
+msgid "Slovak"
+msgstr "સ્લોવૅક"
+
+#: contact-form-7/includes/functions.php:199
+msgid "Slovene"
+msgstr "સ્લોવેને"
+
+#: contact-form-7/includes/functions.php:200
+msgid "Spanish"
+msgstr "સ્પેનિશ"
+
+#: contact-form-7/includes/functions.php:201
+msgid "Swedish"
+msgstr "સ્વીડિશ"
+
+#: contact-form-7/includes/functions.php:202
+msgid "Tamil"
+msgstr "તમિળ"
+
+#: contact-form-7/includes/functions.php:203
+msgid "Thai"
+msgstr "થાઈ"
+
+#: contact-form-7/includes/functions.php:204
+msgid "Tagalog"
+msgstr "ટાગાલોગ"
+
+#: contact-form-7/includes/functions.php:205
+msgid "Turkish"
+msgstr "ટર્કિશ"
+
+#: contact-form-7/includes/functions.php:206
+msgid "Ukrainian"
+msgstr "યુક્રેનિયન"
+
+#: contact-form-7/includes/functions.php:207
+msgid "Vietnamese"
+msgstr "વિયેતનામીસ"
+
+#: contact-form-7/modules/acceptance.php:133
+msgid "Acceptance"
+msgstr "સ્વીકૃતિ"
+
+#: contact-form-7/modules/acceptance.php:142
+#: contact-form-7/modules/captcha.php:200
+#: contact-form-7/modules/checkbox.php:181 contact-form-7/modules/date.php:155
+#: contact-form-7/modules/file.php:234 contact-form-7/modules/number.php:167
+#: contact-form-7/modules/quiz.php:159 contact-form-7/modules/select.php:143
+#: contact-form-7/modules/text.php:229 contact-form-7/modules/textarea.php:106
+msgid "Name"
+msgstr "નામ"
+
+#: contact-form-7/modules/acceptance.php:147
+#: contact-form-7/modules/acceptance.php:150
+#: contact-form-7/modules/captcha.php:207
+#: contact-form-7/modules/captcha.php:210
+#: contact-form-7/modules/captcha.php:215
+#: contact-form-7/modules/captcha.php:218
+#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:233
+#: contact-form-7/modules/captcha.php:236
+#: contact-form-7/modules/captcha.php:241
+#: contact-form-7/modules/captcha.php:244
+#: contact-form-7/modules/checkbox.php:186
+#: contact-form-7/modules/checkbox.php:189 contact-form-7/modules/date.php:160
+#: contact-form-7/modules/date.php:163 contact-form-7/modules/date.php:168
+#: contact-form-7/modules/date.php:171 contact-form-7/modules/date.php:176
+#: contact-form-7/modules/date.php:181 contact-form-7/modules/file.php:239
+#: contact-form-7/modules/file.php:242 contact-form-7/modules/file.php:247
+#: contact-form-7/modules/file.php:250 contact-form-7/modules/number.php:172
+#: contact-form-7/modules/number.php:175 contact-form-7/modules/number.php:180
+#: contact-form-7/modules/number.php:183 contact-form-7/modules/number.php:188
+#: contact-form-7/modules/number.php:193 contact-form-7/modules/quiz.php:164
+#: contact-form-7/modules/quiz.php:167 contact-form-7/modules/quiz.php:172
+#: contact-form-7/modules/quiz.php:175 contact-form-7/modules/select.php:148
+#: contact-form-7/modules/select.php:151 contact-form-7/modules/submit.php:55
+#: contact-form-7/modules/submit.php:58 contact-form-7/modules/submit.php:63
+#: contact-form-7/modules/text.php:234 contact-form-7/modules/text.php:237
+#: contact-form-7/modules/text.php:242 contact-form-7/modules/text.php:245
+#: contact-form-7/modules/text.php:251 contact-form-7/modules/text.php:264
+#: contact-form-7/modules/textarea.php:111
+#: contact-form-7/modules/textarea.php:114
+#: contact-form-7/modules/textarea.php:119
+#: contact-form-7/modules/textarea.php:122
+#: contact-form-7/modules/textarea.php:127
+#: contact-form-7/modules/textarea.php:132
+msgid "optional"
+msgstr "વૈકલ્પિક"
+
+#: contact-form-7/modules/acceptance.php:156
+msgid "Make this checkbox checked by default?"
+msgstr "મૂળભૂત દ્વારા ચકાસાયેલ આ ચકાસણીબોક્સ બનાવીએ?"
+
+#: contact-form-7/modules/acceptance.php:157
+msgid "Make this checkbox work inversely?"
+msgstr "આ ચેકબોક્સ વ્યસ્ત કામ કરો?"
+
+#: contact-form-7/modules/acceptance.php:158
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* શબ્દ unchecks તેને સ્વીકારે જે મુલાકાતી અર્થ એ થાય કે."
+
+#: contact-form-7/modules/acceptance.php:163
+#: contact-form-7/modules/captcha.php:249
+#: contact-form-7/modules/checkbox.php:209 contact-form-7/modules/date.php:189
+#: contact-form-7/modules/file.php:255 contact-form-7/modules/number.php:201
+#: contact-form-7/modules/quiz.php:187 contact-form-7/modules/select.php:168
+#: contact-form-7/modules/submit.php:70 contact-form-7/modules/text.php:272
+#: contact-form-7/modules/textarea.php:140
+msgid "Copy this code and paste it into the form left."
+msgstr "આ કોડ કૉપિ કરો અને છોડી ફોર્મ પેસ્ટ કરો."
+
+#: contact-form-7/modules/captcha.php:15
+msgid ""
+"To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
+"really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr ""
+"વાપરવા માટે કેપ્ચા, તમને જરૂર છે  <a href=\"http://wordpress.org/extend/plugins/"
+"really-simple-captcha/\">રીયલી સિમ્પલ કેપ્ચા</a> પ્લગઇન ઇન્સ્ટોલ."
+
+#: contact-form-7/modules/captcha.php:172
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "પ્રેષક દાખલ કે કોડ કેપ્ચા મેળ ખાતો નથી"
+
+#: contact-form-7/modules/captcha.php:173
+msgid "Your entered code is incorrect."
+msgstr "તમારી દાખલ કોડ ખોટો છે."
+
+#: contact-form-7/modules/captcha.php:186
+msgid "CAPTCHA"
+msgstr "કેપ્ચા"
+
+#: contact-form-7/modules/captcha.php:197
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "નોંધ: કેપ્ચા વાપરવા માટે, તમે ખરેખર સરળ કેપ્ચા પ્લગઇન ઇન્સ્ટોલ કરવાની જરૂર છે."
+
+#: contact-form-7/modules/captcha.php:204
+msgid "Image settings"
+msgstr "છબી સેટિંગ્સ"
+
+#: contact-form-7/modules/captcha.php:215
+msgid "Foreground color"
+msgstr "અગ્રરંગ રંગ"
+
+#: contact-form-7/modules/captcha.php:218
+msgid "Background color"
+msgstr "પૃષ્ઠભૂમિ રંગ"
+
+#: contact-form-7/modules/captcha.php:222
+msgid "Image size"
+msgstr "છબી કદ"
+
+#: contact-form-7/modules/captcha.php:223
+msgid "Small"
+msgstr "નાના"
+
+#: contact-form-7/modules/captcha.php:224
+msgid "Medium"
+msgstr "મધ્યમ"
+
+#: contact-form-7/modules/captcha.php:225
+msgid "Large"
+msgstr "મોટું"
+
+#: contact-form-7/modules/captcha.php:230
+msgid "Input field settings"
+msgstr "ઇનપુટ સેટિંગ્સ ક્ષેત્ર"
+
+#: contact-form-7/modules/captcha.php:250
+msgid "For image"
+msgstr "ઇમેજ માટે"
+
+#: contact-form-7/modules/captcha.php:252
+msgid "For input field"
+msgstr "ઇનપુટ ક્ષેત્ર માટે"
+
+#: contact-form-7/modules/captcha.php:282
+#, php-format
+msgid ""
+"This contact form contains CAPTCHA fields, but the temporary folder for the "
+"files (%s) does not exist or is not writable. You can create the folder or "
+"change its permission manually."
+msgstr ""
+"આ સંપર્કને ફોર્મ કેપ્ચા ક્ષેત્રો પડે છે, પરંતુ ફાઈલો માટે કામચલાઉ ફોલ્ડર (%s) અસ્તિત્વમાં નથી "
+"અથવા લખી શકાય તેવી નથી. જો તમે ફોલ્ડર બનાવવા અથવા જાતે તેની પરવાનગી બદલી શકો છો."
+
+#: contact-form-7/modules/captcha.php:288
+msgid ""
+"This contact form contains CAPTCHA fields, but the necessary libraries (GD "
+"and FreeType) are not available on your server."
+msgstr ""
+"આ સંપર્કને ફોર્મ કેપ્ચા ક્ષેત્રો પડે છે, પરંતુ જરૂરી લાઈબ્રેરીઓ (જીડી અને FreeType) તમારા "
+"સર્વર પર ઉપલબ્ધ નથી."
+
+#: contact-form-7/modules/checkbox.php:154
+msgid "Checkboxes"
+msgstr "ચકાસણીબોક્સ"
+
+#: contact-form-7/modules/checkbox.php:157
+msgid "Radio buttons"
+msgstr "રેડિયો બટનો"
+
+#: contact-form-7/modules/checkbox.php:178 contact-form-7/modules/date.php:154
+#: contact-form-7/modules/file.php:233 contact-form-7/modules/number.php:166
+#: contact-form-7/modules/select.php:142 contact-form-7/modules/text.php:228
+#: contact-form-7/modules/textarea.php:105
+msgid "Required field?"
+msgstr "ક્ષેત્ર જરૂરી?"
+
+#: contact-form-7/modules/checkbox.php:194
+#: contact-form-7/modules/select.php:156
+msgid "Choices"
+msgstr "પસંદગીઓ"
+
+#: contact-form-7/modules/checkbox.php:196
+#: contact-form-7/modules/select.php:158
+msgid "* One choice per line."
+msgstr "* લાઇન દીઠ એક પસંદગી."
+
+#: contact-form-7/modules/checkbox.php:200
+msgid "Put a label first, a checkbox last?"
+msgstr "ચકાસણીબોક્સ છેલ્લા, પ્રથમ લેબલ મૂકો?"
+
+#: contact-form-7/modules/checkbox.php:201
+msgid "Wrap each item with <label> tag?"
+msgstr "સાથે દરેક વસ્તુ લપેટી <label> ટેગ?"
+
+#: contact-form-7/modules/checkbox.php:203
+msgid "Make checkboxes exclusive?"
+msgstr "ચકાસણીબોક્સ વિશિષ્ટ બનાવો?"
+
+#: contact-form-7/modules/checkbox.php:211 contact-form-7/modules/date.php:191
+#: contact-form-7/modules/number.php:203 contact-form-7/modules/select.php:170
+#: contact-form-7/modules/text.php:274 contact-form-7/modules/textarea.php:142
+msgid "And, put this code into the Mail fields below."
+msgstr "અને, નીચે મેઇલ ક્ષેત્રો આ કોડને મૂકો."
+
+#: contact-form-7/modules/date.php:114
+msgid "Date format that the sender entered is invalid"
+msgstr "પ્રેષક દાખલ તારીખ ફોર્મેટ અમાન્ય છે"
+
+#: contact-form-7/modules/date.php:115
+msgid "Date format seems invalid."
+msgstr "તારીખ ફોર્મેટ અમાન્ય લાગે છે."
+
+#: contact-form-7/modules/date.php:119
+msgid "Date is earlier than minimum limit"
+msgstr "તારીખ ન્યુનત્તમ મર્યાદા કરતાં પહેલાં છે"
+
+#: contact-form-7/modules/date.php:120
+msgid "This date is too early."
+msgstr "આ તારીખ વહેલુ છે."
+
+#: contact-form-7/modules/date.php:124
+msgid "Date is later than maximum limit"
+msgstr "તારીખ મહત્તમ મર્યાદા કરતાં પાછળથી છે"
+
+#: contact-form-7/modules/date.php:125
+msgid "This date is too late."
+msgstr "આ તારીખ ખૂબ અંતમાં છે."
+
+#: contact-form-7/modules/date.php:181 contact-form-7/modules/number.php:193
+#: contact-form-7/modules/text.php:264 contact-form-7/modules/textarea.php:132
+msgid "Default value"
+msgstr "ડિફૉલ્ટ મૂલ્ય"
+
+#: contact-form-7/modules/date.php:184 contact-form-7/modules/number.php:196
+#: contact-form-7/modules/text.php:267 contact-form-7/modules/textarea.php:135
+msgid "Use this text as placeholder?"
+msgstr "પ્લેસહોલ્ડર તરીકે આ લખાણ નો ઉપયોગ કરીએ?"
+
+#: contact-form-7/modules/file.php:194
+msgid "Uploading a file fails for any reason"
+msgstr "ફાઇલ અપલોડ કરી રહ્યા છીએ કોઈપણ કારણોસર નિષ્ફળ જાય"
+
+#: contact-form-7/modules/file.php:195
+msgid "Failed to upload file."
+msgstr "ફાઈલ અપલોડ કરવા માટે નિષ્ફળ."
+
+#: contact-form-7/modules/file.php:199
+msgid "Uploaded file is not allowed file type"
+msgstr "અપલોડ કરેલી ફાઇલ ફાઇલ પ્રકારને મંજૂરી નથી"
+
+#: contact-form-7/modules/file.php:200
+msgid "This file type is not allowed."
+msgstr "આ ફાઇલ પ્રકારને મંજૂરી નથી."
+
+#: contact-form-7/modules/file.php:204
+msgid "Uploaded file is too large"
+msgstr "અપલોડ કરેલી ફાઇલ ખૂબ મોટી છે"
+
+#: contact-form-7/modules/file.php:205
+msgid "This file is too large."
+msgstr "આ ફાઇલ ખૂબ મોટી છે."
+
+#: contact-form-7/modules/file.php:209
+msgid "Uploading a file fails for PHP error"
+msgstr "ફાઇલ અપલોડ કરીને PHP ભૂલ માટે નિષ્ફળ જાય છે"
+
+#: contact-form-7/modules/file.php:210
+msgid "Failed to upload file. Error occurred."
+msgstr "ફાઈલ અપલોડ કરવા માટે નિષ્ફળ. ભૂલ આવી."
+
+#: contact-form-7/modules/file.php:224
+msgid "File upload"
+msgstr "ફાઇલ અપલોડ કરો"
+
+#: contact-form-7/modules/file.php:247
+msgid "File size limit"
+msgstr "ફાઈલ માપ મર્યાદા"
+
+#: contact-form-7/modules/file.php:247
+msgid "bytes"
+msgstr "બાઇટ્સ"
+
+#: contact-form-7/modules/file.php:250
+msgid "Acceptable file types"
+msgstr "સ્વીકાર્ય ફાઇલ પ્રકારો"
+
+#: contact-form-7/modules/file.php:257
+msgid "And, put this code into the File Attachments field below."
+msgstr "અને, નીચેની ફાઇલ જોડાણો ક્ષેત્ર આ કોડને મૂકો."
+
+#: contact-form-7/modules/file.php:282
+#, php-format
+msgid ""
+"This contact form contains file uploading fields, but the temporary folder "
+"for the files (%s) does not exist or is not writable. You can create the "
+"folder or change its permission manually."
+msgstr ""
+"આ સંપર્કને ફોર્મ ફાઈલ અપલોડ ક્ષેત્રો પડે છે, પરંતુ ફાઈલો માટે કામચલાઉ ફોલ્ડર (% s) "
+"અસ્તિત્વમાં નથી અથવા લખી શકાય તેવી નથી. જો તમે ફોલ્ડર બનાવવા અથવા જાતે તેની પરવાનગી "
+"બદલી શકો છો."
+
+#: contact-form-7/modules/jetpack.php:21
+#, php-format
+msgid ""
+"<strong>Jetpack may cause problems for other plugins in certain cases.</"
+"strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr ""
+"<strong>Jetpack અમુક કિસ્સાઓમાં અન્ય પ્લગઈનો માટે સમસ્યાઓ ઊભી કરી શકે છે.</strong><a "
+"href=\"%s\" target=\"_blank\">તે ટાળવા માટે જુઓ કે કેવી રીતે</a>"
+
+#: contact-form-7/modules/number.php:119
+msgid "Number format that the sender entered is invalid"
+msgstr "પ્રેષક દાખલ કે જે નંબર બંધારણમાં અમાન્ય છે"
+
+#: contact-form-7/modules/number.php:120
+msgid "Number format seems invalid."
+msgstr "સંખ્યા બંધારણમાં અમાન્ય લાગે છે."
+
+#: contact-form-7/modules/number.php:124
+msgid "Number is smaller than minimum limit"
+msgstr "સંખ્યા ન્યુનત્તમ મર્યાદા કરતા ઓછી છે"
+
+#: contact-form-7/modules/number.php:125
+msgid "This number is too small."
+msgstr "આ સંખ્યા ખૂબ જ નાની છે."
+
+#: contact-form-7/modules/number.php:129
+msgid "Number is larger than maximum limit"
+msgstr "સંખ્યા મહત્તમ મર્યાદા કરતાં પણ મોટો છે"
+
+#: contact-form-7/modules/number.php:130
+msgid "This number is too large."
+msgstr "આ સંખ્યા ખૂબ મોટી છે."
+
+#: contact-form-7/modules/number.php:143
+msgid "Number (spinbox)"
+msgstr "સંખ્યા (spinbox)"
+
+#: contact-form-7/modules/number.php:146
+msgid "Number (slider)"
+msgstr "સંખ્યા (સ્લાઇડર)"
+
+#: contact-form-7/modules/quiz.php:136
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "પ્રેષક ક્વિઝ માટે યોગ્ય જવાબ દાખલ નથી"
+
+#: contact-form-7/modules/quiz.php:137
+msgid "Your answer is not correct."
+msgstr "તમારો જવાબ સાચો નથી."
+
+#: contact-form-7/modules/quiz.php:150
+msgid "Quiz"
+msgstr "પ્રશ્નોતરી"
+
+#: contact-form-7/modules/quiz.php:180
+msgid "Quizzes"
+msgstr "પ્રશ્નોત્તરી"
+
+#: contact-form-7/modules/quiz.php:182
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* ક્વિઝ | જવાબ (દા.ત. 1 +1 = |? 2)"
+
+#: contact-form-7/modules/select.php:133
+msgid "Drop-down menu"
+msgstr "ડ્રોપ ડાઉન મેનુ"
+
+#: contact-form-7/modules/select.php:162
+msgid "Allow multiple selections?"
+msgstr "બહુવિધ પસંદગી મંજૂરી આપો?"
+
+#: contact-form-7/modules/select.php:163
+msgid "Insert a blank item as the first option?"
+msgstr "પ્રથમ વિકલ્પ તરીકે એક ખાલી આઇટમ શામેલ કરો?"
+
+#: contact-form-7/modules/submit.php:45
+msgid "Submit button"
+msgstr "બટન સબમિટ"
+
+#: contact-form-7/modules/submit.php:63
+msgid "Label"
+msgstr "લેબલ"
+
+#: contact-form-7/modules/text.php:167
+msgid "Email address that the sender entered is invalid"
+msgstr "પ્રેષક દાખલ થયો ઇમેઇલ સરનામું અમાન્ય છે"
+
+#: contact-form-7/modules/text.php:168
+msgid "Email address seems invalid."
+msgstr "ઇમેઇલ સરનામું અમાન્ય લાગે છે."
+
+#: contact-form-7/modules/text.php:172
+msgid "URL that the sender entered is invalid"
+msgstr "પ્રેષક દાખલ થયો URL અમાન્ય છે"
+
+#: contact-form-7/modules/text.php:173
+msgid "URL seems invalid."
+msgstr "URL અમાન્ય લાગે છે."
+
+#: contact-form-7/modules/text.php:177
+msgid "Telephone number that the sender entered is invalid"
+msgstr "પ્રેષક દાખલ થયો ટેલિફોન નંબર અમાન્ય છે"
+
+#: contact-form-7/modules/text.php:178
+msgid "Telephone number seems invalid."
+msgstr "ટેલિફોન નંબર અમાન્ય લાગે છે."
+
+#: contact-form-7/modules/text.php:191
+msgid "Text field"
+msgstr "પર ટેક્સ્ટ કરો ક્ષેત્ર"
+
+#: contact-form-7/modules/text.php:194
+msgid "Email"
+msgstr "ઇમેઇલ"
+
+#: contact-form-7/modules/text.php:197
+msgid "URL"
+msgstr "URL"
+
+#: contact-form-7/modules/text.php:200
+msgid "Telephone number"
+msgstr "ટેલિફોન નંબર"
+
+#: contact-form-7/modules/text.php:251
+msgid "Akismet"
+msgstr "Akismet"
+
+#: contact-form-7/modules/text.php:253
+msgid "This field requires author's name"
+msgstr "આ ક્ષેત્ર લેખકની નામ જરૂરી છે"
+
+#: contact-form-7/modules/text.php:255
+msgid "This field requires author's email address"
+msgstr "આ ક્ષેત્ર લેખકની ઇમેઇલ સરનામું જરૂરી છે"
+
+#: contact-form-7/modules/text.php:257
+msgid "This field requires author's URL"
+msgstr "આ ક્ષેત્ર લેખકો જરૂરી છે URL"
+
+#: contact-form-7/modules/textarea.php:96
+msgid "Text area"
+msgstr "લખાણ વિસ્તારમાં"
