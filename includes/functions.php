@@ -170,6 +170,7 @@ function wpcf7_l10n() {
 		'fi' => __( 'Finnish', 'wpcf7' ),
 		'fr_FR' => __( 'French', 'wpcf7' ),
 		'gl_ES' => __( 'Galician', 'wpcf7' ),
+		'gu_IN' => __( 'Gujarati', 'wpcf7' ),
 		'ka_GE' => __( 'Georgian', 'wpcf7' ),
 		'de_DE' => __( 'German', 'wpcf7' ),
 		'el' => __( 'Greek', 'wpcf7' ),

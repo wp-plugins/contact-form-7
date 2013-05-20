@@ -58,6 +58,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Georgian (ka_GE) - [Nodar Rocko Davituri](http://davituri.com/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de), [Ivan Graf](http://blog.bildergallery.com/)
 * Greek (el) - [Nick Mouratidis](http://www.kepik.gr/), [Pr. friedlich](http://friedlich.wordpress.com/)
+* Gujarati (gu_IN) - [Apoto](http://www.apoto.com/)
 * Hebrew (he_IL) - [Yaron Ofer](http://www.gadgetguru.co.il/), [Arik Galansky](http://www.arikg.co.il/)
 * Hindi (hi_IN) - [Tarun Joshi](http://www.readers-cafe.net/), [Ashish](http://outshinesolutions.com/)
 * Hungarian (hu_HU) - [Andras Hirschler](http://hia.itblog.hu/), [János Csárdi-Braunstein](http://blogocska.org/), [Farkas Győző](http://www.sakraft.hu/)
