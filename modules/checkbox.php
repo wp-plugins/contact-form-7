@@ -42,7 +42,11 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
-	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
+
+	$tabindex = $tag->get_option( 'tabindex', 'int', true );
+
+	if ( false !== $tabindex )
+		$tabindex = absint( $tabindex );
 
 	$defaults = array();
 
@@ -69,13 +73,6 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		} else {
 			if ( in_array( $key + 1, (array) $defaults ) )
 				$checked = true;
-		}
-
-		$tabindex = '';
-
-		if ( '' !== $atts['tabindex'] ) {
-			$tabindex = $atts['tabindex'];
-			$atts['tabindex'] += 1;
 		}
 
 		if ( isset( $tag->labels[$key] ) )
@@ -107,9 +104,10 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 		$item = '<span class="wpcf7-list-item">' . $item . '</span>';
 		$html .= $item;
-	}
 
-	unset( $atts['tabindex'] );
+		if ( false !== $tabindex )
+			$tabindex += 1;
+	}
 
 	$atts = wpcf7_format_atts( $atts );
 
