@@ -195,7 +195,7 @@
 			var unitTag = $(this).find('input[name="_wpcf7_unit_tag"]').val();
 
 			$.getJSON(url,
-				{ _wpcf7_is_ajax_call: 1, _wpcf7: id },
+				{ _wpcf7_is_ajax_call: 1, _wpcf7: id, _wpcf7_request_ver: $.now() },
 				function(data) {
 					if (data && data.captcha)
 						$('#' + unitTag).wpcf7RefillCaptcha(data.captcha);
