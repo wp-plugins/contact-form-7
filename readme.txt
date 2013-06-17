@@ -43,7 +43,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
 * Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), [Gervásio Antônio](http://twitter.com/gervasioantonio)
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
-* Catalan (ca) - [Jordi Sancho](http://www.qasolutions.net/blog), Robert Buj
+* Catalan (ca) - [Jordi Sancho](http://www.qasolutions.net/blog), Robert Buj, Jaume Aragay Badia
 * Chinese, Simplified (zh_CN) - [Soz](http://www.webtoolol.com/), [Keefe Dunn](http://dengkefu.com/), [Stella Hu](http://prowordpresser.com/)
 * Chinese, Traditional (zh_TW) - [James Wu](http://jameswublog.com)
 * Croatian (hr) - [tolingo Translation Services](http://www.tolingo.com)
