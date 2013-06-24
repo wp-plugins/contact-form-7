@@ -1,13 +1,12 @@
 /*!
  * jQuery Form Plugin
- * version: 3.32.0-2013.04.03
+ * version: 3.36.0-2013.06.16
  * @requires jQuery v1.5 or later
- *
+ * Copyright (c) 2013 M. Alsup
  * Examples and documentation at: http://malsup.com/jquery/form/
  * Project repository: https://github.com/malsup/form
- * Dual licensed under the MIT and GPL licenses:
- *    http://malsup.github.com/mit-license.txt
- *    http://malsup.github.com/gpl-license-v2.txt
+ * Dual licensed under the MIT and GPL licenses.
+ * https://github.com/malsup/form#copyright-and-license
  */
 /*global ActiveXObject */
 ;(function($) {
@@ -91,8 +90,8 @@ $.fn.ajaxSubmit = function(options) {
         options = { success: options };
     }
 
-    method = this.attr2('method');
-    action = this.attr2('action');
+    method = options.type || this.attr2('method');
+    action = options.url  || this.attr2('action');
 
     url = (typeof action === 'string') ? $.trim(action) : '';
     url = url || window.location.href || '';
@@ -187,6 +186,22 @@ $.fn.ajaxSubmit = function(options) {
         }
     };
 
+    if (options.error) {
+        var oldError = options.error;
+        options.error = function(xhr, status, error) {
+            var context = options.context || this;
+            oldError.apply(context, [xhr, status, error, $form]);
+        };
+    }
+
+     if (options.complete) {
+        var oldComplete = options.complete;
+        options.complete = function(xhr, status) {
+            var context = options.context || this;
+            oldComplete.apply(context, [xhr, status, $form]);
+        };
+    }
+
     // are there files to upload?
 
     // [value] (issue #113), also see comment:
@@ -236,7 +251,7 @@ $.fn.ajaxSubmit = function(options) {
 
     // utility fn for deep serialization
     function deepSerialize(extraData){
-        var serialized = $.param(extraData).split('&');
+        var serialized = $.param(extraData, options.traditional).split('&');
         var len = serialized.length;
         var result = [];
         var i, part;
@@ -277,7 +292,7 @@ $.fn.ajaxSubmit = function(options) {
         if (options.uploadProgress) {
             // workaround because jqXHR does not expose upload property
             s.xhr = function() {
-                var xhr = jQuery.ajaxSettings.xhr();
+                var xhr = $.ajaxSettings.xhr();
                 if (xhr.upload) {
                     xhr.upload.addEventListener('progress', function(event) {
                         var percent = 0;
