@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.5
-Tested up to: 3.5.1
+Tested up to: 3.5.2
 Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,14 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.4.2 =
+
+* Fixed: Unintended tabindex attributes are added to checkbox items.
+* Fixed: Added an unique number to each getJSON request for avoiding cache-related issues.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.36.0.
+* Translation for Gujarati language has been created by Apoto.
+* Translations for French, Polish, Simplified Chinese, Arabic, Catalan and Japanese have been updated.
 
 = 3.4.1 =
 
