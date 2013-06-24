@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 18:49+0900\n"
-"PO-Revision-Date: 2013-05-20 18:49+0900\n"
+"POT-Creation-Date: 2013-06-25 06:17+0900\n"
+"PO-Revision-Date: 2013-06-25 06:17+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -638,7 +638,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:147
 #: contact-form-7/modules/captcha.php:204
-#: contact-form-7/modules/checkbox.php:184 contact-form-7/modules/date.php:159
+#: contact-form-7/modules/checkbox.php:182 contact-form-7/modules/date.php:159
 #: contact-form-7/modules/file.php:238 contact-form-7/modules/number.php:169
 #: contact-form-7/modules/quiz.php:163 contact-form-7/modules/select.php:147
 #: contact-form-7/modules/text.php:228 contact-form-7/modules/textarea.php:110
@@ -656,8 +656,8 @@ msgstr ""
 #: contact-form-7/modules/captcha.php:240
 #: contact-form-7/modules/captcha.php:245
 #: contact-form-7/modules/captcha.php:248
-#: contact-form-7/modules/checkbox.php:189
-#: contact-form-7/modules/checkbox.php:192 contact-form-7/modules/date.php:164
+#: contact-form-7/modules/checkbox.php:187
+#: contact-form-7/modules/checkbox.php:190 contact-form-7/modules/date.php:164
 #: contact-form-7/modules/date.php:167 contact-form-7/modules/date.php:172
 #: contact-form-7/modules/date.php:175 contact-form-7/modules/date.php:180
 #: contact-form-7/modules/date.php:185 contact-form-7/modules/file.php:243
@@ -696,7 +696,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:168
 #: contact-form-7/modules/captcha.php:253
-#: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:193
+#: contact-form-7/modules/checkbox.php:210 contact-form-7/modules/date.php:193
 #: contact-form-7/modules/file.php:259 contact-form-7/modules/number.php:203
 #: contact-form-7/modules/quiz.php:191 contact-form-7/modules/select.php:172
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:271
@@ -780,44 +780,44 @@ msgid ""
 "and FreeType) are not available on your server."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:157
+#: contact-form-7/modules/checkbox.php:155
 msgid "Checkboxes"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:160
+#: contact-form-7/modules/checkbox.php:158
 msgid "Radio buttons"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:181 contact-form-7/modules/date.php:158
+#: contact-form-7/modules/checkbox.php:179 contact-form-7/modules/date.php:158
 #: contact-form-7/modules/file.php:237 contact-form-7/modules/number.php:168
 #: contact-form-7/modules/select.php:146 contact-form-7/modules/text.php:227
 #: contact-form-7/modules/textarea.php:109
 msgid "Required field?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:197
+#: contact-form-7/modules/checkbox.php:195
 #: contact-form-7/modules/select.php:160
 msgid "Choices"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:199
+#: contact-form-7/modules/checkbox.php:197
 #: contact-form-7/modules/select.php:162
 msgid "* One choice per line."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:203
+#: contact-form-7/modules/checkbox.php:201
 msgid "Put a label first, a checkbox last?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:204
+#: contact-form-7/modules/checkbox.php:202
 msgid "Wrap each item with <label> tag?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:206
+#: contact-form-7/modules/checkbox.php:204
 msgid "Make checkboxes exclusive?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:214 contact-form-7/modules/date.php:195
+#: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:195
 #: contact-form-7/modules/number.php:205 contact-form-7/modules/select.php:174
 #: contact-form-7/modules/text.php:273 contact-form-7/modules/textarea.php:146
 msgid "And, put this code into the Mail fields below."
