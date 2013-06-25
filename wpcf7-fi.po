@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-22 19:27+0900\n"
-"PO-Revision-Date: 2012-09-30 18:17+0200\n"
+"POT-Creation-Date: 2013-06-25 06:17+0900\n"
+"PO-Revision-Date: 2013-06-25 16:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: Mediajalostamo <info@mediajalostamo.fi>\n"
 "Language: fi_FI\n"
@@ -13,14 +13,14 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
 msgid "Just another contact form plugin. Simple but flexible."
 msgstr ""
 
-#: contact-form-7/settings.php:193
+#: contact-form-7/settings.php:202
 #, php-format
 msgid "Contact form %d"
 msgstr "Yhteydenottolomake %d"
@@ -225,6 +225,7 @@ msgid "Author"
 msgstr "Tekijä"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+#: contact-form-7/modules/date.php:142
 msgid "Date"
 msgstr "Päivämäärä"
 
@@ -271,7 +272,6 @@ msgid "Use HTML content type"
 msgstr "Käytä HTML:ää"
 
 #: contact-form-7/admin/includes/meta-boxes.php:80
-#: contact-form-7/includes/functions.php:112
 msgid "Message body:"
 msgstr "Viesti:"
 
@@ -279,7 +279,7 @@ msgstr "Viesti:"
 msgid "Contact Form"
 msgstr "Yhteydenottolomake"
 
-#: contact-form-7/includes/classes.php:768
+#: contact-form-7/includes/classes.php:810
 msgid "Untitled"
 msgstr "Ei otsikkoa"
 
@@ -318,7 +318,7 @@ msgid "Sender's message was failed to send"
 msgstr "Viestin lähettäminen epäonnistui"
 
 #: contact-form-7/includes/functions.php:36
-#: contact-form-7/modules/akismet.php:127
+#: contact-form-7/includes/functions.php:46
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -336,20 +336,16 @@ msgid ""
 msgstr "Lomakkeesta löytyi virheitä. Tarkasta lomake ja yritä uudelleen."
 
 #: contact-form-7/includes/functions.php:45
+msgid "Submission was referred to as spam"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:50
 msgid "There are terms that the sender must accept"
 msgstr "Nämä ovat käyttöehdot, jotka lähettäjän täytyy hyväksyä"
 
-#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:51
 msgid "Please accept the terms to proceed."
 msgstr "Hyväksy käyttöehdot jatkaaksesi."
-
-#: contact-form-7/includes/functions.php:50
-msgid "Email address that the sender entered is invalid"
-msgstr "Lähettäjän sähköpostiosoite on virheellinen"
-
-#: contact-form-7/includes/functions.php:51
-msgid "Email address seems invalid."
-msgstr "Sähköpostiosoite vaikuttaa virheelliseltä."
 
 #: contact-form-7/includes/functions.php:55
 msgid "There is a field that the sender must fill in"
@@ -381,7 +377,7 @@ msgid "Your Message"
 msgstr "Viesti"
 
 #: contact-form-7/includes/functions.php:88
-#: contact-form-7/modules/submit.php:45
+#: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr "Lähetä"
 
@@ -396,317 +392,331 @@ msgid "Subject: %s"
 msgstr "Aihe: %s"
 
 #: contact-form-7/includes/functions.php:98
+#: contact-form-7/includes/functions.php:112
 msgid "Message Body:"
 msgstr "Viesti: "
 
 #: contact-form-7/includes/functions.php:99
 #: contact-form-7/includes/functions.php:113
 #, php-format
-msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Tämä viesti on lähetetty palautelomakkeella %1$s %2$s"
+msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
+msgstr "Tämä viesti on lähetetty palautelomakkeella %1$s (%2$s)"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:149
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:150
 msgid "Albanian"
 msgstr "Albanian"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:151
 msgid "Arabic"
 msgstr "Arabic"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:152
 msgid "Armenian"
 msgstr "Armenian"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:153
 msgid "Azerbaijani"
 msgstr "Azerbaijani"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:154
 msgid "Bangla"
 msgstr "Bangla"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:155
 msgid "Basque"
 msgstr "Basque"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:156
 msgid "Belarusian"
 msgstr "Belarusian"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:157
 msgid "Bosnian"
 msgstr "Bosnian"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:158
 msgid "Brazilian Portuguese"
 msgstr "Brazilian Portuguese"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:159
 msgid "Bulgarian"
 msgstr "Bulgarian"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:160
 msgid "Catalan"
 msgstr "Catalan"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:161
 msgid "Chinese (Simplified)"
 msgstr "Chinese (Simplified)"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:162
 msgid "Chinese (Traditional)"
 msgstr "Chinese (Traditional)"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:163
 msgid "Croatian"
 msgstr "Croatian"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:164
 msgid "Czech"
 msgstr "Czech"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:165
 msgid "Danish"
 msgstr "Danish"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:166
 msgid "Dutch"
 msgstr "Dutch"
 
-#: contact-form-7/includes/functions.php:207
+#: contact-form-7/includes/functions.php:167
 msgid "English"
 msgstr "English"
 
-#: contact-form-7/includes/functions.php:208
+#: contact-form-7/includes/functions.php:168
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: contact-form-7/includes/functions.php:209
+#: contact-form-7/includes/functions.php:169
 msgid "Estonian"
 msgstr "Estonian"
 
-#: contact-form-7/includes/functions.php:210
+#: contact-form-7/includes/functions.php:170
 msgid "Finnish"
 msgstr "Suomi"
 
-#: contact-form-7/includes/functions.php:211
+#: contact-form-7/includes/functions.php:171
 msgid "French"
 msgstr "French"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:172
 msgid "Galician"
 msgstr "Galician"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:173
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: contact-form-7/includes/functions.php:174
 msgid "Georgian"
 msgstr "Georgian"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:175
 msgid "German"
 msgstr "German"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:176
 msgid "Greek"
 msgstr "Greek"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:177
 msgid "Hebrew"
 msgstr "Hebrew"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:178
 msgid "Hindi"
 msgstr "Hindi"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:179
 msgid "Hungarian"
 msgstr "Hungarian"
 
-#: contact-form-7/includes/functions.php:219
+#: contact-form-7/includes/functions.php:180
 msgid "Indonesian"
 msgstr "Indonesian"
 
-#: contact-form-7/includes/functions.php:220
+#: contact-form-7/includes/functions.php:181
+msgid "Irish"
+msgstr "Irish"
+
+#: contact-form-7/includes/functions.php:182
 msgid "Italian"
 msgstr "Italian"
 
-#: contact-form-7/includes/functions.php:221
+#: contact-form-7/includes/functions.php:183
 msgid "Japanese"
 msgstr "Japanese"
 
-#: contact-form-7/includes/functions.php:222
+#: contact-form-7/includes/functions.php:184
 msgid "Korean"
 msgstr "Korean"
 
-#: contact-form-7/includes/functions.php:223
+#: contact-form-7/includes/functions.php:185
 msgid "Latvian"
 msgstr "Latvian"
 
-#: contact-form-7/includes/functions.php:224
+#: contact-form-7/includes/functions.php:186
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
-#: contact-form-7/includes/functions.php:225
+#: contact-form-7/includes/functions.php:187
 msgid "Macedonian"
 msgstr "Macedonian"
 
-#: contact-form-7/includes/functions.php:226
+#: contact-form-7/includes/functions.php:188
 msgid "Malay"
 msgstr "Malay"
 
-#: contact-form-7/includes/functions.php:227
+#: contact-form-7/includes/functions.php:189
 msgid "Malayalam"
 msgstr "Malayalam"
 
-#: contact-form-7/includes/functions.php:228
+#: contact-form-7/includes/functions.php:190
 msgid "Maltese"
 msgstr "Maltese"
 
-#: contact-form-7/includes/functions.php:229
+#: contact-form-7/includes/functions.php:191
 msgid "Norwegian"
 msgstr "Norwegian"
 
-#: contact-form-7/includes/functions.php:230
+#: contact-form-7/includes/functions.php:192
 msgid "Persian"
 msgstr "Persian"
 
-#: contact-form-7/includes/functions.php:231
+#: contact-form-7/includes/functions.php:193
 msgid "Polish"
 msgstr "Polish"
 
-#: contact-form-7/includes/functions.php:232
+#: contact-form-7/includes/functions.php:194
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#: contact-form-7/includes/functions.php:233
+#: contact-form-7/includes/functions.php:195
 msgid "Russian"
 msgstr "Russian"
 
-#: contact-form-7/includes/functions.php:234
+#: contact-form-7/includes/functions.php:196
 msgid "Romanian"
 msgstr "Romanian"
 
-#: contact-form-7/includes/functions.php:235
+#: contact-form-7/includes/functions.php:197
 msgid "Serbian"
 msgstr "Serbian"
 
-#: contact-form-7/includes/functions.php:236
+#: contact-form-7/includes/functions.php:198
 msgid "Sinhala"
 msgstr "Sinhala"
 
-#: contact-form-7/includes/functions.php:237
+#: contact-form-7/includes/functions.php:199
 msgid "Slovak"
 msgstr "Slovak"
 
-#: contact-form-7/includes/functions.php:238
+#: contact-form-7/includes/functions.php:200
 msgid "Slovene"
 msgstr "Slovene"
 
-#: contact-form-7/includes/functions.php:239
+#: contact-form-7/includes/functions.php:201
 msgid "Spanish"
 msgstr "Spanish"
 
-#: contact-form-7/includes/functions.php:240
+#: contact-form-7/includes/functions.php:202
 msgid "Swedish"
 msgstr "Swedish"
 
-#: contact-form-7/includes/functions.php:241
+#: contact-form-7/includes/functions.php:203
 msgid "Tamil"
 msgstr "Tamil"
 
-#: contact-form-7/includes/functions.php:242
+#: contact-form-7/includes/functions.php:204
 msgid "Thai"
 msgstr "Thai"
 
-#: contact-form-7/includes/functions.php:243
+#: contact-form-7/includes/functions.php:205
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: contact-form-7/includes/functions.php:244
+#: contact-form-7/includes/functions.php:206
 msgid "Turkish"
 msgstr "Turkish"
 
-#: contact-form-7/includes/functions.php:245
+#: contact-form-7/includes/functions.php:207
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
-#: contact-form-7/includes/functions.php:246
+#: contact-form-7/includes/functions.php:208
 msgid "Vietnamese"
 msgstr "Vietnamese"
 
-#: contact-form-7/modules/acceptance.php:156
+#: contact-form-7/modules/acceptance.php:138
 msgid "Acceptance"
 msgstr "Hyväksyntä"
 
-#: contact-form-7/modules/acceptance.php:165
-#: contact-form-7/modules/captcha.php:215
-#: contact-form-7/modules/checkbox.php:191 contact-form-7/modules/file.php:241
-#: contact-form-7/modules/quiz.php:182 contact-form-7/modules/select.php:152
-#: contact-form-7/modules/text.php:179 contact-form-7/modules/textarea.php:140
+#: contact-form-7/modules/acceptance.php:147
+#: contact-form-7/modules/captcha.php:204
+#: contact-form-7/modules/checkbox.php:182 contact-form-7/modules/date.php:159
+#: contact-form-7/modules/file.php:238 contact-form-7/modules/number.php:169
+#: contact-form-7/modules/quiz.php:163 contact-form-7/modules/select.php:147
+#: contact-form-7/modules/text.php:228 contact-form-7/modules/textarea.php:110
 msgid "Name"
 msgstr "Nimi"
 
-#: contact-form-7/modules/acceptance.php:170
-#: contact-form-7/modules/acceptance.php:173
+#: contact-form-7/modules/acceptance.php:152
+#: contact-form-7/modules/acceptance.php:155
+#: contact-form-7/modules/captcha.php:211
+#: contact-form-7/modules/captcha.php:214
+#: contact-form-7/modules/captcha.php:219
 #: contact-form-7/modules/captcha.php:222
-#: contact-form-7/modules/captcha.php:225
-#: contact-form-7/modules/captcha.php:230
-#: contact-form-7/modules/captcha.php:233
+#: contact-form-7/modules/captcha.php:226
 #: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:240
+#: contact-form-7/modules/captcha.php:245
 #: contact-form-7/modules/captcha.php:248
-#: contact-form-7/modules/captcha.php:251
-#: contact-form-7/modules/captcha.php:256
-#: contact-form-7/modules/captcha.php:259
-#: contact-form-7/modules/checkbox.php:196
-#: contact-form-7/modules/checkbox.php:199 contact-form-7/modules/file.php:246
-#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
-#: contact-form-7/modules/file.php:257 contact-form-7/modules/quiz.php:187
-#: contact-form-7/modules/quiz.php:190 contact-form-7/modules/quiz.php:195
-#: contact-form-7/modules/quiz.php:198 contact-form-7/modules/select.php:157
-#: contact-form-7/modules/select.php:160 contact-form-7/modules/submit.php:71
-#: contact-form-7/modules/submit.php:74 contact-form-7/modules/submit.php:79
-#: contact-form-7/modules/text.php:184 contact-form-7/modules/text.php:187
-#: contact-form-7/modules/text.php:192 contact-form-7/modules/text.php:195
-#: contact-form-7/modules/text.php:200 contact-form-7/modules/text.php:211
-#: contact-form-7/modules/textarea.php:145
-#: contact-form-7/modules/textarea.php:148
-#: contact-form-7/modules/textarea.php:153
-#: contact-form-7/modules/textarea.php:156
-#: contact-form-7/modules/textarea.php:161
+#: contact-form-7/modules/checkbox.php:187
+#: contact-form-7/modules/checkbox.php:190 contact-form-7/modules/date.php:164
+#: contact-form-7/modules/date.php:167 contact-form-7/modules/date.php:172
+#: contact-form-7/modules/date.php:175 contact-form-7/modules/date.php:180
+#: contact-form-7/modules/date.php:185 contact-form-7/modules/file.php:243
+#: contact-form-7/modules/file.php:246 contact-form-7/modules/file.php:251
+#: contact-form-7/modules/file.php:254 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/number.php:177 contact-form-7/modules/number.php:182
+#: contact-form-7/modules/number.php:185 contact-form-7/modules/number.php:190
+#: contact-form-7/modules/number.php:195 contact-form-7/modules/quiz.php:168
+#: contact-form-7/modules/quiz.php:171 contact-form-7/modules/quiz.php:176
+#: contact-form-7/modules/quiz.php:179 contact-form-7/modules/select.php:152
+#: contact-form-7/modules/select.php:155 contact-form-7/modules/submit.php:59
+#: contact-form-7/modules/submit.php:62 contact-form-7/modules/submit.php:67
+#: contact-form-7/modules/text.php:233 contact-form-7/modules/text.php:236
+#: contact-form-7/modules/text.php:241 contact-form-7/modules/text.php:244
+#: contact-form-7/modules/text.php:250 contact-form-7/modules/text.php:263
+#: contact-form-7/modules/textarea.php:115
+#: contact-form-7/modules/textarea.php:118
+#: contact-form-7/modules/textarea.php:123
+#: contact-form-7/modules/textarea.php:126
+#: contact-form-7/modules/textarea.php:131
+#: contact-form-7/modules/textarea.php:136
 msgid "optional"
 msgstr "Valinnainen"
 
-#: contact-form-7/modules/acceptance.php:179
+#: contact-form-7/modules/acceptance.php:161
 msgid "Make this checkbox checked by default?"
 msgstr "Merkitse tämä valintaruutu aktiiviseksi oletuksena?"
 
-#: contact-form-7/modules/acceptance.php:180
+#: contact-form-7/modules/acceptance.php:162
 msgid "Make this checkbox work inversely?"
 msgstr "Laita tämä valintaruutu toimimaan käänteisesti"
 
-#: contact-form-7/modules/acceptance.php:181
+#: contact-form-7/modules/acceptance.php:163
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr ""
 "* Tämä tarkoittaa sitä että käyttäjän täytyy ottaa valinta pois "
 "hyväksyäkseen ehdon"
 
-#: contact-form-7/modules/acceptance.php:186
-#: contact-form-7/modules/captcha.php:264
-#: contact-form-7/modules/checkbox.php:219 contact-form-7/modules/file.php:262
-#: contact-form-7/modules/quiz.php:210 contact-form-7/modules/select.php:177
-#: contact-form-7/modules/submit.php:86 contact-form-7/modules/text.php:219
-#: contact-form-7/modules/textarea.php:169
+#: contact-form-7/modules/acceptance.php:168
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/checkbox.php:210 contact-form-7/modules/date.php:193
+#: contact-form-7/modules/file.php:259 contact-form-7/modules/number.php:203
+#: contact-form-7/modules/quiz.php:191 contact-form-7/modules/select.php:172
+#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:271
+#: contact-form-7/modules/textarea.php:144
 msgid "Copy this code and paste it into the form left."
 msgstr "Kopioi ja liitä tämä koodi lomakkeeseen"
 
-#: contact-form-7/modules/akismet.php:126
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet piti viestiä spämminä."
-
-#: contact-form-7/modules/captcha.php:73
+#: contact-form-7/modules/captcha.php:19
 msgid ""
 "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
 "really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
@@ -714,63 +724,63 @@ msgstr ""
 "Käyttääksesi CAPTCHAa, sinun täytyy asentaa <a href=\"http://wordpress.org/"
 "extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a>."
 
-#: contact-form-7/modules/captcha.php:187
+#: contact-form-7/modules/captcha.php:176
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Koodi jonka lähettäjä kirjoitta ei matsaa CAPTCHAa"
+msgstr "Koodi jonka lähettäjä kirjoitti ei matsaa CAPTCHAa"
 
-#: contact-form-7/modules/captcha.php:188
+#: contact-form-7/modules/captcha.php:177
 msgid "Your entered code is incorrect."
 msgstr "Syöttämäsi koodi on virheellinen."
 
-#: contact-form-7/modules/captcha.php:201
+#: contact-form-7/modules/captcha.php:190
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:212
+#: contact-form-7/modules/captcha.php:201
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr "Huom: Käyttääksesi CAPTCHAa, asenna Really Simple CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:208
 msgid "Image settings"
 msgstr "Kuvan asetukset"
 
-#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:219
 msgid "Foreground color"
 msgstr "Etuosan väri"
 
-#: contact-form-7/modules/captcha.php:233
+#: contact-form-7/modules/captcha.php:222
 msgid "Background color"
 msgstr "Taustan väri"
 
-#: contact-form-7/modules/captcha.php:237
+#: contact-form-7/modules/captcha.php:226
 msgid "Image size"
 msgstr "Kuvan koko"
 
-#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:227
 msgid "Small"
 msgstr "Pieni"
 
-#: contact-form-7/modules/captcha.php:239
+#: contact-form-7/modules/captcha.php:228
 msgid "Medium"
 msgstr "Keski"
 
-#: contact-form-7/modules/captcha.php:240
+#: contact-form-7/modules/captcha.php:229
 msgid "Large"
 msgstr "Suuri"
 
-#: contact-form-7/modules/captcha.php:245
+#: contact-form-7/modules/captcha.php:234
 msgid "Input field settings"
 msgstr "Syötekentän asetukset"
 
-#: contact-form-7/modules/captcha.php:265
+#: contact-form-7/modules/captcha.php:254
 msgid "For image"
 msgstr "Kuvalle"
 
-#: contact-form-7/modules/captcha.php:267
+#: contact-form-7/modules/captcha.php:256
 msgid "For input field"
 msgstr "Syötekentälle"
 
-#: contact-form-7/modules/captcha.php:297
+#: contact-form-7/modules/captcha.php:286
 #, php-format
 msgid ""
 "This contact form contains CAPTCHA fields, but the temporary folder for the "
@@ -781,7 +791,7 @@ msgstr ""
 "tiedostoille (%s) ei ole tai sinne ei voi kirjoittaa. Voit luoda kansion tai "
 "vaihtaa oikeudet manuaalisesti."
 
-#: contact-form-7/modules/captcha.php:303
+#: contact-form-7/modules/captcha.php:292
 msgid ""
 "This contact form contains CAPTCHA fields, but the necessary libraries (GD "
 "and FreeType) are not available on your server."
@@ -789,101 +799,136 @@ msgstr ""
 "Tämä palautelomake sisältää CAPTCHA-kentän, mutta tarvittavia kirjastoja (GD "
 "ja FreeType) ei ole serverillä."
 
-#: contact-form-7/modules/checkbox.php:164
+#: contact-form-7/modules/checkbox.php:155
 msgid "Checkboxes"
 msgstr "Valintaruudut"
 
-#: contact-form-7/modules/checkbox.php:167
+#: contact-form-7/modules/checkbox.php:158
 msgid "Radio buttons"
 msgstr "Valintanapit"
 
-#: contact-form-7/modules/checkbox.php:188 contact-form-7/modules/file.php:240
-#: contact-form-7/modules/select.php:151 contact-form-7/modules/text.php:178
-#: contact-form-7/modules/textarea.php:139
+#: contact-form-7/modules/checkbox.php:179 contact-form-7/modules/date.php:158
+#: contact-form-7/modules/file.php:237 contact-form-7/modules/number.php:168
+#: contact-form-7/modules/select.php:146 contact-form-7/modules/text.php:227
+#: contact-form-7/modules/textarea.php:109
 msgid "Required field?"
 msgstr "Pakollinen tieto?"
 
-#: contact-form-7/modules/checkbox.php:204
-#: contact-form-7/modules/select.php:165
+#: contact-form-7/modules/checkbox.php:195
+#: contact-form-7/modules/select.php:160
 msgid "Choices"
 msgstr "Valinnat"
 
-#: contact-form-7/modules/checkbox.php:206
-#: contact-form-7/modules/select.php:167
+#: contact-form-7/modules/checkbox.php:197
+#: contact-form-7/modules/select.php:162
 msgid "* One choice per line."
 msgstr "* Yksi valinta per rivi"
 
-#: contact-form-7/modules/checkbox.php:210
+#: contact-form-7/modules/checkbox.php:201
 msgid "Put a label first, a checkbox last?"
 msgstr "Nimi ensin, valintaruutu viimeseksi?"
 
-#: contact-form-7/modules/checkbox.php:211
+#: contact-form-7/modules/checkbox.php:202
 msgid "Wrap each item with <label> tag?"
 msgstr "Kiedo jokainen kohde <label> -tageilla?"
 
-#: contact-form-7/modules/checkbox.php:213
+#: contact-form-7/modules/checkbox.php:204
 msgid "Make checkboxes exclusive?"
 msgstr "Tee valintaruuduista poissulkeva?"
 
-#: contact-form-7/modules/checkbox.php:221
-#: contact-form-7/modules/select.php:179 contact-form-7/modules/text.php:221
-#: contact-form-7/modules/textarea.php:171
+#: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:195
+#: contact-form-7/modules/number.php:205 contact-form-7/modules/select.php:174
+#: contact-form-7/modules/text.php:273 contact-form-7/modules/textarea.php:146
 msgid "And, put this code into the Mail fields below."
 msgstr "Kopioi ja liitä tämä koodi viestikenttiin alla."
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/date.php:118
+msgid "Date format that the sender entered is invalid"
+msgstr "Lähettäjän syöttämä päivämäärän muoto on virheellinen"
+
+#: contact-form-7/modules/date.php:119
+msgid "Date format seems invalid."
+msgstr "Päivämäärän muoto vaikuttaa virheelliseltä."
+
+#: contact-form-7/modules/date.php:123
+msgid "Date is earlier than minimum limit"
+msgstr "Päivämäärä on minimirajaa aikaisempi"
+
+#: contact-form-7/modules/date.php:124
+msgid "This date is too early."
+msgstr "Päivämäärä on liian aikainen."
+
+#: contact-form-7/modules/date.php:128
+msgid "Date is later than maximum limit"
+msgstr "Päivämäärä on maksimirajaa myöhäisempi"
+
+#: contact-form-7/modules/date.php:129
+msgid "This date is too late."
+msgstr "Päivämäärä on liian myöhäinen."
+
+#: contact-form-7/modules/date.php:185 contact-form-7/modules/number.php:195
+#: contact-form-7/modules/text.php:263 contact-form-7/modules/textarea.php:136
+msgid "Default value"
+msgstr "Vakioarvo"
+
+#: contact-form-7/modules/date.php:188 contact-form-7/modules/number.php:198
+#: contact-form-7/modules/text.php:266 contact-form-7/modules/textarea.php:139
+msgid "Use this text as placeholder?"
+msgstr "Käytä tätä tekstiä vesileimana?"
+
+#: contact-form-7/modules/file.php:198
 msgid "Uploading a file fails for any reason"
 msgstr "Tiedoston lataaminen epäonnistuu jostain syystä"
 
-#: contact-form-7/modules/file.php:202
+#: contact-form-7/modules/file.php:199
 msgid "Failed to upload file."
 msgstr "Tiedoston lataaminen epäonnistui."
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:203
 msgid "Uploaded file is not allowed file type"
 msgstr "Ladattu tiedosto ei ole sallittua tiedostotyyppiä"
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:204
 msgid "This file type is not allowed."
 msgstr "Tiedostotyyppi ei ole sallittu."
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:208
 msgid "Uploaded file is too large"
 msgstr "Ladattu tiedosto on liian suuri"
 
-#: contact-form-7/modules/file.php:212
+#: contact-form-7/modules/file.php:209
 msgid "This file is too large."
 msgstr "Tiedosto on liian suuri"
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:213
 msgid "Uploading a file fails for PHP error"
 msgstr "Tiedoston lataaminen epäonnistui PHP-virheen vuoksi"
 
-#: contact-form-7/modules/file.php:217
+#: contact-form-7/modules/file.php:214
 msgid "Failed to upload file. Error occurred."
 msgstr "Tiedoston lataaminen epäonnistui. Virhe."
 
-#: contact-form-7/modules/file.php:231
+#: contact-form-7/modules/file.php:228
 msgid "File upload"
 msgstr "Tiedoston lataaminen"
 
-#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:251
 msgid "File size limit"
 msgstr "Tiedoston maksimikoko"
 
-#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:251
 msgid "bytes"
 msgstr "bittiä"
 
-#: contact-form-7/modules/file.php:257
+#: contact-form-7/modules/file.php:254
 msgid "Acceptable file types"
 msgstr "Hyväksytyt tiedostotyypit"
 
-#: contact-form-7/modules/file.php:264
+#: contact-form-7/modules/file.php:261
 msgid "And, put this code into the File Attachments field below."
 msgstr "Ja laita tämä koodi Liitetiedosto-kenttään."
 
-#: contact-form-7/modules/file.php:289
+#: contact-form-7/modules/file.php:286
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -894,7 +939,7 @@ msgstr ""
 "kansiota tiedostoille (%s) ei ole tai ei voi kirjoittaa. Voit luoda kansion "
 "tai vaihtaa oikeudet manuaalisesti."
 
-#: contact-form-7/modules/jetpack.php:14
+#: contact-form-7/modules/jetpack.php:21
 #, php-format
 msgid ""
 "<strong>Jetpack may cause problems for other plugins in certain cases.</"
@@ -904,81 +949,143 @@ msgstr ""
 "lisäosille.</strong> <a href=\"%s\" target=\"_blank\">Katso kuinka välttää "
 "tämä.</a>"
 
-#: contact-form-7/modules/quiz.php:159
+#: contact-form-7/modules/number.php:121
+msgid "Number format that the sender entered is invalid"
+msgstr "Lähettäjän syöttämä luvun muoto on virheellinen"
+
+#: contact-form-7/modules/number.php:122
+msgid "Number format seems invalid."
+msgstr "Numeron muoto vaikuttaa virheelliseltä."
+
+#: contact-form-7/modules/number.php:126
+msgid "Number is smaller than minimum limit"
+msgstr "Luku on minimirajaa pienempi"
+
+#: contact-form-7/modules/number.php:127
+msgid "This number is too small."
+msgstr "Luku on liian pieni."
+
+#: contact-form-7/modules/number.php:131
+msgid "Number is larger than maximum limit"
+msgstr "Luku on maksimirajaa suurempi"
+
+#: contact-form-7/modules/number.php:132
+msgid "This number is too large."
+msgstr "Luku on liian suuri."
+
+#: contact-form-7/modules/number.php:145
+msgid "Number (spinbox)"
+msgstr "Numero (painike)"
+
+#: contact-form-7/modules/number.php:148
+msgid "Number (slider)"
+msgstr "Numero (liukusäädin)"
+
+#: contact-form-7/modules/quiz.php:140
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "Lähettäjä ei antanut oikeaa vastausta kysymykseen"
 
-#: contact-form-7/modules/quiz.php:160
+#: contact-form-7/modules/quiz.php:141
 msgid "Your answer is not correct."
 msgstr "Vastauksesi on väärä"
 
-#: contact-form-7/modules/quiz.php:173
+#: contact-form-7/modules/quiz.php:154
 msgid "Quiz"
 msgstr "Kysymys"
 
-#: contact-form-7/modules/quiz.php:203
+#: contact-form-7/modules/quiz.php:184
 msgid "Quizzes"
 msgstr "Kysymykset"
 
-#: contact-form-7/modules/quiz.php:205
+#: contact-form-7/modules/quiz.php:186
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* kysymys|vastaus (esim. 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:142
+#: contact-form-7/modules/select.php:137
 msgid "Drop-down menu"
 msgstr "Alasvetovalikko"
 
-#: contact-form-7/modules/select.php:171
+#: contact-form-7/modules/select.php:166
 msgid "Allow multiple selections?"
 msgstr "Salli monivalinta?"
 
-#: contact-form-7/modules/select.php:172
+#: contact-form-7/modules/select.php:167
 msgid "Insert a blank item as the first option?"
 msgstr "Laita tyhjä valinta ensimmäiseksi vaihtoehdoksi?"
 
-#: contact-form-7/modules/submit.php:61
+#: contact-form-7/modules/submit.php:49
 msgid "Submit button"
 msgstr "Lähetä -nappi"
 
-#: contact-form-7/modules/submit.php:79
+#: contact-form-7/modules/submit.php:67
 msgid "Label"
 msgstr "Nimi"
 
-#: contact-form-7/modules/text.php:155
+#: contact-form-7/modules/text.php:166
+msgid "Email address that the sender entered is invalid"
+msgstr "Lähettäjän sähköpostiosoite on virheellinen"
+
+#: contact-form-7/modules/text.php:167
+msgid "Email address seems invalid."
+msgstr "Sähköpostiosoite vaikuttaa virheelliseltä."
+
+#: contact-form-7/modules/text.php:171
+msgid "URL that the sender entered is invalid"
+msgstr "Lähettäjän syöttämä URL-osoite on virheellinen"
+
+#: contact-form-7/modules/text.php:172
+msgid "URL seems invalid."
+msgstr "URL-osoite vaikuttaa virheelliseltä."
+
+#: contact-form-7/modules/text.php:176
+msgid "Telephone number that the sender entered is invalid"
+msgstr "Lähettäjän syöttämä puhelinnumero on virheellinen"
+
+#: contact-form-7/modules/text.php:177
+msgid "Telephone number seems invalid."
+msgstr "Puhelinnumero vaikuttaa virheelliseltä."
+
+#: contact-form-7/modules/text.php:190
 msgid "Text field"
 msgstr "Tekstialue"
 
-#: contact-form-7/modules/text.php:158
-msgid "Email field"
-msgstr "Sähköpostikenttä"
+#: contact-form-7/modules/text.php:193
+msgid "Email"
+msgstr "Sähköposti"
 
-#: contact-form-7/modules/text.php:200
+#: contact-form-7/modules/text.php:196
+msgid "URL"
+msgstr "URL-osoite"
+
+#: contact-form-7/modules/text.php:199
+msgid "Telephone number"
+msgstr "Puhelinnumero"
+
+#: contact-form-7/modules/text.php:250
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:202
+#: contact-form-7/modules/text.php:252
 msgid "This field requires author's name"
 msgstr "Tämä kenttä vaatii kirjoittajan nimen"
 
-#: contact-form-7/modules/text.php:203
-msgid "This field requires author's URL"
-msgstr "Tämä kenttä vaatii kirjoittajan URL:n"
-
-#: contact-form-7/modules/text.php:205
+#: contact-form-7/modules/text.php:254
 msgid "This field requires author's email address"
 msgstr "Tämä kenttä vaatii kirjoittajan sähköpostiosoitteen"
 
-#: contact-form-7/modules/text.php:211 contact-form-7/modules/textarea.php:161
-msgid "Default value"
-msgstr "Vakioarvo"
+#: contact-form-7/modules/text.php:256
+msgid "This field requires author's URL"
+msgstr "Tämä kenttä vaatii kirjoittajan URL:n"
 
-#: contact-form-7/modules/text.php:214 contact-form-7/modules/textarea.php:164
-msgid "Use this text as watermark?"
-msgstr "Käytä tätä tekstiä vesileimana?"
-
-#: contact-form-7/modules/textarea.php:130
+#: contact-form-7/modules/textarea.php:100
 msgid "Text area"
 msgstr "Tekstikenttä"
+
+#~ msgid "Akismet judged the sending activity as spamming"
+#~ msgstr "Akismet piti viestiä spämminä."
+
+#~ msgid "Email field"
+#~ msgstr "Sähköpostikenttä"
 
 #~ msgid "Show"
 #~ msgstr "Näytä"
