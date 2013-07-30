@@ -5,9 +5,9 @@
 			if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
 				_wpcf7 = {};
 
-			_wpcf7 = $.extend({
-				cached: 0,
-				supportHtml5: $.wpcf7SupportHtml5() }, _wpcf7);
+			_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
+
+			_wpcf7.supportHtml5 = $.wpcf7SupportHtml5();
 
 			$('div.wpcf7 > form').ajaxForm({
 				beforeSubmit: function(formData, jqForm, options) {
@@ -129,7 +129,7 @@
 				});
 
 				if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
-					$(n).find('.wpcf7-date').each(function() {
+					$(n).find('input.wpcf7-date[type="date"]').each(function() {
 						$(this).datepicker({
 							dateFormat: 'yy-mm-dd',
 							minDate: new Date($(this).attr('min')),
@@ -139,7 +139,7 @@
 				}
 
 				if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.number) {
-					$(n).find('.wpcf7-number').each(function() {
+					$(n).find('input.wpcf7-number[type="number"]').each(function() {
 						$(this).spinner({
 							min: $(this).attr('min'),
 							max: $(this).attr('max'),
