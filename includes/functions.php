@@ -221,6 +221,9 @@ function wpcf7_is_rtl() {
 function wpcf7_ajax_loader() {
 	$url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
 
+	if ( is_ssl() && 'http:' == substr( $url, 0, 5 ) )
+		$url = 'https:' . substr( $url, 5 );
+
 	return apply_filters( 'wpcf7_ajax_loader', $url );
 }
 
