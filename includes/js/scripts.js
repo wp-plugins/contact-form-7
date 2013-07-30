@@ -5,10 +5,9 @@
 			if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
 				_wpcf7 = {};
 
-			_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
-
-			_wpcf7.supportHtml5Placeholder
-				= 'placeholder' in document.createElement('input');
+			_wpcf7 = $.extend({
+				cached: 0,
+				supportHtml5: $.wpcf7SupportHtml5() }, _wpcf7);
 
 			$('div.wpcf7 > form').ajaxForm({
 				beforeSubmit: function(formData, jqForm, options) {
@@ -110,7 +109,7 @@
 				$(n).find('[placeholder]').each(function(i, n) {
 					var input = $(n);
 
-					if (_wpcf7.supportHtml5Placeholder)
+					if (_wpcf7.supportHtml5.placeholder)
 						return;
 
 					input.val(input.attr('placeholder'));
@@ -128,6 +127,27 @@
 						}
 					});
 				});
+
+				if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
+					$(n).find('.wpcf7-date').each(function() {
+						$(this).datepicker({
+							dateFormat: 'yy-mm-dd',
+							minDate: new Date($(this).attr('min')),
+							maxDate: new Date($(this).attr('max'))
+						});
+					});
+				}
+
+				if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.number) {
+					$(n).find('.wpcf7-number').each(function() {
+						$(this).spinner({
+							min: $(this).attr('min'),
+							max: $(this).attr('max'),
+							step: $(this).attr('step')
+						});
+					});
+				}
+
 			});
 
 		} catch (e) {
@@ -244,6 +264,22 @@
 		return this.each(function() {
 			$(this).find('div.wpcf7-response-output').append(message).slideDown('fast');
 		});
+	};
+
+	$.wpcf7SupportHtml5 = function() {
+		var features = {};
+		var input = document.createElement('input');
+
+		features.placeholder = 'placeholder' in input;
+
+		var inputTypes = ['email', 'url', 'tel', 'number', 'range', 'date'];
+
+		$.each(inputTypes, function(index, value) {
+			input.setAttribute('type', value);
+			features[value] = input.type !== 'text';
+		});
+
+		return features;
 	};
 
 })(jQuery);

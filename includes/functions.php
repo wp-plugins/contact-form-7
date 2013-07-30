@@ -272,6 +272,10 @@ function wpcf7_support_html5() {
 	return (bool) apply_filters( 'wpcf7_support_html5', true );
 }
 
+function wpcf7_support_html5_fallback() {
+	return (bool) apply_filters( 'wpcf7_support_html5_fallback', false );
+}
+
 function wpcf7_format_atts( $atts ) {
 	$html = '';
 
