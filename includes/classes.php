@@ -601,6 +601,8 @@ class WPCF7_ContactForm {
 			else
 				$submitted = $this->posted_data[$tagname];
 
+			$submitted = trim( $submitted );
+
 			if ( is_array( $submitted ) )
 				$replaced = join( ', ', $submitted );
 			else
