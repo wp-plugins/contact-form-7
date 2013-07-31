@@ -41,6 +41,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$multiple = $tag->has_option( 'multiple' );
 	$include_blank = $tag->has_option( 'include_blank' );
+	$first_as_label = $tag->has_option( 'first_as_label' );
 
 	$name = $tag->name;
 	$values = $tag->values;
@@ -51,6 +52,8 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	if ( $empty_select || $include_blank ) {
 		array_unshift( $labels, '---' );
 		array_unshift( $values, '' );
+	} elseif ( $first_as_label ) {
+		$values[0] = '';
 	}
 
 	$html = '';
