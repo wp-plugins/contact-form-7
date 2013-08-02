@@ -85,6 +85,10 @@
 					});
 
 					$(data.into).wpcf7FillResponseOutput(data.message);
+				},
+				error: function(xhr, status, error, $form) {
+					var e = $('<div class="ajax-error"></div>').text(error.message);
+					$form.after(e);
 				}
 			});
 

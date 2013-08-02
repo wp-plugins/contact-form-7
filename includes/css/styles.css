@@ -60,6 +60,10 @@ div.wpcf7 img.ajax-loader {
 	margin-left: 4px;
 }
 
+div.wpcf7 div.ajax-error {
+	display: none;
+}
+
 div.wpcf7 .placeheld {
 	color: #888;
 }
