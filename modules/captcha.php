@@ -282,7 +282,7 @@ function wpcf7_captcha_display_warning_message() {
 	$uploads_dir = wpcf7_captcha_tmp_dir();
 	wpcf7_init_captcha();
 
-	if ( ! is_dir( $uploads_dir ) || ! is_writable( $uploads_dir ) ) {
+	if ( ! is_dir( $uploads_dir ) || ! wp_is_writable( $uploads_dir ) ) {
 		$message = sprintf( __( 'This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually.', 'wpcf7' ), $uploads_dir );
 
 		echo '<div class="error"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
@@ -354,7 +354,7 @@ function wpcf7_generate_captcha( $options = null ) {
 	if ( ! wpcf7_init_captcha() )
 		return false;
 
-	if ( ! is_dir( $wpcf7_captcha->tmp_dir ) || ! is_writable( $wpcf7_captcha->tmp_dir ) )
+	if ( ! is_dir( $wpcf7_captcha->tmp_dir ) || ! wp_is_writable( $wpcf7_captcha->tmp_dir ) )
 		return false;
 
 	$img_type = imagetypes();
@@ -419,7 +419,7 @@ function wpcf7_cleanup_captcha_files() {
 
 	$dir = trailingslashit( wpcf7_captcha_tmp_dir() );
 
-	if ( ! is_dir( $dir ) || ! is_readable( $dir ) || ! is_writable( $dir ) )
+	if ( ! is_dir( $dir ) || ! is_readable( $dir ) || ! wp_is_writable( $dir ) )
 		return false;
 
 	if ( $handle = @opendir( $dir ) ) {
