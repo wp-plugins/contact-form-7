@@ -113,31 +113,9 @@
 				$f.wpcf7ToggleSubmit();
 			});
 
-			$f.find('.wpcf7-exclusive-checkbox input:checkbox').click(function() {
-				$(this).closest('.wpcf7-checkbox').find('input:checkbox').not(this).removeAttr('checked');
-			});
+			$f.find('.wpcf7-exclusive-checkbox').wpcf7ExclusiveCheckbox();
 
-			$f.find('[placeholder]').each(function() {
-				if (_wpcf7.supportHtml5.placeholder)
-					return;
-
-				var input = $(this);
-
-				input.val(input.attr('placeholder'));
-				input.addClass('placeheld');
-
-				input.focus(function() {
-					if ($(this).hasClass('placeheld'))
-						$(this).val('').removeClass('placeheld');
-				});
-
-				input.blur(function() {
-					if ('' == $(this).val()) {
-						$(this).val($(this).attr('placeholder'));
-						$(this).addClass('placeheld');
-					}
-				});
-			});
+			$f.find('[placeholder]').wpcf7Placeholder();
 
 			if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
 				$f.find('input.wpcf7-date[type="date"]').each(function() {
@@ -158,6 +136,34 @@
 					});
 				});
 			}
+		});
+	};
+
+	$.fn.wpcf7ExclusiveCheckbox = function() {
+		return this.find('input:checkbox').click(function() {
+			$(this).closest('.wpcf7-checkbox').find('input:checkbox').not(this).removeAttr('checked');
+		});
+	};
+
+	$.fn.wpcf7Placeholder = function() {
+		if (_wpcf7.supportHtml5.placeholder)
+			return this;
+
+		return this.each(function() {
+			$(this).val($(this).attr('placeholder'));
+			$(this).addClass('placeheld');
+
+			$(this).focus(function() {
+				if ($(this).hasClass('placeheld'))
+					$(this).val('').removeClass('placeheld');
+			});
+
+			$(this).blur(function() {
+				if ('' == $(this).val()) {
+					$(this).val($(this).attr('placeholder'));
+					$(this).addClass('placeheld');
+				}
+			});
 		});
 	};
 
