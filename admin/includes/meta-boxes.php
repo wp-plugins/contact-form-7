@@ -64,7 +64,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-attachments"><?php echo esc_html( __( 'File attachments:', 'wpcf7' ) ); ?></label><br />
-	<input type="text" id="<?php echo $id; ?>-attachments" name="<?php echo $id; ?>-attachments" class="wide" size="70" value="<?php echo esc_attr( $mail['attachments'] ); ?>" />
+	<textarea id="<?php echo $id; ?>-attachments" name="<?php echo $id; ?>-attachments" cols="100" rows="2"><?php echo esc_textarea( $mail['attachments'] ); ?></textarea>
 	</div>
 
 	<div class="pseudo-hr"></div>
@@ -78,7 +78,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <div class="half-right">
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message body:', 'wpcf7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="16"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
+	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="20"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
 	</div>
 </div>
 

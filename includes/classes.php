@@ -531,14 +531,7 @@ class WPCF7_ContactForm {
 			$body = $this->replace_mail_tags( $mail_template['body'] );
 		}
 
-		$attachments = array();
-
-		foreach ( (array) $this->uploaded_files as $name => $path ) {
-			if ( false === strpos( $mail_template['attachments'], "[${name}]" ) || empty( $path ) )
-				continue;
-
-			$attachments[] = $path;
-		}
+		$attachments = $this->mail_attachments( $mail_template['attachments'] );
 
 		$components = compact(
 			'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' );
@@ -625,6 +618,29 @@ class WPCF7_ContactForm {
 			return $special;
 
 		return $tag;
+	}
+
+	function mail_attachments( $template ) {
+		$attachments = array();
+
+		foreach ( (array) $this->uploaded_files as $name => $path ) {
+			if ( false !== strpos( $template, "[${name}]" ) && ! empty( $path ) )
+				$attachments[] = $path;
+		}
+
+		foreach ( explode( "\n", $template ) as $line ) {
+			$line = trim( $line );
+
+			if ( '[' == substr( $line, 0, 1 ) )
+				continue;
+
+			$path = path_join( WP_CONTENT_DIR, $line );
+
+			if ( @is_readable( $path ) && @is_file( $path ) )
+				$attachments[] = $path;
+		}
+
+		return $attachments;
 	}
 
 	/* Message */
