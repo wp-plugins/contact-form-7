@@ -46,6 +46,7 @@ function wpcf7_load_contact_form_admin() {
 		}
 
 		$contact_form->title = trim( $_POST['wpcf7-title'] );
+		$contact_form->locale = trim( $_POST['wpcf7-locale'] );
 
 		$form = trim( $_POST['wpcf7-form'] );
 

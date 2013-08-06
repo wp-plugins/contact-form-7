@@ -70,6 +70,7 @@ class WPCF7_ContactForm {
 			$this->initial = false;
 			$this->id = $post->ID;
 			$this->title = $post->post_title;
+			$this->locale = get_post_meta( $post->ID, '_locale', true );
 
 			$props = $this->get_properties();
 
@@ -180,6 +181,7 @@ class WPCF7_ContactForm {
 		$hidden_fields = array(
 			'_wpcf7' => $this->id,
 			'_wpcf7_version' => WPCF7_VERSION,
+			'_wpcf7_locale' => $this->locale,
 			'_wpcf7_unit_tag' => $this->unit_tag );
 
 		if ( WPCF7_VERIFY_NONCE )
@@ -729,6 +731,9 @@ class WPCF7_ContactForm {
 			foreach ( $props as $prop => $value )
 				update_post_meta( $post_id, '_' . $prop, wpcf7_normalize_newline_deep( $value ) );
 
+			if ( ! empty( $this->locale ) )
+				update_post_meta( $post_id, '_locale', $this->locale );
+
 			if ( $this->initial ) {
 				$this->initial = false;
 				$this->id = $post_id;
@@ -747,6 +752,7 @@ class WPCF7_ContactForm {
 		$new = new WPCF7_ContactForm();
 		$new->initial = true;
 		$new->title = $this->title . '_copy';
+		$new->locale = $this->locale;
 
 		$props = $this->get_properties();
 
@@ -824,8 +830,8 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 
 	$contact_form = new WPCF7_ContactForm();
 	$contact_form->initial = true;
-
 	$contact_form->title = ( $title ? $title : __( 'Untitled', 'wpcf7' ) );
+	$contact_form->locale = ( $locale ? $locale : get_locale() );
 
 	$props = $contact_form->get_properties();
 
