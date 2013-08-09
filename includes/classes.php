@@ -596,12 +596,7 @@ class WPCF7_ContactForm {
 			else
 				$submitted = $this->posted_data[$tagname];
 
-			$submitted = trim( $submitted );
-
-			if ( is_array( $submitted ) )
-				$replaced = join( ', ', $submitted );
-			else
-				$replaced = $submitted;
+			$replaced = wpcf7_flat_join( $submitted );
 
 			if ( $html ) {
 				$replaced = strip_tags( $replaced );
