@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-07 15:56+0900\n"
-"PO-Revision-Date: 2013-08-07 15:56+0900\n"
+"POT-Creation-Date: 2013-08-09 16:36+0900\n"
+"PO-Revision-Date: 2013-08-09 16:36+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.6\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
@@ -517,118 +517,122 @@ msgid "Hungarian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:195
-msgid "Indonesian"
+msgid "Indian Bengali"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:196
-msgid "Irish"
+msgid "Indonesian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:197
-msgid "Italian"
+msgid "Irish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:198
-msgid "Japanese"
+msgid "Italian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:199
-msgid "Korean"
+msgid "Japanese"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:200
-msgid "Latvian"
+msgid "Korean"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:201
-msgid "Lithuanian"
+msgid "Latvian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:202
-msgid "Macedonian"
+msgid "Lithuanian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:203
-msgid "Malay"
+msgid "Macedonian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:204
-msgid "Malayalam"
+msgid "Malay"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:205
-msgid "Maltese"
+msgid "Malayalam"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:206
-msgid "Norwegian"
+msgid "Maltese"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:207
-msgid "Persian"
+msgid "Norwegian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:208
-msgid "Polish"
+msgid "Persian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:209
-msgid "Portuguese"
+msgid "Polish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:210
-msgid "Russian"
+msgid "Portuguese"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:211
-msgid "Romanian"
+msgid "Russian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:212
-msgid "Serbian"
+msgid "Romanian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:213
-msgid "Sinhala"
+msgid "Serbian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:214
-msgid "Slovak"
+msgid "Sinhala"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:215
-msgid "Slovene"
+msgid "Slovak"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:216
-msgid "Spanish"
+msgid "Slovene"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:217
-msgid "Swedish"
+msgid "Spanish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:218
-msgid "Tamil"
+msgid "Swedish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:219
-msgid "Thai"
+msgid "Tamil"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:220
-msgid "Tagalog"
+msgid "Thai"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:221
-msgid "Turkish"
+msgid "Tagalog"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:222
-msgid "Ukrainian"
+msgid "Turkish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:223
+msgid "Ukrainian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:224
 msgid "Vietnamese"
 msgstr ""
 
