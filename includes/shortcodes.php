@@ -133,6 +133,9 @@ class WPCF7_ShortcodeManager {
 			$scanned_tag['attr'] = $attr;
 		}
 
+		$scanned_tag['values'] = array_map( 'trim', $scanned_tag['values'] );
+		$scanned_tag['labels'] = array_map( 'trim', $scanned_tag['labels'] );
+
 		$content = trim( $m[5] );
 		$content = preg_replace( "/<br[\r\n\t ]*\/?>$/m", '', $content );
 		$scanned_tag['content'] = $content;
