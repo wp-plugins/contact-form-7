@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 3.5
+Stable tag: 3.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.5.1 =
+
+* Fixed: Submissions with array value cause PHP error.
+* Translation for Indian Bengali (bn_IN) has been created.
+* Translations for Spanish, Tagalog and Japanese have been updated.
 
 = 3.5 =
 
