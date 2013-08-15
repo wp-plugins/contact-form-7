@@ -49,7 +49,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Croatian (hr) - [tolingo Translation Services](http://www.tolingo.com)
 * Czech (cs_CZ) - Korry, [Radovan Fiser](http://algymsa.cz/), [Tomas Vesely](http://www.mcmotylek.cz/), [Pavel Bilek](http://chcistranky.eu/zdarma/)
 * Danish (da_DK) - [Jens Griebel](http://www.kompas-it.dk/), [Georg S. Adamsen](http://wordpress.blogos.dk/)
-* Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/), [Martin Hein](http://www.split-a-pixel.nl/), [Rene](http://wpwebshop.com/)
+* Dutch (nl_NL) - [Chris Devriese](http://www.100it.be/), [Martin Hein](http://www.split-a-pixel.nl/), [Rene](http://wpwebshop.com/), [TenSheep](http://tensheep.nl/)
 * Esperanto (eo_EO) - Arkadiusz Zychewicz
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee), Egon Elbre
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/), [Mediajalostamo](http://www.mediajalostamo.fi/), [Jani Alha](http://www.wysiwyg.fi/)
