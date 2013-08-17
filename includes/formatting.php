@@ -95,6 +95,12 @@ function wpcf7_normalize_newline_deep( $arr, $to = "\n" ) {
 	return wpcf7_normalize_newline( $arr, $to );
 }
 
+function wpcf7_strip_newline( $str ) {
+	$str = (string) $str;
+	$str = str_replace( array( "\r", "\n" ), '', $str );
+	return trim( $str );
+}
+
 function wpcf7_canonicalize( $text ) {
 	if ( function_exists( 'mb_convert_kana' ) && 'UTF-8' == get_option( 'blog_charset' ) )
 		$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );

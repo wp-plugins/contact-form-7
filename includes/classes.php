@@ -543,6 +543,10 @@ class WPCF7_ContactForm {
 
 		extract( $components );
 
+		$subject = wpcf7_strip_newline( $subject );
+		$sender = wpcf7_strip_newline( $sender );
+		$recipient = wpcf7_strip_newline( $recipient );
+
 		$headers = "From: $sender\n";
 
 		if ( $use_html )
