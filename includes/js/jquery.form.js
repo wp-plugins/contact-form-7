@@ -1,6 +1,6 @@
 /*!
  * jQuery Form Plugin
- * version: 3.39.0-2013.07.31
+ * version: 3.40.0-2013.08.13
  * @requires jQuery v1.5 or later
  * Copyright (c) 2013 M. Alsup
  * Examples and documentation at: http://malsup.com/jquery/form/
@@ -635,7 +635,7 @@ $.fn.ajaxSubmit = function(options) {
                     s.dataType = 'xml';
                 xhr.getResponseHeader = function(header){
                     var headers = {'content-type': s.dataType};
-                    return headers[header];
+                    return headers[header.toLowerCase()];
                 };
                 // support for XHR 'status' & 'statusText' emulation :
                 if (docRoot) {
