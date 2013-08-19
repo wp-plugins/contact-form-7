@@ -120,6 +120,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 == Changelog ==
 
+= 3.5.2 =
+
+* Fixed: Strip newlines to prevent mail header injection.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.40.0.
+* Translations for Spanish and Dutch have been updated.
+
 = 3.5.1 =
 
 * Fixed: Submissions with array value cause PHP error.
@@ -137,3 +143,9 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 * Save locale information when generating a contact form.
 * The jQuery Form Plugin (jquery.form.js) has been updated to 3.39.0.
 * Translations for Finnish, German and Turkish have been updated.
+
+== Upgrade Notice ==
+
+= 3.5.2 =
+
+This version fixes a security related bug. Upgrade immediately.
