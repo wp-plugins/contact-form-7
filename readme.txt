@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 3.5.2
+Tested up to: 3.6.1
+Stable tag: 3.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -120,6 +120,13 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.5.3 =
+
+* Checking of file extension when uploading has been enhanced.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.44.0.
+* Translation for Central Kurdish (ckb) has been created.
+* Translations for German, Hungarian and Japanese have been updated.
 
 = 3.5.2 =
 
