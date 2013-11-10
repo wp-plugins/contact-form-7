@@ -76,7 +76,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Malayalam (ml_IN) - [RAHUL.S.A](http://www.infution.co.cc/)
 * Maltese (mt_MT) - [Ajoft Technologies](http://www.ajoft.com/)
 * Norwegian (nb_NO) - Kjetil M. Bergem, [aanvik.net](http://www.aanvik.net), [Peter Holme](http://holme.se/nettsteder/)
-* Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/), [Mohsen Firoozmandan](http://www.rankbazar.com/)
+* Persian (Farsi; fa_IR) - [Mohammad Musavi](http://www.musavis.com/), [Mohsen Firoozmandan](http://www.rankbazar.com/), Ghaem Omidi
 * Polish (pl_PL) - [Zbigniew Czernik](http://zibik.jogger.pl/), [Daniel Fruzynski](http://www.poradnik-webmastera.com), [RafalDesign](http://www.rafaldesign.pl/), [Bartosz Arendt](http://digitalfactory.pl/)
 * Portuguese (pt_PT) - [Hugo Baeta](http://hugobaeta.com), [Pedro Nave](http://pedronave.com/)
 * Russian (ru_RU) - Dmitry Volotovich, [Denis Voituk](http://artprima.cz/), [kg69design](http://kg69design.com/)
