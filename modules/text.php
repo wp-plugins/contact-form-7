@@ -112,7 +112,7 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
-		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
+		? trim( stripslashes( strtr( (string) $_POST[$name], "\n", " " ) ) )
 		: '';
 
 	if ( 'text*' == $tag->type ) {

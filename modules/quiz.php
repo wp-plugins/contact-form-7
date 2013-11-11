@@ -71,6 +71,8 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 	$name = $tag->name;
 
 	$answer = isset( $_POST[$name] ) ? wpcf7_canonicalize( $_POST[$name] ) : '';
+	$answer = stripslashes( $answer );
+
 	$answer_hash = wp_hash( $answer, 'wpcf7_quiz' );
 
 	$expected_hash = isset( $_POST['_wpcf7_quiz_answer_' . $name] )
