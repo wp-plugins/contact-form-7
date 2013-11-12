@@ -41,7 +41,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Basque (Euskara; eu) - [karrikas](http://blog.karrikas.com/)
 * Belarusian (be_BY) - [Igor Dubilei](http://www.iflexion.com/)
 * Bosnian (bs) - [Vedran](http://www.seorabbit.com/)
-* Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), [Gervásio Antônio](http://twitter.com/gervasioantonio)
+* Brazilian Portuguese (pt_BR) - [Leonardo Pinheiro](http://www.eletrikabarbarella.com.br/), [Henrique Vianna](http://henriquevianna.com/), [Caciano Gabriel Batista](http://www.gn10.com.br/), [Gervásio Antônio](http://twitter.com/gervasioantonio), Gilvanilson Santos
 * Bulgarian (bg_BG) - [Iliyan Darganov](http://www.darganov.com/)
 * Catalan (ca) - [Jordi Sancho](http://www.qasolutions.net/blog), Robert Buj, Jaume Aragay Badia
 * Central Kurdish (ckb) - Mahr Hassan
