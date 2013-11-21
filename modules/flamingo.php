@@ -4,19 +4,6 @@
 ** http://wordpress.org/extend/plugins/flamingo/
 **/
 
-add_action( 'flamingo_init', 'wpcf7_flamingo_init' );
-
-function wpcf7_flamingo_init() {
-	if ( ! class_exists( 'Flamingo_Inbound_Message' ) )
-		return;
-
-	if ( ! term_exists( 'contact-form-7', Flamingo_Inbound_Message::channel_taxonomy ) ) {
-		wp_insert_term( __( 'Contact Form 7', 'wpcf7' ),
-			Flamingo_Inbound_Message::channel_taxonomy,
-			array( 'slug' => 'contact-form-7' ) );
-	}
-}
-
 add_action( 'wpcf7_before_send_mail', 'wpcf7_flamingo_before_send_mail' );
 
 function wpcf7_flamingo_before_send_mail( $contactform ) {
@@ -59,8 +46,24 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 		'email' => $email,
 		'name' => $name ) );
 
+	$channel_id = wpcf7_flamingo_add_channel(
+		$contactform->name, $contactform->title );
+
+	if ( $channel_id ) {
+		$channel = get_term( $channel_id,
+			Flamingo_Inbound_Message::channel_taxonomy );
+
+		if ( ! $channel || is_wp_error( $channel ) ) {
+			$channel = 'contact-form-7';
+		} else {
+			$channel = $channel->slug;
+		}
+	} else {
+		$channel = 'contact-form-7';
+	}
+
 	Flamingo_Inbound_Message::add( array(
-		'channel' => 'contact-form-7',
+		'channel' => $channel,
 		'subject' => $subject,
 		'from' => trim( sprintf( '%s <%s>', $name, $email ) ),
 		'from_name' => $name,
@@ -68,6 +71,51 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 		'fields' => $posted_data,
 		'meta' => $meta,
 		'akismet' => $akismet ) );
+}
+
+function wpcf7_flamingo_add_channel( $slug, $name = '' ) {
+	if ( ! class_exists( 'Flamingo_Inbound_Message' ) )
+		return false;
+
+	$parent = term_exists( 'contact-form-7',
+		Flamingo_Inbound_Message::channel_taxonomy );
+
+	if ( ! $parent ) {
+		$parent = wp_insert_term( __( 'Contact Form 7', 'wpcf7' ),
+			Flamingo_Inbound_Message::channel_taxonomy,
+			array( 'slug' => 'contact-form-7' ) );
+
+		if ( is_wp_error( $parent ) ) {
+			return false;
+		}
+	}
+
+	$parent = (int) $parent['term_id'];
+
+	if ( ! is_taxonomy_hierarchical( Flamingo_Inbound_Message::channel_taxonomy ) ) {
+		// backward compat for Flamingo 1.0.4 and lower
+		return $parent;
+	}
+
+	if ( empty( $name ) ) {
+		$name = $slug;
+	}
+
+	$channel = term_exists( $slug,
+		Flamingo_Inbound_Message::channel_taxonomy,
+		$parent );
+
+	if ( ! $channel ) {
+		$channel = wp_insert_term( $name,
+			Flamingo_Inbound_Message::channel_taxonomy,
+			array( 'slug' => $slug, 'parent' => $parent ) );
+
+		if ( is_wp_error( $channel ) ) {
+			return false;
+		}
+	}
+
+	return (int) $channel['term_id'];
 }
 
 ?>

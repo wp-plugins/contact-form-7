@@ -9,6 +9,7 @@ class WPCF7_ContactForm {
 	var $initial = false;
 
 	var $id;
+	var $name;
 	var $title;
 
 	var $unit_tag;
@@ -69,6 +70,7 @@ class WPCF7_ContactForm {
 		if ( $post && self::post_type == get_post_type( $post ) ) {
 			$this->initial = false;
 			$this->id = $post->ID;
+			$this->name = $post->post_name;
 			$this->title = $post->post_title;
 			$this->locale = get_post_meta( $post->ID, '_locale', true );
 
