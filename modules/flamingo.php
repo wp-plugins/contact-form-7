@@ -7,10 +7,11 @@
 add_action( 'wpcf7_submit', 'wpcf7_flamingo_submit', 10, 2 );
 
 function wpcf7_flamingo_submit( $contactform, $result ) {
-	$statuses = array( 'spam', 'mail_sent', 'mail_failed' );
+	$cases = (array) apply_filters( 'wpcf7_flamingo_submit_if',
+		array( 'spam', 'mail_sent', 'mail_failed' ) );
 
 	if ( empty( $result['status'] )
-	|| ! in_array( $result['status'], $statuses ) ) {
+	|| ! in_array( $result['status'], $cases ) ) {
 		return;
 	}
 
