@@ -4,14 +4,24 @@
 ** http://wordpress.org/extend/plugins/flamingo/
 **/
 
-add_action( 'wpcf7_before_send_mail', 'wpcf7_flamingo_before_send_mail' );
+add_action( 'wpcf7_submit', 'wpcf7_flamingo_submit', 10, 2 );
 
-function wpcf7_flamingo_before_send_mail( $contactform ) {
-	if ( ! ( class_exists( 'Flamingo_Contact' ) && class_exists( 'Flamingo_Inbound_Message' ) ) )
-		return;
+function wpcf7_flamingo_submit( $contactform, $result ) {
+	$statuses = array( 'spam', 'mail_sent', 'mail_failed' );
 
-	if ( empty( $contactform->posted_data ) || ! empty( $contactform->skip_mail ) )
+	if ( empty( $result['status'] )
+	|| ! in_array( $result['status'], $statuses ) ) {
 		return;
+	}
+
+	if ( ! class_exists( 'Flamingo_Contact' )
+	|| ! class_exists( 'Flamingo_Inbound_Message' ) ) {
+		return;
+	}
+
+	if ( empty( $contactform->posted_data ) ) {
+		return;
+	}
 
 	$fields_senseless = $contactform->form_scan_shortcode(
 		array( 'type' => array( 'captchar', 'quiz', 'acceptance' ) ) );
@@ -62,7 +72,7 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 		$channel = 'contact-form-7';
 	}
 
-	Flamingo_Inbound_Message::add( array(
+	$args = array(
 		'channel' => $channel,
 		'subject' => $subject,
 		'from' => trim( sprintf( '%s <%s>', $name, $email ) ),
@@ -70,7 +80,10 @@ function wpcf7_flamingo_before_send_mail( $contactform ) {
 		'from_email' => $email,
 		'fields' => $posted_data,
 		'meta' => $meta,
-		'akismet' => $akismet ) );
+		'akismet' => $akismet,
+		'spam' => ( 'spam' == $result['status'] ) );
+
+	Flamingo_Inbound_Message::add( $args );
 }
 
 function wpcf7_flamingo_add_channel( $slug, $name = '' ) {
