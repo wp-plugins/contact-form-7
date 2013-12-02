@@ -363,6 +363,7 @@ class WPCF7_ContactForm {
 
 	function submit( $ajax = false ) {
 		$result = array(
+			'status' => 'init',
 			'valid' => true,
 			'invalid_reasons' => array(),
 			'spam' => false,
@@ -376,18 +377,22 @@ class WPCF7_ContactForm {
 		$validation = $this->validate();
 
 		if ( ! $validation['valid'] ) { // Validation error occured
+			$result['status'] = 'validation_failed';
 			$result['valid'] = false;
 			$result['invalid_reasons'] = $validation['reason'];
 			$result['message'] = $this->message( 'validation_error' );
 
 		} elseif ( ! $this->accepted() ) { // Not accepted terms
+			$result['status'] = 'acceptance_missing';
 			$result['message'] = $this->message( 'accept_terms' );
 
 		} elseif ( $this->spam() ) { // Spam!
+			$result['status'] = 'spam';
 			$result['message'] = $this->message( 'spam' );
 			$result['spam'] = true;
 
 		} elseif ( $this->mail() ) {
+			$result['status'] = 'mail_sent';
 			$result['mail_sent'] = true;
 			$result['message'] = $this->message( 'mail_sent_ok' );
 
@@ -403,6 +408,7 @@ class WPCF7_ContactForm {
 			}
 
 		} else {
+			$result['status'] = 'mail_failed';
 			$result['message'] = $this->message( 'mail_sent_ng' );
 
 			do_action_ref_array( 'wpcf7_mail_failed', array( &$this ) );
@@ -419,6 +425,8 @@ class WPCF7_ContactForm {
 		foreach ( (array) $this->uploaded_files as $name => $path ) {
 			@unlink( $path );
 		}
+
+		do_action_ref_array( 'wpcf7_submit', array( &$this, $result ) );
 
 		return $result;
 	}
