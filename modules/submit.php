@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_submit', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_submit' );
 
 function wpcf7_add_shortcode_submit() {
 	wpcf7_add_shortcode( 'submit', 'wpcf7_submit_shortcode_handler' );

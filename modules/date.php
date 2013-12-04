@@ -6,7 +6,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_date', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_date' );
 
 function wpcf7_add_shortcode_date() {
 	wpcf7_add_shortcode( array( 'date', 'date*' ),

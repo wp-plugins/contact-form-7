@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_quiz', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_quiz' );
 
 function wpcf7_add_shortcode_quiz() {
 	wpcf7_add_shortcode( 'quiz', 'wpcf7_quiz_shortcode_handler', true );

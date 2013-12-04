@@ -9,7 +9,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_text', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_text' );
 
 function wpcf7_add_shortcode_text() {
 	wpcf7_add_shortcode(

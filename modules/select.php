@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_select', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_select' );
 
 function wpcf7_add_shortcode_select() {
 	wpcf7_add_shortcode( array( 'select', 'select*' ),

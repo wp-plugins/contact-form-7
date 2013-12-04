@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_captcha', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_captcha' );
 
 function wpcf7_add_shortcode_captcha() {
 	wpcf7_add_shortcode( array( 'captchac', 'captchar' ),

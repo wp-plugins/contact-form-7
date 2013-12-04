@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_acceptance', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_acceptance' );
 
 function wpcf7_add_shortcode_acceptance() {
 	wpcf7_add_shortcode( 'acceptance',

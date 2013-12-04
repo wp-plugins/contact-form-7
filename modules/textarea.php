@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_textarea', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_textarea' );
 
 function wpcf7_add_shortcode_textarea() {
 	wpcf7_add_shortcode( array( 'textarea', 'textarea*' ),

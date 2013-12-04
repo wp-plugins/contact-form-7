@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_file', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_file' );
 
 function wpcf7_add_shortcode_file() {
 	wpcf7_add_shortcode( array( 'file', 'file*' ),

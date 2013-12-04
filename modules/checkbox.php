@@ -5,7 +5,7 @@
 
 /* Shortcode handler */
 
-add_action( 'init', 'wpcf7_add_shortcode_checkbox', 5 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_checkbox' );
 
 function wpcf7_add_shortcode_checkbox() {
 	wpcf7_add_shortcode( array( 'checkbox', 'checkbox*', 'radio' ), 
