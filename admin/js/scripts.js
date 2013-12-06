@@ -2,6 +2,23 @@
 
 	$(function() {
 		try {
+			var welcomePanel = $('#welcome-panel');
+			var updateWelcomePanel;
+
+			updateWelcomePanel = function( visible ) {
+				$.post( ajaxurl, {
+					action: 'wpcf7-update-welcome-panel',
+					visible: visible,
+					welcomepanelnonce: $( '#welcomepanelnonce' ).val()
+				});
+			};
+
+			$('a.welcome-panel-close', welcomePanel).click(function(event) {
+				event.preventDefault();
+				welcomePanel.addClass('hidden');
+				updateWelcomePanel( 0 );
+			});
+
 			$('div.cf7com-links').insertAfter($('div.wrap h2:first'));
 
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
