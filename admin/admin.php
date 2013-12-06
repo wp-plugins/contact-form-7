@@ -488,10 +488,10 @@ function wpcf7_welcome_panel() {
 
 	$classes = 'welcome-panel';
 
-	$option = (array) get_user_meta( get_current_user_id(),
-		'wpcf7_show_welcome_panel', true );
+	$vers = (array) get_user_meta( get_current_user_id(),
+		'wpcf7_hide_welcome_panel_on', true );
 
-	if ( in_array( WPCF7_VERSION, $option ) ) {
+	if ( in_array( WPCF7_VERSION, $vers ) ) {
 		$classes .= ' hidden';
 	}
 ?>
@@ -537,20 +537,20 @@ add_action( 'wp_ajax_wpcf7-update-welcome-panel', 'wpcf7_admin_ajax_welcome_pane
 function wpcf7_admin_ajax_welcome_panel() {
 	check_ajax_referer( 'wpcf7-welcome-panel-nonce', 'welcomepanelnonce' );
 
-	$option = get_user_meta( get_current_user_id(),
-		'wpcf7_show_welcome_panel', true );
+	$vers = get_user_meta( get_current_user_id(),
+		'wpcf7_hide_welcome_panel_on', true );
 
-	if ( empty( $option ) || ! is_array( $option ) ) {
-		$option = array();
+	if ( empty( $vers ) || ! is_array( $vers ) ) {
+		$vers = array();
 	}
 
 	if ( empty( $_POST['visible'] ) ) {
-		$option[] = WPCF7_VERSION;
+		$vers[] = WPCF7_VERSION;
 	}
 
-	$option = array_unique( $option );
+	$vers = array_unique( $vers );
 
-	update_user_meta( get_current_user_id(), 'wpcf7_show_welcome_panel', $option );
+	update_user_meta( get_current_user_id(), 'wpcf7_hide_welcome_panel_on', $vers );
 
 	wp_die( 1 );
 }
