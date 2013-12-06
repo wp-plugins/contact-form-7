@@ -9,11 +9,17 @@ function wpcf7_admin_menu() {
 		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page',
 		wpcf7_plugin_url( 'admin/images/menu-icon.png' ) );
 
-	$contact_form_admin = add_submenu_page( 'wpcf7',
-		__( 'Edit Contact Forms', 'wpcf7' ), __( 'Edit', 'wpcf7' ),
+	$edit = add_submenu_page( 'wpcf7',
+		__( 'Edit Contact Form', 'wpcf7' ), __( 'Contact Forms', 'wpcf7' ),
 		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page' );
 
-	add_action( 'load-' . $contact_form_admin, 'wpcf7_load_contact_form_admin' );
+	add_action( 'load-' . $edit, 'wpcf7_load_contact_form_admin' );
+
+	$addnew = add_submenu_page( 'wpcf7',
+		__( 'Add New Contact Form', 'wpcf7' ), __( 'Add New', 'wpcf7' ),
+		'wpcf7_edit_contact_forms', 'wpcf7-new', 'wpcf7_admin_add_new_page' );
+
+	add_action( 'load-' . $addnew, 'wpcf7_load_contact_form_admin' );
 }
 
 add_filter( 'set-screen-option', 'wpcf7_set_screen_options', 10, 3 );
@@ -29,7 +35,7 @@ function wpcf7_set_screen_options( $result, $option, $value ) {
 }
 
 function wpcf7_load_contact_form_admin() {
-	global $wpcf7_contact_form;
+	global $wpcf7_contact_form, $plugin_page;
 
 	$action = wpcf7_current_action();
 
@@ -175,11 +181,12 @@ function wpcf7_load_contact_form_admin() {
 
 	$post = null;
 
-	if ( 'new' == $_GET['post'] && current_user_can( 'wpcf7_edit_contact_forms' ) )
-		$post = wpcf7_get_contact_form_default_pack(
-			array( 'locale' => ( isset( $_GET['locale'] ) ? $_GET['locale'] : '' ) ) );
-	elseif ( ! empty( $_GET['post'] ) )
+	if ( 'wpcf7-new' == $plugin_page ) {
+		$post = wpcf7_get_contact_form_default_pack( array(
+			'locale' => ( isset( $_GET['locale'] ) ? $_GET['locale'] : '' ) ) );
+	} elseif ( ! empty( $_GET['post'] ) ) {
 		$post = wpcf7_contact_form( $_GET['post'] );
+	}
 
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id ) ) {
 		wpcf7_add_meta_boxes( $post->id );
@@ -280,6 +287,17 @@ function wpcf7_admin_management_page() {
 	wpcf7_admin_lang_select_modal();
 }
 
+function wpcf7_admin_add_new_page() {
+	global $wpcf7_contact_form;
+
+	$post =& $wpcf7_contact_form;
+	$post_id = -1;
+
+	require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
+	require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
+	return;
+}
+
 function wpcf7_admin_lang_select_modal() {
 	$available_locales = wpcf7_l10n();
 	$default_locale = get_locale();
@@ -290,13 +308,12 @@ function wpcf7_admin_lang_select_modal() {
 ?>
 <div id="wpcf7-lang-select-modal" class="hidden">
 <h4><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'wpcf7' ), $available_locales[$default_locale] ) ); ?></h4>
-<p><a href="<?php echo esc_url( add_query_arg( array( 'post' => 'new' ), menu_page_url( 'wpcf7', false ) ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
+<p><a href="<?php echo esc_url( menu_page_url( 'wpcf7-new', false ) ); ?>" class="button" /><?php echo esc_html( __( 'Add New', 'wpcf7' ) ); ?></a></p>
 
 <?php unset( $available_locales[$default_locale] ); ?>
 <h4><?php echo esc_html( __( 'Or', 'wpcf7' ) ); ?></h4>
 <form action="" method="get">
-<input type="hidden" name="page" value="wpcf7" />
-<input type="hidden" name="post" value="new" />
+<input type="hidden" name="page" value="wpcf7-new" />
 <select name="locale">
 <option value="" selected="selected"><?php echo esc_html( __( '(select language)', 'wpcf7' ) ); ?></option>
 <?php foreach ( $available_locales as $code => $locale ) : ?>
@@ -403,10 +420,12 @@ function wpcf7_cf7com_links() {
 add_action( 'wpcf7_admin_notices', 'wpcf7_donation_link' );
 
 function wpcf7_donation_link() {
+	global $plugin_page;
+
 	if ( ! WPCF7_SHOW_DONATION_LINK )
 		return;
 
-	if ( ! empty( $_REQUEST['post'] ) && 'new' == $_REQUEST['post'] )
+	if ( 'wpcf7-new' == $plugin_page )
 		return;
 
 	if ( ! empty( $_REQUEST['message'] ) )
