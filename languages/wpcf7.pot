@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-11 23:37+0900\n"
-"PO-Revision-Date: 2013-11-11 23:37+0900\n"
+"POT-Creation-Date: 2013-12-07 01:22+0900\n"
+"PO-Revision-Date: 2013-12-07 01:23+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,9 +25,9 @@ msgstr ""
 msgid "Contact form %d"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/admin/admin.php:259
+#: contact-form-7/admin/admin.php:8 contact-form-7/admin/admin.php:266
 #: contact-form-7/admin/edit-contact-form.php:12
-#: contact-form-7/modules/flamingo.php:14
+#: contact-form-7/modules/flamingo.php:98
 msgid "Contact Form 7"
 msgstr ""
 
@@ -36,147 +36,227 @@ msgid "Contact"
 msgstr ""
 
 #: contact-form-7/admin/admin.php:13
-msgid "Edit Contact Forms"
+msgid "Edit Contact Form"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:13
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
-msgid "Edit"
-msgstr ""
-
-#: contact-form-7/admin/admin.php:41 contact-form-7/admin/admin.php:114
-msgid "You are not allowed to edit this item."
-msgstr ""
-
-#: contact-form-7/admin/admin.php:155
-msgid "You are not allowed to delete this item."
-msgstr ""
-
-#: contact-form-7/admin/admin.php:158
-msgid "Error in deleting."
-msgstr ""
-
-#: contact-form-7/admin/admin.php:197 contact-form-7/includes/classes.php:27
+#: contact-form-7/admin/admin.php:13 contact-form-7/admin/admin.php:204
+#: contact-form-7/includes/classes.php:28
 msgid "Contact Forms"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:234
-msgid "Generate Tag"
+#: contact-form-7/admin/admin.php:19
+msgid "Add New Contact Form"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:261 contact-form-7/admin/admin.php:293
-#: contact-form-7/admin/admin.php:306
+#: contact-form-7/admin/admin.php:19 contact-form-7/admin/admin.php:268
+#: contact-form-7/admin/admin.php:311 contact-form-7/admin/admin.php:323
 #: contact-form-7/admin/edit-contact-form.php:15
 msgid "Add New"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:265
+#: contact-form-7/admin/admin.php:47 contact-form-7/admin/admin.php:120
+msgid "You are not allowed to edit this item."
+msgstr ""
+
+#: contact-form-7/admin/admin.php:161
+msgid "You are not allowed to delete this item."
+msgstr ""
+
+#: contact-form-7/admin/admin.php:164
+msgid "Error in deleting."
+msgstr ""
+
+#: contact-form-7/admin/admin.php:241
+msgid "Generate Tag"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:272
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:274
+#: contact-form-7/admin/admin.php:281
 msgid "Search Contact Forms"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:310
 #, php-format
 msgid "Use the default language (%s)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:296
+#: contact-form-7/admin/admin.php:314
 msgid "Or"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:301
+#: contact-form-7/admin/admin.php:318
 msgid "(select language)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:313
+#: contact-form-7/admin/admin.php:330
 msgid "Form"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:316
+#: contact-form-7/admin/admin.php:333
 msgid "Mail"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:319
+#: contact-form-7/admin/admin.php:336
 msgid "Mail (2)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:324
+#: contact-form-7/admin/admin.php:341
 msgid "Use mail (2)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:326
+#: contact-form-7/admin/admin.php:343
 msgid "Messages"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:329
+#: contact-form-7/admin/admin.php:346
 msgid "Additional Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:360
+#: contact-form-7/admin/admin.php:377
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:362
+#: contact-form-7/admin/admin.php:379
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:364
+#: contact-form-7/admin/admin.php:381
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:381
+#: contact-form-7/admin/admin.php:398
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:392
+#: contact-form-7/admin/admin.php:409
 msgid "http://contactform7.com/docs/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:393
+#: contact-form-7/admin/admin.php:410
 msgid "Docs"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:394
+#: contact-form-7/admin/admin.php:411
 msgid "http://contactform7.com/faq/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:395
+#: contact-form-7/admin/admin.php:412
 msgid "FAQ"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:396
+#: contact-form-7/admin/admin.php:413
 msgid "http://contactform7.com/support/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:397
+#: contact-form-7/admin/admin.php:414
 msgid "Support"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:428
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr ""
-
-#: contact-form-7/admin/admin.php:429
-msgid "Your contribution is needed for making this plugin better."
-msgstr ""
-
-#: contact-form-7/admin/admin.php:435
+#: contact-form-7/admin/admin.php:415 contact-form-7/admin/admin.php:470
 msgid "http://contactform7.com/donate/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:435
+#: contact-form-7/admin/admin.php:416 contact-form-7/admin/admin.php:470
 msgid "Donate"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:455
+#: contact-form-7/admin/admin.php:438
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
 "Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr ""
+
+#: contact-form-7/admin/admin.php:463
+msgid "Dismiss"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:468
+msgid "Contact Form 7 Needs Your Support"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:469
+msgid ""
+"It is hard to continue development and support for this plugin without "
+"contributions from users like you. If you enjoy using Contact Form 7 and "
+"find it useful, please consider making a donation."
+msgstr ""
+
+#: contact-form-7/admin/admin.php:474
+msgid "Get Started"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:476
+msgid "http://contactform7.com/getting-started-with-contact-form-7/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:476
+msgid "Getting Started with Contact Form 7"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:477
+msgid "http://contactform7.com/admin-screen/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:477
+msgid "Admin Screen"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:478
+msgid "http://contactform7.com/tag-syntax/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:478
+msgid "How Tags Work"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:479
+msgid "http://contactform7.com/setting-up-mail/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:479
+msgid "Setting Up Mail"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:484
+msgid "Did You Know?"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:486
+msgid "http://contactform7.com/spam-filtering-with-akismet/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:486
+msgid "Spam Filtering with Akismet"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:487
+msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:487
+msgid "Save Messages with Flamingo"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:488
+msgid "http://contactform7.com/selectable-recipient-with-pipes/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:488
+msgid "Selectable Recipient with Pipes"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:489
+msgid ""
+"http://contactform7.com/tracking-form-submissions-with-google-analytics/"
+msgstr ""
+
+#: contact-form-7/admin/admin.php:489
+msgid "Tracking Submissions with Google Analytics"
 msgstr ""
 
 #: contact-form-7/admin/edit-contact-form.php:47
@@ -222,6 +302,10 @@ msgstr ""
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
 #: contact-form-7/modules/date.php:142
 msgid "Date"
+msgstr ""
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
 msgstr ""
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
@@ -274,11 +358,11 @@ msgstr ""
 msgid "Message body:"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:28
+#: contact-form-7/includes/classes.php:29
 msgid "Contact Form"
 msgstr ""
 
-#: contact-form-7/includes/classes.php:832
+#: contact-form-7/includes/classes.php:842
 msgid "Untitled"
 msgstr ""
 
