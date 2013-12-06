@@ -461,8 +461,9 @@ add_action( 'admin_notices', 'wpcf7_old_wp_version_error', 9 );
 function wpcf7_old_wp_version_error() {
 	global $plugin_page;
 
-	if ( 'wpcf7' != $plugin_page )
+	if ( 'wpcf7' != substr( $plugin_page, 0, 5 ) ) {
 		return;
+	}
 
 	$wp_version = get_bloginfo( 'version' );
 
