@@ -477,4 +477,59 @@ function wpcf7_old_wp_version_error() {
 <?php
 }
 
+add_action( 'wpcf7_admin_notices', 'wpcf7_welcome_panel', 2 );
+
+function wpcf7_welcome_panel() {
+	global $plugin_page;
+
+	if ( 'wpcf7' != $plugin_page || ! empty( $_GET['post'] ) ) {
+		return;
+	}
+
+	$classes = 'welcome-panel';
+
+	$option = get_user_meta( get_current_user_id(),
+		'wpcf7_show_welcome_panel', true );
+
+	if ( empty( $option ) ) {
+//		$classes .= ' hidden';
+	}
+?>
+<div id="welcome-panel" class="<?php echo esc_attr( $classes ); ?>">
+	<?php wp_nonce_field( 'wpcf7-welcome-panel-nonce', '_wpnonce' , false ); ?>
+	<a class="welcome-panel-close" href="<?php echo esc_url( add_query_arg( array( 'welcome' => 0 ), menu_page_url( 'wpcf7', false ) ) ); ?>"><?php echo esc_html( __( 'Dismiss', 'wpcf7' ) ); ?></a>
+
+	<div class="welcome-panel-content">
+		<div class="welcome-panel-column-container">
+			<div class="welcome-panel-column">
+				<h4><?php echo esc_html( __( 'Contact Form 7 Needs Your Support', 'wpcf7' ) ); ?></h4>
+				<p class="message"><?php echo esc_html( __( "It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider making a donation.", 'wpcf7' ) ); ?></p>
+				<p><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ); ?>" class="button button-primary" target="_blank"><?php echo esc_html( __( 'Donate', 'wpcf7' ) ); ?></a></p>
+			</div>
+
+			<div class="welcome-panel-column">
+				<h4><?php echo esc_html( __( 'Get Started', 'wpcf7' ) ); ?></h4>
+				<ul>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/getting-started-with-contact-form-7/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Getting Started with Contact Form 7", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/admin-screen/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Admin Screen", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tag-syntax/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "How Tags Work", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/setting-up-mail/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Setting Up Mail", 'wpcf7' ) ); ?></a></li>
+				</ul>
+			</div>
+
+			<div class="welcome-panel-column">
+				<h4><?php echo esc_html( __( 'Did You Know?', 'wpcf7' ) ); ?></h4>
+				<ul>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/spam-filtering-with-akismet/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Spam Filtering with Akismet", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/save-submitted-messages-with-flamingo/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Save Messages with Flamingo", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/selectable-recipient-with-pipes/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Selectable Recipient with Pipes", 'wpcf7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tracking-form-submissions-with-google-analytics/', 'wpcf7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Tracking Submissions with Google Analytics", 'wpcf7' ) ); ?></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+}
+
 ?>

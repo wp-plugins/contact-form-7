@@ -265,3 +265,13 @@ input.shortcode-in-list-table {
 	width: 100%;
 	border: none;
 }
+
+/* welcome panel */
+.welcome-panel p.message {
+	line-height: 1.4em;
+	margin-right: 25px;
+}
+
+.welcome-panel li {
+	margin-bottom: 12px;
+}
