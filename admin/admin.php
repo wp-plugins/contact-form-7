@@ -411,49 +411,12 @@ function wpcf7_cf7com_links() {
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/faq/', 'wpcf7' ) ) . '" target="_blank">'
 		. esc_html( __( 'FAQ', 'wpcf7' ) ) . '</a> - '
 		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/support/', 'wpcf7' ) ) . '" target="_blank">'
-		. esc_html( __( 'Support', 'wpcf7' ) ) . '</a>'
+		. esc_html( __( 'Support', 'wpcf7' ) ) . '</a> - '
+		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ) . '" target="_blank">'
+		. esc_html( __( 'Donate', 'wpcf7' ) ) . '</a>'
 		. '</div>';
 
 	echo apply_filters( 'wpcf7_cf7com_links', $links );
-}
-
-add_action( 'wpcf7_admin_notices', 'wpcf7_donation_link' );
-
-function wpcf7_donation_link() {
-	global $plugin_page;
-
-	if ( ! WPCF7_SHOW_DONATION_LINK )
-		return;
-
-	if ( 'wpcf7-new' == $plugin_page )
-		return;
-
-	if ( ! empty( $_REQUEST['message'] ) )
-		return;
-
-	$show_link = true;
-
-	$num = mt_rand( 0, 99 );
-
-	if ( $num >= 20 )
-		$show_link = false;
-
-	$show_link = apply_filters( 'wpcf7_show_donation_link', $show_link );
-
-	if ( ! $show_link )
-		return;
-
-	$texts = array(
-		__( "Contact Form 7 needs your support. Please donate today.", 'wpcf7' ),
-		__( "Your contribution is needed for making this plugin better.", 'wpcf7' ) );
-
-	$text = $texts[array_rand( $texts )];
-
-?>
-<div class="donation">
-<p><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ); ?>"><?php echo esc_html( $text ); ?></a> <a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'wpcf7' ) ); ?>" class="button"><?php echo esc_html( __( "Donate", 'wpcf7' ) ); ?></a></p>
-</div>
-<?php
 }
 
 add_action( 'admin_notices', 'wpcf7_old_wp_version_error', 9 );
