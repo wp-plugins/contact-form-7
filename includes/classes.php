@@ -574,7 +574,10 @@ class WPCF7_ContactForm {
 	}
 
 	function replace_mail_tags( $content, $html = false ) {
-		$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
+		$regex = '/(\[?)\[[\t ]*'
+			. '([a-zA-Z_][0-9a-zA-Z:._-]*)' // [2] = name
+			. '((?:[\t ]+"[^"]*"|[\t ]+\'[^\']*\')*)' // [3] = values
+			. '[\t ]*\](\]?)/';
 
 		if ( $html )
 			$callback = array( &$this, 'mail_callback_html' );
@@ -590,7 +593,7 @@ class WPCF7_ContactForm {
 
 	function mail_callback( $matches, $html = false ) {
 		// allow [[foo]] syntax for escaping a tag
-		if ( $matches[1] == '[' && $matches[3] == ']' )
+		if ( $matches[1] == '[' && $matches[4] == ']' )
 			return substr( $matches[0], 1, -1 );
 
 		$tag = $matches[0];
