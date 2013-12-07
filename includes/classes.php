@@ -598,12 +598,25 @@ class WPCF7_ContactForm {
 
 		$tag = $matches[0];
 		$tagname = $matches[2];
+		$values = $matches[3];
+
+		if ( ! empty( $values ) ) {
+			preg_match_all( '/"[^"]*"|\'[^\']*\'/', $values, $matches );
+			$values = wpcf7_strip_quote_deep( $matches[0] );
+		}
 
 		$do_not_heat = false;
 
 		if ( preg_match( '/^_raw_(.+)$/', $tagname, $matches ) ) {
 			$tagname = trim( $matches[1] );
 			$do_not_heat = true;
+		}
+
+		$format = '';
+
+		if ( preg_match( '/^_format_(.+)$/', $tagname, $matches ) ) {
+			$tagname = trim( $matches[1] );
+			$format = $values[0];
 		}
 
 		if ( isset( $this->posted_data[$tagname] ) ) {
@@ -613,7 +626,13 @@ class WPCF7_ContactForm {
 			else
 				$submitted = $this->posted_data[$tagname];
 
-			$replaced = wpcf7_flat_join( $submitted );
+			$replaced = $submitted;
+
+			if ( ! empty( $format ) ) {
+				$replaced = $this->format( $replaced, $format );
+			}
+
+			$replaced = wpcf7_flat_join( $replaced );
 
 			if ( $html ) {
 				$replaced = strip_tags( $replaced );
@@ -632,6 +651,18 @@ class WPCF7_ContactForm {
 			return $special;
 
 		return $tag;
+	}
+
+	function format( $original, $format ) {
+		$original = (array) $original;
+
+		foreach ( $original as $key => $value ) {
+			if ( preg_match( '/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $value ) ) {
+				$original[$key] = mysql2date( $format, $value );
+			}
+		}
+
+		return $original;
 	}
 
 	function mail_attachments( $template ) {
