@@ -240,7 +240,7 @@ function wpcf7_enqueue_scripts() {
 
 	$_wpcf7 = array(
 		'loaderUrl' => wpcf7_ajax_loader(),
-		'sending' => __( 'Sending ...', 'wpcf7' ) );
+		'sending' => __( 'Sending ...', 'contact-form-7' ) );
 
 	if ( defined( 'WP_CACHE' ) && WP_CACHE )
 		$_wpcf7['cached'] = 1;

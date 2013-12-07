@@ -5,7 +5,7 @@ Plugin URI: http://contactform7.com/
 Description: Just another contact form plugin. Simple but flexible.
 Author: Takayuki Miyoshi
 Author URI: http://ideasilo.wordpress.com/
-Text Domain: wpcf7
+Text Domain: contact-form-7
 Domain Path: /languages/
 Version: 3.5.4
 */

@@ -25,8 +25,8 @@ class WPCF7_ContactForm {
 	public static function register_post_type() {
 		register_post_type( self::post_type, array(
 			'labels' => array(
-				'name' => __( 'Contact Forms', 'wpcf7' ),
-				'singular_name' => __( 'Contact Form', 'wpcf7' ) ),
+				'name' => __( 'Contact Forms', 'contact-form-7' ),
+				'singular_name' => __( 'Contact Form', 'contact-form-7' ) ),
 			'rewrite' => false,
 			'query_var' => false ) );
 	}
@@ -859,13 +859,13 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	$title = $args['title'];
 
 	if ( $locale && $locale != get_locale() ) {
-		$mo_orig = $l10n['wpcf7'];
-		unset( $l10n['wpcf7'] );
+		$mo_orig = $l10n['contact-form-7'];
+		unset( $l10n['contact-form-7'] );
 
 		if ( 'en_US' != $locale ) {
-			$mofile = wpcf7_plugin_path( 'languages/wpcf7-' . $locale . '.mo' );
-			if ( ! load_textdomain( 'wpcf7', $mofile ) ) {
-				$l10n['wpcf7'] = $mo_orig;
+			$mofile = wpcf7_plugin_path( 'languages/contact-form-7-' . $locale . '.mo' );
+			if ( ! load_textdomain( 'contact-form-7', $mofile ) ) {
+				$l10n['contact-form-7'] = $mo_orig;
 				unset( $mo_orig );
 			}
 		}
@@ -873,7 +873,7 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 
 	$contact_form = new WPCF7_ContactForm();
 	$contact_form->initial = true;
-	$contact_form->title = ( $title ? $title : __( 'Untitled', 'wpcf7' ) );
+	$contact_form->title = ( $title ? $title : __( 'Untitled', 'contact-form-7' ) );
 	$contact_form->locale = ( $locale ? $locale : get_locale() );
 
 	$props = $contact_form->get_properties();
@@ -882,7 +882,7 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 		$contact_form->{$prop} = wpcf7_get_default_template( $prop );
 
 	if ( isset( $mo_orig ) )
-		$l10n['wpcf7'] = $mo_orig;
+		$l10n['contact-form-7'] = $mo_orig;
 
 	$contact_form = apply_filters_ref_array( 'wpcf7_contact_form_default_pack',
 		array( &$contact_form, $args ) );

@@ -163,18 +163,18 @@ add_filter( 'wpcf7_messages', 'wpcf7_text_messages' );
 function wpcf7_text_messages( $messages ) {
 	return array_merge( $messages, array(
 		'invalid_email' => array(
-			'description' => __( "Email address that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'Email address seems invalid.', 'wpcf7' )
+			'description' => __( "Email address that the sender entered is invalid", 'contact-form-7' ),
+			'default' => __( 'Email address seems invalid.', 'contact-form-7' )
 		),
 
 		'invalid_url' => array(
-			'description' => __( "URL that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'URL seems invalid.', 'wpcf7' )
+			'description' => __( "URL that the sender entered is invalid", 'contact-form-7' ),
+			'default' => __( 'URL seems invalid.', 'contact-form-7' )
 		),
 
 		'invalid_tel' => array(
-			'description' => __( "Telephone number that the sender entered is invalid", 'wpcf7' ),
-			'default' => __( 'Telephone number seems invalid.', 'wpcf7' )
+			'description' => __( "Telephone number that the sender entered is invalid", 'contact-form-7' ),
+			'default' => __( 'Telephone number seems invalid.', 'contact-form-7' )
 		) ) );
 }
 
@@ -187,16 +187,16 @@ function wpcf7_add_tag_generator_text() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'text', __( 'Text field', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'text', __( 'Text field', 'contact-form-7' ),
 		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
 
-	wpcf7_add_tag_generator( 'email', __( 'Email', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'email', __( 'Email', 'contact-form-7' ),
 		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
 
-	wpcf7_add_tag_generator( 'url', __( 'URL', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'url', __( 'URL', 'contact-form-7' ),
 		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
 
-	wpcf7_add_tag_generator( 'tel', __( 'Telephone number', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'tel', __( 'Telephone number', 'contact-form-7' ),
 		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
 }
 
@@ -224,53 +224,53 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
 <form action="">
 <table>
-<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'wpcf7' ) ); ?></td></tr>
-<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
+<tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
 
 <table>
 <tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
 
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
-<td><code>size</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>size</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="number" name="size" class="numeric oneline option" min="1" /></td>
 
-<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 
 <?php if ( in_array( $type, array( 'text', 'email', 'url' ) ) ) : ?>
 <tr>
-<td colspan="2"><?php echo esc_html( __( 'Akismet', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td colspan="2"><?php echo esc_html( __( 'Akismet', 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <?php if ( 'text' == $type ) : ?>
-<input type="checkbox" name="akismet:author" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's name", 'wpcf7' ) ); ?><br />
+<input type="checkbox" name="akismet:author" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's name", 'contact-form-7' ) ); ?><br />
 <?php elseif ( 'email' == $type ) : ?>
-<input type="checkbox" name="akismet:author_email" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's email address", 'wpcf7' ) ); ?>
+<input type="checkbox" name="akismet:author_email" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's email address", 'contact-form-7' ) ); ?>
 <?php elseif ( 'url' == $type ) : ?>
-<input type="checkbox" name="akismet:author_url" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'wpcf7' ) ); ?>
+<input type="checkbox" name="akismet:author_url" class="option" />&nbsp;<?php echo esc_html( __( "This field requires author's URL", 'contact-form-7' ) ); ?>
 <?php endif; ?>
 </td>
 </tr>
 <?php endif; ?>
 
 <tr>
-<td><?php echo esc_html( __( 'Default value', 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
+<td><?php echo esc_html( __( 'Default value', 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
 
 <td>
-<br /><input type="checkbox" name="placeholder" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as placeholder?', 'wpcf7' ) ); ?>
+<br /><input type="checkbox" name="placeholder" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as placeholder?', 'contact-form-7' ) ); ?>
 </td>
 </tr>
 </table>
 
-<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag" readonly="readonly" onfocus="this.select()" /></div>
 
-<div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'wpcf7' ) ); ?><br /><span class="arrow">&#11015;</span>&nbsp;<input type="text" class="mail-tag" readonly="readonly" onfocus="this.select()" /></div>
+<div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><span class="arrow">&#11015;</span>&nbsp;<input type="text" class="mail-tag" readonly="readonly" onfocus="this.select()" /></div>
 </form>
 </div>
 <?php

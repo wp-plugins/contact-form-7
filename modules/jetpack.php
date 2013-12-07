@@ -18,7 +18,7 @@ function wpcf7_jetpack_admin_notices() {
 	$url = 'http://contactform7.com/jetpack-overrides-contact-forms/';
 ?>
 <div class="error">
-<p><?php echo sprintf( __( '<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href="%s" target="_blank">See how to avoid it.</a>', 'wpcf7' ), $url ); ?></p>
+<p><?php echo sprintf( __( '<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href="%s" target="_blank">See how to avoid it.</a>', 'contact-form-7' ), $url ); ?></p>
 </div>
 <?php
 }

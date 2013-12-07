@@ -191,23 +191,23 @@ add_filter( 'wpcf7_messages', 'wpcf7_file_messages' );
 function wpcf7_file_messages( $messages ) {
 	return array_merge( $messages, array(
 		'upload_failed' => array(
-			'description' => __( "Uploading a file fails for any reason", 'wpcf7' ),
-			'default' => __( 'Failed to upload file.', 'wpcf7' )
+			'description' => __( "Uploading a file fails for any reason", 'contact-form-7' ),
+			'default' => __( 'Failed to upload file.', 'contact-form-7' )
 		),
 
 		'upload_file_type_invalid' => array(
-			'description' => __( "Uploaded file is not allowed file type", 'wpcf7' ),
-			'default' => __( 'This file type is not allowed.', 'wpcf7' )
+			'description' => __( "Uploaded file is not allowed file type", 'contact-form-7' ),
+			'default' => __( 'This file type is not allowed.', 'contact-form-7' )
 		),
 
 		'upload_file_too_large' => array(
-			'description' => __( "Uploaded file is too large", 'wpcf7' ),
-			'default' => __( 'This file is too large.', 'wpcf7' )
+			'description' => __( "Uploaded file is too large", 'contact-form-7' ),
+			'default' => __( 'This file is too large.', 'contact-form-7' )
 		),
 
 		'upload_failed_php_error' => array(
-			'description' => __( "Uploading a file fails for PHP error", 'wpcf7' ),
-			'default' => __( 'Failed to upload file. Error occurred.', 'wpcf7' )
+			'description' => __( "Uploading a file fails for PHP error", 'contact-form-7' ),
+			'default' => __( 'Failed to upload file. Error occurred.', 'contact-form-7' )
 		)
 	) );
 }
@@ -221,7 +221,7 @@ function wpcf7_add_tag_generator_file() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'file', __( 'File upload', 'wpcf7' ),
+	wpcf7_add_tag_generator( 'file', __( 'File upload', 'contact-form-7' ),
 		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
 }
 
@@ -230,31 +230,31 @@ function wpcf7_tg_pane_file( &$contact_form ) {
 <div id="wpcf7-tg-pane-file" class="hidden">
 <form action="">
 <table>
-<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'wpcf7' ) ); ?></td></tr>
-<tr><td><?php echo esc_html( __( 'Name', 'wpcf7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
+<tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
 
 <table>
 <tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
 
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="class" class="classvalue oneline option" /></td>
 </tr>
 
 <tr>
-<td><?php echo esc_html( __( "File size limit", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'bytes', 'wpcf7' ) ); ?>) (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><?php echo esc_html( __( "File size limit", 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'bytes', 'contact-form-7' ) ); ?>) (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="limit" class="filesize oneline option" /></td>
 
-<td><?php echo esc_html( __( "Acceptable file types", 'wpcf7' ) ); ?> (<?php echo esc_html( __( 'optional', 'wpcf7' ) ); ?>)<br />
+<td><?php echo esc_html( __( "Acceptable file types", 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="filetypes" class="filetype oneline option" /></td>
 </tr>
 </table>
 
-<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'wpcf7' ) ); ?><br /><input type="text" name="file" class="tag" readonly="readonly" onfocus="this.select()" /></div>
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="file" class="tag" readonly="readonly" onfocus="this.select()" /></div>
 
-<div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the File Attachments field below.", 'wpcf7' ) ); ?><br /><span class="arrow">&#11015;</span>&nbsp;<input type="text" class="mail-tag" readonly="readonly" onfocus="this.select()" /></div>
+<div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the File Attachments field below.", 'contact-form-7' ) ); ?><br /><span class="arrow">&#11015;</span>&nbsp;<input type="text" class="mail-tag" readonly="readonly" onfocus="this.select()" /></div>
 </form>
 </div>
 <?php
@@ -279,7 +279,7 @@ function wpcf7_file_display_warning_message() {
 	wpcf7_init_uploads();
 
 	if ( ! is_dir( $uploads_dir ) || ! wp_is_writable( $uploads_dir ) ) {
-		$message = sprintf( __( 'This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually.', 'wpcf7' ), $uploads_dir );
+		$message = sprintf( __( 'This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually.', 'contact-form-7' ), $uploads_dir );
 
 		echo '<div class="error"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
 	}

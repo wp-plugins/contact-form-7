@@ -95,7 +95,7 @@ function wpcf7_flamingo_add_channel( $slug, $name = '' ) {
 		Flamingo_Inbound_Message::channel_taxonomy );
 
 	if ( ! $parent ) {
-		$parent = wp_insert_term( __( 'Contact Form 7', 'wpcf7' ),
+		$parent = wp_insert_term( __( 'Contact Form 7', 'contact-form-7' ),
 			Flamingo_Inbound_Message::channel_taxonomy,
 			array( 'slug' => 'contact-form-7' ) );
 

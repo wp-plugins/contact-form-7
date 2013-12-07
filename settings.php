@@ -32,7 +32,7 @@ function wpcf7() {
 add_action( 'plugins_loaded', 'wpcf7_load_plugin_textdomain', 1 );
 
 function wpcf7_load_plugin_textdomain() {
-	load_plugin_textdomain( 'wpcf7', false, 'contact-form-7/languages' );
+	load_plugin_textdomain( 'contact-form-7', false, 'contact-form-7/languages' );
 }
 
 add_action( 'plugins_loaded', 'wpcf7_init_shortcode_manager', 1 );
@@ -198,7 +198,7 @@ function wpcf7_install() {
 		return;
 
 	$contact_form = wpcf7_get_contact_form_default_pack(
-		array( 'title' => sprintf( __( 'Contact form %d', 'wpcf7' ), 1 ) ) );
+		array( 'title' => sprintf( __( 'Contact form %d', 'contact-form-7' ), 1 ) ) );
 
 	$contact_form->save();
 }
