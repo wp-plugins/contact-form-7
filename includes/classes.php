@@ -858,17 +858,9 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	$locale = $args['locale'];
 	$title = $args['title'];
 
-	if ( $locale && $locale != get_locale() ) {
+	if ( $locale ) {
 		$mo_orig = $l10n['contact-form-7'];
-		unset( $l10n['contact-form-7'] );
-
-		if ( 'en_US' != $locale ) {
-			$mofile = wpcf7_plugin_path( 'languages/contact-form-7-' . $locale . '.mo' );
-			if ( ! load_textdomain( 'contact-form-7', $mofile ) ) {
-				$l10n['contact-form-7'] = $mo_orig;
-				unset( $mo_orig );
-			}
-		}
+		wpcf7_load_textdomain( $locale );
 	}
 
 	$contact_form = new WPCF7_ContactForm();
@@ -881,11 +873,11 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 	foreach ( $props as $prop => $value )
 		$contact_form->{$prop} = wpcf7_get_default_template( $prop );
 
-	if ( isset( $mo_orig ) )
-		$l10n['contact-form-7'] = $mo_orig;
-
 	$contact_form = apply_filters_ref_array( 'wpcf7_contact_form_default_pack',
 		array( &$contact_form, $args ) );
+
+	if ( isset( $mo_orig ) )
+		$l10n['contact-form-7'] = $mo_orig;
 
 	return $contact_form;
 }

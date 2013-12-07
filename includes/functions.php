@@ -331,4 +331,39 @@ function wpcf7_format_atts( $atts ) {
 	return $html;
 }
 
+function wpcf7_load_textdomain( $locale = null ) {
+	global $l10n;
+
+	$domain = 'contact-form-7';
+
+	if ( get_locale() == $locale ) {
+		$locale = null;
+	}
+
+	if ( empty( $locale ) ) {
+		if ( is_textdomain_loaded( $domain ) ) {
+			return true;
+		} else {
+			return load_plugin_textdomain( $domain, false, $domain . '/languages' );
+		}
+	} else {
+		$mo_orig = $l10n[$domain];
+		unload_textdomain( $domain );
+
+		$mofile = $domain . '-' . $locale . '.mo';
+		$path = WP_PLUGIN_DIR . '/' . $domain . '/languages';
+
+		if ( $loaded = load_textdomain( $domain, $path . '/'. $mofile ) ) {
+			return $loaded;
+		} else {
+			$mofile = WP_LANG_DIR . '/plugins/' . $mofile;
+			return load_textdomain( $domain, $mofile );
+		}
+
+		$l10n[$domain] = $mo_orig;
+	}
+
+	return false;
+}
+
 ?>

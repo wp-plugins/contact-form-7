@@ -29,11 +29,7 @@ function wpcf7() {
 		'result' => array() );
 }
 
-add_action( 'plugins_loaded', 'wpcf7_load_plugin_textdomain', 1 );
-
-function wpcf7_load_plugin_textdomain() {
-	load_plugin_textdomain( 'contact-form-7', false, 'contact-form-7/languages' );
-}
+add_action( 'plugins_loaded', 'wpcf7_load_textdomain', 1 );
 
 add_action( 'plugins_loaded', 'wpcf7_init_shortcode_manager', 1 );
 
@@ -190,7 +186,7 @@ function wpcf7_install() {
 	if ( $opt = get_option( 'wpcf7' ) )
 		return;
 
-	wpcf7_load_plugin_textdomain();
+	wpcf7_load_textdomain();
 	wpcf7_register_post_types();
 	wpcf7_upgrade();
 
