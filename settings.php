@@ -29,6 +29,12 @@ function wpcf7() {
 		'result' => array() );
 }
 
+add_action( 'plugins_loaded', 'wpcf7_load_plugin_textdomain', 1 );
+
+function wpcf7_load_plugin_textdomain() {
+	load_plugin_textdomain( 'wpcf7', false, 'contact-form-7/languages' );
+}
+
 add_action( 'plugins_loaded', 'wpcf7_init_shortcode_manager', 1 );
 
 function wpcf7_init_shortcode_manager() {
@@ -70,17 +76,10 @@ function wpcf7_get_request_uri() {
 add_action( 'init', 'wpcf7_init' );
 
 function wpcf7_init() {
-	// L10N
-	wpcf7_load_plugin_textdomain();
-
 	// Custom Post Type
 	wpcf7_register_post_types();
 
 	do_action( 'wpcf7_init' );
-}
-
-function wpcf7_load_plugin_textdomain() {
-	load_plugin_textdomain( 'wpcf7', false, 'contact-form-7/languages' );
 }
 
 function wpcf7_register_post_types() {
