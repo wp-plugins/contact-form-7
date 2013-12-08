@@ -388,4 +388,19 @@ function wpcf7_load_modules() {
 	}
 }
 
+function wpcf7_get_request_uri() {
+	global $wpcf7;
+
+	return (string) $wpcf7->request_uri;
+}
+
+function wpcf7_register_post_types() {
+	if ( class_exists( 'WPCF7_ContactForm' ) ) {
+		WPCF7_ContactForm::register_post_type();
+		return true;
+	} else {
+		return false;
+	}
+}
+
 ?>

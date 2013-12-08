@@ -24,7 +24,8 @@ function wpcf7() {
 			'widget_count' => 0,
 			'unit_count' => 0,
 			'global_unit_count' => 0,
-			'result' => array() );
+			'result' => array(),
+			'request_uri' => null );
 	}
 
 	$wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
@@ -33,31 +34,17 @@ function wpcf7() {
 	wpcf7_load_modules();
 }
 
-add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );
-
-function wpcf7_set_request_uri() {
-	global $wpcf7_request_uri;
-
-	$wpcf7_request_uri = add_query_arg( array() );
-}
-
-function wpcf7_get_request_uri() {
-	global $wpcf7_request_uri;
-
-	return (string) $wpcf7_request_uri;
-}
-
 add_action( 'init', 'wpcf7_init' );
 
 function wpcf7_init() {
+	global $wpcf7;
+
+	$wpcf7->request_uri = add_query_arg( array() );
+
 	// Custom Post Type
 	wpcf7_register_post_types();
 
 	do_action( 'wpcf7_init' );
-}
-
-function wpcf7_register_post_types() {
-	WPCF7_ContactForm::register_post_type();
 }
 
 /* Upgrading */
