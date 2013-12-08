@@ -16,53 +16,21 @@ else
 add_action( 'plugins_loaded', 'wpcf7', 1 );
 
 function wpcf7() {
-	global $wpcf7;
+	global $wpcf7, $wpcf7_shortcode_manager;
 
-	if ( is_object( $wpcf7 ) )
-		return;
-
-	$wpcf7 = (object) array(
-		'processing_within' => '',
-		'widget_count' => 0,
-		'unit_count' => 0,
-		'global_unit_count' => 0,
-		'result' => array() );
-}
-
-add_action( 'plugins_loaded', 'wpcf7_load_textdomain', 1 );
-
-add_action( 'plugins_loaded', 'wpcf7_init_shortcode_manager', 1 );
-
-function wpcf7_init_shortcode_manager() {
-	global $wpcf7_shortcode_manager;
+	if ( ! is_object( $wpcf7 ) ) {
+		$wpcf7 = (object) array(
+			'processing_within' => '',
+			'widget_count' => 0,
+			'unit_count' => 0,
+			'global_unit_count' => 0,
+			'result' => array() );
+	}
 
 	$wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
-}
 
-/* Loading modules */
-
-add_action( 'plugins_loaded', 'wpcf7_load_modules', 1 );
-
-function wpcf7_load_modules() {
-	$dir = WPCF7_PLUGIN_MODULES_DIR;
-
-	if ( empty( $dir ) || ! is_dir( $dir ) ) {
-		return false;
-	}
-
-	$mods = array(
-		'acceptance', 'flamingo', 'special-mail-tags',
-		'akismet', 'jetpack', 'submit', 'captcha', 'number',
-		'text', 'checkbox', 'quiz', 'textarea', 'date',
-		'response', 'file', 'select' );
-
-	foreach ( $mods as $mod ) {
-		$file = trailingslashit( $dir ) . $mod . '.php';
-
-		if ( file_exists( $file ) ) {
-			include_once $file; 
-		}
-	}
+	wpcf7_load_textdomain();
+	wpcf7_load_modules();
 }
 
 add_action( 'plugins_loaded', 'wpcf7_set_request_uri', 9 );

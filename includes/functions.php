@@ -366,4 +366,26 @@ function wpcf7_load_textdomain( $locale = null ) {
 	return false;
 }
 
+function wpcf7_load_modules() {
+	$dir = WPCF7_PLUGIN_MODULES_DIR;
+
+	if ( empty( $dir ) || ! is_dir( $dir ) ) {
+		return false;
+	}
+
+	$mods = array(
+		'acceptance', 'flamingo', 'special-mail-tags',
+		'akismet', 'jetpack', 'submit', 'captcha', 'number',
+		'text', 'checkbox', 'quiz', 'textarea', 'date',
+		'response', 'file', 'select' );
+
+	foreach ( $mods as $mod ) {
+		$file = trailingslashit( $dir ) . $mod . '.php';
+
+		if ( file_exists( $file ) ) {
+			include_once $file; 
+		}
+	}
+}
+
 ?>
