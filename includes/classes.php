@@ -204,6 +204,7 @@ class WPCF7_ContactForm {
 		global $wpcf7;
 
 		$class = 'wpcf7-response-output';
+		$role = '';
 		$content = '';
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
@@ -217,6 +218,8 @@ class WPCF7_ContactForm {
 			else
 				$class .= ' wpcf7-mail-sent-ng';
 
+			$role = 'alert';
+
 			if ( ! empty( $wpcf7->result['message'] ) )
 				$content = $wpcf7->result['message'];
 
@@ -224,10 +227,14 @@ class WPCF7_ContactForm {
 			$class .= ' wpcf7-display-none';
 		}
 
-		$class = trim( $class );
+		$atts = array(
+			'class' => trim( $class ),
+			'role' => trim( $role ) );
 
-		$output = sprintf( '<div class="%1$s">%2$s</div>',
-			$class, esc_html( $content ) );
+		$atts = wpcf7_format_atts( $atts );
+
+		$output = sprintf( '<div %1$s>%2$s</div>',
+			$atts, esc_html( $content ) );
 
 		return apply_filters( 'wpcf7_form_response_output',
 			$output, $class, $content, $this );
