@@ -262,7 +262,7 @@
 
 	$.fn.wpcf7ClearResponseOutput = function() {
 		return this.each(function() {
-			$(this).find('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
+			$(this).find('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked').removeAttr('role');
 			$(this).find('span.wpcf7-not-valid-tip').remove();
 			$(this).find('img.ajax-loader').css({ visibility: 'hidden' });
 		});
