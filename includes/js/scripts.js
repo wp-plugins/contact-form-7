@@ -40,7 +40,7 @@
 		this.find('.wpcf7-submit').wpcf7AjaxLoader();
 
 		this.find('.wpcf7-acceptance').click(function() {
-			$(this).wpcf7ToggleSubmit();
+			$(this).closest('form').wpcf7ToggleSubmit();
 		});
 
 		this.find('.wpcf7-exclusive-checkbox').wpcf7ExclusiveCheckbox();
