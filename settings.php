@@ -46,12 +46,22 @@ add_action( 'plugins_loaded', 'wpcf7_load_modules', 1 );
 function wpcf7_load_modules() {
 	$dir = WPCF7_PLUGIN_MODULES_DIR;
 
-	if ( ! ( is_dir( $dir ) && $dh = opendir( $dir ) ) )
+	if ( empty( $dir ) || ! is_dir( $dir ) ) {
 		return false;
+	}
 
-	while ( ( $module = readdir( $dh ) ) !== false ) {
-		if ( substr( $module, -4 ) == '.php' && substr( $module, 0, 1 ) != '.' )
-			include_once $dir . '/' . $module;
+	$mods = array(
+		'acceptance', 'flamingo', 'special-mail-tags',
+		'akismet', 'jetpack', 'submit', 'captcha', 'number',
+		'text', 'checkbox', 'quiz', 'textarea', 'date',
+		'response', 'file', 'select' );
+
+	foreach ( $mods as $mod ) {
+		$file = trailingslashit( $dir ) . $mod . '.php';
+
+		if ( file_exists( $file ) ) {
+			include_once $file; 
+		}
 	}
 }
 
