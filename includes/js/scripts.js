@@ -1,80 +1,71 @@
 (function($) {
 
+	if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
+		_wpcf7 = {};
+
+	_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
+
 	$(function() {
-		try {
-			if (typeof _wpcf7 == 'undefined' || _wpcf7 === null)
-				_wpcf7 = {};
-
-			_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
-
-			_wpcf7.supportHtml5 = $.wpcf7SupportHtml5();
-
-			$('div.wpcf7 > form').ajaxForm({
-				beforeSubmit: function(formData, jqForm, options) {
-					jqForm.wpcf7ClearResponseOutput();
-					jqForm.find('img.ajax-loader').css({ visibility: 'visible' });
-					return true;
-				},
-				beforeSerialize: function(jqForm, options) {
-					jqForm.find('[placeholder].placeheld').each(function(i, n) {
-						$(n).val('');
-					});
-					return true;
-				},
-				data: { '_wpcf7_is_ajax_call': 1 },
-				dataType: 'json',
-				success: $.wpcf7AjaxSuccess,
-				error: function(xhr, status, error, $form) {
-					var e = $('<div class="ajax-error"></div>').text(error.message);
-					$form.after(e);
-				}
-			});
-
-			$('div.wpcf7 > form').wpcf7InitForm();
-
-		} catch (e) {
-		}
+		_wpcf7.supportHtml5 = $.wpcf7SupportHtml5();
+		$('div.wpcf7 > form').wpcf7InitForm();
 	});
 
 	$.fn.wpcf7InitForm = function() {
-		return this.each(function(i, n) {
-			var $f = $(n);
-
-			if (_wpcf7.cached)
-				$f.wpcf7OnloadRefill();
-
-			$f.wpcf7ToggleSubmit();
-
-			$f.find('.wpcf7-submit').wpcf7AjaxLoader();
-
-			$f.find('.wpcf7-acceptance').click(function() {
-				$f.wpcf7ToggleSubmit();
-			});
-
-			$f.find('.wpcf7-exclusive-checkbox').wpcf7ExclusiveCheckbox();
-
-			$f.find('[placeholder]').wpcf7Placeholder();
-
-			if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
-				$f.find('input.wpcf7-date[type="date"]').each(function() {
-					$(this).datepicker({
-						dateFormat: 'yy-mm-dd',
-						minDate: new Date($(this).attr('min')),
-						maxDate: new Date($(this).attr('max'))
-					});
+		this.ajaxForm({
+			beforeSubmit: function(arr, $form, options) {
+				$form.wpcf7ClearResponseOutput();
+				$form.find('img.ajax-loader').css({ visibility: 'visible' });
+				return true;
+			},
+			beforeSerialize: function($form, options) {
+				$form.find('[placeholder].placeheld').each(function(i, n) {
+					$(n).val('');
 				});
-			}
-
-			if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.number) {
-				$f.find('input.wpcf7-number[type="number"]').each(function() {
-					$(this).spinner({
-						min: $(this).attr('min'),
-						max: $(this).attr('max'),
-						step: $(this).attr('step')
-					});
-				});
+				return true;
+			},
+			data: { '_wpcf7_is_ajax_call': 1 },
+			dataType: 'json',
+			success: $.wpcf7AjaxSuccess,
+			error: function(xhr, status, error, $form) {
+				var e = $('<div class="ajax-error"></div>').text(error.message);
+				$form.after(e);
 			}
 		});
+
+		if (_wpcf7.cached)
+			this.wpcf7OnloadRefill();
+
+		this.wpcf7ToggleSubmit();
+
+		this.find('.wpcf7-submit').wpcf7AjaxLoader();
+
+		this.find('.wpcf7-acceptance').click(function() {
+			$(this).wpcf7ToggleSubmit();
+		});
+
+		this.find('.wpcf7-exclusive-checkbox').wpcf7ExclusiveCheckbox();
+
+		this.find('[placeholder]').wpcf7Placeholder();
+
+		if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
+			this.find('input.wpcf7-date[type="date"]').each(function() {
+				$(this).datepicker({
+					dateFormat: 'yy-mm-dd',
+					minDate: new Date($(this).attr('min')),
+					maxDate: new Date($(this).attr('max'))
+				});
+			});
+		}
+
+		if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.number) {
+			this.find('input.wpcf7-number[type="number"]').each(function() {
+				$(this).spinner({
+					min: $(this).attr('min'),
+					max: $(this).attr('max'),
+					step: $(this).attr('step')
+				});
+			});
+		}
 	};
 
 	$.wpcf7AjaxSuccess = function(data, status, xhr, $form) {
