@@ -23,69 +23,7 @@
 				},
 				data: { '_wpcf7_is_ajax_call': 1 },
 				dataType: 'json',
-				success: function(data) {
-					if (! $.isPlainObject(data) || $.isEmptyObject(data))
-						return;
-
-					var ro = $(data.into).find('div.wpcf7-response-output');
-					$(data.into).wpcf7ClearResponseOutput();
-
-					$(data.into).find('.wpcf7-form-control').removeClass('wpcf7-not-valid');
-					$(data.into).find('form.wpcf7-form').removeClass('invalid spam sent failed');
-
-					if (data.captcha)
-						$(data.into).wpcf7RefillCaptcha(data.captcha);
-
-					if (data.quiz)
-						$(data.into).wpcf7RefillQuiz(data.quiz);
-
-					if (data.invalids) {
-						$.each(data.invalids, function(i, n) {
-							$(data.into).find(n.into).wpcf7NotValidTip(n.message);
-							$(data.into).find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
-						});
-
-						ro.addClass('wpcf7-validation-errors');
-						$(data.into).find('form.wpcf7-form').addClass('invalid');
-
-						$(data.into).trigger('invalid.wpcf7');
-
-					} else if (1 == data.spam) {
-						ro.addClass('wpcf7-spam-blocked');
-						$(data.into).find('form.wpcf7-form').addClass('spam');
-
-						$(data.into).trigger('spam.wpcf7');
-
-					} else if (1 == data.mailSent) {
-						ro.addClass('wpcf7-mail-sent-ok');
-						$(data.into).find('form.wpcf7-form').addClass('sent');
-
-						if (data.onSentOk)
-							$.each(data.onSentOk, function(i, n) { eval(n) });
-
-						$(data.into).trigger('mailsent.wpcf7');
-
-					} else {
-						ro.addClass('wpcf7-mail-sent-ng');
-						$(data.into).find('form.wpcf7-form').addClass('failed');
-
-						$(data.into).trigger('mailfailed.wpcf7');
-					}
-
-					if (data.onSubmit)
-						$.each(data.onSubmit, function(i, n) { eval(n) });
-
-					$(data.into).trigger('submit.wpcf7');
-
-					if (1 == data.mailSent)
-						$(data.into).find('form').resetForm().clearForm();
-
-					$(data.into).find('[placeholder].placeheld').each(function(i, n) {
-						$(n).val($(n).attr('placeholder'));
-					});
-
-					$(data.into).wpcf7FillResponseOutput(data.message);
-				},
+				success: $.wpcf7AjaxSuccess,
 				error: function(xhr, status, error, $form) {
 					var e = $('<div class="ajax-error"></div>').text(error.message);
 					$form.after(e);
@@ -138,6 +76,71 @@
 			}
 		});
 	};
+
+	$.wpcf7AjaxSuccess = function(data, status, xhr, $form) {
+		if (! $.isPlainObject(data) || $.isEmptyObject(data))
+			return;
+
+		var $responseOutput = $form.find('div.wpcf7-response-output');
+
+		$form.wpcf7ClearResponseOutput();
+
+		$form.find('.wpcf7-form-control').removeClass('wpcf7-not-valid');
+		$form.removeClass('invalid spam sent failed');
+
+		if (data.captcha)
+			$form.wpcf7RefillCaptcha(data.captcha);
+
+		if (data.quiz)
+			$form.wpcf7RefillQuiz(data.quiz);
+
+		if (data.invalids) {
+			$.each(data.invalids, function(i, n) {
+				$form.find(n.into).wpcf7NotValidTip(n.message);
+				$form.find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
+			});
+
+			$responseOutput.addClass('wpcf7-validation-errors');
+			$form.addClass('invalid');
+
+			$(data.into).trigger('invalid.wpcf7');
+
+		} else if (1 == data.spam) {
+			$responseOutput.addClass('wpcf7-spam-blocked');
+			$form.addClass('spam');
+
+			$(data.into).trigger('spam.wpcf7');
+
+		} else if (1 == data.mailSent) {
+			$responseOutput.addClass('wpcf7-mail-sent-ok');
+			$form.addClass('sent');
+
+			if (data.onSentOk)
+				$.each(data.onSentOk, function(i, n) { eval(n) });
+
+			$(data.into).trigger('mailsent.wpcf7');
+
+		} else {
+			$responseOutput.addClass('wpcf7-mail-sent-ng');
+			$form.addClass('failed');
+
+			$(data.into).trigger('mailfailed.wpcf7');
+		}
+
+		if (data.onSubmit)
+			$.each(data.onSubmit, function(i, n) { eval(n) });
+
+		$(data.into).trigger('submit.wpcf7');
+
+		if (1 == data.mailSent)
+			$form.resetForm().clearForm();
+
+		$form.find('[placeholder].placeheld').each(function(i, n) {
+			$(n).val($(n).attr('placeholder'));
+		});
+
+		$form.wpcf7FillResponseOutput(data.message);
+	}
 
 	$.fn.wpcf7ExclusiveCheckbox = function() {
 		return this.find('input:checkbox').click(function() {
