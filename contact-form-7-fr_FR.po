@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Contact Form 7-fr_FR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-20 18:33+0900\n"
-"PO-Revision-Date: 2013-10-28 17:52+0100\n"
+"PO-Revision-Date: 2013-12-08 17:34+0100\n"
 "Last-Translator: Practisport <webmaster@practisport.com>\n"
 "Language-Team: Practisport <webmaster@practisport.com>\n"
 "Language: fr_FR\n"
@@ -16,13 +16,13 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.1\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
 msgid "Just another contact form plugin. Simple but flexible."
 msgstr ""
-"Juste un autre plugin de formuaire de contact. Simple et souple "
+"Juste une autre extension de formulaire de contact. Simple mais souple "
 "d'utilisation."
 
 #: contact-form-7/settings.php:202
@@ -73,7 +73,7 @@ msgstr "Générer un marqueur"
 #: contact-form-7/admin/admin.php:306
 #: contact-form-7/admin/edit-contact-form.php:15
 msgid "Add New"
-msgstr "En ajouter un nouveau"
+msgstr "Créer un formulaire"
 
 #: contact-form-7/admin/admin.php:265
 #, php-format
@@ -82,7 +82,7 @@ msgstr "Résultats de recherche pour &#8220;%s&#8221;"
 
 #: contact-form-7/admin/admin.php:274
 msgid "Search Contact Forms"
-msgstr "Chercher les formulaires de contact"
+msgstr "Chercher"
 
 #: contact-form-7/admin/admin.php:292
 #, php-format
@@ -95,7 +95,7 @@ msgstr "ou"
 
 #: contact-form-7/admin/admin.php:301
 msgid "(select language)"
-msgstr "(sélectionner une langue)"
+msgstr "(choisir une autre langue)"
 
 #: contact-form-7/admin/admin.php:313
 msgid "Form"
@@ -164,8 +164,7 @@ msgstr "Support"
 #: contact-form-7/admin/admin.php:428
 msgid "Contact Form 7 needs your support. Please donate today."
 msgstr ""
-"Contact Form 7 a besoin de votre soutien. Merci de faire un don dès "
-"aujourd'hui !"
+"Contact Form 7 a besoin de votre soutien. Merci de faire un don aujourd'hui."
 
 #: contact-form-7/admin/admin.php:429
 msgid "Your contribution is needed for making this plugin better."
@@ -177,7 +176,7 @@ msgstr "http://contactform7.com/donate/"
 
 #: contact-form-7/admin/admin.php:435
 msgid "Donate"
-msgstr "Effectuer un don"
+msgstr "Faire un don"
 
 #: contact-form-7/admin/admin.php:455
 #, php-format
@@ -191,7 +190,7 @@ msgstr ""
 #: contact-form-7/admin/edit-contact-form.php:47
 msgid ""
 "Copy this code and paste it into your post, page or text widget content."
-msgstr "Copiez ce code et collez-le dans vos article, page ou widget texte."
+msgstr "Copiez ce code et collez-le dans votre article, page ou widget texte."
 
 #: contact-form-7/admin/edit-contact-form.php:53
 msgid "Old code is also available."
@@ -279,7 +278,7 @@ msgstr "Pièces jointes :"
 
 #: contact-form-7/admin/includes/meta-boxes.php:74
 msgid "Use HTML content type"
-msgstr "Utiliser un type de contenu HTML"
+msgstr "Envoyer cet email au format HTML"
 
 #: contact-form-7/admin/includes/meta-boxes.php:80
 msgid "Message body:"
@@ -303,8 +302,8 @@ msgid ""
 "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use "
 "%3$s instead."
 msgstr ""
-"%1$s est <strong>obsolète</strong> depuis Contact Form 7 version %2$s ! "
-"Utilisez %3$s à la palce."
+"%1$s est <strong>obsolète</strong> depuis Contact Form 7 version %2$s&nbsp;! "
+"Utilisez %3$s à la place."
 
 #: contact-form-7/includes/functions.php:23
 #, php-format
@@ -317,7 +316,7 @@ msgstr ""
 
 #: contact-form-7/includes/functions.php:30
 msgid "Sender's message was sent successfully"
-msgstr "Votre message a été envoyé avec succès"
+msgstr "Le message de l'expéditeur a été envoyé avec succès"
 
 #: contact-form-7/includes/functions.php:31
 msgid "Your message was sent successfully. Thanks."
@@ -325,7 +324,7 @@ msgstr "Votre message a bien été envoyé. Merci."
 
 #: contact-form-7/includes/functions.php:35
 msgid "Sender's message was failed to send"
-msgstr "Votre message n'a pas pu être envoyé"
+msgstr "Le message de l'expéditeur n'a pas pu être envoyé"
 
 #: contact-form-7/includes/functions.php:36
 #: contact-form-7/includes/functions.php:46
@@ -348,7 +347,7 @@ msgstr ""
 
 #: contact-form-7/includes/functions.php:45
 msgid "Submission was referred to as spam"
-msgstr "La saisie a été détectée comme spam"
+msgstr "L'envoi a été détecté comme spam"
 
 #: contact-form-7/includes/functions.php:50
 msgid "There are terms that the sender must accept"
@@ -411,7 +410,7 @@ msgstr "Corps du message :"
 #: contact-form-7/includes/functions.php:113
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
-msgstr "Cet email a été envoyé via le formulaire de contact le %1$s (%2$s)\v"
+msgstr "Cet email a été envoyé via le formulaire de contact de %1$s (%2$s)\v"
 
 #: contact-form-7/includes/functions.php:164
 msgid "Afrikaans"
@@ -713,17 +712,17 @@ msgstr "facultatif"
 
 #: contact-form-7/modules/acceptance.php:161
 msgid "Make this checkbox checked by default?"
-msgstr "Cocher cette case par défaut ?"
+msgstr "Cocher cette case par défaut&nbsp;?"
 
 #: contact-form-7/modules/acceptance.php:162
 msgid "Make this checkbox work inversely?"
-msgstr "Inverser le fonctionnement de cette case ?"
+msgstr "Inverser le fonctionnement de cette case&nbsp;?"
 
 #: contact-form-7/modules/acceptance.php:163
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr ""
-"* Ceci signifie que le visiteur qui accepte les termes à valider doit "
-"décocher la case."
+"* Signifie que le visiteur doit décocher la case pour accepter les termes à "
+"valider."
 
 #: contact-form-7/modules/acceptance.php:168
 #: contact-form-7/modules/captcha.php:253
@@ -740,17 +739,17 @@ msgid ""
 "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
 "really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
 msgstr ""
-"Pour utiliser la CAPTCHA, vous devez avoir installé l'extension <a href="
+"Pour utiliser les CAPTCHA, vous devez avoir installé l'extension <a href="
 "\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple "
-"CAPTCHA</a> ."
+"CAPTCHA</a>."
 
 #: contact-form-7/modules/captcha.php:176
 msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Le code entré ne correspond pas à la CAPTCHA"
+msgstr "Le code entré ne correspond pas au CAPTCHA"
 
 #: contact-form-7/modules/captcha.php:177
 msgid "Your entered code is incorrect."
-msgstr "Le code entre est incorrect."
+msgstr "Le code entré est incorrect."
 
 #: contact-form-7/modules/captcha.php:190
 msgid "CAPTCHA"
@@ -759,8 +758,8 @@ msgstr "CAPTCHA"
 #: contact-form-7/modules/captcha.php:201
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr ""
-"Note: Pour utiliser la CAPTCHA, vous devez avoir installé l'extension Really "
-"Simple CAPTCHA."
+"Note&nbsp;: Pour utiliser les CAPTCHA, vous devez avoir installé l'extension "
+"Really Simple CAPTCHA."
 
 #: contact-form-7/modules/captcha.php:208
 msgid "Image settings"
@@ -810,7 +809,7 @@ msgid ""
 "change its permission manually."
 msgstr ""
 "Ce formulaire de contact contient des champs CAPTCHA, mais le dossier "
-"temporaire de fichiers (%s) n'existe pas ou n'est pas accessible en "
+"temporaire des fichiers (%s) n'existe pas ou n'est pas accessible en "
 "écriture. Vous pouvez créer le dossier ou modifier ses permissions "
 "manuellement."
 
@@ -835,7 +834,7 @@ msgstr "Boutons radio"
 #: contact-form-7/modules/select.php:149 contact-form-7/modules/text.php:227
 #: contact-form-7/modules/textarea.php:109
 msgid "Required field?"
-msgstr "Champ obligatoire ?"
+msgstr "Champ obligatoire&nbsp;?"
 
 #: contact-form-7/modules/checkbox.php:195
 #: contact-form-7/modules/select.php:163
@@ -849,21 +848,21 @@ msgstr "* Un choix par ligne."
 
 #: contact-form-7/modules/checkbox.php:201
 msgid "Put a label first, a checkbox last?"
-msgstr "Placer d'abord le label, ensuite la case à cocher ?"
+msgstr "Placer d'abord le label, ensuite la case à cocher&nbsp;?"
 
 #: contact-form-7/modules/checkbox.php:202
 msgid "Wrap each item with <label> tag?"
-msgstr "Encadrer chaque élément d'une balise <label> ?"
+msgstr "Encadrer chaque élément d'une balise <label>&nbsp;?"
 
 #: contact-form-7/modules/checkbox.php:204
 msgid "Make checkboxes exclusive?"
-msgstr "Rendre les cases à cocher exclusives?"
+msgstr "Rendre les cases à cocher exclusives&nbsp;?"
 
 #: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:195
 #: contact-form-7/modules/number.php:205 contact-form-7/modules/select.php:177
 #: contact-form-7/modules/text.php:273 contact-form-7/modules/textarea.php:146
 msgid "And, put this code into the Mail fields below."
-msgstr "Et placez ce code dans les champs Email ci-dessous."
+msgstr "Et placez ce code dans le champ Corps du message ci-dessous."
 
 #: contact-form-7/modules/date.php:118
 msgid "Date format that the sender entered is invalid"
@@ -875,7 +874,7 @@ msgstr "Le format de date semble invalide."
 
 #: contact-form-7/modules/date.php:123
 msgid "Date is earlier than minimum limit"
-msgstr "La date est avant la limite minimum"
+msgstr "La date est antérieure à la date limite minimale"
 
 #: contact-form-7/modules/date.php:124
 msgid "This date is too early."
@@ -883,7 +882,7 @@ msgstr "Cette date est trop tôt."
 
 #: contact-form-7/modules/date.php:128
 msgid "Date is later than maximum limit"
-msgstr "La date est après la date limite maximum"
+msgstr "La date est postérieure à la date limite maximale"
 
 #: contact-form-7/modules/date.php:129
 msgid "This date is too late."
@@ -897,7 +896,7 @@ msgstr "Valeur par défaut"
 #: contact-form-7/modules/date.php:188 contact-form-7/modules/number.php:198
 #: contact-form-7/modules/text.php:266 contact-form-7/modules/textarea.php:139
 msgid "Use this text as placeholder?"
-msgstr "Utiliser ce texte en filigrane ?"
+msgstr "Utiliser ce texte en filigrane&nbsp;?"
 
 #: contact-form-7/modules/file.php:198
 msgid "Uploading a file fails for any reason"
@@ -925,15 +924,15 @@ msgstr "Ce fichier est trop volumineux."
 
 #: contact-form-7/modules/file.php:213
 msgid "Uploading a file fails for PHP error"
-msgstr "Le téléchargement de fichier a échoué du fait d'une erreur PHP"
+msgstr "La mise en ligne du fichier a échoué du fait d'une erreur PHP"
 
 #: contact-form-7/modules/file.php:214
 msgid "Failed to upload file. Error occurred."
-msgstr "Impossible de télécharger le fichier. Une erreur est survenue."
+msgstr "Impossible de mettre en ligne le fichier. Une erreur est survenue."
 
 #: contact-form-7/modules/file.php:228
 msgid "File upload"
-msgstr "Upload de fichier"
+msgstr "Mise en ligne d'un fichier"
 
 #: contact-form-7/modules/file.php:251
 msgid "File size limit"
@@ -958,10 +957,10 @@ msgid ""
 "for the files (%s) does not exist or is not writable. You can create the "
 "folder or change its permission manually."
 msgstr ""
-"Ce formulaire de contact contient des champs de téléchargement, mais le "
-"dossier temporaire de fichiers (%s) n'existe pas ou n'est pas accessible en "
-"écriture. Vous pouvez créer le dossier ou modifier ses permissions "
-"manuellement."
+"Ce formulaire de contact contient des champs d'envoi/mise en ligne de "
+"fichiers, mais le dossier temporaire des fichiers (%s) n'existe pas ou n'est "
+"pas accessible en écriture. Vous pouvez créer le dossier ou modifier ses "
+"permissions manuellement."
 
 #: contact-form-7/modules/jetpack.php:21
 #, php-format
@@ -1030,11 +1029,11 @@ msgstr "Menu déroulant"
 
 #: contact-form-7/modules/select.php:169
 msgid "Allow multiple selections?"
-msgstr "Autoriser les sélections multiples ?"
+msgstr "Autoriser les sélections multiples&nbsp;?"
 
 #: contact-form-7/modules/select.php:170
 msgid "Insert a blank item as the first option?"
-msgstr "Insérer un choix vide comme première option ?"
+msgstr "Insérer un choix vide comme première option&nbsp;?"
 
 #: contact-form-7/modules/submit.php:49
 msgid "Submit button"
@@ -1094,7 +1093,7 @@ msgstr "Ce champ néessite le nom de l'auteur"
 
 #: contact-form-7/modules/text.php:254
 msgid "This field requires author's email address"
-msgstr "Ce champ nécessite l'adresse e-mail de l'auteur"
+msgstr "Ce champ nécessite l'adresse email de l'auteur"
 
 #: contact-form-7/modules/text.php:256
 msgid "This field requires author's URL"
