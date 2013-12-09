@@ -502,7 +502,7 @@ function wpcf7_welcome_panel() {
 					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/spam-filtering-with-akismet/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Spam Filtering with Akismet", 'contact-form-7' ) ); ?></a></li>
 					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/save-submitted-messages-with-flamingo/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Save Messages with Flamingo", 'contact-form-7' ) ); ?></a></li>
 					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/selectable-recipient-with-pipes/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Selectable Recipient with Pipes", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tracking-form-submissions-with-google-analytics/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Tracking Submissions with Google Analytics", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tracking-form-submissions-with-google-analytics/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Tracking with Google Analytics", 'contact-form-7' ) ); ?></a></li>
 				</ul>
 			</div>
 		</div>
