@@ -5,19 +5,31 @@ require_once WPCF7_PLUGIN_DIR . '/admin/admin-functions.php';
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
 
 function wpcf7_admin_menu() {
-	add_object_page( __( 'Contact Form 7', 'contact-form-7' ), __( 'Contact', 'contact-form-7' ),
-		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page',
-		wpcf7_plugin_url( 'admin/images/menu-icon.png' ) );
+	$icon_url = wpcf7_plugin_url( 'admin/images/menu-icon.png' );
+
+	if ( defined( 'MP6' ) && MP6
+	|| version_compare( get_bloginfo( 'version' ), '3.8-dev', '>=' ) ) {
+		$icon_url = '';
+	}
+
+	add_object_page( __( 'Contact Form 7', 'contact-form-7' ),
+		__( 'Contact', 'contact-form-7' ),
+		'wpcf7_read_contact_forms', 'wpcf7',
+		'wpcf7_admin_management_page', $icon_url );
 
 	$edit = add_submenu_page( 'wpcf7',
-		__( 'Edit Contact Form', 'contact-form-7' ), __( 'Contact Forms', 'contact-form-7' ),
-		'wpcf7_read_contact_forms', 'wpcf7', 'wpcf7_admin_management_page' );
+		__( 'Edit Contact Form', 'contact-form-7' ),
+		__( 'Contact Forms', 'contact-form-7' ),
+		'wpcf7_read_contact_forms', 'wpcf7',
+		'wpcf7_admin_management_page' );
 
 	add_action( 'load-' . $edit, 'wpcf7_load_contact_form_admin' );
 
 	$addnew = add_submenu_page( 'wpcf7',
-		__( 'Add New Contact Form', 'contact-form-7' ), __( 'Add New', 'contact-form-7' ),
-		'wpcf7_edit_contact_forms', 'wpcf7-new', 'wpcf7_admin_add_new_page' );
+		__( 'Add New Contact Form', 'contact-form-7' ),
+		__( 'Add New', 'contact-form-7' ),
+		'wpcf7_edit_contact_forms', 'wpcf7-new',
+		'wpcf7_admin_add_new_page' );
 
 	add_action( 'load-' . $addnew, 'wpcf7_load_contact_form_admin' );
 }
