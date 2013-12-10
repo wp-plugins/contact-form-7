@@ -203,15 +203,6 @@
 		return this.each(function() {
 			var into = $(this);
 			into.append('<span role="alert" class="wpcf7-not-valid-tip">' + message + '</span>');
-			$('span.wpcf7-not-valid-tip').mouseover(function() {
-				$(this).fadeOut('fast');
-			});
-			into.find(':input').mouseover(function() {
-				into.find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
-			});
-			into.find(':input').focus(function() {
-				into.find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
-			});
 		});
 	};
 

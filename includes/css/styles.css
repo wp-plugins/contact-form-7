@@ -29,15 +29,9 @@ span.wpcf7-form-control-wrap {
 }
 
 span.wpcf7-not-valid-tip {
-	position: absolute;
-	top: 20%;
-	left: 20%;
-	z-index: 100;
-	background: #fff;
-	border: 1px solid #ff0000;
+	color: #f00;
 	font-size: 10pt;
-	width: 280px;
-	padding: 2px;
+	display: block;
 }
 
 span.wpcf7-not-valid-tip-no-ajax {
