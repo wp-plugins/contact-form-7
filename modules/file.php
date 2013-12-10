@@ -35,6 +35,8 @@ function wpcf7_file_shortcode_handler( $tag ) {
 	if ( $tag->is_required() )
 		$atts['aria-required'] = 'true';
 
+	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
 	$atts['type'] = 'file';
 	$atts['name'] = $tag->name;
 	$atts['value'] = '1';

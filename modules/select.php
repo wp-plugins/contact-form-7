@@ -34,6 +34,8 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	if ( $tag->is_required() )
 		$atts['aria-required'] = 'true';
 
+	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
 	$defaults = array();
 
 	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) )

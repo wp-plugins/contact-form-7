@@ -32,6 +32,7 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_option( 'id', 'id', true );
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['aria-required'] = 'true';
+	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
 	$pipes = $tag->pipes;
 

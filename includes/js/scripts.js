@@ -14,6 +14,7 @@
 		this.ajaxForm({
 			beforeSubmit: function(arr, $form, options) {
 				$form.wpcf7ClearResponseOutput();
+				$form.find('[aria-invalid]').attr('aria-invalid', 'false');
 				$form.find('img.ajax-loader').css({ visibility: 'visible' });
 				return true;
 			},
@@ -89,6 +90,7 @@
 			$.each(data.invalids, function(i, n) {
 				$form.find(n.into).wpcf7NotValidTip(n.message);
 				$form.find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
+				$form.find(n.into).find('[aria-invalid]').attr('aria-invalid', 'true');
 			});
 
 			$responseOutput.addClass('wpcf7-validation-errors');

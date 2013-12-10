@@ -77,6 +77,8 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		$atts['id'] = $tag->get_option( 'id', 'id', true );
 		$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
+		$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
 		$value = (string) reset( $tag->values );
 
 		if ( wpcf7_is_posted() )

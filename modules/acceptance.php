@@ -37,6 +37,8 @@ function wpcf7_acceptance_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'default:on' ) )
 		$atts['checked'] = 'checked';
 
+	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
 	$atts['type'] = 'checkbox';
 	$atts['name'] = $tag->name;
 	$atts['value'] = '1';

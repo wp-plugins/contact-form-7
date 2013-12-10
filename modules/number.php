@@ -44,6 +44,8 @@ function wpcf7_number_shortcode_handler( $tag ) {
 	if ( $tag->is_required() )
 		$atts['aria-required'] = 'true';
 
+	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
 	$value = (string) reset( $tag->values );
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
