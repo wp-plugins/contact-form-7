@@ -254,7 +254,9 @@ class WPCF7_ContactForm {
 		if ( empty( $ve ) )
 			return '';
 
-		$ve = '<span class="wpcf7-not-valid-tip-no-ajax">' . esc_html( $ve ) . '</span>';
+		$ve = '<span role="alert" class="wpcf7-not-valid-tip-no-ajax">'
+			. esc_html( $ve ) . '</span>';
+
 		return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
 	}
 
