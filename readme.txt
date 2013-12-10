@@ -54,7 +54,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Esperanto (eo_EO) - Arkadiusz Zychewicz
 * Estonian (et) - [Peeter Rahuvarm](http://www.kraabus.ee), Egon Elbre
 * Finnish (fi) - [Miika Turunen](http://www.webwork.fi/), [Mediajalostamo](http://www.mediajalostamo.fi/), [Jani Alha](http://www.wysiwyg.fi/)
-* French (fr_FR) - [Jillij](http://www.jillij.com/), [Oncle Tom](http://case.oncle-tom.net/), [Maître Mô](http://maitremo.fr/), Hédi Sellami
+* French (fr_FR) - [Jillij](http://www.jillij.com/), [Oncle Tom](http://case.oncle-tom.net/), [Maître Mô](http://maitremo.fr/), Emmanuel Simond, Hédi Sellami
 * Galician (gl_ES) - [Arume Desenvolvementos Informáticos](http://www.arumeinformatica.es/)
 * Georgian (ka_GE) - [Nodar Rocko Davituri](http://davituri.com/)
 * German (de_DE) - [Marcel Spitau](http://blog.spitau.de), [Ivan Graf](http://blog.bildergallery.com/)
