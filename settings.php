@@ -14,7 +14,7 @@ if ( is_admin() )
 else
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
 
-add_action( 'plugins_loaded', 'wpcf7', 1 );
+add_action( 'plugins_loaded', 'wpcf7' );
 
 function wpcf7() {
 	global $wpcf7, $wpcf7_shortcode_manager;

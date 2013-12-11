@@ -161,7 +161,7 @@ function wpcf7_widget_text_filter( $content ) {
 
 /* Shortcodes */
 
-add_action( 'plugins_loaded', 'wpcf7_add_shortcodes', 1 );
+add_action( 'plugins_loaded', 'wpcf7_add_shortcodes' );
 
 function wpcf7_add_shortcodes() {
 	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
