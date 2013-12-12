@@ -644,7 +644,7 @@ class WPCF7_ContactForm {
 			$replaced = wpcf7_flat_join( $replaced );
 
 			if ( $html ) {
-				$replaced = strip_tags( $replaced );
+				$replaced = esc_html( $replaced );
 				$replaced = wptexturize( $replaced );
 			}
 
