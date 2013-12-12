@@ -100,7 +100,7 @@ function wpcf7_flamingo_get_value( $field, $contactform ) {
 		if ( empty( $templates[0] ) ) {
 			$template = sprintf( '[your-%s]', $field );
 		} else {
-			$template = trim( $templates[0] );
+			$template = trim( wpcf7_strip_quote( $templates[0] ) );
 		}
 
 		$value = $contactform->replace_mail_tags( $template );
