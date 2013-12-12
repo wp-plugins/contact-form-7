@@ -323,6 +323,8 @@ function wpcf7_admin_add_new_page() {
 
 <h2><?php echo esc_html( __( 'Add New Contact Form', 'contact-form-7' ) ); ?></h2>
 
+<?php do_action( 'wpcf7_admin_notices' ); ?>
+
 <h3><?php echo esc_html( sprintf( __( 'Use the default language (%s)', 'contact-form-7' ), $available_locales[$default_locale] ) ); ?></h3>
 <p><a href="<?php echo esc_url( add_query_arg( array( 'locale' => $default_locale ), menu_page_url( 'wpcf7-new', false ) ) ); ?>" class="button button-primary" /><?php echo esc_html( __( 'Add New', 'contact-form-7' ) ); ?></a></p>
 
