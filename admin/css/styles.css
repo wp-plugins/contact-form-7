@@ -278,3 +278,7 @@ input.shortcode-in-list-table {
 .welcome-panel li {
 	margin-bottom: 12px;
 }
+
+.welcome-panel-close {
+	z-index: 2;
+}
