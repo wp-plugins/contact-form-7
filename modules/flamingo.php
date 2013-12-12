@@ -39,9 +39,9 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 			unset( $posted_data[$key] );
 	}
 
-	$email = isset( $posted_data['your-email'] ) ? trim( $posted_data['your-email'] ) : '';
-	$name = isset( $posted_data['your-name'] ) ? trim( $posted_data['your-name'] ) : '';
-	$subject = isset( $posted_data['your-subject'] ) ? trim( $posted_data['your-subject'] ) : '';
+	$email = wpcf7_flamingo_get_value( 'email', $contactform );
+	$name = wpcf7_flamingo_get_value( 'name', $contactform );
+	$subject = wpcf7_flamingo_get_value( 'subject', $contactform );
 
 	$meta = array();
 
@@ -85,6 +85,31 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 		'spam' => ( 'spam' == $result['status'] ) );
 
 	Flamingo_Inbound_Message::add( $args );
+}
+
+function wpcf7_flamingo_get_value( $field, $contactform ) {
+	if ( empty( $field ) || empty( $contactform ) ) {
+		return false;
+	}
+
+	$value = '';
+
+	if ( in_array( $field, array( 'email', 'name', 'subject' ) ) ) {
+		$templates = $contactform->additional_setting( 'flamingo_' . $field );
+
+		if ( empty( $templates[0] ) ) {
+			$template = sprintf( '[your-%s]', $field );
+		} else {
+			$template = trim( $templates[0] );
+		}
+
+		$value = $contactform->replace_mail_tags( $template );
+	}
+
+	$value = apply_filters( 'wpcf7_flamingo_get_value', $value,
+		$field, $contactform );
+
+	return $value;
 }
 
 function wpcf7_flamingo_add_channel( $slug, $name = '' ) {
