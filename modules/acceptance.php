@@ -118,14 +118,7 @@ function wpcf7_acceptance_as_validation() {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() )
 		return false;
 
-	$settings = $contact_form->additional_setting( 'acceptance_as_validation', false );
-
-	foreach ( $settings as $setting ) {
-		if ( in_array( $setting, array( 'on', 'true', '1' ) ) )
-			return true;
-	}
-
-	return false;
+	return $contact_form->is_true( 'acceptance_as_validation' );
 }
 
 

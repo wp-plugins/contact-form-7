@@ -731,8 +731,8 @@ class WPCF7_ContactForm {
 		return $values;
 	}
 
-	function in_demo_mode() {
-		$settings = $this->additional_setting( 'demo_mode', false );
+	function is_true( $name ) {
+		$settings = $this->additional_setting( $name, false );
 
 		foreach ( $settings as $setting ) {
 			if ( in_array( $setting, array( 'on', 'true', '1' ) ) )
@@ -740,6 +740,10 @@ class WPCF7_ContactForm {
 		}
 
 		return false;
+	}
+
+	function in_demo_mode() {
+		return $this->is_true( 'demo_mode' );
 	}
 
 	/* Upgrade */
