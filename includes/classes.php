@@ -401,7 +401,12 @@ class WPCF7_ContactForm {
 			$result['spam'] = true;
 
 		} elseif ( $this->mail() ) {
-			$result['status'] = 'mail_sent';
+			if ( $this->in_demo_mode() ) {
+				$result['status'] = 'demo_mode';
+			} else {
+				$result['status'] = 'mail_sent';
+			}
+
 			$result['mail_sent'] = true;
 			$result['message'] = $this->message( 'mail_sent_ok' );
 
