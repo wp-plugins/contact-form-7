@@ -1,918 +1,1167 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 | V3.1.1\n"
+"Project-Id-Version: WordPress sulietuvinimas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-22 15:57+0900\n"
-"PO-Revision-Date: 2012-04-04 00:12-0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"POT-Creation-Date: 2013-12-18 19:54+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mantas Malcius <mantas.malcius@gmail.com>\n"
+"Language-Team: Mantas Malcius [mantas.malcius.lt] <mantas.malcius@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2;_n:1,2;_nc:1,2;__ngettext_noop:1,2;_n_noop:1,2;_x:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Lithuanian\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
-"X-Poedit-Basepath: ../..\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: SWITZERLAND\n"
-"X-Poedit-SearchPath-0: contact-form-7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Country: LITHUANIA\n"
+"X-Poedit-SearchPath-0: /home/mantas/Documents/www/wp-content/plugins/contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:5
-msgid "Just another contact form plugin. Simple but flexible."
-msgstr "Dar vienas susisiekimo formų papildinys. Paprastas, tačiau lankstus."
-
-#: contact-form-7/settings.php:75
-msgid "Contact Forms"
-msgstr "Susisiekimo Formos"
-
-#: contact-form-7/settings.php:76
-msgid "Contact Form"
-msgstr "Susisiekimo Forma"
-
-#: contact-form-7/settings.php:168
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/settings.php:87
 #, php-format
 msgid "Contact form %d"
-msgstr "Susisiekimo forma %d"
+msgstr "Kontaktų forma %d"
 
-#: contact-form-7/admin/admin.php:114
-#: contact-form-7/admin/edit.php:5
-msgid "Contact Form 7"
-msgstr "Contact Form 7"
-
-#: contact-form-7/admin/admin.php:114
-msgid "Contact"
-msgstr "Susisiekimo"
-
-#: contact-form-7/admin/admin.php:118
-msgid "Edit Contact Forms"
-msgstr "Redaguoti Susisiekimo Formas"
-
-#: contact-form-7/admin/admin.php:118
-msgid "Edit"
-msgstr "Redaguoti"
-
-#: contact-form-7/admin/admin.php:167
-msgid "Generate Tag"
-msgstr "Kurti Gairę"
-
-#: contact-form-7/admin/admin.php:244
-msgid "Settings"
-msgstr "Nuostatos"
-
-#: contact-form-7/admin/admin.php:255
-msgid "http://contactform7.com/"
-msgstr "http://contactform7.com/"
-
-#: contact-form-7/admin/admin.php:256
-msgid "Contactform7.com"
-msgstr "Contactform7.com"
-
-#: contact-form-7/admin/admin.php:257
-msgid "http://contactform7.com/docs/"
-msgstr "http://contactform7.com/docs/"
-
-#: contact-form-7/admin/admin.php:258
-msgid "Docs"
-msgstr "Dokumentacija"
-
-#: contact-form-7/admin/admin.php:259
-msgid "http://contactform7.com/faq/"
-msgstr "http://contactform7.com/faq/"
-
-#: contact-form-7/admin/admin.php:260
-msgid "FAQ"
-msgstr "Dažniausiai Užduodami Klausimai"
-
-#: contact-form-7/admin/admin.php:261
-msgid "http://contactform7.com/support/"
-msgstr "http://contactform7.com/support/"
-
-#: contact-form-7/admin/admin.php:262
-msgid "Support"
-msgstr "Pagalba"
-
-#: contact-form-7/admin/admin.php:276
-msgid "Contact form created."
-msgstr "Susisiekimo forma sukurta."
-
-#: contact-form-7/admin/admin.php:279
-msgid "Contact form saved."
-msgstr "Susisiekimo forma įrašyta."
-
-#: contact-form-7/admin/admin.php:282
-msgid "Contact form deleted."
-msgstr "Susisiekimo forma ištrinta."
-
-#: contact-form-7/admin/admin.php:316
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 reikalinga Jūsų pagalba. Prašome paaukoti šiandien."
-
-#: contact-form-7/admin/admin.php:317
-msgid "Your contribution is needed for making this plugin better."
-msgstr "Jūsų bendradarbiavimas yra labai svarbus tobulinant papildinį."
-
-#: contact-form-7/admin/admin.php:323
-msgid "http://contactform7.com/donate/"
-msgstr "http://contactform7.com/donate/"
-
-#: contact-form-7/admin/admin.php:323
-msgid "Donate"
-msgstr "Paaukoti"
-
-#: contact-form-7/admin/admin.php:343
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:21
 #, php-format
-msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
-msgstr "<strong>Contact Form 7 %1$s reikalauja WordPress %2$s arba naujesnio. </strong> Prašome pirmiau <a href=\"%3$s\">atnaujinti WordPress</a>."
-
-#: contact-form-7/admin/edit.php:20
-#: contact-form-7/admin/edit.php:142
-#: contact-form-7/admin/edit.php:155
-msgid "Add New"
-msgstr "Pridėti Naują"
-
-#: contact-form-7/admin/edit.php:41
-msgid "Copy this code and paste it into your post, page or text widget content."
-msgstr "Nukopijuokite šį kodą ir įkelkite jį į savo įrašą, puslapį ar teksto valdiklio turinį."
-
-#: contact-form-7/admin/edit.php:47
-msgid "Old code is also available."
-msgstr "Senasis kodas taip pat įmanomas."
-
-#: contact-form-7/admin/edit.php:55
-msgid "Save"
-msgstr "Įrašyti"
-
-#: contact-form-7/admin/edit.php:62
-msgid "Copy"
-msgstr "Kopijuoti"
-
-#: contact-form-7/admin/edit.php:67
-msgid "Delete"
-msgstr "Ištrinti"
-
-#: contact-form-7/admin/edit.php:69
-msgid ""
-"You are about to delete this contact form.\n"
-"  'Cancel' to stop, 'OK' to delete."
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 msgstr ""
-"Jūs bandote ištrinti šią susisiekimo formą. \n"
-"'Cancel', kad atšauktumėte trynimo procesą, 'OK', kad ištrinti."
 
-#: contact-form-7/admin/edit.php:78
-msgid "Form"
-msgstr "Forma"
-
-#: contact-form-7/admin/edit.php:81
-msgid "Mail"
-msgstr "Paštas"
-
-#: contact-form-7/admin/edit.php:84
-msgid "Mail (2)"
-msgstr "Paštas (2)"
-
-#: contact-form-7/admin/edit.php:89
-msgid "Use mail (2)"
-msgstr "Naudoti paštą (2)"
-
-#: contact-form-7/admin/edit.php:91
-msgid "Messages"
-msgstr "Pranešimai"
-
-#: contact-form-7/admin/edit.php:94
-msgid "Additional Settings"
-msgstr "Pridėtinės Nuostatos"
-
-#: contact-form-7/admin/edit.php:141
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:23
 #, php-format
-msgid "Use the default language (%s)"
-msgstr "Naudoti numatytąją kalbą (%s)"
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
+msgstr ""
 
-#: contact-form-7/admin/edit.php:145
-msgid "Or"
-msgstr "arba"
-
-#: contact-form-7/admin/edit.php:150
-msgid "(select language)"
-msgstr "(pasirinkite kalbą)"
-
-#: contact-form-7/admin/includes/meta-boxes.php:44
-msgid "To:"
-msgstr "Į:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:49
-msgid "From:"
-msgstr "Nuo:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:54
-msgid "Subject:"
-msgstr "Tema:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:61
-msgid "Additional headers:"
-msgstr "Pridėtinės puslapinės antraštės:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:66
-msgid "File attachments:"
-msgstr "Rinkmenų priedai:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:74
-msgid "Use HTML content type"
-msgstr "Naudoti HTML turinio tipą"
-
-#: contact-form-7/admin/includes/meta-boxes.php:80
-#: contact-form-7/includes/functions.php:108
-msgid "Message body:"
-msgstr "Pagrindinė laiško dalis:"
-
-#: contact-form-7/includes/classes.php:665
-msgid "Untitled"
-msgstr "Bevardis"
-
-#: contact-form-7/includes/controller.php:245
-msgid "Sending ..."
-msgstr "Siunčiama ..."
-
-#: contact-form-7/includes/functions.php:26
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:30
 msgid "Sender's message was sent successfully"
-msgstr "Siuntėjo pranešimas išsiųstas sėkmingai"
+msgstr "Siuntėjo žinutė išsiųsta"
 
-#: contact-form-7/includes/functions.php:27
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:31
 msgid "Your message was sent successfully. Thanks."
-msgstr "Jūsų pranešimas išsiųstas sėkmingai. Ačiū."
+msgstr "Jūsų žinutė sėkmingai išsiųsta. Ačiū."
 
-#: contact-form-7/includes/functions.php:31
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:35
 msgid "Sender's message was failed to send"
-msgstr "Siuntėjo pranešimo išsiųsti nepavyko"
+msgstr "Siuntėjo žinutė neišsiųsta"
 
-#: contact-form-7/includes/functions.php:32
-#: contact-form-7/modules/akismet.php:106
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:36
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:46
 msgid "Failed to send your message. Please try later or contact the administrator by another method."
-msgstr "Nepavyko išsiųsti Jūsų pranešimo."
+msgstr "Jūsų žinutės išsiųsti nepavyko. Pabandykite vėliau arba susisiekite kitais būdais."
 
-#: contact-form-7/includes/functions.php:36
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:40
 msgid "Validation errors occurred"
-msgstr "Įsipynė tikrinimo klaidų"
+msgstr "Validacijos klaidos"
 
-#: contact-form-7/includes/functions.php:37
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:41
 msgid "Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Įsipynė tikrinimo klaidų. Prašome patvirtinti laukelius ir pateikti tai vėl."
+msgstr "Validacijos klaidos. Patikrinkite laukelius ir bandykite vėl."
 
-#: contact-form-7/includes/functions.php:41
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:45
+msgid "Submission was referred to as spam"
+msgstr "Pateiktas turinys priskirtas kaip brukalas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:50
 msgid "There are terms that the sender must accept"
-msgstr "Yra taisyklių, su kuriomis siuntėjas turi sutikti"
+msgstr "Yra sąlygos, su kuriomis siuntėjas turi sutikti"
 
-#: contact-form-7/includes/functions.php:42
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:51
 msgid "Please accept the terms to proceed."
-msgstr "Prašome prieš pradedant sutikti su taisyklėmis."
+msgstr "Sutikite su sąlygomis, jei norite tęsti."
 
-#: contact-form-7/includes/functions.php:46
-msgid "Email address that the sender entered is invalid"
-msgstr "Elektroninio pašto adresas, kurį įrašė siuntėjas, yra neteisingas"
-
-#: contact-form-7/includes/functions.php:47
-msgid "Email address seems invalid."
-msgstr "Elektroninio pašto adresas atrodo neteisingas"
-
-#: contact-form-7/includes/functions.php:51
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:55
 msgid "There is a field that the sender must fill in"
 msgstr "Yra laukelis, kurį siuntėjas privalo užpildyti"
 
-#: contact-form-7/includes/functions.php:52
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:56
 msgid "Please fill the required field."
-msgstr "Prašome užpildyti privalomąjį laukelį."
+msgstr "Užpildykite būtiną laukelį."
 
-#: contact-form-7/includes/functions.php:76
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:80
 msgid "Your Name"
-msgstr "Jūsų Vardas"
+msgstr "Jūsų vardas"
 
-#: contact-form-7/includes/functions.php:76
-#: contact-form-7/includes/functions.php:78
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:80
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:82
 msgid "(required)"
-msgstr "(privaloma)"
+msgstr "(būtina)"
 
-#: contact-form-7/includes/functions.php:78
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:82
 msgid "Your Email"
-msgstr "Jūsų Elektroninio pašto adresas"
+msgstr "Jūsų el. pašto adresas"
 
-#: contact-form-7/includes/functions.php:80
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:84
 msgid "Subject"
 msgstr "Tema"
 
-#: contact-form-7/includes/functions.php:82
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:86
 msgid "Your Message"
-msgstr "Jūsų Pranešimas"
+msgstr "Jūsų žinutė"
 
-#: contact-form-7/includes/functions.php:84
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:88
 msgid "Send"
 msgstr "Siųsti"
 
-#: contact-form-7/includes/functions.php:92
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:96
 #, php-format
 msgid "From: %s"
-msgstr "Nuo: %s"
+msgstr "Iš: %s"
 
-#: contact-form-7/includes/functions.php:93
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:97
 #, php-format
 msgid "Subject: %s"
 msgstr "Tema: %s"
 
-#: contact-form-7/includes/functions.php:94
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:98
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:112
 msgid "Message Body:"
-msgstr "Pagrindinė laiško dalis:"
+msgstr "Žinutės turinys:"
 
-#: contact-form-7/includes/functions.php:95
-#: contact-form-7/includes/functions.php:109
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:99
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:113
 #, php-format
-msgid "This mail is sent via contact form on %1$s %2$s"
-msgstr "Šis laiškas išsiųstas per susisiekimo formą, esančią %1$s %2$s"
+msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
+msgstr "Šis el. laiškas išsiųstas per kontaktų formą: %1$s (%2$s)"
 
-#: contact-form-7/includes/functions.php:185
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:164
 msgid "Afrikaans"
-msgstr "afrikanso"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:186
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:165
 msgid "Albanian"
-msgstr "albanų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:187
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:166
 msgid "Arabic"
-msgstr "arabų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:188
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:167
 msgid "Armenian"
-msgstr "armėnų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:189
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:168
 msgid "Azerbaijani"
-msgstr "azerbaidžaniečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:190
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:169
 msgid "Bangla"
-msgstr "Bangladešo"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:191
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:170
+msgid "Basque"
+msgstr ""
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:171
 msgid "Belarusian"
-msgstr "baltarusių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:192
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:172
 msgid "Bosnian"
-msgstr "bosnių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:193
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:173
 msgid "Brazilian Portuguese"
-msgstr "portugalų (Brazilija)"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:194
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:174
 msgid "Bulgarian"
-msgstr "bulgarų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:195
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:175
 msgid "Catalan"
-msgstr "katalonų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:196
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:176
+msgid "Central Kurdish"
+msgstr ""
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:177
 msgid "Chinese (Simplified)"
-msgstr "kinų (Supraprastinta)"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:197
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:178
 msgid "Chinese (Traditional)"
-msgstr "kinų (Tradicinė)"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:198
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:179
 msgid "Croatian"
-msgstr "kroatų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:199
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:180
 msgid "Czech"
-msgstr "čekų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:200
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:181
 msgid "Danish"
-msgstr "danų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:201
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:182
 msgid "Dutch"
-msgstr "olandų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:202
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:183
 msgid "English"
-msgstr "anglų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:203
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:184
 msgid "Esperanto"
-msgstr "esperanto"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:204
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:185
 msgid "Estonian"
-msgstr "estų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:205
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:186
 msgid "Finnish"
-msgstr "suomių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:206
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:187
 msgid "French"
-msgstr "prancūzų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:207
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:188
 msgid "Galician"
-msgstr "galisų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:208
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:189
+msgid "Gujarati"
+msgstr ""
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:190
 msgid "Georgian"
-msgstr "gruzinų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:209
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:191
 msgid "German"
-msgstr "vokiečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:210
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:192
 msgid "Greek"
-msgstr "graikų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:211
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:193
 msgid "Hebrew"
-msgstr "hebrajų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:212
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:194
 msgid "Hindi"
-msgstr "hindi"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:213
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:195
 msgid "Hungarian"
-msgstr "vengrų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:214
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:196
+msgid "Indian Bengali"
+msgstr ""
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:197
 msgid "Indonesian"
-msgstr "indoneziečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:215
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:198
+msgid "Irish"
+msgstr ""
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:199
 msgid "Italian"
-msgstr "italų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:216
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:200
 msgid "Japanese"
-msgstr "joponų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:217
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:201
 msgid "Korean"
-msgstr "korejiečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:218
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:202
 msgid "Latvian"
-msgstr "latvių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:219
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:203
 msgid "Lithuanian"
-msgstr "lietuvių"
+msgstr "Lietuvių"
 
-#: contact-form-7/includes/functions.php:220
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:204
 msgid "Macedonian"
-msgstr "makedonų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:221
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:205
 msgid "Malay"
-msgstr "malajų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:222
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:206
 msgid "Malayalam"
-msgstr "malajalių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:223
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:207
 msgid "Maltese"
-msgstr "maltiečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:224
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:208
 msgid "Norwegian"
-msgstr "norvegų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:225
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:209
 msgid "Persian"
-msgstr "persų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:226
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:210
 msgid "Polish"
-msgstr "lenkų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:227
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:211
 msgid "Portuguese"
-msgstr "portugalų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:228
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:212
 msgid "Russian"
-msgstr "rusų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:229
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:213
 msgid "Romanian"
-msgstr "rumunų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:230
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:214
 msgid "Serbian"
-msgstr "serbų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:231
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:215
 msgid "Sinhala"
-msgstr "sinhalų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:232
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:216
 msgid "Slovak"
-msgstr "slovakų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:233
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:217
 msgid "Slovene"
-msgstr "slovėnų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:234
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:218
 msgid "Spanish"
-msgstr "ispanų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:235
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:219
 msgid "Swedish"
-msgstr "švedų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:236
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:220
 msgid "Tamil"
-msgstr "tamilų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:237
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:221
 msgid "Thai"
-msgstr "tajų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:238
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:222
 msgid "Tagalog"
-msgstr "tagalų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:239
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:223
 msgid "Turkish"
-msgstr "turkų"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:240
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:224
 msgid "Ukrainian"
-msgstr "ukrainiečių"
+msgstr ""
 
-#: contact-form-7/includes/functions.php:241
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/functions.php:225
 msgid "Vietnamese"
-msgstr "vietnamiečių"
+msgstr ""
 
-#: contact-form-7/modules/acceptance.php:153
-msgid "Acceptance"
-msgstr "Priėmimas"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/classes.php:28
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:22
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:216
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:278
+msgid "Contact Forms"
+msgstr "Kontaktų formos"
 
-#: contact-form-7/modules/acceptance.php:162
-#: contact-form-7/modules/captcha.php:212
-msgid "Name"
-msgstr "Vardas"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/classes.php:29
+msgid "Contact Form"
+msgstr "Kontaktų forma"
 
-#: contact-form-7/modules/acceptance.php:167
-#: contact-form-7/modules/acceptance.php:170
-#: contact-form-7/modules/captcha.php:219
-#: contact-form-7/modules/captcha.php:222
-#: contact-form-7/modules/captcha.php:227
-#: contact-form-7/modules/captcha.php:230
-#: contact-form-7/modules/captcha.php:234
-#: contact-form-7/modules/captcha.php:245
-#: contact-form-7/modules/captcha.php:248
-#: contact-form-7/modules/captcha.php:253
-#: contact-form-7/modules/captcha.php:256
-msgid "optional"
-msgstr "pasirinktinis"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/classes.php:877
+msgid "Untitled"
+msgstr "Be pavadinimo"
 
-#: contact-form-7/modules/acceptance.php:176
-msgid "Make this checkbox checked by default?"
-msgstr "Ar pažymėti šį pažymimąjį langelį pagal numatytasias nuostatas?"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/includes/controller.php:243
+msgid "Sending ..."
+msgstr "Siunčiama ..."
 
-#: contact-form-7/modules/acceptance.php:177
-msgid "Make this checkbox work inversely?"
-msgstr "Pažymėti šį pažymimąjį langelį atvirkščiai?"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:15
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
 
-#: contact-form-7/modules/acceptance.php:178
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr "* Tai reiškia, jog svečias, kuris sutiks su taisyklėmis, turės panaikinti žymėjimą."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:16
+msgid "Contact"
+msgstr "Kontaktų formos"
 
-#: contact-form-7/modules/acceptance.php:183
-#: contact-form-7/modules/captcha.php:261
-msgid "Copy this code and paste it into the form left."
-msgstr "Nukopijuokite šį kodą ir įkelkite jį į formą kairėje."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:21
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:15
+msgid "Edit Contact Form"
+msgstr "Redaguoti kontaktų formą"
 
-#: contact-form-7/modules/akismet.php:105
-msgid "Akismet judged the sending activity as spamming"
-msgstr "Akismet nustatė, jog siunčiami brukalai"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:29
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:324
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:13
+msgid "Add New Contact Form"
+msgstr "Kurti naują kontaktų formą"
 
-#: contact-form-7/modules/captcha.php:73
-msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
-msgstr "Kad galėtumėte naudoti CAPTCHA, Jums reikia sėkmingai įdiegto <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> papildinio."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:30
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:280
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:329
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:341
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:17
+msgid "Add New"
+msgstr "Kurti naują"
 
-#: contact-form-7/modules/captcha.php:187
-msgid "The code that sender entered does not match the CAPTCHA"
-msgstr "Kodas, kurį įvedė siuntėjas neatitinka CAPTCHA"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:59
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:132
+msgid "You are not allowed to edit this item."
+msgstr "Jūs negalite redaguoti šio elemento."
 
-#: contact-form-7/modules/captcha.php:188
-msgid "Your entered code is incorrect."
-msgstr "Jūsų įvestas kodas neteisingas."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:173
+msgid "You are not allowed to delete this item."
+msgstr "Jūs negalite ištrinti šio elemento."
 
-#: contact-form-7/modules/captcha.php:198
-msgid "CAPTCHA"
-msgstr "CAPTCHA"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:176
+msgid "Error in deleting."
+msgstr "Trinant įvyko klaida"
 
-#: contact-form-7/modules/captcha.php:209
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
-msgstr "Pastaba: Kad galėtumėte naudoti Captcha, Jūs turite turėti sėkmingai įdiegtą  Really Simple CAPTCHA papildinį."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:253
+msgid "Generate Tag"
+msgstr "Generuoti žymą"
 
-#: contact-form-7/modules/captcha.php:216
-msgid "Image settings"
-msgstr "Vaizdo nuostatos"
-
-#: contact-form-7/modules/captcha.php:227
-msgid "Foreground color"
-msgstr "Priekinio plano spalva"
-
-#: contact-form-7/modules/captcha.php:230
-msgid "Background color"
-msgstr "Fono spalva"
-
-#: contact-form-7/modules/captcha.php:234
-msgid "Image size"
-msgstr "Vaizdo dydis"
-
-#: contact-form-7/modules/captcha.php:235
-msgid "Small"
-msgstr "Mažas"
-
-#: contact-form-7/modules/captcha.php:236
-msgid "Medium"
-msgstr "Vidutinis"
-
-#: contact-form-7/modules/captcha.php:237
-msgid "Large"
-msgstr "Didelis"
-
-#: contact-form-7/modules/captcha.php:242
-msgid "Input field settings"
-msgstr "Įvesties laukelio nuostatos"
-
-#: contact-form-7/modules/captcha.php:262
-msgid "For image"
-msgstr "Vaizdui"
-
-#: contact-form-7/modules/captcha.php:264
-msgid "For input field"
-msgstr "Įvesties laukeliui"
-
-#: contact-form-7/modules/captcha.php:294
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:284
 #, php-format
-msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Šioje susisiekimo formoje yra CAPTCHA laukelių, bet laikinasis rinkmenų (%s) katalogas neegzistuoja arba nėra įrašytinas. Jūs galite sukurti aplanką arba pakeisti jo leidimus rankiniu būdu."
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Paieškos rezultatai: „%s“"
 
-#: contact-form-7/modules/captcha.php:300
-msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
-msgstr "Šioje susisiekimo formoje yra CAPTCHA laukelių, bet reikalingos kolekcijos (GD ir FreeType) Jūsų serveryje yra neprieinamos."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:293
+msgid "Search Contact Forms"
+msgstr "Ieškoti kontaktų formos"
 
-#: contact-form-7/modules/checkbox.php:161
-msgid "Checkboxes"
-msgstr "Pažymimieji langeliai"
-
-#: contact-form-7/modules/checkbox.php:164
-msgid "Radio buttons"
-msgstr "Radijos mygtukai"
-
-#: contact-form-7/modules/checkbox.php:185
-#: contact-form-7/modules/file.php:236
-#: contact-form-7/modules/select.php:148
-#: contact-form-7/modules/text.php:175
-#: contact-form-7/modules/textarea.php:136
-msgid "Required field?"
-msgstr "Reikalingas laukelis?"
-
-#: contact-form-7/modules/checkbox.php:201
-#: contact-form-7/modules/select.php:162
-msgid "Choices"
-msgstr "Pasirinkimai"
-
-#: contact-form-7/modules/checkbox.php:203
-#: contact-form-7/modules/select.php:164
-msgid "* One choice per line."
-msgstr "* Vienas pasirinkimas eilutėje."
-
-#: contact-form-7/modules/checkbox.php:207
-msgid "Put a label first, a checkbox last?"
-msgstr "Pirmiausiai pridėti etiketę, o pažymimasis langelis paskiau?"
-
-#: contact-form-7/modules/checkbox.php:208
-msgid "Wrap each item with <label> tag?"
-msgstr "Priskirti kiekvienam elementui <eteiketę> gairę?"
-
-#: contact-form-7/modules/checkbox.php:210
-msgid "Make checkboxes exclusive?"
-msgstr "Padaryti pažymimuosius langelius išskirtiniais?"
-
-#: contact-form-7/modules/checkbox.php:218
-#: contact-form-7/modules/select.php:176
-#: contact-form-7/modules/text.php:218
-#: contact-form-7/modules/textarea.php:168
-msgid "And, put this code into the Mail fields below."
-msgstr "Ir įkelkite šį kodą į Pašto laukelius žemiau."
-
-#: contact-form-7/modules/file.php:200
-msgid "Uploading a file fails for any reason"
-msgstr "Rinkmenos siuntimas gali nepavykti dėl bet kokios priežasties"
-
-#: contact-form-7/modules/file.php:201
-msgid "Failed to upload file."
-msgstr "Nepavyko išsiųsti rinkmenos."
-
-#: contact-form-7/modules/file.php:205
-msgid "Uploaded file is not allowed file type"
-msgstr "Išsiųsta rinkmena yra neleistino rinkmenos tipo."
-
-#: contact-form-7/modules/file.php:206
-msgid "This file type is not allowed."
-msgstr "Šis rinkmenos tipas - neleistinas."
-
-#: contact-form-7/modules/file.php:210
-msgid "Uploaded file is too large"
-msgstr "Išsiųsta rinkmena per didelė"
-
-#: contact-form-7/modules/file.php:211
-msgid "This file is too large."
-msgstr "Ši rinkmena yra per didelė."
-
-#: contact-form-7/modules/file.php:215
-msgid "Uploading a file fails for PHP error"
-msgstr "Rinkmenos išsiuntimas nepavyko dėl PHP klaidos"
-
-#: contact-form-7/modules/file.php:216
-msgid "Failed to upload file. Error occurred."
-msgstr "Nepavyko išsiųsti rinkmenos. Įvyko klaida."
-
-#: contact-form-7/modules/file.php:227
-msgid "File upload"
-msgstr "Rinkmenos siuntimas"
-
-#: contact-form-7/modules/file.php:250
-msgid "File size limit"
-msgstr "Rinkmenos dydžio apribojimas"
-
-#: contact-form-7/modules/file.php:250
-msgid "bytes"
-msgstr "Baitais"
-
-#: contact-form-7/modules/file.php:253
-msgid "Acceptable file types"
-msgstr "Priimtini rinkmenų tipai"
-
-#: contact-form-7/modules/file.php:260
-msgid "And, put this code into the File Attachments field below."
-msgstr "Ir įkelkite šį kodą į Rinkmenų Priedų laukelį žemiau."
-
-#: contact-form-7/modules/file.php:285
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:328
 #, php-format
-msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
-msgstr "Šioje susisiekimo formoje yra nusiuntimo laukeliai, bet laikinasis aplankas rinkmenoms (%s) neegzistuoja arba nėra įrašytinas. Jūs galite sukurti aplanką arba pakeisti jo leidimus rankiniu būdu."
+msgid "Use the default language (%s)"
+msgstr "Naudokite numatytąją kalbą (%s)"
 
-#: contact-form-7/modules/quiz.php:159
-msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Siuntėjas neįrašė teisingo mįslės atsakymo."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:332
+msgid "Or"
+msgstr "Arba"
 
-#: contact-form-7/modules/quiz.php:160
-msgid "Your answer is not correct."
-msgstr "Jūsų atsakymas neteisingas."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:336
+msgid "(select language)"
+msgstr "(pasirinkite kalbą)"
 
-#: contact-form-7/modules/quiz.php:170
-msgid "Quiz"
-msgstr "Mįslė"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:348
+msgid "Form"
+msgstr "Forma"
 
-#: contact-form-7/modules/quiz.php:200
-msgid "Quizzes"
-msgstr "Mįslės"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:351
+msgid "Mail"
+msgstr "Laiškas"
 
-#: contact-form-7/modules/quiz.php:202
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* mįslė|atsakymas (pvz. 1+1=?|2)"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:354
+msgid "Mail (2)"
+msgstr "Laiškas (2)"
 
-#: contact-form-7/modules/select.php:139
-msgid "Drop-down menu"
-msgstr "Išskleidžiamasis meniu"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:359
+msgid "Use mail (2)"
+msgstr "Naudoti laišką (2)"
 
-#: contact-form-7/modules/select.php:168
-msgid "Allow multiple selections?"
-msgstr "Leisti dauginius pažymėjimus?"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:361
+msgid "Messages"
+msgstr "Žinutės"
 
-#: contact-form-7/modules/select.php:169
-msgid "Insert a blank item as the first option?"
-msgstr "Įterpti tuščią elementą, kaip pirmąją parinktį?"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:364
+msgid "Additional Settings"
+msgstr "Papildomi nustatymai"
 
-#: contact-form-7/modules/submit.php:58
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:395
+msgid "Contact form created."
+msgstr "Kontaktų forma sukurta."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:397
+msgid "Contact form saved."
+msgstr "Kontaktų forma išsaugota."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:399
+msgid "Contact form deleted."
+msgstr "Kontaktų forma ištrinta."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:416
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:427
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:428
+msgid "Docs"
+msgstr "Dokumentacija"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:429
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:430
+msgid "FAQ"
+msgstr "DUK"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:431
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:432
+msgid "Support"
+msgstr "Pagalba"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:433
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:488
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:434
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:488
+msgid "Donate"
+msgstr "Paremti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:456
+#, php-format
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Contact Form 7 %1$s reikalinga WordPress %2$s arba naujesnė versija.</strong> <a href=\"%3$s\">Atnaujinkite WordPress</a>."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:481
+msgid "Dismiss"
+msgstr "Paslėpti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:486
+msgid "Contact Form 7 Needs Your Support"
+msgstr "Contact Form 7 prašo jūsų pagalbos"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:487
+msgid "It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider making a donation."
+msgstr "Be jūsų paramos sunku tęsti įskiepio tobulinimą. Jei naudojate ir mėgstate šį įskiepį, pagalvokite apie nedidelę paramą jo kūrėjams."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:492
+msgid "Get Started"
+msgstr "Pirmi žingsniai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:494
+msgid "http://contactform7.com/getting-started-with-contact-form-7/"
+msgstr "http://contactform7.com/getting-started-with-contact-form-7/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:494
+msgid "Getting Started with Contact Form 7"
+msgstr "Pirmi žingsniai su Contact Form 7"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:495
+msgid "http://contactform7.com/admin-screen/"
+msgstr "http://contactform7.com/admin-screen/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:495
+msgid "Admin Screen"
+msgstr "Administravimo sąsaja"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:496
+msgid "http://contactform7.com/tag-syntax/"
+msgstr "http://contactform7.com/tag-syntax/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:496
+msgid "How Tags Work"
+msgstr "Kaip veikia žymos"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:497
+msgid "http://contactform7.com/setting-up-mail/"
+msgstr "http://contactform7.com/setting-up-mail/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:497
+msgid "Setting Up Mail"
+msgstr "Laiškų nustatymai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:502
+msgid "Did You Know?"
+msgstr "Ar žinojote?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:504
+msgid "http://contactform7.com/spam-filtering-with-akismet/"
+msgstr "http://contactform7.com/spam-filtering-with-akismet/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:504
+msgid "Spam Filtering with Akismet"
+msgstr "Brukalų filtravimas su Akismet"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:505
+msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
+msgstr "http://contactform7.com/save-submitted-messages-with-flamingo/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:505
+msgid "Save Messages with Flamingo"
+msgstr "Išsaugokite žinutes su Flamingo"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:506
+msgid "http://contactform7.com/selectable-recipient-with-pipes/"
+msgstr "http://contactform7.com/selectable-recipient-with-pipes/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:506
+msgid "Selectable Recipient with Pipes"
+msgstr "Pasirenkamas gavėjas su vert. brūkšniu"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:507
+msgid "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
+msgstr "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/admin.php:507
+msgid "Tracking with Google Analytics"
+msgstr "Sekimas su Google Analytics"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:49
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Nukopijuokite šį kodą į įrašą, puslapį ar tekstinį valdiklį."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:55
+msgid "Old code is also available."
+msgstr "Senas kodas taip pat galimas."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:63
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:70
+msgid "Duplicate"
+msgstr "Daryti kopiją"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:75
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/edit-contact-form.php:77
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Jūs norite ištrinti šią kontaktų formą. \n"
+"Spauskite 'Atsisakyti', jei norite sustabdyti veiksmą, arba 'Gerai', jei norite ištrinti."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:44
+msgid "To:"
+msgstr "Į:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:49
+msgid "From:"
+msgstr "Iš:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:54
+msgid "Subject:"
+msgstr "Tema:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:61
+msgid "Additional headers:"
+msgstr "Papildomos antraštės:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:66
+msgid "File attachments:"
+msgstr "Failų priedai:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:74
+msgid "Use HTML content type"
+msgstr "Naudoti HTML turinio tipą"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/meta-boxes.php:80
+msgid "Message body:"
+msgstr "Žinutės turinys:"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+msgid "Shortcode"
+msgstr "„Shortcode“"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+msgid "Author"
+msgstr "Autorius"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:14
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:144
+msgid "Date"
+msgstr "Data"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "Redaguoti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "Redaguoti „%s“"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+msgid "Y/m/d g:i:s A"
+msgstr "Y-m-d G:i"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+msgid "%s ago"
+msgstr "prieš %s"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+msgid "Y/m/d"
+msgstr "Y-m-d"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:49
 msgid "Submit button"
 msgstr "Pateikimo mygtukas"
 
-#: contact-form-7/modules/submit.php:76
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:59
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:62
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:67
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:235
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:238
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:243
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:246
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:252
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:265
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:176
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:179
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:184
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:187
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:192
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:197
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:154
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:157
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:166
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:169
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:174
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:177
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:182
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:187
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:241
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:244
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:249
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:252
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:157
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:160
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:187
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:190
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:171
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:174
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:179
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:182
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:117
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:120
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:125
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:128
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:133
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:138
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:213
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:216
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:221
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:224
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:228
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:239
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:242
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:247
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:250
+msgid "optional"
+msgstr "nebūtina"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:67
 msgid "Label"
-msgstr "Etiketė"
+msgstr "Užrašas"
 
-#: contact-form-7/modules/text.php:152
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/submit.php:74
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:273
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:205
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:170
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:195
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:257
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:177
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:210
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:194
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:146
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:255
+msgid "Copy this code and paste it into the form left."
+msgstr "Nukopijuokite šį kodą ir įklijuokite į kairėje esančią formą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:168
+msgid "Email address that the sender entered is invalid"
+msgstr "Siuntėjo įvestas el. pašto adresas nėra tinkamas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:169
+msgid "Email address seems invalid."
+msgstr "El. pašto adresas panašus į netinkamą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:173
+msgid "URL that the sender entered is invalid"
+msgstr "Siuntėjo įvestas URL yra netinkamas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:174
+msgid "URL seems invalid."
+msgstr "URL panaši į netinkamą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:178
+msgid "Telephone number that the sender entered is invalid"
+msgstr "Siuntėjo įvestas telefono numeris yra netinkamas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:179
+msgid "Telephone number seems invalid."
+msgstr "Telefono numeris panašus į netinkamą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:192
 msgid "Text field"
-msgstr "Teksto laukelis"
+msgstr "Tekstinis laukelis"
 
-#: contact-form-7/modules/text.php:155
-msgid "Email field"
-msgstr "Elektroninio pašto laukelis"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:195
+msgid "Email"
+msgstr "El. pašto adresas"
 
-#: contact-form-7/modules/text.php:197
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:198
+msgid "URL"
+msgstr "URL"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:201
+msgid "Telephone number"
+msgstr "Telefono numeris"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:229
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:170
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:160
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:235
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:151
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:179
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:111
+msgid "Required field?"
+msgstr "Būtinas laukelis?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:230
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:171
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:149
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:161
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:236
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:152
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:182
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:166
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:112
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:206
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:252
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:199
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:254
 msgid "This field requires author's name"
 msgstr "Šis laukelis reikalauja autoriaus vardo"
 
-#: contact-form-7/modules/text.php:200
-msgid "This field requires author's URL"
-msgstr "Šis laukelis reikalauja autoriaus Universaliosios nuorodos"
-
-#: contact-form-7/modules/text.php:202
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:256
 msgid "This field requires author's email address"
-msgstr "Šis laukelis reikalauja autoriaus elektroninio pašto adreso"
+msgstr "Šis laukelis reikalauja autoriaus el. pašto adreso"
 
-#: contact-form-7/modules/text.php:208
-#: contact-form-7/modules/textarea.php:158
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:258
+msgid "This field requires author's URL"
+msgstr "Šis laukelis reikalauja autoriaus URL"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:265
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:197
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:187
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:138
 msgid "Default value"
 msgstr "Numatytoji reikšmė"
 
-#: contact-form-7/modules/text.php:211
-#: contact-form-7/modules/textarea.php:161
-msgid "Use this text as watermark?"
-msgstr "Naudoti šį tekstą kaip vandenženklį?"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:268
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:200
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:190
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:141
+msgid "Use this text as placeholder?"
+msgstr "Naudoti šią reikšmę kaip laukelio paaiškinimą?"
 
-#: contact-form-7/modules/textarea.php:127
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/text.php:275
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:207
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:197
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:179
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:212
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:148
+msgid "And, put this code into the Mail fields below."
+msgstr "Ir pridėkite šį kodą į Laiško laukelius žemiau."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:123
+msgid "Number format that the sender entered is invalid"
+msgstr "Siuntėjo įvestas numerio formatas nėra tinkamas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:124
+msgid "Number format seems invalid."
+msgstr "Numerio formatas nepanašus į tinkamą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:128
+msgid "Number is smaller than minimum limit"
+msgstr "Numeris nesiekia minimalaus limito"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:129
+msgid "This number is too small."
+msgstr "Šis numeris yra per mažas."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:133
+msgid "Number is larger than maximum limit"
+msgstr "Numeris viršija maksimalų limitą"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:134
+msgid "This number is too large."
+msgstr "Šis numeris yra per didelis."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:147
+msgid "Number (spinbox)"
+msgstr "Numeris (laukelis)"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/number.php:150
+msgid "Number (slider)"
+msgstr "Numeris (slankiklis)"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:140
+msgid "Acceptance"
+msgstr "Sutikimas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:163
+msgid "Make this checkbox checked by default?"
+msgstr "Pažymėti pagal nutylėjimą?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:164
+msgid "Make this checkbox work inversely?"
+msgstr "Laukelis turi veikti priešingai?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/acceptance.php:165
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Reiškia, lankytojas, kuris sutinka su taisyklėmis, pašalina jo pažymėjimą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:120
+msgid "Date format that the sender entered is invalid"
+msgstr "Siuntėjo įvestas datos formatas nėra tinkamas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:121
+msgid "Date format seems invalid."
+msgstr "Datos formatas panašus į netinkamą."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:125
+msgid "Date is earlier than minimum limit"
+msgstr "Data yra ankstesnė už minimalų limitą"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:126
+msgid "This date is too early."
+msgstr "Data per ankstyva."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:130
+msgid "Date is later than maximum limit"
+msgstr "Data yra vėlesnė už maksimalų limitą"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/date.php:131
+msgid "This date is too late."
+msgstr "Data per vėlyva."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/jetpack.php:21
+#, php-format
+msgid "<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr "<strong>Jetpack tam tikrais atvejais gali sukelti problemų kitiems įskiepiams.</strong> <a href=\"%s\" target=\"_blank\">Žiūrėkite, kaip to išvengti.</a>"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:196
+msgid "Uploading a file fails for any reason"
+msgstr "Failo įkėlimas dėl įvairių priežasčių nepavyksta"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:197
+msgid "Failed to upload file."
+msgstr "Failo įkelti nepavyko."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:201
+msgid "Uploaded file is not allowed file type"
+msgstr "Įkeltas neleidžiamo tipo failas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:202
+msgid "This file type is not allowed."
+msgstr "Šis failo tipas neleidžiamas."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:206
+msgid "Uploaded file is too large"
+msgstr "Įkeltas failas yra per didelis"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:207
+msgid "This file is too large."
+msgstr "Šis failas per didelis."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:211
+msgid "Uploading a file fails for PHP error"
+msgstr "Failo įkėlimas dėl PHP klaidos nepavyksta"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:212
+msgid "Failed to upload file. Error occurred."
+msgstr "Nepavyko įkelti failo. Įvyko klaida."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:226
+msgid "File upload"
+msgstr "Failo įkėlimas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:249
+msgid "File size limit"
+msgstr "Failo dydžio limitas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:249
+msgid "bytes"
+msgstr "baitais"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:252
+msgid "Acceptable file types"
+msgstr "Priimtini failų tipai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:259
+msgid "And, put this code into the File Attachments field below."
+msgstr "Ir žemiau pridėkite šį kodą į Failų priedų laukelį."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/file.php:284
+#, php-format
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ši kontaktų forma turi failų įkėlimo laukelių, bet laikinasis failų aplankas (%s) neegzistuoja arba nėra įrašomas. Galite sukurti aplanką arba pakeisti jo leidimus (angl. permissions)."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:142
+msgid "Drop-down menu"
+msgstr "Išsiskleidžiantis meniu"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:165
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:195
+msgid "Choices"
+msgstr "Pasirinkimai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:167
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:197
+msgid "* One choice per line."
+msgstr "* Po vieną pasirinkimą eilutėje."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:171
+msgid "Allow multiple selections?"
+msgstr "Leisti keletą pasirinkimų?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/select.php:172
+msgid "Insert a blank item as the first option?"
+msgstr "Įterpti tuščią kaip pirmą variantą?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:155
+msgid "Checkboxes"
+msgstr "Žymimieji laukeliai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:158
+msgid "Radio buttons"
+msgstr "Pasirenkamieji laukeliai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:201
+msgid "Put a label first, a checkbox last?"
+msgstr "Pirma atvaizduoti reikšmę, o laukelį už jos?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:202
+msgid "Wrap each item with <label> tag?"
+msgstr "Apgaubti kiekvieną reikšmę <label> žyma?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/checkbox.php:204
+msgid "Make checkboxes exclusive?"
+msgstr "Leisti pažymėti tik vieną?"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:143
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Siuntėjas neįvedė teisingo atsakymo į klausimą"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:144
+msgid "Your answer is not correct."
+msgstr "Jūsų atsakymas neteisingas."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:157
+msgid "Quiz"
+msgstr "Klausimas"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:187
+msgid "Quizzes"
+msgstr "Klausimai"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/quiz.php:189
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* klausimas|atsakymas (pvz., 1+1=?|2)"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/textarea.php:102
 msgid "Text area"
-msgstr "Teksto sritis"
+msgstr "Tekstinis laukelis"
 
-#~ msgid "Azeri"
-#~ msgstr "Aserbaidschanisch"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:19
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "Norint naudoti CAPTCHA, jums reikia <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> įskiepio."
 
-#~ msgid ""
-#~ "This contact form contains [icl] tags, but they are obsolete and no "
-#~ "longer functioning on this version of Contact Form 7. <a href=\"http://"
-#~ "contactform7.com/2009/12/25/contact-form-in-your-language/"
-#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">There "
-#~ "is a simpler way for creating contact forms of other languages</a> and "
-#~ "you are recommended to use it."
-#~ msgstr ""
-#~ "Dieses Kontaktformular enthÃ¤lt [icl] Tags, aber sie sind veraltet und "
-#~ "nicht funktionieren nicht mehr in dieser Version von Contact Form 7. <a "
-#~ "href=\"http://contactform7.com/2009/12/25/contact-form-in-your-language/"
-#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">Es ist "
-#~ "ein einfacher Weg, ein Kontaktformulars in anderen Sprachen zu erstellen</"
-#~ "a> und es wird empfohlen, dies zu verwenden."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:178
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Siuntėjo įvestas kodas neatitinka CAPTCHA"
 
-#~ msgid "Show"
-#~ msgstr "Anzeigen"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:179
+msgid "Your entered code is incorrect."
+msgstr "Jūsų įvestas kodas yra neteisingas."
 
-#~ msgid "Hide"
-#~ msgstr "Ausblenden"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:192
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
 
-#~ msgid "Database table created."
-#~ msgstr "Datenbanktabelle erstellt."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:203
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Pastaba: Norint naudoti CAPTCHA, jums reikia Really Simple CAPTCHA įskiepio."
 
-#~ msgid "Failed to create database table."
-#~ msgstr "Fehler beim Erstellen einer Datenbanktabelle."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:210
+msgid "Image settings"
+msgstr "Paveikslėlio nustatymai"
 
-#~ msgid ""
-#~ "<strong>The database table for Contact Form 7 does not exist.</strong> "
-#~ "You must <a href=\"%s\">create the table</a> for it to work."
-#~ msgstr ""
-#~ "<strong>Die Datenbanktabelle fÃ¼r Contact Form 7 ist nicht vorhanden.</"
-#~ "strong> Sie mÃ¼ssen zuerst eine <a href=\"%s\">Tabelle erstellen.</a>"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:221
+msgid "Foreground color"
+msgstr "Pirmojo plano spalva"
 
-#~ msgid ""
-#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
-#~ msgstr ""
-#~ "<strong>Die Datenbanktabelle fÃ¼r Contact Form 7 ist nicht vorhanden.</"
-#~ "strong>"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:224
+msgid "Background color"
+msgstr "Fono spalva"
 
-#~ msgid "Add new"
-#~ msgstr "Neues Formular"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:228
+msgid "Image size"
+msgstr "Paveikslėlio dydis"
 
-#~ msgid ""
-#~ "Is this plugin useful for you? If you like it, please help the developer."
-#~ msgstr ""
-#~ "Ist dieses Plugin nÃ¼tzlich fÃ¼r Sie? Wenn es Ihnen gefÃ¤llt, helfen Sie dem "
-#~ "Entwickler."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:229
+msgid "Small"
+msgstr "Mažas"
 
-#~ msgid ""
-#~ "Developing a plugin and providing user support is really hard work. "
-#~ "Please help."
-#~ msgstr ""
-#~ "Die Entwicklung eines Plugins sowie die vielen Support Anfragen "
-#~ "verbrauchen viel Zeit. Helfen Sie uns mit einer Spende."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:230
+msgid "Medium"
+msgstr "Vidutinis"
 
-#~ msgid "This mail is created by Contact Form 7 plugin for WordPress."
-#~ msgstr "Dieses Mail ist vom Wordpress Plugin Contact Form 7 erstellt."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:231
+msgid "Large"
+msgstr "Didelis"
 
-#~ msgid "(You need WordPress 2.7 or greater to use this feature)"
-#~ msgstr ""
-#~ "(Um diese Funktion nutzen zu kÃ¶nnen, benÃ¶tigen Sie WordPress Version 2.7 "
-#~ "oder hÃ¶her)"
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:236
+msgid "Input field settings"
+msgstr "Įvesties laukelio nustatymai"
 
-#~ msgid "Delete this contact form"
-#~ msgstr "Dieses Kontaktformular lÃ¶schen."
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:256
+msgid "For image"
+msgstr "Paveikslėliui"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:258
+msgid "For input field"
+msgstr "Įvesties laukeliui"
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:288
+#, php-format
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Šioje kontaktų formoje yra CAPTCHA laukelių, laikinas failų aplankas (%s) neegzistuoja arba nėra įrašomas. Galite sukurti aplanką arba pakeisti jo leidimus (angl. permissions)."
+
+#: /home/mantas/Documents/www/wp-content/plugins/contact-form-7/modules/captcha.php:294
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Ši kontaktų forma turi CAPTCHA laukelių, bet reikiamos bibliotekos (GD ir FreeType) nepasiekiamos jūsų serveryje."
+
