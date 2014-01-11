@@ -127,8 +127,12 @@ class WPCF7_ContactForm {
 
 	/* Generating Form HTML */
 
-	function form_html() {
+	function form_html( $atts = array() ) {
 		global $wpcf7;
+
+		$atts = wp_parse_args( $atts, array(
+			'html_id' => '',
+			'html_class' => '' ) );
 
 		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 
@@ -140,6 +144,9 @@ class WPCF7_ContactForm {
 		$url .= '#' . $this->unit_tag;
 
 		$url = apply_filters( 'wpcf7_form_action_url', $url );
+
+		$id_attr = apply_filters( 'wpcf7_form_id_attr',
+			preg_replace( '/[^A-Za-z0-9:._-]/', '', $atts['html_id'] ) );
 
 		$class = 'wpcf7-form';
 
@@ -154,7 +161,14 @@ class WPCF7_ContactForm {
 				$class .= ' failed';
 		}
 
-		$class = apply_filters( 'wpcf7_form_class_attr', $class );
+		$atts['html_class'] = array_unique( array_map( 'sanitize_html_class',
+			explode( ' ', $atts['html_class'] ) ) );
+
+		if ( $atts['html_class'] ) {
+			$class .= ' ' . implode( ' ', $atts['html_class'] );
+		}
+
+		$class = apply_filters( 'wpcf7_form_class_attr', trim( $class ) );
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
@@ -162,6 +176,7 @@ class WPCF7_ContactForm {
 			wpcf7_support_html5() ? ' novalidate="novalidate"' : '' );
 
 		$form .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
+			. ( $id_attr ? ' id="' . esc_attr( $id_attr ) . '"' : '' )
 			. ' class="' . esc_attr( $class ) . '"'
 			. $enctype . $novalidate . '>' . "\n";
 

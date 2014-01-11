@@ -175,7 +175,11 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 		return '[contact-form-7]';
 
 	if ( 'contact-form-7' == $code ) {
-		$atts = shortcode_atts( array( 'id' => 0, 'title' => '' ), $atts );
+		$atts = shortcode_atts( array(
+			'id' => 0,
+			'title' => '',
+			'html_id' => '',
+			'html_class' => '' ), $atts );
 
 		$id = (int) $atts['id'];
 		$title = trim( $atts['title'] );
@@ -212,7 +216,7 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	$unit_tag = 'wpcf7-f' . $wpcf7_contact_form->id . '-' . $processing_within . '-o' . $unit_count;
 	$wpcf7_contact_form->unit_tag = $unit_tag;
 
-	$form = $wpcf7_contact_form->form_html();
+	$form = $wpcf7_contact_form->form_html( $atts );
 
 	$wpcf7_contact_form = null;
 
