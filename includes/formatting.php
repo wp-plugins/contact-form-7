@@ -1,9 +1,10 @@
 <?php
 
 function wpcf7_autop( $pee, $br = 1 ) {
-
-	if ( trim( $pee ) === '' )
+	if ( trim( $pee ) === '' ) {
 		return '';
+	}
+
 	$pee = $pee . "\n"; // just to make things a little easier, pad the end
 	$pee = preg_replace( '|<br />\s*<br />|', "\n\n", $pee );
 	// Space things out a little
@@ -11,17 +12,26 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$allblocks = '(?:table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr|fieldset|legend|section|article|aside|hgroup|header|footer|nav|figure|figcaption|details|menu|summary)';
 	$pee = preg_replace( '!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee );
 	$pee = preg_replace( '!(</' . $allblocks . '>)!', "$1\n\n", $pee );
+
+	/* wpcf7: take care of [response] tag */
+	$pee = preg_replace( '!(\[response[^]]*\])!', "\n$1\n\n", $pee );
+
 	$pee = str_replace( array( "\r\n", "\r" ), "\n", $pee ); // cross-platform newlines
+
 	if ( strpos( $pee, '<object' ) !== false ) {
 		$pee = preg_replace( '|\s*<param([^>]*)>\s*|', "<param$1>", $pee ); // no pee inside object/embed
 		$pee = preg_replace( '|\s*</embed>\s*|', '</embed>', $pee );
 	}
+
 	$pee = preg_replace( "/\n\n+/", "\n\n", $pee ); // take care of duplicates
 	// make paragraphs, including one at the end
 	$pees = preg_split( '/\n\s*\n/', $pee, -1, PREG_SPLIT_NO_EMPTY );
 	$pee = '';
-	foreach ( $pees as $tinkle )
+
+	foreach ( $pees as $tinkle ) {
 		$pee .= '<p>' . trim( $tinkle, "\n" ) . "</p>\n";
+	}
+
 	$pee = preg_replace( '|<p>\s*</p>|', '', $pee ); // under certain strange conditions it could create a P of entirely whitespace
 	$pee = preg_replace( '!<p>([^<]+)</(div|address|form|fieldset)>!', "<p>$1</p></$2>", $pee );
 	$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee ); // don't pee all over a tag
@@ -30,6 +40,10 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$pee = str_replace( '</blockquote></p>', '</p></blockquote>', $pee );
 	$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee );
 	$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee );
+
+	/* wpcf7: take care of [response] tag */
+	$pee = preg_replace( '!<p>\s*(\[response[^]]*\])\s*</p>!', "$1", $pee );
+
 	if ( $br ) {
 		/* wpcf7: add textarea */
 		$pee = preg_replace_callback( '/<(script|style|textarea).*?<\/\\1>/s', create_function( '$matches', 'return str_replace("\n", "<WPPreserveNewline />", $matches[0]);' ), $pee );
