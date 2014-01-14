@@ -34,6 +34,16 @@ span.wpcf7-not-valid-tip {
 	display: block;
 }
 
+.use-floating-validation-tip span.wpcf7-not-valid-tip { 
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+	border: 1px solid #ff0000;
+	background: #fff;
+	padding: .2em .8em;
+}
+
 span.wpcf7-list-item {
 	margin-left: 0.5em;
 }

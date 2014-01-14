@@ -201,8 +201,22 @@
 
 	$.fn.wpcf7NotValidTip = function(message) {
 		return this.each(function() {
-			var into = $(this);
-			into.hide().append('<span role="alert" class="wpcf7-not-valid-tip">' + message + '</span>').slideDown('fast');
+			var $into = $(this);
+			$into.hide().append('<span role="alert" class="wpcf7-not-valid-tip">' + message + '</span>').slideDown('fast');
+
+			if ($into.is('.use-floating-validation-tip *')) {
+				$('.wpcf7-not-valid-tip', $into).mouseover(function() {
+					$(this).fadeOut('fast');
+				});
+
+				$(':input', $into).mouseover(function() {
+					$('.wpcf7-not-valid-tip', $into).not(':hidden').fadeOut('fast');
+				});
+
+				$(':input', $into).focus(function() {
+					$('.wpcf7-not-valid-tip', $into).not(':hidden').fadeOut('fast');
+				});
+			}
 		});
 	};
 
