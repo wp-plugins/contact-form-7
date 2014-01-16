@@ -206,17 +206,23 @@
 
 			if ($into.is('.use-floating-validation-tip *')) {
 				$('.wpcf7-not-valid-tip', $into).mouseover(function() {
-					$(this).fadeOut('fast');
-				});
-
-				$(':input', $into).mouseover(function() {
-					$('.wpcf7-not-valid-tip', $into).not(':hidden').fadeOut('fast');
+					$(this).wpcf7FadeOut();
 				});
 
 				$(':input', $into).focus(function() {
-					$('.wpcf7-not-valid-tip', $into).not(':hidden').fadeOut('fast');
+					$('.wpcf7-not-valid-tip', $into).not(':hidden').wpcf7FadeOut();
 				});
 			}
+		});
+	};
+
+	$.fn.wpcf7FadeOut = function() {
+		return this.each(function() {
+			$(this).animate({
+				opacity: 0
+			}, 'fast', function() {
+				$(this).css({'z-index': -100});
+			});
 		});
 	};
 
