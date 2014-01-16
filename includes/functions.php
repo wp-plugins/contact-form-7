@@ -145,6 +145,12 @@ function wpcf7_upload_dir( $type = false ) {
 }
 
 function wpcf7_l10n() {
+	static $l10n = array();
+
+	if ( ! empty( $l10n ) ) {
+		return $l10n;
+	}
+
 	$l10n = array(
 		'af' => __( 'Afrikaans', 'contact-form-7' ),
 		'sq' => __( 'Albanian', 'contact-form-7' ),
