@@ -2,15 +2,31 @@
 
 class WPCF7_ShortcodeManager {
 
-	var $shortcode_tags = array();
+	private static $instance;
+
+	private $shortcode_tags = array();
 
 	// Taggs scanned at the last time of do_shortcode()
-	var $scanned_tags = null;
+	private $scanned_tags = null;
 
 	// Executing shortcodes (true) or just scanning (false)
-	var $exec = true;
+	private $exec = true;
 
-	function add_shortcode( $tag, $func, $has_name = false ) {
+	private function __construct() {}
+
+	public static function get_instance() {
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+	}
+
+	public function get_scanned_tags() {
+		return $this->scanned_tags;
+	}
+
+	public function add_shortcode( $tag, $func, $has_name = false ) {
 		if ( ! is_callable( $func ) )
 			return;
 
@@ -23,11 +39,11 @@ class WPCF7_ShortcodeManager {
 		}
 	}
 
-	function remove_shortcode( $tag ) {
+	public function remove_shortcode( $tag ) {
 		unset( $this->shortcode_tags[$tag] );
 	}
 
-	function normalize_shortcode( $content ) {
+	public function normalize_shortcode( $content ) {
 		if ( empty( $this->shortcode_tags ) || ! is_array( $this->shortcode_tags ) )
 			return $content;
 
@@ -36,7 +52,7 @@ class WPCF7_ShortcodeManager {
 			array( &$this, 'normalize_space_cb' ), $content );
 	}
 
-	function normalize_space_cb( $m ) {
+	private function normalize_space_cb( $m ) {
 		// allow [[foo]] syntax for escaping a tag
 		if ( $m[1] == '[' && $m[6] == ']' )
 			return $m[0];
@@ -57,7 +73,7 @@ class WPCF7_ShortcodeManager {
 		return $result;
 	}
 
-	function do_shortcode( $content, $exec = true ) {
+	public function do_shortcode( $content, $exec = true ) {
 		$this->exec = (bool) $exec;
 		$this->scanned_tags = array();
 
@@ -69,12 +85,12 @@ class WPCF7_ShortcodeManager {
 			array( &$this, 'do_shortcode_tag' ), $content );
 	}
 
-	function scan_shortcode( $content ) {
+	public function scan_shortcode( $content ) {
 		$this->do_shortcode( $content, false );
 		return $this->scanned_tags;
 	}
 
-	function get_shortcode_regex() {
+	private function get_shortcode_regex() {
 		$tagnames = array_keys( $this->shortcode_tags );
 		$tagregexp = join( '|', array_map( 'preg_quote', $tagnames ) );
 
@@ -84,7 +100,7 @@ class WPCF7_ShortcodeManager {
 			. '(\]?)';
 	}
 
-	function do_shortcode_tag( $m ) {
+	private function do_shortcode_tag( $m ) {
 		// allow [[foo]] syntax for escaping a tag
 		if ( $m[1] == '[' && $m[6] == ']' ) {
 			return substr( $m[0], 1, -1 );
@@ -152,7 +168,7 @@ class WPCF7_ShortcodeManager {
 		}
 	}
 
-	function shortcode_parse_atts( $text ) {
+	private function shortcode_parse_atts( $text ) {
 		$atts = array( 'options' => array(), 'values' => array() );
 		$text = preg_replace( "/[\x{00a0}\x{200b}]+/u", " ", $text );
 		$text = stripcslashes( trim( $text ) );
@@ -177,31 +193,21 @@ class WPCF7_ShortcodeManager {
 }
 
 function wpcf7_add_shortcode( $tag, $func, $has_name = false ) {
-	global $wpcf7_shortcode_manager;
+	$manager = WPCF7_ShortcodeManager::get_instance();
 
-	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
-		return $wpcf7_shortcode_manager->add_shortcode( $tag, $func, $has_name );
+	return $manager->add_shortcode( $tag, $func, $has_name );
 }
 
 function wpcf7_remove_shortcode( $tag ) {
-	global $wpcf7_shortcode_manager;
+	$manager = WPCF7_ShortcodeManager::get_instance();
 
-	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
-		return $wpcf7_shortcode_manager->remove_shortcode( $tag );
+	return $manager->remove_shortcode( $tag );
 }
 
 function wpcf7_do_shortcode( $content ) {
-	global $wpcf7_shortcode_manager;
+	$manager = WPCF7_ShortcodeManager::get_instance();
 
-	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
-		return $wpcf7_shortcode_manager->do_shortcode( $content );
-}
-
-function wpcf7_get_shortcode_regex() {
-	global $wpcf7_shortcode_manager;
-
-	if ( is_a( $wpcf7_shortcode_manager, 'WPCF7_ShortcodeManager' ) )
-		return $wpcf7_shortcode_manager->get_shortcode_regex();
+	return $manager->do_shortcode( $content );
 }
 
 class WPCF7_Shortcode {

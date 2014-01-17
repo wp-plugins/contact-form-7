@@ -17,7 +17,7 @@ else
 add_action( 'plugins_loaded', 'wpcf7' );
 
 function wpcf7() {
-	global $wpcf7, $wpcf7_shortcode_manager;
+	global $wpcf7;
 
 	if ( ! is_object( $wpcf7 ) ) {
 		$wpcf7 = (object) array(
@@ -28,8 +28,6 @@ function wpcf7() {
 			'result' => array(),
 			'request_uri' => null );
 	}
-
-	$wpcf7_shortcode_manager = new WPCF7_ShortcodeManager();
 
 	wpcf7_load_textdomain();
 	wpcf7_load_modules();

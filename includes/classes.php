@@ -278,28 +278,27 @@ class WPCF7_ContactForm {
 	/* Form Elements */
 
 	function form_do_shortcode() {
-		global $wpcf7_shortcode_manager;
-
+		$manager = WPCF7_ShortcodeManager::get_instance();
 		$form = $this->form;
 
 		if ( WPCF7_AUTOP ) {
-			$form = $wpcf7_shortcode_manager->normalize_shortcode( $form );
+			$form = $manager->normalize_shortcode( $form );
 			$form = wpcf7_autop( $form );
 		}
 
-		$form = $wpcf7_shortcode_manager->do_shortcode( $form );
-		$this->scanned_form_tags = $wpcf7_shortcode_manager->scanned_tags;
+		$form = $manager->do_shortcode( $form );
+		$this->scanned_form_tags = $manager->get_scanned_tags();
 
 		return $form;
 	}
 
 	function form_scan_shortcode( $cond = null ) {
-		global $wpcf7_shortcode_manager;
+		$manager = WPCF7_ShortcodeManager::get_instance();
 
 		if ( ! empty( $this->scanned_form_tags ) ) {
 			$scanned = $this->scanned_form_tags;
 		} else {
-			$scanned = $wpcf7_shortcode_manager->scan_shortcode( $this->form );
+			$scanned = $manager->scan_shortcode( $this->form );
 			$this->scanned_form_tags = $scanned;
 		}
 
