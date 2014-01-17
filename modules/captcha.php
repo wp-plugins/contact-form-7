@@ -53,7 +53,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		}
 
 		$atts['alt'] = 'captcha';
-		$atts['src'] = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+		$atts['src'] = wpcf7_captcha_url( $filename );
 
 		$atts = wpcf7_format_atts( $atts );
 
@@ -157,7 +157,7 @@ function wpcf7_captcha_ajax_refill( $items ) {
 
 		$op = wpcf7_captchac_options( $options );
 		if ( $filename = wpcf7_generate_captcha( $op ) ) {
-			$captcha_url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+			$captcha_url = wpcf7_captcha_url( $filename );
 			$refill[$name] = $captcha_url;
 		}
 	}
@@ -361,6 +361,16 @@ function wpcf7_captcha_tmp_url() {
 		return WPCF7_CAPTCHA_TMP_URL;
 	else
 		return wpcf7_upload_dir( 'url' ) . '/wpcf7_captcha';
+}
+
+function wpcf7_captcha_url( $filename ) {
+	$url = trailingslashit( wpcf7_captcha_tmp_url() ) . $filename;
+
+	if ( is_ssl() && 'http:' == substr( $url, 0, 5 ) ) {
+		$url = 'https:' . substr( $url, 5 );
+	}
+
+	return apply_filters( 'wpcf7_captcha_url', esc_url_raw( $url ) );
 }
 
 function wpcf7_generate_captcha( $options = null ) {
