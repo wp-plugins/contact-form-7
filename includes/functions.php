@@ -181,6 +181,7 @@ function wpcf7_l10n() {
 		'ka_GE' => __( 'Georgian', 'contact-form-7' ),
 		'de_DE' => __( 'German', 'contact-form-7' ),
 		'el' => __( 'Greek', 'contact-form-7' ),
+		'ht' => __( 'Haitian', 'contact-form-7' ),
 		'he_IL' => __( 'Hebrew', 'contact-form-7' ),
 		'hi_IN' => __( 'Hindi', 'contact-form-7' ),
 		'hu_HU' => __( 'Hungarian', 'contact-form-7' ),
