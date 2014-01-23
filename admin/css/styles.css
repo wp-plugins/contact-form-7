@@ -107,8 +107,6 @@ p.tagcode {
 }
 
 input#contact-form-anchor-text, input#contact-form-anchor-text-old {
-	color: #fff;
-	background: #7e4e0b;
 	border: none;
 	width: 100%;
 	-webkit-border-radius: 6px;
@@ -166,12 +164,10 @@ div.tag-generator {
 }
 
 div.tg-pane {
-    border: 1px dashed #999;
+    border: 1px solid #e1e1e1;
     background: #f1f1f1;
     margin: 1ex 0 0 0;
     padding: 10px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
 	line-height: 140%;
 }
 
@@ -201,15 +197,12 @@ div.tg-pane table td {
 div.tg-pane input.tag, div.tg-pane input.mail-tag {
 	width: 100%;
 	border: none;
-	color: #fff;
-	background-color: #7e4e0b;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
 
 div.tg-pane input.mail-tag {
 	width: 50%;
-	background-color: #404f03;
 }
 
 div.tg-mail-tag {

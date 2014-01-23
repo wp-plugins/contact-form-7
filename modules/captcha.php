@@ -254,9 +254,9 @@ function wpcf7_tg_pane_captcha( &$contact_form ) {
 
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?>
 <br />1) <?php echo esc_html( __( "For image", 'contact-form-7' ) ); ?>
-<input type="text" name="captchac" class="tag" readonly="readonly" onfocus="this.select()" />
+<input type="text" name="captchac" class="tag wp-ui-highlight" readonly="readonly" onfocus="this.select()" />
 <br />2) <?php echo esc_html( __( "For input field", 'contact-form-7' ) ); ?>
-<input type="text" name="captchar" class="tag" readonly="readonly" onfocus="this.select()" />
+<input type="text" name="captchar" class="tag wp-ui-highlight" readonly="readonly" onfocus="this.select()" />
 </div>
 </form>
 </div>
