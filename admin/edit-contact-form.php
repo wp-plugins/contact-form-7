@@ -48,13 +48,13 @@ if ( $post ) :
 		<p class="tagcode">
 			<?php echo esc_html( __( "Copy this code and paste it into your post, page or text widget content.", 'contact-form-7' ) ); ?><br />
 
-			<input type="text" id="contact-form-anchor-text" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight" />
+			<input type="text" id="contact-form-anchor-text" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight code" />
 		</p>
 
 		<p class="tagcode" style="display: none;">
 			<?php echo esc_html( __( "Old code is also available.", 'contact-form-7' ) ); ?><br />
 
-			<input type="text" id="contact-form-anchor-text-old" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight" />
+			<input type="text" id="contact-form-anchor-text-old" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight code" />
 		</p>
 		<?php endif; ?>
 

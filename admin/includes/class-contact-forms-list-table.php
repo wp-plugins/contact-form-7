@@ -138,8 +138,10 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$output = '';
 
 		foreach ( $shortcodes as $shortcode ) {
-			$output .= "\n" . '<input type="text" onfocus="this.select();" readonly="readonly"
-				value="' . esc_attr( $shortcode ) . '" class="shortcode-in-list-table" />';
+			$output .= "\n" . '<input type="text"'
+				. ' onfocus="this.select();" readonly="readonly"'
+				. ' value="' . esc_attr( $shortcode ) . '"'
+				. ' class="shortcode-in-list-table code" />';
 		}
 
 		return trim( $output );
