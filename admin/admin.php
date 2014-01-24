@@ -139,8 +139,6 @@ function wpcf7_load_contact_form_admin() {
 
 			$query['post'] = $new_contact_form->id;
 			$query['message'] = 'created';
-		} else {
-			$query['post'] = $contact_form->id;
 		}
 
 		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
