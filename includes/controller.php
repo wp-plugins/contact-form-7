@@ -118,7 +118,7 @@ function wpcf7_submit_nonajax() {
 	$id = (int) $_POST['_wpcf7'];
 
 	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) )
-		$wpcf7->result = $wpcf7_contact_form->submit();
+		$wpcf7_contact_form->submit();
 
 	$wpcf7_contact_form = null;
 }

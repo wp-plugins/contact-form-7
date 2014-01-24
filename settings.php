@@ -21,7 +21,6 @@ function wpcf7() {
 
 	if ( ! is_object( $wpcf7 ) ) {
 		$wpcf7 = (object) array(
-			'result' => array(),
 			'request_uri' => null );
 	}
 

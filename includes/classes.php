@@ -5,6 +5,7 @@ class WPCF7_ContactForm {
 	const post_type = 'wpcf7_contact_form';
 
 	public static $found_items = 0;
+	private static $submission = array(); // result of submit() process
 
 	var $initial = false;
 
@@ -21,6 +22,16 @@ class WPCF7_ContactForm {
 	var $uploaded_files = array();
 
 	var $skip_mail = false;
+
+	private static function add_submission_status( $id, $status ) {
+		self::$submission[$id] = (array) $status;
+	}
+
+	private static function get_submission_status( $id ) {
+		if ( isset( self::$submission[$id] ) ) {
+			return (array) self::$submission[$id];
+		}
+	}
 
 	private static function get_unit_tag( $id = 0 ) {
 		static $global_count = 0;
@@ -180,8 +191,6 @@ class WPCF7_ContactForm {
 	/* Generating Form HTML */
 
 	function form_html( $atts = array() ) {
-		global $wpcf7;
-
 		$atts = wp_parse_args( $atts, array(
 			'html_id' => '',
 			'html_class' => '' ) );
@@ -204,12 +213,14 @@ class WPCF7_ContactForm {
 
 		$class = 'wpcf7-form';
 
+		$result = self::get_submission_status( $this->id );
+
 		if ( $this->is_posted() ) {
-			if ( empty( $wpcf7->result['valid'] ) )
+			if ( empty( $result['valid'] ) )
 				$class .= ' invalid';
-			elseif ( ! empty( $wpcf7->result['spam'] ) )
+			elseif ( ! empty( $result['spam'] ) )
 				$class .= ' spam';
-			elseif ( ! empty( $wpcf7->result['mail_sent'] ) )
+			elseif ( ! empty( $result['mail_sent'] ) )
 				$class .= ' sent';
 			else
 				$class .= ' failed';
@@ -270,27 +281,27 @@ class WPCF7_ContactForm {
 	}
 
 	function form_response_output() {
-		global $wpcf7;
-
 		$class = 'wpcf7-response-output';
 		$role = '';
 		$content = '';
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 
-			if ( empty( $wpcf7->result['valid'] ) )
+			$result = self::get_submission_status( $this->id );
+
+			if ( empty( $result['valid'] ) )
 				$class .= ' wpcf7-validation-errors';
-			elseif ( ! empty( $wpcf7->result['spam'] ) )
+			elseif ( ! empty( $result['spam'] ) )
 				$class .= ' wpcf7-spam-blocked';
-			elseif ( ! empty( $wpcf7->result['mail_sent'] ) )
+			elseif ( ! empty( $result['mail_sent'] ) )
 				$class .= ' wpcf7-mail-sent-ok';
 			else
 				$class .= ' wpcf7-mail-sent-ng';
 
 			$role = 'alert';
 
-			if ( ! empty( $wpcf7->result['message'] ) )
-				$content = $wpcf7->result['message'];
+			if ( ! empty( $result['message'] ) )
+				$content = $result['message'];
 
 		} else {
 			$class .= ' wpcf7-display-none';
@@ -310,15 +321,15 @@ class WPCF7_ContactForm {
 	}
 
 	function validation_error( $name ) {
-		global $wpcf7;
-
 		if ( ! $this->is_posted() )
 			return '';
 
-		if ( ! isset( $wpcf7->result['invalid_reasons'][$name] ) )
+		$result = self::get_submission_status( $this->id );
+
+		if ( ! isset( $result['invalid_reasons'][$name] ) )
 			return '';
 
-		$ve = trim( $wpcf7->result['invalid_reasons'][$name] );
+		$ve = trim( $result['invalid_reasons'][$name] );
 
 		if ( empty( $ve ) )
 			return '';
@@ -509,6 +520,8 @@ class WPCF7_ContactForm {
 		}
 
 		do_action_ref_array( 'wpcf7_submit', array( &$this, $result ) );
+
+		self::add_submission_status( $this->id, $result );
 
 		return $result;
 	}
