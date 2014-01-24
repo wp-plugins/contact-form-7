@@ -110,7 +110,7 @@ function wpcf7_is_xhr() {
 }
 
 function wpcf7_submit_nonajax() {
-	global $wpcf7, $wpcf7_contact_form;
+	global $wpcf7_contact_form;
 
 	if ( ! isset( $_POST['_wpcf7'] ) )
 		return;

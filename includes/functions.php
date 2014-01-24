@@ -381,9 +381,13 @@ function wpcf7_load_modules() {
 }
 
 function wpcf7_get_request_uri() {
-	global $wpcf7;
+	static $request_uri = '';
 
-	return (string) $wpcf7->request_uri;
+	if ( empty( $request_uri ) ) {
+		$request_uri = add_query_arg( array() );
+	}
+
+	return esc_url_raw( $request_uri );
 }
 
 function wpcf7_register_post_types() {

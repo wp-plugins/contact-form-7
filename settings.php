@@ -17,13 +17,6 @@ else
 add_action( 'plugins_loaded', 'wpcf7' );
 
 function wpcf7() {
-	global $wpcf7;
-
-	if ( ! is_object( $wpcf7 ) ) {
-		$wpcf7 = (object) array(
-			'request_uri' => null );
-	}
-
 	wpcf7_load_textdomain();
 	wpcf7_load_modules();
 }
@@ -31,10 +24,7 @@ function wpcf7() {
 add_action( 'init', 'wpcf7_init' );
 
 function wpcf7_init() {
-	global $wpcf7;
-
-	$wpcf7->request_uri = add_query_arg( array() );
-
+	wpcf7_get_request_uri();
 	wpcf7_register_post_types();
 
 	do_action( 'wpcf7_init' );
