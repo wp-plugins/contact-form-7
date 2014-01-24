@@ -860,7 +860,7 @@ class WPCF7_ContactForm {
 	}
 
 	function copy() {
-		$new = new WPCF7_ContactForm();
+		$new = new self;
 		$new->initial = true;
 		$new->title = $this->title . '_copy';
 		$new->locale = $this->locale;
