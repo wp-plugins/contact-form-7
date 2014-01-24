@@ -21,10 +21,6 @@ function wpcf7() {
 
 	if ( ! is_object( $wpcf7 ) ) {
 		$wpcf7 = (object) array(
-			'processing_within' => '',
-			'widget_count' => 0,
-			'unit_count' => 0,
-			'global_unit_count' => 0,
 			'result' => array(),
 			'request_uri' => null );
 	}

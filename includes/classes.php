@@ -22,6 +22,22 @@ class WPCF7_ContactForm {
 
 	var $skip_mail = false;
 
+	private static function get_unit_tag( $id = 0 ) {
+		static $global_count = 0;
+
+		$global_count += 1;
+
+		if ( in_the_loop() ) {
+			$unit_tag = sprintf( 'wpcf7-f%1$d-p%2$d-o%3$d',
+				absint( $id ), get_the_ID(), $global_count );
+		} else {
+			$unit_tag = sprintf( 'wpcf7-f%1$d-o%2$d',
+				absint( $id ), $global_count );
+		}
+
+		return $unit_tag;
+	}
+
 	public static function register_post_type() {
 		register_post_type( self::post_type, array(
 			'labels' => array(
@@ -169,6 +185,8 @@ class WPCF7_ContactForm {
 		$atts = wp_parse_args( $atts, array(
 			'html_id' => '',
 			'html_class' => '' ) );
+
+		$this->unit_tag = self::get_unit_tag( $this->id );
 
 		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 

@@ -123,38 +123,13 @@ function wpcf7_submit_nonajax() {
 	$wpcf7_contact_form = null;
 }
 
-add_action( 'the_post', 'wpcf7_the_post' );
-
-function wpcf7_the_post() {
-	global $wpcf7;
-
-	$wpcf7->processing_within = 'p' . get_the_ID();
-	$wpcf7->unit_count = 0;
-}
-
-add_action( 'loop_end', 'wpcf7_loop_end' );
-
-function wpcf7_loop_end() {
-	global $wpcf7;
-
-	$wpcf7->processing_within = '';
-}
-
 add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
 
 function wpcf7_widget_text_filter( $content ) {
-	global $wpcf7;
-
 	if ( ! preg_match( '/\[[\r\n\t ]*contact-form(-7)?[\r\n\t ].*?\]/', $content ) )
 		return $content;
 
-	$wpcf7->widget_count += 1;
-	$wpcf7->processing_within = 'w' . $wpcf7->widget_count;
-	$wpcf7->unit_count = 0;
-
 	$content = do_shortcode( $content );
-
-	$wpcf7->processing_within = '';
 
 	return $content;
 }
@@ -169,7 +144,7 @@ function wpcf7_add_shortcodes() {
 }
 
 function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
-	global $wpcf7, $wpcf7_contact_form;
+	global $wpcf7_contact_form;
 
 	if ( is_feed() )
 		return '[contact-form-7]';
@@ -197,24 +172,6 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 
 	if ( ! $wpcf7_contact_form )
 		return '[contact-form-7 404 "Not Found"]';
-
-	if ( $wpcf7->processing_within ) { // Inside post content or text widget
-		$wpcf7->unit_count += 1;
-		$unit_count = $wpcf7->unit_count;
-		$processing_within = $wpcf7->processing_within;
-
-	} else { // Inside template
-
-		if ( ! isset( $wpcf7->global_unit_count ) )
-			$wpcf7->global_unit_count = 0;
-
-		$wpcf7->global_unit_count += 1;
-		$unit_count = 1;
-		$processing_within = 't' . $wpcf7->global_unit_count;
-	}
-
-	$unit_tag = 'wpcf7-f' . $wpcf7_contact_form->id . '-' . $processing_within . '-o' . $unit_count;
-	$wpcf7_contact_form->unit_tag = $unit_tag;
 
 	$form = $wpcf7_contact_form->form_html( $atts );
 
