@@ -52,6 +52,16 @@ class WPCF7_Pipes {
 		return $befores;
 	}
 
+	function collect_afters() {
+		$afters = array();
+
+		foreach ( $this->pipes as $pipe ) {
+			$afters[] = $pipe->after;
+		}
+
+		return $afters;
+	}
+
 	function zero() {
 		return empty( $this->pipes );
 	}

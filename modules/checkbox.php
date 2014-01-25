@@ -28,6 +28,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$label_first = $tag->has_option( 'label_first' );
 	$use_label_element = $tag->has_option( 'use_label_element' );
 	$exclusive = $tag->has_option( 'exclusive' );
+	$free_text = $tag->has_option( 'free_text' );
 	$multiple = false;
 
 	if ( 'checkbox' == $tag->basetype )
@@ -61,6 +62,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$is_posted = wpcf7_is_posted();
 
 	$html = '';
+	$count = 0;
 
 	foreach ( (array) $tag->values as $key => $value ) {
 		$checked = false;
@@ -102,11 +104,32 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		if ( $use_label_element )
 			$item = '<label>' . $item . '</label>';
 
-		$item = '<span class="wpcf7-list-item">' . $item . '</span>';
-		$html .= $item;
-
 		if ( false !== $tabindex )
 			$tabindex += 1;
+
+		if ( count( $tag->values ) == ( $count += 1 ) ) { // last round
+			if ( $free_text ) {
+				$free_text_name = sprintf(
+					'_wpcf7_%1$s_free_text_%2$s', $tag->basetype, $tag->name );
+
+				$free_text_atts = array(
+					'name' => $free_text_name,
+					'class' => 'wpcf7-free-text',
+					'tabindex' => $tabindex ? $tabindex : '' );
+
+				if ( wpcf7_is_posted() && isset( $_POST[$free_text_name] ) ) {
+					$free_text_atts['value'] = stripslashes_deep(
+						$_POST[$free_text_name] );
+				}
+
+				$free_text_atts = wpcf7_format_atts( $free_text_atts );
+
+				$item .= sprintf( ' <input type="text" %s />', $free_text_atts );
+			}
+		}
+
+		$item = '<span class="wpcf7-list-item">' . $item . '</span>';
+		$html .= $item;
 	}
 
 	$atts = wpcf7_format_atts( $atts );
@@ -141,6 +164,52 @@ function wpcf7_checkbox_validation_filter( $result, $tag ) {
 	}
 
 	return $result;
+}
+
+
+/* Adding free text field */
+
+add_filter( 'wpcf7_posted_data', 'wpcf7_checkbox_posted_data' );
+
+function wpcf7_checkbox_posted_data( $posted_data ) {
+	$tags = wpcf7_scan_shortcode(
+		array( 'type' => array( 'checkbox', 'checkbox*', 'radio' ) ) );
+
+	if ( empty( $tags ) ) {
+		return $posted_data;
+	}
+
+	foreach ( $tags as $tag ) {
+		$tag = new WPCF7_Shortcode( $tag );
+
+		if ( $tag->has_option( 'free_text' ) ) {
+			if ( WPCF7_USE_PIPE ) {
+				$values = $tag->pipes->collect_afters();
+			} else {
+				$values = $tag->values;
+			}
+
+			$last = array_pop( $values );
+
+			if ( in_array( $last, $posted_data[$tag->name] ) ) {
+				$posted_data[$tag->name] = array_diff(
+					$posted_data[$tag->name], array( $last ) );
+
+				$free_text_name = sprintf(
+					'_wpcf7_%1$s_free_text_%2$s', $tag->basetype, $tag->name );
+
+				$free_text = $posted_data[$free_text_name];
+
+				if ( ! empty( $free_text ) ) {
+					$posted_data[$tag->name][] = trim( $last . ' ' . $free_text );
+				} else {
+					$posted_data[$tag->name][] = $last;
+				}
+			}
+		}
+	}
+
+	return $posted_data;
 }
 
 
