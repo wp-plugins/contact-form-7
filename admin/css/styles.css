@@ -13,34 +13,6 @@ div.wrap div.cf7com-links a {
 	font-weight: bold;
 }
 
-div.wrap div.donation {
-	border-width: 1px;
-	border-style: solid;
-	padding: 0 0.6em;
-	margin: 5px 0 15px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	background-color: #ffffe0;
-	border-color: #e6db55;
-}
-
-div.wrap div.donation p {
-	margin: .7em 0;
-	line-height: 1;
-	padding: 2px;
-	font-size: 107%;
-}
-
-div.wrap div.donation p a {
-	color: #3f3f3f;
-	text-decoration: none;
-}
-
-div.wrap div.donation p a.button {
-	margin-left: 1em;
-	font-weight: bold;
-}
-
 #titlediv {
 	margin-bottom: 20px;
 	position: relative;
