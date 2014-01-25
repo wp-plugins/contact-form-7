@@ -32,6 +32,10 @@ class WPCF7_ContactForm {
 		return self::$current;
 	}
 
+	public static function reset_current() {
+		self::$current = null;
+	}
+
 	private static function add_submission_status( $id, $status ) {
 		self::$submission[$id] = (array) $status;
 	}
@@ -964,16 +968,9 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 }
 
 function wpcf7_get_current_contact_form() {
-	global $wpcf7_contact_form;
-
 	if ( $current = WPCF7_ContactForm::get_current() ) {
 		return $current;
 	}
-
-	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
-		return null;
-
-	return $wpcf7_contact_form;
 }
 
 function wpcf7_is_posted() {

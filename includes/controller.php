@@ -9,19 +9,19 @@ function wpcf7_control_init() {
 }
 
 function wpcf7_ajax_onload() {
-	global $wpcf7_contact_form;
-
-	if ( 'GET' != $_SERVER['REQUEST_METHOD'] || ! isset( $_GET['_wpcf7_is_ajax_call'] ) )
+	if ( 'GET' != $_SERVER['REQUEST_METHOD']
+	|| ! isset( $_GET['_wpcf7_is_ajax_call'] ) ) {
 		return;
+	}
 
 	$echo = '';
+	$items = array();
 
 	if ( isset( $_GET['_wpcf7'] ) ) {
-		$id = (int) $_GET['_wpcf7'];
-
-		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
-			$items = apply_filters( 'wpcf7_ajax_onload', array() );
-			$wpcf7_contact_form = null;
+		if ( $contact_form = wpcf7_contact_form( (int) $_GET['_wpcf7'] ) ) {
+			WPCF7_ContactForm::set_current( $contact_form );
+			$items = apply_filters( 'wpcf7_ajax_onload', $items );
+			WPCF7_ContactForm::reset_current();
 		}
 	}
 
@@ -36,8 +36,6 @@ function wpcf7_ajax_onload() {
 }
 
 function wpcf7_ajax_json_echo() {
-	global $wpcf7_contact_form;
-
 	if ( 'POST' != $_SERVER['REQUEST_METHOD'] || ! isset( $_POST['_wpcf7_is_ajax_call'] ) )
 		return;
 
@@ -47,14 +45,15 @@ function wpcf7_ajax_json_echo() {
 		$id = (int) $_POST['_wpcf7'];
 		$unit_tag = wpcf7_sanitize_unit_tag( $_POST['_wpcf7_unit_tag'] );
 
-		if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) ) {
+		if ( $contact_form = wpcf7_contact_form( $id ) ) {
+			WPCF7_ContactForm::set_current( $contact_form );
 
 			$items = array(
 				'mailSent' => false,
 				'into' => '#' . $unit_tag,
 				'captcha' => null );
 
-			$result = $wpcf7_contact_form->submit( true );
+			$result = $contact_form->submit( true );
 
 			if ( ! empty( $result['message'] ) )
 				$items['message'] = $result['message'];
@@ -85,7 +84,7 @@ function wpcf7_ajax_json_echo() {
 
 			$items = apply_filters( 'wpcf7_ajax_json_echo', $items, $result );
 
-			$wpcf7_contact_form = null;
+			WPCF7_ContactForm::reset_current();
 		}
 	}
 
@@ -110,17 +109,16 @@ function wpcf7_is_xhr() {
 }
 
 function wpcf7_submit_nonajax() {
-	global $wpcf7_contact_form;
-
 	if ( ! isset( $_POST['_wpcf7'] ) )
 		return;
 
-	$id = (int) $_POST['_wpcf7'];
+	if ( $contact_form = wpcf7_contact_form( (int) $_POST['_wpcf7'] ) ) {
+		WPCF7_ContactForm::set_current( $contact_form );
 
-	if ( $wpcf7_contact_form = wpcf7_contact_form( $id ) )
-		$wpcf7_contact_form->submit();
+		$contact_form->submit();
 
-	$wpcf7_contact_form = null;
+		WPCF7_ContactForm::reset_current();
+	}
 }
 
 add_filter( 'widget_text', 'wpcf7_widget_text_filter', 9 );
@@ -144,8 +142,6 @@ function wpcf7_add_shortcodes() {
 }
 
 function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
-	global $wpcf7_contact_form;
-
 	if ( is_feed() )
 		return '[contact-form-7]';
 
@@ -159,25 +155,27 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 		$id = (int) $atts['id'];
 		$title = trim( $atts['title'] );
 
-		if ( ! $wpcf7_contact_form = wpcf7_contact_form( $id ) )
-			$wpcf7_contact_form = wpcf7_get_contact_form_by_title( $title );
+		if ( ! $contact_form = wpcf7_contact_form( $id ) )
+			$contact_form = wpcf7_get_contact_form_by_title( $title );
 
 	} else {
 		if ( is_string( $atts ) )
 			$atts = explode( ' ', $atts, 2 );
 
 		$id = (int) array_shift( $atts );
-		$wpcf7_contact_form = wpcf7_get_contact_form_by_old_id( $id );
+		$contact_form = wpcf7_get_contact_form_by_old_id( $id );
 	}
 
-	if ( ! $wpcf7_contact_form )
+	if ( ! $contact_form )
 		return '[contact-form-7 404 "Not Found"]';
 
-	$form = $wpcf7_contact_form->form_html( $atts );
+	WPCF7_ContactForm::set_current( $contact_form );
 
-	$wpcf7_contact_form = null;
+	$html = $contact_form->form_html( $atts );
 
-	return $form;
+	WPCF7_ContactForm::reset_current();
+
+	return $html;
 }
 
 if ( WPCF7_LOAD_JS )
