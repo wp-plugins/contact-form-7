@@ -65,6 +65,8 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$count = 0;
 
 	foreach ( (array) $tag->values as $key => $value ) {
+		$class = 'wpcf7-list-item';
+
 		$checked = false;
 
 		if ( $is_posted && ! empty( $post ) ) {
@@ -107,7 +109,15 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		if ( false !== $tabindex )
 			$tabindex += 1;
 
-		if ( count( $tag->values ) == ( $count += 1 ) ) { // last round
+		$count += 1;
+
+		if ( 1 == $count ) {
+			$class .= ' first';
+		}
+
+		if ( count( $tag->values ) == $count ) { // last round
+			$class .= ' last';
+
 			if ( $free_text ) {
 				$free_text_name = sprintf(
 					'_wpcf7_%1$s_free_text_%2$s', $tag->basetype, $tag->name );
@@ -125,10 +135,12 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 				$free_text_atts = wpcf7_format_atts( $free_text_atts );
 
 				$item .= sprintf( ' <input type="text" %s />', $free_text_atts );
+
+				$class .= ' has-free-text';
 			}
 		}
 
-		$item = '<span class="wpcf7-list-item">' . $item . '</span>';
+		$item = '<span class="' . esc_attr( $class ) . '">' . $item . '</span>';
 		$html .= $item;
 	}
 
@@ -182,6 +194,12 @@ function wpcf7_checkbox_posted_data( $posted_data ) {
 	foreach ( $tags as $tag ) {
 		$tag = new WPCF7_Shortcode( $tag );
 
+		if ( ! isset( $posted_data[$tag->name] ) ) {
+			continue;
+		}
+
+		$posted_items = (array) $posted_data[$tag->name];
+
 		if ( $tag->has_option( 'free_text' ) ) {
 			if ( WPCF7_USE_PIPE ) {
 				$values = $tag->pipes->collect_afters();
@@ -191,9 +209,8 @@ function wpcf7_checkbox_posted_data( $posted_data ) {
 
 			$last = array_pop( $values );
 
-			if ( in_array( $last, $posted_data[$tag->name] ) ) {
-				$posted_data[$tag->name] = array_diff(
-					$posted_data[$tag->name], array( $last ) );
+			if ( in_array( $last, $posted_items ) ) {
+				$posted_items = array_diff( $posted_items, array( $last ) );
 
 				$free_text_name = sprintf(
 					'_wpcf7_%1$s_free_text_%2$s', $tag->basetype, $tag->name );
@@ -201,12 +218,14 @@ function wpcf7_checkbox_posted_data( $posted_data ) {
 				$free_text = $posted_data[$free_text_name];
 
 				if ( ! empty( $free_text ) ) {
-					$posted_data[$tag->name][] = trim( $last . ' ' . $free_text );
+					$posted_items[] = trim( $last . ' ' . $free_text );
 				} else {
-					$posted_data[$tag->name][] = $last;
+					$posted_items[] = $last;
 				}
 			}
 		}
+
+		$posted_data[$tag->name] = $posted_items;
 	}
 
 	return $posted_data;

@@ -46,6 +46,8 @@
 
 		this.find('.wpcf7-exclusive-checkbox').wpcf7ExclusiveCheckbox();
 
+		this.find('.wpcf7-list-item.has-free-text').wpcf7ToggleCheckboxFreetext();
+
 		this.find('[placeholder]').wpcf7Placeholder();
 
 		if (_wpcf7.jqueryUi && ! _wpcf7.supportHtml5.date) {
@@ -195,6 +197,29 @@
 				if (n.hasClass('wpcf7-invert') && n.is(':checked')
 				|| ! n.hasClass('wpcf7-invert') && ! n.is(':checked'))
 					submit.attr('disabled', 'disabled');
+			});
+		});
+	};
+
+	$.fn.wpcf7ToggleCheckboxFreetext = function() {
+		return this.each(function() {
+			var $wrap = $(this).closest('.wpcf7-form-control');
+
+			if ($(this).find(':checkbox, :radio').is(':checked')) {
+				$(this).find(':input.wpcf7-free-text').prop('disabled', false);
+			} else {
+				$(this).find(':input.wpcf7-free-text').prop('disabled', true);
+			}
+
+			$wrap.find(':checkbox, :radio').change(function() {
+				var $cb = $('.has-free-text', $wrap).find(':checkbox, :radio');
+				var $freetext = $(':input.wpcf7-free-text', $wrap);
+
+				if ($cb.is(':checked')) {
+					$freetext.prop('disabled', false).focus();
+				} else {
+					$freetext.prop('disabled', true);
+				}
 			});
 		});
 	};
