@@ -217,7 +217,7 @@ function wpcf7_load_contact_form_admin() {
 	}
 
 	if ( $post ) {
-		WPCF7_ContactForm::$current = $post;
+		WPCF7_ContactForm::set_current( $post );
 	}
 }
 
