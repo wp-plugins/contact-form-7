@@ -56,7 +56,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 		$this->items = WPCF7_ContactForm::find( $args );
 
-		$total_items = WPCF7_ContactForm::$found_items;
+		$total_items = WPCF7_ContactForm::count();
 		$total_pages = ceil( $total_items / $per_page );
 
 		$this->set_pagination_args( array(
