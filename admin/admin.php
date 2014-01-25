@@ -47,7 +47,7 @@ function wpcf7_set_screen_options( $result, $option, $value ) {
 }
 
 function wpcf7_load_contact_form_admin() {
-	global $wpcf7_contact_form, $plugin_page;
+	global $plugin_page;
 
 	$action = wpcf7_current_action();
 
@@ -216,7 +216,9 @@ function wpcf7_load_contact_form_admin() {
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
 
-	$wpcf7_contact_form = $post;
+	if ( $post ) {
+		WPCF7_ContactForm::$current = $post;
+	}
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
@@ -254,10 +256,7 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 }
 
 function wpcf7_admin_management_page() {
-	global $wpcf7_contact_form;
-
-	if ( $wpcf7_contact_form ) {
-		$post =& $wpcf7_contact_form;
+	if ( $post = wpcf7_get_current_contact_form() ) {
 		$post_id = $post->initial ? -1 : $post->id;
 
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
@@ -297,10 +296,7 @@ function wpcf7_admin_management_page() {
 }
 
 function wpcf7_admin_add_new_page() {
-	global $wpcf7_contact_form;
-
-	if ( $wpcf7_contact_form ) {
-		$post =& $wpcf7_contact_form;
+	if ( $post = wpcf7_get_current_contact_form() ) {
 		$post_id = -1;
 
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';

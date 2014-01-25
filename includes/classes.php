@@ -5,6 +5,7 @@ class WPCF7_ContactForm {
 	const post_type = 'wpcf7_contact_form';
 
 	public static $found_items = 0;
+	public static $current = null;
 	private static $submission = array(); // result of submit() process
 
 	var $initial = false;
@@ -956,6 +957,10 @@ function wpcf7_get_contact_form_default_pack( $args = '' ) {
 
 function wpcf7_get_current_contact_form() {
 	global $wpcf7_contact_form;
+
+	if ( ! empty( WPCF7_ContactForm::$current ) ) {
+		return WPCF7_ContactForm::$current;
+	}
 
 	if ( ! is_a( $wpcf7_contact_form, 'WPCF7_ContactForm' ) )
 		return null;
