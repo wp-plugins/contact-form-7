@@ -229,6 +229,7 @@ input.shortcode-in-list-table {
 
 input[readonly].code {
 	background: #f3f3f3;
+	color: #3f3f3f;
 }
 
 /* welcome panel */
