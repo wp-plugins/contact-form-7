@@ -227,6 +227,10 @@ input.shortcode-in-list-table {
 	font-size: 90%;
 }
 
+input[readonly].code {
+	background: #f3f3f3;
+}
+
 /* welcome panel */
 .welcome-panel p.message {
 	line-height: 1.4em;
