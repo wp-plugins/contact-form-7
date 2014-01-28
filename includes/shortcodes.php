@@ -337,6 +337,32 @@ class WPCF7_Shortcode {
 		return $default;
 	}
 
+	public function get_default_option() {
+		$options = (array) $this->get_option( 'default' );
+
+		if ( empty( $options ) ) {
+			return false;
+		}
+
+		foreach ( $options as $opt ) {
+			$opt = sanitize_key( $opt );
+
+			if ( 'user_' == substr( $opt, 0, 5 ) && is_user_logged_in() ) {
+				$primary_props = array( 'user_login', 'user_email', 'user_url' );
+				$opt = in_array( $opt, $primary_props ) ? $opt : substr( $opt, 5 );
+
+				$user = wp_get_current_user();
+				$user_prop = $user->get( $opt );
+
+				if ( ! empty( $user_prop ) ) {
+					return $user_prop;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	public function get_first_match_option( $pattern ) {
 		foreach( (array) $this->options as $option ) {
 			if ( preg_match( $pattern, $option, $matches ) )

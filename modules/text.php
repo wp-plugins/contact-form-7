@@ -54,24 +54,8 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
 		$atts['placeholder'] = $value;
 		$value = '';
-	} elseif ( empty( $value ) && is_user_logged_in() ) {
-		$user = wp_get_current_user();
-
-		$user_options = array(
-			'default:user_login' => 'user_login',
-			'default:user_email' => 'user_email',
-			'default:user_url' => 'user_url',
-			'default:user_first_name' => 'first_name',
-			'default:user_last_name' => 'last_name',
-			'default:user_nickname' => 'nickname',
-			'default:user_display_name' => 'display_name' );
-
-		foreach ( $user_options as $option => $prop ) {
-			if ( $tag->has_option( $option ) ) {
-				$value = $user->{$prop};
-				break;
-			}
-		}
+	} elseif ( empty( $value ) ) {
+		$value = $tag->get_default_option();
 	}
 
 	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
