@@ -42,7 +42,7 @@ if ( $post ) :
 	<div id="poststuff" class="metabox-holder">
 
 	<div id="titlediv">
-		<input type="text" id="wpcf7-title" name="wpcf7-title" size="40" value="<?php echo esc_attr( $post->title ); ?>"<?php echo $disabled; ?> />
+		<input type="text" id="wpcf7-title" name="wpcf7-title" size="80" value="<?php echo esc_attr( $post->title ); ?>"<?php echo $disabled; ?> />
 
 		<?php if ( ! $post->initial ) : ?>
 		<p class="tagcode">
