@@ -363,22 +363,6 @@ function wpcf7_add_meta_boxes( $post_id ) {
 
 /* Misc */
 
-add_action( 'wpcf7_admin_notices', 'wpcf7_admin_before_subsubsub' );
-
-function wpcf7_admin_before_subsubsub() {
-	// wpcf7_admin_before_subsubsub is deprecated. Use wpcf7_admin_notices instead.
-
-	$current_screen = get_current_screen();
-
-	if ( 'toplevel_page_wpcf7' != $current_screen->id )
-		return;
-
-	if ( empty( $_GET['post'] ) || ! $contact_form = wpcf7_contact_form( $_GET['post'] ) )
-		return;
-
-	do_action_ref_array( 'wpcf7_admin_before_subsubsub', array( &$contact_form ) );
-}
-
 add_action( 'wpcf7_admin_notices', 'wpcf7_admin_updated_message' );
 
 function wpcf7_admin_updated_message() {
