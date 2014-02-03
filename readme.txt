@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 3.6
+Tested up to: 3.8.1
+Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.7 =
+
+* Support free_text option that allows checkbox/radio to have an additional free text field.
+* Restore floating-tip style validation error as an option.
+* Support html_id and html_class attributes in [contact-form-7] shortcode.
+* Fixed bug that Flamingo stored submissions in demo-mode.
+* Fixed bug where auto-p function wrapped [response] with p.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.48.0.
+* Translation for Haitian has been created. Translations for German, Hungarian, Czech, Turkish, Lithuanian, French, Basque, and Brazilian Portuguese have been updated.
 
 = 3.6 =
 
