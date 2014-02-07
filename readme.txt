@@ -69,7 +69,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Irish (ga_IE) - [Vikas Arora](http://www.wiznicworld.com/)
 * Italian (it_IT) - [Bruno](http://www.brunosalzano.com), [Gianni Diurno](http://gidibao.net/)
 * Japanese (ja) - [Takayuki Miyoshi](http://ideasilo.wordpress.com)
-* Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/)
+* Korean (ko_KR) - Seong Eun Lee, [Jong-In Kim](http://incommunity.codex.kr/wordpress/), [martian36](http://martian36.tistory.com/)
 * Latvian (lv) - [Sandis Veinbergs](http://www.kleofass.lv/)
 * Lithuanian (lt_LT) - [Ernestas Kardzys](http://www.ernestas.info/), [Vincent G](http://www.host1free.com/), [Mantas Malcius](http://mantas.malcius.lt/)
 * Macedonian (mk_MK) - [Darko](http://www.findermind.com/)
