@@ -49,7 +49,7 @@ class WPCF7_ShortcodeManager {
 
 		$pattern = $this->get_shortcode_regex();
 		return preg_replace_callback( '/' . $pattern . '/s',
-			array( &$this, 'normalize_space_cb' ), $content );
+			array( $this, 'normalize_space_cb' ), $content );
 	}
 
 	private function normalize_space_cb( $m ) {
@@ -82,7 +82,7 @@ class WPCF7_ShortcodeManager {
 
 		$pattern = $this->get_shortcode_regex();
 		return preg_replace_callback( '/' . $pattern . '/s',
-			array( &$this, 'do_shortcode_tag' ), $content );
+			array( $this, 'do_shortcode_tag' ), $content );
 	}
 
 	public function scan_shortcode( $content ) {

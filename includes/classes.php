@@ -687,9 +687,9 @@ class WPCF7_ContactForm {
 			. '[\t ]*\](\]?)/';
 
 		if ( $html )
-			$callback = array( &$this, 'mail_callback_html' );
+			$callback = array( $this, 'mail_callback_html' );
 		else
-			$callback = array( &$this, 'mail_callback' );
+			$callback = array( $this, 'mail_callback' );
 
 		return preg_replace_callback( $regex, $callback, $content );
 	}
