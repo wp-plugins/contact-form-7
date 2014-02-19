@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-09 16:36+0900\n"
-"PO-Revision-Date: 2013-08-15 12:30+0100\n"
-"Last-Translator: Martijn van Egmond <martijn@tensheep.nl>\n"
+"POT-Creation-Date: 2014-02-19 09:25+0100\n"
+"PO-Revision-Date: 2014-02-19 09:34+0100\n"
+"Last-Translator: Tim de Hoog <tidh@ecommany.com>\n"
 "Language-Team: \n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,166 +14,149 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/wp-contact-form-7.php:5
-msgid "Just another contact form plugin. Simple but flexible."
-msgstr "Gewoon nog een contactformulier plugin. Simpel, maar erg flexibel."
-
-#: contact-form-7/settings.php:202
-#, php-format
-msgid "Contact form %d"
-msgstr "Contactformulier %d"
-
-#: contact-form-7/admin/admin.php:8 contact-form-7/admin/admin.php:259
-#: contact-form-7/admin/edit-contact-form.php:12
-#: contact-form-7/modules/flamingo.php:14
+#: contact-form-7/admin/admin.php:15 contact-form-7/modules/flamingo.php:123
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:8
+#: contact-form-7/admin/admin.php:16
 msgid "Contact"
 msgstr "Contact"
 
-#: contact-form-7/admin/admin.php:13
-msgid "Edit Contact Forms"
-msgstr "Bewerk contactformulieren"
+#: contact-form-7/admin/admin.php:21
+#: contact-form-7/admin/edit-contact-form.php:15
+msgid "Edit Contact Form"
+msgstr "Bewerk contactformulier"
 
-#: contact-form-7/admin/admin.php:13
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
-msgid "Edit"
-msgstr "Bewerk"
-
-#: contact-form-7/admin/admin.php:41 contact-form-7/admin/admin.php:114
-msgid "You are not allowed to edit this item."
-msgstr "Je hebt geen toestemming om dit item te bewerken."
-
-#: contact-form-7/admin/admin.php:155
-msgid "You are not allowed to delete this item."
-msgstr "Je hebt geen toestemming om dit item te verwijderen."
-
-#: contact-form-7/admin/admin.php:158
-msgid "Error in deleting."
-msgstr "Er is een fout opgetreden tijdens het verwijderen."
-
-#: contact-form-7/admin/admin.php:197 contact-form-7/includes/classes.php:27
+#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:214
+#: contact-form-7/admin/admin.php:275 contact-form-7/includes/classes.php:67
 msgid "Contact Forms"
 msgstr "Contact formulieren"
 
-#: contact-form-7/admin/admin.php:234
-msgid "Generate Tag"
-msgstr "Genereer tag"
+#: contact-form-7/admin/admin.php:29 contact-form-7/admin/admin.php:318
+#: contact-form-7/admin/edit-contact-form.php:13
+msgid "Add New Contact Form"
+msgstr "Voeg contactformulier toe"
 
-#: contact-form-7/admin/admin.php:261 contact-form-7/admin/admin.php:293
-#: contact-form-7/admin/admin.php:306
-#: contact-form-7/admin/edit-contact-form.php:15
+#: contact-form-7/admin/admin.php:30 contact-form-7/admin/admin.php:277
+#: contact-form-7/admin/admin.php:323 contact-form-7/admin/admin.php:335
+#: contact-form-7/admin/edit-contact-form.php:17
 msgid "Add New"
 msgstr "Voeg nieuwe toe"
 
-#: contact-form-7/admin/admin.php:265
+#: contact-form-7/admin/admin.php:59 contact-form-7/admin/admin.php:132
+msgid "You are not allowed to edit this item."
+msgstr "Je hebt geen toestemming om dit item te bewerken."
+
+#: contact-form-7/admin/admin.php:171
+msgid "You are not allowed to delete this item."
+msgstr "Je hebt geen toestemming om dit item te verwijderen."
+
+#: contact-form-7/admin/admin.php:174
+msgid "Error in deleting."
+msgstr "Er is een fout opgetreden tijdens het verwijderen."
+
+#: contact-form-7/admin/admin.php:253
+msgid "Generate Tag"
+msgstr "Genereer tag"
+
+#: contact-form-7/admin/admin.php:281
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Zoekresultaten voor &#8220;%s&#8221;"
 
-#: contact-form-7/admin/admin.php:274
+#: contact-form-7/admin/admin.php:290
 msgid "Search Contact Forms"
 msgstr "Zoek contactformulieren"
 
-#: contact-form-7/admin/admin.php:292
+#: contact-form-7/admin/admin.php:322
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "Gebruik de standaardtaal (%s)"
 
-#: contact-form-7/admin/admin.php:296
+#: contact-form-7/admin/admin.php:326
 msgid "Or"
 msgstr "Of"
 
-#: contact-form-7/admin/admin.php:301
+#: contact-form-7/admin/admin.php:330
 msgid "(select language)"
 msgstr "(selecteer een taal)"
 
-#: contact-form-7/admin/admin.php:313
+#: contact-form-7/admin/admin.php:342
 msgid "Form"
 msgstr "Van"
 
-#: contact-form-7/admin/admin.php:316
+#: contact-form-7/admin/admin.php:345
 msgid "Mail"
 msgstr "Mail"
 
-#: contact-form-7/admin/admin.php:319
+#: contact-form-7/admin/admin.php:348
 msgid "Mail (2)"
 msgstr "Mail (2)"
 
-#: contact-form-7/admin/admin.php:324
+#: contact-form-7/admin/admin.php:353
 msgid "Use mail (2)"
 msgstr "Gebruik mail (2)"
 
-#: contact-form-7/admin/admin.php:326
+#: contact-form-7/admin/admin.php:355
 msgid "Messages"
 msgstr "Berichten"
 
-#: contact-form-7/admin/admin.php:329
+#: contact-form-7/admin/admin.php:358
 msgid "Additional Settings"
 msgstr "Aanvullende instellingen"
 
-#: contact-form-7/admin/admin.php:360
+#: contact-form-7/admin/admin.php:373
 msgid "Contact form created."
 msgstr "Contactformulier aangemaakt."
 
-#: contact-form-7/admin/admin.php:362
+#: contact-form-7/admin/admin.php:375
 msgid "Contact form saved."
 msgstr "Contactformulier opgeslagen."
 
-#: contact-form-7/admin/admin.php:364
+#: contact-form-7/admin/admin.php:377
 msgid "Contact form deleted."
 msgstr "Contactformulier verwijderd."
 
-#: contact-form-7/admin/admin.php:381
+#: contact-form-7/admin/admin.php:394
 msgid "Settings"
 msgstr "Instellingen"
 
-#: contact-form-7/admin/admin.php:392
+#: contact-form-7/admin/admin.php:405
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:393
+#: contact-form-7/admin/admin.php:406
 msgid "Docs"
 msgstr "Documenten"
 
-#: contact-form-7/admin/admin.php:394
+#: contact-form-7/admin/admin.php:407
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:395
+#: contact-form-7/admin/admin.php:408
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact-form-7/admin/admin.php:396
+#: contact-form-7/admin/admin.php:409
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:397
+#: contact-form-7/admin/admin.php:410
 msgid "Support"
 msgstr "Support"
 
-#: contact-form-7/admin/admin.php:428
-msgid "Contact Form 7 needs your support. Please donate today."
-msgstr "Contact Form 7 heeft jouw steun nodig. Doneer vandaag nog."
-
-#: contact-form-7/admin/admin.php:429
-msgid "Your contribution is needed for making this plugin better."
-msgstr "Jouw bijdrage is nodig voor het verbeteren van deze plugin."
-
-#: contact-form-7/admin/admin.php:435
+#: contact-form-7/admin/admin.php:411 contact-form-7/admin/admin.php:467
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:435
+#: contact-form-7/admin/admin.php:412 contact-form-7/admin/admin.php:467
 msgid "Donate"
 msgstr "Doneer"
 
-#: contact-form-7/admin/admin.php:455
+#: contact-form-7/admin/admin.php:434
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -181,31 +165,122 @@ msgstr ""
 "<strong>Contact Form 7 %1$s vereist WordPress %2$s of hoger.</strong> a href="
 "\"%3$s\">update WordPress</a> eerst."
 
-#: contact-form-7/admin/edit-contact-form.php:47
+#: contact-form-7/admin/admin.php:460
+msgid "Dismiss"
+msgstr "Sluiten"
+
+#: contact-form-7/admin/admin.php:465
+msgid "Contact Form 7 Needs Your Support"
+msgstr "Contact Form 7 heeft jouw steun nodig."
+
+#: contact-form-7/admin/admin.php:466
+msgid ""
+"It is hard to continue development and support for this plugin without "
+"contributions from users like you. If you enjoy using Contact Form 7 and "
+"find it useful, please consider making a donation."
+msgstr ""
+"Het is moeilijk om door te ontwikkelen en support te verlenen voor deze "
+"plugin zonder bijdrage van gebruikers zoals jou. Als je Contact Form 7 met "
+"plezier gebruikt en je vind het zinvol, overweeg dan een donatie te maken."
+
+#: contact-form-7/admin/admin.php:471
+msgid "Get Started"
+msgstr "Aan de slag"
+
+#: contact-form-7/admin/admin.php:473
+msgid "http://contactform7.com/getting-started-with-contact-form-7/"
+msgstr "http://contactform7.com/getting-started-with-contact-form-7/"
+
+#: contact-form-7/admin/admin.php:473
+msgid "Getting Started with Contact Form 7"
+msgstr "Aan de slag met Contact Form 7"
+
+#: contact-form-7/admin/admin.php:474
+msgid "http://contactform7.com/admin-screen/"
+msgstr "http://contactform7.com/admin-screen/"
+
+#: contact-form-7/admin/admin.php:474
+msgid "Admin Screen"
+msgstr "Beheer scherm"
+
+#: contact-form-7/admin/admin.php:475
+msgid "http://contactform7.com/tag-syntax/"
+msgstr "http://contactform7.com/tag-syntax/"
+
+#: contact-form-7/admin/admin.php:475
+msgid "How Tags Work"
+msgstr "Hoe tags werken"
+
+#: contact-form-7/admin/admin.php:476
+msgid "http://contactform7.com/setting-up-mail/"
+msgstr "http://contactform7.com/setting-up-mail/"
+
+#: contact-form-7/admin/admin.php:476
+msgid "Setting Up Mail"
+msgstr "E-mail instellen"
+
+#: contact-form-7/admin/admin.php:481
+msgid "Did You Know?"
+msgstr "Wist je dat?"
+
+#: contact-form-7/admin/admin.php:483
+msgid "http://contactform7.com/spam-filtering-with-akismet/"
+msgstr "http://contactform7.com/spam-filtering-with-akismet/"
+
+#: contact-form-7/admin/admin.php:483
+msgid "Spam Filtering with Akismet"
+msgstr "Spam filteren met Akismet"
+
+#: contact-form-7/admin/admin.php:484
+msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
+msgstr "http://contactform7.com/save-submitted-messages-with-flamingo/"
+
+#: contact-form-7/admin/admin.php:484
+msgid "Save Messages with Flamingo"
+msgstr "Berichten opslaan met Flamingo"
+
+#: contact-form-7/admin/admin.php:485
+msgid "http://contactform7.com/selectable-recipient-with-pipes/"
+msgstr "http://contactform7.com/selectable-recipient-with-pipes/"
+
+#: contact-form-7/admin/admin.php:485
+msgid "Selectable Recipient with Pipes"
+msgstr "Selecteerbare ontvangers met pipes"
+
+#: contact-form-7/admin/admin.php:486
+msgid ""
+"http://contactform7.com/tracking-form-submissions-with-google-analytics/"
+msgstr ""
+"http://contactform7.com/tracking-form-submissions-with-google-analytics/"
+
+#: contact-form-7/admin/admin.php:486
+msgid "Tracking with Google Analytics"
+msgstr "Volgen met Goolge Analytics"
+
+#: contact-form-7/admin/edit-contact-form.php:49
 msgid ""
 "Copy this code and paste it into your post, page or text widget content."
 msgstr ""
 "Kopieer deze code en plak hem in de inhoud van je bericht, pagina of widget."
 
-#: contact-form-7/admin/edit-contact-form.php:53
+#: contact-form-7/admin/edit-contact-form.php:55
 msgid "Old code is also available."
 msgstr "De oude code is ook beschikbaar."
 
-#: contact-form-7/admin/edit-contact-form.php:61
+#: contact-form-7/admin/edit-contact-form.php:63
 msgid "Save"
 msgstr "Opslaan"
 
-#: contact-form-7/admin/edit-contact-form.php:68
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
-msgid "Copy"
-msgstr "Kopieer"
+#: contact-form-7/admin/edit-contact-form.php:70
+msgid "Duplicate"
+msgstr "Dupliceer"
 
-#: contact-form-7/admin/edit-contact-form.php:73
+#: contact-form-7/admin/edit-contact-form.php:75
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
 msgid "Delete"
 msgstr "Verwijder"
 
-#: contact-form-7/admin/edit-contact-form.php:75
+#: contact-form-7/admin/edit-contact-form.php:77
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -226,25 +301,33 @@ msgid "Author"
 msgstr "Auteur"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
-#: contact-form-7/modules/date.php:142
+#: contact-form-7/modules/date.php:144
 msgid "Date"
 msgstr "Datum"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+msgid "Edit"
+msgstr "Bewerk"
+
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+msgid "Copy"
+msgstr "Kopieer"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
 msgstr "Bewerk &#8220;%s&#8221;"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:156
 msgid "Y/m/d g:i:s A"
 msgstr "Y/m/d g:i:s A"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
 #, php-format
 msgid "%s ago"
 msgstr "%s geleden"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:165
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
@@ -276,15 +359,15 @@ msgstr "HTML indeling gebruiken"
 msgid "Message body:"
 msgstr "Berichttekst:"
 
-#: contact-form-7/includes/classes.php:28
+#: contact-form-7/includes/classes.php:68
 msgid "Contact Form"
 msgstr "Contactformulier"
 
-#: contact-form-7/includes/classes.php:833
+#: contact-form-7/includes/classes.php:148
 msgid "Untitled"
 msgstr "Zonder titel"
 
-#: contact-form-7/includes/controller.php:243
+#: contact-form-7/includes/controller.php:202
 msgid "Sending ..."
 msgstr "Verzenden ..."
 
@@ -404,321 +487,329 @@ msgstr "Bericht inhoud:"
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr "Deze e-mail is verzonden vanuit het contactformulier op %1$s %2$s"
 
-#: contact-form-7/includes/functions.php:164
+#: contact-form-7/includes/functions.php:155
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
-#: contact-form-7/includes/functions.php:165
+#: contact-form-7/includes/functions.php:156
 msgid "Albanian"
 msgstr "Albanees"
 
-#: contact-form-7/includes/functions.php:166
+#: contact-form-7/includes/functions.php:157
 msgid "Arabic"
 msgstr "Arabisch"
 
-#: contact-form-7/includes/functions.php:167
+#: contact-form-7/includes/functions.php:158
 msgid "Armenian"
 msgstr "Armeens"
 
-#: contact-form-7/includes/functions.php:168
+#: contact-form-7/includes/functions.php:159
 msgid "Azerbaijani"
 msgstr "Azerbeidzjaans"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:160
 msgid "Bangla"
 msgstr "Bengaals"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:161
 msgid "Basque"
 msgstr "Baskisch"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:162
 msgid "Belarusian"
 msgstr "Wit-Russich"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:163
 msgid "Bosnian"
 msgstr "Bosnisch"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:164
 msgid "Brazilian Portuguese"
 msgstr "Braziliaans-Portugees"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:165
 msgid "Bulgarian"
 msgstr "Bulgaars"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:166
 msgid "Catalan"
 msgstr "Catalaans"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:167
+msgid "Central Kurdish"
+msgstr "Centraal Koerdisch"
+
+#: contact-form-7/includes/functions.php:168
 msgid "Chinese (Simplified)"
 msgstr "Chinees (Vereenvoudigd)"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:169
 msgid "Chinese (Traditional)"
 msgstr "Chinees (Traditioneel)"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:170
 msgid "Croatian"
 msgstr "Kraotisch"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:171
 msgid "Czech"
 msgstr "Tsjechisch"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:172
 msgid "Danish"
 msgstr "Deens"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:173
 msgid "Dutch"
 msgstr "Nederlands"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:174
 msgid "English"
 msgstr "Engels"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:175
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:176
 msgid "Estonian"
 msgstr "Ests"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:177
 msgid "Finnish"
 msgstr "Fins"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:178
 msgid "French"
 msgstr "Frans"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:179
 msgid "Galician"
 msgstr "Galicisch"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:180
 msgid "Gujarati"
 msgstr "Gujarati"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:181
 msgid "Georgian"
 msgstr "Georgisch"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:182
 msgid "German"
 msgstr "Duits"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:183
 msgid "Greek"
 msgstr "Grieks"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:184
+msgid "Haitian"
+msgstr "Haïtiaans"
+
+#: contact-form-7/includes/functions.php:185
 msgid "Hebrew"
 msgstr "Hebreews"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:186
 msgid "Hindi"
 msgstr "Hindi"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:187
 msgid "Hungarian"
 msgstr "Hongaars"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:188
 msgid "Indian Bengali"
 msgstr "Indisch Bengali"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:189
 msgid "Indonesian"
 msgstr "Indonesisch"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:190
 msgid "Irish"
 msgstr "Iers"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:191
 msgid "Italian"
 msgstr "Italiaans"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:192
 msgid "Japanese"
 msgstr "Japans"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:193
 msgid "Korean"
 msgstr "Koreaans"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:194
 msgid "Latvian"
 msgstr "Lets"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:195
 msgid "Lithuanian"
 msgstr "Litouws"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:196
 msgid "Macedonian"
 msgstr "Macedonisch"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:197
 msgid "Malay"
 msgstr "Maleis"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:198
 msgid "Malayalam"
 msgstr "Malayalam"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:199
 msgid "Maltese"
 msgstr "Maltees"
 
-#: contact-form-7/includes/functions.php:207
+#: contact-form-7/includes/functions.php:200
 msgid "Norwegian"
 msgstr "Noors"
 
-#: contact-form-7/includes/functions.php:208
+#: contact-form-7/includes/functions.php:201
 msgid "Persian"
 msgstr "Perzisch"
 
-#: contact-form-7/includes/functions.php:209
+#: contact-form-7/includes/functions.php:202
 msgid "Polish"
 msgstr "Pools"
 
-#: contact-form-7/includes/functions.php:210
+#: contact-form-7/includes/functions.php:203
 msgid "Portuguese"
 msgstr "Portugees"
 
-#: contact-form-7/includes/functions.php:211
+#: contact-form-7/includes/functions.php:204
 msgid "Russian"
 msgstr "Russisch"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:205
 msgid "Romanian"
 msgstr "Roemeens"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:206
 msgid "Serbian"
 msgstr "Servisch"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:207
 msgid "Sinhala"
 msgstr "Sinhala"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:208
 msgid "Slovak"
 msgstr "Slovaaks"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:209
 msgid "Slovene"
 msgstr "Sloveens"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:210
 msgid "Spanish"
 msgstr "Spaans"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:211
 msgid "Swedish"
 msgstr "Zweeds"
 
-#: contact-form-7/includes/functions.php:219
+#: contact-form-7/includes/functions.php:212
 msgid "Tamil"
 msgstr "Tamil"
 
-#: contact-form-7/includes/functions.php:220
+#: contact-form-7/includes/functions.php:213
 msgid "Thai"
 msgstr "Thais"
 
-#: contact-form-7/includes/functions.php:221
+#: contact-form-7/includes/functions.php:214
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: contact-form-7/includes/functions.php:222
+#: contact-form-7/includes/functions.php:215
 msgid "Turkish"
 msgstr "Turks"
 
-#: contact-form-7/includes/functions.php:223
+#: contact-form-7/includes/functions.php:216
 msgid "Ukrainian"
 msgstr "Oekraïens"
 
-#: contact-form-7/includes/functions.php:224
+#: contact-form-7/includes/functions.php:217
 msgid "Vietnamese"
 msgstr "Vietnamees"
 
-#: contact-form-7/modules/acceptance.php:138
+#: contact-form-7/modules/acceptance.php:133
 msgid "Acceptance"
 msgstr "Acceptatie"
 
-#: contact-form-7/modules/acceptance.php:147
-#: contact-form-7/modules/captcha.php:204
-#: contact-form-7/modules/checkbox.php:182 contact-form-7/modules/date.php:159
-#: contact-form-7/modules/file.php:238 contact-form-7/modules/number.php:169
-#: contact-form-7/modules/quiz.php:163 contact-form-7/modules/select.php:150
-#: contact-form-7/modules/text.php:228 contact-form-7/modules/textarea.php:110
+#: contact-form-7/modules/acceptance.php:142
+#: contact-form-7/modules/captcha.php:206
+#: contact-form-7/modules/checkbox.php:270 contact-form-7/modules/date.php:161
+#: contact-form-7/modules/file.php:236 contact-form-7/modules/number.php:171
+#: contact-form-7/modules/quiz.php:166 contact-form-7/modules/select.php:152
+#: contact-form-7/modules/text.php:214 contact-form-7/modules/textarea.php:112
 msgid "Name"
 msgstr "Naam"
 
-#: contact-form-7/modules/acceptance.php:152
-#: contact-form-7/modules/acceptance.php:155
-#: contact-form-7/modules/captcha.php:211
-#: contact-form-7/modules/captcha.php:214
-#: contact-form-7/modules/captcha.php:219
-#: contact-form-7/modules/captcha.php:222
-#: contact-form-7/modules/captcha.php:226
-#: contact-form-7/modules/captcha.php:237
-#: contact-form-7/modules/captcha.php:240
-#: contact-form-7/modules/captcha.php:245
-#: contact-form-7/modules/captcha.php:248
-#: contact-form-7/modules/checkbox.php:187
-#: contact-form-7/modules/checkbox.php:190 contact-form-7/modules/date.php:164
-#: contact-form-7/modules/date.php:167 contact-form-7/modules/date.php:172
-#: contact-form-7/modules/date.php:175 contact-form-7/modules/date.php:180
-#: contact-form-7/modules/date.php:185 contact-form-7/modules/file.php:243
-#: contact-form-7/modules/file.php:246 contact-form-7/modules/file.php:251
-#: contact-form-7/modules/file.php:254 contact-form-7/modules/number.php:174
-#: contact-form-7/modules/number.php:177 contact-form-7/modules/number.php:182
-#: contact-form-7/modules/number.php:185 contact-form-7/modules/number.php:190
-#: contact-form-7/modules/number.php:195 contact-form-7/modules/quiz.php:168
-#: contact-form-7/modules/quiz.php:171 contact-form-7/modules/quiz.php:176
-#: contact-form-7/modules/quiz.php:179 contact-form-7/modules/select.php:155
-#: contact-form-7/modules/select.php:158 contact-form-7/modules/submit.php:59
+#: contact-form-7/modules/acceptance.php:147
+#: contact-form-7/modules/acceptance.php:150
+#: contact-form-7/modules/captcha.php:213
+#: contact-form-7/modules/captcha.php:216
+#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/captcha.php:239
+#: contact-form-7/modules/captcha.php:242
+#: contact-form-7/modules/captcha.php:247
+#: contact-form-7/modules/captcha.php:250
+#: contact-form-7/modules/checkbox.php:275
+#: contact-form-7/modules/checkbox.php:278 contact-form-7/modules/date.php:166
+#: contact-form-7/modules/date.php:169 contact-form-7/modules/date.php:174
+#: contact-form-7/modules/date.php:177 contact-form-7/modules/date.php:182
+#: contact-form-7/modules/date.php:187 contact-form-7/modules/file.php:241
+#: contact-form-7/modules/file.php:244 contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:252 contact-form-7/modules/number.php:176
+#: contact-form-7/modules/number.php:179 contact-form-7/modules/number.php:184
+#: contact-form-7/modules/number.php:187 contact-form-7/modules/number.php:192
+#: contact-form-7/modules/number.php:197 contact-form-7/modules/quiz.php:171
+#: contact-form-7/modules/quiz.php:174 contact-form-7/modules/quiz.php:179
+#: contact-form-7/modules/quiz.php:182 contact-form-7/modules/select.php:157
+#: contact-form-7/modules/select.php:160 contact-form-7/modules/submit.php:59
 #: contact-form-7/modules/submit.php:62 contact-form-7/modules/submit.php:67
-#: contact-form-7/modules/text.php:233 contact-form-7/modules/text.php:236
-#: contact-form-7/modules/text.php:241 contact-form-7/modules/text.php:244
-#: contact-form-7/modules/text.php:250 contact-form-7/modules/text.php:263
-#: contact-form-7/modules/textarea.php:115
-#: contact-form-7/modules/textarea.php:118
-#: contact-form-7/modules/textarea.php:123
-#: contact-form-7/modules/textarea.php:126
-#: contact-form-7/modules/textarea.php:131
-#: contact-form-7/modules/textarea.php:136
+#: contact-form-7/modules/text.php:219 contact-form-7/modules/text.php:222
+#: contact-form-7/modules/text.php:227 contact-form-7/modules/text.php:230
+#: contact-form-7/modules/text.php:236 contact-form-7/modules/text.php:249
+#: contact-form-7/modules/textarea.php:117
+#: contact-form-7/modules/textarea.php:120
+#: contact-form-7/modules/textarea.php:125
+#: contact-form-7/modules/textarea.php:128
+#: contact-form-7/modules/textarea.php:133
+#: contact-form-7/modules/textarea.php:138
 msgid "optional"
 msgstr "optioneel"
 
-#: contact-form-7/modules/acceptance.php:161
+#: contact-form-7/modules/acceptance.php:156
 msgid "Make this checkbox checked by default?"
 msgstr "Checkbox standaard aanvinken?"
 
-#: contact-form-7/modules/acceptance.php:162
+#: contact-form-7/modules/acceptance.php:157
 msgid "Make this checkbox work inversely?"
 msgstr "Checkbox omgekeerd laten werken?"
 
-#: contact-form-7/modules/acceptance.php:163
+#: contact-form-7/modules/acceptance.php:158
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr ""
 "* Dit betekent dat de bezoeker het vakje moet uitvinken om de voorwaarden te "
 "accepteren."
 
-#: contact-form-7/modules/acceptance.php:168
-#: contact-form-7/modules/captcha.php:253
-#: contact-form-7/modules/checkbox.php:210 contact-form-7/modules/date.php:193
-#: contact-form-7/modules/file.php:259 contact-form-7/modules/number.php:203
-#: contact-form-7/modules/quiz.php:191 contact-form-7/modules/select.php:175
-#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:271
-#: contact-form-7/modules/textarea.php:144
+#: contact-form-7/modules/acceptance.php:163
+#: contact-form-7/modules/captcha.php:255
+#: contact-form-7/modules/checkbox.php:298 contact-form-7/modules/date.php:195
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:205
+#: contact-form-7/modules/quiz.php:194 contact-form-7/modules/select.php:177
+#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:257
+#: contact-form-7/modules/textarea.php:146
 msgid "Copy this code and paste it into the form left."
 msgstr "Kopieer deze code en plak hem in het formulier aan de linkerzijde."
 
@@ -731,65 +822,65 @@ msgstr ""
 "plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin "
 "geÃ¯nstalleerd hebben."
 
-#: contact-form-7/modules/captcha.php:176
+#: contact-form-7/modules/captcha.php:178
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "De ingevulde verificatiecode komt niet overeen met de CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:177
+#: contact-form-7/modules/captcha.php:179
 msgid "Your entered code is incorrect."
 msgstr "De ingevulde code is onjuist."
 
-#: contact-form-7/modules/captcha.php:190
+#: contact-form-7/modules/captcha.php:192
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:201
+#: contact-form-7/modules/captcha.php:203
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr ""
 "Let op: Om CAPTCHA te gebruiken moet de Really Simple CAPTCHA plugin "
 "geïnstalleerd zijn."
 
-#: contact-form-7/modules/captcha.php:208
+#: contact-form-7/modules/captcha.php:210
 msgid "Image settings"
 msgstr "Afbeeldingsinstellingen"
 
-#: contact-form-7/modules/captcha.php:219
+#: contact-form-7/modules/captcha.php:221
 msgid "Foreground color"
 msgstr "Voorgrond kleur"
 
-#: contact-form-7/modules/captcha.php:222
+#: contact-form-7/modules/captcha.php:224
 msgid "Background color"
 msgstr "Achtergrondkleur"
 
-#: contact-form-7/modules/captcha.php:226
+#: contact-form-7/modules/captcha.php:228
 msgid "Image size"
 msgstr "Afbeeldingsgrootte"
 
-#: contact-form-7/modules/captcha.php:227
+#: contact-form-7/modules/captcha.php:229
 msgid "Small"
 msgstr "Klein"
 
-#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/captcha.php:230
 msgid "Medium"
 msgstr "Medium"
 
-#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:231
 msgid "Large"
 msgstr "Groot"
 
-#: contact-form-7/modules/captcha.php:234
+#: contact-form-7/modules/captcha.php:236
 msgid "Input field settings"
 msgstr "Invoerveld instellingen"
 
-#: contact-form-7/modules/captcha.php:254
+#: contact-form-7/modules/captcha.php:256
 msgid "For image"
 msgstr "Voor afbeelding"
 
-#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/captcha.php:258
 msgid "For input field"
 msgstr "Voor invoerveld"
 
-#: contact-form-7/modules/captcha.php:286
+#: contact-form-7/modules/captcha.php:289
 #, php-format
 msgid ""
 "This contact form contains CAPTCHA fields, but the temporary folder for the "
@@ -800,7 +891,7 @@ msgstr ""
 "bestanden (%s) bestaat niet of is niet beschrijfbaar. Je kan de map aanmaken "
 "of de permissie manueel wijzigen."
 
-#: contact-form-7/modules/captcha.php:292
+#: contact-form-7/modules/captcha.php:295
 msgid ""
 "This contact form contains CAPTCHA fields, but the necessary libraries (GD "
 "and FreeType) are not available on your server."
@@ -808,136 +899,136 @@ msgstr ""
 "Dit contact formulier bevat CAPTCHA velden, maar de benodigde bibliotheken "
 "(GD en FreeType) zijn niet beschikbaar op je server."
 
-#: contact-form-7/modules/checkbox.php:155
+#: contact-form-7/modules/checkbox.php:243
 msgid "Checkboxes"
 msgstr "Selectievakjes (checkboxes)"
 
-#: contact-form-7/modules/checkbox.php:158
+#: contact-form-7/modules/checkbox.php:246
 msgid "Radio buttons"
 msgstr "Keuzerondjes (radio buttons)"
 
-#: contact-form-7/modules/checkbox.php:179 contact-form-7/modules/date.php:158
-#: contact-form-7/modules/file.php:237 contact-form-7/modules/number.php:168
-#: contact-form-7/modules/select.php:149 contact-form-7/modules/text.php:227
-#: contact-form-7/modules/textarea.php:109
+#: contact-form-7/modules/checkbox.php:267 contact-form-7/modules/date.php:160
+#: contact-form-7/modules/file.php:235 contact-form-7/modules/number.php:170
+#: contact-form-7/modules/select.php:151 contact-form-7/modules/text.php:213
+#: contact-form-7/modules/textarea.php:111
 msgid "Required field?"
 msgstr "Verplichtveld?"
 
-#: contact-form-7/modules/checkbox.php:195
-#: contact-form-7/modules/select.php:163
+#: contact-form-7/modules/checkbox.php:283
+#: contact-form-7/modules/select.php:165
 msgid "Choices"
 msgstr "Keuzes"
 
-#: contact-form-7/modules/checkbox.php:197
-#: contact-form-7/modules/select.php:165
+#: contact-form-7/modules/checkbox.php:285
+#: contact-form-7/modules/select.php:167
 msgid "* One choice per line."
 msgstr "* Eén keuze per regel."
 
-#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/checkbox.php:289
 msgid "Put a label first, a checkbox last?"
 msgstr "Plaats eerst een label, een selectievakje (checkbox) als laatste?"
 
-#: contact-form-7/modules/checkbox.php:202
+#: contact-form-7/modules/checkbox.php:290
 msgid "Wrap each item with <label> tag?"
 msgstr "Wikkel elk item met <label> tag?"
 
-#: contact-form-7/modules/checkbox.php:204
+#: contact-form-7/modules/checkbox.php:292
 msgid "Make checkboxes exclusive?"
 msgstr "Selectievakjes (checkboxes) exclusief maken?"
 
-#: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:195
-#: contact-form-7/modules/number.php:205 contact-form-7/modules/select.php:177
-#: contact-form-7/modules/text.php:273 contact-form-7/modules/textarea.php:146
+#: contact-form-7/modules/checkbox.php:300 contact-form-7/modules/date.php:197
+#: contact-form-7/modules/number.php:207 contact-form-7/modules/select.php:179
+#: contact-form-7/modules/text.php:259 contact-form-7/modules/textarea.php:148
 msgid "And, put this code into the Mail fields below."
 msgstr "En plaats deze code in het mail veld onder."
 
-#: contact-form-7/modules/date.php:118
+#: contact-form-7/modules/date.php:120
 msgid "Date format that the sender entered is invalid"
 msgstr "Datumnotatie die de gebruiker heeft ingevuld is ongeldig"
 
-#: contact-form-7/modules/date.php:119
+#: contact-form-7/modules/date.php:121
 msgid "Date format seems invalid."
 msgstr "Datumnotatie lijkt ongeldig."
 
-#: contact-form-7/modules/date.php:123
+#: contact-form-7/modules/date.php:125
 msgid "Date is earlier than minimum limit"
 msgstr "Datum is eerder dan de minimale limiet"
 
-#: contact-form-7/modules/date.php:124
+#: contact-form-7/modules/date.php:126
 msgid "This date is too early."
 msgstr "Deze datum is te vroeg."
 
-#: contact-form-7/modules/date.php:128
+#: contact-form-7/modules/date.php:130
 msgid "Date is later than maximum limit"
 msgstr "Datum is later dan de maximale limiet"
 
-#: contact-form-7/modules/date.php:129
+#: contact-form-7/modules/date.php:131
 msgid "This date is too late."
 msgstr "Deze datum is te laat."
 
-#: contact-form-7/modules/date.php:185 contact-form-7/modules/number.php:195
-#: contact-form-7/modules/text.php:263 contact-form-7/modules/textarea.php:136
+#: contact-form-7/modules/date.php:187 contact-form-7/modules/number.php:197
+#: contact-form-7/modules/text.php:249 contact-form-7/modules/textarea.php:138
 msgid "Default value"
 msgstr "Standaardwaarde"
 
-#: contact-form-7/modules/date.php:188 contact-form-7/modules/number.php:198
-#: contact-form-7/modules/text.php:266 contact-form-7/modules/textarea.php:139
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/number.php:200
+#: contact-form-7/modules/text.php:252 contact-form-7/modules/textarea.php:141
 msgid "Use this text as placeholder?"
 msgstr "Gebruik deze tekst als tijdelijke aanduiding (placeholder)?"
 
-#: contact-form-7/modules/file.php:198
+#: contact-form-7/modules/file.php:196
 msgid "Uploading a file fails for any reason"
 msgstr "Het uploaden van het bestand is mislukt"
 
-#: contact-form-7/modules/file.php:199
+#: contact-form-7/modules/file.php:197
 msgid "Failed to upload file."
 msgstr "Uploaden van het bestand is mislukt"
 
-#: contact-form-7/modules/file.php:203
+#: contact-form-7/modules/file.php:201
 msgid "Uploaded file is not allowed file type"
 msgstr "Het up te loaden bestand heeft een ongeldige extensie"
 
-#: contact-form-7/modules/file.php:204
+#: contact-form-7/modules/file.php:202
 msgid "This file type is not allowed."
 msgstr "Dit bestandstype is niet toegestaan"
 
-#: contact-form-7/modules/file.php:208
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is too large"
 msgstr "Het te uploaden bestand is te groot"
 
-#: contact-form-7/modules/file.php:209
+#: contact-form-7/modules/file.php:207
 msgid "This file is too large."
 msgstr "Dit bestand is te groot"
 
-#: contact-form-7/modules/file.php:213
+#: contact-form-7/modules/file.php:211
 msgid "Uploading a file fails for PHP error"
 msgstr "Uploaden van een bestand is mislukt door een PHP fout"
 
-#: contact-form-7/modules/file.php:214
+#: contact-form-7/modules/file.php:212
 msgid "Failed to upload file. Error occurred."
 msgstr "Uploaden bestand mislukt. Er is een fout opgetreden."
 
-#: contact-form-7/modules/file.php:228
+#: contact-form-7/modules/file.php:226
 msgid "File upload"
 msgstr "Bestandsupload"
 
-#: contact-form-7/modules/file.php:251
+#: contact-form-7/modules/file.php:249
 msgid "File size limit"
 msgstr "Maximale bestandsgrootte"
 
-#: contact-form-7/modules/file.php:251
+#: contact-form-7/modules/file.php:249
 msgid "bytes"
 msgstr "bytes"
 
-#: contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:252
 msgid "Acceptable file types"
 msgstr "Toegestane bestandstypes"
 
-#: contact-form-7/modules/file.php:261
+#: contact-form-7/modules/file.php:259
 msgid "And, put this code into the File Attachments field below."
 msgstr "En plaats deze code in het bestandsbijlagen veld hieronder."
 
-#: contact-form-7/modules/file.php:286
+#: contact-form-7/modules/file.php:285
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -958,67 +1049,67 @@ msgstr ""
 "ontstaan.</strong> <a href=\"%s\" target=\"_blank\">Lees hier hoe dit "
 "vermeden kan worden.</a>"
 
-#: contact-form-7/modules/number.php:121
+#: contact-form-7/modules/number.php:123
 msgid "Number format that the sender entered is invalid"
 msgstr "Getalnotatie die de gebruiker ingevuld heeft is ongeldig"
 
-#: contact-form-7/modules/number.php:122
+#: contact-form-7/modules/number.php:124
 msgid "Number format seems invalid."
 msgstr "Getalnotatie lijkt ongeldig"
 
-#: contact-form-7/modules/number.php:126
+#: contact-form-7/modules/number.php:128
 msgid "Number is smaller than minimum limit"
 msgstr "Nummer is kleiner dan de minimale limiet"
 
-#: contact-form-7/modules/number.php:127
+#: contact-form-7/modules/number.php:129
 msgid "This number is too small."
 msgstr "Dit nummer is te klein"
 
-#: contact-form-7/modules/number.php:131
+#: contact-form-7/modules/number.php:133
 msgid "Number is larger than maximum limit"
 msgstr "Nummer is groter dan de maximale limiet"
 
-#: contact-form-7/modules/number.php:132
+#: contact-form-7/modules/number.php:134
 msgid "This number is too large."
 msgstr "Dit nummer is te groot"
 
-#: contact-form-7/modules/number.php:145
+#: contact-form-7/modules/number.php:147
 msgid "Number (spinbox)"
 msgstr "Nummer (spinbox)"
 
-#: contact-form-7/modules/number.php:148
+#: contact-form-7/modules/number.php:150
 msgid "Number (slider)"
 msgstr "Nummer (slider)"
 
-#: contact-form-7/modules/quiz.php:140
+#: contact-form-7/modules/quiz.php:143
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "Er is geen juist antwoord voor de quiz ingevuld"
 
-#: contact-form-7/modules/quiz.php:141
+#: contact-form-7/modules/quiz.php:144
 msgid "Your answer is not correct."
 msgstr "Jouw antwoord is niet juist."
 
-#: contact-form-7/modules/quiz.php:154
+#: contact-form-7/modules/quiz.php:157
 msgid "Quiz"
 msgstr "Quiz"
 
-#: contact-form-7/modules/quiz.php:184
+#: contact-form-7/modules/quiz.php:187
 msgid "Quizzes"
 msgstr "Quizzen"
 
-#: contact-form-7/modules/quiz.php:186
+#: contact-form-7/modules/quiz.php:189
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* quiz|antwoord (bijv. 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:140
+#: contact-form-7/modules/select.php:142
 msgid "Drop-down menu"
 msgstr "Keuzemenu (dropdown menu)"
 
-#: contact-form-7/modules/select.php:169
+#: contact-form-7/modules/select.php:171
 msgid "Allow multiple selections?"
 msgstr "Meerdere selecties toestaan?"
 
-#: contact-form-7/modules/select.php:170
+#: contact-form-7/modules/select.php:172
 msgid "Insert a blank item as the first option?"
 msgstr "Een leeg item als eerste optie invoegen?"
 
@@ -1030,62 +1121,73 @@ msgstr "Verzendknop"
 msgid "Label"
 msgstr "Label"
 
-#: contact-form-7/modules/text.php:166
+#: contact-form-7/modules/text.php:152
 msgid "Email address that the sender entered is invalid"
 msgstr "E-mailadres die de gebruiker heeft ingevoerd is ongeldig"
 
-#: contact-form-7/modules/text.php:167
+#: contact-form-7/modules/text.php:153
 msgid "Email address seems invalid."
 msgstr "E-mailadres lijkt ongeldig."
 
-#: contact-form-7/modules/text.php:171
+#: contact-form-7/modules/text.php:157
 msgid "URL that the sender entered is invalid"
 msgstr "URL die de gebruiker heeft ingevoerd is ongeldig"
 
-#: contact-form-7/modules/text.php:172
+#: contact-form-7/modules/text.php:158
 msgid "URL seems invalid."
 msgstr "URL lijkt ongeldig"
 
-#: contact-form-7/modules/text.php:176
+#: contact-form-7/modules/text.php:162
 msgid "Telephone number that the sender entered is invalid"
 msgstr "Telefoonnummer die de gebruiker heeft ingevoerd is ongeldig"
 
-#: contact-form-7/modules/text.php:177
+#: contact-form-7/modules/text.php:163
 msgid "Telephone number seems invalid."
 msgstr "Telefoonnummer lijkt ongeldig"
 
-#: contact-form-7/modules/text.php:190
+#: contact-form-7/modules/text.php:176
 msgid "Text field"
 msgstr "Tekstveld"
 
-#: contact-form-7/modules/text.php:193
+#: contact-form-7/modules/text.php:179
 msgid "Email"
 msgstr "E-mail"
 
-#: contact-form-7/modules/text.php:196
+#: contact-form-7/modules/text.php:182
 msgid "URL"
 msgstr "URL"
 
-#: contact-form-7/modules/text.php:199
+#: contact-form-7/modules/text.php:185
 msgid "Telephone number"
 msgstr "Telefoonnummer"
 
-#: contact-form-7/modules/text.php:250
+#: contact-form-7/modules/text.php:236
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:252
+#: contact-form-7/modules/text.php:238
 msgid "This field requires author's name"
 msgstr "Dit veld vereist de naam van de auteur"
 
-#: contact-form-7/modules/text.php:254
+#: contact-form-7/modules/text.php:240
 msgid "This field requires author's email address"
 msgstr "Dit veld vereist het e-mailadres van de auteur"
 
-#: contact-form-7/modules/text.php:256
+#: contact-form-7/modules/text.php:242
 msgid "This field requires author's URL"
 msgstr "Dit veld vereist de URL van de auteur"
 
-#: contact-form-7/modules/textarea.php:100
+#: contact-form-7/modules/textarea.php:102
 msgid "Text area"
 msgstr "Tekstgebied"
+
+#: contact-form-7/settings.php:70
+#, php-format
+msgid "Contact form %d"
+msgstr "Contactformulier %d"
+
+#~ msgid "Just another contact form plugin. Simple but flexible."
+#~ msgstr "Gewoon nog een contactformulier plugin. Simpel, maar erg flexibel."
+
+#~ msgid "Your contribution is needed for making this plugin better."
+#~ msgstr "Jouw bijdrage is nodig voor het verbeteren van deze plugin."
