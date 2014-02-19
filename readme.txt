@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.6
 Tested up to: 3.8.1
-Stable tag: 3.7
+Stable tag: 3.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 1. screenshot-1.png 
 
 == Changelog ==
+
+= 3.7.1 =
+
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.49.0.
+* Fixed a bug of auto-p formatting around [response].
+* Translations for Russian, Korean, Hungarian, and German have been updated.
 
 = 3.7 =
 
