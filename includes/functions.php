@@ -399,4 +399,39 @@ function wpcf7_register_post_types() {
 	}
 }
 
+function wpcf7_version( $args = '' ) {
+	$defaults = array(
+		'limit' => -1,
+		'only_major' => false );
+
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( $args['only_major'] ) {
+		$args['limit'] = 2;
+	}
+
+	$args['limit'] = (int) $args['limit'];
+
+	$ver = WPCF7_VERSION;
+	$ver = strtr( $ver, '_-+', '...' );
+	$ver = preg_replace( '/[^0-9.]+/', ".$0.", $ver );
+	$ver = preg_replace( '/[.]+/', ".", $ver );
+	$ver = trim( $ver, '.' );
+	$ver = explode( '.', $ver );
+
+	if ( -1 < $args['limit'] ) {
+		$ver = array_slice( $ver, 0, $args['limit'] );
+	}
+
+	$ver = implode( '.', $ver );
+
+	return $ver;
+}
+
+function wpcf7_version_grep( $version, array $input ) {
+	$pattern = '/^' . preg_quote( (string) $version, '/' ) . '(?:\.|$)/';
+
+	return preg_grep( $pattern, $input );
+}
+
 ?>

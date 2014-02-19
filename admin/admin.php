@@ -450,9 +450,10 @@ function wpcf7_welcome_panel() {
 	$vers = (array) get_user_meta( get_current_user_id(),
 		'wpcf7_hide_welcome_panel_on', true );
 
-	if ( in_array( WPCF7_VERSION, $vers ) ) {
+	if ( wpcf7_version_grep( wpcf7_version( 'only_major=1' ), $vers ) ) {
 		$classes .= ' hidden';
 	}
+
 ?>
 <div id="welcome-panel" class="<?php echo esc_attr( $classes ); ?>">
 	<?php wp_nonce_field( 'wpcf7-welcome-panel-nonce', 'welcomepanelnonce', false ); ?>
