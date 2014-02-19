@@ -42,7 +42,8 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee );
 
 	/* wpcf7: take care of [response] tag */
-	$pee = preg_replace( '!<p>\s*(\[response[^]]*\])\s*</p>!', "$1", $pee );
+	$pee = preg_replace( '!<p>\s*(\[response[^]]*\])!', "$1", $pee );
+	$pee = preg_replace( '!(\[response[^]]*\])\s*</p>!', "$1", $pee );
 
 	if ( $br ) {
 		/* wpcf7: add textarea */
