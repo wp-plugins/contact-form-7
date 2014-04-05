@@ -54,7 +54,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
 		$atts['placeholder'] = $value;
 		$value = '';
-	} elseif ( empty( $value ) ) {
+	} elseif ( '' === $value ) {
 		$value = $tag->get_default_option();
 	}
 
