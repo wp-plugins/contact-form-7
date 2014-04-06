@@ -209,7 +209,7 @@ class WPCF7_ContactForm {
 
 		$this->unit_tag = self::get_unit_tag( $this->id );
 
-		$form = '<div class="wpcf7" id="' . $this->unit_tag . '">';
+		$html = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 
 		$url = wpcf7_get_request_uri();
 
@@ -238,37 +238,41 @@ class WPCF7_ContactForm {
 				$class .= ' failed';
 		}
 
-		$atts['html_class'] = array_unique( array_map( 'sanitize_html_class',
-			explode( ' ', $atts['html_class'] ) ) );
-
 		if ( $atts['html_class'] ) {
-			$class .= ' ' . implode( ' ', $atts['html_class'] );
+			$class .= ' ' . $atts['html_class'];
 		}
 
-		$class = apply_filters( 'wpcf7_form_class_attr', trim( $class ) );
+		if ( $this->in_demo_mode() ) {
+			$class .= ' demo';
+		}
+
+		$class = explode( ' ', $class );
+		$class = array_map( 'sanitize_html_class', $class );
+		$class = array_filter( $class );
+		$class = array_unique( $class );
+		$class = implode( ' ', $class );
+		$class = apply_filters( 'wpcf7_form_class_attr', $class );
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
 		$novalidate = apply_filters( 'wpcf7_form_novalidate',
 			wpcf7_support_html5() ? ' novalidate="novalidate"' : '' );
 
-		$form .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
+		$html .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
 			. ( $id_attr ? ' id="' . esc_attr( $id_attr ) . '"' : '' )
 			. ' class="' . esc_attr( $class ) . '"'
 			. $enctype . $novalidate . '>' . "\n";
 
-		$form .= $this->form_hidden_fields();
-
-		$form .= $this->form_elements();
+		$html .= $this->form_hidden_fields();
+		$html .= $this->form_elements();
 
 		if ( ! $this->responses_count )
-			$form .= $this->form_response_output();
+			$html .= $this->form_response_output();
 
-		$form .= '</form>';
+		$html .= '</form>';
+		$html .= '</div>';
 
-		$form .= '</div>';
-
-		return $form;
+		return $html;
 	}
 
 	public function form_hidden_fields() {
