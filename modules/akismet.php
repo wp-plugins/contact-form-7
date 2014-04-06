@@ -108,7 +108,7 @@ function wpcf7_akismet_comment_check( $comment ) {
 	$query_string = '';
 
 	foreach ( $comment as $key => $data )
-		$query_string .= $key . '=' . urlencode( stripslashes( (string) $data ) ) . '&';
+		$query_string .= $key . '=' . urlencode( wp_unslash( (string) $data ) ) . '&';
 
 	$response = akismet_http_post( $query_string,
 		$akismet_api_host, '/1.1/comment-check', $akismet_api_port );

@@ -54,7 +54,7 @@ function wpcf7_number_shortcode_handler( $tag ) {
 	}
 
 	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
-		$value = stripslashes_deep( $_POST[$tag->name] );
+		$value = wp_unslash( $_POST[$tag->name] );
 
 	$atts['value'] = $value;
 

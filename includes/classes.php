@@ -449,11 +449,11 @@ class WPCF7_ContactForm {
 					$new_value = array();
 
 					foreach ( $value as $v )
-						$new_value[] = $pipes->do_pipe( stripslashes( $v ) );
+						$new_value[] = $pipes->do_pipe( wp_unslash( $v ) );
 
 					$value = $new_value;
 				} else {
-					$value = $pipes->do_pipe( stripslashes( $value ) );
+					$value = $pipes->do_pipe( wp_unslash( $value ) );
 				}
 			}
 
@@ -753,7 +753,7 @@ class WPCF7_ContactForm {
 			$replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced,
 				$submitted, $html );
 
-			return stripslashes( $replaced );
+			return wp_unslash( $replaced );
 		}
 
 		$special = apply_filters( 'wpcf7_special_mail_tags', '', $tagname, $html );

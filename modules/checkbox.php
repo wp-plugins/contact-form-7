@@ -128,7 +128,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 					'tabindex' => $tabindex ? $tabindex : '' );
 
 				if ( wpcf7_is_posted() && isset( $_POST[$free_text_name] ) ) {
-					$free_text_atts['value'] = stripslashes_deep(
+					$free_text_atts['value'] = wp_unslash(
 						$_POST[$free_text_name] );
 				}
 

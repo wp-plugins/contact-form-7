@@ -59,7 +59,7 @@ function wpcf7_text_shortcode_handler( $tag ) {
 	}
 
 	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
-		$value = stripslashes_deep( $_POST[$tag->name] );
+		$value = wp_unslash( $_POST[$tag->name] );
 
 	$atts['value'] = $value;
 
@@ -98,7 +98,7 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 	$name = $tag->name;
 
 	$value = isset( $_POST[$name] )
-		? trim( stripslashes( strtr( (string) $_POST[$name], "\n", " " ) ) )
+		? trim( wp_unslash( strtr( (string) $_POST[$name], "\n", " " ) ) )
 		: '';
 
 	if ( 'text*' == $tag->type ) {
