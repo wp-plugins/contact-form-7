@@ -29,7 +29,7 @@ function wpcf7_file_shortcode_handler( $tag ) {
 
 	$atts['size'] = $tag->get_size_option( '40' );
 	$atts['class'] = $tag->get_class_option( $class );
-	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 	if ( $tag->is_required() )

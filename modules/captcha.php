@@ -31,7 +31,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		$atts = array();
 
 		$atts['class'] = $tag->get_class_option( $class );
-		$atts['id'] = $tag->get_option( 'id', 'id', true );
+		$atts['id'] = $tag->get_id_option();
 
 		$op = array( // Default
 			'img_size' => array( 72, 24 ),
@@ -74,7 +74,7 @@ function wpcf7_captcha_shortcode_handler( $tag ) {
 		$atts['size'] = $tag->get_size_option( '40' );
 		$atts['maxlength'] = $tag->get_maxlength_option();
 		$atts['class'] = $tag->get_class_option( $class );
-		$atts['id'] = $tag->get_option( 'id', 'id', true );
+		$atts['id'] = $tag->get_id_option();
 		$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 		$atts['aria-invalid'] = $validation_error ? 'true' : 'false';

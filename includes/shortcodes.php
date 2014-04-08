@@ -277,6 +277,10 @@ class WPCF7_Shortcode {
 		}
 	}
 
+	public function get_id_option() {
+		return $this->get_option( 'id', 'id', true );
+	}
+
 	public function get_class_option( $default = '' ) {
 		if ( is_string( $default ) )
 			$default = explode( ' ', $default );

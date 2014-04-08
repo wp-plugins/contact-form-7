@@ -31,7 +31,7 @@ function wpcf7_date_shortcode_handler( $tag ) {
 	$atts = array();
 
 	$atts['class'] = $tag->get_class_option( $class );
-	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['min'] = $tag->get_option( 'min', 'date', true );
 	$atts['max'] = $tag->get_option( 'max', 'date', true );

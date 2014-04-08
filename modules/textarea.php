@@ -31,7 +31,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts['rows'] = $tag->get_rows_option( '10' );
 	$atts['maxlength'] = $tag->get_maxlength_option();
 	$atts['class'] = $tag->get_class_option( $class );
-	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
 	if ( $tag->has_option( 'readonly' ) )

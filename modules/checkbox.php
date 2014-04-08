@@ -42,7 +42,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$atts = array();
 
 	$atts['class'] = $tag->get_class_option( $class );
-	$atts['id'] = $tag->get_option( 'id', 'id', true );
+	$atts['id'] = $tag->get_id_option();
 
 	$tabindex = $tag->get_option( 'tabindex', 'int', true );
 
