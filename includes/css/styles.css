@@ -8,6 +8,17 @@ div.wpcf7-response-output {
 	padding: 0.2em 1em;
 }
 
+div.wpcf7 .screen-reader-response {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
 div.wpcf7-mail-sent-ok {
 	border: 2px solid #398f14;
 }

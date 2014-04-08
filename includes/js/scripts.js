@@ -136,6 +136,8 @@
 
 		$responseOutput.append(data.message).slideDown('fast');
 		$responseOutput.attr('role', 'alert');
+
+		$.wpcf7UpdateScreenReaderResponse($form, data);
 	}
 
 	$.fn.wpcf7ExclusiveCheckbox = function() {
@@ -305,6 +307,14 @@
 			$(this).find('img.ajax-loader').css({ visibility: 'hidden' });
 		});
 	};
+
+	$.wpcf7UpdateScreenReaderResponse = function($form, data) {
+		$('.wpcf7 .screen-reader-response').html('').attr('role', '');
+
+		if (data.message) {
+			$form.siblings('.screen-reader-response').html(data.message).attr('role', 'alert').focus();
+		}
+	}
 
 	$.wpcf7SupportHtml5 = function() {
 		var features = {};

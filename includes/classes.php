@@ -211,6 +211,8 @@ class WPCF7_ContactForm {
 
 		$html = '<div class="wpcf7" id="' . $this->unit_tag . '">';
 
+		$html .= $this->screen_reader_response();
+
 		$url = wpcf7_get_request_uri();
 
 		if ( $frag = strstr( $url, '#' ) )
@@ -334,6 +336,32 @@ class WPCF7_ContactForm {
 
 		return apply_filters( 'wpcf7_form_response_output',
 			$output, $class, $content, $this );
+	}
+
+	public function screen_reader_response() {
+		$class = 'screen-reader-response';
+		$role = '';
+		$content = '';
+
+		if ( $this->is_posted() ) { // Post response output for non-AJAX
+			$role = 'alert';
+			$result = self::get_submission_status( $this->id );
+
+			if ( ! empty( $result['message'] ) ) {
+				$content = $result['message'];
+			}
+		}
+
+		$atts = array(
+			'class' => trim( $class ),
+			'role' => trim( $role ) );
+
+		$atts = wpcf7_format_atts( $atts );
+
+		$output = sprintf( '<div %1$s>%2$s</div>',
+			$atts, esc_html( $content ) );
+
+		return $output;
 	}
 
 	public function validation_error( $name ) {
