@@ -348,7 +348,17 @@ class WPCF7_ContactForm {
 			$result = self::get_submission_status( $this->id );
 
 			if ( ! empty( $result['message'] ) ) {
-				$content = $result['message'];
+				$content = esc_html( $result['message'] );
+
+				if ( ! empty( $result['invalid_reasons'] ) ) {
+					$content .= '<ul>';
+
+					foreach ( (array) $result['invalid_reasons'] as $k => $v ) {
+						$content .= sprintf( '<li>%s</li>', esc_html( $v ) );
+					}
+
+					$content .= '</ul>';
+				}
 			}
 		}
 
@@ -359,7 +369,7 @@ class WPCF7_ContactForm {
 		$atts = wpcf7_format_atts( $atts );
 
 		$output = sprintf( '<div %1$s>%2$s</div>',
-			$atts, esc_html( $content ) );
+			$atts, $content );
 
 		return $output;
 	}

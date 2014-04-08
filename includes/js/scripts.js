@@ -312,7 +312,20 @@
 		$('.wpcf7 .screen-reader-response').html('').attr('role', '');
 
 		if (data.message) {
-			$form.siblings('.screen-reader-response').html(data.message).attr('role', 'alert').focus();
+			var $response = $form.siblings('.screen-reader-response').first();
+			$response.append(data.message);
+
+			if (data.invalids) {
+				var $invalids = $('<ul></ul>');
+
+				$.each(data.invalids, function(i, n) {
+					$('<li></li>').append(n.message).appendTo($invalids);
+				});
+
+				$response.append($invalids);
+			}
+
+			$response.attr('role', 'alert').focus();
 		}
 	}
 
