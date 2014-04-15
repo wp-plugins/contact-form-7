@@ -74,28 +74,21 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
 	$name = $tag->name;
+	$id = $tag->get_id_option();
 
 	$file = isset( $_FILES[$name] ) ? $_FILES[$name] : null;
 
 	if ( $file['error'] && UPLOAD_ERR_NO_FILE != $file['error'] ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'upload_failed_php_error' );
-
-		if ( $id = $tag->get_id_option() ) {
-			$result['idref'][$name] = $id;
-		}
-
+		$result['idref'][$name] = $id ? $id : null;
 		return $result;
 	}
 
 	if ( empty( $file['tmp_name'] ) && $tag->is_required() ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
-
-		if ( $id = $tag->get_id_option() ) {
-			$result['idref'][$name] = $id;
-		}
-
+		$result['idref'][$name] = $id ? $id : null;
 		return $result;
 	}
 
@@ -156,11 +149,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	if ( ! preg_match( $file_type_pattern, $file['name'] ) ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'upload_file_type_invalid' );
-
-		if ( $id = $tag->get_id_option() ) {
-			$result['idref'][$name] = $id;
-		}
-
+		$result['idref'][$name] = $id ? $id : null;
 		return $result;
 	}
 
@@ -169,11 +158,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	if ( $file['size'] > $allowed_size ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'upload_file_too_large' );
-
-		if ( $id = $tag->get_id_option() ) {
-			$result['idref'][$name] = $id;
-		}
-
+		$result['idref'][$name] = $id ? $id : null;
 		return $result;
 	}
 
@@ -189,11 +174,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
 		$result['valid'] = false;
 		$result['reason'][$name] = wpcf7_get_message( 'upload_failed' );
-
-		if ( $id = $tag->get_id_option() ) {
-			$result['idref'][$name] = $id;
-		}
-
+		$result['idref'][$name] = $id ? $id : null;
 		return $result;
 	}
 
