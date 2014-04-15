@@ -209,9 +209,9 @@ class WPCF7_ContactForm {
 
 		$this->unit_tag = self::get_unit_tag( $this->id );
 
-		$html = '<div class="wpcf7" id="' . $this->unit_tag . '">';
+		$html = '<div class="wpcf7" id="' . $this->unit_tag . '">' . "\n";
 
-		$html .= $this->screen_reader_response();
+		$html .= $this->screen_reader_response() . "\n";
 
 		$url = wpcf7_get_request_uri();
 
@@ -351,7 +351,7 @@ class WPCF7_ContactForm {
 				$content = esc_html( $result['message'] );
 
 				if ( ! empty( $result['invalid_reasons'] ) ) {
-					$content .= '<ul>';
+					$content .= "\n" . '<ul>' . "\n";
 
 					foreach ( (array) $result['invalid_reasons'] as $k => $v ) {
 						if ( isset( $result['invalid_fields'][$k] )
@@ -363,9 +363,11 @@ class WPCF7_ContactForm {
 						} else {
 							$content .= sprintf( '<li>%s</li>', esc_html( $v ) );
 						}
+
+						$content .= "\n";
 					}
 
-					$content .= '</ul>';
+					$content .= '</ul>' . "\n";
 				}
 			}
 		}
