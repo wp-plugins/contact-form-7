@@ -101,7 +101,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$html = sprintf(
 		'<span class="wpcf7-form-control-wrap %1$s"><select %2$s>%3$s</select>%4$s</span>',
-		$tag->name, $atts, $html, $validation_error );
+		sanitize_html_class( $tag->name ), $atts, $html, $validation_error );
 
 	return $html;
 }

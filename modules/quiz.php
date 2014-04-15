@@ -54,8 +54,9 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %1$s"><span class="wpcf7-quiz-label">%2$s</span>&nbsp;<input %3$s /><input type="hidden" name="_wpcf7_quiz_answer_%1$s" value="%4$s" />%5$s</span>',
-		$tag->name, esc_html( $question ), $atts,
+		'<span class="wpcf7-form-control-wrap %1$s"><span class="wpcf7-quiz-label">%2$s</span>&nbsp;<input %3$s /><input type="hidden" name="_wpcf7_quiz_answer_%4$s" value="%5$s" />%6$s</span>',
+		sanitize_html_class( $tag->name ),
+		esc_html( $question ), $atts, $tag->name,
 		wp_hash( $answer, 'wpcf7_quiz' ), $validation_error );
 
 	return $html;

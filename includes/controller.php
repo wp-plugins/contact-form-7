@@ -66,7 +66,8 @@ function wpcf7_ajax_json_echo() {
 
 				foreach ( $result['invalid_reasons'] as $name => $reason ) {
 					$invalid = array(
-						'into' => 'span.wpcf7-form-control-wrap.' . $name,
+						'into' => 'span.wpcf7-form-control-wrap.'
+							. sanitize_html_class( $name ),
 						'message' => $reason );
 
 					if ( isset( $result['invalid_fields'][$name] )
