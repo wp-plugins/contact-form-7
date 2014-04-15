@@ -49,6 +49,11 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$values = $tag->values;
 	$labels = $tag->labels;
 
+	if ( $data = (array) $tag->get_data_option() ) {
+		$values = array_merge( $values, array_values( $data ) );
+		$labels = array_merge( $labels, array_values( $data ) );
+	}
+
 	$empty_select = empty( $values );
 
 	if ( $empty_select || $include_blank ) {

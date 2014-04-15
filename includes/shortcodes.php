@@ -367,6 +367,12 @@ class WPCF7_Shortcode {
 		return false;
 	}
 
+	public function get_data_option( $args = '' ) {
+		$options = (array) $this->get_option( 'data' );
+
+		return apply_filters( 'wpcf7_form_tag_data_option', null, $options, $args );
+	}
+
 	public function get_first_match_option( $pattern ) {
 		foreach( (array) $this->options as $option ) {
 			if ( preg_match( $pattern, $option, $matches ) )

@@ -369,7 +369,7 @@ function wpcf7_load_modules() {
 		'acceptance', 'flamingo', 'special-mail-tags',
 		'akismet', 'jetpack', 'submit', 'captcha', 'number',
 		'text', 'checkbox', 'quiz', 'textarea', 'date',
-		'response', 'file', 'select' );
+		'response', 'file', 'select', 'listo' );
 
 	foreach ( $mods as $mod ) {
 		$file = trailingslashit( $dir ) . $mod . '.php';

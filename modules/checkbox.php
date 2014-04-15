@@ -64,7 +64,26 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$html = '';
 	$count = 0;
 
-	foreach ( (array) $tag->values as $key => $value ) {
+	$values = (array) $tag->values;
+	$labels = (array) $tag->labels;
+
+	if ( $data = (array) $tag->get_data_option() ) {
+		if ( $free_text ) {
+			$values = array_merge(
+				array_slice( $values, 0, -1 ),
+				array_values( $data ),
+				array_slice( $values, -1 ) );
+			$labels = array_merge(
+				array_slice( $labels, 0, -1 ),
+				array_values( $data ),
+				array_slice( $labels, -1 ) );
+		} else {
+			$values = array_merge( $values, array_values( $data ) );
+			$labels = array_merge( $labels, array_values( $data ) );
+		}
+	}
+
+	foreach ( $values as $key => $value ) {
 		$class = 'wpcf7-list-item';
 
 		$checked = false;
@@ -79,8 +98,8 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 				$checked = true;
 		}
 
-		if ( isset( $tag->labels[$key] ) )
-			$label = $tag->labels[$key];
+		if ( isset( $labels[$key] ) )
+			$label = $labels[$key];
 		else
 			$label = $value;
 
@@ -115,7 +134,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 			$class .= ' first';
 		}
 
-		if ( count( $tag->values ) == $count ) { // last round
+		if ( count( $values ) == $count ) { // last round
 			$class .= ' last';
 
 			if ( $free_text ) {
