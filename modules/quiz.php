@@ -85,6 +85,10 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 		$result['reason'][$name] = wpcf7_get_message( 'quiz_answer_not_correct' );
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	return $result;
 }
 

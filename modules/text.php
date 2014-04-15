@@ -138,6 +138,10 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	return $result;
 }
 

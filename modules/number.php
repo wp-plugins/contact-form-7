@@ -109,6 +109,10 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 		$result['reason'][$name] = wpcf7_get_message( 'number_too_large' );
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	return $result;
 }
 

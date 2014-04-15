@@ -106,6 +106,10 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 		$result['reason'][$name] = wpcf7_get_message( 'date_too_late' );
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	return $result;
 }
 

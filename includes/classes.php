@@ -354,7 +354,15 @@ class WPCF7_ContactForm {
 					$content .= '<ul>';
 
 					foreach ( (array) $result['invalid_reasons'] as $k => $v ) {
-						$content .= sprintf( '<li>%s</li>', esc_html( $v ) );
+						if ( isset( $result['invalid_fields'][$k] )
+						&& wpcf7_is_name( $result['invalid_fields'][$k] ) ) {
+							$link = sprintf( '<a href="#%1$s">%2$s</a>',
+								$result['invalid_fields'][$k],
+								esc_html( $v ) );
+							$content .= sprintf( '<li>%s</li>', $link );
+						} else {
+							$content .= sprintf( '<li>%s</li>', esc_html( $v ) );
+						}
 					}
 
 					$content .= '</ul>';
@@ -508,6 +516,7 @@ class WPCF7_ContactForm {
 			'status' => 'init',
 			'valid' => true,
 			'invalid_reasons' => array(),
+			'invalid_fields' => array(),
 			'spam' => false,
 			'message' => '',
 			'mail_sent' => false,
@@ -522,6 +531,7 @@ class WPCF7_ContactForm {
 			$result['status'] = 'validation_failed';
 			$result['valid'] = false;
 			$result['invalid_reasons'] = $validation['reason'];
+			$result['invalid_fields'] = $validation['idref'];
 			$result['message'] = $this->message( 'validation_error' );
 
 		} elseif ( ! $this->accepted() ) { // Not accepted terms
@@ -585,7 +595,10 @@ class WPCF7_ContactForm {
 	public function validate() {
 		$fes = $this->form_scan_shortcode();
 
-		$result = array( 'valid' => true, 'reason' => array() );
+		$result = array(
+			'valid' => true,
+			'reason' => array(),
+			'idref' => array() );
 
 		foreach ( $fes as $fe ) {
 			$result = apply_filters( 'wpcf7_validate_' . $fe['type'], $result, $fe );

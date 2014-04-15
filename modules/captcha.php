@@ -124,6 +124,10 @@ function wpcf7_captcha_validation_filter( $result, $tag ) {
 		$result['reason'][$name] = wpcf7_get_message( 'captcha_not_match' );
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	if ( 0 != strlen( $prefix ) ) {
 		wpcf7_remove_captcha( $prefix );
 	}

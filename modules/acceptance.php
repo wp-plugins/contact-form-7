@@ -73,6 +73,10 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 		$result['reason'][$name] = wpcf7_get_message( 'accept_terms' );
 	}
 
+	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
+		$result['idref'][$name] = $id;
+	}
+
 	return $result;
 }
 
