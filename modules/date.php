@@ -33,8 +33,8 @@ function wpcf7_date_shortcode_handler( $tag ) {
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
-	$atts['min'] = $tag->get_option( 'min', 'date', true );
-	$atts['max'] = $tag->get_option( 'max', 'date', true );
+	$atts['min'] = $tag->get_date_option( 'min' );
+	$atts['max'] = $tag->get_date_option( 'max' );
 	$atts['step'] = $tag->get_option( 'step', 'int', true );
 
 	if ( $tag->has_option( 'readonly' ) )
@@ -85,8 +85,8 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 
 	$name = $tag->name;
 
-	$min = $tag->get_option( 'min', 'date', true );
-	$max = $tag->get_option( 'max', 'date', true );
+	$min = $tag->get_date_option( 'min' );
+	$max = $tag->get_date_option( 'max' );
 
 	$value = isset( $_POST[$name] )
 		? trim( strtr( (string) $_POST[$name], "\n", " " ) )
