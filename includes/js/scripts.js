@@ -128,7 +128,7 @@
 		$(data.into).trigger('submit.wpcf7');
 
 		if (1 == data.mailSent)
-			$form.resetForm().clearForm();
+			$form.resetForm();
 
 		$form.find('[placeholder].placeheld').each(function(i, n) {
 			$(n).val($(n).attr('placeholder'));
