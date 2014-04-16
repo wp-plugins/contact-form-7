@@ -158,6 +158,7 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 			'id' => 0,
 			'title' => '',
 			'html_id' => '',
+			'html_name' => '',
 			'html_class' => '' ), $atts );
 
 		$id = (int) $atts['id'];

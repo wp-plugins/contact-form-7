@@ -205,6 +205,7 @@ class WPCF7_ContactForm {
 	public function form_html( $atts = array() ) {
 		$atts = wp_parse_args( $atts, array(
 			'html_id' => '',
+			'html_name' => '',
 			'html_class' => '' ) );
 
 		$this->unit_tag = self::get_unit_tag( $this->id );
@@ -224,6 +225,9 @@ class WPCF7_ContactForm {
 
 		$id_attr = apply_filters( 'wpcf7_form_id_attr',
 			preg_replace( '/[^A-Za-z0-9:._-]/', '', $atts['html_id'] ) );
+
+		$name_attr = apply_filters( 'wpcf7_form_name_attr',
+			preg_replace( '/[^A-Za-z0-9:._-]/', '', $atts['html_name'] ) );
 
 		$class = 'wpcf7-form';
 
@@ -262,6 +266,7 @@ class WPCF7_ContactForm {
 
 		$html .= '<form action="' . esc_url_raw( $url ) . '" method="post"'
 			. ( $id_attr ? ' id="' . esc_attr( $id_attr ) . '"' : '' )
+			. ( $name_attr ? ' name="' . esc_attr( $name_attr ) . '"' : '' )
 			. ' class="' . esc_attr( $class ) . '"'
 			. $enctype . $novalidate . '>' . "\n";
 
