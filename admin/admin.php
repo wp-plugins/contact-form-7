@@ -402,13 +402,13 @@ add_action( 'wpcf7_admin_notices', 'wpcf7_cf7com_links', 9 );
 
 function wpcf7_cf7com_links() {
 	$links = '<div class="cf7com-links">'
-		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/docs/', 'contact-form-7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url( __( 'http://contactform7.com/docs/', 'contact-form-7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Docs', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/faq/', 'contact-form-7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url( __( 'http://contactform7.com/faq/', 'contact-form-7' ) ) . '" target="_blank">'
 		. esc_html( __( 'FAQ', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/support/', 'contact-form-7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url( __( 'http://contactform7.com/support/', 'contact-form-7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Support', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url_raw( __( 'http://contactform7.com/donate/', 'contact-form-7' ) ) . '" target="_blank">'
+		. '<a href="' . esc_url( __( 'http://contactform7.com/donate/', 'contact-form-7' ) ) . '" target="_blank">'
 		. esc_html( __( 'Donate', 'contact-form-7' ) ) . '</a>'
 		. '</div>';
 
@@ -464,26 +464,26 @@ function wpcf7_welcome_panel() {
 			<div class="welcome-panel-column">
 				<h4><?php echo esc_html( __( 'Contact Form 7 Needs Your Support', 'contact-form-7' ) ); ?></h4>
 				<p class="message"><?php echo esc_html( __( "It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Contact Form 7 and find it useful, please consider making a donation.", 'contact-form-7' ) ); ?></p>
-				<p><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/donate/', 'contact-form-7' ) ); ?>" class="button button-primary" target="_blank"><?php echo esc_html( __( 'Donate', 'contact-form-7' ) ); ?></a></p>
+				<p><a href="<?php echo esc_url( __( 'http://contactform7.com/donate/', 'contact-form-7' ) ); ?>" class="button button-primary" target="_blank"><?php echo esc_html( __( 'Donate', 'contact-form-7' ) ); ?></a></p>
 			</div>
 
 			<div class="welcome-panel-column">
 				<h4><?php echo esc_html( __( 'Get Started', 'contact-form-7' ) ); ?></h4>
 				<ul>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/getting-started-with-contact-form-7/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Getting Started with Contact Form 7", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/admin-screen/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Admin Screen", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tag-syntax/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "How Tags Work", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/setting-up-mail/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Setting Up Mail", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/getting-started-with-contact-form-7/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Getting Started with Contact Form 7", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/admin-screen/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Admin Screen", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/tag-syntax/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "How Tags Work", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/setting-up-mail/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Setting Up Mail", 'contact-form-7' ) ); ?></a></li>
 				</ul>
 			</div>
 
 			<div class="welcome-panel-column">
 				<h4><?php echo esc_html( __( 'Did You Know?', 'contact-form-7' ) ); ?></h4>
 				<ul>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/spam-filtering-with-akismet/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Spam Filtering with Akismet", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/save-submitted-messages-with-flamingo/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Save Messages with Flamingo", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/selectable-recipient-with-pipes/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Selectable Recipient with Pipes", 'contact-form-7' ) ); ?></a></li>
-					<li><a href="<?php echo esc_url_raw( __( 'http://contactform7.com/tracking-form-submissions-with-google-analytics/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Tracking with Google Analytics", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/spam-filtering-with-akismet/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Spam Filtering with Akismet", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/save-submitted-messages-with-flamingo/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Save Messages with Flamingo", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/selectable-recipient-with-pipes/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Selectable Recipient with Pipes", 'contact-form-7' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( __( 'http://contactform7.com/tracking-form-submissions-with-google-analytics/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( "Tracking with Google Analytics", 'contact-form-7' ) ); ?></a></li>
 				</ul>
 			</div>
 		</div>
