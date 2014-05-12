@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.7
-Tested up to: 3.9
-Stable tag: 3.8
+Tested up to: 3.9.1
+Stable tag: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Changelog ==
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
+
+= 3.8.1 =
+
+* Fix: misuse of functions that Akismet 3.0 has marked deprecated.
+* Fix: some URL outputs used esc_url_raw in places where esc_url should be used.
+* Translation for Finnish and Thai have been updated.
 
 = 3.8 =
 
