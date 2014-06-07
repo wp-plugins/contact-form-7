@@ -312,7 +312,11 @@ function wpcf7_format_atts( $atts ) {
 	foreach ( $prioritized_atts as $att ) {
 		if ( isset( $atts[$att] ) ) {
 			$value = trim( $atts[$att] );
-			$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
+
+			if ( '' !== $value ) {
+				$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
+			}
+
 			unset( $atts[$att] );
 		}
 	}
@@ -320,8 +324,9 @@ function wpcf7_format_atts( $atts ) {
 	foreach ( $atts as $key => $value ) {
 		$value = trim( $value );
 
-		if ( '' !== $value )
+		if ( '' !== $value ) {
 			$html .= sprintf( ' %s="%s"', $key, esc_attr( $value ) );
+		}
 	}
 
 	$html = trim( $html );
