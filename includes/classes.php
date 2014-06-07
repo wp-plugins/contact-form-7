@@ -269,11 +269,14 @@ class WPCF7_ContactForm {
 		$novalidate = apply_filters( 'wpcf7_form_novalidate',
 			wpcf7_support_html5() ? ' novalidate="novalidate"' : '' );
 
-		$html .= '<form action="' . esc_url( $url ) . '" method="post"'
-			. ( $id_attr ? ' id="' . esc_attr( $id_attr ) . '"' : '' )
-			. ( $name_attr ? ' name="' . esc_attr( $name_attr ) . '"' : '' )
-			. ' class="' . esc_attr( $class ) . '"'
-			. $enctype . $novalidate . '>' . "\n";
+		$html .= sprintf( '<form %s>',
+			wpcf7_format_atts( array(
+				'action' => esc_url( $url ),
+				'method' => 'post',
+				'id' => $id_attr,
+				'name' => $name_attr,
+				'class' => $class ) )
+			. $enctype . $novalidate ) . "\n";
 
 		$html .= $this->form_hidden_fields();
 		$html .= $this->form_elements();
