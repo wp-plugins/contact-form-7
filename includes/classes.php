@@ -266,8 +266,7 @@ class WPCF7_ContactForm {
 
 		$enctype = apply_filters( 'wpcf7_form_enctype', '' );
 
-		$novalidate = apply_filters( 'wpcf7_form_novalidate',
-			wpcf7_support_html5() ? ' novalidate="novalidate"' : '' );
+		$novalidate = apply_filters( 'wpcf7_form_novalidate', wpcf7_support_html5() );
 
 		$html .= sprintf( '<form %s>',
 			wpcf7_format_atts( array(
@@ -275,8 +274,9 @@ class WPCF7_ContactForm {
 				'method' => 'post',
 				'id' => $id_attr,
 				'name' => $name_attr,
-				'class' => $class ) )
-			. $enctype . $novalidate ) . "\n";
+				'class' => $class,
+				'novalidate' => $novalidate ? 'novalidate' : '' ) )
+			. $enctype ) . "\n";
 
 		$html .= $this->form_hidden_fields();
 		$html .= $this->form_elements();
