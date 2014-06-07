@@ -210,7 +210,12 @@ class WPCF7_ContactForm {
 
 		$this->unit_tag = self::get_unit_tag( $this->id );
 
-		$html = '<div class="wpcf7" id="' . $this->unit_tag . '">' . "\n";
+		$html = sprintf( '<div %s>', wpcf7_format_atts( array(
+			'class' => 'wpcf7',
+			'id' => $this->unit_tag,
+			( get_option( 'html_type' ) == 'text/html' ) ? 'lang' : 'xml:lang'
+				=> str_replace( '_', '-', $this->locale ),
+			'dir' => wpcf7_is_rtl( $this->locale ) ? 'rtl' : '' ) ) ) . "\n";
 
 		$html .= $this->screen_reader_response() . "\n";
 
