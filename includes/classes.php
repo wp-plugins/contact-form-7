@@ -215,7 +215,7 @@ class WPCF7_ContactForm {
 			'id' => $this->unit_tag,
 			( get_option( 'html_type' ) == 'text/html' ) ? 'lang' : 'xml:lang'
 				=> str_replace( '_', '-', $this->locale ),
-			'dir' => wpcf7_is_rtl( $this->locale ) ? 'rtl' : '' ) ) ) . "\n";
+			'dir' => wpcf7_is_rtl( $this->locale ) ? 'rtl' : 'ltr' ) ) ) . "\n";
 
 		$html .= $this->screen_reader_response() . "\n";
 
