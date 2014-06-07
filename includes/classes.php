@@ -275,8 +275,8 @@ class WPCF7_ContactForm {
 				'id' => $id_attr,
 				'name' => $name_attr,
 				'class' => $class,
-				'novalidate' => $novalidate ? 'novalidate' : '' ) )
-			. $enctype ) . "\n";
+				'enctype' => wpcf7_enctype_value( $enctype ),
+				'novalidate' => $novalidate ? 'novalidate' : '' ) ) ) . "\n";
 
 		$html .= $this->form_hidden_fields();
 		$html .= $this->form_elements();

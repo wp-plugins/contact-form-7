@@ -58,8 +58,9 @@ add_filter( 'wpcf7_form_enctype', 'wpcf7_file_form_enctype_filter' );
 function wpcf7_file_form_enctype_filter( $enctype ) {
 	$multipart = (bool) wpcf7_scan_shortcode( array( 'type' => array( 'file', 'file*' ) ) );
 
-	if ( $multipart )
-		$enctype = ' enctype="multipart/form-data"';
+	if ( $multipart ) {
+		$enctype = 'multipart/form-data';
+	}
 
 	return $enctype;
 }
