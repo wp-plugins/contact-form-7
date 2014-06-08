@@ -97,17 +97,17 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	margin-left: 10px;
 }
 
-#maildiv .headers {
+#maildiv .headers, #mail2div .headers {
 	float: left;
 	width: 40%;
 }
 
-#maildiv .body {
+#maildiv .body, #mail2div .body {
 	float: left;
 	width: 60%;
 }
 
-#maildiv .body > * {
+#maildiv .body > *, #mail2div .body > * {
 	margin-left: 10px;
 }
 
