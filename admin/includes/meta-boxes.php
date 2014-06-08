@@ -4,9 +4,9 @@
 
 function wpcf7_form_meta_box( $post ) {
 ?>
-<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24"><?php echo esc_textarea( $post->form ); ?></textarea></div>
+<div class="body"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24"><?php echo esc_textarea( $post->form ); ?></textarea></div>
 
-<div class="half-right"><div id="taggenerator"></div></div>
+<div class="tool"><div id="taggenerator"></div></div>
 
 <br class="clear" />
 <?php
@@ -39,7 +39,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <?php endif; ?>
 
 <div class="mail-fields">
-<div class="half-left">
+<div class="headers">
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-recipient"><?php echo esc_html( __( 'To:', 'contact-form-7' ) ); ?></label><br />
 	<input type="text" id="<?php echo $id; ?>-recipient" name="<?php echo $id; ?>-recipient" class="wide" size="70" value="<?php echo esc_attr( $mail['recipient'] ); ?>" />
@@ -75,7 +75,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 	</div>
 </div>
 
-<div class="half-right">
+<div class="body">
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message body:', 'contact-form-7' ) ); ?></label><br />
 	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="20"><?php echo esc_textarea( $mail['body'] ); ?></textarea>

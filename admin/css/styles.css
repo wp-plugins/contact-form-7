@@ -83,12 +83,31 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	width: 100%;
 }
 
-.postbox .half, .postbox .half-left, .postbox .half-right {
+#formdiv .body {
 	float: left;
 	width: 50%;
 }
 
-.postbox .half-right > * {
+#formdiv .tool {
+	float: left;
+	width: 50%;
+}
+
+#formdiv .tool > * {
+	margin-left: 10px;
+}
+
+#maildiv .headers {
+	float: left;
+	width: 40%;
+}
+
+#maildiv .body {
+	float: left;
+	width: 60%;
+}
+
+#maildiv .body > * {
 	margin-left: 10px;
 }
 
