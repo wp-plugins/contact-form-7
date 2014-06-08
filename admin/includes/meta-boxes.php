@@ -15,23 +15,23 @@ function wpcf7_form_meta_box( $post ) {
 /* Mail */
 
 function wpcf7_mail_meta_box( $post, $box ) {
-	$defaults = array( 'id' => 'wpcf7-mail', 'name' => 'mail', 'use' => null );
+	$args = isset( $box['args'] ) && is_array( $box['args'] )
+		? $box['args'] : array();
 
-	if ( ! isset( $box['args'] ) || ! is_array( $box['args'] ) )
-		$args = array();
-	else
-		$args = $box['args'];
+	$args = wp_parse_args( $args, array(
+		'id' => 'wpcf7-mail',
+		'name' => 'mail',
+		'use' => null ) );
 
-	extract( wp_parse_args( $args, $defaults ), EXTR_SKIP );
+	$id = esc_attr( $args['id'] );
+	$mail = isset( $post->{$args['name']} )
+		? $post->{$args['name']} : $post->mail;
 
-	$id = esc_attr( $id );
-	$mail = $post->{$name};
-
-	if ( ! empty( $use ) ) :
+	if ( ! empty( $args['use'] ) ) :
 ?>
 <div class="mail-field">
 <input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" class="check-if-these-fields-are-active" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> />
-<label for="<?php echo $id; ?>-active"><?php echo esc_html( $use ); ?></label>
+<label for="<?php echo $id; ?>-active"><?php echo esc_html( $args['use'] ); ?></label>
 <div class="pseudo-hr"></div>
 </div>
 
