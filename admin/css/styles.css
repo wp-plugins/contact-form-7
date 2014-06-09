@@ -92,6 +92,20 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	margin-left: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+	.postbox .half, .postbox .half-left, .postbox .half-right {
+		width: 100%;
+	}
+
+	.postbox .half-right {
+		margin-top: 1em;
+	}
+
+	.postbox .half-right > * {
+		margin-left: inherit;
+	}
+}
+
 .postbox .mail-field, .postbox .message-field {
 	margin-top: 6px;
 	margin-bottom: 8px;
