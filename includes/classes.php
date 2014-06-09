@@ -488,45 +488,15 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
-	public function setup_posted_data() {
-		$posted_data = (array) $_POST;
-
-		$fes = $this->form_scan_shortcode();
-
-		foreach ( $fes as $fe ) {
-			if ( empty( $fe['name'] ) )
-				continue;
-
-			$name = $fe['name'];
-			$value = '';
-
-			if ( isset( $posted_data[$name] ) )
-				$value = $posted_data[$name];
-
-			$pipes = $fe['pipes'];
-
-			if ( WPCF7_USE_PIPE && is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
-				if ( is_array( $value) ) {
-					$new_value = array();
-
-					foreach ( $value as $v )
-						$new_value[] = $pipes->do_pipe( wp_unslash( $v ) );
-
-					$value = $new_value;
-				} else {
-					$value = $pipes->do_pipe( wp_unslash( $value ) );
-				}
-			}
-
-			$posted_data[$name] = $value;
+	public function submit( $ajax = false ) {
+		if ( ! class_exists( 'WPCF7_Submission' ) ) {
+			require_once WPCF7_PLUGIN_DIR . '/includes/submission.php';
 		}
 
-		$this->posted_data = apply_filters( 'wpcf7_posted_data', $posted_data );
+		$handler = WPCF7_Submission::get_instance();
+		$this->posted_data = $handler->setup_posted_data(
+			$this->form_scan_shortcode() );
 
-		return $this->posted_data;
-	}
-
-	public function submit( $ajax = false ) {
 		$result = array(
 			'status' => 'init',
 			'valid' => true,
@@ -537,8 +507,6 @@ class WPCF7_ContactForm {
 			'mail_sent' => false,
 			'scripts_on_sent_ok' => null,
 			'scripts_on_submit' => null );
-
-		$this->setup_posted_data();
 
 		$validation = $this->validate();
 
