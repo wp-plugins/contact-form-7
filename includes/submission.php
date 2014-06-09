@@ -44,11 +44,11 @@ class WPCF7_Submission {
 			$result['invalid_fields'] = $validation['idref'];
 			$result['message'] = $contact_form->message( 'validation_error' );
 
-		} elseif ( ! $contact_form->accepted() ) { // Not accepted terms
+		} elseif ( ! $this->accepted() ) { // Not accepted terms
 			$result['status'] = 'acceptance_missing';
 			$result['message'] = $contact_form->message( 'accept_terms' );
 
-		} elseif ( $contact_form->spam() ) { // Spam!
+		} elseif ( $this->spam() ) { // Spam!
 			$result['status'] = 'spam';
 			$result['message'] = $contact_form->message( 'spam' );
 			$result['spam'] = true;
@@ -129,6 +129,37 @@ class WPCF7_Submission {
 		return apply_filters( 'wpcf7_validate', $result );
 	}
 
+	private function accepted() {
+		return apply_filters( 'wpcf7_acceptance', true );
+	}
+
+	private function spam() {
+		$spam = false;
+
+		if ( WPCF7_VERIFY_NONCE && ! $this->verify_nonce() ) {
+			$spam = true;
+		}
+
+		if ( $this->blacklist_check() ) {
+			$spam = true;
+		}
+
+		return apply_filters( 'wpcf7_spam', $spam );
+	}
+
+	private function verify_nonce() {
+		return wpcf7_verify_nonce( $_POST['_wpnonce'], $this->contact_form->id );
+	}
+
+	private function blacklist_check() {
+		$target = wpcf7_array_flatten( $this->posted_data );
+		$target[] = $_SERVER['REMOTE_ADDR'];
+		$target[] = $_SERVER['HTTP_USER_AGENT'];
+
+		$target = implode( "\n", $target );
+
+		return wpcf7_blacklist_check( $target );
+	}
 }
 
 ?>
