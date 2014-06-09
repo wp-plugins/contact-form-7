@@ -30,8 +30,40 @@ class WPCF7_Submission {
 		return self::$instance;
 	}
 
-	public function submit( $ajax = false ) {
+	public function submit() {
 		$this->setup_posted_data();
+		$validation = $this->validate();
+
+		$result = &$this->result;
+		$contact_form = &$this->contact_form;
+
+		if ( ! $validation['valid'] ) { // Validation error occured
+			$result['status'] = 'validation_failed';
+			$result['valid'] = false;
+			$result['invalid_reasons'] = $validation['reason'];
+			$result['invalid_fields'] = $validation['idref'];
+			$result['message'] = $contact_form->message( 'validation_error' );
+
+		} elseif ( ! $contact_form->accepted() ) { // Not accepted terms
+			$result['status'] = 'acceptance_missing';
+			$result['message'] = $contact_form->message( 'accept_terms' );
+
+		} elseif ( $contact_form->spam() ) { // Spam!
+			$result['status'] = 'spam';
+			$result['message'] = $contact_form->message( 'spam' );
+			$result['spam'] = true;
+
+		} elseif ( $contact_form->mail() ) {
+			$result['status'] = 'mail_sent';
+			$result['mail_sent'] = true;
+			$result['message'] = $contact_form->message( 'mail_sent_ok' );
+
+		} else {
+			$result['status'] = 'mail_failed';
+			$result['message'] = $contact_form->message( 'mail_sent_ng' );
+		}
+
+		return $result;
 	}
 
 	public function get_posted_data() {
@@ -79,6 +111,22 @@ class WPCF7_Submission {
 		$this->posted_data = apply_filters( 'wpcf7_posted_data', $posted_data );
 
 		return $this->posted_data;
+	}
+
+	private function validate() {
+		$tags = $this->contact_form->form_scan_shortcode();
+
+		$result = array(
+			'valid' => true,
+			'reason' => array(),
+			'idref' => array() );
+
+		foreach ( $tags as $tag ) {
+			$result = apply_filters( 'wpcf7_validate_' . $tag['type'],
+				$result, $tag );
+		}
+
+		return apply_filters( 'wpcf7_validate', $result );
 	}
 
 }

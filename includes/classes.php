@@ -494,71 +494,37 @@ class WPCF7_ContactForm {
 		}
 
 		$handler = WPCF7_Submission::get_instance( $this );
-		$handler->submit();
+		$result = $handler->submit();
 		$this->posted_data = $handler->get_posted_data();
 
-		$result = array(
-			'status' => 'init',
-			'valid' => true,
-			'invalid_reasons' => array(),
-			'invalid_fields' => array(),
-			'spam' => false,
-			'message' => '',
-			'mail_sent' => false,
-			'scripts_on_sent_ok' => null,
-			'scripts_on_submit' => null );
-
-		$validation = $this->validate();
-
-		if ( ! $validation['valid'] ) { // Validation error occured
-			$result['status'] = 'validation_failed';
-			$result['valid'] = false;
-			$result['invalid_reasons'] = $validation['reason'];
-			$result['invalid_fields'] = $validation['idref'];
-			$result['message'] = $this->message( 'validation_error' );
-
-		} elseif ( ! $this->accepted() ) { // Not accepted terms
-			$result['status'] = 'acceptance_missing';
-			$result['message'] = $this->message( 'accept_terms' );
-
-		} elseif ( $this->spam() ) { // Spam!
-			$result['status'] = 'spam';
-			$result['message'] = $this->message( 'spam' );
-			$result['spam'] = true;
-
-		} elseif ( $this->mail() ) {
+		if ( 'mail_sent' == $result['status'] ) {
 			if ( $this->in_demo_mode() ) {
 				$result['status'] = 'demo_mode';
-			} else {
-				$result['status'] = 'mail_sent';
 			}
-
-			$result['mail_sent'] = true;
-			$result['message'] = $this->message( 'mail_sent_ok' );
 
 			do_action_ref_array( 'wpcf7_mail_sent', array( &$this ) );
 
 			if ( $ajax ) {
 				$on_sent_ok = $this->additional_setting( 'on_sent_ok', false );
 
-				if ( ! empty( $on_sent_ok ) )
-					$result['scripts_on_sent_ok'] = array_map( 'wpcf7_strip_quote', $on_sent_ok );
+				if ( ! empty( $on_sent_ok ) ) {
+					$result['scripts_on_sent_ok'] = array_map(
+						'wpcf7_strip_quote', $on_sent_ok );
+				}
 			} else {
 				$this->clear_post();
 			}
-
-		} else {
-			$result['status'] = 'mail_failed';
-			$result['message'] = $this->message( 'mail_sent_ng' );
-
+		} elseif ( 'mail_failed' == $result['status'] ) {
 			do_action_ref_array( 'wpcf7_mail_failed', array( &$this ) );
 		}
 
 		if ( $ajax ) {
 			$on_submit = $this->additional_setting( 'on_submit', false );
 
-			if ( ! empty( $on_submit ) )
-				$result['scripts_on_submit'] = array_map( 'wpcf7_strip_quote', $on_submit );
+			if ( ! empty( $on_submit ) ) {
+				$result['scripts_on_submit'] = array_map(
+					'wpcf7_strip_quote', $on_submit );
+			}
 		}
 
 		// remove upload files
@@ -569,25 +535,6 @@ class WPCF7_ContactForm {
 		do_action_ref_array( 'wpcf7_submit', array( &$this, $result ) );
 
 		self::add_submission_status( $this->id, $result );
-
-		return $result;
-	}
-
-	/* Validate */
-
-	public function validate() {
-		$fes = $this->form_scan_shortcode();
-
-		$result = array(
-			'valid' => true,
-			'reason' => array(),
-			'idref' => array() );
-
-		foreach ( $fes as $fe ) {
-			$result = apply_filters( 'wpcf7_validate_' . $fe['type'], $result, $fe );
-		}
-
-		$result = apply_filters( 'wpcf7_validate', $result );
 
 		return $result;
 	}
