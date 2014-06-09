@@ -493,9 +493,9 @@ class WPCF7_ContactForm {
 			require_once WPCF7_PLUGIN_DIR . '/includes/submission.php';
 		}
 
-		$handler = WPCF7_Submission::get_instance();
-		$this->posted_data = $handler->setup_posted_data(
-			$this->form_scan_shortcode() );
+		$handler = WPCF7_Submission::get_instance( $this );
+		$handler->submit();
+		$this->posted_data = $handler->get_posted_data();
 
 		$result = array(
 			'status' => 'init',

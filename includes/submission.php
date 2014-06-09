@@ -4,6 +4,8 @@ class WPCF7_Submission {
 
 	private static $instance;
 
+	private $contact_form;
+
 	private $result = array(
 		'status' => 'init',
 		'valid' => true,
@@ -19,16 +21,27 @@ class WPCF7_Submission {
 
 	private function __construct() {}
 
-	public static function get_instance() {
+	public static function get_instance( WPCF7_ContactForm $contact_form ) {
 		if ( empty( self::$instance ) ) {
 			self::$instance = new self;
+			self::$instance->contact_form = $contact_form;
 		}
 
 		return self::$instance;
 	}
 
-	public function setup_posted_data( $tags = null ) {
+	public function submit( $ajax = false ) {
+		$this->setup_posted_data();
+	}
+
+	public function get_posted_data() {
+		return $this->posted_data;
+	}
+
+	private function setup_posted_data() {
 		$posted_data = (array) $_POST;
+
+		$tags = $this->contact_form->form_scan_shortcode();
 
 		foreach ( (array) $tags as $tag ) {
 			if ( empty( $tag['name'] ) ) {
