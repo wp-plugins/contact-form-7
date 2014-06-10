@@ -488,13 +488,9 @@ class WPCF7_ContactForm {
 	}
 
 	public function submit( $ajax = false ) {
-		if ( ! class_exists( 'WPCF7_Submission' ) ) {
-			require_once WPCF7_PLUGIN_DIR . '/includes/submission.php';
-		}
-
-		$handler = WPCF7_Submission::get_instance( $this );
-		$result = $handler->submit();
-		$this->posted_data = $handler->get_posted_data();
+		$submission = WPCF7_Submission::get_instance( $this );
+		$result = $submission->submit();
+		$this->posted_data = $submission->get_posted_data();
 
 		if ( 'mail_sent' == $result['status'] ) {
 			if ( $this->in_demo_mode() ) {
@@ -539,9 +535,7 @@ class WPCF7_ContactForm {
 	public function message( $status ) {
 		$messages = $this->messages;
 		$message = isset( $messages[$status] ) ? $messages[$status] : '';
-
-// TODO: after making WPCF7_Mail class, make WPCF7_Mail::replace_mail_tags() accessible
-//		$message = $this->replace_mail_tags( $message, true );
+		$message = WPCF7_Mail::replace_tags( $message, true );
 
 		return apply_filters( 'wpcf7_display_message', $message, $status );
 	}
