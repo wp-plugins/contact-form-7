@@ -502,8 +502,6 @@ class WPCF7_ContactForm {
 				$result['status'] = 'demo_mode';
 			}
 
-			do_action( 'wpcf7_mail_sent', $this );
-
 			if ( $ajax ) {
 				$on_sent_ok = $this->additional_setting( 'on_sent_ok', false );
 
@@ -514,8 +512,6 @@ class WPCF7_ContactForm {
 			} else {
 				$this->clear_post();
 			}
-		} elseif ( 'mail_failed' == $result['status'] ) {
-			do_action( 'wpcf7_mail_failed', $this );
 		}
 
 		if ( $ajax ) {

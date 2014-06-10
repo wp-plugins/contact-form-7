@@ -13,9 +13,7 @@ class WPCF7_Submission {
 		'invalid_fields' => array(),
 		'spam' => false,
 		'message' => '',
-		'mail_sent' => false,
-		'scripts_on_sent_ok' => null,
-		'scripts_on_submit' => null );
+		'mail_sent' => false );
 
 	private $posted_data = array();
 
@@ -35,7 +33,7 @@ class WPCF7_Submission {
 		$validation = $this->validate();
 
 		$result = &$this->result;
-		$contact_form = &$this->contact_form;
+		$contact_form = $this->contact_form;
 
 		if ( ! $validation['valid'] ) { // Validation error occured
 			$result['status'] = 'validation_failed';
@@ -58,9 +56,13 @@ class WPCF7_Submission {
 			$result['mail_sent'] = true;
 			$result['message'] = $contact_form->message( 'mail_sent_ok' );
 
+			do_action( 'wpcf7_mail_sent', $contact_form );
+
 		} else {
 			$result['status'] = 'mail_failed';
 			$result['message'] = $contact_form->message( 'mail_sent_ng' );
+
+			do_action( 'wpcf7_mail_failed', $contact_form );
 		}
 
 		return $result;
