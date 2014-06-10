@@ -82,27 +82,27 @@ if ( $post ) :
 
 <?php
 
-do_action_ref_array( 'wpcf7_admin_after_general_settings', array( &$post ) );
+do_action( 'wpcf7_admin_after_general_settings', $post );
 
 do_meta_boxes( null, 'form', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_form', array( &$post ) );
+do_action( 'wpcf7_admin_after_form', $post );
 
 do_meta_boxes( null, 'mail', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_mail', array( &$post ) );
+do_action( 'wpcf7_admin_after_mail', $post );
 
 do_meta_boxes( null, 'mail_2', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_mail_2', array( &$post ) );
+do_action( 'wpcf7_admin_after_mail_2', $post );
 
 do_meta_boxes( null, 'messages', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_messages', array( &$post ) );
+do_action( 'wpcf7_admin_after_messages', $post );
 
 do_meta_boxes( null, 'additional_settings', $post );
 
-do_action_ref_array( 'wpcf7_admin_after_additional_settings', array( &$post ) );
+do_action( 'wpcf7_admin_after_additional_settings', $post );
 
 wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
@@ -116,4 +116,4 @@ wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 
 </div>
 
-<?php do_action_ref_array( 'wpcf7_admin_footer', array( &$post ) ); ?>
+<?php do_action( 'wpcf7_admin_footer', $post ); ?>

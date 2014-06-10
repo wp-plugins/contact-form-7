@@ -125,7 +125,7 @@ class WPCF7_ContactForm {
 			$this->upgrade();
 		}
 
-		do_action_ref_array( 'wpcf7_contact_form', array( &$this ) );
+		do_action( 'wpcf7_contact_form', $this );
 	}
 
 	public static function generate_default_package( $args = '' ) {
@@ -502,7 +502,7 @@ class WPCF7_ContactForm {
 				$result['status'] = 'demo_mode';
 			}
 
-			do_action_ref_array( 'wpcf7_mail_sent', array( &$this ) );
+			do_action( 'wpcf7_mail_sent', $this );
 
 			if ( $ajax ) {
 				$on_sent_ok = $this->additional_setting( 'on_sent_ok', false );
@@ -515,7 +515,7 @@ class WPCF7_ContactForm {
 				$this->clear_post();
 			}
 		} elseif ( 'mail_failed' == $result['status'] ) {
-			do_action_ref_array( 'wpcf7_mail_failed', array( &$this ) );
+			do_action( 'wpcf7_mail_failed', $this );
 		}
 
 		if ( $ajax ) {
@@ -532,7 +532,7 @@ class WPCF7_ContactForm {
 			@unlink( $path );
 		}
 
-		do_action_ref_array( 'wpcf7_submit', array( &$this, $result ) );
+		do_action( 'wpcf7_submit', $this, $result );
 
 		self::add_submission_status( $this->id, $result );
 
@@ -545,7 +545,7 @@ class WPCF7_ContactForm {
 		if ( $this->in_demo_mode() )
 			$this->skip_mail = true;
 
-		do_action_ref_array( 'wpcf7_before_send_mail', array( &$this ) );
+		do_action( 'wpcf7_before_send_mail', $this );
 
 		if ( $this->skip_mail )
 			return true;
@@ -558,8 +558,8 @@ class WPCF7_ContactForm {
 			if ( $this->mail_2['active'] )
 				$additional_mail[] = $this->setup_mail_template( $this->mail_2, 'mail_2' );
 
-			$additional_mail = apply_filters_ref_array( 'wpcf7_additional_mail',
-				array( $additional_mail, &$this ) );
+			$additional_mail = apply_filters( 'wpcf7_additional_mail',
+				$additional_mail, $this );
 
 			foreach ( $additional_mail as $mail )
 				$this->compose_mail( $mail );
@@ -608,8 +608,7 @@ class WPCF7_ContactForm {
 		$components = compact(
 			'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments' );
 
-		$components = apply_filters_ref_array( 'wpcf7_mail_components',
-			array( $components, &$this ) );
+		$components = apply_filters( 'wpcf7_mail_components', $components, $this );
 
 		extract( $components );
 
@@ -844,12 +843,12 @@ class WPCF7_ContactForm {
 			if ( $this->initial ) {
 				$this->initial = false;
 				$this->id = $post_id;
-				do_action_ref_array( 'wpcf7_after_create', array( &$this ) );
+				do_action( 'wpcf7_after_create', $this );
 			} else {
-				do_action_ref_array( 'wpcf7_after_update', array( &$this ) );
+				do_action( 'wpcf7_after_update', $this );
 			}
 
-			do_action_ref_array( 'wpcf7_after_save', array( &$this ) );
+			do_action( 'wpcf7_after_save', $this );
 		}
 
 		return $post_id;
@@ -866,7 +865,7 @@ class WPCF7_ContactForm {
 		foreach ( $props as $prop => $value )
 			$new->{$prop} = $value;
 
-		$new = apply_filters_ref_array( 'wpcf7_copy', array( &$new, &$this ) );
+		$new = apply_filters( 'wpcf7_copy', $new, $this );
 
 		return $new;
 	}
