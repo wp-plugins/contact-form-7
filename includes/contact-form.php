@@ -15,8 +15,6 @@ class WPCF7_ContactForm {
 	public $unit_tag;
 	public $responses_count = 0;
 	public $scanned_form_tags;
-	public $posted_data;
-	public $uploaded_files = array();
 
 	public static function count() {
 		return self::$found_items;
@@ -490,7 +488,6 @@ class WPCF7_ContactForm {
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
 		$result = $submission->submit();
-		$this->posted_data = $submission->get_posted_data();
 
 		if ( 'mail_sent' == $result['status'] ) {
 			if ( $this->in_demo_mode() ) {

@@ -20,7 +20,10 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 		return;
 	}
 
-	if ( empty( $contactform->posted_data ) ) {
+	$submission = WPCF7_Submission::get_instance();
+	$posted_data = $submission ? $submission->get_posted_data() : array();
+
+	if ( empty( $posted_data ) ) {
 		return;
 	}
 
@@ -31,8 +34,6 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 
 	foreach ( $fields_senseless as $tag )
 		$exclude_names[] = $tag['name'];
-
-	$posted_data = $contactform->posted_data;
 
 	foreach ( $posted_data as $key => $value ) {
 		if ( '_' == substr( $key, 0, 1 ) || in_array( $key, $exclude_names ) )
