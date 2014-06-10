@@ -231,7 +231,7 @@ function wpcf7_add_tag_generator_file() {
 		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
 }
 
-function wpcf7_tg_pane_file( &$contact_form ) {
+function wpcf7_tg_pane_file( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-file" class="hidden">
 <form action="">

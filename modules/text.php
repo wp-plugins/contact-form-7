@@ -190,19 +190,19 @@ function wpcf7_add_tag_generator_text() {
 		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
 }
 
-function wpcf7_tg_pane_text( &$contact_form ) {
+function wpcf7_tg_pane_text( $contact_form ) {
 	wpcf7_tg_pane_text_and_relatives( 'text' );
 }
 
-function wpcf7_tg_pane_email( &$contact_form ) {
+function wpcf7_tg_pane_email( $contact_form ) {
 	wpcf7_tg_pane_text_and_relatives( 'email' );
 }
 
-function wpcf7_tg_pane_url( &$contact_form ) {
+function wpcf7_tg_pane_url( $contact_form ) {
 	wpcf7_tg_pane_text_and_relatives( 'url' );
 }
 
-function wpcf7_tg_pane_tel( &$contact_form ) {
+function wpcf7_tg_pane_tel( $contact_form ) {
 	wpcf7_tg_pane_text_and_relatives( 'tel' );
 }
 

@@ -163,7 +163,7 @@ function wpcf7_add_tag_generator_quiz() {
 		'wpcf7-tg-pane-quiz', 'wpcf7_tg_pane_quiz' );
 }
 
-function wpcf7_tg_pane_quiz( &$contact_form ) {
+function wpcf7_tg_pane_quiz( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-quiz" class="hidden">
 <form action="">

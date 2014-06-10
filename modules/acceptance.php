@@ -138,7 +138,7 @@ function wpcf7_add_tag_generator_acceptance() {
 		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
 }
 
-function wpcf7_tg_pane_acceptance( &$contact_form ) {
+function wpcf7_tg_pane_acceptance( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-acceptance" class="hidden">
 <form action="">

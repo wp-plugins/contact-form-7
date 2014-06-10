@@ -152,7 +152,7 @@ function wpcf7_add_tag_generator_menu() {
 		'wpcf7-tg-pane-menu', 'wpcf7_tg_pane_menu' );
 }
 
-function wpcf7_tg_pane_menu( &$contact_form ) {
+function wpcf7_tg_pane_menu( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-menu" class="hidden">
 <form action="">

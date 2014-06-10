@@ -197,7 +197,7 @@ function wpcf7_add_tag_generator_captcha() {
 		'wpcf7-tg-pane-captcha', 'wpcf7_tg_pane_captcha' );
 }
 
-function wpcf7_tg_pane_captcha( &$contact_form ) {
+function wpcf7_tg_pane_captcha( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-captcha" class="hidden">
 <form action="">

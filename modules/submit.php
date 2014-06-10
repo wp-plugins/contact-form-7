@@ -50,7 +50,7 @@ function wpcf7_add_tag_generator_submit() {
 		'wpcf7-tg-pane-submit', 'wpcf7_tg_pane_submit', array( 'nameless' => 1 ) );
 }
 
-function wpcf7_tg_pane_submit( &$contact_form ) {
+function wpcf7_tg_pane_submit( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-submit" class="hidden">
 <form action="">

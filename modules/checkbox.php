@@ -270,11 +270,11 @@ function wpcf7_add_tag_generator_checkbox_and_radio() {
 		'wpcf7-tg-pane-radio', 'wpcf7_tg_pane_radio' );
 }
 
-function wpcf7_tg_pane_checkbox( &$contact_form ) {
+function wpcf7_tg_pane_checkbox( $contact_form ) {
 	wpcf7_tg_pane_checkbox_and_radio( 'checkbox' );
 }
 
-function wpcf7_tg_pane_radio( &$contact_form ) {
+function wpcf7_tg_pane_radio( $contact_form ) {
 	wpcf7_tg_pane_checkbox_and_radio( 'radio' );
 }
 

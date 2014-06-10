@@ -149,7 +149,7 @@ function wpcf7_add_tag_generator_date() {
 		'wpcf7-tg-pane-date', 'wpcf7_tg_pane_date' );
 }
 
-function wpcf7_tg_pane_date( &$contact_form ) {
+function wpcf7_tg_pane_date( $contact_form ) {
 	wpcf7_tg_pane_date_and_relatives( 'date' );
 }
 

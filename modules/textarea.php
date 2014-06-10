@@ -108,7 +108,7 @@ function wpcf7_add_tag_generator_textarea() {
 		'wpcf7-tg-pane-textarea', 'wpcf7_tg_pane_textarea' );
 }
 
-function wpcf7_tg_pane_textarea( &$contact_form ) {
+function wpcf7_tg_pane_textarea( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-textarea" class="hidden">
 <form action="">
