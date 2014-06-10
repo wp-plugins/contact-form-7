@@ -41,8 +41,7 @@ class WPCF7_Mail {
 			$body = self::replace_tags( $template['body'] );
 		}
 
-$attachments = array(); // TODO: make WPCF7_Submission to manage uploaded files, then make this function available
-//		$attachments = $this->attachments( $template['attachments'] );
+		$attachments = $this->attachments( $template['attachments'] );
 
 		$components = compact( 'subject', 'sender', 'body',
 			'recipient', 'additional_headers', 'attachments' );
@@ -174,16 +173,18 @@ $attachments = array(); // TODO: make WPCF7_Submission to manage uploaded files,
 
 		return $original;
 	}
-// TODO: make WPCF7_Submission to manage uploaded files, then make this function available
-/*
+
 	private function attachments( $template ) {
 		$attachments = array();
 
-		$uploaded_files = $this->contact_form->uploaded_files;
+		if ( $submission = WPCF7_Submission::get_instance() ) {
+			$uploaded_files = $submission->uploaded_files();
 
-		foreach ( (array) $uploaded_files as $name => $path ) {
-			if ( false !== strpos( $template, "[${name}]" ) && ! empty( $path ) ) {
-				$attachments[] = $path;
+			foreach ( (array) $uploaded_files as $name => $path ) {
+				if ( false !== strpos( $template, "[${name}]" )
+				&& ! empty( $path ) ) {
+					$attachments[] = $path;
+				}
 			}
 		}
 
@@ -203,7 +204,6 @@ $attachments = array(); // TODO: make WPCF7_Submission to manage uploaded files,
 
 		return $attachments;
 	}
-*/
 }
 
 ?>

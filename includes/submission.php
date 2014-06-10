@@ -16,6 +16,7 @@ class WPCF7_Submission {
 		'mail_sent' => false );
 
 	private $posted_data = array();
+	private $uploaded_files = array();
 	private $skip_mail = false;
 
 	private function __construct() {}
@@ -73,6 +74,8 @@ class WPCF7_Submission {
 
 			do_action( 'wpcf7_mail_failed', $contact_form );
 		}
+
+		$this->remove_uploaded_files();
 
 		return $result;
 	}
@@ -213,6 +216,24 @@ class WPCF7_Submission {
 		}
 
 		return false;
+	}
+
+	public function uploaded_files() {
+		return $this->uploaded_files;
+	}
+
+	public function add_uploaded_file( $name, $file_path ) {
+		$this->uploaded_files[$name] = $file_path;
+
+		if ( empty( $this->posted_data[$name] ) ) {
+			$this->posted_data[$name] = basename( $file_path );
+		}
+	}
+
+	public function remove_uploaded_files() {
+		foreach ( (array) $this->uploaded_files as $name => $path ) {
+			@unlink( $path );
+		}
 	}
 }
 

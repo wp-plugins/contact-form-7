@@ -518,11 +518,6 @@ class WPCF7_ContactForm {
 			}
 		}
 
-		// remove upload files
-		foreach ( (array) $this->uploaded_files as $name => $path ) {
-			@unlink( $path );
-		}
-
 		do_action( 'wpcf7_submit', $this, $result );
 
 		self::add_submission_status( $this->id, $result );
