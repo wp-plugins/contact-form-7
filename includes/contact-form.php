@@ -163,26 +163,26 @@ class WPCF7_ContactForm {
 
 	// Return true if this form is the same one as currently POSTed.
 	public function is_posted() {
-		if ( ! isset( $_POST['_wpcf7_unit_tag'] ) || empty( $_POST['_wpcf7_unit_tag'] ) )
+		if ( empty( $_POST['_wpcf7_unit_tag'] ) ) {
 			return false;
+		}
 
-		if ( $this->unit_tag == $_POST['_wpcf7_unit_tag'] )
-			return true;
-
-		return false;
+		return $this->unit_tag == $_POST['_wpcf7_unit_tag'];
 	}
 
 	public function clear_post() {
-		$fes = $this->form_scan_shortcode();
+		$tags = $this->form_scan_shortcode();
 
-		foreach ( $fes as $fe ) {
-			if ( ! isset( $fe['name'] ) || empty( $fe['name'] ) )
+		foreach ( $tags as $tag ) {
+			$tag = new WPCF7_Shortcode( $tag );
+
+			if ( empty( $tag->name ) ) {
 				continue;
+			}
 
-			$name = $fe['name'];
-
-			if ( isset( $_POST[$name] ) )
-				unset( $_POST[$name] );
+			if ( isset( $_POST[$tag->name] ) ) {
+				unset( $_POST[$tag->name] );
+			}
 		}
 	}
 
