@@ -6,7 +6,6 @@ class WPCF7_ContactForm {
 
 	private static $found_items = 0;
 	private static $current = null;
-	private static $submission = array(); // result of submit() process
 
 	public $initial = false;
 	public $id;
@@ -30,16 +29,6 @@ class WPCF7_ContactForm {
 
 	public static function reset_current() {
 		self::$current = null;
-	}
-
-	private static function add_submission_status( $id, $status ) {
-		self::$submission[$id] = (array) $status;
-	}
-
-	private static function get_submission_status( $id ) {
-		if ( isset( self::$submission[$id] ) ) {
-			return (array) self::$submission[$id];
-		}
 	}
 
 	private static function get_unit_tag( $id = 0 ) {
@@ -233,7 +222,7 @@ class WPCF7_ContactForm {
 
 		$class = 'wpcf7-form';
 
-		$result = self::get_submission_status( $this->id );
+		$result = WPCF7_Submission::get_status();
 
 		if ( $this->is_posted() ) {
 			if ( empty( $result['valid'] ) )
@@ -315,7 +304,7 @@ class WPCF7_ContactForm {
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 
-			$result = self::get_submission_status( $this->id );
+			$result = WPCF7_Submission::get_status();
 
 			if ( empty( $result['valid'] ) )
 				$class .= ' wpcf7-validation-errors';
@@ -355,7 +344,7 @@ class WPCF7_ContactForm {
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 			$role = 'alert';
-			$result = self::get_submission_status( $this->id );
+			$result = WPCF7_Submission::get_status();
 
 			if ( ! empty( $result['message'] ) ) {
 				$content = esc_html( $result['message'] );
@@ -398,7 +387,7 @@ class WPCF7_ContactForm {
 		if ( ! $this->is_posted() )
 			return '';
 
-		$result = self::get_submission_status( $this->id );
+		$result = WPCF7_Submission::get_status();
 
 		if ( ! isset( $result['invalid_reasons'][$name] ) )
 			return '';
@@ -516,8 +505,6 @@ class WPCF7_ContactForm {
 		}
 
 		do_action( 'wpcf7_submit', $this, $result );
-
-		self::add_submission_status( $this->id, $result );
 
 		return $result;
 	}

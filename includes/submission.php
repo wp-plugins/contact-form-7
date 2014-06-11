@@ -38,6 +38,16 @@ class WPCF7_Submission {
 		return self::$instance;
 	}
 
+	public static function get_status() {
+		$instance = self::get_instance();
+
+		if ( $instance ) {
+			return $instance->result;
+		}
+
+		return array();
+	}
+
 	public function submit() {
 		$this->setup_posted_data();
 		$validation = $this->validate();
