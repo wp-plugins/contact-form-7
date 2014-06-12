@@ -344,23 +344,24 @@ class WPCF7_ContactForm {
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 			$role = 'alert';
-			$result = WPCF7_Submission::get_status();
 
-			if ( ! empty( $result['message'] ) ) {
-				$content = esc_html( $result['message'] );
+			if ( $submission = WPCF7_Submission::get_instance() ) {
+				if ( $response = $submission->get_response() ) {
+					$content = esc_html( $response );
+				}
 
-				if ( ! empty( $result['invalid_reasons'] ) ) {
+				if ( $invalid_fields = $submission->get_invalid_fields() ) {
 					$content .= "\n" . '<ul>' . "\n";
 
-					foreach ( (array) $result['invalid_reasons'] as $k => $v ) {
-						if ( isset( $result['invalid_fields'][$k] )
-						&& wpcf7_is_name( $result['invalid_fields'][$k] ) ) {
+					foreach ( (array) $invalid_fields as $name => $field ) {
+						if ( $field['idref'] ) {
 							$link = sprintf( '<a href="#%1$s">%2$s</a>',
-								$result['invalid_fields'][$k],
-								esc_html( $v ) );
+								esc_attr( $field['idref'] ),
+								esc_html( $field['reason'] ) );
 							$content .= sprintf( '<li>%s</li>', $link );
 						} else {
-							$content .= sprintf( '<li>%s</li>', esc_html( $v ) );
+							$content .= sprintf( '<li>%s</li>',
+								esc_html( $field['reason'] ) );
 						}
 
 						$content .= "\n";
@@ -384,23 +385,27 @@ class WPCF7_ContactForm {
 	}
 
 	public function validation_error( $name ) {
-		if ( ! $this->is_posted() )
+		if ( ! $this->is_posted() ) {
 			return '';
+		}
 
-		$result = WPCF7_Submission::get_status();
-
-		if ( ! isset( $result['invalid_reasons'][$name] ) )
+		if ( ! $submission = WPCF7_Submission::get_instance() ) {
 			return '';
+		}
 
-		$ve = trim( $result['invalid_reasons'][$name] );
-
-		if ( empty( $ve ) )
+		if ( ! $invalid_field = $submission->get_invalid_field( $name ) ) {
 			return '';
+		}
 
-		$ve = '<span role="alert" class="wpcf7-not-valid-tip">'
-			. esc_html( $ve ) . '</span>';
+		if ( ! $error = trim( $invalid_field['reason'] ) ) {
+			return '';
+		}
 
-		return apply_filters( 'wpcf7_validation_error', $ve, $name, $this );
+		$error = sprintf(
+			'<span role="alert" class="wpcf7-not-valid-tip">%s</span>',
+			esc_html( $error ) );
+
+		return apply_filters( 'wpcf7_validation_error', $error, $name, $this );
 	}
 
 	/* Form Elements */
@@ -477,6 +482,10 @@ class WPCF7_ContactForm {
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
 		$result = $submission->submit();
+
+		if ( 'validation_failed' == $result['status'] ) {
+			$result['invalid_fields'] = $submission->get_invalid_fields();
+		}
 
 		if ( 'mail_sent' == $result['status'] ) {
 			if ( $this->in_demo_mode() ) {

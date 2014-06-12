@@ -18,6 +18,8 @@ class WPCF7_Submission {
 	private $posted_data = array();
 	private $uploaded_files = array();
 	private $skip_mail = false;
+	private $response = '';
+	private $invalid_fields = array();
 
 	private function __construct() {}
 
@@ -50,44 +52,59 @@ class WPCF7_Submission {
 
 	public function submit() {
 		$this->setup_posted_data();
-		$validation = $this->validate();
 
 		$result = &$this->result;
 		$contact_form = $this->contact_form;
 
-		if ( ! $validation['valid'] ) { // Validation error occured
+		if ( ! $this->validate() ) { // Validation error occured
 			$result['status'] = 'validation_failed';
 			$result['valid'] = false;
-			$result['invalid_reasons'] = $validation['reason'];
-			$result['invalid_fields'] = $validation['idref'];
-			$result['message'] = $contact_form->message( 'validation_error' );
+			$this->response = $contact_form->message( 'validation_error' );
 
 		} elseif ( ! $this->accepted() ) { // Not accepted terms
 			$result['status'] = 'acceptance_missing';
-			$result['message'] = $contact_form->message( 'accept_terms' );
+			$this->response = $contact_form->message( 'accept_terms' );
 
 		} elseif ( $this->spam() ) { // Spam!
 			$result['status'] = 'spam';
-			$result['message'] = $contact_form->message( 'spam' );
+			$this->response = $contact_form->message( 'spam' );
 			$result['spam'] = true;
 
 		} elseif ( $this->mail() ) {
 			$result['status'] = 'mail_sent';
 			$result['mail_sent'] = true;
-			$result['message'] = $contact_form->message( 'mail_sent_ok' );
+			$this->response = $contact_form->message( 'mail_sent_ok' );
 
 			do_action( 'wpcf7_mail_sent', $contact_form );
 
 		} else {
 			$result['status'] = 'mail_failed';
-			$result['message'] = $contact_form->message( 'mail_sent_ng' );
+			$this->response = $contact_form->message( 'mail_sent_ng' );
 
 			do_action( 'wpcf7_mail_failed', $contact_form );
 		}
 
+		$result['message'] = $this->response;
+
 		$this->remove_uploaded_files();
 
 		return $result;
+	}
+
+	public function get_response() {
+		return $this->response;
+	}
+
+	public function get_invalid_field( $name ) {
+		if ( isset( $this->invalid_fields[$name] ) ) {
+			return $this->invalid_fields[$name];
+		} else {
+			return false;
+		}
+	}
+
+	public function get_invalid_fields() {
+		return $this->invalid_fields;
 	}
 
 	public function get_posted_data( $name = '' ) {
@@ -146,19 +163,42 @@ class WPCF7_Submission {
 	}
 
 	private function validate() {
-		$tags = $this->contact_form->form_scan_shortcode();
+		if ( $this->invalid_fields ) {
+			return false;
+		}
 
 		$result = array(
 			'valid' => true,
 			'reason' => array(),
 			'idref' => array() );
 
+		$tags = $this->contact_form->form_scan_shortcode();
+
 		foreach ( $tags as $tag ) {
 			$result = apply_filters( 'wpcf7_validate_' . $tag['type'],
 				$result, $tag );
 		}
 
-		return apply_filters( 'wpcf7_validate', $result );
+		$result = apply_filters( 'wpcf7_validate', $result );
+
+		if ( $result['valid'] ) {
+			return true;
+		} else {
+			foreach ( (array) $result['reason'] as $name => $reason ) {
+				$field = array( 'reason' => $reason );
+
+				if ( isset( $result['idref'][$name] )
+				&& wpcf7_is_name( $result['idref'][$name] ) ) {
+					$field['idref'] = $result['idref'][$name];
+				} else {
+					$field['idref'] = null;
+				}
+
+				$this->invalid_fields[$name] = $field;
+			}
+
+			return false;
+		}
 	}
 
 	private function accepted() {

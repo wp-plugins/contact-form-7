@@ -64,18 +64,12 @@ function wpcf7_ajax_json_echo() {
 			if ( ! $result['valid'] ) {
 				$invalids = array();
 
-				foreach ( $result['invalid_reasons'] as $name => $reason ) {
-					$invalid = array(
+				foreach ( $result['invalid_fields'] as $name => $field ) {
+					$invalids[] = array(
 						'into' => 'span.wpcf7-form-control-wrap.'
 							. sanitize_html_class( $name ),
-						'message' => $reason );
-
-					if ( isset( $result['invalid_fields'][$name] )
-					&& wpcf7_is_name( $result['invalid_fields'][$name] ) ) {
-						$invalid['idref'] = $result['invalid_fields'][$name];
-					}
-
-					$invalids[] = $invalid;
+						'message' => $field['reason'],
+						'idref' => $field['idref'] );
 				}
 
 				$items['invalids'] = $invalids;
