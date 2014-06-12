@@ -5,16 +5,7 @@ class WPCF7_Submission {
 	private static $instance;
 
 	private $contact_form;
-
-	private $result = array(
-		'status' => 'init',
-		'valid' => true,
-		'invalid_reasons' => array(),
-		'invalid_fields' => array(),
-		'spam' => false,
-		'message' => '',
-		'mail_sent' => false );
-
+	private $status = 'init';
 	private $posted_data = array();
 	private $uploaded_files = array();
 	private $skip_mail = false;
@@ -40,55 +31,46 @@ class WPCF7_Submission {
 		return self::$instance;
 	}
 
-	public static function get_status() {
-		$instance = self::get_instance();
-
-		if ( $instance ) {
-			return $instance->result;
-		}
-
-		return array();
-	}
-
 	public function submit() {
 		$this->setup_posted_data();
-
-		$result = &$this->result;
 		$contact_form = $this->contact_form;
 
 		if ( ! $this->validate() ) { // Validation error occured
-			$result['status'] = 'validation_failed';
-			$result['valid'] = false;
+			$this->status = 'validation_failed';
 			$this->response = $contact_form->message( 'validation_error' );
 
 		} elseif ( ! $this->accepted() ) { // Not accepted terms
-			$result['status'] = 'acceptance_missing';
+			$this->status = 'acceptance_missing';
 			$this->response = $contact_form->message( 'accept_terms' );
 
 		} elseif ( $this->spam() ) { // Spam!
-			$result['status'] = 'spam';
+			$this->status = 'spam';
 			$this->response = $contact_form->message( 'spam' );
-			$result['spam'] = true;
 
 		} elseif ( $this->mail() ) {
-			$result['status'] = 'mail_sent';
-			$result['mail_sent'] = true;
+			$this->status = 'mail_sent';
 			$this->response = $contact_form->message( 'mail_sent_ok' );
 
 			do_action( 'wpcf7_mail_sent', $contact_form );
 
 		} else {
-			$result['status'] = 'mail_failed';
+			$this->status = 'mail_failed';
 			$this->response = $contact_form->message( 'mail_sent_ng' );
 
 			do_action( 'wpcf7_mail_failed', $contact_form );
 		}
 
-		$result['message'] = $this->response;
-
 		$this->remove_uploaded_files();
 
-		return $result;
+		return $this->status;
+	}
+
+	public function get_status() {
+		return $this->status;
+	}
+
+	public function is( $status ) {
+		return $this->status == $status;
 	}
 
 	public function get_response() {

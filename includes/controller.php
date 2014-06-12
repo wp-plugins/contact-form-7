@@ -55,13 +55,15 @@ function wpcf7_ajax_json_echo() {
 
 			$result = $contact_form->submit( true );
 
-			if ( ! empty( $result['message'] ) )
+			if ( ! empty( $result['message'] ) ) {
 				$items['message'] = $result['message'];
+			}
 
-			if ( $result['mail_sent'] )
+			if ( 'mail_sent' == $result['status'] ) {
 				$items['mailSent'] = true;
+			}
 
-			if ( ! $result['valid'] ) {
+			if ( 'validation_failed' == $result['status'] ) {
 				$invalids = array();
 
 				foreach ( $result['invalid_fields'] as $name => $field ) {
@@ -75,14 +77,17 @@ function wpcf7_ajax_json_echo() {
 				$items['invalids'] = $invalids;
 			}
 
-			if ( $result['spam'] )
+			if ( 'spam' == $result['status'] ) {
 				$items['spam'] = true;
+			}
 
-			if ( ! empty( $result['scripts_on_sent_ok'] ) )
+			if ( ! empty( $result['scripts_on_sent_ok'] ) ) {
 				$items['onSentOk'] = $result['scripts_on_sent_ok'];
+			}
 
-			if ( ! empty( $result['scripts_on_submit'] ) )
+			if ( ! empty( $result['scripts_on_submit'] ) ) {
 				$items['onSubmit'] = $result['scripts_on_submit'];
+			}
 
 			$items = apply_filters( 'wpcf7_ajax_json_echo', $items, $result );
 

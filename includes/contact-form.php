@@ -163,6 +163,10 @@ class WPCF7_ContactForm {
 
 	// Return true if this form is the same one as currently POSTed.
 	public function is_posted() {
+		if ( ! WPCF7_Submission::get_instance() ) {
+			return false;
+		}
+
 		if ( empty( $_POST['_wpcf7_unit_tag'] ) ) {
 			return false;
 		}
@@ -222,17 +226,18 @@ class WPCF7_ContactForm {
 
 		$class = 'wpcf7-form';
 
-		$result = WPCF7_Submission::get_status();
-
 		if ( $this->is_posted() ) {
-			if ( empty( $result['valid'] ) )
+			$submission = WPCF7_Submission::get_instance();
+
+			if ( $submission->is( 'validation_failed' ) ) {
 				$class .= ' invalid';
-			elseif ( ! empty( $result['spam'] ) )
+			} elseif ( $submission->is( 'spam' ) ) {
 				$class .= ' spam';
-			elseif ( ! empty( $result['mail_sent'] ) )
+			} elseif ( $submission->is( 'mail_sent' ) ) {
 				$class .= ' sent';
-			else
+			} elseif ( $submission->is( 'mail_failed' ) ) {
 				$class .= ' failed';
+			}
 		}
 
 		if ( $atts['html_class'] ) {
@@ -303,23 +308,20 @@ class WPCF7_ContactForm {
 		$content = '';
 
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
-
-			$result = WPCF7_Submission::get_status();
-
-			if ( empty( $result['valid'] ) )
-				$class .= ' wpcf7-validation-errors';
-			elseif ( ! empty( $result['spam'] ) )
-				$class .= ' wpcf7-spam-blocked';
-			elseif ( ! empty( $result['mail_sent'] ) )
-				$class .= ' wpcf7-mail-sent-ok';
-			else
-				$class .= ' wpcf7-mail-sent-ng';
-
 			$role = 'alert';
 
-			if ( ! empty( $result['message'] ) )
-				$content = $result['message'];
+			$submission = WPCF7_Submission::get_instance();
+			$content = $submission->get_response();
 
+			if ( $submission->is( 'validation_failed' ) ) {
+				$class .= ' wpcf7-validation-errors';
+			} elseif ( $submission->is( 'spam' ) ) {
+				$class .= ' wpcf7-spam-blocked';
+			} elseif ( $submission->is( 'mail_sent' ) ) {
+				$class .= ' wpcf7-mail-sent-ok';
+			} elseif ( $submission->is( 'mail_failed' ) ) {
+				$class .= ' wpcf7-mail-sent-ng';
+			}
 		} else {
 			$class .= ' wpcf7-display-none';
 		}
@@ -345,30 +347,30 @@ class WPCF7_ContactForm {
 		if ( $this->is_posted() ) { // Post response output for non-AJAX
 			$role = 'alert';
 
-			if ( $submission = WPCF7_Submission::get_instance() ) {
-				if ( $response = $submission->get_response() ) {
-					$content = esc_html( $response );
-				}
+			$submission = WPCF7_Submission::get_instance();
 
-				if ( $invalid_fields = $submission->get_invalid_fields() ) {
-					$content .= "\n" . '<ul>' . "\n";
+			if ( $response = $submission->get_response() ) {
+				$content = esc_html( $response );
+			}
 
-					foreach ( (array) $invalid_fields as $name => $field ) {
-						if ( $field['idref'] ) {
-							$link = sprintf( '<a href="#%1$s">%2$s</a>',
-								esc_attr( $field['idref'] ),
-								esc_html( $field['reason'] ) );
-							$content .= sprintf( '<li>%s</li>', $link );
-						} else {
-							$content .= sprintf( '<li>%s</li>',
-								esc_html( $field['reason'] ) );
-						}
+			if ( $invalid_fields = $submission->get_invalid_fields() ) {
+				$content .= "\n" . '<ul>' . "\n";
 
-						$content .= "\n";
+				foreach ( (array) $invalid_fields as $name => $field ) {
+					if ( $field['idref'] ) {
+						$link = sprintf( '<a href="#%1$s">%2$s</a>',
+							esc_attr( $field['idref'] ),
+							esc_html( $field['reason'] ) );
+						$content .= sprintf( '<li>%s</li>', $link );
+					} else {
+						$content .= sprintf( '<li>%s</li>',
+							esc_html( $field['reason'] ) );
 					}
 
-					$content .= '</ul>' . "\n";
+					$content .= "\n";
 				}
+
+				$content .= '</ul>' . "\n";
 			}
 		}
 
@@ -385,20 +387,18 @@ class WPCF7_ContactForm {
 	}
 
 	public function validation_error( $name ) {
-		if ( ! $this->is_posted() ) {
-			return '';
+		$error = '';
+
+		if ( $this->is_posted() ) {
+			$submission = WPCF7_Submission::get_instance();
+
+			if ( $invalid_field = $submission->get_invalid_field( $name ) ) {
+				$error = trim( $invalid_field['reason'] );
+			}
 		}
 
-		if ( ! $submission = WPCF7_Submission::get_instance() ) {
-			return '';
-		}
-
-		if ( ! $invalid_field = $submission->get_invalid_field( $name ) ) {
-			return '';
-		}
-
-		if ( ! $error = trim( $invalid_field['reason'] ) ) {
-			return '';
+		if ( ! $error ) {
+			return $error;
 		}
 
 		$error = sprintf(
@@ -481,13 +481,17 @@ class WPCF7_ContactForm {
 
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
-		$result = $submission->submit();
+		$submission->submit();
 
-		if ( 'validation_failed' == $result['status'] ) {
+		$result = array(
+			'status' => $submission->get_status(),
+			'message' => $submission->get_response() );
+
+		if ( $submission->is( 'validation_failed' ) ) {
 			$result['invalid_fields'] = $submission->get_invalid_fields();
 		}
 
-		if ( 'mail_sent' == $result['status'] ) {
+		if ( $submission->is( 'mail_sent' ) ) {
 			if ( $this->in_demo_mode() ) {
 				$result['status'] = 'demo_mode';
 			}
