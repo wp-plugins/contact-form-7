@@ -25,6 +25,8 @@ class WPCF7_Submission {
 			self::$instance->skip_mail = $contact_form->in_demo_mode();
 			self::$instance->setup_posted_data();
 			self::$instance->submit();
+		} elseif ( null != $contact_form ) {
+			return null;
 		}
 
 		return self::$instance;
