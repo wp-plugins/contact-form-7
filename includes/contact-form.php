@@ -481,7 +481,6 @@ class WPCF7_ContactForm {
 
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
-		$submission->submit();
 
 		$result = array(
 			'status' => $submission->get_status(),

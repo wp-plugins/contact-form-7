@@ -22,47 +22,12 @@ class WPCF7_Submission {
 
 			self::$instance = new self;
 			self::$instance->contact_form = $contact_form;
-
-			if ( $contact_form->in_demo_mode() ) {
-				self::$instance->skip_mail = true;
-			}
+			self::$instance->skip_mail = $contact_form->in_demo_mode();
+			self::$instance->setup_posted_data();
+			self::$instance->submit();
 		}
 
 		return self::$instance;
-	}
-
-	public function submit() {
-		$this->setup_posted_data();
-		$contact_form = $this->contact_form;
-
-		if ( ! $this->validate() ) { // Validation error occured
-			$this->status = 'validation_failed';
-			$this->response = $contact_form->message( 'validation_error' );
-
-		} elseif ( ! $this->accepted() ) { // Not accepted terms
-			$this->status = 'acceptance_missing';
-			$this->response = $contact_form->message( 'accept_terms' );
-
-		} elseif ( $this->spam() ) { // Spam!
-			$this->status = 'spam';
-			$this->response = $contact_form->message( 'spam' );
-
-		} elseif ( $this->mail() ) {
-			$this->status = 'mail_sent';
-			$this->response = $contact_form->message( 'mail_sent_ok' );
-
-			do_action( 'wpcf7_mail_sent', $contact_form );
-
-		} else {
-			$this->status = 'mail_failed';
-			$this->response = $contact_form->message( 'mail_sent_ng' );
-
-			do_action( 'wpcf7_mail_failed', $contact_form );
-		}
-
-		$this->remove_uploaded_files();
-
-		return $this->status;
 	}
 
 	public function get_status() {
@@ -142,6 +107,39 @@ class WPCF7_Submission {
 		$this->posted_data = apply_filters( 'wpcf7_posted_data', $posted_data );
 
 		return $this->posted_data;
+	}
+
+	private function submit() {
+		$contact_form = $this->contact_form;
+
+		if ( ! $this->validate() ) { // Validation error occured
+			$this->status = 'validation_failed';
+			$this->response = $contact_form->message( 'validation_error' );
+
+		} elseif ( ! $this->accepted() ) { // Not accepted terms
+			$this->status = 'acceptance_missing';
+			$this->response = $contact_form->message( 'accept_terms' );
+
+		} elseif ( $this->spam() ) { // Spam!
+			$this->status = 'spam';
+			$this->response = $contact_form->message( 'spam' );
+
+		} elseif ( $this->mail() ) {
+			$this->status = 'mail_sent';
+			$this->response = $contact_form->message( 'mail_sent_ok' );
+
+			do_action( 'wpcf7_mail_sent', $contact_form );
+
+		} else {
+			$this->status = 'mail_failed';
+			$this->response = $contact_form->message( 'mail_sent_ng' );
+
+			do_action( 'wpcf7_mail_failed', $contact_form );
+		}
+
+		$this->remove_uploaded_files();
+
+		return $this->status;
 	}
 
 	private function validate() {
