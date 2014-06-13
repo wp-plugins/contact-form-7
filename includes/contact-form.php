@@ -704,6 +704,20 @@ function wpcf7_is_posted() {
 	return $contact_form->is_posted();
 }
 
+function wpcf7_get_hangover( $name, $default = null ) {
+	if ( ! wpcf7_is_posted() ) {
+		return $default;
+	}
+
+	$submission = WPCF7_Submission::get_instance();
+
+	if ( ! $submission || $submission->is( 'mail_sent' ) ) {
+		return $default;
+	}
+
+	return isset( $_POST[$name] ) ? wp_unslash( $_POST[$name] ) : $default;
+}
+
 function wpcf7_get_validation_error( $name ) {
 	if ( ! $contact_form = wpcf7_get_current_contact_form() )
 		return '';

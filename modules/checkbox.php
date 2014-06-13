@@ -54,13 +54,6 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) )
 		$defaults = explode( '_', $matches[1] );
 
-	if ( isset( $_POST[$tag->name] ) )
-		$post = $_POST[$tag->name];
-	else
-		$post = $multiple ? array() : '';
-
-	$is_posted = wpcf7_is_posted();
-
 	$html = '';
 	$count = 0;
 
@@ -83,19 +76,21 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 		}
 	}
 
+	$hangover = wpcf7_get_hangover( $tag->name, $multiple ? array() : '' );
+
 	foreach ( $values as $key => $value ) {
 		$class = 'wpcf7-list-item';
 
 		$checked = false;
 
-		if ( $is_posted && ! empty( $post ) ) {
-			if ( $multiple && in_array( esc_sql( $value ), (array) $post ) )
-				$checked = true;
-			if ( ! $multiple && $post == esc_sql( $value ) )
-				$checked = true;
+		if ( $hangover ) {
+			if ( $multiple ) {
+				$checked = in_array( esc_sql( $value ), (array) $hangover );
+			} else {
+				$checked = ( $hangover == esc_sql( $value ) );
+			}
 		} else {
-			if ( in_array( $key + 1, (array) $defaults ) )
-				$checked = true;
+			$checked = in_array( $key + 1, (array) $defaults );
 		}
 
 		if ( isset( $labels[$key] ) )

@@ -52,8 +52,7 @@ function wpcf7_date_shortcode_handler( $tag ) {
 		$value = '';
 	}
 
-	if ( wpcf7_is_posted() && isset( $_POST[$tag->name] ) )
-		$value = wp_unslash( $_POST[$tag->name] );
+	$value = wpcf7_get_hangover( $tag->name, $value );
 
 	$atts['value'] = $value;
 

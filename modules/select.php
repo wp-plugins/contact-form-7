@@ -45,7 +45,6 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$include_blank = $tag->has_option( 'include_blank' );
 	$first_as_label = $tag->has_option( 'first_as_label' );
 
-	$name = $tag->name;
 	$values = $tag->values;
 	$labels = $tag->labels;
 
@@ -64,20 +63,21 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	}
 
 	$html = '';
-
-	$posted = wpcf7_is_posted();
+	$hangover = wpcf7_get_hangover( $tag->name );
 
 	foreach ( $values as $key => $value ) {
 		$selected = false;
 
-		if ( $posted && ! empty( $_POST[$name] ) ) {
-			if ( $multiple && in_array( esc_sql( $value ), (array) $_POST[$name] ) )
-				$selected = true;
-			if ( ! $multiple && $_POST[$name] == esc_sql( $value ) )
-				$selected = true;
+		if ( $hangover ) {
+			if ( $multiple ) {
+				$selected = in_array( esc_sql( $value ), (array) $hangover );
+			} else {
+				$selected = ( $hangover == esc_sql( $value ) );
+			}
 		} else {
-			if ( ! $empty_select && in_array( $key + 1, (array) $defaults ) )
+			if ( ! $empty_select && in_array( $key + 1, (array) $defaults ) ) {
 				$selected = true;
+			}
 		}
 
 		$item_atts = array(
