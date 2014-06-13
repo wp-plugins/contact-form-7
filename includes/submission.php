@@ -227,7 +227,7 @@ class WPCF7_Submission {
 		}
 
 		$mail = new WPCF7_Mail( $contact_form->mail, 'mail' );
-		$result = $mail->compose_mail();
+		$result = $mail->compose();
 
 		if ( $result ) {
 			$additional_mail = array();
@@ -241,7 +241,7 @@ class WPCF7_Submission {
 				$additional_mail, $contact_form );
 
 			foreach ( $additional_mail as $mail ) {
-				$mail->compose_mail();
+				$mail->compose();
 			}
 
 			return true;

@@ -24,7 +24,7 @@ class WPCF7_Mail {
 		$this->template = $template;
 	}
 
-	public function compose_mail( $send = true ) {
+	public function compose( $send = true ) {
 		$template = $this->template;
 
 		$use_html = (bool) $template['use_html'];
@@ -84,19 +84,19 @@ class WPCF7_Mail {
 			. '[\t ]*\](\]?)/';
 
 		if ( $html ) {
-			$callback = 'self::mail_callback_html';
+			$callback = 'self::replace_tags_callback_html';
 		} else {
-			$callback = 'self::mail_callback';
+			$callback = 'self::replace_tags_callback';
 		}
 
 		return preg_replace_callback( $regex, $callback, $content );
 	}
 
-	private static function mail_callback_html( $matches ) {
-		return self::mail_callback( $matches, true );
+	private static function replace_tags_callback_html( $matches ) {
+		return self::replace_tags_callback( $matches, true );
 	}
 
-	private static function mail_callback( $matches, $html = false ) {
+	private static function replace_tags_callback( $matches, $html = false ) {
 		// allow [[foo]] syntax for escaping a tag
 		if ( $matches[1] == '[' && $matches[4] == ']' ) {
 			return substr( $matches[0], 1, -1 );
