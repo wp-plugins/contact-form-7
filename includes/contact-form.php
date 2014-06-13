@@ -174,22 +174,6 @@ class WPCF7_ContactForm {
 		return $this->unit_tag == $_POST['_wpcf7_unit_tag'];
 	}
 
-	public function clear_post() {
-		$tags = $this->form_scan_shortcode();
-
-		foreach ( $tags as $tag ) {
-			$tag = new WPCF7_Shortcode( $tag );
-
-			if ( empty( $tag->name ) ) {
-				continue;
-			}
-
-			if ( isset( $_POST[$tag->name] ) ) {
-				unset( $_POST[$tag->name] );
-			}
-		}
-	}
-
 	/* Generating Form HTML */
 
 	public function form_html( $atts = array() ) {
@@ -502,8 +486,6 @@ class WPCF7_ContactForm {
 					$result['scripts_on_sent_ok'] = array_map(
 						'wpcf7_strip_quote', $on_sent_ok );
 				}
-			} else {
-				$this->clear_post();
 			}
 		}
 
