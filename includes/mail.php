@@ -2,29 +2,37 @@
 
 class WPCF7_Mail {
 
+	private static $current = null;
+
+	private $name = '';
 	private $template = array();
 
-	public function __construct( $template, $name = '' ) {
-		$this->setup_template( $template, $name );
+	public static function send( $template, $name = '' ) {
+		$instance = new self;
+		$instance->name = trim( $name );
+		$instance->setup_template( $template );
+
+		self::$current = $instance;
+
+		return $instance->compose();
 	}
 
-	private function setup_template( $template, $name ) {
+	private function __construct() {}
+
+	public static function get_current() {
+		return self::$current;
+	}
+
+	private function setup_template( $template ) {
 		$defaults = array(
 			'subject' => '', 'sender' => '', 'body' => '',
 			'recipient' => '', 'additional_headers' => '',
 			'attachments' => '', 'use_html' => false );
 
-		$template = wp_parse_args( $template, $defaults );
-
-		$name = trim( $name );
-
-		if ( ! empty( $name ) )
-			$template['name'] = $name;
-
-		$this->template = $template;
+		$this->template = wp_parse_args( $template, $defaults );
 	}
 
-	public function compose( $send = true ) {
+	private function compose( $send = true ) {
 		$template = $this->template;
 
 		$use_html = (bool) $template['use_html'];

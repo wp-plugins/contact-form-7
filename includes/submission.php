@@ -226,22 +226,20 @@ class WPCF7_Submission {
 			return true;
 		}
 
-		$mail = new WPCF7_Mail( $contact_form->mail, 'mail' );
-		$result = $mail->compose();
+		$result = WPCF7_Mail::send( $contact_form->mail, 'mail' );
 
 		if ( $result ) {
 			$additional_mail = array();
 
 			if ( $contact_form->mail_2['active'] ) {
-				$additional_mail[] = new WPCF7_Mail(
-					$contact_form->mail_2, 'mail_2' );
+				$additional_mail['mail_2'] = $contact_form->mail_2;
 			}
 
 			$additional_mail = apply_filters( 'wpcf7_additional_mail',
 				$additional_mail, $contact_form );
 
-			foreach ( $additional_mail as $mail ) {
-				$mail->compose();
+			foreach ( $additional_mail as $name => $template ) {
+				WPCF7_Mail::send( $template, $name );
 			}
 
 			return true;
