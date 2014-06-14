@@ -115,7 +115,19 @@ class WPCF7_ContactForm {
 		return $contact_form;
 	}
 
-	public function __construct( $post = null ) {
+	public static function get_instance( $post ) {
+		$post = get_post( $post );
+
+		if ( ! $post || self::post_type != get_post_type( $post ) ) {
+			return false;
+		}
+
+		self::$current = $contact_form = new self( $post );
+
+		return $contact_form;
+	}
+
+	private function __construct( $post = null ) {
 		$this->form = '';
 		$this->mail = array();
 		$this->mail_2 = array();
@@ -150,12 +162,15 @@ class WPCF7_ContactForm {
 	}
 
 	public function get_properties() {
-		$prop_names = array( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+		$prop_names = array(
+			'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
 
 		$properties = array();
 
-		foreach ( $prop_names as $prop_name )
-			$properties[$prop_name] = isset( $this->{$prop_name} ) ? $this->{$prop_name} : '';
+		foreach ( $prop_names as $prop_name ) {
+			$properties[$prop_name] = isset( $this->{$prop_name} )
+				? $this->{$prop_name} : '';
+		}
 
 		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
 	}
@@ -636,13 +651,7 @@ class WPCF7_ContactForm {
 }
 
 function wpcf7_contact_form( $id ) {
-	$contact_form = new WPCF7_ContactForm( $id );
-
-	if ( $contact_form->initial() ) {
-		return false;
-	}
-
-	return $contact_form;
+	return WPCF7_ContactForm::get_instance( $id );
 }
 
 function wpcf7_get_contact_form_by_old_id( $old_id ) {

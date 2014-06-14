@@ -110,7 +110,7 @@ function wpcf7_load_contact_form_admin() {
 		$deleted = 0;
 
 		foreach ( $posts as $post ) {
-			$post = new WPCF7_ContactForm( $post );
+			$post = WPCF7_ContactForm::get_instance( $post );
 
 			if ( empty( $post ) )
 				continue;
