@@ -68,8 +68,8 @@ function wpcf7_install() {
 	if ( get_posts( array( 'post_type' => 'wpcf7_contact_form' ) ) )
 		return;
 
-	$contact_form = wpcf7_get_contact_form_default_pack(
-		array( 'title' => sprintf( __( 'Contact form %d', 'contact-form-7' ), 1 ) ) );
+	$contact_form = WPCF7_ContactForm::get_template( array(
+		'title' => sprintf( __( 'Contact form %d', 'contact-form-7' ), 1 ) ) );
 
 	$contact_form->save();
 }

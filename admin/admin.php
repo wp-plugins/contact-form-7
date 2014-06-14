@@ -140,7 +140,7 @@ function wpcf7_load_contact_form_admin() {
 	$post = null;
 
 	if ( 'wpcf7-new' == $plugin_page && isset( $_GET['locale'] ) ) {
-		$post = wpcf7_get_contact_form_default_pack( array(
+		$post = WPCF7_ContactForm::get_template( array(
 			'locale' => $_GET['locale'] ) );
 	} elseif ( ! empty( $_GET['post'] ) ) {
 		$post = wpcf7_contact_form( $_GET['post'] );
