@@ -63,60 +63,13 @@ function wpcf7_load_contact_form_admin() {
 			$contact_form->initial = true;
 		}
 
-		$contact_form->title = trim( $_POST['wpcf7-title'] );
-		$contact_form->locale = trim( $_POST['wpcf7-locale'] );
+		wpcf7_save_contact_form( $contact_form );
 
-		$form = trim( $_POST['wpcf7-form'] );
-
-		$mail = array(
-			'subject' => trim( $_POST['wpcf7-mail-subject'] ),
-			'sender' => trim( $_POST['wpcf7-mail-sender'] ),
-			'body' => trim( $_POST['wpcf7-mail-body'] ),
-			'recipient' => trim( $_POST['wpcf7-mail-recipient'] ),
-			'additional_headers' => trim( $_POST['wpcf7-mail-additional-headers'] ),
-			'attachments' => trim( $_POST['wpcf7-mail-attachments'] ),
-			'use_html' =>
-				isset( $_POST['wpcf7-mail-use-html'] ) && 1 == $_POST['wpcf7-mail-use-html']
-		);
-
-		$mail_2 = array(
-			'active' =>
-				isset( $_POST['wpcf7-mail-2-active'] ) && 1 == $_POST['wpcf7-mail-2-active'],
-			'subject' => trim( $_POST['wpcf7-mail-2-subject'] ),
-			'sender' => trim( $_POST['wpcf7-mail-2-sender'] ),
-			'body' => trim( $_POST['wpcf7-mail-2-body'] ),
-			'recipient' => trim( $_POST['wpcf7-mail-2-recipient'] ),
-			'additional_headers' => trim( $_POST['wpcf7-mail-2-additional-headers'] ),
-			'attachments' => trim( $_POST['wpcf7-mail-2-attachments'] ),
-			'use_html' =>
-				isset( $_POST['wpcf7-mail-2-use-html'] ) && 1 == $_POST['wpcf7-mail-2-use-html']
-		);
-
-		$messages = isset( $contact_form->messages ) ? $contact_form->messages : array();
-
-		foreach ( wpcf7_messages() as $key => $arr ) {
-			$field_name = 'wpcf7-message-' . strtr( $key, '_', '-' );
-			if ( isset( $_POST[$field_name] ) )
-				$messages[$key] = trim( $_POST[$field_name] );
-		}
-
-		$additional_settings = trim( $_POST['wpcf7-additional-settings'] );
-
-		$props = apply_filters( 'wpcf7_contact_form_admin_posted_properties',
-			compact( 'form', 'mail', 'mail_2', 'messages', 'additional_settings' ) );
-
-		foreach ( (array) $props as $key => $prop )
-			$contact_form->{$key} = $prop;
-
-		$query = array();
-		$query['message'] = ( $contact_form->initial ) ? 'created' : 'saved';
-
-		$contact_form->save();
-
-		$query['post'] = $contact_form->id;
+		$query = array(
+			'message' => ( $contact_form->initial ) ? 'created' : 'saved',
+			'post' => $contact_form->id );
 
 		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
-
 		wp_safe_redirect( $redirect_to );
 		exit();
 	}

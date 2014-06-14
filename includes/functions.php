@@ -220,6 +220,11 @@ function wpcf7_l10n() {
 	return $l10n;
 }
 
+function wpcf7_is_valid_locale( $locale ) {
+	$l10n = wpcf7_l10n();
+	return isset( $l10n[$locale] );
+}
+
 function wpcf7_is_rtl( $locale = '' ) {
 	if ( empty( $locale ) ) {
 		return function_exists( 'is_rtl' ) ? is_rtl() : false;
