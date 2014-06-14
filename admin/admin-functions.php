@@ -104,6 +104,7 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 	}
 
 	$mail['use_html'] = ! empty( $_POST['wpcf7-mail-use-html'] );
+	$mail['exclude_blank'] = ! empty( $_POST['wpcf7-mail-exclude-blank'] );
 
 	$contact_form->mail = $mail;
 
@@ -137,6 +138,7 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 	}
 
 	$mail_2['use_html'] = ! empty( $_POST['wpcf7-mail-2-use-html'] );
+	$mail_2['exclude_blank'] = ! empty( $_POST['wpcf7-mail-2-exclude-blank'] );
 
 	$contact_form->mail_2 = $mail_2;
 

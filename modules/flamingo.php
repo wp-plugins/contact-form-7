@@ -104,7 +104,7 @@ function wpcf7_flamingo_get_value( $field, $contactform ) {
 			$template = trim( wpcf7_strip_quote( $templates[0] ) );
 		}
 
-		$value = WPCF7_Mail::replace_tags( $template );
+		$value = wpcf7_mail_replace_tags( $template );
 	}
 
 	$value = apply_filters( 'wpcf7_flamingo_get_value', $value,

@@ -61,7 +61,7 @@ class WPCF7_Submission {
 			if ( isset( $this->posted_data[$name] ) ) {
 				return $this->posted_data[$name];
 			} else {
-				return false;
+				return null;
 			}
 		}
 

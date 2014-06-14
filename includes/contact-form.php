@@ -514,7 +514,7 @@ class WPCF7_ContactForm {
 	public function message( $status ) {
 		$messages = $this->messages;
 		$message = isset( $messages[$status] ) ? $messages[$status] : '';
-		$message = WPCF7_Mail::replace_tags( $message, true );
+		$message = wpcf7_mail_replace_tags( $message, array( 'html' => true ) );
 
 		return apply_filters( 'wpcf7_display_message', $message, $status );
 	}

@@ -27,7 +27,8 @@ class WPCF7_Mail {
 		$defaults = array(
 			'subject' => '', 'sender' => '', 'body' => '',
 			'recipient' => '', 'additional_headers' => '',
-			'attachments' => '', 'use_html' => false );
+			'attachments' => '', 'use_html' => false,
+			'exclude_blank' => false );
 
 		$this->template = wp_parse_args( $template, $defaults );
 	}
@@ -37,16 +38,16 @@ class WPCF7_Mail {
 
 		$use_html = (bool) $template['use_html'];
 
-		$subject = self::replace_tags( $template['subject'] );
-		$sender = self::replace_tags( $template['sender'] );
-		$recipient = self::replace_tags( $template['recipient'] );
-		$additional_headers = self::replace_tags( $template['additional_headers'] );
+		$subject = $this->replace_tags( $template['subject'] );
+		$sender = $this->replace_tags( $template['sender'] );
+		$recipient = $this->replace_tags( $template['recipient'] );
+		$additional_headers = $this->replace_tags( $template['additional_headers'] );
 
 		if ( $use_html ) {
-			$body = self::replace_tags( $template['body'], true );
+			$body = $this->replace_tags( $template['body'], true );
 			$body = wpautop( $body );
 		} else {
-			$body = self::replace_tags( $template['body'] );
+			$body = $this->replace_tags( $template['body'] );
 		}
 
 		$attachments = $this->attachments( $template['attachments'] );
@@ -85,16 +86,12 @@ class WPCF7_Mail {
 		return $components;
 	}
 
-	public static function replace_tags( $content, $html = false ) {
-		$content = explode( "\n", $content );
+	public function replace_tags( $content, $html = false ) {
+		$args = array(
+			'html' => $html,
+			'exclude_blank' => $this->template['exclude_blank'] );
 
-		foreach ( $content as $num => $line ) {
-			$content[$num] = WPCF7_Mail_Line::replace_tags( $line );
-		}
-
-		$content = implode( "\n", $content );
-
-		return $content;
+		return wpcf7_mail_replace_tags( $content, $args );
 	}
 
 	private function attachments( $template ) {
@@ -129,28 +126,64 @@ class WPCF7_Mail {
 	}
 }
 
+function wpcf7_mail_replace_tags( $content, $args = '' ) {
+	$args = wp_parse_args( $args, array(
+		'html' => false,
+		'exclude_blank' => false ) );
+
+	$content = explode( "\n", $content );
+
+	foreach ( $content as $num => $line ) {
+		$line = new WPCF7_Mail_Line( $line, $args['html'] );
+		$replaced = $line->replace_tags();
+
+		if ( $args['exclude_blank'] ) {
+			$replaced_tags = $line->get_replaced_tags();
+
+			if ( empty( $replaced_tags ) || array_filter( $replaced_tags ) ) {
+				$content[$num] = $replaced;
+			} else {
+				unset( $content[$num] ); // Remove a line.
+			}
+		} else {
+			$content[$num] = $replaced;
+		}
+	}
+
+	$content = implode( "\n", $content );
+
+	return $content;
+}
+
 class WPCF7_Mail_Line {
 
-	public static function replace_tags( $content, $html = false ) {
-		$content = str_replace( "\n", '', $content );
+	private $html = false;
+	private $content = '';
+	private $replaced_tags = array();
 
+	public function __construct( $content, $html = false ) {
+		$this->html = $html;
+		$this->content = str_replace( "\n", '', $content );
+	}
+
+	public function get_replaced_tags() {
+		return $this->replaced_tags;
+	}
+
+	public function replace_tags() {
 		$regex = '/(\[?)\[[\t ]*'
 			. '([a-zA-Z_][0-9a-zA-Z:._-]*)' // [2] = name
 			. '((?:[\t ]+"[^"]*"|[\t ]+\'[^\']*\')*)' // [3] = values
 			. '[\t ]*\](\]?)/';
 
-		$obj = new self;
-
-		if ( $html ) {
-			$callback = array( $obj, 'replace_tags_callback_html' );
+		if ( $this->html ) {
+			$callback = array( $this, 'replace_tags_callback_html' );
 		} else {
-			$callback = array( $obj, 'replace_tags_callback' );
+			$callback = array( $this, 'replace_tags_callback' );
 		}
 
-		return preg_replace_callback( $regex, $callback, $content );
+		return preg_replace_callback( $regex, $callback, $this->content );
 	}
-
-	private function __construct() {}
 
 	private function replace_tags_callback_html( $matches ) {
 		return $this->replace_tags_callback( $matches, true );
@@ -186,9 +219,9 @@ class WPCF7_Mail_Line {
 		}
 
 		$submission = WPCF7_Submission::get_instance();
-		$submitted = $submission ? $submission->get_posted_data( $tagname ) : false;
+		$submitted = $submission ? $submission->get_posted_data( $tagname ) : null;
 
-		if ( $submitted ) {
+		if ( null !== $submitted ) {
 
 			if ( $do_not_heat ) {
 				$submitted = isset( $_POST[$tagname] ) ? $_POST[$tagname] : '';
@@ -210,12 +243,16 @@ class WPCF7_Mail_Line {
 			$replaced = apply_filters( 'wpcf7_mail_tag_replaced',
 				$replaced, $submitted, $html );
 
-			return wp_unslash( $replaced );
+			$replaced = wp_unslash( trim( $replaced ) );
+
+			$this->replaced_tags[$tag] = $replaced;
+			return $replaced;
 		}
 
 		$special = apply_filters( 'wpcf7_special_mail_tags', '', $tagname, $html );
 
 		if ( ! empty( $special ) ) {
+			$this->replaced_tags[$tag] = $special;
 			return $special;
 		}
 

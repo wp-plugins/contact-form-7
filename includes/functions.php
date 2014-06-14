@@ -91,7 +91,8 @@ function wpcf7_default_mail_template() {
 	$additional_headers = '';
 	$attachments = '';
 	$use_html = 0;
-	return compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html' );
+	$exclude_blank = 0;
+	return compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html', 'exclude_blank' );
 }
 
 function wpcf7_default_mail_2_template() {
@@ -105,7 +106,8 @@ function wpcf7_default_mail_2_template() {
 	$additional_headers = '';
 	$attachments = '';
 	$use_html = 0;
-	return compact( 'active', 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html' );
+	$exclude_blank = 0;
+	return compact( 'active', 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html', 'exclude_blank' );
 }
 
 function wpcf7_default_messages_template() {

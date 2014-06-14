@@ -78,7 +78,12 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <div class="half-right">
 	<div class="mail-field">
 	<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message body:', 'contact-form-7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="20"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
+	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="18"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
+	</div>
+
+	<div class="mail-field">
+	<input type="checkbox" id="<?php echo $id; ?>-exclude-blank" name="<?php echo $id; ?>-exclude-blank" value="1"<?php echo ( ! empty( $mail['exclude_blank'] ) ) ? ' checked="checked"' : ''; ?> />
+	<label for="<?php echo $id; ?>-exclude-blank"><?php echo esc_html( __( 'Exclude lines with blank mail-tags from output', 'contact-form-7' ) ); ?></label>
 	</div>
 </div>
 
