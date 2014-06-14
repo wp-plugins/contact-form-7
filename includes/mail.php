@@ -134,7 +134,7 @@ function wpcf7_mail_replace_tags( $content, $args = '' ) {
 	$content = explode( "\n", $content );
 
 	foreach ( $content as $num => $line ) {
-		$line = new WPCF7_Mail_Line( $line, $args['html'] );
+		$line = new WPCF7_MailTaggedText( $line, $args );
 		$replaced = $line->replace_tags();
 
 		if ( $args['exclude_blank'] ) {
@@ -155,15 +155,17 @@ function wpcf7_mail_replace_tags( $content, $args = '' ) {
 	return $content;
 }
 
-class WPCF7_Mail_Line {
+class WPCF7_MailTaggedText {
 
 	private $html = false;
 	private $content = '';
 	private $replaced_tags = array();
 
-	public function __construct( $content, $html = false ) {
-		$this->html = $html;
-		$this->content = str_replace( "\n", '', $content );
+	public function __construct( $content, $args = '' ) {
+		$args = wp_parse_args( $args, array( 'html' => false ) );
+
+		$this->html = (bool) $args['html'];
+		$this->content = $content;
 	}
 
 	public function get_replaced_tags() {
