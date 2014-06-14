@@ -17,12 +17,9 @@ function wpcf7_ajax_onload() {
 	$echo = '';
 	$items = array();
 
-	if ( isset( $_GET['_wpcf7'] ) ) {
-		if ( $contact_form = wpcf7_contact_form( (int) $_GET['_wpcf7'] ) ) {
-			WPCF7_ContactForm::set_current( $contact_form );
-			$items = apply_filters( 'wpcf7_ajax_onload', $items );
-			WPCF7_ContactForm::reset_current();
-		}
+	if ( isset( $_GET['_wpcf7'] )
+	&& $contact_form = wpcf7_contact_form( (int) $_GET['_wpcf7'] ) ) {
+		$items = apply_filters( 'wpcf7_ajax_onload', $items );
 	}
 
 	$echo = json_encode( $items );
@@ -46,8 +43,6 @@ function wpcf7_ajax_json_echo() {
 		$unit_tag = wpcf7_sanitize_unit_tag( $_POST['_wpcf7_unit_tag'] );
 
 		if ( $contact_form = wpcf7_contact_form( $id ) ) {
-			WPCF7_ContactForm::set_current( $contact_form );
-
 			$items = array(
 				'mailSent' => false,
 				'into' => '#' . $unit_tag,
@@ -90,8 +85,6 @@ function wpcf7_ajax_json_echo() {
 			}
 
 			$items = apply_filters( 'wpcf7_ajax_json_echo', $items, $result );
-
-			WPCF7_ContactForm::reset_current();
 		}
 	}
 
@@ -120,11 +113,7 @@ function wpcf7_submit_nonajax() {
 		return;
 
 	if ( $contact_form = wpcf7_contact_form( (int) $_POST['_wpcf7'] ) ) {
-		WPCF7_ContactForm::set_current( $contact_form );
-
 		$contact_form->submit();
-
-		WPCF7_ContactForm::reset_current();
 	}
 }
 
@@ -177,13 +166,7 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	if ( ! $contact_form )
 		return '[contact-form-7 404 "Not Found"]';
 
-	WPCF7_ContactForm::set_current( $contact_form );
-
-	$html = $contact_form->form_html( $atts );
-
-	WPCF7_ContactForm::reset_current();
-
-	return $html;
+	return $contact_form->form_html( $atts );
 }
 
 if ( WPCF7_LOAD_JS )

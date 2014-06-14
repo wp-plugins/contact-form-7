@@ -18,16 +18,8 @@ class WPCF7_ContactForm {
 		return self::$found_items;
 	}
 
-	public static function set_current( self $obj ) {
-		self::$current = $obj;
-	}
-
 	public static function get_current() {
 		return self::$current;
-	}
-
-	public static function reset_current() {
-		self::$current = null;
 	}
 
 	private static function get_unit_tag( $id = 0 ) {

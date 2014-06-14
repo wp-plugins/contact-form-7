@@ -143,7 +143,7 @@ function wpcf7_load_contact_form_admin() {
 		$post = WPCF7_ContactForm::get_template( array(
 			'locale' => $_GET['locale'] ) );
 	} elseif ( ! empty( $_GET['post'] ) ) {
-		$post = wpcf7_contact_form( $_GET['post'] );
+		$post = WPCF7_ContactForm::get_instance( $_GET['post'] );
 	}
 
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id ) ) {
@@ -162,10 +162,6 @@ function wpcf7_load_contact_form_admin() {
 			'label' => __( 'Contact Forms', 'contact-form-7' ),
 			'default' => 20,
 			'option' => 'cfseven_contact_forms_per_page' ) );
-	}
-
-	if ( $post ) {
-		WPCF7_ContactForm::set_current( $post );
 	}
 }
 
