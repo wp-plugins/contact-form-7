@@ -7,7 +7,6 @@ class WPCF7_ContactForm {
 	private static $found_items = 0;
 	private static $current = null;
 
-	private $initial = true;
 	public $id;
 	public $name;
 	public $title;
@@ -91,7 +90,6 @@ class WPCF7_ContactForm {
 		$post = get_post( $post );
 
 		if ( $post && self::post_type == get_post_type( $post ) ) {
-			$this->initial = false;
 			$this->id = $post->ID;
 			$this->name = $post->post_name;
 			$this->title = $post->post_title;
@@ -148,7 +146,7 @@ class WPCF7_ContactForm {
 	}
 
 	public function initial() {
-		return $this->initial;
+		return empty( $this->id );
 	}
 
 	public function get_properties() {
@@ -575,7 +573,7 @@ class WPCF7_ContactForm {
 
 		$post_content = implode( "\n", wpcf7_array_flatten( $props ) );
 
-		if ( $this->initial ) {
+		if ( $this->initial() ) {
 			$post_id = wp_insert_post( array(
 				'post_type' => self::post_type,
 				'post_status' => 'publish',
@@ -596,8 +594,7 @@ class WPCF7_ContactForm {
 			if ( ! empty( $this->locale ) )
 				update_post_meta( $post_id, '_locale', $this->locale );
 
-			if ( $this->initial ) {
-				$this->initial = false;
+			if ( $this->initial() ) {
 				$this->id = $post_id;
 				do_action( 'wpcf7_after_create', $this );
 			} else {
@@ -626,12 +623,11 @@ class WPCF7_ContactForm {
 	}
 
 	public function delete() {
-		if ( $this->initial )
+		if ( $this->initial() )
 			return;
 
 		if ( wp_delete_post( $this->id, true ) ) {
-			$this->initial = true;
-			$this->id = null;
+			$this->id = 0;
 			return true;
 		}
 
