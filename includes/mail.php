@@ -86,25 +86,77 @@ class WPCF7_Mail {
 	}
 
 	public static function replace_tags( $content, $html = false ) {
+		$content = explode( "\n", $content );
+
+		foreach ( $content as $num => $line ) {
+			$content[$num] = WPCF7_Mail_Line::replace_tags( $line );
+		}
+
+		$content = implode( "\n", $content );
+
+		return $content;
+	}
+
+	private function attachments( $template ) {
+		$attachments = array();
+
+		if ( $submission = WPCF7_Submission::get_instance() ) {
+			$uploaded_files = $submission->uploaded_files();
+
+			foreach ( (array) $uploaded_files as $name => $path ) {
+				if ( false !== strpos( $template, "[${name}]" )
+				&& ! empty( $path ) ) {
+					$attachments[] = $path;
+				}
+			}
+		}
+
+		foreach ( explode( "\n", $template ) as $line ) {
+			$line = trim( $line );
+
+			if ( '[' == substr( $line, 0, 1 ) ) {
+				continue;
+			}
+
+			$path = path_join( WP_CONTENT_DIR, $line );
+
+			if ( @is_readable( $path ) && @is_file( $path ) ) {
+				$attachments[] = $path;
+			}
+		}
+
+		return $attachments;
+	}
+}
+
+class WPCF7_Mail_Line {
+
+	public static function replace_tags( $content, $html = false ) {
+		$content = str_replace( "\n", '', $content );
+
 		$regex = '/(\[?)\[[\t ]*'
 			. '([a-zA-Z_][0-9a-zA-Z:._-]*)' // [2] = name
 			. '((?:[\t ]+"[^"]*"|[\t ]+\'[^\']*\')*)' // [3] = values
 			. '[\t ]*\](\]?)/';
 
+		$obj = new self;
+
 		if ( $html ) {
-			$callback = 'self::replace_tags_callback_html';
+			$callback = array( $obj, 'replace_tags_callback_html' );
 		} else {
-			$callback = 'self::replace_tags_callback';
+			$callback = array( $obj, 'replace_tags_callback' );
 		}
 
 		return preg_replace_callback( $regex, $callback, $content );
 	}
 
-	private static function replace_tags_callback_html( $matches ) {
-		return self::replace_tags_callback( $matches, true );
+	private function __construct() {}
+
+	private function replace_tags_callback_html( $matches ) {
+		return $this->replace_tags_callback( $matches, true );
 	}
 
-	private static function replace_tags_callback( $matches, $html = false ) {
+	private function replace_tags_callback( $matches, $html = false ) {
 		// allow [[foo]] syntax for escaping a tag
 		if ( $matches[1] == '[' && $matches[4] == ']' ) {
 			return substr( $matches[0], 1, -1 );
@@ -145,7 +197,7 @@ class WPCF7_Mail {
 			$replaced = $submitted;
 
 			if ( ! empty( $format ) ) {
-				$replaced = self::format( $replaced, $format );
+				$replaced = $this->format( $replaced, $format );
 			}
 
 			$replaced = wpcf7_flat_join( $replaced );
@@ -170,7 +222,7 @@ class WPCF7_Mail {
 		return $tag;
 	}
 
-	public static function format( $original, $format ) {
+	public function format( $original, $format ) {
 		$original = (array) $original;
 
 		foreach ( $original as $key => $value ) {
@@ -180,37 +232,6 @@ class WPCF7_Mail {
 		}
 
 		return $original;
-	}
-
-	private function attachments( $template ) {
-		$attachments = array();
-
-		if ( $submission = WPCF7_Submission::get_instance() ) {
-			$uploaded_files = $submission->uploaded_files();
-
-			foreach ( (array) $uploaded_files as $name => $path ) {
-				if ( false !== strpos( $template, "[${name}]" )
-				&& ! empty( $path ) ) {
-					$attachments[] = $path;
-				}
-			}
-		}
-
-		foreach ( explode( "\n", $template ) as $line ) {
-			$line = trim( $line );
-
-			if ( '[' == substr( $line, 0, 1 ) ) {
-				continue;
-			}
-
-			$path = path_join( WP_CONTENT_DIR, $line );
-
-			if ( @is_readable( $path ) && @is_file( $path ) ) {
-				$attachments[] = $path;
-			}
-		}
-
-		return $attachments;
 	}
 }
 
