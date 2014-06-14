@@ -58,15 +58,10 @@ function wpcf7_load_contact_form_admin() {
 		if ( ! current_user_can( 'wpcf7_edit_contact_form', $id ) )
 			wp_die( __( 'You are not allowed to edit this item.', 'contact-form-7' ) );
 
-		if ( ! $contact_form = wpcf7_contact_form( $id ) ) {
-			$contact_form = new WPCF7_ContactForm();
-			$contact_form->initial = true;
-		}
-
-		wpcf7_save_contact_form( $contact_form );
+		wpcf7_save_contact_form( $id );
 
 		$query = array(
-			'message' => ( $contact_form->initial ) ? 'created' : 'saved',
+			'message' => ( -1 == $id ) ? 'created' : 'saved',
 			'post' => $contact_form->id );
 
 		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );

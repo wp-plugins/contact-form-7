@@ -49,7 +49,16 @@ function wpcf7_tag_generators() {
 	return $taggenerators;
 }
 
-function wpcf7_save_contact_form( WPCF7_ContactForm $contact_form ) {
+function wpcf7_save_contact_form( $post_id = -1 ) {
+	if ( -1 != $post_id ) {
+		$contact_form = wpcf7_contact_form( $post_id );
+	}
+
+	if ( empty( $contact_form ) ) {
+		$contact_form = new WPCF7_ContactForm();
+		$contact_form->initial = true;
+	}
+
 	if ( isset( $_POST['wpcf7-title'] ) ) {
 		$title = trim( $_POST['wpcf7-title'] );
 
