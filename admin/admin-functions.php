@@ -56,7 +56,6 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 
 	if ( empty( $contact_form ) ) {
 		$contact_form = new WPCF7_ContactForm();
-		$contact_form->initial = true;
 	}
 
 	if ( isset( $_POST['wpcf7-title'] ) ) {

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) )
 <?php screen_icon(); ?>
 
 <h2><?php
-	if ( $post->initial ) {
+	if ( $post->initial() ) {
 		echo esc_html( __( 'Add New Contact Form', 'contact-form-7' ) );
 	} else {
 		echo esc_html( __( 'Edit Contact Form', 'contact-form-7' ) );
@@ -44,7 +44,7 @@ if ( $post ) :
 	<div id="titlediv">
 		<input type="text" id="wpcf7-title" name="wpcf7-title" size="80" value="<?php echo esc_attr( $post->title ); ?>"<?php echo $disabled; ?> />
 
-		<?php if ( ! $post->initial ) : ?>
+		<?php if ( ! $post->initial() ) : ?>
 		<p class="tagcode">
 			<?php echo esc_html( __( "Copy this code and paste it into your post, page or text widget content.", 'contact-form-7' ) ); ?><br />
 
@@ -64,7 +64,7 @@ if ( $post ) :
 		</div>
 		<?php endif; ?>
 
-		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) && ! $post->initial ) : ?>
+		<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) && ! $post->initial() ) : ?>
 		<div class="actions-link">
 			<?php $copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $post_id ); ?>
 			<input type="submit" name="wpcf7-copy" class="copy" value="<?php echo esc_attr( __( 'Duplicate', 'contact-form-7' ) ); ?>"

@@ -58,11 +58,11 @@ function wpcf7_load_contact_form_admin() {
 		if ( ! current_user_can( 'wpcf7_edit_contact_form', $id ) )
 			wp_die( __( 'You are not allowed to edit this item.', 'contact-form-7' ) );
 
-		wpcf7_save_contact_form( $id );
+		$id = wpcf7_save_contact_form( $id );
 
 		$query = array(
-			'message' => ( -1 == $id ) ? 'created' : 'saved',
-			'post' => $contact_form->id );
+			'message' => ( -1 == $_POST['post_ID'] ) ? 'created' : 'saved',
+			'post' => $id );
 
 		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
 		wp_safe_redirect( $redirect_to );
@@ -205,7 +205,7 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 
 function wpcf7_admin_management_page() {
 	if ( $post = wpcf7_get_current_contact_form() ) {
-		$post_id = $post->initial ? -1 : $post->id;
+		$post_id = $post->initial() ? -1 : $post->id;
 
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';

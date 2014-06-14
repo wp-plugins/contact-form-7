@@ -7,7 +7,7 @@ class WPCF7_ContactForm {
 	private static $found_items = 0;
 	private static $current = null;
 
-	public $initial = false;
+	private $initial = true;
 	public $id;
 	public $name;
 	public $title;
@@ -82,8 +82,6 @@ class WPCF7_ContactForm {
 	}
 
 	public function __construct( $post = null ) {
-		$this->initial = true;
-
 		$this->form = '';
 		$this->mail = array();
 		$this->mail_2 = array();
@@ -129,7 +127,6 @@ class WPCF7_ContactForm {
 		}
 
 		$contact_form = new self;
-		$contact_form->initial = true;
 		$contact_form->title =
 			( $title ? $title : __( 'Untitled', 'contact-form-7' ) );
 		$contact_form->locale = ( $locale ? $locale : get_locale() );
@@ -148,6 +145,10 @@ class WPCF7_ContactForm {
 		}
 
 		return $contact_form;
+	}
+
+	public function initial() {
+		return $this->initial;
 	}
 
 	public function get_properties() {
@@ -611,7 +612,6 @@ class WPCF7_ContactForm {
 
 	public function copy() {
 		$new = new self;
-		$new->initial = true;
 		$new->title = $this->title . '_copy';
 		$new->locale = $this->locale;
 
@@ -642,8 +642,9 @@ class WPCF7_ContactForm {
 function wpcf7_contact_form( $id ) {
 	$contact_form = new WPCF7_ContactForm( $id );
 
-	if ( $contact_form->initial )
+	if ( $contact_form->initial() ) {
 		return false;
+	}
 
 	return $contact_form;
 }
