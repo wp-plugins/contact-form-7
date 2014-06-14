@@ -13,17 +13,6 @@ function wpcf7_plugin_url( $path = '' ) {
 	return $url;
 }
 
-function wpcf7_deprecated_function( $function, $version, $replacement = null ) {
-	do_action( 'wpcf7_deprecated_function_run', $function, $replacement, $version );
-
-	if ( WP_DEBUG && apply_filters( 'wpcf7_deprecated_function_trigger_error', true ) ) {
-		if ( ! is_null( $replacement ) )
-			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead.', 'contact-form-7' ), $function, $version, $replacement ) );
-		else
-			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available.', 'contact-form-7' ), $function, $version ) );
-	}
-}
-
 function wpcf7_messages() {
 	$messages = array(
 		'mail_sent_ok' => array(
