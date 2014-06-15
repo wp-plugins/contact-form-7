@@ -4,7 +4,7 @@
 
 function wpcf7_form_meta_box( $post ) {
 ?>
-<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24"><?php echo esc_textarea( $post->form ); ?></textarea></div>
+<div class="half-left"><textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24"><?php echo esc_textarea( $post->prop( 'form' ) ); ?></textarea></div>
 
 <div class="half-right"><div id="taggenerator"></div></div>
 
@@ -24,8 +24,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 		'use' => null ) );
 
 	$id = esc_attr( $args['id'] );
-	$mail = isset( $post->{$args['name']} )
-		? $post->{$args['name']} : $post->mail;
+	$mail = $post->prop( $args['name'] );
 
 	if ( ! empty( $args['use'] ) ) :
 ?>
@@ -99,7 +98,7 @@ function wpcf7_messages_meta_box( $post ) {
 ?>
 <div class="message-field">
 <label for="<?php echo $field_name; ?>"><em># <?php echo esc_html( $arr['description'] ); ?></em></label><br />
-<input type="text" id="<?php echo $field_name; ?>" name="<?php echo $field_name; ?>" class="wide" size="70" value="<?php echo esc_attr( $post->messages[$key] ); ?>" />
+<input type="text" id="<?php echo $field_name; ?>" name="<?php echo $field_name; ?>" class="wide" size="70" value="<?php echo esc_attr( $post->message( $key, false ) ); ?>" />
 </div>
 <?php
 	endforeach;
@@ -107,7 +106,7 @@ function wpcf7_messages_meta_box( $post ) {
 
 function wpcf7_additional_settings_meta_box( $post ) {
 ?>
-<textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8"><?php echo esc_textarea( $post->additional_settings ); ?></textarea>
+<textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8"><?php echo esc_textarea( $post->prop( 'additional_settings' ) ); ?></textarea>
 <?php
 }
 

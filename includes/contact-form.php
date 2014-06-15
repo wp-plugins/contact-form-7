@@ -10,6 +10,7 @@ class WPCF7_ContactForm {
 	private $id;
 	private $name;
 	private $title;
+	private $properties = array();
 	private $unit_tag;
 	private $responses_count = 0;
 	private $scanned_form_tags;
@@ -75,11 +76,13 @@ class WPCF7_ContactForm {
 			( $title ? $title : __( 'Untitled', 'contact-form-7' ) );
 		$contact_form->locale = ( $locale ? $locale : get_locale() );
 
-		$props = $contact_form->get_properties();
+		$properties = $contact_form->get_properties();
 
-		foreach ( $props as $prop => $value ) {
-			$contact_form->{$prop} = wpcf7_get_default_template( $prop );
+		foreach ( $properties as $key => $value ) {
+			$properties[$key] = wpcf7_get_default_template( $key );
 		}
+
+		$contact_form->properties = $properties;
 
 		$contact_form = apply_filters( 'wpcf7_contact_form_default_pack',
 			$contact_form, $args );
@@ -120,12 +123,6 @@ class WPCF7_ContactForm {
 	}
 
 	private function __construct( $post = null ) {
-		$this->form = '';
-		$this->mail = array();
-		$this->mail_2 = array();
-		$this->messages = array();
-		$this->additional_settings = '';
-
 		$post = get_post( $post );
 
 		if ( $post && self::post_type == get_post_type( $post ) ) {
@@ -134,15 +131,17 @@ class WPCF7_ContactForm {
 			$this->title = $post->post_title;
 			$this->locale = get_post_meta( $post->ID, '_locale', true );
 
-			$props = $this->get_properties();
+			$properties = $this->get_properties();
 
-			foreach ( $props as $prop => $value ) {
-				if ( metadata_exists( 'post', $post->ID, '_' . $prop ) )
-					$this->{$prop} = get_post_meta( $post->ID, '_' . $prop, true );
-				else
-					$this->{$prop} = get_post_meta( $post->ID, $prop, true );
+			foreach ( $properties as $key => $value ) {
+				if ( metadata_exists( 'post', $post->ID, '_' . $key ) ) {
+					$properties[$key] = get_post_meta( $post->ID, '_' . $key, true );
+				} elseif ( metadata_exists( 'post', $post->ID, $key ) ) {
+					$properties[$key] = get_post_meta( $post->ID, $key, true );
+				}
 			}
 
+			$this->properties = $properties;
 			$this->upgrade();
 		}
 
@@ -155,21 +154,25 @@ class WPCF7_ContactForm {
 
 	public function prop( $name ) {
 		$props = $this->get_properties();
-		return isset( $props[$name] ) ? $props[$name] : '';
+		return isset( $props[$name] ) ? $props[$name] : null;
 	}
 
 	public function get_properties() {
-		$prop_names = array(
-			'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
+		$properties = (array) $this->properties;
 
-		$properties = array();
-
-		foreach ( $prop_names as $prop_name ) {
-			$properties[$prop_name] = isset( $this->{$prop_name} )
-				? $this->{$prop_name} : '';
-		}
+		$properties = wp_parse_args( $properties, array(
+			'form' => '',
+			'mail' => array(),
+			'mail_2' => array(),
+			'messages' => array(),
+			'additional_settings' => '' ) );
 
 		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
+	}
+
+	public function set_properties( $properties ) {
+		$properties = array_intersect_key( $properties, $this->get_properties() );
+		$this->properties = $properties;
 	}
 
 	public function id() {
@@ -434,7 +437,7 @@ class WPCF7_ContactForm {
 
 	public function form_do_shortcode() {
 		$manager = WPCF7_ShortcodeManager::get_instance();
-		$form = $this->form;
+		$form = $this->prop( 'form' );
 
 		if ( WPCF7_AUTOP ) {
 			$form = $manager->normalize_shortcode( $form );
@@ -453,7 +456,7 @@ class WPCF7_ContactForm {
 		if ( ! empty( $this->scanned_form_tags ) ) {
 			$scanned = $this->scanned_form_tags;
 		} else {
-			$scanned = $manager->scan_shortcode( $this->form );
+			$scanned = $manager->scan_shortcode( $this->prop( 'form' ) );
 			$this->scanned_form_tags = $scanned;
 		}
 
@@ -543,18 +546,22 @@ class WPCF7_ContactForm {
 
 	/* Message */
 
-	public function message( $status ) {
-		$messages = $this->messages;
+	public function message( $status, $filter = true ) {
+		$messages = $this->prop( 'messages' );
 		$message = isset( $messages[$status] ) ? $messages[$status] : '';
-		$message = wpcf7_mail_replace_tags( $message, array( 'html' => true ) );
 
-		return apply_filters( 'wpcf7_display_message', $message, $status );
+		if ( $filter ) {
+			$message = wpcf7_mail_replace_tags( $message, array( 'html' => true ) );
+			$message = apply_filters( 'wpcf7_display_message', $message, $status );
+		}
+
+		return $message;
 	}
 
 	/* Additional settings */
 
 	public function additional_setting( $name, $max = 1 ) {
-		$tmp_settings = (array) explode( "\n", $this->additional_settings );
+		$tmp_settings = (array) explode( "\n", $this->prop( 'additional_settings' ) );
 
 		$count = 0;
 		$values = array();
@@ -592,17 +599,25 @@ class WPCF7_ContactForm {
 	/* Upgrade */
 
 	public function upgrade() {
-		if ( is_array( $this->mail ) ) {
-			if ( ! isset( $this->mail['recipient'] ) )
-				$this->mail['recipient'] = get_option( 'admin_email' );
+		$mail = $this->prop( 'mail' );
+
+		if ( is_array( $mail ) && ! isset( $mail['recipient'] ) ) {
+			$mail['recipient'] = get_option( 'admin_email' );
 		}
 
-		if ( is_array( $this->messages ) ) {
+		$this->properties['mail'] = $mail;
+
+		$messages = $this->prop( 'messages' );
+
+		if ( is_array( $messages ) ) {
 			foreach ( wpcf7_messages() as $key => $arr ) {
-				if ( ! isset( $this->messages[$key] ) )
-					$this->messages[$key] = $arr['default'];
+				if ( ! isset( $messages[$key] ) ) {
+					$messages[$key] = $arr['default'];
+				}
 			}
 		}
+
+		$this->properties['messages'] = $messages;
 	}
 
 	/* Save */
@@ -627,11 +642,14 @@ class WPCF7_ContactForm {
 		}
 
 		if ( $post_id ) {
-			foreach ( $props as $prop => $value )
-				update_post_meta( $post_id, '_' . $prop, wpcf7_normalize_newline_deep( $value ) );
+			foreach ( $props as $prop => $value ) {
+				update_post_meta( $post_id, '_' . $prop,
+					wpcf7_normalize_newline_deep( $value ) );
+			}
 
-			if ( ! empty( $this->locale ) )
+			if ( wpcf7_is_valid_locale( $this->locale ) ) {
 				update_post_meta( $post_id, '_locale', $this->locale );
+			}
 
 			if ( $this->initial() ) {
 				$this->id = $post_id;
@@ -650,15 +668,9 @@ class WPCF7_ContactForm {
 		$new = new self;
 		$new->title = $this->title . '_copy';
 		$new->locale = $this->locale;
+		$new->properties = $this->properties;
 
-		$props = $this->get_properties();
-
-		foreach ( $props as $prop => $value )
-			$new->{$prop} = $value;
-
-		$new = apply_filters( 'wpcf7_copy', $new, $this );
-
-		return $new;
+		return apply_filters( 'wpcf7_copy', $new, $this );
 	}
 
 	public function delete() {

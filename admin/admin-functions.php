@@ -70,11 +70,13 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 		}
 	}
 
+	$properties = $contact_form->get_properties();
+
 	if ( isset( $_POST['wpcf7-form'] ) ) {
-		$contact_form->form = trim( $_POST['wpcf7-form'] );
+		$properties['form'] = trim( $_POST['wpcf7-form'] );
 	}
 
-	$mail = $contact_form->mail;
+	$mail = $properties['mail'];
 
 	if ( isset( $_POST['wpcf7-mail-subject'] ) ) {
 		$mail['subject'] = trim( $_POST['wpcf7-mail-subject'] );
@@ -103,9 +105,9 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 	$mail['use_html'] = ! empty( $_POST['wpcf7-mail-use-html'] );
 	$mail['exclude_blank'] = ! empty( $_POST['wpcf7-mail-exclude-blank'] );
 
-	$contact_form->mail = $mail;
+	$properties['mail'] = $mail;
 
-	$mail_2 = $contact_form->mail_2;
+	$mail_2 = $properties['mail_2'];
 
 	$mail_2['active'] = ! empty( $_POST['wpcf7-mail-2-active'] );
 
@@ -137,25 +139,22 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 	$mail_2['use_html'] = ! empty( $_POST['wpcf7-mail-2-use-html'] );
 	$mail_2['exclude_blank'] = ! empty( $_POST['wpcf7-mail-2-exclude-blank'] );
 
-	$contact_form->mail_2 = $mail_2;
-
-	$messages = isset( $contact_form->messages )
-		? $contact_form->messages : array();
+	$properties['mail_2'] = $mail_2;
 
 	foreach ( wpcf7_messages() as $key => $arr ) {
 		$field_name = 'wpcf7-message-' . strtr( $key, '_', '-' );
 
 		if ( isset( $_POST[$field_name] ) ) {
-			$messages[$key] = trim( $_POST[$field_name] );
+			$properties['messages'][$key] = trim( $_POST[$field_name] );
 		}
 	}
 
-	$contact_form->messages = $messages;
-
 	if ( isset( $_POST['wpcf7-additional-settings'] ) ) {
-		$contact_form->additional_settings = trim(
+		$properties['additional_settings'] = trim(
 			$_POST['wpcf7-additional-settings'] );
 	}
+
+	$contact_form->set_properties( $properties );
 
 	do_action( 'wpcf7_save_contact_form', $contact_form );
 

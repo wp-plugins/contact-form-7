@@ -226,13 +226,13 @@ class WPCF7_Submission {
 			return true;
 		}
 
-		$result = WPCF7_Mail::send( $contact_form->mail, 'mail' );
+		$result = WPCF7_Mail::send( $contact_form->prop( 'mail' ), 'mail' );
 
 		if ( $result ) {
 			$additional_mail = array();
 
-			if ( $contact_form->mail_2['active'] ) {
-				$additional_mail['mail_2'] = $contact_form->mail_2;
+			if ( ( $mail_2 = $contact_form->prop( 'mail_2' ) ) && $mail_2['active'] ) {
+				$additional_mail['mail_2'] = $mail_2;
 			}
 
 			$additional_mail = apply_filters( 'wpcf7_additional_mail',
