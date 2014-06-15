@@ -59,7 +59,7 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 		'name' => $name ) );
 
 	$channel_id = wpcf7_flamingo_add_channel(
-		$contactform->prop( 'name' ), $contactform->title() );
+		$contactform->name(), $contactform->title() );
 
 	if ( $channel_id ) {
 		$channel = get_term( $channel_id,

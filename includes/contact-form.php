@@ -153,15 +153,7 @@ class WPCF7_ContactForm {
 		return empty( $this->id );
 	}
 
-	public function id() {
-		return $this->prop( 'id' );
-	}
-
 	public function prop( $name ) {
-		if ( in_array( $name, array( 'id', 'name', 'title' ) ) ) {
-			return $this->{$name};
-		}
-
 		$props = $this->get_properties();
 		return isset( $props[$name] ) ? $props[$name] : '';
 	}
@@ -180,8 +172,16 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
 	}
 
+	public function id() {
+		return $this->id;
+	}
+
+	public function name() {
+		return $this->name;
+	}
+
 	public function title() {
-		return $this->prop( 'title' );
+		return $this->title;
 	}
 
 	public function set_title( $title ) {
