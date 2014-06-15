@@ -93,20 +93,20 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		return sprintf(
 			'<input type="checkbox" name="%1$s[]" value="%2$s" />',
 			$this->_args['singular'],
-			$item->id );
+			$item->id() );
 	}
 
 	function column_title( $item ) {
-		$url = admin_url( 'admin.php?page=wpcf7&post=' . absint( $item->id ) );
+		$url = admin_url( 'admin.php?page=wpcf7&post=' . absint( $item->id() ) );
 		$edit_link = add_query_arg( array( 'action' => 'edit' ), $url );
 
 		$actions = array(
 			'edit' => '<a href="' . $edit_link . '">' . __( 'Edit', 'contact-form-7' ) . '</a>' );
 
-		if ( current_user_can( 'wpcf7_edit_contact_form', $item->id ) ) {
+		if ( current_user_can( 'wpcf7_edit_contact_form', $item->id() ) ) {
 			$copy_link = wp_nonce_url(
 				add_query_arg( array( 'action' => 'copy' ), $url ),
-				'wpcf7-copy-contact-form_' . absint( $item->id ) );
+				'wpcf7-copy-contact-form_' . absint( $item->id() ) );
 
 			$actions = array_merge( $actions, array(
 				'copy' => '<a href="' . $copy_link . '">' . __( 'Copy', 'contact-form-7' ) . '</a>' ) );
@@ -114,14 +114,15 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 		$a = sprintf( '<a class="row-title" href="%1$s" title="%2$s">%3$s</a>',
 			$edit_link,
-			esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;', 'contact-form-7' ), $item->title ) ),
-			esc_html( $item->title ) );
+			esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;', 'contact-form-7' ),
+				$item->prop( 'title' ) ) ),
+			esc_html( $item->prop( 'title' ) ) );
 
 		return '<strong>' . $a . '</strong> ' . $this->row_actions( $actions );
     }
 
 	function column_author( $item ) {
-		$post = get_post( $item->id );
+		$post = get_post( $item->id() );
 
 		if ( ! $post )
 			return;
@@ -133,7 +134,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 	function column_shortcode( $item ) {
 		$shortcodes = array(
-			sprintf( '[contact-form-7 id="%1$d" title="%2$s"]', $item->id, $item->title ) );
+			sprintf( '[contact-form-7 id="%1$d" title="%2$s"]',
+				$item->id(), $item->prop( 'title' ) ) );
 
 		$output = '';
 
@@ -148,7 +150,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 	}
 
 	function column_date( $item ) {
-		$post = get_post( $item->id );
+		$post = get_post( $item->id() );
 
 		if ( ! $post )
 			return;

@@ -64,11 +64,11 @@ function wpcf7_prepend_underscore( $new_ver, $old_ver ) {
 		$props = $post->get_properties();
 
 		foreach ( $props as $prop => $value ) {
-			if ( metadata_exists( 'post', $post->id, '_' . $prop ) )
+			if ( metadata_exists( 'post', $post->id(), '_' . $prop ) )
 				continue;
 
-			update_post_meta( $post->id, '_' . $prop, $value );
-			delete_post_meta( $post->id, $prop );
+			update_post_meta( $post->id(), '_' . $prop, $value );
+			delete_post_meta( $post->id(), $prop );
 		}
 	}
 }

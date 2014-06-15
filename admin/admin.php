@@ -85,7 +85,7 @@ function wpcf7_load_contact_form_admin() {
 			$new_contact_form = $contact_form->copy();
 			$new_contact_form->save();
 
-			$query['post'] = $new_contact_form->id;
+			$query['post'] = $new_contact_form->id();
 			$query['message'] = 'created';
 		}
 
@@ -115,7 +115,7 @@ function wpcf7_load_contact_form_admin() {
 			if ( empty( $post ) )
 				continue;
 
-			if ( ! current_user_can( 'wpcf7_delete_contact_form', $post->id ) )
+			if ( ! current_user_can( 'wpcf7_delete_contact_form', $post->id() ) )
 				wp_die( __( 'You are not allowed to delete this item.', 'contact-form-7' ) );
 
 			if ( ! $post->delete() )
@@ -146,8 +146,8 @@ function wpcf7_load_contact_form_admin() {
 		$post = WPCF7_ContactForm::get_instance( $_GET['post'] );
 	}
 
-	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id ) ) {
-		wpcf7_add_meta_boxes( $post->id );
+	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
+		wpcf7_add_meta_boxes( $post->id() );
 
 	} else {
 		$current_screen = get_current_screen();
@@ -201,7 +201,7 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 
 function wpcf7_admin_management_page() {
 	if ( $post = wpcf7_get_current_contact_form() ) {
-		$post_id = $post->initial() ? -1 : $post->id;
+		$post_id = $post->initial() ? -1 : $post->id();
 
 		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';

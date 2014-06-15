@@ -35,14 +35,14 @@ if ( $post ) :
 	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
 		wp_nonce_field( 'wpcf7-save-contact-form_' . $post_id ); ?>
 	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo (int) $post_id; ?>" />
-	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $post->id, '_old_cf7_unit_id', true ); ?>" />
+	<input type="hidden" id="wpcf7-id" name="wpcf7-id" value="<?php echo (int) get_post_meta( $post->id(), '_old_cf7_unit_id', true ); ?>" />
 	<input type="hidden" id="wpcf7-locale" name="wpcf7-locale" value="<?php echo esc_attr( $post->locale ); ?>" />
 	<input type="hidden" id="hiddenaction" name="action" value="save" />
 
 	<div id="poststuff" class="metabox-holder">
 
 	<div id="titlediv">
-		<input type="text" id="wpcf7-title" name="wpcf7-title" size="80" value="<?php echo esc_attr( $post->title ); ?>"<?php echo $disabled; ?> />
+		<input type="text" id="wpcf7-title" name="wpcf7-title" size="80" value="<?php echo esc_attr( $post->prop( 'title' ) ); ?>"<?php echo $disabled; ?> />
 
 		<?php if ( ! $post->initial() ) : ?>
 		<p class="tagcode">

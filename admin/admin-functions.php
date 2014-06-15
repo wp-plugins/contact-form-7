@@ -59,10 +59,7 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 	}
 
 	if ( isset( $_POST['wpcf7-title'] ) ) {
-		$title = trim( $_POST['wpcf7-title'] );
-
-		$contact_form->title = ( '' === $title )
-			? __( 'Untitled', 'contact-form-7' ) : $title;
+		$contact_form->set_title( $_POST['wpcf7-title'] );
 	}
 
 	if ( isset( $_POST['wpcf7-locale'] ) ) {

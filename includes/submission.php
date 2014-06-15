@@ -202,7 +202,7 @@ class WPCF7_Submission {
 	}
 
 	private function verify_nonce() {
-		return wpcf7_verify_nonce( $_POST['_wpnonce'], $this->contact_form->id );
+		return wpcf7_verify_nonce( $_POST['_wpnonce'], $this->contact_form->id() );
 	}
 
 	private function blacklist_check() {

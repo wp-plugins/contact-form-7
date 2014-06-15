@@ -7,10 +7,10 @@ class WPCF7_ContactForm {
 	private static $found_items = 0;
 	private static $current = null;
 
-	public $id;
-	public $name;
-	public $title;
-	public $unit_tag;
+	private $id;
+	private $name;
+	private $title;
+	private $unit_tag;
 	private $responses_count = 0;
 	private $scanned_form_tags;
 
@@ -153,6 +153,19 @@ class WPCF7_ContactForm {
 		return empty( $this->id );
 	}
 
+	public function id() {
+		return $this->prop( 'id' );
+	}
+
+	public function prop( $name ) {
+		if ( in_array( $name, array( 'id', 'name', 'title' ) ) ) {
+			return $this->{$name};
+		}
+
+		$props = $this->get_properties();
+		return isset( $props[$name] ) ? $props[$name] : '';
+	}
+
 	public function get_properties() {
 		$prop_names = array(
 			'form', 'mail', 'mail_2', 'messages', 'additional_settings' );
@@ -165,6 +178,16 @@ class WPCF7_ContactForm {
 		}
 
 		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
+	}
+
+	public function set_title( $title ) {
+		$title = trim( $title );
+
+		if ( '' === $title ) {
+			$title = __( 'Untitled', 'contact-form-7' );
+		}
+
+		$this->title = $title;
 	}
 
 	// Return true if this form is the same one as currently POSTed.
