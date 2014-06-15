@@ -11,8 +11,8 @@ class WPCF7_ContactForm {
 	public $name;
 	public $title;
 	public $unit_tag;
-	public $responses_count = 0;
-	public $scanned_form_tags;
+	private $responses_count = 0;
+	private $scanned_form_tags;
 
 	public static function count() {
 		return self::$found_items;
@@ -20,22 +20,6 @@ class WPCF7_ContactForm {
 
 	public static function get_current() {
 		return self::$current;
-	}
-
-	private static function get_unit_tag( $id = 0 ) {
-		static $global_count = 0;
-
-		$global_count += 1;
-
-		if ( in_the_loop() ) {
-			$unit_tag = sprintf( 'wpcf7-f%1$d-p%2$d-o%3$d',
-				absint( $id ), get_the_ID(), $global_count );
-		} else {
-			$unit_tag = sprintf( 'wpcf7-f%1$d-o%2$d',
-				absint( $id ), $global_count );
-		}
-
-		return $unit_tag;
 	}
 
 	public static function register_post_type() {
@@ -117,6 +101,22 @@ class WPCF7_ContactForm {
 		self::$current = $contact_form = new self( $post );
 
 		return $contact_form;
+	}
+
+	private static function get_unit_tag( $id = 0 ) {
+		static $global_count = 0;
+
+		$global_count += 1;
+
+		if ( in_the_loop() ) {
+			$unit_tag = sprintf( 'wpcf7-f%1$d-p%2$d-o%3$d',
+				absint( $id ), get_the_ID(), $global_count );
+		} else {
+			$unit_tag = sprintf( 'wpcf7-f%1$d-o%2$d',
+				absint( $id ), $global_count );
+		}
+
+		return $unit_tag;
 	}
 
 	private function __construct( $post = null ) {
@@ -262,8 +262,9 @@ class WPCF7_ContactForm {
 		$html .= $this->form_hidden_fields();
 		$html .= $this->form_elements();
 
-		if ( ! $this->responses_count )
+		if ( ! $this->responses_count ) {
 			$html .= $this->form_response_output();
+		}
 
 		$html .= '</form>';
 		$html .= '</div>';
@@ -325,8 +326,12 @@ class WPCF7_ContactForm {
 		$output = sprintf( '<div %1$s>%2$s</div>',
 			$atts, esc_html( $content ) );
 
-		return apply_filters( 'wpcf7_form_response_output',
+		$output = apply_filters( 'wpcf7_form_response_output',
 			$output, $class, $content, $this );
+
+		$this->responses_count += 1;
+
+		return $output;
 	}
 
 	public function screen_reader_response() {
