@@ -115,8 +115,8 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$a = sprintf( '<a class="row-title" href="%1$s" title="%2$s">%3$s</a>',
 			$edit_link,
 			esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;', 'contact-form-7' ),
-				$item->prop( 'title' ) ) ),
-			esc_html( $item->prop( 'title' ) ) );
+				$item->title() ) ),
+			esc_html( $item->title() ) );
 
 		return '<strong>' . $a . '</strong> ' . $this->row_actions( $actions );
     }
@@ -135,7 +135,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 	function column_shortcode( $item ) {
 		$shortcodes = array(
 			sprintf( '[contact-form-7 id="%1$d" title="%2$s"]',
-				$item->id(), $item->prop( 'title' ) ) );
+				$item->id(), $item->title() ) );
 
 		$output = '';
 

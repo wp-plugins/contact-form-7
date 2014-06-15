@@ -180,6 +180,10 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
 	}
 
+	public function title() {
+		return $this->prop( 'title' );
+	}
+
 	public function set_title( $title ) {
 		$title = trim( $title );
 
