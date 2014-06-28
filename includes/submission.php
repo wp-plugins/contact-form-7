@@ -11,6 +11,7 @@ class WPCF7_Submission {
 	private $skip_mail = false;
 	private $response = '';
 	private $invalid_fields = array();
+	private $meta = array();
 
 	private function __construct() {}
 
@@ -112,6 +113,16 @@ class WPCF7_Submission {
 	}
 
 	private function submit() {
+		$this->meta = array(
+			'remote_ip' => preg_replace( '/[^0-9a-f.:, ]/', '',
+				$_SERVER['REMOTE_ADDR'] ),
+			'user_agent' => substr( $_SERVER['HTTP_USER_AGENT'], 0, 254 ),
+			'url' => preg_replace( '%(?<!:|/)/.*$%', '',
+				untrailingslashit( home_url() ) ) . wpcf7_get_request_uri(),
+			'timestamp' => current_time( 'timestamp' ),
+			'unit_tag' => isset( $_POST['_wpcf7_unit_tag'] )
+				? $_POST['_wpcf7_unit_tag'] : '' );
+
 		$contact_form = $this->contact_form;
 
 		if ( ! $this->validate() ) { // Validation error occured
@@ -263,6 +274,12 @@ class WPCF7_Submission {
 	public function remove_uploaded_files() {
 		foreach ( (array) $this->uploaded_files as $name => $path ) {
 			@unlink( $path );
+		}
+	}
+
+	public function get_meta( $name ) {
+		if ( isset( $this->meta[$name] ) ) {
+			return $this->meta[$name];
 		}
 	}
 }
