@@ -131,6 +131,14 @@ function wpcf7_mail_replace_tags( $content, $args = '' ) {
 		'html' => false,
 		'exclude_blank' => false ) );
 
+	if ( is_array( $content ) ) {
+		foreach ( $content as $key => $value ) {
+			$content[$key] = wpcf7_mail_replace_tags( $value, $args );
+		}
+
+		return $content;
+	}
+
 	$content = explode( "\n", $content );
 
 	foreach ( $content as $num => $line ) {
