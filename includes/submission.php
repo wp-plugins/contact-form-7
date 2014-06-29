@@ -113,6 +113,10 @@ class WPCF7_Submission {
 	}
 
 	private function submit() {
+		if ( ! $this->is( 'init' ) ) {
+			return $this->status;
+		}
+
 		$this->meta = array(
 			'remote_ip' => preg_replace( '/[^0-9a-f.:, ]/', '',
 				$_SERVER['REMOTE_ADDR'] ),
