@@ -197,6 +197,10 @@ function wpcf7_load_js() {
 	return apply_filters( 'wpcf7_load_js', WPCF7_LOAD_JS );
 }
 
+function wpcf7_load_css() {
+	return apply_filters( 'wpcf7_load_css', WPCF7_LOAD_CSS );
+}
+
 function wpcf7_format_atts( $atts ) {
 	$html = '';
 
