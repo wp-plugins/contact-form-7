@@ -6,8 +6,6 @@ if ( ! defined( 'ABSPATH' ) )
 
 ?><div class="wrap">
 
-<?php screen_icon(); ?>
-
 <h2><?php
 	if ( $post->initial() ) {
 		echo esc_html( __( 'Add New Contact Form', 'contact-form-7' ) );

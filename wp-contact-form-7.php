@@ -29,7 +29,7 @@ Version: 3.8.1
 
 define( 'WPCF7_VERSION', '3.8.1' );
 
-define( 'WPCF7_REQUIRED_WP_VERSION', '3.7' );
+define( 'WPCF7_REQUIRED_WP_VERSION', '3.8' );
 
 define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 

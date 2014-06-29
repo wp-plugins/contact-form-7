@@ -2,7 +2,7 @@
 Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
-Requires at least: 3.7
+Requires at least: 3.8
 Tested up to: 3.9.1
 Stable tag: 3.8.1
 License: GPLv2 or later
