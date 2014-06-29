@@ -308,7 +308,7 @@ class WPCF7_ContactForm {
 		return $html;
 	}
 
-	public function form_hidden_fields() {
+	private function form_hidden_fields() {
 		$hidden_fields = array(
 			'_wpcf7' => $this->id,
 			'_wpcf7_version' => WPCF7_VERSION,
@@ -604,7 +604,7 @@ class WPCF7_ContactForm {
 
 	/* Upgrade */
 
-	public function upgrade() {
+	private function upgrade() {
 		$mail = $this->prop( 'mail' );
 
 		if ( is_array( $mail ) && ! isset( $mail['recipient'] ) ) {
