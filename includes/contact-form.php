@@ -216,7 +216,13 @@ class WPCF7_ContactForm {
 		$atts = wp_parse_args( $atts, array(
 			'html_id' => '',
 			'html_name' => '',
-			'html_class' => '' ) );
+			'html_class' => '',
+			'output' => 'form' ) );
+
+		if ( 'raw_form' == $atts['output'] ) {
+			return '<pre class="wpcf7-raw-form"><code>'
+				. esc_html( $this->prop( 'form' ) ) . '</code></pre>';
+		}
 
 		$this->unit_tag = self::get_unit_tag( $this->id );
 
