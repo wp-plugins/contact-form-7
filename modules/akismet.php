@@ -131,11 +131,13 @@ function wpcf7_akismet_comment_check( $comment ) {
 			'/1.1/comment-check', $akismet_api_port );
 	}
 
-	if ( 'true' == $response[1] )
+	if ( 'true' == $response[1] ) {
 		$spam = true;
+	}
 
-	if ( $contact_form = wpcf7_get_current_contact_form() )
-		$contact_form->akismet = array( 'comment' => $comment, 'spam' => $spam );
+	if ( $submission = WPCF7_Submission::get_instance() ) {
+		$submission->akismet = array( 'comment' => $comment, 'spam' => $spam );
+	}
 
 	return apply_filters( 'wpcf7_akismet_comment_check', $spam, $comment );
 }

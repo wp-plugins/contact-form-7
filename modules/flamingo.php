@@ -21,9 +21,8 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 	}
 
 	$submission = WPCF7_Submission::get_instance();
-	$posted_data = $submission ? $submission->get_posted_data() : array();
 
-	if ( empty( $posted_data ) ) {
+	if ( ! $submission || ! $posted_data = $submission->get_posted_data() ) {
 		return;
 	}
 
@@ -32,12 +31,14 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 
 	$exclude_names = array();
 
-	foreach ( $fields_senseless as $tag )
+	foreach ( $fields_senseless as $tag ) {
 		$exclude_names[] = $tag['name'];
+	}
 
 	foreach ( $posted_data as $key => $value ) {
-		if ( '_' == substr( $key, 0, 1 ) || in_array( $key, $exclude_names ) )
+		if ( '_' == substr( $key, 0, 1 ) || in_array( $key, $exclude_names ) ) {
 			unset( $posted_data[$key] );
+		}
 	}
 
 	$email = wpcf7_flamingo_get_value( 'email', $contactform );
@@ -46,13 +47,16 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 
 	$meta = array();
 
-	$special_mail_tags = array( 'remote_ip', 'user_agent', 'url', 'date', 'time',
-		'post_id', 'post_name', 'post_title', 'post_url', 'post_author', 'post_author_email' );
+	$special_mail_tags = array( 'remote_ip', 'user_agent', 'url',
+		'date', 'time', 'post_id', 'post_name', 'post_title', 'post_url',
+		'post_author', 'post_author_email' );
 
-	foreach ( $special_mail_tags as $smt )
-		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags', '', '_' . $smt, false );
+	foreach ( $special_mail_tags as $smt ) {
+		$meta[$smt] = apply_filters( 'wpcf7_special_mail_tags',
+			'', '_' . $smt, false );
+	}
 
-	$akismet = isset( $contactform->akismet ) ? (array) $contactform->akismet : null;
+	$akismet = isset( $submission->akismet ) ? (array) $submission->akismet : null;
 
 	Flamingo_Contact::add( array(
 		'email' => $email,
