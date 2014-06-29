@@ -193,6 +193,10 @@ function wpcf7_support_html5_fallback() {
 	return (bool) apply_filters( 'wpcf7_support_html5_fallback', false );
 }
 
+function wpcf7_load_js() {
+	return apply_filters( 'wpcf7_load_js', WPCF7_LOAD_JS );
+}
+
 function wpcf7_format_atts( $atts ) {
 	$html = '';
 

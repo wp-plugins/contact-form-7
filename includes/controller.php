@@ -170,10 +170,13 @@ function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
 	return $contact_form->form_html( $atts );
 }
 
-if ( WPCF7_LOAD_JS )
-	add_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_scripts' );
 
 function wpcf7_enqueue_scripts() {
+	if ( ! wpcf7_load_js() ) {
+		return;
+	}
+
 	// jquery.form.js originally bundled with WordPress is out of date and deprecated
 	// so we need to deregister it and re-register the latest one
 	wp_deregister_script( 'jquery-form' );
@@ -182,8 +185,10 @@ function wpcf7_enqueue_scripts() {
 		array( 'jquery' ), '3.50.0-2014.02.05', true );
 
 	$in_footer = true;
-	if ( 'header' === WPCF7_LOAD_JS )
+
+	if ( 'header' === wpcf7_load_js() ) {
 		$in_footer = false;
+	}
 
 	wp_enqueue_script( 'contact-form-7',
 		wpcf7_plugin_url( 'includes/js/scripts.js' ),
@@ -237,7 +242,7 @@ function wpcf7_html5_fallback() {
 	if ( ! wpcf7_support_html5_fallback() )
 		return;
 
-	if ( WPCF7_LOAD_JS ) {
+	if ( wpcf7_load_js() ) {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'jquery-ui-spinner' );
 	}
