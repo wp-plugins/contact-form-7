@@ -167,11 +167,18 @@ class WPCF7_ContactForm {
 			'messages' => array(),
 			'additional_settings' => '' ) );
 
-		return apply_filters( 'wpcf7_contact_form_properties', $properties, $this );
+		$properties = (array) apply_filters( 'wpcf7_contact_form_properties',
+			$properties, $this );
+
+		return $properties;
 	}
 
 	public function set_properties( $properties ) {
-		$properties = array_intersect_key( $properties, $this->get_properties() );
+		$defaults = $this->get_properties();
+
+		$properties = wp_parse_args( $properties, $defaults );
+		$properties = array_intersect_key( $properties, $defaults );
+
 		$this->properties = $properties;
 	}
 
