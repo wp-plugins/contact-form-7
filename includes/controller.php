@@ -182,7 +182,7 @@ function wpcf7_enqueue_scripts() {
 	wp_deregister_script( 'jquery-form' );
 	wp_register_script( 'jquery-form',
 		wpcf7_plugin_url( 'includes/js/jquery.form.min.js' ),
-		array( 'jquery' ), '3.50.0-2014.02.05', true );
+		array( 'jquery' ), '3.51.0-2014.06.20', true );
 
 	$in_footer = true;
 
