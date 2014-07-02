@@ -124,6 +124,15 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
 
+= 3.9 =
+
+* A major change has been made to the internal structure of the WPCF7_ContactForm class. For details, see [Contact Form 7 3.9 Beta](http://contactform7.com/2014/07/02/contact-form-7-39-beta/).
+* The exclude_blank mail option has been introduced.
+* The wpcf7_load_js and wpcf7_load_css (functions and filter hooks) have been introduced.
+* The jQuery Form Plugin (jquery.form.js) has been updated to 3.51.0.
+* Translation for Persian has been updated.
+* WordPress 3.8 or higher is required.
+
 = 3.8.1 =
 
 * Fix: misuse of functions that Akismet 3.0 has marked deprecated.
@@ -138,25 +147,3 @@ For more information, see [Releases](http://contactform7.com/category/releases/)
 * Added html_name attribute support in [contact-form-7] shortcodes.
 * WordPress 3.7 or higher is required.
 * Translation for Ukrainian has been updated.
-
-= 3.7.2 =
-
-* Fixed a bug that allowed to avoid CAPTCHA validation.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.50.0.
-* Translation for Dutch has been updated.
-
-= 3.7.1 =
-
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.49.0.
-* Fixed a bug of auto-p formatting around [response].
-* Translations for Russian, Korean, Hungarian, and German have been updated.
-
-= 3.7 =
-
-* Support free_text option that allows checkbox/radio to have an additional free text field.
-* Restore floating-tip style validation error as an option.
-* Support html_id and html_class attributes in [contact-form-7] shortcode.
-* Fixed bug that Flamingo stored submissions in demo-mode.
-* Fixed bug where auto-p function wrapped [response] with p.
-* The jQuery Form Plugin (jquery.form.js) has been updated to 3.48.0.
-* Translation for Haitian has been created. Translations for German, Hungarian, Czech, Turkish, Lithuanian, French, Basque, and Brazilian Portuguese have been updated.
