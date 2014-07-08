@@ -317,7 +317,7 @@ function wpcf7_upload_tmp_dir() {
 		return wpcf7_upload_dir( 'dir' ) . '/wpcf7_uploads';
 }
 
-add_action( 'template_redirect', 'wpcf7_cleanup_upload_files' );
+add_action( 'template_redirect', 'wpcf7_cleanup_upload_files', 20 );
 
 function wpcf7_cleanup_upload_files() {
 	if ( is_admin() || 'GET' != $_SERVER['REQUEST_METHOD']
