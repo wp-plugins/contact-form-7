@@ -3,17 +3,26 @@
 add_action( 'init', 'wpcf7_control_init', 11 );
 
 function wpcf7_control_init() {
-	wpcf7_ajax_onload();
-	wpcf7_ajax_json_echo();
-	wpcf7_submit_nonajax();
-}
-
-function wpcf7_ajax_onload() {
-	if ( 'GET' != $_SERVER['REQUEST_METHOD']
-	|| ! isset( $_GET['_wpcf7_is_ajax_call'] ) ) {
+	if ( ! isset( $_SERVER['REQUEST_METHOD'] ) ) {
 		return;
 	}
 
+	if ( 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+		if ( isset( $_GET['_wpcf7_is_ajax_call'] ) ) {
+			wpcf7_ajax_onload();
+		}
+	}
+
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
+		if ( isset( $_POST['_wpcf7_is_ajax_call'] ) ) {
+			wpcf7_ajax_json_echo();
+		}
+
+		wpcf7_submit_nonajax();
+	}
+}
+
+function wpcf7_ajax_onload() {
 	$echo = '';
 	$items = array();
 
@@ -33,9 +42,6 @@ function wpcf7_ajax_onload() {
 }
 
 function wpcf7_ajax_json_echo() {
-	if ( 'POST' != $_SERVER['REQUEST_METHOD'] || ! isset( $_POST['_wpcf7_is_ajax_call'] ) )
-		return;
-
 	$echo = '';
 
 	if ( isset( $_POST['_wpcf7'] ) ) {
