@@ -226,6 +226,7 @@ function wpcf7_checkbox_posted_data( $posted_data ) {
 			}
 
 			$last = array_pop( $values );
+			$last = html_entity_decode( $last, ENT_QUOTES, 'UTF-8' );
 
 			if ( in_array( $last, $posted_items ) ) {
 				$posted_items = array_diff( $posted_items, array( $last ) );
