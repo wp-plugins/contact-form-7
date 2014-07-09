@@ -148,6 +148,31 @@ class WPCF7_ContactForm {
 		do_action( 'wpcf7_contact_form', $this );
 	}
 
+	public function __get( $name ) {
+		$message = __( '<code>%1$s</code> property of a <code>WPCF7_ContactForm</code> object is <strong>no longer accessible</strong>. Use <code>%2$s</code> method instead.', 'contact-form-7' );
+
+		if ( 'id' == $name ) {
+			if ( WP_DEBUG ) {
+				trigger_error( sprintf( $message, 'id', 'id()' ) );
+			}
+
+			return $this->id;
+		} elseif ( 'title' == $name ) {
+			if ( WP_DEBUG ) {
+				trigger_error( sprintf( $message, 'title', 'title()' ) );
+			}
+
+			return $this->title;
+		} elseif ( $prop = $this->prop( $name ) ) {
+			if ( WP_DEBUG ) {
+				trigger_error(
+					sprintf( $message, $name, 'prop(\'' . $name . '\')' ) );
+			}
+
+			return $prop;
+		}
+	}
+
 	public function initial() {
 		return empty( $this->id );
 	}
