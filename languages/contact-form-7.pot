@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-01 08:59+0900\n"
-"PO-Revision-Date: 2014-07-01 08:59+0900\n"
+"POT-Creation-Date: 2014-07-09 20:55+0900\n"
+"PO-Revision-Date: 2014-07-09 20:56+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -368,106 +368,113 @@ msgid "Contact Form"
 msgstr ""
 
 #: contact-form-7/includes/contact-form.php:76
-#: contact-form-7/includes/contact-form.php:201
+#: contact-form-7/includes/contact-form.php:226
 msgid "Untitled"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:809
+#: contact-form-7/includes/contact-form.php:152
+#, php-format
+msgid ""
+"<code>%1$s</code> property of a <code>WPCF7_ContactForm</code> object is "
+"<strong>no longer accessible</strong>. Use <code>%2$s</code> method instead."
+msgstr ""
+
+#: contact-form-7/includes/contact-form.php:834
 msgid "Your Name"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:809
-#: contact-form-7/includes/contact-form.php:811
+#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:836
 msgid "(required)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:811
+#: contact-form-7/includes/contact-form.php:836
 msgid "Your Email"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:813
+#: contact-form-7/includes/contact-form.php:838
 msgid "Subject"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:815
+#: contact-form-7/includes/contact-form.php:840
 msgid "Your Message"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:817
+#: contact-form-7/includes/contact-form.php:842
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:825
+#: contact-form-7/includes/contact-form.php:850
 #, php-format
 msgid "From: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:826
+#: contact-form-7/includes/contact-form.php:851
 #, php-format
 msgid "Subject: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:827
-#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/includes/contact-form.php:852
+#: contact-form-7/includes/contact-form.php:867
 msgid "Message Body:"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:828
-#: contact-form-7/includes/contact-form.php:843
+#: contact-form-7/includes/contact-form.php:853
+#: contact-form-7/includes/contact-form.php:868
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:866
+#: contact-form-7/includes/contact-form.php:891
 msgid "Sender's message was sent successfully"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:867
+#: contact-form-7/includes/contact-form.php:892
 msgid "Your message was sent successfully. Thanks."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:871
+#: contact-form-7/includes/contact-form.php:896
 msgid "Sender's message was failed to send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:872
-#: contact-form-7/includes/contact-form.php:882
+#: contact-form-7/includes/contact-form.php:897
+#: contact-form-7/includes/contact-form.php:907
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:876
+#: contact-form-7/includes/contact-form.php:901
 msgid "Validation errors occurred"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:877
+#: contact-form-7/includes/contact-form.php:902
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:881
+#: contact-form-7/includes/contact-form.php:906
 msgid "Submission was referred to as spam"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:886
+#: contact-form-7/includes/contact-form.php:911
 msgid "There are terms that the sender must accept"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:887
+#: contact-form-7/includes/contact-form.php:912
 msgid "Please accept the terms to proceed."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:891
+#: contact-form-7/includes/contact-form.php:916
 msgid "There is a field that the sender must fill in"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:892
+#: contact-form-7/includes/contact-form.php:917
 msgid "Please fill the required field."
 msgstr ""
 
-#: contact-form-7/includes/controller.php:199
+#: contact-form-7/includes/controller.php:205
 msgid "Sending ..."
 msgstr ""
 
@@ -729,7 +736,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:146
 #: contact-form-7/modules/captcha.php:210
-#: contact-form-7/modules/checkbox.php:288 contact-form-7/modules/date.php:164
+#: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
 #: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
 #: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
 #: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
@@ -747,8 +754,8 @@ msgstr ""
 #: contact-form-7/modules/captcha.php:246
 #: contact-form-7/modules/captcha.php:251
 #: contact-form-7/modules/captcha.php:254
-#: contact-form-7/modules/checkbox.php:293
-#: contact-form-7/modules/checkbox.php:296 contact-form-7/modules/date.php:169
+#: contact-form-7/modules/checkbox.php:294
+#: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
 #: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
 #: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
 #: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
@@ -787,7 +794,7 @@ msgstr ""
 
 #: contact-form-7/modules/acceptance.php:167
 #: contact-form-7/modules/captcha.php:259
-#: contact-form-7/modules/checkbox.php:316 contact-form-7/modules/date.php:198
+#: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
 #: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
@@ -871,44 +878,44 @@ msgid ""
 "and FreeType) are not available on your server."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:261
+#: contact-form-7/modules/checkbox.php:262
 msgid "Checkboxes"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:264
+#: contact-form-7/modules/checkbox.php:265
 msgid "Radio buttons"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:285 contact-form-7/modules/date.php:163
+#: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
 #: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
 #: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
 #: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:301
+#: contact-form-7/modules/checkbox.php:302
 #: contact-form-7/modules/select.php:174
 msgid "Choices"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:303
+#: contact-form-7/modules/checkbox.php:304
 #: contact-form-7/modules/select.php:176
 msgid "* One choice per line."
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:307
+#: contact-form-7/modules/checkbox.php:308
 msgid "Put a label first, a checkbox last?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:308
+#: contact-form-7/modules/checkbox.php:309
 msgid "Wrap each item with <label> tag?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:310
+#: contact-form-7/modules/checkbox.php:311
 msgid "Make checkboxes exclusive?"
 msgstr ""
 
-#: contact-form-7/modules/checkbox.php:318 contact-form-7/modules/date.php:200
+#: contact-form-7/modules/checkbox.php:319 contact-form-7/modules/date.php:200
 #: contact-form-7/modules/number.php:210 contact-form-7/modules/select.php:188
 #: contact-form-7/modules/text.php:262 contact-form-7/modules/textarea.php:152
 msgid "And, put this code into the Mail fields below."
