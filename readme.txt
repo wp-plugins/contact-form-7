@@ -126,11 +126,11 @@ For more information, see [Releases](http://contactform7.com/category/releases/)
 
 = 3.9 =
 
-* A major change has been made to the internal structure of the WPCF7_ContactForm class. For details, see [Contact Form 7 3.9 Beta](http://contactform7.com/2014/07/02/contact-form-7-39-beta/).
+* A major change has been made to the internal structure. For details, see [beta release announcement](http://contactform7.com/2014/07/02/contact-form-7-39-beta/).
 * The exclude_blank mail option has been introduced.
 * The wpcf7_load_js and wpcf7_load_css (functions and filter hooks) have been introduced.
 * The jQuery Form Plugin (jquery.form.js) has been updated to 3.51.0.
-* Translation for Persian has been updated.
+* Translations for Persian and Slovak have been updated.
 * WordPress 3.8 or higher is required.
 
 = 3.8.1 =
