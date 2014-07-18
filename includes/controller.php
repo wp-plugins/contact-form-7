@@ -245,18 +245,19 @@ function wpcf7_style_is() {
 
 /* HTML5 Fallback */
 
-add_action( 'wp_enqueue_scripts', 'wpcf7_html5_fallback', 11 );
+add_action( 'wp_enqueue_scripts', 'wpcf7_html5_fallback', 20 );
 
 function wpcf7_html5_fallback() {
-	if ( ! wpcf7_support_html5_fallback() )
+	if ( ! wpcf7_support_html5_fallback() ) {
 		return;
+	}
 
-	if ( wpcf7_load_js() ) {
+	if ( wp_script_is( 'contact-form-7' ) ) {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'jquery-ui-spinner' );
 	}
 
-	if ( wpcf7_load_css() ) {
+	if ( wp_style_is( 'contact-form-7' ) ) {
 		wp_enqueue_style( 'jquery-ui-smoothness',
 			wpcf7_plugin_url( 'includes/js/jquery-ui/themes/smoothness/jquery-ui.min.css' ), array(), '1.10.3', 'screen' );
 	}
