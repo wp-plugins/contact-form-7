@@ -252,12 +252,12 @@ function wpcf7_html5_fallback() {
 		return;
 	}
 
-	if ( wp_script_is( 'contact-form-7' ) ) {
+	if ( wpcf7_script_is() ) {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'jquery-ui-spinner' );
 	}
 
-	if ( wp_style_is( 'contact-form-7' ) ) {
+	if ( wpcf7_style_is() ) {
 		wp_enqueue_style( 'jquery-ui-smoothness',
 			wpcf7_plugin_url( 'includes/js/jquery-ui/themes/smoothness/jquery-ui.min.css' ), array(), '1.10.3', 'screen' );
 	}
