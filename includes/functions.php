@@ -209,11 +209,7 @@ function wpcf7_format_atts( $atts ) {
 	foreach ( $prioritized_atts as $att ) {
 		if ( isset( $atts[$att] ) ) {
 			$value = trim( $atts[$att] );
-
-			if ( '' !== $value ) {
-				$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
-			}
-
+			$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
 			unset( $atts[$att] );
 		}
 	}
