@@ -60,7 +60,7 @@ function wpcf7_ajax_json_echo() {
 				$items['message'] = $result['message'];
 			}
 
-			if ( 'mail_sent' == $result['status'] ) {
+			if ( 'mail_sent' == $result['status'] || 'demo_mode' == $result['status'] ) {
 				$items['mailSent'] = true;
 			}
 
