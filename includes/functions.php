@@ -85,6 +85,7 @@ function wpcf7_l10n() {
 		'fa_IR' => __( 'Persian', 'contact-form-7' ),
 		'pl_PL' => __( 'Polish', 'contact-form-7' ),
 		'pt_PT' => __( 'Portuguese', 'contact-form-7' ),
+		'pa_IN' => __( 'Punjabi', 'contact-form-7' ),
 		'ru_RU' => __( 'Russian', 'contact-form-7' ),
 		'ro_RO' => __( 'Romanian', 'contact-form-7' ),
 		'sr_RS' => __( 'Serbian', 'contact-form-7' ),
