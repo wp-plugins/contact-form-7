@@ -62,9 +62,11 @@ function wpcf7_flamingo_submit( $contactform, $result ) {
 
 	$akismet = isset( $submission->akismet ) ? (array) $submission->akismet : null;
 
-	Flamingo_Contact::add( array(
-		'email' => $email,
-		'name' => $name ) );
+	if ( 'mail_sent' == $result['status'] ) {
+		Flamingo_Contact::add( array(
+			'email' => $email,
+			'name' => $name ) );
+	}
 
 	$channel_id = wpcf7_flamingo_add_channel(
 		$contactform->name(), $contactform->title() );
