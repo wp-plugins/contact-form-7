@@ -7,16 +7,20 @@
 add_action( 'wpcf7_submit', 'wpcf7_flamingo_submit', 10, 2 );
 
 function wpcf7_flamingo_submit( $contactform, $result ) {
+	if ( ! class_exists( 'Flamingo_Contact' )
+	|| ! class_exists( 'Flamingo_Inbound_Message' ) ) {
+		return;
+	}
+
+	if ( $contactform->in_demo_mode() ) {
+		return;
+	}
+
 	$cases = (array) apply_filters( 'wpcf7_flamingo_submit_if',
 		array( 'spam', 'mail_sent', 'mail_failed' ) );
 
 	if ( empty( $result['status'] )
 	|| ! in_array( $result['status'], $cases ) ) {
-		return;
-	}
-
-	if ( ! class_exists( 'Flamingo_Contact' )
-	|| ! class_exists( 'Flamingo_Inbound_Message' ) ) {
 		return;
 	}
 
