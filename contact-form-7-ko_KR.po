@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-28 17:08+0900\n"
-"PO-Revision-Date: 2014-01-28 17:14+0900\n"
+"POT-Creation-Date: 2014-07-09 20:55+0900\n"
+"PO-Revision-Date: 2014-08-17 20:24+0900\n"
 "Last-Translator: Venusian <martian36@naver.com>\n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -14,154 +14,159 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
-#: contact-form-7/settings.php:87
+#: contact-form-7/wp-contact-form-7.php:5
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "하나의 다른 컨택트 폼.  단순하지만 유연합니다."
+
+#: contact-form-7/settings.php:71
 #, php-format
 msgid "Contact form %d"
 msgstr "컨택트 폼 %d"
 
-#: contact-form-7/admin/admin.php:15 contact-form-7/modules/flamingo.php:123
+#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:128
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:16
+#: contact-form-7/admin/admin.php:9
 msgid "Contact"
 msgstr "Contact"
 
-#: contact-form-7/admin/admin.php:21
-#: contact-form-7/admin/edit-contact-form.php:15
+#: contact-form-7/admin/admin.php:14
+#: contact-form-7/admin/edit-contact-form.php:13
 msgid "Edit Contact Form"
 msgstr "컨택트 폼 편집"
 
-#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:216
-#: contact-form-7/admin/admin.php:278 contact-form-7/includes/classes.php:28
+#: contact-form-7/admin/admin.php:15 contact-form-7/admin/admin.php:155
+#: contact-form-7/admin/admin.php:211
+#: contact-form-7/includes/contact-form.php:29
 msgid "Contact Forms"
 msgstr "컨택트 폼"
 
-#: contact-form-7/admin/admin.php:29 contact-form-7/admin/admin.php:324
-#: contact-form-7/admin/edit-contact-form.php:13
+#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:253
+#: contact-form-7/admin/edit-contact-form.php:11
 msgid "Add New Contact Form"
 msgstr "새 콘택트 폼 추가"
 
-#: contact-form-7/admin/admin.php:30 contact-form-7/admin/admin.php:280
-#: contact-form-7/admin/admin.php:329 contact-form-7/admin/admin.php:341
-#: contact-form-7/admin/edit-contact-form.php:17
+#: contact-form-7/admin/admin.php:23 contact-form-7/admin/admin.php:213
+#: contact-form-7/admin/admin.php:258 contact-form-7/admin/admin.php:270
+#: contact-form-7/admin/edit-contact-form.php:15
 msgid "Add New"
 msgstr "새로 추가"
 
-#: contact-form-7/admin/admin.php:59 contact-form-7/admin/admin.php:132
+#: contact-form-7/admin/admin.php:52 contact-form-7/admin/admin.php:73
 msgid "You are not allowed to edit this item."
 msgstr "이 아이템을 편집하도록 허용되지 않았습니다."
 
-#: contact-form-7/admin/admin.php:173
+#: contact-form-7/admin/admin.php:112
 msgid "You are not allowed to delete this item."
 msgstr "이 아이템을 삭제할 권한이 없습니다."
 
-#: contact-form-7/admin/admin.php:176
+#: contact-form-7/admin/admin.php:115
 msgid "Error in deleting."
 msgstr "삭제 중 에러"
 
-#: contact-form-7/admin/admin.php:253
+#: contact-form-7/admin/admin.php:190
 msgid "Generate Tag"
 msgstr "태그 생성"
 
-#: contact-form-7/admin/admin.php:284
+#: contact-form-7/admin/admin.php:217
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "&#8220;%s&#8221;의 검색 결과"
 
-#: contact-form-7/admin/admin.php:293
+#: contact-form-7/admin/admin.php:226
 msgid "Search Contact Forms"
 msgstr "컨택트 폼 검색"
 
-#: contact-form-7/admin/admin.php:328
+#: contact-form-7/admin/admin.php:257
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "기본 언어 사용하기 (%s)"
 
-#: contact-form-7/admin/admin.php:332
+#: contact-form-7/admin/admin.php:261
 msgid "Or"
 msgstr "또는"
 
-#: contact-form-7/admin/admin.php:336
+#: contact-form-7/admin/admin.php:265
 msgid "(select language)"
 msgstr "(언어 선택)"
 
-#: contact-form-7/admin/admin.php:348
+#: contact-form-7/admin/admin.php:277
 msgid "Form"
 msgstr "폼"
 
-#: contact-form-7/admin/admin.php:351
+#: contact-form-7/admin/admin.php:280
 msgid "Mail"
 msgstr "메일"
 
-#: contact-form-7/admin/admin.php:354
+#: contact-form-7/admin/admin.php:283
 msgid "Mail (2)"
 msgstr "메일 (2)"
 
-#: contact-form-7/admin/admin.php:359
+#: contact-form-7/admin/admin.php:288
 msgid "Use mail (2)"
 msgstr "메일 (2) 사용하기"
 
-#: contact-form-7/admin/admin.php:361
+#: contact-form-7/admin/admin.php:290
 msgid "Messages"
 msgstr "메시지"
 
-#: contact-form-7/admin/admin.php:364
+#: contact-form-7/admin/admin.php:293
 msgid "Additional Settings"
 msgstr "추가 설정"
 
-#: contact-form-7/admin/admin.php:395
+#: contact-form-7/admin/admin.php:308
 msgid "Contact form created."
 msgstr "컨택트 폼이 만들어졌습니다."
 
-#: contact-form-7/admin/admin.php:397
+#: contact-form-7/admin/admin.php:310
 msgid "Contact form saved."
 msgstr "컨택트 폼이 저장됐습니다."
 
-#: contact-form-7/admin/admin.php:399
+#: contact-form-7/admin/admin.php:312
 msgid "Contact form deleted."
 msgstr "컨택트 폼이 삭제됐습니다."
 
-#: contact-form-7/admin/admin.php:416
+#: contact-form-7/admin/admin.php:329
 msgid "Settings"
 msgstr "설정"
 
-#: contact-form-7/admin/admin.php:427
+#: contact-form-7/admin/admin.php:340
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:428
+#: contact-form-7/admin/admin.php:341
 msgid "Docs"
 msgstr "문서"
 
-#: contact-form-7/admin/admin.php:429
+#: contact-form-7/admin/admin.php:342
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:343
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:344
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:432
+#: contact-form-7/admin/admin.php:345
 msgid "Support"
 msgstr "지원"
 
-#: contact-form-7/admin/admin.php:433 contact-form-7/admin/admin.php:488
+#: contact-form-7/admin/admin.php:346 contact-form-7/admin/admin.php:402
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:434 contact-form-7/admin/admin.php:488
+#: contact-form-7/admin/admin.php:347 contact-form-7/admin/admin.php:402
 msgid "Donate"
 msgstr "기부"
 
-#: contact-form-7/admin/admin.php:456
+#: contact-form-7/admin/admin.php:369
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -170,15 +175,15 @@ msgstr ""
 "<strong>Contact Form 7 %1$s는 워드프레스 %2$s 이상의 버전이 필요합니다. 우선 "
 "</strong><a href=\"%3$s\">워드프레스를 업데이트</a> 해주세요."
 
-#: contact-form-7/admin/admin.php:481
+#: contact-form-7/admin/admin.php:395
 msgid "Dismiss"
 msgstr "무시하기"
 
-#: contact-form-7/admin/admin.php:486
+#: contact-form-7/admin/admin.php:400
 msgid "Contact Form 7 Needs Your Support"
 msgstr "Contact Form 7 은 당신의 지원이 필요합니다"
 
-#: contact-form-7/admin/admin.php:487
+#: contact-form-7/admin/admin.php:401
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
@@ -187,103 +192,103 @@ msgstr ""
 "사용자로부터 기부가 없이는 이 플러그인의 지속적인 개발과 지원이 어렵습니다. "
 "Contact Form 7을 유용하게 사용하고 있다면 기부를 고려해주세요."
 
-#: contact-form-7/admin/admin.php:492
+#: contact-form-7/admin/admin.php:406
 msgid "Get Started"
 msgstr "시작하기"
 
-#: contact-form-7/admin/admin.php:494
+#: contact-form-7/admin/admin.php:408
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr "http://contactform7.com/getting-started-with-contact-form-7/"
 
-#: contact-form-7/admin/admin.php:494
+#: contact-form-7/admin/admin.php:408
 msgid "Getting Started with Contact Form 7"
 msgstr "Contact Form 7 시작하기"
 
-#: contact-form-7/admin/admin.php:495
+#: contact-form-7/admin/admin.php:409
 msgid "http://contactform7.com/admin-screen/"
 msgstr "http://contactform7.com/admin-screen/"
 
-#: contact-form-7/admin/admin.php:495
+#: contact-form-7/admin/admin.php:409
 msgid "Admin Screen"
 msgstr "관리자 화면"
 
-#: contact-form-7/admin/admin.php:496
+#: contact-form-7/admin/admin.php:410
 msgid "http://contactform7.com/tag-syntax/"
 msgstr "http://contactform7.com/tag-syntax/"
 
-#: contact-form-7/admin/admin.php:496
+#: contact-form-7/admin/admin.php:410
 msgid "How Tags Work"
 msgstr "태그 작동하는 방법"
 
-#: contact-form-7/admin/admin.php:497
+#: contact-form-7/admin/admin.php:411
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr "http://contactform7.com/setting-up-mail/"
 
-#: contact-form-7/admin/admin.php:497
+#: contact-form-7/admin/admin.php:411
 msgid "Setting Up Mail"
 msgstr "메일 설정"
 
-#: contact-form-7/admin/admin.php:502
+#: contact-form-7/admin/admin.php:416
 msgid "Did You Know?"
 msgstr "알고계신가요?"
 
-#: contact-form-7/admin/admin.php:504
+#: contact-form-7/admin/admin.php:418
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr "http://contactform7.com/spam-filtering-with-akismet/"
 
-#: contact-form-7/admin/admin.php:504
+#: contact-form-7/admin/admin.php:418
 msgid "Spam Filtering with Akismet"
 msgstr "아키스밋으로 스팸 필더"
 
-#: contact-form-7/admin/admin.php:505
+#: contact-form-7/admin/admin.php:419
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr "http://contactform7.com/save-submitted-messages-with-flamingo/"
 
-#: contact-form-7/admin/admin.php:505
+#: contact-form-7/admin/admin.php:419
 msgid "Save Messages with Flamingo"
 msgstr "Flamingo 메시지 저장하기"
 
-#: contact-form-7/admin/admin.php:506
+#: contact-form-7/admin/admin.php:420
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr "http://contactform7.com/selectable-recipient-with-pipes/"
 
-#: contact-form-7/admin/admin.php:506
+#: contact-form-7/admin/admin.php:420
 msgid "Selectable Recipient with Pipes"
 msgstr "Pipes 선택가능한 수신자"
 
-#: contact-form-7/admin/admin.php:507
+#: contact-form-7/admin/admin.php:421
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 
-#: contact-form-7/admin/admin.php:507
+#: contact-form-7/admin/admin.php:421
 msgid "Tracking with Google Analytics"
 msgstr "구글 애널리틱스 트랙킹"
 
-#: contact-form-7/admin/edit-contact-form.php:49
+#: contact-form-7/admin/edit-contact-form.php:47
 msgid ""
 "Copy this code and paste it into your post, page or text widget content."
 msgstr "이 코드를 복사해서 글, 페이지, 위젯 콘텐츠에 붙여넣으세요."
 
-#: contact-form-7/admin/edit-contact-form.php:55
+#: contact-form-7/admin/edit-contact-form.php:53
 msgid "Old code is also available."
 msgstr "이전의 코드도 가능합니다."
 
-#: contact-form-7/admin/edit-contact-form.php:63
+#: contact-form-7/admin/edit-contact-form.php:61
 msgid "Save"
 msgstr "저장하기"
 
-#: contact-form-7/admin/edit-contact-form.php:70
+#: contact-form-7/admin/edit-contact-form.php:68
 msgid "Duplicate"
 msgstr "복제하기"
 
-#: contact-form-7/admin/edit-contact-form.php:75
+#: contact-form-7/admin/edit-contact-form.php:73
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
 msgid "Delete"
 msgstr "삭제"
 
-#: contact-form-7/admin/edit-contact-form.php:77
+#: contact-form-7/admin/edit-contact-form.php:75
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -304,7 +309,7 @@ msgid "Author"
 msgstr "지은이"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
-#: contact-form-7/modules/date.php:144
+#: contact-form-7/modules/date.php:147
 msgid "Date"
 msgstr "날짜"
 
@@ -321,91 +326,131 @@ msgstr "복사"
 msgid "Edit &#8220;%s&#8221;"
 msgstr "&#8220;%s&#8221; 편집"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:154
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:158
 msgid "Y/m/d g:i:s A"
 msgstr "Y/m/d g:i:s A"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:161
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:165
 #, php-format
 msgid "%s ago"
 msgstr "%s 전에"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:167
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
-#: contact-form-7/admin/includes/meta-boxes.php:44
+#: contact-form-7/admin/includes/meta-boxes.php:43
 msgid "To:"
 msgstr "수신:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:49
+#: contact-form-7/admin/includes/meta-boxes.php:48
 msgid "From:"
 msgstr "발신:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:54
+#: contact-form-7/admin/includes/meta-boxes.php:53
 msgid "Subject:"
 msgstr "제목:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:61
+#: contact-form-7/admin/includes/meta-boxes.php:60
 msgid "Additional headers:"
 msgstr "추가 헤더:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:66
+#: contact-form-7/admin/includes/meta-boxes.php:65
 msgid "File attachments:"
 msgstr "파일 첨부:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:74
+#: contact-form-7/admin/includes/meta-boxes.php:73
 msgid "Use HTML content type"
 msgstr "HTML 컨텐트 타입 사용하기"
 
-#: contact-form-7/admin/includes/meta-boxes.php:80
+#: contact-form-7/admin/includes/meta-boxes.php:79
 msgid "Message body:"
 msgstr "메시지 내용"
 
-#: contact-form-7/includes/classes.php:29
+#: contact-form-7/admin/includes/meta-boxes.php:85
+msgid "Exclude lines with blank mail-tags from output"
+msgstr "빈 메일 태그가 있는 라인을 제외하고 출력"
+
+#: contact-form-7/includes/contact-form.php:30
 msgid "Contact Form"
 msgstr "컨택트 폼"
 
-#: contact-form-7/includes/classes.php:877
+#: contact-form-7/includes/contact-form.php:76
+#: contact-form-7/includes/contact-form.php:226
 msgid "Untitled"
 msgstr "제목 없음"
 
-#: contact-form-7/includes/controller.php:243
-msgid "Sending ..."
-msgstr "보내는 중..."
-
-#: contact-form-7/includes/functions.php:21
+#: contact-form-7/includes/contact-form.php:152
 #, php-format
 msgid ""
-"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use "
-"%3$s instead."
+"<code>%1$s</code> property of a <code>WPCF7_ContactForm</code> object is "
+"<strong>no longer accessible</strong>. Use <code>%2$s</code> method instead."
 msgstr ""
-"Contact Form 7 버전 %2$s이므로 %1$s는 <strong>폐기될 예정입니다!</strong> 대"
-"신 %3$s를 사용하세요."
+"<code>WPCF7_ContactForm</code> 오브젝트의 <code>%1$s</code> 속성은 <strong>"
+"더 이상 접근이 불가능합니다</strong>. 대신 <code>%2$s</code> 메소드를 사용하"
+"세요."
 
-#: contact-form-7/includes/functions.php:23
+#: contact-form-7/includes/contact-form.php:834
+msgid "Your Name"
+msgstr "이름"
+
+#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:836
+msgid "(required)"
+msgstr "(필수)"
+
+#: contact-form-7/includes/contact-form.php:836
+msgid "Your Email"
+msgstr "이메일"
+
+#: contact-form-7/includes/contact-form.php:838
+msgid "Subject"
+msgstr "제목"
+
+#: contact-form-7/includes/contact-form.php:840
+msgid "Your Message"
+msgstr "메시지"
+
+#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/modules/submit.php:28
+msgid "Send"
+msgstr "보내기"
+
+#: contact-form-7/includes/contact-form.php:850
 #, php-format
-msgid ""
-"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with "
-"no alternative available."
-msgstr ""
-"Contact Form 7 버전 %2$s은 대체할 것이 없으므로 %1$s는 <strong>폐기될 예정입"
-"니다!</strong>"
+msgid "From: %s"
+msgstr "발신: %s"
 
-#: contact-form-7/includes/functions.php:30
+#: contact-form-7/includes/contact-form.php:851
+#, php-format
+msgid "Subject: %s"
+msgstr "제목: %s"
+
+#: contact-form-7/includes/contact-form.php:852
+#: contact-form-7/includes/contact-form.php:867
+msgid "Message Body:"
+msgstr "메시지 내용:"
+
+#: contact-form-7/includes/contact-form.php:853
+#: contact-form-7/includes/contact-form.php:868
+#, php-format
+msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
+msgstr "이 이메일은 %1$s (%2$s)의 컨택트 폼에서 보내진 것입니다"
+
+#: contact-form-7/includes/contact-form.php:891
 msgid "Sender's message was sent successfully"
 msgstr "보내는 사람의 메시지가 성공적으로 발송됐습니다."
 
-#: contact-form-7/includes/functions.php:31
+#: contact-form-7/includes/contact-form.php:892
 msgid "Your message was sent successfully. Thanks."
 msgstr "메시지가 성공적으로 발송됐습니다. 감사합니다."
 
-#: contact-form-7/includes/functions.php:35
+#: contact-form-7/includes/contact-form.php:896
 msgid "Sender's message was failed to send"
 msgstr "보내는 사람의 메시지가 보내는데 실패했습니다"
 
-#: contact-form-7/includes/functions.php:36
-#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/contact-form.php:897
+#: contact-form-7/includes/contact-form.php:907
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -413,399 +458,360 @@ msgstr ""
 "메시지 보내기가 실패했습니다. 나중에 다시 하거나 다른 방법으로 관리자에게 연"
 "락하세요."
 
-#: contact-form-7/includes/functions.php:40
+#: contact-form-7/includes/contact-form.php:901
 msgid "Validation errors occurred"
 msgstr "인증 에러가 발생했습니다"
 
-#: contact-form-7/includes/functions.php:41
+#: contact-form-7/includes/contact-form.php:902
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "인증 에러가 발생했습니다. 입력란을 확인하고 다시 제출해주세요."
 
-#: contact-form-7/includes/functions.php:45
+#: contact-form-7/includes/contact-form.php:906
 msgid "Submission was referred to as spam"
 msgstr "제출이 스팸으로 처리됐습니다"
 
-#: contact-form-7/includes/functions.php:50
+#: contact-form-7/includes/contact-form.php:911
 msgid "There are terms that the sender must accept"
 msgstr "보내는 사람이 수락해야할 사용 조건이 있습니다."
 
-#: contact-form-7/includes/functions.php:51
+#: contact-form-7/includes/contact-form.php:912
 msgid "Please accept the terms to proceed."
 msgstr "계속 진행하려면 사용 조건을 수락하세요."
 
-#: contact-form-7/includes/functions.php:55
+#: contact-form-7/includes/contact-form.php:916
 msgid "There is a field that the sender must fill in"
 msgstr "보내는 사람이 입력해야 할 입력란이 있습니다."
 
-#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/contact-form.php:917
 msgid "Please fill the required field."
 msgstr "필수 입력란을 채워주세요."
 
-#: contact-form-7/includes/functions.php:80
-msgid "Your Name"
-msgstr "이름"
+#: contact-form-7/includes/controller.php:205
+msgid "Sending ..."
+msgstr "보내는 중..."
 
-#: contact-form-7/includes/functions.php:80
-#: contact-form-7/includes/functions.php:82
-msgid "(required)"
-msgstr "(필수)"
-
-#: contact-form-7/includes/functions.php:82
-msgid "Your Email"
-msgstr "이메일"
-
-#: contact-form-7/includes/functions.php:84
-msgid "Subject"
-msgstr "제목"
-
-#: contact-form-7/includes/functions.php:86
-msgid "Your Message"
-msgstr "메시지"
-
-#: contact-form-7/includes/functions.php:88
-#: contact-form-7/modules/submit.php:28
-msgid "Send"
-msgstr "보내기"
-
-#: contact-form-7/includes/functions.php:96
-#, php-format
-msgid "From: %s"
-msgstr "발신: %s"
-
-#: contact-form-7/includes/functions.php:97
-#, php-format
-msgid "Subject: %s"
-msgstr "제목: %s"
-
-#: contact-form-7/includes/functions.php:98
-#: contact-form-7/includes/functions.php:112
-msgid "Message Body:"
-msgstr "메시지 내용:"
-
-#: contact-form-7/includes/functions.php:99
-#: contact-form-7/includes/functions.php:113
-#, php-format
-msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
-msgstr "이 이메일은 %1$s (%2$s)의 컨택트 폼에서 보내진 것입니다"
-
-#: contact-form-7/includes/functions.php:164
+#: contact-form-7/includes/functions.php:39
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
-#: contact-form-7/includes/functions.php:165
+#: contact-form-7/includes/functions.php:40
 msgid "Albanian"
 msgstr "Albanian"
 
-#: contact-form-7/includes/functions.php:166
+#: contact-form-7/includes/functions.php:41
 msgid "Arabic"
 msgstr "Arabic"
 
-#: contact-form-7/includes/functions.php:167
+#: contact-form-7/includes/functions.php:42
 msgid "Armenian"
 msgstr "Armenian"
 
-#: contact-form-7/includes/functions.php:168
+#: contact-form-7/includes/functions.php:43
 msgid "Azerbaijani"
 msgstr "Azerbaijani"
 
-#: contact-form-7/includes/functions.php:169
+#: contact-form-7/includes/functions.php:44
 msgid "Bangla"
 msgstr "Bangla"
 
-#: contact-form-7/includes/functions.php:170
+#: contact-form-7/includes/functions.php:45
 msgid "Basque"
 msgstr "Basque"
 
-#: contact-form-7/includes/functions.php:171
+#: contact-form-7/includes/functions.php:46
 msgid "Belarusian"
 msgstr "Belarusian"
 
-#: contact-form-7/includes/functions.php:172
+#: contact-form-7/includes/functions.php:47
 msgid "Bosnian"
 msgstr "Bosnian"
 
-#: contact-form-7/includes/functions.php:173
+#: contact-form-7/includes/functions.php:48
 msgid "Brazilian Portuguese"
 msgstr "Brazilian Portuguese"
 
-#: contact-form-7/includes/functions.php:174
+#: contact-form-7/includes/functions.php:49
 msgid "Bulgarian"
 msgstr "Bulgarian"
 
-#: contact-form-7/includes/functions.php:175
+#: contact-form-7/includes/functions.php:50
 msgid "Catalan"
 msgstr "Catalan"
 
-#: contact-form-7/includes/functions.php:176
+#: contact-form-7/includes/functions.php:51
 msgid "Central Kurdish"
 msgstr "Central Kurdish"
 
-#: contact-form-7/includes/functions.php:177
+#: contact-form-7/includes/functions.php:52
 msgid "Chinese (Simplified)"
 msgstr "Chinese (Simplified)"
 
-#: contact-form-7/includes/functions.php:178
+#: contact-form-7/includes/functions.php:53
 msgid "Chinese (Traditional)"
 msgstr "Chinese (Traditional)"
 
-#: contact-form-7/includes/functions.php:179
+#: contact-form-7/includes/functions.php:54
 msgid "Croatian"
 msgstr "Croatian"
 
-#: contact-form-7/includes/functions.php:180
+#: contact-form-7/includes/functions.php:55
 msgid "Czech"
 msgstr "Czech"
 
-#: contact-form-7/includes/functions.php:181
+#: contact-form-7/includes/functions.php:56
 msgid "Danish"
 msgstr "Danish"
 
-#: contact-form-7/includes/functions.php:182
+#: contact-form-7/includes/functions.php:57
 msgid "Dutch"
 msgstr "Dutch"
 
-#: contact-form-7/includes/functions.php:183
+#: contact-form-7/includes/functions.php:58
 msgid "English"
 msgstr "English"
 
-#: contact-form-7/includes/functions.php:184
+#: contact-form-7/includes/functions.php:59
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: contact-form-7/includes/functions.php:185
+#: contact-form-7/includes/functions.php:60
 msgid "Estonian"
 msgstr "Estonian"
 
-#: contact-form-7/includes/functions.php:186
+#: contact-form-7/includes/functions.php:61
 msgid "Finnish"
 msgstr "Finnish"
 
-#: contact-form-7/includes/functions.php:187
+#: contact-form-7/includes/functions.php:62
 msgid "French"
 msgstr "French"
 
-#: contact-form-7/includes/functions.php:188
+#: contact-form-7/includes/functions.php:63
 msgid "Galician"
 msgstr "Galician"
 
-#: contact-form-7/includes/functions.php:189
+#: contact-form-7/includes/functions.php:64
 msgid "Gujarati"
 msgstr "Gujarati"
 
-#: contact-form-7/includes/functions.php:190
+#: contact-form-7/includes/functions.php:65
 msgid "Georgian"
 msgstr "Georgian"
 
-#: contact-form-7/includes/functions.php:191
+#: contact-form-7/includes/functions.php:66
 msgid "German"
 msgstr "German"
 
-#: contact-form-7/includes/functions.php:192
+#: contact-form-7/includes/functions.php:67
 msgid "Greek"
 msgstr "Greek"
 
-#: contact-form-7/includes/functions.php:193
+#: contact-form-7/includes/functions.php:68
+msgid "Haitian"
+msgstr "Haitian"
+
+#: contact-form-7/includes/functions.php:69
 msgid "Hebrew"
 msgstr "Hebrew"
 
-#: contact-form-7/includes/functions.php:194
+#: contact-form-7/includes/functions.php:70
 msgid "Hindi"
 msgstr "Hindi"
 
-#: contact-form-7/includes/functions.php:195
+#: contact-form-7/includes/functions.php:71
 msgid "Hungarian"
 msgstr "Hungarian"
 
-#: contact-form-7/includes/functions.php:196
+#: contact-form-7/includes/functions.php:72
 msgid "Indian Bengali"
 msgstr "Indian Bengali"
 
-#: contact-form-7/includes/functions.php:197
+#: contact-form-7/includes/functions.php:73
 msgid "Indonesian"
 msgstr "Indonesian"
 
-#: contact-form-7/includes/functions.php:198
+#: contact-form-7/includes/functions.php:74
 msgid "Irish"
 msgstr "Irish"
 
-#: contact-form-7/includes/functions.php:199
+#: contact-form-7/includes/functions.php:75
 msgid "Italian"
 msgstr "Italian"
 
-#: contact-form-7/includes/functions.php:200
+#: contact-form-7/includes/functions.php:76
 msgid "Japanese"
 msgstr "Japanese"
 
-#: contact-form-7/includes/functions.php:201
+#: contact-form-7/includes/functions.php:77
 msgid "Korean"
-msgstr "Korean"
+msgstr "대한민국"
 
-#: contact-form-7/includes/functions.php:202
+#: contact-form-7/includes/functions.php:78
 msgid "Latvian"
 msgstr "Latvian"
 
-#: contact-form-7/includes/functions.php:203
+#: contact-form-7/includes/functions.php:79
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
-#: contact-form-7/includes/functions.php:204
+#: contact-form-7/includes/functions.php:80
 msgid "Macedonian"
 msgstr "Macedonian"
 
-#: contact-form-7/includes/functions.php:205
+#: contact-form-7/includes/functions.php:81
 msgid "Malay"
 msgstr "Malay"
 
-#: contact-form-7/includes/functions.php:206
+#: contact-form-7/includes/functions.php:82
 msgid "Malayalam"
 msgstr "Malayalam"
 
-#: contact-form-7/includes/functions.php:207
+#: contact-form-7/includes/functions.php:83
 msgid "Maltese"
 msgstr "Maltese"
 
-#: contact-form-7/includes/functions.php:208
+#: contact-form-7/includes/functions.php:84
 msgid "Norwegian"
 msgstr "Norwegian"
 
-#: contact-form-7/includes/functions.php:209
+#: contact-form-7/includes/functions.php:85
 msgid "Persian"
 msgstr "Persian"
 
-#: contact-form-7/includes/functions.php:210
+#: contact-form-7/includes/functions.php:86
 msgid "Polish"
 msgstr "Polish"
 
-#: contact-form-7/includes/functions.php:211
+#: contact-form-7/includes/functions.php:87
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#: contact-form-7/includes/functions.php:212
+#: contact-form-7/includes/functions.php:88
 msgid "Russian"
 msgstr "Russian"
 
-#: contact-form-7/includes/functions.php:213
+#: contact-form-7/includes/functions.php:89
 msgid "Romanian"
 msgstr "Romanian"
 
-#: contact-form-7/includes/functions.php:214
+#: contact-form-7/includes/functions.php:90
 msgid "Serbian"
 msgstr "Serbian"
 
-#: contact-form-7/includes/functions.php:215
+#: contact-form-7/includes/functions.php:91
 msgid "Sinhala"
 msgstr "Sinhala"
 
-#: contact-form-7/includes/functions.php:216
+#: contact-form-7/includes/functions.php:92
 msgid "Slovak"
 msgstr "Slovak"
 
-#: contact-form-7/includes/functions.php:217
+#: contact-form-7/includes/functions.php:93
 msgid "Slovene"
 msgstr "Slovene"
 
-#: contact-form-7/includes/functions.php:218
+#: contact-form-7/includes/functions.php:94
 msgid "Spanish"
 msgstr "Spanish"
 
-#: contact-form-7/includes/functions.php:219
+#: contact-form-7/includes/functions.php:95
 msgid "Swedish"
 msgstr "Swedish"
 
-#: contact-form-7/includes/functions.php:220
+#: contact-form-7/includes/functions.php:96
 msgid "Tamil"
 msgstr "Tamil"
 
-#: contact-form-7/includes/functions.php:221
+#: contact-form-7/includes/functions.php:97
 msgid "Thai"
 msgstr "Thai"
 
-#: contact-form-7/includes/functions.php:222
+#: contact-form-7/includes/functions.php:98
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: contact-form-7/includes/functions.php:223
+#: contact-form-7/includes/functions.php:99
 msgid "Turkish"
 msgstr "Turkish"
 
-#: contact-form-7/includes/functions.php:224
+#: contact-form-7/includes/functions.php:100
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
-#: contact-form-7/includes/functions.php:225
+#: contact-form-7/includes/functions.php:101
 msgid "Vietnamese"
 msgstr "Vietnamese"
 
-#: contact-form-7/modules/acceptance.php:140
+#: contact-form-7/modules/acceptance.php:137
 msgid "Acceptance"
-msgstr "접수"
+msgstr "동의"
 
-#: contact-form-7/modules/acceptance.php:149
-#: contact-form-7/modules/captcha.php:206
-#: contact-form-7/modules/checkbox.php:182 contact-form-7/modules/date.php:161
-#: contact-form-7/modules/file.php:236 contact-form-7/modules/number.php:171
-#: contact-form-7/modules/quiz.php:166 contact-form-7/modules/select.php:152
-#: contact-form-7/modules/text.php:230 contact-form-7/modules/textarea.php:112
+#: contact-form-7/modules/acceptance.php:146
+#: contact-form-7/modules/captcha.php:210
+#: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
+#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
+#: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
 msgid "Name"
 msgstr "이름"
 
+#: contact-form-7/modules/acceptance.php:151
 #: contact-form-7/modules/acceptance.php:154
-#: contact-form-7/modules/acceptance.php:157
-#: contact-form-7/modules/captcha.php:213
-#: contact-form-7/modules/captcha.php:216
-#: contact-form-7/modules/captcha.php:221
-#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:217
+#: contact-form-7/modules/captcha.php:220
+#: contact-form-7/modules/captcha.php:225
 #: contact-form-7/modules/captcha.php:228
-#: contact-form-7/modules/captcha.php:239
-#: contact-form-7/modules/captcha.php:242
-#: contact-form-7/modules/captcha.php:247
-#: contact-form-7/modules/captcha.php:250
-#: contact-form-7/modules/checkbox.php:187
-#: contact-form-7/modules/checkbox.php:190 contact-form-7/modules/date.php:166
-#: contact-form-7/modules/date.php:169 contact-form-7/modules/date.php:174
-#: contact-form-7/modules/date.php:177 contact-form-7/modules/date.php:182
-#: contact-form-7/modules/date.php:187 contact-form-7/modules/file.php:241
-#: contact-form-7/modules/file.php:244 contact-form-7/modules/file.php:249
-#: contact-form-7/modules/file.php:252 contact-form-7/modules/number.php:176
-#: contact-form-7/modules/number.php:179 contact-form-7/modules/number.php:184
-#: contact-form-7/modules/number.php:187 contact-form-7/modules/number.php:192
-#: contact-form-7/modules/number.php:197 contact-form-7/modules/quiz.php:171
-#: contact-form-7/modules/quiz.php:174 contact-form-7/modules/quiz.php:179
-#: contact-form-7/modules/quiz.php:182 contact-form-7/modules/select.php:157
-#: contact-form-7/modules/select.php:160 contact-form-7/modules/submit.php:59
+#: contact-form-7/modules/captcha.php:232
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:246
+#: contact-form-7/modules/captcha.php:251
+#: contact-form-7/modules/captcha.php:254
+#: contact-form-7/modules/checkbox.php:294
+#: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
+#: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
+#: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
+#: contact-form-7/modules/file.php:248 contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:256 contact-form-7/modules/number.php:179
+#: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
+#: contact-form-7/modules/number.php:190 contact-form-7/modules/number.php:195
+#: contact-form-7/modules/number.php:200 contact-form-7/modules/quiz.php:176
+#: contact-form-7/modules/quiz.php:179 contact-form-7/modules/quiz.php:184
+#: contact-form-7/modules/quiz.php:187 contact-form-7/modules/select.php:166
+#: contact-form-7/modules/select.php:169 contact-form-7/modules/submit.php:59
 #: contact-form-7/modules/submit.php:62 contact-form-7/modules/submit.php:67
-#: contact-form-7/modules/text.php:235 contact-form-7/modules/text.php:238
-#: contact-form-7/modules/text.php:243 contact-form-7/modules/text.php:246
-#: contact-form-7/modules/text.php:252 contact-form-7/modules/text.php:265
-#: contact-form-7/modules/textarea.php:117
-#: contact-form-7/modules/textarea.php:120
-#: contact-form-7/modules/textarea.php:125
-#: contact-form-7/modules/textarea.php:128
-#: contact-form-7/modules/textarea.php:133
-#: contact-form-7/modules/textarea.php:138
+#: contact-form-7/modules/text.php:222 contact-form-7/modules/text.php:225
+#: contact-form-7/modules/text.php:230 contact-form-7/modules/text.php:233
+#: contact-form-7/modules/text.php:239 contact-form-7/modules/text.php:252
+#: contact-form-7/modules/textarea.php:121
+#: contact-form-7/modules/textarea.php:124
+#: contact-form-7/modules/textarea.php:129
+#: contact-form-7/modules/textarea.php:132
+#: contact-form-7/modules/textarea.php:137
+#: contact-form-7/modules/textarea.php:142
 msgid "optional"
 msgstr "선택"
 
-#: contact-form-7/modules/acceptance.php:163
+#: contact-form-7/modules/acceptance.php:160
 msgid "Make this checkbox checked by default?"
 msgstr "이 체크박스를 기본으로 체크된 상태로 만드나요?"
 
-#: contact-form-7/modules/acceptance.php:164
+#: contact-form-7/modules/acceptance.php:161
 msgid "Make this checkbox work inversely?"
 msgstr "이 체크박스를 반대로 작동하도록 할까요?"
 
-#: contact-form-7/modules/acceptance.php:165
+#: contact-form-7/modules/acceptance.php:162
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr "* 이것은 사용 조건을 수락한 방문자가 체크해제한 것을 의미합니다."
 
-#: contact-form-7/modules/acceptance.php:170
-#: contact-form-7/modules/captcha.php:255
-#: contact-form-7/modules/checkbox.php:210 contact-form-7/modules/date.php:195
-#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:205
-#: contact-form-7/modules/quiz.php:194 contact-form-7/modules/select.php:177
-#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:273
-#: contact-form-7/modules/textarea.php:146
+#: contact-form-7/modules/acceptance.php:167
+#: contact-form-7/modules/captcha.php:259
+#: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
+#: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
+#: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
+#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
+#: contact-form-7/modules/textarea.php:150
 msgid "Copy this code and paste it into the form left."
 msgstr "이 코드를 복사해서 폼의 왼쪽에 붙여넣으세요."
 
@@ -817,63 +823,63 @@ msgstr ""
 "캡챠를 사용하려면 <a href=\"http://wordpress.org/extend/plugins/really-"
 "simple-captcha/\">Really Simple CAPTCHA</a> 플러그인이 설치돼야 합니다."
 
-#: contact-form-7/modules/captcha.php:178
+#: contact-form-7/modules/captcha.php:182
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "보내는 사람이 입력한 코드는 캡챠와 일치하지 않습니다"
 
-#: contact-form-7/modules/captcha.php:179
+#: contact-form-7/modules/captcha.php:183
 msgid "Your entered code is incorrect."
 msgstr "입력한 코드가 틀립니다."
 
-#: contact-form-7/modules/captcha.php:192
+#: contact-form-7/modules/captcha.php:196
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:203
+#: contact-form-7/modules/captcha.php:207
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr "주의: 캡챠를 사용하려면 캡챠 플러그인이 설치돼야 합니다."
 
-#: contact-form-7/modules/captcha.php:210
+#: contact-form-7/modules/captcha.php:214
 msgid "Image settings"
 msgstr "이미지 설정"
 
-#: contact-form-7/modules/captcha.php:221
+#: contact-form-7/modules/captcha.php:225
 msgid "Foreground color"
 msgstr "전면 색상"
 
-#: contact-form-7/modules/captcha.php:224
+#: contact-form-7/modules/captcha.php:228
 msgid "Background color"
 msgstr "배경 색상"
 
-#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/captcha.php:232
 msgid "Image size"
 msgstr "이미지 사이즈"
 
-#: contact-form-7/modules/captcha.php:229
+#: contact-form-7/modules/captcha.php:233
 msgid "Small"
 msgstr "Small"
 
-#: contact-form-7/modules/captcha.php:230
+#: contact-form-7/modules/captcha.php:234
 msgid "Medium"
 msgstr "Medium"
 
-#: contact-form-7/modules/captcha.php:231
+#: contact-form-7/modules/captcha.php:235
 msgid "Large"
 msgstr "Large"
 
-#: contact-form-7/modules/captcha.php:236
+#: contact-form-7/modules/captcha.php:240
 msgid "Input field settings"
 msgstr "입력 상자 설정"
 
-#: contact-form-7/modules/captcha.php:256
+#: contact-form-7/modules/captcha.php:260
 msgid "For image"
 msgstr "이미지용"
 
-#: contact-form-7/modules/captcha.php:258
+#: contact-form-7/modules/captcha.php:262
 msgid "For input field"
 msgstr "입력 상자용"
 
-#: contact-form-7/modules/captcha.php:288
+#: contact-form-7/modules/captcha.php:293
 #, php-format
 msgid ""
 "This contact form contains CAPTCHA fields, but the temporary folder for the "
@@ -883,7 +889,7 @@ msgstr ""
 "이 컨택트 폼은 캡챠 필드가 있습니다. 하지만 파일 (%s)의 임시 폴더가 없거나 쓰"
 "기 가능하지 않습니다. 폴더를 만들거나 퍼미션을 수동으로 변경하세요."
 
-#: contact-form-7/modules/captcha.php:294
+#: contact-form-7/modules/captcha.php:299
 msgid ""
 "This contact form contains CAPTCHA fields, but the necessary libraries (GD "
 "and FreeType) are not available on your server."
@@ -891,136 +897,136 @@ msgstr ""
 "이 컨택트 폼은 캡챠 입력란이 있습니다. 그런데 필요한 라이브러리 (GD 및 "
 "FreeType)가 서버에 없습니다."
 
-#: contact-form-7/modules/checkbox.php:155
+#: contact-form-7/modules/checkbox.php:262
 msgid "Checkboxes"
 msgstr "체크 박스"
 
-#: contact-form-7/modules/checkbox.php:158
+#: contact-form-7/modules/checkbox.php:265
 msgid "Radio buttons"
 msgstr "라디오 버튼"
 
-#: contact-form-7/modules/checkbox.php:179 contact-form-7/modules/date.php:160
-#: contact-form-7/modules/file.php:235 contact-form-7/modules/number.php:170
-#: contact-form-7/modules/select.php:151 contact-form-7/modules/text.php:229
-#: contact-form-7/modules/textarea.php:111
+#: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
+#: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
+#: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
+#: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
 msgstr "필수 입력란인가요?"
 
-#: contact-form-7/modules/checkbox.php:195
-#: contact-form-7/modules/select.php:165
+#: contact-form-7/modules/checkbox.php:302
+#: contact-form-7/modules/select.php:174
 msgid "Choices"
 msgstr "선택"
 
-#: contact-form-7/modules/checkbox.php:197
-#: contact-form-7/modules/select.php:167
+#: contact-form-7/modules/checkbox.php:304
+#: contact-form-7/modules/select.php:176
 msgid "* One choice per line."
 msgstr "* 한 줄당 하나의 선택"
 
-#: contact-form-7/modules/checkbox.php:201
+#: contact-form-7/modules/checkbox.php:308
 msgid "Put a label first, a checkbox last?"
 msgstr "레이블을 먼저 배치하기 체크박스를 마지막에 배치할까요?"
 
-#: contact-form-7/modules/checkbox.php:202
+#: contact-form-7/modules/checkbox.php:309
 msgid "Wrap each item with <label> tag?"
 msgstr "각 아이템을 <label> 태그로 감쌀까요?"
 
-#: contact-form-7/modules/checkbox.php:204
+#: contact-form-7/modules/checkbox.php:311
 msgid "Make checkboxes exclusive?"
 msgstr "체크박스를 제외할까요?"
 
-#: contact-form-7/modules/checkbox.php:212 contact-form-7/modules/date.php:197
-#: contact-form-7/modules/number.php:207 contact-form-7/modules/select.php:179
-#: contact-form-7/modules/text.php:275 contact-form-7/modules/textarea.php:148
+#: contact-form-7/modules/checkbox.php:319 contact-form-7/modules/date.php:200
+#: contact-form-7/modules/number.php:210 contact-form-7/modules/select.php:188
+#: contact-form-7/modules/text.php:262 contact-form-7/modules/textarea.php:152
 msgid "And, put this code into the Mail fields below."
 msgstr "그리고 이 코드를 아래의 메일 입력란에 입력하세요."
 
-#: contact-form-7/modules/date.php:120
+#: contact-form-7/modules/date.php:123
 msgid "Date format that the sender entered is invalid"
 msgstr "보내는 사람이 입력한 날짜 포맷이 유효하지 않습니다"
 
-#: contact-form-7/modules/date.php:121
+#: contact-form-7/modules/date.php:124
 msgid "Date format seems invalid."
 msgstr "날짜 포맷이 유효하지 않은 것 같습니다."
 
-#: contact-form-7/modules/date.php:125
+#: contact-form-7/modules/date.php:128
 msgid "Date is earlier than minimum limit"
 msgstr "날짜가 최소 제한보다 빠릅니다"
 
-#: contact-form-7/modules/date.php:126
+#: contact-form-7/modules/date.php:129
 msgid "This date is too early."
 msgstr "이 날짜는 너무 빠릅니다."
 
-#: contact-form-7/modules/date.php:130
+#: contact-form-7/modules/date.php:133
 msgid "Date is later than maximum limit"
 msgstr "날짜가 최대 제한보다 늦습니다"
 
-#: contact-form-7/modules/date.php:131
+#: contact-form-7/modules/date.php:134
 msgid "This date is too late."
 msgstr "이 날짜는 너무 늦습니다."
 
-#: contact-form-7/modules/date.php:187 contact-form-7/modules/number.php:197
-#: contact-form-7/modules/text.php:265 contact-form-7/modules/textarea.php:138
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/number.php:200
+#: contact-form-7/modules/text.php:252 contact-form-7/modules/textarea.php:142
 msgid "Default value"
 msgstr "기본 값"
 
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/number.php:200
-#: contact-form-7/modules/text.php:268 contact-form-7/modules/textarea.php:141
+#: contact-form-7/modules/date.php:193 contact-form-7/modules/number.php:203
+#: contact-form-7/modules/text.php:255 contact-form-7/modules/textarea.php:145
 msgid "Use this text as placeholder?"
 msgstr "이 텍스트를 플레이스홀더로 사용할까요?"
 
-#: contact-form-7/modules/file.php:196
+#: contact-form-7/modules/file.php:200
 msgid "Uploading a file fails for any reason"
 msgstr "파일 업로드가 어떤 이유로 실패했습니다."
 
-#: contact-form-7/modules/file.php:197
+#: contact-form-7/modules/file.php:201
 msgid "Failed to upload file."
 msgstr "파일 업로드 실패"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:205
 msgid "Uploaded file is not allowed file type"
 msgstr "업로드한 파일이 허용된 파일 형식이 아닙니다."
 
-#: contact-form-7/modules/file.php:202
+#: contact-form-7/modules/file.php:206
 msgid "This file type is not allowed."
 msgstr "이 파일 형식은 허용되지 않습니다."
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:210
 msgid "Uploaded file is too large"
 msgstr "업로드한 파일이 너무 큽니다"
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:211
 msgid "This file is too large."
 msgstr "이 파일은 너무 큽니다."
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:215
 msgid "Uploading a file fails for PHP error"
 msgstr "파일 업로드가 PHP 에러로 실패했습니다"
 
-#: contact-form-7/modules/file.php:212
+#: contact-form-7/modules/file.php:216
 msgid "Failed to upload file. Error occurred."
 msgstr "파일 업로드가 실패앴습니다. 에러가 발생했습니다."
 
-#: contact-form-7/modules/file.php:226
+#: contact-form-7/modules/file.php:230
 msgid "File upload"
 msgstr "파일 업로드"
 
-#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:253
 msgid "File size limit"
 msgstr "파일 사이즈 제한"
 
-#: contact-form-7/modules/file.php:249
+#: contact-form-7/modules/file.php:253
 msgid "bytes"
 msgstr "bytes"
 
-#: contact-form-7/modules/file.php:252
+#: contact-form-7/modules/file.php:256
 msgid "Acceptable file types"
 msgstr "수락 가능한 파일 형식"
 
-#: contact-form-7/modules/file.php:259
+#: contact-form-7/modules/file.php:263
 msgid "And, put this code into the File Attachments field below."
 msgstr "그리고, 이 코드를 아래의 첨부 입력란에 입력하세요."
 
-#: contact-form-7/modules/file.php:284
+#: contact-form-7/modules/file.php:289
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -1040,67 +1046,67 @@ msgstr ""
 "<strong>어떤 경우에는 젯팩이 다른 플러그인에 대해서 문제를 발생할 수 있습니"
 "다.</strong> <a href=\"%s\" target=\"_blank\">방지하려면 방법을 보세요.</a>"
 
-#: contact-form-7/modules/number.php:123
+#: contact-form-7/modules/number.php:126
 msgid "Number format that the sender entered is invalid"
 msgstr "보내는 사람이 입력한 숫자 포맷이 유효하지 않습니다"
 
-#: contact-form-7/modules/number.php:124
+#: contact-form-7/modules/number.php:127
 msgid "Number format seems invalid."
 msgstr "숫자 포맷이 유효한 것 같지 않습니다."
 
-#: contact-form-7/modules/number.php:128
+#: contact-form-7/modules/number.php:131
 msgid "Number is smaller than minimum limit"
 msgstr "숫자가 최소 제한보다 작습니다."
 
-#: contact-form-7/modules/number.php:129
+#: contact-form-7/modules/number.php:132
 msgid "This number is too small."
 msgstr "이 숫자는 너무 작습니다."
 
-#: contact-form-7/modules/number.php:133
+#: contact-form-7/modules/number.php:136
 msgid "Number is larger than maximum limit"
 msgstr "숫자가 최대 제한보다 큽니다"
 
-#: contact-form-7/modules/number.php:134
+#: contact-form-7/modules/number.php:137
 msgid "This number is too large."
 msgstr "이 숫자는 너무 큽니다."
 
-#: contact-form-7/modules/number.php:147
+#: contact-form-7/modules/number.php:150
 msgid "Number (spinbox)"
 msgstr "숫자 (스핀박스)"
 
-#: contact-form-7/modules/number.php:150
+#: contact-form-7/modules/number.php:153
 msgid "Number (slider)"
 msgstr "숫자 (슬라이더)"
 
-#: contact-form-7/modules/quiz.php:143
+#: contact-form-7/modules/quiz.php:148
 msgid "Sender doesn't enter the correct answer to the quiz"
 msgstr "보내는 사람이 퀴즈에 올바른 답을 입력하지 않았습니다."
 
-#: contact-form-7/modules/quiz.php:144
+#: contact-form-7/modules/quiz.php:149
 msgid "Your answer is not correct."
 msgstr "답변이 올바르지 않습니다."
 
-#: contact-form-7/modules/quiz.php:157
+#: contact-form-7/modules/quiz.php:162
 msgid "Quiz"
 msgstr "퀴즈"
 
-#: contact-form-7/modules/quiz.php:187
+#: contact-form-7/modules/quiz.php:192
 msgid "Quizzes"
 msgstr "퀴즈"
 
-#: contact-form-7/modules/quiz.php:189
+#: contact-form-7/modules/quiz.php:194
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* 퀴즈|답변 (예: 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:142
+#: contact-form-7/modules/select.php:151
 msgid "Drop-down menu"
 msgstr "드롭다운 메뉴"
 
-#: contact-form-7/modules/select.php:171
+#: contact-form-7/modules/select.php:180
 msgid "Allow multiple selections?"
 msgstr "다중 선택 허용?"
 
-#: contact-form-7/modules/select.php:172
+#: contact-form-7/modules/select.php:181
 msgid "Insert a blank item as the first option?"
 msgstr "첫 번째 옵션으로 빈 아이템을 삽입할까요?"
 
@@ -1112,68 +1118,79 @@ msgstr "제출 버튼"
 msgid "Label"
 msgstr "레이블"
 
-#: contact-form-7/modules/text.php:168
+#: contact-form-7/modules/text.php:155
 msgid "Email address that the sender entered is invalid"
 msgstr "보내는 사람이 입력한 이메일 주소가 유효하지 않습니다"
 
-#: contact-form-7/modules/text.php:169
+#: contact-form-7/modules/text.php:156
 msgid "Email address seems invalid."
 msgstr "이메일 주소가 유효한 것 같지 않습니다."
 
-#: contact-form-7/modules/text.php:173
+#: contact-form-7/modules/text.php:160
 msgid "URL that the sender entered is invalid"
 msgstr "보내는 사람이 입력한 URL이 유효하지 않습니다"
 
-#: contact-form-7/modules/text.php:174
+#: contact-form-7/modules/text.php:161
 msgid "URL seems invalid."
 msgstr "URL이 유효하지 않은 것 같습니다."
 
-#: contact-form-7/modules/text.php:178
+#: contact-form-7/modules/text.php:165
 msgid "Telephone number that the sender entered is invalid"
 msgstr "보내는 사람이 입력한 전화번호가 유효하지 않습니다."
 
-#: contact-form-7/modules/text.php:179
+#: contact-form-7/modules/text.php:166
 msgid "Telephone number seems invalid."
 msgstr "전화번호가 유효한 것 같지 않습니다."
 
-#: contact-form-7/modules/text.php:192
+#: contact-form-7/modules/text.php:179
 msgid "Text field"
 msgstr "텍스트 필드"
 
-#: contact-form-7/modules/text.php:195
+#: contact-form-7/modules/text.php:182
 msgid "Email"
 msgstr "이메일"
 
-#: contact-form-7/modules/text.php:198
+#: contact-form-7/modules/text.php:185
 msgid "URL"
 msgstr "URL"
 
-#: contact-form-7/modules/text.php:201
+#: contact-form-7/modules/text.php:188
 msgid "Telephone number"
 msgstr "전화번호"
 
-#: contact-form-7/modules/text.php:252
+#: contact-form-7/modules/text.php:239
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:254
+#: contact-form-7/modules/text.php:241
 msgid "This field requires author's name"
 msgstr "이 입력란은 글쓴이 이름이 필수입니다."
 
-#: contact-form-7/modules/text.php:256
+#: contact-form-7/modules/text.php:243
 msgid "This field requires author's email address"
 msgstr "이 입력란은 글슨이 이메일 주소가 필수입니다"
 
-#: contact-form-7/modules/text.php:258
+#: contact-form-7/modules/text.php:245
 msgid "This field requires author's URL"
 msgstr "이 입력란은 글쓴이 URL이 필수입니다"
 
-#: contact-form-7/modules/textarea.php:102
+#: contact-form-7/modules/textarea.php:106
 msgid "Text area"
 msgstr "Text area"
 
-#~ msgid "Just another contact form plugin. Simple but flexible."
-#~ msgstr "하나의 다른 컨택트 폼.  단순하지만 유연합니다."
+#~ msgid ""
+#~ "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! "
+#~ "Use %3$s instead."
+#~ msgstr ""
+#~ "Contact Form 7 버전 %2$s이므로 %1$s는 <strong>폐기될 예정입니다!</strong> "
+#~ "대신 %3$s를 사용하세요."
+
+#~ msgid ""
+#~ "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s "
+#~ "with no alternative available."
+#~ msgstr ""
+#~ "Contact Form 7 버전 %2$s은 대체할 것이 없으므로 %1$s는 <strong>폐기될 예정"
+#~ "입니다!</strong>"
 
 #~ msgid "Your contribution is needed for making this plugin better."
 #~ msgstr "고객님의 기부는 이 플러그인을 더 좋게 만드는데 필요합니다."
