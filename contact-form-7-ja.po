@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-09 20:55+0900\n"
-"PO-Revision-Date: 2014-07-09 20:59+0900\n"
+"POT-Creation-Date: 2014-08-31 15:20+0900\n"
+"PO-Revision-Date: 2014-08-31 15:22+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -26,7 +26,7 @@ msgstr "お問い合わせフォームプラグイン。シンプル、でも柔
 msgid "Contact form %d"
 msgstr "コンタクトフォーム %d"
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:128
+#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
@@ -393,67 +393,67 @@ msgstr ""
 "<strong>もうアクセスできません</strong>。代わりに <code>%2$s</code> メソッド"
 "を使ってください。"
 
-#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:831
 msgid "Your Name"
 msgstr "お名前"
 
-#: contact-form-7/includes/contact-form.php:834
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:831
+#: contact-form-7/includes/contact-form.php:833
 msgid "(required)"
 msgstr "(必須)"
 
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:833
 msgid "Your Email"
 msgstr "メールアドレス"
 
-#: contact-form-7/includes/contact-form.php:838
+#: contact-form-7/includes/contact-form.php:835
 msgid "Subject"
 msgstr "題名"
 
-#: contact-form-7/includes/contact-form.php:840
+#: contact-form-7/includes/contact-form.php:837
 msgid "Your Message"
 msgstr "メッセージ本文"
 
-#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/includes/contact-form.php:839
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr "送信"
 
-#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:847
 #, php-format
 msgid "From: %s"
 msgstr "差出人: %s"
 
-#: contact-form-7/includes/contact-form.php:851
+#: contact-form-7/includes/contact-form.php:848
 #, php-format
 msgid "Subject: %s"
 msgstr "題名: %s"
 
-#: contact-form-7/includes/contact-form.php:852
-#: contact-form-7/includes/contact-form.php:867
+#: contact-form-7/includes/contact-form.php:849
+#: contact-form-7/includes/contact-form.php:864
 msgid "Message Body:"
 msgstr "メッセージ本文:"
 
-#: contact-form-7/includes/contact-form.php:853
-#: contact-form-7/includes/contact-form.php:868
+#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:865
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr "このメールは %1$s (%2$s) のお問い合わせフォームから送信されました"
 
-#: contact-form-7/includes/contact-form.php:891
+#: contact-form-7/includes/contact-form.php:888
 msgid "Sender's message was sent successfully"
 msgstr "メッセージが正常に送信された"
 
-#: contact-form-7/includes/contact-form.php:892
+#: contact-form-7/includes/contact-form.php:889
 msgid "Your message was sent successfully. Thanks."
 msgstr "あなたのメッセージは送信されました。ありがとうございました。"
 
-#: contact-form-7/includes/contact-form.php:896
+#: contact-form-7/includes/contact-form.php:893
 msgid "Sender's message was failed to send"
 msgstr "メッセージの送信に失敗した"
 
-#: contact-form-7/includes/contact-form.php:897
-#: contact-form-7/includes/contact-form.php:907
+#: contact-form-7/includes/contact-form.php:894
+#: contact-form-7/includes/contact-form.php:904
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -461,36 +461,36 @@ msgstr ""
 "メッセージの送信に失敗しました。間をおいてもう一度お試しいただくか、別の手段"
 "で管理者にお問い合わせ下さい。"
 
-#: contact-form-7/includes/contact-form.php:901
+#: contact-form-7/includes/contact-form.php:898
 msgid "Validation errors occurred"
 msgstr "入力内容に不備が見つかった"
 
-#: contact-form-7/includes/contact-form.php:902
+#: contact-form-7/includes/contact-form.php:899
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "入力内容に不備があります。確認してもう一度送信してください。"
 
-#: contact-form-7/includes/contact-form.php:906
+#: contact-form-7/includes/contact-form.php:903
 msgid "Submission was referred to as spam"
 msgstr "送信がスパムと見なされた"
 
-#: contact-form-7/includes/contact-form.php:911
+#: contact-form-7/includes/contact-form.php:908
 msgid "There are terms that the sender must accept"
 msgstr "承諾が必要な項目が承諾されていない"
 
-#: contact-form-7/includes/contact-form.php:912
+#: contact-form-7/includes/contact-form.php:909
 msgid "Please accept the terms to proceed."
 msgstr "進めるには条項の承諾が必要です。"
 
-#: contact-form-7/includes/contact-form.php:916
+#: contact-form-7/includes/contact-form.php:913
 msgid "There is a field that the sender must fill in"
 msgstr "入力必須の項目が入力されていない"
 
-#: contact-form-7/includes/contact-form.php:917
+#: contact-form-7/includes/contact-form.php:914
 msgid "Please fill the required field."
 msgstr "必須項目に記入もれがあります。"
 
-#: contact-form-7/includes/controller.php:205
+#: contact-form-7/includes/controller.php:211
 msgid "Sending ..."
 msgstr "送信中 ..."
 
@@ -691,58 +691,62 @@ msgid "Portuguese"
 msgstr "ポルトガル語"
 
 #: contact-form-7/includes/functions.php:88
+msgid "Punjabi"
+msgstr "パンジャブ語"
+
+#: contact-form-7/includes/functions.php:89
 msgid "Russian"
 msgstr "ロシア語"
 
-#: contact-form-7/includes/functions.php:89
+#: contact-form-7/includes/functions.php:90
 msgid "Romanian"
 msgstr "ルーマニア語"
 
-#: contact-form-7/includes/functions.php:90
+#: contact-form-7/includes/functions.php:91
 msgid "Serbian"
 msgstr "セルビア語"
 
-#: contact-form-7/includes/functions.php:91
+#: contact-form-7/includes/functions.php:92
 msgid "Sinhala"
 msgstr "シンハラ語"
 
-#: contact-form-7/includes/functions.php:92
+#: contact-form-7/includes/functions.php:93
 msgid "Slovak"
 msgstr "スロバキア語"
 
-#: contact-form-7/includes/functions.php:93
+#: contact-form-7/includes/functions.php:94
 msgid "Slovene"
 msgstr "スロベニア語"
 
-#: contact-form-7/includes/functions.php:94
+#: contact-form-7/includes/functions.php:95
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:96
 msgid "Swedish"
 msgstr "スウェーデン語"
 
-#: contact-form-7/includes/functions.php:96
+#: contact-form-7/includes/functions.php:97
 msgid "Tamil"
 msgstr "タミル語"
 
-#: contact-form-7/includes/functions.php:97
+#: contact-form-7/includes/functions.php:98
 msgid "Thai"
 msgstr "タイ語"
 
-#: contact-form-7/includes/functions.php:98
+#: contact-form-7/includes/functions.php:99
 msgid "Tagalog"
 msgstr "タガログ語"
 
-#: contact-form-7/includes/functions.php:99
+#: contact-form-7/includes/functions.php:100
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: contact-form-7/includes/functions.php:100
+#: contact-form-7/includes/functions.php:101
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: contact-form-7/includes/functions.php:101
+#: contact-form-7/includes/functions.php:102
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
@@ -753,7 +757,7 @@ msgstr "承諾の確認"
 #: contact-form-7/modules/acceptance.php:146
 #: contact-form-7/modules/captcha.php:210
 #: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
-#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/file.php:241 contact-form-7/modules/number.php:174
 #: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
 #: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
 msgid "Name"
@@ -774,9 +778,9 @@ msgstr "名前"
 #: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
 #: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
 #: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
-#: contact-form-7/modules/file.php:248 contact-form-7/modules/file.php:253
-#: contact-form-7/modules/file.php:256 contact-form-7/modules/number.php:179
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:179
 #: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
 #: contact-form-7/modules/number.php:190 contact-form-7/modules/number.php:195
 #: contact-form-7/modules/number.php:200 contact-form-7/modules/quiz.php:176
@@ -813,7 +817,7 @@ msgstr ""
 #: contact-form-7/modules/acceptance.php:167
 #: contact-form-7/modules/captcha.php:259
 #: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
-#: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
+#: contact-form-7/modules/file.php:262 contact-form-7/modules/number.php:208
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
@@ -915,7 +919,7 @@ msgid "Radio buttons"
 msgstr "ラジオボタン"
 
 #: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
-#: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
+#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:173
 #: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
 #: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
@@ -983,59 +987,59 @@ msgstr "デフォルト値"
 msgid "Use this text as placeholder?"
 msgstr "このテキストをプレースホルダーとして使いますか?"
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr "ファイルのアップロードが何らかの理由により失敗している"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr "ファイルのアップロードに失敗しました。"
 
-#: contact-form-7/modules/file.php:205
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
 msgstr "アップロードされたファイルが許可されたファイル形式に適合しない"
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr "許可されていないファイル形式です。"
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr "アップロードされたファイルが大きすぎる"
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr "ファイルが大きすぎます。"
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr "ファイルのアップロードが PHP のエラーにより失敗している"
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr "ファイルのアップロードに失敗しました。エラーが発生しています。"
 
-#: contact-form-7/modules/file.php:230
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr "ファイルのアップロード"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr "ファイルサイズの上限"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr "バイト"
 
-#: contact-form-7/modules/file.php:256
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr "受け入れ可能なファイル形式"
 
-#: contact-form-7/modules/file.php:263
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
 msgstr "それから、このコードを下のファイル添付の項目中に置いてください。"
 
-#: contact-form-7/modules/file.php:289
+#: contact-form-7/modules/file.php:290
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
