@@ -3,7 +3,7 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.8
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: 3.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -124,6 +124,15 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Changelog ==
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
+
+= 3.9.2 =
+
+* Fixed: incorrect behavior seen in demo mode.
+* Fixed: Flamingo saved submitter's contact info even when the submission was spam.
+* New: Introduce wpcf7_skip_mail filter.
+* Enhancement: add a random-named directory to each uploaded file's temporary file path in order to make the path harder for a submitter to guess.
+* Translation for Punjabi has been created.
+* Translations for Turkish, Korean and Slovak have been updated.
 
 = 3.9.1 =
 
