@@ -364,4 +364,29 @@ function wpcf7_enctype_value( $enctype ) {
 	return '';
 }
 
+function wpcf7_rmdir_p( $dir ) {
+	if ( is_file( $dir ) ) {
+		@unlink( $dir );
+		return true;
+	}
+
+	if ( ! is_dir( $dir ) ) {
+		return false;
+	}
+
+	if ( $handle = @opendir( $dir ) ) {
+		while ( false !== ( $file = readdir( $handle ) ) ) {
+			if ( $file == "." || $file == ".." ) {
+				continue;
+			}
+
+			wpcf7_rmdir_p( path_join( $dir, $file ) );
+		}
+
+		closedir( $handle );
+	}
+
+	return @rmdir( $dir );
+}
+
 ?>
