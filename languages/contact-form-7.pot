@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-09 20:55+0900\n"
-"PO-Revision-Date: 2014-07-09 20:56+0900\n"
+"POT-Creation-Date: 2014-08-31 15:20+0900\n"
+"PO-Revision-Date: 2014-08-31 15:20+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Contact form %d"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:128
+#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr ""
 
@@ -379,102 +379,102 @@ msgid ""
 "<strong>no longer accessible</strong>. Use <code>%2$s</code> method instead."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:831
 msgid "Your Name"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:834
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:831
+#: contact-form-7/includes/contact-form.php:833
 msgid "(required)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:833
 msgid "Your Email"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:838
+#: contact-form-7/includes/contact-form.php:835
 msgid "Subject"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:840
+#: contact-form-7/includes/contact-form.php:837
 msgid "Your Message"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/includes/contact-form.php:839
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:847
 #, php-format
 msgid "From: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:851
+#: contact-form-7/includes/contact-form.php:848
 #, php-format
 msgid "Subject: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:852
-#: contact-form-7/includes/contact-form.php:867
+#: contact-form-7/includes/contact-form.php:849
+#: contact-form-7/includes/contact-form.php:864
 msgid "Message Body:"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:853
-#: contact-form-7/includes/contact-form.php:868
+#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:865
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:891
+#: contact-form-7/includes/contact-form.php:888
 msgid "Sender's message was sent successfully"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:892
+#: contact-form-7/includes/contact-form.php:889
 msgid "Your message was sent successfully. Thanks."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:896
+#: contact-form-7/includes/contact-form.php:893
 msgid "Sender's message was failed to send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:897
-#: contact-form-7/includes/contact-form.php:907
+#: contact-form-7/includes/contact-form.php:894
+#: contact-form-7/includes/contact-form.php:904
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:901
+#: contact-form-7/includes/contact-form.php:898
 msgid "Validation errors occurred"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:902
+#: contact-form-7/includes/contact-form.php:899
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:906
+#: contact-form-7/includes/contact-form.php:903
 msgid "Submission was referred to as spam"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:911
+#: contact-form-7/includes/contact-form.php:908
 msgid "There are terms that the sender must accept"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:912
+#: contact-form-7/includes/contact-form.php:909
 msgid "Please accept the terms to proceed."
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:916
+#: contact-form-7/includes/contact-form.php:913
 msgid "There is a field that the sender must fill in"
 msgstr ""
 
-#: contact-form-7/includes/contact-form.php:917
+#: contact-form-7/includes/contact-form.php:914
 msgid "Please fill the required field."
 msgstr ""
 
-#: contact-form-7/includes/controller.php:205
+#: contact-form-7/includes/controller.php:211
 msgid "Sending ..."
 msgstr ""
 
@@ -675,58 +675,62 @@ msgid "Portuguese"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:88
-msgid "Russian"
+msgid "Punjabi"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:89
-msgid "Romanian"
+msgid "Russian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:90
-msgid "Serbian"
+msgid "Romanian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:91
-msgid "Sinhala"
+msgid "Serbian"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:92
-msgid "Slovak"
+msgid "Sinhala"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:93
-msgid "Slovene"
+msgid "Slovak"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:94
-msgid "Spanish"
+msgid "Slovene"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:95
-msgid "Swedish"
+msgid "Spanish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:96
-msgid "Tamil"
+msgid "Swedish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:97
-msgid "Thai"
+msgid "Tamil"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:98
-msgid "Tagalog"
+msgid "Thai"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:99
-msgid "Turkish"
+msgid "Tagalog"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:100
-msgid "Ukrainian"
+msgid "Turkish"
 msgstr ""
 
 #: contact-form-7/includes/functions.php:101
+msgid "Ukrainian"
+msgstr ""
+
+#: contact-form-7/includes/functions.php:102
 msgid "Vietnamese"
 msgstr ""
 
@@ -737,7 +741,7 @@ msgstr ""
 #: contact-form-7/modules/acceptance.php:146
 #: contact-form-7/modules/captcha.php:210
 #: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
-#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/file.php:241 contact-form-7/modules/number.php:174
 #: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
 #: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
 msgid "Name"
@@ -758,9 +762,9 @@ msgstr ""
 #: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
 #: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
 #: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
-#: contact-form-7/modules/file.php:248 contact-form-7/modules/file.php:253
-#: contact-form-7/modules/file.php:256 contact-form-7/modules/number.php:179
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:179
 #: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
 #: contact-form-7/modules/number.php:190 contact-form-7/modules/number.php:195
 #: contact-form-7/modules/number.php:200 contact-form-7/modules/quiz.php:176
@@ -795,7 +799,7 @@ msgstr ""
 #: contact-form-7/modules/acceptance.php:167
 #: contact-form-7/modules/captcha.php:259
 #: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
-#: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
+#: contact-form-7/modules/file.php:262 contact-form-7/modules/number.php:208
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
@@ -887,7 +891,7 @@ msgid "Radio buttons"
 msgstr ""
 
 #: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
-#: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
+#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:173
 #: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
 #: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
@@ -955,59 +959,59 @@ msgstr ""
 msgid "Use this text as placeholder?"
 msgstr ""
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr ""
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr ""
 
-#: contact-form-7/modules/file.php:205
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
 msgstr ""
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr ""
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr ""
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr ""
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr ""
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr ""
 
-#: contact-form-7/modules/file.php:230
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr ""
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr ""
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr ""
 
-#: contact-form-7/modules/file.php:256
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr ""
 
-#: contact-form-7/modules/file.php:263
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
 msgstr ""
 
-#: contact-form-7/modules/file.php:289
+#: contact-form-7/modules/file.php:290
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
