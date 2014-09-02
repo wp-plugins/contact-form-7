@@ -313,7 +313,8 @@ function wpcf7_init_uploads() {
 
 function wpcf7_maybe_add_random_dir( $dir ) {
 	do {
-		$rand = zeroise( mt_rand( 0, 999999999999 ), 12 );
+		$rand_max = mt_getrandmax();
+		$rand = zeroise( mt_rand( 0, $rand_max ), strlen( $rand_max ) );
 		$dir_new = path_join( $dir, $rand );
 	} while ( file_exists( $dir_new ) );
 
