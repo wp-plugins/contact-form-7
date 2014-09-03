@@ -4,7 +4,7 @@ Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 3.9.2
+Stable tag: 3.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,11 +125,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
 
+= 3.9.3 =
+
+* Fixed: file uploading was disabled in some of server environments because of wrong use of mt_rand() function.
+* Translations for Hungarian has been updated.
+
 = 3.9.2 =
 
 * Fixed: incorrect behavior seen in demo mode.
 * Fixed: Flamingo saved submitter's contact info even when the submission was spam.
-* New: Introduce wpcf7_skip_mail filter.
+* New: introduce wpcf7_skip_mail filter.
 * Enhancement: add a random-named directory to each uploaded file's temporary file path in order to make the path harder for a submitter to guess.
 * Translation for Punjabi has been created.
 * Translations for Turkish, Korean and Slovak have been updated.
@@ -150,18 +155,3 @@ For more information, see [Releases](http://contactform7.com/category/releases/)
 * The jQuery Form Plugin (jquery.form.js) has been updated to 3.51.0.
 * Translations for Persian and Slovak have been updated.
 * WordPress 3.8 or higher is required.
-
-= 3.8.1 =
-
-* Fix: misuse of functions that Akismet 3.0 has marked deprecated.
-* Fix: some URL outputs used esc_url_raw in places where esc_url should be used.
-* Translation for Finnish and Thai have been updated.
-
-= 3.8 =
-
-* Introduced data option for select, checkbox and radio form-tags. With Listo plugin, you can make a menu with hundreds of options.
-* Accessibility improvement: add an invisible response message block before &lt;form&gt;.
-* Added relative date notation support in min and max options of date form-tags.
-* Added html_name attribute support in [contact-form-7] shortcodes.
-* WordPress 3.7 or higher is required.
-* Translation for Ukrainian has been updated.
