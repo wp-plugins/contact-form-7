@@ -1,14 +1,15 @@
 #
 # Translators:
-# michalvittek <miso.par1c@gmail.com>, 2014
-# michalvittek <miso.par1c@gmail.com>, 2014
+# Michal Vittek <miso.par1c@gmail.com>, 2014
+# Michal Vittek <miso.par1c@gmail.com>, 2014
+# Michal Vittek <miso.par1c@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Contact form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-09 20:55+0900\n"
-"PO-Revision-Date: 2014-08-26 22:03+0100\n"
-"Last-Translator: michalvittek <miso.par1c@gmail.com>\n"
+"POT-Creation-Date: 2014-08-31 15:20+0900\n"
+"PO-Revision-Date: 2014-09-10 16:03+0100\n"
+"Last-Translator: Michal Vittek <michal.vittek@wp.sk>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/"
 "contact-form-7/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.7\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
@@ -31,7 +32,7 @@ msgstr "Len ďalší modul kontaktného formulára. Jednoduchý ale flexibilný.
 msgid "Contact form %d"
 msgstr "Kontaktný formulár %d"
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:128
+#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
@@ -182,7 +183,7 @@ msgstr ""
 
 #: contact-form-7/admin/admin.php:395
 msgid "Dismiss"
-msgstr "Odložiť"
+msgstr "Zrušiť"
 
 #: contact-form-7/admin/admin.php:400
 msgid "Contact Form 7 Needs Your Support"
@@ -394,69 +395,69 @@ msgstr ""
 "<code>%1$s</code> je majetkom <code>WPCF7_ContactForm</code> objekt už nie "
 "je<strong>dostupný</strong>. Namiesto neho použite <code>%2$s</code>."
 
-#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:831
 msgid "Your Name"
 msgstr "Vaše meno"
 
-#: contact-form-7/includes/contact-form.php:834
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:831
+#: contact-form-7/includes/contact-form.php:833
 msgid "(required)"
 msgstr "(povinné)"
 
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:833
 msgid "Your Email"
 msgstr "Váš email"
 
-#: contact-form-7/includes/contact-form.php:838
+#: contact-form-7/includes/contact-form.php:835
 msgid "Subject"
 msgstr "Predmet"
 
-#: contact-form-7/includes/contact-form.php:840
+#: contact-form-7/includes/contact-form.php:837
 msgid "Your Message"
 msgstr "Vaša správa"
 
-#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/includes/contact-form.php:839
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr "Odošli"
 
-#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:847
 #, php-format
 msgid "From: %s"
 msgstr "Od: %s"
 
-#: contact-form-7/includes/contact-form.php:851
+#: contact-form-7/includes/contact-form.php:848
 #, php-format
 msgid "Subject: %s"
 msgstr "Predmet: %s"
 
-#: contact-form-7/includes/contact-form.php:852
-#: contact-form-7/includes/contact-form.php:867
+#: contact-form-7/includes/contact-form.php:849
+#: contact-form-7/includes/contact-form.php:864
 msgid "Message Body:"
 msgstr "Telo správy:"
 
-#: contact-form-7/includes/contact-form.php:853
-#: contact-form-7/includes/contact-form.php:868
+#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:865
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr ""
 "Tento e-mail bol odoslaný pomocou kontaktného formulára na stránke  %1$s "
 "(%2$s)"
 
-#: contact-form-7/includes/contact-form.php:891
+#: contact-form-7/includes/contact-form.php:888
 msgid "Sender's message was sent successfully"
 msgstr "Užívateľova správa bola úspešne odoslaná"
 
-#: contact-form-7/includes/contact-form.php:892
+#: contact-form-7/includes/contact-form.php:889
 msgid "Your message was sent successfully. Thanks."
 msgstr "Vaša správa bola úspešne odoslaná. Vďaka."
 
-#: contact-form-7/includes/contact-form.php:896
+#: contact-form-7/includes/contact-form.php:893
 msgid "Sender's message was failed to send"
 msgstr "Nastala chyba pri odosielaní užívateľovej správy"
 
-#: contact-form-7/includes/contact-form.php:897
-#: contact-form-7/includes/contact-form.php:907
+#: contact-form-7/includes/contact-form.php:894
+#: contact-form-7/includes/contact-form.php:904
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -464,38 +465,38 @@ msgstr ""
 "Zlyhalo odoslanie vašej správy. Prosím skúste neskôr alebo kontaktujte "
 "administrátora iným spôsobom."
 
-#: contact-form-7/includes/contact-form.php:901
+#: contact-form-7/includes/contact-form.php:898
 msgid "Validation errors occurred"
 msgstr "Nastala chyba pri validácii formulára"
 
-#: contact-form-7/includes/contact-form.php:902
+#: contact-form-7/includes/contact-form.php:899
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 "Nastala chyba pri validácii formulára. Prosím skontrolujte jednotlivé "
 "položky a znovu odošlite formulár."
 
-#: contact-form-7/includes/contact-form.php:906
+#: contact-form-7/includes/contact-form.php:903
 msgid "Submission was referred to as spam"
 msgstr "Správa bola označená ako spam"
 
-#: contact-form-7/includes/contact-form.php:911
+#: contact-form-7/includes/contact-form.php:908
 msgid "There are terms that the sender must accept"
 msgstr "Podmienky ktoré odosielateľ musí prijať"
 
-#: contact-form-7/includes/contact-form.php:912
+#: contact-form-7/includes/contact-form.php:909
 msgid "Please accept the terms to proceed."
 msgstr "Prosím súhlaste s podmienkami, aby ste mohli pokračovať."
 
-#: contact-form-7/includes/contact-form.php:916
+#: contact-form-7/includes/contact-form.php:913
 msgid "There is a field that the sender must fill in"
 msgstr "Pole ktoré odosielateľ musí vyplniť"
 
-#: contact-form-7/includes/contact-form.php:917
+#: contact-form-7/includes/contact-form.php:914
 msgid "Please fill the required field."
 msgstr "Prosím vyplnte povinnú položku."
 
-#: contact-form-7/includes/controller.php:205
+#: contact-form-7/includes/controller.php:211
 msgid "Sending ..."
 msgstr "Posielam ..."
 
@@ -696,58 +697,62 @@ msgid "Portuguese"
 msgstr "Portugalsky"
 
 #: contact-form-7/includes/functions.php:88
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#: contact-form-7/includes/functions.php:89
 msgid "Russian"
 msgstr "Rusky"
 
-#: contact-form-7/includes/functions.php:89
+#: contact-form-7/includes/functions.php:90
 msgid "Romanian"
 msgstr "Rumunsky"
 
-#: contact-form-7/includes/functions.php:90
+#: contact-form-7/includes/functions.php:91
 msgid "Serbian"
 msgstr "Srbsky"
 
-#: contact-form-7/includes/functions.php:91
+#: contact-form-7/includes/functions.php:92
 msgid "Sinhala"
 msgstr "Cejlónsky"
 
-#: contact-form-7/includes/functions.php:92
+#: contact-form-7/includes/functions.php:93
 msgid "Slovak"
 msgstr "Slovensky"
 
-#: contact-form-7/includes/functions.php:93
+#: contact-form-7/includes/functions.php:94
 msgid "Slovene"
 msgstr "Slovinsky"
 
-#: contact-form-7/includes/functions.php:94
+#: contact-form-7/includes/functions.php:95
 msgid "Spanish"
 msgstr "Španielsky"
 
-#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:96
 msgid "Swedish"
 msgstr "Švédsky"
 
-#: contact-form-7/includes/functions.php:96
+#: contact-form-7/includes/functions.php:97
 msgid "Tamil"
 msgstr "Tamilsky"
 
-#: contact-form-7/includes/functions.php:97
+#: contact-form-7/includes/functions.php:98
 msgid "Thai"
 msgstr "Thajsky"
 
-#: contact-form-7/includes/functions.php:98
+#: contact-form-7/includes/functions.php:99
 msgid "Tagalog"
 msgstr "Tagalsky"
 
-#: contact-form-7/includes/functions.php:99
+#: contact-form-7/includes/functions.php:100
 msgid "Turkish"
 msgstr "Turecky"
 
-#: contact-form-7/includes/functions.php:100
+#: contact-form-7/includes/functions.php:101
 msgid "Ukrainian"
 msgstr "Ukrajinsky"
 
-#: contact-form-7/includes/functions.php:101
+#: contact-form-7/includes/functions.php:102
 msgid "Vietnamese"
 msgstr "Vietnamsky"
 
@@ -758,7 +763,7 @@ msgstr "Akceptácia"
 #: contact-form-7/modules/acceptance.php:146
 #: contact-form-7/modules/captcha.php:210
 #: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
-#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/file.php:241 contact-form-7/modules/number.php:174
 #: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
 #: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
 msgid "Name"
@@ -779,9 +784,9 @@ msgstr "Meno"
 #: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
 #: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
 #: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
-#: contact-form-7/modules/file.php:248 contact-form-7/modules/file.php:253
-#: contact-form-7/modules/file.php:256 contact-form-7/modules/number.php:179
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:179
 #: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
 #: contact-form-7/modules/number.php:190 contact-form-7/modules/number.php:195
 #: contact-form-7/modules/number.php:200 contact-form-7/modules/quiz.php:176
@@ -817,7 +822,7 @@ msgstr ""
 #: contact-form-7/modules/acceptance.php:167
 #: contact-form-7/modules/captcha.php:259
 #: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
-#: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
+#: contact-form-7/modules/file.php:262 contact-form-7/modules/number.php:208
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
@@ -918,7 +923,7 @@ msgid "Radio buttons"
 msgstr "Tlačidlá voľby (radio buttons)"
 
 #: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
-#: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
+#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:173
 #: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
 #: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
@@ -986,59 +991,59 @@ msgstr "Predvolená hodnota"
 msgid "Use this text as placeholder?"
 msgstr "Použiť tento text ako zástupný znak?"
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr "Nahrávanie súboru z nejakého dôvodu zlyhalo"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr "Nahrávanie súboru zlyhalo."
 
-#: contact-form-7/modules/file.php:205
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
 msgstr "Typ nahraného súboru nie je povolený"
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr "Tento typ súboru nie je povolený."
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr "Nahraný súbor je príliš veľký"
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr "Súbor je príliš veľký."
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr "Nahrávanie súboru zlyhalo kvôli PHP chybe."
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr "Nahrávanie súboru zlyhalo."
 
-#: contact-form-7/modules/file.php:230
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr "Nahratie súboru"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr "Maximálna veľkosť súboru"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr "bajtov"
 
-#: contact-form-7/modules/file.php:256
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr "Povolené typy súboru"
 
-#: contact-form-7/modules/file.php:263
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
 msgstr "A vložte ho do políčka Prílohy."
 
-#: contact-form-7/modules/file.php:289
+#: contact-form-7/modules/file.php:290
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
