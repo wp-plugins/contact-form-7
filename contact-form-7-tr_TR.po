@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 3.9.1\n"
+"Project-Id-Version: Contact Form 7 3.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-09 20:55+0900\n"
-"PO-Revision-Date: 2014-08-06 21:39+0200\n"
+"POT-Creation-Date: 2014-08-31 15:20+0900\n"
+"PO-Revision-Date: 2014-09-13 19:33+0200\n"
 "Last-Translator: Burak Yavuz <bourock(at)live.com>\n"
 "Language-Team: BouRock <BouRock(at)live.com>\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
@@ -22,7 +22,7 @@ msgstr "Sıradan bir iletişim formu eklentisi. Basit ama esnek."
 msgid "Contact form %d"
 msgstr "İletişim formu %d"
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:128
+#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
@@ -389,67 +389,67 @@ msgstr ""
 "<strong>artık erişilebilir değil</strong>. Bunun yerine <code>%2$s</code> "
 "yöntemini kullanın."
 
-#: contact-form-7/includes/contact-form.php:834
+#: contact-form-7/includes/contact-form.php:831
 msgid "Your Name"
 msgstr "Adınız"
 
-#: contact-form-7/includes/contact-form.php:834
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:831
+#: contact-form-7/includes/contact-form.php:833
 msgid "(required)"
 msgstr "(gerekli)"
 
-#: contact-form-7/includes/contact-form.php:836
+#: contact-form-7/includes/contact-form.php:833
 msgid "Your Email"
 msgstr "Epostanız"
 
-#: contact-form-7/includes/contact-form.php:838
+#: contact-form-7/includes/contact-form.php:835
 msgid "Subject"
 msgstr "Konu"
 
-#: contact-form-7/includes/contact-form.php:840
+#: contact-form-7/includes/contact-form.php:837
 msgid "Your Message"
 msgstr "İletiniz"
 
-#: contact-form-7/includes/contact-form.php:842
+#: contact-form-7/includes/contact-form.php:839
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr "Gönder"
 
-#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:847
 #, php-format
 msgid "From: %s"
 msgstr "Kimden: %s"
 
-#: contact-form-7/includes/contact-form.php:851
+#: contact-form-7/includes/contact-form.php:848
 #, php-format
 msgid "Subject: %s"
 msgstr "Konu: %s"
 
-#: contact-form-7/includes/contact-form.php:852
-#: contact-form-7/includes/contact-form.php:867
+#: contact-form-7/includes/contact-form.php:849
+#: contact-form-7/includes/contact-form.php:864
 msgid "Message Body:"
 msgstr "İleti Gövdesi:"
 
-#: contact-form-7/includes/contact-form.php:853
-#: contact-form-7/includes/contact-form.php:868
+#: contact-form-7/includes/contact-form.php:850
+#: contact-form-7/includes/contact-form.php:865
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr "Bu e-posta %1$s (%2$s) adresindeki iletişim formundan gönderildi"
 
-#: contact-form-7/includes/contact-form.php:891
+#: contact-form-7/includes/contact-form.php:888
 msgid "Sender's message was sent successfully"
 msgstr "Gönderenin iletisi başarılı olarak gönderildi"
 
-#: contact-form-7/includes/contact-form.php:892
+#: contact-form-7/includes/contact-form.php:889
 msgid "Your message was sent successfully. Thanks."
 msgstr "İletiniz başarılı olarak gönderildi. Teşekkürler."
 
-#: contact-form-7/includes/contact-form.php:896
+#: contact-form-7/includes/contact-form.php:893
 msgid "Sender's message was failed to send"
 msgstr "Gönderenin iletisinin gönderilmesi başarısız oldu"
 
-#: contact-form-7/includes/contact-form.php:897
-#: contact-form-7/includes/contact-form.php:907
+#: contact-form-7/includes/contact-form.php:894
+#: contact-form-7/includes/contact-form.php:904
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -457,38 +457,38 @@ msgstr ""
 "İletinizi gönderme başarısız oldu. Lütfen daha sonra tekrar deneyin ya da "
 "yönetici ile başka bir yöntemle iletişime geçin."
 
-#: contact-form-7/includes/contact-form.php:901
+#: contact-form-7/includes/contact-form.php:898
 msgid "Validation errors occurred"
 msgstr "Onaylama hataları meydana geldi"
 
-#: contact-form-7/includes/contact-form.php:902
+#: contact-form-7/includes/contact-form.php:899
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 "Onaylama hataları meydana geldi. Lütfen alanları doğrulayın ve tekrar "
 "gönderin."
 
-#: contact-form-7/includes/contact-form.php:906
+#: contact-form-7/includes/contact-form.php:903
 msgid "Submission was referred to as spam"
 msgstr "Sunuş istenmeyen ileti olarak gönderildi"
 
-#: contact-form-7/includes/contact-form.php:911
+#: contact-form-7/includes/contact-form.php:908
 msgid "There are terms that the sender must accept"
 msgstr "Gönderenin kabul etmek zorunda olduğu koşullar var"
 
-#: contact-form-7/includes/contact-form.php:912
+#: contact-form-7/includes/contact-form.php:909
 msgid "Please accept the terms to proceed."
 msgstr "İlerlemek için lütfen koşulları kabul edin."
 
-#: contact-form-7/includes/contact-form.php:916
+#: contact-form-7/includes/contact-form.php:913
 msgid "There is a field that the sender must fill in"
 msgstr "Gönderenin doldurmak zorunda olduğu bir alan var"
 
-#: contact-form-7/includes/contact-form.php:917
+#: contact-form-7/includes/contact-form.php:914
 msgid "Please fill the required field."
 msgstr "Lütfen gerekli alanları doldurun."
 
-#: contact-form-7/includes/controller.php:205
+#: contact-form-7/includes/controller.php:211
 msgid "Sending ..."
 msgstr "Gönderiliyor ..."
 
@@ -574,7 +574,7 @@ msgstr "İngilizce"
 
 #: contact-form-7/includes/functions.php:59
 msgid "Esperanto"
-msgstr "Esperanto dili"
+msgstr "Esperanto"
 
 #: contact-form-7/includes/functions.php:60
 msgid "Estonian"
@@ -594,7 +594,7 @@ msgstr "Galiçyaca"
 
 #: contact-form-7/includes/functions.php:64
 msgid "Gujarati"
-msgstr "Gujarati dili"
+msgstr "Guceratça"
 
 #: contact-form-7/includes/functions.php:65
 msgid "Georgian"
@@ -670,7 +670,7 @@ msgstr "Malayamca"
 
 #: contact-form-7/includes/functions.php:83
 msgid "Maltese"
-msgstr "Malta dili "
+msgstr "Maltaca"
 
 #: contact-form-7/includes/functions.php:84
 msgid "Norwegian"
@@ -689,58 +689,62 @@ msgid "Portuguese"
 msgstr "Portekizce"
 
 #: contact-form-7/includes/functions.php:88
+msgid "Punjabi"
+msgstr "Pencapça"
+
+#: contact-form-7/includes/functions.php:89
 msgid "Russian"
 msgstr "Rusça"
 
-#: contact-form-7/includes/functions.php:89
+#: contact-form-7/includes/functions.php:90
 msgid "Romanian"
 msgstr "Romence"
 
-#: contact-form-7/includes/functions.php:90
+#: contact-form-7/includes/functions.php:91
 msgid "Serbian"
 msgstr "Sırpça"
 
-#: contact-form-7/includes/functions.php:91
-msgid "Sinhala"
-msgstr "Sinhalese dili"
-
 #: contact-form-7/includes/functions.php:92
+msgid "Sinhala"
+msgstr "Seylanca"
+
+#: contact-form-7/includes/functions.php:93
 msgid "Slovak"
 msgstr "Slovakça"
 
-#: contact-form-7/includes/functions.php:93
+#: contact-form-7/includes/functions.php:94
 msgid "Slovene"
 msgstr "Slovence"
 
-#: contact-form-7/includes/functions.php:94
+#: contact-form-7/includes/functions.php:95
 msgid "Spanish"
 msgstr "İspanyolca"
 
-#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:96
 msgid "Swedish"
 msgstr "İsveççe"
 
-#: contact-form-7/includes/functions.php:96
+#: contact-form-7/includes/functions.php:97
 msgid "Tamil"
 msgstr "Tamilce"
 
-#: contact-form-7/includes/functions.php:97
+#: contact-form-7/includes/functions.php:98
 msgid "Thai"
 msgstr "Tayca"
 
-#: contact-form-7/includes/functions.php:98
-msgid "Tagalog"
-msgstr "Tagalog dili"
-
 #: contact-form-7/includes/functions.php:99
+msgid "Tagalog"
+msgstr "Tagalogca"
+
+#: contact-form-7/includes/functions.php:100
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: contact-form-7/includes/functions.php:100
+#: contact-form-7/includes/functions.php:101
 msgid "Ukrainian"
 msgstr "Ukraynaca"
 
-#: contact-form-7/includes/functions.php:101
+#: contact-form-7/includes/functions.php:102
 msgid "Vietnamese"
 msgstr "Vietnamca"
 
@@ -751,7 +755,7 @@ msgstr "Kabul etme"
 #: contact-form-7/modules/acceptance.php:146
 #: contact-form-7/modules/captcha.php:210
 #: contact-form-7/modules/checkbox.php:289 contact-form-7/modules/date.php:164
-#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:174
+#: contact-form-7/modules/file.php:241 contact-form-7/modules/number.php:174
 #: contact-form-7/modules/quiz.php:171 contact-form-7/modules/select.php:161
 #: contact-form-7/modules/text.php:217 contact-form-7/modules/textarea.php:116
 msgid "Name"
@@ -772,9 +776,9 @@ msgstr "Adı"
 #: contact-form-7/modules/checkbox.php:297 contact-form-7/modules/date.php:169
 #: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
 #: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:185
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:245
-#: contact-form-7/modules/file.php:248 contact-form-7/modules/file.php:253
-#: contact-form-7/modules/file.php:256 contact-form-7/modules/number.php:179
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/file.php:246
+#: contact-form-7/modules/file.php:249 contact-form-7/modules/file.php:254
+#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:179
 #: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
 #: contact-form-7/modules/number.php:190 contact-form-7/modules/number.php:195
 #: contact-form-7/modules/number.php:200 contact-form-7/modules/quiz.php:176
@@ -809,7 +813,7 @@ msgstr "* Koşulu kabul eden ziyaretçi onayı kaldırır anlamındadır."
 #: contact-form-7/modules/acceptance.php:167
 #: contact-form-7/modules/captcha.php:259
 #: contact-form-7/modules/checkbox.php:317 contact-form-7/modules/date.php:198
-#: contact-form-7/modules/file.php:261 contact-form-7/modules/number.php:208
+#: contact-form-7/modules/file.php:262 contact-form-7/modules/number.php:208
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
@@ -911,7 +915,7 @@ msgid "Radio buttons"
 msgstr "Seçenek düğmeleri"
 
 #: contact-form-7/modules/checkbox.php:286 contact-form-7/modules/date.php:163
-#: contact-form-7/modules/file.php:239 contact-form-7/modules/number.php:173
+#: contact-form-7/modules/file.php:240 contact-form-7/modules/number.php:173
 #: contact-form-7/modules/select.php:160 contact-form-7/modules/text.php:216
 #: contact-form-7/modules/textarea.php:115
 msgid "Required field?"
@@ -979,59 +983,59 @@ msgstr "Varsayılan değer"
 msgid "Use this text as placeholder?"
 msgstr "Bu metin yer tutucu olarak kullanılsın mı?"
 
-#: contact-form-7/modules/file.php:200
+#: contact-form-7/modules/file.php:201
 msgid "Uploading a file fails for any reason"
 msgstr "Dosyayı gönderme herhangi bir nedenden başarısız"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:202
 msgid "Failed to upload file."
 msgstr "Dosya gönderme başarısız."
 
-#: contact-form-7/modules/file.php:205
+#: contact-form-7/modules/file.php:206
 msgid "Uploaded file is not allowed file type"
 msgstr "Gönderilen dosya izin verilmeyen dosya biçimi"
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:207
 msgid "This file type is not allowed."
 msgstr "Bu dosya türüne izin verilmiyor."
 
-#: contact-form-7/modules/file.php:210
+#: contact-form-7/modules/file.php:211
 msgid "Uploaded file is too large"
 msgstr "Gönderilen dosya çok büyük"
 
-#: contact-form-7/modules/file.php:211
+#: contact-form-7/modules/file.php:212
 msgid "This file is too large."
 msgstr "Bu dosya çok büyük."
 
-#: contact-form-7/modules/file.php:215
+#: contact-form-7/modules/file.php:216
 msgid "Uploading a file fails for PHP error"
 msgstr "Dosyayı gönderme PHP hatasından dolayı başarısız"
 
-#: contact-form-7/modules/file.php:216
+#: contact-form-7/modules/file.php:217
 msgid "Failed to upload file. Error occurred."
 msgstr "Dosya gönderme başarısız. Hata meydana geldi."
 
-#: contact-form-7/modules/file.php:230
+#: contact-form-7/modules/file.php:231
 msgid "File upload"
 msgstr "Dosya gönderme"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "File size limit"
 msgstr "Dosya boyutu sınırı"
 
-#: contact-form-7/modules/file.php:253
+#: contact-form-7/modules/file.php:254
 msgid "bytes"
 msgstr "bayt"
 
-#: contact-form-7/modules/file.php:256
+#: contact-form-7/modules/file.php:257
 msgid "Acceptable file types"
 msgstr "Kabul edilebilir dosya türleri"
 
-#: contact-form-7/modules/file.php:263
+#: contact-form-7/modules/file.php:264
 msgid "And, put this code into the File Attachments field below."
-msgstr "Ve, bu kodu aşağıdaki Dosya Ekleri alanı içine koyun."
+msgstr "Ve bu kodu aşağıdaki Dosya Ekleri alanı içine koyun."
 
-#: contact-form-7/modules/file.php:289
+#: contact-form-7/modules/file.php:290
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -1078,11 +1082,11 @@ msgstr "Bu sayı çok büyük."
 
 #: contact-form-7/modules/number.php:150
 msgid "Number (spinbox)"
-msgstr "Sayı (spinbox)"
+msgstr "Sayı (devir kutusu)"
 
 #: contact-form-7/modules/number.php:153
 msgid "Number (slider)"
-msgstr "Sayı (slider)"
+msgstr "Sayı (sürgü)"
 
 #: contact-form-7/modules/quiz.php:148
 msgid "Sender doesn't enter the correct answer to the quiz"
