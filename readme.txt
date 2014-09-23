@@ -79,7 +79,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Persian (Farsi; fa_IR) - Mohammad Musavi, Mohsen Firoozmandan, Ghaem Omidi
 * Polish (pl_PL) - Zbigniew Czernik, Daniel Fruzynski, RafalDesign, Bartosz Arendt
 * Portuguese (Brazil; pt_BR) - Leonardo Pinheiro, Henrique Vianna, Caciano Gabriel Batista, Gervásio Antônio, Gilvanilson Santos
-* Portuguese (Portugal; pt_PT) - Hugo Baeta, Pedro Nave
+* Portuguese (Portugal; pt_PT) - Hugo Baeta, Pedro Nave, Pedro Mendonça
 * Punjabi (pa_IN) - Jasvinder Sing
 * Russian (ru_RU) - Dmitry Volotovich, Denis Voituk, kg69design
 * Romanian (ro_RO) - Stas Sushkov, Anunturi Jibo, Marius Olar, Inbox Translation
