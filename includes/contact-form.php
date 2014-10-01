@@ -843,14 +843,14 @@ function wpcf7_default_form_template() {
 
 function wpcf7_default_mail_template() {
 	$subject = '[your-subject]';
-	$sender = '[your-name] <[your-email]>';
+	$sender = sprintf( '[your-name] <%s>', wpcf7_default_from_email() );
 	$body = sprintf( __( 'From: %s', 'contact-form-7' ), '[your-name] <[your-email]>' ) . "\n"
 		. sprintf( __( 'Subject: %s', 'contact-form-7' ), '[your-subject]' ) . "\n\n"
 		. __( 'Message Body:', 'contact-form-7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
 		. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)', 'contact-form-7' ),
 			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
 	$recipient = get_option( 'admin_email' );
-	$additional_headers = '';
+	$additional_headers = 'Reply-To: [your-email]';
 	$attachments = '';
 	$use_html = 0;
 	$exclude_blank = 0;
@@ -860,16 +860,36 @@ function wpcf7_default_mail_template() {
 function wpcf7_default_mail_2_template() {
 	$active = false;
 	$subject = '[your-subject]';
-	$sender = '[your-name] <[your-email]>';
+	$sender = sprintf( '%s <%s>', get_bloginfo( 'name' ), wpcf7_default_from_email() );
 	$body = __( 'Message Body:', 'contact-form-7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
 		. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)', 'contact-form-7' ),
 			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
 	$recipient = '[your-email]';
-	$additional_headers = '';
+	$additional_headers = sprintf( 'Reply-To: %s', get_option( 'admin_email' ) );
 	$attachments = '';
 	$use_html = 0;
 	$exclude_blank = 0;
 	return compact( 'active', 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html', 'exclude_blank' );
+}
+
+function wpcf7_default_from_email() {
+	$admin_email = get_option( 'admin_email' );
+
+	$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+
+	if ( 'localhost' == $sitename ) {
+		return $admin_email;
+	}
+
+	if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+		$sitename = substr( $sitename, 4 );
+	}
+
+	if ( strpbrk( $admin_email, '@' ) == '@' . $sitename ) {
+		return $admin_email;
+	}
+
+	return 'wordpress@' . $sitename;
 }
 
 function wpcf7_default_messages_template() {
