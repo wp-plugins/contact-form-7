@@ -79,7 +79,7 @@ class WPCF7_ContactForm {
 		$properties = $contact_form->get_properties();
 
 		foreach ( $properties as $key => $value ) {
-			$properties[$key] = wpcf7_get_default_template( $key );
+			$properties[$key] = self::get_default_template( $key );
 		}
 
 		$contact_form->properties = $properties;
@@ -92,6 +92,113 @@ class WPCF7_ContactForm {
 		}
 
 		return $contact_form;
+	}
+
+	private static function get_default_template( $prop = 'form' ) {
+		$callbacks = array(
+			'form' => 'default_form_template',
+			'mail' => 'default_mail_template',
+			'mail_2' => 'default_mail_2_template',
+			'messages' => 'default_messages_template' );
+
+		if ( isset( $callbacks[$prop] ) ) {
+			$template = call_user_func( 'self::' . $callbacks[$prop] );
+		} else {
+			$template = null;
+		}
+
+		return apply_filters( 'wpcf7_default_template', $template, $prop );
+	}
+
+	private static function default_form_template() {
+		$template =
+			'<p>' . __( 'Your Name', 'contact-form-7' )
+			. ' ' . __( '(required)', 'contact-form-7' ) . '<br />' . "\n"
+			. '    [text* your-name] </p>' . "\n\n"
+			. '<p>' . __( 'Your Email', 'contact-form-7' )
+			. ' ' . __( '(required)', 'contact-form-7' ) . '<br />' . "\n"
+			. '    [email* your-email] </p>' . "\n\n"
+			. '<p>' . __( 'Subject', 'contact-form-7' ) . '<br />' . "\n"
+			. '    [text your-subject] </p>' . "\n\n"
+			. '<p>' . __( 'Your Message', 'contact-form-7' ) . '<br />' . "\n"
+			. '    [textarea your-message] </p>' . "\n\n"
+			. '<p>[submit "' . __( 'Send', 'contact-form-7' ) . '"]</p>';
+
+		return $template;
+	}
+
+	private static function default_mail_template() {
+		$template = array(
+			'subject' => '[your-subject]',
+			'sender' => sprintf( '[your-name] <%s>', self::default_from_email() ),
+			'body' =>
+				sprintf( __( 'From: %s', 'contact-form-7' ),
+					'[your-name] <[your-email]>' ) . "\n"
+				. sprintf( __( 'Subject: %s', 'contact-form-7' ),
+					'[your-subject]' ) . "\n\n"
+				. __( 'Message Body:', 'contact-form-7' )
+					. "\n" . '[your-message]' . "\n\n"
+				. '--' . "\n"
+				. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)',
+					'contact-form-7' ), get_bloginfo( 'name' ), get_bloginfo( 'url' ) ),
+			'recipient' => get_option( 'admin_email' ),
+			'additional_headers' => 'Reply-To: [your-email]',
+			'attachments' => '',
+			'use_html' => 0,
+			'exclude_blank' => 0 );
+
+		return $template;
+	}
+
+	private static function default_mail_2_template() {
+		$template = array(
+			'active' => false,
+			'subject' => '[your-subject]',
+			'sender' => sprintf( '%s <%s>',
+				get_bloginfo( 'name' ), self::default_from_email() ),
+			'body' =>
+				__( 'Message Body:', 'contact-form-7' )
+					. "\n" . '[your-message]' . "\n\n"
+				. '--' . "\n"
+				. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)',
+					'contact-form-7' ), get_bloginfo( 'name' ), get_bloginfo( 'url' ) ),
+			'recipient' => '[your-email]',
+			'additional_headers' => sprintf( 'Reply-To: %s',
+				get_option( 'admin_email' ) ),
+			'attachments' => '',
+			'use_html' => 0,
+			'exclude_blank' => 0 );
+
+		return $template;
+	}
+
+	private static function default_from_email() {
+		$admin_email = get_option( 'admin_email' );
+		$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+
+		if ( 'localhost' == $sitename ) {
+			return $admin_email;
+		}
+
+		if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+			$sitename = substr( $sitename, 4 );
+		}
+
+		if ( strpbrk( $admin_email, '@' ) == '@' . $sitename ) {
+			return $admin_email;
+		}
+
+		return 'wordpress@' . $sitename;
+	}
+
+	private static function default_messages_template() {
+		$messages = array();
+
+		foreach ( wpcf7_messages() as $key => $arr ) {
+			$messages[$key] = $arr['default'];
+		}
+
+		return $messages;
 	}
 
 	public static function get_instance( $post ) {
@@ -809,97 +916,6 @@ function wpcf7_form_controls_class( $type, $default = '' ) {
 	$classes = array_unique( $classes );
 
 	return implode( ' ', $classes );
-}
-
-function wpcf7_get_default_template( $prop = 'form' ) {
-	if ( 'form' == $prop )
-		$template = wpcf7_default_form_template();
-	elseif ( 'mail' == $prop )
-		$template = wpcf7_default_mail_template();
-	elseif ( 'mail_2' == $prop )
-		$template = wpcf7_default_mail_2_template();
-	elseif ( 'messages' == $prop )
-		$template = wpcf7_default_messages_template();
-	else
-		$template = null;
-
-	return apply_filters( 'wpcf7_default_template', $template, $prop );
-}
-
-function wpcf7_default_form_template() {
-	$template =
-		'<p>' . __( 'Your Name', 'contact-form-7' ) . ' ' . __( '(required)', 'contact-form-7' ) . '<br />' . "\n"
-		. '    [text* your-name] </p>' . "\n\n"
-		. '<p>' . __( 'Your Email', 'contact-form-7' ) . ' ' . __( '(required)', 'contact-form-7' ) . '<br />' . "\n"
-		. '    [email* your-email] </p>' . "\n\n"
-		. '<p>' . __( 'Subject', 'contact-form-7' ) . '<br />' . "\n"
-		. '    [text your-subject] </p>' . "\n\n"
-		. '<p>' . __( 'Your Message', 'contact-form-7' ) . '<br />' . "\n"
-		. '    [textarea your-message] </p>' . "\n\n"
-		. '<p>[submit "' . __( 'Send', 'contact-form-7' ) . '"]</p>';
-
-	return $template;
-}
-
-function wpcf7_default_mail_template() {
-	$subject = '[your-subject]';
-	$sender = sprintf( '[your-name] <%s>', wpcf7_default_from_email() );
-	$body = sprintf( __( 'From: %s', 'contact-form-7' ), '[your-name] <[your-email]>' ) . "\n"
-		. sprintf( __( 'Subject: %s', 'contact-form-7' ), '[your-subject]' ) . "\n\n"
-		. __( 'Message Body:', 'contact-form-7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
-		. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)', 'contact-form-7' ),
-			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
-	$recipient = get_option( 'admin_email' );
-	$additional_headers = 'Reply-To: [your-email]';
-	$attachments = '';
-	$use_html = 0;
-	$exclude_blank = 0;
-	return compact( 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html', 'exclude_blank' );
-}
-
-function wpcf7_default_mail_2_template() {
-	$active = false;
-	$subject = '[your-subject]';
-	$sender = sprintf( '%s <%s>', get_bloginfo( 'name' ), wpcf7_default_from_email() );
-	$body = __( 'Message Body:', 'contact-form-7' ) . "\n" . '[your-message]' . "\n\n" . '--' . "\n"
-		. sprintf( __( 'This e-mail was sent from a contact form on %1$s (%2$s)', 'contact-form-7' ),
-			get_bloginfo( 'name' ), get_bloginfo( 'url' ) );
-	$recipient = '[your-email]';
-	$additional_headers = sprintf( 'Reply-To: %s', get_option( 'admin_email' ) );
-	$attachments = '';
-	$use_html = 0;
-	$exclude_blank = 0;
-	return compact( 'active', 'subject', 'sender', 'body', 'recipient', 'additional_headers', 'attachments', 'use_html', 'exclude_blank' );
-}
-
-function wpcf7_default_from_email() {
-	$admin_email = get_option( 'admin_email' );
-
-	$sitename = strtolower( $_SERVER['SERVER_NAME'] );
-
-	if ( 'localhost' == $sitename ) {
-		return $admin_email;
-	}
-
-	if ( substr( $sitename, 0, 4 ) == 'www.' ) {
-		$sitename = substr( $sitename, 4 );
-	}
-
-	if ( strpbrk( $admin_email, '@' ) == '@' . $sitename ) {
-		return $admin_email;
-	}
-
-	return 'wordpress@' . $sitename;
-}
-
-function wpcf7_default_messages_template() {
-	$messages = array();
-
-	foreach ( wpcf7_messages() as $key => $arr ) {
-		$messages[$key] = $arr['default'];
-	}
-
-	return $messages;
 }
 
 function wpcf7_messages() {
