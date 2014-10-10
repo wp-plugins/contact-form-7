@@ -298,12 +298,13 @@ function wpcf7_file_display_warning_message() {
 
 function wpcf7_init_uploads() {
 	$dir = wpcf7_upload_tmp_dir();
-	wp_mkdir_p( trailingslashit( $dir ) );
-	@chmod( $dir, 0733 );
+	wp_mkdir_p( $dir );
 
 	$htaccess_file = trailingslashit( $dir ) . '.htaccess';
-	if ( file_exists( $htaccess_file ) )
+
+	if ( file_exists( $htaccess_file ) ) {
 		return;
+	}
 
 	if ( $handle = @fopen( $htaccess_file, 'w' ) ) {
 		fwrite( $handle, "Deny from all\n" );
