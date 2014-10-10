@@ -35,7 +35,6 @@ class WPCF7_Mail {
 
 	private function compose( $send = true ) {
 		$template = $this->template;
-
 		$use_html = (bool) $template['use_html'];
 
 		$subject = $this->replace_tags( $template['subject'] );
@@ -58,11 +57,12 @@ class WPCF7_Mail {
 		$components = apply_filters( 'wpcf7_mail_components',
 			$components, wpcf7_get_current_contact_form() );
 
-		extract( $components );
-
-		$subject = wpcf7_strip_newline( $subject );
-		$sender = wpcf7_strip_newline( $sender );
-		$recipient = wpcf7_strip_newline( $recipient );
+		$subject = wpcf7_strip_newline( $components['subject'] );
+		$sender = wpcf7_strip_newline( $components['sender'] );
+		$recipient = wpcf7_strip_newline( $components['recipient'] );
+		$body = $components['body'];
+		$additional_headers = trim( $components['additional_headers'] );
+		$attachments = $components['attachments'];
 
 		$headers = "From: $sender\n";
 
@@ -70,14 +70,12 @@ class WPCF7_Mail {
 			$headers .= "Content-Type: text/html\n";
 		}
 
-		$additional_headers = trim( $additional_headers );
-
 		if ( $additional_headers ) {
 			$headers .= $additional_headers . "\n";
 		}
 
 		if ( $send ) {
-			return @wp_mail( $recipient, $subject, $body, $headers, $attachments );
+			return wp_mail( $recipient, $subject, $body, $headers, $attachments );
 		}
 
 		$components = compact( 'subject', 'sender', 'body',
