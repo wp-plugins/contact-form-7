@@ -2,7 +2,7 @@
 Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
-Requires at least: 3.8
+Requires at least: 3.9
 Tested up to: 4.0
 Stable tag: 3.9.3
 License: GPLv2 or later
@@ -124,6 +124,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Changelog ==
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
+
+= 4.0 =
+
+* The default mail template changed (see [Best Practice to Set Up Mail](http://contactform7.com/best-practice-to-set-up-mail/)).
+* Translations for Slovak, German, Turkish and Portuguese have been updated.
+* WordPress 3.9 or higher is required.
 
 = 3.9.3 =
 
