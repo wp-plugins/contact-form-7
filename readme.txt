@@ -46,7 +46,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Central Kurdish (ckb) - Mahr Hassan
 * Chinese (China; zh_CN) - Soz, Keefe Dunn, Stella Hu
 * Chinese (Taiwan; zh_TW) - James Wu
-* Croatian (hr) - tolingo Translation Services
+* Croatian (hr) - tolingo Translation Services, Marko Puskaric
 * Czech (cs_CZ) - Korry, Radovan Fiser, Tomas Vesely, Pavel Bilek, Vladislav Šenk
 * Danish (da_DK) - Jens Griebel, Georg S. Adamsen
 * Dutch (nl_NL) - Chris Devriese, Martin Hein, Rene, TenSheep, Tim de Hoog
