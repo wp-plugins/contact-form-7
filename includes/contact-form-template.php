@@ -3,9 +3,17 @@
 class WPCF7_ContactFormTemplate {
 
 	public static function get_default( $prop = 'form' ) {
-		$prop = preg_replace( '/[^a-z0-9_]/', '', $prop );
-		$callback = 'self::' . $prop;
-		$template = is_callable( $callback ) ? call_user_func( $callback ) : null;
+		if ( 'form' == $prop ) {
+			$template = self::form();
+		} elseif ( 'mail' == $prop ) {
+			$template = self::mail();
+		} elseif ( 'mail_2' == $prop ) {
+			$template = self::mail_2();
+		} elseif ( 'messages' == $prop ) {
+			$template = self::messages();
+		} else {
+			$template = null;
+		}
 
 		return apply_filters( 'wpcf7_default_template', $template, $prop );
 	}
