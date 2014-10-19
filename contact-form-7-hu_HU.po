@@ -1,11 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form 7 -  HU - v3.9.2\n"
+"Project-Id-Version: Contact Form 7 -  HU - v4.0.1.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-31 15:20+0900\n"
+"POT-Creation-Date: 2014-10-13 14:52+0900\n"
 "PO-Revision-Date: \n"
-"Last-Translator: FYGureout (Farkas Győző) <wpfordito@wpforditas.farkasonline."
-"net>\n"
+"Last-Translator: FYGureout <webmester@konyvelozona.hu>\n"
 "Language-Team: FYGureout <webmester@konyvelozona.hu>\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +18,7 @@ msgstr ""
 msgid "Just another contact form plugin. Simple but flexible."
 msgstr "Egy újabb kapcsolati űrlap bővítmény. Egyszerű, de rugalmas."
 
-#: contact-form-7/settings.php:71
+#: contact-form-7/settings.php:72
 #, php-format
 msgid "Contact form %d"
 msgstr "%d kapcsolati űrlap"
@@ -375,6 +374,108 @@ msgstr "Üzenet törzse:"
 msgid "Exclude lines with blank mail-tags from output"
 msgstr "Üres mail-tag-ekkel történő sorok kizárása a kimenetből"
 
+#: contact-form-7/includes/contact-form-template.php:15
+msgid "Your Name"
+msgstr "Név"
+
+#: contact-form-7/includes/contact-form-template.php:16
+#: contact-form-7/includes/contact-form-template.php:19
+msgid "(required)"
+msgstr "(kötelező)"
+
+#: contact-form-7/includes/contact-form-template.php:18
+msgid "Your Email"
+msgstr "Email cím"
+
+#: contact-form-7/includes/contact-form-template.php:21
+msgid "Subject"
+msgstr "Tárgy"
+
+#: contact-form-7/includes/contact-form-template.php:23
+msgid "Your Message"
+msgstr "Üzenet"
+
+#: contact-form-7/includes/contact-form-template.php:25
+#: contact-form-7/modules/submit.php:28
+msgid "Send"
+msgstr "Küldés"
+
+#: contact-form-7/includes/contact-form-template.php:35
+#, php-format
+msgid "From: %s"
+msgstr "Feladó: %s"
+
+#: contact-form-7/includes/contact-form-template.php:37
+#, php-format
+msgid "Subject: %s"
+msgstr "Tárgy: %s"
+
+#: contact-form-7/includes/contact-form-template.php:39
+#: contact-form-7/includes/contact-form-template.php:60
+msgid "Message Body:"
+msgstr "Üzenet törzse:"
+
+#: contact-form-7/includes/contact-form-template.php:42
+#: contact-form-7/includes/contact-form-template.php:63
+#, php-format
+msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
+msgstr ""
+"Az üzenet a(z) %1$s (%2$s) kapcsolati űrlap felhasználásával kerül "
+"továbbításra"
+
+#: contact-form-7/includes/contact-form-template.php:109
+msgid "Sender's message was sent successfully"
+msgstr "A feladó üzenete sikeresen elküldve."
+
+#: contact-form-7/includes/contact-form-template.php:111
+msgid "Your message was sent successfully. Thanks."
+msgstr "Az üzenet sikeresen küldésre került. Köszönjük szépen!"
+
+#: contact-form-7/includes/contact-form-template.php:116
+msgid "Sender's message was failed to send"
+msgstr "A feladó üzenetének elküldése sikertelen."
+
+#: contact-form-7/includes/contact-form-template.php:118
+#: contact-form-7/includes/contact-form-template.php:132
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"Hiba történt az üzenetküldés során. A küldést később próbáljuk meg "
+"ismételten, amennyiben az is sikertelen, küldjünk egy emailt a "
+"rendszergazdának."
+
+#: contact-form-7/includes/contact-form-template.php:123
+msgid "Validation errors occurred"
+msgstr "Érvényesítési hiba!"
+
+#: contact-form-7/includes/contact-form-template.php:125
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
+msgstr ""
+"Sikertelen ellenőrzés. Kérjük a mezőt (helyesen) kitölteni és a küldést "
+"megismételni."
+
+#: contact-form-7/includes/contact-form-template.php:130
+msgid "Submission was referred to as spam"
+msgstr "A beküldés spam-ként került megjelölésre."
+
+#: contact-form-7/includes/contact-form-template.php:137
+msgid "There are terms that the sender must accept"
+msgstr "Használat feltételhez van kötva, amelyet a feladónak el kell fogadni"
+
+#: contact-form-7/includes/contact-form-template.php:139
+msgid "Please accept the terms to proceed."
+msgstr "A művelet befejezéséhez a feltételeket el kell fogadni."
+
+#: contact-form-7/includes/contact-form-template.php:144
+msgid "There is a field that the sender must fill in"
+msgstr "A mezőt a feladónak adattal kell töltenie"
+
+#: contact-form-7/includes/contact-form-template.php:146
+msgid "Please fill the required field."
+msgstr "A kötelező mezőket ki kell tölteni"
+
 #: contact-form-7/includes/contact-form.php:30
 msgid "Contact Form"
 msgstr "Kapcsolati űrlap"
@@ -393,108 +494,6 @@ msgstr ""
 "<code>%1$s</code>, a<code>WPCF7_ContactForm</code> egyik része <strong>a "
 "továbbiakban már nem érhető el</strong>, helyette használjuk a <code>%2$s</"
 "code> eljárást."
-
-#: contact-form-7/includes/contact-form.php:831
-msgid "Your Name"
-msgstr "Név"
-
-#: contact-form-7/includes/contact-form.php:831
-#: contact-form-7/includes/contact-form.php:833
-msgid "(required)"
-msgstr "(kötelező)"
-
-#: contact-form-7/includes/contact-form.php:833
-msgid "Your Email"
-msgstr "Email cím"
-
-#: contact-form-7/includes/contact-form.php:835
-msgid "Subject"
-msgstr "Tárgy"
-
-#: contact-form-7/includes/contact-form.php:837
-msgid "Your Message"
-msgstr "Üzenet"
-
-#: contact-form-7/includes/contact-form.php:839
-#: contact-form-7/modules/submit.php:28
-msgid "Send"
-msgstr "Küldés"
-
-#: contact-form-7/includes/contact-form.php:847
-#, php-format
-msgid "From: %s"
-msgstr "Feladó: %s"
-
-#: contact-form-7/includes/contact-form.php:848
-#, php-format
-msgid "Subject: %s"
-msgstr "Tárgy: %s"
-
-#: contact-form-7/includes/contact-form.php:849
-#: contact-form-7/includes/contact-form.php:864
-msgid "Message Body:"
-msgstr "Üzenet törzse:"
-
-#: contact-form-7/includes/contact-form.php:850
-#: contact-form-7/includes/contact-form.php:865
-#, php-format
-msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
-msgstr ""
-"Az üzenet a(z) %1$s (%2$s) kapcsolati űrlap felhasználásával kerül "
-"továbbításra"
-
-#: contact-form-7/includes/contact-form.php:888
-msgid "Sender's message was sent successfully"
-msgstr "A feladó üzenete sikeresen elküldve."
-
-#: contact-form-7/includes/contact-form.php:889
-msgid "Your message was sent successfully. Thanks."
-msgstr "Az üzenet sikeresen küldésre került. Köszönjük szépen!"
-
-#: contact-form-7/includes/contact-form.php:893
-msgid "Sender's message was failed to send"
-msgstr "A feladó üzenetének elküldése sikertelen."
-
-#: contact-form-7/includes/contact-form.php:894
-#: contact-form-7/includes/contact-form.php:904
-msgid ""
-"Failed to send your message. Please try later or contact the administrator "
-"by another method."
-msgstr ""
-"Hiba történt az üzenetküldés során. A küldést később próbáljuk meg "
-"ismételten, amennyiben az is sikertelen, küldjünk egy emailt a "
-"rendszergazdának."
-
-#: contact-form-7/includes/contact-form.php:898
-msgid "Validation errors occurred"
-msgstr "Érvényesítési hiba!"
-
-#: contact-form-7/includes/contact-form.php:899
-msgid ""
-"Validation errors occurred. Please confirm the fields and submit it again."
-msgstr ""
-"Sikertelen ellenőrzés. Kérjük a mezőt (helyesen) kitölteni és a küldést "
-"megismételni."
-
-#: contact-form-7/includes/contact-form.php:903
-msgid "Submission was referred to as spam"
-msgstr "A beküldés spam-ként került megjelölésre."
-
-#: contact-form-7/includes/contact-form.php:908
-msgid "There are terms that the sender must accept"
-msgstr "Használat feltételhez van kötva, amelyet a feladónak el kell fogadni"
-
-#: contact-form-7/includes/contact-form.php:909
-msgid "Please accept the terms to proceed."
-msgstr "A művelet befejezéséhez a feltételeket el kell fogadni."
-
-#: contact-form-7/includes/contact-form.php:913
-msgid "There is a field that the sender must fill in"
-msgstr "A mezőt a feladónak adattal kell töltenie"
-
-#: contact-form-7/includes/contact-form.php:914
-msgid "Please fill the required field."
-msgstr "A kötelező mezőket ki kell tölteni"
 
 #: contact-form-7/includes/controller.php:211
 msgid "Sending ..."
@@ -537,164 +536,164 @@ msgid "Bosnian"
 msgstr "bosnyák"
 
 #: contact-form-7/includes/functions.php:48
-msgid "Brazilian Portuguese"
-msgstr "brazil-portugál"
-
-#: contact-form-7/includes/functions.php:49
 msgid "Bulgarian"
 msgstr "bulgár"
 
-#: contact-form-7/includes/functions.php:50
+#: contact-form-7/includes/functions.php:49
 msgid "Catalan"
 msgstr "katalán"
 
-#: contact-form-7/includes/functions.php:51
+#: contact-form-7/includes/functions.php:50
 msgid "Central Kurdish"
 msgstr "központi kurd"
 
+#: contact-form-7/includes/functions.php:51
+msgid "Chinese (China)"
+msgstr "kínai (Kína)"
+
 #: contact-form-7/includes/functions.php:52
-msgid "Chinese (Simplified)"
-msgstr "kínai (egyszerű)"
+msgid "Chinese (Taiwan)"
+msgstr "kínai (Tajvan)"
 
 #: contact-form-7/includes/functions.php:53
-msgid "Chinese (Traditional)"
-msgstr "kínai (hagyományos)"
-
-#: contact-form-7/includes/functions.php:54
 msgid "Croatian"
 msgstr "horvát"
 
-#: contact-form-7/includes/functions.php:55
+#: contact-form-7/includes/functions.php:54
 msgid "Czech"
 msgstr "cseh"
 
-#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/functions.php:55
 msgid "Danish"
 msgstr "dán"
 
-#: contact-form-7/includes/functions.php:57
+#: contact-form-7/includes/functions.php:56
 msgid "Dutch"
 msgstr "holland"
 
-#: contact-form-7/includes/functions.php:58
-msgid "English"
-msgstr "angol"
+#: contact-form-7/includes/functions.php:57
+msgid "English (United States)"
+msgstr "angol (Egyesült Államok)"
 
-#: contact-form-7/includes/functions.php:59
+#: contact-form-7/includes/functions.php:58
 msgid "Esperanto"
 msgstr "eszperantó"
 
-#: contact-form-7/includes/functions.php:60
+#: contact-form-7/includes/functions.php:59
 msgid "Estonian"
 msgstr "észt"
 
-#: contact-form-7/includes/functions.php:61
+#: contact-form-7/includes/functions.php:60
 msgid "Finnish"
 msgstr "finn"
 
-#: contact-form-7/includes/functions.php:62
-msgid "French"
-msgstr "francia"
+#: contact-form-7/includes/functions.php:61
+msgid "French (France)"
+msgstr "francia (Franciaország)"
 
-#: contact-form-7/includes/functions.php:63
+#: contact-form-7/includes/functions.php:62
 msgid "Galician"
 msgstr "gall"
 
-#: contact-form-7/includes/functions.php:64
+#: contact-form-7/includes/functions.php:63
 msgid "Gujarati"
 msgstr "gGujarati"
 
-#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:64
 msgid "Georgian"
 msgstr "georgián"
 
-#: contact-form-7/includes/functions.php:66
+#: contact-form-7/includes/functions.php:65
 msgid "German"
 msgstr "német"
 
-#: contact-form-7/includes/functions.php:67
+#: contact-form-7/includes/functions.php:66
 msgid "Greek"
 msgstr "görög"
 
-#: contact-form-7/includes/functions.php:68
+#: contact-form-7/includes/functions.php:67
 msgid "Haitian"
 msgstr "haiti"
 
-#: contact-form-7/includes/functions.php:69
+#: contact-form-7/includes/functions.php:68
 msgid "Hebrew"
 msgstr "zsidó"
 
-#: contact-form-7/includes/functions.php:70
+#: contact-form-7/includes/functions.php:69
 msgid "Hindi"
 msgstr "indiai"
 
-#: contact-form-7/includes/functions.php:71
+#: contact-form-7/includes/functions.php:70
 msgid "Hungarian"
-msgstr "magyar"
+msgstr "magyar (Magyarország)"
 
-#: contact-form-7/includes/functions.php:72
+#: contact-form-7/includes/functions.php:71
 msgid "Indian Bengali"
 msgstr "indiai bengáli"
 
-#: contact-form-7/includes/functions.php:73
+#: contact-form-7/includes/functions.php:72
 msgid "Indonesian"
 msgstr "indonéz"
 
-#: contact-form-7/includes/functions.php:74
+#: contact-form-7/includes/functions.php:73
 msgid "Irish"
 msgstr "Ír"
 
-#: contact-form-7/includes/functions.php:75
+#: contact-form-7/includes/functions.php:74
 msgid "Italian"
 msgstr "olasz"
 
-#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:75
 msgid "Japanese"
 msgstr "japán"
 
-#: contact-form-7/includes/functions.php:77
+#: contact-form-7/includes/functions.php:76
 msgid "Korean"
 msgstr "koreai"
 
-#: contact-form-7/includes/functions.php:78
+#: contact-form-7/includes/functions.php:77
 msgid "Latvian"
 msgstr "lett"
 
-#: contact-form-7/includes/functions.php:79
+#: contact-form-7/includes/functions.php:78
 msgid "Lithuanian"
 msgstr "litván"
 
-#: contact-form-7/includes/functions.php:80
+#: contact-form-7/includes/functions.php:79
 msgid "Macedonian"
 msgstr "macedon"
 
-#: contact-form-7/includes/functions.php:81
+#: contact-form-7/includes/functions.php:80
 msgid "Malay"
 msgstr "maláj"
 
-#: contact-form-7/includes/functions.php:82
+#: contact-form-7/includes/functions.php:81
 msgid "Malayalam"
 msgstr "malayalam"
 
-#: contact-form-7/includes/functions.php:83
+#: contact-form-7/includes/functions.php:82
 msgid "Maltese"
 msgstr "máltai"
 
-#: contact-form-7/includes/functions.php:84
-msgid "Norwegian"
-msgstr "norvég"
+#: contact-form-7/includes/functions.php:83
+msgid "Norwegian (Bokmål)"
+msgstr "norvég ( (Bokmål)"
 
-#: contact-form-7/includes/functions.php:85
+#: contact-form-7/includes/functions.php:84
 msgid "Persian"
 msgstr "perzsa"
 
-#: contact-form-7/includes/functions.php:86
+#: contact-form-7/includes/functions.php:85
 msgid "Polish"
 msgstr "lengyel"
 
+#: contact-form-7/includes/functions.php:86
+msgid "Portuguese (Brazil)"
+msgstr "portugál (Brazília)"
+
 #: contact-form-7/includes/functions.php:87
-msgid "Portuguese"
-msgstr "portugál"
+msgid "Portuguese (Portugal)"
+msgstr "portugál (Portugália)"
 
 #: contact-form-7/includes/functions.php:88
 msgid "Punjabi"
@@ -725,8 +724,8 @@ msgid "Slovene"
 msgstr "szlovén"
 
 #: contact-form-7/includes/functions.php:95
-msgid "Spanish"
-msgstr "spanyol"
+msgid "Spanish (Spain)"
+msgstr "spanyol (Spanyolország)"
 
 #: contact-form-7/includes/functions.php:96
 msgid "Swedish"
@@ -1197,6 +1196,18 @@ msgstr "Kötelező a szerző URL-címét megadni"
 #: contact-form-7/modules/textarea.php:106
 msgid "Text area"
 msgstr "Szövegterület"
+
+#~ msgid "Brazilian Portuguese"
+#~ msgstr "brazil-portugál"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kínai (egyszerű)"
+
+#~ msgid "English"
+#~ msgstr "angol"
+
+#~ msgid "French"
+#~ msgstr "francia"
 
 #~ msgid ""
 #~ "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! "
