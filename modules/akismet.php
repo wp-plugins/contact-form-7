@@ -121,6 +121,10 @@ function wpcf7_akismet_comment_check( $comment ) {
 	$query_string = '';
 
 	foreach ( $comment as $key => $data ) {
+		if ( is_array( $data ) ) {
+			$data = implode( "\n", $data );
+		}
+
 		$query_string .= $key . '=' . urlencode( wp_unslash( (string) $data ) ) . '&';
 	}
 
