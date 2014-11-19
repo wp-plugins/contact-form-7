@@ -139,14 +139,38 @@ function wpcf7_load_contact_form_admin() {
 		$post = WPCF7_ContactForm::get_instance( $_GET['post'] );
 	}
 
+	$current_screen = get_current_screen();
+
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
+
+		// TODO: real help content
+		$current_screen->add_help_tab( array(
+			'id' => 'sample',
+			'title' => __( 'Sample', 'contact-form-7' ),
+			'content' => "This is a sample help tab." ) );
+
 		wpcf7_add_meta_boxes( $post->id() );
 
-	} else {
-		$current_screen = get_current_screen();
+	} else if ( 'wpcf7-new' == $plugin_page ) {
 
-		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) )
-			require_once WPCF7_PLUGIN_DIR . '/admin/includes/class-contact-forms-list-table.php';
+		// TODO: real help content
+		$current_screen->add_help_tab( array(
+			'id' => 'sample',
+			'title' => __( 'Sample', 'contact-form-7' ),
+			'content' => "This is a sample help tab." ) );
+
+	} else {
+
+		// TODO: real help content
+		$current_screen->add_help_tab( array(
+			'id' => 'sample',
+			'title' => __( 'Sample', 'contact-form-7' ),
+			'content' => "This is a sample help tab." ) );
+
+		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) ) {
+			$file = 'class-contact-forms-list-table.php';
+			require_once WPCF7_PLUGIN_DIR . '/admin/includes/' . $file;
+		}
 
 		add_filter( 'manage_' . $current_screen->id . '_columns',
 			array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
@@ -156,6 +180,12 @@ function wpcf7_load_contact_form_admin() {
 			'default' => 20,
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
+
+	$current_screen->set_help_sidebar(
+		'<p><strong>' . __( 'For more information:', 'contact-form-7' ) . '</strong></p>'
+		. '<p>' . __( '<a href="http://contactform7.com/docs/" target="_blank">Docs</a>', 'contact-form-7' ) . '</p>'
+		. '<p>' . __( '<a href="http://contactform7.com/faq/" target="_blank">FAQ</a>', 'contact-form-7' ) . '</p>'
+		. '<p>' . __( '<a href="http://contactform7.com/support/" target="_blank">Support</a>', 'contact-form-7' ) . '</p>' );
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
