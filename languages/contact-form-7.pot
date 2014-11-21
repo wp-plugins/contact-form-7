@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 14:48+0900\n"
-"PO-Revision-Date: 2014-11-21 14:48+0900\n"
+"POT-Creation-Date: 2014-11-21 18:47+0900\n"
+"PO-Revision-Date: 2014-11-21 18:48+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -329,7 +329,8 @@ msgid "Y/m/d"
 msgstr ""
 
 #: contact-form-7/admin/includes/help-tabs.php:16
-msgid "Sample"
+#: contact-form-7/admin/includes/help-tabs.php:35
+msgid "Overview"
 msgstr ""
 
 #: contact-form-7/admin/includes/help-tabs.php:21
@@ -338,10 +339,6 @@ msgstr ""
 
 #: contact-form-7/admin/includes/help-tabs.php:28
 msgid "Adding A New Contact Form"
-msgstr ""
-
-#: contact-form-7/admin/includes/help-tabs.php:35
-msgid "Overview"
 msgstr ""
 
 #: contact-form-7/admin/includes/help-tabs.php:40
@@ -953,7 +950,7 @@ msgstr ""
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
-msgid "Copy this code and paste it into the form left."
+msgid "Copy this code and paste it into the form at left."
 msgstr ""
 
 #: contact-form-7/modules/captcha.php:19
