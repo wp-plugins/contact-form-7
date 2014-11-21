@@ -107,7 +107,7 @@ input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 }
 
 .postbox .mail-field, .postbox .message-field {
-	margin-top: 6px;
+	margin-top: 16px;
 	margin-bottom: 8px;
 }
 
@@ -134,11 +134,6 @@ textarea {
 
 label.disabled {
 	color: #777;
-}
-
-#messagesdiv div.inside {
-	height: 28em;
-	overflow: auto;
 }
 
 div.tag-generator {

@@ -101,7 +101,7 @@ function wpcf7_messages_meta_box( $post ) {
 
 ?>
 <div class="message-field">
-<label for="<?php echo $field_name; ?>"><em># <?php echo esc_html( $arr['description'] ); ?></em></label><br />
+<p class="description"><label for="<?php echo $field_name; ?>"><?php echo esc_html( $arr['description'] ); ?></label></p>
 <input type="text" id="<?php echo $field_name; ?>" name="<?php echo $field_name; ?>" class="wide" size="70" value="<?php echo esc_attr( $post->message( $key, false ) ); ?>" />
 </div>
 <?php
