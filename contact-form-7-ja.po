@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 14:48+0900\n"
-"PO-Revision-Date: 2014-11-21 16:29+0900\n"
+"POT-Creation-Date: 2014-11-21 18:47+0900\n"
+"PO-Revision-Date: 2014-11-21 18:49+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -340,8 +340,9 @@ msgid "Y/m/d"
 msgstr "Y年n月j日"
 
 #: contact-form-7/admin/includes/help-tabs.php:16
-msgid "Sample"
-msgstr "サンプル"
+#: contact-form-7/admin/includes/help-tabs.php:35
+msgid "Overview"
+msgstr "概要"
 
 #: contact-form-7/admin/includes/help-tabs.php:21
 msgid "Available Actions"
@@ -350,10 +351,6 @@ msgstr "可能な操作"
 #: contact-form-7/admin/includes/help-tabs.php:28
 msgid "Adding A New Contact Form"
 msgstr "コンタクトフォームの新規追加"
-
-#: contact-form-7/admin/includes/help-tabs.php:35
-msgid "Overview"
-msgstr "概要"
 
 #: contact-form-7/admin/includes/help-tabs.php:40
 msgid "Form-tags"
@@ -1023,7 +1020,7 @@ msgstr ""
 #: contact-form-7/modules/quiz.php:199 contact-form-7/modules/select.php:186
 #: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:260
 #: contact-form-7/modules/textarea.php:150
-msgid "Copy this code and paste it into the form left."
+msgid "Copy this code and paste it into the form at left."
 msgstr "このコードをコピーして、左のフォーム内にペーストしてください。"
 
 #: contact-form-7/modules/captcha.php:19
@@ -1393,6 +1390,9 @@ msgstr "送信者の URL の入力を要求する項目"
 #: contact-form-7/modules/textarea.php:106
 msgid "Text area"
 msgstr "テキストエリア"
+
+#~ msgid "Sample"
+#~ msgstr "サンプル"
 
 #~ msgid "Copy"
 #~ msgstr "複製"
