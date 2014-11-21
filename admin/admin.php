@@ -141,31 +141,19 @@ function wpcf7_load_contact_form_admin() {
 
 	$current_screen = get_current_screen();
 
-	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
+	require_once WPCF7_PLUGIN_DIR . '/admin/includes/help-tabs.php';
+	$help_tabs = new WPCF7_Help_Tabs( $current_screen );
 
-		// TODO: real help content
-		$current_screen->add_help_tab( array(
-			'id' => 'sample',
-			'title' => __( 'Sample', 'contact-form-7' ),
-			'content' => "This is a sample help tab." ) );
+	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
+		$help_tabs->set_help_tabs( 'edit' );
 
 		wpcf7_add_meta_boxes( $post->id() );
 
 	} else if ( 'wpcf7-new' == $plugin_page ) {
-
-		// TODO: real help content
-		$current_screen->add_help_tab( array(
-			'id' => 'sample',
-			'title' => __( 'Sample', 'contact-form-7' ),
-			'content' => "This is a sample help tab." ) );
+		$help_tabs->set_help_tabs( 'add_new' );
 
 	} else {
-
-		// TODO: real help content
-		$current_screen->add_help_tab( array(
-			'id' => 'sample',
-			'title' => __( 'Sample', 'contact-form-7' ),
-			'content' => "This is a sample help tab." ) );
+		$help_tabs->set_help_tabs( 'list' );
 
 		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) ) {
 			$file = 'class-contact-forms-list-table.php';
@@ -181,11 +169,7 @@ function wpcf7_load_contact_form_admin() {
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
 
-	$current_screen->set_help_sidebar(
-		'<p><strong>' . __( 'For more information:', 'contact-form-7' ) . '</strong></p>'
-		. '<p>' . __( '<a href="http://contactform7.com/docs/" target="_blank">Docs</a>', 'contact-form-7' ) . '</p>'
-		. '<p>' . __( '<a href="http://contactform7.com/faq/" target="_blank">FAQ</a>', 'contact-form-7' ) . '</p>'
-		. '<p>' . __( '<a href="http://contactform7.com/support/" target="_blank">Support</a>', 'contact-form-7' ) . '</p>' );
+	$help_tabs->sidebar();
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
