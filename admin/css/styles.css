@@ -256,3 +256,32 @@ input[readonly].code {
 .welcome-panel-close {
 	z-index: 2;
 }
+
+/* jQuery UI Tabs */
+.ui-tabs-nav {
+	border-bottom: 1px solid #333;
+}
+
+.ui-tabs-nav li {
+	display: inline-block;
+	margin: 0 0 0 1em;
+	padding: .2em .4em;
+	border: 1px solid #333;
+	border-bottom: none;
+	background-color: #444;
+}
+
+.ui-tabs-nav li.ui-tabs-active {
+	background-color: #333;
+}
+
+.ui-tabs-nav li a {
+	color: #eee;
+	text-decoration: none;
+}
+
+.ui-tabs-nav li.ui-tabs-active a {
+	color: #fff;
+	font-weight: bold;
+	font-size: 120%;
+}
