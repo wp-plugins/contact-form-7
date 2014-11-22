@@ -4,6 +4,9 @@
 if ( ! defined( 'ABSPATH' ) )
 	die( '-1' );
 
+$disabled = current_user_can( 'wpcf7_edit_contact_form', $post_id )
+	? '' : ' disabled="disabled"';
+
 ?><div class="wrap">
 
 <h2><?php
@@ -17,17 +20,6 @@ if ( ! defined( 'ABSPATH' ) )
 ?></h2>
 
 <?php do_action( 'wpcf7_admin_notices' ); ?>
-
-<br class="clear" />
-
-<?php
-if ( $post ) :
-
-	if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
-		$disabled = '';
-	else
-		$disabled = ' disabled="disabled"';
-?>
 
 <form method="post" action="<?php echo esc_url( add_query_arg( array( 'post' => $post_id ), menu_page_url( 'wpcf7', false ) ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
 	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
@@ -109,9 +101,6 @@ wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 	</div>
 
 </form>
-
-<?php endif; ?>
-
 </div>
 
 <?php do_action( 'wpcf7_admin_footer', $post ); ?>
