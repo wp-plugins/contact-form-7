@@ -4,9 +4,6 @@
 if ( ! defined( 'ABSPATH' ) )
 	die( '-1' );
 
-$disabled = current_user_can( 'wpcf7_edit_contact_form', $post_id )
-	? '' : ' disabled="disabled"';
-
 ?><div class="wrap">
 
 <h2><?php
@@ -20,6 +17,17 @@ $disabled = current_user_can( 'wpcf7_edit_contact_form', $post_id )
 ?></h2>
 
 <?php do_action( 'wpcf7_admin_notices' ); ?>
+
+<br class="clear" />
+
+<?php
+if ( $post ) :
+
+	if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
+		$disabled = '';
+	else
+		$disabled = ' disabled="disabled"';
+?>
 
 <form method="post" action="<?php echo esc_url( add_query_arg( array( 'post' => $post_id ), menu_page_url( 'wpcf7', false ) ) ); ?>" id="wpcf7-admin-form-element"<?php do_action( 'wpcf7_post_edit_form_tag' ); ?>>
 	<?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) )
@@ -70,35 +78,40 @@ $disabled = current_user_can( 'wpcf7_edit_contact_form', $post_id )
 		<?php endif; ?>
 	</div>
 
-<div id="tabs">
-<ul>
-	<li><a href="#form-sortables"><?php echo esc_html( __( 'Form', 'contact-form-7' ) ); ?></a></li>
-	<li><a href="#mail-sortables"><?php echo esc_html( __( 'Mail', 'contact-form-7' ) ); ?></a></li>
-	<li><a href="#mail_2-sortables"><?php echo esc_html( __( 'Mail (2)', 'contact-form-7' ) ); ?></a></li>
-	<li><a href="#messages-sortables"><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></a></li>
-	<li><a href="#additional_settings-sortables"><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></a></li>
-</ul>
 <?php
-do_meta_boxes( null, 'form', $post );
-do_meta_boxes( null, 'mail', $post );
-do_meta_boxes( null, 'mail_2', $post );
-do_meta_boxes( null, 'messages', $post );
-do_meta_boxes( null, 'additional_settings', $post );
-?>
-</div>
-<script type="text/javascript">
-(function($) {
-	$(function() { $('#tabs').tabs(); });
-})(jQuery);
-</script>
 
-<?php
+do_action( 'wpcf7_admin_after_general_settings', $post );
+
+do_meta_boxes( null, 'form', $post );
+
+do_action( 'wpcf7_admin_after_form', $post );
+
+do_meta_boxes( null, 'mail', $post );
+
+do_action( 'wpcf7_admin_after_mail', $post );
+
+do_meta_boxes( null, 'mail_2', $post );
+
+do_action( 'wpcf7_admin_after_mail_2', $post );
+
+do_meta_boxes( null, 'messages', $post );
+
+do_action( 'wpcf7_admin_after_messages', $post );
+
+do_meta_boxes( null, 'additional_settings', $post );
+
+do_action( 'wpcf7_admin_after_additional_settings', $post );
+
 wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+
 ?>
 	</div>
 
 </form>
+
+<?php endif; ?>
+
 </div>
 
 <?php do_action( 'wpcf7_admin_footer', $post ); ?>

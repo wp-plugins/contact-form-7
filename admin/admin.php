@@ -139,26 +139,14 @@ function wpcf7_load_contact_form_admin() {
 		$post = WPCF7_ContactForm::get_instance( $_GET['post'] );
 	}
 
-	$current_screen = get_current_screen();
-
-	require_once WPCF7_PLUGIN_DIR . '/admin/includes/help-tabs.php';
-	$help_tabs = new WPCF7_Help_Tabs( $current_screen );
-
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
-		$help_tabs->set_help_tabs( 'edit' );
-
 		wpcf7_add_meta_boxes( $post->id() );
 
-	} else if ( 'wpcf7-new' == $plugin_page ) {
-		$help_tabs->set_help_tabs( 'add_new' );
-
 	} else {
-		$help_tabs->set_help_tabs( 'list' );
+		$current_screen = get_current_screen();
 
-		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) ) {
-			$file = 'class-contact-forms-list-table.php';
-			require_once WPCF7_PLUGIN_DIR . '/admin/includes/' . $file;
-		}
+		if ( ! class_exists( 'WPCF7_Contact_Form_List_Table' ) )
+			require_once WPCF7_PLUGIN_DIR . '/admin/includes/class-contact-forms-list-table.php';
 
 		add_filter( 'manage_' . $current_screen->id . '_columns',
 			array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
@@ -168,8 +156,6 @@ function wpcf7_load_contact_form_admin() {
 			'default' => 20,
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
-
-	$help_tabs->sidebar();
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
@@ -187,8 +173,6 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 			wpcf7_plugin_url( 'admin/css/styles-rtl.css' ),
 			array(), WPCF7_VERSION, 'all' );
 	}
-
-	wp_enqueue_script( 'jquery-ui-tabs' );
 
 	wp_enqueue_script( 'wpcf7-admin-taggenerator',
 		wpcf7_plugin_url( 'admin/js/taggenerator.js' ),
