@@ -389,4 +389,32 @@ function wpcf7_rmdir_p( $dir ) {
 	return @rmdir( $dir );
 }
 
+/* From _http_build_query in wp-includes/functions.php */
+function wpcf7_build_query( $args, $key = '' ) {
+	$sep = '&';
+	$ret = array();
+
+	foreach ( (array) $args as $k => $v ) {
+		$k = urlencode( $k );
+
+		if ( ! empty( $key ) ) {
+			$k = $key . '%5B' . $k . '%5D';
+		}
+
+		if ( null === $v ) {
+			continue;
+		} elseif ( false === $v ) {
+			$v = '0';
+		}
+
+		if ( is_array( $v ) || is_object( $v ) ) {
+			array_push( $ret, wpcf7_build_query( $v, $k ) );
+		} else {
+			array_push( $ret, $k . '=' . urlencode( $v ) );
+		}
+	}
+
+	return implode( $sep, $ret );
+}
+
 ?>

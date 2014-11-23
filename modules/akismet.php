@@ -118,15 +118,7 @@ function wpcf7_akismet_comment_check( $comment ) {
 	global $akismet_api_host, $akismet_api_port;
 
 	$spam = false;
-	$query_string = '';
-
-	foreach ( $comment as $key => $data ) {
-		if ( is_array( $data ) ) {
-			$data = implode( "\n", $data );
-		}
-
-		$query_string .= $key . '=' . urlencode( wp_unslash( (string) $data ) ) . '&';
-	}
+	$query_string = wpcf7_build_query( $comment );
 
 	if ( is_callable( array( 'Akismet', 'http_post' ) ) ) { // Akismet v3.0+
 		$response = Akismet::http_post( $query_string, 'comment-check' );
