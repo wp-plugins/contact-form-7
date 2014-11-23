@@ -109,7 +109,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 				'wpcf7-copy-contact-form_' . absint( $item->id() ) );
 
 			$actions = array_merge( $actions, array(
-				'copy' => '<a href="' . $copy_link . '">' . __( 'Copy', 'contact-form-7' ) . '</a>' ) );
+				'copy' => '<a href="' . $copy_link . '">' . __( 'Duplicate', 'contact-form-7' ) . '</a>' ) );
 		}
 
 		$a = sprintf( '<a class="row-title" href="%1$s" title="%2$s">%3$s</a>',
