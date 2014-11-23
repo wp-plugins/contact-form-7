@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-13 14:52+0900\n"
-"PO-Revision-Date: 2014-10-13 14:53+0900\n"
+"POT-Creation-Date: 2014-11-23 19:55+0900\n"
+"PO-Revision-Date: 2014-11-23 19:56+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -274,6 +274,7 @@ msgid "Save"
 msgstr ""
 
 #: contact-form-7/admin/edit-contact-form.php:68
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
 msgid "Duplicate"
 msgstr ""
 
@@ -309,10 +310,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
-msgid "Copy"
-msgstr ""
-
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
@@ -331,130 +328,130 @@ msgstr ""
 msgid "Y/m/d"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:43
+#: contact-form-7/admin/includes/meta-boxes.php:47
 msgid "To:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:48
+#: contact-form-7/admin/includes/meta-boxes.php:52
 msgid "From:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:53
+#: contact-form-7/admin/includes/meta-boxes.php:57
 msgid "Subject:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:60
+#: contact-form-7/admin/includes/meta-boxes.php:64
 msgid "Additional headers:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:65
+#: contact-form-7/admin/includes/meta-boxes.php:69
 msgid "File attachments:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:73
+#: contact-form-7/admin/includes/meta-boxes.php:77
 msgid "Use HTML content type"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:79
+#: contact-form-7/admin/includes/meta-boxes.php:83
 msgid "Message body:"
 msgstr ""
 
-#: contact-form-7/admin/includes/meta-boxes.php:85
+#: contact-form-7/admin/includes/meta-boxes.php:89
 msgid "Exclude lines with blank mail-tags from output"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:15
+#: contact-form-7/includes/contact-form-template.php:23
 msgid "Your Name"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:16
-#: contact-form-7/includes/contact-form-template.php:19
+#: contact-form-7/includes/contact-form-template.php:24
+#: contact-form-7/includes/contact-form-template.php:27
 msgid "(required)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:18
+#: contact-form-7/includes/contact-form-template.php:26
 msgid "Your Email"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:21
+#: contact-form-7/includes/contact-form-template.php:29
 msgid "Subject"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:23
+#: contact-form-7/includes/contact-form-template.php:31
 msgid "Your Message"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:25
+#: contact-form-7/includes/contact-form-template.php:33
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:35
+#: contact-form-7/includes/contact-form-template.php:43
 #, php-format
 msgid "From: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:37
+#: contact-form-7/includes/contact-form-template.php:45
 #, php-format
 msgid "Subject: %s"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:39
-#: contact-form-7/includes/contact-form-template.php:60
+#: contact-form-7/includes/contact-form-template.php:47
+#: contact-form-7/includes/contact-form-template.php:68
 msgid "Message Body:"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:42
-#: contact-form-7/includes/contact-form-template.php:63
+#: contact-form-7/includes/contact-form-template.php:50
+#: contact-form-7/includes/contact-form-template.php:71
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:109
+#: contact-form-7/includes/contact-form-template.php:117
 msgid "Sender's message was sent successfully"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:111
+#: contact-form-7/includes/contact-form-template.php:119
 msgid "Your message was sent successfully. Thanks."
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:116
+#: contact-form-7/includes/contact-form-template.php:124
 msgid "Sender's message was failed to send"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:118
-#: contact-form-7/includes/contact-form-template.php:132
+#: contact-form-7/includes/contact-form-template.php:126
+#: contact-form-7/includes/contact-form-template.php:140
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:123
+#: contact-form-7/includes/contact-form-template.php:131
 msgid "Validation errors occurred"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:125
+#: contact-form-7/includes/contact-form-template.php:133
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:130
+#: contact-form-7/includes/contact-form-template.php:138
 msgid "Submission was referred to as spam"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:137
+#: contact-form-7/includes/contact-form-template.php:145
 msgid "There are terms that the sender must accept"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:139
+#: contact-form-7/includes/contact-form-template.php:147
 msgid "Please accept the terms to proceed."
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:144
+#: contact-form-7/includes/contact-form-template.php:152
 msgid "There is a field that the sender must fill in"
 msgstr ""
 
-#: contact-form-7/includes/contact-form-template.php:146
+#: contact-form-7/includes/contact-form-template.php:154
 msgid "Please fill the required field."
 msgstr ""
 
