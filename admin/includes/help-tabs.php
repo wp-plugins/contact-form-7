@@ -21,12 +21,16 @@ class WPCF7_Help_Tabs {
 					'title' => __( 'Available Actions', 'contact-form-7' ),
 					'content' => $this->content( 'list_available_actions' ) ) );
 
+				$this->sidebar();
+
 				return;
 			case 'add_new':
 				$this->screen->add_help_tab( array(
 					'id' => 'add_new',
 					'title' => __( 'Adding A New Contact Form', 'contact-form-7' ),
 					'content' => $this->content( 'add_new' ) ) );
+
+				$this->sidebar();
 
 				return;
 			case 'edit':
@@ -44,6 +48,8 @@ class WPCF7_Help_Tabs {
 					'id' => 'edit_mail_tags',
 					'title' => __( 'Mail-tags', 'contact-form-7' ),
 					'content' => $this->content( 'edit_mail_tags' ) ) );
+
+				$this->sidebar();
 
 				return;
 		}

@@ -166,8 +166,6 @@ function wpcf7_load_contact_form_admin() {
 			'default' => 20,
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
-
-	$help_tabs->sidebar();
 }
 
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
