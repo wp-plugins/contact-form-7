@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-13 14:52+0900\n"
-"PO-Revision-Date: 2014-10-15 21:21+0900\n"
+"POT-Creation-Date: 2014-11-24 18:18+0900\n"
+"PO-Revision-Date: 2014-11-25 17:40+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +15,6 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.5.7\n"
-"Language: hr\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
@@ -39,19 +39,19 @@ msgstr "Kontakt"
 msgid "Edit Contact Form"
 msgstr "Uredi kontaktni obrazac"
 
-#: contact-form-7/admin/admin.php:15 contact-form-7/admin/admin.php:155
-#: contact-form-7/admin/admin.php:211
+#: contact-form-7/admin/admin.php:15 contact-form-7/admin/admin.php:165
+#: contact-form-7/admin/admin.php:223
 #: contact-form-7/includes/contact-form.php:29
 msgid "Contact Forms"
 msgstr "Kontaktni obrasci"
 
-#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:253
+#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:265
 #: contact-form-7/admin/edit-contact-form.php:11
 msgid "Add New Contact Form"
 msgstr "Dodaj novi kontaktni obrazac"
 
-#: contact-form-7/admin/admin.php:23 contact-form-7/admin/admin.php:213
-#: contact-form-7/admin/admin.php:258 contact-form-7/admin/admin.php:270
+#: contact-form-7/admin/admin.php:23 contact-form-7/admin/admin.php:225
+#: contact-form-7/admin/admin.php:270 contact-form-7/admin/admin.php:282
 #: contact-form-7/admin/edit-contact-form.php:15
 msgid "Add New"
 msgstr "Dodaj novi"
@@ -68,105 +68,105 @@ msgstr "Nije dopušteno brisati ovu stavku."
 msgid "Error in deleting."
 msgstr "Greška kod brisanja."
 
-#: contact-form-7/admin/admin.php:190
+#: contact-form-7/admin/admin.php:202
 msgid "Generate Tag"
-msgstr "Proizvodna oznaka"
+msgstr "Stvori oznaku (tag)"
 
-#: contact-form-7/admin/admin.php:217
+#: contact-form-7/admin/admin.php:229
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Rezultati traženja za &#8220;%s&#8221;"
 
-#: contact-form-7/admin/admin.php:226
+#: contact-form-7/admin/admin.php:238
 msgid "Search Contact Forms"
 msgstr "Traži kontaktne obrasce"
 
-#: contact-form-7/admin/admin.php:257
+#: contact-form-7/admin/admin.php:269
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "Koristi standardni jezik (%s)"
 
-#: contact-form-7/admin/admin.php:261
+#: contact-form-7/admin/admin.php:273
 msgid "Or"
 msgstr "Ili"
 
-#: contact-form-7/admin/admin.php:265
+#: contact-form-7/admin/admin.php:277
 msgid "(select language)"
 msgstr "(odaberi jezik)"
 
-#: contact-form-7/admin/admin.php:277
+#: contact-form-7/admin/admin.php:289
 msgid "Form"
 msgstr "Obrazac"
 
-#: contact-form-7/admin/admin.php:280
+#: contact-form-7/admin/admin.php:292
 msgid "Mail"
 msgstr "Mail"
 
-#: contact-form-7/admin/admin.php:283
+#: contact-form-7/admin/admin.php:295
 msgid "Mail (2)"
 msgstr "Mail (2)"
 
-#: contact-form-7/admin/admin.php:288
+#: contact-form-7/admin/admin.php:300
 msgid "Use mail (2)"
 msgstr "Koristi mail (2)"
 
-#: contact-form-7/admin/admin.php:290
+#: contact-form-7/admin/admin.php:302
 msgid "Messages"
 msgstr "Poruke"
 
-#: contact-form-7/admin/admin.php:293
+#: contact-form-7/admin/admin.php:305
 msgid "Additional Settings"
 msgstr "Dodatne postavke"
 
-#: contact-form-7/admin/admin.php:308
+#: contact-form-7/admin/admin.php:320
 msgid "Contact form created."
 msgstr "Kontaktni obrazac je stvoren."
 
-#: contact-form-7/admin/admin.php:310
+#: contact-form-7/admin/admin.php:322
 msgid "Contact form saved."
 msgstr "Kontaktni obrazac je spremljen."
 
-#: contact-form-7/admin/admin.php:312
+#: contact-form-7/admin/admin.php:324
 msgid "Contact form deleted."
 msgstr "Kontaktni obrazac je izbrisan."
 
-#: contact-form-7/admin/admin.php:329
+#: contact-form-7/admin/admin.php:341
 msgid "Settings"
 msgstr "Postavke"
 
-#: contact-form-7/admin/admin.php:340
+#: contact-form-7/admin/admin.php:352
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:341
+#: contact-form-7/admin/admin.php:353
 msgid "Docs"
 msgstr "Dokumenti"
 
-#: contact-form-7/admin/admin.php:342
+#: contact-form-7/admin/admin.php:354
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:343
+#: contact-form-7/admin/admin.php:355
 msgid "FAQ"
-msgstr "FAQ (česta pitanja)"
+msgstr "ČPP"
 
-#: contact-form-7/admin/admin.php:344
+#: contact-form-7/admin/admin.php:356
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:345
+#: contact-form-7/admin/admin.php:357
 msgid "Support"
 msgstr "Pomoć"
 
-#: contact-form-7/admin/admin.php:346 contact-form-7/admin/admin.php:402
+#: contact-form-7/admin/admin.php:358 contact-form-7/admin/admin.php:414
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:347 contact-form-7/admin/admin.php:402
+#: contact-form-7/admin/admin.php:359 contact-form-7/admin/admin.php:414
 msgid "Donate"
 msgstr "Doniraj"
 
-#: contact-form-7/admin/admin.php:369
+#: contact-form-7/admin/admin.php:381
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -175,15 +175,15 @@ msgstr ""
 "<strong>Kontaktni obrazac 7 %1$s zahtijeva WordPress %2$s ili noviji.</"
 "strong> Molim najprije <a href=\"%3$s\">ažurirati WordPress</a>."
 
-#: contact-form-7/admin/admin.php:395
+#: contact-form-7/admin/admin.php:407
 msgid "Dismiss"
 msgstr "Zanemari"
 
-#: contact-form-7/admin/admin.php:400
+#: contact-form-7/admin/admin.php:412
 msgid "Contact Form 7 Needs Your Support"
 msgstr "Kontaktni obrazac 7 treba tvoju podršku"
 
-#: contact-form-7/admin/admin.php:401
+#: contact-form-7/admin/admin.php:413
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
@@ -193,77 +193,77 @@ msgstr ""
 "korisnika kao što si ti. Ako uživaš koristeći Kontaktni obrazac 7 (Contact "
 "Form 7) i smatraš ga korisnim, molim te razmisli o slanju donacije."
 
-#: contact-form-7/admin/admin.php:406
+#: contact-form-7/admin/admin.php:418
 msgid "Get Started"
 msgstr "Krenimo"
 
-#: contact-form-7/admin/admin.php:408
+#: contact-form-7/admin/admin.php:420
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr "http://contactform7.com/getting-started-with-contact-form-7/"
 
-#: contact-form-7/admin/admin.php:408
+#: contact-form-7/admin/admin.php:420
 msgid "Getting Started with Contact Form 7"
 msgstr "Krenimo s Kontaktnim obrascem 7"
 
-#: contact-form-7/admin/admin.php:409
+#: contact-form-7/admin/admin.php:421
 msgid "http://contactform7.com/admin-screen/"
 msgstr "http://contactform7.com/admin-screen/"
 
-#: contact-form-7/admin/admin.php:409
+#: contact-form-7/admin/admin.php:421
 msgid "Admin Screen"
 msgstr "Administratorski ekran"
 
-#: contact-form-7/admin/admin.php:410
+#: contact-form-7/admin/admin.php:422
 msgid "http://contactform7.com/tag-syntax/"
 msgstr "http://contactform7.com/tag-syntax/"
 
-#: contact-form-7/admin/admin.php:410
+#: contact-form-7/admin/admin.php:422
 msgid "How Tags Work"
 msgstr "Kako tagovi funkcioniraju"
 
-#: contact-form-7/admin/admin.php:411
+#: contact-form-7/admin/admin.php:423
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr "http://contactform7.com/setting-up-mail/"
 
-#: contact-form-7/admin/admin.php:411
+#: contact-form-7/admin/admin.php:423
 msgid "Setting Up Mail"
 msgstr "Postavljanje maila"
 
-#: contact-form-7/admin/admin.php:416
+#: contact-form-7/admin/admin.php:428
 msgid "Did You Know?"
 msgstr "Znate li?"
 
-#: contact-form-7/admin/admin.php:418
+#: contact-form-7/admin/admin.php:430
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr "http://contactform7.com/spam-filtering-with-akismet/"
 
-#: contact-form-7/admin/admin.php:418
+#: contact-form-7/admin/admin.php:430
 msgid "Spam Filtering with Akismet"
 msgstr "Filtriranje spama s Akismetom"
 
-#: contact-form-7/admin/admin.php:419
+#: contact-form-7/admin/admin.php:431
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr "http://contactform7.com/save-submitted-messages-with-flamingo/"
 
-#: contact-form-7/admin/admin.php:419
+#: contact-form-7/admin/admin.php:431
 msgid "Save Messages with Flamingo"
 msgstr "Spremi poruke s Flamingom"
 
-#: contact-form-7/admin/admin.php:420
+#: contact-form-7/admin/admin.php:432
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr "http://contactform7.com/selectable-recipient-with-pipes/"
 
-#: contact-form-7/admin/admin.php:420
+#: contact-form-7/admin/admin.php:432
 msgid "Selectable Recipient with Pipes"
 msgstr "Odaberivi primatelj sa znakom |"
 
-#: contact-form-7/admin/admin.php:421
+#: contact-form-7/admin/admin.php:433
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 
-#: contact-form-7/admin/admin.php:421
+#: contact-form-7/admin/admin.php:433
 msgid "Tracking with Google Analytics"
 msgstr "Prati s Google Analyticsima"
 
@@ -283,6 +283,7 @@ msgid "Save"
 msgstr "Spremi"
 
 #: contact-form-7/admin/edit-contact-form.php:68
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
 msgid "Duplicate"
 msgstr "Udvostruči"
 
@@ -320,10 +321,6 @@ msgstr "Datum"
 msgid "Edit"
 msgstr "Uredi"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
-msgid "Copy"
-msgstr "Kopiraj"
-
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
@@ -342,99 +339,304 @@ msgstr "%s prije"
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
-#: contact-form-7/admin/includes/meta-boxes.php:43
+#: contact-form-7/admin/includes/help-tabs.php:16
+msgid "Sample"
+msgstr "Primjer"
+
+#: contact-form-7/admin/includes/help-tabs.php:21
+msgid "Available Actions"
+msgstr "Dostupne radnje"
+
+#: contact-form-7/admin/includes/help-tabs.php:28
+msgid "Adding A New Contact Form"
+msgstr "Dodavanje novoga kontaktnog obrasca"
+
+#: contact-form-7/admin/includes/help-tabs.php:35
+msgid "Overview"
+msgstr "Pregled"
+
+#: contact-form-7/admin/includes/help-tabs.php:40
+msgid "Form-tags"
+msgstr "Polja obrasca"
+
+#: contact-form-7/admin/includes/help-tabs.php:45
+msgid "Mail-tags"
+msgstr "Mail polja"
+
+#: contact-form-7/admin/includes/help-tabs.php:55
+msgid ""
+"On this screen, you can manage contact forms provided by Contact Form 7. You "
+"can manage an unlimited number of contact forms. Each contact form has a "
+"unique ID and Contact Form 7 shortcode ([contact-form-7 ...]). To insert a "
+"contact form into a post or a text widget, insert the shortcode into the "
+"target."
+msgstr ""
+"Na ovom zaslonu možeš uređivati kontaktne obrasce stvorene Kontaktnim "
+"obrascem 7. Možeš uređivati neograničen broj obrazaca. Svaki kontaktni "
+"obrazac ima svoj jedinstveni ID i kratki kod ([contact-form-7 ...]). Da bi "
+"kontaktni obrazac umetnuo u post ili u tekstualni widget, unesi kratki kod u "
+"njega."
+
+#: contact-form-7/admin/includes/help-tabs.php:57
+msgid ""
+"Hovering over a row in the contact forms list will display action links that "
+"allow you to manage your contact form. You can perform the following actions:"
+msgstr ""
+"Kada postaviš pokazivač miša iznad retka popisa kontaktnih obrazaca pokazat "
+"će se linkovi radnji kojima možeš uređivati svoje kontaktne obrasce. Možeš "
+"izvesti sljedeće radnje:"
+
+#: contact-form-7/admin/includes/help-tabs.php:58
+msgid ""
+"<strong>Edit</strong> - Navigates to the editing screen for that contact "
+"form. You can also reach that screen by clicking on the contact form title."
+msgstr ""
+"<strong>Uredi</strong> - Otvara zaslon za uređivanje tog kontaktnog obrasca. "
+"Istu radnju možeš izvršiti ako klikneš na naziv kontaktnog obrasca."
+
+#: contact-form-7/admin/includes/help-tabs.php:59
+msgid ""
+"<strong>Duplicate</strong> - Clones that contact form. A cloned contact form "
+"inherits all content from the original, but has a different ID."
+msgstr ""
+"<strong>Udvostruči</strong> - Klonira kontaktni obrazac. Klonirani kontaktni "
+"obrazac nasljeđuje sve sadržaje od izvornika, ali ima drugačiji ID."
+
+#: contact-form-7/admin/includes/help-tabs.php:61
+msgid ""
+"You can add a new contact form on this screen. You can create a contact form "
+"in your language, which is set WordPress local settings, or in a language "
+"that you select from available options."
+msgstr ""
+"Na ovom zaslonu možeš dodati novi kontaktni obrazac. Možeš stvoriti "
+"kontaktni obrazac na svom jeziku, koji je određen lokalnim postavkama "
+"WordPressa, ili na jeziku koji odabereš iz dostupnih opcija."
+
+#: contact-form-7/admin/includes/help-tabs.php:63
+msgid ""
+"On this screen, you can edit a contact form. A contact form is comprised of "
+"the following components:"
+msgstr ""
+"Na ovom zaslonu možeš uređivati kontaktni obrazac. Kontaktni obrazac sastoji "
+"se od sljedećih komponenti:"
+
+#: contact-form-7/admin/includes/help-tabs.php:64
+msgid ""
+"<strong>Title</strong> is the title of a contact form. This title is only "
+"used for labeling a contact form, and can be edited."
+msgstr ""
+"<strong>Naslov</strong> je naziv kontaktnog obrasca. Naslov se koristi samo "
+"za imenovanje obrasca i može se uređivati."
+
+#: contact-form-7/admin/includes/help-tabs.php:65
+msgid ""
+"<strong>Form</strong> is a content of HTML form. You can use arbitrary HTML, "
+"which is allowed inside a form element. You can also use Contact Form "
+"7&#8217;s form-tags here."
+msgstr ""
+"<strong>Obrazac</strong> je sadržaj HTML obrasca. Možeš koristiti bilo koji "
+"element HTML-a koji je dopušten unutar elementa obrasca. Ovdje možeš također "
+"koristiti i polja Kontakt obrasca 7."
+
+#: contact-form-7/admin/includes/help-tabs.php:66
+msgid ""
+"<strong>Mail</strong> manages a mail template (headers and message body) "
+"that this contact form will send when users submit it. You can use Contact "
+"Form 7&#8217;s mail-tags here."
+msgstr ""
+"<strong>Mail</strong> uređuje predložak e-mail poruke (zaglavlja i sadržaje "
+"poruke) koja će biti odaslana kada je korisnik pošalje. Ovdje možeš "
+"koristiti polja Kontakt obrasca 7."
+
+#: contact-form-7/admin/includes/help-tabs.php:67
+msgid ""
+"<strong>Mail (2)</strong> is an additional mail template that works similar "
+"to Mail. Mail (2) is different in that it is sent only when Mail has been "
+"sent successfully."
+msgstr ""
+"<strong>Mail (2)</strong> dodatni je mail obrazac koji radi slično kao i "
+"Mail. Ali Mail (2) je različit po tome što se šalje samo ako je Mail "
+"uspješno poslan."
+
+#: contact-form-7/admin/includes/help-tabs.php:68
+msgid ""
+"In <strong>Messages</strong>, you can edit various types of messages used "
+"for this contact form. These messages are relatively short messages, like a "
+"validation error message you see when you leave a required field blank."
+msgstr ""
+"Pod <strong>Poruke</strong> možeš urediti različite tipove poruka koje se "
+"koriste za ovaj kontaktni obrazac. Te poruke su relativno kratke, kao npr. "
+"poruke o grešci prilikom provjere je li ostalo prazno neko polje koje je "
+"obvezno trebalo popuniti."
+
+#: contact-form-7/admin/includes/help-tabs.php:69
+msgid ""
+"<strong>Additional Settings</strong> provides a place where you can "
+"customize the behavior of this contact form by adding code snippets."
+msgstr ""
+"<strong>Dodatne postavke</strong> omogućavaju uređivanje posebnih zadaća "
+"kontaktnog obrasca, dodajući za to određene kodove."
+
+#: contact-form-7/admin/includes/help-tabs.php:71
+msgid ""
+"A form-tag is a short code enclosed in square brackets used in a form "
+"content. A form-tag generally represents an input field, and its components "
+"can be separated into four parts: type, name, options, and values. Contact "
+"Form 7 supports several types of form-tags including text fields, number "
+"fields, date fields, checkboxes, radio buttons, menus, file-uploading "
+"fields, CAPTCHAs, and quiz fields."
+msgstr ""
+"Polje obrasca kratki je kod uokviren uglatim zagradama. Općenito predstavlja "
+"polje za unos, a njegove komponente mogu se podijeliti u čeiti skupine: "
+"vrsta, naziv, opcije i vrijednosti. Kontaktni obrazac 7 podržava nekoliko "
+"vrsta polja za unos, uključujući tekstualna polja, brojčana polja, datumska "
+"polja, kućice, radio tipke, izbornike, polja za učitavanje datoteka, CAPTCHA "
+"i kviz-polja."
+
+#: contact-form-7/admin/includes/help-tabs.php:72
+msgid ""
+"While form-tags have a comparatively complex syntax, you don&#8217;t need to "
+"know the syntax to add form-tags because you can use the straightforward tag "
+"generator (<strong>Generate Tag</strong> button on this screen)."
+msgstr ""
+"Budući da polja obrasca imaju dosta kompleksnu sintaksu, nije nužno "
+"poznavati je kako bi dodavao nova polja za unos, jer za stvaranje novih "
+"oznaka možeš izravno koristiti tipku <strong>Stvori oznaku</strong> na ovom "
+"zaslonu."
+
+#: contact-form-7/admin/includes/help-tabs.php:74
+msgid ""
+"A mail-tag is also a short code enclosed in square brackets that you can use "
+"in every Mail and Mail (2) field. A mail-tag represents a user input value "
+"through an input field of a corresponding form-tag."
+msgstr ""
+"Mail oznaka je i kratki kod uokviren uglatim zagradama koji možeš koristiti "
+"u svakom Mail i Mail (2) polju. Mail oznaka predstavlja vrijednost koju "
+"korisnik upisuje koristeći odgovarajuće polja za unos na kontakt obrascu."
+
+#: contact-form-7/admin/includes/help-tabs.php:75
+msgid ""
+"There are also special mail-tags that have specific names, but don&#8217;t "
+"have corresponding form-tags. They are used to represent meta information of "
+"form submissions like the submitter&#8217;s IP address or the URL of the "
+"page."
+msgstr ""
+"Postoje i posebna polja obrasca koja imaju određene nazive, ali nemaju svoja "
+"pripadajuća polja za unos. Ona se koriste kao informacije o poslanom "
+"obrascu, kao što su npr. pošiljateljeva IP adresa ili URL stranice."
+
+#: contact-form-7/admin/includes/help-tabs.php:83
+msgid "For more information:"
+msgstr "Za više informacija:"
+
+#: contact-form-7/admin/includes/help-tabs.php:84
+msgid "<a href=\"http://contactform7.com/docs/\" target=\"_blank\">Docs</a>"
+msgstr ""
+"<a href=\"http://contactform7.com/docs/\" target=\"_blank\">Dokumenti</a>"
+
+#: contact-form-7/admin/includes/help-tabs.php:85
+msgid "<a href=\"http://contactform7.com/faq/\" target=\"_blank\">FAQ</a>"
+msgstr "<a href=\"http://contactform7.com/faq/\" target=\"_blank\">ČPP</a>"
+
+#: contact-form-7/admin/includes/help-tabs.php:86
+msgid ""
+"<a href=\"http://contactform7.com/support/\" target=\"_blank\">Support</a>"
+msgstr ""
+"<a href=\"http://contactform7.com/support/\" target=\"_blank\">Podrška</a>"
+
+#: contact-form-7/admin/includes/meta-boxes.php:47
 msgid "To:"
 msgstr "Za:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:48
+#: contact-form-7/admin/includes/meta-boxes.php:52
 msgid "From:"
 msgstr "Od:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:53
+#: contact-form-7/admin/includes/meta-boxes.php:57
 msgid "Subject:"
 msgstr "Predmet:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:60
+#: contact-form-7/admin/includes/meta-boxes.php:64
 msgid "Additional headers:"
 msgstr "Dodatna zaglavlja:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:65
+#: contact-form-7/admin/includes/meta-boxes.php:69
 msgid "File attachments:"
 msgstr "Priložene datoteke:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:73
+#: contact-form-7/admin/includes/meta-boxes.php:77
 msgid "Use HTML content type"
 msgstr "Koristi HTML vrstu sadržaja"
 
-#: contact-form-7/admin/includes/meta-boxes.php:79
+#: contact-form-7/admin/includes/meta-boxes.php:83
 msgid "Message body:"
 msgstr "Sadržaj poruke:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:85
+#: contact-form-7/admin/includes/meta-boxes.php:89
 msgid "Exclude lines with blank mail-tags from output"
 msgstr "Izuzmi kod slanja retke s praznim poljima"
 
-#: contact-form-7/includes/contact-form-template.php:15
+#: contact-form-7/includes/contact-form-template.php:23
 msgid "Your Name"
 msgstr "Tvoje ime"
 
-#: contact-form-7/includes/contact-form-template.php:16
-#: contact-form-7/includes/contact-form-template.php:19
+#: contact-form-7/includes/contact-form-template.php:24
+#: contact-form-7/includes/contact-form-template.php:27
 msgid "(required)"
 msgstr "(obvezno)"
 
-#: contact-form-7/includes/contact-form-template.php:18
+#: contact-form-7/includes/contact-form-template.php:26
 msgid "Your Email"
-msgstr "Tvoj Email"
+msgstr "Tvoj email"
 
-#: contact-form-7/includes/contact-form-template.php:21
+#: contact-form-7/includes/contact-form-template.php:29
 msgid "Subject"
 msgstr "Predmet"
 
-#: contact-form-7/includes/contact-form-template.php:23
+#: contact-form-7/includes/contact-form-template.php:31
 msgid "Your Message"
 msgstr "Tvoja poruka"
 
-#: contact-form-7/includes/contact-form-template.php:25
+#: contact-form-7/includes/contact-form-template.php:33
 #: contact-form-7/modules/submit.php:28
 msgid "Send"
 msgstr "Pošalji"
 
-#: contact-form-7/includes/contact-form-template.php:35
+#: contact-form-7/includes/contact-form-template.php:43
 #, php-format
 msgid "From: %s"
 msgstr "Od: %s"
 
-#: contact-form-7/includes/contact-form-template.php:37
+#: contact-form-7/includes/contact-form-template.php:45
 #, php-format
 msgid "Subject: %s"
 msgstr "Predmet: %s"
 
-#: contact-form-7/includes/contact-form-template.php:39
-#: contact-form-7/includes/contact-form-template.php:60
+#: contact-form-7/includes/contact-form-template.php:47
+#: contact-form-7/includes/contact-form-template.php:68
 msgid "Message Body:"
 msgstr "Sadržaj poruke"
 
-#: contact-form-7/includes/contact-form-template.php:42
-#: contact-form-7/includes/contact-form-template.php:63
+#: contact-form-7/includes/contact-form-template.php:50
+#: contact-form-7/includes/contact-form-template.php:71
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr "Ova poruka poslana je s kontaktnog obrasca na %1$s (%2$s)"
 
-#: contact-form-7/includes/contact-form-template.php:109
+#: contact-form-7/includes/contact-form-template.php:117
 msgid "Sender's message was sent successfully"
 msgstr "Pošiljateljeva poruka uspješno je poslana"
 
-#: contact-form-7/includes/contact-form-template.php:111
+#: contact-form-7/includes/contact-form-template.php:119
 msgid "Your message was sent successfully. Thanks."
 msgstr "Tvoja poruka uspješno je poslana. Hvala."
 
-#: contact-form-7/includes/contact-form-template.php:116
+#: contact-form-7/includes/contact-form-template.php:124
 msgid "Sender's message was failed to send"
 msgstr "Pošiljateljeva poruka nije poslana"
 
-#: contact-form-7/includes/contact-form-template.php:118
-#: contact-form-7/includes/contact-form-template.php:132
+#: contact-form-7/includes/contact-form-template.php:126
+#: contact-form-7/includes/contact-form-template.php:140
 msgid ""
 "Failed to send your message. Please try later or contact the administrator "
 "by another method."
@@ -442,32 +644,32 @@ msgstr ""
 "Nije uspjelo slanje tvoje poruke. Pokušaj kasnije ili administratora "
 "kontaktiraj na drugi način."
 
-#: contact-form-7/includes/contact-form-template.php:123
+#: contact-form-7/includes/contact-form-template.php:131
 msgid "Validation errors occurred"
 msgstr "Greška kod provjere valjanosti"
 
-#: contact-form-7/includes/contact-form-template.php:125
+#: contact-form-7/includes/contact-form-template.php:133
 msgid ""
 "Validation errors occurred. Please confirm the fields and submit it again."
 msgstr "Greška kod provjere valjanosti. Provjeri polja i pošalji ponovno."
 
-#: contact-form-7/includes/contact-form-template.php:130
+#: contact-form-7/includes/contact-form-template.php:138
 msgid "Submission was referred to as spam"
 msgstr "Poruka je ocijenjena kao spam"
 
-#: contact-form-7/includes/contact-form-template.php:137
+#: contact-form-7/includes/contact-form-template.php:145
 msgid "There are terms that the sender must accept"
 msgstr "Pošiljatelj mora prije prihvatiti uvjete"
 
-#: contact-form-7/includes/contact-form-template.php:139
+#: contact-form-7/includes/contact-form-template.php:147
 msgid "Please accept the terms to proceed."
 msgstr "Molim prihvati uvjete za nastavak."
 
-#: contact-form-7/includes/contact-form-template.php:144
+#: contact-form-7/includes/contact-form-template.php:152
 msgid "There is a field that the sender must fill in"
 msgstr "Pošiljatelj mora ispuniti jedno polje"
 
-#: contact-form-7/includes/contact-form-template.php:146
+#: contact-form-7/includes/contact-form-template.php:154
 msgid "Please fill the required field."
 msgstr "Molim ispuni obvezno polje."
 
@@ -671,8 +873,8 @@ msgid "Maltese"
 msgstr "Malteški"
 
 #: contact-form-7/includes/functions.php:83
-msgid "Norwegian (BokmĂĄl)"
-msgstr "Norveški (BokmĂĄl)"
+msgid "Norwegian (Bokmål)"
+msgstr "Norveški (Bokmål)"
 
 #: contact-form-7/includes/functions.php:84
 msgid "Persian"
@@ -1188,3 +1390,6 @@ msgstr "Ovo polje zahtijeva autorov URL"
 #: contact-form-7/modules/textarea.php:106
 msgid "Text area"
 msgstr "Tekstualno područje"
+
+#~ msgid "Copy"
+#~ msgstr "Kopiraj"
