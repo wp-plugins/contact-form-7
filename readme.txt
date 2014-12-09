@@ -42,7 +42,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Belarusian (be_BY) - Igor Dubilei
 * Bosnian (bs_BA) - Vedran
 * Bulgarian (bg_BG) - Iliyan Darganov
-* Catalan (ca) - Jordi Sancho, Robert Buj, Jaume Aragay Badia
+* Catalan (ca) - Jordi Sancho, Robert Buj, Jaume Aragay Badia, luba lee
 * Central Kurdish (ckb) - Mahr Hassan
 * Chinese (China; zh_CN) - Soz, Keefe Dunn, Stella Hu
 * Chinese (Taiwan; zh_TW) - James Wu
