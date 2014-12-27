@@ -417,4 +417,35 @@ function wpcf7_build_query( $args, $key = '' ) {
 	return implode( $sep, $ret );
 }
 
+/**
+ * Returns the number of code units in a string.
+ *
+ * @see http://www.w3.org/TR/html5/infrastructure.html#code-unit-length
+ *
+ * @return int|bool The number of code units, or false if mb_convert_encoding is not available.
+ */
+function wpcf7_count_code_units( $string ) {
+	static $use_mb = null;
+
+	if ( is_null( $use_mb ) ) {
+		$use_mb = function_exists( 'mb_convert_encoding' );
+	}
+
+	if ( ! $use_mb ) {
+		return false;
+	}
+
+	$encoding = mb_detect_encoding( $string, mb_detect_order(), true );
+
+	if ( $encoding ) {
+		$string = mb_convert_encoding( $string, 'UTF-16', $encoding );
+	} else {
+		$string = mb_convert_encoding( $string, 'UTF-16', 'UTF-8' );
+	}
+
+	$byte_count = strlen( $string );
+
+	return floor( $byte_count / 2 );
+}
+
 ?>
