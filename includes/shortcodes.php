@@ -306,6 +306,12 @@ class WPCF7_Shortcode {
 	}
 
 	public function get_maxlength_option( $default = '' ) {
+		$option = $this->get_option( 'maxlength', 'int', true );
+
+		if ( $option ) {
+			return $option;
+		}
+
 		$matches_a = $this->get_all_match_options(
 			'%^(?:[0-9]*x?[0-9]*)?/([0-9]+)$%' );
 
@@ -315,6 +321,16 @@ class WPCF7_Shortcode {
 		}
 
 		return $default;
+	}
+
+	public function get_minlength_option( $default = '' ) {
+		$option = $this->get_option( 'minlength', 'int', true );
+
+		if ( $option ) {
+			return $option;
+		} else {
+			return $default;
+		}
 	}
 
 	public function get_cols_option( $default = '' ) {

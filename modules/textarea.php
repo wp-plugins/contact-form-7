@@ -30,6 +30,12 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts['cols'] = $tag->get_cols_option( '40' );
 	$atts['rows'] = $tag->get_rows_option( '10' );
 	$atts['maxlength'] = $tag->get_maxlength_option();
+	$atts['minlength'] = $tag->get_minlength_option();
+
+	if ( $atts['maxlength'] && $atts['minlength'] && $atts['maxlength'] < $atts['minlength'] ) {
+		unset( $atts['maxlength'], $atts['minlength'] );
+	}
+
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
