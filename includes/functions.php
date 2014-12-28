@@ -435,6 +435,8 @@ function wpcf7_count_code_units( $string ) {
 		return false;
 	}
 
+	$string = (string) $string;
+
 	$encoding = mb_detect_encoding( $string, mb_detect_order(), true );
 
 	if ( $encoding ) {
@@ -443,7 +445,7 @@ function wpcf7_count_code_units( $string ) {
 		$string = mb_convert_encoding( $string, 'UTF-16', 'UTF-8' );
 	}
 
-	$byte_count = strlen( $string );
+	$byte_count = mb_strlen( $string, '8bit' );
 
 	return floor( $byte_count / 2 );
 }
