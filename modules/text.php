@@ -143,6 +143,25 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		}
 	}
 
+	if ( ! isset( $result['reason'][$name] ) && ! empty( $value ) ) {
+		$maxlength = $tag->get_maxlength_option();
+		$minlength = $tag->get_minlength_option();
+
+		if ( $maxlength && $minlength && $maxlength < $minlength ) {
+			$maxlength = $minlength = null;
+		}
+
+		$code_units = wpcf7_count_code_units( $value );
+
+		if ( $maxlength && $maxlength < $code_units ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_too_long' );
+		} elseif ( $minlength && $code_units < $minlength ) {
+			$result['valid'] = false;
+			$result['reason'][$name] = wpcf7_get_message( 'invalid_too_short' );
+		}
+	}
+
 	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
 		$result['idref'][$name] = $id;
 	}
