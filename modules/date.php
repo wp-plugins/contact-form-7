@@ -93,20 +93,20 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 
 	if ( $tag->is_required() && '' == $value ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'invalid_required' ) );
 	} elseif ( '' != $value && ! wpcf7_is_date( $value ) ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'invalid_date' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'invalid_date' ) );
 	} elseif ( '' != $value && ! empty( $min ) && $value < $min ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'date_too_early' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'date_too_early' ) );
 	} elseif ( '' != $value && ! empty( $max ) && $max < $value ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'date_too_late' );
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'date_too_late' ) );
 	}
 
 	return $result;

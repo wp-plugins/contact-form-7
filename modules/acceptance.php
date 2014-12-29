@@ -70,11 +70,8 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 
 	if ( $invert && $value || ! $invert && ! $value ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'accept_terms' );
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'accept_terms' ) );
 	}
 
 	return $result;

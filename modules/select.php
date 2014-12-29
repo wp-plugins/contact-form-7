@@ -128,12 +128,9 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 		if ( ! isset( $_POST[$name] )
 		|| empty( $_POST[$name] ) && '0' !== $_POST[$name] ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		}
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
 	}
 
 	return $result;

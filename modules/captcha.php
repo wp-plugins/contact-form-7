@@ -128,11 +128,8 @@ function wpcf7_captcha_validation_filter( $result, $tag ) {
 
 	if ( 0 == strlen( $prefix ) || ! wpcf7_check_captcha( $prefix, $response ) ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'captcha_not_match' );
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'captcha_not_match' ) );
 	}
 
 	if ( 0 != strlen( $prefix ) ) {

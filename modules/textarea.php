@@ -89,7 +89,8 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 	if ( 'textarea*' == $type ) {
 		if ( '' == $value ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		}
 	}
 
@@ -106,16 +107,14 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 		if ( false !== $code_units ) {
 			if ( $maxlength && $maxlength < $code_units ) {
 				$result['valid'] = false;
-				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_long' );
+				$result['reason'] = array(
+					$name => wpcf7_get_message( 'invalid_too_long' ) );
 			} elseif ( $minlength && $code_units < $minlength ) {
 				$result['valid'] = false;
-				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_short' );
+				$result['reason'] = array(
+					$name => wpcf7_get_message( 'invalid_too_short' ) );
 			}
 		}
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
 	}
 
 	return $result;

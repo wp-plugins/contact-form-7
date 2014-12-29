@@ -96,20 +96,20 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 
 	if ( $tag->is_required() && '' == $value ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'invalid_required' ) );
 	} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'invalid_number' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'invalid_number' ) );
 	} elseif ( '' != $value && '' != $min && (float) $value < (float) $min ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'number_too_small' );
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'number_too_small' ) );
 	} elseif ( '' != $value && '' != $max && (float) $max < (float) $value ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = wpcf7_get_message( 'number_too_large' );
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
+		$result['reason'] = array(
+			$name => wpcf7_get_message( 'number_too_large' ) );
 	}
 
 	return $result;

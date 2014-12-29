@@ -109,37 +109,44 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 	if ( 'text*' == $tag->type ) {
 		if ( '' == $value ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		}
 	}
 
 	if ( 'email' == $tag->basetype ) {
 		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		} elseif ( '' != $value && ! wpcf7_is_email( $value ) ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_email' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_email' ) );
 		}
 	}
 
 	if ( 'url' == $tag->basetype ) {
 		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		} elseif ( '' != $value && ! wpcf7_is_url( $value ) ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_url' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_url' ) );
 		}
 	}
 
 	if ( 'tel' == $tag->basetype ) {
 		if ( $tag->is_required() && '' == $value ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_required' ) );
 		} elseif ( '' != $value && ! wpcf7_is_tel( $value ) ) {
 			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_tel' );
+			$result['reason'] = array(
+				$name => wpcf7_get_message( 'invalid_tel' ) );
 		}
 	}
 
@@ -156,16 +163,14 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 		if ( false !== $code_units ) {
 			if ( $maxlength && $maxlength < $code_units ) {
 				$result['valid'] = false;
-				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_long' );
+				$result['reason'] = array(
+					$name => wpcf7_get_message( 'invalid_too_long' ) );
 			} elseif ( $minlength && $code_units < $minlength ) {
 				$result['valid'] = false;
-				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_short' );
+				$result['reason'] = array(
+					$name => wpcf7_get_message( 'invalid_too_short' ) );
 			}
 		}
-	}
-
-	if ( isset( $result['reason'][$name] ) && $id = $tag->get_id_option() ) {
-		$result['idref'][$name] = $id;
 	}
 
 	return $result;

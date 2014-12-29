@@ -164,10 +164,8 @@ class WPCF7_Submission {
 			return false;
 		}
 
-		$result = array(
-			'valid' => true,
-			'reason' => array(),
-			'idref' => array() );
+		require_once WPCF7_PLUGIN_DIR . '/includes/validation.php';
+		$result = new WPCF7_Validation();
 
 		$tags = $this->contact_form->form_scan_shortcode();
 
@@ -178,24 +176,9 @@ class WPCF7_Submission {
 
 		$result = apply_filters( 'wpcf7_validate', $result );
 
-		if ( $result['valid'] ) {
-			return true;
-		} else {
-			foreach ( (array) $result['reason'] as $name => $reason ) {
-				$field = array( 'reason' => $reason );
+		$this->invalid_fields = $result->get_invalid_fields();
 
-				if ( isset( $result['idref'][$name] )
-				&& wpcf7_is_name( $result['idref'][$name] ) ) {
-					$field['idref'] = $result['idref'][$name];
-				} else {
-					$field['idref'] = null;
-				}
-
-				$this->invalid_fields[$name] = $field;
-			}
-
-			return false;
-		}
+		return $result->is_valid();
 	}
 
 	private function accepted() {
