@@ -76,3 +76,10 @@ div.wpcf7 div.ajax-error {
 div.wpcf7 .placeheld {
 	color: #888;
 }
+
+div.wpcf7 input.wpcf7-count {
+	width: 4em;
+	background: transparent;
+	border: none;
+	color: #000;
+}

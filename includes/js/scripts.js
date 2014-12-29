@@ -69,6 +69,8 @@
 				});
 			});
 		}
+
+		this.find('.wpcf7-count').wpcf7CharacterCount();
 	};
 
 	$.wpcf7AjaxSuccess = function(data, status, xhr, $form) {
@@ -222,6 +224,29 @@
 				} else {
 					$freetext.prop('disabled', true);
 				}
+			});
+		});
+	};
+
+	$.fn.wpcf7CharacterCount = function() {
+		return this.each(function() {
+			var $count = $(this);
+			var name = $count.attr('name').replace(/^_wpcf7_character_count_/, '');
+			var down = $count.hasClass('down');
+			var starting = parseInt($count.val(), 10);
+
+			var updateCount = function($target) {
+				var length = $target.val().length;
+				var count = down ? starting - length : length;
+				$count.val(count);
+			};
+
+			$count.closest('form').find(':input[name="' + name + '"]').each(function() {
+				updateCount($(this));
+
+				$(this).keyup(function() {
+					updateCount($(this));
+				});
 			});
 		});
 	};

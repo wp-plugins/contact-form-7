@@ -274,7 +274,7 @@ function wpcf7_load_modules() {
 		'acceptance', 'flamingo',
 		'akismet', 'jetpack', 'submit', 'captcha', 'number',
 		'text', 'checkbox', 'quiz', 'textarea', 'date',
-		'response', 'file', 'select', 'listo' );
+		'response', 'file', 'select', 'listo', 'count' );
 
 	foreach ( $mods as $mod ) {
 		$file = trailingslashit( $dir ) . $mod . '.php';
