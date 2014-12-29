@@ -153,12 +153,14 @@ function wpcf7_text_validation_filter( $result, $tag ) {
 
 		$code_units = wpcf7_count_code_units( $value );
 
-		if ( $maxlength && $maxlength < $code_units ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_too_long' );
-		} elseif ( $minlength && $code_units < $minlength ) {
-			$result['valid'] = false;
-			$result['reason'][$name] = wpcf7_get_message( 'invalid_too_short' );
+		if ( false !== $code_units ) {
+			if ( $maxlength && $maxlength < $code_units ) {
+				$result['valid'] = false;
+				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_long' );
+			} elseif ( $minlength && $code_units < $minlength ) {
+				$result['valid'] = false;
+				$result['reason'][$name] = wpcf7_get_message( 'invalid_too_short' );
+			}
 		}
 	}
 
