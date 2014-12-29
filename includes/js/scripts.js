@@ -70,7 +70,7 @@
 			});
 		}
 
-		this.find('.wpcf7-count').wpcf7CharacterCount();
+		this.find('.wpcf7-character-count').wpcf7CharacterCount();
 	};
 
 	$.wpcf7AjaxSuccess = function(data, status, xhr, $form) {
@@ -231,14 +231,29 @@
 	$.fn.wpcf7CharacterCount = function() {
 		return this.each(function() {
 			var $count = $(this);
-			var name = $count.attr('name').replace(/^_wpcf7_character_count_/, '');
+			var name = $count.attr('data-target-name');
 			var down = $count.hasClass('down');
-			var starting = parseInt($count.val(), 10);
+			var starting = parseInt($count.attr('data-starting-value'), 10);
+			var maximum = parseInt($count.attr('data-maximum-value'), 10);
+			var minimum = parseInt($count.attr('data-minimum-value'), 10);
 
 			var updateCount = function($target) {
 				var length = $target.val().length;
 				var count = down ? starting - length : length;
-				$count.val(count);
+				$count.attr('data-current-value', count);
+				$count.text(count);
+
+				if (maximum && maximum < length) {
+					$count.addClass('too-long');
+				} else {
+					$count.removeClass('too-long');
+				}
+
+				if (minimum && length < minimum) {
+					$count.addClass('too-short');
+				} else {
+					$count.removeClass('too-short');
+				}
 			};
 
 			$count.closest('form').find(':input[name="' + name + '"]').each(function() {

@@ -31,25 +31,25 @@ function wpcf7_count_shortcode_handler( $tag ) {
 		}
 	}
 
-	$atts = array();
-	$atts['id'] = $tag->get_id_option();
-	$atts['disabled'] = 'disabled';
-	$atts['type'] = 'text';
-	$atts['name'] = '_wpcf7_character_count_' . $tag->name;
-
 	if ( $tag->has_option( 'down' ) ) {
-		$atts['value'] = (int) $maxlength;
-		$atts['class'] = $tag->get_class_option(
-			wpcf7_form_controls_class( $tag->type, 'down' ) );
+		$value = (int) $maxlength;
+		$class = 'wpcf7-character-count down';
 	} else {
-		$atts['value'] = '0';
-		$atts['class'] = $tag->get_class_option(
-			wpcf7_form_controls_class( $tag->type, 'up' ) );
+		$value = '0';
+		$class = 'wpcf7-character-count up';
 	}
 
+	$atts = array();
+	$atts['id'] = $tag->get_id_option();
+	$atts['class'] = $tag->get_class_option( $class );
+	$atts['data-target-name'] = $tag->name;
+	$atts['data-starting-value'] = $value;
+	$atts['data-current-value'] = $value;
+	$atts['data-maximum-value'] = $maxlength;
+	$atts['data-minimum-value'] = $minlength;
 	$atts = wpcf7_format_atts( $atts );
 
-	$html = sprintf( '<input %1$s />', $atts );
+	$html = sprintf( '<span %1$s>%2$s</span>', $atts, $value );
 
 	return $html;
 }
