@@ -127,9 +127,7 @@ function wpcf7_captcha_validation_filter( $result, $tag ) {
 	$response = isset( $_POST[$name] ) ? (string) $_POST[$name] : '';
 
 	if ( 0 == strlen( $prefix ) || ! wpcf7_check_captcha( $prefix, $response ) ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'captcha_not_match' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'captcha_not_match' ) );
 	}
 
 	if ( 0 != strlen( $prefix ) ) {

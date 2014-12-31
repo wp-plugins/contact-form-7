@@ -88,9 +88,7 @@ function wpcf7_quiz_validation_filter( $result, $tag ) {
 		: '';
 
 	if ( $answer_hash != $expected_hash ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'quiz_answer_not_correct' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'quiz_answer_not_correct' ) );
 	}
 
 	return $result;

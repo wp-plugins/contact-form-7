@@ -69,9 +69,7 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 	$invert = $tag->has_option( 'invert' );
 
 	if ( $invert && $value || ! $invert && ! $value ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'accept_terms' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'accept_terms' ) );
 	}
 
 	return $result;

@@ -86,15 +86,11 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 
 	$value = isset( $_POST[$name] ) ? (string) $_POST[$name] : '';
 
-	if ( 'textarea*' == $type ) {
-		if ( '' == $value ) {
-			$result['valid'] = false;
-			$result['reason'] = array(
-				$name => wpcf7_get_message( 'invalid_required' ) );
-		}
+	if ( $tag->is_required() && '' == $value ) {
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
 	}
 
-	if ( ! isset( $result['reason'][$name] ) && ! empty( $value ) ) {
+	if ( ! empty( $value ) ) {
 		$maxlength = $tag->get_maxlength_option();
 		$minlength = $tag->get_minlength_option();
 
@@ -106,13 +102,9 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 
 		if ( false !== $code_units ) {
 			if ( $maxlength && $maxlength < $code_units ) {
-				$result['valid'] = false;
-				$result['reason'] = array(
-					$name => wpcf7_get_message( 'invalid_too_long' ) );
+				$result->invalidate( $tag, wpcf7_get_message( 'invalid_too_long' ) );
 			} elseif ( $minlength && $code_units < $minlength ) {
-				$result['valid'] = false;
-				$result['reason'] = array(
-					$name => wpcf7_get_message( 'invalid_too_short' ) );
+				$result->invalidate( $tag, wpcf7_get_message( 'invalid_too_short' ) );
 			}
 		}
 	}

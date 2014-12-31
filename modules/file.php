@@ -80,16 +80,12 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$file = isset( $_FILES[$name] ) ? $_FILES[$name] : null;
 
 	if ( $file['error'] && UPLOAD_ERR_NO_FILE != $file['error'] ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'upload_failed_php_error' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'upload_failed_php_error' ) );
 		return $result;
 	}
 
 	if ( empty( $file['tmp_name'] ) && $tag->is_required() ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'invalid_required' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
 		return $result;
 	}
 
@@ -148,18 +144,14 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$file_type_pattern = '/\.' . $file_type_pattern . '$/i';
 
 	if ( ! preg_match( $file_type_pattern, $file['name'] ) ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'upload_file_type_invalid' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'upload_file_type_invalid' ) );
 		return $result;
 	}
 
 	/* File size validation */
 
 	if ( $file['size'] > $allowed_size ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'upload_file_too_large' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'upload_file_too_large' ) );
 		return $result;
 	}
 
@@ -174,9 +166,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$new_file = trailingslashit( $uploads_dir ) . $filename;
 
 	if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'upload_failed' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'upload_failed' ) );
 		return $result;
 	}
 

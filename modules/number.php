@@ -95,21 +95,13 @@ function wpcf7_number_validation_filter( $result, $tag ) {
 	$max = $tag->get_option( 'max', 'signed_int', true );
 
 	if ( $tag->is_required() && '' == $value ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'invalid_required' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
 	} elseif ( '' != $value && ! wpcf7_is_number( $value ) ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'invalid_number' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_number' ) );
 	} elseif ( '' != $value && '' != $min && (float) $value < (float) $min ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'number_too_small' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'number_too_small' ) );
 	} elseif ( '' != $value && '' != $max && (float) $max < (float) $value ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'number_too_large' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'number_too_large' ) );
 	}
 
 	return $result;

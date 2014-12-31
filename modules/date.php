@@ -92,21 +92,13 @@ function wpcf7_date_validation_filter( $result, $tag ) {
 		: '';
 
 	if ( $tag->is_required() && '' == $value ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'invalid_required' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
 	} elseif ( '' != $value && ! wpcf7_is_date( $value ) ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'invalid_date' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_date' ) );
 	} elseif ( '' != $value && ! empty( $min ) && $value < $min ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'date_too_early' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'date_too_early' ) );
 	} elseif ( '' != $value && ! empty( $max ) && $max < $value ) {
-		$result['valid'] = false;
-		$result['reason'] = array(
-			$name => wpcf7_get_message( 'date_too_late' ) );
+		$result->invalidate( $tag, wpcf7_get_message( 'date_too_late' ) );
 	}
 
 	return $result;

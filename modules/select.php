@@ -124,13 +124,10 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 		}
 	}
 
-	if ( $tag->is_required() ) {
-		if ( ! isset( $_POST[$name] )
-		|| empty( $_POST[$name] ) && '0' !== $_POST[$name] ) {
-			$result['valid'] = false;
-			$result['reason'] = array(
-				$name => wpcf7_get_message( 'invalid_required' ) );
-		}
+	$empty = ! isset( $_POST[$name] ) || empty( $_POST[$name] ) && '0' !== $_POST[$name];
+
+	if ( $tag->is_required() && $empty ) {
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
 	}
 
 	return $result;
