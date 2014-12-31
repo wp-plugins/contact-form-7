@@ -11,16 +11,24 @@ class WPCF7_Validation implements ArrayAccess {
 			'idref' => array() );
 	}
 
-	public function invalidate( $name, $message ) {
+	public function invalidate( $context, $message ) {
+		if ( $context instanceof WPCF7_Shortcode ) {
+			$tag = $context;
+		} elseif ( is_array( $context ) ) {
+			$tag = new WPCF7_Shortcode( $context );
+		} elseif ( is_string( $context ) ) {
+			$tags = wpcf7_scan_shortcode( array( 'name' => trim( $context ) ) );
+			$tag = $tags ? new WPCF7_Shortcode( $tags[0] ) : null;
+		}
+
+		$name = ! empty( $tag ) ? $tag->name : null;
+
 		if ( empty( $name ) || ! wpcf7_is_name( $name ) ) {
 			return;
 		}
 
 		if ( ! isset( $this->invalid_fields[$name] ) ) {
-			if ( $tags = wpcf7_scan_shortcode( array( 'name' => $name ) ) ) {
-				$tag = new WPCF7_Shortcode( $tags[0] );
-				$id = $tag->get_id_option();
-			}
+			$id = $tag->get_id_option();
 
 			if ( empty( $id ) || ! wpcf7_is_name( $id ) ) {
 				$id = null;
