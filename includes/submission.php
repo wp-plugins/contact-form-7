@@ -89,7 +89,7 @@ class WPCF7_Submission {
 			$pipes = $tag['pipes'];
 
 			if ( WPCF7_USE_PIPE
-			&& is_a( $pipes, 'WPCF7_Pipes' )
+			&& $pipes instanceof WPCF7_Pipes
 			&& ! $pipes->zero() ) {
 				if ( is_array( $value) ) {
 					$new_value = array();

@@ -42,7 +42,7 @@ function wpcf7_quiz_shortcode_handler( $tag ) {
 
 	$pipes = $tag->pipes;
 
-	if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+	if ( $pipes instanceof WPCF7_Pipes && ! $pipes->zero() ) {
 		$pipe = $pipes->random_pipe();
 		$question = $pipe->before;
 		$answer = $pipe->after;
@@ -120,7 +120,7 @@ function wpcf7_quiz_ajax_refill( $items ) {
 		if ( empty( $name ) )
 			continue;
 
-		if ( is_a( $pipes, 'WPCF7_Pipes' ) && ! $pipes->zero() ) {
+		if ( $pipes instanceof WPCF7_Pipes && ! $pipes->zero() ) {
 			$pipe = $pipes->random_pipe();
 			$question = $pipe->before;
 			$answer = $pipe->after;
