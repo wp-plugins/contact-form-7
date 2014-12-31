@@ -151,7 +151,7 @@ function wpcf7_messages() {
 			'description'
 				=> __( "There is a field that the sender must fill in", 'contact-form-7' ),
 			'default'
-				=> __( 'Please fill the required field.', 'contact-form-7' )
+				=> __( 'Please fill in the required field.', 'contact-form-7' )
 		),
 
 		'invalid_too_long' => array(
