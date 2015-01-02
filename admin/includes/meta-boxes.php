@@ -114,7 +114,7 @@ function wpcf7_messages_meta_box( $post ) {
 
 		if ( ! $updated && 10 <= count( $messages ) ) {
 			if ( 6 == $count ) {
-				echo '<p><a href="#" id="show-all-messages">Show all messages</a></p>' . "\n";
+				echo '<p><a href="#" id="show-all-messages">' . esc_html( __( 'Show all messages', 'contact-form-7' ) ) . '</a></p>' . "\n";
 				echo '<div class="hide-initially">';
 			}
 
