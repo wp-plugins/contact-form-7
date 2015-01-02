@@ -48,6 +48,12 @@
 				updateTag();
 			});
 
+			$('#show-all-messages').click(function() {
+				$('#messagesdiv .hide-initially').slideDown();
+				$(this).closest('p').remove();
+				return false;
+			});
+
 			updateTag();
 
 			$('.check-if-these-fields-are-active').each(function(index) {

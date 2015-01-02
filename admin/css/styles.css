@@ -136,9 +136,8 @@ label.disabled {
 	color: #777;
 }
 
-#messagesdiv div.inside {
-	height: 28em;
-	overflow: auto;
+#messagesdiv .hide-initially {
+	display: none;
 }
 
 div.tag-generator {
