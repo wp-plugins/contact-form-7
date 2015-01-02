@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 11:10+0900\n"
-"PO-Revision-Date: 2015-01-02 11:10+0900\n"
+"POT-Creation-Date: 2015-01-02 11:24+0900\n"
+"PO-Revision-Date: 2015-01-02 11:24+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -506,6 +506,10 @@ msgstr ""
 
 #: contact-form-7/admin/includes/meta-boxes.php:89
 msgid "Exclude lines with blank mail-tags from output"
+msgstr ""
+
+#: contact-form-7/admin/includes/meta-boxes.php:117
+msgid "Show all messages"
 msgstr ""
 
 #: contact-form-7/includes/contact-form-template.php:23
