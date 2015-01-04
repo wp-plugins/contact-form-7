@@ -27,7 +27,7 @@ class WPCF7_Validation implements ArrayAccess {
 			return;
 		}
 
-		if ( ! isset( $this->invalid_fields[$name] ) ) {
+		if ( $this->is_valid( $name ) ) {
 			$id = $tag->get_id_option();
 
 			if ( empty( $id ) || ! wpcf7_is_name( $id ) ) {
@@ -40,8 +40,12 @@ class WPCF7_Validation implements ArrayAccess {
 		}
 	}
 
-	public function is_valid() {
-		return empty( $this->invalid_fields );
+	public function is_valid( $name = null ) {
+		if ( ! empty( $name ) ) {
+			return ! isset( $this->invalid_fields[$name] );
+		} else {
+			return empty( $this->invalid_fields );
+		}
 	}
 
 	public function get_invalid_fields() {
