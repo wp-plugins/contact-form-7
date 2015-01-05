@@ -71,6 +71,10 @@
 		}
 
 		this.find('.wpcf7-character-count').wpcf7CharacterCount();
+
+		this.find('.wpcf7-validates-as-url').change(function() {
+			$(this).wpcf7NormalizeUrl();
+		});
 	};
 
 	$.wpcf7AjaxSuccess = function(data, status, xhr, $form) {
@@ -263,6 +267,19 @@
 					updateCount($(this));
 				});
 			});
+		});
+	};
+
+	$.fn.wpcf7NormalizeUrl = function() {
+		return this.each(function() {
+			var val = $.trim($(this).val());
+
+			if (! val.match(/^[a-z][a-z0-9.+-]*:/i)) { // check the scheme part
+				val = val.replace(/^\/+/, '');
+				val = 'http://' + val;
+			}
+
+			$(this).val(val);
 		});
 	};
 
