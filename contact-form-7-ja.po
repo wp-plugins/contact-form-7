@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 11:24+0900\n"
-"PO-Revision-Date: 2015-01-02 11:26+0900\n"
+"POT-Creation-Date: 2015-01-06 10:11+0900\n"
+"PO-Revision-Date: 2015-01-06 10:13+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -335,8 +335,9 @@ msgid "Y/m/d"
 msgstr "Y年n月j日"
 
 #: contact-form-7/admin/includes/help-tabs.php:16
-msgid "Sample"
-msgstr "サンプル"
+#: contact-form-7/admin/includes/help-tabs.php:39
+msgid "Overview"
+msgstr "概要"
 
 #: contact-form-7/admin/includes/help-tabs.php:21
 msgid "Available Actions"
@@ -345,10 +346,6 @@ msgstr "可能な操作"
 #: contact-form-7/admin/includes/help-tabs.php:30
 msgid "Adding A New Contact Form"
 msgstr "コンタクトフォームの新規追加"
-
-#: contact-form-7/admin/includes/help-tabs.php:39
-msgid "Overview"
-msgstr "概要"
 
 #: contact-form-7/admin/includes/help-tabs.php:44
 msgid "Form-tags"
@@ -1417,6 +1414,9 @@ msgstr "テキストエリア"
 #, php-format
 msgid "Contact form %d"
 msgstr "コンタクトフォーム %d"
+
+#~ msgid "Sample"
+#~ msgstr "サンプル"
 
 #~ msgid "Copy"
 #~ msgstr "複製"
