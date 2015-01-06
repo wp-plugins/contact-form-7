@@ -13,7 +13,7 @@ class WPCF7_Help_Tabs {
 			case 'list':
 				$this->screen->add_help_tab( array(
 					'id' => 'list_overview',
-					'title' => __( 'Sample', 'contact-form-7' ),
+					'title' => __( 'Overview', 'contact-form-7' ),
 					'content' => $this->content( 'list_overview' ) ) );
 
 				$this->screen->add_help_tab( array(
