@@ -19,6 +19,10 @@ class WPCF7_Mail {
 
 	private function __construct() {}
 
+	public function name() {
+		return $this->name;
+	}
+
 	public static function get_current() {
 		return self::$current;
 	}
@@ -55,7 +59,7 @@ class WPCF7_Mail {
 			'recipient', 'additional_headers', 'attachments' );
 
 		$components = apply_filters( 'wpcf7_mail_components',
-			$components, wpcf7_get_current_contact_form() );
+			$components, wpcf7_get_current_contact_form(), $this );
 
 		$subject = wpcf7_strip_newline( $components['subject'] );
 		$sender = wpcf7_strip_newline( $components['sender'] );
