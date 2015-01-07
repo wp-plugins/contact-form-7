@@ -33,10 +33,19 @@ class WPCF7_ShortcodeManager {
 		$tags = array_filter( array_unique( (array) $tag ) );
 
 		foreach ( $tags as $tag ) {
+			$tag = $this->sanitize_tag_type( $tag );
+
 			$this->shortcode_tags[$tag] = array(
 				'function' => $func,
 				'has_name' => (boolean) $has_name );
 		}
+	}
+
+	private function sanitize_tag_type( $tag ) {
+		$tag = preg_replace( '/[^a-zA-Z0-9_*]+/', '_', $tag );
+		$tag = rtrim( $tag, '_' );
+		$tag = strtolower( $tag );
+		return $tag;
 	}
 
 	public function remove_shortcode( $tag ) {
