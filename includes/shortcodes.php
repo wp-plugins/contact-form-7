@@ -411,6 +411,25 @@ class WPCF7_Shortcode {
 				if ( ! empty( $user_prop ) ) {
 					return $user_prop;
 				}
+
+			} elseif ( 'post_meta' == $opt && in_the_loop() ) {
+				$val = (string) get_post_meta( get_the_ID(), $this->name, true );
+
+				if ( strlen( $val ) ) {
+					return $val;
+				}
+			} elseif ( 'get' == $opt && isset( $_GET[$this->name] ) ) {
+				$val = (string) $_GET[$this->name];
+
+				if ( strlen( $val ) ) {
+					return $val;
+				}
+			} elseif ( 'post' == $opt && isset( $_POST[$this->name] ) ) {
+				$val = (string) $_POST[$this->name];
+
+				if ( strlen( $val ) ) {
+					return $val;
+				}
 			}
 		}
 

@@ -55,13 +55,15 @@ function wpcf7_text_shortcode_handler( $tag ) {
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
-	$value = (string) reset( $tag->values );
+	$value = $tag->get_default_option();
+
+	if ( false === $value ) {
+		$value = (string) reset( $tag->values );
+	}
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
 		$atts['placeholder'] = $value;
 		$value = '';
-	} elseif ( '' === $value ) {
-		$value = $tag->get_default_option();
 	}
 
 	$value = wpcf7_get_hangover( $tag->name, $value );

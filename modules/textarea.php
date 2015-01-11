@@ -40,18 +40,23 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
-	if ( $tag->has_option( 'readonly' ) )
+	if ( $tag->has_option( 'readonly' ) ) {
 		$atts['readonly'] = 'readonly';
+	}
 
-	if ( $tag->is_required() )
+	if ( $tag->is_required() ) {
 		$atts['aria-required'] = 'true';
+	}
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
-	$value = (string) reset( $tag->values );
+	$value = $tag->get_default_option();
 
-	if ( '' !== $tag->content )
-		$value = $tag->content;
+	if ( false === $value ) {
+		$value = ( '' !== $tag->content )
+			? $tag->content
+			: (string) reset( $tag->values );
+	}
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
 		$atts['placeholder'] = $value;
