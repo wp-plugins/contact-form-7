@@ -391,11 +391,17 @@ class WPCF7_Shortcode {
 		return false;
 	}
 
-	public function get_default_option() {
+	public function get_default_option( $args = '' ) {
+		$defaults = array(
+			'multiple' => false );
+
+		$args = wp_parse_args( $args, $defaults );
+
 		$options = (array) $this->get_option( 'default' );
+		$values = array();
 
 		if ( empty( $options ) ) {
-			return false;
+			return $args['multiple'] ? $values : false;
 		}
 
 		foreach ( $options as $opt ) {
@@ -409,31 +415,59 @@ class WPCF7_Shortcode {
 				$user_prop = $user->get( $opt );
 
 				if ( ! empty( $user_prop ) ) {
-					return $user_prop;
+					if ( $args['multiple'] ) {
+						$values[] = $user_prop;
+					} else {
+						return $user_prop;
+					}
 				}
 
 			} elseif ( 'post_meta' == $opt && in_the_loop() ) {
-				$val = (string) get_post_meta( get_the_ID(), $this->name, true );
+				if ( $args['multiple'] ) {
+					$values = array_merge( $values,
+						get_post_meta( get_the_ID(), $this->name ) );
+				} else {
+					$val = (string) get_post_meta( get_the_ID(), $this->name, true );
 
-				if ( strlen( $val ) ) {
-					return $val;
+					if ( strlen( $val ) ) {
+						return $val;
+					}
 				}
+				
 			} elseif ( 'get' == $opt && isset( $_GET[$this->name] ) ) {
-				$val = (string) $_GET[$this->name];
+				$vals = (array) $_GET[$this->name];
 
-				if ( strlen( $val ) ) {
-					return $val;
+				if ( $args['multiple'] ) {
+					$values = array_merge( $values, $vals );
+				} else {
+					$val = isset( $vals[0] ) ? (string) $vals[0] : '';
+
+					if ( strlen( $val ) ) {
+						return $val;
+					}
 				}
-			} elseif ( 'post' == $opt && isset( $_POST[$this->name] ) ) {
-				$val = (string) $_POST[$this->name];
 
-				if ( strlen( $val ) ) {
-					return $val;
+			} elseif ( 'post' == $opt && isset( $_POST[$this->name] ) ) {
+				$vals = (array) $_POST[$this->name];
+
+				if ( $args['multiple'] ) {
+					$values = array_merge( $values, $vals );
+				} else {
+					$val = isset( $vals[0] ) ? (string) $vals[0] : '';
+
+					if ( strlen( $val ) ) {
+						return $val;
+					}
 				}
 			}
 		}
 
-		return false;
+		if ( $args['multiple'] ) {
+			$values = array_unique( $values );
+			return $values;
+		} else {
+			return false;
+		}
 	}
 
 	public function get_data_option( $args = '' ) {

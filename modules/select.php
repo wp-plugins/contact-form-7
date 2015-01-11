@@ -36,11 +36,6 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
-	$defaults = array();
-
-	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) )
-		$defaults = explode( '_', $matches[1] );
-
 	$multiple = $tag->has_option( 'multiple' );
 	$include_blank = $tag->has_option( 'include_blank' );
 	$first_as_label = $tag->has_option( 'first_as_label' );
@@ -53,11 +48,30 @@ function wpcf7_select_shortcode_handler( $tag ) {
 		$labels = array_merge( $labels, array_values( $data ) );
 	}
 
-	$empty_select = empty( $values );
+	$defaults = array();
 
-	if ( $empty_select || $include_blank ) {
+	$default_choice = $tag->get_default_option( 'multiple=1' );
+
+	foreach ( $default_choice as $value ) {
+		$key = array_search( $value, $values, true );
+
+		if ( false !== $key ) {
+			$defaults[] = (int) $key + 1;
+		}
+	}
+
+	if ( $matches = $tag->get_first_match_option( '/^default:([0-9_]+)$/' ) ) {
+		$defaults = array_merge( $defaults, explode( '_', $matches[1] ) );
+	}
+
+	$defaults = array_unique( $defaults );
+
+	$shifted = false;
+
+	if ( $include_blank || empty( $values ) ) {
 		array_unshift( $labels, '---' );
 		array_unshift( $values, '' );
+		$shifted = true;
 	} elseif ( $first_as_label ) {
 		$values[0] = '';
 	}
@@ -75,7 +89,9 @@ function wpcf7_select_shortcode_handler( $tag ) {
 				$selected = ( $hangover == esc_sql( $value ) );
 			}
 		} else {
-			if ( ! $empty_select && in_array( $key + 1, (array) $defaults ) ) {
+			if ( ! $shifted && in_array( (int) $key + 1, (array) $defaults ) ) {
+				$selected = true;
+			} elseif ( $shifted && in_array( (int) $key, (array) $defaults ) ) {
 				$selected = true;
 			}
 		}
