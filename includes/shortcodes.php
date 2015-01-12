@@ -391,17 +391,15 @@ class WPCF7_Shortcode {
 		return false;
 	}
 
-	public function get_default_option( $args = '' ) {
-		$defaults = array(
-			'multiple' => false );
-
-		$args = wp_parse_args( $args, $defaults );
+	public function get_default_option( $default = '', $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'multiple' => false ) );
 
 		$options = (array) $this->get_option( 'default' );
 		$values = array();
 
 		if ( empty( $options ) ) {
-			return $args['multiple'] ? $values : false;
+			return $args['multiple'] ? $values : $default;
 		}
 
 		foreach ( $options as $opt ) {
@@ -468,7 +466,7 @@ class WPCF7_Shortcode {
 			$values = array_unique( $values );
 			return $values;
 		} else {
-			return false;
+			return $default;
 		}
 	}
 

@@ -73,7 +73,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 
 	$defaults = array();
 
-	$default_choice = $tag->get_default_option( 'multiple=1' );
+	$default_choice = $tag->get_default_option( null, 'multiple=1' );
 
 	foreach ( $default_choice as $value ) {
 		$key = array_search( $value, $values, true );

@@ -50,18 +50,16 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
-	$value = $tag->get_default_option();
-
-	if ( false === $value ) {
-		$value = ( '' !== $tag->content )
-			? $tag->content
-			: (string) reset( $tag->values );
-	}
+	$value = empty( $tag->content )
+		? (string) reset( $tag->values )
+		: $tag->content;
 
 	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
 		$atts['placeholder'] = $value;
 		$value = '';
 	}
+
+	$value = $tag->get_default_option( $value );
 
 	$value = wpcf7_get_hangover( $tag->name, $value );
 
