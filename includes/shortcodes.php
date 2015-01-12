@@ -436,6 +436,7 @@ class WPCF7_Shortcode {
 				
 			} elseif ( 'get' == $opt && isset( $_GET[$this->name] ) ) {
 				$vals = (array) $_GET[$this->name];
+				$vals = array_map( 'wpcf7_sanitize_query_var', $vals );
 
 				if ( $args['multiple'] ) {
 					$values = array_merge( $values, $vals );
@@ -449,6 +450,7 @@ class WPCF7_Shortcode {
 
 			} elseif ( 'post' == $opt && isset( $_POST[$this->name] ) ) {
 				$vals = (array) $_POST[$this->name];
+				$vals = array_map( 'wpcf7_sanitize_query_var', $vals );
 
 				if ( $args['multiple'] ) {
 					$values = array_merge( $values, $vals );

@@ -60,6 +60,21 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	return $pee;
 }
 
+function wpcf7_sanitize_query_var( $text ) {
+	$text = wp_check_invalid_utf8( $text );
+
+	if ( false !== strpos( $text, '<' ) ) {
+		$text = wp_pre_kses_less_than( $text );
+		$text = wp_strip_all_tags( $text );
+	}
+
+	$text = preg_replace( '/%[a-f0-9]{2}/i', '', $text );
+	$text = preg_replace( '/ +/', ' ', $text );
+	$text = trim( $text, ' ' );
+
+	return $text;
+}
+
 function wpcf7_strip_quote( $text ) {
 	$text = trim( $text );
 
