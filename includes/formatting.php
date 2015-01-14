@@ -61,6 +61,7 @@ function wpcf7_autop( $pee, $br = 1 ) {
 }
 
 function wpcf7_sanitize_query_var( $text ) {
+	$text = wp_unslash( $text );
 	$text = wp_check_invalid_utf8( $text );
 
 	if ( false !== strpos( $text, '<' ) ) {
