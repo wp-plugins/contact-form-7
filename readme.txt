@@ -60,7 +60,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Greek (el) - Nick Mouratidis, Pr. friedlich, John D. Dimoferlias
 * Gujarati (gu_IN) - Apoto
 * Haitian (ht) - Lam Tu Do
-* Hebrew (he_IL) - Yaron Ofer, Arik Galansky
+* Hebrew (he_IL) - Yaron Ofer, Arik Galansky, Ahrale
 * Hindi (hi_IN) - Tarun Joshi, Ashish
 * Hungarian (hu_HU) - Andras Hirschler, János Csárdi-Braunstein, Farkas Győző
 * Indian Bengali (bn_IN) - Suman Manna
