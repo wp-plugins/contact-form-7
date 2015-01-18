@@ -35,11 +35,9 @@ class WPCF7_ShortcodeManager {
 		foreach ( $tags as $tag ) {
 			$tag = $this->sanitize_tag_type( $tag );
 
-			if ( ! isset( $this->shortcode_tags[$tag] ) ) {
-				$this->shortcode_tags[$tag] = array(
-					'function' => $func,
-					'has_name' => (boolean) $has_name );
-			}
+			$this->shortcode_tags[$tag] = array(
+				'function' => $func,
+				'has_name' => (boolean) $has_name );
 		}
 	}
 
