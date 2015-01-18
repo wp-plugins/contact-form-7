@@ -141,12 +141,18 @@ function wpcf7_canonicalize( $text ) {
 	return $text;
 }
 
+/**
+ * Check whether a string is a valid NAME token.
+ *
+ * ID and NAME tokens must begin with a letter ([A-Za-z])
+ * and may be followed by any number of letters, digits ([0-9]),
+ * hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
+ *
+ * @see http://www.w3.org/TR/html401/types.html#h-6.2
+ *
+ * @return bool True if it is a valid name, false if not.
+ */
 function wpcf7_is_name( $string ) {
-	// See http://www.w3.org/TR/html401/types.html#h-6.2
-	// ID and NAME tokens must begin with a letter ([A-Za-z])
-	// and may be followed by any number of letters, digits ([0-9]),
-	// hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
-
 	return preg_match( '/^[A-Za-z][-A-Za-z0-9_:.]*$/', $string );
 }
 
