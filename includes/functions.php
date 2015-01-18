@@ -216,6 +216,12 @@ function wpcf7_format_atts( $atts ) {
 	}
 
 	foreach ( $atts as $key => $value ) {
+		$key = strtolower( trim( $key ) );
+
+		if ( ! preg_match( '/^[a-z_:][a-z_:.0-9-]*$/', $key ) ) {
+			continue;
+		}
+
 		$value = trim( $value );
 
 		if ( '' !== $value ) {
