@@ -174,7 +174,7 @@ class WPCF7_Submission {
 				$result, $tag );
 		}
 
-		$result = apply_filters( 'wpcf7_validate', $result );
+		$result = apply_filters( 'wpcf7_validate', $result, $tags );
 
 		$this->invalid_fields = $result->get_invalid_fields();
 
