@@ -133,8 +133,10 @@ function wpcf7_strip_newline( $str ) {
 }
 
 function wpcf7_canonicalize( $text ) {
-	if ( function_exists( 'mb_convert_kana' ) && 'UTF-8' == get_option( 'blog_charset' ) )
+	if ( function_exists( 'mb_convert_kana' )
+	&& 'UTF-8' == get_option( 'blog_charset' ) ) {
 		$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );
+	}
 
 	$text = strtolower( $text );
 	$text = trim( $text );

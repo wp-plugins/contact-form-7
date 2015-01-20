@@ -160,6 +160,7 @@ function wpcf7_file_validation_filter( $result, $tag ) {
 	$uploads_dir = wpcf7_maybe_add_random_dir( $uploads_dir );
 
 	$filename = $file['name'];
+	$filename = wpcf7_canonicalize( $filename );
 	$filename = sanitize_file_name( $filename );
 	$filename = wpcf7_antiscript_file_name( $filename );
 	$filename = wp_unique_filename( $uploads_dir, $filename );
