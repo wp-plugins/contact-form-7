@@ -70,7 +70,7 @@ class WPCF7_Submission {
 	}
 
 	private function setup_posted_data() {
-		$posted_data = (array) $_POST;
+		$posted_data = $this->sanitize_posted_data( $_POST );
 
 		$tags = $this->contact_form->form_scan_shortcode();
 
@@ -110,6 +110,17 @@ class WPCF7_Submission {
 		$this->posted_data = apply_filters( 'wpcf7_posted_data', $posted_data );
 
 		return $this->posted_data;
+	}
+
+	private function sanitize_posted_data( $value ) {
+		if ( is_array( $value ) ) {
+			$value = array_map( array( $this, 'sanitize_posted_data' ), $value );
+		} elseif ( is_string( $value ) ) {
+			$value = wp_check_invalid_utf8( $value );
+			$value = wp_kses_no_null( $value );
+		}
+
+		return $value;
 	}
 
 	private function submit() {
