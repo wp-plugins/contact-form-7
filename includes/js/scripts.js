@@ -144,7 +144,7 @@
 		$responseOutput.attr('role', 'alert');
 
 		$.wpcf7UpdateScreenReaderResponse($form, data);
-	}
+	};
 
 	$.fn.wpcf7ExclusiveCheckbox = function() {
 		return this.find('input:checkbox').click(function() {
@@ -392,7 +392,7 @@
 
 			$response.attr('role', 'alert').focus();
 		}
-	}
+	};
 
 	$.wpcf7SupportHtml5 = function() {
 		var features = {};
