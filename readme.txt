@@ -125,6 +125,16 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
 
+= 4.1 =
+
+* Added maxlength and minlength options to several form-tag types.
+* Added [count] form-tag type that represents character count for form fields.
+* Introduced WPCF7_Validation class to handle the user-input validation process.
+* Added the front-end URL normalization for [url] fields.
+* Added default:get, default:post and default:post_meta options to get default values from the context.
+* Translations for Turkish, German, Portuguese, Dutch, and Hebrew have been updated.
+* WordPress 4.0 or higher is required.
+
 = 4.0.3 =
 
 * The contextual help tab has been added to admin pages.
