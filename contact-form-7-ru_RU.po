@@ -1,12 +1,10 @@
-# translation of wpcf7-ru_RU.po to Russian
-# Denis N. Voituk <ask@artprima.cz>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: contact-form-7-ru_RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-04 04:26+0900\n"
-"PO-Revision-Date: 2014-02-06 05:11+0200\n"
-"Last-Translator: kg69design <kg69design@gmail.com>\n"
+"POT-Creation-Date: 2015-01-28 09:48+0300\n"
+"PO-Revision-Date: 2015-01-28 21:50+0900\n"
+"Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: kg69design <kg69design@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -14,161 +12,150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.7.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-SearchPath-0: contact-form-7\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: contact-form-7/wp-contact-form-7.php:5
-msgid "Just another contact form plugin. Simple but flexible."
-msgstr "Конструктор контактных форм. Простой, но гибкий."
-
-#: contact-form-7/settings.php:70
-#, php-format
-msgid "Contact form %d"
-msgstr "Контактная форма %d"
-
-#: contact-form-7/admin/admin.php:15 contact-form-7/modules/flamingo.php:123
+#: ../admin/admin.php:8 ../modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:16
+#: ../admin/admin.php:9
 msgid "Contact"
-msgstr "Contact Form 7"
+msgstr "Контакт"
 
-#: contact-form-7/admin/admin.php:21
-#: contact-form-7/admin/edit-contact-form.php:15
+#: ../admin/admin.php:14 ../admin/edit-contact-form.php:13
 msgid "Edit Contact Form"
 msgstr "Редактировать форму"
 
-#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:214
-#: contact-form-7/admin/admin.php:275 contact-form-7/includes/classes.php:67
+#: ../admin/admin.php:15 ../admin/admin.php:165 ../admin/admin.php:221
+#: ../includes/contact-form.php:29
 msgid "Contact Forms"
 msgstr "Формы"
 
-#: contact-form-7/admin/admin.php:29 contact-form-7/admin/admin.php:318
-#: contact-form-7/admin/edit-contact-form.php:13
+#: ../admin/admin.php:22 ../admin/admin.php:263
+#: ../admin/edit-contact-form.php:11
 msgid "Add New Contact Form"
 msgstr "Добавить форму"
 
-#: contact-form-7/admin/admin.php:30 contact-form-7/admin/admin.php:277
-#: contact-form-7/admin/admin.php:323 contact-form-7/admin/admin.php:335
-#: contact-form-7/admin/edit-contact-form.php:17
+#: ../admin/admin.php:23 ../admin/admin.php:223 ../admin/admin.php:268
+#: ../admin/admin.php:280 ../admin/edit-contact-form.php:15
 msgid "Add New"
 msgstr "Добавить новую"
 
-#: contact-form-7/admin/admin.php:59 contact-form-7/admin/admin.php:132
+#: ../admin/admin.php:52 ../admin/admin.php:73
 msgid "You are not allowed to edit this item."
 msgstr "Недостаточно прав для редактирования."
 
-#: contact-form-7/admin/admin.php:171
+#: ../admin/admin.php:112
 msgid "You are not allowed to delete this item."
 msgstr "Недостаточно прав для удаления."
 
-#: contact-form-7/admin/admin.php:174
+#: ../admin/admin.php:115
 msgid "Error in deleting."
 msgstr "Ошибка при удалении."
 
-#: contact-form-7/admin/admin.php:253
+#: ../admin/admin.php:200
 msgid "Generate Tag"
-msgstr "Сгенерировать тэг"
+msgstr "Сгенерировать тег"
 
-#: contact-form-7/admin/admin.php:281
+#: ../admin/admin.php:227
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
-msgstr "Результаты поиска для &#8220;%s&#8221;"
+msgstr "Результаты поиска &#8220;%s&#8221;"
 
-#: contact-form-7/admin/admin.php:290
+#: ../admin/admin.php:236
 msgid "Search Contact Forms"
 msgstr "Поиск формы"
 
-#: contact-form-7/admin/admin.php:322
+#: ../admin/admin.php:267
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "Использовать язык по умолчанию (%s)"
 
-#: contact-form-7/admin/admin.php:326
+#: ../admin/admin.php:271
 msgid "Or"
 msgstr "или"
 
-#: contact-form-7/admin/admin.php:330
+#: ../admin/admin.php:275
 msgid "(select language)"
 msgstr "(выберите язык)"
 
-#: contact-form-7/admin/admin.php:342
+#: ../admin/admin.php:287
 msgid "Form"
 msgstr "Шаблон формы"
 
-#: contact-form-7/admin/admin.php:345
+#: ../admin/admin.php:290
 msgid "Mail"
-msgstr "Адресат:"
+msgstr "Сообщение"
 
-#: contact-form-7/admin/admin.php:348
+#: ../admin/admin.php:293
 msgid "Mail (2)"
-msgstr "Адресат-2:"
+msgstr "Сообщение (2)"
 
-#: contact-form-7/admin/admin.php:353
+#: ../admin/admin.php:298
 msgid "Use mail (2)"
-msgstr "Использовать Адресат-2"
+msgstr "Использовать Сообщение (2)"
 
-#: contact-form-7/admin/admin.php:355
+#: ../admin/admin.php:300
 msgid "Messages"
 msgstr "Сообщения"
 
-#: contact-form-7/admin/admin.php:358
+#: ../admin/admin.php:303
 msgid "Additional Settings"
 msgstr "Дополнительные настройки"
 
-#: contact-form-7/admin/admin.php:373
+#: ../admin/admin.php:318
 msgid "Contact form created."
 msgstr "Контактная форма создана."
 
-#: contact-form-7/admin/admin.php:375
+#: ../admin/admin.php:320
 msgid "Contact form saved."
 msgstr "Контактная форма сохранена."
 
-#: contact-form-7/admin/admin.php:377
+#: ../admin/admin.php:322
 msgid "Contact form deleted."
 msgstr "Контактная форма удалена."
 
-#: contact-form-7/admin/admin.php:394
+#: ../admin/admin.php:339
 msgid "Settings"
 msgstr "Настройки"
 
-#: contact-form-7/admin/admin.php:405
+#: ../admin/admin.php:350
 msgid "http://contactform7.com/docs/"
 msgstr "http://contactform7.com/docs/"
 
-#: contact-form-7/admin/admin.php:406
+#: ../admin/admin.php:351
 msgid "Docs"
 msgstr "Документация"
 
-#: contact-form-7/admin/admin.php:407
+#: ../admin/admin.php:352
 msgid "http://contactform7.com/faq/"
 msgstr "http://contactform7.com/faq/"
 
-#: contact-form-7/admin/admin.php:408
+#: ../admin/admin.php:353
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "Частые вопросы"
 
-#: contact-form-7/admin/admin.php:409
+#: ../admin/admin.php:354
 msgid "http://contactform7.com/support/"
 msgstr "http://contactform7.com/support/"
 
-#: contact-form-7/admin/admin.php:410
+#: ../admin/admin.php:355
 msgid "Support"
 msgstr "Поддержка"
 
-#: contact-form-7/admin/admin.php:411 contact-form-7/admin/admin.php:466
+#: ../admin/admin.php:356 ../admin/admin.php:412
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/donate/"
 
-#: contact-form-7/admin/admin.php:412 contact-form-7/admin/admin.php:466
+#: ../admin/admin.php:357 ../admin/admin.php:412
 msgid "Donate"
 msgstr "Пожертвовать"
 
-#: contact-form-7/admin/admin.php:434
+#: ../admin/admin.php:379
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -177,15 +164,15 @@ msgstr ""
 "<strong>Contact Form 7 %1$s требует WordPress %2$s или новее.</strong> "
 "Пожалуйста, сначала <a href=\"%3$s\">обновите WordPress</a>."
 
-#: contact-form-7/admin/admin.php:459
+#: ../admin/admin.php:405
 msgid "Dismiss"
 msgstr "Закрыть"
 
-#: contact-form-7/admin/admin.php:464
+#: ../admin/admin.php:410
 msgid "Contact Form 7 Needs Your Support"
 msgstr "Contact Form 7 нуждается в вашей поддержке"
 
-#: contact-form-7/admin/admin.php:465
+#: ../admin/admin.php:411
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
@@ -195,637 +182,837 @@ msgstr ""
 "Если Вам понравился плагин Contact Form 7, пожалуйста, осуществите "
 "пожертвование."
 
-#: contact-form-7/admin/admin.php:470
+#: ../admin/admin.php:416
 msgid "Get Started"
 msgstr "С чего начать"
 
-#: contact-form-7/admin/admin.php:472
+#: ../admin/admin.php:418
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr "http://contactform7.com/getting-started-with-contact-form-7/"
 
-#: contact-form-7/admin/admin.php:472
+#: ../admin/admin.php:418
 msgid "Getting Started with Contact Form 7"
 msgstr "Приступая к работе с Contact Form 7"
 
-#: contact-form-7/admin/admin.php:473
+#: ../admin/admin.php:419
 msgid "http://contactform7.com/admin-screen/"
 msgstr "http://contactform7.com/admin-screen/"
 
-#: contact-form-7/admin/admin.php:473
+#: ../admin/admin.php:419
 msgid "Admin Screen"
 msgstr "Административный интерфейс"
 
-#: contact-form-7/admin/admin.php:474
+#: ../admin/admin.php:420
 msgid "http://contactform7.com/tag-syntax/"
 msgstr "http://contactform7.com/tag-syntax/"
 
-#: contact-form-7/admin/admin.php:474
+#: ../admin/admin.php:420
 msgid "How Tags Work"
-msgstr "Как работают тэги"
+msgstr "Как работают теги"
 
-#: contact-form-7/admin/admin.php:475
+#: ../admin/admin.php:421
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr "http://contactform7.com/setting-up-mail/"
 
-#: contact-form-7/admin/admin.php:475
+#: ../admin/admin.php:421
 msgid "Setting Up Mail"
 msgstr "Настройки письма"
 
-#: contact-form-7/admin/admin.php:480
+#: ../admin/admin.php:426
 msgid "Did You Know?"
 msgstr "Знаете ли вы?"
 
-#: contact-form-7/admin/admin.php:482
+#: ../admin/admin.php:428
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr "http://contactform7.com/spam-filtering-with-akismet/"
 
-#: contact-form-7/admin/admin.php:482
+#: ../admin/admin.php:428
 msgid "Spam Filtering with Akismet"
 msgstr "Фильтрация спама с Akismet"
 
-#: contact-form-7/admin/admin.php:483
+#: ../admin/admin.php:429
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr "http://contactform7.com/save-submitted-messages-with-flamingo/"
 
-#: contact-form-7/admin/admin.php:483
+#: ../admin/admin.php:429
 msgid "Save Messages with Flamingo"
 msgstr "Сохранение сообщений с Flamingo"
 
-#: contact-form-7/admin/admin.php:484
+#: ../admin/admin.php:430
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr "http://contactform7.com/selectable-recipient-with-pipes/"
 
-#: contact-form-7/admin/admin.php:484
+#: ../admin/admin.php:430
 msgid "Selectable Recipient with Pipes"
-msgstr "Выбор адресатов отправителем"
+msgstr "Выбор получателей отправителем"
 
-#: contact-form-7/admin/admin.php:485
+#: ../admin/admin.php:431
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 
-#: contact-form-7/admin/admin.php:485
+#: ../admin/admin.php:431
 msgid "Tracking with Google Analytics"
 msgstr "Отслеживание Google Analytics"
 
-#: contact-form-7/admin/edit-contact-form.php:49
+#: ../admin/edit-contact-form.php:47
 msgid ""
 "Copy this code and paste it into your post, page or text widget content."
 msgstr ""
 "Скопируйте этот код и вставьте его в свой пост, страницу или текстовый "
 "виджет."
 
-#: contact-form-7/admin/edit-contact-form.php:55
+#: ../admin/edit-contact-form.php:53
 msgid "Old code is also available."
-msgstr "Старый код вставки так же поддерживается"
+msgstr "Старый код вставки также поддерживается"
 
-#: contact-form-7/admin/edit-contact-form.php:63
+#: ../admin/edit-contact-form.php:61
 msgid "Save"
 msgstr "Сохранить"
 
-#: contact-form-7/admin/edit-contact-form.php:70
+#: ../admin/edit-contact-form.php:68
+#: ../admin/includes/class-contact-forms-list-table.php:112
 msgid "Duplicate"
-msgstr "Дублировать"
+msgstr "Копировать"
 
-#: contact-form-7/admin/edit-contact-form.php:75
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
+#: ../admin/edit-contact-form.php:73
+#: ../admin/includes/class-contact-forms-list-table.php:83
 msgid "Delete"
 msgstr "Удалить"
 
-#: contact-form-7/admin/edit-contact-form.php:77
+#: ../admin/edit-contact-form.php:75
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "Удалить эту форму?.\n"
-"  'Cancel' не удалять, 'OK' удалить."
+"  'Отмена' не удалять, 'ОК' удалить."
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
+#: ../admin/includes/class-contact-forms-list-table.php:11
 msgid "Title"
 msgstr "Заголовок"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:12
+#: ../admin/includes/class-contact-forms-list-table.php:12
 msgid "Shortcode"
-msgstr "Код вставки"
+msgstr "Шорткод"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:13
+#: ../admin/includes/class-contact-forms-list-table.php:13
 msgid "Author"
 msgstr "Автор"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
-#: contact-form-7/modules/date.php:144
+#: ../admin/includes/class-contact-forms-list-table.php:14
+#: ../modules/date.php:141
 msgid "Date"
 msgstr "Дата"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+#: ../admin/includes/class-contact-forms-list-table.php:104
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Изменить"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
-msgid "Copy"
-msgstr "Копировать"
-
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#: ../admin/includes/class-contact-forms-list-table.php:117
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
-msgstr "Редактировать &#8220;%s&#8221;"
+msgstr "Изменить &#8220;%s&#8221;"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:156
+#: ../admin/includes/class-contact-forms-list-table.php:158
 msgid "Y/m/d g:i:s A"
 msgstr "Y/m/d g:i:s A"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:163
+#: ../admin/includes/class-contact-forms-list-table.php:165
 #, php-format
 msgid "%s ago"
 msgstr "%s назад"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:165
+#: ../admin/includes/class-contact-forms-list-table.php:167
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
-#: contact-form-7/admin/includes/meta-boxes.php:44
-msgid "To:"
-msgstr "Адресат:"
+#: ../admin/includes/help-tabs.php:16 ../admin/includes/help-tabs.php:39
+msgid "Overview"
+msgstr "Обзор"
 
-#: contact-form-7/admin/includes/meta-boxes.php:49
+#: ../admin/includes/help-tabs.php:21
+msgid "Available Actions"
+msgstr "Доступные действия"
+
+#: ../admin/includes/help-tabs.php:30
+msgid "Adding A New Contact Form"
+msgstr "Добавление новой формы"
+
+#: ../admin/includes/help-tabs.php:44
+msgid "Form-tags"
+msgstr "Теги формы"
+
+#: ../admin/includes/help-tabs.php:49
+msgid "Mail-tags"
+msgstr "Теги сообщения"
+
+#: ../admin/includes/help-tabs.php:61
+msgid ""
+"On this screen, you can manage contact forms provided by Contact Form 7. You "
+"can manage an unlimited number of contact forms. Each contact form has a "
+"unique ID and Contact Form 7 shortcode ([contact-form-7 ...]). To insert a "
+"contact form into a post or a text widget, insert the shortcode into the "
+"target."
+msgstr ""
+"На этом экране вы можете управлять контактными формами Contact Form 7. Вы "
+"можете управлять неограниченным количеством форм. Каждая форма имеет "
+"уникальный ID и специальный шорткод ([contact-form-7 ...]). Для добавления "
+"формы в запись или виджет просто вставьте шорткод."
+
+#: ../admin/includes/help-tabs.php:63
+msgid ""
+"Hovering over a row in the contact forms list will display action links that "
+"allow you to manage your contact form. You can perform the following actions:"
+msgstr ""
+"Наведение на строку в списке контактных форм отобразит список возможных "
+"действий над формой. Вы можете выполнять следующие действия:"
+
+#: ../admin/includes/help-tabs.php:64
+msgid ""
+"<strong>Edit</strong> - Navigates to the editing screen for that contact "
+"form. You can also reach that screen by clicking on the contact form title."
+msgstr ""
+"<strong>Изменить</strong> - Переход на экран изменения контактной формы. Вы "
+"также можете перейти на этот экран нажав на заголовок формы."
+
+#: ../admin/includes/help-tabs.php:65
+msgid ""
+"<strong>Duplicate</strong> - Clones that contact form. A cloned contact form "
+"inherits all content from the original, but has a different ID."
+msgstr ""
+"<strong>Копировать</strong> - Создание копии контактной формы. Копия "
+"унаследует все свойства формы кроме ID."
+
+#: ../admin/includes/help-tabs.php:67
+msgid ""
+"You can add a new contact form on this screen. You can create a contact form "
+"in your language, which is set WordPress local settings, or in a language "
+"that you select from available options."
+msgstr ""
+"Вы можете добавить контактную форму на этом экране. Вы можете создать форму "
+"на своем языке, который установлен для WordPress, или же выбрать язык из "
+"списка доступных."
+
+#: ../admin/includes/help-tabs.php:69
+msgid ""
+"On this screen, you can edit a contact form. A contact form is comprised of "
+"the following components:"
+msgstr ""
+"На этом экране вы можете изменить контактную форму. Контактная форма состоит "
+"из следующих компонентов:"
+
+#: ../admin/includes/help-tabs.php:70
+msgid ""
+"<strong>Title</strong> is the title of a contact form. This title is only "
+"used for labeling a contact form, and can be edited."
+msgstr ""
+"<strong>Заголовок</strong> это название контактной формы. Заголовок "
+"используется только для пометки формы и может быть изменен."
+
+#: ../admin/includes/help-tabs.php:71
+msgid ""
+"<strong>Form</strong> is a content of HTML form. You can use arbitrary HTML, "
+"which is allowed inside a form element. You can also use Contact Form "
+"7&#8217;s form-tags here."
+msgstr ""
+"<strong>Шаблон формы</strong> это HTML содержимое формы. Вы можете "
+"использовать код HTML, который разрешен в элементе форм. Вы также можете "
+"использовать теги форм Contact Form 7."
+
+#: ../admin/includes/help-tabs.php:72
+msgid ""
+"<strong>Mail</strong> manages a mail template (headers and message body) "
+"that this contact form will send when users submit it. You can use Contact "
+"Form 7&#8217;s mail-tags here."
+msgstr ""
+"<strong>Сообщение</strong> позволяет управлять шаблоном сообщения "
+"(заголовоки и тело сообщения), которое будет отправлено от пользователя. Вы "
+"можете использовать теги форм Contact Form 7."
+
+#: ../admin/includes/help-tabs.php:73
+msgid ""
+"<strong>Mail (2)</strong> is an additional mail template that works similar "
+"to Mail. Mail (2) is different in that it is sent only when Mail has been "
+"sent successfully."
+msgstr ""
+"<strong>Сообщение (2)</strong> дополнительный шаблон сообщения, схожий с "
+"обычным шаблоном. Отличие только в том, что Сообщение (2) будет отображено в "
+"случае успешной отправки."
+
+#: ../admin/includes/help-tabs.php:74
+msgid ""
+"In <strong>Messages</strong>, you can edit various types of messages used "
+"for this contact form. These messages are relatively short messages, like a "
+"validation error message you see when you leave a required field blank."
+msgstr ""
+"В <strong>Сообщениях</strong> вы можете использование различные типы "
+"сообщений для контактной формы. Эти сообщения относительно невелики, "
+"например как требование заполнить недостающее поле."
+
+#: ../admin/includes/help-tabs.php:75
+msgid ""
+"<strong>Additional Settings</strong> provides a place where you can "
+"customize the behavior of this contact form by adding code snippets."
+msgstr ""
+"<strong>Дополнительные настройки</strong> позволяют вам изменить поведение "
+"контактной формы с помощью небольших кусочков кода."
+
+#: ../admin/includes/help-tabs.php:77
+msgid ""
+"A form-tag is a short code enclosed in square brackets used in a form "
+"content. A form-tag generally represents an input field, and its components "
+"can be separated into four parts: type, name, options, and values. Contact "
+"Form 7 supports several types of form-tags including text fields, number "
+"fields, date fields, checkboxes, radio buttons, menus, file-uploading "
+"fields, CAPTCHAs, and quiz fields."
+msgstr ""
+"Тег формы это короткий код заключенный в квадратные скобки, используемый в "
+"содержимом формы. "
+
+#: ../admin/includes/help-tabs.php:78
+msgid ""
+"While form-tags have a comparatively complex syntax, you don&#8217;t need to "
+"know the syntax to add form-tags because you can use the straightforward tag "
+"generator (<strong>Generate Tag</strong> button on this screen)."
+msgstr ""
+"Не смотря на то, что тег формы имеет сложный синтаксис, вам не нужно его "
+"знать, так как вы можете использовать генератор тегов (кнопка "
+"<strong>Сгенерировать тег</strong>)."
+
+#: ../admin/includes/help-tabs.php:80
+msgid ""
+"A mail-tag is also a short code enclosed in square brackets that you can use "
+"in every Mail and Mail (2) field. A mail-tag represents a user input value "
+"through an input field of a corresponding form-tag."
+msgstr ""
+"Тег сообщения также является коротким кодом, который заключен в квадратные "
+"скобки и может использоваться в полях Сообщение и Сообщение (2). Тег "
+"сообщения представляет собой текст, введенный пользователем в "
+"соответствующее поле ввода."
+
+#: ../admin/includes/help-tabs.php:81
+msgid ""
+"There are also special mail-tags that have specific names, but don&#8217;t "
+"have corresponding form-tags. They are used to represent meta information of "
+"form submissions like the submitter&#8217;s IP address or the URL of the "
+"page."
+msgstr ""
+"Также существуют специальные теги сообщения, которые имеют специфические "
+"названия, но не имеют тега формы. Они используются для представления "
+"информации об IP пользователя или URL страницы."
+
+#: ../admin/includes/help-tabs.php:89
+msgid "For more information:"
+msgstr "Дополнительная информация:"
+
+#: ../admin/includes/help-tabs.php:90
+msgid "<a href=\"http://contactform7.com/docs/\" target=\"_blank\">Docs</a>"
+msgstr ""
+"<a href=\"http://contactform7.com/docs/\" target=\"_blank\">Документация</a>"
+
+#: ../admin/includes/help-tabs.php:91
+msgid "<a href=\"http://contactform7.com/faq/\" target=\"_blank\">FAQ</a>"
+msgstr ""
+"<a href=\"http://contactform7.com/faq/\" target=\"_blank\">Частые вопросы</a>"
+
+#: ../admin/includes/help-tabs.php:92
+msgid ""
+"<a href=\"http://contactform7.com/support/\" target=\"_blank\">Support</a>"
+msgstr ""
+"<a href=\"http://contactform7.com/support/\" target=\"_blank\">Поддержка</a>"
+
+#: ../admin/includes/meta-boxes.php:47
+msgid "To:"
+msgstr "Получатель:"
+
+#: ../admin/includes/meta-boxes.php:52
 msgid "From:"
 msgstr "Отправитель:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:54
+#: ../admin/includes/meta-boxes.php:57
 msgid "Subject:"
 msgstr "Тема:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:61
+#: ../admin/includes/meta-boxes.php:64
 msgid "Additional headers:"
 msgstr "Дополнительные заголовки:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:66
+#: ../admin/includes/meta-boxes.php:69
 msgid "File attachments:"
 msgstr "Прикрепленные файлы:"
 
-#: contact-form-7/admin/includes/meta-boxes.php:74
+#: ../admin/includes/meta-boxes.php:77
 msgid "Use HTML content type"
-msgstr "Использовать HTML-формат письма"
+msgstr "Использовать HTML содержимое"
 
-#: contact-form-7/admin/includes/meta-boxes.php:80
+#: ../admin/includes/meta-boxes.php:83
 msgid "Message body:"
-msgstr "Шаблон письма:"
+msgstr "Тело письма:"
 
-#: contact-form-7/includes/classes.php:68
-msgid "Contact Form"
-msgstr "Форма"
+#: ../admin/includes/meta-boxes.php:89
+msgid "Exclude lines with blank mail-tags from output"
+msgstr "Исключить вывод строк с пустыми тегами сообщений"
 
-#: contact-form-7/includes/classes.php:148
-msgid "Untitled"
-msgstr "Заголовок"
+#: ../admin/includes/meta-boxes.php:117
+msgid "Show all messages"
+msgstr "Показать все сообщения"
 
-#: contact-form-7/includes/controller.php:202
-msgid "Sending ..."
-msgstr "Отправка..."
-
-#: contact-form-7/includes/functions.php:21
-#, php-format
-msgid ""
-"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use "
-"%3$s instead."
-msgstr ""
-"%1$s - <strong>устарело</strong> начиная с Contact Form 7 version %2$s! "
-"Используйте %3$s."
-
-#: contact-form-7/includes/functions.php:23
-#, php-format
-msgid ""
-"%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with "
-"no alternative available."
-msgstr ""
-"%1$s - <strong>устарело</strong> начиная с Contact Form 7 version %2$s без "
-"альтернатив."
-
-#: contact-form-7/includes/functions.php:30
-msgid "Sender's message was sent successfully"
-msgstr "Сообщение отправителя было успешно отправлено."
-
-#: contact-form-7/includes/functions.php:31
-msgid "Your message was sent successfully. Thanks."
-msgstr "Ваше сообщение было отправлено успешно. Спасибо."
-
-#: contact-form-7/includes/functions.php:35
-msgid "Sender's message was failed to send"
-msgstr "Сообщение не удалось отправить"
-
-#: contact-form-7/includes/functions.php:36
-#: contact-form-7/includes/functions.php:46
-msgid ""
-"Failed to send your message. Please try later or contact the administrator "
-"by another method."
-msgstr ""
-"Ошибка при отправке сообщения. Попытайтесь позже или обратитесь к "
-"администратору сайта."
-
-#: contact-form-7/includes/functions.php:40
-msgid "Validation errors occurred"
-msgstr "Возникли ошибки валидации"
-
-#: contact-form-7/includes/functions.php:41
-msgid ""
-"Validation errors occurred. Please confirm the fields and submit it again."
-msgstr "Ошибка заполнения. Заполните все поля и отправьте снова."
-
-#: contact-form-7/includes/functions.php:45
-msgid "Submission was referred to as spam"
-msgstr "Определено как спам"
-
-#: contact-form-7/includes/functions.php:50
-msgid "There are terms that the sender must accept"
-msgstr "Есть условия, которые должен принять отправитель"
-
-#: contact-form-7/includes/functions.php:51
-msgid "Please accept the terms to proceed."
-msgstr "Пожалуйста, примите условия для продолжения."
-
-#: contact-form-7/includes/functions.php:55
-msgid "There is a field that the sender must fill in"
-msgstr "Есть поле, которое должен заполнить отправитель"
-
-#: contact-form-7/includes/functions.php:56
-msgid "Please fill the required field."
-msgstr "Пожалуйста, заполните обязательные поля."
-
-#: contact-form-7/includes/functions.php:80
+#: ../includes/contact-form-template.php:23
 msgid "Your Name"
 msgstr "Ваше имя"
 
-#: contact-form-7/includes/functions.php:80
-#: contact-form-7/includes/functions.php:82
+#: ../includes/contact-form-template.php:24
+#: ../includes/contact-form-template.php:27
 msgid "(required)"
 msgstr "(обязательно)"
 
-#: contact-form-7/includes/functions.php:82
+#: ../includes/contact-form-template.php:26
 msgid "Your Email"
 msgstr "Ваш e-mail"
 
-#: contact-form-7/includes/functions.php:84
+#: ../includes/contact-form-template.php:29
 msgid "Subject"
 msgstr "Тема"
 
-#: contact-form-7/includes/functions.php:86
+#: ../includes/contact-form-template.php:31
 msgid "Your Message"
 msgstr "Сообщение"
 
-#: contact-form-7/includes/functions.php:88
-#: contact-form-7/modules/submit.php:28
+#: ../includes/contact-form-template.php:33 ../modules/submit.php:28
 msgid "Send"
 msgstr "Отправить"
 
-#: contact-form-7/includes/functions.php:96
+#: ../includes/contact-form-template.php:43
 #, php-format
 msgid "From: %s"
 msgstr "От: %s"
 
-#: contact-form-7/includes/functions.php:97
+#: ../includes/contact-form-template.php:45
 #, php-format
 msgid "Subject: %s"
 msgstr "Тема: %s"
 
-#: contact-form-7/includes/functions.php:98
-#: contact-form-7/includes/functions.php:112
+#: ../includes/contact-form-template.php:47
+#: ../includes/contact-form-template.php:68
 msgid "Message Body:"
 msgstr "Сообщение:"
 
-#: contact-form-7/includes/functions.php:99
-#: contact-form-7/includes/functions.php:113
+#: ../includes/contact-form-template.php:50
+#: ../includes/contact-form-template.php:71
 #, php-format
 msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
 msgstr "Это сообщение отправлено с сайта %1$s (%2$s)"
 
-#: contact-form-7/includes/functions.php:155
+#: ../includes/contact-form-template.php:117
+msgid "Sender's message was sent successfully"
+msgstr "Сообщение отправителя было успешно отправлено."
+
+#: ../includes/contact-form-template.php:119
+msgid "Your message was sent successfully. Thanks."
+msgstr "Ваше сообщение было отправлено успешно. Спасибо."
+
+#: ../includes/contact-form-template.php:124
+msgid "Sender's message was failed to send"
+msgstr "Сообщение не удалось отправить"
+
+#: ../includes/contact-form-template.php:126
+#: ../includes/contact-form-template.php:140
+msgid ""
+"Failed to send your message. Please try later or contact the administrator "
+"by another method."
+msgstr ""
+"Ошибка при отправке сообщения. Пожалуйста попробуйте позже или обратитесь к "
+"администратору сайта."
+
+#: ../includes/contact-form-template.php:131
+msgid "Validation errors occurred"
+msgstr "Произошла ошибка во время проверки"
+
+#: ../includes/contact-form-template.php:133
+msgid ""
+"Validation errors occurred. Please confirm the fields and submit it again."
+msgstr ""
+"Произошла ошибка во время проверки. Пожалуйста проверьте все поля и "
+"отправьте снова."
+
+#: ../includes/contact-form-template.php:138
+msgid "Submission was referred to as spam"
+msgstr "Отправленные данные определены как спам"
+
+#: ../includes/contact-form-template.php:145
+msgid "There are terms that the sender must accept"
+msgstr "Некоторые условия должны быть приняты"
+
+#: ../includes/contact-form-template.php:147
+msgid "Please accept the terms to proceed."
+msgstr "Пожалуйста, примите условия для продолжения."
+
+#: ../includes/contact-form-template.php:152
+msgid "There is a field that the sender must fill in"
+msgstr "Некоторое поле должно быть заполнено"
+
+#: ../includes/contact-form-template.php:154
+msgid "Please fill in the required field."
+msgstr "Пожалуйста заполните все требуемые поля."
+
+#: ../includes/contact-form-template.php:159
+msgid ""
+"There is a field that the user input is longer than the maximum allowed "
+"length"
+msgstr "Некоторое поле имеет длину ввода больше максимально допустимого"
+
+#: ../includes/contact-form-template.php:161
+msgid "This input is too long."
+msgstr "Указано слишком много данных."
+
+#: ../includes/contact-form-template.php:166
+msgid ""
+"There is a field that the user input is shorter than the minimum allowed "
+"length"
+msgstr "Некоторое поле имеет длину ввода меньше минимально допустимого"
+
+#: ../includes/contact-form-template.php:168
+msgid "This input is too short."
+msgstr "Указано слишком мало данных."
+
+#: ../includes/contact-form.php:30
+msgid "Contact Form"
+msgstr "Форма"
+
+#: ../includes/contact-form.php:76 ../includes/contact-form.php:226
+msgid "Untitled"
+msgstr "Без названия"
+
+#: ../includes/contact-form.php:152
+#, php-format
+msgid ""
+"<code>%1$s</code> property of a <code>WPCF7_ContactForm</code> object is "
+"<strong>no longer accessible</strong>. Use <code>%2$s</code> method instead."
+msgstr ""
+"<code>%1$s</code> значение объекта <code>WPCF7_ContactForm</code> "
+"<strong>больше не доступно</strong>. Используйте вместо этого <code>%2$s</"
+"code>."
+
+#: ../includes/controller.php:211
+msgid "Sending ..."
+msgstr "Отправка..."
+
+#: ../includes/functions.php:39
 msgid "Afrikaans"
-msgstr "Afrikaans"
+msgstr "Африканский"
 
-#: contact-form-7/includes/functions.php:156
+#: ../includes/functions.php:40
 msgid "Albanian"
-msgstr "Albanian"
+msgstr "Албанский"
 
-#: contact-form-7/includes/functions.php:157
+#: ../includes/functions.php:41
 msgid "Arabic"
-msgstr "Arabic"
+msgstr "Арабский"
 
-#: contact-form-7/includes/functions.php:158
+#: ../includes/functions.php:42
 msgid "Armenian"
-msgstr "Arabic"
+msgstr "Армянский"
 
-#: contact-form-7/includes/functions.php:159
+#: ../includes/functions.php:43
 msgid "Azerbaijani"
-msgstr "Azerbaijani"
+msgstr "Азербайджанский"
 
-#: contact-form-7/includes/functions.php:160
+#: ../includes/functions.php:44
 msgid "Bangla"
-msgstr "Bangla"
+msgstr "Бангладешский"
 
-#: contact-form-7/includes/functions.php:161
+#: ../includes/functions.php:45
 msgid "Basque"
-msgstr "Basque"
+msgstr "Баскский"
 
-#: contact-form-7/includes/functions.php:162
+#: ../includes/functions.php:46
 msgid "Belarusian"
-msgstr "Belarusian"
+msgstr "Белорусский"
 
-#: contact-form-7/includes/functions.php:163
+#: ../includes/functions.php:47
 msgid "Bosnian"
-msgstr "Bosnian"
+msgstr "Боснийский"
 
-#: contact-form-7/includes/functions.php:164
-msgid "Brazilian Portuguese"
-msgstr "Brazilian Portuguese"
-
-#: contact-form-7/includes/functions.php:165
+#: ../includes/functions.php:48
 msgid "Bulgarian"
-msgstr "Bulgarian"
+msgstr "Болгарский"
 
-#: contact-form-7/includes/functions.php:166
+#: ../includes/functions.php:49
 msgid "Catalan"
-msgstr "Catalan"
+msgstr "Каталанский"
 
-#: contact-form-7/includes/functions.php:167
+#: ../includes/functions.php:50
 msgid "Central Kurdish"
-msgstr "Central Kurdish"
+msgstr "Курдский центральный"
 
-#: contact-form-7/includes/functions.php:168
-msgid "Chinese (Simplified)"
-msgstr "Chinese (Simplified)"
+#: ../includes/functions.php:51
+msgid "Chinese (China)"
+msgstr "Китайский (Китай)"
 
-#: contact-form-7/includes/functions.php:169
-msgid "Chinese (Traditional)"
-msgstr "Chinese (Traditional)"
+#: ../includes/functions.php:52
+msgid "Chinese (Taiwan)"
+msgstr "Китайский (Тайвань)"
 
-#: contact-form-7/includes/functions.php:170
+#: ../includes/functions.php:53
 msgid "Croatian"
-msgstr "Croatian"
+msgstr "Хорватский"
 
-#: contact-form-7/includes/functions.php:171
+#: ../includes/functions.php:54
 msgid "Czech"
-msgstr "Czech"
+msgstr "Чешский"
 
-#: contact-form-7/includes/functions.php:172
+#: ../includes/functions.php:55
 msgid "Danish"
-msgstr "Danish"
+msgstr "Датский"
 
-#: contact-form-7/includes/functions.php:173
+#: ../includes/functions.php:56
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "Нидерландский"
 
-#: contact-form-7/includes/functions.php:174
-msgid "English"
-msgstr "English"
+#: ../includes/functions.php:57
+msgid "English (United States)"
+msgstr "Английский (США)"
 
-#: contact-form-7/includes/functions.php:175
+#: ../includes/functions.php:58
 msgid "Esperanto"
-msgstr "Esperanto"
+msgstr "Эсперанто"
 
-#: contact-form-7/includes/functions.php:176
+#: ../includes/functions.php:59
 msgid "Estonian"
-msgstr "Estonian"
+msgstr "Эстонский"
 
-#: contact-form-7/includes/functions.php:177
+#: ../includes/functions.php:60
 msgid "Finnish"
-msgstr "Finnish"
+msgstr "Финский"
 
-#: contact-form-7/includes/functions.php:178
-msgid "French"
-msgstr "French"
+#: ../includes/functions.php:61
+msgid "French (France)"
+msgstr "Французский (Франция)"
 
-#: contact-form-7/includes/functions.php:179
+#: ../includes/functions.php:62
 msgid "Galician"
-msgstr "Galician"
+msgstr "Галисийский"
 
-#: contact-form-7/includes/functions.php:180
+#: ../includes/functions.php:63
 msgid "Gujarati"
-msgstr "Gujarati"
+msgstr "Гуджарати"
 
-#: contact-form-7/includes/functions.php:181
+#: ../includes/functions.php:64
 msgid "Georgian"
-msgstr "Georgian"
+msgstr "Грузинский"
 
-#: contact-form-7/includes/functions.php:182
+#: ../includes/functions.php:65
 msgid "German"
-msgstr "German"
+msgstr "Немецкий"
 
-#: contact-form-7/includes/functions.php:183
+#: ../includes/functions.php:66
 msgid "Greek"
-msgstr "Greek"
+msgstr "Греческий"
 
-#: contact-form-7/includes/functions.php:184
+#: ../includes/functions.php:67
 msgid "Haitian"
-msgstr "Haitian"
+msgstr "Гаитянский"
 
-#: contact-form-7/includes/functions.php:185
+#: ../includes/functions.php:68
 msgid "Hebrew"
-msgstr "Hebrew"
+msgstr "Иврит"
 
-#: contact-form-7/includes/functions.php:186
+#: ../includes/functions.php:69
 msgid "Hindi"
-msgstr "Hindi"
+msgstr "Хинди"
 
-#: contact-form-7/includes/functions.php:187
+#: ../includes/functions.php:70
 msgid "Hungarian"
-msgstr "Hungarian"
+msgstr "Венгерский"
 
-#: contact-form-7/includes/functions.php:188
+#: ../includes/functions.php:71
 msgid "Indian Bengali"
-msgstr "Indian Bengali"
+msgstr "Бенгальский индийский"
 
-#: contact-form-7/includes/functions.php:189
+#: ../includes/functions.php:72
 msgid "Indonesian"
-msgstr "Indonesian"
+msgstr "Индонезийский"
 
-#: contact-form-7/includes/functions.php:190
+#: ../includes/functions.php:73
 msgid "Irish"
-msgstr "Irish"
+msgstr "Ирландский"
 
-#: contact-form-7/includes/functions.php:191
+#: ../includes/functions.php:74
 msgid "Italian"
-msgstr "Italian"
+msgstr "Итальянский"
 
-#: contact-form-7/includes/functions.php:192
+#: ../includes/functions.php:75
 msgid "Japanese"
-msgstr "Japanese"
+msgstr "Японский"
 
-#: contact-form-7/includes/functions.php:193
+#: ../includes/functions.php:76
 msgid "Korean"
-msgstr "Korean"
+msgstr "Корейский"
 
-#: contact-form-7/includes/functions.php:194
+#: ../includes/functions.php:77
 msgid "Latvian"
-msgstr "Latvian"
+msgstr "Латвийский"
 
-#: contact-form-7/includes/functions.php:195
+#: ../includes/functions.php:78
 msgid "Lithuanian"
-msgstr "Lithuanian"
+msgstr "Литовский"
 
-#: contact-form-7/includes/functions.php:196
+#: ../includes/functions.php:79
 msgid "Macedonian"
-msgstr "Macedonian"
+msgstr "Македонский"
 
-#: contact-form-7/includes/functions.php:197
+#: ../includes/functions.php:80
 msgid "Malay"
-msgstr "Malay"
+msgstr "Малайский"
 
-#: contact-form-7/includes/functions.php:198
+#: ../includes/functions.php:81
 msgid "Malayalam"
-msgstr "Malayalam"
+msgstr "Малаяламский"
 
-#: contact-form-7/includes/functions.php:199
+#: ../includes/functions.php:82
 msgid "Maltese"
-msgstr "Maltese"
+msgstr "Мальтийский"
 
-#: contact-form-7/includes/functions.php:200
-msgid "Norwegian"
-msgstr "Norwegian"
+#: ../includes/functions.php:83
+msgid "Norwegian (Bokmål)"
+msgstr "Норвежский (Букмол)"
 
-#: contact-form-7/includes/functions.php:201
+#: ../includes/functions.php:84
 msgid "Persian"
-msgstr "Persian"
+msgstr "Персидский"
 
-#: contact-form-7/includes/functions.php:202
+#: ../includes/functions.php:85
 msgid "Polish"
-msgstr "Polish"
+msgstr "Польский"
 
-#: contact-form-7/includes/functions.php:203
-msgid "Portuguese"
-msgstr "Portuguese"
+#: ../includes/functions.php:86
+msgid "Portuguese (Brazil)"
+msgstr "Португальский (Бразильский)"
 
-#: contact-form-7/includes/functions.php:204
+#: ../includes/functions.php:87
+msgid "Portuguese (Portugal)"
+msgstr "Португальский (Португальский)"
+
+#: ../includes/functions.php:88
+msgid "Punjabi"
+msgstr "Панджаби"
+
+#: ../includes/functions.php:89
 msgid "Russian"
-msgstr "Russian"
+msgstr "Русский"
 
-#: contact-form-7/includes/functions.php:205
+#: ../includes/functions.php:90
 msgid "Romanian"
-msgstr "Romanian"
+msgstr "Румынский"
 
-#: contact-form-7/includes/functions.php:206
+#: ../includes/functions.php:91
 msgid "Serbian"
-msgstr "Serbian"
+msgstr "Сербский"
 
-#: contact-form-7/includes/functions.php:207
+#: ../includes/functions.php:92
 msgid "Sinhala"
-msgstr "Sinhala"
+msgstr "Сингальский"
 
-#: contact-form-7/includes/functions.php:208
+#: ../includes/functions.php:93
 msgid "Slovak"
-msgstr "Slovak"
+msgstr "Словацкий"
 
-#: contact-form-7/includes/functions.php:209
+#: ../includes/functions.php:94
 msgid "Slovene"
-msgstr "Slovene"
+msgstr "Словенский"
 
-#: contact-form-7/includes/functions.php:210
-msgid "Spanish"
-msgstr "Spanish"
+#: ../includes/functions.php:95
+msgid "Spanish (Spain)"
+msgstr "Испанский (Испания)"
 
-#: contact-form-7/includes/functions.php:211
+#: ../includes/functions.php:96
 msgid "Swedish"
-msgstr "Swedish"
+msgstr "Шведский"
 
-#: contact-form-7/includes/functions.php:212
+#: ../includes/functions.php:97
 msgid "Tamil"
-msgstr "Tamil"
+msgstr "Тамильский"
 
-#: contact-form-7/includes/functions.php:213
+#: ../includes/functions.php:98
 msgid "Thai"
-msgstr "Thai"
+msgstr "Тайсикй"
 
-#: contact-form-7/includes/functions.php:214
+#: ../includes/functions.php:99
 msgid "Tagalog"
-msgstr "Tagalog"
+msgstr "Тагальский"
 
-#: contact-form-7/includes/functions.php:215
+#: ../includes/functions.php:100
 msgid "Turkish"
-msgstr "Turkish"
+msgstr "Турецкий"
 
-#: contact-form-7/includes/functions.php:216
+#: ../includes/functions.php:101
 msgid "Ukrainian"
-msgstr "Ukrainian"
+msgstr "Украинский"
 
-#: contact-form-7/includes/functions.php:217
+#: ../includes/functions.php:102
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr "Вьетнамский"
 
-#: contact-form-7/modules/acceptance.php:133
+#: ../modules/acceptance.php:132
 msgid "Acceptance"
-msgstr "Acceptance"
+msgstr "Соглашение"
 
-#: contact-form-7/modules/acceptance.php:142
-#: contact-form-7/modules/captcha.php:206
-#: contact-form-7/modules/checkbox.php:270 contact-form-7/modules/date.php:161
-#: contact-form-7/modules/file.php:236 contact-form-7/modules/number.php:171
-#: contact-form-7/modules/quiz.php:166 contact-form-7/modules/select.php:152
-#: contact-form-7/modules/text.php:214 contact-form-7/modules/textarea.php:112
+#: ../modules/acceptance.php:141 ../modules/captcha.php:213
+#: ../modules/checkbox.php:295 ../modules/date.php:158 ../modules/file.php:233
+#: ../modules/number.php:168 ../modules/quiz.php:172 ../modules/select.php:171
+#: ../modules/text.php:231 ../modules/textarea.php:137
 msgid "Name"
 msgstr "Имя"
 
-#: contact-form-7/modules/acceptance.php:147
-#: contact-form-7/modules/acceptance.php:150
-#: contact-form-7/modules/captcha.php:213
-#: contact-form-7/modules/captcha.php:216
-#: contact-form-7/modules/captcha.php:221
-#: contact-form-7/modules/captcha.php:224
-#: contact-form-7/modules/captcha.php:228
-#: contact-form-7/modules/captcha.php:239
-#: contact-form-7/modules/captcha.php:242
-#: contact-form-7/modules/captcha.php:247
-#: contact-form-7/modules/captcha.php:250
-#: contact-form-7/modules/checkbox.php:275
-#: contact-form-7/modules/checkbox.php:278 contact-form-7/modules/date.php:166
-#: contact-form-7/modules/date.php:169 contact-form-7/modules/date.php:174
-#: contact-form-7/modules/date.php:177 contact-form-7/modules/date.php:182
-#: contact-form-7/modules/date.php:187 contact-form-7/modules/file.php:241
-#: contact-form-7/modules/file.php:244 contact-form-7/modules/file.php:249
-#: contact-form-7/modules/file.php:252 contact-form-7/modules/number.php:176
-#: contact-form-7/modules/number.php:179 contact-form-7/modules/number.php:184
-#: contact-form-7/modules/number.php:187 contact-form-7/modules/number.php:192
-#: contact-form-7/modules/number.php:197 contact-form-7/modules/quiz.php:171
-#: contact-form-7/modules/quiz.php:174 contact-form-7/modules/quiz.php:179
-#: contact-form-7/modules/quiz.php:182 contact-form-7/modules/select.php:157
-#: contact-form-7/modules/select.php:160 contact-form-7/modules/submit.php:59
-#: contact-form-7/modules/submit.php:62 contact-form-7/modules/submit.php:67
-#: contact-form-7/modules/text.php:219 contact-form-7/modules/text.php:222
-#: contact-form-7/modules/text.php:227 contact-form-7/modules/text.php:230
-#: contact-form-7/modules/text.php:236 contact-form-7/modules/text.php:249
-#: contact-form-7/modules/textarea.php:117
-#: contact-form-7/modules/textarea.php:120
-#: contact-form-7/modules/textarea.php:125
-#: contact-form-7/modules/textarea.php:128
-#: contact-form-7/modules/textarea.php:133
-#: contact-form-7/modules/textarea.php:138
+#: ../modules/acceptance.php:146 ../modules/acceptance.php:149
+#: ../modules/captcha.php:220 ../modules/captcha.php:223
+#: ../modules/captcha.php:228 ../modules/captcha.php:231
+#: ../modules/captcha.php:235 ../modules/captcha.php:246
+#: ../modules/captcha.php:249 ../modules/captcha.php:254
+#: ../modules/captcha.php:257 ../modules/checkbox.php:300
+#: ../modules/checkbox.php:303 ../modules/date.php:163 ../modules/date.php:166
+#: ../modules/date.php:171 ../modules/date.php:174 ../modules/date.php:179
+#: ../modules/date.php:184 ../modules/file.php:238 ../modules/file.php:241
+#: ../modules/file.php:246 ../modules/file.php:249 ../modules/number.php:173
+#: ../modules/number.php:176 ../modules/number.php:181
+#: ../modules/number.php:184 ../modules/number.php:189
+#: ../modules/number.php:194 ../modules/quiz.php:177 ../modules/quiz.php:180
+#: ../modules/quiz.php:185 ../modules/quiz.php:188 ../modules/select.php:176
+#: ../modules/select.php:179 ../modules/submit.php:59 ../modules/submit.php:62
+#: ../modules/submit.php:67 ../modules/text.php:236 ../modules/text.php:239
+#: ../modules/text.php:244 ../modules/text.php:247 ../modules/text.php:253
+#: ../modules/text.php:266 ../modules/textarea.php:142
+#: ../modules/textarea.php:145 ../modules/textarea.php:150
+#: ../modules/textarea.php:153 ../modules/textarea.php:158
+#: ../modules/textarea.php:163
 msgid "optional"
 msgstr "не обязательно"
 
-#: contact-form-7/modules/acceptance.php:156
+#: ../modules/acceptance.php:155
 msgid "Make this checkbox checked by default?"
 msgstr "Сделать этот чек-бокс выбраным по умолчанию?"
 
-#: contact-form-7/modules/acceptance.php:157
+#: ../modules/acceptance.php:156
 msgid "Make this checkbox work inversely?"
 msgstr "Заставить этот чек-бокс работать наоборот?"
 
-#: contact-form-7/modules/acceptance.php:158
+#: ../modules/acceptance.php:157
 msgid "* That means visitor who accepts the term unchecks it."
 msgstr ""
 "* Это значит, что посетитель, который принимает условия, снимает отметку с "
 "чек-бокса"
 
-#: contact-form-7/modules/acceptance.php:163
-#: contact-form-7/modules/captcha.php:255
-#: contact-form-7/modules/checkbox.php:298 contact-form-7/modules/date.php:195
-#: contact-form-7/modules/file.php:257 contact-form-7/modules/number.php:205
-#: contact-form-7/modules/quiz.php:194 contact-form-7/modules/select.php:177
-#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:257
-#: contact-form-7/modules/textarea.php:146
+#: ../modules/acceptance.php:162 ../modules/captcha.php:262
+#: ../modules/checkbox.php:323 ../modules/date.php:192 ../modules/file.php:254
+#: ../modules/number.php:202 ../modules/quiz.php:200 ../modules/select.php:196
+#: ../modules/submit.php:74 ../modules/text.php:274
+#: ../modules/textarea.php:171
 msgid "Copy this code and paste it into the form left."
 msgstr "Скопируйте этот код и вставьте его в шаблон формы слева."
 
-#: contact-form-7/modules/captcha.php:19
+#: ../modules/captcha.php:19
 msgid ""
 "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/"
 "really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
@@ -834,65 +1021,65 @@ msgstr ""
 "wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</"
 "a>."
 
-#: contact-form-7/modules/captcha.php:178
+#: ../modules/captcha.php:185
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "Код, который ввел отправитель не совпадает с CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:179
+#: ../modules/captcha.php:186
 msgid "Your entered code is incorrect."
-msgstr "Код введен Вами неправильно"
+msgstr "Вы ввели неправильный код."
 
-#: contact-form-7/modules/captcha.php:192
+#: ../modules/captcha.php:199
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:203
+#: ../modules/captcha.php:210
 msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
 msgstr ""
 "Внимание: чтобы использовать CAPTCHA, вам нужно установить плагин Really "
 "Simple CAPTCHA."
 
-#: contact-form-7/modules/captcha.php:210
+#: ../modules/captcha.php:217
 msgid "Image settings"
 msgstr "Настройки изображения"
 
-#: contact-form-7/modules/captcha.php:221
+#: ../modules/captcha.php:228
 msgid "Foreground color"
 msgstr "Цвет переднего плана"
 
-#: contact-form-7/modules/captcha.php:224
+#: ../modules/captcha.php:231
 msgid "Background color"
 msgstr "Цвет фона"
 
-#: contact-form-7/modules/captcha.php:228
+#: ../modules/captcha.php:235
 msgid "Image size"
 msgstr "Размер картинки"
 
-#: contact-form-7/modules/captcha.php:229
+#: ../modules/captcha.php:236
 msgid "Small"
 msgstr "Маленький"
 
-#: contact-form-7/modules/captcha.php:230
+#: ../modules/captcha.php:237
 msgid "Medium"
 msgstr "Средний"
 
-#: contact-form-7/modules/captcha.php:231
+#: ../modules/captcha.php:238
 msgid "Large"
 msgstr "Большой"
 
-#: contact-form-7/modules/captcha.php:236
+#: ../modules/captcha.php:243
 msgid "Input field settings"
 msgstr "Настройки поля ввода"
 
-#: contact-form-7/modules/captcha.php:256
+#: ../modules/captcha.php:263
 msgid "For image"
 msgstr "Для изображения"
 
-#: contact-form-7/modules/captcha.php:258
+#: ../modules/captcha.php:265
 msgid "For input field"
 msgstr "Для поля ввода"
 
-#: contact-form-7/modules/captcha.php:289
+#: ../modules/captcha.php:296
 #, php-format
 msgid ""
 "This contact form contains CAPTCHA fields, but the temporary folder for the "
@@ -903,7 +1090,7 @@ msgstr ""
 "(%s) не существует или закрыта на запись. Вы можете создать эту папку или "
 "изменить её права вручную."
 
-#: contact-form-7/modules/captcha.php:295
+#: ../modules/captcha.php:302
 msgid ""
 "This contact form contains CAPTCHA fields, but the necessary libraries (GD "
 "and FreeType) are not available on your server."
@@ -911,136 +1098,133 @@ msgstr ""
 "Эта контактная форма содержит поля CAPTCHA, но необходимые библиотеки (GD и "
 "FreeType) недоступны на вашем сервере."
 
-#: contact-form-7/modules/checkbox.php:243
+#: ../modules/checkbox.php:268
 msgid "Checkboxes"
-msgstr "Checkboxes"
+msgstr "Чек-боксы"
 
-#: contact-form-7/modules/checkbox.php:246
+#: ../modules/checkbox.php:271
 msgid "Radio buttons"
-msgstr "Radio buttons"
+msgstr "Радио-кнопки"
 
-#: contact-form-7/modules/checkbox.php:267 contact-form-7/modules/date.php:160
-#: contact-form-7/modules/file.php:235 contact-form-7/modules/number.php:170
-#: contact-form-7/modules/select.php:151 contact-form-7/modules/text.php:213
-#: contact-form-7/modules/textarea.php:111
+#: ../modules/checkbox.php:292 ../modules/date.php:157 ../modules/file.php:232
+#: ../modules/number.php:167 ../modules/select.php:170 ../modules/text.php:230
+#: ../modules/textarea.php:136
 msgid "Required field?"
 msgstr "Обязательное поле?"
 
-#: contact-form-7/modules/checkbox.php:283
-#: contact-form-7/modules/select.php:165
+#: ../modules/checkbox.php:308 ../modules/select.php:184
 msgid "Choices"
 msgstr "Выбор"
 
-#: contact-form-7/modules/checkbox.php:285
-#: contact-form-7/modules/select.php:167
+#: ../modules/checkbox.php:310 ../modules/select.php:186
 msgid "* One choice per line."
 msgstr "* по одной опции в строке."
 
-#: contact-form-7/modules/checkbox.php:289
+#: ../modules/checkbox.php:314
 msgid "Put a label first, a checkbox last?"
 msgstr "Разместить сначала метку, а потом чек-бокс?"
 
-#: contact-form-7/modules/checkbox.php:290
+#: ../modules/checkbox.php:315
 msgid "Wrap each item with <label> tag?"
-msgstr "Обернуть каждый элемент тэгом <label>?"
+msgstr "Обернуть каждый элемент тегом <label>?"
 
-#: contact-form-7/modules/checkbox.php:292
+#: ../modules/checkbox.php:317
 msgid "Make checkboxes exclusive?"
 msgstr "Сделать чек-боксы взаимоисключающими?"
 
-#: contact-form-7/modules/checkbox.php:300 contact-form-7/modules/date.php:197
-#: contact-form-7/modules/number.php:207 contact-form-7/modules/select.php:179
-#: contact-form-7/modules/text.php:259 contact-form-7/modules/textarea.php:148
+#: ../modules/checkbox.php:325 ../modules/date.php:194
+#: ../modules/number.php:204 ../modules/select.php:198 ../modules/text.php:276
+#: ../modules/textarea.php:173
 msgid "And, put this code into the Mail fields below."
 msgstr "И вставьте следующий код в шаблон письма ниже."
 
-#: contact-form-7/modules/date.php:120
+#: ../modules/date.php:117
 msgid "Date format that the sender entered is invalid"
 msgstr "Формат даты, введенный отправителем, неверен"
 
-#: contact-form-7/modules/date.php:121
+#: ../modules/date.php:118
 msgid "Date format seems invalid."
 msgstr "Формат даты некорректен."
 
-#: contact-form-7/modules/date.php:125
+#: ../modules/date.php:122
 msgid "Date is earlier than minimum limit"
 msgstr "Дата раньше минимального предела"
 
-#: contact-form-7/modules/date.php:126
+#: ../modules/date.php:123
 msgid "This date is too early."
 msgstr "Указана слишком ранняя дата."
 
-#: contact-form-7/modules/date.php:130
+#: ../modules/date.php:127
 msgid "Date is later than maximum limit"
 msgstr "Дата позже максимального предела"
 
-#: contact-form-7/modules/date.php:131
+#: ../modules/date.php:128
 msgid "This date is too late."
 msgstr "Указана слишком поздняя дата."
 
-#: contact-form-7/modules/date.php:187 contact-form-7/modules/number.php:197
-#: contact-form-7/modules/text.php:249 contact-form-7/modules/textarea.php:138
+#: ../modules/date.php:184 ../modules/number.php:194 ../modules/text.php:266
+#: ../modules/textarea.php:163
 msgid "Default value"
 msgstr "Значение по умолчанию"
 
-#: contact-form-7/modules/date.php:190 contact-form-7/modules/number.php:200
-#: contact-form-7/modules/text.php:252 contact-form-7/modules/textarea.php:141
+#: ../modules/date.php:187 ../modules/number.php:197 ../modules/text.php:269
+#: ../modules/textarea.php:166
 msgid "Use this text as placeholder?"
-msgstr "Использовать как placeholder?"
+msgstr "Использовать как заполнитель?"
 
-#: contact-form-7/modules/file.php:196
+#: ../modules/file.php:193
 msgid "Uploading a file fails for any reason"
-msgstr "Загрузка файла неудачна по любой причине"
+msgstr "Загрузка файла неудачна по неизвестной причине"
 
-#: contact-form-7/modules/file.php:197
+#: ../modules/file.php:194
 msgid "Failed to upload file."
 msgstr "Не удалось загрузить файл."
 
-#: contact-form-7/modules/file.php:201
+#: ../modules/file.php:198
 msgid "Uploaded file is not allowed file type"
 msgstr "Тип файла запрещен к загрузке"
 
-#: contact-form-7/modules/file.php:202
+#: ../modules/file.php:199
 msgid "This file type is not allowed."
 msgstr "Этот тип файла не разрешен."
 
-#: contact-form-7/modules/file.php:206
+#: ../modules/file.php:203
 msgid "Uploaded file is too large"
 msgstr "Загруженный файл слишком большой"
 
-#: contact-form-7/modules/file.php:207
+#: ../modules/file.php:204
 msgid "This file is too large."
 msgstr "Этот файл слишком большой."
 
-#: contact-form-7/modules/file.php:211
+#: ../modules/file.php:208
 msgid "Uploading a file fails for PHP error"
 msgstr "Загрузка файла не удалась из-за ошибки PHP"
 
-#: contact-form-7/modules/file.php:212
+#: ../modules/file.php:209
 msgid "Failed to upload file. Error occurred."
 msgstr "Отправка файла не удалась. Возникла ошибка."
 
-#: contact-form-7/modules/file.php:226
+#: ../modules/file.php:223
 msgid "File upload"
 msgstr "Отправка файла"
 
-#: contact-form-7/modules/file.php:249
+#: ../modules/file.php:246
 msgid "File size limit"
 msgstr "Лимит размера файла"
 
-#: contact-form-7/modules/file.php:249
+#: ../modules/file.php:246
 msgid "bytes"
 msgstr "байт"
 
-#: contact-form-7/modules/file.php:252
+#: ../modules/file.php:249
 msgid "Acceptable file types"
 msgstr "Разрешенные типы файлов"
 
-#: contact-form-7/modules/file.php:259
+#: ../modules/file.php:256
 msgid "And, put this code into the File Attachments field below."
 msgstr "И вставьте следующий код в поле Прикрепленные файлы ниже"
 
-#: contact-form-7/modules/file.php:285
+#: ../modules/file.php:282
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -1051,7 +1235,7 @@ msgstr ""
 "файлов (%s) не существует или закрыта для записи. Вы можете создать эту "
 "папку или изменить разрешения вручную."
 
-#: contact-form-7/modules/jetpack.php:21
+#: ../modules/jetpack.php:21
 #, php-format
 msgid ""
 "<strong>Jetpack may cause problems for other plugins in certain cases.</"
@@ -1061,190 +1245,186 @@ msgstr ""
 "плагинов.</strong> <a href=\"%s\" target=\"_blank\">Посмотрите, как этого "
 "избежать.</a>"
 
-#: contact-form-7/modules/number.php:123
+#: ../modules/number.php:120
 msgid "Number format that the sender entered is invalid"
 msgstr "Числовой формат, введенный отправителем, неверен"
 
-#: contact-form-7/modules/number.php:124
+#: ../modules/number.php:121
 msgid "Number format seems invalid."
 msgstr "Числовой формат некорректен."
 
-#: contact-form-7/modules/number.php:128
+#: ../modules/number.php:125
 msgid "Number is smaller than minimum limit"
 msgstr "Число меньше минимального предела"
 
-#: contact-form-7/modules/number.php:129
+#: ../modules/number.php:126
 msgid "This number is too small."
 msgstr "Это число слишком мало."
 
-#: contact-form-7/modules/number.php:133
+#: ../modules/number.php:130
 msgid "Number is larger than maximum limit"
 msgstr "Число больше максимального предела"
 
-#: contact-form-7/modules/number.php:134
+#: ../modules/number.php:131
 msgid "This number is too large."
 msgstr "Это число слишком велико."
 
-#: contact-form-7/modules/number.php:147
+#: ../modules/number.php:144
 msgid "Number (spinbox)"
 msgstr "Число (spinbox)"
 
-#: contact-form-7/modules/number.php:150
+#: ../modules/number.php:147
 msgid "Number (slider)"
 msgstr "Число (slider)"
 
-#: contact-form-7/modules/quiz.php:143
+#: ../modules/quiz.php:149
 msgid "Sender doesn't enter the correct answer to the quiz"
-msgstr "Отправитель не вводит корректный ответ на вопрос"
+msgstr "Отправитель не ввел корректный ответ на вопрос"
 
-#: contact-form-7/modules/quiz.php:144
+#: ../modules/quiz.php:150
 msgid "Your answer is not correct."
 msgstr "Вы ввели некорректный ответ."
 
-#: contact-form-7/modules/quiz.php:157
+#: ../modules/quiz.php:163
 msgid "Quiz"
 msgstr "Вопрос"
 
-#: contact-form-7/modules/quiz.php:187
+#: ../modules/quiz.php:193
 msgid "Quizzes"
 msgstr "Вопросы и ответы"
 
-#: contact-form-7/modules/quiz.php:189
+#: ../modules/quiz.php:195
 msgid "* quiz|answer (e.g. 1+1=?|2)"
 msgstr "* вопрос|ответ (например: 1+1=?|2)"
 
-#: contact-form-7/modules/select.php:142
+#: ../modules/select.php:161
 msgid "Drop-down menu"
 msgstr "Выпадающее меню"
 
-#: contact-form-7/modules/select.php:171
+#: ../modules/select.php:190
 msgid "Allow multiple selections?"
 msgstr "Разрешить множественный выбор?"
 
-#: contact-form-7/modules/select.php:172
+#: ../modules/select.php:191
 msgid "Insert a blank item as the first option?"
 msgstr "Вставить пустой первый элемент?"
 
-#: contact-form-7/modules/submit.php:49
+#: ../modules/submit.php:49
 msgid "Submit button"
 msgstr "Кнопка отправки"
 
-#: contact-form-7/modules/submit.php:67
+#: ../modules/submit.php:67
 msgid "Label"
 msgstr "Ярлык"
 
-#: contact-form-7/modules/text.php:152
+#: ../modules/text.php:169
 msgid "Email address that the sender entered is invalid"
 msgstr "Адрес e-mail, введенный отправителем, неверен"
 
-#: contact-form-7/modules/text.php:153
+#: ../modules/text.php:170
 msgid "Email address seems invalid."
 msgstr "Некорректный e-mail адрес."
 
-#: contact-form-7/modules/text.php:157
+#: ../modules/text.php:174
 msgid "URL that the sender entered is invalid"
 msgstr "URL, введенный отправителем, неверен"
 
-#: contact-form-7/modules/text.php:158
+#: ../modules/text.php:175
 msgid "URL seems invalid."
 msgstr "Некорректный URL."
 
-#: contact-form-7/modules/text.php:162
+#: ../modules/text.php:179
 msgid "Telephone number that the sender entered is invalid"
 msgstr "Номер телефона, введенный отправителем, неверен"
 
-#: contact-form-7/modules/text.php:163
+#: ../modules/text.php:180
 msgid "Telephone number seems invalid."
 msgstr "Некорректный номер телефона."
 
-#: contact-form-7/modules/text.php:176
+#: ../modules/text.php:193
 msgid "Text field"
 msgstr "Текстовое поле"
 
-#: contact-form-7/modules/text.php:179
+#: ../modules/text.php:196
 msgid "Email"
 msgstr "E-mail"
 
-#: contact-form-7/modules/text.php:182
+#: ../modules/text.php:199
 msgid "URL"
 msgstr "URL"
 
-#: contact-form-7/modules/text.php:185
+#: ../modules/text.php:202
 msgid "Telephone number"
 msgstr "Номер телефона"
 
-#: contact-form-7/modules/text.php:236
+#: ../modules/text.php:253
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:238
+#: ../modules/text.php:255
 msgid "This field requires author's name"
 msgstr "Это поле требует имя автора"
 
-#: contact-form-7/modules/text.php:240
+#: ../modules/text.php:257
 msgid "This field requires author's email address"
 msgstr "Это поле требует email-адрес автора"
 
-#: contact-form-7/modules/text.php:242
+#: ../modules/text.php:259
 msgid "This field requires author's URL"
 msgstr "Это поле требует URL автора"
 
-#: contact-form-7/modules/textarea.php:102
+#: ../modules/textarea.php:127
 msgid "Text area"
 msgstr "Текстовое поле"
 
-#~ msgid "Your contribution is needed for making this plugin better."
-#~ msgstr "Выше пожертвование необходимо для улучшения данного плагина."
-
-#~ msgid "Email field"
-#~ msgstr "Поле email"
-
-#~ msgid "http://contactform7.com/"
-#~ msgstr "http://contactform7.com/"
-
-#~ msgid "Contactform7.com"
-#~ msgstr "Contactform7.com"
-
-#~ msgid "Akismet judged the sending activity as spamming"
-#~ msgstr "Akismet определил отправление как спам"
+#: ../settings.php:72
+#, php-format
+msgid "Contact form %d"
+msgstr "Контактная форма %d"
 
 #~ msgid ""
-#~ "This contact form contains [icl] tags, but they are obsolete and no "
-#~ "longer functioning on this version of Contact Form 7. <a href=\"http://"
-#~ "contactform7.com/2009/12/25/contact-form-in-your-language/"
-#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">There "
-#~ "is a simpler way for creating contact forms of other languages</a> and "
-#~ "you are recommended to use it."
+#~ "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s "
+#~ "with no alternative available."
 #~ msgstr ""
-#~ "Эта контактная форма содержит [icl] тэги, но они устарели и более не "
-#~ "работают в этой версии Contact Form 7. <a href=\"http://contactform7."
-#~ "com/2009/12/25/contact-form-in-your-language/"
-#~ "#Creating_contact_form_in_different_languages\" target=\"_blank\">Есть "
-#~ "простой способ создания контактных форм на других языках</a> и мы "
-#~ "советуем вам использовать его."
-
-#~ msgid "Show"
-#~ msgstr "Показать"
-
-#~ msgid "Hide"
-#~ msgstr "Скрыть"
-
-#~ msgid "Database table created."
-#~ msgstr "Таблица в базе данных создана."
-
-#~ msgid "Failed to create database table."
-#~ msgstr "Не удалось создать таблицу в базе данных."
+#~ "%1$s - <strong>устарело</strong> начиная с Contact Form 7 version %2$s "
+#~ "без альтернатив."
 
 #~ msgid ""
-#~ "<strong>The database table for Contact Form 7 does not exist.</strong> "
-#~ "You must <a href=\"%s\">create the table</a> for it to work."
+#~ "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! "
+#~ "Use %3$s instead."
 #~ msgstr ""
-#~ "<strong>Таблица Contact Form 7 отсутствует в базе данных.</strong> Вы "
-#~ "должны <a href=\"%s\">создать таблицу</a>, чтобы плагин заработал."
+#~ "%1$s - <strong>устарело</strong> начиная с Contact Form 7 version %2$s! "
+#~ "Используйте %3$s."
 
-#~ msgid ""
-#~ "<strong>The database table for Contact Form 7 does not exist.</strong>"
-#~ msgstr "<strong>Таблица Contact Form 7 отсутствует в базе данных.</strong>"
+#~ msgid "Brazilian Portuguese"
+#~ msgstr "Brazilian Portuguese"
 
-#~ msgid "Add new"
-#~ msgstr "Добавить новую"
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Chinese (Simplified)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Chinese (Traditional)"
+
+#~ msgid "Copy"
+#~ msgstr "Копировать"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "French"
+#~ msgstr "French"
+
+#~ msgid "Just another contact form plugin. Simple but flexible."
+#~ msgstr "Конструктор контактных форм. Простой, но гибкий."
+
+#~ msgid "Norwegian"
+#~ msgstr "Norwegian"
+
+#~ msgid "Please fill the required field."
+#~ msgstr "Пожалуйста, заполните обязательные поля."
+
+#~ msgid "Portuguese"
+#~ msgstr "Portuguese"
+
+#~ msgid "Spanish"
+#~ msgstr "Spanish"
