@@ -5,10 +5,11 @@ function wpcf7_plugin_path( $path = '' ) {
 }
 
 function wpcf7_plugin_url( $path = '' ) {
-	$url = untrailingslashit( WPCF7_PLUGIN_URL );
+	$url = plugins_url( $path, WPCF7_PLUGIN );
 
-	if ( ! empty( $path ) && is_string( $path ) && false === strpos( $path, '..' ) )
-		$url .= '/' . ltrim( $path, '/' );
+	if ( is_ssl() && 'http:' == substr( $url, 0, 5 ) ) {
+		$url = 'https:' . substr( $url, 5 );
+	}
 
 	return $url;
 }
@@ -125,9 +126,6 @@ function wpcf7_is_rtl( $locale = '' ) {
 
 function wpcf7_ajax_loader() {
 	$url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
-
-	if ( is_ssl() && 'http:' == substr( $url, 0, 5 ) )
-		$url = 'https:' . substr( $url, 5 );
 
 	return apply_filters( 'wpcf7_ajax_loader', $url );
 }
