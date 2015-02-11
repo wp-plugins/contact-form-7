@@ -31,13 +31,15 @@ define( 'WPCF7_VERSION', '4.1' );
 
 define( 'WPCF7_REQUIRED_WP_VERSION', '4.0' );
 
-define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define( 'WPCF7_PLUGIN', __FILE__ );
+
+define( 'WPCF7_PLUGIN_BASENAME', plugin_basename( WPCF7_PLUGIN ) );
 
 define( 'WPCF7_PLUGIN_NAME', trim( dirname( WPCF7_PLUGIN_BASENAME ), '/' ) );
 
-define( 'WPCF7_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
+define( 'WPCF7_PLUGIN_DIR', untrailingslashit( dirname( WPCF7_PLUGIN ) ) );
 
-define( 'WPCF7_PLUGIN_URL', untrailingslashit( plugins_url( '', __FILE__ ) ) );
+define( 'WPCF7_PLUGIN_URL', untrailingslashit( plugins_url( '', WPCF7_PLUGIN ) ) );
 
 define( 'WPCF7_PLUGIN_MODULES_DIR', WPCF7_PLUGIN_DIR . '/modules' );
 
