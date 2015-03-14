@@ -414,7 +414,7 @@ function wpcf7_generate_captcha( $options = null ) {
 			$captcha->bg = $options['bg'];
 	}
 
-	$prefix = mt_rand();
+	$prefix = wp_rand();
 	$captcha_word = $captcha->generate_random_word();
 	return $captcha->generate_image( $prefix, $captcha_word );
 }
@@ -432,7 +432,7 @@ function wpcf7_remove_captcha( $prefix ) {
 		return false;
 	}
 
-	if ( preg_match( '/[^0-9]/', $prefix ) ) // Contact Form 7 generates $prefix with mt_rand()
+	if ( preg_match( '/[^0-9]/', $prefix ) ) // Contact Form 7 generates $prefix with wp_rand()
 		return false;
 
 	$captcha->remove( $prefix );
