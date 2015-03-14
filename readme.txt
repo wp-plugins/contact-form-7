@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 4.0
-Tested up to: 4.1
-Stable tag: 4.1
+Tested up to: 4.1.1
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
 
+= 4.1.1 =
+
+* Security enhancement: use wp_rand() instead of mt_rand() for CAPTCHA file name generation to make it harder for attackers to predict its next value.
+* Modified wpcf7_plugin_url(): use plugins_url() internally.
+* Translations for Russian, Hungarian, Swedish, German, and Turkish have been updated.
+
 = 4.1 =
 
 * Added maxlength and minlength options to several form-tag types.
@@ -134,25 +140,3 @@ For more information, see [Releases](http://contactform7.com/category/releases/)
 * Added default:get, default:post and default:post_meta options to get default values from the context.
 * Translations for Turkish, German, Portuguese, Dutch, and Hebrew have been updated.
 * WordPress 4.0 or higher is required.
-
-= 4.0.3 =
-
-* The contextual help tab has been added to admin pages.
-* Changed the admin menu icon to "email" dashicon.
-* Translations for Croatian, Turkish, and Catalan have been updated.
-
-= 4.0.2 =
-
-* Introduced wpcf7_build_query() to correctly apply urlencode to keys and values in URL queries.
-* Translations for Portuguese, Spanish, Hungarian, and German have been updated.
-
-= 4.0.1 =
-
-* Fixed a bug that caused an error when creating new contact forms in some environment.
-* Translations for Portuguese and Croatian have been updated.
-
-= 4.0 =
-
-* The default mail template changed (see [Best Practice to Set Up Mail](http://contactform7.com/best-practice-to-set-up-mail/)).
-* Translations for Slovak, German, Turkish and Portuguese have been updated.
-* WordPress 3.9 or higher is required.
