@@ -33,8 +33,10 @@ function wpcf7_mail_meta_box( $post, $box ) {
 	if ( ! empty( $args['use'] ) ) :
 ?>
 <div class="mail-field">
+<label for="<?php echo $id; ?>-active">
 <input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" class="check-if-these-fields-are-active" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> />
-<label for="<?php echo $id; ?>-active"><?php echo esc_html( $args['use'] ); ?></label>
+<?php echo esc_html( $args['use'] ); ?>
+</label>
 <div class="pseudo-hr"></div>
 </div>
 
@@ -73,8 +75,11 @@ function wpcf7_mail_meta_box( $post, $box ) {
 	<div class="pseudo-hr"></div>
 
 	<div class="mail-field">
+	
+	<label for="<?php echo $id; ?>-use-html">
 	<input type="checkbox" id="<?php echo $id; ?>-use-html" name="<?php echo $id; ?>-use-html" value="1"<?php echo ( $mail['use_html'] ) ? ' checked="checked"' : ''; ?> />
-	<label for="<?php echo $id; ?>-use-html"><?php echo esc_html( __( 'Use HTML content type', 'contact-form-7' ) ); ?></label>
+	<?php echo esc_html( __( 'Use HTML content type', 'contact-form-7' ) ); ?>
+	</label>
 	</div>
 </div>
 
@@ -85,8 +90,11 @@ function wpcf7_mail_meta_box( $post, $box ) {
 	</div>
 
 	<div class="mail-field">
+	
+	<label for="<?php echo $id; ?>-exclude-blank">
 	<input type="checkbox" id="<?php echo $id; ?>-exclude-blank" name="<?php echo $id; ?>-exclude-blank" value="1"<?php echo ( ! empty( $mail['exclude_blank'] ) ) ? ' checked="checked"' : ''; ?> />
-	<label for="<?php echo $id; ?>-exclude-blank"><?php echo esc_html( __( 'Exclude lines with blank mail-tags from output', 'contact-form-7' ) ); ?></label>
+	<?php echo esc_html( __( 'Exclude lines with blank mail-tags from output', 'contact-form-7' ) ); ?>
+	</label>
 	</div>
 </div>
 
