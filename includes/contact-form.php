@@ -259,6 +259,7 @@ class WPCF7_ContactForm {
 		$this->unit_tag = self::get_unit_tag( $this->id );
 
 		$html = sprintf( '<div %s>', wpcf7_format_atts( array(
+			'role' => 'form',
 			'class' => 'wpcf7',
 			'id' => $this->unit_tag,
 			( get_option( 'html_type' ) == 'text/html' ) ? 'lang' : 'xml:lang'
