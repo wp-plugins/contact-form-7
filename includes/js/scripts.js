@@ -148,7 +148,8 @@
 
 	$.fn.wpcf7ExclusiveCheckbox = function() {
 		return this.find('input:checkbox').click(function() {
-			$(this).closest('.wpcf7-checkbox').find('input:checkbox').not(this).removeAttr('checked');
+			var name = $(this).attr('name');
+			$(this).closest('form').find('input:checkbox[name="' + name + '"]').not(this).prop('checked', false);
 		});
 	};
 
