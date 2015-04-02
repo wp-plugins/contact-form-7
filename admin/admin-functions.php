@@ -58,8 +58,8 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 		$contact_form = WPCF7_ContactForm::get_template();
 	}
 
-	if ( isset( $_POST['wpcf7-title'] ) ) {
-		$contact_form->set_title( $_POST['wpcf7-title'] );
+	if ( isset( $_POST['post_title'] ) ) {
+		$contact_form->set_title( $_POST['post_title'] );
 	}
 
 	if ( isset( $_POST['wpcf7-locale'] ) ) {

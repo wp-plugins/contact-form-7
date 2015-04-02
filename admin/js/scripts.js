@@ -26,25 +26,7 @@
 				dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif',
 				fadebuttImageUrl: _wpcf7.pluginUrl + '/admin/images/fade-butt.png' });
 
-			$('input#wpcf7-title:disabled').css({cursor: 'default'});
-
-			$('input#wpcf7-title').mouseover(function() {
-				$(this).not('.focus').addClass('mouseover');
-			});
-
-			$('input#wpcf7-title').mouseout(function() {
-				$(this).removeClass('mouseover');
-			});
-
-			$('input#wpcf7-title').focus(function() {
-				$(this).addClass('focus').removeClass('mouseover');
-			});
-
-			$('input#wpcf7-title').blur(function() {
-				$(this).removeClass('focus');
-			});
-
-			$('input#wpcf7-title').change(function() {
+			$('input#title').change(function() {
 				updateTag();
 			});
 
@@ -78,22 +60,15 @@
 	});
 
 	function updateTag() {
-		var title = $('input#wpcf7-title').val();
+		var title = $('input#title').val();
 
 		if (title)
 			title = title.replace(/["'\[\]]/g, '');
 
-		$('input#wpcf7-title').val(title);
+		$('input#title').val(title);
 		var postId = $('input#post_ID').val();
 		var tag = '[contact-form-7 id="' + postId + '" title="' + title + '"]';
 		$('input#contact-form-anchor-text').val(tag);
-
-		var oldId = $('input#wpcf7-id').val();
-
-		if (0 != oldId) {
-			var tagOld = '[contact-form ' + oldId + ' "' + title + '"]';
-			$('input#contact-form-anchor-text-old').val(tagOld).parent('p.tagcode').show();
-		}
 	}
 
 })(jQuery);
