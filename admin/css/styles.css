@@ -25,6 +25,47 @@
 	display: none;
 }
 
+#contact-form-edit-tabs {
+	border-bottom: 1px solid #ccc;
+	padding: 9px 15px 0 10px;
+	margin: 0 0 10px;
+}
+
+#contact-form-edit-tabs li {
+	display: inline-block;
+	list-style: none;
+	border: 1px solid #ccc;
+	padding: 0;
+	margin: 0 4px -1px;
+	background-color: #e4e4e4;
+}
+
+#contact-form-edit-tabs li:hover {
+	background-color: #fff;
+}
+
+#contact-form-edit-tabs li.ui-tabs-active,
+#contact-form-edit-tabs li.ui-tabs-active:hover {
+	border-bottom: 1px solid #f1f1f1;
+	background-color: #f1f1f1;
+}
+
+#contact-form-edit-tabs li a {
+	padding: 6px 10px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 30px;
+	color: #333;
+	text-decoration: none;
+}
+
+#contact-form-edit-tabs li.ui-tabs-active a,
+#contact-form-edit-tabs li a:hover {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 /* List Table */
 .fixed .column-title {
 	width: 32%;

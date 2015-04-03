@@ -49,6 +49,8 @@
 
 			postboxes.add_postbox_toggles(_wpcf7.screenId);
 
+			$('#postbox-container-2').tabs();
+
 		} catch (e) {
 		}
 	});

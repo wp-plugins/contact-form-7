@@ -190,7 +190,7 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 
 	wp_enqueue_script( 'wpcf7-admin',
 		wpcf7_plugin_url( 'admin/js/scripts.js' ),
-		array( 'jquery', 'postbox', 'wpcf7-admin-taggenerator' ),
+		array( 'jquery', 'jquery-ui-tabs', 'postbox', 'wpcf7-admin-taggenerator' ),
 		WPCF7_VERSION, true );
 
 	$current_screen = get_current_screen();

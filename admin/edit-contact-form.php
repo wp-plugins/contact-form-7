@@ -113,6 +113,14 @@ if ( $post ) :
 
 <div id="postbox-container-2" class="postbox-container">
 
+<ul id="contact-form-edit-tabs">
+<li><a href="#form-sortables"><?php echo esc_html( __( 'Form', 'contact-form-7' ) ); ?></a></li>
+<li><a href="#mail-sortables"><?php echo esc_html( __( 'Mail', 'contact-form-7' ) ); ?></a></li>
+<li><a href="#mail_2-sortables"><?php echo esc_html( __( 'Mail (2)', 'contact-form-7' ) ); ?></a></li>
+<li><a href="#messages-sortables"><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></a></li>
+<li><a href="#additional_settings-sortables"><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></a></li>
+</ul>
+
 <?php 
 
 do_meta_boxes( null, 'form', $post );
