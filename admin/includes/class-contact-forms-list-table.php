@@ -133,9 +133,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
     }
 
 	function column_shortcode( $item ) {
-		$shortcodes = array(
-			sprintf( '[contact-form-7 id="%1$d" title="%2$s"]',
-				$item->id(), $item->title() ) );
+		$shortcodes = array( $item->shortcode() );
 
 		$output = '';
 
@@ -143,7 +141,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 			$output .= "\n" . '<input type="text"'
 				. ' onfocus="this.select();" readonly="readonly"'
 				. ' value="' . esc_attr( $shortcode ) . '"'
-				. ' class="shortcode-in-list-table wp-ui-text-highlight code" />';
+				. ' class="wp-ui-text-highlight code shortcode" />';
 		}
 
 		return trim( $output );

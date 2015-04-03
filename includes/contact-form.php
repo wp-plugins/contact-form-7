@@ -720,6 +720,28 @@ class WPCF7_ContactForm {
 
 		return false;
 	}
+
+	public function shortcode( $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'use_old_format' => false ) );
+
+		$title = str_replace( array( '"', '[', ']' ), '', $this->title );
+
+		if ( $args['use_old_format'] ) {
+			$old_unit_id = (int) get_post_meta( $this->id, '_old_cf7_unit_id', true );
+
+			if ( $old_unit_id ) {
+				$shortcode = sprintf( '[contact-form %1$d "%2$s"]', $old_unit_id, $title );
+			} else {
+				$shortcode = '';
+			}
+		} else {
+			$shortcode = sprintf( '[contact-form-7 id="%1$d" title="%2$s"]',
+				$this->id, $title );
+		}
+
+		return apply_filters( 'wpcf7_contact_form_shortcode', $shortcode, $args, $this );
+	}
 }
 
 function wpcf7_contact_form( $id ) {

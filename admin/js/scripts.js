@@ -26,17 +26,11 @@
 				dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif',
 				fadebuttImageUrl: _wpcf7.pluginUrl + '/admin/images/fade-butt.png' });
 
-			$('input#title').change(function() {
-				updateTag();
-			});
-
 			$('#show-all-messages').click(function() {
 				$('#messagesdiv .hide-initially').slideDown();
 				$(this).closest('p').remove();
 				return false;
 			});
-
-			updateTag();
 
 			$('.check-if-these-fields-are-active').each(function(index) {
 				if (! $(this).is(':checked'))
@@ -58,17 +52,5 @@
 		} catch (e) {
 		}
 	});
-
-	function updateTag() {
-		var title = $('input#title').val();
-
-		if (title)
-			title = title.replace(/["'\[\]]/g, '');
-
-		$('input#title').val(title);
-		var postId = $('input#post_ID').val();
-		var tag = '[contact-form-7 id="' + postId + '" title="' + title + '"]';
-		$('input#contact-form-anchor-text').val(tag);
-	}
 
 })(jQuery);

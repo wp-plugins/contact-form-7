@@ -1,5 +1,7 @@
-#titlediv .inside input.shortcode {
+#titlediv .inside input.shortcode,
+.wp-list-table .column-shortcode input.shortcode {
 	width: 100%;
+	font-size: 12px;
 }
 
 #submitpost input.copy {
@@ -21,6 +23,15 @@
 
 #messagesdiv .hide-initially {
 	display: none;
+}
+
+/* List Table */
+.fixed .column-title {
+	width: 32%;
+}
+
+.fixed .column-shortcode {
+	width: 50%;
 }
 
 /* welcome panel */
