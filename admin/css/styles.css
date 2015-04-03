@@ -66,6 +66,10 @@
 	font-weight: bold;
 }
 
+.postbox .form-table th {
+	width: 100px;
+}
+
 /* List Table */
 .fixed .column-title {
 	width: 32%;

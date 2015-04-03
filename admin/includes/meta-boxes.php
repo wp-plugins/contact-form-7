@@ -39,63 +39,67 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <br class="clear" />
 <?php endif; ?>
 
-<div class="mail-fields">
-<div class="half-left">
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-recipient"><?php echo esc_html( __( 'To:', 'contact-form-7' ) ); ?></label><br />
-	<input type="text" id="<?php echo $id; ?>-recipient" name="<?php echo $id; ?>-recipient" class="large-text code" size="70" value="<?php echo esc_attr( $mail['recipient'] ); ?>" />
-	</div>
+<table class="form-table">
+<tbody>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-recipient"><?php echo esc_html( __( 'To', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<input type="text" id="<?php echo $id; ?>-recipient" name="<?php echo $id; ?>-recipient" class="large-text code" size="70" value="<?php echo esc_attr( $mail['recipient'] ); ?>" />
+	</td>
+	</tr>
 
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-sender"><?php echo esc_html( __( 'From:', 'contact-form-7' ) ); ?></label><br />
-	<input type="text" id="<?php echo $id; ?>-sender" name="<?php echo $id; ?>-sender" class="large-text code" size="70" value="<?php echo esc_attr( $mail['sender'] ); ?>" />
-	</div>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-sender"><?php echo esc_html( __( 'From', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<input type="text" id="<?php echo $id; ?>-sender" name="<?php echo $id; ?>-sender" class="large-text code" size="70" value="<?php echo esc_attr( $mail['sender'] ); ?>" />
+	</td>
+	</tr>
 
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-subject"><?php echo esc_html( __( 'Subject:', 'contact-form-7' ) ); ?></label><br />
-	<input type="text" id="<?php echo $id; ?>-subject" name="<?php echo $id; ?>-subject" class="large-text code" size="70" value="<?php echo esc_attr( $mail['subject'] ); ?>" />
-	</div>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-subject"><?php echo esc_html( __( 'Subject', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<input type="text" id="<?php echo $id; ?>-subject" name="<?php echo $id; ?>-subject" class="large-text code" size="70" value="<?php echo esc_attr( $mail['subject'] ); ?>" />
+	</td>
+	</tr>
 
-	<div class="pseudo-hr"></div>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-additional-headers"><?php echo esc_html( __( 'Additional Headers', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<textarea id="<?php echo $id; ?>-additional-headers" name="<?php echo $id; ?>-additional-headers" cols="100" rows="4" class="large-text code"><?php echo esc_textarea( $mail['additional_headers'] ); ?></textarea>
+	</td>
+	</tr>
 
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-additional-headers"><?php echo esc_html( __( 'Additional headers:', 'contact-form-7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-additional-headers" name="<?php echo $id; ?>-additional-headers" cols="100" rows="2" class="large-text code"><?php echo esc_textarea( $mail['additional_headers'] ); ?></textarea>
-	</div>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message Body', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="18" class="large-text code"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
 
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-attachments"><?php echo esc_html( __( 'File attachments:', 'contact-form-7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-attachments" name="<?php echo $id; ?>-attachments" cols="100" rows="2" class="large-text code"><?php echo esc_textarea( $mail['attachments'] ); ?></textarea>
-	</div>
+		<p><label for="<?php echo $id; ?>-exclude-blank"><input type="checkbox" id="<?php echo $id; ?>-exclude-blank" name="<?php echo $id; ?>-exclude-blank" value="1"<?php echo ( ! empty( $mail['exclude_blank'] ) ) ? ' checked="checked"' : ''; ?> /> <?php echo esc_html( __( 'Exclude lines with blank mail-tags from output', 'contact-form-7' ) ); ?></label></p>
 
-	<div class="pseudo-hr"></div>
+		<p><label for="<?php echo $id; ?>-use-html"><input type="checkbox" id="<?php echo $id; ?>-use-html" name="<?php echo $id; ?>-use-html" value="1"<?php echo ( $mail['use_html'] ) ? ' checked="checked"' : ''; ?> /> <?php echo esc_html( __( 'Use HTML content type', 'contact-form-7' ) ); ?></label></p>
+	</td>
+	</tr>
 
-	<div class="mail-field">
-	
-	<label for="<?php echo $id; ?>-use-html">
-	<input type="checkbox" id="<?php echo $id; ?>-use-html" name="<?php echo $id; ?>-use-html" value="1"<?php echo ( $mail['use_html'] ) ? ' checked="checked"' : ''; ?> />
-	<?php echo esc_html( __( 'Use HTML content type', 'contact-form-7' ) ); ?>
-	</label>
-	</div>
-</div>
-
-<div class="half-right">
-	<div class="mail-field">
-	<label for="<?php echo $id; ?>-body"><?php echo esc_html( __( 'Message body:', 'contact-form-7' ) ); ?></label><br />
-	<textarea id="<?php echo $id; ?>-body" name="<?php echo $id; ?>-body" cols="100" rows="18" class="large-text code"><?php echo esc_textarea( $mail['body'] ); ?></textarea>
-	</div>
-
-	<div class="mail-field">
-	
-	<label for="<?php echo $id; ?>-exclude-blank">
-	<input type="checkbox" id="<?php echo $id; ?>-exclude-blank" name="<?php echo $id; ?>-exclude-blank" value="1"<?php echo ( ! empty( $mail['exclude_blank'] ) ) ? ' checked="checked"' : ''; ?> />
-	<?php echo esc_html( __( 'Exclude lines with blank mail-tags from output', 'contact-form-7' ) ); ?>
-	</label>
-	</div>
-</div>
-
-<br class="clear" />
-</div>
+	<tr>
+	<th scope="row">
+		<label for="<?php echo $id; ?>-attachments"><?php echo esc_html( __( 'File Attachments', 'contact-form-7' ) ); ?></label>
+	</th>
+	<td>
+		<textarea id="<?php echo $id; ?>-attachments" name="<?php echo $id; ?>-attachments" cols="100" rows="4" class="large-text code"><?php echo esc_textarea( $mail['attachments'] ); ?></textarea>
+	</td>
+	</tr>
+</tbody>
+</table>
 <?php
 }
 
