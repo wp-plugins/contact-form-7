@@ -295,7 +295,7 @@ function wpcf7_add_meta_boxes( $post_id ) {
 		array(
 			'id' => 'wpcf7-mail-2',
 			'name' => 'mail_2',
-			'use' => __( 'Use mail (2)', 'contact-form-7' ) ) );
+			'use' => __( 'Use Mail (2)', 'contact-form-7' ) ) );
 
 	add_meta_box( 'messagesdiv', __( 'Messages', 'contact-form-7' ),
 		'wpcf7_messages_meta_box', null, 'messages', 'core' );

@@ -28,15 +28,8 @@ function wpcf7_mail_meta_box( $post, $box ) {
 
 	if ( ! empty( $args['use'] ) ) :
 ?>
-<div class="mail-field">
-<label for="<?php echo $id; ?>-active">
-<input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" class="check-if-these-fields-are-active" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> />
-<?php echo esc_html( $args['use'] ); ?>
-</label>
-<div class="pseudo-hr"></div>
-</div>
-
-<br class="clear" />
+<label for="<?php echo $id; ?>-active"><input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> /> <?php echo esc_html( $args['use'] ); ?></label>
+<p class="description"><?php echo esc_html( __( "Mail (2) is an additional mail template often used as an autoresponder.", 'contact-form-7' ) ); ?></p>
 <?php endif; ?>
 
 <table class="form-table">

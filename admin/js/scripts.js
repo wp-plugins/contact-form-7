@@ -32,21 +32,6 @@
 				return false;
 			});
 
-			$('.check-if-these-fields-are-active').each(function(index) {
-				if (! $(this).is(':checked'))
-					$(this).parent().siblings('.mail-fields').hide();
-
-				$(this).click(function() {
-					if ($(this).parent().siblings('.mail-fields').is(':hidden')
-					&& $(this).is(':checked')) {
-						$(this).parent().siblings('.mail-fields').slideDown('fast');
-					} else if ($(this).parent().siblings('.mail-fields').is(':visible')
-					&& $(this).not(':checked')) {
-						$(this).parent().siblings('.mail-fields').slideUp('fast');
-					}
-				});
-			});
-
 			postboxes.add_postbox_toggles(_wpcf7.screenId);
 
 			$('#postbox-container-2').tabs();
