@@ -343,23 +343,6 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-add_action( 'wpcf7_admin_notices', 'wpcf7_cf7com_links', 9 );
-
-function wpcf7_cf7com_links() {
-	$links = '<div class="cf7com-links">'
-		. '<a href="' . esc_url( __( 'http://contactform7.com/docs/', 'contact-form-7' ) ) . '" target="_blank">'
-		. esc_html( __( 'Docs', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url( __( 'http://contactform7.com/faq/', 'contact-form-7' ) ) . '" target="_blank">'
-		. esc_html( __( 'FAQ', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url( __( 'http://contactform7.com/support/', 'contact-form-7' ) ) . '" target="_blank">'
-		. esc_html( __( 'Support', 'contact-form-7' ) ) . '</a> - '
-		. '<a href="' . esc_url( __( 'http://contactform7.com/donate/', 'contact-form-7' ) ) . '" target="_blank">'
-		. esc_html( __( 'Donate', 'contact-form-7' ) ) . '</a>'
-		. '</div>';
-
-	echo apply_filters( 'wpcf7_cf7com_links', $links );
-}
-
 add_action( 'admin_notices', 'wpcf7_old_wp_version_error', 9 );
 
 function wpcf7_old_wp_version_error() {

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 ?></h2>
 
-<?php // do_action( 'wpcf7_admin_notices' ); ?>
+<?php do_action( 'wpcf7_admin_notices' ); ?>
 
 <?php
 if ( $post ) :

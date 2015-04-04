@@ -19,8 +19,6 @@
 				updateWelcomePanel( 0 );
 			});
 
-			$('div.cf7com-links').insertAfter($('div.wrap h2:first'));
-
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
 			$('#taggenerator').tagGenerator(_wpcf7.generateTag, {
 				dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif',
