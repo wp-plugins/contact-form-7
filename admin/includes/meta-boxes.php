@@ -101,7 +101,7 @@ function wpcf7_messages_meta_box( $post ) {
 ?>
 <fieldset>
 <legend class="screen-reader-text"><?php echo esc_html( __( 'Edit messages used for the following situations.', 'contact-form-7' ) ); ?></legend>
-<p><?php echo esc_html( __( 'Edit messages used for the following situations.', 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></p>
 <?php
 
 	foreach ( $messages as $key => $arr ) {
