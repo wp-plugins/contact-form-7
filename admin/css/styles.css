@@ -25,8 +25,15 @@
 	display: none;
 }
 
+.postbox .form-table th {
+	width: 100px;
+}
+
+/*
+ * Tabs
+ */
 #contact-form-edit-tabs {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
 	padding: 9px 15px 0 10px;
 	margin: 0 0 10px;
 }
@@ -35,6 +42,7 @@
 	display: inline-block;
 	list-style: none;
 	border: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
 	padding: 0;
 	margin: 0 4px -1px;
 	background-color: #e4e4e4;
@@ -46,6 +54,9 @@
 
 #contact-form-edit-tabs li.ui-tabs-active,
 #contact-form-edit-tabs li.ui-tabs-active:hover {
+	border-top: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #f1f1f1;
 	background-color: #f1f1f1;
 }
@@ -59,18 +70,19 @@
 	text-decoration: none;
 }
 
-#contact-form-edit-tabs li.ui-tabs-active a,
-#contact-form-edit-tabs li a:hover {
+#contact-form-edit-tabs li.ui-tabs-active a {
 	color: #000;
 	font-size: 14px;
 	font-weight: bold;
 }
 
-.postbox .form-table th {
-	width: 100px;
+#contact-form-edit-tabs li a:hover {
+	color: #000;
 }
 
-/* List Table */
+/*
+ * List Table
+ */
 .fixed .column-title {
 	width: 32%;
 }
@@ -79,7 +91,9 @@
 	width: 50%;
 }
 
-/* welcome panel */
+/*
+ * Welcome Panel
+ */
 .welcome-panel p.message {
 	line-height: 1.4em;
 	margin-right: 25px;
