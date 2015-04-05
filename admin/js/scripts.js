@@ -24,12 +24,6 @@
 				dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif',
 				fadebuttImageUrl: _wpcf7.pluginUrl + '/admin/images/fade-butt.png' });
 
-			$('#show-all-messages').click(function() {
-				$('#messagesdiv .hide-initially').slideDown();
-				$(this).closest('p').remove();
-				return false;
-			});
-
 			postboxes.add_postbox_toggles(_wpcf7.screenId);
 
 			$('#postbox-container-2').tabs();
