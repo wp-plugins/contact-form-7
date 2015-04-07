@@ -135,11 +135,11 @@ do_meta_boxes( null, 'additional_settings', $post );
 
 ?>
 
-</div><!-- #postbox-container-2 -->
-
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
 <p class="submit"><input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" /></p>
 <?php endif; ?>
+
+</div><!-- #postbox-container-2 -->
 
 </div><!-- #post-body -->
 <br class="clear" />
