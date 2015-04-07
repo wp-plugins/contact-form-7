@@ -55,7 +55,8 @@ function wpcf7_load_contact_form_admin() {
 
 		$query = array(
 			'message' => ( -1 == $_POST['post_ID'] ) ? 'created' : 'saved',
-			'post' => $id );
+			'post' => $id,
+			'active-tab' => isset( $_POST['active-tab'] ) ? (int) $_POST['active-tab'] : 0 );
 
 		$redirect_to = add_query_arg( $query, menu_page_url( 'wpcf7', false ) );
 		wp_safe_redirect( $redirect_to );
@@ -199,7 +200,8 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 		'screenId' => $current_screen->id,
 		'generateTag' => __( 'Generate Tag', 'contact-form-7' ),
 		'pluginUrl' => wpcf7_plugin_url(),
-		'tagGenerators' => wpcf7_tag_generators() ) );
+		'tagGenerators' => wpcf7_tag_generators(),
+		'activeTab' => isset( $_GET['active-tab'] ) ? (int) $_GET['active-tab'] : 0 ) );
 }
 
 function wpcf7_admin_management_page() {
