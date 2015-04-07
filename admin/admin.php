@@ -291,7 +291,7 @@ function wpcf7_add_meta_boxes( $post_id ) {
 		'wpcf7_mail_meta_box', null, 'mail', 'core' );
 
 	add_meta_box( 'mail2div', __( 'Mail (2)', 'contact-form-7' ),
-		'wpcf7_mail_meta_box', null, 'mail_2', 'core',
+		'wpcf7_mail_meta_box', null, 'mail', 'core',
 		array(
 			'id' => 'wpcf7-mail-2',
 			'name' => 'mail_2',
