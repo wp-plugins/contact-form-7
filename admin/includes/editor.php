@@ -1,19 +1,57 @@
 <?php
 
-/* Form */
+class WPCF7_Editor {
 
-function wpcf7_form_meta_box( $post ) {
+	private $contact_form;
+	private $panels = array();
+
+	public function __construct( WPCF7_ContactForm $contact_form ) {
+		$this->contact_form = $contact_form;
+	}
+
+	public function add_panel( $id, $title, $callback ) {
+		if ( wpcf7_is_name( $id ) ) {
+			$this->panels[$id] = array(
+				'title' => $title,
+				'callback' => $callback );
+		}
+	}
+
+	public function display() {
+		echo '<ul id="contact-form-editor-tabs">';
+
+		foreach ( $this->panels as $id => $panel ) {
+			echo sprintf( '<li id="%1$s-tab"><a href="#%1$s">%2$s</a></li>',
+				esc_attr( $id ), esc_html( $panel['title'] ) );
+		}
+
+		echo '</ul>';
+
+		foreach ( $this->panels as $id => $panel ) {
+			echo sprintf( '<div class="contact-form-editor-panel" id="%1$s">',
+				esc_attr( $id ) );
+			call_user_func( $panel['callback'], $this->contact_form );
+			echo '</div>';
+		}
+	}
+}
+
+function wpcf7_editor_panel_form( $post ) {
 ?>
 <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24" class="large-text code"><?php echo esc_textarea( $post->prop( 'form' ) ); ?></textarea>
 <?php
 }
 
-/* Mail */
+function wpcf7_editor_panel_mail( $post ) {
+	wpcf7_editor_box_mail( $post );
 
-function wpcf7_mail_meta_box( $post, $box ) {
-	$args = isset( $box['args'] ) && is_array( $box['args'] )
-		? $box['args'] : array();
+	wpcf7_editor_box_mail( $post, array(
+		'id' => 'wpcf7-mail-2',
+		'name' => 'mail_2',
+		'use' => __( 'Use Mail (2)', 'contact-form-7' ) ) );
+}
 
+function wpcf7_editor_box_mail( $post, $args = '' ) {
 	$args = wp_parse_args( $args, array(
 		'id' => 'wpcf7-mail',
 		'name' => 'mail',
@@ -96,7 +134,7 @@ function wpcf7_mail_meta_box( $post, $box ) {
 <?php
 }
 
-function wpcf7_messages_meta_box( $post ) {
+function wpcf7_editor_panel_messages( $post ) {
 	$messages = wpcf7_messages();
 ?>
 <fieldset>
@@ -119,7 +157,7 @@ function wpcf7_messages_meta_box( $post ) {
 <?php
 }
 
-function wpcf7_additional_settings_meta_box( $post ) {
+function wpcf7_editor_panel_additional_settings( $post ) {
 ?>
 <textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8" class="large-text"><?php echo esc_textarea( $post->prop( 'additional_settings' ) ); ?></textarea>
 <?php

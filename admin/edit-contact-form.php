@@ -113,22 +113,34 @@ if ( $post ) :
 </div><!-- #postbox-container-1 -->
 
 <div id="postbox-container-2" class="postbox-container">
+<div id="contact-form-editor">
+<?php
 
-<ul id="contact-form-edit-tabs">
-<li><a href="#form-sortables"><?php echo esc_html( __( 'Form', 'contact-form-7' ) ); ?></a></li>
-<li><a href="#mail-sortables"><?php echo esc_html( __( 'Mail', 'contact-form-7' ) ); ?></a></li>
-<li><a href="#messages-sortables"><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></a></li>
-<li><a href="#additional_settings-sortables"><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></a></li>
-</ul>
+	$editor = new WPCF7_Editor( $post );
 
-<?php 
+	$panels = array(
+		'form-panel' => array(
+			'title' => __( 'Form', 'contact-form-7' ),
+			'callback' => 'wpcf7_editor_panel_form' ),
+		'mail-panel' => array(
+			'title' => __( 'Mail', 'contact-form-7' ),
+			'callback' => 'wpcf7_editor_panel_mail' ),
+		'messages-panel' => array(
+			'title' => __( 'Messages', 'contact-form-7' ),
+			'callback' => 'wpcf7_editor_panel_messages' ),
+		'additional-settings-panel' => array(
+			'title' => __( 'Additional Settings', 'contact-form-7' ),
+			'callback' => 'wpcf7_editor_panel_additional_settings' ) );
 
-do_meta_boxes( null, 'form', $post );
-do_meta_boxes( null, 'mail', $post );
-do_meta_boxes( null, 'messages', $post );
-do_meta_boxes( null, 'additional_settings', $post );
+	$panels = apply_filters( 'wpcf7_editor_panels', $panels );
 
+	foreach ( $panels as $id => $panel ) {
+		$editor->add_panel( $id, $panel['title'], $panel['callback'] );
+	}
+
+	$editor->display();
 ?>
+</div><!-- #contact-form-editor -->
 
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
 <p class="submit"><input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" /></p>

@@ -208,7 +208,7 @@ function wpcf7_admin_management_page() {
 	if ( $post = wpcf7_get_current_contact_form() ) {
 		$post_id = $post->initial() ? -1 : $post->id();
 
-		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
+		require_once WPCF7_PLUGIN_DIR . '/admin/includes/editor.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
 		return;
 	}
@@ -247,7 +247,7 @@ function wpcf7_admin_add_new_page() {
 	if ( $post = wpcf7_get_current_contact_form() ) {
 		$post_id = -1;
 
-		require_once WPCF7_PLUGIN_DIR . '/admin/includes/meta-boxes.php';
+		require_once WPCF7_PLUGIN_DIR . '/admin/includes/editor.php';
 		require_once WPCF7_PLUGIN_DIR . '/admin/edit-contact-form.php';
 		return;
 	}

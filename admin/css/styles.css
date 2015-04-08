@@ -28,13 +28,13 @@
 /*
  * Tabs
  */
-#contact-form-edit-tabs {
+#contact-form-editor-tabs {
 	border-bottom: 1px solid #aaa;
 	padding: 9px 15px 0 10px;
 	margin: 0 0 10px;
 }
 
-#contact-form-edit-tabs li {
+#contact-form-editor-tabs li {
 	display: inline-block;
 	list-style: none;
 	border: 1px solid #ccc;
@@ -44,12 +44,12 @@
 	background-color: #e4e4e4;
 }
 
-#contact-form-edit-tabs li:hover {
+#contact-form-editor-tabs li:hover {
 	background-color: #fff;
 }
 
-#contact-form-edit-tabs li.ui-tabs-active,
-#contact-form-edit-tabs li.ui-tabs-active:hover {
+#contact-form-editor-tabs li.ui-tabs-active,
+#contact-form-editor-tabs li.ui-tabs-active:hover {
 	border-top: 1px solid #aaa;
 	border-right: 1px solid #aaa;
 	border-left: 1px solid #aaa;
@@ -57,7 +57,7 @@
 	background-color: #f1f1f1;
 }
 
-#contact-form-edit-tabs li a {
+#contact-form-editor-tabs li a {
 	padding: 6px 10px;
 	font-size: 14px;
 	font-weight: normal;
@@ -66,13 +66,13 @@
 	text-decoration: none;
 }
 
-#contact-form-edit-tabs li.ui-tabs-active a {
+#contact-form-editor-tabs li.ui-tabs-active a {
 	color: #000;
 	font-size: 14px;
 	font-weight: bold;
 }
 
-#contact-form-edit-tabs li a:hover {
+#contact-form-editor-tabs li a:hover {
 	color: #000;
 }
 
