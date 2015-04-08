@@ -32,10 +32,43 @@
 					$('#active-tab').val(ui.newTab.index());
 				}
 			});
-			
+
+			if ('' == $('#title').val()) {
+				$('#title').focus();
+			}
+
+			$.wpcf7TitleHint();
 
 		} catch (e) {
 		}
 	});
+
+	/**
+	 * Copied from wptitlehint() in wp-admin/js/post.js
+	 */
+	$.wpcf7TitleHint = function() {
+		var title = $('#title');
+		var titleprompt = $('#title-prompt-text');
+
+		if ('' == title.val()) {
+			titleprompt.removeClass('screen-reader-text');
+		}
+
+		titleprompt.click(function() {
+			$(this).addClass('screen-reader-text');
+			title.focus();
+		});
+
+		title.blur(function() {
+			if ('' == $(this).val()) {
+				titleprompt.removeClass('screen-reader-text');
+			}
+		}).focus(function() {
+			titleprompt.addClass('screen-reader-text');
+		}).keydown(function(e) {
+			titleprompt.addClass('screen-reader-text');
+			$(this).unbind(e);
+		});
+	};
 
 })(jQuery);

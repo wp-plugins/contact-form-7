@@ -46,7 +46,7 @@ if ( $post ) :
 <div id="titlediv">
 <div id="titlewrap">
 	<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo esc_html( __( 'Enter title here', 'contact-form-7' ) ); ?></label>
-	<input type="text" name="post_title" size="30" value="<?php echo esc_attr( $post->title() ); ?>" id="title" spellcheck="true" autocomplete="off" />
+	<input type="text" name="post_title" size="30" value="<?php echo $post->initial() ? "" : esc_attr( $post->title() ); ?>" id="title" spellcheck="true" autocomplete="off" />
 </div><!-- #titlewrap -->
 
 <div class="inside">
