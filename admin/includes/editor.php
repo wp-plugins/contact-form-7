@@ -46,6 +46,8 @@ function wpcf7_editor_panel_form( $post ) {
 function wpcf7_editor_panel_mail( $post ) {
 	wpcf7_editor_box_mail( $post );
 
+	echo '<br class="clear" />';
+
 	wpcf7_editor_box_mail( $post, array(
 		'id' => 'wpcf7-mail-2',
 		'name' => 'mail_2',
