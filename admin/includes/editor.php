@@ -38,6 +38,7 @@ class WPCF7_Editor {
 
 function wpcf7_editor_panel_form( $post ) {
 ?>
+<h3><?php echo esc_html( __( 'Form', 'contact-form-7' ) ); ?></h3>
 <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24" class="large-text code"><?php echo esc_textarea( $post->prop( 'form' ) ); ?></textarea>
 <?php
 }
@@ -48,6 +49,7 @@ function wpcf7_editor_panel_mail( $post ) {
 	wpcf7_editor_box_mail( $post, array(
 		'id' => 'wpcf7-mail-2',
 		'name' => 'mail_2',
+		'title' => __( 'Mail (2)', 'contact-form-7' ),
 		'use' => __( 'Use Mail (2)', 'contact-form-7' ) ) );
 }
 
@@ -55,6 +57,7 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 	$args = wp_parse_args( $args, array(
 		'id' => 'wpcf7-mail',
 		'name' => 'mail',
+		'title' => __( 'Mail', 'contact-form-7' ),
 		'use' => null ) );
 
 	$id = esc_attr( $args['id'] );
@@ -63,6 +66,8 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 		'active' => false, 'recipient' => '', 'sender' => '',
 		'subject' => '', 'body' => '', 'additional_headers' => '',
 		'attachments' => '', 'use_html' => false, 'exclude_blank' => false ) );
+
+	echo '<h3>' . esc_html( $args['title'] ) . '</h3>';
 
 	if ( ! empty( $args['use'] ) ) :
 ?>
@@ -137,6 +142,7 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 function wpcf7_editor_panel_messages( $post ) {
 	$messages = wpcf7_messages();
 ?>
+<h3><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></h3>
 <fieldset>
 <legend class="screen-reader-text"><?php echo esc_html( __( 'Edit messages used for the following situations.', 'contact-form-7' ) ); ?></legend>
 <p><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></p>
@@ -159,6 +165,7 @@ function wpcf7_editor_panel_messages( $post ) {
 
 function wpcf7_editor_panel_additional_settings( $post ) {
 ?>
+<h3><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></h3>
 <textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8" class="large-text"><?php echo esc_textarea( $post->prop( 'additional_settings' ) ); ?></textarea>
 <?php
 }
