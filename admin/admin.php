@@ -147,7 +147,6 @@ function wpcf7_load_contact_form_admin() {
 
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
 		$help_tabs->set_help_tabs( 'edit' );
-		wpcf7_add_meta_boxes( $post->id() );
 
 	} else if ( 'wpcf7-new' == $plugin_page ) {
 		$help_tabs->set_help_tabs( 'add_new' );
@@ -283,29 +282,6 @@ function wpcf7_admin_add_new_page() {
 </form>
 </div>
 <?php
-}
-
-function wpcf7_add_meta_boxes( $post_id ) {
-	add_meta_box( 'formdiv', __( 'Form', 'contact-form-7' ),
-		'wpcf7_form_meta_box', null, 'form', 'core' );
-
-	add_meta_box( 'maildiv', __( 'Mail', 'contact-form-7' ),
-		'wpcf7_mail_meta_box', null, 'mail', 'core' );
-
-	add_meta_box( 'mail2div', __( 'Mail (2)', 'contact-form-7' ),
-		'wpcf7_mail_meta_box', null, 'mail', 'core',
-		array(
-			'id' => 'wpcf7-mail-2',
-			'name' => 'mail_2',
-			'use' => __( 'Use Mail (2)', 'contact-form-7' ) ) );
-
-	add_meta_box( 'messagesdiv', __( 'Messages', 'contact-form-7' ),
-		'wpcf7_messages_meta_box', null, 'messages', 'core' );
-
-	add_meta_box( 'additionalsettingsdiv', __( 'Additional Settings', 'contact-form-7' ),
-		'wpcf7_additional_settings_meta_box', null, 'additional_settings', 'core' );
-
-	do_action( 'wpcf7_add_meta_boxes', $post_id );
 }
 
 /* Misc */
