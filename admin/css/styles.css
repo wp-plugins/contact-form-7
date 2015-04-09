@@ -2,6 +2,17 @@
 .wp-list-table .column-shortcode input.shortcode {
 	width: 100%;
 	font-size: 12px;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	background-color: #1e8cbe;
+	padding: 4px 8px;
+}
+
+.wp-list-table .column-shortcode input.shortcode {
+	background-color: inherit;
+	color: inherit;
+	padding: 2px 0;
 }
 
 #submitpost input.copy {
@@ -95,11 +106,11 @@
  * List Table
  */
 .fixed .column-title {
-	width: 32%;
+	width: 38%;
 }
 
 .fixed .column-shortcode {
-	width: 50%;
+	width: 38%;
 }
 
 /*
