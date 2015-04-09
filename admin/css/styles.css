@@ -29,7 +29,7 @@
 }
 
 .postbox-container .postbox h3 {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid transparent;
 }
 
 /*

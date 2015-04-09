@@ -79,6 +79,7 @@ if ( $post ) :
 <div id="postbox-container-1" class="postbox-container">
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
 <div id="submitdiv" class="postbox">
+<h3><?php echo esc_html( __( 'Status', 'contact-form-7' ) ); ?></h3>
 <div class="inside">
 <div class="submitbox" id="submitpost">
 
