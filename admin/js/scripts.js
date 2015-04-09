@@ -33,6 +33,10 @@
 				}
 			});
 
+			$('input:checkbox.toggle-form-table').click(function(event) {
+				$(this).wpcf7ToggleFormTable();
+			}).wpcf7ToggleFormTable();
+
 			if ('' == $('#title').val()) {
 				$('#title').focus();
 			}
@@ -42,6 +46,18 @@
 		} catch (e) {
 		}
 	});
+
+	$.fn.wpcf7ToggleFormTable = function() {
+		return this.each(function() {
+			var formtable = $(this).closest('.contact-form-editor-box-mail').find('table.form-table');
+
+			if ($(this).is(':checked')) {
+				formtable.removeClass('hidden');
+			} else {
+				formtable.addClass('hidden');
+			}
+		});
+	};
 
 	/**
 	 * Copied from wptitlehint() in wp-admin/js/post.js

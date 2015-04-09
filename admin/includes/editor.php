@@ -69,13 +69,18 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 		'subject' => '', 'body' => '', 'additional_headers' => '',
 		'attachments' => '', 'use_html' => false, 'exclude_blank' => false ) );
 
-	echo '<h3>' . esc_html( $args['title'] ) . '</h3>';
+?>
+<div class="contact-form-editor-box-mail" id="<?php echo $id; ?>">
+<h3><?php echo esc_html( $args['title'] ); ?></h3>
 
+<?php
 	if ( ! empty( $args['use'] ) ) :
 ?>
-<label for="<?php echo $id; ?>-active"><input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> /> <?php echo esc_html( $args['use'] ); ?></label>
+<label for="<?php echo $id; ?>-active"><input type="checkbox" id="<?php echo $id; ?>-active" name="<?php echo $id; ?>-active" class="toggle-form-table" value="1"<?php echo ( $mail['active'] ) ? ' checked="checked"' : ''; ?> /> <?php echo esc_html( $args['use'] ); ?></label>
 <p class="description"><?php echo esc_html( __( "Mail (2) is an additional mail template often used as an autoresponder.", 'contact-form-7' ) ); ?></p>
-<?php endif; ?>
+<?php
+	endif;
+?>
 
 <table class="form-table">
 <tbody>
@@ -138,6 +143,7 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 	</tr>
 </tbody>
 </table>
+</div>
 <?php
 }
 
