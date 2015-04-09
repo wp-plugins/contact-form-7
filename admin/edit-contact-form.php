@@ -111,6 +111,18 @@ if ( $post ) :
 </div>
 </div><!-- #submitdiv -->
 <?php endif; ?>
+
+<div id="informationdiv" class="postbox">
+<h3 class="dashicons-before dashicons-editor-help"> <?php echo esc_html( __( 'Information', 'contact-form-7' ) ); ?></h3>
+<div class="inside">
+<ul>
+<li><a href="<?php echo esc_url( __( 'http://contactform7.com/docs/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Docs', 'contact-form-7' ) ); ?></a></li>
+<li><a href="<?php echo esc_url( __( 'http://contactform7.com/faq/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'FAQ', 'contact-form-7' ) ); ?></a></li>
+<li><a href="<?php echo esc_url( __( 'http://contactform7.com/support/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Support', 'contact-form-7' ) ); ?></a></li>
+</ul>
+</div>
+</div><!-- #informationdiv -->
+
 </div><!-- #postbox-container-1 -->
 
 <div id="postbox-container-2" class="postbox-container">
