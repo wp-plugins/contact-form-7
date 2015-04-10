@@ -1,3 +1,7 @@
+#wpcf7-admin-form-element #titlediv .inside {
+	margin: 8px 2px 0;
+}
+
 #titlediv .inside input.shortcode,
 .wp-list-table .column-shortcode input.shortcode {
 	width: 100%;
