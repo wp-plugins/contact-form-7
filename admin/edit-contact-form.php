@@ -136,10 +136,18 @@ if ( $post ) :
 			'callback' => 'wpcf7_editor_panel_mail' ),
 		'messages-panel' => array(
 			'title' => __( 'Messages', 'contact-form-7' ),
-			'callback' => 'wpcf7_editor_panel_messages' ),
-		'additional-settings-panel' => array(
-			'title' => __( 'Additional Settings', 'contact-form-7' ),
-			'callback' => 'wpcf7_editor_panel_additional_settings' ) );
+			'callback' => 'wpcf7_editor_panel_messages' ) );
+
+	$additional_settings = trim( $post->prop( 'additional_settings' ) );
+	$additional_settings = array_filter( explode( "\n", $additional_settings ) );
+	$additional_settings = count( $additional_settings );
+
+	$panels['additional-settings-panel'] = array(
+		'title' => $additional_settings
+			? sprintf( __( 'Additional Settings (%d)', 'contact-form-7' ),
+				$additional_settings )
+			: __( 'Additional Settings', 'contact-form-7' ),
+		'callback' => 'wpcf7_editor_panel_additional_settings' );
 
 	$panels = apply_filters( 'wpcf7_editor_panels', $panels );
 
