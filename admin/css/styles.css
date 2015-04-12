@@ -1,22 +1,24 @@
-#wpcf7-admin-form-element #titlediv .inside {
+#titlediv .inside p.description {
 	margin: 8px 2px 0;
 }
 
-#titlediv .inside input.shortcode,
-.wp-list-table .column-shortcode input.shortcode {
-	width: 100%;
+#titlediv .inside p.description label {
+	cursor: pointer;
+}
+
+span.shortcode {
+	display: block;
+	margin: 2px 0;
+}
+
+span.shortcode > input {
+	background: inherit;
+	color: inherit;
 	font-size: 12px;
 	border: none;
 	box-shadow: none;
-	color: #fff;
-	background-color: #1e8cbe;
 	padding: 4px 8px;
-}
-
-.wp-list-table .column-shortcode input.shortcode {
-	background-color: inherit;
-	color: inherit;
-	padding: 2px 0;
+	margin: 0;
 }
 
 #submitpost input.copy {

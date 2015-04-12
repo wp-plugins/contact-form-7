@@ -54,19 +54,15 @@ if ( $post ) :
 	if ( ! $post->initial() ) :
 ?>
 	<p class="description">
-	<label for="wpcf7-shortcode">
-	<?php echo esc_html( __( "Copy this shortcode and paste it into your post, page, or text widget content:", 'contact-form-7' ) ); ?>
-	<input type="text" id="wpcf7-shortcode" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight code shortcode" value="<?php echo esc_attr( $post->shortcode() ); ?>" />
-	</label>
+	<label for="wpcf7-shortcode"><?php echo esc_html( __( "Copy this shortcode and paste it into your post, page, or text widget content:", 'contact-form-7' ) ); ?></label>
+	<span class="shortcode wp-ui-highlight"><input type="text" id="wpcf7-shortcode" onfocus="this.select();" readonly="readonly" class="large-text code" value="<?php echo esc_attr( $post->shortcode() ); ?>" /></span>
 	</p>
 <?php
 		if ( $old_shortcode = $post->shortcode( array( 'use_old_format' => true ) ) ) :
 ?>
 	<p class="description">
-	<label for="wpcf7-shortcode-old">
-	<?php echo esc_html( __( "You can also use this old-style shortcode:", 'contact-form-7' ) ); ?>
-	<input type="text" id="wpcf7-shortcode-old" onfocus="this.select();" readonly="readonly" class="wp-ui-highlight code shortcode" value="<?php echo esc_attr( $old_shortcode ); ?>" />
-	</label>
+	<label for="wpcf7-shortcode-old"><?php echo esc_html( __( "You can also use this old-style shortcode:", 'contact-form-7' ) ); ?></label>
+	<span class="shortcode old"><input type="text" id="wpcf7-shortcode-old" onfocus="this.select();" readonly="readonly" class="large-text code" value="<?php echo esc_attr( $old_shortcode ); ?>" /></span>
 	</p>
 <?php
 		endif;
