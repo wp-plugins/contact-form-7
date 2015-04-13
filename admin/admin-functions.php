@@ -50,7 +50,7 @@ function wpcf7_tag_generators() {
 }
 
 function wpcf7_mail_tags_suggestion( WPCF7_ContactForm $contact_form ) {
-	echo esc_html( __( "You can use these mail-tags in the following fields:", 'contact-form-7' ) );
+	echo esc_html( __( "Available mail-tags:", 'contact-form-7' ) );
 
 	foreach ( $contact_form->collect_mail_tags() as $mailtag ) {
 		echo sprintf(

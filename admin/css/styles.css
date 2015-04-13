@@ -114,7 +114,17 @@ span.shortcode > input {
 .contact-form-editor-box-mail span.mailtag {
 	display: inline-block;
 	margin: 0 0 0 4px;
+	padding: 1px 2px;
 	cursor: pointer;
+	color: #000;
+	background-color: #fcfcfc;
+}
+
+.contact-form-editor-box-mail fieldset legend {
+	width: 95%;
+	border: 1px solid #999;
+	border-radius: 3px;
+	padding: 10px;
 }
 
 /*
