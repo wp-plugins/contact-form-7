@@ -43,13 +43,19 @@
 
 			$.wpcf7TitleHint();
 
+			$('.contact-form-editor-box-mail span.mailtag').click(function(event) {
+				var range = document.createRange();
+				range.selectNodeContents(this);
+				window.getSelection().addRange(range);
+			});
+
 		} catch (e) {
 		}
 	});
 
 	$.fn.wpcf7ToggleFormTable = function() {
 		return this.each(function() {
-			var formtable = $(this).closest('.contact-form-editor-box-mail').find('table.form-table');
+			var formtable = $(this).closest('.contact-form-editor-box-mail').find('fieldset');
 
 			if ($(this).is(':checked')) {
 				formtable.removeClass('hidden');

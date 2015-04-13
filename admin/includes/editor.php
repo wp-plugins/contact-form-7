@@ -82,6 +82,8 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 	endif;
 ?>
 
+<fieldset>
+<legend><?php wpcf7_mail_tags_suggestion( $post ); ?></legend>
 <table class="form-table">
 <tbody>
 	<tr>
@@ -143,6 +145,7 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 	</tr>
 </tbody>
 </table>
+</fieldset>
 </div>
 <?php
 }

@@ -543,6 +543,29 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
+	public function collect_mail_tags( $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'exclude' => array(
+				'acceptance', 'captchac', 'captchar', 'quiz', 'count' ) ) );
+
+		$tags = $this->form_scan_shortcode();
+		$mailtags = array();
+
+		foreach ( $tags as $tag ) {
+			$type = trim( $tag['type'], ' *' );
+
+			if ( empty( $type ) || in_array( $type, $args['exclude'] ) ) {
+				continue;
+			}
+
+			$mailtags[] = $tag['name'];
+		}
+
+		$mailtags = array_unique( array_filter( $mailtags ) );
+
+		return apply_filters( 'wpcf7_collect_mail_tags', $mailtags );
+	}
+
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
 
