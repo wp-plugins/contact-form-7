@@ -20,7 +20,11 @@
 			});
 
 			$.extend($.tgPanes, _wpcf7.tagGenerators);
-			$('#taggenerator').tagGenerator(_wpcf7.generateTag);
+			$('#taggenerator').tagGenerator(_wpcf7.generateTag, {
+				dropdownIconUrl: _wpcf7.pluginUrl + '/admin/images/dropdown.gif',
+				fadebuttImageUrl: _wpcf7.pluginUrl + '/admin/images/fade-butt.png' });
+
+			postboxes.add_postbox_toggles(_wpcf7.screenId);
 
 			$('#contact-form-editor').tabs({
 				active: _wpcf7.activeTab,
