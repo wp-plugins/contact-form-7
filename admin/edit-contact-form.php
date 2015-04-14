@@ -80,6 +80,11 @@ if ( $post ) :
 <div class="submitbox" id="submitpost">
 
 <div id="minor-publishing-actions">
+
+<div class="hidden">
+	<input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" />
+</div>
+
 <?php
 	if ( ! $post->initial() ) :
 		$copy_nonce = wp_create_nonce( 'wpcf7-copy-contact-form_' . $post_id );
