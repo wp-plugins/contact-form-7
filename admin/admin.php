@@ -1,6 +1,7 @@
 <?php
 
 require_once WPCF7_PLUGIN_DIR . '/admin/admin-functions.php';
+require_once WPCF7_PLUGIN_DIR . '/admin/includes/tag-generator.php';
 
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
 
@@ -422,5 +423,3 @@ function wpcf7_admin_ajax_welcome_panel() {
 
 	wp_die( 1 );
 }
-
-?>

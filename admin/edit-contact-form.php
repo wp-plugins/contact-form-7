@@ -179,4 +179,9 @@ if ( $post ) :
 
 </div><!-- .wrap -->
 
-<?php do_action( 'wpcf7_admin_footer', $post ); ?>
+<?php
+
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->print_panels( $post );
+
+	do_action( 'wpcf7_admin_footer', $post );
