@@ -184,6 +184,8 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 			array(), WPCF7_VERSION, 'all' );
 	}
 
+	add_thickbox();
+
 	wp_enqueue_script( 'wpcf7-admin-taggenerator',
 		wpcf7_plugin_url( 'admin/js/taggenerator.js' ),
 		array( 'jquery' ), WPCF7_VERSION, true );

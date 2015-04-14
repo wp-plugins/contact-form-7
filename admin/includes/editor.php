@@ -39,6 +39,15 @@ class WPCF7_Editor {
 function wpcf7_editor_panel_form( $post ) {
 ?>
 <h3><?php echo esc_html( __( 'Form', 'contact-form-7' ) ); ?></h3>
+
+<?php
+	foreach ( wpcf7_tag_generators() as $taggenerator ) {
+		echo sprintf(
+			'<a href="#TB_inline?width=600&height=550&inlineId=%1$s" class="thickbox button">%2$s</a>',
+			$taggenerator['content'], $taggenerator['title'] );
+	}
+?>
+
 <textarea id="wpcf7-form" name="wpcf7-form" cols="100" rows="24" class="large-text code"><?php echo esc_textarea( $post->prop( 'form' ) ); ?></textarea>
 <?php
 }
