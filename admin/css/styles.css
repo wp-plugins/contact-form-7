@@ -109,6 +109,17 @@ span.shortcode > input {
 }
 
 /*
+ * Form Panel
+ */
+#tag-generator-list a.button {
+	font-size: 12px;
+	height: 26px;
+	line-height: 24px;
+	margin: 2px;
+	padding: 0 8px 1px;
+}
+
+/*
  * Mail Panel
  */
 .contact-form-editor-box-mail span.mailtag {
