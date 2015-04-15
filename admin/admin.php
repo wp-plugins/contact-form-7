@@ -172,8 +172,9 @@ function wpcf7_load_contact_form_admin() {
 add_action( 'admin_enqueue_scripts', 'wpcf7_admin_enqueue_scripts' );
 
 function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
-	if ( false === strpos( $hook_suffix, 'wpcf7' ) )
+	if ( false === strpos( $hook_suffix, 'wpcf7' ) ) {
 		return;
+	}
 
 	wp_enqueue_style( 'contact-form-7-admin',
 		wpcf7_plugin_url( 'admin/css/styles.css' ),
@@ -193,16 +194,13 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 
 	wp_enqueue_script( 'wpcf7-admin',
 		wpcf7_plugin_url( 'admin/js/scripts.js' ),
-		array( 'jquery', 'jquery-ui-tabs', 'postbox', 'wpcf7-admin-taggenerator' ),
+		array( 'jquery', 'jquery-ui-tabs', 'wpcf7-admin-taggenerator' ),
 		WPCF7_VERSION, true );
 
 	$current_screen = get_current_screen();
 
 	wp_localize_script( 'wpcf7-admin', '_wpcf7', array(
-		'screenId' => $current_screen->id,
-		'generateTag' => __( 'Generate Tag', 'contact-form-7' ),
 		'pluginUrl' => wpcf7_plugin_url(),
-		'tagGenerators' => wpcf7_tag_generators(),
 		'activeTab' => isset( $_GET['active-tab'] ) ? (int) $_GET['active-tab'] : 0 ) );
 }
 
