@@ -132,12 +132,11 @@ function wpcf7_tg_pane_textarea( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-textarea" class="hidden">
 <form action="" class="tag-generator-panel">
+<div class="control-box">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
-</table>
 
-<table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
@@ -167,10 +166,13 @@ function wpcf7_tg_pane_textarea( $contact_form ) {
 </td>
 </tr>
 </table>
+</div>
 
+<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="textarea" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
+</div>
 </form>
 </div>
 <?php

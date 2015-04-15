@@ -204,6 +204,7 @@ function wpcf7_tg_pane_captcha( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-captcha" class="hidden">
 <form action="" class="tag-generator-panel">
+<div class="control-box">
 <table>
 
 <?php if ( ! class_exists( 'ReallySimpleCaptcha' ) ) : ?>
@@ -258,12 +259,15 @@ function wpcf7_tg_pane_captcha( $contact_form ) {
 <input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 </table>
+</div>
 
+<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?>
 <br />1) <?php echo esc_html( __( "For image", 'contact-form-7' ) ); ?>
 <input type="text" name="captchac" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" />
 <br />2) <?php echo esc_html( __( "For input field", 'contact-form-7' ) ); ?>
 <input type="text" name="captchar" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" />
+</div>
 </div>
 </form>
 </div>
