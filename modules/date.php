@@ -138,7 +138,7 @@ function wpcf7_add_tag_generator_date() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'date', __( 'Date', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'date', __( 'date', 'contact-form-7' ),
 		'wpcf7-tg-pane-date', 'wpcf7_tg_pane_date' );
 }
 
@@ -152,7 +152,7 @@ function wpcf7_tg_pane_date_and_relatives( $type = 'date' ) {
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -196,5 +196,3 @@ function wpcf7_tg_pane_date_and_relatives( $type = 'date' ) {
 </div>
 <?php
 }
-
-?>

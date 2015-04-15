@@ -119,6 +119,14 @@ span.shortcode > input {
 	padding: 0 8px 1px;
 }
 
+.tag-generator-panel table {
+	width: 100%;
+}
+
+.tag-generator-panel table th, .tag-generator-panel table td {
+	width: 50%;
+}
+
 /*
  * Mail Panel
  */

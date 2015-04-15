@@ -141,10 +141,10 @@ function wpcf7_add_tag_generator_number() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'number', __( 'Number (spinbox)', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'number', __( 'number (spinbox)', 'contact-form-7' ),
 		'wpcf7-tg-pane-number', 'wpcf7_tg_pane_number' );
 
-	wpcf7_add_tag_generator( 'range', __( 'Number (slider)', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'range', __( 'number (slider)', 'contact-form-7' ),
 		'wpcf7-tg-pane-range', 'wpcf7_tg_pane_range' );
 }
 
@@ -162,7 +162,7 @@ function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -206,5 +206,3 @@ function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
 </div>
 <?php
 }
-
-?>

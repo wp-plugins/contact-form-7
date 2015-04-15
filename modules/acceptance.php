@@ -129,14 +129,14 @@ function wpcf7_add_tag_generator_acceptance() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'acceptance', __( 'Acceptance', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'acceptance', __( 'acceptance', 'contact-form-7' ),
 		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
 }
 
 function wpcf7_tg_pane_acceptance( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-acceptance" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
@@ -164,5 +164,3 @@ function wpcf7_tg_pane_acceptance( $contact_form ) {
 </div>
 <?php
 }
-
-?>

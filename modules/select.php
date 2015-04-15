@@ -158,14 +158,14 @@ function wpcf7_add_tag_generator_menu() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'menu', __( 'Drop-down menu', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'menu', __( 'drop-down menu', 'contact-form-7' ),
 		'wpcf7-tg-pane-menu', 'wpcf7_tg_pane_menu' );
 }
 
 function wpcf7_tg_pane_menu( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-menu" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -200,5 +200,3 @@ function wpcf7_tg_pane_menu( $contact_form ) {
 </div>
 <?php
 }
-
-?>

@@ -203,7 +203,7 @@ function wpcf7_add_tag_generator_captcha() {
 function wpcf7_tg_pane_captcha( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-captcha" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 
 <?php if ( ! class_exists( 'ReallySimpleCaptcha' ) ) : ?>
@@ -531,5 +531,3 @@ function wpcf7_captchac_options( $options ) {
 
 	return $op;
 }
-
-?>

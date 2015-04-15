@@ -160,14 +160,14 @@ function wpcf7_add_tag_generator_quiz() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'quiz', __( 'Quiz', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'quiz', __( 'quiz', 'contact-form-7' ),
 		'wpcf7-tg-pane-quiz', 'wpcf7_tg_pane_quiz' );
 }
 
 function wpcf7_tg_pane_quiz( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-quiz" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
@@ -202,5 +202,3 @@ function wpcf7_tg_pane_quiz( $contact_form ) {
 </div>
 <?php
 }
-
-?>

@@ -190,16 +190,16 @@ function wpcf7_add_tag_generator_text() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'text', __( 'Text field', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'text', __( 'text', 'contact-form-7' ),
 		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
 
-	wpcf7_add_tag_generator( 'email', __( 'Email', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'email', __( 'email', 'contact-form-7' ),
 		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
 
 	wpcf7_add_tag_generator( 'url', __( 'URL', 'contact-form-7' ),
 		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
 
-	wpcf7_add_tag_generator( 'tel', __( 'Telephone number', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'tel', __( 'tel', 'contact-form-7' ),
 		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
 }
 
@@ -225,7 +225,7 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -278,5 +278,3 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 </div>
 <?php
 }
-
-?>

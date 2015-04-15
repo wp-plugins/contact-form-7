@@ -46,14 +46,14 @@ function wpcf7_add_tag_generator_submit() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'submit', __( 'Submit button', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'submit', __( 'submit', 'contact-form-7' ),
 		'wpcf7-tg-pane-submit', 'wpcf7_tg_pane_submit', array( 'nameless' => 1 ) );
 }
 
 function wpcf7_tg_pane_submit( $contact_form ) {
 ?>
 <div id="wpcf7-tg-pane-submit" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
@@ -76,5 +76,3 @@ function wpcf7_tg_pane_submit( $contact_form ) {
 </div>
 <?php
 }
-
-?>

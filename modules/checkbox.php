@@ -8,7 +8,7 @@
 add_action( 'wpcf7_init', 'wpcf7_add_shortcode_checkbox' );
 
 function wpcf7_add_shortcode_checkbox() {
-	wpcf7_add_shortcode( array( 'checkbox', 'checkbox*', 'radio' ), 
+	wpcf7_add_shortcode( array( 'checkbox', 'checkbox*', 'radio' ),
 		'wpcf7_checkbox_shortcode_handler', true );
 }
 
@@ -265,10 +265,10 @@ function wpcf7_add_tag_generator_checkbox_and_radio() {
 	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
 		return;
 
-	wpcf7_add_tag_generator( 'checkbox', __( 'Checkboxes', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'checkbox', __( 'checkboxes', 'contact-form-7' ),
 		'wpcf7-tg-pane-checkbox', 'wpcf7_tg_pane_checkbox' );
 
-	wpcf7_add_tag_generator( 'radio', __( 'Radio buttons', 'contact-form-7' ),
+	wpcf7_add_tag_generator( 'radio', __( 'radio buttons', 'contact-form-7' ),
 		'wpcf7-tg-pane-radio', 'wpcf7_tg_pane_radio' );
 }
 
@@ -286,7 +286,7 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
-<form action="">
+<form action="" class="tag-generator-panel">
 <table>
 <?php if ( 'checkbox' == $type ) : ?>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
@@ -327,5 +327,3 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 </div>
 <?php
 }
-
-?>

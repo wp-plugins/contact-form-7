@@ -37,7 +37,7 @@ class WPCF7_TagGenerator {
 
     foreach ( (array) $this->panels as $panel ) {
       echo sprintf(
-        '<a href="#TB_inline?width=600&height=550&inlineId=%1$s" class="thickbox button" title="%2$s">%3$s</a>',
+        '<a href="#TB_inline?width=900&height=500&inlineId=%1$s" class="thickbox button" title="%2$s">%3$s</a>',
         esc_attr( $panel['content'] ),
         esc_attr( sprintf(
           __( 'Form-tag Generator: %s', 'contact-form-7' ),
