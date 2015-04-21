@@ -43,18 +43,18 @@ function wpcf7_submit_shortcode_handler( $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_submit', 55 );
 
 function wpcf7_add_tag_generator_submit() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'submit', __( 'submit', 'contact-form-7' ),
-		'wpcf7-tg-pane-submit', 'wpcf7_tg_pane_submit', array( 'nameless' => 1 ) );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'submit', __( 'submit', 'contact-form-7' ),
+		'wpcf7-tg-pane-submit', 'wpcf7_tag_generator_submit',
+		array( 'nameless' => 1 ) );
 }
 
-function wpcf7_tg_pane_submit( $contact_form ) {
+function wpcf7_tag_generator_submit( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate a form-tag for a submit button.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-submit" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

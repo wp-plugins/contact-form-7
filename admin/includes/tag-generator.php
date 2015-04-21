@@ -49,11 +49,17 @@ class WPCF7_TagGenerator {
   }
 
   public function print_panels( WPCF7_ContactForm $contact_form ) {
-    foreach ( (array) $this->panels as $panel ) {
+    foreach ( (array) $this->panels as $name => $panel ) {
       $callback = $panel['callback'];
 
+			$options = wp_parse_args( $panel['options'], array() );
+			$options = array_merge( $options, array(
+				'name' => $name,
+				'title' => $panel['title'],
+				'content' => $panel['content'] ) );
+
       if ( is_callable( $callback ) ) {
-        call_user_func( $callback, $contact_form );
+        call_user_func( $callback, $contact_form, $options );
       }
     }
   }

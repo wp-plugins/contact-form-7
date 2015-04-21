@@ -138,25 +138,17 @@ function wpcf7_number_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_number', 18 );
 
 function wpcf7_add_tag_generator_number() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'number', __( 'number (spinbox)', 'contact-form-7' ),
-		'wpcf7-tg-pane-number', 'wpcf7_tg_pane_number' );
-
-	wpcf7_add_tag_generator( 'range', __( 'number (slider)', 'contact-form-7' ),
-		'wpcf7-tg-pane-range', 'wpcf7_tg_pane_range' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'number', __( 'number (spinbox)', 'contact-form-7' ),
+		'wpcf7-tg-pane-number', 'wpcf7_tag_generator_number' );
+	$tag_generator->add( 'range', __( 'number (slider)', 'contact-form-7' ),
+		'wpcf7-tg-pane-range', 'wpcf7_tag_generator_number' );
 }
 
-function wpcf7_tg_pane_number( $contact_form ) {
-	wpcf7_tg_pane_number_and_relatives( 'number' );
-}
+function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$type = $args['name'];
 
-function wpcf7_tg_pane_range( $contact_form ) {
-	wpcf7_tg_pane_number_and_relatives( 'range' );
-}
-
-function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
 	if ( ! in_array( $type, array( 'range' ) ) ) {
 		$type = 'number';
 	}
@@ -164,7 +156,7 @@ function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
 	$description = __( "Generate a form-tag for a field for numeric value input.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

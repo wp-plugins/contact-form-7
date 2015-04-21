@@ -155,18 +155,17 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_menu', 25 );
 
 function wpcf7_add_tag_generator_menu() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'menu', __( 'drop-down menu', 'contact-form-7' ),
-		'wpcf7-tg-pane-menu', 'wpcf7_tg_pane_menu' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'menu', __( 'drop-down menu', 'contact-form-7' ),
+		'wpcf7-tg-pane-menu', 'wpcf7_tag_generator_menu' );
 }
 
-function wpcf7_tg_pane_menu( $contact_form ) {
+function wpcf7_tag_generator_menu( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate a form-tag for a drop-down menu.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-menu" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

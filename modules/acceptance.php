@@ -126,18 +126,17 @@ function wpcf7_acceptance_as_validation() {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance', 35 );
 
 function wpcf7_add_tag_generator_acceptance() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'acceptance', __( 'acceptance', 'contact-form-7' ),
-		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'acceptance', __( 'acceptance', 'contact-form-7' ),
+		'wpcf7-tg-pane-acceptance', 'wpcf7_tag_generator_acceptance' );
 }
 
-function wpcf7_tg_pane_acceptance( $contact_form ) {
+function wpcf7_tag_generator_acceptance( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate a form-tag for an acceptance checkbox.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-acceptance" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

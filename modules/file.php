@@ -217,18 +217,17 @@ function wpcf7_file_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_file', 50 );
 
 function wpcf7_add_tag_generator_file() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'file', __( 'file', 'contact-form-7' ),
-		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'file', __( 'file', 'contact-form-7' ),
+		'wpcf7-tg-pane-file', 'wpcf7_tag_generator_file' );
 }
 
-function wpcf7_tg_pane_file( $contact_form ) {
+function wpcf7_tag_generator_file( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate a form-tag for a file uploading field.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-file" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

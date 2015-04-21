@@ -87,7 +87,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 
 	function column_default( $item, $column_name ) {
 		return '';
-    }
+	}
 
 	function column_cb( $item ) {
 		return sprintf(
@@ -123,7 +123,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 			esc_html( $item->title() ) );
 
 		return '<strong>' . $a . '</strong> ' . $this->row_actions( $actions );
-    }
+	}
 
 	function column_author( $item ) {
 		$post = get_post( $item->id() );
@@ -134,7 +134,7 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$author = get_userdata( $post->post_author );
 
 		return esc_html( $author->display_name );
-    }
+	}
 
 	function column_shortcode( $item ) {
 		$shortcodes = array( $item->shortcode() );
@@ -169,5 +169,5 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 			$h_time = mysql2date( __( 'Y/m/d', 'contact-form-7' ), $m_time );
 
 		return '<abbr title="' . $t_time . '">' . $h_time . '</abbr>';
-    }
+	}
 }

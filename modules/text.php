@@ -187,39 +187,21 @@ function wpcf7_text_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );
 
 function wpcf7_add_tag_generator_text() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'text', __( 'text', 'contact-form-7' ),
-		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
-
-	wpcf7_add_tag_generator( 'email', __( 'email', 'contact-form-7' ),
-		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
-
-	wpcf7_add_tag_generator( 'url', __( 'URL', 'contact-form-7' ),
-		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
-
-	wpcf7_add_tag_generator( 'tel', __( 'tel', 'contact-form-7' ),
-		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'text', __( 'text', 'contact-form-7' ),
+		'wpcf7-tg-pane-text', 'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'email', __( 'email', 'contact-form-7' ),
+		'wpcf7-tg-pane-email', 'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'url', __( 'URL', 'contact-form-7' ),
+		'wpcf7-tg-pane-url', 'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'tel', __( 'tel', 'contact-form-7' ),
+		'wpcf7-tg-pane-tel', 'wpcf7_tag_generator_text' );
 }
 
-function wpcf7_tg_pane_text( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'text' );
-}
+function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$type = $args['name'];
 
-function wpcf7_tg_pane_email( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'email' );
-}
-
-function wpcf7_tg_pane_url( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'url' );
-}
-
-function wpcf7_tg_pane_tel( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'tel' );
-}
-
-function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) ) {
 		$type = 'text';
 	}
@@ -235,7 +217,7 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 	}
 
 ?>
-<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

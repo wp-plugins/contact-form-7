@@ -135,23 +135,18 @@ function wpcf7_date_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_date', 19 );
 
 function wpcf7_add_tag_generator_date() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'date', __( 'date', 'contact-form-7' ),
-		'wpcf7-tg-pane-date', 'wpcf7_tg_pane_date' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'date', __( 'date', 'contact-form-7' ),
+		'wpcf7-tg-pane-date', 'wpcf7_tag_generator_date' );
 }
 
-function wpcf7_tg_pane_date( $contact_form ) {
-	wpcf7_tg_pane_date_and_relatives( 'date' );
-}
-
-function wpcf7_tg_pane_date_and_relatives( $type = 'date' ) {
+function wpcf7_tag_generator_date( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$type = 'date';
 	$description = __( "Generate a form-tag for a date input field.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

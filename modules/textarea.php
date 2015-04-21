@@ -121,18 +121,17 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_textarea', 20 );
 
 function wpcf7_add_tag_generator_textarea() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'textarea', __( 'text area', 'contact-form-7' ),
-		'wpcf7-tg-pane-textarea', 'wpcf7_tg_pane_textarea' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'textarea', __( 'text area', 'contact-form-7' ),
+		'wpcf7-tg-pane-textarea', 'wpcf7_tag_generator_textarea' );
 }
 
-function wpcf7_tg_pane_textarea( $contact_form ) {
+function wpcf7_tag_generator_textarea( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate a form-tag for a multi-line text input field.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-textarea" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

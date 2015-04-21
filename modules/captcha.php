@@ -193,18 +193,17 @@ function wpcf7_captcha_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
 
 function wpcf7_add_tag_generator_captcha() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'captcha', __( 'CAPTCHA', 'contact-form-7' ),
-		'wpcf7-tg-pane-captcha', 'wpcf7_tg_pane_captcha' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'captcha', __( 'CAPTCHA', 'contact-form-7' ),
+		'wpcf7-tg-pane-captcha', 'wpcf7_tag_generator_captcha' );
 }
 
-function wpcf7_tg_pane_captcha( $contact_form ) {
+function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
 	$description = __( "Generate form-tags for a CAPTCHA image and corresponding response input field.", 'contact-form-7' );
 
 ?>
-<div id="wpcf7-tg-pane-captcha" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>

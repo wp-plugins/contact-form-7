@@ -262,25 +262,17 @@ function wpcf7_checkbox_posted_data( $posted_data ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_checkbox_and_radio', 30 );
 
 function wpcf7_add_tag_generator_checkbox_and_radio() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'checkbox', __( 'checkboxes', 'contact-form-7' ),
-		'wpcf7-tg-pane-checkbox', 'wpcf7_tg_pane_checkbox' );
-
-	wpcf7_add_tag_generator( 'radio', __( 'radio buttons', 'contact-form-7' ),
-		'wpcf7-tg-pane-radio', 'wpcf7_tg_pane_radio' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'checkbox', __( 'checkboxes', 'contact-form-7' ),
+		'wpcf7-tg-pane-checkbox', 'wpcf7_tag_generator_checkbox' );
+	$tag_generator->add( 'radio', __( 'radio buttons', 'contact-form-7' ),
+		'wpcf7-tg-pane-radio', 'wpcf7_tag_generator_checkbox' );
 }
 
-function wpcf7_tg_pane_checkbox( $contact_form ) {
-	wpcf7_tg_pane_checkbox_and_radio( 'checkbox' );
-}
+function wpcf7_tag_generator_checkbox( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$type = $args['name'];
 
-function wpcf7_tg_pane_radio( $contact_form ) {
-	wpcf7_tg_pane_checkbox_and_radio( 'radio' );
-}
-
-function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 	if ( 'radio' != $type ) {
 		$type = 'checkbox';
 	}
@@ -292,7 +284,7 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 	}
 
 ?>
-<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
+<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
