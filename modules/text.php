@@ -220,13 +220,26 @@ function wpcf7_tg_pane_tel( $contact_form ) {
 }
 
 function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
-	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) )
+	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) ) {
 		$type = 'text';
+	}
+
+	if ( 'text' == $type ) {
+		$description = __( "Generate a form-tag for a single-line plain text input field.", 'contact-form-7' );
+	} elseif ( 'email' == $type ) {
+		$description = __( "Generate a form-tag for a single-line email address input field.", 'contact-form-7' );
+	} elseif ( 'url' == $type ) {
+		$description = __( "Generate a form-tag for a single-line URL input field.", 'contact-form-7' );
+	} elseif ( 'tel' == $type ) {
+		$description = __( "Generate a form-tag for a single-line telephone number input field.", 'contact-form-7' );
+	}
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ) ), esc_html( __( 'Text Fields', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -269,6 +282,7 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 </td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

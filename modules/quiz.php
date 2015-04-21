@@ -165,10 +165,14 @@ function wpcf7_add_tag_generator_quiz() {
 }
 
 function wpcf7_tg_pane_quiz( $contact_form ) {
+	$description = __( "Generate a form-tag for a question-answer pair.", 'contact-form-7' );
+
 ?>
 <div id="wpcf7-tg-pane-quiz" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/quiz/', 'contact-form-7' ) ), esc_html( __( 'Quiz', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 
@@ -195,6 +199,7 @@ function wpcf7_tg_pane_quiz( $contact_form ) {
 </td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

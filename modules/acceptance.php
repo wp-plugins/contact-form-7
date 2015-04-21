@@ -134,10 +134,14 @@ function wpcf7_add_tag_generator_acceptance() {
 }
 
 function wpcf7_tg_pane_acceptance( $contact_form ) {
+	$description = __( "Generate a form-tag for an acceptance checkbox.", 'contact-form-7' );
+
 ?>
 <div id="wpcf7-tg-pane-acceptance" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/acceptance-checkbox/', 'contact-form-7' ) ), esc_html( __( 'Acceptance Checkbox', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 
@@ -157,6 +161,7 @@ function wpcf7_tg_pane_acceptance( $contact_form ) {
 </td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

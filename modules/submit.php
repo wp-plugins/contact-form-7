@@ -51,10 +51,14 @@ function wpcf7_add_tag_generator_submit() {
 }
 
 function wpcf7_tg_pane_submit( $contact_form ) {
+	$description = __( "Generate a form-tag for a submit button.", 'contact-form-7' );
+
 ?>
 <div id="wpcf7-tg-pane-submit" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/submit-button/', 'contact-form-7' ) ), esc_html( __( 'Submit Button', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
@@ -71,6 +75,7 @@ function wpcf7_tg_pane_submit( $contact_form ) {
 <td></td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

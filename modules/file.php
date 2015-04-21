@@ -225,10 +225,14 @@ function wpcf7_add_tag_generator_file() {
 }
 
 function wpcf7_tg_pane_file( $contact_form ) {
+	$description = __( "Generate a form-tag for a file uploading field.", 'contact-form-7' );
+
 ?>
 <div id="wpcf7-tg-pane-file" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/file-uploading-and-attachment/', 'contact-form-7' ) ), esc_html( __( 'File Uploading and Attachment', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
@@ -249,6 +253,7 @@ function wpcf7_tg_pane_file( $contact_form ) {
 <input type="text" name="filetypes" class="filetype oneline option" /></td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

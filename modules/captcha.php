@@ -201,10 +201,14 @@ function wpcf7_add_tag_generator_captcha() {
 }
 
 function wpcf7_tg_pane_captcha( $contact_form ) {
+	$description = __( "Generate form-tags for a CAPTCHA image and corresponding response input field.", 'contact-form-7' );
+
 ?>
 <div id="wpcf7-tg-pane-captcha" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) ); ?></legend>
 <table>
 
 <?php if ( ! class_exists( 'ReallySimpleCaptcha' ) ) : ?>
@@ -259,6 +263,7 @@ function wpcf7_tg_pane_captcha( $contact_form ) {
 <input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">

@@ -281,13 +281,22 @@ function wpcf7_tg_pane_radio( $contact_form ) {
 }
 
 function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
-	if ( 'radio' != $type )
+	if ( 'radio' != $type ) {
 		$type = 'checkbox';
+	}
+
+	if ( 'checkbox' == $type ) {
+		$description = __( "Generate a form-tag for a group of checkboxes.", 'contact-form-7' );
+	} elseif ( 'radio' == $type ) {
+		$description = __( "Generate a form-tag for a group of radio buttons.", 'contact-form-7' );
+	}
 
 ?>
 <div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
 <form action="" class="tag-generator-panel">
 <div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/checkboxes-radio-buttons-and-menus/', 'contact-form-7' ) ), esc_html( __( 'Checkboxes, Radio Buttons and Menus', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <?php if ( 'checkbox' == $type ) : ?>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
@@ -318,6 +327,7 @@ function wpcf7_tg_pane_checkbox_and_radio( $type = 'checkbox' ) {
 </td>
 </tr>
 </table>
+</fieldset>
 </div>
 
 <div class="insert-box">
