@@ -19,20 +19,6 @@ function wpcf7_add_tag_generator( $name, $title, $elm_id, $callback, $options = 
 	return $tag_generator->add( $name, $title, $elm_id, $callback, $options );
 }
 
-function wpcf7_tag_generators() {
-	global $wpcf7_tag_generators;
-
-	$taggenerators = array();
-
-	foreach ( (array) $wpcf7_tag_generators as $name => $tg ) {
-		$taggenerators[$name] = array_merge(
-			(array) $tg['options'],
-			array( 'title' => $tg['title'], 'content' => $tg['content'] ) );
-	}
-
-	return $taggenerators;
-}
-
 function wpcf7_mail_tags_suggestion( WPCF7_ContactForm $contact_form ) {
 	echo esc_html( __( "Available mail-tags:", 'contact-form-7' ) );
 
