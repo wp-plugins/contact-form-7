@@ -101,7 +101,9 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		$edit_link = add_query_arg( array( 'action' => 'edit' ), $url );
 
 		$actions = array(
-			'edit' => '<a href="' . $edit_link . '">' . __( 'Edit', 'contact-form-7' ) . '</a>' );
+			'edit' => sprintf( '<a href="%1$s">%2$s</a>',
+				esc_url( $edit_link ),
+				esc_html( __( 'Edit', 'contact-form-7' ) ) ) );
 
 		if ( current_user_can( 'wpcf7_edit_contact_form', $item->id() ) ) {
 			$copy_link = wp_nonce_url(
@@ -109,11 +111,13 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 				'wpcf7-copy-contact-form_' . absint( $item->id() ) );
 
 			$actions = array_merge( $actions, array(
-				'copy' => '<a href="' . $copy_link . '">' . __( 'Duplicate', 'contact-form-7' ) . '</a>' ) );
+				'copy' => sprintf( '<a href="%1$s">%2$s</a>',
+					esc_url( $copy_link ),
+					esc_html( __( 'Duplicate', 'contact-form-7' ) ) ) ) );
 		}
 
 		$a = sprintf( '<a class="row-title" href="%1$s" title="%2$s">%3$s</a>',
-			$edit_link,
+			esc_url( $edit_link ),
 			esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;', 'contact-form-7' ),
 				$item->title() ) ),
 			esc_html( $item->title() ) );
@@ -167,5 +171,3 @@ class WPCF7_Contact_Form_List_Table extends WP_List_Table {
 		return '<abbr title="' . $t_time . '">' . $h_time . '</abbr>';
     }
 }
-
-?>
