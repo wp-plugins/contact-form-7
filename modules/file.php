@@ -219,7 +219,7 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_file', 50 );
 function wpcf7_add_tag_generator_file() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'file', __( 'file', 'contact-form-7' ),
-		'wpcf7-tg-pane-file', 'wpcf7_tag_generator_file' );
+		'wpcf7_tag_generator_file' );
 }
 
 function wpcf7_tag_generator_file( $contact_form, $args = '' ) {
@@ -227,8 +227,6 @@ function wpcf7_tag_generator_file( $contact_form, $args = '' ) {
 	$description = __( "Generate a form-tag for a file uploading field.", 'contact-form-7' );
 
 ?>
-<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
-<form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/file-uploading-and-attachment/', 'contact-form-7' ) ), esc_html( __( 'File Uploading and Attachment', 'contact-form-7' ) ) ); ?></legend>
@@ -259,8 +257,6 @@ function wpcf7_tag_generator_file( $contact_form, $args = '' ) {
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="file" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the File Attachments field below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</div>
-</form>
 </div>
 <?php
 }

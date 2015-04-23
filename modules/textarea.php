@@ -123,7 +123,7 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_textarea', 20 );
 function wpcf7_add_tag_generator_textarea() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'textarea', __( 'text area', 'contact-form-7' ),
-		'wpcf7-tg-pane-textarea', 'wpcf7_tag_generator_textarea' );
+		'wpcf7_tag_generator_textarea' );
 }
 
 function wpcf7_tag_generator_textarea( $contact_form, $args = '' ) {
@@ -131,8 +131,6 @@ function wpcf7_tag_generator_textarea( $contact_form, $args = '' ) {
 	$description = __( "Generate a form-tag for a multi-line text input field.", 'contact-form-7' );
 
 ?>
-<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
-<form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ) ), esc_html( __( 'Text Fields', 'contact-form-7' ) ) ); ?></legend>
@@ -176,8 +174,6 @@ function wpcf7_tag_generator_textarea( $contact_form, $args = '' ) {
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="textarea" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</div>
-</form>
 </div>
 <?php
 }

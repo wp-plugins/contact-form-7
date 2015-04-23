@@ -16,16 +16,16 @@ class WPCF7_TagGenerator {
 		return self::$instance;
 	}
 
-	public function add( $name, $title, $elm_id, $callback, $options = array() ) {
-		$name = trim( $name );
+	public function add( $id, $title, $callback, $options = array() ) {
+		$id = trim( $id );
 
-		if ( '' === $name ) {
+		if ( '' === $id || ! wpcf7_is_name( $id ) ) {
 			return false;
 		}
 
-		$this->panels[$name] = array(
+		$this->panels[$id] = array(
 			'title' => $title,
-			'content' => $elm_id,
+			'content' => 'tag-generator-panel-' . $id,
 			'options' => $options,
 			'callback' => $callback );
 
@@ -49,17 +49,23 @@ class WPCF7_TagGenerator {
 	}
 
 	public function print_panels( WPCF7_ContactForm $contact_form ) {
-		foreach ( (array) $this->panels as $name => $panel ) {
+		foreach ( (array) $this->panels as $id => $panel ) {
 			$callback = $panel['callback'];
 
 			$options = wp_parse_args( $panel['options'], array() );
 			$options = array_merge( $options, array(
-				'name' => $name,
+				'id' => $id,
 				'title' => $panel['title'],
 				'content' => $panel['content'] ) );
 
 			if ( is_callable( $callback ) ) {
+				echo sprintf( '<div id="%s" class="hidden">',
+					esc_attr( $options['content'] ) );
+				echo '<form action="" class="tag-generator-panel">';
+
 				call_user_func( $callback, $contact_form, $options );
+
+				echo '</form></div>';
 			}
 		}
 	}

@@ -195,7 +195,7 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
 function wpcf7_add_tag_generator_captcha() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'captcha', __( 'CAPTCHA', 'contact-form-7' ),
-		'wpcf7-tg-pane-captcha', 'wpcf7_tag_generator_captcha' );
+		'wpcf7_tag_generator_captcha' );
 }
 
 function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
@@ -203,8 +203,6 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 	$description = __( "Generate form-tags for a CAPTCHA image and corresponding response input field.", 'contact-form-7' );
 
 ?>
-<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
-<form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) ); ?></legend>
@@ -272,8 +270,6 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 <br />2) <?php echo esc_html( __( "For input field", 'contact-form-7' ) ); ?>
 <input type="text" name="captchar" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" />
 </div>
-</div>
-</form>
 </div>
 <?php
 }

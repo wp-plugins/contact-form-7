@@ -140,14 +140,14 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_number', 18 );
 function wpcf7_add_tag_generator_number() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'number', __( 'number (spinbox)', 'contact-form-7' ),
-		'wpcf7-tg-pane-number', 'wpcf7_tag_generator_number' );
+		'wpcf7_tag_generator_number' );
 	$tag_generator->add( 'range', __( 'number (slider)', 'contact-form-7' ),
-		'wpcf7-tg-pane-range', 'wpcf7_tag_generator_number' );
+		'wpcf7_tag_generator_number' );
 }
 
 function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
-	$type = $args['name'];
+	$type = $args['id'];
 
 	if ( ! in_array( $type, array( 'range' ) ) ) {
 		$type = 'number';
@@ -156,8 +156,6 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 	$description = __( "Generate a form-tag for a field for numeric value input.", 'contact-form-7' );
 
 ?>
-<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
-<form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/number-fields/', 'contact-form-7' ) ), esc_html( __( 'Number Fields', 'contact-form-7' ) ) ); ?></legend>
@@ -201,8 +199,6 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</div>
-</form>
 </div>
 <?php
 }

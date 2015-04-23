@@ -189,18 +189,18 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );
 function wpcf7_add_tag_generator_text() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'text', __( 'text', 'contact-form-7' ),
-		'wpcf7-tg-pane-text', 'wpcf7_tag_generator_text' );
+		'wpcf7_tag_generator_text' );
 	$tag_generator->add( 'email', __( 'email', 'contact-form-7' ),
-		'wpcf7-tg-pane-email', 'wpcf7_tag_generator_text' );
+		'wpcf7_tag_generator_text' );
 	$tag_generator->add( 'url', __( 'URL', 'contact-form-7' ),
-		'wpcf7-tg-pane-url', 'wpcf7_tag_generator_text' );
+		'wpcf7_tag_generator_text' );
 	$tag_generator->add( 'tel', __( 'tel', 'contact-form-7' ),
-		'wpcf7-tg-pane-tel', 'wpcf7_tag_generator_text' );
+		'wpcf7_tag_generator_text' );
 }
 
 function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
-	$type = $args['name'];
+	$type = $args['id'];
 
 	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) ) {
 		$type = 'text';
@@ -217,8 +217,6 @@ function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
 	}
 
 ?>
-<div id="<?php echo esc_attr( $args['content'] ); ?>" class="hidden">
-<form action="" class="tag-generator-panel">
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ) ), esc_html( __( 'Text Fields', 'contact-form-7' ) ) ); ?></legend>
@@ -271,8 +269,6 @@ function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</div>
-</form>
 </div>
 <?php
 }
