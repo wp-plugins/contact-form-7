@@ -61,7 +61,9 @@ class WPCF7_TagGenerator {
 			if ( is_callable( $callback ) ) {
 				echo sprintf( '<div id="%s" class="hidden">',
 					esc_attr( $options['content'] ) );
-				echo '<form action="" class="tag-generator-panel">';
+				echo sprintf(
+					'<form action="" class="tag-generator-panel" data-id="%s">',
+					$options['id'] );
 
 				call_user_func( $callback, $contact_form, $options );
 
