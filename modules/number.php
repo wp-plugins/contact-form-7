@@ -138,31 +138,37 @@ function wpcf7_number_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_number', 18 );
 
 function wpcf7_add_tag_generator_number() {
-	$tag_generator = WPCF7_TagGenerator::get_instance();
-	$tag_generator->add( 'number', __( 'number (spinbox)', 'contact-form-7' ),
-		'wpcf7_tag_generator_number' );
-	$tag_generator->add( 'range', __( 'number (slider)', 'contact-form-7' ),
-		'wpcf7_tag_generator_number' );
+	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
+		return;
+
+	wpcf7_add_tag_generator( 'number', __( 'Number (spinbox)', 'contact-form-7' ),
+		'wpcf7-tg-pane-number', 'wpcf7_tg_pane_number' );
+
+	wpcf7_add_tag_generator( 'range', __( 'Number (slider)', 'contact-form-7' ),
+		'wpcf7-tg-pane-range', 'wpcf7_tg_pane_range' );
 }
 
-function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
-	$args = wp_parse_args( $args, array() );
-	$type = $args['id'];
+function wpcf7_tg_pane_number( $contact_form ) {
+	wpcf7_tg_pane_number_and_relatives( 'number' );
+}
 
-	if ( ! in_array( $type, array( 'range' ) ) ) {
+function wpcf7_tg_pane_range( $contact_form ) {
+	wpcf7_tg_pane_number_and_relatives( 'range' );
+}
+
+function wpcf7_tg_pane_number_and_relatives( $type = 'number' ) {
+	if ( ! in_array( $type, array( 'range' ) ) )
 		$type = 'number';
-	}
-
-	$description = __( "Generate a form-tag for a field for numeric value input.", 'contact-form-7' );
 
 ?>
-<div class="control-box">
-<fieldset>
-<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/number-fields/', 'contact-form-7' ) ), esc_html( __( 'Number Fields', 'contact-form-7' ) ) ); ?></legend>
+<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
+<form action="">
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+</table>
 
+<table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
@@ -192,13 +198,13 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 </td>
 </tr>
 </table>
-</fieldset>
-</div>
 
-<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
+</form>
 </div>
 <?php
 }
+
+?>

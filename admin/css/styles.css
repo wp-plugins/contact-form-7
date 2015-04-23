@@ -1,198 +1,253 @@
-#titlediv .inside p.description {
-	margin: 8px 2px 0;
+#icon-wpcf7 {
+	background: transparent url(../images/screen-icon.png) no-repeat 2px 1px;
 }
 
-#titlediv .inside p.description label {
-	cursor: pointer;
+div.wrap div.cf7com-links {
+	text-align: right;
+	font-size: .9em;
+	margin: -20px 1em 1em 0;
 }
 
-span.shortcode {
-	display: block;
-	margin: 2px 0;
+div.wrap div.cf7com-links a {
+	text-decoration: none;
+	font-weight: bold;
 }
 
-span.shortcode > input {
-	background: inherit;
-	color: inherit;
-	font-size: 12px;
-	border: none;
-	box-shadow: none;
-	padding: 4px 8px;
-	margin: 0;
-}
-
-#submitpost input.copy {
-	margin-bottom: 10px;
-}
-
-#submitpost input.delete {
-	padding: 0;
-	margin: 0;
-	border: none;
-	cursor: pointer;
-	background: inherit;
-	color: #a00;
-}
-
-.postbox-container .postbox h3 {
-	border-bottom: 1px solid transparent;
-}
-
-/*
- * Tabs
- */
-#contact-form-editor-tabs {
-	border-bottom: 1px solid #aaa;
-	padding: 9px 15px 0 10px;
-	margin: 0;
-}
-
-#contact-form-editor-tabs li {
-	display: inline-block;
-	list-style: none;
-	border: 1px solid #ccc;
-	border-bottom: 1px solid #aaa;
-	padding: 0;
-	margin: 0 4px -1px;
-	background-color: #e4e4e4;
-}
-
-#contact-form-editor-tabs li:hover {
+#titlediv {
+	margin-bottom: 20px;
+	position: relative;
+	border: 1px solid #c7c7c7;
+	padding: 6px;
 	background-color: #fff;
 }
 
-#contact-form-editor-tabs li.ui-tabs-active,
-#contact-form-editor-tabs li.ui-tabs-active:hover {
-	border-top: 1px solid #aaa;
-	border-right: 1px solid #aaa;
-	border-left: 1px solid #aaa;
-	border-bottom: 1px solid #f5f5f5;
-	background-color: #f5f5f5;
+div.save-contact-form {
+	padding: 1.4em 0 0 0;
+	text-align: right;
 }
 
-#contact-form-editor-tabs li a {
-	padding: 6px 10px;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 30px;
-	color: #333;
-	text-decoration: none;
-}
-
-#contact-form-editor-tabs li.ui-tabs-active a {
-	color: #000;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-#contact-form-editor-tabs li a:hover {
-	color: #000;
-}
-
-#contact-form-editor .contact-form-editor-panel h3 {
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 24px;
-	margin: 8px 0;
-	padding: 0;
-}
-
-#contact-form-editor .contact-form-editor-panel {
-	background-color: #f5f5f5;
-	border: 1px solid #aaa;
-	border-top: none;
-	padding: 16px;
-}
-
-#contact-form-editor .form-table th {
-	width: 100px;
-}
-
-/*
- * Form Panel
- */
-#tag-generator-list a.button {
-	font-size: 12px;
-	height: 26px;
-	line-height: 24px;
-	margin: 2px;
-	padding: 0 8px 1px;
-}
-
-.tag-generator-panel {
-	position: relative;
-	height: 495px;
-}
-
-.tag-generator-panel .control-box {
-	padding: 10px 0;
-	height: 360px;
-}
-
-.tag-generator-panel .control-box legend {
-	margin: 10px 0;
-	line-height: 1.6em;
-	font-weight: bold;
-}
-
-.tag-generator-panel .insert-box {
+div.actions-link {
 	position: absolute;
-	left: -15px;
-	right: -15px;
-	bottom: -15px;
-	width: 100%;
-	height: 100px;
+	top: 0;
+	right: 0;
 	margin: 0;
-	padding: 8px 16px;
-	background-color: #fcfcfc;
-	border-top: 1px solid #dfdfdf;
+	padding: 6px;
 }
 
-.tag-generator-panel table {
+div.actions-link input {
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-size: 11px;
+	cursor: pointer;
+	background: inherit;
+}
+
+div.actions-link input.copy {
+	color: #006505;
+}
+
+div.actions-link input.delete {
+	color: #bc0b0b;
+}
+
+input#wpcf7-title {
+	color: #5f5f5f;
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	cursor: pointer;
+	background-color: transparent;
+	box-shadow: none;
+	width: 80%;
+}
+
+input#wpcf7-title.focus {
+	color: #3f3f3f;
+	border: 1px solid #aaa;
+	cursor: text;
+	background-color: transparent;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
+}
+
+input#wpcf7-title.mouseover {
+	background-color: #ffffdd;
+}
+
+p.tagcode {
+	color: #333;
+	margin: 2ex 0 1ex 0;
+}
+
+input#contact-form-anchor-text, input#contact-form-anchor-text-old {
 	width: 100%;
 }
 
-.tag-generator-panel table th, .tag-generator-panel table td {
+.postbox .half, .postbox .half-left, .postbox .half-right {
+	float: left;
 	width: 50%;
 }
 
-.tag-generator-panel .insert-box input.tag {
-	width: 99%;
+.postbox .half-right > * {
+	margin-left: 10px;
 }
 
-/*
- * Mail Panel
- */
-.contact-form-editor-box-mail span.mailtag {
-	display: inline-block;
-	margin: 0 0 0 4px;
-	padding: 1px 2px;
-	cursor: pointer;
-	color: #000;
-	background-color: #fcfcfc;
+@media only screen and (max-width: 768px) {
+	.postbox .half, .postbox .half-left, .postbox .half-right {
+		width: 100%;
+	}
+
+	.postbox .half-right {
+		margin-top: 1em;
+	}
+
+	.postbox .half-right > * {
+		margin-left: inherit;
+	}
 }
 
-.contact-form-editor-box-mail fieldset legend {
-	width: 95%;
-	border: 1px solid #999;
-	border-radius: 3px;
-	padding: 10px;
+.postbox .mail-field, .postbox .message-field {
+	margin-top: 6px;
+	margin-bottom: 8px;
 }
 
-/*
- * List Table
- */
+.postbox .mail-field label, .postbox .message-field label {
+	line-height: 1.4em;
+}
+
+div.pseudo-hr {
+	border-bottom: 1px solid transparent;
+	margin: 8px 0;
+}
+
+input, textarea {
+	border: 1px solid #dfdfdf;
+}
+
+input.wide {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+label.disabled {
+	color: #777;
+}
+
+#messagesdiv .hide-initially {
+	display: none;
+}
+
+div.tag-generator {
+	position: relative;
+	background: transparent;
+	padding: 0 0 5px 1px;
+}
+
+div.tg-pane {
+    border: 1px solid #e1e1e1;
+    background: #f7f7f7;
+    margin: 1ex 0 0 0;
+    padding: 10px;
+	line-height: 140%;
+}
+
+div.tg-pane table {
+	width: 100%;
+	margin: 0 0 0.7em 0;
+}
+
+div.tg-pane table caption {
+	text-align: left;
+	padding: 0 0 0.2em 0;
+	font-weight: bolder;
+	color: #777;
+}
+
+div.tg-pane table code {
+	background-color: inherit;
+}
+
+div.tg-pane table td {
+	vertical-align: top;
+	width: 50%;
+	border: none;
+	padding: 2px 0;
+}
+
+div.tg-pane input.tag, div.tg-pane input.mail-tag {
+	width: 100%;
+	font-size: 90%;
+}
+
+div.tg-pane input.mail-tag {
+	width: 65%;
+}
+
+div.tg-mail-tag {
+	margin-top: 2.4em;
+	text-align: right;
+}
+
+div.tg-pane input.tg-name {
+	border-color: #555;
+}
+
+div.tg-pane input.oneline {
+	width: 94%;
+	font-size: smaller;
+	-moz-box-sizing: border-box;
+}
+
+div.tg-pane textarea {
+	width: 94%;
+	height: 100px;
+	font-size: smaller;
+}
+
+div.tg-pane div.tg-tag {
+	margin: .4em 0;
+}
+
+div.tg-dropdown {
+    position: absolute;
+    top: 26px;
+	left: 0;
+    z-index: 10;
+    border: 1px solid #ddd;
+}
+
+span.tg-closebutton {
+    color: #777;
+    font: bold 18px monospace;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+
+div.tg-panetitle {
+	font-weight: bold;
+	font-size: 1.5em;
+    margin: 0 0 .5em;
+    color: #5f5f5f;
+}
+
 .fixed .column-title {
-	width: 38%;
+	width: 32%;
 }
 
-.fixed .column-shortcode {
-	width: 38%;
+input.shortcode-in-list-table {
+	width: 100%;
+	font-size: 90%;
 }
 
-/*
- * Welcome Panel
- */
+input[readonly].code {
+	background: #f3f3f3;
+	color: #3f3f3f;
+}
+
+/* welcome panel */
 .welcome-panel p.message {
 	line-height: 1.4em;
 	margin-right: 25px;
