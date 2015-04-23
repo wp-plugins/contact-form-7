@@ -7,7 +7,7 @@ Author: Takayuki Miyoshi
 Author URI: http://ideasilo.wordpress.com/
 Text Domain: contact-form-7
 Domain Path: /languages/
-Version: 4.1.1
+Version: 4.1.2
 */
 
 /*  Copyright 2007-2015 Takayuki Miyoshi (email: takayukister at gmail.com)
@@ -27,7 +27,7 @@ Version: 4.1.1
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define( 'WPCF7_VERSION', '4.1.1' );
+define( 'WPCF7_VERSION', '4.1.2' );
 
 define( 'WPCF7_REQUIRED_WP_VERSION', '4.0' );
 
