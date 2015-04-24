@@ -1,12 +1,3 @@
-div.save-contact-form {
-	direction: rtl;
-}
-
-div.actions-link {
-	right: auto;
-	left: 0;
-}
-
 div.tg-pane table caption {
 	text-align: right;
 }
@@ -14,8 +5,4 @@ div.tg-pane table caption {
 div.tg-dropdown {
 	left: auto;
 	right: 0;
-}
-
-div.wrap div.cf7com-links {
-	text-align: left;
 }

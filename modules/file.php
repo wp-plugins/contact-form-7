@@ -217,23 +217,23 @@ function wpcf7_file_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_file', 50 );
 
 function wpcf7_add_tag_generator_file() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'file', __( 'File upload', 'contact-form-7' ),
-		'wpcf7-tg-pane-file', 'wpcf7_tg_pane_file' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'file', __( 'file', 'contact-form-7' ),
+		'wpcf7_tag_generator_file' );
 }
 
-function wpcf7_tg_pane_file( $contact_form ) {
+function wpcf7_tag_generator_file( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$description = __( "Generate a form-tag for a file uploading field.", 'contact-form-7' );
+
 ?>
-<div id="wpcf7-tg-pane-file" class="hidden">
-<form action="">
+<div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/file-uploading-and-attachment/', 'contact-form-7' ) ), esc_html( __( 'File Uploading and Attachment', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
-</table>
 
-<table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
@@ -250,11 +250,13 @@ function wpcf7_tg_pane_file( $contact_form ) {
 <input type="text" name="filetypes" class="filetype oneline option" /></td>
 </tr>
 </table>
+</fieldset>
+</div>
 
+<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="file" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the File Attachments field below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</form>
 </div>
 <?php
 }
@@ -357,5 +359,3 @@ function wpcf7_cleanup_upload_files() {
 		closedir( $handle );
 	}
 }
-
-?>

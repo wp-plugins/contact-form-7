@@ -126,22 +126,22 @@ function wpcf7_acceptance_as_validation() {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance', 35 );
 
 function wpcf7_add_tag_generator_acceptance() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'acceptance', __( 'Acceptance', 'contact-form-7' ),
-		'wpcf7-tg-pane-acceptance', 'wpcf7_tg_pane_acceptance' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'acceptance', __( 'acceptance', 'contact-form-7' ),
+		'wpcf7_tag_generator_acceptance' );
 }
 
-function wpcf7_tg_pane_acceptance( $contact_form ) {
+function wpcf7_tag_generator_acceptance( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$description = __( "Generate a form-tag for an acceptance checkbox.", 'contact-form-7' );
+
 ?>
-<div id="wpcf7-tg-pane-acceptance" class="hidden">
-<form action="">
+<div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/acceptance-checkbox/', 'contact-form-7' ) ), esc_html( __( 'Acceptance Checkbox', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
-</table>
 
-<table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
@@ -158,11 +158,11 @@ function wpcf7_tg_pane_acceptance( $contact_form ) {
 </td>
 </tr>
 </table>
+</fieldset>
+</div>
 
+<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="acceptance" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</form>
 </div>
 <?php
 }
-
-?>

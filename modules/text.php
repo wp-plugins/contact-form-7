@@ -187,51 +187,43 @@ function wpcf7_text_messages( $messages ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );
 
 function wpcf7_add_tag_generator_text() {
-	if ( ! function_exists( 'wpcf7_add_tag_generator' ) )
-		return;
-
-	wpcf7_add_tag_generator( 'text', __( 'Text field', 'contact-form-7' ),
-		'wpcf7-tg-pane-text', 'wpcf7_tg_pane_text' );
-
-	wpcf7_add_tag_generator( 'email', __( 'Email', 'contact-form-7' ),
-		'wpcf7-tg-pane-email', 'wpcf7_tg_pane_email' );
-
-	wpcf7_add_tag_generator( 'url', __( 'URL', 'contact-form-7' ),
-		'wpcf7-tg-pane-url', 'wpcf7_tg_pane_url' );
-
-	wpcf7_add_tag_generator( 'tel', __( 'Telephone number', 'contact-form-7' ),
-		'wpcf7-tg-pane-tel', 'wpcf7_tg_pane_tel' );
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	$tag_generator->add( 'text', __( 'text', 'contact-form-7' ),
+		'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'email', __( 'email', 'contact-form-7' ),
+		'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'url', __( 'URL', 'contact-form-7' ),
+		'wpcf7_tag_generator_text' );
+	$tag_generator->add( 'tel', __( 'tel', 'contact-form-7' ),
+		'wpcf7_tag_generator_text' );
 }
 
-function wpcf7_tg_pane_text( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'text' );
-}
+function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
+	$args = wp_parse_args( $args, array() );
+	$type = $args['id'];
 
-function wpcf7_tg_pane_email( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'email' );
-}
-
-function wpcf7_tg_pane_url( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'url' );
-}
-
-function wpcf7_tg_pane_tel( $contact_form ) {
-	wpcf7_tg_pane_text_and_relatives( 'tel' );
-}
-
-function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
-	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) )
+	if ( ! in_array( $type, array( 'email', 'url', 'tel' ) ) ) {
 		$type = 'text';
+	}
+
+	if ( 'text' == $type ) {
+		$description = __( "Generate a form-tag for a single-line plain text input field.", 'contact-form-7' );
+	} elseif ( 'email' == $type ) {
+		$description = __( "Generate a form-tag for a single-line email address input field.", 'contact-form-7' );
+	} elseif ( 'url' == $type ) {
+		$description = __( "Generate a form-tag for a single-line URL input field.", 'contact-form-7' );
+	} elseif ( 'tel' == $type ) {
+		$description = __( "Generate a form-tag for a single-line telephone number input field.", 'contact-form-7' );
+	}
 
 ?>
-<div id="wpcf7-tg-pane-<?php echo $type; ?>" class="hidden">
-<form action="">
+<div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ) ), esc_html( __( 'Text Fields', 'contact-form-7' ) ) ); ?></legend>
 <table>
 <tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
-</table>
 
-<table>
 <tr>
 <td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
 <input type="text" name="id" class="idvalue oneline option" /></td>
@@ -270,13 +262,13 @@ function wpcf7_tg_pane_text_and_relatives( $type = 'text' ) {
 </td>
 </tr>
 </table>
+</fieldset>
+</div>
 
+<div class="insert-box">
 <div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="<?php echo $type; ?>" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 
 <div class="tg-mail-tag"><?php echo esc_html( __( "And, put this code into the Mail fields below.", 'contact-form-7' ) ); ?><br /><input type="text" class="mail-tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
-</form>
 </div>
 <?php
 }
-
-?>

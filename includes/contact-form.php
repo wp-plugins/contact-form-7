@@ -543,6 +543,29 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_form_elements', $this->form_do_shortcode() );
 	}
 
+	public function collect_mail_tags( $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'exclude' => array(
+				'acceptance', 'captchac', 'captchar', 'quiz', 'count' ) ) );
+
+		$tags = $this->form_scan_shortcode();
+		$mailtags = array();
+
+		foreach ( $tags as $tag ) {
+			$type = trim( $tag['type'], ' *' );
+
+			if ( empty( $type ) || in_array( $type, $args['exclude'] ) ) {
+				continue;
+			}
+
+			$mailtags[] = $tag['name'];
+		}
+
+		$mailtags = array_unique( array_filter( $mailtags ) );
+
+		return apply_filters( 'wpcf7_collect_mail_tags', $mailtags );
+	}
+
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
 
@@ -719,6 +742,28 @@ class WPCF7_ContactForm {
 		}
 
 		return false;
+	}
+
+	public function shortcode( $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'use_old_format' => false ) );
+
+		$title = str_replace( array( '"', '[', ']' ), '', $this->title );
+
+		if ( $args['use_old_format'] ) {
+			$old_unit_id = (int) get_post_meta( $this->id, '_old_cf7_unit_id', true );
+
+			if ( $old_unit_id ) {
+				$shortcode = sprintf( '[contact-form %1$d "%2$s"]', $old_unit_id, $title );
+			} else {
+				$shortcode = '';
+			}
+		} else {
+			$shortcode = sprintf( '[contact-form-7 id="%1$d" title="%2$s"]',
+				$this->id, $title );
+		}
+
+		return apply_filters( 'wpcf7_contact_form_shortcode', $shortcode, $args, $this );
 	}
 }
 

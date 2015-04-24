@@ -15,38 +15,18 @@ function wpcf7_admin_has_edit_cap() {
 }
 
 function wpcf7_add_tag_generator( $name, $title, $elm_id, $callback, $options = array() ) {
-	global $wpcf7_tag_generators;
-
-	$name = trim( $name );
-	if ( '' == $name )
-		return false;
-
-	if ( ! is_array( $wpcf7_tag_generators ) )
-		$wpcf7_tag_generators = array();
-
-	$wpcf7_tag_generators[$name] = array(
-		'title' => $title,
-		'content' => $elm_id,
-		'options' => $options );
-
-	if ( is_callable( $callback ) )
-		add_action( 'wpcf7_admin_footer', $callback );
-
-	return true;
+	$tag_generator = WPCF7_TagGenerator::get_instance();
+	return $tag_generator->add( $name, $title, $callback, $options );
 }
 
-function wpcf7_tag_generators() {
-	global $wpcf7_tag_generators;
+function wpcf7_mail_tags_suggestion( WPCF7_ContactForm $contact_form ) {
+	echo esc_html( __( "Available mail-tags:", 'contact-form-7' ) );
 
-	$taggenerators = array();
-
-	foreach ( (array) $wpcf7_tag_generators as $name => $tg ) {
-		$taggenerators[$name] = array_merge(
-			(array) $tg['options'],
-			array( 'title' => $tg['title'], 'content' => $tg['content'] ) );
+	foreach ( $contact_form->collect_mail_tags() as $mailtag ) {
+		echo sprintf(
+			'<span class="mailtag code">[%s]</span>',
+			esc_html( $mailtag ) );
 	}
-
-	return $taggenerators;
 }
 
 function wpcf7_save_contact_form( $post_id = -1 ) {
@@ -58,8 +38,8 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 		$contact_form = WPCF7_ContactForm::get_template();
 	}
 
-	if ( isset( $_POST['wpcf7-title'] ) ) {
-		$contact_form->set_title( $_POST['wpcf7-title'] );
+	if ( isset( $_POST['post_title'] ) ) {
+		$contact_form->set_title( $_POST['post_title'] );
 	}
 
 	if ( isset( $_POST['wpcf7-locale'] ) ) {
@@ -160,5 +140,3 @@ function wpcf7_save_contact_form( $post_id = -1 ) {
 
 	return $contact_form->save();
 }
-
-?>
