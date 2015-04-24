@@ -200,6 +200,19 @@ function wpcf7_add_tag_generator_captcha() {
 
 function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
+
+	if ( ! class_exists( 'ReallySimpleCaptcha' ) ) {
+?>
+<div class="control-box">
+<fieldset>
+<legend><?php echo esc_html( __( "To use CAPTCHA, you first need to install and activate Really Simple CAPTCHA plugin.", 'contact-form-7' ) ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'http://wordpress.org/extend/plugins/really-simple-captcha/', 'Really Simple CAPTCHA' ); ?></legend>
+</fieldset>
+</div>
+<?php
+
+		return;
+	}
+
 	$description = __( "Generate form-tags for a CAPTCHA image and corresponding response input field.", 'contact-form-7' );
 
 ?>
@@ -207,10 +220,6 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) ); ?></legend>
 <table>
-
-<?php if ( ! class_exists( 'ReallySimpleCaptcha' ) ) : ?>
-<tr><td colspan="2"><strong style="color: #e6255b"><?php echo esc_html( __( "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed.", 'contact-form-7' ) ); ?></strong><br /><a href="http://wordpress.org/extend/plugins/really-simple-captcha/">http://wordpress.org/extend/plugins/really-simple-captcha/</a></td></tr>
-<?php endif; ?>
 
 <tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 </table>
