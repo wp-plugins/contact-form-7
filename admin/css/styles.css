@@ -125,14 +125,18 @@ span.shortcode > input {
 }
 
 .tag-generator-panel .control-box {
-	padding: 10px 0;
-	height: 360px;
+	padding: 0;
+	margin: 0;
+	height: 380px;
+	overflow: scroll;
 }
 
 .tag-generator-panel .control-box legend {
-	margin: 10px 0;
+	margin: 0;
+	padding: 0;
 	line-height: 1.6em;
 	font-weight: bold;
+	width: 100%;
 }
 
 .tag-generator-panel .insert-box {
@@ -152,8 +156,15 @@ span.shortcode > input {
 	width: 100%;
 }
 
-.tag-generator-panel table th, .tag-generator-panel table td {
-	width: 50%;
+.tag-generator-panel table.form-table th {
+	width: 120px;
+	padding: 10px 10px 10px 0;
+	font-size: 13px;
+}
+
+.tag-generator-panel table.form-table td {
+	padding: 5px 10px;
+	font-size: 13px;
 }
 
 .tag-generator-panel .insert-box input.tag {
