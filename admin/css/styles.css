@@ -139,6 +139,14 @@ span.shortcode > input {
 	width: 100%;
 }
 
+.tag-generator-panel .control-box input.oneline {
+	width: 200px;
+}
+
+.tag-generator-panel .control-box input[type="number"] {
+	width: 80px;
+}
+
 .tag-generator-panel .insert-box {
 	position: absolute;
 	left: -15px;

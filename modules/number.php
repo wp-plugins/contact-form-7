@@ -139,19 +139,13 @@ add_action( 'admin_init', 'wpcf7_add_tag_generator_number', 18 );
 
 function wpcf7_add_tag_generator_number() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
-	$tag_generator->add( 'number', __( 'number (spinbox)', 'contact-form-7' ),
-		'wpcf7_tag_generator_number' );
-	$tag_generator->add( 'range', __( 'number (slider)', 'contact-form-7' ),
+	$tag_generator->add( 'number', __( 'number', 'contact-form-7' ),
 		'wpcf7_tag_generator_number' );
 }
 
 function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
-	$type = $args['id'];
-
-	if ( ! in_array( $type, array( 'range' ) ) ) {
-		$type = 'number';
-	}
+	$type = 'number';
 
 	$description = __( "Generate a form-tag for a field for numeric value input.", 'contact-form-7' );
 
@@ -159,38 +153,62 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/number-fields/', 'contact-form-7' ) ), esc_html( __( 'Number Fields', 'contact-form-7' ) ) ); ?></legend>
-<table>
-<tr><td><input type="checkbox" name="required" />&nbsp;<?php echo esc_html( __( 'Required field?', 'contact-form-7' ) ); ?></td></tr>
-<tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
 
-<tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline option" /></td>
+<table class="form-table">
+<tbody>
+	<tr>
+	<th scope="row"><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></th>
+	<td>
+		<fieldset>
+		<legend class="screen-reader-text"><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></legend>
+		<label><input type="radio" name="tagtype" value="number" checked="checked" /> <?php echo esc_html( __( 'Spinbox', 'contact-form-7' ) ); ?></label>
+		<br />
+		<label><input type="radio" name="tagtype" value="range" /> <?php echo esc_html( __( 'Slider', 'contact-form-7' ) ); ?></label>
+		<br />
+		<label><input type="checkbox" name="required" /> <?php echo esc_html( __( 'Required field', 'contact-form-7' ) ); ?></label>
+		</fieldset>
+	</td>
+	</tr>
 
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline option" /></td>
-</tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="name" class="tg-name oneline" id="<?php echo esc_attr( $args['content'] . '-name' ); ?>" /></td>
+	</tr>
 
-<tr>
-<td><code>min</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="number" name="min" class="numeric oneline option" /></td>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><?php echo esc_html( __( 'Default value', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="values" class="oneline" id="<?php echo esc_attr( $args['content'] . '-values' ); ?>" /><br />
+	<label><input type="checkbox" name="placeholder" class="option" /> <?php echo esc_html( __( 'Use this text as the placeholder of the field', 'contact-form-7' ) ); ?></label></td>
+	</tr>
 
-<td><code>max</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="number" name="max" class="numeric oneline option" /></td>
-</tr>
+	<tr>
+	<th scope="row"><?php echo esc_html( __( 'Range', 'contact-form-7' ) ); ?></th>
+	<td>
+		<fieldset>
+		<legend class="screen-reader-text"><?php echo esc_html( __( 'Range', 'contact-form-7' ) ); ?></legend>
+		<label>
+		<?php echo esc_html( __( 'Minimum', 'contact-form-7' ) ); ?>
+		<input type="number" name="min" class="numeric option" />
+		</label>
+		&ndash;
+		<label>
+		<?php echo esc_html( __( 'Maximum', 'contact-form-7' ) ); ?>
+		<input type="number" name="max" class="numeric option" />
+		</label>
+		</fieldset>
+	</td>
+	</tr>
 
-<tr>
-<td><code>step</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="number" name="step" class="numeric oneline option" min="1" /></td>
-</tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-id' ); ?>"><?php echo esc_html( __( 'Id attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="id" class="idvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-id' ); ?>" /></td>
+	</tr>
 
-<tr>
-<td><?php echo esc_html( __( 'Default value', 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br /><input type="text" name="values" class="oneline" /></td>
-
-<td>
-<br /><input type="checkbox" name="placeholder" class="option" />&nbsp;<?php echo esc_html( __( 'Use this text as placeholder?', 'contact-form-7' ) ); ?>
-</td>
-</tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-class' ); ?>"><?php echo esc_html( __( 'Class attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="class" class="classvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-class' ); ?>" /></td>
+	</tr>
+</tbody>
 </table>
 </fieldset>
 </div>

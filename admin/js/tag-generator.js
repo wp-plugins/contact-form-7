@@ -40,6 +40,10 @@
 		$form.find('input.tag').each(function() {
 			var tag_type = $(this).attr('name');
 
+			if ($form.find('input[name="tagtype"]').length) {
+				tag_type = $form.find('input[name="tagtype"]:checked').val();
+			}
+
 			if (required) {
 				tag_type += '*';
 			}
@@ -112,7 +116,11 @@
 			var components = [];
 
 			$.each([tag_type, name, options, value], function(i, v) {
-				components.push($.trim(v));
+				v = $.trim(v);
+
+				if ('' != v) {
+					components.push(v);
+				}
 			});
 
 			components = $.trim(components.join(' '));
