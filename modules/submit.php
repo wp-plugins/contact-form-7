@@ -56,21 +56,25 @@ function wpcf7_tag_generator_submit( $contact_form, $args = '' ) {
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/submit-button/', 'contact-form-7' ) ), esc_html( __( 'Submit Button', 'contact-form-7' ) ) ); ?></legend>
-<table>
-<tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline option" /></td>
 
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline option" /></td>
-</tr>
+<table class="form-table">
+<tbody>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><?php echo esc_html( __( 'Label', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="values" class="oneline" id="<?php echo esc_attr( $args['content'] . '-values' ); ?>" /></td>
+	</tr>
 
-<tr>
-<td><?php echo esc_html( __( 'Label', 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="values" class="oneline" /></td>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-id' ); ?>"><?php echo esc_html( __( 'Id attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="id" class="idvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-id' ); ?>" /></td>
+	</tr>
 
-<td></td>
-</tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-class' ); ?>"><?php echo esc_html( __( 'Class attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="class" class="classvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-class' ); ?>" /></td>
+	</tr>
+
+</tbody>
 </table>
 </fieldset>
 </div>
