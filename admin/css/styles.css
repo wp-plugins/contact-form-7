@@ -143,6 +143,11 @@ span.shortcode > input {
 	width: 200px;
 }
 
+.tag-generator-panel .control-box textarea.values {
+	width: 200px;
+	height: 6em;
+}
+
 .tag-generator-panel .control-box input[type="number"],
 .tag-generator-panel .control-box input[type="date"] {
 	width: 88px;
