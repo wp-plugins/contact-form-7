@@ -143,8 +143,9 @@ span.shortcode > input {
 	width: 200px;
 }
 
-.tag-generator-panel .control-box input[type="number"] {
-	width: 80px;
+.tag-generator-panel .control-box input[type="number"],
+.tag-generator-panel .control-box input[type="date"] {
+	width: 88px;
 }
 
 .tag-generator-panel .insert-box {

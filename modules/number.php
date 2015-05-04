@@ -187,12 +187,12 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 		<fieldset>
 		<legend class="screen-reader-text"><?php echo esc_html( __( 'Range', 'contact-form-7' ) ); ?></legend>
 		<label>
-		<?php echo esc_html( __( 'Minimum', 'contact-form-7' ) ); ?>
+		<?php echo esc_html( __( 'Min', 'contact-form-7' ) ); ?>
 		<input type="number" name="min" class="numeric option" />
 		</label>
 		&ndash;
 		<label>
-		<?php echo esc_html( __( 'Maximum', 'contact-form-7' ) ); ?>
+		<?php echo esc_html( __( 'Max', 'contact-form-7' ) ); ?>
 		<input type="number" name="max" class="numeric option" />
 		</label>
 		</fieldset>
