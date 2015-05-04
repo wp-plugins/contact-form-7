@@ -164,12 +164,15 @@ function wpcf7_add_tag_generator_quiz() {
 
 function wpcf7_tag_generator_quiz( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
-	$description = __( "Generate a form-tag for a question-answer pair.", 'contact-form-7' );
+
+	$description = __( "Generate a form-tag for a question-answer pair. For more details, see %s.", 'contact-form-7' );
+
+	$desc_link = sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/quiz/', 'contact-form-7' ) ), esc_html( __( 'Quiz', 'contact-form-7' ) ) );
 
 ?>
 <div class="control-box">
 <fieldset>
-<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/quiz/', 'contact-form-7' ) ), esc_html( __( 'Quiz', 'contact-form-7' ) ) ); ?></legend>
+<legend><?php echo sprintf( esc_html( $description ), $desc_link ); ?></legend>
 
 <table class="form-table">
 <tbody>
@@ -184,7 +187,7 @@ function wpcf7_tag_generator_quiz( $contact_form, $args = '' ) {
 		<fieldset>
 		<legend class="screen-reader-text"><?php echo esc_html( __( 'Questions and answers', 'contact-form-7' ) ); ?></legend>
 		<textarea name="values" class="values" id="<?php echo esc_attr( $args['content'] . '-values' ); ?>"></textarea><br />
-		<label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><span class="description"><?php echo esc_html( __( "Write one quiz|answer pair (e.g. 1+1=?|2) per line.", 'contact-form-7' ) ); ?></span></label>
+		<label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><span class="description"><?php echo esc_html( __( "One pipe-separated question-answer pair (e.g. The capital of Brazil?|Rio) per line.", 'contact-form-7' ) ); ?></span></label>
 		</fieldset>
 	</td>
 	</tr>

@@ -143,12 +143,15 @@ function wpcf7_add_tag_generator_date() {
 function wpcf7_tag_generator_date( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
 	$type = 'date';
-	$description = __( "Generate a form-tag for a date input field.", 'contact-form-7' );
+
+	$description = __( "Generate a form-tag for a date input field. For more details, see %s.", 'contact-form-7' );
+
+	$desc_link = sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/date-field/', 'contact-form-7' ) ), esc_html( __( 'Date Field', 'contact-form-7' ) ) );
 
 ?>
 <div class="control-box">
 <fieldset>
-<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/date-field/', 'contact-form-7' ) ), esc_html( __( 'Date Field', 'contact-form-7' ) ) ); ?></legend>
+<legend><?php echo sprintf( esc_html( $description ), $desc_link ); ?></legend>
 
 <table class="form-table">
 <tbody>

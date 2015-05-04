@@ -162,12 +162,15 @@ function wpcf7_add_tag_generator_menu() {
 
 function wpcf7_tag_generator_menu( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
-	$description = __( "Generate a form-tag for a drop-down menu.", 'contact-form-7' );
+
+	$description = __( "Generate a form-tag for a drop-down menu. For more details, see %s.", 'contact-form-7' );
+
+	$desc_link = sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/checkboxes-radio-buttons-and-menus/', 'contact-form-7' ) ), esc_html( __( 'Checkboxes, Radio Buttons and Menus', 'contact-form-7' ) ) );
 
 ?>
 <div class="control-box">
 <fieldset>
-<legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/checkboxes-radio-buttons-and-menus/', 'contact-form-7' ) ), esc_html( __( 'Checkboxes, Radio Buttons and Menus', 'contact-form-7' ) ) ); ?></legend>
+<legend><?php echo sprintf( esc_html( $description ), $desc_link ); ?></legend>
 
 <table class="form-table">
 <tbody>

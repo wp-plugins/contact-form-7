@@ -131,12 +131,14 @@ span.shortcode > input {
 	overflow: scroll;
 }
 
-.tag-generator-panel .control-box legend {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6em;
+.tag-generator-panel .control-box > fieldset legend {
+	border-left: 4px solid #7ad03a;
+	background: #fff;
+	padding: 1px 12px;
+	margin: 10px 0;
+	line-height: 1.4em;
 	font-weight: bold;
-	width: 100%;
+	width: 94%;
 }
 
 .tag-generator-panel .control-box input.oneline {
@@ -159,6 +161,14 @@ span.shortcode > input {
 	font-weight: bold;
 	color: #777;
 	margin: 10px 0 5px;
+}
+
+.tag-generator-panel .control-box table.form-table td label {
+	line-height: 1.1em;
+}
+
+.tag-generator-panel .control-box table.form-table td label .description {
+	line-height: 1.4em;
 }
 
 .tag-generator-panel .insert-box {
