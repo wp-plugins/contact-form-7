@@ -219,55 +219,44 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 <div class="control-box">
 <fieldset>
 <legend><?php echo esc_html( $description ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) ); ?></legend>
-<table>
 
-<tr><td><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?><br /><input type="text" name="name" class="tg-name oneline" /></td><td></td></tr>
+<table class="form-table">
+<tbody>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="name" class="tg-name oneline" id="<?php echo esc_attr( $args['content'] . '-name' ); ?>" /></td>
+	</tr>
+</tbody>
 </table>
 
-<table class="scope captchac">
+<table class="form-table scope captchac">
 <caption><?php echo esc_html( __( "Image settings", 'contact-form-7' ) ); ?></caption>
+<tbody>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-captchac-id' ); ?>"><?php echo esc_html( __( 'Id attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="id" class="idvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-captchac-id' ); ?>" /></td>
+	</tr>
 
-<tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline option" /></td>
-
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline option" /></td>
-</tr>
-
-<tr>
-<td><?php echo esc_html( __( "Foreground color", 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="fg" class="color oneline option" /></td>
-
-<td><?php echo esc_html( __( "Background color", 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="bg" class="color oneline option" /></td>
-</tr>
-
-<tr><td colspan="2"><?php echo esc_html( __( "Image size", 'contact-form-7' ) ); ?> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="checkbox" name="size:s" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Small", 'contact-form-7' ) ); ?>&emsp;
-<input type="checkbox" name="size:m" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Medium", 'contact-form-7' ) ); ?>&emsp;
-<input type="checkbox" name="size:l" class="exclusive option" />&nbsp;<?php echo esc_html( __( "Large", 'contact-form-7' ) ); ?>
-</td></tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-captchac-class' ); ?>"><?php echo esc_html( __( 'Class attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="class" class="classvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-captchac-class' ); ?>" /></td>
+	</tr>
+</tbody>
 </table>
 
-<table class="scope captchar">
+<table class="form-table scope captchar">
 <caption><?php echo esc_html( __( "Input field settings", 'contact-form-7' ) ); ?></caption>
+<tbody>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-captchar-id' ); ?>"><?php echo esc_html( __( 'Id attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="id" class="idvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-captchar-id' ); ?>" /></td>
+	</tr>
 
-<tr>
-<td><code>id</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="id" class="idvalue oneline option" /></td>
-
-<td><code>class</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="text" name="class" class="classvalue oneline option" /></td>
-</tr>
-
-<tr>
-<td><code>size</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="number" name="size" class="numeric oneline option" min="1" /></td>
-
-<td><code>maxlength</code> (<?php echo esc_html( __( 'optional', 'contact-form-7' ) ); ?>)<br />
-<input type="number" name="maxlength" class="numeric oneline option" min="1" /></td>
-</tr>
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-captchar-class' ); ?>"><?php echo esc_html( __( 'Class attribute', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="class" class="classvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-captchar-class' ); ?>" /></td>
+	</tr>
+</tbody>
 </table>
 </fieldset>
 </div>

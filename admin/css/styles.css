@@ -153,6 +153,14 @@ span.shortcode > input {
 	width: 88px;
 }
 
+.tag-generator-panel .control-box table caption {
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	color: #777;
+	margin: 10px 0 5px;
+}
+
 .tag-generator-panel .insert-box {
 	position: absolute;
 	left: -15px;
