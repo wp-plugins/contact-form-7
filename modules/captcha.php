@@ -264,12 +264,7 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 </div>
 
 <div class="insert-box">
-<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?>
-<br />1) <?php echo esc_html( __( "For image", 'contact-form-7' ) ); ?>
-<input type="text" name="captchac" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" />
-<br />2) <?php echo esc_html( __( "For input field", 'contact-form-7' ) ); ?>
-<input type="text" name="captchar" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" />
-</div>
+<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="captchac" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
 </div>
 <?php
 }

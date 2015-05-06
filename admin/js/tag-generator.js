@@ -23,7 +23,6 @@
 	});
 
 	_wpcf7.taggen.update = function($form) {
-		var required = $form.find(':input[name="required"]').is(':checked');
 		var id = $form.attr('data-id');
 		var name = '';
 		var name_fields = $form.find('input[name="name"]');
@@ -37,6 +36,10 @@
 			}
 		}
 
+		if ($.isFunction(_wpcf7.taggen.update[id])) {
+			return _wpcf7.taggen.update[id].call(this, $form);
+		}
+
 		$form.find('input.tag').each(function() {
 			var tag_type = $(this).attr('name');
 
@@ -44,88 +47,12 @@
 				tag_type = $form.find('input[name="tagtype"]:checked').val();
 			}
 
-			if (required) {
+			if ($form.find(':input[name="required"]').is(':checked')) {
 				tag_type += '*';
 			}
 
-			var scope = $form.find('.scope.' + tag_type);
-
-			if (! scope.length) {
-				scope = $form;
-			}
-
-			var options = [];
-
-			var size = scope.find(':input[name="size"]').val() || '';
-			var maxlength = scope.find(':input[name="maxlength"]').val() || '';
-			var cols = scope.find(':input[name="cols"]').val() || '';
-			var rows = scope.find(':input[name="rows"]').val() || '';
-
-			if ((cols || rows) && maxlength) {
-				options.push(cols + 'x' + rows + '/' + maxlength);
-			} else if (cols || rows) {
-				options.push(cols + 'x' + rows);
-			} else if (size || maxlength) {
-				options.push(size + '/' + maxlength);
-			}
-
-			scope.find('input.option').not(':checkbox,:radio').each(function(i) {
-				var excluded = ['size', 'maxlength', 'cols', 'rows'];
-
-				if (-1 < $.inArray($(this).attr('name'), excluded)) {
-					return;
-				}
-
-				var val = $(this).val();
-
-				if (! val) {
-					return;
-				}
-
-				if ($(this).hasClass('filetype')) {
-					val = val.split(/[,|\s]+/).join('|');
-				}
-
-				if ($(this).hasClass('color')) {
-					val = '#' + val;
-				}
-
-				if ('class' == $(this).attr('name')) {
-					$.each(val.split(' '), function(i, n) { options.push('class:' + n) });
-				} else {
-					options.push($(this).attr('name') + ':' + val);
-				}
-			});
-
-			scope.find('input:checkbox.option').each(function(i) {
-				if ($(this).is(':checked')) {
-					options.push($(this).attr('name'));
-				}
-			});
-
-			options = (options.length > 0) ? ' ' + options.join(' ') : '';
-
-			var value = '';
-
-			if (scope.find(':input[name="values"]').val()) {
-				$.each(scope.find(':input[name="values"]').val().split("\n"), function(i, n) {
-					value += ' "' + n.replace(/["]/g, '&quot;') + '"';
-				});
-			}
-
-			var components = [];
-
-			$.each([tag_type, name, options, value], function(i, v) {
-				v = $.trim(v);
-
-				if ('' != v) {
-					components.push(v);
-				}
-			});
-
-			components = $.trim(components.join(' '));
-
-			$(this).val('[' + components + ']');
+			components = _wpcf7.taggen.compose(tag_type, $form);
+			$(this).val(components);
 		});
 
 		$form.find('input.mail-tag').each(function() {
@@ -133,6 +60,94 @@
 		});
 
 	};
+
+	_wpcf7.taggen.update.captcha = function($form) {
+		var captchac = _wpcf7.taggen.compose('captchac', $form);
+		var captchar = _wpcf7.taggen.compose('captchar', $form);
+
+		$form.find('input.tag').val(captchac + ' ' + captchar);
+	};
+
+	_wpcf7.taggen.compose = function(tagType, $form) {
+		var name = $form.find('input[name="name"]').val();
+		var scope = $form.find('.scope.' + tagType);
+
+		if (! scope.length) {
+			scope = $form;
+		}
+
+		var options = [];
+
+		var size = scope.find(':input[name="size"]').val() || '';
+		var maxlength = scope.find(':input[name="maxlength"]').val() || '';
+		var cols = scope.find(':input[name="cols"]').val() || '';
+		var rows = scope.find(':input[name="rows"]').val() || '';
+
+		if ((cols || rows) && maxlength) {
+			options.push(cols + 'x' + rows + '/' + maxlength);
+		} else if (cols || rows) {
+			options.push(cols + 'x' + rows);
+		} else if (size || maxlength) {
+			options.push(size + '/' + maxlength);
+		}
+
+		scope.find('input.option').not(':checkbox,:radio').each(function(i) {
+			var excluded = ['size', 'maxlength', 'cols', 'rows'];
+
+			if (-1 < $.inArray($(this).attr('name'), excluded)) {
+				return;
+			}
+
+			var val = $(this).val();
+
+			if (! val) {
+				return;
+			}
+
+			if ($(this).hasClass('filetype')) {
+				val = val.split(/[,|\s]+/).join('|');
+			}
+
+			if ($(this).hasClass('color')) {
+				val = '#' + val;
+			}
+
+			if ('class' == $(this).attr('name')) {
+				$.each(val.split(' '), function(i, n) { options.push('class:' + n) });
+			} else {
+				options.push($(this).attr('name') + ':' + val);
+			}
+		});
+
+		scope.find('input:checkbox.option').each(function(i) {
+			if ($(this).is(':checked')) {
+				options.push($(this).attr('name'));
+			}
+		});
+
+		options = (options.length > 0) ? options.join(' ') : '';
+
+		var value = '';
+
+		if (scope.find(':input[name="values"]').val()) {
+			$.each(scope.find(':input[name="values"]').val().split("\n"), function(i, n) {
+				value += ' "' + n.replace(/["]/g, '&quot;') + '"';
+			});
+		}
+
+		var components = [];
+
+		$.each([tagType, name, options, value], function(i, v) {
+			v = $.trim(v);
+
+			if ('' != v) {
+				components.push(v);
+			}
+		});
+
+		components = $.trim(components.join(' '));
+		return '[' + components + ']';
+	}
 
 	_wpcf7.taggen.normalize = function($input) {
 		var val = $input.val();
