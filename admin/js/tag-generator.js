@@ -127,6 +127,11 @@
 
 			$(this).val('[' + components + ']');
 		});
+
+		$form.find('input.mail-tag').each(function() {
+			$(this).val('[' + name + ']');
+		});
+
 	};
 
 	_wpcf7.taggen.normalize = function($input) {
