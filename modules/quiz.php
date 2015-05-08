@@ -164,6 +164,7 @@ function wpcf7_add_tag_generator_quiz() {
 
 function wpcf7_tag_generator_quiz( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
+	$type = 'quiz';
 
 	$description = __( "Generate a form-tag for a question-answer pair. For more details, see %s.", 'contact-form-7' );
 
@@ -208,7 +209,11 @@ function wpcf7_tag_generator_quiz( $contact_form, $args = '' ) {
 </div>
 
 <div class="insert-box">
-<div class="tg-tag"><?php echo esc_html( __( "Copy this code and paste it into the form left.", 'contact-form-7' ) ); ?><br /><input type="text" name="quiz" class="tag wp-ui-text-highlight code" readonly="readonly" onfocus="this.select()" /></div>
+	<input type="text" name="<?php echo $type; ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
+
+	<div class="submitbox">
+	<input type="button" class="button button-primary insert-tag" value="<?php echo esc_attr( __( 'Insert Tag', 'contact-form-7' ) ); ?>" />
+	</div>
 </div>
 <?php
 }

@@ -22,6 +22,14 @@
 		_wpcf7.taggen.update(form);
 	});
 
+	$('input.insert-tag').click(function(event) {
+		var form = $(this).closest('form.tag-generator-panel');
+		var tag = form.find('input.tag').val();
+		_wpcf7.taggen.insert(tag);
+		tb_remove(); // close thickbox
+		return false;
+	});
+
 	_wpcf7.taggen.update = function($form) {
 		var id = $form.attr('data-id');
 		var name = '';
@@ -54,6 +62,8 @@
 			components = _wpcf7.taggen.compose(tag_type, $form);
 			$(this).val(components);
 		});
+
+		$form.find('span.mail-tag').text('[' + name + ']');
 
 		$form.find('input.mail-tag').each(function() {
 			$(this).val('[' + name + ']');
@@ -205,6 +215,17 @@
 		if ($cb.is(':checked')) {
 			$cb.siblings(':checkbox.exclusive').prop('checked', false);
 		}
+	};
+
+	_wpcf7.taggen.insert = function(content) {
+		var field = $('textarea#wpcf7-form');
+
+		if (! field.length) {
+			return false;
+		}
+
+		field.val(field.val() + content);
+		field.focus();
 	};
 
 })(jQuery);
