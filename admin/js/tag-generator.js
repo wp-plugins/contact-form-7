@@ -218,14 +218,24 @@
 	};
 
 	_wpcf7.taggen.insert = function(content) {
-		var field = $('textarea#wpcf7-form');
+		$('textarea#wpcf7-form').each(function() {
+			this.focus();
 
-		if (! field.length) {
-			return false;
-		}
+			if (document.selection) { // IE
+				var selection = document.selection.createRange();
+				selection.text = content;
+			} else if (this.selectionEnd || 0 === this.selectionEnd) {
+				var val = $(this).val();
+				var end = this.selectionEnd;
+				$(this).val(val.substring(0, end) + content + val.substring(end, val.length));
+				this.selectionStart = end + content.length;
+				this.selectionEnd = end + content.length;
+			} else {
+				$(this).val($(this).val() + content);
+			}
 
-		field.val(field.val() + content);
-		field.focus();
+			this.focus();
+		});
 	};
 
 })(jQuery);
