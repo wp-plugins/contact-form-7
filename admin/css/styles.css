@@ -34,6 +34,10 @@ span.shortcode > input {
 	color: #a00;
 }
 
+#submitpost input.delete:focus {
+	outline: thin dotted;
+}
+
 .postbox-container .postbox h3 {
 	border-bottom: 1px solid transparent;
 }
