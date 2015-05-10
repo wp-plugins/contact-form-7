@@ -232,13 +232,13 @@ span.shortcode > input {
 	padding: 1px 2px;
 	cursor: pointer;
 	color: #000;
-	background-color: #fcfcfc;
 }
 
 .contact-form-editor-box-mail fieldset legend {
 	width: 95%;
-	border: 1px solid #999;
-	border-radius: 3px;
+	border: 1px solid #dfdfdf;
+	border-left: 4px solid #00a0d2;
+	background: #f7fcfe;
 	padding: 10px;
 }
 

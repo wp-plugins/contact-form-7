@@ -114,7 +114,7 @@ if ( $post ) :
 <?php endif; ?>
 
 <div id="informationdiv" class="postbox">
-<h3 class="dashicons-before dashicons-editor-help"> <?php echo esc_html( __( 'Information', 'contact-form-7' ) ); ?></h3>
+<h3><?php echo esc_html( __( 'Information', 'contact-form-7' ) ); ?></h3>
 <div class="inside">
 <ul>
 <li><a href="<?php echo esc_url( __( 'http://contactform7.com/docs/', 'contact-form-7' ) ); ?>" target="_blank"><?php echo esc_html( __( 'Docs', 'contact-form-7' ) ); ?></a></li>
