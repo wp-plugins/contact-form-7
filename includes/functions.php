@@ -144,19 +144,24 @@ function wpcf7_create_nonce( $action = -1 ) {
 function wpcf7_blacklist_check( $target ) {
 	$mod_keys = trim( get_option( 'blacklist_keys' ) );
 
-	if ( empty( $mod_keys ) )
+	if ( empty( $mod_keys ) ) {
 		return false;
+	}
 
 	$words = explode( "\n", $mod_keys );
 
 	foreach ( (array) $words as $word ) {
 		$word = trim( $word );
 
-		if ( empty( $word ) )
+		if ( empty( $word ) || 256 < strlen( $word ) ) {
 			continue;
+		}
 
-		if ( preg_match( '#' . preg_quote( $word, '#' ) . '#', $target ) )
+		$pattern = sprintf( '#%s#i', preg_quote( $word, '#' ) );
+
+		if ( preg_match( $pattern, $target ) ) {
 			return true;
+		}
 	}
 
 	return false;
@@ -284,7 +289,7 @@ function wpcf7_load_modules() {
 		$file = trailingslashit( $dir ) . $mod . '.php';
 
 		if ( file_exists( $file ) ) {
-			include_once $file; 
+			include_once $file;
 		}
 	}
 }
@@ -453,5 +458,3 @@ function wpcf7_count_code_units( $string ) {
 
 	return floor( $byte_count / 2 );
 }
-
-?>
