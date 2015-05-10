@@ -132,17 +132,17 @@ span.shortcode > input {
 	padding: 0;
 	margin: 0;
 	height: 380px;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .tag-generator-panel .control-box > fieldset legend {
-	border-left: 4px solid #7ad03a;
-	background: #fff;
-	padding: 1px 12px;
-	margin: 10px 0;
+	border: 1px solid #dfdfdf;
+	border-left: 4px solid #00a0d2;
+	background: #f7fcfe;
+	padding: 4px 12px;
+	margin: 4px 0;
 	line-height: 1.4em;
-	font-weight: bold;
-	width: 94%;
+	width: 95%;
 }
 
 .tag-generator-panel table {
@@ -151,12 +151,12 @@ span.shortcode > input {
 
 .tag-generator-panel table.form-table th {
 	width: 120px;
-	padding: 10px 10px 10px 0;
+	padding: 4px 10px 4px 0;
 	font-size: 13px;
 }
 
 .tag-generator-panel table.form-table td {
-	padding: 5px 10px;
+	padding: 4px 10px;
 	font-size: 13px;
 }
 
@@ -201,7 +201,7 @@ span.shortcode > input {
 	padding: 8px 16px;
 	background-color: #fcfcfc;
 	border-top: 1px solid #dfdfdf;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .tag-generator-panel .insert-box input.tag {
@@ -217,6 +217,10 @@ span.shortcode > input {
 
 .tag-generator-panel .insert-box .submitbox input[type="button"] {
 	float: right;
+}
+
+.tag-generator-panel .insert-box .description label {
+	cursor: text;
 }
 
 /*
