@@ -163,9 +163,10 @@ function wpcf7_tag_generator_number( $contact_form, $args = '' ) {
 	<td>
 		<fieldset>
 		<legend class="screen-reader-text"><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></legend>
-		<label><input type="radio" name="tagtype" value="number" checked="checked" /> <?php echo esc_html( __( 'Spinbox', 'contact-form-7' ) ); ?></label>
-		<br />
-		<label><input type="radio" name="tagtype" value="range" /> <?php echo esc_html( __( 'Slider', 'contact-form-7' ) ); ?></label>
+		<select name="tagtype">
+			<option value="number" selected="selected"><?php echo esc_html( __( 'Spinbox', 'contact-form-7' ) ); ?></option>
+			<option value="range"><?php echo esc_html( __( 'Slider', 'contact-form-7' ) ); ?></option>
+		</select>
 		<br />
 		<label><input type="checkbox" name="required" /> <?php echo esc_html( __( 'Required field', 'contact-form-7' ) ); ?></label>
 		</fieldset>

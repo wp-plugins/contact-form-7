@@ -51,8 +51,8 @@
 		$form.find('input.tag').each(function() {
 			var tag_type = $(this).attr('name');
 
-			if ($form.find('input[name="tagtype"]').length) {
-				tag_type = $form.find('input[name="tagtype"]:checked').val();
+			if ($form.find(':input[name="tagtype"]').length) {
+				tag_type = $form.find(':input[name="tagtype"]').val();
 			}
 
 			if ($form.find(':input[name="required"]').is(':checked')) {
