@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 10:11+0900\n"
-"PO-Revision-Date: 2015-01-06 10:13+0900\n"
+"POT-Creation-Date: 2015-05-11 07:20+0900\n"
+"PO-Revision-Date: 2015-05-11 22:30+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -14,154 +14,98 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_c\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SearchPath-0: contact-form-7\n"
 
 #: contact-form-7/wp-contact-form-7.php:5
 msgid "Just another contact form plugin. Simple but flexible."
 msgstr "お問い合わせフォームプラグイン。シンプル、でも柔軟。"
 
-#: contact-form-7/admin/admin.php:8 contact-form-7/modules/flamingo.php:134
+#: contact-form-7/admin/admin-functions.php:23
+msgid "Available mail-tags:"
+msgstr "利用可能なメールタグ:"
+
+#: contact-form-7/admin/admin.php:9 contact-form-7/modules/flamingo.php:134
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
-#: contact-form-7/admin/admin.php:9
+#: contact-form-7/admin/admin.php:10
 msgid "Contact"
 msgstr "お問い合わせ"
 
-#: contact-form-7/admin/admin.php:14
-#: contact-form-7/admin/edit-contact-form.php:13
+#: contact-form-7/admin/admin.php:15
+#: contact-form-7/admin/edit-contact-form.php:14
 msgid "Edit Contact Form"
 msgstr "コンタクトフォームの編集"
 
-#: contact-form-7/admin/admin.php:15 contact-form-7/admin/admin.php:165
-#: contact-form-7/admin/admin.php:221
+#: contact-form-7/admin/admin.php:16 contact-form-7/admin/admin.php:166
+#: contact-form-7/admin/admin.php:223
 #: contact-form-7/includes/contact-form.php:29
 msgid "Contact Forms"
 msgstr "コンタクトフォーム"
 
-#: contact-form-7/admin/admin.php:22 contact-form-7/admin/admin.php:263
-#: contact-form-7/admin/edit-contact-form.php:11
+#: contact-form-7/admin/admin.php:23 contact-form-7/admin/admin.php:265
+#: contact-form-7/admin/edit-contact-form.php:12
 msgid "Add New Contact Form"
 msgstr "コンタクトフォームを追加"
 
-#: contact-form-7/admin/admin.php:23 contact-form-7/admin/admin.php:223
-#: contact-form-7/admin/admin.php:268 contact-form-7/admin/admin.php:280
-#: contact-form-7/admin/edit-contact-form.php:15
+#: contact-form-7/admin/admin.php:24 contact-form-7/admin/admin.php:225
+#: contact-form-7/admin/admin.php:270 contact-form-7/admin/admin.php:282
+#: contact-form-7/admin/edit-contact-form.php:16
 msgid "Add New"
 msgstr "新規追加"
 
-#: contact-form-7/admin/admin.php:52 contact-form-7/admin/admin.php:73
+#: contact-form-7/admin/admin.php:53 contact-form-7/admin/admin.php:75
 msgid "You are not allowed to edit this item."
 msgstr "この項目の編集は許可されていません。"
 
-#: contact-form-7/admin/admin.php:112
+#: contact-form-7/admin/admin.php:114
 msgid "You are not allowed to delete this item."
 msgstr "この項目を削除する権限がありません。"
 
-#: contact-form-7/admin/admin.php:115
+#: contact-form-7/admin/admin.php:117
 msgid "Error in deleting."
 msgstr "削除中にエラーが発生しました。"
 
-#: contact-form-7/admin/admin.php:200
-msgid "Generate Tag"
-msgstr "タグの作成"
-
-#: contact-form-7/admin/admin.php:227
+#: contact-form-7/admin/admin.php:229
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "&#8220;%s&#8221; の検索結果"
 
-#: contact-form-7/admin/admin.php:236
+#: contact-form-7/admin/admin.php:238
 msgid "Search Contact Forms"
 msgstr "コンタクトフォームの検索"
 
-#: contact-form-7/admin/admin.php:267
+#: contact-form-7/admin/admin.php:269
 #, php-format
 msgid "Use the default language (%s)"
 msgstr "デフォルトの言語を使用する (%s)"
 
-#: contact-form-7/admin/admin.php:271
+#: contact-form-7/admin/admin.php:273
 msgid "Or"
 msgstr "または"
 
-#: contact-form-7/admin/admin.php:275
+#: contact-form-7/admin/admin.php:277
 msgid "(select language)"
 msgstr "(言語を選択)"
 
-#: contact-form-7/admin/admin.php:287
-msgid "Form"
-msgstr "フォーム"
-
-#: contact-form-7/admin/admin.php:290
-msgid "Mail"
-msgstr "メール"
-
-#: contact-form-7/admin/admin.php:293
-msgid "Mail (2)"
-msgstr "メール (2)"
-
-#: contact-form-7/admin/admin.php:298
-msgid "Use mail (2)"
-msgstr "メール (2) を使う"
-
-#: contact-form-7/admin/admin.php:300
-msgid "Messages"
-msgstr "メッセージ"
-
-#: contact-form-7/admin/admin.php:303
-msgid "Additional Settings"
-msgstr "その他の設定"
-
-#: contact-form-7/admin/admin.php:318
+#: contact-form-7/admin/admin.php:297
 msgid "Contact form created."
 msgstr "コンタクトフォームが作成されました。"
 
-#: contact-form-7/admin/admin.php:320
+#: contact-form-7/admin/admin.php:299
 msgid "Contact form saved."
 msgstr "コンタクトフォームが保存されました。"
 
-#: contact-form-7/admin/admin.php:322
+#: contact-form-7/admin/admin.php:301
 msgid "Contact form deleted."
 msgstr "コンタクトフォームが削除されました。"
 
-#: contact-form-7/admin/admin.php:339
+#: contact-form-7/admin/admin.php:318
 msgid "Settings"
 msgstr "設定"
 
-#: contact-form-7/admin/admin.php:350
-msgid "http://contactform7.com/docs/"
-msgstr "http://contactform7.com/ja/docs/"
-
-#: contact-form-7/admin/admin.php:351
-msgid "Docs"
-msgstr "使い方"
-
-#: contact-form-7/admin/admin.php:352
-msgid "http://contactform7.com/faq/"
-msgstr "http://contactform7.com/ja/faq/"
-
-#: contact-form-7/admin/admin.php:353
-msgid "FAQ"
-msgstr "FAQ"
-
-#: contact-form-7/admin/admin.php:354
-msgid "http://contactform7.com/support/"
-msgstr "http://contactform7.com/ja/support/"
-
-#: contact-form-7/admin/admin.php:355
-msgid "Support"
-msgstr "サポート"
-
-#: contact-form-7/admin/admin.php:356 contact-form-7/admin/admin.php:412
-msgid "http://contactform7.com/donate/"
-msgstr "http://contactform7.com/ja/donate/"
-
-#: contact-form-7/admin/admin.php:357 contact-form-7/admin/admin.php:412
-msgid "Donate"
-msgstr "寄付する"
-
-#: contact-form-7/admin/admin.php:379
+#: contact-form-7/admin/admin.php:341
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -170,15 +114,15 @@ msgstr ""
 "<strong>Contact Form 7 %1$s は WordPress %2$s 以降に対応しています。</strong>"
 "まず <a href=\"%3$s\">WordPress を更新</a>してください。"
 
-#: contact-form-7/admin/admin.php:405
+#: contact-form-7/admin/admin.php:367
 msgid "Dismiss"
 msgstr "非表示にする"
 
-#: contact-form-7/admin/admin.php:410
+#: contact-form-7/admin/admin.php:372
 msgid "Contact Form 7 Needs Your Support"
 msgstr "Contact Form 7 は支援を必要としています"
 
-#: contact-form-7/admin/admin.php:411
+#: contact-form-7/admin/admin.php:373
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
@@ -188,112 +132,184 @@ msgstr ""
 "ができません。Contact Form 7 があなたのお役に立っているなら、この機会にぜひい"
 "くらかの寄付をご検討ください。"
 
-#: contact-form-7/admin/admin.php:416
+#: contact-form-7/admin/admin.php:374
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/ja/donate/"
+
+#: contact-form-7/admin/admin.php:374
+msgid "Donate"
+msgstr "寄付する"
+
+#: contact-form-7/admin/admin.php:378
 msgid "Get Started"
 msgstr "はじめに"
 
-#: contact-form-7/admin/admin.php:418
+#: contact-form-7/admin/admin.php:380
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr "http://contactform7.com/ja/getting-started-with-contact-form-7/"
 
-#: contact-form-7/admin/admin.php:418
+#: contact-form-7/admin/admin.php:380
 msgid "Getting Started with Contact Form 7"
 msgstr "Contact Form 7 の基本的な使い方"
 
-#: contact-form-7/admin/admin.php:419
+#: contact-form-7/admin/admin.php:381
 msgid "http://contactform7.com/admin-screen/"
 msgstr "http://contactform7.com/ja/admin-screen/"
 
-#: contact-form-7/admin/admin.php:419
+#: contact-form-7/admin/admin.php:381
 msgid "Admin Screen"
 msgstr "管理画面"
 
-#: contact-form-7/admin/admin.php:420
+#: contact-form-7/admin/admin.php:382
 msgid "http://contactform7.com/tag-syntax/"
 msgstr "http://contactform7.com/ja/tag-syntax/"
 
-#: contact-form-7/admin/admin.php:420
+#: contact-form-7/admin/admin.php:382
 msgid "How Tags Work"
 msgstr "タグの使い方"
 
-#: contact-form-7/admin/admin.php:421
+#: contact-form-7/admin/admin.php:383
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr "http://contactform7.com/ja/setting-up-mail/"
 
-#: contact-form-7/admin/admin.php:421
+#: contact-form-7/admin/admin.php:383
 msgid "Setting Up Mail"
 msgstr "メールのセットアップ"
 
-#: contact-form-7/admin/admin.php:426
+#: contact-form-7/admin/admin.php:388
 msgid "Did You Know?"
 msgstr "知ってました ?"
 
-#: contact-form-7/admin/admin.php:428
+#: contact-form-7/admin/admin.php:390
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr "http://contactform7.com/ja/spam-filtering-with-akismet/"
 
-#: contact-form-7/admin/admin.php:428
+#: contact-form-7/admin/admin.php:390
 msgid "Spam Filtering with Akismet"
 msgstr "Akismet によるスパムフィルタリング"
 
-#: contact-form-7/admin/admin.php:429
+#: contact-form-7/admin/admin.php:391
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr "http://contactform7.com/ja/save-submitted-messages-with-flamingo/"
 
-#: contact-form-7/admin/admin.php:429
+#: contact-form-7/admin/admin.php:391
 msgid "Save Messages with Flamingo"
 msgstr "Flamingo でメッセージを保存する"
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:392
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr "http://contactform7.com/ja/selectable-recipient-with-pipes/"
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:392
 msgid "Selectable Recipient with Pipes"
 msgstr "パイプを使って送信先を選択可能に"
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:393
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 "http://contactform7.com/ja/tracking-form-submissions-with-google-analytics/"
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:393
 msgid "Tracking with Google Analytics"
 msgstr "Google Analytics でトラッキングする"
 
-#: contact-form-7/admin/edit-contact-form.php:47
+#: contact-form-7/admin/edit-contact-form.php:48
+msgid "Enter title here"
+msgstr "ここにタイトルを入力"
+
+#: contact-form-7/admin/edit-contact-form.php:57
 msgid ""
-"Copy this code and paste it into your post, page or text widget content."
+"Copy this shortcode and paste it into your post, page, or text widget "
+"content:"
 msgstr ""
-"このコードをコピーして、投稿、ページ、またはテキストウィジェットの本文内に"
-"ペーストしてください。"
+"このショートコードをコピーして、投稿、固定ページ、またはテキストウィジェット"
+"の内容にペーストしてください:"
 
-#: contact-form-7/admin/edit-contact-form.php:53
-msgid "Old code is also available."
-msgstr "古いコードも利用可能です。"
+#: contact-form-7/admin/edit-contact-form.php:64
+msgid "You can also use this old-style shortcode:"
+msgstr "この旧式のショートコードも利用できます:"
 
-#: contact-form-7/admin/edit-contact-form.php:61
+#: contact-form-7/admin/edit-contact-form.php:78
+msgid "Status"
+msgstr "ステータス"
+
+#: contact-form-7/admin/edit-contact-form.php:85
+#: contact-form-7/admin/edit-contact-form.php:108
+#: contact-form-7/admin/edit-contact-form.php:168
 msgid "Save"
 msgstr "保存"
 
-#: contact-form-7/admin/edit-contact-form.php:68
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:112
+#: contact-form-7/admin/edit-contact-form.php:92
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:116
 msgid "Duplicate"
 msgstr "複製"
 
-#: contact-form-7/admin/edit-contact-form.php:73
+#: contact-form-7/admin/edit-contact-form.php:103
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:83
 msgid "Delete"
 msgstr "削除 "
 
-#: contact-form-7/admin/edit-contact-form.php:75
+#: contact-form-7/admin/edit-contact-form.php:103
 msgid ""
 "You are about to delete this contact form.\n"
 "  'Cancel' to stop, 'OK' to delete."
 msgstr ""
 "このコンタクトフォームを削除しようとしています。\n"
 "  'キャンセル' で中止、 'OK' で削除します。"
+
+#: contact-form-7/admin/edit-contact-form.php:117
+msgid "Information"
+msgstr "インフォメーション"
+
+#: contact-form-7/admin/edit-contact-form.php:120
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/ja/docs/"
+
+#: contact-form-7/admin/edit-contact-form.php:120
+msgid "Docs"
+msgstr "使い方"
+
+#: contact-form-7/admin/edit-contact-form.php:121
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/ja/faq/"
+
+#: contact-form-7/admin/edit-contact-form.php:121
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact-form-7/admin/edit-contact-form.php:122
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/ja/support/"
+
+#: contact-form-7/admin/edit-contact-form.php:122
+msgid "Support"
+msgstr "サポート"
+
+#: contact-form-7/admin/edit-contact-form.php:137
+#: contact-form-7/admin/includes/editor.php:41
+msgid "Form"
+msgstr "フォーム"
+
+#: contact-form-7/admin/edit-contact-form.php:140
+#: contact-form-7/admin/includes/editor.php:68
+msgid "Mail"
+msgstr "メール"
+
+#: contact-form-7/admin/edit-contact-form.php:143
+#: contact-form-7/admin/includes/editor.php:162
+msgid "Messages"
+msgstr "メッセージ"
+
+#: contact-form-7/admin/edit-contact-form.php:152
+#, php-format
+msgid "Additional Settings (%d)"
+msgstr "その他の設定 (%d)"
+
+#: contact-form-7/admin/edit-contact-form.php:154
+#: contact-form-7/admin/includes/editor.php:185
+msgid "Additional Settings"
+msgstr "その他の設定"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:11
 msgid "Title"
@@ -308,31 +324,84 @@ msgid "Author"
 msgstr "作成者"
 
 #: contact-form-7/admin/includes/class-contact-forms-list-table.php:14
-#: contact-form-7/modules/date.php:139
 msgid "Date"
 msgstr "日付"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:104
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:106
 msgid "Edit"
 msgstr "編集"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:117
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:121
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
 msgstr "&#8220;%s&#8221; を編集する"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:158
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:160
 msgid "Y/m/d g:i:s A"
 msgstr "Y年n月j日 g:i:s a"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:165
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:167
 #, php-format
 msgid "%s ago"
 msgstr "%s前"
 
-#: contact-form-7/admin/includes/class-contact-forms-list-table.php:167
+#: contact-form-7/admin/includes/class-contact-forms-list-table.php:169
 msgid "Y/m/d"
 msgstr "Y年n月j日"
+
+#: contact-form-7/admin/includes/editor.php:60
+msgid "Mail (2)"
+msgstr "メール (2)"
+
+#: contact-form-7/admin/includes/editor.php:61
+msgid "Use Mail (2)"
+msgstr "メール (2) を使用"
+
+#: contact-form-7/admin/includes/editor.php:86
+msgid "Mail (2) is an additional mail template often used as an autoresponder."
+msgstr ""
+"メール (2) は追加のメールテンプレートで、自動返信メールによく使われます。"
+
+#: contact-form-7/admin/includes/editor.php:97
+msgid "To"
+msgstr "送信先"
+
+#: contact-form-7/admin/includes/editor.php:106
+msgid "From"
+msgstr "送信元"
+
+#: contact-form-7/admin/includes/editor.php:115
+#: contact-form-7/includes/contact-form-template.php:29
+msgid "Subject"
+msgstr "題名"
+
+#: contact-form-7/admin/includes/editor.php:124
+msgid "Additional Headers"
+msgstr "追加ヘッダー"
+
+#: contact-form-7/admin/includes/editor.php:133
+msgid "Message Body"
+msgstr "メッセージ本文"
+
+#: contact-form-7/admin/includes/editor.php:138
+msgid "Exclude lines with blank mail-tags from output"
+msgstr "空のメールタグを含む行を出力から除外する"
+
+#: contact-form-7/admin/includes/editor.php:140
+msgid "Use HTML content type"
+msgstr "HTML 形式のメールを使用する"
+
+#: contact-form-7/admin/includes/editor.php:146
+msgid "File Attachments"
+msgstr "ファイル添付"
+
+#: contact-form-7/admin/includes/editor.php:164
+msgid "Edit messages used for the following situations."
+msgstr "以下の状況で使用されるメッセージを編集します。"
+
+#: contact-form-7/admin/includes/editor.php:165
+msgid "Edit messages used in the following situations."
+msgstr "以下の状況で使用されるメッセージを編集します。"
 
 #: contact-form-7/admin/includes/help-tabs.php:16
 #: contact-form-7/admin/includes/help-tabs.php:39
@@ -536,41 +605,10 @@ msgstr ""
 "<a href=\"http://contactform7.com/ja/support/\" target=\"_blank\">サポート</"
 "a>"
 
-#: contact-form-7/admin/includes/meta-boxes.php:47
-msgid "To:"
-msgstr "宛先:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:52
-msgid "From:"
-msgstr "差出人:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:57
-msgid "Subject:"
-msgstr "件名:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:64
-msgid "Additional headers:"
-msgstr "追加ヘッダー:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:69
-msgid "File attachments:"
-msgstr "ファイル添付:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:77
-msgid "Use HTML content type"
-msgstr "HTML 形式のメールを使用する"
-
-#: contact-form-7/admin/includes/meta-boxes.php:83
-msgid "Message body:"
-msgstr "メッセージ本文:"
-
-#: contact-form-7/admin/includes/meta-boxes.php:89
-msgid "Exclude lines with blank mail-tags from output"
-msgstr "空のメールタグを含む行を出力から除外する"
-
-#: contact-form-7/admin/includes/meta-boxes.php:117
-msgid "Show all messages"
-msgstr "すべてのメッセージを表示"
+#: contact-form-7/admin/includes/tag-generator.php:43
+#, php-format
+msgid "Form-tag Generator: %s"
+msgstr "フォームタグ生成: %s"
 
 #: contact-form-7/includes/contact-form-template.php:23
 msgid "Your Name"
@@ -584,10 +622,6 @@ msgstr "(必須)"
 #: contact-form-7/includes/contact-form-template.php:26
 msgid "Your Email"
 msgstr "メールアドレス"
-
-#: contact-form-7/includes/contact-form-template.php:29
-msgid "Subject"
-msgstr "題名"
 
 #: contact-form-7/includes/contact-form-template.php:31
 msgid "Your Message"
@@ -712,335 +746,336 @@ msgstr ""
 msgid "Sending ..."
 msgstr "送信中 ..."
 
-#: contact-form-7/includes/functions.php:39
+#: contact-form-7/includes/functions.php:40
 msgid "Afrikaans"
 msgstr "アフリカーンス語"
 
-#: contact-form-7/includes/functions.php:40
+#: contact-form-7/includes/functions.php:41
 msgid "Albanian"
 msgstr "アルバニア語"
 
-#: contact-form-7/includes/functions.php:41
+#: contact-form-7/includes/functions.php:42
 msgid "Arabic"
 msgstr "アラビア語"
 
-#: contact-form-7/includes/functions.php:42
+#: contact-form-7/includes/functions.php:43
 msgid "Armenian"
 msgstr "アルメニア語"
 
-#: contact-form-7/includes/functions.php:43
+#: contact-form-7/includes/functions.php:44
 msgid "Azerbaijani"
 msgstr "アゼルバイジャン語"
 
-#: contact-form-7/includes/functions.php:44
+#: contact-form-7/includes/functions.php:45
 msgid "Bangla"
 msgstr "ベンガル語"
 
-#: contact-form-7/includes/functions.php:45
+#: contact-form-7/includes/functions.php:46
 msgid "Basque"
 msgstr "バスク語"
 
-#: contact-form-7/includes/functions.php:46
+#: contact-form-7/includes/functions.php:47
 msgid "Belarusian"
 msgstr "ベラルーシ語"
 
-#: contact-form-7/includes/functions.php:47
+#: contact-form-7/includes/functions.php:48
 msgid "Bosnian"
 msgstr "ボスニア語"
 
-#: contact-form-7/includes/functions.php:48
+#: contact-form-7/includes/functions.php:49
 msgid "Bulgarian"
 msgstr "ブルガリア語"
 
-#: contact-form-7/includes/functions.php:49
+#: contact-form-7/includes/functions.php:50
 msgid "Catalan"
 msgstr "カタルーニャ語"
 
-#: contact-form-7/includes/functions.php:50
+#: contact-form-7/includes/functions.php:51
 msgid "Central Kurdish"
 msgstr "中央クルド語"
 
-#: contact-form-7/includes/functions.php:51
+#: contact-form-7/includes/functions.php:52
 msgid "Chinese (China)"
 msgstr "中国語 (中国)"
 
-#: contact-form-7/includes/functions.php:52
+#: contact-form-7/includes/functions.php:53
 msgid "Chinese (Taiwan)"
 msgstr "中国語 (台湾)"
 
-#: contact-form-7/includes/functions.php:53
+#: contact-form-7/includes/functions.php:54
 msgid "Croatian"
 msgstr "クロアチア語"
 
-#: contact-form-7/includes/functions.php:54
+#: contact-form-7/includes/functions.php:55
 msgid "Czech"
 msgstr "チェコ語"
 
-#: contact-form-7/includes/functions.php:55
+#: contact-form-7/includes/functions.php:56
 msgid "Danish"
 msgstr "デンマーク語"
 
-#: contact-form-7/includes/functions.php:56
+#: contact-form-7/includes/functions.php:57
 msgid "Dutch"
 msgstr "オランダ語"
 
-#: contact-form-7/includes/functions.php:57
+#: contact-form-7/includes/functions.php:58
 msgid "English (United States)"
 msgstr "英語 (米国)"
 
-#: contact-form-7/includes/functions.php:58
+#: contact-form-7/includes/functions.php:59
 msgid "Esperanto"
 msgstr "エスペラント語"
 
-#: contact-form-7/includes/functions.php:59
+#: contact-form-7/includes/functions.php:60
 msgid "Estonian"
 msgstr "エストニア語"
 
-#: contact-form-7/includes/functions.php:60
+#: contact-form-7/includes/functions.php:61
 msgid "Finnish"
 msgstr "フィンランド語"
 
-#: contact-form-7/includes/functions.php:61
+#: contact-form-7/includes/functions.php:62
 msgid "French (France)"
 msgstr "フランス語 (フランス)"
 
-#: contact-form-7/includes/functions.php:62
+#: contact-form-7/includes/functions.php:63
 msgid "Galician"
 msgstr "ガリシア語"
 
-#: contact-form-7/includes/functions.php:63
+#: contact-form-7/includes/functions.php:64
 msgid "Gujarati"
 msgstr "グジャラート語"
 
-#: contact-form-7/includes/functions.php:64
+#: contact-form-7/includes/functions.php:65
 msgid "Georgian"
 msgstr "グルジア語"
 
-#: contact-form-7/includes/functions.php:65
+#: contact-form-7/includes/functions.php:66
 msgid "German"
 msgstr "ドイツ語"
 
-#: contact-form-7/includes/functions.php:66
+#: contact-form-7/includes/functions.php:67
 msgid "Greek"
 msgstr "ギリシャ語"
 
-#: contact-form-7/includes/functions.php:67
+#: contact-form-7/includes/functions.php:68
 msgid "Haitian"
 msgstr "ハイチ語"
 
-#: contact-form-7/includes/functions.php:68
+#: contact-form-7/includes/functions.php:69
 msgid "Hebrew"
 msgstr "ヘブライ語"
 
-#: contact-form-7/includes/functions.php:69
+#: contact-form-7/includes/functions.php:70
 msgid "Hindi"
 msgstr "ヒンディー語"
 
-#: contact-form-7/includes/functions.php:70
+#: contact-form-7/includes/functions.php:71
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: contact-form-7/includes/functions.php:71
+#: contact-form-7/includes/functions.php:72
 msgid "Indian Bengali"
 msgstr "インドのベンガル語"
 
-#: contact-form-7/includes/functions.php:72
+#: contact-form-7/includes/functions.php:73
 msgid "Indonesian"
 msgstr "インドネシア語"
 
-#: contact-form-7/includes/functions.php:73
+#: contact-form-7/includes/functions.php:74
 msgid "Irish"
 msgstr "アイルランド語"
 
-#: contact-form-7/includes/functions.php:74
+#: contact-form-7/includes/functions.php:75
 msgid "Italian"
 msgstr "イタリア語"
 
-#: contact-form-7/includes/functions.php:75
+#: contact-form-7/includes/functions.php:76
 msgid "Japanese"
 msgstr "日本語"
 
-#: contact-form-7/includes/functions.php:76
+#: contact-form-7/includes/functions.php:77
 msgid "Korean"
 msgstr "韓国語"
 
-#: contact-form-7/includes/functions.php:77
+#: contact-form-7/includes/functions.php:78
 msgid "Latvian"
 msgstr "ラトビア語"
 
-#: contact-form-7/includes/functions.php:78
+#: contact-form-7/includes/functions.php:79
 msgid "Lithuanian"
 msgstr "リトアニア語"
 
-#: contact-form-7/includes/functions.php:79
+#: contact-form-7/includes/functions.php:80
 msgid "Macedonian"
 msgstr "マケドニア語"
 
-#: contact-form-7/includes/functions.php:80
+#: contact-form-7/includes/functions.php:81
 msgid "Malay"
 msgstr "マレー語"
 
-#: contact-form-7/includes/functions.php:81
+#: contact-form-7/includes/functions.php:82
 msgid "Malayalam"
 msgstr "マラヤーラム語"
 
-#: contact-form-7/includes/functions.php:82
+#: contact-form-7/includes/functions.php:83
 msgid "Maltese"
 msgstr "マルタ語"
 
-#: contact-form-7/includes/functions.php:83
+#: contact-form-7/includes/functions.php:84
 msgid "Norwegian (Bokmål)"
 msgstr "ノルウェー語 (ブークモール)"
 
-#: contact-form-7/includes/functions.php:84
+#: contact-form-7/includes/functions.php:85
 msgid "Persian"
 msgstr "ペルシア語"
 
-#: contact-form-7/includes/functions.php:85
+#: contact-form-7/includes/functions.php:86
 msgid "Polish"
 msgstr "ポーランド語"
 
-#: contact-form-7/includes/functions.php:86
+#: contact-form-7/includes/functions.php:87
 msgid "Portuguese (Brazil)"
 msgstr "ポルトガル語 (ブラジル)"
 
-#: contact-form-7/includes/functions.php:87
+#: contact-form-7/includes/functions.php:88
 msgid "Portuguese (Portugal)"
 msgstr "ポルトガル語 (ポルトガル)"
 
-#: contact-form-7/includes/functions.php:88
+#: contact-form-7/includes/functions.php:89
 msgid "Punjabi"
 msgstr "パンジャブ語"
 
-#: contact-form-7/includes/functions.php:89
+#: contact-form-7/includes/functions.php:90
 msgid "Russian"
 msgstr "ロシア語"
 
-#: contact-form-7/includes/functions.php:90
+#: contact-form-7/includes/functions.php:91
 msgid "Romanian"
 msgstr "ルーマニア語"
 
-#: contact-form-7/includes/functions.php:91
+#: contact-form-7/includes/functions.php:92
 msgid "Serbian"
 msgstr "セルビア語"
 
-#: contact-form-7/includes/functions.php:92
+#: contact-form-7/includes/functions.php:93
 msgid "Sinhala"
 msgstr "シンハラ語"
 
-#: contact-form-7/includes/functions.php:93
+#: contact-form-7/includes/functions.php:94
 msgid "Slovak"
 msgstr "スロバキア語"
 
-#: contact-form-7/includes/functions.php:94
+#: contact-form-7/includes/functions.php:95
 msgid "Slovene"
 msgstr "スロベニア語"
 
-#: contact-form-7/includes/functions.php:95
+#: contact-form-7/includes/functions.php:96
 msgid "Spanish (Spain)"
 msgstr "スペイン語 (スペイン)"
 
-#: contact-form-7/includes/functions.php:96
+#: contact-form-7/includes/functions.php:97
 msgid "Swedish"
 msgstr "スウェーデン語"
 
-#: contact-form-7/includes/functions.php:97
+#: contact-form-7/includes/functions.php:98
 msgid "Tamil"
 msgstr "タミル語"
 
-#: contact-form-7/includes/functions.php:98
+#: contact-form-7/includes/functions.php:99
 msgid "Thai"
 msgstr "タイ語"
 
-#: contact-form-7/includes/functions.php:99
+#: contact-form-7/includes/functions.php:100
 msgid "Tagalog"
 msgstr "タガログ語"
 
-#: contact-form-7/includes/functions.php:100
+#: contact-form-7/includes/functions.php:101
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: contact-form-7/includes/functions.php:101
+#: contact-form-7/includes/functions.php:102
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: contact-form-7/includes/functions.php:102
+#: contact-form-7/includes/functions.php:103
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
-#: contact-form-7/modules/acceptance.php:132
-msgid "Acceptance"
-msgstr "承諾の確認"
+#: contact-form-7/modules/acceptance.php:130
+msgid "acceptance"
+msgstr "承諾確認"
 
-#: contact-form-7/modules/acceptance.php:141
-#: contact-form-7/modules/captcha.php:212
-#: contact-form-7/modules/checkbox.php:282 contact-form-7/modules/date.php:156
-#: contact-form-7/modules/file.php:231 contact-form-7/modules/number.php:166
-#: contact-form-7/modules/quiz.php:172 contact-form-7/modules/select.php:155
-#: contact-form-7/modules/text.php:231 contact-form-7/modules/textarea.php:134
+#: contact-form-7/modules/acceptance.php:138
+#, php-format
+msgid ""
+"Generate a form-tag for an acceptance checkbox. For more details, see %s."
+msgstr "承諾確認チェックボックスのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/acceptance.php:140
+msgid "http://contactform7.com/acceptance-checkbox/"
+msgstr "http://contactform7.com/ja/acceptance-checkbox/"
+
+#: contact-form-7/modules/acceptance.php:140
+msgid "Acceptance Checkbox"
+msgstr "承諾確認チェックボックス"
+
+#: contact-form-7/modules/acceptance.php:150
+#: contact-form-7/modules/captcha.php:228
+#: contact-form-7/modules/checkbox.php:308 contact-form-7/modules/date.php:169
+#: contact-form-7/modules/file.php:251 contact-form-7/modules/number.php:177
+#: contact-form-7/modules/quiz.php:181 contact-form-7/modules/select.php:188
+#: contact-form-7/modules/text.php:239 contact-form-7/modules/textarea.php:155
 msgid "Name"
 msgstr "名前"
 
-#: contact-form-7/modules/acceptance.php:146
-#: contact-form-7/modules/acceptance.php:149
-#: contact-form-7/modules/captcha.php:219
-#: contact-form-7/modules/captcha.php:222
-#: contact-form-7/modules/captcha.php:227
-#: contact-form-7/modules/captcha.php:230
-#: contact-form-7/modules/captcha.php:234
-#: contact-form-7/modules/captcha.php:245
-#: contact-form-7/modules/captcha.php:248
-#: contact-form-7/modules/captcha.php:253
-#: contact-form-7/modules/captcha.php:256
-#: contact-form-7/modules/checkbox.php:287
-#: contact-form-7/modules/checkbox.php:290 contact-form-7/modules/date.php:161
-#: contact-form-7/modules/date.php:164 contact-form-7/modules/date.php:169
-#: contact-form-7/modules/date.php:172 contact-form-7/modules/date.php:177
-#: contact-form-7/modules/date.php:182 contact-form-7/modules/file.php:236
-#: contact-form-7/modules/file.php:239 contact-form-7/modules/file.php:244
-#: contact-form-7/modules/file.php:247 contact-form-7/modules/number.php:171
-#: contact-form-7/modules/number.php:174 contact-form-7/modules/number.php:179
-#: contact-form-7/modules/number.php:182 contact-form-7/modules/number.php:187
-#: contact-form-7/modules/number.php:192 contact-form-7/modules/quiz.php:177
-#: contact-form-7/modules/quiz.php:180 contact-form-7/modules/quiz.php:185
-#: contact-form-7/modules/quiz.php:188 contact-form-7/modules/select.php:160
-#: contact-form-7/modules/select.php:163 contact-form-7/modules/submit.php:59
-#: contact-form-7/modules/submit.php:62 contact-form-7/modules/submit.php:67
-#: contact-form-7/modules/text.php:236 contact-form-7/modules/text.php:239
-#: contact-form-7/modules/text.php:244 contact-form-7/modules/text.php:247
-#: contact-form-7/modules/text.php:253 contact-form-7/modules/text.php:266
-#: contact-form-7/modules/textarea.php:139
-#: contact-form-7/modules/textarea.php:142
-#: contact-form-7/modules/textarea.php:147
-#: contact-form-7/modules/textarea.php:150
-#: contact-form-7/modules/textarea.php:155
-#: contact-form-7/modules/textarea.php:160
-msgid "optional"
+#: contact-form-7/modules/acceptance.php:155
+#: contact-form-7/modules/acceptance.php:158
+#: contact-form-7/modules/checkbox.php:313
+#: contact-form-7/modules/checkbox.php:316
+#: contact-form-7/modules/select.php:193 contact-form-7/modules/select.php:196
+msgid "Options"
 msgstr "オプション"
 
-#: contact-form-7/modules/acceptance.php:155
-msgid "Make this checkbox checked by default?"
-msgstr "初期状態でチェックボックスにチェックを入れますか?"
+#: contact-form-7/modules/acceptance.php:159
+msgid "Make this checkbox checked by default"
+msgstr "このチェックボックスをデフォルトでチェックされた状態にする"
 
-#: contact-form-7/modules/acceptance.php:156
-msgid "Make this checkbox work inversely?"
-msgstr "チェックボックスを反転させますか?"
+#: contact-form-7/modules/acceptance.php:160
+msgid "Make this work inversely"
+msgstr "これの挙動を反対にする"
 
-#: contact-form-7/modules/acceptance.php:157
-msgid "* That means visitor who accepts the term unchecks it."
-msgstr ""
-"* つまり、利用者には条項に承諾する場合にチェックボックスのチェックをはずして"
-"もらいます。"
+#: contact-form-7/modules/acceptance.php:166
+#: contact-form-7/modules/captcha.php:238
+#: contact-form-7/modules/captcha.php:253
+#: contact-form-7/modules/checkbox.php:329 contact-form-7/modules/date.php:198
+#: contact-form-7/modules/file.php:266 contact-form-7/modules/number.php:206
+#: contact-form-7/modules/quiz.php:197 contact-form-7/modules/select.php:206
+#: contact-form-7/modules/submit.php:71 contact-form-7/modules/text.php:279
+#: contact-form-7/modules/textarea.php:166
+msgid "Id attribute"
+msgstr "ID 属性"
 
-#: contact-form-7/modules/acceptance.php:162
-#: contact-form-7/modules/captcha.php:261
-#: contact-form-7/modules/checkbox.php:310 contact-form-7/modules/date.php:190
-#: contact-form-7/modules/file.php:252 contact-form-7/modules/number.php:200
-#: contact-form-7/modules/quiz.php:200 contact-form-7/modules/select.php:180
-#: contact-form-7/modules/submit.php:74 contact-form-7/modules/text.php:274
-#: contact-form-7/modules/textarea.php:168
-msgid "Copy this code and paste it into the form left."
-msgstr "このコードをコピーして、左のフォーム内にペーストしてください。"
+#: contact-form-7/modules/acceptance.php:171
+#: contact-form-7/modules/captcha.php:243
+#: contact-form-7/modules/captcha.php:258
+#: contact-form-7/modules/checkbox.php:334 contact-form-7/modules/date.php:203
+#: contact-form-7/modules/file.php:271 contact-form-7/modules/number.php:211
+#: contact-form-7/modules/quiz.php:202 contact-form-7/modules/select.php:211
+#: contact-form-7/modules/submit.php:76 contact-form-7/modules/text.php:284
+#: contact-form-7/modules/textarea.php:171
+msgid "Class attribute"
+msgstr "クラス属性"
+
+#: contact-form-7/modules/acceptance.php:184
+#: contact-form-7/modules/captcha.php:270
+#: contact-form-7/modules/checkbox.php:347 contact-form-7/modules/date.php:215
+#: contact-form-7/modules/file.php:284 contact-form-7/modules/number.php:223
+#: contact-form-7/modules/quiz.php:215 contact-form-7/modules/select.php:224
+#: contact-form-7/modules/submit.php:89 contact-form-7/modules/text.php:297
+#: contact-form-7/modules/textarea.php:184
+msgid "Insert Tag"
+msgstr "タグを挿入"
 
 #: contact-form-7/modules/captcha.php:19
 msgid ""
@@ -1051,65 +1086,49 @@ msgstr ""
 "simple-captcha/\">Really Simple CAPTCHA</a> プラグインのインストールが必要で"
 "す。"
 
-#: contact-form-7/modules/captcha.php:184
+#: contact-form-7/modules/captcha.php:185
 msgid "The code that sender entered does not match the CAPTCHA"
 msgstr "入力されたコードが CAPTCHA に適合していない"
 
-#: contact-form-7/modules/captcha.php:185
+#: contact-form-7/modules/captcha.php:186
 msgid "Your entered code is incorrect."
 msgstr "入力されたコードが正しくありません。"
 
-#: contact-form-7/modules/captcha.php:198
+#: contact-form-7/modules/captcha.php:197
+#: contact-form-7/modules/captcha.php:218
 msgid "CAPTCHA"
 msgstr "CAPTCHA"
 
-#: contact-form-7/modules/captcha.php:209
-msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+#: contact-form-7/modules/captcha.php:208
+msgid ""
+"To use CAPTCHA, you first need to install and activate Really Simple CAPTCHA "
+"plugin."
 msgstr ""
-"お知らせ: CAPTCHA を使うには Really Simple CAPTCHA プラグインのインストールが"
-"必要です。"
+"CAPTCHA を使うには、まず Really Simple CAPTCHA プラグインのインストールと有効"
+"化が必要です。"
 
 #: contact-form-7/modules/captcha.php:216
+#, php-format
+msgid ""
+"Generate form-tags for a CAPTCHA image and corresponding response input "
+"field. For more details, see %s."
+msgstr ""
+"CAPTCHA 画像とそれに対応する回答入力項目のためのフォームタグを生成します。詳"
+"しくは%sを参照。"
+
+#: contact-form-7/modules/captcha.php:218
+msgid "http://contactform7.com/captcha/"
+msgstr "http://contactform7.com/ja/captcha/"
+
+#: contact-form-7/modules/captcha.php:235
 msgid "Image settings"
 msgstr "画像の設定"
 
-#: contact-form-7/modules/captcha.php:227
-msgid "Foreground color"
-msgstr "文字色"
-
-#: contact-form-7/modules/captcha.php:230
-msgid "Background color"
-msgstr "背景色"
-
-#: contact-form-7/modules/captcha.php:234
-msgid "Image size"
-msgstr "画像サイズ"
-
-#: contact-form-7/modules/captcha.php:235
-msgid "Small"
-msgstr "小"
-
-#: contact-form-7/modules/captcha.php:236
-msgid "Medium"
-msgstr "中"
-
-#: contact-form-7/modules/captcha.php:237
-msgid "Large"
-msgstr "大"
-
-#: contact-form-7/modules/captcha.php:242
+#: contact-form-7/modules/captcha.php:250
 msgid "Input field settings"
 msgstr "入力項目の設定"
 
-#: contact-form-7/modules/captcha.php:262
-msgid "For image"
-msgstr "画像"
-
-#: contact-form-7/modules/captcha.php:264
-msgid "For input field"
-msgstr "入力項目"
-
-#: contact-form-7/modules/captcha.php:295
+#: contact-form-7/modules/captcha.php:299
 #, php-format
 msgid ""
 "This contact form contains CAPTCHA fields, but the temporary folder for the "
@@ -1120,7 +1139,7 @@ msgstr ""
 "一時フォルダ (%s) が存在しないか、あるいは書き込み可能ではありません。この"
 "フォルダを手動で作成するか、パーミッションの変更を行うと解決できるでしょう。"
 
-#: contact-form-7/modules/captcha.php:301
+#: contact-form-7/modules/captcha.php:305
 msgid ""
 "This contact form contains CAPTCHA fields, but the necessary libraries (GD "
 "and FreeType) are not available on your server."
@@ -1128,136 +1147,217 @@ msgstr ""
 "このコンタクトフォームは CAPTCHA の項目を含んでいますが、お使いのサーバーでは"
 "必要なライブラリ (GD および FreeType) が利用可能でありません。"
 
-#: contact-form-7/modules/checkbox.php:255
-msgid "Checkboxes"
+#: contact-form-7/modules/checkbox.php:266
+msgid "checkboxes"
 msgstr "チェックボックス"
 
-#: contact-form-7/modules/checkbox.php:258
-msgid "Radio buttons"
+#: contact-form-7/modules/checkbox.php:268
+msgid "radio buttons"
 msgstr "ラジオボタン"
 
-#: contact-form-7/modules/checkbox.php:279 contact-form-7/modules/date.php:155
-#: contact-form-7/modules/file.php:230 contact-form-7/modules/number.php:165
-#: contact-form-7/modules/select.php:154 contact-form-7/modules/text.php:230
-#: contact-form-7/modules/textarea.php:133
-msgid "Required field?"
-msgstr "必須入力の項目ですか?"
+#: contact-form-7/modules/checkbox.php:281
+#, php-format
+msgid ""
+"Generate a form-tag for a group of checkboxes. For more details, see %s."
+msgstr ""
+"一連のチェックボックスのためのフォームタグを生成します。詳しくは%sを参照。"
 
-#: contact-form-7/modules/checkbox.php:295
+#: contact-form-7/modules/checkbox.php:283
+#, php-format
+msgid ""
+"Generate a form-tag for a group of radio buttons. For more details, see %s."
+msgstr "一連のラジオボタンのためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/checkbox.php:286
 #: contact-form-7/modules/select.php:168
-msgid "Choices"
-msgstr "選択項目"
+msgid "http://contactform7.com/checkboxes-radio-buttons-and-menus/"
+msgstr "http://contactform7.com/ja/checkboxes-radio-buttons-and-menus/"
+
+#: contact-form-7/modules/checkbox.php:286
+#: contact-form-7/modules/select.php:168
+msgid "Checkboxes, Radio Buttons and Menus"
+msgstr "チェックボックス、ラジオボタン、メニュー"
 
 #: contact-form-7/modules/checkbox.php:297
-#: contact-form-7/modules/select.php:170
-msgid "* One choice per line."
-msgstr "* 1行ごとに分けて入力してください。"
+#: contact-form-7/modules/checkbox.php:300 contact-form-7/modules/date.php:159
+#: contact-form-7/modules/date.php:162 contact-form-7/modules/file.php:241
+#: contact-form-7/modules/file.php:244 contact-form-7/modules/number.php:162
+#: contact-form-7/modules/number.php:165 contact-form-7/modules/select.php:178
+#: contact-form-7/modules/select.php:181 contact-form-7/modules/text.php:229
+#: contact-form-7/modules/text.php:232 contact-form-7/modules/textarea.php:145
+#: contact-form-7/modules/textarea.php:148
+msgid "Field type"
+msgstr "項目タイプ"
 
-#: contact-form-7/modules/checkbox.php:301
-msgid "Put a label first, a checkbox last?"
-msgstr "ラベルを先に、チェックボックスを後に置きますか?"
+#: contact-form-7/modules/checkbox.php:301 contact-form-7/modules/date.php:163
+#: contact-form-7/modules/file.php:245 contact-form-7/modules/number.php:171
+#: contact-form-7/modules/select.php:182 contact-form-7/modules/text.php:233
+#: contact-form-7/modules/textarea.php:149
+msgid "Required field"
+msgstr "必須項目"
 
-#: contact-form-7/modules/checkbox.php:302
-msgid "Wrap each item with <label> tag?"
-msgstr "個々の項目を <label> タグで囲みますか?"
+#: contact-form-7/modules/checkbox.php:318
+#: contact-form-7/modules/select.php:198
+msgid "One option per line."
+msgstr "一行に一オプションを入力。"
 
-#: contact-form-7/modules/checkbox.php:304
-msgid "Make checkboxes exclusive?"
-msgstr "チェックボックスを排他化しますか?"
+#: contact-form-7/modules/checkbox.php:319
+msgid "Put a label first, a checkbox last"
+msgstr "ラベルを前に、チェックボックスを後に配置する"
 
-#: contact-form-7/modules/checkbox.php:312 contact-form-7/modules/date.php:192
-#: contact-form-7/modules/number.php:202 contact-form-7/modules/select.php:182
-#: contact-form-7/modules/text.php:276 contact-form-7/modules/textarea.php:170
-msgid "And, put this code into the Mail fields below."
-msgstr "それから、このコードを下のメールの項目中に置いてください。"
+#: contact-form-7/modules/checkbox.php:320
+msgid "Wrap each item with label element"
+msgstr "個々の項目を label 要素で囲む"
 
-#: contact-form-7/modules/date.php:115
+#: contact-form-7/modules/checkbox.php:322
+msgid "Make checkboxes exclusive"
+msgstr "チェックボックスを排他化する"
+
+#: contact-form-7/modules/checkbox.php:352 contact-form-7/modules/date.php:220
+#: contact-form-7/modules/number.php:228 contact-form-7/modules/select.php:229
+#: contact-form-7/modules/text.php:302 contact-form-7/modules/textarea.php:189
+#, php-format
+msgid ""
+"To use the value input through this field in a mail field, you need to "
+"insert the corresponding mail-tag (%s) into the field on the Mail tab."
+msgstr ""
+"この項目に入力された値をメールの項目で使用するには、対応するメールタグ (%s) "
+"をメールタブ上の項目に挿入する必要があります。"
+
+#: contact-form-7/modules/date.php:117
 msgid "Date format that the sender entered is invalid"
 msgstr "入力された日付の形式が正しくない"
 
-#: contact-form-7/modules/date.php:116
+#: contact-form-7/modules/date.php:118
 msgid "Date format seems invalid."
 msgstr "日付の形式が正しくないようです。"
 
-#: contact-form-7/modules/date.php:120
+#: contact-form-7/modules/date.php:122
 msgid "Date is earlier than minimum limit"
 msgstr "日付が最小制約日より小さい"
 
-#: contact-form-7/modules/date.php:121
+#: contact-form-7/modules/date.php:123
 msgid "This date is too early."
 msgstr "日付が早すぎます。"
 
-#: contact-form-7/modules/date.php:125
+#: contact-form-7/modules/date.php:127
 msgid "Date is later than maximum limit"
 msgstr "日付が最大制約日より大きい"
 
-#: contact-form-7/modules/date.php:126
+#: contact-form-7/modules/date.php:128
 msgid "This date is too late."
 msgstr "日付が遅すぎます。"
 
-#: contact-form-7/modules/date.php:182 contact-form-7/modules/number.php:192
-#: contact-form-7/modules/text.php:266 contact-form-7/modules/textarea.php:160
+#: contact-form-7/modules/date.php:139
+msgid "date"
+msgstr "日付"
+
+#: contact-form-7/modules/date.php:147
+#, php-format
+msgid "Generate a form-tag for a date input field. For more details, see %s."
+msgstr "日付入力項目のフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/date.php:149
+msgid "http://contactform7.com/date-field/"
+msgstr "http://contactform7.com/ja/date-field/"
+
+#: contact-form-7/modules/date.php:149
+msgid "Date Field"
+msgstr "日付項目"
+
+#: contact-form-7/modules/date.php:174 contact-form-7/modules/number.php:182
+#: contact-form-7/modules/text.php:244 contact-form-7/modules/textarea.php:160
 msgid "Default value"
 msgstr "デフォルト値"
 
-#: contact-form-7/modules/date.php:185 contact-form-7/modules/number.php:195
-#: contact-form-7/modules/text.php:269 contact-form-7/modules/textarea.php:163
-msgid "Use this text as placeholder?"
-msgstr "このテキストをプレースホルダーとして使いますか?"
+#: contact-form-7/modules/date.php:176 contact-form-7/modules/number.php:184
+#: contact-form-7/modules/text.php:246 contact-form-7/modules/textarea.php:162
+msgid "Use this text as the placeholder of the field"
+msgstr "このテキストを項目のプレースホルダーとして使用する"
 
-#: contact-form-7/modules/file.php:191
+#: contact-form-7/modules/date.php:180 contact-form-7/modules/date.php:183
+#: contact-form-7/modules/number.php:188 contact-form-7/modules/number.php:191
+msgid "Range"
+msgstr "範囲"
+
+#: contact-form-7/modules/date.php:185 contact-form-7/modules/number.php:193
+msgid "Min"
+msgstr "下限"
+
+#: contact-form-7/modules/date.php:190 contact-form-7/modules/number.php:198
+msgid "Max"
+msgstr "上限"
+
+#: contact-form-7/modules/file.php:193
 msgid "Uploading a file fails for any reason"
 msgstr "ファイルのアップロードが何らかの理由により失敗している"
 
-#: contact-form-7/modules/file.php:192
+#: contact-form-7/modules/file.php:194
 msgid "Failed to upload file."
 msgstr "ファイルのアップロードに失敗しました。"
 
-#: contact-form-7/modules/file.php:196
+#: contact-form-7/modules/file.php:198
 msgid "Uploaded file is not allowed file type"
 msgstr "アップロードされたファイルが許可されたファイル形式に適合しない"
 
-#: contact-form-7/modules/file.php:197
+#: contact-form-7/modules/file.php:199
 msgid "This file type is not allowed."
 msgstr "許可されていないファイル形式です。"
 
-#: contact-form-7/modules/file.php:201
+#: contact-form-7/modules/file.php:203
 msgid "Uploaded file is too large"
 msgstr "アップロードされたファイルが大きすぎる"
 
-#: contact-form-7/modules/file.php:202
+#: contact-form-7/modules/file.php:204
 msgid "This file is too large."
 msgstr "ファイルが大きすぎます。"
 
-#: contact-form-7/modules/file.php:206
+#: contact-form-7/modules/file.php:208
 msgid "Uploading a file fails for PHP error"
 msgstr "ファイルのアップロードが PHP のエラーにより失敗している"
 
-#: contact-form-7/modules/file.php:207
+#: contact-form-7/modules/file.php:209
 msgid "Failed to upload file. Error occurred."
 msgstr "ファイルのアップロードに失敗しました。エラーが発生しています。"
 
 #: contact-form-7/modules/file.php:221
-msgid "File upload"
-msgstr "ファイルのアップロード"
+msgid "file"
+msgstr "ファイル"
 
-#: contact-form-7/modules/file.php:244
-msgid "File size limit"
-msgstr "ファイルサイズの上限"
+#: contact-form-7/modules/file.php:229
+#, php-format
+msgid ""
+"Generate a form-tag for a file uploading field. For more details, see %s."
+msgstr ""
+"ファイルアップロード項目のためのフォームタグを生成します。詳しくは%sを参照。"
 
-#: contact-form-7/modules/file.php:244
-msgid "bytes"
-msgstr "バイト"
+#: contact-form-7/modules/file.php:231
+msgid "http://contactform7.com/file-uploading-and-attachment/"
+msgstr "http://contactform7.com/ja/file-uploading-and-attachment/"
 
-#: contact-form-7/modules/file.php:247
+#: contact-form-7/modules/file.php:231
+msgid "File Uploading and Attachment"
+msgstr "ファイルのアップロードとメール添付"
+
+#: contact-form-7/modules/file.php:256
+msgid "File size limit (bytes)"
+msgstr "ファイルサイズの上限 (バイト)"
+
+#: contact-form-7/modules/file.php:261
 msgid "Acceptable file types"
 msgstr "受け入れ可能なファイル形式"
 
-#: contact-form-7/modules/file.php:254
-msgid "And, put this code into the File Attachments field below."
-msgstr "それから、このコードを下のファイル添付の項目中に置いてください。"
+#: contact-form-7/modules/file.php:289
+#, php-format
+msgid ""
+"To attach the file uploaded through this field to mail, you need to insert "
+"the corresponding mail-tag (%s) into the File Attachments field on the Mail "
+"tab."
+msgstr ""
+"この項目からアップロードされたファイルをメールに添付するには、対応するメール"
+"タグ (%s) をメールタブ上にあるファイル添付項目に挿入する必要があります。"
 
-#: contact-form-7/modules/file.php:280
+#: contact-form-7/modules/file.php:314
 #, php-format
 msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
@@ -1278,37 +1378,56 @@ msgstr ""
 "<strong>Jetpack が他のプラグインに対し支障を与える場合があります。</strong> "
 "<a href=\"%s\" target=\"_blank\">回避方法はこちら。</a>"
 
-#: contact-form-7/modules/number.php:118
+#: contact-form-7/modules/number.php:120
 msgid "Number format that the sender entered is invalid"
 msgstr "入力された数値の形式が正しくない"
 
-#: contact-form-7/modules/number.php:119
+#: contact-form-7/modules/number.php:121
 msgid "Number format seems invalid."
 msgstr "数値の形式が正しくないようです。"
 
-#: contact-form-7/modules/number.php:123
+#: contact-form-7/modules/number.php:125
 msgid "Number is smaller than minimum limit"
 msgstr "数値が最小制約値より小さい"
 
-#: contact-form-7/modules/number.php:124
+#: contact-form-7/modules/number.php:126
 msgid "This number is too small."
 msgstr "数値が小さすぎます。"
 
-#: contact-form-7/modules/number.php:128
+#: contact-form-7/modules/number.php:130
 msgid "Number is larger than maximum limit"
 msgstr "数値が最大制約値より大きい"
 
-#: contact-form-7/modules/number.php:129
+#: contact-form-7/modules/number.php:131
 msgid "This number is too large."
 msgstr "数値が大きすぎます。"
 
 #: contact-form-7/modules/number.php:142
-msgid "Number (spinbox)"
-msgstr "数値 (スピンボックス)"
+msgid "number"
+msgstr "数値"
 
-#: contact-form-7/modules/number.php:145
-msgid "Number (slider)"
-msgstr "数値 (スライダー)"
+#: contact-form-7/modules/number.php:150
+#, php-format
+msgid ""
+"Generate a form-tag for a field for numeric value input. For more details, "
+"see %s."
+msgstr "数値入力項目のためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/number.php:152
+msgid "http://contactform7.com/number-fields/"
+msgstr "http://contactform7.com/ja/number-fields/"
+
+#: contact-form-7/modules/number.php:152
+msgid "Number Fields"
+msgstr "数値入力項目"
+
+#: contact-form-7/modules/number.php:167
+msgid "Spinbox"
+msgstr "スピンボックス"
+
+#: contact-form-7/modules/number.php:168
+msgid "Slider"
+msgstr "スライダー"
 
 #: contact-form-7/modules/quiz.php:149
 msgid "Sender doesn't enter the correct answer to the quiz"
@@ -1318,35 +1437,72 @@ msgstr "クイズに対する正しい答えが入力されなかった"
 msgid "Your answer is not correct."
 msgstr "答えが正しくありません。"
 
-#: contact-form-7/modules/quiz.php:163
+#: contact-form-7/modules/quiz.php:161
+msgid "quiz"
+msgstr "クイズ"
+
+#: contact-form-7/modules/quiz.php:169
+#, php-format
+msgid ""
+"Generate a form-tag for a question-answer pair. For more details, see %s."
+msgstr "クイズと回答の項目のためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/quiz.php:171
+msgid "http://contactform7.com/quiz/"
+msgstr "http://contactform7.com/ja/quiz/"
+
+#: contact-form-7/modules/quiz.php:171
 msgid "Quiz"
 msgstr "クイズ"
 
-#: contact-form-7/modules/quiz.php:193
-msgid "Quizzes"
-msgstr "質問と答え"
+#: contact-form-7/modules/quiz.php:186 contact-form-7/modules/quiz.php:189
+msgid "Questions and answers"
+msgstr "クイズと回答"
 
-#: contact-form-7/modules/quiz.php:195
-msgid "* quiz|answer (e.g. 1+1=?|2)"
-msgstr "* 質問|答え (例: 1+1=?|2)"
+#: contact-form-7/modules/quiz.php:191
+msgid ""
+"One pipe-separated question-answer pair (e.g. The capital of Brazil?|Rio) "
+"per line."
+msgstr ""
+"一行に一対の、パイプで区切られたクイズと回答 (例: ブラジルの首都は?|リオ) を"
+"入力。"
 
-#: contact-form-7/modules/select.php:145
-msgid "Drop-down menu"
-msgstr "ドロップダウン・メニュー"
+#: contact-form-7/modules/select.php:159
+msgid "drop-down menu"
+msgstr "ドロップダウンメニュー"
 
-#: contact-form-7/modules/select.php:174
-msgid "Allow multiple selections?"
-msgstr "複数選択を可能にしますか?"
+#: contact-form-7/modules/select.php:166
+#, php-format
+msgid "Generate a form-tag for a drop-down menu. For more details, see %s."
+msgstr ""
+"ドロップダウンメニューのためのフォームタグを生成します。詳しくは%sを参照。"
 
-#: contact-form-7/modules/select.php:175
-msgid "Insert a blank item as the first option?"
-msgstr "先頭に空の項目を挿入しますか?"
+#: contact-form-7/modules/select.php:199
+msgid "Allow multiple selections"
+msgstr "複数選択を可能にする"
 
-#: contact-form-7/modules/submit.php:49
-msgid "Submit button"
+#: contact-form-7/modules/select.php:200
+msgid "Insert a blank item as the first option"
+msgstr "空の項目を先頭に挿入する"
+
+#: contact-form-7/modules/submit.php:47
+msgid "submit"
 msgstr "送信ボタン"
 
-#: contact-form-7/modules/submit.php:67
+#: contact-form-7/modules/submit.php:54
+#, php-format
+msgid "Generate a form-tag for a submit button. For more details, see %s."
+msgstr "送信ボタンのためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/submit.php:56
+msgid "http://contactform7.com/submit-button/"
+msgstr "http://contactform7.com/ja/submit-button/"
+
+#: contact-form-7/modules/submit.php:56
+msgid "Submit Button"
+msgstr "送信ボタン"
+
+#: contact-form-7/modules/submit.php:66
 msgid "Label"
 msgstr "ラベル"
 
@@ -1374,46 +1530,260 @@ msgstr "入力された電話番号の形式が正しくない"
 msgid "Telephone number seems invalid."
 msgstr "電話番号の形式が正しくないようです。"
 
-#: contact-form-7/modules/text.php:193
-msgid "Text field"
-msgstr "テキスト項目"
+#: contact-form-7/modules/text.php:191
+msgid "text"
+msgstr "テキスト"
 
-#: contact-form-7/modules/text.php:196
-msgid "Email"
+#: contact-form-7/modules/text.php:193
+msgid "email"
 msgstr "メールアドレス"
 
-#: contact-form-7/modules/text.php:199
+#: contact-form-7/modules/text.php:195
 msgid "URL"
 msgstr "URL"
 
-#: contact-form-7/modules/text.php:202
-msgid "Telephone number"
+#: contact-form-7/modules/text.php:197
+msgid "tel"
 msgstr "電話番号"
 
-#: contact-form-7/modules/text.php:253
+#: contact-form-7/modules/text.php:210
+#, php-format
+msgid ""
+"Generate a form-tag for a single-line plain text input field. For more "
+"details, see %s."
+msgstr ""
+"単一行のプレーンテキスト入力項目のためのフォームタグを生成します。詳しくは%s"
+"を参照。"
+
+#: contact-form-7/modules/text.php:212
+#, php-format
+msgid ""
+"Generate a form-tag for a single-line email address input field. For more "
+"details, see %s."
+msgstr ""
+"単一行のメールアドレス入力項目のためのフォームタグを生成します。詳しくは%sを"
+"参照。"
+
+#: contact-form-7/modules/text.php:214
+#, php-format
+msgid ""
+"Generate a form-tag for a single-line URL input field. For more details, see "
+"%s."
+msgstr ""
+"単一行の URL 入力項目のためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/text.php:216
+#, php-format
+msgid ""
+"Generate a form-tag for a single-line telephone number input field. For more "
+"details, see %s."
+msgstr ""
+"単一行の電話番号入力項目のためのフォームタグを生成します。詳しくは%sを参照。"
+
+#: contact-form-7/modules/text.php:219 contact-form-7/modules/textarea.php:135
+msgid "http://contactform7.com/text-fields/"
+msgstr "http://contactform7.com/ja/text-fields/"
+
+#: contact-form-7/modules/text.php:219 contact-form-7/modules/textarea.php:135
+msgid "Text Fields"
+msgstr "テキスト項目"
+
+#: contact-form-7/modules/text.php:251 contact-form-7/modules/text.php:254
 msgid "Akismet"
 msgstr "Akismet"
 
-#: contact-form-7/modules/text.php:255
+#: contact-form-7/modules/text.php:259
 msgid "This field requires author's name"
 msgstr "送信者の名前の入力を要求する項目"
 
-#: contact-form-7/modules/text.php:257
+#: contact-form-7/modules/text.php:264
 msgid "This field requires author's email address"
 msgstr "送信者のメールアドレスの入力を要求する項目"
 
-#: contact-form-7/modules/text.php:259
+#: contact-form-7/modules/text.php:269
 msgid "This field requires author's URL"
 msgstr "送信者の URL の入力を要求する項目"
 
-#: contact-form-7/modules/textarea.php:124
-msgid "Text area"
+#: contact-form-7/modules/textarea.php:125
+msgid "text area"
 msgstr "テキストエリア"
+
+#: contact-form-7/modules/textarea.php:133
+#, php-format
+msgid ""
+"Generate a form-tag for a multi-line text input field. For more details, see "
+"%s."
+msgstr ""
+"複数行のテキスト入力項目のためのフォームタグを生成します。詳しくは%sを参照。"
 
 #: contact-form-7/settings.php:72
 #, php-format
 msgid "Contact form %d"
 msgstr "コンタクトフォーム %d"
+
+#~ msgid "Generate Tag"
+#~ msgstr "タグの作成"
+
+#~ msgid "Use mail (2)"
+#~ msgstr "メール (2) を使う"
+
+#~ msgid ""
+#~ "Copy this code and paste it into your post, page or text widget content."
+#~ msgstr ""
+#~ "このコードをコピーして、投稿、ページ、またはテキストウィジェットの本文内に"
+#~ "ペーストしてください。"
+
+#~ msgid "Old code is also available."
+#~ msgstr "古いコードも利用可能です。"
+
+#~ msgid "To:"
+#~ msgstr "宛先:"
+
+#~ msgid "From:"
+#~ msgstr "差出人:"
+
+#~ msgid "Subject:"
+#~ msgstr "件名:"
+
+#~ msgid "Additional headers:"
+#~ msgstr "追加ヘッダー:"
+
+#~ msgid "File attachments:"
+#~ msgstr "ファイル添付:"
+
+#~ msgid "Message body:"
+#~ msgstr "メッセージ本文:"
+
+#~ msgid "Show all messages"
+#~ msgstr "すべてのメッセージを表示"
+
+#~ msgid "Acceptance"
+#~ msgstr "承諾の確認"
+
+#~ msgid "optional"
+#~ msgstr "オプション"
+
+#~ msgid "Make this checkbox checked by default?"
+#~ msgstr "初期状態でチェックボックスにチェックを入れますか?"
+
+#~ msgid "Make this checkbox work inversely?"
+#~ msgstr "チェックボックスを反転させますか?"
+
+#~ msgid "* That means visitor who accepts the term unchecks it."
+#~ msgstr ""
+#~ "* つまり、利用者には条項に承諾する場合にチェックボックスのチェックをはずし"
+#~ "てもらいます。"
+
+#~ msgid "Copy this code and paste it into the form left."
+#~ msgstr "このコードをコピーして、左のフォーム内にペーストしてください。"
+
+#~ msgid ""
+#~ "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+#~ msgstr ""
+#~ "お知らせ: CAPTCHA を使うには Really Simple CAPTCHA プラグインのインストー"
+#~ "ルが必要です。"
+
+#~ msgid "Foreground color"
+#~ msgstr "文字色"
+
+#~ msgid "Background color"
+#~ msgstr "背景色"
+
+#~ msgid "Image size"
+#~ msgstr "画像サイズ"
+
+#~ msgid "Small"
+#~ msgstr "小"
+
+#~ msgid "Medium"
+#~ msgstr "中"
+
+#~ msgid "Large"
+#~ msgstr "大"
+
+#~ msgid "For image"
+#~ msgstr "画像"
+
+#~ msgid "For input field"
+#~ msgstr "入力項目"
+
+#~ msgid "Checkboxes"
+#~ msgstr "チェックボックス"
+
+#~ msgid "Radio buttons"
+#~ msgstr "ラジオボタン"
+
+#~ msgid "Required field?"
+#~ msgstr "必須入力の項目ですか?"
+
+#~ msgid "Choices"
+#~ msgstr "選択項目"
+
+#~ msgid "* One choice per line."
+#~ msgstr "* 1行ごとに分けて入力してください。"
+
+#~ msgid "Put a label first, a checkbox last?"
+#~ msgstr "ラベルを先に、チェックボックスを後に置きますか?"
+
+#~ msgid "Wrap each item with <label> tag?"
+#~ msgstr "個々の項目を <label> タグで囲みますか?"
+
+#~ msgid "Make checkboxes exclusive?"
+#~ msgstr "チェックボックスを排他化しますか?"
+
+#~ msgid "And, put this code into the Mail fields below."
+#~ msgstr "それから、このコードを下のメールの項目中に置いてください。"
+
+#~ msgid "Use this text as placeholder?"
+#~ msgstr "このテキストをプレースホルダーとして使いますか?"
+
+#~ msgid "File upload"
+#~ msgstr "ファイルのアップロード"
+
+#~ msgid "File size limit"
+#~ msgstr "ファイルサイズの上限"
+
+#~ msgid "bytes"
+#~ msgstr "バイト"
+
+#~ msgid "And, put this code into the File Attachments field below."
+#~ msgstr "それから、このコードを下のファイル添付の項目中に置いてください。"
+
+#~ msgid "Number (spinbox)"
+#~ msgstr "数値 (スピンボックス)"
+
+#~ msgid "Number (slider)"
+#~ msgstr "数値 (スライダー)"
+
+#~ msgid "Quizzes"
+#~ msgstr "質問と答え"
+
+#~ msgid "* quiz|answer (e.g. 1+1=?|2)"
+#~ msgstr "* 質問|答え (例: 1+1=?|2)"
+
+#~ msgid "Drop-down menu"
+#~ msgstr "ドロップダウン・メニュー"
+
+#~ msgid "Allow multiple selections?"
+#~ msgstr "複数選択を可能にしますか?"
+
+#~ msgid "Insert a blank item as the first option?"
+#~ msgstr "先頭に空の項目を挿入しますか?"
+
+#~ msgid "Submit button"
+#~ msgstr "送信ボタン"
+
+#~ msgid "Text field"
+#~ msgstr "テキスト項目"
+
+#~ msgid "Email"
+#~ msgstr "メールアドレス"
+
+#~ msgid "Telephone number"
+#~ msgstr "電話番号"
+
+#~ msgid "Text area"
+#~ msgstr "テキストエリア"
 
 #~ msgid "Sample"
 #~ msgstr "サンプル"
