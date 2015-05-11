@@ -161,7 +161,7 @@ function wpcf7_editor_panel_messages( $post ) {
 ?>
 <h3><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><?php echo esc_html( __( 'Edit messages used for the following situations.', 'contact-form-7' ) ); ?></legend>
+<legend class="screen-reader-text"><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></legend>
 <p><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></p>
 <?php
 
