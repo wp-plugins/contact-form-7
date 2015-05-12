@@ -1,49 +1,45 @@
 (function($) {
 
 	$(function() {
-		try {
-			var welcomePanel = $('#welcome-panel');
-			var updateWelcomePanel;
+		var welcomePanel = $('#welcome-panel');
+		var updateWelcomePanel;
 
-			updateWelcomePanel = function( visible ) {
-				$.post( ajaxurl, {
-					action: 'wpcf7-update-welcome-panel',
-					visible: visible,
-					welcomepanelnonce: $( '#welcomepanelnonce' ).val()
-				});
-			};
-
-			$('a.welcome-panel-close', welcomePanel).click(function(event) {
-				event.preventDefault();
-				welcomePanel.addClass('hidden');
-				updateWelcomePanel( 0 );
+		updateWelcomePanel = function( visible ) {
+			$.post( ajaxurl, {
+				action: 'wpcf7-update-welcome-panel',
+				visible: visible,
+				welcomepanelnonce: $( '#welcomepanelnonce' ).val()
 			});
+		};
 
-			$('#contact-form-editor').tabs({
-				active: _wpcf7.activeTab,
-				activate: function(event, ui) {
-					$('#active-tab').val(ui.newTab.index());
-				}
-			});
+		$('a.welcome-panel-close', welcomePanel).click(function(event) {
+			event.preventDefault();
+			welcomePanel.addClass('hidden');
+			updateWelcomePanel( 0 );
+		});
 
-			$('input:checkbox.toggle-form-table').click(function(event) {
-				$(this).wpcf7ToggleFormTable();
-			}).wpcf7ToggleFormTable();
-
-			if ('' == $('#title').val()) {
-				$('#title').focus();
+		$('#contact-form-editor').tabs({
+			active: _wpcf7.activeTab,
+			activate: function(event, ui) {
+				$('#active-tab').val(ui.newTab.index());
 			}
+		});
 
-			$.wpcf7TitleHint();
+		$('input:checkbox.toggle-form-table').click(function(event) {
+			$(this).wpcf7ToggleFormTable();
+		}).wpcf7ToggleFormTable();
 
-			$('.contact-form-editor-box-mail span.mailtag').click(function(event) {
-				var range = document.createRange();
-				range.selectNodeContents(this);
-				window.getSelection().addRange(range);
-			});
-
-		} catch (e) {
+		if ('' == $('#title').val()) {
+			$('#title').focus();
 		}
+
+		$.wpcf7TitleHint();
+
+		$('.contact-form-editor-box-mail span.mailtag').click(function(event) {
+			var range = document.createRange();
+			range.selectNodeContents(this);
+			window.getSelection().addRange(range);
+		});
 	});
 
 	$.fn.wpcf7ToggleFormTable = function() {
