@@ -1,5 +1,9 @@
 (function($) {
 
+	if (typeof _wpcf7 == 'undefined' || _wpcf7 === null) {
+		_wpcf7 = {};
+	}
+
 	$(function() {
 		var welcomePanel = $('#welcome-panel');
 		var updateWelcomePanel;
@@ -39,6 +43,31 @@
 			var range = document.createRange();
 			range.selectNodeContents(this);
 			window.getSelection().addRange(range);
+		});
+
+		$(window).on('beforeunload', function(event) {
+			var changed = false;
+
+			$('#wpcf7-admin-form-element :input[type!="hidden"]').each(function() {
+				if ($(this).is(':checkbox, :radio')) {
+					if (this.defaultChecked != $(this).is(':checked')) {
+						changed = true;
+					}
+				} else {
+					if (this.defaultValue != $(this).val()) {
+						changed = true;
+					}
+				}
+			});
+
+			if (changed) {
+				event.returnValue = _wpcf7.saveAlert;
+				return _wpcf7.saveAlert;
+			}
+		});
+
+		$('#wpcf7-admin-form-element').submit(function() {
+			$(window).off('beforeunload');
 		});
 	});
 

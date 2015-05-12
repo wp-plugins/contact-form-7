@@ -201,6 +201,7 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 
 	wp_localize_script( 'wpcf7-admin', '_wpcf7', array(
 		'pluginUrl' => wpcf7_plugin_url(),
+		'saveAlert' => __( "The changes you made will be lost if you navigate away from this page.", 'contact-form-7' ),
 		'activeTab' => isset( $_GET['active-tab'] ) ? (int) $_GET['active-tab'] : 0 ) );
 }
 
