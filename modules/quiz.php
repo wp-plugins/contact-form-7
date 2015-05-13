@@ -168,7 +168,7 @@ function wpcf7_tag_generator_quiz( $contact_form, $args = '' ) {
 
 	$description = __( "Generate a form-tag for a question-answer pair. For more details, see %s.", 'contact-form-7' );
 
-	$desc_link = sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/quiz/', 'contact-form-7' ) ), esc_html( __( 'Quiz', 'contact-form-7' ) ) );
+	$desc_link = sprintf( '<a href="%1$s">%2$s</a>', esc_url( __( 'http://contactform7.com/quiz/', 'contact-form-7' ) ), esc_html( __( 'Quiz', 'contact-form-7' ) ) );
 
 ?>
 <div class="control-box">

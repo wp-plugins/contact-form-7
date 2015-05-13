@@ -205,7 +205,7 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 ?>
 <div class="control-box">
 <fieldset>
-<legend><?php echo esc_html( __( "To use CAPTCHA, you first need to install and activate Really Simple CAPTCHA plugin.", 'contact-form-7' ) ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'http://wordpress.org/extend/plugins/really-simple-captcha/', 'Really Simple CAPTCHA' ); ?></legend>
+<legend><?php echo esc_html( __( "To use CAPTCHA, you first need to install and activate Really Simple CAPTCHA plugin.", 'contact-form-7' ) ); ?><br /><span class="dashicons dashicons-external"></span> <?php echo sprintf( '<a href="%1$s">%2$s</a>', 'http://wordpress.org/extend/plugins/really-simple-captcha/', 'Really Simple CAPTCHA' ); ?></legend>
 </fieldset>
 </div>
 <?php
@@ -215,7 +215,7 @@ function wpcf7_tag_generator_captcha( $contact_form, $args = '' ) {
 
 	$description = __( "Generate form-tags for a CAPTCHA image and corresponding response input field. For more details, see %s.", 'contact-form-7' );
 
-	$desc_link = sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) );
+	$desc_link = sprintf( '<a href="%1$s">%2$s</a>', esc_url( __( 'http://contactform7.com/captcha/', 'contact-form-7' ) ), esc_html( __( 'CAPTCHA', 'contact-form-7' ) ) );
 
 ?>
 <div class="control-box">
