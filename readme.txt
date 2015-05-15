@@ -86,7 +86,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Serbian (sr_RS) - Vedran, Aleksandar Urošević
 * Sinhala (si_LK) - Nitin Aggarwal
 * Slovak (sk_SK) - Patrik Bóna, WordPress Slovakia
-* Slovene (sl_SI) - Mihael Simonič, Jani Roskar
+* Slovene (sl_SI) - Mihael Simonič, Jani Roskar, Marko Ambrožič
 * Spanish (es_ES) - Jordi Sancho, Vladimir Prieto, Federico Mikaelian, Matias Baldanza, Carlos Agnese, Lourdes Cuesta, Carlos Oropesa
 * Swedish (sv_SE) - Fredrik Jonsson, the Swedish community
 * Tagalog (tl) - Rupert Agnew Lanuza, Hanne, Language Connect
