@@ -87,9 +87,9 @@ class WPCF7_Help_Tabs {
 
 	public function sidebar() {
 		$content = '<p><strong>' . __( 'For more information:', 'contact-form-7' ) . '</strong></p>';
-		$content .= '<p>' . __( '<a href="http://contactform7.com/docs/">Docs</a>', 'contact-form-7' ) . '</p>';
-		$content .= '<p>' . __( '<a href="http://contactform7.com/faq/">FAQ</a>', 'contact-form-7' ) . '</p>';
-		$content .= '<p>' . __( '<a href="http://contactform7.com/support/">Support</a>', 'contact-form-7' ) . '</p>';
+		$content .= '<p>' . wpcf7_link( __( 'http://contactform7.com/docs/', 'contact-form-7' ), __( 'Docs', 'contact-form-7' ) ) . '</p>';
+		$content .= '<p>' . wpcf7_link( __( 'http://contactform7.com/faq/', 'contact-form-7' ), __( 'FAQ', 'contact-form-7' ) ) . '</p>';
+		$content .= '<p>' . wpcf7_link( __( 'http://contactform7.com/support/', 'contact-form-7' ), __( 'Support', 'contact-form-7' ) ) . '</p>';
 
 		$this->screen->set_help_sidebar( $content );
 	}

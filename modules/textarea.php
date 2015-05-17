@@ -132,7 +132,7 @@ function wpcf7_tag_generator_textarea( $contact_form, $args = '' ) {
 
 	$description = __( "Generate a form-tag for a multi-line text input field. For more details, see %s.", 'contact-form-7' );
 
-	$desc_link = sprintf( '<a href="%1$s">%2$s</a>', esc_url( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ) ), esc_html( __( 'Text Fields', 'contact-form-7' ) ) );
+	$desc_link = wpcf7_link( __( 'http://contactform7.com/text-fields/', 'contact-form-7' ), __( 'Text Fields', 'contact-form-7' ) );
 
 ?>
 <div class="control-box">

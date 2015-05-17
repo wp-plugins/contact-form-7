@@ -237,6 +237,23 @@ function wpcf7_format_atts( $atts ) {
 	return $html;
 }
 
+function wpcf7_link( $url, $anchor_text, $args = '' ) {
+	$defaults = array(
+		'id' => '',
+		'class' => '' );
+
+	$args = wp_parse_args( $args, $defaults );
+	$args = array_intersect_key( $args, $defaults );
+	$atts = wpcf7_format_atts( $args );
+
+	$link = sprintf( '<a href="%1$s"%3$s>%2$s</a>',
+		esc_url( $url ),
+		esc_html( $anchor_text ),
+		$atts ? ( ' ' . $atts ) : '' );
+
+	return $link;
+}
+
 function wpcf7_load_textdomain( $locale = null ) {
 	global $l10n;
 
