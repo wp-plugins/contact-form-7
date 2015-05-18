@@ -18,6 +18,10 @@ class WPCF7_Editor {
 	}
 
 	public function display() {
+		if ( empty( $this->panels ) ) {
+			return;
+		}
+
 		echo '<ul id="contact-form-editor-tabs">';
 
 		foreach ( $this->panels as $id => $panel ) {

@@ -223,7 +223,9 @@ function wpcf7_admin_management_page() {
 <h2><?php
 	echo esc_html( __( 'Contact Forms', 'contact-form-7' ) );
 
-	echo ' <a href="' . esc_url( menu_page_url( 'wpcf7-new', false ) ) . '" class="add-new-h2">' . esc_html( __( 'Add New', 'contact-form-7' ) ) . '</a>';
+	if ( current_user_can( 'wpcf7_edit_contact_forms' ) ) {
+		echo ' <a href="' . esc_url( menu_page_url( 'wpcf7-new', false ) ) . '" class="add-new-h2">' . esc_html( __( 'Add New', 'contact-form-7' ) ) . '</a>';
+	}
 
 	if ( ! empty( $_REQUEST['s'] ) ) {
 		echo sprintf( '<span class="subtitle">'
