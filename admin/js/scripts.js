@@ -67,7 +67,9 @@
 		});
 
 		$('#wpcf7-admin-form-element').submit(function() {
-			$(window).off('beforeunload');
+			if ('copy' != this.action.value) {
+				$(window).off('beforeunload');
+			}
 		});
 	});
 
