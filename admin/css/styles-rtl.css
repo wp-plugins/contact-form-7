@@ -14,8 +14,3 @@
 .tag-generator-panel .insert-box .submitbox input[type="button"] {
 	float: left;
 }
-
-.contact-form-editor-box-mail fieldset legend {
-	border: 1px solid #dfdfdf;
-	border-right: 4px solid #00a0d2;
-}

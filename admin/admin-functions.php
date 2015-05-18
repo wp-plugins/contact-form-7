@@ -20,8 +20,6 @@ function wpcf7_add_tag_generator( $name, $title, $elm_id, $callback, $options = 
 }
 
 function wpcf7_mail_tags_suggestion( WPCF7_ContactForm $contact_form ) {
-	echo esc_html( __( "Available mail-tags:", 'contact-form-7' ) );
-
 	foreach ( $contact_form->collect_mail_tags() as $mailtag ) {
 		echo sprintf(
 			'<span class="mailtag code">[%s]</span>',

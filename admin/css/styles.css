@@ -112,6 +112,11 @@ span.shortcode > input {
 	width: 100px;
 }
 
+#contact-form-editor .contact-form-editor-panel fieldset legend {
+	line-height: 1.5;
+	margin: .6em 0 .4em;
+}
+
 /*
  * Form Panel
  */
@@ -232,14 +237,6 @@ span.shortcode > input {
 	padding: 1px 2px;
 	cursor: pointer;
 	color: #000;
-}
-
-.contact-form-editor-box-mail fieldset legend {
-	width: 95%;
-	border: 1px solid #dfdfdf;
-	border-left: 4px solid #00a0d2;
-	background: #f7fcfe;
-	padding: 10px;
 }
 
 /*

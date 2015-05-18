@@ -93,7 +93,8 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 ?>
 
 <fieldset>
-<legend><?php wpcf7_mail_tags_suggestion( $post ); ?></legend>
+<legend><?php echo esc_html( __( "In the following fields, you can use these mail-tags:", 'contact-form-7' ) ); ?><br />
+<?php wpcf7_mail_tags_suggestion( $post ); ?></legend>
 <table class="form-table">
 <tbody>
 	<tr>
@@ -165,8 +166,7 @@ function wpcf7_editor_panel_messages( $post ) {
 ?>
 <h3><?php echo esc_html( __( 'Messages', 'contact-form-7' ) ); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></legend>
-<p><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></p>
+<legend><?php echo esc_html( __( 'Edit messages used in the following situations.', 'contact-form-7' ) ); ?></legend>
 <?php
 
 	foreach ( $messages as $key => $arr ) {
@@ -194,8 +194,7 @@ function wpcf7_editor_panel_additional_settings( $post ) {
 ?>
 <h3><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><?php echo $description; ?></legend>
-<p><?php echo $description; ?></p>
+<legend><?php echo $description; ?></legend>
 <textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8" class="large-text"><?php echo esc_textarea( $post->prop( 'additional_settings' ) ); ?></textarea>
 </fieldset>
 <?php
