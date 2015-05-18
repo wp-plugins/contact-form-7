@@ -185,8 +185,18 @@ function wpcf7_editor_panel_messages( $post ) {
 }
 
 function wpcf7_editor_panel_additional_settings( $post ) {
+	$desc_link = wpcf7_link(
+		__( 'http://contactform7.com/additional-settings/', 'contact-form-7' ),
+		__( 'Additional Settings', 'contact-form-7' ) );
+	$description = __( "You can add customization code snippets here. For details, see %s.", 'contact-form-7' );
+	$description = sprintf( esc_html( $description ), $desc_link );
+
 ?>
 <h3><?php echo esc_html( __( 'Additional Settings', 'contact-form-7' ) ); ?></h3>
+<fieldset>
+<legend class="screen-reader-text"><?php echo $description; ?></legend>
+<p><?php echo $description; ?></p>
 <textarea id="wpcf7-additional-settings" name="wpcf7-additional-settings" cols="100" rows="8" class="large-text"><?php echo esc_textarea( $post->prop( 'additional_settings' ) ); ?></textarea>
+</fieldset>
 <?php
 }
