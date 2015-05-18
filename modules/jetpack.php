@@ -21,7 +21,7 @@ function wpcf7_jetpack_admin_notices() {
 
 ?>
 <div class="notice notice-warning">
-<p><?php echo esc_html( __( "Jetpack may cause problems for other plugins in certain cases.", 'contact-form-7' ) ); ?> <?php echo sprintf( esc_html( __( 'For more details, see %s.', 'contact-form-7' ) ), $desc_link ); ?></p>
+<p><?php echo sprintf( esc_html( __( 'Jetpack may cause problems for other plugins in certain cases. For more details, see %s.', 'contact-form-7' ) ), $desc_link ); ?></p>
 </div>
 <?php
 }
