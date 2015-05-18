@@ -424,3 +424,23 @@ function wpcf7_admin_ajax_welcome_panel() {
 
 	wp_die( 1 );
 }
+
+add_action( 'wpcf7_admin_notices', 'wpcf7_not_allowed_to_edit' );
+
+function wpcf7_not_allowed_to_edit() {
+	if ( ! $contact_form = wpcf7_get_current_contact_form() ) {
+		return;
+	}
+
+	$post_id = $contact_form->id();
+
+	if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) {
+		return;
+	}
+
+	$message = __( "You are not allowed to edit this contact form.",
+		'contact-form-7' );
+
+	echo sprintf( '<div class="notice notice-warning"><p>%s</p></div>',
+		esc_html( $message ) );
+}
