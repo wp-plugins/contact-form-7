@@ -5,6 +5,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+function wpcf7_admin_save_button( $post_id ) {
+	static $button = '';
+
+	if ( ! empty( $button ) ) {
+		echo $button;
+		return;
+	}
+
+	$nonce = wp_create_nonce( 'wpcf7-save-contact-form_' . $post_id );
+
+	$onclick = sprintf(
+		"this.form._wpnonce.value = '%s';"
+		. " this.form.action.value = 'save';"
+		. " return true;",
+		$nonce );
+
+	$button = sprintf(
+		'<input type="submit" class="button-primary" name="wpcf7-save" value="%1$s" onclick="%2$s" />',
+		esc_attr( __( 'Save', 'contact-form-7' ) ),
+		$onclick );
+
+	echo $button;
+}
+
 ?><div class="wrap">
 
 <h2><?php
@@ -120,7 +144,7 @@ if ( $post ) :
 <?php endif; ?>
 
 <div class="save-contact-form textright">
-<input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" />
+	<?php wpcf7_admin_save_button( $post_id ); ?>
 </div>
 </div><!-- #major-publishing-actions -->
 </div><!-- #submitpost -->
@@ -185,7 +209,7 @@ if ( $post ) :
 </div><!-- #contact-form-editor -->
 
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
-<p class="submit"><input type="submit" class="button-primary" name="wpcf7-save" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" /></p>
+<p class="submit"><?php wpcf7_admin_save_button( $post_id ); ?></p>
 <?php endif; ?>
 
 </div><!-- #postbox-container-2 -->
