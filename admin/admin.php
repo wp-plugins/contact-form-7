@@ -1,6 +1,6 @@
 <?php
 
-require_once WPCF7_PLUGIN_DIR . '/admin/admin-functions.php';
+require_once WPCF7_PLUGIN_DIR . '/admin/includes/admin-functions.php';
 require_once WPCF7_PLUGIN_DIR . '/admin/includes/tag-generator.php';
 
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
