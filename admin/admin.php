@@ -26,6 +26,14 @@ function wpcf7_admin_menu() {
 		'wpcf7_admin_add_new_page' );
 
 	add_action( 'load-' . $addnew, 'wpcf7_load_contact_form_admin' );
+
+	$integration = add_submenu_page( 'wpcf7',
+		__( 'Integration with Other Services', 'contact-form-7' ),
+		__( 'Integration', 'contact-form-7' ),
+		'wpcf7_edit_contact_forms', 'wpcf7-integration',
+		'wpcf7_admin_integration_page' );
+
+	add_action( 'load-' . $integration, 'wpcf7_load_integration_page' );
 }
 
 add_filter( 'set-screen-option', 'wpcf7_set_screen_options', 10, 3 );
@@ -284,6 +292,21 @@ function wpcf7_admin_add_new_page() {
 </select>
 <input type="submit" class="button" value="<?php echo esc_attr( __( 'Add New', 'contact-form-7' ) ); ?>" />
 </form>
+</div>
+<?php
+}
+
+function wpcf7_load_integration_page() {
+}
+
+function wpcf7_admin_integration_page() {
+?>
+<div class="wrap">
+
+<h2><?php echo esc_html( __( 'Integration with Other Services', 'contact-form-7' ) ); ?></h2>
+
+<?php do_action( 'wpcf7_admin_notices' ); ?>
+
 </div>
 <?php
 }
