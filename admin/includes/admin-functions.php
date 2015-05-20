@@ -19,14 +19,6 @@ function wpcf7_add_tag_generator( $name, $title, $elm_id, $callback, $options = 
 	return $tag_generator->add( $name, $title, $callback, $options );
 }
 
-function wpcf7_mail_tags_suggestion( WPCF7_ContactForm $contact_form ) {
-	foreach ( $contact_form->collect_mail_tags() as $mailtag ) {
-		echo sprintf(
-			'<span class="mailtag code">[%s]</span>',
-			esc_html( $mailtag ) );
-	}
-}
-
 function wpcf7_save_contact_form( $post_id = -1 ) {
 	if ( -1 != $post_id ) {
 		$contact_form = wpcf7_contact_form( $post_id );

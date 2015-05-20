@@ -239,6 +239,10 @@ span.shortcode > input {
 	color: #000;
 }
 
+.contact-form-editor-box-mail span.mailtag.used {
+	color: #666;
+}
+
 /*
  * List Table
  */

@@ -566,6 +566,26 @@ class WPCF7_ContactForm {
 		return apply_filters( 'wpcf7_collect_mail_tags', $mailtags );
 	}
 
+	public function suggest_mail_tags( $for = 'mail' ) {
+		$mail = wp_parse_args( $this->prop( $for ), array(
+			'active' => false, 'recipient' => '', 'sender' => '',
+			'subject' => '', 'body' => '', 'additional_headers' => '',
+			'attachments' => '', 'use_html' => false, 'exclude_blank' => false ) );
+
+		$mail = array_filter( $mail );
+
+		foreach ( (array) $this->collect_mail_tags() as $mail_tag ) {
+			$pattern = sprintf( '/\[(_[a-z]+_)?%s([ \t]+[^]]+)?\]/',
+				preg_quote( $mail_tag, '/' ) );
+			$used = preg_grep( $pattern, $mail );
+
+			echo sprintf(
+				'<span class="%1$s">[%2$s]</span>',
+				'mailtag code ' . ( $used ? 'used' : 'unused' ),
+				esc_html( $mail_tag ) );
+		}
+	}
+
 	public function submit( $ajax = false ) {
 		$submission = WPCF7_Submission::get_instance( $this );
 
@@ -856,5 +876,3 @@ function wpcf7_form_controls_class( $type, $default = '' ) {
 
 	return implode( ' ', $classes );
 }
-
-?>

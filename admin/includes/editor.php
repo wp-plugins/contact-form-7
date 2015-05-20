@@ -94,7 +94,7 @@ function wpcf7_editor_box_mail( $post, $args = '' ) {
 
 <fieldset>
 <legend><?php echo esc_html( __( "In the following fields, you can use these mail-tags:", 'contact-form-7' ) ); ?><br />
-<?php wpcf7_mail_tags_suggestion( $post ); ?></legend>
+<?php $post->suggest_mail_tags( $args['name'] ); ?></legend>
 <table class="form-table">
 <tbody>
 	<tr>
