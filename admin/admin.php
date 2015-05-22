@@ -307,6 +307,8 @@ function wpcf7_admin_integration_page() {
 
 <?php do_action( 'wpcf7_admin_notices' ); ?>
 
+<?php do_action( 'wpcf7_admin_integration_page' ); ?>
+
 </div>
 <?php
 }
