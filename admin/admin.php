@@ -297,9 +297,6 @@ function wpcf7_admin_add_new_page() {
 }
 
 function wpcf7_load_integration_page() {
-	if ( ! class_exists( 'WPCF7_OAuth' ) ) {
-		require_once WPCF7_PLUGIN_DIR . '/admin/includes/oauth.php';
-	}
 }
 
 function wpcf7_admin_integration_page() {
