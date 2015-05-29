@@ -297,15 +297,25 @@ function wpcf7_admin_add_new_page() {
 }
 
 function wpcf7_load_integration_page() {
+	if ( ! class_exists( 'WPCF7_Integration' ) ) {
+		require_once WPCF7_PLUGIN_DIR . '/admin/includes/integration.php';
+	}
+
+	$integration = WPCF7_Integration::get_instance();
+	do_action( 'wpcf7_load_integration_page', $integration );
 }
 
 function wpcf7_admin_integration_page() {
+	$integration = WPCF7_Integration::get_instance();
+
 ?>
 <div class="wrap">
 
 <h2><?php echo esc_html( __( 'Integration with Other Services', 'contact-form-7' ) ); ?></h2>
 
 <?php do_action( 'wpcf7_admin_notices' ); ?>
+
+<?php $integration->list_services(); ?>
 
 <?php do_action( 'wpcf7_admin_integration_page' ); ?>
 
