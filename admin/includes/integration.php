@@ -32,6 +32,10 @@ class WPCF7_Integration {
 		$this->services[$name] = $args;
 	}
 
+	public function service_exists( $name ) {
+		return isset( $this->services[$name] );
+	}
+
 	public function list_services() {
 		$services = (array) $this->services;
 

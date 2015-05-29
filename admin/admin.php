@@ -303,6 +303,12 @@ function wpcf7_load_integration_page() {
 
 	$integration = WPCF7_Integration::get_instance();
 	do_action( 'wpcf7_load_integration_page', $integration );
+
+	if ( isset( $_REQUEST['service'] )
+	&& $integration->service_exists( $_REQUEST['service'] ) ) {
+		$action = wpcf7_current_action();
+		do_action( 'wpcf7_load_integration_' . $_REQUEST['service'], $action );
+	}
 }
 
 function wpcf7_admin_integration_page() {
@@ -313,7 +319,7 @@ function wpcf7_admin_integration_page() {
 
 <h2><?php echo esc_html( __( 'Integration with Other Services', 'contact-form-7' ) ); ?></h2>
 
-<?php do_action( 'wpcf7_admin_notices' ); ?>
+<?php do_action( 'wpcf7_admin_notices', 'integration' ); ?>
 
 <?php $integration->list_services(); ?>
 
