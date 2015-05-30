@@ -23,10 +23,13 @@ function wpcf7_getscorecard_add_service( $integration ) {
 		'title' => __( 'GetScorecard', 'contact-form-7' ),
 		'callback' => 'wpcf7_getscorecard_card',
 		'link' => 'http://www.getscorecard.com',
-		'cats' => array(
-			'crm' => __( 'CRM', 'contact-form-7' ),
-			'sales_management' => __( 'Sales Management', 'contact-form-7' ) ),
+		'cats' => array( 'crm', 'sales_management' ),
 		'active' => WPCF7_GetScorecard::get_access_token() ) );
+
+	$integration->add_category( 'crm',
+		__( 'CRM', 'contact-form-7' ) );
+	$integration->add_category( 'sales_management',
+		__( 'Sales Management', 'contact-form-7' ) );
 }
 
 add_action( 'wpcf7_load_integration_getscorecard', 'wpcf7_getscorecard_load' );

@@ -5,6 +5,7 @@ class WPCF7_Integration {
 	private static $instance;
 
 	private $services = array();
+	private $categories = array();
 
 	private function __construct() {}
 
@@ -33,6 +34,16 @@ class WPCF7_Integration {
 		$this->services[$name] = $args;
 	}
 
+	public function add_category( $name, $title ) {
+		$name = sanitize_key( $name );
+
+		if ( empty( $name ) || isset( $this->categories[$name] ) ) {
+			return false;
+		}
+
+		$this->categories[$name] = $title;
+	}
+
 	public function service_exists( $name ) {
 		return isset( $this->services[$name] );
 	}
@@ -46,11 +57,13 @@ class WPCF7_Integration {
 		}
 
 		foreach ( $services as $name => $service ) {
+			$cats = array_intersect_key( $this->categories,
+				array_flip( $service['cats'] ) );
 ?>
 <div class="card<?php echo $service['active'] ? ' active' : ''; ?>" id="<?php echo esc_attr( $name ); ?>">
 <h3 class="alignleft"><?php echo esc_html( $service['title'] ); ?></h3>
 <p class="description alignright">
-<?php echo esc_html( implode( ', ', $service['cats'] ) ); ?>
+<?php echo esc_html( implode( ', ', $cats ) ); ?>
 <br />
 <?php echo make_clickable( $service['link'] ); ?>
 </p>
