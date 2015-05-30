@@ -61,19 +61,21 @@ class WPCF7_Integration {
 				array_flip( $service['cats'] ) );
 ?>
 <div class="card<?php echo $service['active'] ? ' active' : ''; ?>" id="<?php echo esc_attr( $name ); ?>">
-<h3 class="alignleft"><?php echo esc_html( $service['title'] ); ?></h3>
-<p class="description alignright">
+<h3 class="title"><?php echo esc_html( $service['title'] ); ?></h3>
+<div class="infobox">
 <?php echo esc_html( implode( ', ', $cats ) ); ?>
 <br />
 <?php echo make_clickable( $service['link'] ); ?>
-</p>
+</div>
 <br class="clear" />
 
+<div class="inside">
 <?php
 			if ( is_callable( $service['callback'] ) ) {
 				call_user_func( $service['callback'] );
 			}
 ?>
+</div>
 </div>
 <?php
 		}

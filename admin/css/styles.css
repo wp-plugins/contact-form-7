@@ -287,3 +287,17 @@ span.shortcode > input {
 .card.active {
 	background-color: #f7fcfe;
 }
+
+.card h3.title {
+	float: left;
+	max-width: 260px;
+}
+
+.card .infobox {
+	float: right;
+	font-size: 13px;
+	color: #666;
+	margin: 2px 0 5px;
+	line-height: 1.5;
+	max-width: 240px;
+}
