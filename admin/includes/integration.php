@@ -27,7 +27,8 @@ class WPCF7_Integration {
 			'title' => ucwords( $name ),
 			'cats' => array(),
 			'link' => '',
-			'callback' => '' ) );
+			'callback' => '',
+			'active' => false ) );
 
 		$this->services[$name] = $args;
 	}
@@ -46,7 +47,7 @@ class WPCF7_Integration {
 
 		foreach ( $services as $name => $service ) {
 ?>
-<div class="card" id="<?php echo esc_attr( $name ); ?>">
+<div class="card<?php echo $service['active'] ? ' active' : ''; ?>" id="<?php echo esc_attr( $name ); ?>">
 <h3 class="alignleft"><?php echo esc_html( $service['title'] ); ?></h3>
 <p class="description alignright">
 <?php echo esc_html( implode( ', ', $service['cats'] ) ); ?>

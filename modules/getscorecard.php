@@ -25,7 +25,8 @@ function wpcf7_getscorecard_add_service( $integration ) {
 		'link' => 'http://www.getscorecard.com',
 		'cats' => array(
 			'crm' => __( 'CRM', 'contact-form-7' ),
-			'sales_management' => __( 'Sales Management', 'contact-form-7' ) ) ) );
+			'sales_management' => __( 'Sales Management', 'contact-form-7' ) ),
+		'active' => WPCF7_GetScorecard::get_access_token() ) );
 }
 
 add_action( 'wpcf7_load_integration_getscorecard', 'wpcf7_getscorecard_load' );

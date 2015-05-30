@@ -283,3 +283,7 @@ span.shortcode > input {
 	padding: 0.7em 2em 1em;
 	position: relative;
 }
+
+.card.active {
+	background-color: #f7fcfe;
+}
