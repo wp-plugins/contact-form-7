@@ -47,12 +47,13 @@ class WPCF7_Integration {
 		foreach ( $services as $name => $service ) {
 ?>
 <div class="card" id="<?php echo esc_attr( $name ); ?>">
-<h3><?php echo esc_html( $service['title'] ); ?></h3>
-<p class="description">
+<h3 class="alignleft"><?php echo esc_html( $service['title'] ); ?></h3>
+<p class="description alignright">
 <?php echo esc_html( implode( ', ', $service['cats'] ) ); ?>
 <br />
 <?php echo make_clickable( $service['link'] ); ?>
 </p>
+<br class="clear" />
 
 <?php
 			if ( is_callable( $service['callback'] ) ) {
