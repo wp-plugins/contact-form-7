@@ -16,7 +16,7 @@ class WPCF7_GetScorecard {
 	}
 }
 
-add_action( 'wpcf7_load_integration_page', 'wpcf7_getscorecard_add_service' );
+add_action( 'wpcf7_load_integration', 'wpcf7_getscorecard_add_service' );
 
 function wpcf7_getscorecard_add_service( $integration ) {
 	$integration->add_service( 'getscorecard', array(
