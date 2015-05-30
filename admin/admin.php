@@ -297,10 +297,6 @@ function wpcf7_admin_add_new_page() {
 }
 
 function wpcf7_load_integration_page() {
-	if ( ! class_exists( 'WPCF7_Integration' ) ) {
-		require_once WPCF7_PLUGIN_DIR . '/admin/includes/integration.php';
-	}
-
 	$integration = WPCF7_Integration::get_instance();
 	do_action( 'wpcf7_load_integration', $integration );
 
