@@ -53,19 +53,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 }
 
-add_action( 'wpcf7_load_integration', 'wpcf7_getscorecard_add_service' );
-
-function wpcf7_getscorecard_add_service( $integration ) {
-	$service = new WPCF7_GetScorecard();
-
-	$integration->add_service( 'getscorecard', $service );
-
-	$integration->add_category( 'crm',
-		__( 'CRM', 'contact-form-7' ) );
-	$integration->add_category( 'sales_management',
-		__( 'Sales Management', 'contact-form-7' ) );
-}
-
 add_action( 'wpcf7_load_integration_getscorecard', 'wpcf7_getscorecard_load' );
 
 function wpcf7_getscorecard_load( $action ) {

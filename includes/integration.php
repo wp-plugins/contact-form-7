@@ -96,3 +96,22 @@ class WPCF7_Service {
 	}
 
 }
+
+function wpcf7_init_integration() {
+	$integration = WPCF7_Integration::get_instance();
+
+	$categories = array(
+		'crm' => __( 'CRM', 'contact-form-7' ),
+		'sales_management' => __( 'Sales Management', 'contact-form-7' ) );
+
+	foreach ( $categories as $name => $category ) {
+		$integration->add_category( $name, $category );
+	}
+
+	$services = array(
+		'getscorecard' => new WPCF7_GetScorecard() );
+
+	foreach ( $services as $name => $service ) {
+		$integration->add_service( $name, $service );
+	}
+}

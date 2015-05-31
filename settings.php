@@ -29,6 +29,7 @@ add_action( 'init', 'wpcf7_init' );
 function wpcf7_init() {
 	wpcf7_get_request_uri();
 	wpcf7_register_post_types();
+	wpcf7_init_integration();
 
 	do_action( 'wpcf7_init' );
 }

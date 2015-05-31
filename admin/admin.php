@@ -298,7 +298,6 @@ function wpcf7_admin_add_new_page() {
 
 function wpcf7_load_integration_page() {
 	$integration = WPCF7_Integration::get_instance();
-	do_action( 'wpcf7_load_integration', $integration );
 
 	if ( isset( $_REQUEST['service'] )
 	&& $integration->service_exists( $_REQUEST['service'] ) ) {
