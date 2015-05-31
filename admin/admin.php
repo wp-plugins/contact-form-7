@@ -314,7 +314,14 @@ function wpcf7_admin_integration_page() {
 
 <h2><?php echo esc_html( __( 'Integration with Other Services', 'contact-form-7' ) ); ?></h2>
 
-<?php do_action( 'wpcf7_admin_notices', 'integration' ); ?>
+<?php do_action( 'wpcf7_admin_notices' ); ?>
+
+<?php
+	if ( isset( $_REQUEST['service'] )
+	&& $service = $integration->get_service( $_REQUEST['service'] ) ) {
+		$service->admin_notice();
+	}
+?>
 
 <?php $integration->list_services(); ?>
 

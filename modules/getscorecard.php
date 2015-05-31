@@ -62,31 +62,19 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function admin_notice() {
+		if ( empty( $_REQUEST['message'] ) ) {
+			return;
+		}
+
+		if ( 'disconnected' == $_REQUEST['message'] ) {
+			$message = __( 'Disconnected from GetScorecard.', 'contact-form-7' );
+		}
+
+		if ( ! empty( $message ) ) {
+			echo sprintf( '<div id="message" class="updated"><p>%s</p></div>',
+				esc_html( $message ) );
+		}
 	}
-}
-
-add_action( 'wpcf7_admin_notices', 'wpcf7_getscorecard_admin_notices' );
-
-function wpcf7_getscorecard_admin_notices( $page ) {
-	if ( 'integration' != $page || empty( $_REQUEST['message'] ) ) {
-		return;
-	}
-
-	if ( ! isset( $_GET['service'] ) || 'getscorecard' != $_GET['service'] ) {
-		return;
-	}
-
-	if ( 'disconnected' == $_REQUEST['message'] ) {
-		$updated_message = esc_html( __( 'Disconnected from GetScorecard.', 'contact-form-7' ) );
-	}
-
-	if ( empty( $updated_message ) ) {
-		return;
-	}
-
-?>
-<div id="message" class="updated"><p><?php echo $updated_message; ?></p></div>
-<?php
 }
 
 function wpcf7_getscorecard_card_disconnect() {
