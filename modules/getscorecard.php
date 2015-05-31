@@ -31,8 +31,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return array( 'crm', 'sales_management' );
 	}
 
-	public function get_link() {
-		return 'http://www.getscorecard.com';
+	public function link() {
+		echo sprintf( '<a href="%1$s">%2$s</a>',
+			'http://www.getscorecard.com?source=contact-form-7',
+			'getscorecard.com' );
 	}
 
 	public function load() {

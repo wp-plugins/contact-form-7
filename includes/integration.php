@@ -58,7 +58,7 @@ class WPCF7_Integration {
 <div class="infobox">
 <?php echo esc_html( implode( ', ', $cats ) ); ?>
 <br />
-<?php echo make_clickable( $service->get_link() ); ?>
+<?php $service->link(); ?>
 </div>
 <br class="clear" />
 
@@ -83,7 +83,7 @@ class WPCF7_Service {
 	public function get_categories() {
 	}
 
-	public function get_link() {
+	public function link() {
 	}
 
 	public function load() {
