@@ -301,8 +301,8 @@ function wpcf7_load_integration_page() {
 
 	if ( isset( $_REQUEST['service'] )
 	&& $integration->service_exists( $_REQUEST['service'] ) ) {
-		$action = wpcf7_current_action();
-		do_action( 'wpcf7_load_integration_' . $_REQUEST['service'], $action );
+		$service = $integration->get_service( $_REQUEST['service'] );
+		$service->load( wpcf7_current_action() );
 	}
 }
 

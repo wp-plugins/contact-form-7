@@ -37,7 +37,20 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 			'getscorecard.com' );
 	}
 
-	public function load() {
+	public function load( $action = '' ) {
+		if ( 'disconnect' == $action ) {
+			check_admin_referer( 'wpcf7-disconnect-getscorecard' );
+			self::delete_access_token();
+
+			$redirect_to = add_query_arg(
+				array(
+					'service' => 'getscorecard',
+					'message' => 'disconnected' ),
+				menu_page_url( 'wpcf7-integration', false ) );
+
+			wp_safe_redirect( $redirect_to );
+			exit();
+		}
 	}
 
 	public function display() {
@@ -49,25 +62,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function admin_notice() {
-	}
-
-}
-
-add_action( 'wpcf7_load_integration_getscorecard', 'wpcf7_getscorecard_load' );
-
-function wpcf7_getscorecard_load( $action ) {
-	if ( 'disconnect' == $action ) {
-		check_admin_referer( 'wpcf7-disconnect-getscorecard' );
-		WPCF7_GetScorecard::delete_access_token();
-
-		$redirect_to = add_query_arg(
-			array(
-				'service' => 'getscorecard',
-				'message' => 'disconnected' ),
-			menu_page_url( 'wpcf7-integration', false ) );
-
-		wp_safe_redirect( $redirect_to );
-		exit();
 	}
 }
 

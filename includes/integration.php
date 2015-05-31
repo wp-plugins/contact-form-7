@@ -41,6 +41,14 @@ class WPCF7_Integration {
 		return isset( $this->services[$name] );
 	}
 
+	public function get_service( $name ) {
+		if ( $this->service_exists( $name ) ) {
+			return $this->services[$name];
+		} else {
+			return false;
+		}
+	}
+
 	public function list_services() {
 		$services = (array) $this->services;
 
@@ -86,7 +94,7 @@ class WPCF7_Service {
 	public function link() {
 	}
 
-	public function load() {
+	public function load( $action = '' ) {
 	}
 
 	public function display() {
