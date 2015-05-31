@@ -49,12 +49,15 @@ class WPCF7_Integration {
 		}
 	}
 
-	public function list_services() {
+	public function list_services( $args = '' ) {
+		$args = wp_parse_args( $args, array(
+			'include' => array() ) );
+
 		$services = (array) $this->services;
 
-		if ( isset( $_GET['service'] ) ) {
+		if ( ! empty( $args['include'] ) ) {
 			$services = array_intersect_key( $services,
-				array( $_GET['service'] => '' ) );
+				array_flip( (array) $args['include'] ) );
 		}
 
 		foreach ( $services as $name => $service ) {
