@@ -4,7 +4,7 @@
 ** http://www.getscorecard.com/
 **/
 
-class WPCF7_GetScorecard {
+class WPCF7_GetScorecard extends WPCF7_Service {
 	const AUTH_EP = 'https://app.getscorecard.com/api/public/oauth';
 
 	public static function get_access_token() {
@@ -14,17 +14,49 @@ class WPCF7_GetScorecard {
 	public static function delete_access_token() {
 		return delete_transient( 'wpcf7_getscorecard_access_token' );
 	}
+
+	public function get_title() {
+		return __( 'GetScorecard', 'contact-form-7' );
+	}
+
+	public function is_connected() {
+		return (bool) self::get_access_token();
+	}
+
+	public function is_active() {
+		return $this->is_connected();
+	}
+
+	public function get_categories() {
+		return array( 'crm', 'sales_management' );
+	}
+
+	public function get_link() {
+		return 'http://www.getscorecard.com';
+	}
+
+	public function load() {
+	}
+
+	public function display() {
+		if ( $this->is_connected() ) {
+			wpcf7_getscorecard_card_disconnect();
+		} else {
+			wpcf7_getscorecard_card_connect();
+		}
+	}
+
+	public function admin_notice() {
+	}
+
 }
 
 add_action( 'wpcf7_load_integration', 'wpcf7_getscorecard_add_service' );
 
 function wpcf7_getscorecard_add_service( $integration ) {
-	$integration->add_service( 'getscorecard', array(
-		'title' => __( 'GetScorecard', 'contact-form-7' ),
-		'callback' => 'wpcf7_getscorecard_card',
-		'link' => 'http://www.getscorecard.com',
-		'cats' => array( 'crm', 'sales_management' ),
-		'active' => WPCF7_GetScorecard::get_access_token() ) );
+	$service = new WPCF7_GetScorecard();
+
+	$integration->add_service( 'getscorecard', $service );
 
 	$integration->add_category( 'crm',
 		__( 'CRM', 'contact-form-7' ) );
@@ -72,14 +104,6 @@ function wpcf7_getscorecard_admin_notices( $page ) {
 ?>
 <div id="message" class="updated"><p><?php echo $updated_message; ?></p></div>
 <?php
-}
-
-function wpcf7_getscorecard_card() {
-	if ( $access_token = WPCF7_GetScorecard::get_access_token() ) {
-		wpcf7_getscorecard_card_disconnect();
-	} else {
-		wpcf7_getscorecard_card_connect();
-	}
 }
 
 function wpcf7_getscorecard_card_disconnect() {
