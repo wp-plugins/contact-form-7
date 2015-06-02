@@ -1,6 +1,7 @@
 <?php
 
 require_once WPCF7_PLUGIN_DIR . '/admin/includes/admin-functions.php';
+require_once WPCF7_PLUGIN_DIR . '/admin/includes/help-tabs.php';
 require_once WPCF7_PLUGIN_DIR . '/admin/includes/tag-generator.php';
 
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
@@ -151,7 +152,6 @@ function wpcf7_load_contact_form_admin() {
 
 	$current_screen = get_current_screen();
 
-	require_once WPCF7_PLUGIN_DIR . '/admin/includes/help-tabs.php';
 	$help_tabs = new WPCF7_Help_Tabs( $current_screen );
 
 	if ( $post && current_user_can( 'wpcf7_edit_contact_form', $post->id() ) ) {
@@ -304,6 +304,9 @@ function wpcf7_load_integration_page() {
 		$service = $integration->get_service( $_REQUEST['service'] );
 		$service->load( wpcf7_current_action() );
 	}
+
+	$help_tabs = new WPCF7_Help_Tabs( get_current_screen() );
+	$help_tabs->set_help_tabs( 'integration' );
 }
 
 function wpcf7_admin_integration_page() {
