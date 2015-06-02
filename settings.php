@@ -23,6 +23,10 @@ add_action( 'plugins_loaded', 'wpcf7' );
 function wpcf7() {
 	wpcf7_load_textdomain();
 	wpcf7_load_modules();
+
+	/* Shortcodes */
+	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
+	add_shortcode( 'contact-form', 'wpcf7_contact_form_tag_func' );
 }
 
 add_action( 'init', 'wpcf7_init' );

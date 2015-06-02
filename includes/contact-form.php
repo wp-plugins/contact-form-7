@@ -876,3 +876,40 @@ function wpcf7_form_controls_class( $type, $default = '' ) {
 
 	return implode( ' ', $classes );
 }
+
+function wpcf7_contact_form_tag_func( $atts, $content = null, $code = '' ) {
+	if ( is_feed() ) {
+		return '[contact-form-7]';
+	}
+
+	if ( 'contact-form-7' == $code ) {
+		$atts = shortcode_atts( array(
+			'id' => 0,
+			'title' => '',
+			'html_id' => '',
+			'html_name' => '',
+			'html_class' => '',
+			'output' => 'form' ), $atts );
+
+		$id = (int) $atts['id'];
+		$title = trim( $atts['title'] );
+
+		if ( ! $contact_form = wpcf7_contact_form( $id ) ) {
+			$contact_form = wpcf7_get_contact_form_by_title( $title );
+		}
+
+	} else {
+		if ( is_string( $atts ) ) {
+			$atts = explode( ' ', $atts, 2 );
+		}
+
+		$id = (int) array_shift( $atts );
+		$contact_form = wpcf7_get_contact_form_by_old_id( $id );
+	}
+
+	if ( ! $contact_form ) {
+		return '[contact-form-7 404 "Not Found"]';
+	}
+
+	return $contact_form->form_html( $atts );
+}
