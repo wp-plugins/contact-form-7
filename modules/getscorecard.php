@@ -101,3 +101,24 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 }
+
+add_action( 'wpcf7_init', 'wpcf7_getscorecard_register_service' );
+
+function wpcf7_getscorecard_register_service() {
+	$integration = WPCF7_Integration::get_instance();
+
+	$categories = array(
+		'crm' => __( 'CRM', 'contact-form-7' ),
+		'sales_management' => __( 'Sales Management', 'contact-form-7' ) );
+
+	foreach ( $categories as $name => $category ) {
+		$integration->add_category( $name, $category );
+	}
+
+	$services = array(
+		'getscorecard' => new WPCF7_GetScorecard() );
+
+	foreach ( $services as $name => $service ) {
+		$integration->add_service( $name, $service );
+	}
+}

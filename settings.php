@@ -12,10 +12,11 @@ require_once WPCF7_PLUGIN_DIR . '/includes/submission.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upgrade.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/integration.php';
 
-if ( is_admin() )
+if ( is_admin() ) {
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
-else
+} else {
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
+}
 
 add_action( 'plugins_loaded', 'wpcf7' );
 
@@ -29,7 +30,6 @@ add_action( 'init', 'wpcf7_init' );
 function wpcf7_init() {
 	wpcf7_get_request_uri();
 	wpcf7_register_post_types();
-	wpcf7_init_integration();
 
 	do_action( 'wpcf7_init' );
 }
@@ -75,5 +75,3 @@ function wpcf7_install() {
 
 	$contact_form->save();
 }
-
-?>
