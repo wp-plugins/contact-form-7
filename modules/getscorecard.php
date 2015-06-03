@@ -5,7 +5,20 @@
 **/
 
 class WPCF7_GetScorecard extends WPCF7_Service {
+
 	const AUTH_EP = 'https://app.getscorecard.com/api/public/oauth';
+
+	private static $instance;
+
+	private function __construct() {}
+
+	public static function get_instance() {
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+	}
 
 	public function get_access_token() {
 		return get_transient( 'wpcf7_getscorecard_access_token' );
@@ -116,7 +129,7 @@ function wpcf7_getscorecard_register_service() {
 	}
 
 	$services = array(
-		'getscorecard' => new WPCF7_GetScorecard() );
+		'getscorecard' => WPCF7_GetScorecard::get_instance() );
 
 	foreach ( $services as $name => $service ) {
 		$integration->add_service( $name, $service );

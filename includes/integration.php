@@ -83,7 +83,7 @@ class WPCF7_Integration {
 
 }
 
-class WPCF7_Service {
+abstract class WPCF7_Service {
 
 	public function get_title() {
 	}
