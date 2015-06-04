@@ -28,13 +28,17 @@ function wpcf7_admin_menu() {
 
 	add_action( 'load-' . $addnew, 'wpcf7_load_contact_form_admin' );
 
-	$integration = add_submenu_page( 'wpcf7',
-		__( 'Integration with Other Services', 'contact-form-7' ),
-		__( 'Integration', 'contact-form-7' ),
-		'wpcf7_edit_contact_forms', 'wpcf7-integration',
-		'wpcf7_admin_integration_page' );
+	$integration = WPCF7_Integration::get_instance();
 
-	add_action( 'load-' . $integration, 'wpcf7_load_integration_page' );
+	if ( $integration->service_exists() ) {
+		$integration = add_submenu_page( 'wpcf7',
+			__( 'Integration with Other Services', 'contact-form-7' ),
+			__( 'Integration', 'contact-form-7' ),
+			'wpcf7_edit_contact_forms', 'wpcf7-integration',
+			'wpcf7_admin_integration_page' );
+
+		add_action( 'load-' . $integration, 'wpcf7_load_integration_page' );
+	}
 }
 
 add_filter( 'set-screen-option', 'wpcf7_set_screen_options', 10, 3 );

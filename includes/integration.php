@@ -37,8 +37,12 @@ class WPCF7_Integration {
 		$this->categories[$name] = $title;
 	}
 
-	public function service_exists( $name ) {
-		return isset( $this->services[$name] );
+	public function service_exists( $name = '' ) {
+		if ( '' == $name ) {
+			return (bool) count( $this->services );
+		} else {
+			return isset( $this->services[$name] );
+		}
 	}
 
 	public function get_service( $name ) {
