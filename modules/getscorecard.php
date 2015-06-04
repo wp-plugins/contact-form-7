@@ -118,9 +118,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 add_action( 'wpcf7_init', 'wpcf7_getscorecard_register_service' );
 
 function wpcf7_getscorecard_register_service() {
-	$server_name = strtolower( $_SERVER['SERVER_NAME'] );
-
-	if ( in_array( $server_name, array( 'localhost', '127.0.0.1' ) ) ) {
+	if ( wpcf7_is_localhost() ) {
 		return;
 	}
 

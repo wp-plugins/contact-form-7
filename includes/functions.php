@@ -476,3 +476,8 @@ function wpcf7_count_code_units( $string ) {
 
 	return floor( $byte_count / 2 );
 }
+
+function wpcf7_is_localhost() {
+	$server_name = strtolower( $_SERVER['SERVER_NAME'] );
+	return in_array( $server_name, array( 'localhost', '127.0.0.1' ) );
+}
