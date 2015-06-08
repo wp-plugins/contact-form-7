@@ -51,7 +51,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Danish (da_DK) - Jens Griebel, Georg S. Adamsen
 * Dutch (nl_NL) - Chris Devriese, Martin Hein, Rene, TenSheep, Tim de Hoog
 * Esperanto (eo_EO) - Arkadiusz Zychewicz
-* Estonian (et) - Peeter Rahuvarm, Egon Elbre
+* Estonian (et) - Peeter Rahuvarm, Egon Elbre, Tanel Jüris
 * Finnish (fi) - Miika Turunen, Mediajalostamo, Jani Alha
 * French (fr_FR) - Jillij, Oncle Tom, Maître Mô, Emmanuel Simond, Hédi Sellami
 * Galician (gl_ES) - Arume Desenvolvementos Informáticos
