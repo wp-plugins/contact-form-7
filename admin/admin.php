@@ -198,23 +198,21 @@ function wpcf7_admin_enqueue_scripts( $hook_suffix ) {
 			array(), WPCF7_VERSION, 'all' );
 	}
 
-	add_thickbox();
-
-	wp_enqueue_script( 'wpcf7-admin-taggenerator',
-		wpcf7_plugin_url( 'admin/js/tag-generator.js' ),
-		array( 'jquery' ), WPCF7_VERSION, true );
-
 	wp_enqueue_script( 'wpcf7-admin',
 		wpcf7_plugin_url( 'admin/js/scripts.js' ),
-		array( 'jquery', 'jquery-ui-tabs', 'wpcf7-admin-taggenerator' ),
+		array( 'jquery', 'jquery-ui-tabs' ),
 		WPCF7_VERSION, true );
-
-	$current_screen = get_current_screen();
 
 	wp_localize_script( 'wpcf7-admin', '_wpcf7', array(
 		'pluginUrl' => wpcf7_plugin_url(),
 		'saveAlert' => __( "The changes you made will be lost if you navigate away from this page.", 'contact-form-7' ),
 		'activeTab' => isset( $_GET['active-tab'] ) ? (int) $_GET['active-tab'] : 0 ) );
+
+	add_thickbox();
+
+	wp_enqueue_script( 'wpcf7-admin-taggenerator',
+		wpcf7_plugin_url( 'admin/js/tag-generator.js' ),
+		array( 'jquery', 'thickbox', 'wpcf7-admin' ), WPCF7_VERSION, true );
 }
 
 function wpcf7_admin_management_page() {
