@@ -29,6 +29,14 @@
 			}
 		});
 
+		$('#contact-form-editor-tabs').focusin(function(event) {
+			$('#contact-form-editor .keyboard-interaction').css(
+				'visibility', 'visible');
+		}).focusout(function(event) {
+			$('#contact-form-editor .keyboard-interaction').css(
+				'visibility', 'hidden');
+		});
+
 		$('input:checkbox.toggle-form-table').click(function(event) {
 			$(this).wpcf7ToggleFormTable();
 		}).wpcf7ToggleFormTable();

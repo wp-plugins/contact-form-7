@@ -42,6 +42,11 @@ span.shortcode > input {
 	border-bottom: 1px solid transparent;
 }
 
+.keyboard-interaction {
+	visibility: hidden;
+	color: #23282d;
+}
+
 /*
  * Tabs
  */
