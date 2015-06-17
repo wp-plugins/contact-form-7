@@ -118,7 +118,9 @@ function wpcf7_textarea_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_textarea', 20 );
+if ( is_admin() ) {
+	add_action( 'admin_init', 'wpcf7_add_tag_generator_textarea', 20 );
+}
 
 function wpcf7_add_tag_generator_textarea() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

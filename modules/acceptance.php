@@ -123,7 +123,9 @@ function wpcf7_acceptance_as_validation() {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance', 35 );
+if ( is_admin() ) {
+	add_action( 'admin_init', 'wpcf7_add_tag_generator_acceptance', 35 );
+}
 
 function wpcf7_add_tag_generator_acceptance() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

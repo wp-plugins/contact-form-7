@@ -152,7 +152,9 @@ function wpcf7_select_validation_filter( $result, $tag ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_menu', 25 );
+if ( is_admin() ) {
+	add_action( 'admin_init', 'wpcf7_add_tag_generator_menu', 25 );
+}
 
 function wpcf7_add_tag_generator_menu() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

@@ -132,7 +132,9 @@ function wpcf7_date_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_date', 19 );
+if ( is_admin() ) {
+	add_action( 'admin_init', 'wpcf7_add_tag_generator_date', 19 );
+}
 
 function wpcf7_add_tag_generator_date() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

@@ -190,7 +190,9 @@ function wpcf7_captcha_messages( $messages ) {
 
 /* Tag generator */
 
-add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
+if ( is_admin() ) {
+	add_action( 'admin_init', 'wpcf7_add_tag_generator_captcha', 45 );
+}
 
 function wpcf7_add_tag_generator_captcha() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
