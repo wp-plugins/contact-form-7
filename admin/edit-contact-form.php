@@ -167,7 +167,7 @@ if ( $post ) :
 
 <div id="postbox-container-2" class="postbox-container">
 <div id="contact-form-editor">
-<div class="keyboard-interaction"><?php echo esc_html( __( '&#x25C0; &#x25B6; keys switch panels', 'contact-form-7' ) ); ?></div>
+<div class="keyboard-interaction"><?php echo sprintf( esc_html( __( '%s keys switch panels', 'contact-form-7' ) ), '<span class="dashicons dashicons-leftright"></span>' ); ?></div>
 
 <?php
 
