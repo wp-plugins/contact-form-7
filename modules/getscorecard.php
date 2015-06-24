@@ -6,6 +6,7 @@
 
 class WPCF7_GetScorecard extends WPCF7_Service {
 
+	const API_EP = 'https://app.getscorecard.com/api/public';
 	const AUTH_EP = 'https://app.getscorecard.com/api/public/oauth';
 
 	private static $instance;
@@ -113,6 +114,28 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <?php
 	}
 
+	public function add_person( $data ) {
+		return $this->request( 'people', $data );
+	}
+
+	private function request( $resource, $data = '' ) {
+		if ( ! $this->is_connected() ) {
+			return;
+		}
+
+		$data = wp_parse_args( $data, array() );
+		$data = json_encode( $data );
+
+		$url = path_join( self::API_EP, $resource );
+		return wp_safe_remote_post( $url, array(
+			'headers' => array(
+				'Content-Type' => 'application/vnd.getscorecard.v1+json',
+				'Accept' => 'application/vnd.getscorecard.v1+json',
+				'Authorization' => sprintf( 'Bearer %s', $this->get_access_token() ),
+				'X-Getscorecard-Client-Type' => 'contact-form-7',
+				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+			'body' => $data ) );
+	}
 }
 
 add_action( 'wpcf7_init', 'wpcf7_getscorecard_register_service' );
@@ -137,5 +160,24 @@ function wpcf7_getscorecard_register_service() {
 
 	foreach ( $services as $name => $service ) {
 		$integration->add_service( $name, $service );
+	}
+}
+
+add_action( 'wpcf7_submit', 'wpcf7_getscorecard_submit' );
+
+function wpcf7_getscorecard_submit( $contact_form, $result ) {
+	if ( ! in_array( $result['status'], array( 'mail_sent', 'mail_failed' ) )
+	|| $result['demo_mode'] ) {
+		return;
+	}
+
+	$service = WPCF7_GetScorecard::get_instance();
+
+	if ( $service->is_connected() ) {
+		$submission = WPCF7_Submission::get_instance();
+
+		if ( $submission && $posted_data = $submission->get_posted_data() ) {
+			$service->add_person( $posted_data );
+		}
 	}
 }
