@@ -11,6 +11,11 @@ span.shortcode {
 	margin: 2px 0;
 }
 
+span.shortcode.old {
+	background: #777;
+	color: #fff;
+}
+
 span.shortcode > input {
 	background: inherit;
 	color: inherit;
