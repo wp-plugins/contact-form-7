@@ -110,14 +110,50 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function display_connect() {
+		$integration_page_url = add_query_arg(
+			array( 'service' => 'getscorecard' ),
+			menu_page_url( 'wpcf7-integration', false ) );
+
+		$login_callback_url = add_query_arg(
+			array( 'action' => 'login_callback' ),
+			$integration_page_url );
+		$login_callback_url = wp_nonce_url( $login_callback_url,
+			'wpcf7-getscorecard-login-callback' );
+
+		$oauth_redirect_url = add_query_arg(
+			array( 'action' => 'oauth_redirect' ),
+			$integration_page_url );
+		$oauth_redirect_url = wp_nonce_url( $oauth_redirect_url,
+			'wpcf7-getscorecard-oauth-redirect' );
+
 ?>
+<form method="post" action="<?php echo esc_url( $this->get_endpoint_url( 'login-process.php' ) ); ?>">
+<input type="hidden" name="plugin_signIn" value="1" />
+<input type="hidden" name="plugin_type" value="contact-form-7">
+<input type="hidden" name="callback_uri" value="<?php echo esc_url( $login_callback_url ); ?>" />
+<input type="hidden" name="oauth_redirect_uri" value="<?php echo esc_url( $oauth_redirect_url ); ?>" />
+
 <p><?php echo esc_html( __( "If you already have a GetScorecard account, sign in to GetScorecard.", 'contact-form-7' ) ); ?></p>
 
-<p><a href="" class="button button-primary"><?php echo esc_html( __( 'Sign In', 'contact-form-7' ) ); ?></a></p>
+<table class="form-table">
+<tbody>
+<tr>
+	<th scope="row"><label for="getscorecard-login-email"><?php echo esc_html( __( 'E-mail', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="email" aria-required="true" value="" id="getscorecard-login-email" name="email" class="regular-text ltr" /></td>
+</tr>
+<tr>
+	<th scope="row"><label for="getscorecard-login-password"><?php echo esc_html( __( 'Password', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="password" aria-required="true" value="" id="getscorecard-login-password" name="password" class="regular-text" /></td>
+</tr>
+</tbody>
+</table>
 
-<p><?php echo esc_html( __( "If you don't have a GetScorecard account, get started today.", 'contact-form-7' ) ); ?></p>
+<p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Sign In', 'contact-form-7' ) ); ?>" name="submit" /></p>
+</form>
 
-<p><?php echo sprintf( '<a href="%1$s" class="button">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Register', 'contact-form-7' ) ) ); ?></p>
+<p><?php echo esc_html( __( "If you don't have a GetScorecard account, sign up today.", 'contact-form-7' ) ); ?></p>
+
+<p><strong><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up', 'contact-form-7' ) ) ); ?></strong></p>
 <?php
 	}
 
