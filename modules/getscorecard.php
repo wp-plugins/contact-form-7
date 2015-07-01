@@ -6,8 +6,7 @@
 
 class WPCF7_GetScorecard extends WPCF7_Service {
 
-	const API_EP = 'https://app.getscorecard.com/api/public';
-	const AUTH_EP = 'https://app.getscorecard.com/api/public/oauth';
+	const APP_URL = 'https://app.getscorecard.com';
 
 	private static $instance;
 
@@ -19,6 +18,14 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 
 		return self::$instance;
+	}
+
+	private function get_endpoint_url( $ep = '' ) {
+		if ( empty( $ep ) ) {
+			return self::APP_URL;
+		} else {
+			return path_join( self::APP_URL, $ep );
+		}
 	}
 
 	public function get_access_token() {
@@ -108,9 +115,9 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 <p><a href="" class="button button-primary"><?php echo esc_html( __( 'Sign In', 'contact-form-7' ) ); ?></a></p>
 
-<p><?php echo esc_html( __( "If you don't have a GetScorecard account, get started today!", 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( "If you don't have a GetScorecard account, get started today.", 'contact-form-7' ) ); ?></p>
 
-<p><a href="https://app.getscorecard.com/register.php?registerType=gc_wp_plugin" class="button"><?php echo esc_html( __( 'Register', 'contact-form-7' ) ); ?></a></p>
+<p><?php echo sprintf( '<a href="%1$s" class="button">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Register', 'contact-form-7' ) ) ); ?></p>
 <?php
 	}
 
@@ -126,7 +133,8 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		$data = wp_parse_args( $data, array() );
 		$data = json_encode( $data );
 
-		$url = path_join( self::API_EP, $resource );
+		$url = $this->get_endpoint_url( path_join( 'api/public', $resource) );
+
 		return wp_safe_remote_post( $url, array(
 			'headers' => array(
 				'Content-Type' => 'application/vnd.getscorecard.v1+json',
