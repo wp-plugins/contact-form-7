@@ -57,12 +57,23 @@ class WPCF7_Integration {
 		$args = wp_parse_args( $args, array(
 			'include' => array() ) );
 
+		$singular = false;
 		$services = (array) $this->services;
 
 		if ( ! empty( $args['include'] ) ) {
 			$services = array_intersect_key( $services,
 				array_flip( (array) $args['include'] ) );
+
+			if ( 1 == count( $services ) ) {
+				$singular = true;
+			}
 		}
+
+		if ( empty( $services ) ) {
+			return;
+		}
+
+		$action = wpcf7_current_action();
 
 		foreach ( $services as $name => $service ) {
 			$cats = array_intersect_key( $this->categories,
@@ -78,7 +89,13 @@ class WPCF7_Integration {
 <br class="clear" />
 
 <div class="inside">
-<?php $service->display(); ?>
+<?php
+			if ( $singular ) {
+				$service->display( $action );
+			} else {
+				$service->display();
+			}
+?>
 </div>
 </div>
 <?php
@@ -104,7 +121,7 @@ abstract class WPCF7_Service {
 	public function load( $action = '' ) {
 	}
 
-	public function display() {
+	public function display( $action = '' ) {
 	}
 
 	public function admin_notice() {

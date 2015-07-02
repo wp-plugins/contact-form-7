@@ -89,7 +89,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 	}
 
-	public function display() {
+	public function display( $action = '' ) {
 		if ( $this->is_connected() ) {
 			$this->display_disconnect();
 		} else {
