@@ -105,24 +105,24 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	public function display( $action = '' ) {
 		if ( $this->is_connected() ) {
 			$this->display_disconnect();
-		} else {
-			$this->display_connect();
+			return;
+		} elseif ( 'login' == $action ) {
+			$this->display_login();
+			return;
 		}
-	}
 
-	private function display_disconnect() {
 ?>
-<form method="post" action="<?php echo esc_url( menu_page_url( 'wpcf7-integration', false ) ); ?>">
-	<?php wp_nonce_field( 'wpcf7-disconnect-getscorecard' ); ?>
-	<input type="hidden" name="service" value="getscorecard" />
-	<input type="hidden" name="action" value="disconnect" />
+<p><?php echo esc_html( __( "If you already have a GetScorecard account, sign in to GetScorecard.", 'contact-form-7' ) ); ?></p>
 
-	<p class="submit"><input type="submit" name="disconnect_getscorecard" class="button" value="<?php echo esc_attr( __( 'Disconnect from GetScorecard', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "Are you sure you want to disconnect from GetScorecard?\n  'Cancel' to stop, 'OK' to disconnect.", 'contact-form-7' ) ) . "')) {return true;} return false;\""; ?> /></p>
-</form>
+<p><?php echo sprintf( '<a href="%1$s" class="button button-primary">%2$s</a>', esc_url( $this->menu_page_url( 'action=login' ) ), esc_html( __( 'Sign In', 'contact-form-7' ) ) ); ?></p>
+
+<p><?php echo esc_html( __( "If you don't have a GetScorecard account, sign up today.", 'contact-form-7' ) ); ?></p>
+
+<p><strong><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up', 'contact-form-7' ) ) ); ?></strong></p>
 <?php
 	}
 
-	private function display_connect() {
+	private function display_login() {
 		$login_callback_url = wp_nonce_url(
 			$this->menu_page_url( 'action=login_callback' ),
 			'wpcf7-getscorecard-login-callback' );
@@ -137,8 +137,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <input type="hidden" name="plugin_type" value="contact-form-7">
 <input type="hidden" name="callback_uri" value="<?php echo esc_url( $login_callback_url ); ?>" />
 <input type="hidden" name="oauth_redirect_uri" value="<?php echo esc_url( $oauth_redirect_url ); ?>" />
-
-<p><?php echo esc_html( __( "If you already have a GetScorecard account, sign in to GetScorecard.", 'contact-form-7' ) ); ?></p>
 
 <table class="form-table">
 <tbody>
@@ -155,10 +153,18 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 <p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Sign In', 'contact-form-7' ) ); ?>" name="submit" /></p>
 </form>
+<?php
+	}
 
-<p><?php echo esc_html( __( "If you don't have a GetScorecard account, sign up today.", 'contact-form-7' ) ); ?></p>
+	private function display_disconnect() {
+?>
+<form method="post" action="<?php echo esc_url( menu_page_url( 'wpcf7-integration', false ) ); ?>">
+	<?php wp_nonce_field( 'wpcf7-disconnect-getscorecard' ); ?>
+	<input type="hidden" name="service" value="getscorecard" />
+	<input type="hidden" name="action" value="disconnect" />
 
-<p><strong><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up', 'contact-form-7' ) ) ); ?></strong></p>
+	<p class="submit"><input type="submit" name="disconnect_getscorecard" class="button" value="<?php echo esc_attr( __( 'Disconnect from GetScorecard', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "Are you sure you want to disconnect from GetScorecard?\n  'Cancel' to stop, 'OK' to disconnect.", 'contact-form-7' ) ) . "')) {return true;} return false;\""; ?> /></p>
+</form>
 <?php
 	}
 
