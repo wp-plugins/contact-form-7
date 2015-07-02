@@ -154,6 +154,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Sign In', 'contact-form-7' ) ); ?>" name="submit" /></p>
 </form>
 <?php
+
+		if ( isset( $_GET['error'] ) ) {
+			echo sprintf( '<div class="login-error"><strong>%1$s</strong>: %2$s</div>', esc_html( __( "ERROR", 'contact-form-7' ) ), esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
+		}
 	}
 
 	private function display_disconnect() {

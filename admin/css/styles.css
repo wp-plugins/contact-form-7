@@ -311,3 +311,10 @@ span.shortcode > input {
 	line-height: 1.5;
 	max-width: 240px;
 }
+
+.card .inside .login-error {
+	margin: 5px 0 15px;
+	background-color: #fff;
+	border-left: 4px solid #dd3d36;
+	padding: 1px 12px;
+}
