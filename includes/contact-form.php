@@ -551,7 +551,7 @@ class WPCF7_ContactForm {
 		$tags = $this->form_scan_shortcode();
 		$mailtags = array();
 
-		foreach ( $tags as $tag ) {
+		foreach ( (array) $tags as $tag ) {
 			$type = trim( $tag['type'], ' *' );
 
 			if ( empty( $type ) || in_array( $type, $args['exclude'] ) ) {
