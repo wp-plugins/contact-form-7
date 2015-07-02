@@ -28,6 +28,19 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 	}
 
+	private function menu_page_url( $args = '' ) {
+		$args = wp_parse_args( $args, array() );
+
+		$url = menu_page_url( 'wpcf7-integration', false );
+		$url = add_query_arg( array( 'service' => 'getscorecard' ), $url );
+
+		if ( ! empty( $args) ) {
+			$url = add_query_arg( $args, $url );
+		}
+
+		return $url;
+	}
+
 	public function get_access_token() {
 		return get_transient( 'wpcf7_getscorecard_access_token' );
 	}
@@ -110,20 +123,12 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function display_connect() {
-		$integration_page_url = add_query_arg(
-			array( 'service' => 'getscorecard' ),
-			menu_page_url( 'wpcf7-integration', false ) );
-
-		$login_callback_url = add_query_arg(
-			array( 'action' => 'login_callback' ),
-			$integration_page_url );
-		$login_callback_url = wp_nonce_url( $login_callback_url,
+		$login_callback_url = wp_nonce_url(
+			$this->menu_page_url( 'action=login_callback' ),
 			'wpcf7-getscorecard-login-callback' );
 
-		$oauth_redirect_url = add_query_arg(
-			array( 'action' => 'oauth_redirect' ),
-			$integration_page_url );
-		$oauth_redirect_url = wp_nonce_url( $oauth_redirect_url,
+		$oauth_redirect_url = wp_nonce_url(
+			$this->menu_page_url( 'action=oauth_redirect' ),
 			'wpcf7-getscorecard-oauth-redirect' );
 
 ?>
