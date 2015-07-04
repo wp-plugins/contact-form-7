@@ -72,15 +72,24 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function load( $action = '' ) {
+		if ( 'login_callback' == $action ) {
+			check_admin_referer( 'wpcf7-getscorecard-login-callback' );
+
+			if ( isset( $_GET['error'] ) ) {
+				$redirect_to = $this->menu_page_url( array(
+					'action' => 'login', 'message' => 'login_failed' ) );
+
+				wp_safe_redirect( $redirect_to );
+				exit();
+			}
+		}
+
 		if ( 'disconnect' == $action ) {
 			check_admin_referer( 'wpcf7-disconnect-getscorecard' );
 			$this->delete_access_token();
 
-			$redirect_to = add_query_arg(
-				array(
-					'service' => 'getscorecard',
-					'message' => 'disconnected' ),
-				menu_page_url( 'wpcf7-integration', false ) );
+			$redirect_to = $this->menu_page_url(
+				array( 'message' => 'disconnected' ) );
 
 			wp_safe_redirect( $redirect_to );
 			exit();
@@ -92,13 +101,16 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 			return;
 		}
 
-		if ( 'disconnected' == $_REQUEST['message'] ) {
-			$message = __( 'Disconnected from GetScorecard.', 'contact-form-7' );
+		if ( 'login_failed' == $_REQUEST['message'] ) {
+			echo sprintf(
+				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
+				esc_html( __( "ERROR", 'contact-form-7' ) ),
+				esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
 		}
 
-		if ( ! empty( $message ) ) {
-			echo sprintf( '<div id="message" class="updated"><p>%s</p></div>',
-				esc_html( $message ) );
+		if ( 'disconnected' == $_REQUEST['message'] ) {
+			echo sprintf( '<div class="updated"><p>%s</p></div>',
+				esc_html( __( 'Disconnected from GetScorecard.', 'contact-form-7' ) ) );
 		}
 	}
 
@@ -154,10 +166,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Sign In', 'contact-form-7' ) ); ?>" name="submit" /></p>
 </form>
 <?php
-
-		if ( isset( $_GET['error'] ) ) {
-			echo sprintf( '<div class="login-error"><strong>%1$s</strong>: %2$s</div>', esc_html( __( "ERROR", 'contact-form-7' ) ), esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
-		}
 	}
 
 	private function display_disconnect() {
