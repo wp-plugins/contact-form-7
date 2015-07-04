@@ -82,6 +82,45 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				wp_safe_redirect( $redirect_to );
 				exit();
 			}
+
+			$client_id = isset( $_GET['client_id'] )
+				? trim( $_GET['client_id'] ) : '';
+			$client_secret = isset( $_GET['client_secret'] )
+				? trim( $_GET['client_secret'] ) : '';
+			$user_id = isset( $_GET['user_id'] )
+				? trim( $_GET['user_id'] ) : '';
+
+			if ( '' === $client_id || '' === $client_secret || '' === $user_id ) {
+				$redirect_to = $this->menu_page_url( array(
+					'action' => 'login', 'message' => 'invalid_client_data' ) );
+
+				wp_safe_redirect( $redirect_to );
+				exit();
+			}
+
+			$option = (array) get_option( 'wpcf7_getscorecard' );
+
+			$option = array_merge( $option, array(
+				'client_id' => $client_id,
+				'client_secret' => $client_secret,
+				'user_id' => $user_id ) );
+
+			update_option( 'wpcf7_getscorecard', $option, false );
+
+			$oauth_redirect_url = wp_nonce_url(
+				$this->menu_page_url( 'action=oauth_redirect' ),
+				'wpcf7-getscorecard-oauth-redirect' );
+
+			$redirect_to = $this->get_endpoint_url( 'api/public/oauth/authorize' );
+			$redirect_to = add_query_arg( array(
+				'response_type' => 'code',
+				'client_id' => $client_id,
+				'redirect_uri' => urlencode( $oauth_redirect_url ),
+				'state' => '',
+				'request_type' => 'contact-form-7' ), $redirect_to );
+
+			wp_redirect( $redirect_to );
+			exit();
 		}
 
 		if ( 'disconnect' == $action ) {
@@ -106,6 +145,13 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
 				esc_html( __( "ERROR", 'contact-form-7' ) ),
 				esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
+		}
+
+		if ( 'invalid_client_data' == $_REQUEST['message'] ) {
+			echo sprintf(
+				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
+				esc_html( __( "ERROR", 'contact-form-7' ) ),
+				esc_html( __( "Invalid client data.", 'contact-form-7' ) ) );
 		}
 
 		if ( 'disconnected' == $_REQUEST['message'] ) {
