@@ -116,7 +116,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				'response_type' => 'code',
 				'client_id' => $client_id,
 				'redirect_uri' => urlencode( $oauth_redirect_url ),
-				'state' => '',
 				'request_type' => 'contact-form-7' ), $redirect_to );
 
 			wp_redirect( $redirect_to );
