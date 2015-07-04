@@ -230,10 +230,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function add_person( $data ) {
-		return $this->request( 'people', $data );
+		return $this->post( 'people', $data );
 	}
 
-	private function request( $resource, $data = '' ) {
+	private function post( $resource, $data = '' ) {
 		if ( ! $this->is_connected() ) {
 			return;
 		}
