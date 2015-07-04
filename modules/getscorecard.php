@@ -49,6 +49,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return delete_transient( 'wpcf7_getscorecard_access_token' );
 	}
 
+	private function get_option() {
+		return (array) get_option( 'wpcf7_getscorecard' );
+	}
+
 	private function update_option( $args = '' ) {
 		$args = wp_parse_args( $args, array() );
 
@@ -126,6 +130,21 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 			exit();
 		}
 
+		if ( 'oauth_redirect' == $action ) {
+			check_admin_referer( 'wpcf7-getscorecard-oauth-redirect' );
+
+			$authorization_code = isset( $_GET['code'] )
+				? trim( $_GET['code'] ) : '';
+
+			$this->request_access_token( $authorization_code );
+
+			$redirect_to = $this->menu_page_url(
+				array( 'message' => 'auth_success' ) );
+
+			wp_safe_redirect( $redirect_to );
+			exit();
+		}
+
 		if ( 'disconnect' == $action ) {
 			check_admin_referer( 'wpcf7-disconnect-getscorecard' );
 			$this->delete_access_token();
@@ -155,6 +174,11 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
 				esc_html( __( "ERROR", 'contact-form-7' ) ),
 				esc_html( __( "Invalid client data.", 'contact-form-7' ) ) );
+		}
+
+		if ( 'auth_success' == $_REQUEST['message'] ) {
+			echo sprintf( '<div class="updated"><p>%s</p></div>',
+				esc_html( __( 'Connected to GetScorecard.', 'contact-form-7' ) ) );
 		}
 
 		if ( 'disconnected' == $_REQUEST['message'] ) {
@@ -227,6 +251,44 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	<p class="submit"><input type="submit" name="disconnect_getscorecard" class="button" value="<?php echo esc_attr( __( 'Disconnect from GetScorecard', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "Are you sure you want to disconnect from GetScorecard?\n  'Cancel' to stop, 'OK' to disconnect.", 'contact-form-7' ) ) . "')) {return true;} return false;\""; ?> /></p>
 </form>
 <?php
+	}
+
+	private function request_access_token( $authorization_code ) {
+		$url = $this->get_endpoint_url( 'api/public/oauth' );
+
+		$option = $this->get_option();
+		$client_id = isset( $option['client_id'] )
+			? $option['client_id'] : '';
+		$client_secret = isset( $option['client_secret'] )
+			? $option['client_secret'] : '';
+
+		$oauth_redirect_url = wp_nonce_url(
+			$this->menu_page_url( 'action=oauth_redirect' ),
+			'wpcf7-getscorecard-oauth-redirect' );
+
+		$response = wp_safe_remote_post( $url, array(
+			'headers' => array(
+				'Content-Type' => 'application/x-www-form-urlencoded',
+				'Accept' => 'application/json',
+				'X-Getscorecard-Client-Type' => 'contact-form-7',
+				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+			'body' => array(
+				'client_id' => $client_id,
+				'client_secret' => $client_secret,
+				'code' => $authorization_code,
+				'grant_type' => 'authorization_code',
+				'redirect_uri' => $oauth_redirect_url ) ) );
+
+		$response = json_decode( $response, true );
+
+		$access_token = isset( $response['access_token'] )
+			? $response['access_token'] : '';
+		$refresh_token = isset( $response['refresh_token'] )
+			? $response['refresh_token'] : '';
+
+		$this->update_option( array(
+			'access_token' => $access_token,
+			'refresh_token' => $refresh_token ) );
 	}
 
 	public function add_person( $data ) {
