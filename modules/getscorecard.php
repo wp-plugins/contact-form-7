@@ -45,8 +45,16 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return get_transient( 'wpcf7_getscorecard_access_token' );
 	}
 
-	public function delete_access_token() {
+	private function delete_access_token() {
 		return delete_transient( 'wpcf7_getscorecard_access_token' );
+	}
+
+	private function update_option( $args = '' ) {
+		$args = wp_parse_args( $args, array() );
+
+		$option = (array) get_option( 'wpcf7_getscorecard' );
+		$option = array_merge( $option, $args );
+		update_option( 'wpcf7_getscorecard', $option, false );
 	}
 
 	public function get_title() {
@@ -98,14 +106,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				exit();
 			}
 
-			$option = (array) get_option( 'wpcf7_getscorecard' );
-
-			$option = array_merge( $option, array(
+			$this->update_option( array(
 				'client_id' => $client_id,
 				'client_secret' => $client_secret,
 				'user_id' => $user_id ) );
-
-			update_option( 'wpcf7_getscorecard', $option, false );
 
 			$oauth_redirect_url = wp_nonce_url(
 				$this->menu_page_url( 'action=oauth_redirect' ),
