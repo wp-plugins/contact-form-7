@@ -41,8 +41,18 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return $url;
 	}
 
-	public function get_access_token() {
-		return get_transient( 'wpcf7_getscorecard_access_token' );
+	public function get_access_token( $refresh_if_expired = true ) {
+		$access_token = get_transient( 'wpcf7_getscorecard_access_token' );
+
+		if ( false !== $access_token ) {
+			return $access_token;
+		}
+
+		if ( $refresh_if_expired ) {
+			return $this->refresh_access_token();
+		}
+
+		return false;
 	}
 
 	private function set_access_token( $access_token, $expires_in = 3600 ) {
@@ -278,10 +288,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				'X-Getscorecard-Client-Type' => 'contact-form-7',
 				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
 			'body' => array(
+				'grant_type' => 'authorization_code',
+				'code' => $authorization_code,
 				'client_id' => $client_id,
 				'client_secret' => $client_secret,
-				'code' => $authorization_code,
-				'grant_type' => 'authorization_code',
 				'redirect_uri' => $oauth_redirect_url ) ) );
 
 		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
@@ -303,6 +313,59 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 		$this->update_option( array(
 			'refresh_token' => $refresh_token ) );
+
+		return $access_token;
+	}
+
+	private function refresh_access_token() {
+		$url = $this->get_endpoint_url( 'api/public/oauth' );
+
+		$option = $this->get_option();
+		$client_id = isset( $option['client_id'] )
+			? $option['client_id'] : '';
+		$client_secret = isset( $option['client_secret'] )
+			? $option['client_secret'] : '';
+		$refresh_token = isset( $option['refresh_token'] )
+			? $option['refresh_token'] : '';
+
+		if ( '' === $refresh_token ) {
+			return false;
+		}
+
+		$response = wp_safe_remote_post( $url, array(
+			'headers' => array(
+				'Content-Type' => 'application/x-www-form-urlencoded',
+				'Accept' => 'application/json',
+				'X-Getscorecard-Client-Type' => 'contact-form-7',
+				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+			'body' => array(
+				'grant_type' => 'refresh_token',
+				'refresh_token' => $refresh_token,
+				'client_id' => $client_id,
+				'client_secret' => $client_secret ) ) );
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		$access_token = isset( $response['access_token'] )
+			? $response['access_token'] : '';
+		$expires_in = isset( $response['expires_in'] )
+			? absint( $response['expires_in'] ) : 3600;
+
+		$this->set_access_token( $access_token, $expires_in );
+
+		$refresh_token = isset( $response['refresh_token'] )
+			? $response['refresh_token'] : '';
+
+		if ( '' !== $refresh_token ) {
+			$this->update_option( array( 'refresh_token' => $refresh_token ) );
+		}
+
+		return $access_token;
 	}
 
 	public function add_person( $data ) {
