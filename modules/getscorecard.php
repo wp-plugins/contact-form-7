@@ -284,6 +284,11 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 				'grant_type' => 'authorization_code',
 				'redirect_uri' => $oauth_redirect_url ) ) );
 
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
 		$response = json_decode( $response, true );
 
 		$access_token = isset( $response['access_token'] )
