@@ -45,6 +45,11 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return get_transient( 'wpcf7_getscorecard_access_token' );
 	}
 
+	private function set_access_token( $access_token, $expires_in = 3600 ) {
+		return set_transient( 'wpcf7_getscorecard_access_token',
+			$access_token, absint( $expires_in ) );
+	}
+
 	private function delete_access_token() {
 		return delete_transient( 'wpcf7_getscorecard_access_token' );
 	}
@@ -283,11 +288,15 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 		$access_token = isset( $response['access_token'] )
 			? $response['access_token'] : '';
+		$expires_in = isset( $response['expires_in'] )
+			? absint( $response['expires_in'] ) : 3600;
+
+		$this->set_access_token( $access_token, $expires_in );
+
 		$refresh_token = isset( $response['refresh_token'] )
 			? $response['refresh_token'] : '';
 
 		$this->update_option( array(
-			'access_token' => $access_token,
 			'refresh_token' => $refresh_token ) );
 	}
 
