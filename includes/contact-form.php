@@ -554,6 +554,7 @@ class WPCF7_ContactForm {
 
 	public function collect_mail_tags( $args = '' ) {
 		$args = wp_parse_args( $args, array(
+			'include' => array(),
 			'exclude' => array(
 				'acceptance', 'captchac', 'captchar', 'quiz', 'count' ) ) );
 
@@ -563,8 +564,16 @@ class WPCF7_ContactForm {
 		foreach ( (array) $tags as $tag ) {
 			$type = trim( $tag['type'], ' *' );
 
-			if ( empty( $type ) || in_array( $type, $args['exclude'] ) ) {
+			if ( empty( $type ) ) {
 				continue;
+			} elseif ( ! empty( $args['include'] ) ) {
+				if ( ! in_array( $type, $args['include'] ) ) {
+					continue;
+				}
+			} elseif ( ! empty( $args['exclude'] ) ) {
+				if ( in_array( $type, $args['exclude'] ) ) {
+					continue;
+				}
 			}
 
 			$mailtags[] = $tag['name'];
