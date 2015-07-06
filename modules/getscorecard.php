@@ -206,7 +206,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 	public function display( $action = '' ) {
 		if ( $this->is_connected() ) {
-			$this->display_disconnect();
+			$this->display_connected();
 			return;
 		} elseif ( 'login' == $action ) {
 			$this->display_login();
@@ -258,7 +258,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <?php
 	}
 
-	private function display_disconnect() {
+	private function display_connected() {
 ?>
 <form method="post" action="<?php echo esc_url( menu_page_url( 'wpcf7-integration', false ) ); ?>">
 	<?php wp_nonce_field( 'wpcf7-disconnect-getscorecard' ); ?>
