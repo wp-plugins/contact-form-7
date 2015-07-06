@@ -516,6 +516,16 @@ function wpcf7_getscorecard_submit( $contact_form, $result ) {
 		$submission = WPCF7_Submission::get_instance();
 
 		if ( $submission && $posted_data = $submission->get_posted_data() ) {
+			$fields_no_use = $contact_form->collect_mail_tags(
+				array( 'include' => array( 'acceptance', 'captchar', 'quiz' ) ) );
+
+			foreach ( $posted_data as $key => $value ) {
+				if ( '_' == substr( $key, 0, 1 )
+				|| in_array( $key, $fields_no_use ) ) {
+					unset( $posted_data[$key] );
+				}
+			}
+
 			$service->add_person( $posted_data );
 		}
 	}
