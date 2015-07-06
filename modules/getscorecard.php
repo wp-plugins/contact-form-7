@@ -76,6 +76,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		update_option( 'wpcf7_getscorecard', $option, false );
 	}
 
+	private function delete_option() {
+		delete_option( 'wpcf7_getscorecard' );
+	}
+
 	public function get_title() {
 		return __( 'GetScorecard', 'contact-form-7' );
 	}
@@ -162,7 +166,9 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 		if ( 'disconnect' == $action ) {
 			check_admin_referer( 'wpcf7-disconnect-getscorecard' );
+
 			$this->delete_access_token();
+			$this->delete_option();
 
 			$redirect_to = $this->menu_page_url(
 				array( 'message' => 'disconnected' ) );
