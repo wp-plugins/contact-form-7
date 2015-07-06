@@ -265,11 +265,31 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function display_connected() {
+		$user_info = $this->get_user_info();
+
+		if ( false !== $user_info ) :
 ?>
-<form method="post" action="<?php echo esc_url( menu_page_url( 'wpcf7-integration', false ) ); ?>">
+<h4><?php echo esc_html( __( 'Your Profile on GetScorecard', 'contact-form-7' ) ); ?></h4>
+<table class="form-table">
+<tbody>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'User ID', 'contact-form-7' ) ); ?></th>
+	<td><?php echo esc_html( $user_info['id'] ); ?></td>
+</tr>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'Full Name', 'contact-form-7' ) ); ?></th>
+	<td><?php echo esc_html( $user_info['fullname'] ); ?></td>
+</tr>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'E-mail', 'contact-form-7' ) ); ?></th>
+	<td><?php echo esc_html( $user_info['email'] ); ?></td>
+</tr>
+</tbody>
+</table>
+<?php endif; ?>
+
+<form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=disconnect' ) ); ?>">
 	<?php wp_nonce_field( 'wpcf7-disconnect-getscorecard' ); ?>
-	<input type="hidden" name="service" value="getscorecard" />
-	<input type="hidden" name="action" value="disconnect" />
 
 	<p class="submit"><input type="submit" name="disconnect_getscorecard" class="button" value="<?php echo esc_attr( __( 'Disconnect from GetScorecard', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "Are you sure you want to disconnect from GetScorecard?\n  'Cancel' to stop, 'OK' to disconnect.", 'contact-form-7' ) ) . "')) {return true;} return false;\""; ?> /></p>
 </form>
@@ -374,6 +394,27 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 
 		return $access_token;
+	}
+
+	private function get_user_info() {
+		$user_id = (int) $this->get_option( 'user_id' );
+
+		if ( empty( $user_id ) ) {
+			return false;
+		}
+
+		$data = (array) $this->get( sprintf( 'users/%d', $user_id ) );
+
+		if ( empty( $data ) ) {
+			return false;
+		}
+
+		$data = wp_parse_args( $data[0], array(
+			'id' => 0,
+			'fullname' => '',
+			'email' => '' ) );
+
+		return $data;
 	}
 
 	public function add_person( $data ) {
