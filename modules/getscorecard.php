@@ -64,8 +64,14 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return delete_transient( 'wpcf7_getscorecard_access_token' );
 	}
 
-	private function get_option() {
-		return (array) get_option( 'wpcf7_getscorecard' );
+	private function get_option( $name = '' ) {
+		$option = (array) get_option( 'wpcf7_getscorecard' );
+
+		if ( '' == $name ) {
+			return $option;
+		} else {
+			return isset( $option[$name] ) ? $option[$name] : '';
+		}
 	}
 
 	private function update_option( $args = '' ) {
