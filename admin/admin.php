@@ -324,7 +324,8 @@ function wpcf7_admin_integration_page() {
 <?php
 	if ( isset( $_REQUEST['service'] )
 	&& $service = $integration->get_service( $_REQUEST['service'] ) ) {
-		$service->admin_notice();
+		$message = isset( $_REQUEST['message'] ) ? $_REQUEST['message'] : '';
+		$service->admin_notice( $message );
 		$integration->list_services( array( 'include' => $_REQUEST['service'] ) );
 	} else {
 		$integration->list_services();

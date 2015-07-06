@@ -124,7 +124,7 @@ abstract class WPCF7_Service {
 	public function display( $action = '' ) {
 	}
 
-	public function admin_notice() {
+	public function admin_notice( $message = '' ) {
 	}
 
 }

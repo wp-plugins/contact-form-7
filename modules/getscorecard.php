@@ -178,31 +178,27 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 	}
 
-	public function admin_notice() {
-		if ( empty( $_REQUEST['message'] ) ) {
-			return;
-		}
-
-		if ( 'login_failed' == $_REQUEST['message'] ) {
+	public function admin_notice( $message = '' ) {
+		if ( 'login_failed' == $message ) {
 			echo sprintf(
 				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
 				esc_html( __( "ERROR", 'contact-form-7' ) ),
 				esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
 		}
 
-		if ( 'invalid_client_data' == $_REQUEST['message'] ) {
+		if ( 'invalid_client_data' == $message ) {
 			echo sprintf(
 				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
 				esc_html( __( "ERROR", 'contact-form-7' ) ),
 				esc_html( __( "Invalid client data.", 'contact-form-7' ) ) );
 		}
 
-		if ( 'auth_success' == $_REQUEST['message'] ) {
+		if ( 'auth_success' == $message ) {
 			echo sprintf( '<div class="updated"><p>%s</p></div>',
 				esc_html( __( 'Connected to GetScorecard.', 'contact-form-7' ) ) );
 		}
 
-		if ( 'disconnected' == $_REQUEST['message'] ) {
+		if ( 'disconnected' == $message ) {
 			echo sprintf( '<div class="updated"><p>%s</p></div>',
 				esc_html( __( 'Disconnected from GetScorecard.', 'contact-form-7' ) ) );
 		}
