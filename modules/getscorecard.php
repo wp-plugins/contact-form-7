@@ -372,24 +372,59 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return $this->post( 'people', $data );
 	}
 
+	private function get( $resource ) {
+		return $this->request( $resource, '', 'get' );
+	}
+
 	private function post( $resource, $data = '' ) {
-		if ( ! $this->is_connected() ) {
-			return;
+		return $this->request( $resource, $data, 'post' );
+	}
+
+	private function request( $resource, $data = '', $method = 'get' ) {
+		$access_token = $this->get_access_token();
+
+		if ( false === $access_token ) {
+			return false;
 		}
 
 		$data = wp_parse_args( $data, array() );
 		$data = json_encode( $data );
 
-		$url = $this->get_endpoint_url( path_join( 'api/public', $resource) );
+		$method = strtolower( $method );
 
-		return wp_safe_remote_post( $url, array(
-			'headers' => array(
-				'Content-Type' => 'application/vnd.getscorecard.v1+json',
-				'Accept' => 'application/vnd.getscorecard.v1+json',
-				'Authorization' => sprintf( 'Bearer %s', $this->get_access_token() ),
-				'X-Getscorecard-Client-Type' => 'contact-form-7',
-				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
-			'body' => $data ) );
+		if ( 'post' != $method ) {
+			$method = 'get';
+		}
+
+		$url = path_join( 'api/public', $resource );
+		$url = $this->get_endpoint_url( $url );
+
+		if ( 'get' == $method ) {
+			$response = wp_safe_remote_get( $url, array(
+				'headers' => array(
+					'Accept' => 'application/vnd.getscorecard.v1+json',
+					'Authorization' => sprintf( 'Bearer %s', $access_token ),
+					'X-Getscorecard-Client-Type' => 'contact-form-7',
+					'X-Getscorecard-Client-Version' => WPCF7_VERSION ) ) );
+		} elseif ( 'post' == $method ) {
+			$response = wp_safe_remote_post( $url, array(
+				'headers' => array(
+					'Content-Type' => 'application/vnd.getscorecard.v1+json',
+					'Accept' => 'application/vnd.getscorecard.v1+json',
+					'Authorization' => sprintf( 'Bearer %s', $access_token ),
+					'X-Getscorecard-Client-Type' => 'contact-form-7',
+					'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+				'body' => $data ) );
+		}
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		return $response;
 	}
 }
 
