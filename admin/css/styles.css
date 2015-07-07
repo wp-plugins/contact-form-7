@@ -286,6 +286,7 @@ span.shortcode > input {
 .card {
 	background: #fff none repeat scroll 0 0;
 	border: 1px solid #e5e5e5;
+	border-left: 4px solid #e5e5e5;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 	margin-top: 20px;
 	max-width: 520px;
@@ -295,7 +296,7 @@ span.shortcode > input {
 }
 
 .card.active {
-	background-color: #f7fcfe;
+	border-color: #00a0d2;
 }
 
 .card h3.title {

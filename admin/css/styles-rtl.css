@@ -14,3 +14,8 @@
 .tag-generator-panel .insert-box .submitbox input[type="button"] {
 	float: left;
 }
+
+.card {
+	border-left: 1px solid #e5e5e5;
+	border-right: 4px solid #e5e5e5;
+}
