@@ -93,7 +93,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function is_connected() {
-		return (bool) $this->get_access_token();
+		return (bool) $this->get_option();
 	}
 
 	public function is_active() {
