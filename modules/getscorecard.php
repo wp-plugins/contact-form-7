@@ -65,9 +65,9 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function get_option( $name = '' ) {
-		$option = (array) get_option( 'wpcf7_getscorecard' );
+		$option = get_option( 'wpcf7_getscorecard' );
 
-		if ( '' == $name ) {
+		if ( false === $option || '' == $name ) {
 			return $option;
 		} else {
 			return isset( $option[$name] ) ? $option[$name] : '';
@@ -77,8 +77,10 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	private function update_option( $args = '' ) {
 		$args = wp_parse_args( $args, array() );
 
-		$option = (array) get_option( 'wpcf7_getscorecard' );
+		$option = get_option( 'wpcf7_getscorecard' );
+		$option = ( false === $option ) ? array() : (array) $option;
 		$option = array_merge( $option, $args );
+
 		update_option( 'wpcf7_getscorecard', $option, false );
 	}
 
@@ -403,7 +405,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 			return false;
 		}
 
-		$data = (array) $this->get( sprintf( 'users/%d', $user_id ) );
+		$data = $this->get( sprintf( 'users/%d', $user_id ) );
 
 		if ( empty( $data ) ) {
 			return false;
