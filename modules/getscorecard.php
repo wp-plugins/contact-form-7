@@ -547,7 +547,7 @@ function wpcf7_getscorecard_register_service() {
 	}
 }
 
-add_action( 'wpcf7_submit', 'wpcf7_getscorecard_submit' );
+add_action( 'wpcf7_submit', 'wpcf7_getscorecard_submit', 10, 2 );
 
 function wpcf7_getscorecard_submit( $contact_form, $result ) {
 	$getscorecard_able = ( ! $result['demo_mode']
