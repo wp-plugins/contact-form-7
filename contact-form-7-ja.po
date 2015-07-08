@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 19:55+0900\n"
-"PO-Revision-Date: 2015-06-22 19:56+0900\n"
+"POT-Creation-Date: 2015-07-09 03:35+0900\n"
+"PO-Revision-Date: 2015-07-09 04:13+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -97,23 +97,23 @@ msgstr "または"
 msgid "(select language)"
 msgstr "(言語を選択)"
 
-#: contact-form-7/admin/admin.php:347
+#: contact-form-7/admin/admin.php:348
 msgid "Contact form created."
 msgstr "コンタクトフォームが作成されました。"
 
-#: contact-form-7/admin/admin.php:349
+#: contact-form-7/admin/admin.php:350
 msgid "Contact form saved."
 msgstr "コンタクトフォームが保存されました。"
 
-#: contact-form-7/admin/admin.php:351
+#: contact-form-7/admin/admin.php:352
 msgid "Contact form deleted."
 msgstr "コンタクトフォームが削除されました。"
 
-#: contact-form-7/admin/admin.php:368
+#: contact-form-7/admin/admin.php:369
 msgid "Settings"
 msgstr "設定"
 
-#: contact-form-7/admin/admin.php:391
+#: contact-form-7/admin/admin.php:392
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
@@ -122,15 +122,15 @@ msgstr ""
 "<strong>Contact Form 7 %1$s は WordPress %2$s 以降に対応しています。</strong>"
 "まず <a href=\"%3$s\">WordPress を更新</a>してください。"
 
-#: contact-form-7/admin/admin.php:417
+#: contact-form-7/admin/admin.php:418
 msgid "Dismiss"
 msgstr "非表示にする"
 
-#: contact-form-7/admin/admin.php:422
+#: contact-form-7/admin/admin.php:423
 msgid "Contact Form 7 Needs Your Support"
 msgstr "Contact Form 7 は支援を必要としています"
 
-#: contact-form-7/admin/admin.php:423
+#: contact-form-7/admin/admin.php:424
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
@@ -140,89 +140,89 @@ msgstr ""
 "ができません。Contact Form 7 があなたのお役に立っているなら、この機会にぜひい"
 "くらかの寄付をご検討ください。"
 
-#: contact-form-7/admin/admin.php:424
+#: contact-form-7/admin/admin.php:425
 msgid "http://contactform7.com/donate/"
 msgstr "http://contactform7.com/ja/donate/"
 
-#: contact-form-7/admin/admin.php:424
+#: contact-form-7/admin/admin.php:425
 msgid "Donate"
 msgstr "寄付する"
 
-#: contact-form-7/admin/admin.php:428
+#: contact-form-7/admin/admin.php:429
 msgid "Get Started"
 msgstr "はじめに"
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:431
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr "http://contactform7.com/ja/getting-started-with-contact-form-7/"
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:431
 msgid "Getting Started with Contact Form 7"
 msgstr "Contact Form 7 の基本的な使い方"
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:432
 msgid "http://contactform7.com/admin-screen/"
 msgstr "http://contactform7.com/ja/admin-screen/"
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:432
 msgid "Admin Screen"
 msgstr "管理画面"
 
-#: contact-form-7/admin/admin.php:432
+#: contact-form-7/admin/admin.php:433
 msgid "http://contactform7.com/tag-syntax/"
 msgstr "http://contactform7.com/ja/tag-syntax/"
 
-#: contact-form-7/admin/admin.php:432
+#: contact-form-7/admin/admin.php:433
 msgid "How Tags Work"
 msgstr "タグの使い方"
 
-#: contact-form-7/admin/admin.php:433
+#: contact-form-7/admin/admin.php:434
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr "http://contactform7.com/ja/setting-up-mail/"
 
-#: contact-form-7/admin/admin.php:433
+#: contact-form-7/admin/admin.php:434
 msgid "Setting Up Mail"
 msgstr "メールのセットアップ"
 
-#: contact-form-7/admin/admin.php:438
+#: contact-form-7/admin/admin.php:439
 msgid "Did You Know?"
 msgstr "知ってました ?"
 
-#: contact-form-7/admin/admin.php:440
+#: contact-form-7/admin/admin.php:441
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr "http://contactform7.com/ja/spam-filtering-with-akismet/"
 
-#: contact-form-7/admin/admin.php:440
+#: contact-form-7/admin/admin.php:441
 msgid "Spam Filtering with Akismet"
 msgstr "Akismet によるスパムフィルタリング"
 
-#: contact-form-7/admin/admin.php:441
+#: contact-form-7/admin/admin.php:442
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr "http://contactform7.com/ja/save-submitted-messages-with-flamingo/"
 
-#: contact-form-7/admin/admin.php:441
+#: contact-form-7/admin/admin.php:442
 msgid "Save Messages with Flamingo"
 msgstr "Flamingo でメッセージを保存する"
 
-#: contact-form-7/admin/admin.php:442
+#: contact-form-7/admin/admin.php:443
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr "http://contactform7.com/ja/selectable-recipient-with-pipes/"
 
-#: contact-form-7/admin/admin.php:442
+#: contact-form-7/admin/admin.php:443
 msgid "Selectable Recipient with Pipes"
 msgstr "パイプを使って送信先を選択可能に"
 
-#: contact-form-7/admin/admin.php:443
+#: contact-form-7/admin/admin.php:444
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 "http://contactform7.com/ja/tracking-form-submissions-with-google-analytics/"
 
-#: contact-form-7/admin/admin.php:443
+#: contact-form-7/admin/admin.php:444
 msgid "Tracking with Google Analytics"
 msgstr "Google Analytics でトラッキングする"
 
-#: contact-form-7/admin/admin.php:488
+#: contact-form-7/admin/admin.php:489
 msgid "You are not allowed to edit this contact form."
 msgstr "このコンタクトフォームを編集する権限がありません。"
 
@@ -1411,6 +1411,89 @@ msgstr ""
 "ルのための一時フォルダ (%s) が存在しないか、あるいは書き込み可能ではありませ"
 "ん。このフォルダを手動で作成するか、パーミッションの変更を行うと解決できるで"
 "しょう。"
+
+#: contact-form-7/modules/getscorecard.php:24
+msgid "GetScorecard"
+msgstr "GetScorecard"
+
+#: contact-form-7/modules/getscorecard.php:416
+#: contact-form-7/modules/getscorecard.php:423
+msgid "ERROR"
+msgstr "エラー"
+
+#: contact-form-7/modules/getscorecard.php:417
+msgid "Invalid e-mail, or the password is incorrect."
+msgstr "メールアドレスまたはパスワードが間違っています。"
+
+#: contact-form-7/modules/getscorecard.php:424
+msgid "Invalid client data."
+msgstr "クライアントデータが正しくありません。"
+
+#: contact-form-7/modules/getscorecard.php:429
+msgid "Connected to GetScorecard."
+msgstr "GetScorecard に接続しました。"
+
+#: contact-form-7/modules/getscorecard.php:434
+msgid "Disconnected from GetScorecard."
+msgstr "GetScorecard との接続を解除しました。"
+
+#: contact-form-7/modules/getscorecard.php:448
+msgid "If you already have a GetScorecard account, sign in to GetScorecard."
+msgstr "すでに GetScorecard のアカウントがある場合はログインしてください。"
+
+#: contact-form-7/modules/getscorecard.php:450
+#: contact-form-7/modules/getscorecard.php:487
+msgid "Sign In"
+msgstr "ログイン"
+
+#: contact-form-7/modules/getscorecard.php:452
+msgid "If you don't have a GetScorecard account, sign up today."
+msgstr "GetScorecard のアカウントをお持ちでないなら、登録しましょう。"
+
+#: contact-form-7/modules/getscorecard.php:454
+msgid "Sign Up"
+msgstr "新規アカウント登録"
+
+#: contact-form-7/modules/getscorecard.php:477
+#: contact-form-7/modules/getscorecard.php:509
+msgid "E-mail"
+msgstr "メールアドレス"
+
+#: contact-form-7/modules/getscorecard.php:481
+msgid "Password"
+msgstr "パスワード"
+
+#: contact-form-7/modules/getscorecard.php:497
+msgid "Your Profile on GetScorecard"
+msgstr "GetScorecard でのあなたのプロフィール"
+
+#: contact-form-7/modules/getscorecard.php:501
+msgid "User ID"
+msgstr "ユーザー ID"
+
+#: contact-form-7/modules/getscorecard.php:505
+msgid "Full Name"
+msgstr "名前"
+
+#: contact-form-7/modules/getscorecard.php:519
+msgid "Disconnect from GetScorecard"
+msgstr "GetScorecard との接続を解除する"
+
+#: contact-form-7/modules/getscorecard.php:519
+msgid ""
+"Are you sure you want to disconnect from GetScorecard?\n"
+"  'Cancel' to stop, 'OK' to disconnect."
+msgstr ""
+"GetScorecard との接続を解除しようとしています。\n"
+"  'キャンセル' で中止、 'OK' で接続解除します。"
+
+#: contact-form-7/modules/getscorecard.php:535
+msgid "CRM"
+msgstr "CRM"
+
+#: contact-form-7/modules/getscorecard.php:536
+msgid "Sales Management"
+msgstr "販売管理"
 
 #: contact-form-7/modules/jetpack.php:20
 msgid "http://contactform7.com/jetpack-overrides-contact-forms/"
