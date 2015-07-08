@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 19:53+0900\n"
+"POT-Creation-Date: 2015-07-09 03:34+0900\n"
 "PO-Revision-Date: 2015-05-18 21:49+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
@@ -97,126 +97,126 @@ msgstr ""
 msgid "(select language)"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:347
+#: contact-form-7/admin/admin.php:348
 msgid "Contact form created."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:349
+#: contact-form-7/admin/admin.php:350
 msgid "Contact form saved."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:351
+#: contact-form-7/admin/admin.php:352
 msgid "Contact form deleted."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:368
+#: contact-form-7/admin/admin.php:369
 msgid "Settings"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:391
+#: contact-form-7/admin/admin.php:392
 #, php-format
 msgid ""
 "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> "
 "Please <a href=\"%3$s\">update WordPress</a> first."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:417
+#: contact-form-7/admin/admin.php:418
 msgid "Dismiss"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:422
+#: contact-form-7/admin/admin.php:423
 msgid "Contact Form 7 Needs Your Support"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:423
+#: contact-form-7/admin/admin.php:424
 msgid ""
 "It is hard to continue development and support for this plugin without "
 "contributions from users like you. If you enjoy using Contact Form 7 and "
 "find it useful, please consider making a donation."
 msgstr ""
 
-#: contact-form-7/admin/admin.php:424
+#: contact-form-7/admin/admin.php:425
 msgid "http://contactform7.com/donate/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:424
+#: contact-form-7/admin/admin.php:425
 msgid "Donate"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:428
+#: contact-form-7/admin/admin.php:429
 msgid "Get Started"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:431
 msgid "http://contactform7.com/getting-started-with-contact-form-7/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:430
+#: contact-form-7/admin/admin.php:431
 msgid "Getting Started with Contact Form 7"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:432
 msgid "http://contactform7.com/admin-screen/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:431
+#: contact-form-7/admin/admin.php:432
 msgid "Admin Screen"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:432
+#: contact-form-7/admin/admin.php:433
 msgid "http://contactform7.com/tag-syntax/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:432
+#: contact-form-7/admin/admin.php:433
 msgid "How Tags Work"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:433
+#: contact-form-7/admin/admin.php:434
 msgid "http://contactform7.com/setting-up-mail/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:433
+#: contact-form-7/admin/admin.php:434
 msgid "Setting Up Mail"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:438
+#: contact-form-7/admin/admin.php:439
 msgid "Did You Know?"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:440
+#: contact-form-7/admin/admin.php:441
 msgid "http://contactform7.com/spam-filtering-with-akismet/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:440
+#: contact-form-7/admin/admin.php:441
 msgid "Spam Filtering with Akismet"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:441
+#: contact-form-7/admin/admin.php:442
 msgid "http://contactform7.com/save-submitted-messages-with-flamingo/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:441
+#: contact-form-7/admin/admin.php:442
 msgid "Save Messages with Flamingo"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:442
+#: contact-form-7/admin/admin.php:443
 msgid "http://contactform7.com/selectable-recipient-with-pipes/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:442
+#: contact-form-7/admin/admin.php:443
 msgid "Selectable Recipient with Pipes"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:443
+#: contact-form-7/admin/admin.php:444
 msgid ""
 "http://contactform7.com/tracking-form-submissions-with-google-analytics/"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:443
+#: contact-form-7/admin/admin.php:444
 msgid "Tracking with Google Analytics"
 msgstr ""
 
-#: contact-form-7/admin/admin.php:488
+#: contact-form-7/admin/admin.php:489
 msgid "You are not allowed to edit this contact form."
 msgstr ""
 
@@ -1316,6 +1316,87 @@ msgid ""
 "This contact form contains file uploading fields, but the temporary folder "
 "for the files (%s) does not exist or is not writable. You can create the "
 "folder or change its permission manually."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:24
+msgid "GetScorecard"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:416
+#: contact-form-7/modules/getscorecard.php:423
+msgid "ERROR"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:417
+msgid "Invalid e-mail, or the password is incorrect."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:424
+msgid "Invalid client data."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:429
+msgid "Connected to GetScorecard."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:434
+msgid "Disconnected from GetScorecard."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:448
+msgid "If you already have a GetScorecard account, sign in to GetScorecard."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:450
+#: contact-form-7/modules/getscorecard.php:487
+msgid "Sign In"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:452
+msgid "If you don't have a GetScorecard account, sign up today."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:454
+msgid "Sign Up"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:477
+#: contact-form-7/modules/getscorecard.php:509
+msgid "E-mail"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:481
+msgid "Password"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:497
+msgid "Your Profile on GetScorecard"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:501
+msgid "User ID"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:505
+msgid "Full Name"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:519
+msgid "Disconnect from GetScorecard"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:519
+msgid ""
+"Are you sure you want to disconnect from GetScorecard?\n"
+"  'Cancel' to stop, 'OK' to disconnect."
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:535
+msgid "CRM"
+msgstr ""
+
+#: contact-form-7/modules/getscorecard.php:536
+msgid "Sales Management"
 msgstr ""
 
 #: contact-form-7/modules/jetpack.php:20
