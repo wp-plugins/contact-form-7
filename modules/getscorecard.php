@@ -533,7 +533,10 @@ function wpcf7_getscorecard_submit( $contact_form, $result ) {
 				}
 			}
 
-			$service->add_person( $posted_data );
+			$person_data = apply_filters( 'wpcf7_getscorecard_person_data',
+				$posted_data );
+
+			$service->add_person( $person_data );
 		}
 	}
 }
