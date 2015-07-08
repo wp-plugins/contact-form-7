@@ -20,6 +20,35 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return self::$instance;
 	}
 
+	public function get_title() {
+		return __( 'GetScorecard', 'contact-form-7' );
+	}
+
+	public function is_connected() {
+		return (bool) $this->get_option();
+	}
+
+	public function is_active() {
+		return $this->is_connected();
+	}
+
+	public function get_categories() {
+		return array( 'crm', 'sales_management' );
+	}
+
+	public function link() {
+		echo sprintf( '<a href="%1$s">%2$s</a>',
+			'http://www.getscorecard.com?source=contact-form-7',
+			'getscorecard.com' );
+	}
+
+	/**
+	 * Returns an endpoint URL on the GetScorecard API server.
+	 * Example: https://app.getscorecard.com/api/public/oauth
+	 *
+	 * @param string $ep The path to be appended to the base URL.
+	 * @return string The endpoint URL.
+	 */
 	private function get_endpoint_url( $ep = '' ) {
 		if ( empty( $ep ) ) {
 			return self::APP_URL;
@@ -28,6 +57,13 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 	}
 
+	/**
+	 * Returns a menu page URL on the client WordPress site.
+	 * Example: http://example.com/wp-admin/admin.php?page=wpcf7-integration&service=getscorecard&action=login
+	 *
+	 * @param string|array $args Additional queries to be appended to the URL.
+	 * @return string The menu page URL.
+	 */
 	private function menu_page_url( $args = '' ) {
 		$args = wp_parse_args( $args, array() );
 
@@ -41,29 +77,18 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return $url;
 	}
 
-	public function get_access_token( $refresh_if_expired = true ) {
-		$access_token = get_transient( 'wpcf7_getscorecard_access_token' );
-
-		if ( false !== $access_token ) {
-			return $access_token;
-		}
-
-		if ( $refresh_if_expired ) {
-			return $this->refresh_access_token();
-		}
-
-		return false;
-	}
-
-	private function set_access_token( $access_token, $expires_in = 3600 ) {
-		return set_transient( 'wpcf7_getscorecard_access_token',
-			$access_token, absint( $expires_in ) );
-	}
-
-	private function delete_access_token() {
-		return delete_transient( 'wpcf7_getscorecard_access_token' );
-	}
-
+	/**
+	 * Retrieves the option data from wp_options database table.
+	 * The data can include these items:
+	 * user_id - The user's ID on GetScorecard
+	 * client_id - The client identifier issued to the client
+	 * client_secret - The client secret
+	 * refresh_token - The refresh token used by OAuth authorization
+	 *
+	 * @param string $name Optional. One of the items listed above.
+	 * @return array|string An array includes all option items.
+	 *         Or the value of the item specified by $name.
+	 */
 	private function get_option( $name = '' ) {
 		$option = get_option( 'wpcf7_getscorecard' );
 
@@ -88,26 +113,224 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		delete_option( 'wpcf7_getscorecard' );
 	}
 
-	public function get_title() {
-		return __( 'GetScorecard', 'contact-form-7' );
+	/**
+	 * Retrieves an OAuth access token from the transient data
+	 * in wp-options database table.
+	 *
+	 * @param bool $refresh_if_expired Optional. Whether to attempt to
+	 *        refresh access token when it is expired. Default true.
+	 * @return string|false A string of access token.
+	 *         False if the retrieval failed.
+	 */
+	public function get_access_token( $refresh_if_expired = true ) {
+		$access_token = get_transient( 'wpcf7_getscorecard_access_token' );
+
+		if ( false !== $access_token ) {
+			return $access_token;
+		}
+
+		if ( $refresh_if_expired ) {
+			return $this->refresh_access_token();
+		}
+
+		return false;
 	}
 
-	public function is_connected() {
-		return (bool) $this->get_option();
+	private function set_access_token( $access_token, $expires_in = 3600 ) {
+		return set_transient( 'wpcf7_getscorecard_access_token',
+			$access_token, absint( $expires_in ) );
 	}
 
-	public function is_active() {
-		return $this->is_connected();
+	private function delete_access_token() {
+		return delete_transient( 'wpcf7_getscorecard_access_token' );
 	}
 
-	public function get_categories() {
-		return array( 'crm', 'sales_management' );
+	private function request_access_token( $authorization_code ) {
+		$url = $this->get_endpoint_url( 'api/public/oauth' );
+
+		$option = $this->get_option();
+		$client_id = isset( $option['client_id'] )
+			? $option['client_id'] : '';
+		$client_secret = isset( $option['client_secret'] )
+			? $option['client_secret'] : '';
+
+		$oauth_redirect_url = wp_nonce_url(
+			$this->menu_page_url( 'action=oauth_redirect' ),
+			'wpcf7-getscorecard-oauth-redirect' );
+
+		$response = wp_safe_remote_post( $url, array(
+			'headers' => array(
+				'Content-Type' => 'application/x-www-form-urlencoded',
+				'Accept' => 'application/json',
+				'X-Getscorecard-Client-Type' => 'contact-form-7',
+				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+			'body' => array(
+				'grant_type' => 'authorization_code',
+				'code' => $authorization_code,
+				'client_id' => $client_id,
+				'client_secret' => $client_secret,
+				'redirect_uri' => $oauth_redirect_url ) ) );
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		$access_token = isset( $response['access_token'] )
+			? $response['access_token'] : '';
+		$expires_in = isset( $response['expires_in'] )
+			? absint( $response['expires_in'] ) : 3600;
+
+		$this->set_access_token( $access_token, $expires_in );
+
+		$refresh_token = isset( $response['refresh_token'] )
+			? $response['refresh_token'] : '';
+
+		$this->update_option( array(
+			'refresh_token' => $refresh_token ) );
+
+		return $access_token;
 	}
 
-	public function link() {
-		echo sprintf( '<a href="%1$s">%2$s</a>',
-			'http://www.getscorecard.com?source=contact-form-7',
-			'getscorecard.com' );
+	private function refresh_access_token() {
+		$url = $this->get_endpoint_url( 'api/public/oauth' );
+
+		$option = $this->get_option();
+		$client_id = isset( $option['client_id'] )
+			? $option['client_id'] : '';
+		$client_secret = isset( $option['client_secret'] )
+			? $option['client_secret'] : '';
+		$refresh_token = isset( $option['refresh_token'] )
+			? $option['refresh_token'] : '';
+
+		if ( '' === $refresh_token ) {
+			return false;
+		}
+
+		$response = wp_safe_remote_post( $url, array(
+			'headers' => array(
+				'Content-Type' => 'application/x-www-form-urlencoded',
+				'Accept' => 'application/json',
+				'X-Getscorecard-Client-Type' => 'contact-form-7',
+				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+			'body' => array(
+				'grant_type' => 'refresh_token',
+				'refresh_token' => $refresh_token,
+				'client_id' => $client_id,
+				'client_secret' => $client_secret ) ) );
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		$access_token = isset( $response['access_token'] )
+			? $response['access_token'] : '';
+		$expires_in = isset( $response['expires_in'] )
+			? absint( $response['expires_in'] ) : 3600;
+
+		$this->set_access_token( $access_token, $expires_in );
+
+		$refresh_token = isset( $response['refresh_token'] )
+			? $response['refresh_token'] : '';
+
+		if ( '' !== $refresh_token ) {
+			$this->update_option( array( 'refresh_token' => $refresh_token ) );
+		}
+
+		return $access_token;
+	}
+
+	/**
+	 * Sends an API request to the GetScorecard server.
+	 *
+	 * @param string $resource The resource name.
+	 * @param string|array $data The data submitted with a POST request.
+	 * @param string $method HTTP method ('get' or 'post').
+	 * @return array|false A result array. False if the request failed.
+	 */
+	private function request( $resource, $data = '', $method = 'get' ) {
+		$access_token = $this->get_access_token();
+
+		if ( false === $access_token ) {
+			return false;
+		}
+
+		$data = wp_parse_args( $data, array() );
+		$data = json_encode( $data );
+
+		$method = strtolower( $method );
+
+		if ( 'post' != $method ) {
+			$method = 'get';
+		}
+
+		$url = path_join( 'api/public', $resource );
+		$url = $this->get_endpoint_url( $url );
+
+		if ( 'get' == $method ) {
+			$response = wp_safe_remote_get( $url, array(
+				'headers' => array(
+					'Accept' => 'application/vnd.getscorecard.v1+json',
+					'Authorization' => sprintf( 'Bearer %s', $access_token ),
+					'X-Getscorecard-Client-Type' => 'contact-form-7',
+					'X-Getscorecard-Client-Version' => WPCF7_VERSION ) ) );
+		} elseif ( 'post' == $method ) {
+			$response = wp_safe_remote_post( $url, array(
+				'headers' => array(
+					'Content-Type' => 'application/vnd.getscorecard.v1+json',
+					'Accept' => 'application/vnd.getscorecard.v1+json',
+					'Authorization' => sprintf( 'Bearer %s', $access_token ),
+					'X-Getscorecard-Client-Type' => 'contact-form-7',
+					'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
+				'body' => $data ) );
+		}
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		return $response;
+	}
+
+	private function get( $resource ) {
+		return $this->request( $resource, '', 'get' );
+	}
+
+	private function post( $resource, $data = '' ) {
+		return $this->request( $resource, $data, 'post' );
+	}
+
+	private function get_user_info() {
+		$user_id = (int) $this->get_option( 'user_id' );
+
+		if ( empty( $user_id ) ) {
+			return false;
+		}
+
+		$data = $this->get( sprintf( 'users/%d', $user_id ) );
+
+		if ( empty( $data ) ) {
+			return false;
+		}
+
+		$data = wp_parse_args( $data[0], array(
+			'id' => 0,
+			'fullname' => '',
+			'email' => '' ) );
+
+		return $data;
+	}
+
+	public function add_person( $data ) {
+		return $this->post( 'people', $data );
 	}
 
 	public function load( $action = '' ) {
@@ -296,186 +519,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	<p class="submit"><input type="submit" name="disconnect_getscorecard" class="button" value="<?php echo esc_attr( __( 'Disconnect from GetScorecard', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "Are you sure you want to disconnect from GetScorecard?\n  'Cancel' to stop, 'OK' to disconnect.", 'contact-form-7' ) ) . "')) {return true;} return false;\""; ?> /></p>
 </form>
 <?php
-	}
-
-	private function request_access_token( $authorization_code ) {
-		$url = $this->get_endpoint_url( 'api/public/oauth' );
-
-		$option = $this->get_option();
-		$client_id = isset( $option['client_id'] )
-			? $option['client_id'] : '';
-		$client_secret = isset( $option['client_secret'] )
-			? $option['client_secret'] : '';
-
-		$oauth_redirect_url = wp_nonce_url(
-			$this->menu_page_url( 'action=oauth_redirect' ),
-			'wpcf7-getscorecard-oauth-redirect' );
-
-		$response = wp_safe_remote_post( $url, array(
-			'headers' => array(
-				'Content-Type' => 'application/x-www-form-urlencoded',
-				'Accept' => 'application/json',
-				'X-Getscorecard-Client-Type' => 'contact-form-7',
-				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
-			'body' => array(
-				'grant_type' => 'authorization_code',
-				'code' => $authorization_code,
-				'client_id' => $client_id,
-				'client_secret' => $client_secret,
-				'redirect_uri' => $oauth_redirect_url ) ) );
-
-		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
-			return false;
-		}
-
-		$response = wp_remote_retrieve_body( $response );
-		$response = json_decode( $response, true );
-
-		$access_token = isset( $response['access_token'] )
-			? $response['access_token'] : '';
-		$expires_in = isset( $response['expires_in'] )
-			? absint( $response['expires_in'] ) : 3600;
-
-		$this->set_access_token( $access_token, $expires_in );
-
-		$refresh_token = isset( $response['refresh_token'] )
-			? $response['refresh_token'] : '';
-
-		$this->update_option( array(
-			'refresh_token' => $refresh_token ) );
-
-		return $access_token;
-	}
-
-	private function refresh_access_token() {
-		$url = $this->get_endpoint_url( 'api/public/oauth' );
-
-		$option = $this->get_option();
-		$client_id = isset( $option['client_id'] )
-			? $option['client_id'] : '';
-		$client_secret = isset( $option['client_secret'] )
-			? $option['client_secret'] : '';
-		$refresh_token = isset( $option['refresh_token'] )
-			? $option['refresh_token'] : '';
-
-		if ( '' === $refresh_token ) {
-			return false;
-		}
-
-		$response = wp_safe_remote_post( $url, array(
-			'headers' => array(
-				'Content-Type' => 'application/x-www-form-urlencoded',
-				'Accept' => 'application/json',
-				'X-Getscorecard-Client-Type' => 'contact-form-7',
-				'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
-			'body' => array(
-				'grant_type' => 'refresh_token',
-				'refresh_token' => $refresh_token,
-				'client_id' => $client_id,
-				'client_secret' => $client_secret ) ) );
-
-		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
-			return false;
-		}
-
-		$response = wp_remote_retrieve_body( $response );
-		$response = json_decode( $response, true );
-
-		$access_token = isset( $response['access_token'] )
-			? $response['access_token'] : '';
-		$expires_in = isset( $response['expires_in'] )
-			? absint( $response['expires_in'] ) : 3600;
-
-		$this->set_access_token( $access_token, $expires_in );
-
-		$refresh_token = isset( $response['refresh_token'] )
-			? $response['refresh_token'] : '';
-
-		if ( '' !== $refresh_token ) {
-			$this->update_option( array( 'refresh_token' => $refresh_token ) );
-		}
-
-		return $access_token;
-	}
-
-	private function get_user_info() {
-		$user_id = (int) $this->get_option( 'user_id' );
-
-		if ( empty( $user_id ) ) {
-			return false;
-		}
-
-		$data = $this->get( sprintf( 'users/%d', $user_id ) );
-
-		if ( empty( $data ) ) {
-			return false;
-		}
-
-		$data = wp_parse_args( $data[0], array(
-			'id' => 0,
-			'fullname' => '',
-			'email' => '' ) );
-
-		return $data;
-	}
-
-	public function add_person( $data ) {
-		return $this->post( 'people', $data );
-	}
-
-	private function get( $resource ) {
-		return $this->request( $resource, '', 'get' );
-	}
-
-	private function post( $resource, $data = '' ) {
-		return $this->request( $resource, $data, 'post' );
-	}
-
-	private function request( $resource, $data = '', $method = 'get' ) {
-		$access_token = $this->get_access_token();
-
-		if ( false === $access_token ) {
-			return false;
-		}
-
-		$data = wp_parse_args( $data, array() );
-		$data = json_encode( $data );
-
-		$method = strtolower( $method );
-
-		if ( 'post' != $method ) {
-			$method = 'get';
-		}
-
-		$url = path_join( 'api/public', $resource );
-		$url = $this->get_endpoint_url( $url );
-
-		if ( 'get' == $method ) {
-			$response = wp_safe_remote_get( $url, array(
-				'headers' => array(
-					'Accept' => 'application/vnd.getscorecard.v1+json',
-					'Authorization' => sprintf( 'Bearer %s', $access_token ),
-					'X-Getscorecard-Client-Type' => 'contact-form-7',
-					'X-Getscorecard-Client-Version' => WPCF7_VERSION ) ) );
-		} elseif ( 'post' == $method ) {
-			$response = wp_safe_remote_post( $url, array(
-				'headers' => array(
-					'Content-Type' => 'application/vnd.getscorecard.v1+json',
-					'Accept' => 'application/vnd.getscorecard.v1+json',
-					'Authorization' => sprintf( 'Bearer %s', $access_token ),
-					'X-Getscorecard-Client-Type' => 'contact-form-7',
-					'X-Getscorecard-Client-Version' => WPCF7_VERSION ),
-				'body' => $data ) );
-		}
-
-		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
-			return false;
-		}
-
-		$response = wp_remote_retrieve_body( $response );
-		$response = json_decode( $response, true );
-
-		return $response;
 	}
 }
 
