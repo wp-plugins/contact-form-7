@@ -507,8 +507,13 @@ function wpcf7_getscorecard_register_service() {
 add_action( 'wpcf7_submit', 'wpcf7_getscorecard_submit' );
 
 function wpcf7_getscorecard_submit( $contact_form, $result ) {
-	if ( ! in_array( $result['status'], array( 'mail_sent', 'mail_failed' ) )
-	|| $result['demo_mode'] ) {
+	$getscorecard_able = ( ! $result['demo_mode']
+		&& in_array( $result['status'], array( 'mail_sent', 'mail_failed' ) ) );
+
+	$getscorecard_able = apply_filters( 'wpcf7_getscorecard_able',
+		$getscorecard_able, $contact_form, $result );
+
+	if ( ! $getscorecard_able ) {
 		return;
 	}
 
