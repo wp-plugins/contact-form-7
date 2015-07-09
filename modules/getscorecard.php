@@ -525,9 +525,9 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 add_action( 'wpcf7_init', 'wpcf7_getscorecard_register_service' );
 
 function wpcf7_getscorecard_register_service() {
-//	if ( wpcf7_is_localhost() ) {
-//		return;
-//	}
+	if ( wpcf7_is_localhost() ) {
+		return;
+	}
 
 	$integration = WPCF7_Integration::get_instance();
 
