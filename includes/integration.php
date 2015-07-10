@@ -80,6 +80,7 @@ class WPCF7_Integration {
 				array_flip( $service->get_categories() ) );
 ?>
 <div class="card<?php echo $service->is_active() ? ' active' : ''; ?>" id="<?php echo esc_attr( $name ); ?>">
+<?php $service->icon(); ?>
 <h3 class="title"><?php echo esc_html( $service->get_title() ); ?></h3>
 <div class="infobox">
 <?php echo esc_html( implode( ', ', $cats ) ); ?>
@@ -113,6 +114,9 @@ abstract class WPCF7_Service {
 	}
 
 	public function get_categories() {
+	}
+
+	public function icon() {
 	}
 
 	public function link() {

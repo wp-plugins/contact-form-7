@@ -36,6 +36,15 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		return array( 'crm', 'sales_management' );
 	}
 
+	public function icon() {
+		$icon = sprintf(
+			'<img src="%1$s" alt="%2$s" width="%3$d" height="%4$d" class="icon" />',
+			wpcf7_plugin_url( 'images/service-icons/getscorecard-72x72.png' ),
+			esc_attr( __( 'GetScorecard Logo', 'contact-form-7' ) ),
+			36, 36 );
+		echo $icon;
+	}
+
 	public function link() {
 		echo sprintf( '<a href="%1$s">%2$s</a>',
 			'http://www.getscorecard.com?source=contact-form-7',

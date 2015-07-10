@@ -19,3 +19,16 @@
 	border-left: 1px solid #e5e5e5;
 	border-right: 4px solid #e5e5e5;
 }
+
+.card img.icon {
+	float: right;
+	margin: 8px -8px 8px 8px;
+}
+
+.card h3.title {
+	float: right;
+}
+
+.card .infobox {
+	float: left;
+}
