@@ -343,27 +343,17 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function load( $action = '' ) {
-		if ( 'login_callback' == $action ) {
-			check_admin_referer( 'wpcf7-getscorecard-login-callback' );
+		if ( 'setup_client' == $action && 'POST' == $_SERVER['REQUEST_METHOD'] ) {
+			check_admin_referer( 'wpcf7-getscorecard-setup-client' );
 
-			if ( isset( $_GET['error'] ) ) {
+			$client_id = isset( $_POST['client-id'] )
+				? trim( $_POST['client-id'] ) : '';
+			$client_secret = isset( $_POST['client-secret'] )
+				? trim( $_POST['client-secret'] ) : '';
+
+			if ( '' === $client_id || '' === $client_secret ) {
 				$redirect_to = $this->menu_page_url( array(
-					'action' => 'login', 'message' => 'login_failed' ) );
-
-				wp_safe_redirect( $redirect_to );
-				exit();
-			}
-
-			$client_id = isset( $_GET['client_id'] )
-				? trim( $_GET['client_id'] ) : '';
-			$client_secret = isset( $_GET['client_secret'] )
-				? trim( $_GET['client_secret'] ) : '';
-			$user_id = isset( $_GET['user_id'] )
-				? trim( $_GET['user_id'] ) : '';
-
-			if ( '' === $client_id || '' === $client_secret || '' === $user_id ) {
-				$redirect_to = $this->menu_page_url( array(
-					'action' => 'login', 'message' => 'invalid_client_data' ) );
+					'action' => 'setup_client', 'message' => 'invalid_client_data' ) );
 
 				wp_safe_redirect( $redirect_to );
 				exit();
@@ -371,8 +361,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 			$this->update_option( array(
 				'client_id' => $client_id,
-				'client_secret' => $client_secret,
-				'user_id' => $user_id ) );
+				'client_secret' => $client_secret ) );
 
 			$oauth_redirect_url = wp_nonce_url(
 				$this->menu_page_url( 'action=oauth_redirect' ),
@@ -419,13 +408,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function admin_notice( $message = '' ) {
-		if ( 'login_failed' == $message ) {
-			echo sprintf(
-				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
-				esc_html( __( "ERROR", 'contact-form-7' ) ),
-				esc_html( __( "Invalid e-mail, or the password is incorrect.", 'contact-form-7' ) ) );
-		}
-
 		if ( 'invalid_client_data' == $message ) {
 			echo sprintf(
 				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
@@ -448,8 +430,8 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		if ( $this->is_connected() ) {
 			$this->display_connected();
 			return;
-		} elseif ( 'login' == $action ) {
-			$this->display_login();
+		} elseif ( 'setup_client' == $action ) {
+			$this->display_setup_client();
 			return;
 		}
 
@@ -460,42 +442,30 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 <p><strong><?php echo sprintf( '<a href="%1$s" class="button button-primary">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up Free', 'contact-form-7' ) ) ); ?></strong></p>
 
-<p><?php echo esc_html( __( "If you already have a GetScorecard account, move on to the authorization step.", 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( "If you already have a GetScorecard account, let's move on to the next step.", 'contact-form-7' ) ); ?></p>
 
-<p><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->menu_page_url( 'action=login' ) ), esc_html( __( 'Authorize', 'contact-form-7' ) ) ); ?></p>
+<p><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->menu_page_url( 'action=setup_client' ) ), esc_html( __( 'Connect to GetScorecard', 'contact-form-7' ) ) ); ?></p>
 <?php
 	}
 
-	private function display_login() {
-		$login_callback_url = wp_nonce_url(
-			$this->menu_page_url( 'action=login_callback' ),
-			'wpcf7-getscorecard-login-callback' );
-
-		$oauth_redirect_url = wp_nonce_url(
-			$this->menu_page_url( 'action=oauth_redirect' ),
-			'wpcf7-getscorecard-oauth-redirect' );
-
+	private function display_setup_client() {
 ?>
-<form method="post" action="<?php echo esc_url( $this->get_endpoint_url( 'login-process.php' ) ); ?>">
-<input type="hidden" name="plugin_signIn" value="1" />
-<input type="hidden" name="plugin_type" value="contact-form-7">
-<input type="hidden" name="callback_uri" value="<?php echo esc_url( $login_callback_url ); ?>" />
-<input type="hidden" name="oauth_redirect_uri" value="<?php echo esc_url( $oauth_redirect_url ); ?>" />
-
+<form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=setup_client' ) ); ?>">
+<?php wp_nonce_field( 'wpcf7-getscorecard-setup-client' ); ?>
 <table class="form-table">
 <tbody>
 <tr>
-	<th scope="row"><label for="getscorecard-login-email"><?php echo esc_html( __( 'E-mail', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="email" aria-required="true" value="" id="getscorecard-login-email" name="email" class="regular-text ltr" /></td>
+	<th scope="row"><label for="client-id"><?php echo esc_html( __( 'Client ID', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" aria-required="true" value="" id="client-id" name="client-id" class="regular-text ltr" /></td>
 </tr>
 <tr>
-	<th scope="row"><label for="getscorecard-login-password"><?php echo esc_html( __( 'Password', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="password" aria-required="true" value="" id="getscorecard-login-password" name="password" class="regular-text" /></td>
+	<th scope="row"><label for="client-secret"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" aria-required="true" value="" id="client-secret" name="client-secret" class="regular-text ltr" /></td>
 </tr>
 </tbody>
 </table>
 
-<p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Sign In', 'contact-form-7' ) ); ?>" name="submit" /></p>
+<p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Connect to GetScorecard', 'contact-form-7' ) ); ?>" name="submit" /></p>
 </form>
 <?php
 	}
