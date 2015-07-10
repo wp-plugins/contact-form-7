@@ -454,13 +454,15 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 		}
 
 ?>
-<p><?php echo esc_html( __( "If you already have a GetScorecard account, sign in to GetScorecard.", 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( "GetScorecard is a full CRM and Sales Management system to help you manage your business or website contacts. It will capture all the information from your contact forms, help you track conversations with your contacts. Its features include Notes, Tasks, Email Tracking, Sales and Pipeline Management and Calendar.", 'contact-form-7' ) ); ?></p>
 
-<p><?php echo sprintf( '<a href="%1$s" class="button button-primary">%2$s</a>', esc_url( $this->menu_page_url( 'action=login' ) ), esc_html( __( 'Sign In', 'contact-form-7' ) ) ); ?></p>
+<p><?php echo esc_html( __( "It is FREE for up to 2 users with no Credit Card required.", 'contact-form-7' ) ); ?></p>
 
-<p><?php echo esc_html( __( "If you don't have a GetScorecard account, sign up today.", 'contact-form-7' ) ); ?></p>
+<p><strong><?php echo sprintf( '<a href="%1$s" class="button button-primary">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up Free', 'contact-form-7' ) ) ); ?></strong></p>
 
-<p><strong><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up', 'contact-form-7' ) ) ); ?></strong></p>
+<p><?php echo esc_html( __( "If you already have a GetScorecard account, move on to the authorization step.", 'contact-form-7' ) ); ?></p>
+
+<p><?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->menu_page_url( 'action=login' ) ), esc_html( __( 'Authorize', 'contact-form-7' ) ) ); ?></p>
 <?php
 	}
 
