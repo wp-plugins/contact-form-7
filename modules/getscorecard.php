@@ -456,11 +456,11 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <tbody>
 <tr>
 	<th scope="row"><label for="client-id"><?php echo esc_html( __( 'Client ID', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" aria-required="true" value="" id="client-id" name="client-id" class="regular-text ltr" /></td>
+	<td><input type="text" aria-required="true" value="" id="client-id" name="client-id" class="regular-text code" /></td>
 </tr>
 <tr>
 	<th scope="row"><label for="client-secret"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" aria-required="true" value="" id="client-secret" name="client-secret" class="regular-text ltr" /></td>
+	<td><input type="text" aria-required="true" value="" id="client-secret" name="client-secret" class="regular-text code" /></td>
 </tr>
 </tbody>
 </table>
@@ -481,15 +481,15 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 <tbody>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'Client ID', 'contact-form-7' ) ); ?></th>
-	<td><?php echo esc_html( $client_info['client_id'] ); ?></td>
+	<td class="code"><?php echo esc_html( $client_info['client_id'] ); ?></td>
 </tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></th>
-	<td><?php echo esc_html( wpcf7_mask_password( $client_info['client_secret'] ) ); ?></td>
+	<td class="code"><?php echo esc_html( wpcf7_mask_password( $client_info['client_secret'] ) ); ?></td>
 </tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'User ID', 'contact-form-7' ) ); ?></th>
-	<td><?php echo esc_html( $user_info['id'] ); ?></td>
+	<td class="code"><?php echo esc_html( $user_info['id'] ); ?></td>
 </tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'Full Name', 'contact-form-7' ) ); ?></th>
