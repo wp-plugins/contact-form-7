@@ -317,3 +317,12 @@ span.shortcode > input {
 	line-height: 1.5;
 	max-width: 240px;
 }
+
+.card .inside .form-table th {
+	padding: 15px 10px 15px 0;
+	width: 160px;
+}
+
+.card .inside .form-table td {
+	padding: 10px 10px;
+}

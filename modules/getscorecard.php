@@ -438,7 +438,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 ?>
 <p><?php echo esc_html( __( "GetScorecard is a full CRM and Sales Management system to help you manage your business or website contacts. It will capture all the information from your contact forms, help you track conversations with your contacts. Its features include Notes, Tasks, Email Tracking, Sales and Pipeline Management and Calendar.", 'contact-form-7' ) ); ?></p>
 
-<p><?php echo esc_html( __( "It is FREE for up to 2 users with no Credit Card required.", 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( "It is free for up to 2 users with no Credit Card required.", 'contact-form-7' ) ); ?></p>
 
 <p><strong><?php echo sprintf( '<a href="%1$s" class="button button-primary">%2$s</a>', esc_url( $this->get_endpoint_url( 'register.php?registerType=contact-form-7' ) ), esc_html( __( 'Sign Up Free', 'contact-form-7' ) ) ); ?></strong></p>
 
@@ -471,13 +471,22 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function display_connected() {
+		$client_info = wp_parse_args( $this->get_option(),
+			array( 'client_id' => '', 'client_secret' => '' ) );
 		$user_info = $this->get_user_info();
 
-		if ( false !== $user_info ) :
 ?>
 <h4><?php echo esc_html( __( 'Your Profile on GetScorecard', 'contact-form-7' ) ); ?></h4>
 <table class="form-table">
 <tbody>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'Client ID', 'contact-form-7' ) ); ?></th>
+	<td><?php echo esc_html( $client_info['client_id'] ); ?></td>
+</tr>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></th>
+	<td><?php echo esc_html( $client_info['client_secret'] ); ?></td>
+</tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'User ID', 'contact-form-7' ) ); ?></th>
 	<td><?php echo esc_html( $user_info['id'] ); ?></td>
@@ -492,7 +501,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 </tr>
 </tbody>
 </table>
-<?php endif; ?>
 
 <form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=disconnect' ) ); ?>">
 	<?php wp_nonce_field( 'wpcf7-disconnect-getscorecard' ); ?>
