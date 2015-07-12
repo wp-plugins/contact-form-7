@@ -485,7 +485,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 </tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></th>
-	<td><?php echo esc_html( $client_info['client_secret'] ); ?></td>
+	<td><?php echo esc_html( wpcf7_mask_password( $client_info['client_secret'] ) ); ?></td>
 </tr>
 <tr>
 	<th scope="row"><?php echo esc_html( __( 'User ID', 'contact-form-7' ) ); ?></th>
