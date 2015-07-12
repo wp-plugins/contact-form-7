@@ -34,7 +34,7 @@ function wpcf7_admin_menu() {
 		$integration = add_submenu_page( 'wpcf7',
 			__( 'Integration with Other Services', 'contact-form-7' ),
 			__( 'Integration', 'contact-form-7' ),
-			'wpcf7_edit_contact_forms', 'wpcf7-integration',
+			'wpcf7_manage_integration', 'wpcf7-integration',
 			'wpcf7_admin_integration_page' );
 
 		add_action( 'load-' . $integration, 'wpcf7_load_integration_page' );
