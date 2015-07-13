@@ -450,6 +450,8 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 
 	private function display_setup_client() {
 ?>
+<p><?php echo esc_html( __( "Client ID and Secret Key are unique strings identifying your account on GetScorecard.", 'contact-form-7' ) ); ?> <?php echo sprintf( '<a href="%1$s">%2$s</a>', esc_url( $this->get_endpoint_url( 'settings.php?id=integration&api=cf7' ) ), esc_html( __( "Get them from the GetScorecard dashboard.", 'contact-form-7' ) ) ); ?></p>
+
 <form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=setup_client' ) ); ?>">
 <?php wp_nonce_field( 'wpcf7-getscorecard-setup-client' ); ?>
 <table class="form-table">
@@ -459,7 +461,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	<td><input type="text" aria-required="true" value="" id="client-id" name="client-id" class="regular-text code" /></td>
 </tr>
 <tr>
-	<th scope="row"><label for="client-secret"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></label></th>
+	<th scope="row"><label for="client-secret"><?php echo esc_html( __( 'Secret Key', 'contact-form-7' ) ); ?></label></th>
 	<td><input type="text" aria-required="true" value="" id="client-secret" name="client-secret" class="regular-text code" /></td>
 </tr>
 </tbody>
@@ -484,7 +486,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	<td class="code"><?php echo esc_html( $client_info['client_id'] ); ?></td>
 </tr>
 <tr>
-	<th scope="row"><?php echo esc_html( __( 'Client Secret', 'contact-form-7' ) ); ?></th>
+	<th scope="row"><?php echo esc_html( __( 'Secret Key', 'contact-form-7' ) ); ?></th>
 	<td class="code"><?php echo esc_html( wpcf7_mask_password( $client_info['client_secret'] ) ); ?></td>
 </tr>
 <tr>
