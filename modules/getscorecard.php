@@ -457,8 +457,16 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function display_setup_client() {
+		$setup_client_url = $this->menu_page_url( 'action=setup_client' );
+
+		$manage_clients_url =
+			$this->get_endpoint_url( 'integration/cf7/index.php' );
+		$manage_clients_url = add_query_arg( array(
+			'action' => 'login_redirect',
+			'redirect_uri' => urlencode( $setup_client_url ) ), $manage_clients_url );
+
 ?>
-<p><?php echo esc_html( __( "Client ID and Client Secret are unique strings identifying your account on GetScorecard.", 'contact-form-7' ) ); ?> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( $this->get_endpoint_url( 'settings.php?id=integration&api=cf7' ) ), esc_html( __( "Get them from the GetScorecard dashboard.", 'contact-form-7' ) ) ); ?></p>
+<p><?php echo esc_html( __( "Client ID and Client Secret are unique strings identifying your account on GetScorecard.", 'contact-form-7' ) ); ?> <?php echo sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( $manage_clients_url ), esc_html( __( "Get them from the GetScorecard dashboard.", 'contact-form-7' ) ) ); ?></p>
 
 <form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=setup_client' ) ); ?>">
 <?php wp_nonce_field( 'wpcf7-getscorecard-setup-client' ); ?>
