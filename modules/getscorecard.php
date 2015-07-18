@@ -332,7 +332,7 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	public function add_person( $data ) {
-		return $this->post( 'people', $data );
+		return $this->post( 'custom?action=contactForm7AddRecord', $data );
 	}
 
 	public function load( $action = '' ) {
