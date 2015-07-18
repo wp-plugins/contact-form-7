@@ -89,7 +89,6 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	/**
 	 * Retrieves the option data from wp_options database table.
 	 * The data can include these items:
-	 * user_id - The user's ID on GetScorecard
 	 * client_id - The client identifier issued to the client
 	 * client_secret - The client secret
 	 * refresh_token - The refresh token used by OAuth authorization
@@ -318,19 +317,13 @@ class WPCF7_GetScorecard extends WPCF7_Service {
 	}
 
 	private function get_user_info() {
-		$user_id = (int) $this->get_option( 'user_id' );
+		$data = $this->get( 'custom/1?action=contactForm7getAuthorizedUserInfo' );
 
-		if ( empty( $user_id ) ) {
+		if ( empty( $data ) || empty( $data['user_info'] ) ) {
 			return false;
 		}
 
-		$data = $this->get( sprintf( 'users/%d', $user_id ) );
-
-		if ( empty( $data ) ) {
-			return false;
-		}
-
-		$data = wp_parse_args( $data[0], array(
+		$data = wp_parse_args( $data['user_info'], array(
 			'id' => 0,
 			'fullname' => '',
 			'email' => '' ) );
