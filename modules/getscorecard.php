@@ -579,6 +579,22 @@ function wpcf7_getscorecard_submit( $contact_form, $result ) {
 			$person_data = apply_filters( 'wpcf7_getscorecard_person_data',
 				$posted_data );
 
+			$defaults = array( 'title' => '', 'firstname' => '', 'lastname' => '',
+				'address' => '', 'state' => '', 'zipcode' => '', 'country' => '' );
+
+			foreach ( $defaults as $dkey => $dval ) {
+				if ( ! isset( $person_data[$dkey] )
+				&& isset( $person_data['your-' . $dkey] ) ) {
+					$defaults[$dkey] = $person_data['your-' . $dkey];
+					unset( $person_data['your-' . $dkey] );
+				} elseif ( 'firstname' == $dkey
+				&& isset( $person_data['your-name'] ) ) {
+					$defaults[$dkey] = $person_data['your-name'];
+				}
+			}
+
+			$person_data = wp_parse_args( $person_data, $defaults );
+
 			$service->add_person( $person_data );
 		}
 	}
