@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form 7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 03:35+0900\n"
-"PO-Revision-Date: 2015-07-09 04:13+0900\n"
+"POT-Creation-Date: 2015-07-30 11:50+0900\n"
+"PO-Revision-Date: 2015-07-30 11:50+0900\n"
 "Last-Translator: Takayuki Miyoshi <takayukister@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -1412,89 +1412,6 @@ msgstr ""
 "ん。このフォルダを手動で作成するか、パーミッションの変更を行うと解決できるで"
 "しょう。"
 
-#: contact-form-7/modules/getscorecard.php:24
-msgid "GetScorecard"
-msgstr "GetScorecard"
-
-#: contact-form-7/modules/getscorecard.php:416
-#: contact-form-7/modules/getscorecard.php:423
-msgid "ERROR"
-msgstr "エラー"
-
-#: contact-form-7/modules/getscorecard.php:417
-msgid "Invalid e-mail, or the password is incorrect."
-msgstr "メールアドレスまたはパスワードが間違っています。"
-
-#: contact-form-7/modules/getscorecard.php:424
-msgid "Invalid client data."
-msgstr "クライアントデータが正しくありません。"
-
-#: contact-form-7/modules/getscorecard.php:429
-msgid "Connected to GetScorecard."
-msgstr "GetScorecard に接続しました。"
-
-#: contact-form-7/modules/getscorecard.php:434
-msgid "Disconnected from GetScorecard."
-msgstr "GetScorecard との接続を解除しました。"
-
-#: contact-form-7/modules/getscorecard.php:448
-msgid "If you already have a GetScorecard account, sign in to GetScorecard."
-msgstr "すでに GetScorecard のアカウントがある場合はログインしてください。"
-
-#: contact-form-7/modules/getscorecard.php:450
-#: contact-form-7/modules/getscorecard.php:487
-msgid "Sign In"
-msgstr "ログイン"
-
-#: contact-form-7/modules/getscorecard.php:452
-msgid "If you don't have a GetScorecard account, sign up today."
-msgstr "GetScorecard のアカウントをお持ちでないなら、登録しましょう。"
-
-#: contact-form-7/modules/getscorecard.php:454
-msgid "Sign Up"
-msgstr "新規アカウント登録"
-
-#: contact-form-7/modules/getscorecard.php:477
-#: contact-form-7/modules/getscorecard.php:509
-msgid "E-mail"
-msgstr "メールアドレス"
-
-#: contact-form-7/modules/getscorecard.php:481
-msgid "Password"
-msgstr "パスワード"
-
-#: contact-form-7/modules/getscorecard.php:497
-msgid "Your Profile on GetScorecard"
-msgstr "GetScorecard でのあなたのプロフィール"
-
-#: contact-form-7/modules/getscorecard.php:501
-msgid "User ID"
-msgstr "ユーザー ID"
-
-#: contact-form-7/modules/getscorecard.php:505
-msgid "Full Name"
-msgstr "名前"
-
-#: contact-form-7/modules/getscorecard.php:519
-msgid "Disconnect from GetScorecard"
-msgstr "GetScorecard との接続を解除する"
-
-#: contact-form-7/modules/getscorecard.php:519
-msgid ""
-"Are you sure you want to disconnect from GetScorecard?\n"
-"  'Cancel' to stop, 'OK' to disconnect."
-msgstr ""
-"GetScorecard との接続を解除しようとしています。\n"
-"  'キャンセル' で中止、 'OK' で接続解除します。"
-
-#: contact-form-7/modules/getscorecard.php:535
-msgid "CRM"
-msgstr "CRM"
-
-#: contact-form-7/modules/getscorecard.php:536
-msgid "Sales Management"
-msgstr "販売管理"
-
 #: contact-form-7/modules/jetpack.php:20
 msgid "http://contactform7.com/jetpack-overrides-contact-forms/"
 msgstr "http://contactform7.com/ja/jetpack-overrides-contact-forms/"
@@ -1754,6 +1671,67 @@ msgstr ""
 #, php-format
 msgid "Contact form %d"
 msgstr "コンタクトフォーム %d"
+
+#~ msgid "GetScorecard"
+#~ msgstr "GetScorecard"
+
+#~ msgid "ERROR"
+#~ msgstr "エラー"
+
+#~ msgid "Invalid e-mail, or the password is incorrect."
+#~ msgstr "メールアドレスまたはパスワードが間違っています。"
+
+#~ msgid "Invalid client data."
+#~ msgstr "クライアントデータが正しくありません。"
+
+#~ msgid "Connected to GetScorecard."
+#~ msgstr "GetScorecard に接続しました。"
+
+#~ msgid "Disconnected from GetScorecard."
+#~ msgstr "GetScorecard との接続を解除しました。"
+
+#~ msgid "If you already have a GetScorecard account, sign in to GetScorecard."
+#~ msgstr "すでに GetScorecard のアカウントがある場合はログインしてください。"
+
+#~ msgid "Sign In"
+#~ msgstr "ログイン"
+
+#~ msgid "If you don't have a GetScorecard account, sign up today."
+#~ msgstr "GetScorecard のアカウントをお持ちでないなら、登録しましょう。"
+
+#~ msgid "Sign Up"
+#~ msgstr "新規アカウント登録"
+
+#~ msgid "E-mail"
+#~ msgstr "メールアドレス"
+
+#~ msgid "Password"
+#~ msgstr "パスワード"
+
+#~ msgid "Your Profile on GetScorecard"
+#~ msgstr "GetScorecard でのあなたのプロフィール"
+
+#~ msgid "User ID"
+#~ msgstr "ユーザー ID"
+
+#~ msgid "Full Name"
+#~ msgstr "名前"
+
+#~ msgid "Disconnect from GetScorecard"
+#~ msgstr "GetScorecard との接続を解除する"
+
+#~ msgid ""
+#~ "Are you sure you want to disconnect from GetScorecard?\n"
+#~ "  'Cancel' to stop, 'OK' to disconnect."
+#~ msgstr ""
+#~ "GetScorecard との接続を解除しようとしています。\n"
+#~ "  'キャンセル' で中止、 'OK' で接続解除します。"
+
+#~ msgid "CRM"
+#~ msgstr "CRM"
+
+#~ msgid "Sales Management"
+#~ msgstr "販売管理"
 
 #~ msgid "Available mail-tags:"
 #~ msgstr "利用可能なメールタグ:"
