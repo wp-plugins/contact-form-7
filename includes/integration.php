@@ -107,19 +107,19 @@ class WPCF7_Integration {
 
 abstract class WPCF7_Service {
 
-	public function get_title() {
-	}
-
-	public function is_active() {
-	}
+	abstract public function get_title();
+	abstract public function is_active();
 
 	public function get_categories() {
+		return array();
 	}
 
 	public function icon() {
+		return '';
 	}
 
 	public function link() {
+		return '';
 	}
 
 	public function load( $action = '' ) {
