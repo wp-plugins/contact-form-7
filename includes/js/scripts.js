@@ -104,13 +104,15 @@
 			$responseOutput.addClass('wpcf7-validation-errors');
 			$form.addClass('invalid');
 
-			$(data.into).trigger('invalid.wpcf7');
+			$(data.into).trigger('wpcf7:invalid');
+			$(data.into).trigger('invalid.wpcf7'); // deprecated
 
 		} else if (1 == data.spam) {
 			$responseOutput.addClass('wpcf7-spam-blocked');
 			$form.addClass('spam');
 
-			$(data.into).trigger('spam.wpcf7');
+			$(data.into).trigger('wpcf7:spam');
+			$(data.into).trigger('spam.wpcf7'); // deprecated
 
 		} else if (1 == data.mailSent) {
 			$responseOutput.addClass('wpcf7-mail-sent-ok');
@@ -119,19 +121,22 @@
 			if (data.onSentOk)
 				$.each(data.onSentOk, function(i, n) { eval(n) });
 
-			$(data.into).trigger('mailsent.wpcf7');
+			$(data.into).trigger('wpcf7:mailsent');
+			$(data.into).trigger('mailsent.wpcf7'); // deprecated
 
 		} else {
 			$responseOutput.addClass('wpcf7-mail-sent-ng');
 			$form.addClass('failed');
 
-			$(data.into).trigger('mailfailed.wpcf7');
+			$(data.into).trigger('wpcf7:mailfailed');
+			$(data.into).trigger('mailfailed.wpcf7'); // deprecated
 		}
 
 		if (data.onSubmit)
 			$.each(data.onSubmit, function(i, n) { eval(n) });
 
-		$(data.into).trigger('submit.wpcf7');
+		$(data.into).trigger('wpcf7:submit');
+		$(data.into).trigger('submit.wpcf7'); // deprecated
 
 		if (1 == data.mailSent)
 			$form.resetForm();
