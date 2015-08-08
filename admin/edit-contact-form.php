@@ -143,9 +143,11 @@ if ( $post ) :
 </div><!-- #delete-action -->
 <?php endif; ?>
 
-<div class="save-contact-form textright">
+<div id="publishing-action">
+	<span class="spinner"></span>
 	<?php wpcf7_admin_save_button( $post_id ); ?>
 </div>
+<div class="clear"></div>
 </div><!-- #major-publishing-actions -->
 </div><!-- #submitpost -->
 </div>
