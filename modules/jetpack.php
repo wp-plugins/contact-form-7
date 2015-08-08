@@ -20,7 +20,7 @@ function wpcf7_jetpack_admin_notices() {
 	$desc_link = wpcf7_link( __( 'http://contactform7.com/jetpack-overrides-contact-forms/', 'contact-form-7' ), __( 'Jetpack Overrides Contact Forms', 'contact-form-7' ) );
 
 ?>
-<div class="notice notice-warning">
+<div class="notice notice-warning is-dismissible">
 <p><?php echo sprintf( esc_html( __( 'Jetpack may cause problems for other plugins in certain cases. For more details, see %s.', 'contact-form-7' ) ), $desc_link ); ?></p>
 </div>
 <?php

@@ -308,8 +308,9 @@ function wpcf7_file_display_warning_message() {
 	$has_tags = (bool) $contact_form->form_scan_shortcode(
 		array( 'type' => array( 'file', 'file*' ) ) );
 
-	if ( ! $has_tags )
+	if ( ! $has_tags ) {
 		return;
+	}
 
 	$uploads_dir = wpcf7_upload_tmp_dir();
 	wpcf7_init_uploads();
@@ -317,7 +318,7 @@ function wpcf7_file_display_warning_message() {
 	if ( ! is_dir( $uploads_dir ) || ! wp_is_writable( $uploads_dir ) ) {
 		$message = sprintf( __( 'This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually.', 'contact-form-7' ), $uploads_dir );
 
-		echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
+		echo '<div class="notice notice-error is-dismissible"><p>' . esc_html( $message ) . '</p></div>';
 	}
 }
 

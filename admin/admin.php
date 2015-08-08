@@ -341,22 +341,21 @@ function wpcf7_admin_integration_page() {
 add_action( 'wpcf7_admin_notices', 'wpcf7_admin_updated_message' );
 
 function wpcf7_admin_updated_message() {
-	if ( empty( $_REQUEST['message'] ) )
+	if ( empty( $_REQUEST['message'] ) ) {
 		return;
+	}
 
-	if ( 'created' == $_REQUEST['message'] )
-		$updated_message = esc_html( __( 'Contact form created.', 'contact-form-7' ) );
-	elseif ( 'saved' == $_REQUEST['message'] )
-		$updated_message = esc_html( __( 'Contact form saved.', 'contact-form-7' ) );
-	elseif ( 'deleted' == $_REQUEST['message'] )
-		$updated_message = esc_html( __( 'Contact form deleted.', 'contact-form-7' ) );
+	if ( 'created' == $_REQUEST['message'] ) {
+		$updated_message = __( 'Contact form created.', 'contact-form-7' );
+	} elseif ( 'saved' == $_REQUEST['message'] ) {
+		$updated_message = __( 'Contact form saved.', 'contact-form-7' );
+	} elseif ( 'deleted' == $_REQUEST['message'] ) {
+		$updated_message = __( 'Contact form deleted.', 'contact-form-7' );
+	}
 
-	if ( empty( $updated_message ) )
-		return;
-
-?>
-<div id="message" class="updated"><p><?php echo $updated_message; ?></p></div>
-<?php
+	if ( ! empty( $updated_message ) ) {
+		echo sprintf( '<div id="message" class="updated notice notice-success is-dismissible"><p>%s</p></div>', esc_html( $updated_message ) );
+	}
 }
 
 add_filter( 'plugin_action_links', 'wpcf7_plugin_action_links', 10, 2 );
@@ -373,28 +372,23 @@ function wpcf7_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-add_action( 'admin_notices', 'wpcf7_old_wp_version_error', 9 );
+add_action( 'wpcf7_admin_notices', 'wpcf7_old_wp_version_error', 2 );
 
 function wpcf7_old_wp_version_error() {
-	global $plugin_page;
+	$wp_version = get_bloginfo( 'version' );
 
-	if ( 'wpcf7' != substr( $plugin_page, 0, 5 ) ) {
+	if ( ! version_compare( $wp_version, WPCF7_REQUIRED_WP_VERSION, '<' ) ) {
 		return;
 	}
 
-	$wp_version = get_bloginfo( 'version' );
-
-	if ( ! version_compare( $wp_version, WPCF7_REQUIRED_WP_VERSION, '<' ) )
-		return;
-
 ?>
-<div class="error">
+<div class="notice notice-error is-dismissible">
 <p><?php echo sprintf( __( '<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href="%3$s">update WordPress</a> first.', 'contact-form-7' ), WPCF7_VERSION, WPCF7_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) ); ?></p>
 </div>
 <?php
 }
 
-add_action( 'wpcf7_admin_notices', 'wpcf7_welcome_panel', 2 );
+add_action( 'wpcf7_admin_notices', 'wpcf7_welcome_panel', 4 );
 
 function wpcf7_welcome_panel() {
 	global $plugin_page;
@@ -489,6 +483,7 @@ function wpcf7_not_allowed_to_edit() {
 	$message = __( "You are not allowed to edit this contact form.",
 		'contact-form-7' );
 
-	echo sprintf( '<div class="notice notice-warning"><p>%s</p></div>',
+	echo sprintf(
+		'<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
 		esc_html( $message ) );
 }
