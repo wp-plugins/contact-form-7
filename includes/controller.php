@@ -31,7 +31,7 @@ function wpcf7_ajax_onload() {
 		$items = apply_filters( 'wpcf7_ajax_onload', $items );
 	}
 
-	$echo = json_encode( $items );
+	$echo = wp_json_encode( $items );
 
 	if ( wpcf7_is_xhr() ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
@@ -94,7 +94,7 @@ function wpcf7_ajax_json_echo() {
 		}
 	}
 
-	$echo = json_encode( $items );
+	$echo = wp_json_encode( $items );
 
 	if ( wpcf7_is_xhr() ) {
 		@header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ) );
