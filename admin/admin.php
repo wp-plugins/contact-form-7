@@ -175,7 +175,6 @@ function wpcf7_load_contact_form_admin() {
 			array( 'WPCF7_Contact_Form_List_Table', 'define_columns' ) );
 
 		add_screen_option( 'per_page', array(
-			'label' => __( 'Contact Forms', 'contact-form-7' ),
 			'default' => 20,
 			'option' => 'cfseven_contact_forms_per_page' ) );
 	}
