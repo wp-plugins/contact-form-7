@@ -76,7 +76,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Malayalam (ml_IN) - RAHUL.S.A
 * Maltese (mt_MT) - Ajoft Technologies
 * Norwegian (nb_NO) - Kjetil M. Bergem, aanvik.net, Peter Holme
-* Persian (Farsi; fa_IR) - Mohammad Musavi, Mohsen Firoozmandan, Ghaem Omidi
+* Persian (Farsi; fa_IR) - Mohammad Musavi, Mohsen Firoozmandan, Ghaem Omidi, Ehsan Np
 * Polish (pl_PL) - Zbigniew Czernik, Daniel Fruzynski, RafalDesign, Bartosz Arendt
 * Portuguese (Brazil; pt_BR) - Leonardo Pinheiro, Henrique Vianna, Caciano Gabriel Batista, Gervásio Antônio, Gilvanilson Santos
 * Portuguese (Portugal; pt_PT) - Hugo Baeta, Pedro Nave, Pedro Mendonça

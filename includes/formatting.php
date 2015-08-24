@@ -13,8 +13,9 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$pee = preg_replace( '!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee );
 	$pee = preg_replace( '!(</' . $allblocks . '>)!', "$1\n\n", $pee );
 
-	/* wpcf7: take care of [response] tag */
-	$pee = preg_replace( '!(\[response[^]]*\])!', "\n$1\n\n", $pee );
+	/* wpcf7: take care of [response] and [recaptcha] tag */
+	$pee = preg_replace( '!(\[(?:response|recaptcha)[^]]*\])!',
+		"\n$1\n\n", $pee );
 
 	$pee = str_replace( array( "\r\n", "\r" ), "\n", $pee ); // cross-platform newlines
 
@@ -41,9 +42,11 @@ function wpcf7_autop( $pee, $br = 1 ) {
 	$pee = preg_replace( '!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee );
 	$pee = preg_replace( '!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee );
 
-	/* wpcf7: take care of [response] tag */
-	$pee = preg_replace( '!<p>\s*(\[response[^]]*\])!', "$1", $pee );
-	$pee = preg_replace( '!(\[response[^]]*\])\s*</p>!', "$1", $pee );
+	/* wpcf7: take care of [response] and [recaptcha] tag */
+	$pee = preg_replace( '!<p>\s*(\[(?:response|recaptcha)[^]]*\])!',
+		"$1", $pee );
+	$pee = preg_replace( '!(\[(?:response|recaptcha)[^]]*\])\s*</p>!',
+		"$1", $pee );
 
 	if ( $br ) {
 		/* wpcf7: add textarea */

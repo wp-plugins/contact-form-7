@@ -298,7 +298,7 @@ function wpcf7_load_modules() {
 
 	$mods = array(
 		'acceptance', 'flamingo',
-		'akismet', 'jetpack', 'submit', 'captcha', 'number',
+		'akismet', 'jetpack', 'submit', 'captcha', 'recaptcha', 'number',
 		'text', 'checkbox', 'quiz', 'textarea', 'date',
 		'response', 'file', 'select', 'listo', 'count' );
 
