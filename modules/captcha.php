@@ -181,6 +181,10 @@ function wpcf7_captcha_ajax_refill( $items ) {
 add_filter( 'wpcf7_messages', 'wpcf7_captcha_messages' );
 
 function wpcf7_captcha_messages( $messages ) {
+	if ( ! wpcf7_use_really_simple_captcha() ) {
+		return $messages;
+	}
+
 	return array_merge( $messages, array( 'captcha_not_match' => array(
 		'description' => __( "The code that sender entered does not match the CAPTCHA", 'contact-form-7' ),
 		'default' => __( 'Your entered code is incorrect.', 'contact-form-7' )
@@ -195,6 +199,10 @@ if ( is_admin() ) {
 }
 
 function wpcf7_add_tag_generator_captcha() {
+	if ( ! wpcf7_use_really_simple_captcha() ) {
+		return;
+	}
+
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'captcha', __( 'CAPTCHA', 'contact-form-7' ),
 		'wpcf7_tag_generator_captcha' );

@@ -69,6 +69,10 @@ if ( ! defined( 'WPCF7_VERIFY_NONCE' ) ) {
 	define( 'WPCF7_VERIFY_NONCE', true );
 }
 
+if ( ! defined( 'WPCF7_USE_REALLY_SIMPLE_CAPTCHA' ) ) {
+	define( 'WPCF7_USE_REALLY_SIMPLE_CAPTCHA', false );
+}
+
 // Deprecated, not used in the plugin core. Use wpcf7_plugin_url() instead.
 define( 'WPCF7_PLUGIN_URL', untrailingslashit( plugins_url( '', WPCF7_PLUGIN ) ) );
 

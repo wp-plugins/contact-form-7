@@ -197,6 +197,11 @@ function wpcf7_support_html5_fallback() {
 	return (bool) apply_filters( 'wpcf7_support_html5_fallback', false );
 }
 
+function wpcf7_use_really_simple_captcha() {
+	return apply_filters( 'wpcf7_use_really_simple_captcha',
+		WPCF7_USE_REALLY_SIMPLE_CAPTCHA );
+}
+
 function wpcf7_load_js() {
 	return apply_filters( 'wpcf7_load_js', WPCF7_LOAD_JS );
 }
