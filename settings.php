@@ -19,11 +19,49 @@ if ( is_admin() ) {
 	require_once WPCF7_PLUGIN_DIR . '/includes/controller.php';
 }
 
+class WPCF7 {
+
+	public static function load_modules() {
+		self::load_module( 'acceptance' );
+		self::load_module( 'akismet' );
+		self::load_module( 'captcha' );
+		self::load_module( 'checkbox' );
+		self::load_module( 'count' );
+		self::load_module( 'date' );
+		self::load_module( 'file' );
+		self::load_module( 'flamingo' );
+		self::load_module( 'jetpack' );
+		self::load_module( 'listo' );
+		self::load_module( 'number' );
+		self::load_module( 'quiz' );
+		self::load_module( 'recaptcha' );
+		self::load_module( 'response' );
+		self::load_module( 'select' );
+		self::load_module( 'submit' );
+		self::load_module( 'text' );
+		self::load_module( 'textarea' );
+	}
+
+	protected static function load_module( $mod ) {
+		$dir = WPCF7_PLUGIN_MODULES_DIR;
+
+		if ( empty( $dir ) || ! is_dir( $dir ) ) {
+			return false;
+		}
+
+		$file = path_join( $dir, $mod . '.php' );
+
+		if ( file_exists( $file ) ) {
+			include_once $file;
+		}
+	}
+}
+
 add_action( 'plugins_loaded', 'wpcf7' );
 
 function wpcf7() {
 	wpcf7_load_textdomain();
-	wpcf7_load_modules();
+	WPCF7::load_modules();
 
 	/* Shortcodes */
 	add_shortcode( 'contact-form-7', 'wpcf7_contact_form_tag_func' );
