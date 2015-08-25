@@ -24,7 +24,6 @@ class WPCF7 {
 	public static function load_modules() {
 		self::load_module( 'acceptance' );
 		self::load_module( 'akismet' );
-		self::load_module( 'captcha' );
 		self::load_module( 'checkbox' );
 		self::load_module( 'count' );
 		self::load_module( 'date' );
@@ -34,6 +33,7 @@ class WPCF7 {
 		self::load_module( 'listo' );
 		self::load_module( 'number' );
 		self::load_module( 'quiz' );
+		self::load_module( 'really-simple-captcha' );
 		self::load_module( 'recaptcha' );
 		self::load_module( 'response' );
 		self::load_module( 'select' );
