@@ -55,6 +55,26 @@ class WPCF7 {
 			include_once $file;
 		}
 	}
+
+	public static function get_option( $name = '' ) {
+		$option = get_option( 'wpcf7' );
+
+		if ( false === $option || '' == $name ) {
+			return $option;
+		} else {
+			return isset( $option[$name] ) ? $option[$name] : '';
+		}
+	}
+
+	public static function update_option( $args = '' ) {
+		$args = wp_parse_args( $args, array() );
+
+		$option = get_option( 'wpcf7' );
+		$option = ( false === $option ) ? array() : (array) $option;
+		$option = array_merge( $option, $args );
+
+		update_option( 'wpcf7', $option, false );
+	}
 }
 
 add_action( 'plugins_loaded', 'wpcf7' );
@@ -80,22 +100,17 @@ function wpcf7_init() {
 add_action( 'admin_init', 'wpcf7_upgrade' );
 
 function wpcf7_upgrade() {
-	$opt = get_option( 'wpcf7' );
-
-	if ( ! is_array( $opt ) )
-		$opt = array();
-
-	$old_ver = isset( $opt['version'] ) ? (string) $opt['version'] : '0';
+	$old_ver = WPCF7::get_option( 'version' );
+	$old_ver = $old_ver ? $old_ver : '0';
 	$new_ver = WPCF7_VERSION;
 
-	if ( $old_ver == $new_ver )
+	if ( $old_ver == $new_ver ) {
 		return;
+	}
 
 	do_action( 'wpcf7_upgrade', $new_ver, $old_ver );
 
-	$opt['version'] = $new_ver;
-
-	update_option( 'wpcf7', $opt );
+	WPCF7::update_option( array( 'version' => $new_ver ) );
 }
 
 /* Install and default settings */
