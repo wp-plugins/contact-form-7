@@ -184,9 +184,7 @@ function wpcf7_text_messages( $messages ) {
 
 /* Tag generator */
 
-if ( is_admin() ) {
-	add_action( 'admin_init', 'wpcf7_add_tag_generator_text', 15 );
-}
+add_action( 'wpcf7_admin_init', 'wpcf7_add_tag_generator_text', 15 );
 
 function wpcf7_add_tag_generator_text() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

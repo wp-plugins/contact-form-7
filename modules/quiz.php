@@ -154,9 +154,7 @@ function wpcf7_quiz_messages( $messages ) {
 
 /* Tag generator */
 
-if ( is_admin() ) {
-	add_action( 'admin_init', 'wpcf7_add_tag_generator_quiz', 40 );
-}
+add_action( 'wpcf7_admin_init', 'wpcf7_add_tag_generator_quiz', 40 );
 
 function wpcf7_add_tag_generator_quiz() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

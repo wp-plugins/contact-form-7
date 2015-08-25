@@ -4,6 +4,12 @@ require_once WPCF7_PLUGIN_DIR . '/admin/includes/admin-functions.php';
 require_once WPCF7_PLUGIN_DIR . '/admin/includes/help-tabs.php';
 require_once WPCF7_PLUGIN_DIR . '/admin/includes/tag-generator.php';
 
+add_action( 'admin_init', 'wpcf7_admin_init' );
+
+function wpcf7_admin_init() {
+	do_action( 'wpcf7_admin_init' );
+}
+
 add_action( 'admin_menu', 'wpcf7_admin_menu', 9 );
 
 function wpcf7_admin_menu() {

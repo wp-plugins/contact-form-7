@@ -103,9 +103,7 @@ function wpcf7_recaptcha_check_with_google( $spam ) {
 	return $spam;
 }
 
-if ( is_admin() ) {
-	add_action( 'admin_init', 'wpcf7_add_tag_generator_recaptcha', 45 );
-}
+add_action( 'wpcf7_admin_init', 'wpcf7_add_tag_generator_recaptcha', 45 );
 
 function wpcf7_add_tag_generator_recaptcha() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();

@@ -1,6 +1,7 @@
 <?php
 
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
+require_once WPCF7_PLUGIN_DIR . '/includes/l10n.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
