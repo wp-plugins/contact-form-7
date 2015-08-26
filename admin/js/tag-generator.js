@@ -88,10 +88,10 @@
 
 		var options = [];
 
-		var size = scope.find(':input[name="size"]').val() || '';
-		var maxlength = scope.find(':input[name="maxlength"]').val() || '';
-		var cols = scope.find(':input[name="cols"]').val() || '';
-		var rows = scope.find(':input[name="rows"]').val() || '';
+		var size = scope.find(':text[name="size"]').val() || '';
+		var maxlength = scope.find(':text[name="maxlength"]').val() || '';
+		var cols = scope.find(':text[name="cols"]').val() || '';
+		var rows = scope.find(':text[name="rows"]').val() || '';
 
 		if ((cols || rows) && maxlength) {
 			options.push(cols + 'x' + rows + '/' + maxlength);
@@ -132,6 +132,12 @@
 		scope.find('input:checkbox.option').each(function(i) {
 			if ($(this).is(':checked')) {
 				options.push($(this).attr('name'));
+			}
+		});
+
+		scope.find('input:radio.option').each(function(i) {
+			if ($(this).is(':checked')) {
+				options.push($(this).attr('name') + ':' + $(this).val());
 			}
 		});
 

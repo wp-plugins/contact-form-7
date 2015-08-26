@@ -127,12 +127,36 @@ function wpcf7_tag_generator_recaptcha( $contact_form, $args = '' ) {
 <tbody>
 	<tr>
 	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-sitekey' ); ?>"><?php echo esc_html( __( 'Site key', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" name="sitekey" class="large-text option" id="<?php echo esc_attr( $args['content'] . '-sitekey' ); ?>" /></td>
+	<td><input type="text" name="sitekey" class="large-text option code" id="<?php echo esc_attr( $args['content'] . '-sitekey' ); ?>" /></td>
 	</tr>
 
 	<tr>
 	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-secret' ); ?>"><?php echo esc_html( __( 'Secret key', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" name="secret" class="large-text option" id="<?php echo esc_attr( $args['content'] . '-secret' ); ?>" /></td>
+	<td><input type="text" name="secret" class="large-text option code" id="<?php echo esc_attr( $args['content'] . '-secret' ); ?>" /></td>
+	</tr>
+
+	<tr>
+	<th scope="row"><?php echo esc_html( __( 'Theme', 'contact-form-7' ) ); ?></th>
+	<td>
+		<fieldset>
+		<legend class="screen-reader-text"><?php echo esc_html( __( 'Theme', 'contact-form-7' ) ); ?></legend>
+		<label for="<?php echo esc_attr( $args['content'] . '-theme-light' ); ?>"><input type="radio" name="theme" class="option" id="<?php echo esc_attr( $args['content'] . '-theme-light' ); ?>" value="light" checked="checked" /> <?php echo esc_html( __( 'Light', 'contact-form-7' ) ); ?></label>
+		<br />
+		<label for="<?php echo esc_attr( $args['content'] . '-theme-dark' ); ?>"><input type="radio" name="theme" class="option" id="<?php echo esc_attr( $args['content'] . '-theme-dark' ); ?>" value="dark" /> <?php echo esc_html( __( 'Dark', 'contact-form-7' ) ); ?></label>
+		</fieldset>
+	</td>
+	</tr>
+
+	<tr>
+	<th scope="row"><?php echo esc_html( __( 'Size', 'contact-form-7' ) ); ?></th>
+	<td>
+		<fieldset>
+		<legend class="screen-reader-text"><?php echo esc_html( __( 'Size', 'contact-form-7' ) ); ?></legend>
+		<label for="<?php echo esc_attr( $args['content'] . '-size-normal' ); ?>"><input type="radio" name="size" class="option" id="<?php echo esc_attr( $args['content'] . '-size-normal' ); ?>" value="normal" checked="checked" /> <?php echo esc_html( __( 'Normal', 'contact-form-7' ) ); ?></label>
+		<br />
+		<label for="<?php echo esc_attr( $args['content'] . '-size-compact' ); ?>"><input type="radio" name="size" class="option" id="<?php echo esc_attr( $args['content'] . '-size-compact' ); ?>" value="compact" /> <?php echo esc_html( __( 'Compact', 'contact-form-7' ) ); ?></label>
+		</fieldset>
+	</td>
 	</tr>
 
 	<tr>
