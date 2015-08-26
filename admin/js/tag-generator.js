@@ -88,26 +88,7 @@
 
 		var options = [];
 
-		var size = scope.find(':text[name="size"]').val() || '';
-		var maxlength = scope.find(':text[name="maxlength"]').val() || '';
-		var cols = scope.find(':text[name="cols"]').val() || '';
-		var rows = scope.find(':text[name="rows"]').val() || '';
-
-		if ((cols || rows) && maxlength) {
-			options.push(cols + 'x' + rows + '/' + maxlength);
-		} else if (cols || rows) {
-			options.push(cols + 'x' + rows);
-		} else if (size || maxlength) {
-			options.push(size + '/' + maxlength);
-		}
-
 		scope.find('input.option').not(':checkbox,:radio').each(function(i) {
-			var excluded = ['size', 'maxlength', 'cols', 'rows'];
-
-			if (-1 < $.inArray($(this).attr('name'), excluded)) {
-				return;
-			}
-
 			var val = $(this).val();
 
 			if (! val) {
