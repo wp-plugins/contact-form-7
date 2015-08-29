@@ -56,24 +56,25 @@ class WPCF7 {
 		}
 	}
 
-	public static function get_option( $name = '' ) {
+	public static function get_option( $name, $default = false ) {
 		$option = get_option( 'wpcf7' );
 
-		if ( false === $option || '' == $name ) {
-			return $option;
+		if ( false === $option ) {
+			return $default;
+		}
+
+		if ( isset( $option[$name] ) ) {
+			return $option[$name];
 		} else {
-			return isset( $option[$name] ) ? $option[$name] : '';
+			return $default;
 		}
 	}
 
-	public static function update_option( $args = '' ) {
-		$args = wp_parse_args( $args, array() );
-
+	public static function update_option( $name, $value ) {
 		$option = get_option( 'wpcf7' );
 		$option = ( false === $option ) ? array() : (array) $option;
-		$option = array_merge( $option, $args );
-
-		update_option( 'wpcf7', $option, false );
+		$option = array_merge( $option, array( $name => $value ) );
+		update_option( 'wpcf7', $option );
 	}
 }
 
@@ -100,8 +101,7 @@ function wpcf7_init() {
 add_action( 'admin_init', 'wpcf7_upgrade' );
 
 function wpcf7_upgrade() {
-	$old_ver = WPCF7::get_option( 'version' );
-	$old_ver = $old_ver ? $old_ver : '0';
+	$old_ver = WPCF7::get_option( 'version', '0' );
 	$new_ver = WPCF7_VERSION;
 
 	if ( $old_ver == $new_ver ) {
@@ -110,7 +110,7 @@ function wpcf7_upgrade() {
 
 	do_action( 'wpcf7_upgrade', $new_ver, $old_ver );
 
-	WPCF7::update_option( array( 'version' => $new_ver ) );
+	WPCF7::update_option( 'version', $new_ver );
 }
 
 /* Install and default settings */
