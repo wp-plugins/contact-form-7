@@ -3,8 +3,7 @@
 class WPCF7_RECAPTCHA extends WPCF7_Service {
 
 	private static $instance;
-
-	private function __construct() {}
+	private $sitekeys;
 
 	public static function get_instance() {
 		if ( empty( self::$instance ) ) {
@@ -14,12 +13,16 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		return self::$instance;
 	}
 
+	private function __construct() {
+		$this->sitekeys = WPCF7::get_option( 'recaptcha' );
+	}
+
 	public function get_title() {
 		return __( 'reCAPTCHA', 'contact-form-7' );
 	}
 
 	public function is_active() {
-		return true;
+		return ! empty( $this->sitekeys );
 	}
 
 	public function get_categories() {
@@ -39,6 +42,44 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		echo sprintf( '<a href="%1$s">%2$s</a>',
 			'https://www.google.com/recaptcha/intro/index.html',
 			'google.com/recaptcha' );
+	}
+
+	public function get_sitekey() {
+		if ( empty( $this->sitekeys ) || ! is_array( $this->sitekeys ) ) {
+			return false;
+		}
+
+		return array_shift( array_keys( $this->sitekeys ) );
+	}
+
+	public function get_secret( $sitekey ) {
+		$sitekeys = (array) $this->sitekeys;
+
+		if ( isset( $sitekeys[$sitekey] ) ) {
+			return $sitekeys[$sitekey];
+		} else {
+			return false;
+		}
+	}
+
+	public function display( $action = '' ) {
+		$sitekey = $this->get_sitekey();
+		$secret = $this->get_secret( $sitekey );
+
+?>
+<table class="form-table">
+<tbody>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'Site Key', 'contact-form-7' ) ); ?></th>
+	<td class="code"><?php echo esc_html( $sitekey ); ?></td>
+</tr>
+<tr>
+	<th scope="row"><?php echo esc_html( __( 'Secret Key', 'contact-form-7' ) ); ?></th>
+	<td class="code"><?php echo esc_html( wpcf7_mask_password( $secret ) ); ?></td>
+</tr>
+</tbody>
+</table>
+<?php
 	}
 }
 
