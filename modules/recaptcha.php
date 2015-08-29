@@ -67,6 +67,10 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		$secret = $this->get_secret( $sitekey );
 
 ?>
+<p><?php echo esc_html( __( "reCAPTCHA is a free service to protect your website from spam and abuse.", 'contact-form-7' ) ); ?></p>
+
+<p><?php echo sprintf( __( 'To use reCAPTCHA, you need to <a href="%s" target="_blank">sign up for an API key pair</a> (a site key and secret) for your site.', 'contact-form-7' ), 'https://www.google.com/recaptcha/admin' ); ?></p>
+
 <table class="form-table">
 <tbody>
 <tr>
