@@ -1,5 +1,67 @@
 <?php
 
+class WPCF7_RECAPTCHA extends WPCF7_Service {
+
+	private static $instance;
+
+	private function __construct() {}
+
+	public static function get_instance() {
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+	}
+
+	public function get_title() {
+		return __( 'reCAPTCHA', 'contact-form-7' );
+	}
+
+	public function is_active() {
+		return true;
+	}
+
+	public function get_categories() {
+		return array( 'captcha' );
+	}
+
+	public function icon() {
+		$icon = sprintf(
+			'<img src="%1$s" alt="%2$s" width="%3$d" height="%4$d" class="icon" />',
+			wpcf7_plugin_url( 'images/service-icons/recaptcha-72x72.png' ),
+			esc_attr( __( 'reCAPTCHA Logo', 'contact-form-7' ) ),
+			36, 36 );
+		echo $icon;
+	}
+
+	public function link() {
+		echo sprintf( '<a href="%1$s">%2$s</a>',
+			'https://www.google.com/recaptcha/intro/index.html',
+			'google.com/recaptcha' );
+	}
+}
+
+add_action( 'wpcf7_init', 'wpcf7_recaptcha_register_service' );
+
+function wpcf7_recaptcha_register_service() {
+	$integration = WPCF7_Integration::get_instance();
+
+	$categories = array(
+		'captcha' => __( 'CAPTCHA', 'contact-form-7' ) );
+
+	foreach ( $categories as $name => $category ) {
+		$integration->add_category( $name, $category );
+	}
+
+	$services = array(
+		'recaptcha' => WPCF7_RECAPTCHA::get_instance() );
+
+	foreach ( $services as $name => $service ) {
+		$integration->add_service( $name, $service );
+	}
+}
+
 add_action( 'wpcf7_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts' );
 
 function wpcf7_recaptcha_enqueue_scripts() {
