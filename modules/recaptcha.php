@@ -2,6 +2,8 @@
 
 class WPCF7_RECAPTCHA extends WPCF7_Service {
 
+	const VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+
 	private static $instance;
 	private $sitekeys;
 
@@ -64,6 +66,34 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		} else {
 			return false;
 		}
+	}
+
+	public function verify( $user_response ) {
+		$is_human = false;
+
+		if ( empty( $user_response ) ) {
+			return $is_human;
+		}
+
+		$url = self::VERIFY_URL;
+		$sitekey = $this->get_sitekey();
+		$secret = $this->get_secret( $sitekey );
+
+		$response = wp_safe_remote_post( $url, array(
+			'body' => array(
+				'secret' => $secret,
+				'response' => $user_response,
+				'remoteip' => $_SERVER['REMOTE_ADDR'] ) ) );
+
+		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+			return $is_human;
+		}
+
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+
+		$is_human = isset( $response['success'] ) && true == $response['success'];
+		return $is_human;
 	}
 
 	private function menu_page_url( $args = '' ) {
@@ -217,7 +247,10 @@ function wpcf7_recaptcha_shortcode_handler( $tag ) {
 	$tag = new WPCF7_Shortcode( $tag );
 
 	$atts = array();
-	$atts['data-sitekey'] = $tag->get_option( 'sitekey', '', true );
+
+	$recaptcha = WPCF7_RECAPTCHA::get_instance();
+	$atts['data-sitekey'] = $recaptcha->get_sitekey();
+
 	$atts['data-theme'] = $tag->get_option( 'theme', '(dark|light)', true );
 	$atts['data-size'] = $tag->get_option( 'size', '(compact|normal)', true );
 	$atts['class'] = $tag->get_class_option(
@@ -273,32 +306,16 @@ function wpcf7_recaptcha_check_with_google( $spam ) {
 	}
 
 	$tags = $contact_form->form_scan_shortcode( array( 'type' => 'recaptcha' ) );
-	$tag = array_shift( $tags );
 
-	if ( ! $tag ) {
+	if ( empty( $tags ) ) {
 		return $spam;
 	}
 
-	$tag = new WPCF7_Shortcode( $tag );
-	$secret = $tag->get_option( 'secret', '', true );
+	$recaptcha = WPCF7_RECAPTCHA::get_instance();
+	$user_response = isset( $_POST['g-recaptcha-response'] )
+		? $_POST['g-recaptcha-response'] : '';
+	$spam = ! $recaptcha->verify( $user_response );
 
-	$url = 'https://www.google.com/recaptcha/api/siteverify';
-
-	$response = wp_safe_remote_post( $url, array(
-		'body' => array(
-			'secret' => $secret,
-			'response' => isset( $_POST['g-recaptcha-response'] )
-				? $_POST['g-recaptcha-response'] : '',
-			'remoteip' => $_SERVER['REMOTE_ADDR'] ) ) );
-
-	if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
-		return $spam;
-	}
-
-	$response = wp_remote_retrieve_body( $response );
-	$response = json_decode( $response, true );
-
-	$spam = isset( $response['success'] ) && false == $response['success'];
 	return $spam;
 }
 
@@ -324,16 +341,6 @@ function wpcf7_tag_generator_recaptcha( $contact_form, $args = '' ) {
 
 <table class="form-table">
 <tbody>
-	<tr>
-	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-sitekey' ); ?>"><?php echo esc_html( __( 'Site key', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" name="sitekey" class="large-text option code" id="<?php echo esc_attr( $args['content'] . '-sitekey' ); ?>" /></td>
-	</tr>
-
-	<tr>
-	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-secret' ); ?>"><?php echo esc_html( __( 'Secret key', 'contact-form-7' ) ); ?></label></th>
-	<td><input type="text" name="secret" class="large-text option code" id="<?php echo esc_attr( $args['content'] . '-secret' ); ?>" /></td>
-	</tr>
-
 	<tr>
 	<th scope="row"><?php echo esc_html( __( 'Theme', 'contact-form-7' ) ); ?></th>
 	<td>
