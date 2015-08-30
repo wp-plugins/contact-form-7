@@ -22,7 +22,9 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 	}
 
 	public function is_active() {
-		return ! empty( $this->sitekeys );
+		$sitekey = $this->get_sitekey();
+		$secret = $this->get_secret( $sitekey );
+		return $sitekey && $secret;
 	}
 
 	public function get_categories() {
@@ -49,7 +51,9 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 			return false;
 		}
 
-		return array_shift( array_keys( $this->sitekeys ) );
+		$sitekeys = array_keys( $this->sitekeys );
+
+		return $sitekeys[0];
 	}
 
 	public function get_secret( $sitekey ) {
@@ -62,15 +66,71 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		}
 	}
 
-	public function display( $action = '' ) {
-		$sitekey = $this->get_sitekey();
-		$secret = $this->get_secret( $sitekey );
+	private function menu_page_url( $args = '' ) {
+		$args = wp_parse_args( $args, array() );
 
+		$url = menu_page_url( 'wpcf7-integration', false );
+		$url = add_query_arg( array( 'service' => 'recaptcha' ), $url );
+
+		if ( ! empty( $args) ) {
+			$url = add_query_arg( $args, $url );
+		}
+
+		return $url;
+	}
+
+	public function load( $action = '' ) {
+		if ( 'setup' == $action ) {
+			if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
+				check_admin_referer( 'wpcf7-recaptcha-setup' );
+
+				$sitekey = isset( $_POST['sitekey'] ) ? trim( $_POST['sitekey'] ) : '';
+				$secret = isset( $_POST['secret'] ) ? trim( $_POST['secret'] ) : '';
+
+				if ( $sitekey && $secret ) {
+					WPCF7::update_option( 'recaptcha', array( $sitekey => $secret ) );
+					$redirect_to = $this->menu_page_url( array(
+						'message' => 'success' ) );
+				} else {
+					$redirect_to = $this->menu_page_url( array(
+						'action' => 'setup',
+						'message' => 'invalid' ) );
+				}
+
+				wp_safe_redirect( $redirect_to );
+				exit();
+			}
+		}
+	}
+
+	public function admin_notice( $message = '' ) {
+		if ( 'invalid' == $message ) {
+			echo sprintf(
+				'<div class="error"><p><strong>%1$s</strong>: %2$s</p></div>',
+				esc_html( __( "ERROR", 'contact-form-7' ) ),
+				esc_html( __( "Invalid key values.", 'contact-form-7' ) ) );
+		}
+
+		if ( 'success' == $message ) {
+			echo sprintf( '<div class="updated"><p>%s</p></div>',
+				esc_html( __( 'Settings saved.', 'contact-form-7' ) ) );
+		}
+	}
+
+	public function display( $action = '' ) {
 ?>
 <p><?php echo esc_html( __( "reCAPTCHA is a free service to protect your website from spam and abuse.", 'contact-form-7' ) ); ?></p>
 
-<p><?php echo sprintf( __( 'To use reCAPTCHA, you need to <a href="%s" target="_blank">sign up for an API key pair</a> (a site key and secret) for your site.', 'contact-form-7' ), 'https://www.google.com/recaptcha/admin' ); ?></p>
+<?php
+		if ( 'setup' == $action ) {
+			$this->display_setup();
+			return;
+		}
 
+		if ( $this->is_active() ) {
+			$sitekey = $this->get_sitekey();
+			$secret = $this->get_secret( $sitekey );
+?>
 <table class="form-table">
 <tbody>
 <tr>
@@ -83,6 +143,38 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 </tr>
 </tbody>
 </table>
+
+<p><a href="<?php echo esc_url( $this->menu_page_url( 'action=setup' ) ); ?>" class="button"><?php echo esc_html( __( "Reset Keys", 'contact-form-7' ) ); ?></a></p>
+
+<?php
+		} else {
+?>
+<p><?php echo esc_html( __( "To use reCAPTCHA, you need to set up an API key pair.", 'contact-form-7' ) ); ?></p>
+
+<p><a href="<?php echo esc_url( $this->menu_page_url( 'action=setup' ) ); ?>" class="button"><?php echo esc_html( __( "Configure Keys", 'contact-form-7' ) ); ?></a></p>
+<?php
+		}
+	}
+
+	public function display_setup() {
+?>
+<form method="post" action="<?php echo esc_url( $this->menu_page_url( 'action=setup' ) ); ?>">
+<?php wp_nonce_field( 'wpcf7-recaptcha-setup' ); ?>
+<table class="form-table">
+<tbody>
+<tr>
+	<th scope="row"><label for="sitekey"><?php echo esc_html( __( 'Site Key', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" aria-required="true" value="" id="sitekey" name="sitekey" class="regular-text code" /></td>
+</tr>
+<tr>
+	<th scope="row"><label for="secret"><?php echo esc_html( __( 'Secret Key', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" aria-required="true" value="" id="secret" name="secret" class="regular-text code" /></td>
+</tr>
+</tbody>
+</table>
+
+<p class="submit"><input type="submit" class="button button-primary" value="<?php echo esc_attr( __( 'Save', 'contact-form-7' ) ); ?>" name="submit" /></p>
+</form>
 <?php
 	}
 }
