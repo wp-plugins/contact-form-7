@@ -47,7 +47,7 @@ The following are other recommended plugins by the author of Contact Form 7.
 * Chinese (Taiwan; zh_TW) - James Wu
 * Croatian (hr) - tolingo Translation Services, Marko Puskaric
 * Czech (cs_CZ) - Korry, Radovan Fiser, Tomas Vesely, Pavel Bilek, Vladislav Šenk
-* Danish (da_DK) - Jens Griebel, Georg S. Adamsen
+* Danish (da_DK) - Jens Griebel, Georg S. Adamsen, Thomas Blomberg Hansen
 * Dutch (nl_NL) - Chris Devriese, Martin Hein, Rene, TenSheep, Tim de Hoog, Henk Buma
 * Esperanto (eo_EO) - Arkadiusz Zychewicz
 * Estonian (et) - Peeter Rahuvarm, Egon Elbre, Tanel Jüris
