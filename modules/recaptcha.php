@@ -68,10 +68,10 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		}
 	}
 
-	public function verify( $user_response ) {
+	public function verify( $response_token ) {
 		$is_human = false;
 
-		if ( empty( $user_response ) ) {
+		if ( empty( $response_token ) ) {
 			return $is_human;
 		}
 
@@ -82,7 +82,7 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 		$response = wp_safe_remote_post( $url, array(
 			'body' => array(
 				'secret' => $secret,
-				'response' => $user_response,
+				'response' => $response_token,
 				'remoteip' => $_SERVER['REMOTE_ADDR'] ) ) );
 
 		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
@@ -312,9 +312,9 @@ function wpcf7_recaptcha_check_with_google( $spam ) {
 	}
 
 	$recaptcha = WPCF7_RECAPTCHA::get_instance();
-	$user_response = isset( $_POST['g-recaptcha-response'] )
+	$response_token = isset( $_POST['g-recaptcha-response'] )
 		? $_POST['g-recaptcha-response'] : '';
-	$spam = ! $recaptcha->verify( $user_response );
+	$spam = ! $recaptcha->verify( $response_token );
 
 	return $spam;
 }
