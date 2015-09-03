@@ -12,7 +12,7 @@ Version: 4.2.2
 
 define( 'WPCF7_VERSION', '4.2.2' );
 
-define( 'WPCF7_REQUIRED_WP_VERSION', '4.1' );
+define( 'WPCF7_REQUIRED_WP_VERSION', '4.2' );
 
 define( 'WPCF7_PLUGIN', __FILE__ );
 
