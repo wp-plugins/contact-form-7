@@ -121,6 +121,10 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 					WPCF7::update_option( 'recaptcha', array( $sitekey => $secret ) );
 					$redirect_to = $this->menu_page_url( array(
 						'message' => 'success' ) );
+				} elseif ( '' === $sitekey && '' === $secret ) {
+					WPCF7::update_option( 'recaptcha', null );
+					$redirect_to = $this->menu_page_url( array(
+						'message' => 'success' ) );
 				} else {
 					$redirect_to = $this->menu_page_url( array(
 						'action' => 'setup',
