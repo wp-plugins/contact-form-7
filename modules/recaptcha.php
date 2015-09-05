@@ -236,7 +236,7 @@ function wpcf7_recaptcha_register_service() {
 add_action( 'wpcf7_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts' );
 
 function wpcf7_recaptcha_enqueue_scripts() {
-	wp_enqueue_script( 'google-recaptcha',
+	wp_register_script( 'google-recaptcha',
 		'https://www.google.com/recaptcha/api.js',
 		array(), '2.0', true );
 }
@@ -248,6 +248,8 @@ function wpcf7_recaptcha_add_shortcode_recaptcha() {
 }
 
 function wpcf7_recaptcha_shortcode_handler( $tag ) {
+	wp_enqueue_script( 'google-recaptcha' );
+
 	$tag = new WPCF7_Shortcode( $tag );
 
 	$atts = array();
