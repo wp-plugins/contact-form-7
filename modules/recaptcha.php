@@ -296,9 +296,14 @@ function wpcf7_recaptcha_shortcode_handler( $tag ) {
 
 	$recaptcha = WPCF7_RECAPTCHA::get_instance();
 	$atts['data-sitekey'] = $recaptcha->get_sitekey();
-
 	$atts['data-theme'] = $tag->get_option( 'theme', '(dark|light)', true );
+	$atts['data-type'] = $tag->get_option( 'type', '(audio|image)', true );
 	$atts['data-size'] = $tag->get_option( 'size', '(compact|normal)', true );
+	$atts['data-tabindex'] = $tag->get_option( 'tabindex', 'int', true );
+	$atts['data-callback'] = $tag->get_option( 'callback', '', true );
+	$atts['data-expired-callback'] =
+		$tag->get_option( 'expired-callback', '', true );
+
 	$atts['class'] = $tag->get_class_option(
 		wpcf7_form_controls_class( $tag->type, 'g-recaptcha' ) );
 	$atts['id'] = $tag->get_id_option();
