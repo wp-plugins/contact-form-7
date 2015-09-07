@@ -117,7 +117,7 @@
 		});
 
 		scope.find('input:radio.option').each(function(i) {
-			if ($(this).is(':checked')) {
+			if ($(this).is(':checked') && ! $(this).hasClass('default')) {
 				options.push($(this).attr('name') + ':' + $(this).val());
 			}
 		});
