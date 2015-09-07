@@ -236,9 +236,49 @@ function wpcf7_recaptcha_register_service() {
 add_action( 'wpcf7_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts' );
 
 function wpcf7_recaptcha_enqueue_scripts() {
-	wp_register_script( 'google-recaptcha',
-		'https://www.google.com/recaptcha/api.js',
-		array(), '2.0', true );
+	$url = 'https://www.google.com/recaptcha/api.js';
+	$url = add_query_arg( array(
+		'onload' => 'recaptchaCallback',
+		'render' => 'explicit' ), $url );
+
+	wp_register_script( 'google-recaptcha', $url, array(), '2.0', true );
+}
+
+add_action( 'wp_footer', 'wpcf7_recaptcha_callback_script' );
+
+function wpcf7_recaptcha_callback_script() {
+	if ( ! wp_script_is( 'google-recaptcha', 'enqueued' ) ) {
+		return;
+	}
+
+?>
+<script type="text/javascript">
+var recaptchaCallback = function() {
+	var forms = document.getElementsByTagName('form');
+	var pattern = /(^|\s)g-recaptcha(\s|$)/;
+
+	for (var i = 0; i < forms.length; i++) {
+		var divs = forms[i].getElementsByTagName('div');
+
+		for (var j = 0; j < divs.length; j++) {
+			if (divs[j].className && divs[j].className.match(pattern)) {
+				grecaptcha.render(divs[j], {
+			  	'sitekey': divs[j].getAttribute('data-sitekey'),
+					'theme': divs[j].getAttribute('data-theme'),
+					'type': divs[j].getAttribute('data-type'),
+					'size': divs[j].getAttribute('data-size'),
+					'tabindex': divs[j].getAttribute('data-tabindex'),
+					'callback': divs[j].getAttribute('data-callback'),
+					'expired-callback': divs[j].getAttribute('data-expired-callback')
+				});
+
+				break;
+			}
+		}
+	}
+}
+</script>
+<?php
 }
 
 add_action( 'wpcf7_init', 'wpcf7_recaptcha_add_shortcode_recaptcha' );
