@@ -369,6 +369,11 @@ function wpcf7_recaptcha_check_with_google( $spam ) {
 	}
 
 	$recaptcha = WPCF7_RECAPTCHA::get_instance();
+
+	if ( ! $recaptcha->is_active() ) {
+		return $spam;
+	}
+
 	$response_token = isset( $_POST['g-recaptcha-response'] )
 		? $_POST['g-recaptcha-response'] : '';
 	$spam = ! $recaptcha->verify( $response_token );
