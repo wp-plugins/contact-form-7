@@ -357,15 +357,19 @@ class WPCF7_ContactForm {
 			'_wpcf7_locale' => $this->locale,
 			'_wpcf7_unit_tag' => $this->unit_tag );
 
-		if ( WPCF7_VERIFY_NONCE )
+		if ( WPCF7_VERIFY_NONCE ) {
 			$hidden_fields['_wpnonce'] = wpcf7_create_nonce( $this->id );
+		}
+
+		$hidden_fields += (array) apply_filters(
+			'wpcf7_form_hidden_fields', array() );
 
 		$content = '';
 
 		foreach ( $hidden_fields as $name => $value ) {
-			$content .= '<input type="hidden"'
-				. ' name="' . esc_attr( $name ) . '"'
-				. ' value="' . esc_attr( $value ) . '" />' . "\n";
+			$content .= sprintf(
+				'<input type="hidden" name="%1$s" value="%2$s" />',
+				esc_attr( $name ), esc_attr( $value ) ) . "\n";
 		}
 
 		return '<div style="display: none;">' . "\n" . $content . '</div>' . "\n";
