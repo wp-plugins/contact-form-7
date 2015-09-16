@@ -288,7 +288,11 @@ var recaptchaCallback = function() {
 add_action( 'wpcf7_init', 'wpcf7_recaptcha_add_shortcode_recaptcha' );
 
 function wpcf7_recaptcha_add_shortcode_recaptcha() {
-	wpcf7_add_shortcode( 'recaptcha', 'wpcf7_recaptcha_shortcode_handler' );
+	$recaptcha = WPCF7_RECAPTCHA::get_instance();
+
+	if ( $recaptcha->is_active() ) {
+		wpcf7_add_shortcode( 'recaptcha', 'wpcf7_recaptcha_shortcode_handler' );
+	}
 }
 
 function wpcf7_recaptcha_shortcode_handler( $tag ) {
