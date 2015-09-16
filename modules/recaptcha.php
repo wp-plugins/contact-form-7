@@ -183,9 +183,11 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 <?php
 		} else {
 ?>
-<p><?php echo esc_html( __( "To use reCAPTCHA, you need to set up an API key pair.", 'contact-form-7' ) ); ?></p>
+<p><?php echo esc_html( __( "To use reCAPTCHA, you need to install an API key pair.", 'contact-form-7' ) ); ?></p>
 
 <p><a href="<?php echo esc_url( $this->menu_page_url( 'action=setup' ) ); ?>" class="button"><?php echo esc_html( __( "Configure Keys", 'contact-form-7' ) ); ?></a></p>
+
+<p><?php echo sprintf( esc_html( __( "For more details, see %s.", 'contact-form-7' ) ), wpcf7_link( __( 'http://contactform7.com/recaptcha/', 'contact-form-7' ), __( 'reCAPTCHA', 'contact-form-7' ) ) ); ?></p>
 <?php
 		}
 	}
@@ -391,6 +393,20 @@ function wpcf7_add_tag_generator_recaptcha() {
 
 function wpcf7_tag_generator_recaptcha( $contact_form, $args = '' ) {
 	$args = wp_parse_args( $args, array() );
+
+	$recaptcha = WPCF7_RECAPTCHA::get_instance();
+
+	if ( ! $recaptcha->is_active() ) {
+?>
+<div class="control-box">
+<fieldset>
+<legend><?php echo sprintf( esc_html( __( "To use reCAPTCHA, first you need to install an API key pair. For more details, see %s.", 'contact-form-7' ) ), wpcf7_link( __( 'http://contactform7.com/recaptcha/', 'contact-form-7' ), __( 'reCAPTCHA', 'contact-form-7' ) ) ); ?></legend>
+</fieldset>
+</div>
+<?php
+
+		return;
+	}
 
 	$description = __( "Generate a form-tag for a reCAPTCHA widget. For more details, see %s.", 'contact-form-7' );
 
