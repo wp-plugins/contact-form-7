@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 4.2
-Tested up to: 4.3
-Stable tag: 4.2.2
+Tested up to: 4.3.1
+Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,12 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 == Changelog ==
 
 For more information, see [Releases](http://contactform7.com/category/releases/).
+
+= 4.3 =
+
+* reCAPTCHA module has been introduced.
+* Translations for Croatian, Danish, Persian, and Swedish have been updated.
+* WordPress 4.2 or higher is required.
 
 = 4.2.2 =
 
