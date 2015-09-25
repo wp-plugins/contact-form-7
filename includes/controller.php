@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'init', 'wpcf7_control_init', 11 );
+add_action( 'wp_loaded', 'wpcf7_control_init' );
 
 function wpcf7_control_init() {
 	if ( ! isset( $_SERVER['REQUEST_METHOD'] ) ) {
